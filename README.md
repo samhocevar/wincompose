@@ -1,7 +1,14 @@
 wincompose
 ==========
 
-Compose Key for Windows
+A real compose key for Windows
 
-Requires AutoHotKey (http://www.autohotkey.com/)
+Quick Start:
 
+ 1. Run WinCompose.exe
+ 2. Use the Right Alt key as a compose key, for instance: Right Alt,
+    then "," then "c" will type "ç"
+
+Customising the script requires AutoHotKey (http://www.autohotkey.com/) for now.
+
+Please report bugs to Sam Hocevar <sam@hocevar.net>
