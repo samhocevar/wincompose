@@ -127,7 +127,8 @@ send_char(char)
 ResetCallback:
   sequence =
   compose := false
-  Menu, Tray, Icon, wc.ico
+  if (active)
+    Menu, Tray, Icon, wc.ico
   SetTimer, ResetCallback, Off
   return
 
