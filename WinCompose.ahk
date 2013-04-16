@@ -26,7 +26,7 @@ compose_file := "Compose"
 reset_delay := 5000
 
 ; Activate debug messages?
-have_debug := true
+have_debug := false
 
 ;
 ; Initialisation
@@ -72,7 +72,8 @@ send_char(char)
 
   if (!active || (!compose && char != "compose"))
   {
-    send_raw(char)
+    if (char != "compose")
+      send_raw(char)
     sequence =
     compose := false
     return
@@ -84,13 +85,18 @@ send_char(char)
     sequence =
     compose := !compose
     if (compose)
+    {
       SetTimer, ResetCallback, %reset_delay%
+      Menu, Tray, Icon, wca.ico
+    }
+    else
+      Menu, Tray, Icon, wc.ico
     return
   }
 
   sequence .= char
 
-  debug("character: [ " char " ] sequence: [ " sequence " ]")
+  debug("Sequence: [ " sequence " ]")
 
   if (has_sequence(sequence))
   {
@@ -98,6 +104,7 @@ send_char(char)
     Send %tmp%
     sequence =
     compose := false
+    Menu, Tray, Icon, wc.ico
   }
   else if (!has_prefix(sequence))
   {
@@ -105,6 +112,7 @@ send_char(char)
     send_raw(sequence)
     sequence =
     compose := false
+    Menu, Tray, Icon, wc.ico
   }
 
   return
@@ -112,6 +120,7 @@ send_char(char)
 ResetCallback:
   sequence =
   compose := false
+  Menu, Tray, Icon, wc.ico
   SetTimer, ResetCallback, Off
   return
 
@@ -141,6 +150,11 @@ send_raw(string)
   }
 }
 
+info(string)
+{
+  TrayTip, WinCompose, %string%, 10, 1
+}
+
 debug(string)
 {
   global have_debug
@@ -163,6 +177,7 @@ to_hex(str)
 read_sequences(file)
 {
   FileEncoding UTF-8
+  count := 0
   Loop read, %file%
   {
     ; Check whether we get a character between quotes after a colon,
@@ -230,7 +245,10 @@ read_sequences(file)
       continue
   
     add_sequence(seq, right)
+    count += 1
   }
+
+  info("Loaded " count " Sequences")
 }
 
 ; Register a compose sequence, and add all substring prefixes to our list
