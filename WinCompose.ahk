@@ -41,16 +41,23 @@ Menu, Tray, NoStandard
 Menu, Tray, Add, &Disable, ToggleCallback
 Menu, Tray, Add, &Restart, RestartCallback
 Menu, Tray, Add
+if (have_debug)
+  Menu, Tray, Add, Key &History, HistoryCallback
 Menu, Tray, Add, &About, AboutCallback
 Menu, Tray, Add, E&xit, ExitCallback
 Menu, Tray, Icon, wc.ico
 
+; Activate the compose key for real
+Hotkey, %compose_key%, ComposeCallback
+
+; Activate these variants just in case; for instance, Outlook 2010 seems
+; to automatically remap "Right Alt" to "Left Control + Right Alt".
+Hotkey, ^%compose_key%, ComposeCallback
+Hotkey, +%compose_key%, ComposeCallback
+Hotkey, !%compose_key%, ComposeCallback
+
 ; Workaround for an AHK bug that prevents "::`:::" from working in hotstrings
 HotKey, $:, workaround_hotkey
-
-; Activate the compose key for real
-#Hotstring ? * c b0
-Hotkey, %compose_key%, ComposeCallback
 
 ; End of initialisation
 return
@@ -291,6 +298,10 @@ ComposeCallback:
 
 RestartCallback:
   Reload
+  return
+
+HistoryCallback:
+  KeyHistory
   return
 
 AboutCallback:
