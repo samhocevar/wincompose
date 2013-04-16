@@ -42,7 +42,7 @@ Menu, Tray, Add, &Disable, ToggleCallback
 Menu, Tray, Add, &Restart, RestartCallback
 Menu, Tray, Add
 if (have_debug)
-  Menu, Tray, Add, Key &History, HistoryCallback
+    Menu, Tray, Add, Key &History, HistoryCallback
 Menu, Tray, Add, &About, AboutCallback
 Menu, Tray, Add, E&xit, ExitCallback
 Menu, Tray, Icon, wc.ico
@@ -72,102 +72,102 @@ return
 
 send_char(char)
 {
-  global reset_delay
-  static sequence := ""
-  static compose := false
-  static active := true
+    global reset_delay
+    static sequence =
+    static compose := false
+    static active := true
 
-  if (!active || (!compose && char != "compose"))
-  {
-    if (char != "compose")
-      send_raw(char)
-    sequence =
-    compose := false
-    return
-  }
-
-  if (char = "compose")
-  {
-    debug("Compose key pressed")
-    sequence =
-    compose := !compose
-    if (compose)
+    if (!active || (!compose && char != "compose"))
     {
-      SetTimer, ResetCallback, %reset_delay%
-      Menu, Tray, Icon, wca.ico
+        if (char != "compose")
+            send_raw(char)
+        sequence =
+        compose := false
+        return
     }
-    else
-      Menu, Tray, Icon, wc.ico
+
+    if (char = "compose")
+    {
+        debug("Compose key pressed")
+        sequence =
+        compose := !compose
+        if (compose)
+        {
+            SetTimer, ResetCallback, %reset_delay%
+            Menu, Tray, Icon, wca.ico
+        }
+        else
+            Menu, Tray, Icon, wc.ico
+        return
+    }
+
+    sequence .= char
+
+    debug("Sequence: [ " sequence " ]")
+
+    if (has_sequence(sequence))
+    {
+        tmp := get_sequence(sequence)
+        Send %tmp%
+        sequence =
+        compose := false
+        Menu, Tray, Icon, wc.ico
+    }
+    else if (!has_prefix(sequence))
+    {
+        debug("Disabling Dead End Sequence [ " sequence " ]")
+        send_raw(sequence)
+        sequence =
+        compose := false
+        Menu, Tray, Icon, wc.ico
+    }
+
     return
-  }
-
-  sequence .= char
-
-  debug("Sequence: [ " sequence " ]")
-
-  if (has_sequence(sequence))
-  {
-    tmp := get_sequence(sequence)
-    Send %tmp%
-    sequence =
-    compose := false
-    Menu, Tray, Icon, wc.ico
-  }
-  else if (!has_prefix(sequence))
-  {
-    debug("Disabling Dead End Sequence [ " sequence " ]")
-    send_raw(sequence)
-    sequence =
-    compose := false
-    Menu, Tray, Icon, wc.ico
-  }
-
-  return
 
 ResetCallback:
-  sequence =
-  compose := false
-  if (active)
-    Menu, Tray, Icon, wc.ico
-  SetTimer, ResetCallback, Off
-  return
+    sequence =
+    compose := false
+    if (active)
+        Menu, Tray, Icon, wc.ico
+    SetTimer, ResetCallback, Off
+    return
 
 ToggleCallback:
-  active := !active
-  if (active)
-  {
-    Menu, Tray, Uncheck, &Disable
-    Menu, Tray, Icon, wc.ico
-  }
-  else
-  {
-    Menu, Tray, Check, &Disable
-    Menu, Tray, Icon, wcd.ico
-  }
-  return
+    active := !active
+    if (active)
+    {
+        Menu, Tray, Uncheck, &Disable
+        Menu, Tray, Icon, wc.ico
+    }
+    else
+    {
+        Menu, Tray, Check, &Disable
+        Menu, Tray, Icon, wcd.ico
+    }
+    return
 }
 
 send_raw(string)
 {
-  Loop, parse, string
-  {
-    if (a_loopfield = " ")
-      Send {Space}
-    else
-      SendRaw %a_loopfield%
-  }
+    Loop, parse, string
+    {
+        if (a_loopfield = " ")
+            Send {Space}
+        else
+            SendRaw %a_loopfield%
+    }
 }
 
 info(string)
 {
-  TrayTip, WinCompose, %string%, 10, 1
+    TrayTip, WinCompose, %string%, 10, 1
 }
 
 debug(string)
 {
-  global have_debug
-  if (have_debug)
-    TrayTip, WinCompose, %string%, 10, 1
+    global have_debug
+    if (have_debug)
+        TrayTip, WinCompose, %string%, 10, 1
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have
@@ -175,143 +175,143 @@ debug(string)
 ; first character is special
 to_hex(str)
 {
-  hex = *
-  loop, parse, str
-    hex .= asc(a_loopfield)
-  return hex
+    hex = *
+    loop, parse, str
+        hex .= asc(a_loopfield)
+    return hex
 }
 
 ; Read compose sequences from an X11 compose file
 read_sequences(file)
 {
-  FileEncoding UTF-8
-  count := 0
-  Loop read, %file%
-  {
-    ; Check whether we get a character between quotes after a colon,
-    ; that's our destination character.
-    r_right := "^[^"":#]*:[^""#]*""(\\.|[^\\""])*"".*$"
-    if (!regexmatch(a_loopreadline, r_right))
-      continue
-    right := regexreplace(a_loopreadline, r_right, "$1")
-  
-    ; Everything before that colon is our sequence, only keep it if it
-    ; starts with "<Multi_key>".
-    r_left := "^[ \\t]*<Multi_key>([^:]*):.*$"
-    if (!regexmatch(a_loopreadline, r_left))
-      continue
-    left := regexreplace(a_loopreadline, r_left, "$1")
-    left := regexreplace(left, "[ \\t]*", "")
-  
-    ; Now replace all special key names to build our sequence
-    valid := true
-    seq =
-    loop, parse, left, "<>"
+    FileEncoding UTF-8
+    count := 0
+    Loop read, %file%
     {
-      decoder := { "space":        " " ; 0x20
-                 , "exclam":       "!" ; 0x21
-                 , "quotedbl":    """" ; 0x22
-                 , "numbersign":   "#" ; 0x23
-                 , "dollar":       "$" ; 0x24
-                 , "percent":      "%" ; 0x25
-                 , "ampersand":    "&" ; 0x26 XXX: Is this the right name?
-                 , "apostrophe":   "'" ; 0x27
-                 , "parenleft":    "(" ; 0x28
-                 , "parenright":   ")" ; 0x29
-                 , "asterisk":     "*" ; 0x2a
-                 , "plus":         "+" ; 0x2b
-                 , "comma":        "," ; 0x2c
-                 , "minus":        "-" ; 0x2d
-                 , "period":       "." ; 0x2e
-                 , "slash":        "/" ; 0x2f
-                 , "colon":        ":" ; 0x3a
-                 , "semicolon":    ";" ; 0x3b
-                 , "less":         "<" ; 0x3c
-                 , "equal":        "=" ; 0x3d
-                 , "greater":      ">" ; 0x3e
-                 , "question":     "?" ; 0x3f
-                 , "bracketleft":  "[" ; 0x5b
-                 , "backslash":   "\\" ; 0x5c
-                 , "bracketright": "]" ; 0x5d
-                 , "asciicircum":  "^" ; 0x5e
-                 , "underscore":   "_" ; 0x5f
-                 , "grave":        "`" ; 0x60
-                 , "braceleft":    "{" ; 0x7b
-                 , "bar":          "|" ; 0x7c
-                 , "braceright":   "}" ; 0x7d
-                 , "asciitilde":   "~" } ; 0x7e
-      if (strlen(a_loopfield) <= 1)
-        seq .= a_loopfield
-      else if (decoder.haskey(a_loopfield))
-        seq .= decoder[a_loopfield]
-      else
-        valid := false
-    }
-  
-    ; If still not valid, drop it
-    if (!valid)
-      continue
-  
-    add_sequence(seq, right)
-    count += 1
-  }
+        ; Check whether we get a character between quotes after a colon,
+        ; that's our destination character.
+        r_right := "^[^"":#]*:[^""#]*""(\\.|[^\\""])*"".*$"
+        if (!regexmatch(a_loopreadline, r_right))
+            continue
+        right := regexreplace(a_loopreadline, r_right, "$1")
 
-  info("Loaded " count " Sequences")
+        ; Everything before that colon is our sequence, only keep it if it
+        ; starts with "<Multi_key>".
+        r_left := "^[ \\t]*<Multi_key>([^:]*):.*$"
+        if (!regexmatch(a_loopreadline, r_left))
+            continue
+        left := regexreplace(a_loopreadline, r_left, "$1")
+        left := regexreplace(left, "[ \\t]*", "")
+
+        ; Now replace all special key names to build our sequence
+        valid := true
+        seq =
+        loop, parse, left, "<>"
+        {
+            decoder := { "space":        " " ; 0x20
+                       , "exclam":       "!" ; 0x21
+                       , "quotedbl":    """" ; 0x22
+                       , "numbersign":   "#" ; 0x23
+                       , "dollar":       "$" ; 0x24
+                       , "percent":      "%" ; 0x25
+                       , "ampersand":    "&" ; 0x26 XXX: Is this the right name?
+                       , "apostrophe":   "'" ; 0x27
+                       , "parenleft":    "(" ; 0x28
+                       , "parenright":   ")" ; 0x29
+                       , "asterisk":     "*" ; 0x2a
+                       , "plus":         "+" ; 0x2b
+                       , "comma":        "," ; 0x2c
+                       , "minus":        "-" ; 0x2d
+                       , "period":       "." ; 0x2e
+                       , "slash":        "/" ; 0x2f
+                       , "colon":        ":" ; 0x3a
+                       , "semicolon":    ";" ; 0x3b
+                       , "less":         "<" ; 0x3c
+                       , "equal":        "=" ; 0x3d
+                       , "greater":      ">" ; 0x3e
+                       , "question":     "?" ; 0x3f
+                       , "bracketleft":  "[" ; 0x5b
+                       , "backslash":   "\\" ; 0x5c
+                       , "bracketright": "]" ; 0x5d
+                       , "asciicircum":  "^" ; 0x5e
+                       , "underscore":   "_" ; 0x5f
+                       , "grave":        "`" ; 0x60
+                       , "braceleft":    "{" ; 0x7b
+                       , "bar":          "|" ; 0x7c
+                       , "braceright":   "}" ; 0x7d
+                       , "asciitilde":   "~" } ; 0x7e
+            if (strlen(a_loopfield) <= 1)
+                seq .= a_loopfield
+            else if (decoder.haskey(a_loopfield))
+                seq .= decoder[a_loopfield]
+            else
+                valid := false
+        }
+
+        ; If still not valid, drop it
+        if (!valid)
+            continue
+
+        add_sequence(seq, right)
+        count += 1
+    }
+
+    info("Loaded " count " Sequences")
 }
 
 ; Register a compose sequence, and add all substring prefixes to our list
 ; of valid prefixes so that we can cancel invalid sequences early on.
 add_sequence(key, val)
 {
-  global s, p
-  if (!s)
-  {
-    s := {}
-    p := {}
-  }
+    global s, p
+    if (!s)
+    {
+        s := {}
+        p := {}
+    }
 
-  s.insert(to_hex(key), val)
-  loop % strlen(key) - 1
-    p.insert(to_hex(substr(key, 1, a_index)), true)
+    s.insert(to_hex(key), val)
+    loop % strlen(key) - 1
+        p.insert(to_hex(substr(key, 1, a_index)), true)
 }
 
 has_sequence(key)
 {
-  global s
-  return s.HasKey(to_hex(key))
+    global s
+    return s.HasKey(to_hex(key))
 }
 
 get_sequence(key)
 {
-  global s
-  return s[to_hex(key)]
+    global s
+    return s[to_hex(key)]
 }
 
 has_prefix(key)
 {
-  global p
-  return p.HasKey(to_hex(key))
+    global p
+    return p.HasKey(to_hex(key))
 }
 
 ComposeCallback:
-  send_char("compose")
-  return
+    send_char("compose")
+    return
 
 RestartCallback:
-  Reload
-  return
+    Reload
+    return
 
 HistoryCallback:
-  KeyHistory
-  return
+    KeyHistory
+    return
 
 AboutCallback:
-  MsgBox, 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
-  return
+    MsgBox, 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
+    return
 
 ExitCallback:
-  ExitApp
-  return
+    ExitApp
+    return
 
 ; Activate hotstrings for all ASCII characters that may
 ; be used in a compose sequence; these hotstrings just feed
