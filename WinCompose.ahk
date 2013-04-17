@@ -64,10 +64,10 @@ send_char(char)
         if (compose)
         {
             settimer, reset_callback, %reset_delay%
-            menu, Tray, Icon, wca.ico
+            menu, tray, icon, wca.ico
         }
         else
-            menu, Tray, Icon, wc.ico
+            menu, tray, icon, wc.ico
         return
     }
 
@@ -81,7 +81,7 @@ send_char(char)
         send %tmp%
         sequence =
         compose := false
-        menu, Tray, Icon, wc.ico
+        menu, tray, icon, wc.ico
     }
     else if (!has_prefix(sequence))
     {
@@ -89,7 +89,7 @@ send_char(char)
         send_raw(sequence)
         sequence =
         compose := false
-        menu, Tray, Icon, wc.ico
+        menu, tray, icon, wc.ico
     }
 
     return
@@ -98,7 +98,7 @@ reset_callback:
     sequence =
     compose := false
     if (active)
-        menu, Tray, Icon, wc.ico
+        menu, tray, icon, wc.ico
     settimer, reset_callback, Off
     return
 
@@ -106,13 +106,16 @@ toggle_callback:
     active := !active
     if (active)
     {
-        menu, Tray, Uncheck, &Disable
-        menu, Tray, Icon, wc.ico
+        menu, tray, uncheck, &Disable
+        menu, tray, icon, wc.ico
+        menu, tray, tip, WinCompose (active)
     }
     else
     {
-        menu, Tray, Check, &Disable
-        menu, Tray, Icon, wcd.ico
+        menu, tray, check, &Disable
+        ; TODO: use icon groups here
+        menu, tray, icon, wcd.ico
+        menu, tray, tip, WinCompose (disabled)
     }
     return
 }
@@ -156,16 +159,17 @@ setup_ui()
     global compose_key, have_debug
 
     ; Build the menu
-    menu, Tray, click, 1
-    menu, Tray, NoStandard
-    menu, Tray, Add, &Disable, toggle_callback
-    menu, Tray, Add, &Restart, restart_callback
-    menu, Tray, Add
+    menu, tray, click, 1
+    menu, tray, NoStandard
+    menu, tray, Add, &Disable, toggle_callback
+    menu, tray, Add, &Restart, restart_callback
+    menu, tray, Add
     if (have_debug)
-        menu, Tray, Add, Key &History, history_callback
-    menu, Tray, Add, &About, about_callback
-    menu, Tray, Add, E&xit, exit_callback
-    menu, Tray, Icon, wc.ico
+        menu, tray, Add, Key &History, history_callback
+    menu, tray, Add, &About, about_callback
+    menu, tray, Add, E&xit, exit_callback
+    menu, tray, icon, wc.ico
+    menu, tray, tip, WinCompose (active)
 
     ; Activate the compose key for real
     hotkey, %compose_key%, compose_callback
