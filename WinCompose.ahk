@@ -32,38 +32,8 @@ have_debug := false
 ; Initialisation
 ;
 
-; Read sequences from file
-read_sequences(compose_file)
-
-; Build the menu
-Menu, Tray, Click, 1
-Menu, Tray, NoStandard
-Menu, Tray, Add, &Disable, ToggleCallback
-Menu, Tray, Add, &Restart, RestartCallback
-Menu, Tray, Add
-if (have_debug)
-    Menu, Tray, Add, Key &History, HistoryCallback
-Menu, Tray, Add, &About, AboutCallback
-Menu, Tray, Add, E&xit, ExitCallback
-Menu, Tray, Icon, wc.ico
-
-; Activate the compose key for real
-Hotkey, %compose_key%, ComposeCallback
-
-; Activate these variants just in case; for instance, Outlook 2010 seems
-; to automatically remap "Right Alt" to "Left Control + Right Alt".
-Hotkey, ^%compose_key%, ComposeCallback
-Hotkey, +%compose_key%, ComposeCallback
-Hotkey, !%compose_key%, ComposeCallback
-
-; Workaround for an AHK bug that prevents "::`:::" from working in hotstrings
-HotKey, $:, workaround_hotkey
-
-; End of initialisation
-return
-
-workaround_hotkey:
-send_char(substr(a_thishotkey, strlen(a_thishotkey)))
+setup_ui()
+setup_sequences()
 return
 
 ;
@@ -93,11 +63,11 @@ send_char(char)
         compose := !compose
         if (compose)
         {
-            SetTimer, ResetCallback, %reset_delay%
-            Menu, Tray, Icon, wca.ico
+            settimer, reset_callback, %reset_delay%
+            menu, Tray, Icon, wca.ico
         }
         else
-            Menu, Tray, Icon, wc.ico
+            menu, Tray, Icon, wc.ico
         return
     }
 
@@ -108,10 +78,10 @@ send_char(char)
     if (has_sequence(sequence))
     {
         tmp := get_sequence(sequence)
-        Send %tmp%
+        send %tmp%
         sequence =
         compose := false
-        Menu, Tray, Icon, wc.ico
+        menu, Tray, Icon, wc.ico
     }
     else if (!has_prefix(sequence))
     {
@@ -119,55 +89,55 @@ send_char(char)
         send_raw(sequence)
         sequence =
         compose := false
-        Menu, Tray, Icon, wc.ico
+        menu, Tray, Icon, wc.ico
     }
 
     return
 
-ResetCallback:
+reset_callback:
     sequence =
     compose := false
     if (active)
-        Menu, Tray, Icon, wc.ico
-    SetTimer, ResetCallback, Off
+        menu, Tray, Icon, wc.ico
+    settimer, reset_callback, Off
     return
 
-ToggleCallback:
+toggle_callback:
     active := !active
     if (active)
     {
-        Menu, Tray, Uncheck, &Disable
-        Menu, Tray, Icon, wc.ico
+        menu, Tray, Uncheck, &Disable
+        menu, Tray, Icon, wc.ico
     }
     else
     {
-        Menu, Tray, Check, &Disable
-        Menu, Tray, Icon, wcd.ico
+        menu, Tray, Check, &Disable
+        menu, Tray, Icon, wcd.ico
     }
     return
 }
 
 send_raw(string)
 {
-    Loop, parse, string
+    loop, parse, string
     {
         if (a_loopfield = " ")
-            Send {Space}
+            send {Space}
         else
-            SendRaw %a_loopfield%
+            sendraw %a_loopfield%
     }
 }
 
 info(string)
 {
-    TrayTip, WinCompose, %string%, 10, 1
+    traytip, WinCompose, %string%, 10, 1
 }
 
 debug(string)
 {
     global have_debug
     if (have_debug)
-        TrayTip, WinCompose, %string%, 10, 1
+        traytip, WinCompose, %string%, 10, 1
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have
@@ -181,12 +151,49 @@ to_hex(str)
     return hex
 }
 
-; Read compose sequences from an X11 compose file
-read_sequences(file)
+setup_ui()
 {
+    global compose_key, have_debug
+
+    ; Build the menu
+    menu, Tray, click, 1
+    menu, Tray, NoStandard
+    menu, Tray, Add, &Disable, toggle_callback
+    menu, Tray, Add, &Restart, restart_callback
+    menu, Tray, Add
+    if (have_debug)
+        menu, Tray, Add, Key &History, history_callback
+    menu, Tray, Add, &About, about_callback
+    menu, Tray, Add, E&xit, exit_callback
+    menu, Tray, Icon, wc.ico
+
+    ; Activate the compose key for real
+    hotkey, %compose_key%, compose_callback
+
+    ; Activate these variants just in case; for instance, Outlook 2010 seems
+    ; to automatically remap "Right Alt" to "Left Control + Right Alt".
+    hotkey, ^%compose_key%, compose_callback
+    hotkey, +%compose_key%, compose_callback
+    hotkey, !%compose_key%, compose_callback
+
+    ; Workaround for an AHK bug that prevents "::`:::" from working in hotstrings
+    hotkey, $:, workaround_hotkey
+
+    return
+
+workaround_hotkey:
+    send_char(substr(a_thishotkey, strlen(a_thishotkey)))
+    return
+
+}
+
+; Read compose sequences from an X11 compose file
+setup_sequences()
+{
+    global compose_file
     FileEncoding UTF-8
     count := 0
-    Loop read, %file%
+    loop read, %compose_file%
     {
         ; Check whether we get a character between quotes after a colon,
         ; that's our destination character.
@@ -278,7 +285,7 @@ add_sequence(key, val)
 has_sequence(key)
 {
     global s
-    return s.HasKey(to_hex(key))
+    return s.haskey(to_hex(key))
 }
 
 get_sequence(key)
@@ -290,27 +297,27 @@ get_sequence(key)
 has_prefix(key)
 {
     global p
-    return p.HasKey(to_hex(key))
+    return p.haskey(to_hex(key))
 }
 
-ComposeCallback:
+compose_callback:
     send_char("compose")
     return
 
-RestartCallback:
-    Reload
+restart_callback:
+    reload
     return
 
-HistoryCallback:
-    KeyHistory
+history_callback:
+    keyhistory
     return
 
-AboutCallback:
-    MsgBox, 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
+about_callback:
+    msgbox, 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
     return
 
-ExitCallback:
-    ExitApp
+exit_callback:
+    exitapp
     return
 
 ; Activate hotstrings for all ASCII characters that may
