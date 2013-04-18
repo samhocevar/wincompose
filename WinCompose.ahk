@@ -11,10 +11,6 @@
 #Persistent
 #NoEnv
 
-;
-; Configuration
-;
-
 ; Compose Key: one of RAlt, LAlt, LControl, RControl, RWin, LWin, Esc,
 ; Insert, Numlock, Tab
 global compose_key := "RAlt"
@@ -31,13 +27,18 @@ global reset_delay := 5000
 ; Activate debug messages?
 global have_debug := false
 
+main()
+return
+
 ;
-; Initialisation
+; Main entry point
 ;
 
-setup_ui()
-setup_sequences()
-return
+main()
+{
+    setup_ui()
+    setup_sequences()
+}
 
 ;
 ; Utility functions
@@ -187,7 +188,6 @@ setup_ui()
 workaround_hotkey:
     send_char(substr(a_thishotkey, strlen(a_thishotkey)))
     return
-
 }
 
 ; Read compose sequences from an X11 compose file

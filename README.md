@@ -1,3 +1,5 @@
+<div style="float: right"><img src="res/icon.png" /></div>
+
 wincompose
 ==========
 
