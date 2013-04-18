@@ -17,16 +17,19 @@
 
 ; Compose Key: one of RAlt, LAlt, LControl, RControl, RWin, LWin, Esc,
 ; Insert, Numlock, Tab
-compose_key := "RAlt"
+global compose_key := "RAlt"
 
-; File containing compose rules
-compose_file := "Compose"
+; Resource files
+global compose_file := "res/Compose"
+global standard_icon := "res/wc.ico"
+global active_icon := "res/wca.ico"
+global disabled_icon := "res/wcd.ico"
 
 ; Reset Delay: milliseconds until reset
-reset_delay := 5000
+global reset_delay := 5000
 
 ; Activate debug messages?
-have_debug := false
+global have_debug := false
 
 ;
 ; Initialisation
@@ -42,7 +45,6 @@ return
 
 send_char(char)
 {
-    global reset_delay
     static sequence =
     static compose := false
     static active := true
@@ -64,10 +66,10 @@ send_char(char)
         if (compose)
         {
             settimer, reset_callback, %reset_delay%
-            menu, tray, icon, wca.ico
+            menu, tray, icon, %active_icon%
         }
         else
-            menu, tray, icon, wc.ico
+            menu, tray, icon, %standard_icon%
         return
     }
 
@@ -81,7 +83,7 @@ send_char(char)
         send %tmp%
         sequence =
         compose := false
-        menu, tray, icon, wc.ico
+        menu, tray, icon, %standard_icon%
     }
     else if (!has_prefix(sequence))
     {
@@ -89,7 +91,7 @@ send_char(char)
         send_raw(sequence)
         sequence =
         compose := false
-        menu, tray, icon, wc.ico
+        menu, tray, icon, %standard_icon%
     }
 
     return
@@ -98,7 +100,7 @@ reset_callback:
     sequence =
     compose := false
     if (active)
-        menu, tray, icon, wc.ico
+        menu, tray, icon, %standard_icon%
     settimer, reset_callback, Off
     return
 
@@ -107,14 +109,14 @@ toggle_callback:
     if (active)
     {
         menu, tray, uncheck, &Disable
-        menu, tray, icon, wc.ico
+        menu, tray, icon, %standard_icon%
         menu, tray, tip, WinCompose (active)
     }
     else
     {
         menu, tray, check, &Disable
         ; TODO: use icon groups here
-        menu, tray, icon, wcd.ico
+        menu, tray, icon, %disabled_icon%
         menu, tray, tip, WinCompose (disabled)
     }
     return
@@ -138,7 +140,6 @@ info(string)
 
 debug(string)
 {
-    global have_debug
     if (have_debug)
         traytip, WinCompose, %string%, 10, 1
 }
@@ -156,8 +157,6 @@ to_hex(str)
 
 setup_ui()
 {
-    global compose_key, have_debug
-
     ; Build the menu
     menu, tray, click, 1
     menu, tray, NoStandard
@@ -168,7 +167,7 @@ setup_ui()
         menu, tray, Add, Key &History, history_callback
     menu, tray, Add, &About, about_callback
     menu, tray, Add, E&xit, exit_callback
-    menu, tray, icon, wc.ico
+    menu, tray, icon, %standard_icon%
     menu, tray, tip, WinCompose (active)
 
     ; Activate the compose key for real
@@ -194,7 +193,6 @@ workaround_hotkey:
 ; Read compose sequences from an X11 compose file
 setup_sequences()
 {
-    global compose_file
     FileEncoding UTF-8
     count := 0
     loop read, %compose_file%
