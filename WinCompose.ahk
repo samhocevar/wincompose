@@ -180,12 +180,21 @@ setup_ui()
     hotkey, +%compose_key%, compose_callback
     hotkey, !%compose_key%, compose_callback
 
-    ; Workaround for an AHK bug that prevents "::`:::" from working in hotstrings
-    hotkey, $:, workaround_hotkey
+    ; Activate hotkeys for all ASCII characters except letters.
+    chars := " !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
+    loop, parse, chars
+    {
+        s := "$" . a_loopfield
+        hotkey, %s%, hotkey_callback
+    }
 
     return
 
-workaround_hotkey:
+hotstring_callback:
+    send_char($1)
+    return
+
+hotkey_callback:
     send_char(substr(a_thishotkey, strlen(a_thishotkey)))
     return
 }
@@ -322,110 +331,9 @@ exit_callback:
     exitapp
     return
 
-; Activate hotstrings for all ASCII characters that may
-; be used in a compose sequence; these hotstrings just feed
-; the character to the underlying engine.
+; Activate hotstrings for all alphabetic characters. Hotkeys will not
+; work because AHK decides that hotkeys are case-insensitive.
 #Hotstring ? * c b
-:: ::
-send_char(" ")
-return
-::!::
-send_char("!")
-return
-::"::
-send_char("""")
-return
-::#::
-send_char("#")
-return
-::$::
-send_char("$")
-return
-::%::
-send_char("%")
-return
-::&::
-send_char("&")
-return
-::'::
-send_char("'")
-return
-::(::
-send_char("(")
-return
-::)::
-send_char(")")
-return
-::\*::
-send_char("*")
-return
-::+::
-send_char("+")
-return
-::,::
-send_char(",")
-return
-::-::
-send_char("-")
-return
-::.::
-send_char(".")
-return
-::/::
-send_char("/")
-return
-::0::
-send_char("0")
-return
-::1::
-send_char("1")
-return
-::2::
-send_char("2")
-return
-::3::
-send_char("3")
-return
-::4::
-send_char("4")
-return
-::5::
-send_char("5")
-return
-::6::
-send_char("6")
-return
-::7::
-send_char("7")
-return
-::8::
-send_char("8")
-return
-::9::
-send_char("9")
-return
-; XXX: disabled on purpose because AHK can't parse this
-;:::::
-;send_char(":")
-;return
-::;::
-send_char(";")
-return
-::<::
-send_char("<")
-return
-::=::
-send_char("=")
-return
-::>::
-send_char(">")
-return
-::?::
-send_char("?")
-return
-::@::
-send_char("@")
-return
 ::A::
 send_char("A")
 return
@@ -504,24 +412,6 @@ return
 ::Z::
 send_char("Z")
 return
-::[::
-send_char("[")
-return
-::\\::
-send_char("\\")
-return
-::]::
-send_char("]")
-return
-::^::
-send_char("^")
-return
-::_::
-send_char("_")
-return
-::\`::
-send_char("\`")
-return
 ::a::
 send_char("a")
 return
@@ -599,17 +489,5 @@ send_char("y")
 return
 ::z::
 send_char("z")
-return
-::{::
-send_char("{")
-return
-::|::
-send_char("|")
-return
-::}::
-send_char("}")
-return
-::~::
-send_char("~")
 return
 
