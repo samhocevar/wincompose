@@ -58,7 +58,7 @@ send_keystroke(keystroke)
         if (asc(char) >= asc("a") && asc(char) <= asc("z"))
             char := chr(asc(char) - asc("a") + asc("A"))
 
-    if (!active || (!compose && keystroke != "compose"))
+    if (!compose && keystroke != "compose")
     {
         if (keystroke != "compose")
             send_raw(char)
@@ -117,6 +117,7 @@ toggle_callback:
     active := !active
     if (active)
     {
+        suspend, off
         menu, tray, uncheck, &Disable
         menu, tray, icon, %standard_icon%
         menu, tray, tip, WinCompose (active)
@@ -125,8 +126,9 @@ toggle_callback:
     {
         menu, tray, check, &Disable
         ; TODO: use icon groups here
-        menu, tray, icon, %disabled_icon%
+        menu, tray, icon, %disabled_icon%, , 1 ; freeze icon
         menu, tray, tip, WinCompose (disabled)
+        suspend, on
     }
     return
 }
