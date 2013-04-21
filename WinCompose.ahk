@@ -53,6 +53,11 @@ send_keystroke(keystroke)
     ; The actual character is the last char of the keystroke
     char := substr(keystroke, strlen(keystroke))
 
+    ; If holding shift, switch letters to uppercase
+    if (getkeystate("Capslock", "T") != getkeystate("Shift"))
+        if (asc(char) >= asc("a") && asc(char) <= asc("z"))
+            char := chr(asc(char) - asc("a") + asc("A"))
+
     if (!active || (!compose && keystroke != "compose"))
     {
         if (keystroke != "compose")
@@ -148,17 +153,6 @@ debug(string)
         traytip, WinCompose, %string%, 10, 1
 }
 
-; We need to encode our strings somehow because AutoHotKey objects have
-; case-insensitive hash tables. How retarded is that? Also, make sure the
-; first character is special
-to_hex(str)
-{
-    hex = *
-    loop, parse, str
-        hex .= asc(a_loopfield)
-    return hex
-}
-
 setup_ui()
 {
     ; Build the menu
@@ -183,13 +177,14 @@ setup_ui()
     hotkey, +%compose_key%, compose_callback
     hotkey, !%compose_key%, compose_callback
 
-    ; Activate hotkeys for all ASCII characters except letters.
-    chars := " !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
+    ; Activate hotkeys for all ASCII characters, including shift for letters
+    chars := "abcdefghijklmnopqrstuvwxyz"
     loop, parse, chars
-    {
-        s := "$" . a_loopfield
-        hotkey, %s%, hotkey_callback
-    }
+        hotkey, $+%a_loopfield%, hotkey_callback
+
+    chars .= "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
+    loop, parse, chars
+        hotkey, $%a_loopfield%, hotkey_callback
 
     return
 
@@ -197,12 +192,24 @@ compose_callback:
     send_keystroke("compose")
     return
 
-hotstring_callback:
-    send_keystroke($1)
-    return
-
 hotkey_callback:
     send_keystroke(a_thishotkey)
+    return
+
+restart_callback:
+    reload
+    return
+
+history_callback:
+    keyhistory
+    return
+
+about_callback:
+    msgbox, 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
+    return
+
+exit_callback:
+    exitapp
     return
 }
 
@@ -284,6 +291,17 @@ setup_sequences()
     info("Loaded " count " Sequences")
 }
 
+; We need to encode our strings somehow because AutoHotKey objects have
+; case-insensitive hash tables. How retarded is that? Also, make sure the
+; first character is special
+to_hex(str)
+{
+    hex = *
+    loop, parse, str
+        hex .= asc(a_loopfield)
+    return hex
+}
+
 ; Register a compose sequence, and add all substring prefixes to our list
 ; of valid prefixes so that we can cancel invalid sequences early on.
 add_sequence(key, val)
@@ -317,180 +335,4 @@ has_prefix(key)
     global p
     return p.haskey(to_hex(key))
 }
-
-restart_callback:
-    reload
-    return
-
-history_callback:
-    keyhistory
-    return
-
-about_callback:
-    msgbox, 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
-    return
-
-exit_callback:
-    exitapp
-    return
-
-; Activate hotstrings for all alphabetic characters. Hotkeys will not
-; work because AHK decides that hotkeys are case-insensitive.
-#Hotstring ? * c b
-::A::
-send_keystroke("A")
-return
-::B::
-send_keystroke("B")
-return
-::C::
-send_keystroke("C")
-return
-::D::
-send_keystroke("D")
-return
-::E::
-send_keystroke("E")
-return
-::F::
-send_keystroke("F")
-return
-::G::
-send_keystroke("G")
-return
-::H::
-send_keystroke("H")
-return
-::I::
-send_keystroke("I")
-return
-::J::
-send_keystroke("J")
-return
-::K::
-send_keystroke("K")
-return
-::L::
-send_keystroke("L")
-return
-::M::
-send_keystroke("M")
-return
-::N::
-send_keystroke("N")
-return
-::O::
-send_keystroke("O")
-return
-::P::
-send_keystroke("P")
-return
-::Q::
-send_keystroke("Q")
-return
-::R::
-send_keystroke("R")
-return
-::S::
-send_keystroke("S")
-return
-::T::
-send_keystroke("T")
-return
-::U::
-send_keystroke("U")
-return
-::V::
-send_keystroke("V")
-return
-::W::
-send_keystroke("W")
-return
-::X::
-send_keystroke("X")
-return
-::Y::
-send_keystroke("Y")
-return
-::Z::
-send_keystroke("Z")
-return
-::a::
-send_keystroke("a")
-return
-::b::
-send_keystroke("b")
-return
-::c::
-send_keystroke("c")
-return
-::d::
-send_keystroke("d")
-return
-::e::
-send_keystroke("e")
-return
-::f::
-send_keystroke("f")
-return
-::g::
-send_keystroke("g")
-return
-::h::
-send_keystroke("h")
-return
-::i::
-send_keystroke("i")
-return
-::j::
-send_keystroke("j")
-return
-::k::
-send_keystroke("k")
-return
-::l::
-send_keystroke("l")
-return
-::m::
-send_keystroke("m")
-return
-::n::
-send_keystroke("n")
-return
-::o::
-send_keystroke("o")
-return
-::p::
-send_keystroke("p")
-return
-::q::
-send_keystroke("q")
-return
-::r::
-send_keystroke("r")
-return
-::s::
-send_keystroke("s")
-return
-::t::
-send_keystroke("t")
-return
-::u::
-send_keystroke("u")
-return
-::v::
-send_keystroke("v")
-return
-::w::
-send_keystroke("w")
-return
-::x::
-send_keystroke("x")
-return
-::y::
-send_keystroke("y")
-return
-::z::
-send_keystroke("z")
-return
 
