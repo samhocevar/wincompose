@@ -6,10 +6,11 @@
 ;   Public License, Version 2, as published by the WTFPL Task Force.
 ;   See http://www.wtfpl.net/ for more details.
 
-#SingleInstance force
-#EscapeChar \
-#Persistent
-#NoEnv
+#singleinstance force
+#escapechar \
+#persistent
+#noenv
+
 
 ; Compose Key: one of RAlt, LAlt, LControl, RControl, RWin, LWin, Esc,
 ; Insert, Numlock, Tab
@@ -140,7 +141,7 @@ send_raw(string)
         if (a_loopfield = " ")
             send {Space}
         else
-            sendraw %a_loopfield%
+            sendinput {raw}%a_loopfield%
     }
 }
 
