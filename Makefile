@@ -1,6 +1,11 @@
 
-all: WinCompose.exe
+EXE = WinCompose.exe
 
-WinCompose.exe: WinCompose.ahk
+all: $(EXE)
+
+clean:
+	rm -f $(EXE)
+
+%.exe: %.ahk
 	"c:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe" //in $^ //out $@ //icon res/wc.ico
 
