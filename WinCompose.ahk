@@ -44,22 +44,25 @@ main()
 ; Utility functions
 ;
 
-send_char(char)
+send_keystroke(keystroke)
 {
     static sequence =
     static compose := false
     static active := true
 
-    if (!active || (!compose && char != "compose"))
+    ; The actual character is the last char of the keystroke
+    char := substr(keystroke, strlen(keystroke))
+
+    if (!active || (!compose && keystroke != "compose"))
     {
-        if (char != "compose")
+        if (keystroke != "compose")
             send_raw(char)
         sequence =
         compose := false
         return
     }
 
-    if (char = "compose")
+    if (keystroke = "compose")
     {
         debug("Compose key pressed")
         sequence =
@@ -190,12 +193,16 @@ setup_ui()
 
     return
 
+compose_callback:
+    send_keystroke("compose")
+    return
+
 hotstring_callback:
-    send_char($1)
+    send_keystroke($1)
     return
 
 hotkey_callback:
-    send_char(substr(a_thishotkey, strlen(a_thishotkey)))
+    send_keystroke(a_thishotkey)
     return
 }
 
@@ -311,10 +318,6 @@ has_prefix(key)
     return p.haskey(to_hex(key))
 }
 
-compose_callback:
-    send_char("compose")
-    return
-
 restart_callback:
     reload
     return
@@ -335,159 +338,159 @@ exit_callback:
 ; work because AHK decides that hotkeys are case-insensitive.
 #Hotstring ? * c b
 ::A::
-send_char("A")
+send_keystroke("A")
 return
 ::B::
-send_char("B")
+send_keystroke("B")
 return
 ::C::
-send_char("C")
+send_keystroke("C")
 return
 ::D::
-send_char("D")
+send_keystroke("D")
 return
 ::E::
-send_char("E")
+send_keystroke("E")
 return
 ::F::
-send_char("F")
+send_keystroke("F")
 return
 ::G::
-send_char("G")
+send_keystroke("G")
 return
 ::H::
-send_char("H")
+send_keystroke("H")
 return
 ::I::
-send_char("I")
+send_keystroke("I")
 return
 ::J::
-send_char("J")
+send_keystroke("J")
 return
 ::K::
-send_char("K")
+send_keystroke("K")
 return
 ::L::
-send_char("L")
+send_keystroke("L")
 return
 ::M::
-send_char("M")
+send_keystroke("M")
 return
 ::N::
-send_char("N")
+send_keystroke("N")
 return
 ::O::
-send_char("O")
+send_keystroke("O")
 return
 ::P::
-send_char("P")
+send_keystroke("P")
 return
 ::Q::
-send_char("Q")
+send_keystroke("Q")
 return
 ::R::
-send_char("R")
+send_keystroke("R")
 return
 ::S::
-send_char("S")
+send_keystroke("S")
 return
 ::T::
-send_char("T")
+send_keystroke("T")
 return
 ::U::
-send_char("U")
+send_keystroke("U")
 return
 ::V::
-send_char("V")
+send_keystroke("V")
 return
 ::W::
-send_char("W")
+send_keystroke("W")
 return
 ::X::
-send_char("X")
+send_keystroke("X")
 return
 ::Y::
-send_char("Y")
+send_keystroke("Y")
 return
 ::Z::
-send_char("Z")
+send_keystroke("Z")
 return
 ::a::
-send_char("a")
+send_keystroke("a")
 return
 ::b::
-send_char("b")
+send_keystroke("b")
 return
 ::c::
-send_char("c")
+send_keystroke("c")
 return
 ::d::
-send_char("d")
+send_keystroke("d")
 return
 ::e::
-send_char("e")
+send_keystroke("e")
 return
 ::f::
-send_char("f")
+send_keystroke("f")
 return
 ::g::
-send_char("g")
+send_keystroke("g")
 return
 ::h::
-send_char("h")
+send_keystroke("h")
 return
 ::i::
-send_char("i")
+send_keystroke("i")
 return
 ::j::
-send_char("j")
+send_keystroke("j")
 return
 ::k::
-send_char("k")
+send_keystroke("k")
 return
 ::l::
-send_char("l")
+send_keystroke("l")
 return
 ::m::
-send_char("m")
+send_keystroke("m")
 return
 ::n::
-send_char("n")
+send_keystroke("n")
 return
 ::o::
-send_char("o")
+send_keystroke("o")
 return
 ::p::
-send_char("p")
+send_keystroke("p")
 return
 ::q::
-send_char("q")
+send_keystroke("q")
 return
 ::r::
-send_char("r")
+send_keystroke("r")
 return
 ::s::
-send_char("s")
+send_keystroke("s")
 return
 ::t::
-send_char("t")
+send_keystroke("t")
 return
 ::u::
-send_char("u")
+send_keystroke("u")
 return
 ::v::
-send_char("v")
+send_keystroke("v")
 return
 ::w::
-send_char("w")
+send_keystroke("w")
 return
 ::x::
-send_char("x")
+send_keystroke("x")
 return
 ::y::
-send_char("y")
+send_keystroke("y")
 return
 ::z::
-send_char("z")
+send_keystroke("z")
 return
 
