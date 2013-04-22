@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Quick start
 -----------
 
- 1. Run WinCompose.exe
+ 1. Run `WinCompose.exe`
  2. Press and release the **Right Alt** key to initiate a compose sequence
  3. Type the keys for a compose sequence, such as **A** and **E** for **Æ**
 
@@ -35,7 +35,7 @@ Compose rules are supposed to be intuitive. Here are some examples:
  - **( 2 3 )** → **㉓**
  - **< 3** → **♥**
 
-The full list of rules can be found in the "Compose" file shipped with WinCompose.
+The full list of rules can be found in the `Compose.txt` file shipped with WinCompose.
 
 Features
 --------
@@ -43,7 +43,7 @@ Features
 WinCompose supports the standard Compose file format. It ships with more than
 1000 compose rules from [Xorg](http://www.x.org/wiki/).
 
-WinCompose supports rules of more than 2 characters such as **(**, **3**, **)**
+WinCompose supports rules of more than 2 characters such as **(** + **3** + **)**
 for **③**.
 
 WinCompose supports early exits. For instance, **Compose** + **&** will

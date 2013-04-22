@@ -17,7 +17,8 @@
 global compose_key := "RAlt"
 
 ; Resource files
-global compose_file := "res/Compose"
+global compose_file := "res/Compose.txt"
+global keys_file := "res/Keys.txt"
 global standard_icon := "res/wc.ico"
 global active_icon := "res/wca.ico"
 global disabled_icon := "res/wcd.ico"
@@ -180,11 +181,12 @@ setup_ui()
     hotkey, +%compose_key%, compose_callback
     hotkey, !%compose_key%, compose_callback
 
-    ; Activate hotkeys for all ASCII characters, including shift for letters
+    ; Hotkeys for all shifted letters
     chars := "abcdefghijklmnopqrstuvwxyz"
     loop, parse, chars
         hotkey, $+%a_loopfield%, hotkey_callback
 
+    ; Hotkeys for all other ASCII characters, including non-shifted letters
     chars .= "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
     loop, parse, chars
         hotkey, $%a_loopfield%, hotkey_callback
@@ -216,79 +218,79 @@ exit_callback:
     return
 }
 
-; Read compose sequences from an X11 compose file
+; Read key symbols from a key file, then read compose sequences
+; from an X11 compose file
 setup_sequences()
 {
     FileEncoding UTF-8
+
+    ; Regex to match a character or group of characters between quotes after
+    ; a colon, i.e. the X in lines such as:
+    ;  ... any stuff ... : "X"  # optional comment
+    ; XXX: The result is put in either $2 or $3.
+    r_right := "^[^"":#]*:[^""#]*""(\\\\(.)|([^\\""]))"".*$"
+
+    ; Regex to match a key sequence between brackets and before a colon,
+    ; such as:
+    ;  <key> <other_key><j> <more_keys>  : ... any stuff ...
+    r_left := "^[ \\t]*(([ \\t]*<[^>]*>)*)([^:]*):.*$"
+
+    keys := {}
+    loop read, %keys_file%
+    {
+        ; Retrieve destination character
+        right := regexreplace(a_loopreadline, r_right, "$2$3", ret)
+        if (ret != 1)
+            continue
+
+        ; Retrieve sequence (in this case, only one key)
+        left := regexreplace(a_loopreadline, r_left, "$1", ret)
+        if (ret != 1)
+            continue
+        left := regexreplace(left, "[ \\t]*", "")
+
+        keys[regexreplace(left, "[<>]*", "")] := right
+    }
+
     count := 0
     loop read, %compose_file%
     {
-        ; Check whether we get a character between quotes after a colon,
-        ; that's our destination character.
-        r_right := "^[^"":#]*:[^""#]*""(\\.|[^\\""])*"".*$"
-        if (!regexmatch(a_loopreadline, r_right))
+        ; Retrieve destination character
+        right := regexreplace(a_loopreadline, r_right, "$2$3", ret)
+        if (ret != 1)
             continue
-        right := regexreplace(a_loopreadline, r_right, "$1")
 
-        ; Everything before that colon is our sequence, only keep it if it
-        ; starts with "<Multi_key>".
-        r_left := "^[ \\t]*<Multi_key>([^:]*):.*$"
-        if (!regexmatch(a_loopreadline, r_left))
+        ; Retrieve sequence
+        left := regexreplace(a_loopreadline, r_left, "$1", ret)
+        if (ret != 1)
             continue
-        left := regexreplace(a_loopreadline, r_left, "$1")
         left := regexreplace(left, "[ \\t]*", "")
 
-        ; Now replace all special key names to build our sequence
+        ; Check that the sequence starts with <Multi_key>
+        left := regexreplace(left, "^<Multi_key>", "", ret)
+        if (ret != 1)
+            continue
+
+        ; Now replace all special key names to build our sequence and
+        ; check whether it's valid
         valid := true
-        seq =
+        seq := ""
         loop, parse, left, "<>"
         {
-            decoder := { "space":        " " ; 0x20
-                       , "exclam":       "!" ; 0x21
-                       , "quotedbl":    """" ; 0x22
-                       , "numbersign":   "#" ; 0x23
-                       , "dollar":       "$" ; 0x24
-                       , "percent":      "%" ; 0x25
-                       , "ampersand":    "&" ; 0x26 XXX: Is this the right name?
-                       , "apostrophe":   "'" ; 0x27
-                       , "parenleft":    "(" ; 0x28
-                       , "parenright":   ")" ; 0x29
-                       , "asterisk":     "*" ; 0x2a
-                       , "plus":         "+" ; 0x2b
-                       , "comma":        "," ; 0x2c
-                       , "minus":        "-" ; 0x2d
-                       , "period":       "." ; 0x2e
-                       , "slash":        "/" ; 0x2f
-                       , "colon":        ":" ; 0x3a
-                       , "semicolon":    ";" ; 0x3b
-                       , "less":         "<" ; 0x3c
-                       , "equal":        "=" ; 0x3d
-                       , "greater":      ">" ; 0x3e
-                       , "question":     "?" ; 0x3f
-                       , "bracketleft":  "[" ; 0x5b
-                       , "backslash":   "\\" ; 0x5c
-                       , "bracketright": "]" ; 0x5d
-                       , "asciicircum":  "^" ; 0x5e
-                       , "underscore":   "_" ; 0x5f
-                       , "grave":        "`" ; 0x60
-                       , "braceleft":    "{" ; 0x7b
-                       , "bar":          "|" ; 0x7c
-                       , "braceright":   "}" ; 0x7d
-                       , "asciitilde":   "~" } ; 0x7e
             if (strlen(a_loopfield) <= 1)
                 seq .= a_loopfield
-            else if (decoder.haskey(a_loopfield))
-                seq .= decoder[a_loopfield]
+            else if (keys.haskey(a_loopfield))
+                seq .= keys[a_loopfield]
             else
                 valid := false
         }
 
-        ; If still not valid, drop it
-        if (!valid)
-            continue
-
-        add_sequence(seq, right)
-        count += 1
+        ; If valid, add it to our list
+        if (valid)
+        {
+            add_sequence(seq, right)
+            count += 1
+        }
     }
 
     info("Loaded " count " Sequences")
