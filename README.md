@@ -1,7 +1,7 @@
-WinCompose
+﻿WinCompose
 ==========
 
-![Icon](/res/icon.png)
+![Icon](/web/icon.png)
 
 A robust compose key for Windows, written by Sam Hocevar.
 
@@ -13,8 +13,15 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Quick start
 -----------
 
- 1. Run `WinCompose.exe`
- 2. Press and release the **Right Alt** key to initiate a compose sequence
+ 1. Run `WinCompose.exe`; it should appear in the Quick Launch bar:
+
+![Quick Launch](/web/shot1.png)
+
+ 2. Press and release the **Right Alt** key to initiate a compose sequence; the
+    icon should change to indicate a compose sequence is in progress:
+
+![In Progress](/web/shot2.png)
+
  3. Type the keys for a compose sequence, such as **A** and **E** for **Æ**
 
 Examples
@@ -35,7 +42,10 @@ Compose rules are supposed to be intuitive. Here are some examples:
  - **( 2 3 )** → **㉓**
  - **< 3** → **♥**
 
-The full list of rules can be found in the `Compose.txt` file shipped with WinCompose.
+The full list of rules can be found in the `Compose.txt` file shipped with WinCompose,
+or using the “Show Sequences…” menu entry:
+
+![Sequence List](/web/shot3.png)
 
 Features
 --------
