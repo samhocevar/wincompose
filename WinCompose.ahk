@@ -56,8 +56,8 @@ send_keystroke(keystroke)
     char := substr(keystroke, strlen(keystroke))
 
     ; If holding shift, switch letters to uppercase
-    if (getkeystate("Capslock", "T") != getkeystate("Shift"))
-        if (asc(char) >= asc("a") && asc(char) <= asc("z"))
+    if (asc(char) >= asc("a") && asc(char) <= asc("z"))
+        if (getkeystate("Capslock", "T") != getkeystate("Shift"))
             char := chr(asc(char) - asc("a") + asc("A"))
 
     if (!compose && keystroke != "compose")
@@ -162,34 +162,45 @@ setup_ui()
     ; Build the menu
     menu, tray, click, 1
     menu, tray, NoStandard
-    menu, tray, Add, &Disable, toggle_callback
-    menu, tray, Add, &Restart, restart_callback
-    menu, tray, Add
+    menu, tray, add, Show &Sequences…, sequences_callback
+    menu, tray, add, &Disable, toggle_callback
+    menu, tray, add, &Restart, restart_callback
+    menu, tray, add
     if (have_debug)
-        menu, tray, Add, Key &History, history_callback
-    menu, tray, Add, &About, about_callback
-    menu, tray, Add, E&xit, exit_callback
+        menu, tray, add, Key &History, history_callback
+    menu, tray, add, &About, about_callback
+    menu, tray, add, E&xit, exit_callback
     menu, tray, icon, %standard_icon%
     menu, tray, tip, WinCompose (active)
 
+    ; Build the sequence list window
+    static my_listbox, my_button
+    gui font, s11
+    gui font, s11, Courier New
+    gui font, s11, Lucida Console
+    gui font, s11, Consolas
+    gui add, listview, vmy_listbox w800 r24 sort, Unicode|Sequence|Char|Description
+    gui font
+    gui add, button, vmy_button w80 x730 default, Close
+
     ; Activate the compose key for real
-    hotkey, %compose_key%, compose_callback
+    hotkey %compose_key%, compose_callback
 
     ; Activate these variants just in case; for instance, Outlook 2010 seems
     ; to automatically remap "Right Alt" to "Left Control + Right Alt".
-    hotkey, ^%compose_key%, compose_callback
-    hotkey, +%compose_key%, compose_callback
-    hotkey, !%compose_key%, compose_callback
+    hotkey ^%compose_key%, compose_callback
+    hotkey +%compose_key%, compose_callback
+    hotkey !%compose_key%, compose_callback
 
     ; Hotkeys for all shifted letters
     chars := "abcdefghijklmnopqrstuvwxyz"
     loop, parse, chars
-        hotkey, $+%a_loopfield%, hotkey_callback
+        hotkey $+%a_loopfield%, hotkey_callback
 
     ; Hotkeys for all other ASCII characters, including non-shifted letters
     chars .= "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
     loop, parse, chars
-        hotkey, $%a_loopfield%, hotkey_callback
+        hotkey $%a_loopfield%, hotkey_callback
 
     return
 
@@ -201,6 +212,10 @@ hotkey_callback:
     send_keystroke(a_thishotkey)
     return
 
+sequences_callback:
+    gui show, autosize, WinCompose - List of Sequences
+    return
+
 restart_callback:
     reload
     return
@@ -210,11 +225,20 @@ history_callback:
     return
 
 about_callback:
-    msgbox, 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
+    msgbox 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
     return
 
 exit_callback:
     exitapp
+    return
+
+buttonclose:
+    gui hide
+    return
+
+guiclose:
+guiescape:
+    gui hide
     return
 }
 
@@ -271,6 +295,11 @@ setup_sequences()
         if (ret != 1)
             continue
 
+        ; Retrieve comment, if any
+        comment := regexreplace(a_loopreadline, "^.*#[^""][ \t]*(.*)$", "$1", ret)
+        if (ret != 1)
+            comment := ""
+
         ; Now replace all special key names to build our sequence and
         ; check whether it's valid
         valid := true
@@ -288,7 +317,7 @@ setup_sequences()
         ; If valid, add it to our list
         if (valid)
         {
-            add_sequence(seq, right)
+            add_sequence(seq, right, comment)
             count += 1
         }
     }
@@ -299,45 +328,68 @@ setup_sequences()
 ; We need to encode our strings somehow because AutoHotKey objects have
 ; case-insensitive hash tables. How retarded is that? Also, make sure the
 ; first character is special
-to_hex(str)
+string_to_hex(str)
 {
     hex = *
     loop, parse, str
-        hex .= asc(a_loopfield)
+        hex .= num_to_hex(asc(a_loopfield))
     return hex
+}
+
+num_to_hex(x)
+{
+    chars := "0123456789ABCDEF"
+    ret := ""
+    if (x == 0)
+        return "0"
+    while (x > 0)
+    {
+        ret := substr(chars, 1 + mod(x, 16), 1) . ret
+        x /= 16
+    }
+    while (strlen(ret) < 4)
+        ret := "0" . ret
+    return ret
 }
 
 ; Register a compose sequence, and add all substring prefixes to our list
 ; of valid prefixes so that we can cancel invalid sequences early on.
-add_sequence(key, val)
+add_sequence(key, val, desc)
 {
-    global s, p
+    global s, p, listview
     if (!s)
     {
         s := {}
         p := {}
     }
 
-    s.insert(to_hex(key), val)
+    ; Insert into our lookup table
+    s.insert(string_to_hex(key), val)
     loop % strlen(key) - 1
-        p.insert(to_hex(substr(key, 1, a_index)), true)
+        p.insert(string_to_hex(substr(key, 1, a_index)), true)
+
+    ; Insert into the GUI
+    sequence := regexreplace(key, " ", "[Spc]")
+    result := val
+    uni := "U+" . num_to_hex(asc(val))
+    lv_add("", uni, sequence, val, desc)
 }
 
 has_sequence(key)
 {
     global s
-    return s.haskey(to_hex(key))
+    return s.haskey(string_to_hex(key))
 }
 
 get_sequence(key)
 {
     global s
-    return s[to_hex(key)]
+    return s[string_to_hex(key)]
 }
 
 has_prefix(key)
 {
     global p
-    return p.haskey(to_hex(key))
+    return p.haskey(string_to_hex(key))
 }
 
