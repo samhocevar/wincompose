@@ -179,7 +179,7 @@ setup_ui()
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, vmy_listbox w800 r24 sort, Unicode|Sequence|Char|Description
+    gui add, listview, vmy_listbox w800 r24, Sequence|Char|Unicode|Description
     gui font
     gui add, button, vmy_button w80 x730 default, Close
 
@@ -213,6 +213,10 @@ hotkey_callback:
     return
 
 sequences_callback:
+    loop % 4
+        lv_modifycol(a_index, "autohdr")
+    lv_modifycol(2, "center") ; center the character column
+    lv_modifycol(3, "sort")   ; sort the Unicode column
     gui show, autosize, WinCompose - List of Sequences
     return
 
@@ -332,11 +336,12 @@ string_to_hex(str)
 {
     hex = *
     loop, parse, str
-        hex .= num_to_hex(asc(a_loopfield))
+        hex .= num_to_hex(asc(a_loopfield), 2)
     return hex
 }
 
-num_to_hex(x)
+; Convert a number to a hexadecimal string with a minimum number of digits
+num_to_hex(x, mindigits)
 {
     chars := "0123456789ABCDEF"
     ret := ""
@@ -347,7 +352,7 @@ num_to_hex(x)
         ret := substr(chars, 1 + mod(x, 16), 1) . ret
         x /= 16
     }
-    while (strlen(ret) < 4)
+    while (strlen(ret) < mindigits)
         ret := "0" . ret
     return ret
 }
@@ -369,10 +374,12 @@ add_sequence(key, val, desc)
         p.insert(string_to_hex(substr(key, 1, a_index)), true)
 
     ; Insert into the GUI
-    sequence := regexreplace(key, " ", "[Spc]")
+    sequence := "♦" . regexreplace(key, "(.)", " $1")
+    sequence := regexreplace(sequence, "  ", " {spc}")
     result := val
-    uni := "U+" . num_to_hex(asc(val))
-    lv_add("", uni, sequence, val, desc)
+    uni := "U+" . num_to_hex(asc(val), 4)
+    stringlower desc, desc
+    lv_add("", sequence, val, uni, desc)
 }
 
 has_sequence(key)
