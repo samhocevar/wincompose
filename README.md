@@ -13,16 +13,19 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Quick start
 -----------
 
- 1. Run `WinCompose.exe`; it should appear in the Quick Launch bar:
+Unless it was automatically started, run `WinCompose.exe`; it should appear
+in the Quick Launch bar:
 
 ![Quick Launch](/web/shot1.png)
 
- 2. Press and release the **Right Alt** key to initiate a compose sequence; the
-    icon should change to indicate a compose sequence is in progress:
+Press and release the **Right Alt** key to initiate a compose sequence; the
+icon should change to indicate a compose sequence is in progress:
 
 ![In Progress](/web/shot2.png)
 
- 3. Type the keys for a compose sequence, such as **A** and **E** for **Æ**
+Type in the keys for a compose sequence, such as **A** and **E** for **Æ**:
+
+![In Progress](/web/shot3.png)
 
 Examples
 --------
@@ -45,7 +48,7 @@ Compose rules are supposed to be intuitive. Here are some examples:
 The full list of rules can be found in the `Compose.txt` file shipped with WinCompose,
 or using the “Show Sequences…” menu entry:
 
-![Sequence List](/web/shot3.png)
+![Sequence List](/web/shot4.png)
 
 Features
 --------
