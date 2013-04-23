@@ -10,6 +10,11 @@ It allows to easily write characters such as **é ž à ō û ø ☺ ¤
 combinations. For instance, **ö** is obtained using **o** and **"**, and
 **♥** is obtained using **<** and **3**.
 
+Download
+--------
+
+Latest release: [WinCompose-Setup-0.1.exe](/WinCompose-Setup-0.1.exe)
+
 Quick start
 -----------
 
