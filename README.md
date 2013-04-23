@@ -13,8 +13,8 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Quick start
 -----------
 
-Unless it was automatically started, run `WinCompose.exe`; it should appear
-in the Quick Launch bar:
+After installation, WinCompose should appear in the System Tray;
+otherwise, launch it manually:
 
 ![Quick Launch](/web/shot1.png)
 
@@ -23,7 +23,7 @@ icon should change to indicate a compose sequence is in progress:
 
 ![In Progress](/web/shot2.png)
 
-Type in the keys for a compose sequence, such as **A** and **E** for **Æ**:
+Type in the keys for a compose sequence, such as **A** then **E** for **Æ**:
 
 ![In Progress](/web/shot3.png)
 
