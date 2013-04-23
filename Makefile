@@ -1,10 +1,15 @@
 
 EXE = WinCompose.exe
+ISS = WinCompose.iss
 
-all: $(EXE)
+all: installer
 
 clean:
 	rm -f $(EXE)
+
+installer: $(EXE) $(ISS)
+	rm -f $@
+	"c:\\Program Files (x86)\\Inno Setup 5\\ISCC.exe" $(ISS)
 
 %.exe: %.ahk
 	rm -f $@
