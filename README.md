@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.1.exe](/WinCompose-Setup-0.1.exe)
+Latest release: [WinCompose-Setup-0.1.1.exe](/WinCompose-Setup-0.1.1.exe)
 
 Quick start
 -----------
