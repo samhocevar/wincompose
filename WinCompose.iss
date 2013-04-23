@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.1"
+#define VERSION "0.1.1"
 
 [Setup]
 AppName = {#NAME}
@@ -21,9 +21,9 @@ Source: "res\wca.ico"; DestDir: "{app}\res"
 Source: "res\wcd.ico"; DestDir: "{app}\res"
 
 [Icons]
-Name: "{commonstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"
+Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
 Name: "{group}\Uninstall"; Filename: "{uninstallexe}"; IconFilename: "{app}\res\wcd.ico"
-Name: "{group}\{#NAME}"; Filename: "{app}\{#NAME}.exe"
+Name: "{group}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
 
 [Run]
 Filename: "{app}\{#NAME}.exe"; Flags: nowait
