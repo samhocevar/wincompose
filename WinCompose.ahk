@@ -11,6 +11,8 @@
 #persistent
 #noenv
 
+; The version of this script
+global version := "0.2.0"
 
 ; Compose Key: one of RAlt, LAlt, LControl, RControl, RWin, LWin, Esc,
 ; Insert, Numlock, Tab
@@ -226,7 +228,7 @@ history_callback:
     return
 
 about_callback:
-    msgbox 64, WinCompose, WinCompose\nby Sam Hocevar <sam@hocevar.net>
+    msgbox 64, WinCompose, WinCompose v%version%\nby Sam Hocevar <sam@hocevar.net>
     return
 
 exit_callback:
