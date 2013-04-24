@@ -29,6 +29,9 @@ global reset_delay := 5000
 ; Activate debug messages?
 global have_debug := false
 
+; Global state, one of WAITING, TYPING, or DISABLED
+global state := "WAITING"
+
 main()
 return
 
@@ -49,89 +52,78 @@ main()
 send_keystroke(keystroke)
 {
     static sequence =
-    static compose := false
-    static active := true
 
-    ; The actual character is the last char of the keystroke
-    char := substr(keystroke, strlen(keystroke))
-
-    ; If holding shift, switch letters to uppercase
-    if (asc(char) >= asc("a") && asc(char) <= asc("z"))
-        if (getkeystate("Capslock", "T") != getkeystate("Shift"))
-            char := chr(asc(char) - asc("a") + asc("A"))
-
-    if (!compose && keystroke != "compose")
+    if (state == "DISABLED")
     {
-        if (keystroke != "compose")
-            send_raw(char)
-        sequence =
-        compose := false
-        return
+        ; This hould not happen; do nothing
     }
-
-    if (keystroke = "compose")
+    else if (state == "WAITING")
     {
-        debug("Compose key pressed")
-        sequence =
-        compose := !compose
-        if (compose)
+        ; Enter typing state if compose was pressed; otherwise we
+        ; should not be here but send the character anyway.
+        if (keystroke = "compose")
         {
             settimer, reset_callback, %reset_delay%
-            menu, tray, icon, %active_icon%
+            state := "TYPING"
         }
         else
-            menu, tray, icon, %standard_icon%
-        return
+            send_raw(char)
+        sequence := ""
     }
-
-    sequence .= char
-
-    debug("Sequence: [ " sequence " ]")
-
-    if (has_sequence(sequence))
+    else if (state == "TYPING")
     {
-        tmp := get_sequence(sequence)
-        send %tmp%
-        sequence =
-        compose := false
-        menu, tray, icon, %standard_icon%
-    }
-    else if (!has_prefix(sequence))
-    {
-        debug("Disabling Dead End Sequence [ " sequence " ]")
-        send_raw(sequence)
-        sequence =
-        compose := false
-        menu, tray, icon, %standard_icon%
+        if (keystroke = "compose")
+        {
+            sequence := ""
+            state := "WAITING"
+        }
+        else
+        {
+            ; The actual character is the last char of the keystroke
+            char := substr(keystroke, strlen(keystroke))
+
+            ; If holding shift, switch letters to uppercase
+            if (asc(char) >= asc("a") && asc(char) <= asc("z"))
+                if (getkeystate("Capslock", "T") != getkeystate("Shift"))
+                    char := chr(asc(char) - asc("a") + asc("A"))
+
+            sequence .= char
+            debug("Sequence: [ " sequence " ]")
+
+            if (has_sequence(sequence))
+            {
+                tmp := get_sequence(sequence)
+                send %tmp%
+                state := "WAITING"
+                sequence := ""
+            }
+            else if (!has_prefix(sequence))
+            {
+                debug("Disabling Dead End Sequence [ " sequence " ]")
+                send_raw(sequence)
+                state := "WAITING"
+                sequence := ""
+            }
+        }
     }
 
+    refresh_systray()
     return
 
 reset_callback:
-    sequence =
-    compose := false
-    if (active)
-        menu, tray, icon, %standard_icon%
-    settimer, reset_callback, Off
+    settimer, reset_callback, off
+    sequence := ""
+    if (state == "TYPING")
+        state := "WAITING"
+    refresh_systray()
     return
 
 toggle_callback:
-    active := !active
-    if (active)
-    {
-        suspend, off
-        menu, tray, uncheck, &Disable
-        menu, tray, icon, %standard_icon%
-        menu, tray, tip, WinCompose (active)
-    }
+    if (state == "DISABLED")
+        state := "WAITING"
     else
-    {
-        menu, tray, check, &Disable
-        ; TODO: use icon groups here
-        menu, tray, icon, %disabled_icon%, , 1 ; freeze icon
-        menu, tray, tip, WinCompose (disabled)
-        suspend, on
-    }
+        state := "DISABLED"
+    refresh_systray()
     return
 }
 
@@ -170,8 +162,8 @@ setup_ui()
         menu, tray, add, Key &History, history_callback
     menu, tray, add, &About, about_callback
     menu, tray, add, E&xit, exit_callback
-    menu, tray, icon, %standard_icon%
-    menu, tray, tip, WinCompose (active)
+
+    refresh_systray()
 
     ; Build the sequence list window
     static my_listbox, my_button
@@ -195,20 +187,25 @@ setup_ui()
     ; Hotkeys for all shifted letters
     chars := "abcdefghijklmnopqrstuvwxyz"
     loop, parse, chars
-        hotkey $+%a_loopfield%, hotkey_callback
+        hotkey $+%a_loopfield%, key_callback
 
     ; Hotkeys for all other ASCII characters, including non-shifted letters
     chars .= "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
     loop, parse, chars
-        hotkey $%a_loopfield%, hotkey_callback
+        hotkey $%a_loopfield%, key_callback
+
+    ; Disable hotkeys; we only want them on during a compose sequence
+    suspend on
 
     return
 
 compose_callback:
-    send_keystroke("compose")
+    suspend ; We're not affected by suspend
+    if (state != "DISABLED")
+        send_keystroke("compose")
     return
 
-hotkey_callback:
+key_callback:
     send_keystroke(a_thishotkey)
     return
 
@@ -244,6 +241,32 @@ guiclose:
 guiescape:
     gui hide
     return
+}
+
+refresh_systray()
+{
+    if (state == "WAITING")
+    {
+        suspend on
+        menu, tray, uncheck, &Disable
+        menu, tray, icon, %standard_icon%, , 1
+        menu, tray, tip, WinCompose (active)
+    }
+    else if (state == "TYPING")
+    {
+        suspend off
+        menu, tray, uncheck, &Disable
+        menu, tray, icon, %active_icon%
+        menu, tray, tip, WinCompose (typing)
+    }
+    else if (state == "DISABLED")
+    {
+        suspend on
+        menu, tray, check, &Disable
+        ; TODO: use icon groups here
+        menu, tray, icon, %disabled_icon%, , 1
+        menu, tray, tip, WinCompose (disabled)
+    }
 }
 
 ; Read key symbols from a key file, then read compose sequences
