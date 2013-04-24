@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.1.1.exe](/WinCompose-Setup-0.1.1.exe)
+Latest release: [WinCompose-Setup-0.2.0.exe](/WinCompose-Setup-0.2.0.exe)
 
 Quick start
 -----------
@@ -78,4 +78,17 @@ Customising the script requires AutoHotKey (http://www.autohotkey.com/) for now.
 The original WinCompose.ahk script file is provided.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
+
+News for version 0.2.0 (24 April 2013)
+--------------------------------------
+ - Highly improved compatibility with games.
+ - “Typing” and “Disabled” icons are now more easily told apart.
+
+News for version 0.1.1 (23 April 2013)
+--------------------------------------
+ - Admin privileges are no longer required to start WinCompose at startup.
+
+News for version 0.1 (22 April 2013)
+------------------------------------
+ - Initial release.
 
