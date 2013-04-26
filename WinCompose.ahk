@@ -12,11 +12,21 @@
 #noenv
 
 ; The version of this script
-global version := "0.2.0"
+global version := "0.3.0"
 
-; Compose Key: one of RAlt, LAlt, LControl, RControl, RWin, LWin, Esc,
-; Insert, Numlock, Tab
-global compose_key := "RAlt"
+; Configuration directory and file
+global config_dir := a_appdata . "\\WinCompose"
+global config_file := config_dir . "\\settings.ini"
+
+; List of keys that can be used for Compose
+global valid_keys := { "Left Alt"      : "LAlt"
+                     , "Right Alt"     : "RAlt"
+                     , "Left Control"  : "LControl"
+                     , "Right Control" : "RControl"
+                     , "Left Windows"  : "LWin"
+                     , "Right Windows" : "RWin"
+                     , "Caps Lock"     : "CapsLock"
+                     , "Num Lock"      : "NumLock" }
 
 ; Resource files
 global compose_file := "res/Compose.txt"
@@ -25,14 +35,11 @@ global standard_icon := "res/wc.ico"
 global active_icon := "res/wca.ico"
 global disabled_icon := "res/wcd.ico"
 
-; Reset Delay: milliseconds until reset
-global reset_delay := 5000
-
 ; Activate debug messages?
 global have_debug := false
 
-; Global state, one of WAITING, TYPING, or DISABLED
-global state := "WAITING"
+; Global runtime variables
+global state, compose_key, reset_delay
 
 main()
 return
@@ -43,8 +50,38 @@ return
 
 main()
 {
+    ; Global state, one of WAITING, TYPING, or DISABLED
+    state := "WAITING"
+
+    load_settings()
     setup_ui()
-    setup_sequences()
+    load_sequences()
+}
+
+;
+; Handle Settings
+;
+
+load_settings()
+{
+    ; Compose Key: one of RAlt, LAlt, LControl, RControl, RWin, LWin,
+    ; Esc, Insert, Numlock, Tab
+    iniread, compose_key, %config_file%, Global, compose_key, ""
+
+    ; Reset Delay: milliseconds until reset
+    iniread, reset_delay, %config_file%, Global, reset_delay, 5000
+
+    ; Sanitize configuration just in case
+    if (!valid_keys.haskey(compose_key))
+        compose_key := "Right Alt"
+    save_settings()
+}
+
+save_settings()
+{
+    filecreatedir, %config_dir%
+    iniwrite, %compose_key%, %config_file%, Global, compose_key
+    iniwrite, %reset_delay%, %config_file%, Global, reset_delay
 }
 
 ;
@@ -57,7 +94,7 @@ send_keystroke(keystroke)
 
     if (state == "DISABLED")
     {
-        ; This hould not happen; do nothing
+        ; This should not happen; do nothing
     }
     else if (state == "WAITING")
     {
@@ -153,10 +190,17 @@ debug(string)
 
 setup_ui()
 {
+    onexit exit_callback
+
+    ; The hotkey selection menu
+    for key, val in valid_keys
+        menu, hotkeymenu, add, %key%, hotkeymenu_callback
+
     ; Build the menu
     menu, tray, click, 1
     menu, tray, NoStandard
-    menu, tray, add, Show &Sequences…, sequences_callback
+    menu, tray, add, &Sequences…, sequences_callback
+    menu, tray, add, Compose Key, :hotkeymenu
     menu, tray, add, &Disable, toggle_callback
     menu, tray, add, &Restart, restart_callback
     menu, tray, add
@@ -164,8 +208,6 @@ setup_ui()
         menu, tray, add, Key &History, history_callback
     menu, tray, add, &About, about_callback
     menu, tray, add, E&xit, exit_callback
-
-    refresh_systray()
 
     ; Build the sequence list window
     static my_listbox, my_button
@@ -177,14 +219,8 @@ setup_ui()
     gui font
     gui add, button, vmy_button w80 x730 default, Close
 
-    ; Activate the compose key for real
-    hotkey %compose_key%, compose_callback
-
-    ; Activate these variants just in case; for instance, Outlook 2010 seems
-    ; to automatically remap "Right Alt" to "Left Control + Right Alt".
-    hotkey ^%compose_key%, compose_callback
-    hotkey +%compose_key%, compose_callback
-    hotkey !%compose_key%, compose_callback
+    refresh_systray()
+    refresh_bindings()
 
     ; Hotkeys for all shifted letters
     chars := "abcdefghijklmnopqrstuvwxyz"
@@ -201,14 +237,14 @@ setup_ui()
 
     return
 
-compose_callback:
-    suspend ; We're not affected by suspend
-    if (state != "DISABLED")
-        send_keystroke("compose")
-    return
-
 key_callback:
     send_keystroke(a_thishotkey)
+    return
+
+hotkeymenu_callback:
+    compose_key := a_thismenuitem
+    refresh_systray()
+    refresh_bindings()
     return
 
 sequences_callback:
@@ -220,6 +256,7 @@ sequences_callback:
     return
 
 restart_callback:
+    save_settings()
     reload
     return
 
@@ -232,6 +269,7 @@ about_callback:
     return
 
 exit_callback:
+    save_settings()
     exitapp
     return
 
@@ -269,11 +307,50 @@ refresh_systray()
         menu, tray, icon, %disabled_icon%, , 1
         menu, tray, tip, WinCompose (disabled)
     }
+
+    for key, val in valid_keys
+    {
+        if (key == compose_key)
+            menu, hotkeymenu, check, %key%
+        else
+            menu, hotkeymenu, uncheck, %key%
+    }
+}
+
+refresh_bindings()
+{
+    ; Disable any existing hotkeys
+    for key, val in valid_keys
+    {
+        hotkey %val%, off, useerrorlevel
+        hotkey ^%val%, off, useerrorlevel
+        hotkey +%val%, off, useerrorlevel
+        hotkey !%val%, off, useerrorlevel
+    }
+
+    keysym := valid_keys[compose_key]
+
+    ; Activate the compose key for real
+    hotkey %keysym%, compose_callback
+
+    ; Activate these variants just in case; for instance, Outlook 2010 seems
+    ; to automatically remap "Right Alt" to "Left Control + Right Alt".
+    hotkey ^%keysym%, compose_callback
+    hotkey +%keysym%, compose_callback
+    hotkey !%keysym%, compose_callback
+
+    return
+
+compose_callback:
+    suspend ; We're not affected by suspend
+    if (state != "DISABLED")
+        send_keystroke("compose")
+    return
 }
 
 ; Read key symbols from a key file, then read compose sequences
 ; from an X11 compose file
-setup_sequences()
+load_sequences()
 {
     FileEncoding UTF-8
 
@@ -351,7 +428,7 @@ setup_sequences()
         }
     }
 
-    info("Loaded " count " Sequences")
+    info("Loaded " count " Sequences\nCompose Key: " compose_key)
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have

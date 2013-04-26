@@ -32,6 +32,9 @@ Type in the keys for a compose sequence, such as **A** then **E** for **Æ**:
 
 ![In Progress](/web/shot3.png)
 
+If **Right Alt** is not suitable for you, right click on the tray icon to
+choose another key.
+
 Examples
 --------
 
@@ -74,10 +77,13 @@ current application.
 Bugs
 ----
 
-Customising the script requires AutoHotKey (http://www.autohotkey.com/) for now.
-The original WinCompose.ahk script file is provided.
+There are no known bugs as of now.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
+
+News for version 0.3.0 (26 April 2013)
+--------------------------------------
+ - The key used for composing is now customisable.
 
 News for version 0.2.0 (24 April 2013)
 --------------------------------------
