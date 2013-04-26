@@ -442,14 +442,12 @@ num_to_hex(x, mindigits)
 {
     chars := "0123456789ABCDEF"
     ret := ""
-    if (x == 0)
-        return "0"
     while (x > 0)
     {
         ret := substr(chars, 1 + mod(x, 16), 1) . ret
         x /= 16
     }
-    while (strlen(ret) < mindigits)
+    while (strlen(ret) < mindigits || strlen(ret) < 1)
         ret := "0" . ret
     return ret
 }
