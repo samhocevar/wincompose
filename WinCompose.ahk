@@ -64,16 +64,13 @@ main()
 
 load_settings()
 {
-    ; Compose Key: one of RAlt, LAlt, LControl, RControl, RWin, LWin,
-    ; Esc, Insert, Numlock, Tab
     iniread, compose_key, %config_file%, Global, compose_key, ""
-
-    ; Reset Delay: milliseconds until reset
     iniread, reset_delay, %config_file%, Global, reset_delay, 5000
 
     ; Sanitize configuration just in case
     if (!valid_keys.haskey(compose_key))
         compose_key := "Right Alt"
+
     save_settings()
 }
 
@@ -219,9 +216,6 @@ setup_ui()
     gui font
     gui add, button, vmy_button w80 x730 default, Close
 
-    refresh_systray()
-    refresh_bindings()
-
     ; Hotkeys for all shifted letters
     chars := "abcdefghijklmnopqrstuvwxyz"
     loop, parse, chars
@@ -232,8 +226,8 @@ setup_ui()
     loop, parse, chars
         hotkey $%a_loopfield%, key_callback
 
-    ; Disable hotkeys; we only want them on during a compose sequence
-    suspend on
+    refresh_systray()
+    refresh_bindings()
 
     return
 
@@ -287,6 +281,7 @@ refresh_systray()
 {
     if (state == "WAITING")
     {
+        ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
         menu, tray, uncheck, &Disable
         menu, tray, icon, %standard_icon%, , 1
