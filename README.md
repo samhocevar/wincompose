@@ -77,7 +77,7 @@ current application.
 Bugs
 ----
 
-There are no known bugs as of now.
+As of now, WinCompose does not support Unicode code points after U+FFFF.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
 
