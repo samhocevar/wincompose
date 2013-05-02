@@ -259,7 +259,7 @@ history_callback:
     return
 
 about_callback:
-    msgbox 64, WinCompose, WinCompose v%version%\nby Sam Hocevar <sam@hocevar.net>
+    msgbox 64, WinCompose, WinCompose v%version%\nby Sam Hocevar <sam@hocevar.net>\nrunning on AHK v%a_ahkversion%
     return
 
 exit_callback:
