@@ -50,6 +50,9 @@ return
 
 main()
 {
+    ; Early icon initialisation to prevent flashing
+    menu, tray, icon, %standard_icon%
+
     ; Global state, one of WAITING, TYPING, or DISABLED
     state := "WAITING"
 
