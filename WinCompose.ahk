@@ -18,6 +18,9 @@ global version := "0.3.0"
 global config_dir := a_appdata . "\\WinCompose"
 global config_file := config_dir . "\\settings.ini"
 
+; GUI window title
+global gui_title := "WinCompose - List of Sequences"
+
 ; List of keys that can be used for Compose
 global valid_keys := { "Left Alt"      : "LAlt"
                      , "Right Alt"     : "RAlt"
@@ -51,7 +54,7 @@ return
 main()
 {
     ; Early icon initialisation to prevent flashing
-    menu, tray, icon, %standard_icon%
+    menu tray, icon, %standard_icon%
 
     ; Global state, one of WAITING, TYPING, or DISABLED
     state := "WAITING"
@@ -197,20 +200,22 @@ setup_ui()
         menu, hotkeymenu, add, %key%, hotkeymenu_callback
 
     ; Build the menu
-    menu, tray, click, 1
-    menu, tray, NoStandard
-    menu, tray, add, &Sequences…, sequences_callback
-    menu, tray, add, Compose Key, :hotkeymenu
-    menu, tray, add, &Disable, toggle_callback
-    menu, tray, add, &Restart, restart_callback
-    menu, tray, add
+    menu tray, click, 1
+    menu tray, NoStandard
+    menu tray, add, &Sequences…, showgui_callback
+    menu tray, add, Compose Key, :hotkeymenu
+    menu tray, add, &Disable, toggle_callback
+    menu tray, add, &Restart, restart_callback
+    menu tray, add
     if (have_debug)
-        menu, tray, add, Key &History, history_callback
-    menu, tray, add, &About, about_callback
-    menu, tray, add, E&xit, exit_callback
+        menu tray, add, Key &History, history_callback
+    menu tray, add, &About, about_callback
+    menu tray, add, E&xit, exit_callback
+    menu tray, default, &Sequences…
 
     ; Build the sequence list window
-    static my_listbox, my_button
+    global my_listbox, my_button
+    gui +resize +minsize300x115
     gui font, s11
     gui font, s11, Courier New
     gui font, s11, Lucida Console
@@ -244,14 +249,6 @@ hotkeymenu_callback:
     refresh_bindings()
     return
 
-sequences_callback:
-    loop % 4
-        lv_modifycol(a_index, "autohdr")
-    lv_modifycol(2, "center") ; center the character column
-    lv_modifycol(3, "sort")   ; sort the Unicode column
-    gui show, autosize, WinCompose - List of Sequences
-    return
-
 restart_callback:
     save_settings()
     reload
@@ -270,12 +267,28 @@ exit_callback:
     exitapp
     return
 
-buttonclose:
-    gui hide
+guisize:
+    if (a_eventinfo != 1) ; Ignore minimising
+    {
+        guicontrol move, my_listbox, % "w" (a_guiwidth - 16) " h" (a_guiheight - 45)
+        guicontrol move, my_button, % "x" (a_guiwidth - 87) " y" (a_guiheight - 30)
+    }
     return
 
+showgui_callback:
+    if (winexist(gui_title))
+        goto hidegui_callback
+    loop % 4
+        lv_modifycol(a_index, "autohdr")
+    lv_modifycol(2, "center") ; center the character column
+    lv_modifycol(3, "sort")   ; sort the Unicode column
+    gui show, , %gui_title%
+    return
+
+buttonclose:
 guiclose:
 guiescape:
+hidegui_callback:
     gui hide
     return
 }
@@ -286,24 +299,24 @@ refresh_systray()
     {
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
-        menu, tray, uncheck, &Disable
-        menu, tray, icon, %standard_icon%, , 1
-        menu, tray, tip, WinCompose (active)
+        menu tray, uncheck, &Disable
+        menu tray, icon, %standard_icon%, , 1
+        menu tray, tip, WinCompose (active)
     }
     else if (state == "TYPING")
     {
         suspend off
-        menu, tray, uncheck, &Disable
-        menu, tray, icon, %active_icon%
-        menu, tray, tip, WinCompose (typing)
+        menu tray, uncheck, &Disable
+        menu tray, icon, %active_icon%
+        menu tray, tip, WinCompose (typing)
     }
     else if (state == "DISABLED")
     {
         suspend on
-        menu, tray, check, &Disable
+        menu tray, check, &Disable
         ; TODO: use icon groups here
-        menu, tray, icon, %disabled_icon%, , 1
-        menu, tray, tip, WinCompose (disabled)
+        menu tray, icon, %disabled_icon%, , 1
+        menu tray, tip, WinCompose (disabled)
     }
 
     for key, val in valid_keys
