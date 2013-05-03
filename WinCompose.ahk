@@ -13,7 +13,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.3.0"
+global version := "0.4.0"
 
 ; Configuration directory and file
 global config_dir := a_appdata . "\\" . app
@@ -24,6 +24,7 @@ global gui_title := app . " - List of Sequences"
 
 ; About box text
 global about_text := app . " v" . version . "\n"
+       about_text .= "\n"
        about_text .= "by Sam Hocevar <sam@hocevar.net>\n"
        about_text .= "running on AHK v" . a_ahkversion . "\n"
 
