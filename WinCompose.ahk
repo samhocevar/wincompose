@@ -68,8 +68,8 @@ main()
     state := "WAITING"
 
     load_settings()
-    setup_ui()
     load_sequences()
+    setup_ui()
 }
 
 ;
@@ -231,7 +231,7 @@ setup_ui()
     gui add, listview, vmy_listbox w700 r18, Sequence|Char|Unicode|Description
     gui font
     gui add, text, vmy_text, Search Filter:
-    gui add, edit, vmy_edit
+    gui add, edit, vmy_edit gedit_callback
     gui add, button, vmy_button default, Close
 
     ; Hotkeys for all shifted letters
@@ -289,20 +289,23 @@ guisize:
     }
     return
 
+edit_callback:
+    critical on ; don't self-interrupt or we will corrupt the listview
+    refresh_gui()
+    return
+
 showgui_callback:
     if (winexist(gui_title))
         goto hidegui_callback
-    loop % 4
-        lv_modifycol(a_index, "autohdr")
-    lv_modifycol(2, "center") ; center the character column
-    lv_modifycol(3, "sort")   ; sort the Unicode column
+    refresh_gui()
     gui show, , %gui_title%
+    guicontrol focus, my_edit
     return
 
+hidegui_callback:
 buttonclose:
 guiclose:
 guiescape:
-hidegui_callback:
     gui hide
     return
 }
@@ -371,6 +374,19 @@ compose_callback:
     if (state != "DISABLED")
         send_keystroke("compose")
     return
+}
+
+refresh_gui()
+{
+    lv_delete()
+    guicontrolget my_edit
+    stringlower filter, filter
+    traytip LOL, %my_edit%
+    fill_sequences(my_edit)
+    loop % 4
+        lv_modifycol(a_index, "autohdr")
+    lv_modifycol(2, "center") ; center the character column
+    lv_modifycol(3, "sort")   ; sort the Unicode column
 }
 
 ; Read key symbols from a key file, then read compose sequences
@@ -494,17 +510,33 @@ add_sequence(key, val, desc)
     }
 
     ; Insert into our lookup table
-    s.insert(string_to_hex(key), val)
+    stringlower desc, desc
+    s.insert(string_to_hex(key), [key, val, desc])
+
+    ; Insert into the prefix lookup table
     loop % strlen(key) - 1
         p.insert(string_to_hex(substr(key, 1, a_index)), true)
+}
 
-    ; Insert into the GUI
-    sequence := "♦" . regexreplace(key, "(.)", " $1")
-    sequence := regexreplace(sequence, "  ", " {spc}")
-    result := val
-    uni := "U+" . num_to_hex(asc(val), 4)
-    stringlower desc, desc
-    lv_add("", sequence, val, uni, desc)
+fill_sequences(filter)
+{
+    global s
+    for k, v in s
+    {
+        key := v[1]
+        val := v[2]
+        desc := v[3]
+
+        if (!instr(desc, filter))
+            continue
+
+        ; Insert into the GUI
+        sequence := "♦" . regexreplace(key, "(.)", " $1")
+        sequence := regexreplace(sequence, "  ", " {spc}")
+        result := val
+        uni := "U+" . num_to_hex(asc(val), 4)
+        lv_add("", sequence, val, uni, desc)
+    }
 }
 
 has_sequence(key)
@@ -516,7 +548,7 @@ has_sequence(key)
 get_sequence(key)
 {
     global s
-    return s[string_to_hex(key)]
+    return s[string_to_hex(key)][2]
 }
 
 has_prefix(key)
