@@ -11,15 +11,21 @@
 #persistent
 #noenv
 
-; The version of this script
+; The name and version of this script
+global app := "WinCompose"
 global version := "0.3.0"
 
 ; Configuration directory and file
-global config_dir := a_appdata . "\\WinCompose"
+global config_dir := a_appdata . "\\" . app
 global config_file := config_dir . "\\settings.ini"
 
 ; GUI window title
-global gui_title := "WinCompose - List of Sequences"
+global gui_title := app . " - List of Sequences"
+
+; About box text
+global about_text := app . " v" . version . "\n"
+       about_text .= "by Sam Hocevar <sam@hocevar.net>\n"
+       about_text .= "running on AHK v" . a_ahkversion . "\n"
 
 ; List of keys that can be used for Compose
 global valid_keys := { "Left Alt"      : "LAlt"
@@ -95,7 +101,7 @@ save_settings()
 
 send_keystroke(keystroke)
 {
-    static sequence =
+    static sequence := ""
 
     if (state == "DISABLED")
     {
@@ -105,7 +111,7 @@ send_keystroke(keystroke)
     {
         ; Enter typing state if compose was pressed; otherwise we
         ; should not be here but send the character anyway.
-        if (keystroke = "compose")
+        if (keystroke == "compose")
         {
             settimer, reset_callback, %reset_delay%
             state := "TYPING"
@@ -116,7 +122,7 @@ send_keystroke(keystroke)
     }
     else if (state == "TYPING")
     {
-        if (keystroke = "compose")
+        if (keystroke == "compose")
         {
             sequence := ""
             state := "WAITING"
@@ -175,7 +181,7 @@ send_raw(string)
 {
     loop, parse, string
     {
-        if (a_loopfield = " ")
+        if (a_loopfield == " ")
             send {Space}
         else
             sendinput {raw}%a_loopfield%
@@ -184,13 +190,13 @@ send_raw(string)
 
 info(string)
 {
-    traytip, WinCompose, %string%, 10, 1
+    traytip, %app%, %string%, 10, 1
 }
 
 debug(string)
 {
     if (have_debug)
-        traytip, WinCompose, %string%, 10, 1
+        traytip, %app%, %string%, 10, 1
 }
 
 setup_ui()
@@ -216,15 +222,17 @@ setup_ui()
     menu tray, default, &Sequences…
 
     ; Build the sequence list window
-    global my_listbox, my_button
+    global my_listbox, my_text, my_edit, my_button
     gui +resize +minsize300x115
     gui font, s11
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, vmy_listbox w800 r24, Sequence|Char|Unicode|Description
+    gui add, listview, vmy_listbox w700 r18, Sequence|Char|Unicode|Description
     gui font
-    gui add, button, vmy_button w80 x730 default, Close
+    gui add, text, vmy_text, Search Filter:
+    gui add, edit, vmy_edit
+    gui add, button, vmy_button default, Close
 
     ; Hotkeys for all shifted letters
     chars := "abcdefghijklmnopqrstuvwxyz"
@@ -261,7 +269,7 @@ history_callback:
     return
 
 about_callback:
-    msgbox 64, WinCompose, WinCompose v%version%\nby Sam Hocevar <sam@hocevar.net>\nrunning on AHK v%a_ahkversion%
+    msgbox 64, %app%, %about_text%
     return
 
 exit_callback:
@@ -272,8 +280,12 @@ exit_callback:
 guisize:
     if (a_eventinfo != 1) ; Ignore minimising
     {
-        guicontrol move, my_listbox, % "w" (a_guiwidth - 16) " h" (a_guiheight - 45)
-        guicontrol move, my_button, % "x" (a_guiwidth - 87) " y" (a_guiheight - 30)
+        w := a_guiwidth
+        h := a_guiheight
+        guicontrol move, my_listbox, % "w" (w - 16) " h" (h - 45)
+        guicontrol move, my_text, % "y" (h - 26)
+        guicontrol move, my_edit, % "x80 w" (w - 220) " y" (h - 30)
+        guicontrol move, my_button, % "x" (w - 87) " y" (h - 30) " w80"
     }
     return
 
@@ -303,14 +315,14 @@ refresh_systray()
         suspend on
         menu tray, uncheck, &Disable
         menu tray, icon, %standard_icon%, , 1
-        menu tray, tip, WinCompose (active)
+        menu tray, tip, %app% (active)
     }
     else if (state == "TYPING")
     {
         suspend off
         menu tray, uncheck, &Disable
         menu tray, icon, %active_icon%
-        menu tray, tip, WinCompose (typing)
+        menu tray, tip, %app% (typing)
     }
     else if (state == "DISABLED")
     {
@@ -318,7 +330,7 @@ refresh_systray()
         menu tray, check, &Disable
         ; TODO: use icon groups here
         menu tray, icon, %disabled_icon%, , 1
-        menu tray, tip, WinCompose (disabled)
+        menu tray, tip, %app% (disabled)
     }
 
     for key, val in valid_keys
@@ -449,7 +461,7 @@ load_sequences()
 ; first character is special
 string_to_hex(str)
 {
-    hex = *
+    hex := "*"
     loop, parse, str
         hex .= num_to_hex(asc(a_loopfield), 2)
     return hex
