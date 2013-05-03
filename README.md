@@ -53,10 +53,13 @@ Compose rules are supposed to be intuitive. Here are some examples:
  - **( 2 3 )** → **㉓**
  - **< 3** → **♥**
 
-The full list of rules can be found in the `Compose.txt` file shipped with WinCompose,
-or using the “Show Sequences…” menu entry:
+The full list of rules can be found in the `Compose.txt` file shipped with
+WinCompose, or by clicking on the WinCompose system tray icon or using the
+“Show Sequences…” menu entry:
 
 ![Sequence List](/web/shot4.png)
+
+The window allows you to filter the sequences being listed.
 
 Features
 --------
@@ -64,10 +67,10 @@ Features
 WinCompose supports the standard Compose file format. It ships with more than
 1000 compose rules from [Xorg](http://www.x.org/wiki/).
 
-WinCompose supports rules of more than 2 characters such as **(** + **3** + **)**
+WinCompose supports rules of more than 2 characters such as **( 3 )**
 for **③**.
 
-WinCompose supports early exits. For instance, **Compose** + **&** will
+WinCompose supports early exits. For instance, **Compose &** will
 immediately type **&** because there is currently no rule starting with **&**.
 
 WinCompose does not emit unnecessary keystrokes, such as a backspace keystroke
