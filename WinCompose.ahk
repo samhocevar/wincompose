@@ -29,7 +29,9 @@ global valid_keys := { "Left Alt"      : "LAlt"
                      , "Left Windows"  : "LWin"
                      , "Right Windows" : "RWin"
                      , "Caps Lock"     : "CapsLock"
-                     , "Num Lock"      : "NumLock" }
+                     , "Num Lock"      : "NumLock"
+                     , "Pause"         : "Pause"
+                     , "Scroll Lock"   : "ScrollLock" }
 
 ; Resource files
 global compose_file := "res/Compose.txt"
