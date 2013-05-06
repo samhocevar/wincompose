@@ -381,8 +381,6 @@ refresh_gui()
 {
     lv_delete()
     guicontrolget my_edit
-    stringlower filter, filter
-    traytip LOL, %my_edit%
     fill_sequences(my_edit)
     loop % 4
         lv_modifycol(a_index, "autohdr")
@@ -522,21 +520,22 @@ add_sequence(key, val, desc)
 fill_sequences(filter)
 {
     global s
+    stringlower filter_low, filter
     for k, v in s
     {
         key := v[1]
         val := v[2]
         desc := v[3]
 
-        if (!instr(desc, filter))
-            continue
-
-        ; Insert into the GUI
-        sequence := "♦" . regexreplace(key, "(.)", " $1")
-        sequence := regexreplace(sequence, "  ", " {spc}")
-        result := val
-        uni := "U+" . num_to_hex(asc(val), 4)
-        lv_add("", sequence, val, uni, desc)
+        ; Insert into the GUI if applicable
+        if (filter == val || instr(key, filter) || instr(desc, filter_low))
+        {
+            sequence := "♦" . regexreplace(key, "(.)", " $1")
+            sequence := regexreplace(sequence, "  ", " {spc}")
+            result := val
+            uni := "U+" . num_to_hex(asc(val), 4)
+            lv_add("", sequence, val, uni, desc)
+        }
     }
 }
 
