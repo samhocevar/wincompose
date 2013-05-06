@@ -360,13 +360,13 @@ refresh_bindings()
     keysym := valid_keys[compose_key]
 
     ; Activate the compose key for real
-    hotkey %keysym%, compose_callback
+    hotkey %keysym%, compose_callback, on
 
     ; Activate these variants just in case; for instance, Outlook 2010 seems
     ; to automatically remap "Right Alt" to "Left Control + Right Alt".
-    hotkey ^%keysym%, compose_callback
-    hotkey +%keysym%, compose_callback
-    hotkey !%keysym%, compose_callback
+    hotkey ^%keysym%, compose_callback, on
+    hotkey +%keysym%, compose_callback, on
+    hotkey !%keysym%, compose_callback, on
 
     return
 
