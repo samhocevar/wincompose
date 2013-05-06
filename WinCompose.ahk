@@ -43,6 +43,20 @@ global valid_keys := { "Left Alt"      : "LAlt"
                      , "Scroll Lock"   : "ScrollLock"
                      , "` (Backtick)"  : "`" }
 
+; Default key used as compose key
+global default_key := "Right Alt"
+
+; List of timeout values
+global valid_delays := { 500   : "500 milliseconds"
+                       , 1000  : "1 second"
+                       , 2000  : "2 seconds"
+                       , 3000  : "3 seconds"
+                       , 5000  : "5 seconds"
+                       , 10000 : "10 seconds" }
+
+; Default timeout value
+global default_delay := 5000
+
 ; Resource files
 global compose_file := "res/Compose.txt"
 global keys_file := "res/Keys.txt"
@@ -83,11 +97,14 @@ main()
 load_settings()
 {
     iniread, compose_key, %config_file%, Global, compose_key, ""
-    iniread, reset_delay, %config_file%, Global, reset_delay, 5000
+    iniread, reset_delay, %config_file%, Global, reset_delay, ""
 
     ; Sanitize configuration just in case
     if (!valid_keys.haskey(compose_key))
-        compose_key := "Right Alt"
+        compose_key := default_key
+
+    if (!valid_delays.haskey(reset_delay))
+        reset_delay := default_delay
 
     save_settings()
 }
@@ -216,11 +233,15 @@ setup_ui()
     for key, val in valid_keys
         menu, hotkeymenu, add, %key%, hotkeymenu_callback
 
+    for key, val in valid_delays
+        menu, delaymenu, add, %val%, delaymenu_callback
+
     ; Build the menu
     menu tray, click, 1
     menu tray, NoStandard
     menu tray, add, &Sequences…, showgui_callback
     menu tray, add, Compose Key, :hotkeymenu
+    menu tray, add, Timeout, :delaymenu
     menu tray, add, &Disable, toggle_callback
     menu tray, add, &Restart, restart_callback
     menu tray, add
@@ -266,6 +287,13 @@ hotkeymenu_callback:
     compose_key := a_thismenuitem
     refresh_systray()
     refresh_bindings()
+    return
+
+delaymenu_callback:
+    for key, val in valid_delays
+        if (val == a_thismenuitem)
+            reset_delay := key
+    refresh_systray()
     return
 
 restart_callback:
@@ -346,12 +374,10 @@ refresh_systray()
     }
 
     for key, val in valid_keys
-    {
-        if (key == compose_key)
-            menu, hotkeymenu, check, %key%
-        else
-            menu, hotkeymenu, uncheck, %key%
-    }
+        menu, hotkeymenu, % (key == compose_key) ? "check" : "uncheck", %key%
+
+    for key, val in valid_delays
+        menu, delaymenu, % (key == reset_delay) ? "check" : "uncheck", %val%
 }
 
 refresh_bindings()
@@ -530,6 +556,9 @@ add_sequence(key, val, desc)
         p.insert(string_to_hex(substr(key, 1, a_index)), true)
 }
 
+; Fill the default list view widget with all the compose rules that
+; contain the string "filter", either in the compose sequence or in
+; the description of the Unicode character.
 fill_sequences(filter)
 {
     global s
