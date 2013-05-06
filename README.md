@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.4.0.exe](/WinCompose-Setup-0.4.0.exe)
+Latest release: [WinCompose-Setup-0.4.1.exe](/WinCompose-Setup-0.4.1.exe)
 
 Quick start
 -----------
@@ -83,6 +83,13 @@ Bugs
 As of now, WinCompose does not support Unicode code points after U+FFFF.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
+
+News for version 0.4.1 (6 May 2013)
+--------------------------------------
+ - “Menu”, “Escape” and “Backtick�� can now act as compose
+   keys, too.
+ - Improved the filtering logic.
+ - Allow to choose the timeout delay from the context menu.
 
 News for version 0.4.0 (4 May 2013)
 --------------------------------------
