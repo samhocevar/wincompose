@@ -38,7 +38,10 @@ global valid_keys := { "Left Alt"      : "LAlt"
                      , "Caps Lock"     : "CapsLock"
                      , "Num Lock"      : "NumLock"
                      , "Pause"         : "Pause"
-                     , "Scroll Lock"   : "ScrollLock" }
+                     , "Menu"          : "AppsKey"
+                     , "Escape"        : "Esc"
+                     , "Scroll Lock"   : "ScrollLock"
+                     , "` (Backtick)"  : "`" }
 
 ; Resource files
 global compose_file := "res/Compose.txt"
@@ -123,6 +126,11 @@ send_keystroke(keystroke)
     }
     else if (state == "TYPING")
     {
+        ; If the compose key is an actual character, don't cancel the compose
+        ; sequence since the character could be used in the sequence itself.
+        if (keystroke == "compose" && strlen(valid_keys[compose_key]) == 1)
+            keystroke := valid_keys[compose_key]
+
         if (keystroke == "compose")
         {
             sequence := ""
@@ -356,6 +364,11 @@ refresh_bindings()
         hotkey +%val%, off, useerrorlevel
         hotkey !%val%, off, useerrorlevel
     }
+
+    ; Reactivate hotkeys for 1-character compose keys
+    for key, val in valid_keys
+        if (strlen(val) == 1)
+            hotkey $%val%, key_callback, on
 
     keysym := valid_keys[compose_key]
 
