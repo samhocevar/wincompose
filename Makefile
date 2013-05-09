@@ -10,6 +10,7 @@ clean:
 installer: $(EXE) $(ISS)
 	rm -f $@
 	"c:\\Program Files (x86)\\Inno Setup 5\\ISCC.exe" $(ISS)
+	rm -f $(EXE)
 
 %.exe: %.ahk
 	rm -f $@
