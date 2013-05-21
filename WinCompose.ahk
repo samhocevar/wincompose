@@ -123,6 +123,7 @@ save_settings()
 send_keystroke(keystroke)
 {
     static sequence := ""
+    settimer, reset_callback, off
 
     if (state == "DISABLED")
     {
@@ -134,8 +135,8 @@ send_keystroke(keystroke)
         ; should not be here but send the character anyway.
         if (keystroke == "compose")
         {
-            settimer, reset_callback, %reset_delay%
             state := "TYPING"
+            settimer, reset_callback, %reset_delay%
         }
         else
             send_raw(char)
@@ -150,6 +151,7 @@ send_keystroke(keystroke)
 
         if (keystroke == "compose")
         {
+            settimer, reset_callback, off
             sequence := ""
             state := "WAITING"
         }
@@ -179,6 +181,10 @@ send_keystroke(keystroke)
                 send_raw(sequence)
                 state := "WAITING"
                 sequence := ""
+            }
+            else
+            {
+                settimer, reset_callback, %reset_delay%
             }
         }
     }
@@ -397,6 +403,7 @@ refresh_bindings()
         if (strlen(val) == 1)
             hotkey $%val%, key_callback, on
 
+    ; Change the value of the hotkey
     keysym := valid_keys[compose_key]
 
     ; Activate the compose key for real
