@@ -254,6 +254,7 @@ setup_ui()
     ; Build the sequence list window
     global my_listbox, my_text, my_edit, my_button
     gui +resize +minsize300x115
+    gui margin, 8, 8
     gui font, s11
     gui font, s11, Courier New
     gui font, s11, Lucida Console
