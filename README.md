@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.4.1.exe](/WinCompose-Setup-0.4.1.exe)
+Latest release: [WinCompose-Setup-0.4.2.exe](/WinCompose-Setup-0.4.2.exe)
 
 Quick start
 -----------
@@ -83,6 +83,11 @@ Bugs
 As of now, WinCompose does not support Unicode code points after U+FFFF.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
+
+News for version 0.4.2 (11 June 2013)
+--------------------------------------
+ - Better support for GTK+ applications such as Pidgin.
+ - Minor GUI fixes.
 
 News for version 0.4.1 (6 May 2013)
 --------------------------------------
