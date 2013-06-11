@@ -13,7 +13,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.4.1"
+global version := "0.4.2"
 
 ; Configuration directory and file
 global config_dir := a_appdata . "\\" . app
@@ -170,8 +170,7 @@ send_keystroke(keystroke)
 
             if (has_sequence(sequence))
             {
-                tmp := get_sequence(sequence)
-                send %tmp%
+                send_unicode(get_sequence(sequence))
                 state := "WAITING"
                 sequence := ""
             }
@@ -207,6 +206,15 @@ toggle_callback:
         state := "DISABLED"
     refresh_systray()
     return
+}
+
+send_unicode(char)
+{
+    ; HACK: GTK+ behaves differently with Unicode
+    if (winactive("ahk_class gdkWindowToplevel"))
+        sendinput % "{Ctrl down}{Shift down}u" num_to_hex(asc(char), 4) "{Space}{Shift up}{Ctrl up}"
+    else
+        send %char%
 }
 
 send_raw(string)
@@ -409,8 +417,8 @@ refresh_bindings()
     ; Activate the compose key for real
     hotkey %keysym%, compose_callback, on
 
-    ; Activate these variants just in case; for instance, Outlook 2010 seems
-    ; to automatically remap "Right Alt" to "Left Control + Right Alt".
+    ; HACK: Activate these variants just in case; for instance, Outlook 2010
+    ; seems to automatically remap "Right Alt" to "Left Control + Right Alt".
     hotkey ^%keysym%, compose_callback, on
     hotkey +%keysym%, compose_callback, on
     hotkey !%keysym%, compose_callback, on
