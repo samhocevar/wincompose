@@ -211,7 +211,8 @@ toggle_callback:
 send_unicode(char)
 {
     ; HACK: GTK+ behaves differently with Unicode
-    if (winactive("ahk_class gdkWindowToplevel"))
+    ; HACK: XChat for Windows renames its own top-level window
+    if (winactive("ahk_class gdkWindowToplevel") || winactive("ahk_class xchatWindowToplevel"))
         sendinput % "{Ctrl down}{Shift down}u" num_to_hex(asc(char), 4) "{Space}{Shift up}{Ctrl up}"
     else
         send %char%
