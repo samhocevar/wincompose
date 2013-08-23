@@ -2,6 +2,9 @@
 EXE = WinCompose.exe
 ISS = WinCompose.iss
 
+ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
+AHKCDIR = c:\\Program Files\\AutoHotkey\\Compiler
+
 all: installer
 
 clean:
@@ -9,10 +12,10 @@ clean:
 
 installer: $(EXE) $(ISS)
 	rm -f $@
-	"c:\\Program Files (x86)\\Inno Setup 5\\ISCC.exe" $(ISS)
+	"$(ISCCDIR)\\ISCC.exe" $(ISS)
 	rm -f $(EXE)
 
 %.exe: %.ahk
 	rm -f $@
-	"c:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe" //in $^ //out $@ //icon res/wc.ico
+	"$(AHKCDIR)\\Ahk2Exe.exe" //in $^ //out $@ //icon res/wc.ico //bin "$(AHKCDIR)\\Unicode 32-bit.bin"
 
