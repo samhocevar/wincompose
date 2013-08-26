@@ -60,9 +60,7 @@ global default_delay := 5000
 ; Resource files
 global compose_file := "res/Compose.txt"
 global keys_file := "res/Keys.txt"
-global standard_icon := "res/wc.ico"
-global active_icon := "res/wca.ico"
-global disabled_icon := "res/wcd.ico"
+global icons := "res/wc.icons.dll"
 
 ; Activate debug messages?
 global have_debug := false
@@ -80,7 +78,7 @@ return
 main()
 {
     ; Early icon initialisation to prevent flashing
-    menu tray, icon, %standard_icon%
+    menu tray, icon, %icons%, 1
 
     ; Global state, one of WAITING, TYPING, or DISABLED
     state := "WAITING"
@@ -370,14 +368,14 @@ refresh_systray()
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
         menu tray, uncheck, &Disable
-        menu tray, icon, %standard_icon%, , 1
+        menu tray, icon, %icons%, 1, 1
         menu tray, tip, %app% (active)
     }
     else if (state == "TYPING")
     {
         suspend off
         menu tray, uncheck, &Disable
-        menu tray, icon, %active_icon%
+        menu tray, icon, %icons%, 2
         menu tray, tip, %app% (typing)
     }
     else if (state == "DISABLED")
@@ -385,7 +383,7 @@ refresh_systray()
         suspend on
         menu tray, check, &Disable
         ; TODO: use icon groups here
-        menu tray, icon, %disabled_icon%, , 1
+        menu tray, icon, %icons%, 3, 1
         menu tray, tip, %app% (disabled)
     }
 
