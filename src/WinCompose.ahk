@@ -481,7 +481,7 @@ load_sequences()
     count := 0
     loop read, %compose_file%
     {
-        ; Retrieve destination character
+        ; Retrieve destination character(s) -- could be an UTF-16 sequence
         right := regexreplace(a_loopreadline, r_right, "$2$3", ret)
         if (ret != 1)
             continue
@@ -586,15 +586,30 @@ fill_sequences(filter)
         val := v[2]
         desc := v[3]
 
+        ; Filter out if necessary
+        if (filter != val && !instr(key, filter) && !instr(desc, filter_low))
+            continue
+
         ; Insert into the GUI if applicable
-        if (filter == val || instr(key, filter) || instr(desc, filter_low))
+        sequence := "♦" . regexreplace(key, "(.)", " $1")
+        sequence := regexreplace(sequence, "  ", " {spc}")
+        result := val
+
+        if (strlen(val) == 1)
         {
-            sequence := "♦" . regexreplace(key, "(.)", " $1")
-            sequence := regexreplace(sequence, "  ", " {spc}")
-            result := val
-            uni := "U+" . num_to_hex(asc(val), 4)
-            lv_add("", sequence, val, uni, desc)
+            code := asc(val)
+            digits := 4
         }
+        else if (strlen(val) == 2)
+        {
+            code := (asc(substr(val, 1, 1)) - 0xd800) << 10
+            code += asc(substr(val, 2, 1)) + 0x10000 - 0xdc00
+            digits := 6
+        }
+
+        uni := "U+" . num_to_hex(code, digits)
+
+        lv_add("", sequence, val, uni, desc)
     }
 }
 
