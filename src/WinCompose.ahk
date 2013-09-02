@@ -13,7 +13,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.4.3"
+global version := "0.4.4"
 
 ; Configuration directory and file
 global config_dir := a_appdata . "\\" . app

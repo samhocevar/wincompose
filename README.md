@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.4.3.exe](/bin/WinCompose-Setup-0.4.3.exe)
+Latest release: [WinCompose-Setup-0.4.4.exe](/bin/WinCompose-Setup-0.4.4.exe)
 
 Quick start
 -----------
@@ -80,9 +80,13 @@ current application.
 Bugs
 ----
 
-As of now, WinCompose does not support Unicode code points after U+FFFF.
+There are no known bugs in WinCompose.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
+
+News for version 0.4.4 (2 September 2013)
+-----------------------------------------
+ - Support for Unicode codepoints above U+FFFF.
 
 News for version 0.4.3 (23 August 2013)
 --------------------------------------
