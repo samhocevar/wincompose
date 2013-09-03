@@ -597,17 +597,20 @@ fill_sequences(filter)
 
         if (strlen(val) == 1)
         {
+            prefix := "U+"
             code := asc(val)
             digits := 4
         }
         else if (strlen(val) == 2)
         {
+            ; HACK: prepend a non-printable character to fix sorting
+            prefix := chr(0x2063) . "U+"
             code := (asc(substr(val, 1, 1)) - 0xd800) << 10
             code += asc(substr(val, 2, 1)) + 0x10000 - 0xdc00
             digits := 6
         }
 
-        uni := "U+" . num_to_hex(code, digits)
+        uni := prefix . num_to_hex(code, digits)
 
         lv_add("", sequence, val, uni, desc)
     }
