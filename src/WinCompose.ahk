@@ -135,6 +135,7 @@ send_keystroke(keystroke)
         ; should not be here but send the character anyway.
         if (keystroke == "compose")
         {
+            check_keyboard_layout()
             state := "TYPING"
             settimer, reset_callback, %reset_delay%
         }
@@ -234,6 +235,41 @@ info(string)
     traytip, %app%, %string%, 10, 1
 }
 
+check_keyboard_layout()
+{
+    critical on ; don't self-interrupt
+    detecthiddenwindows on
+
+    winget client_hwnd, ID, A
+    client_thread := dllcall("user32\\GetWindowThreadProcessId", "uint", client_hwnd, "uint", 0, "uint")
+    client_layout := dllcall("user32\\GetKeyboardLayout", "uint", client_thread, "uint")
+
+    script_hwnd := dllcall("imm32\\ImmGetDefaultIMEWnd", "uint", a_scripthwnd, "uint")
+    script_thread := dllcall("user32\\GetWindowThreadProcessId", "uint", script_hwnd, "uint", 0, "uint")
+    script_layout := dllcall("user32\\GetKeyboardLayout", "uint", script_thread, "uint")
+
+    if (client_layout == script_layout)
+        return
+
+    set_hotkeys(false)
+
+    WM_INPUTLANGCHANGEREQUEST := 0x50
+    postmessage %WM_INPUTLANGCHANGEREQUEST%, 0, %client_layout%, , ahk_id %script_hwnd%
+
+    loop % 10
+    {
+        script_layout := dllcall("user32\\GetKeyboardLayout", "uint", script_thread, "uint")
+        if (client_layout == script_layout)
+            break
+        sleep, 50
+    }
+
+    ;if (client_layout != script_layout)
+    ;    msgbox, Something went wrong!
+
+    set_hotkeys(true)
+}
+
 debug(string)
 {
     if (have_debug)
@@ -261,7 +297,10 @@ setup_ui()
     menu tray, add, &Restart, restart_callback
     menu tray, add
     if (have_debug)
+    {
         menu tray, add, Key &History, history_callback
+        menu tray, add, Hotkey &List, hotkeylist_callback
+    }
     menu tray, add, &About, about_callback
     menu tray, add, E&xit, exit_callback
     menu tray, default, &Sequences…
@@ -280,18 +319,10 @@ setup_ui()
     gui add, edit, vmy_edit gedit_callback
     gui add, button, vmy_button default, Close
 
-    ; Hotkeys for all shifted letters
-    chars := "abcdefghijklmnopqrstuvwxyz"
-    loop, parse, chars
-        hotkey $+%a_loopfield%, key_callback
-
-    ; Hotkeys for all other ASCII characters, including non-shifted letters
-    chars .= "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
-    loop, parse, chars
-        hotkey $%a_loopfield%, key_callback
+    set_hotkeys(true)
 
     refresh_systray()
-    refresh_bindings()
+    refresh_hotkeys()
 
     return
 
@@ -302,7 +333,7 @@ key_callback:
 hotkeymenu_callback:
     compose_key := a_thismenuitem
     refresh_systray()
-    refresh_bindings()
+    refresh_hotkeys()
     return
 
 delaymenu_callback:
@@ -319,6 +350,10 @@ restart_callback:
 
 history_callback:
     keyhistory
+    return
+
+hotkeylist_callback:
+    listhotkeys
     return
 
 about_callback:
@@ -396,7 +431,31 @@ refresh_systray()
         menu, delaymenu, % (key == reset_delay) ? "check" : "uncheck", %val%
 }
 
-refresh_bindings()
+set_hotkeys(val)
+{
+    ; Hotkeys for all shifted letters
+    c1 := "abcdefghijklmnopqrstuvwxyz"
+
+    ; Hotkeys for all other ASCII characters, including non-shifted letters
+    c2 := c1 . "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
+
+    if (val)
+    {
+        loop, parse, c1
+            hotkey $+%a_loopfield%, key_callback, on
+        loop, parse, c2
+            hotkey $%a_loopfield%, key_callback, on
+    }
+    else
+    {
+        loop, parse, c1
+            hotkey $+%a_loopfield%, off, useerrorlevel
+        loop, parse, c2
+            hotkey $%a_loopfield%, off, useerrorlevel
+    }
+}
+
+refresh_hotkeys()
 {
     ; Disable any existing hotkeys
     for key, val in valid_keys
@@ -594,23 +653,23 @@ fill_sequences(filter)
         sequence := "♦" . regexreplace(key, "(.)", " $1")
         sequence := regexreplace(sequence, "  ", " {spc}")
         result := val
+        uni := "U+"
 
         if (strlen(val) == 1)
         {
-            prefix := "U+"
             code := asc(val)
             digits := 4
         }
         else if (strlen(val) == 2)
         {
-            ; HACK: prepend a non-printable character to fix sorting
-            prefix := chr(0x2063) . "U+"
             code := (asc(substr(val, 1, 1)) - 0xd800) << 10
             code += asc(substr(val, 2, 1)) + 0x10000 - 0xdc00
             digits := 6
+            ; HACK: prepend a non-printable character to fix sorting
+            uni := chr(0x2063) . uni
         }
 
-        uni := prefix . num_to_hex(code, digits)
+        uni .= num_to_hex(code, digits)
 
         lv_add("", sequence, val, uni, desc)
     }
