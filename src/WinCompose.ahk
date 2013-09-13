@@ -43,6 +43,23 @@ global valid_keys := { "Left Alt"      : "LAlt"
                      , "Scroll Lock"   : "ScrollLock"
                      , "` (Backtick)"  : "`" }
 
+; List of numeric keypad keys
+global num_keys := { "$Numpad0"    : "0"
+                   , "$Numpad1"    : "1"
+                   , "$Numpad2"    : "2"
+                   , "$Numpad3"    : "3"
+                   , "$Numpad4"    : "4"
+                   , "$Numpad5"    : "5"
+                   , "$Numpad6"    : "6"
+                   , "$Numpad7"    : "7"
+                   , "$Numpad8"    : "8"
+                   , "$Numpad9"    : "9"
+                   , "$NumpadDot"  : "."
+                   , "$NumpadDiv"  : "/"
+                   , "$NumpadMult" : "*"
+                   , "$NumpadAdd"  : "+"
+                   , "$NumpadSub"  : "-" }
+
 ; Default key used as compose key
 global default_key := "Right Alt"
 
@@ -158,6 +175,10 @@ send_keystroke(keystroke)
         }
         else
         {
+            ; If this is a numpad key, replace it with its ASCII value
+            if (num_keys.haskey(keystroke))
+                keystroke := "$" . num_keys[keystroke]
+
             ; The actual character is the last char of the keystroke
             char := substr(keystroke, strlen(keystroke))
 
@@ -445,6 +466,8 @@ set_hotkeys(val)
             hotkey $+%a_loopfield%, key_callback, on
         loop, parse, c2
             hotkey $%a_loopfield%, key_callback, on
+        for key, val in num_keys
+            hotkey $%key%, key_callback, on
     }
     else
     {
@@ -452,6 +475,8 @@ set_hotkeys(val)
             hotkey $+%a_loopfield%, off, useerrorlevel
         loop, parse, c2
             hotkey $%a_loopfield%, off, useerrorlevel
+        for key, val in num_keys
+            hotkey $%key%, off, useerrorlevel
     }
 }
 
