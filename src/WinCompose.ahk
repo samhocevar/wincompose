@@ -235,9 +235,20 @@ send_unicode(char)
     ; HACK: GTK+ behaves differently with Unicode
     ; HACK: XChat for Windows renames its own top-level window
     if (winactive("ahk_class gdkWindowToplevel") || winactive("ahk_class xchatWindowToplevel"))
+    {
         sendinput % "{Ctrl down}{Shift down}u" num_to_hex(asc(char), 4) "{Space}{Shift up}{Ctrl up}"
-    else
-        send %char%
+        return
+    }
+
+    ; HACK: if the character is pure ASCII, we need raw send otherwise AHK
+    ; may think it's a control character of some sort.
+    if (asc(char) < 0x7f)
+    {
+        send {raw}%char%
+        return
+    }
+
+    send %char%
 }
 
 send_raw(string)
