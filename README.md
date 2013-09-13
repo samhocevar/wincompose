@@ -87,6 +87,7 @@ Please report bugs to Sam Hocevar <sam@hocevar.net>
 News for version 0.4.5 (13 September 2013)
 -----------------------------------------
  - Support for numeric keypad keys.
+ - Bugfix for pure ASCII compose sequences.
  - Cosmetic UI fixes.
 
 News for version 0.4.4 (2 September 2013)
