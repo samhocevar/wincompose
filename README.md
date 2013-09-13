@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.4.4.exe](/bin/WinCompose-Setup-0.4.4.exe)
+Latest release: [WinCompose-Setup-0.4.5.exe](/bin/WinCompose-Setup-0.4.5.exe)
 
 Quick start
 -----------
@@ -83,6 +83,11 @@ Bugs
 There are no known bugs in WinCompose.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
+
+News for version 0.4.5 (13 September 2013)
+-----------------------------------------
+ - Support for numeric keypad keys.
+ - Cosmetic UI fixes.
 
 News for version 0.4.4 (2 September 2013)
 -----------------------------------------
