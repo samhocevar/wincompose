@@ -65,7 +65,8 @@ Features
 --------
 
 WinCompose supports the standard Compose file format. It ships with more than
-1000 compose rules from [Xorg](http://www.x.org/wiki/).
+1000 compose rules from [Xorg](http://www.x.org/wiki/). You can add custom
+rules but the file will be overwritten when you upgrade the software.
 
 WinCompose supports rules of more than 2 characters such as **( 3 )**
 for **③**.
