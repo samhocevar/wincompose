@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Wincompose by SamHocevar</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Wincompose</h1>
+        <p class="header">Compose Key for Windows</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/SamHocevar/wincompose/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/SamHocevar/wincompose/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/SamHocevar/wincompose">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/SamHocevar">SamHocevar</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="wincompose" class="anchor" href="#wincompose"><span class="octicon octicon-link"></span></a>WinCompose</h1>
+
+<p><img src="/web/icon.png" alt="Icon"></p>
+
+<p>A robust compose key for Windows, written by Sam Hocevar.</p>
+
+<p>It allows to easily write characters such as <strong>é ž à ō û ø ☺ ¤
+∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬</strong> using short and often very intuitive key
+combinations. For instance, <strong>ö</strong> is obtained using <strong>o</strong> and <strong>"</strong>, and
+<strong>♥</strong> is obtained using <strong>&lt;</strong> and <strong>3</strong>.</p>
+
+<h2>
+<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h2>
+
+<p>Latest release: <a href="/bin/WinCompose-Setup-0.4.5.exe">WinCompose-Setup-0.4.5.exe</a></p>
+
+<h2>
+<a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick start</h2>
+
+<p>After installation, WinCompose should appear in the System Tray;
+otherwise, launch it manually:</p>
+
+<p><img src="/web/shot1.png" alt="Quick Launch"></p>
+
+<p>Press and release the <strong>Right Alt</strong> key to initiate a compose sequence; the
+icon should change to indicate a compose sequence is in progress:</p>
+
+<p><img src="/web/shot2.png" alt="In Progress"></p>
+
+<p>Type in the keys for a compose sequence, such as <strong>A</strong> then <strong>E</strong> for <strong>Æ</strong>:</p>
+
+<p><img src="/web/shot3.png" alt="In Progress"></p>
+
+<p>If <strong>Right Alt</strong> is not suitable for you, right click on the tray icon to
+choose another key.</p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Compose rules are supposed to be intuitive. Here are some examples:</p>
+
+<ul>
+<li>
+<strong>` a</strong> → <strong>à</strong>
+</li>
+<li>
+<strong>' e</strong> → <strong>é</strong>
+</li>
+<li>
+<strong>^ i</strong> → <strong>î</strong>
+</li>
+<li>
+<strong>~ n</strong> → <strong>ñ</strong>
+</li>
+<li>
+<strong>/ o</strong> → <strong>ø</strong>
+</li>
+<li>
+<strong>" u</strong> → <strong>ü</strong>
+</li>
+<li>
+<strong>o c</strong> → <strong>©</strong>
+</li>
+<li>
+<strong>+ -</strong> → <strong>±</strong>
+</li>
+<li>
+<strong>: -</strong> → <strong>÷</strong>
+</li>
+<li>
+<strong>C C C P</strong> → <strong>☭</strong>
+</li>
+<li>
+<strong>( 2 3 )</strong> → <strong>㉓</strong>
+</li>
+<li>
+<strong>&lt; 3</strong> → <strong>♥</strong>
+</li>
+</ul><p>The full list of rules can be found in the <code>Compose.txt</code> file shipped with
+WinCompose, or by clicking on the WinCompose system tray icon or using the
+“Show Sequences…” menu entry:</p>
+
+<p><img src="/web/shot4.png" alt="Sequence List"></p>
+
+<p>The window allows you to filter the sequences being listed.</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<p>WinCompose supports the standard Compose file format. It ships with more than
+1000 compose rules from <a href="http://www.x.org/wiki/">Xorg</a>. You can add custom
+rules but the file will be overwritten when you upgrade the software.</p>
+
+<p>WinCompose supports rules of more than 2 characters such as <strong>( 3 )</strong>
+for <strong>③</strong>.</p>
+
+<p>WinCompose supports early exits. For instance, <strong>Compose &amp;</strong> will
+immediately type <strong>&amp;</strong> because there is currently no rule starting with <strong>&amp;</strong>.</p>
+
+<p>WinCompose does not emit unnecessary keystrokes, such as a backspace keystroke
+to erase the composing characters. Only the final character is sent to the
+current application.</p>
+
+<h2>
+<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
+
+<p>There are no known bugs in WinCompose.</p>
+
+<p>Please report bugs to Sam Hocevar <a href="mailto:sam@hocevar.net">sam@hocevar.net</a></p>
+
+<h2>
+<a name="news-for-version-045-13-september-2013" class="anchor" href="#news-for-version-045-13-september-2013"><span class="octicon octicon-link"></span></a>News for version 0.4.5 (13 September 2013)</h2>
+
+<ul>
+<li>Support for numeric keypad keys.</li>
+<li>Bugfix for pure ASCII compose sequences.</li>
+<li>Cosmetic UI fixes.</li>
+</ul><h2>
+<a name="news-for-version-044-2-september-2013" class="anchor" href="#news-for-version-044-2-september-2013"><span class="octicon octicon-link"></span></a>News for version 0.4.4 (2 September 2013)</h2>
+
+<ul>
+<li>Support for Unicode codepoints above U+FFFF.</li>
+</ul><h2>
+<a name="news-for-version-043-23-august-2013" class="anchor" href="#news-for-version-043-23-august-2013"><span class="octicon octicon-link"></span></a>News for version 0.4.3 (23 August 2013)</h2>
+
+<ul>
+<li>Support for 32-bit Windows.</li>
+<li>Support for the X-Chat IRC client.</li>
+</ul><h2>
+<a name="news-for-version-042-11-june-2013" class="anchor" href="#news-for-version-042-11-june-2013"><span class="octicon octicon-link"></span></a>News for version 0.4.2 (11 June 2013)</h2>
+
+<ul>
+<li>Better support for GTK+ applications such as Pidgin.</li>
+<li>Minor GUI fixes.</li>
+</ul><h2>
+<a name="news-for-version-041-6-may-2013" class="anchor" href="#news-for-version-041-6-may-2013"><span class="octicon octicon-link"></span></a>News for version 0.4.1 (6 May 2013)</h2>
+
+<ul>
+<li>“Menu”, “Escape” and “Backtick?? can now act as compose
+keys, too.</li>
+<li>Improved the filtering logic.</li>
+<li>Allow to choose the timeout delay from the context menu.</li>
+</ul><h2>
+<a name="news-for-version-040-4-may-2013" class="anchor" href="#news-for-version-040-4-may-2013"><span class="octicon octicon-link"></span></a>News for version 0.4.0 (4 May 2013)</h2>
+
+<ul>
+<li>“Pause” and “Scroll Lock” can now act as compose keys, too.</li>
+<li>It is possible to filter sequences by keyword</li>
+<li>The sequence window can be resized and is displayed with a simple
+click on the systray icon.</li>
+<li>Cosmetic fixes in the GUI.</li>
+</ul><h2>
+<a name="news-for-version-030-26-april-2013" class="anchor" href="#news-for-version-030-26-april-2013"><span class="octicon octicon-link"></span></a>News for version 0.3.0 (26 April 2013)</h2>
+
+<ul>
+<li>The key used for composing is now customisable.</li>
+</ul><h2>
+<a name="news-for-version-020-24-april-2013" class="anchor" href="#news-for-version-020-24-april-2013"><span class="octicon octicon-link"></span></a>News for version 0.2.0 (24 April 2013)</h2>
+
+<ul>
+<li>Highly improved compatibility with games.</li>
+<li>“Typing” and “Disabled” icons are now more easily told apart.</li>
+</ul><h2>
+<a name="news-for-version-011-23-april-2013" class="anchor" href="#news-for-version-011-23-april-2013"><span class="octicon octicon-link"></span></a>News for version 0.1.1 (23 April 2013)</h2>
+
+<ul>
+<li>Admin privileges are no longer required to start WinCompose at startup.</li>
+</ul><h2>
+<a name="news-for-version-01-22-april-2013" class="anchor" href="#news-for-version-01-22-april-2013"><span class="octicon octicon-link"></span></a>News for version 0.1 (22 April 2013)</h2>
+
+<ul>
+<li>Initial release.</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
