@@ -19,29 +19,27 @@ global version := "0.4.5"
 global config_dir := a_appdata . "\\" . app
 global config_file := config_dir . "\\settings.ini"
 
-; GUI window title
-global gui_title := app . " - List of Sequences"
-
-; About box text
-global about_text := app . " v" . version . "\n"
-       about_text .= "\n"
-       about_text .= "by Sam Hocevar <sam@hocevar.net>\n"
-       about_text .= "running on AHK v" . a_ahkversion . "\n"
+; Resource files
+global compose_file  := "res/Compose.txt"
+global keys_file     := "res/Keys.txt"
+global standard_icon := "res/wc.ico"
+global active_icon   := "res/wca.ico"
+global disabled_icon := "res/wcd.ico"
 
 ; List of keys that can be used for Compose
-global valid_keys := { "Left Alt"      : "LAlt"
-                     , "Right Alt"     : "RAlt"
-                     , "Left Control"  : "LControl"
-                     , "Right Control" : "RControl"
-                     , "Left Windows"  : "LWin"
-                     , "Right Windows" : "RWin"
-                     , "Caps Lock"     : "CapsLock"
-                     , "Num Lock"      : "NumLock"
-                     , "Pause"         : "Pause"
-                     , "Menu"          : "AppsKey"
-                     , "Escape"        : "Esc"
-                     , "Scroll Lock"   : "ScrollLock"
-                     , "` (Backtick)"  : "`" }
+global valid_keys := { _("keys.lalt")       : "LAlt"
+                     , _("keys.ralt")       : "RAlt"
+                     , _("keys.lcontrol")   : "LControl"
+                     , _("keys.rcontrol")   : "RControl"
+                     , _("keys.lwin")       : "LWin"
+                     , _("keys.rwin")       : "RWin"
+                     , _("keys.capslock")   : "CapsLock"
+                     , _("keys.numlock")    : "NumLock"
+                     , _("keys.pause")      : "Pause"
+                     , _("keys.menu")       : "AppsKey"
+                     , _("keys.esc")        : "Esc"
+                     , _("keys.scrolllock") : "ScrollLock"
+                     , _("keys.backtick")   : "`" }
 
 ; List of numeric keypad keys
 global num_keys := { "$Numpad0"    : "$0"
@@ -64,22 +62,15 @@ global num_keys := { "$Numpad0"    : "$0"
 global default_key := "Right Alt"
 
 ; List of timeout values
-global valid_delays := { 500   : "500 milliseconds"
-                       , 1000  : "1 second"
-                       , 2000  : "2 seconds"
-                       , 3000  : "3 seconds"
-                       , 5000  : "5 seconds"
-                       , 10000 : "10 seconds" }
+global valid_delays := { 500   : _("delays.500ms")
+                       , 1000  : _("delays.1000ms")
+                       , 2000  : _("delays.2000ms")
+                       , 3000  : _("delays.3000ms")
+                       , 5000  : _("delays.5000ms")
+                       , 10000 : _("delays.10000ms") }
 
 ; Default timeout value
 global default_delay := 5000
-
-; Resource files
-global compose_file := "res/Compose.txt"
-global keys_file := "res/Keys.txt"
-global standard_icon := "res/wc.ico"
-global active_icon := "res/wca.ico"
-global disabled_icon := "res/wcd.ico"
 
 ; Activate debug messages?
 global have_debug := false
@@ -131,6 +122,60 @@ save_settings()
     filecreatedir, %config_dir%
     iniwrite, %compose_key%, %config_file%, Global, compose_key
     iniwrite, %reset_delay%, %config_file%, Global, reset_delay
+}
+
+;
+; Handle i18n
+;
+
+_(str, args*)
+{
+    static t
+
+    if (!t)
+    {
+        t := {}
+
+        regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
+        files := [ "default", substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
+
+        FileEncoding UTF-8
+
+        for index, file in files
+        {
+            section := ""
+            loop read, % "locale/" file ".ini"
+            {
+                regex := "^[ \\t]*\\[([^ \\t\\]]*)[^ \\t\\]]*\\].*"
+                newsection := regexreplace(a_loopreadline, regex, "$1", ret)
+                if (ret == 1)
+                {
+                    section := newsection
+                    continue
+                }
+
+                regex := "^[ \\t]*([^ \\t=]*)[ \\t]*=[ \\t]*(""(.*)""|(.*[^ ]))[ \\t]*$"
+                key := regexreplace(a_loopreadline, regex, "$1", ret)
+                val := regexreplace(a_loopreadline, regex, "$3$4", ret2)
+                if (ret == 1 && ret2 == 1)
+                {
+                    t.insert(section "." key, val)
+                    continue
+                }
+            }
+        }
+    }
+
+    ret := t[str]
+
+    ret := regexreplace(ret, "@APP_NAME@", app)
+    ret := regexreplace(ret, "@APP_VERSION@", version)
+    ret := regexreplace(ret, "@AHK_VERSION@", a_ahkversion)
+
+    for index, arg in args
+        ret := regexreplace(ret, "@" index "@", arg)
+
+    return ret
 }
 
 ;
@@ -322,20 +367,20 @@ setup_ui()
     ; Build the menu
     menu tray, click, 1
     menu tray, NoStandard
-    menu tray, add, &Sequences…, showgui_callback
-    menu tray, add, Compose Key, :hotkeymenu
-    menu tray, add, Timeout, :delaymenu
-    menu tray, add, &Disable, toggle_callback
-    menu tray, add, &Restart, restart_callback
+    menu tray, add, % _("menu.sequences"), showgui_callback
+    menu tray, add, % _("menu.composekey"), :hotkeymenu
+    menu tray, add, % _("menu.timeout"), :delaymenu
+    menu tray, add, % _("menu.disable"), toggle_callback
+    menu tray, add, % _("menu.restart"), restart_callback
     menu tray, add
     if (have_debug)
     {
-        menu tray, add, Key &History, history_callback
-        menu tray, add, Hotkey &List, hotkeylist_callback
+        menu tray, add, % _("menu.history"), history_callback
+        menu tray, add, % _("menu.hotkeylist"), hotkeylist_callback
     }
-    menu tray, add, &About, about_callback
-    menu tray, add, E&xit, exit_callback
-    menu tray, default, &Sequences…
+    menu tray, add, % _("menu.about"), about_callback
+    menu tray, add, % _("menu.exit"), exit_callback
+    menu tray, default, % _("menu.sequences")
 
     ; Build the sequence list window
     global my_listbox, my_text, my_edit, my_button
@@ -345,11 +390,11 @@ setup_ui()
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, vmy_listbox w700 r18, Sequence|Char|Unicode|Description
+    gui add, listview, vmy_listbox w700 r18, % _("seq_win.columns")
     gui font
-    gui add, text, vmy_text, Search Filter:
+    gui add, text, vmy_text, % _("seq_win.filter")
     gui add, edit, vmy_edit gedit_callback
-    gui add, button, vmy_button default, Close
+    gui add, button, vmy_button default, % _("seq_win.close")
 
     set_hotkeys(true)
 
@@ -389,6 +434,10 @@ hotkeylist_callback:
     return
 
 about_callback:
+    about_text := _("about_win.line1") . "\n"
+    about_text .= _("about_win.line2") . "\n"
+    about_text .= _("about_win.line3") . "\n"
+    about_text .= _("about_win.line4") . "\n"
     msgbox 64, %app%, %about_text%
     return
 
@@ -404,7 +453,7 @@ guisize:
         h := a_guiheight
         guicontrol move, my_listbox, % "w" (w - 16) " h" (h - 45)
         guicontrol move, my_text, % "y" (h - 26)
-        guicontrol move, my_edit, % "x80 w" (w - 220) " y" (h - 30)
+        guicontrol move, my_edit, % "x" 80 " w" (w - 220) " y" (h - 30)
         guicontrol move, my_button, % "x" (w - 87) " y" (h - 30) " w80"
     }
     return
@@ -415,6 +464,7 @@ edit_callback:
     return
 
 showgui_callback:
+    gui_title := _("seq_win.title")
     if (winexist(gui_title))
         goto hidegui_callback
     refresh_gui()
@@ -436,21 +486,21 @@ refresh_systray()
     {
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
-        menu tray, uncheck, &Disable
+        menu tray, uncheck, % _("menu.disable")
         menu tray, icon, %standard_icon%, , 1
         menu tray, tip, %app% (active)
     }
     else if (state == "TYPING")
     {
         suspend off
-        menu tray, uncheck, &Disable
+        menu tray, uncheck, % _("menu.disable")
         menu tray, icon, %active_icon%
         menu tray, tip, %app% (typing)
     }
     else if (state == "DISABLED")
     {
         suspend on
-        menu tray, check, &Disable
+        menu tray, check, % _("menu.disable")
         ; TODO: use icon groups here
         menu tray, icon, %disabled_icon%, , 1
         menu tray, tip, %app% (disabled)
@@ -619,7 +669,7 @@ load_sequences()
         }
     }
 
-    info("Loaded " count " Sequences\nCompose Key: " compose_key)
+    info(_("tip_win.loaded", count) "\n" _("tip_win.keyinfo", compose_key) "\n")
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have

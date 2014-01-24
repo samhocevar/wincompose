@@ -19,6 +19,7 @@ Source: "res\Keys.txt"; DestDir: "{app}\res"
 Source: "res\wc.ico"; DestDir: "{app}\res"
 Source: "res\wca.ico"; DestDir: "{app}\res"
 Source: "res\wcd.ico"; DestDir: "{app}\res"
+Source: "locale\default.ini"; DestDir: "{app}\locale"
 
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
