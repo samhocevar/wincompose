@@ -383,7 +383,7 @@ setup_ui()
     menu tray, default, % _("menu.sequences")
 
     ; Build the sequence list window
-    global my_listbox, my_text, my_edit, my_button
+    global my_listbox, my_text, my_textw, my_edit, my_button
     gui +resize +minsize300x115
     gui margin, 8, 8
     gui font, s11
@@ -393,6 +393,7 @@ setup_ui()
     gui add, listview, vmy_listbox w700 r18, % _("seq_win.columns")
     gui font
     gui add, text, vmy_text, % _("seq_win.filter")
+    guicontrolget my_text, pos
     gui add, edit, vmy_edit gedit_callback
     gui add, button, vmy_button default, % _("seq_win.close")
 
@@ -453,7 +454,7 @@ guisize:
         h := a_guiheight
         guicontrol move, my_listbox, % "w" (w - 16) " h" (h - 45)
         guicontrol move, my_text, % "y" (h - 26)
-        guicontrol move, my_edit, % "x" 80 " w" (w - 220) " y" (h - 30)
+        guicontrol move, my_edit, % "x" (my_textw + 15) " w" (w - 140 - my_textw) " y" (h - 30)
         guicontrol move, my_button, % "x" (w - 87) " y" (h - 30) " w80"
     }
     return
