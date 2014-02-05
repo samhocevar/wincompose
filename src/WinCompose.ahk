@@ -27,19 +27,22 @@ global active_icon   := "res/wca.ico"
 global disabled_icon := "res/wcd.ico"
 
 ; List of keys that can be used for Compose
-global valid_keys := { _("keys.lalt")       : "LAlt"
-                     , _("keys.ralt")       : "RAlt"
-                     , _("keys.lcontrol")   : "LControl"
-                     , _("keys.rcontrol")   : "RControl"
-                     , _("keys.lwin")       : "LWin"
-                     , _("keys.rwin")       : "RWin"
-                     , _("keys.capslock")   : "CapsLock"
-                     , _("keys.numlock")    : "NumLock"
-                     , _("keys.pause")      : "Pause"
-                     , _("keys.menu")       : "AppsKey"
-                     , _("keys.esc")        : "Esc"
-                     , _("keys.scrolllock") : "ScrollLock"
-                     , _("keys.backtick")   : "`" }
+global valid_keys := { "LAlt"       : _("keys.lalt")
+                     , "RAlt"       : _("keys.ralt")
+                     , "LControl"   : _("keys.lcontrol")
+                     , "RControl"   : _("keys.rcontrol")
+                     , "LWin"       : _("keys.lwin")
+                     , "RWin"       : _("keys.rwin")
+                     , "CapsLock"   : _("keys.capslock")
+                     , "NumLock"    : _("keys.numlock")
+                     , "Pause"      : _("keys.pause")
+                     , "AppsKey"    : _("keys.menu")
+                     , "Esc"        : _("keys.esc")
+                     , "ScrollLock" : _("keys.scrolllock")
+                     , "`"          : _("keys.backtick") }
+
+; Default key used as compose key
+global default_key := "RAlt"
 
 ; List of numeric keypad keys
 global num_keys := { "$Numpad0"    : "$0"
@@ -57,9 +60,6 @@ global num_keys := { "$Numpad0"    : "$0"
                    , "$NumpadMult" : "$*"
                    , "$NumpadAdd"  : "$+"
                    , "$NumpadSub"  : "$-" }
-
-; Default key used as compose key
-global default_key := "Right Alt"
 
 ; List of timeout values
 global valid_delays := { 500   : _("delays.500ms")
@@ -209,8 +209,8 @@ send_keystroke(keystroke)
     {
         ; If the compose key is an actual character, don't cancel the compose
         ; sequence since the character could be used in the sequence itself.
-        if (keystroke == "compose" && strlen(valid_keys[compose_key]) == 1)
-            keystroke := valid_keys[compose_key]
+        if (keystroke == "compose" && strlen(compose_key) == 1)
+            keystroke := compose_key
 
         if (keystroke == "compose")
         {
@@ -359,7 +359,7 @@ setup_ui()
 
     ; The hotkey selection menu
     for key, val in valid_keys
-        menu, hotkeymenu, add, %key%, hotkeymenu_callback
+        menu, hotkeymenu, add, %val%, hotkeymenu_callback
 
     for key, val in valid_delays
         menu, delaymenu, add, %val%, delaymenu_callback
@@ -409,7 +409,9 @@ key_callback:
     return
 
 hotkeymenu_callback:
-    compose_key := a_thismenuitem
+    for key, val in valid_keys
+        if (val == a_thismenuitem)
+            compose_key := key
     refresh_systray()
     refresh_hotkeys()
     return
@@ -508,7 +510,7 @@ refresh_systray()
     }
 
     for key, val in valid_keys
-        menu, hotkeymenu, % (key == compose_key) ? "check" : "uncheck", %key%
+        menu, hotkeymenu, % (key == compose_key) ? "check" : "uncheck", %val%
 
     for key, val in valid_delays
         menu, delaymenu, % (key == reset_delay) ? "check" : "uncheck", %val%
@@ -547,19 +549,19 @@ refresh_hotkeys()
     ; Disable any existing hotkeys
     for key, val in valid_keys
     {
-        hotkey %val%, off, useerrorlevel
-        hotkey ^%val%, off, useerrorlevel
-        hotkey +%val%, off, useerrorlevel
-        hotkey !%val%, off, useerrorlevel
+        hotkey %key%, off, useerrorlevel
+        hotkey ^%key%, off, useerrorlevel
+        hotkey +%key%, off, useerrorlevel
+        hotkey !%key%, off, useerrorlevel
     }
 
     ; Reactivate hotkeys for 1-character compose keys
     for key, val in valid_keys
-        if (strlen(val) == 1)
-            hotkey $%val%, key_callback, on
+        if (strlen(key) == 1)
+            hotkey $%key%, key_callback, on
 
     ; Change the value of the hotkey
-    keysym := valid_keys[compose_key]
+    keysym := compose_key
 
     ; Activate the compose key for real
     hotkey %keysym%, compose_callback, on
@@ -670,7 +672,7 @@ load_sequences()
         }
     }
 
-    info(_("tip_win.loaded", count) "\n" _("tip_win.keyinfo", compose_key) "\n")
+    info(_("tip_win.loaded", count) "\n" _("tip_win.keyinfo", valid_keys[compose_key]) "\n")
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have
