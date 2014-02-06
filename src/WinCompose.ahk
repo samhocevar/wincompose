@@ -22,9 +22,7 @@ global config_file := config_dir . "\\settings.ini"
 ; Resource files
 global compose_file  := "res/Compose.txt"
 global keys_file     := "res/Keys.txt"
-global standard_icon := "res/wc.ico"
-global active_icon   := "res/wca.ico"
-global disabled_icon := "res/wcd.ico"
+global resource_file := "res/resources.dll"
 
 ; List of keys that can be used for Compose
 global valid_keys := { "LAlt"       : _("keys.lalt")
@@ -88,7 +86,7 @@ return
 main()
 {
     ; Early icon initialisation to prevent flashing
-    menu tray, icon, %standard_icon%
+    menu tray, icon, %resource_file%, 1
 
     ; Global state, one of WAITING, TYPING, or DISABLED
     state := "WAITING"
@@ -490,14 +488,14 @@ refresh_systray()
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
         menu tray, uncheck, % _("menu.disable")
-        menu tray, icon, %standard_icon%, , 1
+        menu tray, icon, %resource_file%, 1, 1
         menu tray, tip, %app% (active)
     }
     else if (state == "TYPING")
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
-        menu tray, icon, %active_icon%
+        menu tray, icon, %resource_file%, 2
         menu tray, tip, %app% (typing)
     }
     else if (state == "DISABLED")
@@ -505,7 +503,7 @@ refresh_systray()
         suspend on
         menu tray, check, % _("menu.disable")
         ; TODO: use icon groups here
-        menu tray, icon, %disabled_icon%, , 1
+        menu tray, icon, %resource_file%, 2, 1
         menu tray, tip, %app% (disabled)
     }
 
