@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.4.5.exe](/bin/WinCompose-Setup-0.4.5.exe)
+Latest release: [WinCompose-Setup-0.4.6.exe](/bin/WinCompose-Setup-0.4.6.exe)
 
 Quick start
 -----------
@@ -90,9 +90,10 @@ Please report bugs to Sam Hocevar <sam@hocevar.net>
 News
 ----
 
-News for upcoming version
+News for version 0.4.6 (26 February 2014)
  - Internationalisation support.
  - The key timeout can be entirely disabled.
+ - Unicode characters in the sequence window can be copied to the clipboard.
 
 News for version 0.4.5 (13 September 2013)
  - Support for numeric keypad keys.
