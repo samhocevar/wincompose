@@ -75,7 +75,7 @@ global default_delay := 5000
 global have_debug := false
 
 ; Global runtime variables
-global state, compose_key, reset_delay
+global state, compose_key, reset_delay, selected_char
 
 main()
 return
@@ -168,7 +168,7 @@ _(str, args*)
         }
     }
 
-    ret := t[str]
+    ret := t.haskey(str) ? t[str] : "[" str "]"
 
     ret := regexreplace(ret, "@APP_NAME@", app)
     ret := regexreplace(ret, "@APP_VERSION@", version)
@@ -369,10 +369,11 @@ setup_ui()
     for key, val in valid_keys
         menu, hotkeymenu, add, %val%, hotkeymenu_callback
 
+    ; The delay selection menu
     for key, val in valid_delays
         menu, delaymenu, add, %val%, delaymenu_callback
 
-    ; Build the menu
+    ; Build the systray menu
     menu tray, click, 1
     menu tray, NoStandard
     menu tray, add, % _("menu.sequences"), showgui_callback
@@ -404,6 +405,9 @@ setup_ui()
     guicontrolget my_text, pos
     gui add, edit, vmy_edit gedit_callback
     gui add, button, vmy_button default, % _("seq_win.close")
+
+    ; The copy character menu
+    menu, contextmenu, add, % _("contextmenu.copy"), copychar_callback
 
     set_hotkeys(true)
 
@@ -467,6 +471,21 @@ guisize:
         guicontrol move, my_edit, % "x" (my_textw + 15) " w" (w - 140 - my_textw) " y" (h - 30)
         guicontrol move, my_button, % "x" (w - 87) " y" (h - 30) " w80"
     }
+    return
+
+guicontextmenu:
+    if (a_guicontrol == "my_listbox")
+    {
+        if (a_eventinfo > 0)
+        {
+            lv_gettext(selected_char, a_eventinfo, 2)
+            menu, contextmenu, show
+        }
+    }
+    return
+
+copychar_callback:
+    clipboard := selected_char
     return
 
 edit_callback:
