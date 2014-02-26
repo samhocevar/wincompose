@@ -26,7 +26,7 @@ icon should change to indicate a compose sequence is in progress.
 
 Then type in the keys for a compose sequence, such as **A** then **E** for **Æ**:
 
-![Quick Launch](/web/shot1.png) ![In Progress](/web/shot2.png) ![In Progress](/web/shot3.png)
+![Quick Launch](/web/shot1.png)
 
 If **Right Alt** is not suitable for you, right click on the tray icon to
 choose another key.
@@ -53,7 +53,7 @@ The full list of rules can be found in the `Compose.txt` file shipped with
 WinCompose, or by clicking on the WinCompose system tray icon or using the
 “Show Sequences…” menu entry:
 
-![Sequence List](/web/shot4.png)
+![Sequence List](/web/shot2.png)
 
 The window allows you to filter the sequences being listed.
 
