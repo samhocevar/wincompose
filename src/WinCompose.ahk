@@ -65,7 +65,8 @@ global valid_delays := { 500   : _("delays.500ms")
                        , 2000  : _("delays.2000ms")
                        , 3000  : _("delays.3000ms")
                        , 5000  : _("delays.5000ms")
-                       , 10000 : _("delays.10000ms") }
+                       , 10000 : _("delays.10000ms")
+                       , -1    : _("delays.infinite") }
 
 ; Default timeout value
 global default_delay := 5000
@@ -200,7 +201,8 @@ send_keystroke(keystroke)
         {
             check_keyboard_layout()
             state := "TYPING"
-            settimer, reset_callback, %reset_delay%
+            if (reset_delay > 0)
+                settimer, reset_callback, %reset_delay%
         }
         else
             send_raw(char)
@@ -253,7 +255,8 @@ send_keystroke(keystroke)
             }
             else
             {
-                settimer, reset_callback, %reset_delay%
+                if (reset_delay > 0)
+                    settimer, reset_callback, %reset_delay%
             }
 
             debug(info)
