@@ -1,6 +1,6 @@
 ﻿
 ;
-; Copyright: (c) 2013 Sam Hocevar <sam@hocevar.net>
+; Copyright: (c) 2013-2014 Sam Hocevar <sam@hocevar.net>
 ;   This program is free software; you can redistribute it and/or
 ;   modify it under the terms of the Do What The Fuck You Want To
 ;   Public License, Version 2, as published by the WTFPL Task Force.
@@ -85,6 +85,9 @@ return
 
 main()
 {
+    ; Don't crash if the icons cannot be found
+    menu tray, useerrorlevel
+
     ; Early icon initialisation to prevent flashing
     menu tray, icon, %resource_file%, 1
 
@@ -231,17 +234,19 @@ send_keystroke(keystroke)
                     char := chr(asc(char) - asc("a") + asc("A"))
 
             sequence .= char
-            debug("Sequence: [ " sequence " ]")
+
+            info := "Sequence: [ " sequence " ]"
 
             if (has_sequence(sequence))
             {
+                info .= " -> [ " get_sequence(sequence) " ]"
                 send_unicode(get_sequence(sequence))
                 state := "WAITING"
                 sequence := ""
             }
             else if (!has_prefix(sequence))
             {
-                debug("Disabling Dead End Sequence [ " sequence " ]")
+                info .= " ABORTED"
                 send_raw(sequence)
                 state := "WAITING"
                 sequence := ""
@@ -250,6 +255,8 @@ send_keystroke(keystroke)
             {
                 settimer, reset_callback, %reset_delay%
             }
+
+            debug(info)
         }
     }
 
