@@ -19,18 +19,14 @@ Quick start
 -----------
 
 After installation, WinCompose should appear in the System Tray;
-otherwise, launch it manually:
-
-![Quick Launch](/web/shot1.png)
+otherwise, launch it manually.
 
 Press and release the **Right Alt** key to initiate a compose sequence; the
-icon should change to indicate a compose sequence is in progress:
+icon should change to indicate a compose sequence is in progress.
 
-![In Progress](/web/shot2.png)
+Then type in the keys for a compose sequence, such as **A** then **E** for **Æ**:
 
-Type in the keys for a compose sequence, such as **A** then **E** for **Æ**:
-
-![In Progress](/web/shot3.png)
+![Quick Launch](/web/shot1.png) ![In Progress](/web/shot2.png) ![In Progress](/web/shot3.png)
 
 If **Right Alt** is not suitable for you, right click on the tray icon to
 choose another key.
@@ -81,39 +77,46 @@ current application.
 Bugs
 ----
 
-There are no known bugs in WinCompose.
+WinCompose is known to misbehave in the following situations:
+ - When the Synergy keyboard sharing software is running.
+ - When several keyboard layouts are installed on the computer and they are
+   changed on the fly.
+
+Most of these issues are actually bugs in the AutoHotKey software upon which
+WinCompose is based.
 
 Please report bugs to Sam Hocevar <sam@hocevar.net>
 
+News
+----
+
+News for upcoming version
+ - Internationalisation support.
+ - The key timeout can be entirely disabled.
+
 News for version 0.4.5 (13 September 2013)
------------------------------------------
  - Support for numeric keypad keys.
  - Bugfix for pure ASCII compose sequences.
  - Cosmetic UI fixes.
 
 News for version 0.4.4 (2 September 2013)
------------------------------------------
  - Support for Unicode codepoints above U+FFFF.
 
 News for version 0.4.3 (23 August 2013)
---------------------------------------
  - Support for 32-bit Windows.
  - Support for the X-Chat IRC client.
 
 News for version 0.4.2 (11 June 2013)
---------------------------------------
  - Better support for GTK+ applications such as Pidgin.
  - Minor GUI fixes.
 
 News for version 0.4.1 (6 May 2013)
---------------------------------------
  - “Menu”, “Escape” and “Backtick�� can now act as compose
    keys, too.
  - Improved the filtering logic.
  - Allow to choose the timeout delay from the context menu.
 
 News for version 0.4.0 (4 May 2013)
---------------------------------------
  - “Pause” and “Scroll Lock” can now act as compose keys, too.
  - It is possible to filter sequences by keyword
  - The sequence window can be resized and is displayed with a simple
@@ -121,19 +124,15 @@ News for version 0.4.0 (4 May 2013)
  - Cosmetic fixes in the GUI.
 
 News for version 0.3.0 (26 April 2013)
---------------------------------------
  - The key used for composing is now customisable.
 
 News for version 0.2.0 (24 April 2013)
---------------------------------------
  - Highly improved compatibility with games.
  - “Typing” and “Disabled” icons are now more easily told apart.
 
 News for version 0.1.1 (23 April 2013)
---------------------------------------
  - Admin privileges are no longer required to start WinCompose at startup.
 
 News for version 0.1 (22 April 2013)
-------------------------------------
  - Initial release.
 
