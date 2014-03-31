@@ -336,7 +336,7 @@ check_keyboard_layout()
     if (client_layout == script_layout)
         return
 
-    set_hotkeys(false)
+    set_ascii_hotkeys(false)
 
     WM_INPUTLANGCHANGEREQUEST := 0x50
     postmessage %WM_INPUTLANGCHANGEREQUEST%, 0, %client_layout%, , ahk_id %script_hwnd%
@@ -352,7 +352,7 @@ check_keyboard_layout()
     ;if (client_layout != script_layout)
     ;    msgbox, Something went wrong!
 
-    set_hotkeys(true)
+    set_ascii_hotkeys(true)
 }
 
 debug(string)
@@ -409,10 +409,10 @@ setup_ui()
     ; The copy character menu
     menu, contextmenu, add, % _("contextmenu.copy"), copychar_callback
 
-    set_hotkeys(true)
+    set_ascii_hotkeys(true)
+    set_compose_hotkeys(true)
 
     refresh_systray()
-    refresh_hotkeys()
 
     return
 
@@ -421,11 +421,12 @@ key_callback:
     return
 
 hotkeymenu_callback:
+    set_compose_hotkeys(false)
     for key, val in valid_keys
         if (val == a_thismenuitem)
             compose_key := key
     refresh_systray()
-    refresh_hotkeys()
+    set_compose_hotkeys(true)
     return
 
 delaymenu_callback:
@@ -542,7 +543,7 @@ refresh_systray()
         menu, delaymenu, % (key == reset_delay) ? "check" : "uncheck", %val%
 }
 
-set_hotkeys(val)
+set_ascii_hotkeys(must_enable)
 {
     ; Hotkeys for all shifted letters
     c1 := "abcdefghijklmnopqrstuvwxyz"
@@ -551,40 +552,43 @@ set_hotkeys(val)
     c2 := c1 . "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
 
     loop, parse, c1
-        hotkey $+%a_loopfield%, key_callback, % val ? "on" : "off", useerrorlevel
+        hotkey $+%a_loopfield%, key_callback, % must_enable ? "on" : "off", useerrorlevel
     loop, parse, c2
-        hotkey $%a_loopfield%, key_callback, % val ? "on" : "off", useerrorlevel
+        hotkey $%a_loopfield%, key_callback, % must_enable ? "on" : "off", useerrorlevel
     for key, val in num_keys
-        hotkey %key%, key_callback, % val ? "on" : "off", useerrorlevel
+        hotkey %key%, key_callback, % must_enable ? "on" : "off", useerrorlevel
 }
 
-refresh_hotkeys()
+set_compose_hotkeys(must_enable)
 {
-    ; Disable any existing hotkeys
-    for key, val in valid_keys
+    if (must_enable)
     {
-        hotkey %key%, off, useerrorlevel
-        hotkey ^%key%, off, useerrorlevel
-        hotkey +%key%, off, useerrorlevel
-        hotkey !%key%, off, useerrorlevel
+        ; Make sure that 1-character hotkeys are activated; these may have
+        ; been deactivated by set_compose_hotkeys(false).
+        for key, val in valid_keys
+            if (strlen(key) == 1)
+                hotkey $%key%, key_callback, on, useerrorlevel
+
+        ; Activate the compose key for real
+        hotkey %compose_key%, compose_callback, on, useerrorlevel
+
+        ; HACK: Activate these variants just in case; for instance, Outlook 2010
+        ; seems to automatically remap "Right Alt" to "Left Control + Right Alt".
+        hotkey ^%compose_key%, compose_callback, on, useerrorlevel
+        hotkey +%compose_key%, compose_callback, on, useerrorlevel
+        hotkey !%compose_key%, compose_callback, on, useerrorlevel
     }
-
-    ; Reactivate hotkeys for 1-character compose keys
-    for key, val in valid_keys
-        if (strlen(key) == 1)
-            hotkey $%key%, key_callback, on
-
-    ; Change the value of the hotkey
-    keysym := compose_key
-
-    ; Activate the compose key for real
-    hotkey %keysym%, compose_callback, on
-
-    ; HACK: Activate these variants just in case; for instance, Outlook 2010
-    ; seems to automatically remap "Right Alt" to "Left Control + Right Alt".
-    hotkey ^%keysym%, compose_callback, on
-    hotkey +%keysym%, compose_callback, on
-    hotkey !%keysym%, compose_callback, on
+    else
+    {
+        ; Disable any existing hotkeys
+        for key, val in valid_keys
+        {
+            hotkey %key%, off, useerrorlevel
+            hotkey ^%key%, off, useerrorlevel
+            hotkey +%key%, off, useerrorlevel
+            hotkey !%key%, off, useerrorlevel
+        }
+    }
 
     return
 
