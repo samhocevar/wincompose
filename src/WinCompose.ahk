@@ -531,7 +531,6 @@ refresh_systray()
     {
         suspend on
         menu tray, check, % _("menu.disable")
-        ; TODO: use icon groups here
         menu tray, icon, %resource_file%, 3, 1
         menu tray, tip, % _("tray_tip.disabled")
     }
