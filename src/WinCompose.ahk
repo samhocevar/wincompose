@@ -518,22 +518,22 @@ refresh_systray()
         suspend on
         menu tray, uncheck, % _("menu.disable")
         menu tray, icon, %resource_file%, 1, 1
-        menu tray, tip, %app% (active)
+        menu tray, tip, % _("tray_tip.active")
     }
     else if (state == "TYPING")
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
         menu tray, icon, %resource_file%, 2
-        menu tray, tip, %app% (typing)
+        menu tray, tip, % _("tray_tip.typing")
     }
     else if (state == "DISABLED")
     {
         suspend on
         menu tray, check, % _("menu.disable")
         ; TODO: use icon groups here
-        menu tray, icon, %resource_file%, 2, 1
-        menu tray, tip, %app% (disabled)
+        menu tray, icon, %resource_file%, 3, 1
+        menu tray, tip, % _("tray_tip.disabled")
     }
 
     for key, val in valid_keys
@@ -699,7 +699,7 @@ load_sequences()
         }
     }
 
-    info(_("tip_win.loaded", count) "\n" _("tip_win.keyinfo", valid_keys[compose_key]) "\n")
+    info(_("tray_notify.loaded", count) "\n" _("tray_notify.keyinfo", valid_keys[compose_key]) "\n")
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have
