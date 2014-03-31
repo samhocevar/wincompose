@@ -191,7 +191,15 @@ send_keystroke(keystroke)
 
     if (state == "DISABLED")
     {
-        ; This should not happen; do nothing
+        ; This should not happen, because the DISABLED state should
+        ; completely disable the compose key and the other callbacks
+        ; are automatically disabled in suspend mode, but I guess it
+        ; doesn't hurt to have some fallback solution.
+        if (keystroke == "compose")
+            send %compose_key%
+        else
+            send_raw(char)
+        sequence := ""
     }
     else if (state == "WAITING")
     {
@@ -276,9 +284,15 @@ reset_callback:
 
 toggle_callback:
     if (state == "DISABLED")
+    {
         state := "WAITING"
+        set_compose_hotkeys(true)
+    }
     else
+    {
+        set_compose_hotkeys(false)
         state := "DISABLED"
+    }
     refresh_systray()
     return
 }
@@ -593,9 +607,9 @@ set_compose_hotkeys(must_enable)
     return
 
 compose_callback:
-    suspend ; We're not affected by suspend
-    if (state != "DISABLED")
-        send_keystroke("compose")
+    ; We don't want to be affected by suspend.
+    suspend
+    send_keystroke("compose")
     return
 }
 
