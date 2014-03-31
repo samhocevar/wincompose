@@ -551,24 +551,12 @@ set_hotkeys(val)
     ; Hotkeys for all other ASCII characters, including non-shifted letters
     c2 := c1 . "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
 
-    if (val)
-    {
-        loop, parse, c1
-            hotkey $+%a_loopfield%, key_callback, on
-        loop, parse, c2
-            hotkey $%a_loopfield%, key_callback, on
-        for key, val in num_keys
-            hotkey %key%, key_callback, on
-    }
-    else
-    {
-        loop, parse, c1
-            hotkey $+%a_loopfield%, off, useerrorlevel
-        loop, parse, c2
-            hotkey $%a_loopfield%, off, useerrorlevel
-        for key, val in num_keys
-            hotkey %key%, off, useerrorlevel
-    }
+    loop, parse, c1
+        hotkey $+%a_loopfield%, key_callback, % val ? "on" : "off", useerrorlevel
+    loop, parse, c2
+        hotkey $%a_loopfield%, key_callback, % val ? "on" : "off", useerrorlevel
+    for key, val in num_keys
+        hotkey %key%, key_callback, % val ? "on" : "off", useerrorlevel
 }
 
 refresh_hotkeys()
