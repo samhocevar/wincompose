@@ -607,8 +607,8 @@ set_compose_hotkeys(must_enable)
     return
 
 compose_callback:
-    ; We don't want to be affected by suspend.
-    suspend
+    ; This hotkey must always be active
+    suspend permit
     send_keystroke("compose")
     return
 }
