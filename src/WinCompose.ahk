@@ -565,16 +565,22 @@ set_ascii_hotkeys(must_enable)
     ; Hotkeys for all other ASCII characters, including non-shifted letters
     c2 := c1 . "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
 
+    flag := must_enable ? "on" : "off"
     loop, parse, c1
-        hotkey $+%a_loopfield%, key_callback, % must_enable ? "on" : "off", useerrorlevel
+        hotkey $+%a_loopfield%, key_callback, %flag%, useerrorlevel
     loop, parse, c2
-        hotkey $%a_loopfield%, key_callback, % must_enable ? "on" : "off", useerrorlevel
+        hotkey $%a_loopfield%, key_callback, %flag%, useerrorlevel
     for key, val in num_keys
-        hotkey %key%, key_callback, % must_enable ? "on" : "off", useerrorlevel
+        hotkey %key%, key_callback, %flag%, useerrorlevel
 }
 
 set_compose_hotkeys(must_enable)
 {
+    ; HACK: The ^ + ! variants are here just in case; for instance, Outlook 2010
+    ; seems to automatically remap "Right Alt" to "Left Control + Right Alt", so
+    ; obviously in this case we need to add hooks for LControl + RAlt.
+    compose_prefixes := "$^+!"
+
     if (must_enable)
     {
         ; Make sure that 1-character hotkeys are activated; these may have
@@ -584,23 +590,22 @@ set_compose_hotkeys(must_enable)
                 hotkey $%key%, key_callback, on, useerrorlevel
 
         ; Activate the compose key for real
-        hotkey %compose_key%, compose_callback, on, useerrorlevel
-
-        ; HACK: Activate these variants just in case; for instance, Outlook 2010
-        ; seems to automatically remap "Right Alt" to "Left Control + Right Alt".
-        hotkey ^%compose_key%, compose_callback, on, useerrorlevel
-        hotkey +%compose_key%, compose_callback, on, useerrorlevel
-        hotkey !%compose_key%, compose_callback, on, useerrorlevel
+        loop, parse, compose_prefixes
+        {
+            hotkey % a_loopfield compose_key, compose_callback, on, useerrorlevel
+            hotkey % a_loopfield compose_key " up", compose_callback, on, useerrorlevel
+        }
     }
     else
     {
         ; Disable any existing hotkeys
-        for key, val in valid_keys
+        loop, parse, compose_prefixes
         {
-            hotkey %key%, off, useerrorlevel
-            hotkey ^%key%, off, useerrorlevel
-            hotkey +%key%, off, useerrorlevel
-            hotkey !%key%, off, useerrorlevel
+            for key, val in valid_keys
+            {
+                hotkey % a_loopfield key, off, useerrorlevel
+                hotkey % a_loopfield key " up", off, useerrorlevel
+            }
         }
     }
 
@@ -609,7 +614,18 @@ set_compose_hotkeys(must_enable)
 compose_callback:
     ; This hotkey must always be active
     suspend permit
-    send_keystroke("compose")
+    global compose_is_down
+    if (instr(a_thishotkey, " up"))
+    {
+        ; Compose was released
+        compose_is_down := false
+    }
+    else if (!compose_is_down)
+    {
+        ; Compose was pressed down -- protect against autorepeat
+        compose_is_down := true
+        send_keystroke("compose")
+    }
     return
 }
 
