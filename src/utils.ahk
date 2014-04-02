@@ -7,13 +7,11 @@
 ;   See http://www.wtfpl.net/ for more details.
 
 
-; Return the length of an array
+; Return the length of an array, provided the data indices are 1, 2,
+; 3, ... n, without any holes.
 length(array)
 {
-    if (!array.haskey(1))
-        return 0
-
-    low := 1, high := 1
+    low := 0, high := 1
 
     ; Find an upper bound for the length
     while (array.haskey(high))
