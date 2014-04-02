@@ -2,7 +2,8 @@
 VERSION = 0.4.6
 
 ISS = installer.iss
-AHK = WinCompose.ahk
+AHK = main.ahk
+INC = constants.ahk utils.ahk
 RC = resources.rc
 
 ICONS = res/wc.ico res/wca.ico res/wcd.ico
@@ -28,10 +29,10 @@ installer: fixsource $(DLL) $(EXE) $(ISS)
 	rm -f $@
 	"$(ISCCDIR)\\ISCC.exe" $(ISS)
 
-obj/%.exe: %.ahk
+obj/%.exe: $(AHK) $(INC)
 	@mkdir -p obj
 	@rm -f $@
-	"$(AHKCDIR)\\Ahk2Exe.exe" //in $^ //out $@ //icon res/wc.ico //bin "$(AHKCDIR)\\Unicode 32-bit.bin"
+	"$(AHKCDIR)\\Ahk2Exe.exe" //in $(AHK) //out $@ //icon res/wc.ico //bin "$(AHKCDIR)\\Unicode 32-bit.bin"
 
 %.dll: %.o
 	$(CC) -shared $^ -o $@

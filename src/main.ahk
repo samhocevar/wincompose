@@ -11,6 +11,9 @@
 #persistent
 #noenv
 
+#include constants.ahk
+#include utils.ahk
+
 ; The name and version of this script
 global app := "WinCompose"
 global version := "0.4.6"
@@ -19,63 +22,18 @@ global version := "0.4.6"
 global config_dir := a_appdata . "\\" . app
 global config_file := config_dir . "\\settings.ini"
 
-; Resource files
-global compose_file  := "res/Compose.txt"
-global keys_file     := "res/Keys.txt"
-global resource_file := "res/resources.dll"
-
-; List of keys that can be used for Compose
-global valid_keys := { "LAlt"       : _("keys.lalt")
-                     , "RAlt"       : _("keys.ralt")
-                     , "LControl"   : _("keys.lcontrol")
-                     , "RControl"   : _("keys.rcontrol")
-                     , "LWin"       : _("keys.lwin")
-                     , "RWin"       : _("keys.rwin")
-                     , "CapsLock"   : _("keys.capslock")
-                     , "NumLock"    : _("keys.numlock")
-                     , "Pause"      : _("keys.pause")
-                     , "AppsKey"    : _("keys.menu")
-                     , "Esc"        : _("keys.esc")
-                     , "ScrollLock" : _("keys.scrolllock")
-                     , "`"          : _("keys.backtick") }
-
-; Default key used as compose key
-global default_key := "RAlt"
-
-; List of numeric keypad keys
-global num_keys := { "$Numpad0"    : "$0"
-                   , "$Numpad1"    : "$1"
-                   , "$Numpad2"    : "$2"
-                   , "$Numpad3"    : "$3"
-                   , "$Numpad4"    : "$4"
-                   , "$Numpad5"    : "$5"
-                   , "$Numpad6"    : "$6"
-                   , "$Numpad7"    : "$7"
-                   , "$Numpad8"    : "$8"
-                   , "$Numpad9"    : "$9"
-                   , "$NumpadDot"  : "$."
-                   , "$NumpadDiv"  : "$/"
-                   , "$NumpadMult" : "$*"
-                   , "$NumpadAdd"  : "$+"
-                   , "$NumpadSub"  : "$-" }
-
-; List of timeout values
-global valid_delays := { 500   : _("delays.500ms")
-                       , 1000  : _("delays.1000ms")
-                       , 2000  : _("delays.2000ms")
-                       , 3000  : _("delays.3000ms")
-                       , 5000  : _("delays.5000ms")
-                       , 10000 : _("delays.10000ms")
-                       , -1    : _("delays.infinite") }
-
-; Default timeout value
-global default_delay := 5000
-
 ; Activate debug messages?
 global have_debug := false
 
 ; Global runtime variables
-global state, compose_key, reset_delay, selected_char
+global state := { mode: "WAITING"  ; Global state, one of WAITING, TYPING, or DISABLED
+                , isdown: false }  ; Is the compose key down?
+
+; Runtime configuration, taken from the config files
+global config := { sequences:   {}
+                 , prefixes:    {}
+                 , compose_key: default_key
+                 , reset_delay: default_delay }
 
 main()
 return
@@ -92,9 +50,6 @@ main()
     ; Early icon initialisation to prevent flashing
     menu tray, icon, %resource_file%, 1
 
-    ; Global state, one of WAITING, TYPING, or DISABLED
-    state := "WAITING"
-
     load_settings()
     load_sequences()
     setup_ui()
@@ -106,15 +61,13 @@ main()
 
 load_settings()
 {
-    iniread, compose_key, %config_file%, Global, compose_key, ""
-    iniread, reset_delay, %config_file%, Global, reset_delay, ""
+    ; Read the compose key value and sanitise it if necessary
+    iniread, tmp, %config_file%, Global, % config.compose_key, ""
+    config.compose_key := valid_keys.haskey(tmp) ? tmp : default_key
 
-    ; Sanitize configuration just in case
-    if (!valid_keys.haskey(compose_key))
-        compose_key := default_key
-
-    if (!valid_delays.haskey(reset_delay))
-        reset_delay := default_delay
+    ; Read the reset delay value and sanitise it if necessary
+    iniread, tmp, %config_file%, Global, % config.reset_delay, ""
+    config.reset_delay := valid_delays.haskey(tmp) ? tmp : default_delay
 
     save_settings()
 }
@@ -122,8 +75,8 @@ load_settings()
 save_settings()
 {
     filecreatedir, %config_dir%
-    iniwrite, %compose_key%, %config_file%, Global, compose_key
-    iniwrite, %reset_delay%, %config_file%, Global, reset_delay
+    iniwrite, % config.compose_key, %config_file%, Global, compose_key
+    iniwrite, % config.reset_delay, %config_file%, Global, reset_delay
 }
 
 ;
@@ -189,45 +142,45 @@ send_keystroke(keystroke)
     static sequence := ""
     settimer, reset_callback, off
 
-    if (state == "DISABLED")
+    if (state.mode == "DISABLED")
     {
         ; This should not happen, because the DISABLED state should
         ; completely disable the compose key and the other callbacks
         ; are automatically disabled in suspend mode, but I guess it
         ; doesn't hurt to have some fallback solution.
         if (keystroke == "compose")
-            send %compose_key%
+            send % config.compose_key
         else
             send_raw(char)
         sequence := ""
     }
-    else if (state == "WAITING")
+    else if (state.mode == "WAITING")
     {
         ; Enter typing state if compose was pressed; otherwise we
         ; should not be here but send the character anyway.
         if (keystroke == "compose")
         {
             check_keyboard_layout()
-            state := "TYPING"
-            if (reset_delay > 0)
-                settimer, reset_callback, %reset_delay%
+            state.mode := "TYPING"
+            if (config.reset_delay > 0)
+                settimer, reset_callback, % config.reset_delay
         }
         else
             send_raw(char)
         sequence := ""
     }
-    else if (state == "TYPING")
+    else if (state.mode == "TYPING")
     {
         ; If the compose key is an actual character, don't cancel the compose
         ; sequence since the character could be used in the sequence itself.
-        if (keystroke == "compose" && strlen(compose_key) == 1)
-            keystroke := compose_key
+        if (keystroke == "compose" && strlen(config.compose_key) == 1)
+            keystroke := config.compose_key
 
         if (keystroke == "compose")
         {
             settimer, reset_callback, off
             sequence := ""
-            state := "WAITING"
+            state.mode := "WAITING"
         }
         else
         {
@@ -251,20 +204,20 @@ send_keystroke(keystroke)
             {
                 info .= " -> [ " get_sequence(sequence) " ]"
                 send_unicode(get_sequence(sequence))
-                state := "WAITING"
+                state.mode := "WAITING"
                 sequence := ""
             }
             else if (!has_prefix(sequence))
             {
                 info .= " ABORTED"
                 send_raw(sequence)
-                state := "WAITING"
+                state.mode := "WAITING"
                 sequence := ""
             }
             else
             {
-                if (reset_delay > 0)
-                    settimer, reset_callback, %reset_delay%
+                if (config.reset_delay > 0)
+                    settimer, reset_callback, % config.reset_delay
             }
 
             debug(info)
@@ -277,21 +230,21 @@ send_keystroke(keystroke)
 reset_callback:
     settimer, reset_callback, off
     sequence := ""
-    if (state == "TYPING")
-        state := "WAITING"
+    if (state.mode == "TYPING")
+        state.mode := "WAITING"
     refresh_systray()
     return
 
 toggle_callback:
-    if (state == "DISABLED")
+    if (state.mode == "DISABLED")
     {
-        state := "WAITING"
+        state.mode := "WAITING"
         set_compose_hotkeys(true)
     }
     else
     {
         set_compose_hotkeys(false)
-        state := "DISABLED"
+        state.mode := "DISABLED"
     }
     refresh_systray()
     return
@@ -299,12 +252,15 @@ toggle_callback:
 
 send_unicode(char)
 {
-    ; HACK: GTK+ behaves differently with Unicode
-    ; HACK: XChat for Windows renames its own top-level window
-    if (winactive("ahk_class gdkWindowToplevel") || winactive("ahk_class xchatWindowToplevel"))
+    ; HACK: GTK+ applications behave differently with Unicode, and some applications
+    ; such as XChat for Windows rename their own top-level window
+    loop % length(gdk_windows)
     {
-        sendinput % "{Ctrl down}{Shift down}u" num_to_hex(asc(char), 4) "{Space}{Shift up}{Ctrl up}"
-        return
+        if (winactive("ahk class " gdk_windows[a_index]))
+        {
+            sendinput % "{Ctrl down}{Shift down}u" num_to_hex(asc(char), 4) "{Space}{Shift up}{Ctrl up}"
+            return
+        }
     }
 
     ; HACK: if the character is pure ASCII, we need raw send otherwise AHK
@@ -406,19 +362,19 @@ setup_ui()
     menu tray, default, % _("menu.sequences")
 
     ; Build the sequence list window
-    global my_listbox, my_text, my_textw, my_edit, my_button
+    global ui_listbox, ui_text, ui_textw, ui_textedit, ui_button
     gui +resize +minsize300x115
     gui margin, 8, 8
     gui font, s11
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, vmy_listbox w700 r18, % _("seq_win.columns")
+    gui add, listview, vui_listbox w700 r18, % _("seq_win.columns")
     gui font
-    gui add, text, vmy_text, % _("seq_win.filter")
-    guicontrolget my_text, pos
-    gui add, edit, vmy_edit gedit_callback
-    gui add, button, vmy_button default, % _("seq_win.close")
+    gui add, text, vui_text, % _("seq_win.filter")
+    guicontrolget ui_text, pos
+    gui add, edit, vui_textedit gedit_callback
+    gui add, button, vui_button default, % _("seq_win.close")
 
     ; The copy character menu
     menu, contextmenu, add, % _("contextmenu.copy"), copychar_callback
@@ -438,7 +394,7 @@ hotkeymenu_callback:
     set_compose_hotkeys(false)
     for key, val in valid_keys
         if (val == a_thismenuitem)
-            compose_key := key
+            config.compose_key := key
     refresh_systray()
     set_compose_hotkeys(true)
     return
@@ -446,7 +402,7 @@ hotkeymenu_callback:
 delaymenu_callback:
     for key, val in valid_delays
         if (val == a_thismenuitem)
-            reset_delay := key
+            config.reset_delay := key
     refresh_systray()
     return
 
@@ -481,26 +437,29 @@ guisize:
     {
         w := a_guiwidth
         h := a_guiheight
-        guicontrol move, my_listbox, % "w" (w - 16) " h" (h - 45)
-        guicontrol move, my_text, % "y" (h - 26)
-        guicontrol move, my_edit, % "x" (my_textw + 15) " w" (w - 140 - my_textw) " y" (h - 30)
-        guicontrol move, my_button, % "x" (w - 87) " y" (h - 30) " w80"
+        global ui_listbox, ui_text, ui_textedit, ui_textw, ui_button
+        guicontrol move, ui_listbox, % "w" (w - 16) " h" (h - 45)
+        guicontrol move, ui_text, % "y" (h - 26)
+        guicontrol move, ui_textedit, % "x" (ui_textw + 15) " w" (w - 140 - ui_textw) " y" (h - 30)
+        guicontrol move, ui_button, % "x" (w - 87) " y" (h - 30) " w80"
     }
     return
 
 guicontextmenu:
-    if (a_guicontrol == "my_listbox")
+    if (a_guicontrol == "ui_listbox")
     {
         if (a_eventinfo > 0)
         {
-            lv_gettext(selected_char, a_eventinfo, 2)
+            global ui_selected_char
+            lv_gettext(ui_selected_char, a_eventinfo, 2)
             menu, contextmenu, show
         }
     }
     return
 
 copychar_callback:
-    clipboard := selected_char
+    global ui_selected_char
+    clipboard := ui_selected_char
     return
 
 edit_callback:
@@ -514,7 +473,8 @@ showgui_callback:
         goto hidegui_callback
     refresh_gui()
     gui show, , %gui_title%
-    guicontrol focus, my_edit
+    global ui_textedit
+    guicontrol focus, ui_textedit
     return
 
 hidegui_callback:
@@ -527,7 +487,7 @@ guiescape:
 
 refresh_systray()
 {
-    if (state == "WAITING")
+    if (state.mode == "WAITING")
     {
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
@@ -535,14 +495,14 @@ refresh_systray()
         menu tray, icon, %resource_file%, 1, 1
         menu tray, tip, % _("tray_tip.active")
     }
-    else if (state == "TYPING")
+    else if (state.mode == "TYPING")
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
         menu tray, icon, %resource_file%, 2
         menu tray, tip, % _("tray_tip.typing")
     }
-    else if (state == "DISABLED")
+    else if (state.mode == "DISABLED")
     {
         suspend on
         menu tray, check, % _("menu.disable")
@@ -551,10 +511,10 @@ refresh_systray()
     }
 
     for key, val in valid_keys
-        menu, hotkeymenu, % (key == compose_key) ? "check" : "uncheck", %val%
+        menu, hotkeymenu, % (key == config.compose_key) ? "check" : "uncheck", %val%
 
     for key, val in valid_delays
-        menu, delaymenu, % (key == reset_delay) ? "check" : "uncheck", %val%
+        menu, delaymenu, % (key == config.reset_delay) ? "check" : "uncheck", %val%
 }
 
 set_ascii_hotkeys(must_enable)
@@ -592,8 +552,8 @@ set_compose_hotkeys(must_enable)
         ; Activate the compose key for real
         loop, parse, compose_prefixes
         {
-            hotkey % a_loopfield compose_key, compose_callback, on, useerrorlevel
-            hotkey % a_loopfield compose_key " up", compose_callback, on, useerrorlevel
+            hotkey % a_loopfield config.compose_key, compose_callback, on, useerrorlevel
+            hotkey % a_loopfield config.compose_key " up", compose_callback, on, useerrorlevel
         }
     }
     else
@@ -614,16 +574,15 @@ set_compose_hotkeys(must_enable)
 compose_callback:
     ; This hotkey must always be active
     suspend permit
-    global compose_is_down
     if (instr(a_thishotkey, " up"))
     {
         ; Compose was released
-        compose_is_down := false
+        state.isdown := false
     }
-    else if (!compose_is_down)
+    else if (!state.isdown)
     {
         ; Compose was pressed down -- protect against autorepeat
-        compose_is_down := true
+        state.isdown := true
         send_keystroke("compose")
     }
     return
@@ -632,8 +591,9 @@ compose_callback:
 refresh_gui()
 {
     lv_delete()
-    guicontrolget my_edit
-    fill_sequences(my_edit)
+    global ui_textedit
+    guicontrolget ui_textedit
+    fill_sequences(ui_textedit)
     loop % 4
         lv_modifycol(a_index, "autohdr")
     lv_modifycol(2, "center") ; center the character column
@@ -720,7 +680,7 @@ load_sequences()
         }
     }
 
-    info(_("tray_notify.loaded", count) "\n" _("tray_notify.keyinfo", valid_keys[compose_key]) "\n")
+    info(_("tray_notify.loaded", count) "\n" _("tray_notify.keyinfo", valid_keys[config.compose_key]) "\n")
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have
@@ -753,20 +713,13 @@ num_to_hex(x, mindigits)
 ; of valid prefixes so that we can cancel invalid sequences early on.
 add_sequence(key, val, desc)
 {
-    global s, p, listview
-    if (!s)
-    {
-        s := {}
-        p := {}
-    }
-
     ; Insert into our lookup table
     stringlower desc, desc
-    s.insert(string_to_hex(key), [key, val, desc])
+    config.sequences.insert(string_to_hex(key), [key, val, desc])
 
     ; Insert into the prefix lookup table
     loop % strlen(key) - 1
-        p.insert(string_to_hex(substr(key, 1, a_index)), true)
+        config.prefixes.insert(string_to_hex(substr(key, 1, a_index)), true)
 }
 
 ; Fill the default list view widget with all the compose rules that
@@ -774,9 +727,8 @@ add_sequence(key, val, desc)
 ; the description of the Unicode character.
 fill_sequences(filter)
 {
-    global s
     stringlower filter_low, filter
-    for k, v in s
+    for k, v in config.sequences
     {
         key := v[1]
         val := v[2]
@@ -814,19 +766,16 @@ fill_sequences(filter)
 
 has_sequence(key)
 {
-    global s
-    return s.haskey(string_to_hex(key))
+    return config.sequences.haskey(string_to_hex(key))
 }
 
 get_sequence(key)
 {
-    global s
-    return s[string_to_hex(key)][2]
+    return config.sequences[string_to_hex(key)][2]
 }
 
 has_prefix(key)
 {
-    global p
-    return p.haskey(string_to_hex(key))
+    return config.prefixes.haskey(string_to_hex(key))
 }
 
