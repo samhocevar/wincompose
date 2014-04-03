@@ -11,25 +11,34 @@
 ; 3, ... n, without any holes.
 length(array)
 {
-    low := 0, high := 1
+    ret := array.maxindex()
+    return ret ? ret : 0
+}
 
-    ; Find an upper bound for the length
-    while (array.haskey(high))
+; We need to encode our strings somehow because AutoHotKey objects have
+; case-insensitive hash tables. How retarded is that? Also, make sure the
+; first character is special.
+string_to_hex(str)
+{
+    hex := "*"
+    loop, parse, str
+        hex .= num_to_hex(asc(a_loopfield), 2)
+    return hex
+}
+
+; Convert a number to a hexadecimal string, padding with leading zeroes
+; up to mindigits if necessary.
+num_to_hex(x, mindigits)
+{
+    chars := "0123456789ABCDEF"
+    ret := ""
+    while (x > 0)
     {
-        low := high
-        high := high * 2
+        ret := substr(chars, 1 + mod(x, 16), 1) . ret
+        x = floor(x / 16)
     }
-
-    ; Bisect to find the real length
-    while (low + 1 < high)
-    {
-        mid := floor((low + high + 1) / 2)
-        if (array.haskey(mid))
-            low := mid
-        else
-            high := mid
-    }
-
-    return low
+    while (strlen(ret) < mindigits || strlen(ret) < 1)
+        ret := "0" . ret
+    return ret
 }
 

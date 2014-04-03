@@ -556,22 +556,22 @@ set_special_hotkeys(must_enable)
 special_callback:
     ; This hotkey must always be active
     suspend permit
-    special_key := regexreplace(a_thishotkey, "[^a-z0-9]*([a-z0-9]*).*", "$1", ret)
+    key := regexreplace(a_thishotkey, "[^a-z0-9]*([a-z0-9]*).*", "$1", ret)
     if (instr(a_thishotkey, " up"))
     {
         state.special_down := false
-        sendinput {%special_key% up}
+        sendinput {%key% up}
     }
     else
     {
         ; Cancel any sequence in progress
         if (state.mode == "TYPING")
             send_keystroke("compose")
-        
+
         if (!state.special_down)
             sendinput % "{" config.compose_key " down}"
 
-        sendinput {%special_key% down}
+        sendinput {%key% down}
         state.special_down := true
     }
     return
@@ -647,6 +647,7 @@ refresh_gui()
     fill_sequences(ui_textedit)
     loop % 4
         lv_modifycol(a_index, "autohdr")
+    lv_modifycol(1, "center") ; center the sequences column
     lv_modifycol(2, "center") ; center the character column
     lv_modifycol(3, "sort")   ; sort the Unicode column
 }
@@ -750,32 +751,6 @@ read_sequence_file(file)
     }
 }
 
-; We need to encode our strings somehow because AutoHotKey objects have
-; case-insensitive hash tables. How retarded is that? Also, make sure the
-; first character is special
-string_to_hex(str)
-{
-    hex := "*"
-    loop, parse, str
-        hex .= num_to_hex(asc(a_loopfield), 2)
-    return hex
-}
-
-; Convert a number to a hexadecimal string with a minimum number of digits
-num_to_hex(x, mindigits)
-{
-    chars := "0123456789ABCDEF"
-    ret := ""
-    while (x > 0)
-    {
-        ret := substr(chars, 1 + mod(x, 16), 1) . ret
-        x /= 16
-    }
-    while (strlen(ret) < mindigits || strlen(ret) < 1)
-        ret := "0" . ret
-    return ret
-}
-
 ; Register a compose sequence, and add all substring prefixes to our list
 ; of valid prefixes so that we can cancel invalid sequences early on.
 add_sequence(key, val, desc)
@@ -807,7 +782,7 @@ fill_sequences(filter)
             continue
 
         ; Insert into the GUI if applicable
-        sequence := "♦" . regexreplace(key, "(.)", " $1")
+        sequence := substr(key, 1, 1)
         sequence := regexreplace(sequence, "  ", " {spc}")
         result := val
         uni := "U+"
