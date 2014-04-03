@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.4.6.exe](/bin/WinCompose-Setup-0.4.6.exe)
+Latest release: [WinCompose-Setup-0.5.0.exe](/bin/WinCompose-Setup-0.5.0.exe)
 
 Quick start
 -----------
@@ -62,7 +62,10 @@ Features
 
 WinCompose supports the standard Compose file format. It ships with more than
 1000 compose rules from [Xorg](http://www.x.org/wiki/). You can add custom
-rules but the file will be overwritten when you upgrade the software.
+rules by creating a file named `.XCompose` or `.XCompose.txt` in the
+`%USERPROFILE%` directory, which is usually your user directory. The
+[dotXCompose](https://github.com/kragen/xcompose) project provides such a file
+with many additional compose sequences.
 
 WinCompose supports rules of more than 2 characters such as **( 3 )**
 for **③**.
@@ -89,6 +92,12 @@ Please report bugs to Sam Hocevar <sam@hocevar.net>
 
 News
 ----
+
+News for version 0.5.0 (3 April 2014)
+ - Support for custom compose rules in `%userprofile%/.XCompose.txt`.
+ - Using Alt as the compose key does not disable Alt-Tab, and other
+   similar fixes.
+ - Keeping the compose key pressed no longer causes the icon to flicker.
 
 News for version 0.4.6 (26 February 2014)
  - Internationalisation support.
