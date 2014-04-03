@@ -36,7 +36,7 @@ Examples
 
 Compose rules are supposed to be intuitive. Here are some examples:
 
- - `` ` `a` → `à`
+ - `` ` `` `a` → `à`
  - `'` `e` → `é`
  - `^` `i` → `î`
  - `~` `n` → `ñ`
@@ -45,8 +45,8 @@ Compose rules are supposed to be intuitive. Here are some examples:
  - `o` `c` → `©`
  - `+` `-` → `±`
  - `:` `-` → `÷`
+ - `(` `7` `)` → `⑦`
  - `C` `C` `C` `P` → `☭`
- - `(` `2` `3` `)` → `㉓`
  - `<` `3` → `♥`
 
 The full list of rules can be found in the `Compose.txt` file shipped with
