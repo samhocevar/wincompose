@@ -21,6 +21,9 @@ clean:
 	rm -f $(DLL) $(DLL:%.dll:%.o) $(EXE) $(INSTALLER)
 	@rmdir obj >/dev/null 2>&1 || true
 
+check:
+	start tests.ahk
+
 fixsource:
 	sed -i 's/\(#define *VERSION *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(ISS)
 	sed -i 's/\(global *version *:= *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(AHK)
