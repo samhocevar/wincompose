@@ -36,18 +36,18 @@ Examples
 
 Compose rules are supposed to be intuitive. Here are some examples:
 
- - **` a** → **à**
- - **' e** → **é**
- - **^ i** → **î**
- - **~ n** → **ñ**
- - **/ o** → **ø**
- - **" u** → **ü**
- - **o c** → **©**
- - **+ -** → **±**
- - **: -** → **÷**
- - **C C C P** → **☭**
- - **( 2 3 )** → **㉓**
- - **< 3** → **♥**
+ - `` ` `a` → `à`
+ - `'` `e` → `é`
+ - `^` `i` → `î`
+ - `~` `n` → `ñ`
+ - `/` `o` → `ø`
+ - `"` `u` → `ü`
+ - `o` `c` → `©`
+ - `+` `-` → `±`
+ - `:` `-` → `÷`
+ - `C` `C` `C` `P` → `☭`
+ - `(` `2` `3` `)` → `㉓`
+ - `<` `3` → `♥`
 
 The full list of rules can be found in the `Compose.txt` file shipped with
 WinCompose, or by clicking on the WinCompose system tray icon or using the
@@ -121,7 +121,7 @@ News for version 0.4.2 (11 June 2013)
  - Minor GUI fixes.
 
 News for version 0.4.1 (6 May 2013)
- - “Menu”, “Escape” and “Backtick�� can now act as compose
+ - “Menu”, “Escape” and “Backtick” can now act as compose
    keys, too.
  - Improved the filtering logic.
  - Allow to choose the timeout delay from the context menu.
