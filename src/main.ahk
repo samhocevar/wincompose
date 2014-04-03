@@ -16,7 +16,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.4.6"
+global version := "0.5.0"
 
 ; Configuration directory and file
 global config_dir := a_appdata . "\\" . app
@@ -32,7 +32,9 @@ global state := { mode: "WAITING"        ; Global state, one of WAITING, TYPING,
 
 ; Runtime configuration, taken from the config files
 global config := { sequences:   {}
+                 , seq_count:   0
                  , prefixes:    {}
+                 , keynames:    {}
                  , compose_key: default_key
                  , reset_delay: default_delay }
 
@@ -49,7 +51,7 @@ main()
     menu tray, useerrorlevel
 
     ; Early icon initialisation to prevent flashing
-    menu tray, icon, %resource_file%, 1
+    menu tray, icon, %global_resource_file%, 1
 
     load_settings()
     load_sequences()
@@ -63,11 +65,11 @@ main()
 load_settings()
 {
     ; Read the compose key value and sanitise it if necessary
-    iniread, tmp, %config_file%, Global, % config.compose_key, ""
+    iniread tmp, %config_file%, Global, % config.compose_key, ""
     config.compose_key := valid_keys.haskey(tmp) ? tmp : default_key
 
     ; Read the reset delay value and sanitise it if necessary
-    iniread, tmp, %config_file%, Global, % config.reset_delay, ""
+    iniread tmp, %config_file%, Global, % config.reset_delay, ""
     config.reset_delay := valid_delays.haskey(tmp) ? tmp : default_delay
 
     save_settings()
@@ -75,9 +77,9 @@ load_settings()
 
 save_settings()
 {
-    filecreatedir, %config_dir%
-    iniwrite, % config.compose_key, %config_file%, Global, compose_key
-    iniwrite, % config.reset_delay, %config_file%, Global, reset_delay
+    filecreatedir %config_dir%
+    iniwrite % config.compose_key, %config_file%, Global, compose_key
+    iniwrite % config.reset_delay, %config_file%, Global, reset_delay
 }
 
 ;
@@ -493,21 +495,21 @@ refresh_systray()
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
         menu tray, uncheck, % _("menu.disable")
-        menu tray, icon, %resource_file%, 1, 1
+        menu tray, icon, %global_resource_file%, 1, 1
         menu tray, tip, % _("tray_tip.active")
     }
     else if (state.mode == "TYPING")
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
-        menu tray, icon, %resource_file%, 2
+        menu tray, icon, %global_resource_file%, 2
         menu tray, tip, % _("tray_tip.typing")
     }
     else if (state.mode == "DISABLED")
     {
         suspend on
         menu tray, check, % _("menu.disable")
-        menu tray, icon, %resource_file%, 3, 1
+        menu tray, icon, %global_resource_file%, 3, 1
         menu tray, tip, % _("tray_tip.disabled")
     }
 
@@ -649,9 +651,23 @@ refresh_gui()
     lv_modifycol(3, "sort")   ; sort the Unicode column
 }
 
-; Read key symbols from a key file, then read compose sequences
-; from an X11 compose file
 load_sequences()
+{
+    ; Read the default key file
+    read_key_file(global_key_file)
+
+    ; Read the default sequence file
+    read_sequence_file(global_sequence_file)
+
+    ; Read a user-provided sequence file, if available
+    envget userprofile, userprofile
+    read_sequence_file(userprofile "\\.XCompose")
+    read_sequence_file(userprofile "\\.XCompose.txt")
+
+    info(_("tray_notify.loaded", config.seq_count) "\n" _("tray_notify.keyinfo", valid_keys[config.compose_key]) "\n")
+}
+
+read_key_file(file)
 {
     FileEncoding UTF-8
 
@@ -666,8 +682,7 @@ load_sequences()
     ;  <key> <other_key><j> <more_keys>  : ... any stuff ...
     r_left := "^[ \\t]*(([ \\t]*<[^>]*>)*)([^:]*):.*$"
 
-    keys := {}
-    loop read, %keys_file%
+    loop read, %file%
     {
         ; Retrieve destination character
         right := regexreplace(a_loopreadline, r_right, "$2$3", ret)
@@ -680,11 +695,19 @@ load_sequences()
             continue
         left := regexreplace(left, "[ \\t]*", "")
 
-        keys[regexreplace(left, "[<>]*", "")] := right
+        config.keynames[regexreplace(left, "[<>]*", "")] := right
     }
+}
 
-    count := 0
-    loop read, %compose_file%
+read_sequence_file(file)
+{
+    FileEncoding UTF-8
+
+    ; See read_key_file() for more explanations
+    r_right := "^[^"":#]*:[^""#]*""(\\\\(.)|([^\\""]))"".*$"
+    r_left := "^[ \\t]*(([ \\t]*<[^>]*>)*)([^:]*):.*$"
+
+    loop read, %file%
     {
         ; Retrieve destination character(s) -- could be an UTF-16 sequence
         right := regexreplace(a_loopreadline, r_right, "$2$3", ret)
@@ -715,21 +738,16 @@ load_sequences()
         {
             if (strlen(a_loopfield) <= 1)
                 seq .= a_loopfield
-            else if (keys.haskey(a_loopfield))
-                seq .= keys[a_loopfield]
+            else if (config.keynames.haskey(a_loopfield))
+                seq .= config.keynames[a_loopfield]
             else
                 valid := false
         }
 
         ; If valid, add it to our list
         if (valid)
-        {
             add_sequence(seq, right, comment)
-            count += 1
-        }
     }
-
-    info(_("tray_notify.loaded", count) "\n" _("tray_notify.keyinfo", valid_keys[config.compose_key]) "\n")
 }
 
 ; We need to encode our strings somehow because AutoHotKey objects have
@@ -765,6 +783,7 @@ add_sequence(key, val, desc)
     ; Insert into our lookup table
     stringlower desc, desc
     config.sequences.insert(string_to_hex(key), [key, val, desc])
+    config.seq_count += 1
 
     ; Insert into the prefix lookup table
     loop % strlen(key) - 1

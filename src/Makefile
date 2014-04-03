@@ -1,5 +1,5 @@
 
-VERSION = 0.4.6
+VERSION = 0.5.0
 
 ISS = installer.iss
 AHK = main.ahk

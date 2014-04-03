@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.4.6"
+#define VERSION "0.5.0"
 
 [Setup]
 AppName = {#NAME}

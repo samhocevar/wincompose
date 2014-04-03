@@ -7,9 +7,9 @@
 ;   See http://www.wtfpl.net/ for more details.
 
 ; Resource files
-global compose_file  := "res/Compose.txt"
-global keys_file     := "res/Keys.txt"
-global resource_file := "res/resources.dll"
+global global_sequence_file := "res/Compose.txt"
+global global_key_file      := "res/Keys.txt"
+global global_resource_file := "res/resources.dll"
 
 ; List of keys that can be used for Compose
 global valid_keys := { "lalt"       : _("keys.lalt")
