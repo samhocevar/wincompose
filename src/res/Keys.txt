@@ -5,7 +5,7 @@
 <numbersign>    : "#" # 0x23
 <dollar>        : "$" # 0x24
 <percent>       : "%" # 0x25
-<ampersand>     : "&" # 0x26 XXX: Is this the right name?
+<ampersand>     : "&" # 0x26
 <apostrophe>    : "'" # 0x27
 <parenleft>     : "(" # 0x28
 <parenright>    : ")" # 0x29
