@@ -562,8 +562,13 @@ special_callback:
     }
     else
     {
+        ; Cancel any sequence in progress
+        if (state.mode == "TYPING")
+            send_keystroke("compose")
+        
         if (!state.special_down)
             sendinput % "{" config.compose_key " down}"
+
         sendinput {%special_key% down}
         state.special_down := true
     }
