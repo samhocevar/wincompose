@@ -12,39 +12,47 @@ global keys_file     := "res/Keys.txt"
 global resource_file := "res/resources.dll"
 
 ; List of keys that can be used for Compose
-global valid_keys := { "LAlt"       : _("keys.lalt")
-                     , "RAlt"       : _("keys.ralt")
-                     , "LControl"   : _("keys.lcontrol")
-                     , "RControl"   : _("keys.rcontrol")
-                     , "LWin"       : _("keys.lwin")
-                     , "RWin"       : _("keys.rwin")
-                     , "CapsLock"   : _("keys.capslock")
-                     , "NumLock"    : _("keys.numlock")
-                     , "Pause"      : _("keys.pause")
-                     , "AppsKey"    : _("keys.menu")
-                     , "Esc"        : _("keys.esc")
-                     , "ScrollLock" : _("keys.scrolllock")
+global valid_keys := { "lalt"       : _("keys.lalt")
+                     , "ralt"       : _("keys.ralt")
+                     , "lcontrol"   : _("keys.lcontrol")
+                     , "rcontrol"   : _("keys.rcontrol")
+                     , "lwin"       : _("keys.lwin")
+                     , "rwin"       : _("keys.rwin")
+                     , "capslock"   : _("keys.capslock")
+                     , "numlock"    : _("keys.numlock")
+                     , "pause"      : _("keys.pause")
+                     , "appskey"    : _("keys.menu")
+                     , "esc"        : _("keys.esc")
+                     , "scrolllock" : _("keys.scrolllock")
                      , "`"          : _("keys.backtick") }
 
 ; Default key used as compose key
-global default_key := "RAlt"
+global default_key := "ralt"
 
 ; List of numeric keypad keys
-global num_keys := { "$Numpad0"    : "$0"
-                   , "$Numpad1"    : "$1"
-                   , "$Numpad2"    : "$2"
-                   , "$Numpad3"    : "$3"
-                   , "$Numpad4"    : "$4"
-                   , "$Numpad5"    : "$5"
-                   , "$Numpad6"    : "$6"
-                   , "$Numpad7"    : "$7"
-                   , "$Numpad8"    : "$8"
-                   , "$Numpad9"    : "$9"
-                   , "$NumpadDot"  : "$."
-                   , "$NumpadDiv"  : "$/"
-                   , "$NumpadMult" : "$*"
-                   , "$NumpadAdd"  : "$+"
-                   , "$NumpadSub"  : "$-" }
+global num_keys := { "$numpad0"    : "0"
+                   , "$numpad1"    : "1"
+                   , "$numpad2"    : "2"
+                   , "$numpad3"    : "3"
+                   , "$numpad4"    : "4"
+                   , "$numpad5"    : "5"
+                   , "$numpad6"    : "6"
+                   , "$numpad7"    : "7"
+                   , "$numpad8"    : "8"
+                   , "$numpad9"    : "9"
+                   , "$numpaddot"  : "."
+                   , "$numpaddiv"  : "/"
+                   , "$numpadmult" : "*"
+                   , "$numpadadd"  : "+"
+                   , "$numpadsub"  : "-" }
+
+; List of special keys that we need to hijack
+global special_keys := [ "tab" ; for Alt-Tab
+                       , "left", "right", "up", "down" ; for Windows-Left etc.
+                       , "f1",  "f2",  "f3",  "f4",  "f5",  "f6"
+                       , "f7",  "f8",  "f9",  "f10", "f11", "f12"
+                       , "f13", "f14", "f15", "f16", "f17", "f18"
+                       , "f19", "f20", "f21", "f22", "f23", "f24" ] ; for Alt-F4 etc.
 
 ; List of timeout values
 global valid_delays := { 500   : _("delays.500ms")
@@ -60,6 +68,6 @@ global default_delay := 5000
 
 ; List of window names that must be treated specially because
 ; of how GTK+ handles Unicode input
-global gdk_windows := [ "gdkWindowToplevel"
+global gdk_classes := [ "gdkWindowToplevel"
                       , "xchatWindowToplevel" ]
 

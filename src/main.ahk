@@ -26,8 +26,9 @@ global config_file := config_dir . "\\settings.ini"
 global have_debug := false
 
 ; Global runtime variables
-global state := { mode: "WAITING"  ; Global state, one of WAITING, TYPING, or DISABLED
-                , isdown: false }  ; Is the compose key down?
+global state := { mode: "WAITING"        ; Global state, one of WAITING, TYPING, or DISABLED
+                , compose_down: false    ; Is the compose key down?
+                , special_down: false }  ; Is a special key down?
 
 ; Runtime configuration, taken from the config files
 global config := { sequences:   {}
@@ -96,7 +97,7 @@ _(str, args*)
 
         FileEncoding UTF-8
 
-        for index, file in files
+        for ignored, file in files
         {
             section := ""
             loop read, % "locale/" file ".ini"
@@ -186,7 +187,7 @@ send_keystroke(keystroke)
         {
             ; If this is a numpad key, replace it with its ASCII value
             if (num_keys.haskey(keystroke))
-                keystroke := num_keys[keystroke]
+                keystroke := "$" num_keys[keystroke]
 
             ; The actual character is the last char of the keystroke
             char := substr(keystroke, strlen(keystroke))
@@ -254,11 +255,11 @@ send_unicode(char)
 {
     ; HACK: GTK+ applications behave differently with Unicode, and some applications
     ; such as XChat for Windows rename their own top-level window
-    loop % length(gdk_windows)
+    for ignored, class in gdk_classes
     {
-        if (winactive("ahk class " gdk_windows[a_index]))
+        if (winactive("ahk class " class))
         {
-            sendinput % "{Ctrl down}{Shift down}u" num_to_hex(asc(char), 4) "{Space}{Shift up}{Ctrl up}"
+            sendinput % "{ctrl down}{shift down}u" num_to_hex(asc(char), 4) "{space}{shift up}{ctrl up}"
             return
         }
     }
@@ -279,7 +280,7 @@ send_raw(string)
     loop, parse, string
     {
         if (a_loopfield == " ")
-            send {Space}
+            send {space}
         else
             sendinput {raw}%a_loopfield%
     }
@@ -534,12 +535,50 @@ set_ascii_hotkeys(must_enable)
         hotkey %key%, key_callback, %flag%, useerrorlevel
 }
 
+;
+; Handle special keys that may be used with the compose key in other situations,
+; for instance Alt-Tab when Alt is the compose key, or Windows-Left/Right, etc.
+;
+set_special_hotkeys(must_enable)
+{
+    flag := must_enable ? "on" : "off"
+
+    for ignored, key in special_keys
+    {
+        hotkey $%key%, special_callback, %flag%, useerrorlevel
+        hotkey $%key% up, special_callback, %flag%, useerrorlevel
+    }
+
+    return
+
+special_callback:
+    ; This hotkey must always be active
+    suspend permit
+    special_key := regexreplace(a_thishotkey, "[^a-z0-9]*([a-z0-9]*).*", "$1", ret)
+    if (instr(a_thishotkey, " up"))
+    {
+        state.special_down := false
+        sendinput {%special_key% up}
+    }
+    else
+    {
+        if (!state.special_down)
+            sendinput % "{" config.compose_key " down}"
+        sendinput {%special_key% down}
+        state.special_down := true
+    }
+    return
+}
+
+;
+; Handle the key currently acting as the compose key
+;
 set_compose_hotkeys(must_enable)
 {
     ; HACK: The ^ + ! variants are here just in case; for instance, Outlook 2010
     ; seems to automatically remap "Right Alt" to "Left Control + Right Alt", so
     ; obviously in this case we need to add hooks for LControl + RAlt.
-    compose_prefixes := "$^+!"
+    compose_prefixes := [ "$", "$^", "$+", "$!" ]
 
     if (must_enable)
     {
@@ -550,21 +589,21 @@ set_compose_hotkeys(must_enable)
                 hotkey $%key%, key_callback, on, useerrorlevel
 
         ; Activate the compose key for real
-        loop, parse, compose_prefixes
+        for ignored, prefix in compose_prefixes
         {
-            hotkey % a_loopfield config.compose_key, compose_callback, on, useerrorlevel
-            hotkey % a_loopfield config.compose_key " up", compose_callback, on, useerrorlevel
+            hotkey % prefix config.compose_key, compose_callback, on, useerrorlevel
+            hotkey % prefix config.compose_key " up", compose_callback, on, useerrorlevel
         }
     }
     else
     {
         ; Disable any existing hotkeys
-        loop, parse, compose_prefixes
+        for ignored, prefix in compose_prefixes
         {
             for key, val in valid_keys
             {
-                hotkey % a_loopfield key, off, useerrorlevel
-                hotkey % a_loopfield key " up", off, useerrorlevel
+                hotkey % prefix key, off, useerrorlevel
+                hotkey % prefix key " up", off, useerrorlevel
             }
         }
     }
@@ -577,13 +616,18 @@ compose_callback:
     if (instr(a_thishotkey, " up"))
     {
         ; Compose was released
-        state.isdown := false
+        state.compose_down := false
+        ; Tell the system it was released, just in case a special
+        ; hotkey was triggered.
+        sendinput % "{" config.compose_key " up}"
+        set_special_hotkeys(false)
     }
-    else if (!state.isdown)
+    else if (!state.compose_down)
     {
         ; Compose was pressed down -- protect against autorepeat
-        state.isdown := true
+        state.compose_down := true
         send_keystroke("compose")
+        set_special_hotkeys(true)
     }
     return
 }
