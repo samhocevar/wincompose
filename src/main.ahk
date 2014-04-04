@@ -17,6 +17,7 @@
 ; The name and version of this script
 global app := "WinCompose"
 global version := "0.5.0"
+global website := "https://github.com/SamHocevar/wincompose"
 
 ; Configuration directory and file
 global config_dir := a_appdata . "\\" . app
@@ -308,6 +309,7 @@ setup_ui()
         menu tray, add, % _("menu.hotkeylist"), hotkeylist_callback
     }
     menu tray, add, % _("menu.about"), about_callback
+    menu tray, add, % _("menu.website"), website_callback
     menu tray, add, % _("menu.exit"), exit_callback
     menu tray, default, % _("menu.sequences")
 
@@ -375,6 +377,10 @@ about_callback:
     about_text .= _("about_win.line3") . "\n"
     about_text .= _("about_win.line4") . "\n"
     msgbox 64, %app%, %about_text%
+    return
+
+website_callback:
+    run %website%
     return
 
 exit_callback:
