@@ -35,10 +35,61 @@ num_to_hex(x, mindigits)
     while (x > 0)
     {
         ret := substr(chars, 1 + mod(x, 16), 1) . ret
-        x = floor(x / 16)
+        x := floor(x / 16)
     }
     while (strlen(ret) < mindigits || strlen(ret) < 1)
         ret := "0" . ret
+    return ret
+}
+
+; Handle i18n
+_(str, args*)
+{
+    static t
+
+    if (!t)
+    {
+        t := {}
+
+        regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
+        files := [ "default", substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
+
+        FileEncoding UTF-8
+
+        for ignored, file in files
+        {
+            section := ""
+            loop read, % "locale/" file ".ini"
+            {
+                regex := "^[ \\t]*\\[([^ \\t\\]]*)[^ \\t\\]]*\\].*"
+                newsection := regexreplace(a_loopreadline, regex, "$1", ret)
+                if (ret == 1)
+                {
+                    section := newsection
+                    continue
+                }
+
+                regex := "^[ \\t]*([^ \\t=]*)[ \\t]*=[ \\t]*(""(.*)""|(.*[^ ]))[ \\t]*$"
+                key := regexreplace(a_loopreadline, regex, "$1", ret)
+                val := regexreplace(a_loopreadline, regex, "$3$4", ret2)
+                if (ret == 1 && ret2 == 1)
+                {
+                    t.insert(section "." key, val)
+                    continue
+                }
+            }
+        }
+    }
+
+    ret := t.haskey(str) ? t[str] : "[" str "]"
+
+    ret := regexreplace(ret, "@APP_NAME@", app)
+    ret := regexreplace(ret, "@APP_VERSION@", version)
+    ret := regexreplace(ret, "@AHK_VERSION@", a_ahkversion)
+
+    for index, arg in args
+        ret := regexreplace(ret, "@" index "@", arg)
+
     return ret
 }
 

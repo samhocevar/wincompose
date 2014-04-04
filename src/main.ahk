@@ -26,7 +26,8 @@ global config_file := config_dir . "\\settings.ini"
 global have_debug := false
 
 ; Global runtime variables
-global state := { mode: "WAITING"        ; Global state, one of WAITING, TYPING, or DISABLED
+global state := { typing: false          ; Is the user typing something?
+                , disabled: false        ; Is everything disabled?
                 , compose_down: false    ; Is the compose key down?
                 , special_down: false }  ; Is a special key down?
 
@@ -83,61 +84,7 @@ save_settings()
 }
 
 ;
-; Handle i18n
-;
-
-_(str, args*)
-{
-    static t
-
-    if (!t)
-    {
-        t := {}
-
-        regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
-        files := [ "default", substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
-
-        FileEncoding UTF-8
-
-        for ignored, file in files
-        {
-            section := ""
-            loop read, % "locale/" file ".ini"
-            {
-                regex := "^[ \\t]*\\[([^ \\t\\]]*)[^ \\t\\]]*\\].*"
-                newsection := regexreplace(a_loopreadline, regex, "$1", ret)
-                if (ret == 1)
-                {
-                    section := newsection
-                    continue
-                }
-
-                regex := "^[ \\t]*([^ \\t=]*)[ \\t]*=[ \\t]*(""(.*)""|(.*[^ ]))[ \\t]*$"
-                key := regexreplace(a_loopreadline, regex, "$1", ret)
-                val := regexreplace(a_loopreadline, regex, "$3$4", ret2)
-                if (ret == 1 && ret2 == 1)
-                {
-                    t.insert(section "." key, val)
-                    continue
-                }
-            }
-        }
-    }
-
-    ret := t.haskey(str) ? t[str] : "[" str "]"
-
-    ret := regexreplace(ret, "@APP_NAME@", app)
-    ret := regexreplace(ret, "@APP_VERSION@", version)
-    ret := regexreplace(ret, "@AHK_VERSION@", a_ahkversion)
-
-    for index, arg in args
-        ret := regexreplace(ret, "@" index "@", arg)
-
-    return ret
-}
-
-;
-; Utility functions
+; Keystroke logic
 ;
 
 send_keystroke(keystroke)
@@ -145,7 +92,7 @@ send_keystroke(keystroke)
     static sequence := ""
     settimer, reset_callback, off
 
-    if (state.mode == "DISABLED")
+    if (state.disabled)
     {
         ; This should not happen, because the DISABLED state should
         ; completely disable the compose key and the other callbacks
@@ -157,14 +104,14 @@ send_keystroke(keystroke)
             send_raw(char)
         sequence := ""
     }
-    else if (state.mode == "WAITING")
+    else if (!state.typing)
     {
         ; Enter typing state if compose was pressed; otherwise we
         ; should not be here but send the character anyway.
         if (keystroke == "compose")
         {
             check_keyboard_layout()
-            state.mode := "TYPING"
+            state.typing := true
             if (config.reset_delay > 0)
                 settimer, reset_callback, % config.reset_delay
         }
@@ -172,7 +119,7 @@ send_keystroke(keystroke)
             send_raw(char)
         sequence := ""
     }
-    else if (state.mode == "TYPING")
+    else ; if (state.typing)
     {
         ; If the compose key is an actual character, don't cancel the compose
         ; sequence since the character could be used in the sequence itself.
@@ -183,7 +130,7 @@ send_keystroke(keystroke)
         {
             settimer, reset_callback, off
             sequence := ""
-            state.mode := "WAITING"
+            state.typing := false
         }
         else
         {
@@ -207,14 +154,14 @@ send_keystroke(keystroke)
             {
                 info .= " -> [ " get_sequence(sequence) " ]"
                 send_unicode(get_sequence(sequence))
-                state.mode := "WAITING"
+                state.typing := false
                 sequence := ""
             }
             else if (!has_prefix(sequence))
             {
                 info .= " ABORTED"
                 send_raw(sequence)
-                state.mode := "WAITING"
+                state.typing := false
                 sequence := ""
             }
             else
@@ -233,21 +180,21 @@ send_keystroke(keystroke)
 reset_callback:
     settimer, reset_callback, off
     sequence := ""
-    if (state.mode == "TYPING")
-        state.mode := "WAITING"
+    state.typing := false
     refresh_systray()
     return
 
 toggle_callback:
-    if (state.mode == "DISABLED")
+    if (state.disabled)
     {
-        state.mode := "WAITING"
+        state.disabled := false
+        state.typing := false
         set_compose_hotkeys(true)
     }
     else
     {
         set_compose_hotkeys(false)
-        state.mode := "DISABLED"
+        state.disabled := true
     }
     refresh_systray()
     return
@@ -490,7 +437,14 @@ guiescape:
 
 refresh_systray()
 {
-    if (state.mode == "WAITING")
+    if (state.disabled)
+    {
+        suspend on
+        menu tray, check, % _("menu.disable")
+        menu tray, icon, %global_resource_file%, 3, 1
+        menu tray, tip, % _("tray_tip.disabled")
+    }
+    else if (!state.typing)
     {
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
@@ -498,19 +452,12 @@ refresh_systray()
         menu tray, icon, %global_resource_file%, 1, 1
         menu tray, tip, % _("tray_tip.active")
     }
-    else if (state.mode == "TYPING")
+    else ; if (state.typing)
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
         menu tray, icon, %global_resource_file%, 2
         menu tray, tip, % _("tray_tip.typing")
-    }
-    else if (state.mode == "DISABLED")
-    {
-        suspend on
-        menu tray, check, % _("menu.disable")
-        menu tray, icon, %global_resource_file%, 3, 1
-        menu tray, tip, % _("tray_tip.disabled")
     }
 
     for key, val in valid_keys
@@ -565,7 +512,7 @@ special_callback:
     else
     {
         ; Cancel any sequence in progress
-        if (state.mode == "TYPING")
+        if (state.typing)
             send_keystroke("compose")
 
         if (!state.special_down)
@@ -782,8 +729,9 @@ fill_sequences(filter)
             continue
 
         ; Insert into the GUI if applicable
-        sequence := substr(key, 1, 1)
-        sequence := regexreplace(sequence, "  ", " {spc}")
+        sequence := regexreplace(key, "(.)", " $1")
+        sequence := regexreplace(sequence, "  ", " space")
+        sequence := regexreplace(sequence, "^ ", "")
         result := val
         uni := "U+"
 
