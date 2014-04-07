@@ -6,7 +6,7 @@ AHK = main.ahk
 INC = constants.ahk utils.ahk
 RC = resources.rc
 
-ICONS = res/wc.ico res/wca.ico res/wcd.ico
+ICONS = res/wc.ico res/wca.ico res/wcd.ico res/icon_empty.ico
 
 EXE = obj/WinCompose.exe
 DLL = obj/resources.dll

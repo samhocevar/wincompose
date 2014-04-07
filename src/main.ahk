@@ -30,7 +30,11 @@ global have_debug := false
 global state := { typing: false          ; Is the user typing something?
                 , disabled: false        ; Is everything disabled?
                 , compose_down: false    ; Is the compose key down?
-                , special_down: false }  ; Is a special key down?
+                , special_down: false    ; Is a special key down?
+                , selected_char: ""      ; The character currently selected in GUI
+                , selected_seq: ""       ; The sequence currently selected
+                , gui_width: 0
+                , gui_height: 0 }
 
 ; Runtime configuration, taken from the config files
 global config := { sequences:   {}
@@ -39,6 +43,12 @@ global config := { sequences:   {}
                  , keynames:    {}
                  , compose_key: default_key
                  , reset_delay: default_delay }
+
+; GUI variables
+global ui_listbox, ui_edit_filter, ui_button
+global ui_text_filter, ui_text_filterw, ui_text_bigchar, ui_text_desc
+global ui_key1, ui_key2, ui_key3, ui_key4, ui_key5, ui_key6, ui_key7, ui_key8, ui_key9
+global ui_asc1, ui_asc2, ui_asc3, ui_asc4, ui_asc5, ui_asc6, ui_asc7, ui_asc8, ui_asc9
 
 main()
 return
@@ -314,18 +324,36 @@ setup_ui()
     menu tray, default, % _("menu.sequences")
 
     ; Build the sequence list window
-    global ui_listbox, ui_text, ui_textw, ui_textedit, ui_button
-    gui +resize +minsize300x115
+    gui +resize +minsize640x300
     gui margin, 8, 8
+
     gui font, s11
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, vui_listbox w700 r18, % _("seq_win.columns")
+    gui add, listview, vui_listbox glistview_callback w300 r5 altsubmit -multi, % _("seq_win.columns")
+
+    gui font, s100
+    gui add, text, vui_text_bigchar center border, % ""
+
+    gui font, s11
+    gui add, text, vui_text_desc backgroundtrans, % ""
+
+    gui font, s36
+    loop % 9
+    {
+        gui add, picture, x0 y0 w64 h64 vui_key%a_index% icon4, %global_resource_file%
+        gui add, text, x0 y0 w64 h64 center vui_asc%a_index% backgroundtrans, % ""
+        guicontrol hide, ui_key%a_index%
+        guicontrol hide, ui_asc%a_index%
+    }
+
     gui font
-    gui add, text, vui_text, % _("seq_win.filter")
-    guicontrolget ui_text, pos
-    gui add, edit, vui_textedit gedit_callback
+    gui add, text, vui_text_filter, % _("seq_win.filter")
+    guicontrolget ui_text_filter, pos
+
+    gui add, edit, vui_edit_filter gedit_callback
+
     gui add, button, vui_button default, % _("seq_win.close")
 
     ; The copy character menu
@@ -391,13 +419,9 @@ exit_callback:
 guisize:
     if (a_eventinfo != 1) ; Ignore minimising
     {
-        w := a_guiwidth
-        h := a_guiheight
-        global ui_listbox, ui_text, ui_textedit, ui_textw, ui_button
-        guicontrol move, ui_listbox, % "w" (w - 16) " h" (h - 45)
-        guicontrol move, ui_text, % "y" (h - 26)
-        guicontrol move, ui_textedit, % "x" (ui_textw + 15) " w" (w - 140 - ui_textw) " y" (h - 30)
-        guicontrol move, ui_button, % "x" (w - 87) " y" (h - 30) " w80"
+        state.gui_width := a_guiwidth
+        state.gui_height := a_guiheight
+        refresh_gui()
     }
     return
 
@@ -406,31 +430,55 @@ guicontextmenu:
     {
         if (a_eventinfo > 0)
         {
-            global ui_selected_char
-            lv_gettext(ui_selected_char, a_eventinfo, 2)
+            lv_gettext(tmp, a_eventinfo, 2)
+            state.selected_char := tmp
             menu, contextmenu, show
         }
     }
     return
 
 copychar_callback:
-    global ui_selected_char
-    clipboard := ui_selected_char
+    clipboard := state.selected_char
     return
 
 edit_callback:
     critical on ; don't self-interrupt or we will corrupt the listview
-    refresh_gui()
+    recompute_gui_filter()
+    return
+
+listview_callback:
+    critical on
+    if (a_guievent == "I")
+    {
+        ; If a new line was selected, update all the information
+        if (instr(errorlevel, "S", true))
+        {
+            lv_gettext(tmp, a_eventinfo, 2)
+            if (tmp != state.selected_char)
+            {
+                state.selected_char := tmp
+                guicontrol text, ui_text_bigchar, %tmp%
+
+                lv_gettext(tmp2, a_eventinfo, 3)
+                lv_gettext(tmp3, a_eventinfo, 4)
+                guicontrol text, ui_text_desc, % tmp2 " " tmp "\n\n" tmp3
+
+                lv_gettext(tmp4, a_eventinfo, 1)
+                state.selected_seq := tmp4
+            }
+            refresh_gui()
+        }
+    }
     return
 
 showgui_callback:
+    critical on
     gui_title := _("seq_win.title")
     if (winexist(gui_title))
         goto hidegui_callback
-    refresh_gui()
+    recompute_gui_filter()
     gui show, , %gui_title%
-    global ui_textedit
-    guicontrol focus, ui_textedit
+    guicontrol focus, ui_edit_filter
     return
 
 hidegui_callback:
@@ -471,6 +519,41 @@ refresh_systray()
 
     for key, val in valid_delays
         menu, delaymenu, % (key == config.reset_delay) ? "check" : "uncheck", %val%
+}
+
+refresh_gui()
+{
+    w := state.gui_width
+    h := state.gui_height
+    listbox_w := 260
+    listbox_h := h - 45
+    bigchar_w := 180
+    bigchar_h := 180
+    guicontrol move, ui_listbox, % "w" listbox_w " h" listbox_h
+    guicontrol move, ui_text_desc, % "x" listbox_w + 16 " y" 16 " w" w - listbox_w - 24 " h" 120
+    guicontrol move, ui_text_bigchar, % "x" listbox_w + (w - listbox_w - bigchar_w) / 2 " y" (h - bigchar_h - 45) " w" bigchar_w " h" bigchar_h
+    guicontrol move, ui_text_filter, % "y" (h - 26)
+    guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 15) " w" (w - 140 - ui_text_filterw) " y" (h - 30)
+    guicontrol move, ui_button, % "x" (w - 87) " y" (h - 30) " w80"
+
+    loop % 9
+    {
+        guicontrol hide, ui_key%a_index%
+        guicontrol hide, ui_asc%a_index%
+    }
+
+    tmp := state.selected_seq
+    loop parse, tmp, % " "
+    {
+        guicontrol show, ui_key%a_index%
+        guicontrol move, ui_key%a_index%, % "x" 240 + a_index * 80 " y" 100
+
+        guicontrol text, ui_asc%a_index%, % a_loopfield == "space" ? ""
+                                          : a_loopfield == "&" ? "&&"
+                                          : a_loopfield
+        guicontrol show, ui_asc%a_index%
+        guicontrol move, ui_asc%a_index%, % "x" 240 + a_index * 80 " y" 100
+    }
 }
 
 set_ascii_hotkeys(must_enable)
@@ -592,17 +675,20 @@ compose_callback:
     return
 }
 
-refresh_gui()
+recompute_gui_filter()
 {
     lv_delete()
-    global ui_textedit
-    guicontrolget ui_textedit
-    fill_sequences(ui_textedit)
-    loop % 4
+    guicontrolget ui_edit_filter
+    fill_sequences(ui_edit_filter)
+
+    loop % 3
         lv_modifycol(a_index, "autohdr")
     lv_modifycol(1, "center") ; center the sequences column
+    lv_modifycol(1, "sort")   ; sort the sequences column
     lv_modifycol(2, "center") ; center the character column
-    lv_modifycol(3, "sort")   ; sort the Unicode column
+    lv_modifycol(4, "0")      ; hide the description column
+
+    lv_modify(1, "select")
 }
 
 load_sequences()
