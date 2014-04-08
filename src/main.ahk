@@ -37,12 +37,13 @@ global state := { typing: false          ; Is the user typing something?
                 , gui_height: 0 }
 
 ; Runtime configuration, taken from the config files
-global config := { sequences:   {}
-                 , seq_count:   0
-                 , prefixes:    {}
-                 , keynames:    {}
-                 , compose_key: default_key
-                 , reset_delay: default_delay }
+global config := { sequences:    {}
+                 , seq_count:    0
+                 , prefixes:     {}
+                 , descriptions: {}
+                 , keynames:     {}
+                 , compose_key:  default_key
+                 , reset_delay:  default_delay }
 
 ; GUI variables
 global ui_listbox, ui_edit_filter, ui_button
@@ -457,18 +458,19 @@ listview_callback:
         ; If a new line was selected, update all the information
         if (instr(errorlevel, "S", true))
         {
-            lv_gettext(tmp, a_eventinfo, 2)
-            if (tmp != state.selected_char)
+            lv_gettext(char, a_eventinfo, 2)
+            if (char != state.selected_char)
             {
-                state.selected_char := tmp
-                guicontrol text, ui_text_bigchar, %tmp%
+                lv_gettext(sequence, a_eventinfo, 1)
+                sequence := regexreplace(sequence, " ", "")
+                sequence := regexreplace(sequence, "space", " ")
+                lv_gettext(unicode, a_eventinfo, 3)
 
-                lv_gettext(tmp2, a_eventinfo, 3)
-                lv_gettext(tmp3, a_eventinfo, 4)
-                guicontrol text, ui_text_desc, % tmp2 " " tmp "\n\n" tmp3
+                state.selected_char := char
+                state.selected_seq := sequence
 
-                lv_gettext(tmp4, a_eventinfo, 1)
-                state.selected_seq := tmp4
+                guicontrol text, ui_text_bigchar, %char%
+                guicontrol text, ui_text_desc, % unicode " " char "\n\n" get_description(sequence)
             }
             refresh_gui()
         }
@@ -549,14 +551,13 @@ refresh_gui()
     guicontrol move, ui_keycap_0, % "x280 y100"
 
     tmp := state.selected_seq
-    loop parse, tmp, % " "
+    loop parse, tmp
     {
         guicontrol show, ui_keycap_%a_index%
         guicontrol move, ui_keycap_%a_index%, % "x" 280 + a_index * 52 " y" 100
 
-        guicontrol text, ui_keytext_%a_index%, % a_loopfield == "space" ? ""
-                                          : a_loopfield == "&" ? "&&"
-                                          : a_loopfield
+        guicontrol text, ui_keytext_%a_index%, % a_loopfield == "&" ? "&&"
+                                               : a_loopfield
         guicontrol show, ui_keytext_%a_index%
         guicontrol move, ui_keytext_%a_index%, % "x" 280 + a_index * 52 " y" 106
     }
@@ -798,16 +799,19 @@ read_sequence_file(file)
 
 ; Register a compose sequence, and add all substring prefixes to our list
 ; of valid prefixes so that we can cancel invalid sequences early on.
-add_sequence(key, val, desc)
+add_sequence(seq, char, desc)
 {
     ; Insert into our lookup table
     stringlower desc, desc
-    config.sequences.insert(string_to_hex(key), [key, val, desc])
+    config.sequences.insert(string_to_hex(seq), [seq, char])
     config.seq_count += 1
 
     ; Insert into the prefix lookup table
-    loop % strlen(key) - 1
-        config.prefixes.insert(string_to_hex(substr(key, 1, a_index)), true)
+    loop % strlen(seq) - 1
+        config.prefixes.insert(string_to_hex(substr(seq, 1, a_index)), true)
+
+    ; Insert into Unicode description list
+    config.descriptions.insert(string_to_hex(seq), desc)
 }
 
 ; Fill the default list view widget with all the compose rules that
@@ -818,30 +822,30 @@ fill_sequences(filter)
     stringlower filter_low, filter
     for k, v in config.sequences
     {
-        key := v[1]
-        val := v[2]
-        desc := v[3]
+        seq := v[1]
+        char := v[2]
+        desc := config.descriptions[k]
 
         ; Filter out if necessary
-        if (filter != val && !instr(key, filter) && !instr(desc, filter_low))
+        if (filter != char && !instr(seq, filter) && !instr(desc, filter_low))
             continue
 
         ; Insert into the GUI if applicable
-        sequence := regexreplace(key, "(.)", " $1")
+        sequence := regexreplace(seq, "(.)", " $1")
         sequence := regexreplace(sequence, "  ", " space")
         sequence := regexreplace(sequence, "^ ", "")
-        result := val
+        result := char
         uni := "U+"
 
-        if (strlen(val) == 1)
+        if (strlen(char) == 1)
         {
-            code := asc(val)
+            code := asc(char)
             digits := 4
         }
-        else if (strlen(val) == 2)
+        else if (strlen(char) == 2)
         {
-            code := (asc(substr(val, 1, 1)) - 0xd800) << 10
-            code += asc(substr(val, 2, 1)) + 0x10000 - 0xdc00
+            code := (asc(substr(char, 1, 1)) - 0xd800) << 10
+            code += asc(substr(char, 2, 1)) + 0x10000 - 0xdc00
             digits := 6
             ; HACK: prepend a non-printable character to fix sorting
             uni := chr(0x2063) . uni
@@ -849,22 +853,27 @@ fill_sequences(filter)
 
         uni .= num_to_hex(code, digits)
 
-        lv_add("", sequence, val, uni, desc)
+        lv_add("", sequence, char, uni)
     }
 }
 
-has_sequence(key)
+has_sequence(seq)
 {
-    return config.sequences.haskey(string_to_hex(key))
+    return config.sequences.haskey(string_to_hex(seq))
 }
 
-get_sequence(key)
+get_sequence(seq)
 {
-    return config.sequences[string_to_hex(key)][2]
+    return config.sequences[string_to_hex(seq)][2]
 }
 
-has_prefix(key)
+get_description(seq)
 {
-    return config.prefixes.haskey(string_to_hex(key))
+    return config.descriptions[string_to_hex(seq)]
+}
+
+has_prefix(seq)
+{
+    return config.prefixes.haskey(string_to_hex(seq))
 }
 
