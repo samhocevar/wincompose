@@ -49,9 +49,8 @@ Compose rules are supposed to be intuitive. Here are some examples:
  - `C` `C` `C` `P` → `☭`
  - `<` `3` → `♥`
 
-The full list of rules can be found in the `Compose.txt` file shipped with
-WinCompose, or by clicking on the WinCompose system tray icon or using the
-“Show Sequences…” menu entry:
+The full list of rules can be found by clicking on the WinCompose system tray
+icon or using the “Show Sequences…” menu entry:
 
 ![Sequence List](/web/shot2.png)
 
