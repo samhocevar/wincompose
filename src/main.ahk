@@ -66,7 +66,7 @@ main()
     menu tray, useerrorlevel
 
     ; Early icon initialisation to prevent flashing
-    tmp := C.files.resource
+    tmp := C.files.resources
     menu tray, icon, %tmp%, 1
 
     load_settings()
@@ -343,14 +343,14 @@ setup_ui()
     gui font, s11
     gui add, text, vui_text_desc backgroundtrans, % ""
 
-    tmp := C.files.resource
+    tmp := C.files.resources
     gui add, picture, w48 h48 vui_keycap_0 icon2, %tmp%
 
     gui font, s22
     gui font, w700
     loop % 9
     {
-        tmp := C.files.resource
+        tmp := C.files.resources
         gui add, picture, x0 y0 w48 h48 vui_keycap_%a_index% icon4, %tmp%
         gui add, text, x0 y0 w48 h48 center vui_keytext_%a_index% backgroundtrans, % ""
         guicontrol hide, ui_keycap_%a_index%
@@ -474,7 +474,11 @@ listview_callback:
                 state.selected_seq := sequence
 
                 guicontrol text, ui_text_bigchar, %char%
-                guicontrol text, ui_text_desc, % unicode " " char "\n\n" get_description(sequence)
+                ; HACK: remove the non-printable character we added for sorting purposes
+                desc := " " regexreplace(unicode, ".*U+", "U+") " " char "\n"
+                desc .= substr("————————————————————", 1, strlen(unicode) + 5) "\n"
+                desc .= get_description(sequence)
+                guicontrol text, ui_text_desc, %desc%
             }
             refresh_gui()
         }
@@ -505,7 +509,7 @@ refresh_systray()
     {
         suspend on
         menu tray, check, % _("menu.disable")
-        tmp := C.files.resource
+        tmp := C.files.resources
         menu tray, icon, %tmp%, 3, 1
         menu tray, tip, % _("tray_tip.disabled")
     }
@@ -514,7 +518,7 @@ refresh_systray()
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
         menu tray, uncheck, % _("menu.disable")
-        tmp := C.files.resource
+        tmp := C.files.resources
         menu tray, icon, %tmp%, 1, 1
         menu tray, tip, % _("tray_tip.active")
     }
@@ -522,7 +526,7 @@ refresh_systray()
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
-        tmp := C.files.resource
+        tmp := C.files.resources
         menu tray, icon, %tmp%, 2
         menu tray, tip, % _("tray_tip.typing")
     }
@@ -542,31 +546,37 @@ refresh_gui()
     lb_h := h - 45
     bigchar_w := 180
     bigchar_h := 180
+
     guicontrol move, ui_listbox, % "w" lb_w " h" lb_h
+
     guicontrol move, ui_text_desc, % "x" lb_w + 32 " y" 16 " w" w - lb_w - 40 " h" 120
-    guicontrol move, ui_text_bigchar, % "x" lb_w + (w - lb_w - bigchar_w) / 2 " y" (h - bigchar_h - 45) " w" bigchar_w " h" bigchar_h
+
+    guicontrol move, ui_text_bigchar, % "x" lb_w + (w - lb_w - bigchar_w) / 2 " y" 64 + (h - bigchar_h) / 2 " w" bigchar_w " h" bigchar_h
+
     guicontrol move, ui_text_filter, % "x" 8 " y" (h - 26)
     guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 15) " w" (w - 140 - ui_text_filterw) " y" (h - 30)
     guicontrol move, ui_button, % "x" (w - 87) " y" (h - 30) " w80"
 
-    loop % 9
-    {
-        guicontrol hide, ui_keycap_%a_index%
-        guicontrol hide, ui_keytext_%a_index%
-    }
-
     guicontrol move, ui_keycap_0, % "x" (lb_w + 20) " y" 100
 
-    tmp := state.selected_seq
-    loop parse, tmp
+    loop % 9
     {
-        guicontrol show, ui_keycap_%a_index%
-        guicontrol move, ui_keycap_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" 100
+        if (a_index > strlen(state.selected_seq))
+        {
+            guicontrol hide, ui_keycap_%a_index%
+            guicontrol hide, ui_keytext_%a_index%
+        }
+        else
+        {
+            char := substr(state.selected_seq, a_index, 1)
 
-        guicontrol text, ui_keytext_%a_index%, % a_loopfield == "&" ? "&&"
-                                               : a_loopfield
-        guicontrol show, ui_keytext_%a_index%
-        guicontrol move, ui_keytext_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" (100 + 6)
+            guicontrol show, ui_keycap_%a_index%
+            guicontrol move, ui_keycap_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" 100
+
+            guicontrol text, ui_keytext_%a_index%, % char == "&" ? "&&" : char
+            guicontrol show, ui_keytext_%a_index%
+            guicontrol move, ui_keytext_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" (100 + 6)
+        }
     }
 }
 
@@ -708,10 +718,12 @@ recompute_gui_filter()
 load_sequences()
 {
     ; Read the default key file
-    read_key_file(C.files.key)
+    for ignored, file in C.files.keys
+        read_key_file(file)
 
-    ; Read the default sequence file
-    read_sequence_file(C.files.sequence)
+    ; Read the default sequence files
+    for ignored, file in C.files.sequences
+        read_sequence_file(file)
 
     ; Read a user-provided sequence file, if available
     envget userprofile, userprofile

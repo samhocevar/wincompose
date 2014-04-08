@@ -10,22 +10,22 @@
 ;
 ; All system-wide constants
 ;
-global C := { "":0
+global C := { _:_
 
     ;
     ; Various resource files we need
     ;
 
-  , files : { "":0
-      , sequence : "res/Compose.txt"
-      , key      : "res/Keys.txt"
-      , resource : "res/resources.dll" }
+  , files : { _:_
+      , sequences : [ "res/Xorg.txt", "res/Xcompose.txt" ]
+      , keys      : [ "res/Keys.txt" ]
+      , resources : "res/resources.dll" }
 
     ;
     ; Keyboard-related constants
     ;
 
-  , keys : { "":0
+  , keys : { _:_
         ; List of keys that can be used for Compose
       , valid : { "lalt"       : _("keys.lalt")
                 , "ralt"       : _("keys.ralt")
@@ -70,7 +70,7 @@ global C := { "":0
     ; Timeout-related constants
     ;
 
-  , delays : { "":0
+  , delays : { _:_
         ; List of timeout values
       , valid : { 500   : _("delays.500ms")
                 , 1000  : _("delays.1000ms")
@@ -86,7 +86,7 @@ global C := { "":0
     ; Hacks
     ;
 
-  , hacks : { "":0
+  , hacks : { _:_
         ; List of window names that must be treated specially because
         ; of how GTK+ handles Unicode input
       , gdk_classes : [ "gdkWindowToplevel"

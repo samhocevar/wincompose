@@ -60,12 +60,11 @@ The window allows you to filter the sequences being listed.
 Features
 --------
 
-WinCompose supports the standard Compose file format. It ships with more than
-1000 compose rules from [Xorg](http://www.x.org/wiki/). You can add custom
-rules by creating a file named `.XCompose` or `.XCompose.txt` in the
-`%USERPROFILE%` directory, which is usually your user directory. The
-[dotXCompose](https://github.com/kragen/xcompose) project provides such a file
-with many additional compose sequences.
+WinCompose supports the standard Compose file format. It provides more than
+1500 compose rules from the [Xorg](http://www.x.org/wiki/) project and the
+[dotXCompose](https://github.com/kragen/xcompose) project. You can add custom
+rules by creating a file named `.XCompose` or `.XCompose.txt` in your
+`%USERPROFILE%` directory.
 
 WinCompose supports rules of more than 2 characters such as **( 3 )**
 for **③**.

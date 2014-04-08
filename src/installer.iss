@@ -15,8 +15,9 @@ OutputDir = .
 [Files]
 Source: "obj\{#NAME}.exe"; DestDir: "{app}"; Flags: replacesameversion
 Source: "obj\resources.dll"; DestDir: "{app}\res"
-Source: "res\Compose.txt"; DestDir: "{app}\res"
 Source: "res\Keys.txt"; DestDir: "{app}\res"
+Source: "res\Xorg.txt"; DestDir: "{app}\res"
+Source: "res\Xcompose.txt"; DestDir: "{app}\res"
 Source: "locale\default.ini"; DestDir: "{app}\locale"
 Source: "locale\fr.ini"; DestDir: "{app}\locale"
 
@@ -33,6 +34,7 @@ Filename: "{app}\{#NAME}.exe"; Flags: nowait
 Type: files; Name: "{app}\res\wc.ico"
 Type: files; Name: "{app}\res\wca.ico"
 Type: files; Name: "{app}\res\wcd.ico"
+Type: files; Name: "{app}\res\Compose.txt"
 
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#NAME}.exe"; Flags: runhidden
