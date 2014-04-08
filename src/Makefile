@@ -3,7 +3,7 @@ VERSION = 0.5.0
 
 ISS = installer.iss
 AHK = main.ahk
-INC = constants.ahk utils.ahk
+INC = constants.ahk ui.ahk utils.ahk
 RC = resources.rc
 
 ICONS = res/wc.ico res/wca.ico res/wcd.ico res/icon_empty.ico

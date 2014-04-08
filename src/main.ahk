@@ -12,6 +12,7 @@
 #noenv
 
 #include constants.ahk
+#include ui.ahk
 #include utils.ahk
 
 ; The name and version of this script
@@ -36,14 +37,14 @@ global state := { typing: false          ; Is the user typing something?
                 , gui_width: 0
                 , gui_height: 0 }
 
-; Runtime configuration, taken from the config files
-global config := { sequences:    {}
-                 , seq_count:    0
-                 , prefixes:     {}
-                 , descriptions: {}
-                 , keynames:     {}
-                 , compose_key:  default_key
-                 , reset_delay:  default_delay }
+; Runtime configuration, imported from the config files
+global R := { sequences:    {}
+            , seq_count:    0
+            , prefixes:     {}
+            , descriptions: {}
+            , keynames:     {}
+            , compose_key:  C.keys.default
+            , reset_delay:  C.delays.valid }
 
 ; GUI variables
 global ui_listbox, ui_edit_filter, ui_button
@@ -65,7 +66,8 @@ main()
     menu tray, useerrorlevel
 
     ; Early icon initialisation to prevent flashing
-    menu tray, icon, %global_resource_file%, 1
+    tmp := C.files.resource
+    menu tray, icon, %tmp%, 1
 
     load_settings()
     load_sequences()
@@ -79,12 +81,12 @@ main()
 load_settings()
 {
     ; Read the compose key value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % config.compose_key, ""
-    config.compose_key := valid_keys.haskey(tmp) ? tmp : default_key
+    iniread tmp, %config_file%, Global, % R.compose_key, ""
+    R.compose_key := C.keys.valid.haskey(tmp) ? tmp : C.keys.default
 
     ; Read the reset delay value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % config.reset_delay, ""
-    config.reset_delay := valid_delays.haskey(tmp) ? tmp : default_delay
+    iniread tmp, %config_file%, Global, % R.reset_delay, ""
+    R.reset_delay := C.delays.valid.haskey(tmp) ? tmp : C.delays.valid
 
     save_settings()
 }
@@ -92,8 +94,8 @@ load_settings()
 save_settings()
 {
     filecreatedir %config_dir%
-    iniwrite % config.compose_key, %config_file%, Global, compose_key
-    iniwrite % config.reset_delay, %config_file%, Global, reset_delay
+    iniwrite % R.compose_key, %config_file%, Global, compose_key
+    iniwrite % R.reset_delay, %config_file%, Global, reset_delay
 }
 
 ;
@@ -112,7 +114,7 @@ send_keystroke(keystroke)
         ; are automatically disabled in suspend mode, but I guess it
         ; doesn't hurt to have some fallback solution.
         if (keystroke == "compose")
-            send % config.compose_key
+            send % R.compose_key
         else
             send_raw(char)
         sequence := ""
@@ -125,8 +127,8 @@ send_keystroke(keystroke)
         {
             check_keyboard_layout()
             state.typing := true
-            if (config.reset_delay > 0)
-                settimer, reset_callback, % config.reset_delay
+            if (R.reset_delay > 0)
+                settimer, reset_callback, % R.reset_delay
         }
         else
             send_raw(char)
@@ -136,8 +138,8 @@ send_keystroke(keystroke)
     {
         ; If the compose key is an actual character, don't cancel the compose
         ; sequence since the character could be used in the sequence itself.
-        if (keystroke == "compose" && strlen(config.compose_key) == 1)
-            keystroke := config.compose_key
+        if (keystroke == "compose" && strlen(R.compose_key) == 1)
+            keystroke := R.compose_key
 
         if (keystroke == "compose")
         {
@@ -148,8 +150,8 @@ send_keystroke(keystroke)
         else
         {
             ; If this is a numpad key, replace it with its ASCII value
-            if (num_keys.haskey(keystroke))
-                keystroke := "$" num_keys[keystroke]
+            if (C.keys.numpad.haskey(regexreplace(keystroke, "[$]", "")))
+                keystroke := "$" C.keys.numpad[keystroke]
 
             ; The actual character is the last char of the keystroke
             char := substr(keystroke, strlen(keystroke))
@@ -179,8 +181,8 @@ send_keystroke(keystroke)
             }
             else
             {
-                if (config.reset_delay > 0)
-                    settimer, reset_callback, % config.reset_delay
+                if (R.reset_delay > 0)
+                    settimer, reset_callback, % R.reset_delay
             }
 
             debug(info)
@@ -217,7 +219,7 @@ send_unicode(char)
 {
     ; HACK: GTK+ applications behave differently with Unicode, and some applications
     ; such as XChat for Windows rename their own top-level window
-    for ignored, class in gdk_classes
+    for ignored, class in C.hacks.gdk_classes
     {
         if (winactive("ahk class " class))
         {
@@ -299,11 +301,11 @@ setup_ui()
     onexit exit_callback
 
     ; The hotkey selection menu
-    for key, val in valid_keys
+    for key, val in C.keys.valid
         menu, hotkeymenu, add, %val%, hotkeymenu_callback
 
     ; The delay selection menu
-    for key, val in valid_delays
+    for key, val in C.delays.valid
         menu, delaymenu, add, %val%, delaymenu_callback
 
     ; Build the systray menu
@@ -333,7 +335,7 @@ setup_ui()
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, vui_listbox glistview_callback w300 r5 altsubmit -multi, % _("seq_win.columns")
+    gui add, listview, % "vui_listbox glistview_callback w" UI.listview_width " r5 altsubmit -multi", % _("seq_win.columns")
 
     gui font, s100
     gui add, text, vui_text_bigchar center +E0x200, % ""
@@ -341,13 +343,15 @@ setup_ui()
     gui font, s11
     gui add, text, vui_text_desc backgroundtrans, % ""
 
-    gui add, picture, w48 h48 vui_keycap_0 icon2, %global_resource_file%
+    tmp := C.files.resource
+    gui add, picture, w48 h48 vui_keycap_0 icon2, %tmp%
 
     gui font, s22
     gui font, w700
     loop % 9
     {
-        gui add, picture, x0 y0 w48 h48 vui_keycap_%a_index% icon4, %global_resource_file%
+        tmp := C.files.resource
+        gui add, picture, x0 y0 w48 h48 vui_keycap_%a_index% icon4, %tmp%
         gui add, text, x0 y0 w48 h48 center vui_keytext_%a_index% backgroundtrans, % ""
         guicontrol hide, ui_keycap_%a_index%
         guicontrol hide, ui_keytext_%a_index%
@@ -377,17 +381,17 @@ key_callback:
 
 hotkeymenu_callback:
     set_compose_hotkeys(false)
-    for key, val in valid_keys
+    for key, val in C.keys.valid
         if (val == a_thismenuitem)
-            config.compose_key := key
+            R.compose_key := key
     refresh_systray()
     set_compose_hotkeys(true)
     return
 
 delaymenu_callback:
-    for key, val in valid_delays
+    for key, val in C.delays.valid
         if (val == a_thismenuitem)
-            config.reset_delay := key
+            R.reset_delay := key
     refresh_systray()
     return
 
@@ -501,7 +505,8 @@ refresh_systray()
     {
         suspend on
         menu tray, check, % _("menu.disable")
-        menu tray, icon, %global_resource_file%, 3, 1
+        tmp := C.files.resource
+        menu tray, icon, %tmp%, 3, 1
         menu tray, tip, % _("tray_tip.disabled")
     }
     else if (!state.typing)
@@ -509,36 +514,38 @@ refresh_systray()
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
         menu tray, uncheck, % _("menu.disable")
-        menu tray, icon, %global_resource_file%, 1, 1
+        tmp := C.files.resource
+        menu tray, icon, %tmp%, 1, 1
         menu tray, tip, % _("tray_tip.active")
     }
     else ; if (state.typing)
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
-        menu tray, icon, %global_resource_file%, 2
+        tmp := C.files.resource
+        menu tray, icon, %tmp%, 2
         menu tray, tip, % _("tray_tip.typing")
     }
 
-    for key, val in valid_keys
-        menu, hotkeymenu, % (key == config.compose_key) ? "check" : "uncheck", %val%
+    for key, val in C.keys.valid
+        menu, hotkeymenu, % (key == R.compose_key) ? "check" : "uncheck", %val%
 
-    for key, val in valid_delays
-        menu, delaymenu, % (key == config.reset_delay) ? "check" : "uncheck", %val%
+    for key, val in C.delays.valid
+        menu, delaymenu, % (key == R.reset_delay) ? "check" : "uncheck", %val%
 }
 
 refresh_gui()
 {
     w := state.gui_width
     h := state.gui_height
-    listbox_w := 260
-    listbox_h := h - 45
+    lb_w := UI.listview_width
+    lb_h := h - 45
     bigchar_w := 180
     bigchar_h := 180
-    guicontrol move, ui_listbox, % "w" listbox_w " h" listbox_h
-    guicontrol move, ui_text_desc, % "x" listbox_w + 32 " y" 16 " w" w - listbox_w - 40 " h" 120
-    guicontrol move, ui_text_bigchar, % "x" listbox_w + (w - listbox_w - bigchar_w) / 2 " y" (h - bigchar_h - 45) " w" bigchar_w " h" bigchar_h
-    guicontrol move, ui_text_filter, % "y" (h - 26)
+    guicontrol move, ui_listbox, % "w" lb_w " h" lb_h
+    guicontrol move, ui_text_desc, % "x" lb_w + 32 " y" 16 " w" w - lb_w - 40 " h" 120
+    guicontrol move, ui_text_bigchar, % "x" lb_w + (w - lb_w - bigchar_w) / 2 " y" (h - bigchar_h - 45) " w" bigchar_w " h" bigchar_h
+    guicontrol move, ui_text_filter, % "x" 8 " y" (h - 26)
     guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 15) " w" (w - 140 - ui_text_filterw) " y" (h - 30)
     guicontrol move, ui_button, % "x" (w - 87) " y" (h - 30) " w80"
 
@@ -548,18 +555,18 @@ refresh_gui()
         guicontrol hide, ui_keytext_%a_index%
     }
 
-    guicontrol move, ui_keycap_0, % "x280 y100"
+    guicontrol move, ui_keycap_0, % "x" (lb_w + 20) " y" 100
 
     tmp := state.selected_seq
     loop parse, tmp
     {
         guicontrol show, ui_keycap_%a_index%
-        guicontrol move, ui_keycap_%a_index%, % "x" 280 + a_index * 52 " y" 100
+        guicontrol move, ui_keycap_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" 100
 
         guicontrol text, ui_keytext_%a_index%, % a_loopfield == "&" ? "&&"
                                                : a_loopfield
         guicontrol show, ui_keytext_%a_index%
-        guicontrol move, ui_keytext_%a_index%, % "x" 280 + a_index * 52 " y" 106
+        guicontrol move, ui_keytext_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" (100 + 6)
     }
 }
 
@@ -576,8 +583,8 @@ set_ascii_hotkeys(must_enable)
         hotkey $+%a_loopfield%, key_callback, %flag%, useerrorlevel
     loop, parse, c2
         hotkey $%a_loopfield%, key_callback, %flag%, useerrorlevel
-    for key, val in num_keys
-        hotkey %key%, key_callback, %flag%, useerrorlevel
+    for key, val in C.keys.numpad
+        hotkey $%key%, key_callback, %flag%, useerrorlevel
 }
 
 ;
@@ -588,7 +595,7 @@ set_special_hotkeys(must_enable)
 {
     flag := must_enable ? "on" : "off"
 
-    for ignored, key in special_keys
+    for ignored, key in C.keys.special
     {
         hotkey $%key%, special_callback, %flag%, useerrorlevel
         hotkey $%key% up, special_callback, %flag%, useerrorlevel
@@ -612,7 +619,7 @@ special_callback:
             send_keystroke("compose")
 
         if (!state.special_down)
-            sendinput % "{" config.compose_key " down}"
+            sendinput % "{" R.compose_key " down}"
 
         sendinput {%key% down}
         state.special_down := true
@@ -634,15 +641,15 @@ set_compose_hotkeys(must_enable)
     {
         ; Make sure that 1-character hotkeys are activated; these may have
         ; been deactivated by set_compose_hotkeys(false).
-        for key, val in valid_keys
+        for key, val in C.keys.valid
             if (strlen(key) == 1)
                 hotkey $%key%, key_callback, on, useerrorlevel
 
         ; Activate the compose key for real
         for ignored, prefix in compose_prefixes
         {
-            hotkey % prefix config.compose_key, compose_callback, on, useerrorlevel
-            hotkey % prefix config.compose_key " up", compose_callback, on, useerrorlevel
+            hotkey % prefix R.compose_key, compose_callback, on, useerrorlevel
+            hotkey % prefix R.compose_key " up", compose_callback, on, useerrorlevel
         }
     }
     else
@@ -650,7 +657,7 @@ set_compose_hotkeys(must_enable)
         ; Disable any existing hotkeys
         for ignored, prefix in compose_prefixes
         {
-            for key, val in valid_keys
+            for key, val in C.keys.valid
             {
                 hotkey % prefix key, off, useerrorlevel
                 hotkey % prefix key " up", off, useerrorlevel
@@ -669,7 +676,7 @@ compose_callback:
         state.compose_down := false
         ; Tell the system it was released, just in case a special
         ; hotkey was triggered.
-        sendinput % "{" config.compose_key " up}"
+        sendinput % "{" R.compose_key " up}"
         set_special_hotkeys(false)
     }
     else if (!state.compose_down)
@@ -701,17 +708,17 @@ recompute_gui_filter()
 load_sequences()
 {
     ; Read the default key file
-    read_key_file(global_key_file)
+    read_key_file(C.files.key)
 
     ; Read the default sequence file
-    read_sequence_file(global_sequence_file)
+    read_sequence_file(C.files.sequence)
 
     ; Read a user-provided sequence file, if available
     envget userprofile, userprofile
     read_sequence_file(userprofile "\\.XCompose")
     read_sequence_file(userprofile "\\.XCompose.txt")
 
-    info(_("tray_notify.loaded", config.seq_count) "\n" _("tray_notify.keyinfo", valid_keys[config.compose_key]) "\n")
+    info(_("tray_notify.loaded", R.seq_count) "\n" _("tray_notify.keyinfo", C.keys.valid[R.compose_key]) "\n")
 }
 
 read_key_file(file)
@@ -742,7 +749,7 @@ read_key_file(file)
             continue
         left := regexreplace(left, "[ \\t]*", "")
 
-        config.keynames[regexreplace(left, "[<>]*", "")] := right
+        R.keynames[regexreplace(left, "[<>]*", "")] := right
     }
 }
 
@@ -785,8 +792,8 @@ read_sequence_file(file)
         {
             if (strlen(a_loopfield) <= 1)
                 seq .= a_loopfield
-            else if (config.keynames.haskey(a_loopfield))
-                seq .= config.keynames[a_loopfield]
+            else if (R.keynames.haskey(a_loopfield))
+                seq .= R.keynames[a_loopfield]
             else
                 valid := false
         }
@@ -801,17 +808,19 @@ read_sequence_file(file)
 ; of valid prefixes so that we can cancel invalid sequences early on.
 add_sequence(seq, char, desc)
 {
+    ; Only increment sequence count if we're not replacing one
+    if (!has_sequence(seq))
+        R.seq_count += 1
+
     ; Insert into our lookup table
-    stringlower desc, desc
-    config.sequences.insert(string_to_hex(seq), [seq, char])
-    config.seq_count += 1
+    R.sequences.insert(string_to_hex(seq), [seq, char])
 
     ; Insert into the prefix lookup table
     loop % strlen(seq) - 1
-        config.prefixes.insert(string_to_hex(substr(seq, 1, a_index)), true)
+        R.prefixes.insert(string_to_hex(substr(seq, 1, a_index)), true)
 
     ; Insert into Unicode description list
-    config.descriptions.insert(string_to_hex(seq), desc)
+    R.descriptions.insert(string_to_hex(seq), desc)
 }
 
 ; Fill the default list view widget with all the compose rules that
@@ -820,11 +829,11 @@ add_sequence(seq, char, desc)
 fill_sequences(filter)
 {
     stringlower filter_low, filter
-    for k, v in config.sequences
+    for k, v in R.sequences
     {
         seq := v[1]
         char := v[2]
-        desc := config.descriptions[k]
+        desc := R.descriptions[k]
 
         ; Filter out if necessary
         if (filter != char && !instr(seq, filter) && !instr(desc, filter_low))
@@ -859,21 +868,21 @@ fill_sequences(filter)
 
 has_sequence(seq)
 {
-    return config.sequences.haskey(string_to_hex(seq))
+    return R.sequences.haskey(string_to_hex(seq))
 }
 
 get_sequence(seq)
 {
-    return config.sequences[string_to_hex(seq)][2]
+    return R.sequences[string_to_hex(seq)][2]
 }
 
 get_description(seq)
 {
-    return config.descriptions[string_to_hex(seq)]
+    return R.descriptions[string_to_hex(seq)]
 }
 
 has_prefix(seq)
 {
-    return config.prefixes.haskey(string_to_hex(seq))
+    return R.prefixes.haskey(string_to_hex(seq))
 }
 
