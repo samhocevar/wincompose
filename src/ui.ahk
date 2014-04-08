@@ -164,9 +164,9 @@ guicontextmenu:
         {
             lv_gettext(tmp, a_eventinfo, 2)
             state.selected_char := tmp
-            menu, contextmenu, show
         }
     }
+    menu, contextmenu, show
     return
 
 copychar_callback:
@@ -198,9 +198,9 @@ listview_callback:
 
                 guicontrol text, ui_text_bigchar, %char%
                 ; HACK: remove the non-printable character we added for sorting purposes
-                desc := " " regexreplace(unicode, ".*U+", "U+") " " char "\n"
-                desc .= substr("————————————————————", 1, strlen(unicode) + 5) "\n"
-                desc .= get_description(sequence)
+                desc := " " regexreplace(unicode, ".*U", "U") " " char "\n"
+                desc .= substr("————————————————————", 1, strlen(unicode) + 4) "\n"
+                desc .= _("seq_win.description") " " get_description(sequence)
                 guicontrol text, ui_text_desc, %desc%
             }
             refresh_gui()
