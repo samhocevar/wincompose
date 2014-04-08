@@ -29,6 +29,14 @@ create_gui()
 {
     onexit exit_callback
 
+    create_systray()
+    create_seq_win()
+
+    refresh_systray()
+}
+
+create_systray()
+{
     ; The hotkey selection menu
     for key, val in C.keys.valid
         menu, hotkeymenu, add, %val%, hotkeymenu_callback
@@ -56,56 +64,16 @@ create_gui()
     menu tray, add, % _("menu.exit"), exit_callback
     menu tray, default, % _("menu.sequences")
 
-    ; Build the sequence list window
-    gui +resize +minsize720x400
-    gui margin, 8, 8
-
-    gui font, s11
-    gui font, s11, Courier New
-    gui font, s11, Lucida Console
-    gui font, s11, Consolas
-    gui add, listview, % "vui_listbox glistview_callback w" UI.seq_win.listview.width " r5 altsubmit -multi", % _("seq_win.columns")
-
-    gui font, s100
-    gui add, text, vui_text_bigchar center +E0x200, % ""
-
-    gui font, s11
-    gui add, text, vui_text_desc backgroundtrans, % ""
-
-    tmp := C.files.resources
-    gui add, picture, w48 h48 vui_keycap_0 icon2, %tmp%
-
-    gui font, s22
-    gui font, w700
-    loop % 9
-    {
-        tmp := C.files.resources
-        gui add, picture, x0 y0 w48 h48 vui_keycap_%a_index% icon4, %tmp%
-        gui add, text, x0 y0 w48 h48 center vui_keytext_%a_index% backgroundtrans, % ""
-        guicontrol hide, ui_keycap_%a_index%
-        guicontrol hide, ui_keytext_%a_index%
-    }
-
-    gui font
-    gui add, text, vui_text_filter, % _("seq_win.filter")
-    guicontrolget ui_text_filter, pos
-
-    gui add, edit, vui_edit_filter gedit_callback
-
-    gui add, button, vui_button default, % _("seq_win.close")
-
-    ; The copy character menu
-    menu, contextmenu, add, % _("contextmenu.copy"), copychar_callback
-
-    set_ascii_hotkeys(true)
-    set_compose_hotkeys(true)
-
-    refresh_systray()
-
     return
 
-key_callback:
-    send_keystroke(a_thishotkey)
+showgui_callback:
+    critical on
+    gui_title := _("seq_win.title")
+    if (winexist(gui_title))
+        goto hidegui_callback
+    recompute_gui_filter()
+    gui show, , %gui_title%
+    guicontrol focus, ui_edit_filter
     return
 
 hotkeymenu_callback:
@@ -152,6 +120,56 @@ website_callback:
 exit_callback:
     save_settings()
     exitapp
+    return
+}
+
+create_seq_win()
+{
+    ; Build the sequence list window
+    gui +resize +minsize720x400
+    gui margin, 8, 8
+
+    gui font, s11
+    gui font, s11, Courier New
+    gui font, s11, Lucida Console
+    gui font, s11, Consolas
+    gui add, listview, % "vui_listbox glistview_callback w" UI.seq_win.listview.width " r5 altsubmit -multi", % _("seq_win.columns")
+
+    gui font, s100
+    gui add, text, vui_text_bigchar center +E0x200, % ""
+
+    gui font, s11
+    gui add, text, vui_text_desc backgroundtrans, % ""
+
+    tmp := C.files.resources
+    gui add, picture, w48 h48 vui_keycap_0 icon2, %tmp%
+
+    gui font, s22
+    gui font, w700
+    loop % 9
+    {
+        tmp := C.files.resources
+        gui add, picture, x0 y0 w48 h48 vui_keycap_%a_index% icon4, %tmp%
+        gui add, text, x0 y0 w48 h48 center vui_keytext_%a_index% backgroundtrans, % ""
+        guicontrol hide, ui_keycap_%a_index%
+        guicontrol hide, ui_keytext_%a_index%
+    }
+
+    gui font
+    gui add, text, vui_text_filter, % _("seq_win.filter")
+    guicontrolget ui_text_filter, pos
+
+    gui add, edit, vui_edit_filter gedit_callback
+
+    gui add, button, vui_button default, % _("seq_win.close")
+
+    ; The copy character menu
+    menu, contextmenu, add, % _("contextmenu.copy"), copychar_callback
+
+    return
+
+key_callback:
+    send_keystroke(a_thishotkey)
     return
 
 guisize:
@@ -212,16 +230,6 @@ listview_callback:
             refresh_gui()
         }
     }
-    return
-
-showgui_callback:
-    critical on
-    gui_title := _("seq_win.title")
-    if (winexist(gui_title))
-        goto hidegui_callback
-    recompute_gui_filter()
-    gui show, , %gui_title%
-    guicontrol focus, ui_edit_filter
     return
 
 hidegui_callback:

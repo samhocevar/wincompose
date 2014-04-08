@@ -62,7 +62,11 @@ main()
 
     load_settings()
     load_sequences()
+
     create_gui()
+
+    set_ascii_hotkeys(true)
+    set_compose_hotkeys(true)
 }
 
 ;
