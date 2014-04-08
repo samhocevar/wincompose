@@ -47,8 +47,9 @@ global config := { sequences:   {}
 ; GUI variables
 global ui_listbox, ui_edit_filter, ui_button
 global ui_text_filter, ui_text_filterw, ui_text_bigchar, ui_text_desc
-global ui_key1, ui_key2, ui_key3, ui_key4, ui_key5, ui_key6, ui_key7, ui_key8, ui_key9
-global ui_asc1, ui_asc2, ui_asc3, ui_asc4, ui_asc5, ui_asc6, ui_asc7, ui_asc8, ui_asc9
+global ui_keycap_0
+global ui_keycap_1, ui_keycap_2, ui_keycap_3, ui_keycap_4, ui_keycap_5, ui_keycap_6, ui_keycap_7, ui_keycap_8, ui_keycap_9
+global ui_keytext_1, ui_keytext_2, ui_keytext_3, ui_keytext_4, ui_keytext_5, ui_keytext_6, ui_keytext_7, ui_keytext_8, ui_keytext_9
 
 main()
 return
@@ -324,7 +325,7 @@ setup_ui()
     menu tray, default, % _("menu.sequences")
 
     ; Build the sequence list window
-    gui +resize +minsize640x300
+    gui +resize +minsize720x400
     gui margin, 8, 8
 
     gui font, s11
@@ -334,18 +335,21 @@ setup_ui()
     gui add, listview, vui_listbox glistview_callback w300 r5 altsubmit -multi, % _("seq_win.columns")
 
     gui font, s100
-    gui add, text, vui_text_bigchar center border, % ""
+    gui add, text, vui_text_bigchar center +E0x200, % ""
 
     gui font, s11
     gui add, text, vui_text_desc backgroundtrans, % ""
 
-    gui font, s36
+    gui add, picture, w48 h48 vui_keycap_0 icon2, %global_resource_file%
+
+    gui font, s22
+    gui font, w700
     loop % 9
     {
-        gui add, picture, x0 y0 w64 h64 vui_key%a_index% icon4, %global_resource_file%
-        gui add, text, x0 y0 w64 h64 center vui_asc%a_index% backgroundtrans, % ""
-        guicontrol hide, ui_key%a_index%
-        guicontrol hide, ui_asc%a_index%
+        gui add, picture, x0 y0 w48 h48 vui_keycap_%a_index% icon4, %global_resource_file%
+        gui add, text, x0 y0 w48 h48 center vui_keytext_%a_index% backgroundtrans, % ""
+        guicontrol hide, ui_keycap_%a_index%
+        guicontrol hide, ui_keytext_%a_index%
     }
 
     gui font
@@ -530,7 +534,7 @@ refresh_gui()
     bigchar_w := 180
     bigchar_h := 180
     guicontrol move, ui_listbox, % "w" listbox_w " h" listbox_h
-    guicontrol move, ui_text_desc, % "x" listbox_w + 16 " y" 16 " w" w - listbox_w - 24 " h" 120
+    guicontrol move, ui_text_desc, % "x" listbox_w + 32 " y" 16 " w" w - listbox_w - 40 " h" 120
     guicontrol move, ui_text_bigchar, % "x" listbox_w + (w - listbox_w - bigchar_w) / 2 " y" (h - bigchar_h - 45) " w" bigchar_w " h" bigchar_h
     guicontrol move, ui_text_filter, % "y" (h - 26)
     guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 15) " w" (w - 140 - ui_text_filterw) " y" (h - 30)
@@ -538,21 +542,23 @@ refresh_gui()
 
     loop % 9
     {
-        guicontrol hide, ui_key%a_index%
-        guicontrol hide, ui_asc%a_index%
+        guicontrol hide, ui_keycap_%a_index%
+        guicontrol hide, ui_keytext_%a_index%
     }
+
+    guicontrol move, ui_keycap_0, % "x280 y100"
 
     tmp := state.selected_seq
     loop parse, tmp, % " "
     {
-        guicontrol show, ui_key%a_index%
-        guicontrol move, ui_key%a_index%, % "x" 240 + a_index * 80 " y" 100
+        guicontrol show, ui_keycap_%a_index%
+        guicontrol move, ui_keycap_%a_index%, % "x" 280 + a_index * 52 " y" 100
 
-        guicontrol text, ui_asc%a_index%, % a_loopfield == "space" ? ""
+        guicontrol text, ui_keytext_%a_index%, % a_loopfield == "space" ? ""
                                           : a_loopfield == "&" ? "&&"
                                           : a_loopfield
-        guicontrol show, ui_asc%a_index%
-        guicontrol move, ui_asc%a_index%, % "x" 240 + a_index * 80 " y" 100
+        guicontrol show, ui_keytext_%a_index%
+        guicontrol move, ui_keytext_%a_index%, % "x" 280 + a_index * 52 " y" 106
     }
 }
 
