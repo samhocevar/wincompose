@@ -18,7 +18,7 @@
 ; The name and version of this script
 global app := "WinCompose"
 global version := "0.6.0"
-global website := "https://github.com/SamHocevar/wincompose"
+global website := "https://github.com/samhocevar/wincompose"
 
 ; Configuration directory and file
 global config_dir := a_appdata . "\\" . app

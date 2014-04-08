@@ -14,7 +14,7 @@ Licensing information for "WinCompose.ahk" and icon files:
 |
 |   0. You just DO WHAT THE FUCK YOU WANT TO.
 
-Licensing information for "Compose.txt":
+Licensing information for "Xorg.txt":
 
 |  Copyright ©2012 David Monniaux
 |
@@ -36,4 +36,8 @@ Licensing information for "Compose.txt":
 |  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 |  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 |  DEALINGS IN THE SOFTWARE.
+
+Licensing information for "Xcompose.txt":
+
+| To be determined. See https://github.com/kragen/xcompose/issues/16.
 
