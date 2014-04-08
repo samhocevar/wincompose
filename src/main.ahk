@@ -28,14 +28,12 @@ global config_file := config_dir . "\\settings.ini"
 global have_debug := false
 
 ; Global runtime variables
-global state := { typing: false          ; Is the user typing something?
-                , disabled: false        ; Is everything disabled?
-                , compose_down: false    ; Is the compose key down?
-                , special_down: false    ; Is a special key down?
-                , selected_char: ""      ; The character currently selected in GUI
-                , selected_seq: ""       ; The sequence currently selected
-                , gui_width: 0
-                , gui_height: 0 }
+global S := { typing: false          ; Is the user typing something?
+            , disabled: false        ; Is everything disabled?
+            , compose_down: false    ; Is the compose key down?
+            , special_down: false    ; Is a special key down?
+            , selected_char: ""      ; The character currently selected in GUI
+            , selected_seq: "" }     ; The sequence currently selected
 
 ; Runtime configuration, imported from the config files
 global R := { sequences:    {}
@@ -100,7 +98,7 @@ send_keystroke(keystroke)
     static sequence := ""
     settimer, reset_callback, off
 
-    if (state.disabled)
+    if (S.disabled)
     {
         ; This should not happen, because the DISABLED state should
         ; completely disable the compose key and the other callbacks
@@ -112,14 +110,14 @@ send_keystroke(keystroke)
             send_raw(char)
         sequence := ""
     }
-    else if (!state.typing)
+    else if (!S.typing)
     {
         ; Enter typing state if compose was pressed; otherwise we
         ; should not be here but send the character anyway.
         if (keystroke == "compose")
         {
             check_keyboard_layout()
-            state.typing := true
+            S.typing := true
             if (R.reset_delay > 0)
                 settimer, reset_callback, % R.reset_delay
         }
@@ -127,7 +125,7 @@ send_keystroke(keystroke)
             send_raw(char)
         sequence := ""
     }
-    else ; if (state.typing)
+    else ; if (S.typing)
     {
         ; If the compose key is an actual character, don't cancel the compose
         ; sequence since the character could be used in the sequence itself.
@@ -138,7 +136,7 @@ send_keystroke(keystroke)
         {
             settimer, reset_callback, off
             sequence := ""
-            state.typing := false
+            S.typing := false
         }
         else
         {
@@ -162,14 +160,14 @@ send_keystroke(keystroke)
             {
                 info .= " -> [ " get_sequence(sequence) " ]"
                 send_unicode(get_sequence(sequence))
-                state.typing := false
+                S.typing := false
                 sequence := ""
             }
             else if (!has_prefix(sequence))
             {
                 info .= " ABORTED"
                 send_raw(sequence)
-                state.typing := false
+                S.typing := false
                 sequence := ""
             }
             else
@@ -188,21 +186,21 @@ send_keystroke(keystroke)
 reset_callback:
     settimer, reset_callback, off
     sequence := ""
-    state.typing := false
+    S.typing := false
     refresh_systray()
     return
 
 toggle_callback:
-    if (state.disabled)
+    if (S.disabled)
     {
-        state.disabled := false
-        state.typing := false
+        S.disabled := false
+        S.typing := false
         set_compose_hotkeys(true)
     }
     else
     {
         set_compose_hotkeys(false)
-        state.disabled := true
+        S.disabled := true
     }
     refresh_systray()
     return
@@ -317,20 +315,20 @@ special_callback:
     key := regexreplace(a_thishotkey, "[^a-z0-9]*([a-z0-9]*).*", "$1", ret)
     if (instr(a_thishotkey, " up"))
     {
-        state.special_down := false
+        S.special_down := false
         sendinput {%key% up}
     }
     else
     {
         ; Cancel any sequence in progress
-        if (state.typing)
+        if (S.typing)
             send_keystroke("compose")
 
-        if (!state.special_down)
+        if (!S.special_down)
             sendinput % "{" R.compose_key " down}"
 
         sendinput {%key% down}
-        state.special_down := true
+        S.special_down := true
     }
     return
 }
@@ -381,16 +379,16 @@ compose_callback:
     if (instr(a_thishotkey, " up"))
     {
         ; Compose was released
-        state.compose_down := false
+        S.compose_down := false
         ; Tell the system it was released, just in case a special
         ; hotkey was triggered.
         sendinput % "{" R.compose_key " up}"
         set_special_hotkeys(false)
     }
-    else if (!state.compose_down)
+    else if (!S.compose_down)
     {
         ; Compose was pressed down -- protect against autorepeat
-        state.compose_down := true
+        S.compose_down := true
         send_keystroke("compose")
         set_special_hotkeys(true)
     }
@@ -537,7 +535,6 @@ fill_sequences(filter)
         sequence := regexreplace(seq, "(.)", " $1")
         sequence := regexreplace(sequence, "  ", " space")
         sequence := regexreplace(sequence, "^ ", "")
-        result := char
         uni := "U+"
 
         if (strlen(char) == 1)

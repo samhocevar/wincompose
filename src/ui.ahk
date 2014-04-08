@@ -9,7 +9,13 @@
 
 ; UI-related constants
 global UI := { _:_
-  , listview : { width: 260 } }
+    ; Sequence window
+  , seq_win : { _:_
+      , width: 0
+      , height: 0
+        ; The listview
+      , listview : { _:_
+          , width: 260 } } }
 
 ; Global GUI variables
 global ui_listbox, ui_edit_filter, ui_button
@@ -58,7 +64,7 @@ create_gui()
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, % "vui_listbox glistview_callback w" UI.listview.width " r5 altsubmit -multi", % _("seq_win.columns")
+    gui add, listview, % "vui_listbox glistview_callback w" UI.seq_win.listview.width " r5 altsubmit -multi", % _("seq_win.columns")
 
     gui font, s100
     gui add, text, vui_text_bigchar center +E0x200, % ""
@@ -151,8 +157,8 @@ exit_callback:
 guisize:
     if (a_eventinfo != 1) ; Ignore minimising
     {
-        state.gui_width := a_guiwidth
-        state.gui_height := a_guiheight
+        UI.seq_win.width := a_guiwidth
+        UI.seq_win.height := a_guiheight
         refresh_gui()
     }
     return
@@ -163,14 +169,14 @@ guicontextmenu:
         if (a_eventinfo > 0)
         {
             lv_gettext(tmp, a_eventinfo, 2)
-            state.selected_char := tmp
+            S.selected_char := tmp
         }
     }
     menu, contextmenu, show
     return
 
 copychar_callback:
-    clipboard := state.selected_char
+    clipboard := S.selected_char
     return
 
 edit_callback:
@@ -186,15 +192,15 @@ listview_callback:
         if (instr(errorlevel, "S", true))
         {
             lv_gettext(char, a_eventinfo, 2)
-            if (char != state.selected_char)
+            if (char != S.selected_char)
             {
                 lv_gettext(sequence, a_eventinfo, 1)
                 sequence := regexreplace(sequence, " ", "")
                 sequence := regexreplace(sequence, "space", " ")
                 lv_gettext(unicode, a_eventinfo, 3)
 
-                state.selected_char := char
-                state.selected_seq := sequence
+                S.selected_char := char
+                S.selected_seq := sequence
 
                 guicontrol text, ui_text_bigchar, %char%
                 ; HACK: remove the non-printable character we added for sorting purposes
@@ -228,9 +234,9 @@ guiescape:
 
 refresh_gui()
 {
-    w := state.gui_width
-    h := state.gui_height
-    lb_w := UI.listview.width
+    w := UI.seq_win.width
+    h := UI.seq_win.height
+    lb_w := UI.seq_win.listview.width
     lb_h := h - 45
     bigchar_w := 180
     bigchar_h := 180
@@ -249,14 +255,14 @@ refresh_gui()
 
     loop % 9
     {
-        if (a_index > strlen(state.selected_seq))
+        if (a_index > strlen(S.selected_seq))
         {
             guicontrol hide, ui_keycap_%a_index%
             guicontrol hide, ui_keytext_%a_index%
         }
         else
         {
-            char := substr(state.selected_seq, a_index, 1)
+            char := substr(S.selected_seq, a_index, 1)
 
             guicontrol show, ui_keycap_%a_index%
             guicontrol move, ui_keycap_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" 100
@@ -270,7 +276,7 @@ refresh_gui()
 
 refresh_systray()
 {
-    if (state.disabled)
+    if (S.disabled)
     {
         suspend on
         menu tray, check, % _("menu.disable")
@@ -278,7 +284,7 @@ refresh_systray()
         menu tray, icon, %tmp%, 3, 1
         menu tray, tip, % _("tray_tip.disabled")
     }
-    else if (!state.typing)
+    else if (!S.typing)
     {
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
@@ -287,7 +293,7 @@ refresh_systray()
         menu tray, icon, %tmp%, 1, 1
         menu tray, tip, % _("tray_tip.active")
     }
-    else ; if (state.typing)
+    else ; if (S.typing)
     {
         suspend off
         menu tray, uncheck, % _("menu.disable")
