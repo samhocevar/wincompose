@@ -6,7 +6,7 @@ AHK = main.ahk
 INC = constants.ahk ui.ahk utils.ahk
 RC = resources.rc
 
-ICONS = res/wc.ico res/wca.ico res/wcd.ico res/icon_empty.ico
+ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_empty.ico
 
 EXE = obj/WinCompose.exe
 DLL = obj/resources.dll
@@ -35,7 +35,7 @@ installer: fixsource $(DLL) $(EXE) $(ISS)
 obj/%.exe: $(AHK) $(INC)
 	@mkdir -p obj
 	@rm -f $@
-	"$(AHKCDIR)\\Ahk2Exe.exe" //in $(AHK) //out $@ //icon res/wc.ico //bin "$(AHKCDIR)\\Unicode 32-bit.bin"
+	"$(AHKCDIR)\\Ahk2Exe.exe" //in $(AHK) //out $@ //icon res/icon_normal.ico //bin "$(AHKCDIR)\\Unicode 32-bit.bin"
 
 %.dll: %.o
 	$(CC) -shared $^ -o $@

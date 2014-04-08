@@ -7,7 +7,7 @@ AppVersion = {#VERSION}
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 DefaultDirName = {pf}\{#NAME}
 DefaultGroupName = {#NAME}
-SetupIconFile = "res\wc.ico"
+SetupIconFile = "res\icon_normal.ico"
 Compression = lzma2
 SolidCompression = yes
 OutputDir = .
@@ -29,6 +29,7 @@ Name: "{group}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
 Filename: "{app}\{#NAME}.exe"; Flags: nowait
 
 [InstallDelete]
+; Legacy stuff that we need to remove
 Type: files; Name: "{app}\res\wc.ico"
 Type: files; Name: "{app}\res\wca.ico"
 Type: files; Name: "{app}\res\wcd.ico"
