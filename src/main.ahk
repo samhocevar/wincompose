@@ -25,7 +25,7 @@ global config_dir := a_appdata . "\\" . app
 global config_file := config_dir . "\\settings.ini"
 
 ; Activate debug messages?
-global have_debug := false
+;global have_debug := true
 
 ; Global runtime variables
 global S := { typing: false          ; Is the user typing something?

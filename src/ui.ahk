@@ -76,6 +76,10 @@ showgui_callback:
     guicontrol focus, ui_edit_filter
     return
 
+hidegui_callback:
+    hide_seq_win()
+    return
+
 hotkeymenu_callback:
     set_compose_hotkeys(false)
     for key, val in C.keys.valid
@@ -232,12 +236,16 @@ listview_callback:
     }
     return
 
-hidegui_callback:
 buttonclose:
 guiclose:
 guiescape:
-    gui hide
+    hide_seq_win()
     return
+}
+
+hide_seq_win()
+{
+    gui hide
 }
 
 refresh_gui()
