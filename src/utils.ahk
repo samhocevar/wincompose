@@ -49,39 +49,83 @@ _(str, args*)
 
     if (!t)
     {
-        t := {}
+        t := {_:_}
 
         regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
-        files := [ "default", substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
+        languages := [ substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
 
         FileEncoding UTF-8
 
-        for ignored, file in files
+        for ignored, lang in languages
         {
-            section := ""
-            loop read, % "locale/" file ".ini"
+            fuzzy := false
+            src := false
+            dst := false
+            loop read, % "po/" lang ".po"
             {
-                regex := "^[ \\t]*\\[([^ \\t\\]]*)[^ \\t\\]]*\\].*"
-                newsection := regexreplace(a_loopreadline, regex, "$1", ret)
-                if (ret == 1)
+                if (regexmatch(a_loopreadline, "^ *$") > 0)
                 {
-                    section := newsection
-                    continue
+                    if (dst)
+                        fuzzy := false
+                }
+                else if (regexmatch(a_loopreadline, "^#, fuzzy") > 0)
+                {
+                    fuzzy := true
+                    src := false
+                    dst := false
+                }
+                else if (regexmatch(a_loopreadline, "^#") > 0)
+                {
+                    ; do nothing
+                }
+                else
+                {
+                    s := regexreplace(a_loopreadline, "^msgid *""(.*)"".*", "$1", ret)
+                    if (ret == 1)
+                    {
+                       src := s
+                       continue
+                    }
+
+                    s := regexreplace(a_loopreadline, "^msgstr *""(.*)"".*", "$1", ret)
+                    if (ret == 1)
+                    {
+                       dst := s
+                       continue
+                    }
+
+                    s := regexreplace(a_loopreadline, "^ *""(.*)"".*", "$1", ret)
+                    if (ret == 1)
+                    {
+                        if (dst)
+                            dst .= s
+                        else
+                            src .= s
+                        continue
+                    }
                 }
 
-                regex := "^[ \\t]*([^ \\t=]*)[ \\t]*=[ \\t]*(""(.*)""|(.*[^ ]))[ \\t]*$"
-                key := regexreplace(a_loopreadline, regex, "$1", ret)
-                val := regexreplace(a_loopreadline, regex, "$3$4", ret2)
-                if (ret == 1 && ret2 == 1)
+                ; Always try to insert the line, even if "dst" isn't fully built,
+                ; because we may hit the last line of the script a bit too early
+                if (dst && !fuzzy)
                 {
-                    t.insert(section "." key, val)
-                    continue
+                    replaces := { "\\n": "\n"
+                                , "\\r": "\r"
+                                , "\\""": """"
+                                , "\\\\": "\\" }
+                    for before, after in replaces
+                    {
+                        src := regexreplace(src, before, after)
+                        dst := regexreplace(dst, before, after)
+                    }
+                    t.insert(string_to_hex(src), dst)
                 }
             }
         }
     }
 
-    ret := t.haskey(str) ? t[str] : "[" str "]"
+    key := string_to_hex(str)
+    ret := t.haskey(key) ? t[key] : str
 
     ret := regexreplace(ret, "@APP_NAME@", app)
     ret := regexreplace(ret, "@APP_VERSION@", version)

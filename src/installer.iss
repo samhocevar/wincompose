@@ -18,8 +18,7 @@ Source: "obj\resources.dll"; DestDir: "{app}\res"
 Source: "res\Keys.txt"; DestDir: "{app}\res"
 Source: "res\Xorg.txt"; DestDir: "{app}\res"
 Source: "res\Xcompose.txt"; DestDir: "{app}\res"
-Source: "locale\default.ini"; DestDir: "{app}\locale"
-Source: "locale\fr.ini"; DestDir: "{app}\locale"
+Source: "po\fr.po"; DestDir: "{app}\po"
 
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
@@ -35,12 +34,15 @@ Type: files; Name: "{app}\res\wc.ico"
 Type: files; Name: "{app}\res\wca.ico"
 Type: files; Name: "{app}\res\wcd.ico"
 Type: files; Name: "{app}\res\Compose.txt"
+Type: files; Name: "{app}\locale\default.ini"
+Type: files; Name: "{app}\locale\fr.ini"
+Type: dirifempty; Name: "{app}\locale"
 
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#NAME}.exe"; Flags: runhidden
 
 [UninstallDelete]
 Type: dirifempty; Name: "{app}\res"
-Type: dirifempty; Name: "{app}\locale"
+Type: dirifempty; Name: "{app}\po"
 Type: dirifempty; Name: "{app}"
 

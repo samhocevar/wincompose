@@ -48,27 +48,27 @@ create_systray()
     ; Build the systray menu
     menu tray, click, 1
     menu tray, NoStandard
-    menu tray, add, % _("menu.sequences"), showgui_callback
-    menu tray, add, % _("menu.composekey"), :hotkeymenu
-    menu tray, add, % _("menu.timeout"), :delaymenu
-    menu tray, add, % _("menu.disable"), toggle_callback
-    menu tray, add, % _("menu.restart"), restart_callback
+    menu tray, add, % _("Sequences…"), showgui_callback
+    menu tray, add, % _("Compose Key"), :hotkeymenu
+    menu tray, add, % _("Timeout"), :delaymenu
+    menu tray, add, % _("Disable"), toggle_callback
+    menu tray, add, % _("Restart"), restart_callback
     menu tray, add
     if (have_debug)
     {
-        menu tray, add, % _("menu.history"), history_callback
-        menu tray, add, % _("menu.hotkeylist"), hotkeylist_callback
+        menu tray, add, % _("&History"), history_callback
+        menu tray, add, % _("Hotkey &List"), hotkeylist_callback
     }
-    menu tray, add, % _("menu.about"), about_callback
-    menu tray, add, % _("menu.website"), website_callback
-    menu tray, add, % _("menu.exit"), exit_callback
-    menu tray, default, % _("menu.sequences")
+    menu tray, add, % _("&About"), about_callback
+    menu tray, add, % _("&Visit Website"), website_callback
+    menu tray, add, % _("E&xit"), exit_callback
+    menu tray, default, % _("Sequences…")
 
     return
 
 showgui_callback:
     critical on
-    gui_title := _("seq_win.title")
+    gui_title := _("@APP_NAME@ - List of sequences")
     if (winexist(gui_title))
         goto hidegui_callback
     recompute_gui_filter()
@@ -110,10 +110,10 @@ hotkeylist_callback:
     return
 
 about_callback:
-    about_text := _("about_win.line1") . "\n"
-    about_text .= _("about_win.line2") . "\n"
-    about_text .= _("about_win.line3") . "\n"
-    about_text .= _("about_win.line4") . "\n"
+    about_text := _("@APP_NAME@ v@APP_VERSION@") . "\n"
+    about_text .= _("") . "\n"
+    about_text .= _("by Sam Hocevar <sam@hocevar.net>") . "\n"
+    about_text .= _("running on AHK v@AHK_VERSION@") . "\n"
     msgbox 64, %app%, %about_text%
     return
 
@@ -137,7 +137,8 @@ create_seq_win()
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
-    gui add, listview, % "vui_listbox glistview_callback w" UI.seq_win.listview.width " r5 altsubmit -multi", % _("seq_win.columns")
+    columns := _("Sequence") "|" _("Char") "|" _("Unicode")
+    gui add, listview, % "vui_listbox glistview_callback w" UI.seq_win.listview.width " r5 altsubmit -multi", % columns
 
     gui font, s100
     gui add, text, vui_text_bigchar center +E0x200, % ""
@@ -160,15 +161,15 @@ create_seq_win()
     }
 
     gui font
-    gui add, text, vui_text_filter, % _("seq_win.filter")
+    gui add, text, vui_text_filter, % _("Search Filter:")
     guicontrolget ui_text_filter, pos
 
     gui add, edit, vui_edit_filter gedit_callback
 
-    gui add, button, vui_button default, % _("seq_win.close")
+    gui add, button, vui_button default, % _("Close")
 
     ; The copy character menu
-    menu, contextmenu, add, % _("contextmenu.copy"), copychar_callback
+    menu, contextmenu, add, % _("Copy Character"), copychar_callback
 
     return
 
@@ -228,7 +229,7 @@ listview_callback:
                 ; HACK: remove the non-printable character we added for sorting purposes
                 desc := " " regexreplace(unicode, ".*U", "U") " " char "\n"
                 desc .= substr("————————————————————", 1, strlen(unicode) + 4) "\n"
-                desc .= _("seq_win.description") " " get_description(sequence)
+                desc .= _("Description:") " " get_description(sequence)
                 guicontrol text, ui_text_desc, %desc%
             }
             refresh_gui()
@@ -295,27 +296,27 @@ refresh_systray()
     if (S.disabled)
     {
         suspend on
-        menu tray, check, % _("menu.disable")
+        menu tray, check, % _("Disable")
         tmp := C.files.resources
         menu tray, icon, %tmp%, 3, 1
-        menu tray, tip, % _("tray_tip.disabled")
+        menu tray, tip, % _("@APP_NAME@ (disabled)")
     }
     else if (!S.typing)
     {
         ; Disable hotkeys; we only want them on during a compose sequence
         suspend on
-        menu tray, uncheck, % _("menu.disable")
+        menu tray, uncheck, % _("Disable")
         tmp := C.files.resources
         menu tray, icon, %tmp%, 1, 1
-        menu tray, tip, % _("tray_tip.active")
+        menu tray, tip, % _("@APP_NAME@ (active)")
     }
     else ; if (S.typing)
     {
         suspend off
-        menu tray, uncheck, % _("menu.disable")
+        menu tray, uncheck, % _("Disable")
         tmp := C.files.resources
         menu tray, icon, %tmp%, 2
-        menu tray, tip, % _("tray_tip.typing")
+        menu tray, tip, % _("@APP_NAME@ (typing)")
     }
 
     for key, val in C.keys.valid

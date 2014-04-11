@@ -414,7 +414,7 @@ load_sequences()
     read_sequence_file(userprofile "\\.XCompose")
     read_sequence_file(userprofile "\\.XCompose.txt")
 
-    info(_("tray_notify.loaded", R.seq_count) "\n" _("tray_notify.keyinfo", C.keys.valid[R.compose_key]) "\n")
+    info(_("Loaded @1@ Sequences", R.seq_count) "\n" _("Compose Key is @1@", C.keys.valid[R.compose_key]) "\n")
 }
 
 read_key_file(file)

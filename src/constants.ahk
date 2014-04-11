@@ -27,19 +27,19 @@ global C := { _:_
 
   , keys : { _:_
         ; List of keys that can be used for Compose
-      , valid : { "lalt"       : _("keys.lalt")
-                , "ralt"       : _("keys.ralt")
-                , "lcontrol"   : _("keys.lcontrol")
-                , "rcontrol"   : _("keys.rcontrol")
-                , "lwin"       : _("keys.lwin")
-                , "rwin"       : _("keys.rwin")
-                , "capslock"   : _("keys.capslock")
-                , "numlock"    : _("keys.numlock")
-                , "pause"      : _("keys.pause")
-                , "appskey"    : _("keys.menu")
-                , "esc"        : _("keys.esc")
-                , "scrolllock" : _("keys.scrolllock")
-                , "`"          : _("keys.backtick") }
+      , valid : { "lalt"       : _("Left Alt")
+                , "ralt"       : _("Right Alt")
+                , "lcontrol"   : _("Left Control")
+                , "rcontrol"   : _("Right Control")
+                , "lwin"       : _("Left Windows")
+                , "rwin"       : _("Right Windows")
+                , "capslock"   : _("Caps Lock")
+                , "numlock"    : _("Num Lock")
+                , "pause"      : _("Pause")
+                , "appskey"    : _("Menu")
+                , "esc"        : _("Escape")
+                , "scrolllock" : _("Scroll Lock")
+                , "`"          : _("Grave Accent `") }
         ; Default key used as compose key
       , default : "ralt"
         ; List of numeric keypad keys
@@ -72,13 +72,13 @@ global C := { _:_
 
   , delays : { _:_
         ; List of timeout values
-      , valid : { 500   : _("delays.500ms")
-                , 1000  : _("delays.1000ms")
-                , 2000  : _("delays.2000ms")
-                , 3000  : _("delays.3000ms")
-                , 5000  : _("delays.5000ms")
-                , 10000 : _("delays.10000ms")
-                , -1    : _("delays.infinite") }
+      , valid : { 500   : _("500 milliseconds")
+                , 1000  : _("1 second")
+                , 2000  : _("2 seconds")
+                , 3000  : _("3 seconds")
+                , 5000  : _("5 seconds")
+                , 10000 : _("10 seconds")
+                , -1    : _("None") }
         ; Default timeout value
       , default : 5000 }
 
