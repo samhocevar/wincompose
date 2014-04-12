@@ -9,18 +9,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-11 17:38+0200\n"
-"PO-Revision-Date: 2014-04-11 17:38+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2014-04-12 11:54+0200\n"
+"Last-Translator: Michal Čihař <michal@cihar.com>\n"
+"Language-Team: Czech "
+"<https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 1.9-dev\n"
 
 #: main.ahk:417
 msgid "Loaded @1@ Sequences"
-msgstr ""
+msgstr "Nahráno @1@ sekvencí"
 
 #: main.ahk:417
 msgid "Compose Key is @1@"
@@ -28,51 +30,51 @@ msgstr ""
 
 #: constants.ahk:30
 msgid "Left Alt"
-msgstr ""
+msgstr "Levý Alt"
 
 #: constants.ahk:31
 msgid "Right Alt"
-msgstr ""
+msgstr "Pravý Alt"
 
 #: constants.ahk:32
 msgid "Left Control"
-msgstr ""
+msgstr "Levý Control"
 
 #: constants.ahk:33
 msgid "Right Control"
-msgstr ""
+msgstr "Pravý Control"
 
 #: constants.ahk:34
 msgid "Left Windows"
-msgstr ""
+msgstr "Levé Windows"
 
 #: constants.ahk:35
 msgid "Right Windows"
-msgstr ""
+msgstr "Pravé Windows"
 
 #: constants.ahk:36
 msgid "Caps Lock"
-msgstr ""
+msgstr "Caps Lock"
 
 #: constants.ahk:37
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock"
 
 #: constants.ahk:38
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #: constants.ahk:39
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: constants.ahk:40
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 #: constants.ahk:41
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #: constants.ahk:42
 msgid "Grave Accent `"
@@ -84,23 +86,23 @@ msgstr ""
 
 #: constants.ahk:76
 msgid "1 second"
-msgstr ""
+msgstr "1 sekunda"
 
 #: constants.ahk:77
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekundy"
 
 #: constants.ahk:78
 msgid "3 seconds"
-msgstr ""
+msgstr "3 sekundy"
 
 #: constants.ahk:79
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekundy"
 
 #: constants.ahk:80
 msgid "10 seconds"
-msgstr ""
+msgstr "10 sekund"
 
 #: constants.ahk:81
 msgid "None"
@@ -156,7 +158,7 @@ msgstr ""
 
 #: ui.ahk:115
 msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr ""
+msgstr "napsal Sam Hocevar <sam@hocevar.net>"
 
 #: ui.ahk:116
 msgid "running on AHK v@AHK_VERSION@"
@@ -164,15 +166,15 @@ msgstr ""
 
 #: ui.ahk:140
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvence"
 
 #: ui.ahk:140
 msgid "Char"
-msgstr ""
+msgstr "Znak"
 
 #: ui.ahk:140
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: ui.ahk:164
 msgid "Search Filter:"
@@ -180,7 +182,7 @@ msgstr ""
 
 #: ui.ahk:169
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: ui.ahk:172
 msgid "Copy Character"
@@ -188,16 +190,16 @@ msgstr ""
 
 #: ui.ahk:232
 msgid "Description:"
-msgstr ""
+msgstr "Popis:"
 
 #: ui.ahk:302
 msgid "@APP_NAME@ (disabled)"
-msgstr ""
+msgstr "@APP_NAME@ (vypnuto)"
 
 #: ui.ahk:311
 msgid "@APP_NAME@ (active)"
-msgstr ""
+msgstr "@APP_NAME@ (aktivní)"
 
 #: ui.ahk:319
 msgid "@APP_NAME@ (typing)"
-msgstr ""
+msgstr "@APP_NAME@ (píše)"
