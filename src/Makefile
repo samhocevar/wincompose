@@ -5,7 +5,7 @@ ISS = installer.iss
 AHK = main.ahk
 INC = constants.ahk ui.ahk utils.ahk
 RC = resources.rc
-PO = fr
+PO = fr cs
 
 ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_empty.ico
 
