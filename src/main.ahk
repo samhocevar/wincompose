@@ -76,12 +76,12 @@ main()
 load_settings()
 {
     ; Read the compose key value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % R.compose_key, ""
+    iniread tmp, %config_file%, Global, % "compose_key", ""
     R.compose_key := C.keys.valid.haskey(tmp) ? tmp : C.keys.default
 
     ; Read the reset delay value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % R.reset_delay, ""
-    R.reset_delay := C.delays.valid.haskey(tmp) ? tmp : C.delays.valid
+    iniread tmp, %config_file%, Global, % "reset_delay", ""
+    R.reset_delay := C.delays.valid.haskey(tmp) ? tmp : C.delays.default
 
     save_settings()
 }
@@ -89,8 +89,8 @@ load_settings()
 save_settings()
 {
     filecreatedir %config_dir%
-    iniwrite % R.compose_key, %config_file%, Global, compose_key
-    iniwrite % R.reset_delay, %config_file%, Global, reset_delay
+    iniwrite % R.compose_key, %config_file%, Global, % "compose_key"
+    iniwrite % R.reset_delay, %config_file%, Global, % "reset_delay"
 }
 
 ;
