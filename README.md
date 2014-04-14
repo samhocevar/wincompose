@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.6.0.exe](/bin/WinCompose-Setup-0.6.0.exe)
+Latest release: [WinCompose-Setup-0.6.1.exe](/bin/WinCompose-Setup-0.6.1.exe)
 
 Quick start
 -----------
@@ -90,6 +90,10 @@ Please report bugs to Sam Hocevar <sam@hocevar.net>
 
 News
 ----
+
+News for version 0.6.1 (14 April 2014)
+ - Fix issues with the save files.
+ - Czech translation.
 
 News for version 0.6.0 (8 April 2014)
  - More than 600 new compose rules from the dotXcompose project.
