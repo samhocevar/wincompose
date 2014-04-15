@@ -17,7 +17,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.6.1"
+global version := "0.6.1.fix"
 global website := "https://github.com/samhocevar/wincompose"
 
 ; Configuration directory and file
@@ -295,6 +295,14 @@ set_ascii_hotkeys(must_enable)
         hotkey $%a_loopfield%, key_callback, %flag%, useerrorlevel
     for key, val in C.keys.numpad
         hotkey $%key%, key_callback, %flag%, useerrorlevel
+
+    return
+
+key_callback:
+    ; This hotkey must always be high priority
+    critical on
+    send_keystroke(a_thishotkey)
+    return
 }
 
 ;
@@ -314,8 +322,9 @@ set_special_hotkeys(must_enable)
     return
 
 special_callback:
-    ; This hotkey must always be active
+    ; This hotkey must always be active and high priority
     suspend permit
+    critical on
     key := regexreplace(a_thishotkey, "[^a-z0-9]*([a-z0-9]*).*", "$1", ret)
     if (instr(a_thishotkey, " up"))
     {
@@ -378,8 +387,9 @@ set_compose_hotkeys(must_enable)
     return
 
 compose_callback:
-    ; This hotkey must always be active
+    ; This hotkey must always be active and high priority
     suspend permit
+    critical on
     if (instr(a_thishotkey, " up"))
     {
         ; Compose was released

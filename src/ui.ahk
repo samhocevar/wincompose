@@ -173,10 +173,6 @@ create_seq_win()
 
     return
 
-key_callback:
-    send_keystroke(a_thishotkey)
-    return
-
 guisize:
     if (a_eventinfo != 1) ; Ignore minimising
     {
@@ -298,6 +294,7 @@ refresh_systray()
         suspend on
         menu tray, check, % _("Disable")
         tmp := C.files.resources
+        menu tray, icon
         menu tray, icon, %tmp%, 3, 1
         menu tray, tip, % _("@APP_NAME@ (disabled)")
     }
@@ -307,6 +304,7 @@ refresh_systray()
         suspend on
         menu tray, uncheck, % _("Disable")
         tmp := C.files.resources
+        menu tray, icon
         menu tray, icon, %tmp%, 1, 1
         menu tray, tip, % _("@APP_NAME@ (active)")
     }
@@ -315,6 +313,7 @@ refresh_systray()
         suspend off
         menu tray, uncheck, % _("Disable")
         tmp := C.files.resources
+        menu tray, icon
         menu tray, icon, %tmp%, 2
         menu tray, tip, % _("@APP_NAME@ (typing)")
     }
