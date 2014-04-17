@@ -289,12 +289,14 @@ set_ascii_hotkeys(must_enable)
     c2 := c1 . "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
 
     flag := must_enable ? "on" : "off"
+    manifesthooks off
     loop, parse, c1
         hotkey $+%a_loopfield%, key_callback, %flag%, useerrorlevel
     loop, parse, c2
         hotkey $%a_loopfield%, key_callback, %flag%, useerrorlevel
     for key, val in C.keys.numpad
         hotkey $%key%, key_callback, %flag%, useerrorlevel
+    manifesthooks on
 
     return
 
@@ -313,11 +315,13 @@ set_special_hotkeys(must_enable)
 {
     flag := must_enable ? "on" : "off"
 
+    manifesthooks off
     for ignored, key in C.keys.special
     {
         hotkey $%key%, special_callback, %flag%, useerrorlevel
         hotkey $%key% up, special_callback, %flag%, useerrorlevel
     }
+    manifesthooks on
 
     return
 
@@ -356,6 +360,7 @@ set_compose_hotkeys(must_enable)
     ; obviously in this case we need to add hooks for LControl + RAlt.
     compose_prefixes := [ "$", "$^", "$+", "$!" ]
 
+    manifesthooks off
     if (must_enable)
     {
         ; Make sure that 1-character hotkeys are activated; these may have
@@ -383,6 +388,7 @@ set_compose_hotkeys(must_enable)
             }
         }
     }
+    manifesthooks on
 
     return
 
