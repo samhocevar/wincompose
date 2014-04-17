@@ -14,10 +14,9 @@ DLL = obj/resources.dll
 INSTALLER = WinCompose-Setup-$(VERSION).exe
 
 ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
-AHKCDIR = c:\\Program Files\\AutoHotkey\\Compiler
+AHKDIR = ./ahk
 
 ISCC = $(ISCCDIR)\\ISCC.exe
-AHKC = $(AHKCDIR)\\Ahk2Exe.exe
 WINDRES = windres
 XGETTEXT = xgettext
 MSGMERGE = msgmerge
@@ -39,10 +38,10 @@ installer: fixsource update-po $(DLL) $(EXE) $(ISS)
 	rm -f $@
 	"$(ISCC)" $(ISS)
 
-obj/%.exe: $(AHK) $(INC)
+obj/%.exe: update-ahk $(AHK) $(INC)
 	@mkdir -p obj
 	@rm -f $@
-	"$(AHKC)" //in $(AHK) //out $@ //icon res/icon_normal.ico //bin "$(AHKCDIR)\\Unicode 32-bit.bin"
+	$(AHKDIR)/bin/Win32w/AutoHotkey.exe 'ahk2exe\\ahk2exe.ahk' //in $(AHK) //out $@ //icon res/icon_normal.ico //bin $(AHKDIR)/bin/Win32w/AutoHotkeySC.bin
 
 %.dll: %.o
 	$(CC) -shared $^ -o $@
@@ -55,4 +54,8 @@ obj/%.o: $(RC) $(ICONS)
 update-po:
 	$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ $(AHK) $(INC)
 	for l in $(PO); do msgmerge -U po/$$l.po po/wincompose.pot; done
+
+update-ahk:
+	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Release //project AutoHotkeyx
+	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Self-contained //project AutoHotkeyx
 
