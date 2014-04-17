@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using **o** and **"**, and
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.6.1.exe](/bin/WinCompose-Setup-0.6.1.exe)
+Latest release: [WinCompose-Setup-0.6.2.exe](/bin/WinCompose-Setup-0.6.2.exe)
 
 Quick start
 -----------
@@ -90,6 +90,9 @@ Please report bugs to Sam Hocevar <sam@hocevar.net>
 
 News
 ----
+
+News for version 0.6.2 (17 April 2014)
+ - Fix grave performance issues by using a modified version of AutoHotKey.
 
 News for version 0.6.1 (14 April 2014)
  - Fix issues with the save files.

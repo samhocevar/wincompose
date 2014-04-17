@@ -1,5 +1,5 @@
 
-VERSION = 0.6.1.fix
+VERSION = 0.6.2
 
 ISS = installer.iss
 AHK = main.ahk
@@ -30,11 +30,7 @@ clean:
 check:
 	start tests.ahk
 
-fixsource:
-	sed -i 's/\(#define *VERSION *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(ISS)
-	sed -i 's/\(global *version *:= *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(AHK)
-
-installer: fixsource update-po $(DLL) $(EXE) $(ISS)
+installer: update-source update-po $(DLL) $(EXE) $(ISS)
 	rm -f $@
 	"$(ISCC)" $(ISS)
 
@@ -50,6 +46,10 @@ obj/%.o: $(RC) $(ICONS)
 	mkdir -p obj
 	rm -f $@
 	$(WINDRES) $(RC) -o $@
+
+update-source:
+	sed -i 's/\(#define *VERSION *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(ISS)
+	sed -i 's/\(global *version *:= *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(AHK)
 
 update-po:
 	$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ $(AHK) $(INC)

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-14 10:53+0200\n"
+"POT-Creation-Date: 2014-04-17 18:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.ahk:417
+#: main.ahk:433
 msgid "Loaded @1@ Sequences"
 msgstr ""
 
-#: main.ahk:417
+#: main.ahk:433
 msgid "Compose Key is @1@"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Timeout"
 msgstr ""
 
-#: ui.ahk:54 ui.ahk:299 ui.ahk:308 ui.ahk:316
+#: ui.ahk:54 ui.ahk:295 ui.ahk:305 ui.ahk:314
 msgid "Disable"
 msgstr ""
 
@@ -186,18 +186,18 @@ msgstr ""
 msgid "Copy Character"
 msgstr ""
 
-#: ui.ahk:232
+#: ui.ahk:228
 msgid "Description:"
 msgstr ""
 
-#: ui.ahk:302
+#: ui.ahk:299
 msgid "@APP_NAME@ (disabled)"
 msgstr ""
 
-#: ui.ahk:311
+#: ui.ahk:309
 msgid "@APP_NAME@ (active)"
 msgstr ""
 
-#: ui.ahk:319
+#: ui.ahk:318
 msgid "@APP_NAME@ (typing)"
 msgstr ""

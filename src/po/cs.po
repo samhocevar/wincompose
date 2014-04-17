@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-11 17:38+0200\n"
+"POT-Creation-Date: 2014-04-17 18:19+0200\n"
 "PO-Revision-Date: 2014-04-12 11:54+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: Czech "
-"<https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
+"cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 1.9-dev\n"
 
-#: main.ahk:417
+#: main.ahk:433
 msgid "Loaded @1@ Sequences"
 msgstr "Nahráno @1@ sekvencí"
 
-#: main.ahk:417
+#: main.ahk:433
 msgid "Compose Key is @1@"
 msgstr ""
 
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Timeout"
 msgstr ""
 
-#: ui.ahk:54 ui.ahk:299 ui.ahk:308 ui.ahk:316
+#: ui.ahk:54 ui.ahk:295 ui.ahk:305 ui.ahk:314
 msgid "Disable"
 msgstr ""
 
@@ -188,18 +188,18 @@ msgstr "Zavřít"
 msgid "Copy Character"
 msgstr ""
 
-#: ui.ahk:232
+#: ui.ahk:228
 msgid "Description:"
 msgstr "Popis:"
 
-#: ui.ahk:302
+#: ui.ahk:299
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (vypnuto)"
 
-#: ui.ahk:311
+#: ui.ahk:309
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (aktivní)"
 
-#: ui.ahk:319
+#: ui.ahk:318
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (píše)"
