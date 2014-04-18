@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-17 18:19+0200\n"
+"POT-Creation-Date: 2014-04-18 17:15+0200\n"
 "PO-Revision-Date: 2014-04-13 20:01+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.ahk:433
+#: main.ahk:438
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ séquences chargées"
 
-#: main.ahk:433
+#: main.ahk:438
 msgid "Compose Key is @1@"
 msgstr "Touche compose : @1@"
 
@@ -78,31 +78,31 @@ msgstr "Arrêt défil"
 msgid "Grave Accent `"
 msgstr "Accent grave `"
 
-#: constants.ahk:75
+#: constants.ahk:67
 msgid "500 milliseconds"
 msgstr "500 millisecondes"
 
-#: constants.ahk:76
+#: constants.ahk:68
 msgid "1 second"
 msgstr "1 seconde"
 
-#: constants.ahk:77
+#: constants.ahk:69
 msgid "2 seconds"
 msgstr "2 secondes"
 
-#: constants.ahk:78
+#: constants.ahk:70
 msgid "3 seconds"
 msgstr "3 secondes"
 
-#: constants.ahk:79
+#: constants.ahk:71
 msgid "5 seconds"
 msgstr "5 secondes"
 
-#: constants.ahk:80
+#: constants.ahk:72
 msgid "10 seconds"
 msgstr "10 secondes"
 
-#: constants.ahk:81
+#: constants.ahk:73
 msgid "None"
 msgstr "Aucun"
 

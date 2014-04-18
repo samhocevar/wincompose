@@ -13,7 +13,7 @@ combinations. For instance, **ö** is obtained using <kbd>o</kbd> and <kbd>"</kb
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.6.2.exe](https://github.com/samhocevar/wincompose/releases/download/v0.6.2/WinCompose-Setup-0.6.2.exe)
+Latest release: [WinCompose-Setup-0.6.3.exe](https://github.com/samhocevar/wincompose/releases/download/v0.6.3/WinCompose-Setup-0.6.3.exe)
 
 Quick start
 -----------
