@@ -42,22 +42,14 @@ global C := { _:_
                 , "`"          : _("Grave Accent `") }
         ; Default key used as compose key
       , default : "ralt"
-        ; List of numeric keypad keys
-      , numpad : { "numpad0"    : "0"
-                 , "numpad1"    : "1"
-                 , "numpad2"    : "2"
-                 , "numpad3"    : "3"
-                 , "numpad4"    : "4"
-                 , "numpad5"    : "5"
-                 , "numpad6"    : "6"
-                 , "numpad7"    : "7"
-                 , "numpad8"    : "8"
-                 , "numpad9"    : "9"
-                 , "numpaddot"  : "."
-                 , "numpaddiv"  : "/"
-                 , "numpadmult" : "*"
-                 , "numpadadd"  : "+"
-                 , "numpadsub"  : "-" }
+        ; List of virtual keycodes that lead to printable things
+      , printable : [ [ 0x20, 0x21 ] ; Space
+                    , [ 0x30, 0x3a ] ; 0-9
+                    , [ 0x41, 0x5b ] ; A-Z
+                    , [ 0x60, 0x70 ] ; keypad
+                    , [ 0xba, 0xc1 ] ; misc
+                    , [ 0xdb, 0xe0 ] ; misc
+                    , [ 0xe1, 0xe7 ] ] ; misc
         ; List of special keys that we need to hijack
       , special : [ "tab" ; for Alt-Tab
                   , "left", "right", "up", "down" ; for Windows-Left etc.

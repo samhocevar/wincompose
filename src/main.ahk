@@ -65,7 +65,7 @@ main()
 
     create_gui()
 
-    set_ascii_hotkeys(true)
+    set_printable_hotkeys(true)
     set_compose_hotkeys(true)
 }
 
@@ -144,10 +144,6 @@ send_keystroke(keystroke)
         }
         else
         {
-            ; If this is a numpad key, replace it with its ASCII value
-            if (C.keys.numpad.haskey(regexreplace(keystroke, "[$]", "")))
-                keystroke := "$" C.keys.numpad[keystroke]
-
             ; The actual character is the last char of the keystroke
             char := substr(keystroke, strlen(keystroke))
 
@@ -261,7 +257,7 @@ check_keyboard_layout()
     if (client_layout == script_layout)
         return
 
-    set_ascii_hotkeys(false)
+    set_printable_hotkeys(false)
 
     WM_INPUTLANGCHANGEREQUEST := 0x50
     postmessage %WM_INPUTLANGCHANGEREQUEST%, 0, %client_layout%, , ahk_id %script_hwnd%
@@ -277,25 +273,28 @@ check_keyboard_layout()
     ;if (client_layout != script_layout)
     ;    msgbox, Something went wrong!
 
-    set_ascii_hotkeys(true)
+    set_printable_hotkeys(true)
 }
 
-set_ascii_hotkeys(must_enable)
+set_printable_hotkeys(must_enable)
 {
-    ; Hotkeys for all shifted letters
-    c1 := "abcdefghijklmnopqrstuvwxyz"
-
-    ; Hotkeys for all other ASCII characters, including non-shifted letters
-    c2 := c1 . "\ !""#$%&'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
-
     flag := must_enable ? "on" : "off"
+
+    ; Register hotkeys for all keys that potentially display something, including
+    ; combinations with Shift or Ctrl+Alt (aka AltGr). We must use virtual keys
+    ; instead of characters because we have no way to know what keys are available
+    ; on the currently active keyboard layout.
     manifesthooks off
-    loop, parse, c1
-        hotkey $+%a_loopfield%, key_callback, %flag%, useerrorlevel
-    loop, parse, c2
-        hotkey $%a_loopfield%, key_callback, %flag%, useerrorlevel
-    for key, val in C.keys.numpad
-        hotkey $%key%, key_callback, %flag%, useerrorlevel
+    for ignored, range in C.keys.printable
+    {
+        loop % (range[2] - range[1])
+        {
+            i := range[1] + a_index - 1
+            hotkey % "$vk" num_to_hex(i, 2), key_callback, %flag%, useerrorlevel
+            hotkey % "$+vk" num_to_hex(i, 2), key_callback, %flag%, useerrorlevel
+            hotkey % "$<^>!vk" num_to_hex(i, 2), key_callback, %flag%, useerrorlevel
+        }
+    }
     manifesthooks on
 
     return
@@ -303,7 +302,19 @@ set_ascii_hotkeys(must_enable)
 key_callback:
     ; This hotkey must always be high priority
     critical on
-    send_keystroke(a_thishotkey)
+    varsetcapacity(mods, 256, 0)
+    if (instr(a_thishotkey, "$+"))
+        numput(0x80, mods, 0x10, "uchar")
+    if (instr(a_thishotkey, "$<^>!"))
+    {
+        numput(0x80, mods, 0x11, "uchar")
+        numput(0x80, mods, 0x12, "uchar")
+    }
+    vk := getkeyvk(regexreplace(a_thishotkey, ".*vk", "vk"))
+    sc := getkeysc(regexreplace(a_thishotkey, ".*vk", "vk"))
+    err := dllcall("ToAscii", "uint", vk, "uint", sc, "ptr", &mods, "uintp", ascii, "uint", 0, "uint")
+    if (err > 0 && ascii > 0)
+        send_keystroke(chr(ascii))
     return
 }
 
@@ -363,12 +374,6 @@ set_compose_hotkeys(must_enable)
     manifesthooks off
     if (must_enable)
     {
-        ; Make sure that 1-character hotkeys are activated; these may have
-        ; been deactivated by set_compose_hotkeys(false).
-        for key, val in C.keys.valid
-            if (strlen(key) == 1)
-                hotkey $%key%, key_callback, on, useerrorlevel
-
         ; Activate the compose key for real
         for ignored, prefix in compose_prefixes
         {
