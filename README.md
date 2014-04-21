@@ -1,11 +1,9 @@
 ﻿WinCompose
 ==========
 
-![Icon](/web/icon.png)
-
 A robust compose key for Windows, written by Sam Hocevar.
 
-It allows to easily write characters such as **é ž à ō û ø ☺ ¤
+A **compose key** allows to easily write characters such as **é ž à ō û ø ☺ ¤
 ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often very intuitive key
 combinations. For instance, **ö** is obtained using <kbd>o</kbd> and <kbd>"</kbd>, and
 **♥** is obtained using <kbd>&lt;</kbd> and <kbd>3</kbd>.
@@ -13,18 +11,17 @@ combinations. For instance, **ö** is obtained using <kbd>o</kbd> and <kbd>"</kb
 Download
 --------
 
-Latest release: [WinCompose-Setup-0.6.3.exe](https://github.com/samhocevar/wincompose/releases/download/v0.6.3/WinCompose-Setup-0.6.3.exe)
+Latest release is [WinCompose-Setup-0.6.3.exe](https://github.com/samhocevar/wincompose/releases/download/v0.6.3/WinCompose-Setup-0.6.3.exe). Older releases are available [here](https://github.com/samhocevar/wincompose/releases/).
 
 Quick start
 -----------
 
-After installation, WinCompose should appear in the System Tray;
-otherwise, launch it manually.
+After installation, WinCompose should appear in the System Tray. Press and
+release the <kbd>Right Alt</kbd> key to initiate a compose sequence; the icon
+should change to indicate a compose sequence is in progress.
 
-Press and release the <kbd>Right Alt</kbd> key to initiate a compose sequence; the
-icon should change to indicate a compose sequence is in progress.
-
-Then type in the keys for a compose sequence, such as <kbd>A</kbd> then <kbd>E</kbd> for **Æ**:
+Then type in the keys for a compose sequence, such as <kbd>A</kbd> then
+<kbd>E</kbd> for **Æ**:
 
 ![Quick Launch](/web/shot1.png)
 
@@ -78,7 +75,7 @@ current application.
 Bugs
 ----
 
-WinCompose is known to misbehave in the following situations:
+WinCompose is known to *sometimes* misbehave in the following situations:
  - When the Synergy keyboard sharing software is running.
  - When several keyboard layouts are installed on the computer and they are
    changed on the fly.
