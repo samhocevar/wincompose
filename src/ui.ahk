@@ -10,14 +10,16 @@
 ; UI-related constants
 global UI := { _:_
     ; Sequence window
-  , seq_win : { _:_
+  , app_win : { _:_
       , width: 0
       , height: 0
+      , margin: 8
         ; The listview
       , listview : { _:_
           , width: 260 } } }
 
 ; Global GUI variables
+global ui_tab
 global ui_listbox, ui_edit_filter, ui_button
 global ui_text_filter, ui_text_filterw, ui_text_bigchar, ui_text_desc
 global ui_keycap_0
@@ -30,7 +32,7 @@ create_gui()
     onexit exit_callback
 
     create_systray()
-    create_seq_win()
+    create_app_win()
 
     refresh_systray()
 }
@@ -77,7 +79,7 @@ showgui_callback:
     return
 
 hidegui_callback:
-    hide_seq_win()
+    hide_app_win()
     return
 
 hotkeymenu_callback:
@@ -127,18 +129,23 @@ exit_callback:
     return
 }
 
-create_seq_win()
+create_app_win()
 {
-    ; Build the sequence list window
-    gui +resize +minsize720x400
+    ; Build the main window
+    gui +resize +minsize720x450
     gui margin, 8, 8
+
+    gui add, tab2, vui_tab, % _("Sequences") "|" _("Settings")
+
+    ; Build the sequence list table
+    gui tab, 1
 
     gui font, s11
     gui font, s11, Courier New
     gui font, s11, Lucida Console
     gui font, s11, Consolas
     columns := _("Sequence") "|" _("Char") "|" _("Unicode")
-    gui add, listview, % "vui_listbox glistview_callback w" UI.seq_win.listview.width " r5 altsubmit -multi", % columns
+    gui add, listview, % "vui_listbox glistview_callback w" UI.app_win.listview.width " r5 altsubmit -multi", % columns
 
     gui font, s100
     gui add, text, vui_text_bigchar center +E0x200, % ""
@@ -166,18 +173,21 @@ create_seq_win()
 
     gui add, edit, vui_edit_filter gedit_callback
 
-    gui add, button, vui_button default, % _("Close")
-
     ; The copy character menu
     menu, contextmenu, add, % _("Copy Character"), copychar_callback
+
+    ; Build the rest of the window
+    gui tab
+
+    gui add, button, vui_button default, % _("Close")
 
     return
 
 guisize:
     if (a_eventinfo != 1) ; Ignore minimising
     {
-        UI.seq_win.width := a_guiwidth
-        UI.seq_win.height := a_guiheight
+        UI.app_win.width := a_guiwidth
+        UI.app_win.height := a_guiheight
         refresh_gui()
     }
     return
@@ -236,35 +246,44 @@ listview_callback:
 buttonclose:
 guiclose:
 guiescape:
-    hide_seq_win()
+    hide_app_win()
     return
 }
 
-hide_seq_win()
+hide_app_win()
 {
     gui hide
 }
 
 refresh_gui()
 {
-    w := UI.seq_win.width
-    h := UI.seq_win.height
-    lb_w := UI.seq_win.listview.width
-    lb_h := h - 45
-    bigchar_w := 180
-    bigchar_h := 180
+    w := UI.app_win.width
+    h := UI.app_win.height
+    m := UI.app_win.margin
+
+    ; Main window top containers
+    t_w := w - 2 * m
+    t_h := h - 30 - 2 * m
+    guicontrol move, ui_tab, % "w" t_w " h" t_h
+
+    guicontrol move, ui_button, % "x" (w - 80 - m) " y" (h - 30) " w80"
+
+    ; Second tab (sequences)
+    lb_w := UI.app_win.listview.width
+    lb_h := t_h - 22 - 40 - m
+    bc_w := 180
+    bc_h := 180
 
     guicontrol move, ui_listbox, % "w" lb_w " h" lb_h
 
-    guicontrol move, ui_text_desc, % "x" lb_w + 32 " y" 16 " w" w - lb_w - 40 " h" 120
+    guicontrol move, ui_text_desc, % "x" (lb_w + 32) " y" (40) " w" (w - lb_w - 3 * m - 32) " h" 120
 
-    guicontrol move, ui_text_bigchar, % "x" lb_w + (w - lb_w - bigchar_w) / 2 " y" 64 + (h - bigchar_h) / 2 " w" bigchar_w " h" bigchar_h
+    guicontrol move, ui_text_bigchar, % "x" lb_w + (w - lb_w - bc_w) / 2 " y" 64 + (h - bc_h) / 2 " w" bc_w " h" bc_h
 
-    guicontrol move, ui_text_filter, % "x" 8 " y" (h - 26)
-    guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 15) " w" (w - 140 - ui_text_filterw) " y" (h - 30)
-    guicontrol move, ui_button, % "x" (w - 87) " y" (h - 30) " w80"
+    guicontrol move, ui_text_filter, % "x" 2 * m " y" (t_h - 10 - m)
+    guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 3 * m) " w" (lb_w - m - ui_text_filterw) " y" (t_h - 22)
 
-    guicontrol move, ui_keycap_0, % "x" (lb_w + 20) " y" 100
+    guicontrol move, ui_keycap_0, % "x" (lb_w + 20 + m) " y" 120
 
     loop % 9
     {
@@ -278,11 +297,11 @@ refresh_gui()
             char := substr(S.selected_seq, a_index, 1)
 
             guicontrol show, ui_keycap_%a_index%
-            guicontrol move, ui_keycap_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" 100
+            guicontrol move, ui_keycap_%a_index%, % "x" (lb_w + 20 + m + a_index * 52) " y" 120
 
             guicontrol text, ui_keytext_%a_index%, % char == "&" ? "&&" : char
             guicontrol show, ui_keytext_%a_index%
-            guicontrol move, ui_keytext_%a_index%, % "x" (lb_w + 20 + a_index * 52) " y" (100 + 6)
+            guicontrol move, ui_keytext_%a_index%, % "x" (lb_w + 20 + m + a_index * 52) " y" (120 + 6)
         }
     }
 }
