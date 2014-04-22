@@ -302,19 +302,31 @@ set_printable_hotkeys(must_enable)
 key_callback:
     ; This hotkey must always be high priority
     critical on
+    vk := regexreplace(a_thishotkey, ".*vk", "vk")
+    has_shift := instr(a_thishotkey, "$+")
+    has_altgr := instr(a_thishotkey, "$<^>!")
     varsetcapacity(mods, 256, 0)
-    if (instr(a_thishotkey, "$+"))
-        numput(0x80, mods, 0x10, "uchar")
-    if (instr(a_thishotkey, "$<^>!"))
-    {
-        numput(0x80, mods, 0x11, "uchar")
-        numput(0x80, mods, 0x12, "uchar")
-    }
-    vk := getkeyvk(regexreplace(a_thishotkey, ".*vk", "vk"))
-    sc := getkeysc(regexreplace(a_thishotkey, ".*vk", "vk"))
-    err := dllcall("ToAscii", "uint", vk, "uint", sc, "ptr", &mods, "uintp", ascii, "uint", 0, "uint")
+    numput(has_shift ? 0x80 : 0x00, mods, 0x10, "uchar")
+    numput(has_altgr ? 0x80 : 0x00, mods, 0x11, "uchar")
+    numput(has_altgr ? 0x80 : 0x00, mods, 0x12, "uchar")
+    err := dllcall("ToAscii", "uint", getkeyvk(vk), "uint", getkeysc(vk), "ptr", &mods, "uintp", ascii, "uint", 0, "uint")
     if (err > 0 && ascii > 0)
+    {
+        ; If the system was able to translate the key, pass it to the
+        ; composition handler.
         send_keystroke(chr(ascii))
+    }
+    else
+    {
+        ; If the system doesn't know the key, make an honest attempt at sending
+        ; it anyways. Note that I have never seen this happen yet.
+        tosend := "{" vk "}"
+        if (has_shift)
+            tosend := "{shift down}" tosend "{shift up}"
+        if (has_altgr)
+            tosend := "{sc138 down}" tosend "{sc138 up}"
+        send %tosend%
+    }
     return
 }
 
