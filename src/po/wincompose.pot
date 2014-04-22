@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ui.ahk:114
+#: ui.ahk:116
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-18 17:16+0200\n"
+"POT-Creation-Date: 2014-04-22 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.ahk:438
+#: main.ahk:450
 msgid "Loaded @1@ Sequences"
 msgstr ""
 
-#: main.ahk:438
+#: main.ahk:450
 msgid "Compose Key is @1@"
 msgstr ""
 
@@ -106,98 +106,106 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: ui.ahk:51 ui.ahk:65
+#: ui.ahk:53 ui.ahk:67
 msgid "Sequences…"
 msgstr ""
 
-#: ui.ahk:52
+#: ui.ahk:54
 msgid "Compose Key"
 msgstr ""
 
-#: ui.ahk:53
+#: ui.ahk:55
 msgid "Timeout"
 msgstr ""
 
-#: ui.ahk:54 ui.ahk:295 ui.ahk:305 ui.ahk:314
+#: ui.ahk:56 ui.ahk:314 ui.ahk:324 ui.ahk:333
 msgid "Disable"
 msgstr ""
 
-#: ui.ahk:55
+#: ui.ahk:57
 msgid "Restart"
 msgstr ""
 
-#: ui.ahk:59
+#: ui.ahk:61
 msgid "&History"
 msgstr ""
 
-#: ui.ahk:60
+#: ui.ahk:62
 msgid "Hotkey &List"
 msgstr ""
 
-#: ui.ahk:62
+#: ui.ahk:64
 msgid "&About"
 msgstr ""
 
-#: ui.ahk:63
+#: ui.ahk:65
 msgid "&Visit Website"
 msgstr ""
 
-#: ui.ahk:64
+#: ui.ahk:66
 msgid "E&xit"
 msgstr ""
 
-#: ui.ahk:71
+#: ui.ahk:73
 msgid "@APP_NAME@ - List of sequences"
 msgstr ""
 
-#: ui.ahk:113
+#: ui.ahk:115
 msgid "@APP_NAME@ v@APP_VERSION@"
 msgstr ""
 
-#: ui.ahk:115
+#: ui.ahk:117
 msgid "by Sam Hocevar <sam@hocevar.net>"
 msgstr ""
 
-#: ui.ahk:116
+#: ui.ahk:118
 msgid "running on AHK v@AHK_VERSION@"
 msgstr ""
 
-#: ui.ahk:140
+#: ui.ahk:138
+msgid "Sequences"
+msgstr ""
+
+#: ui.ahk:138
+msgid "Settings"
+msgstr ""
+
+#: ui.ahk:147
 msgid "Sequence"
 msgstr ""
 
-#: ui.ahk:140
+#: ui.ahk:147
 msgid "Char"
 msgstr ""
 
-#: ui.ahk:140
+#: ui.ahk:147
 msgid "Unicode"
 msgstr ""
 
-#: ui.ahk:164
+#: ui.ahk:171
 msgid "Search Filter:"
 msgstr ""
 
-#: ui.ahk:169
-msgid "Close"
-msgstr ""
-
-#: ui.ahk:172
+#: ui.ahk:177
 msgid "Copy Character"
 msgstr ""
 
-#: ui.ahk:228
+#: ui.ahk:182
+msgid "Close"
+msgstr ""
+
+#: ui.ahk:238
 msgid "Description:"
 msgstr ""
 
-#: ui.ahk:299
+#: ui.ahk:318
 msgid "@APP_NAME@ (disabled)"
 msgstr ""
 
-#: ui.ahk:309
+#: ui.ahk:328
 msgid "@APP_NAME@ (active)"
 msgstr ""
 
-#: ui.ahk:318
+#: ui.ahk:337
 msgid "@APP_NAME@ (typing)"
 msgstr ""

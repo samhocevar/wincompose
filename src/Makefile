@@ -57,7 +57,7 @@ update-source:
 
 update-po:
 	$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ $(SRC_AHK) $(SRC_INC)
-	for l in $(PO); do msgmerge -U po/$$l.po po/wincompose.pot; done
+	for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
 
 update-ahk:
 	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Release //project AutoHotkeyx
