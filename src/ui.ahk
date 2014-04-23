@@ -16,12 +16,18 @@ global UI := { _:_
       , margin: 8
         ; The listview
       , listview : { _:_
-          , width: 260 } } }
+          , width: 260 }
+        ; The big char
+      , bigchar : { _:_
+          , width: 180
+          , height: 180 } } }
 
 ; Global GUI variables
 global ui_tab
 global ui_listbox, ui_edit_filter, ui_button
 global ui_text_filter, ui_text_filterw, ui_text_bigchar, ui_text_desc
+global ui_text_composekey, ui_dropdown_composekey
+global ui_text_delay, ui_dropdown_delay
 global ui_keycap_0
 global ui_keycap_1, ui_keycap_2, ui_keycap_3, ui_keycap_4, ui_keycap_5, ui_keycap_6, ui_keycap_7, ui_keycap_8, ui_keycap_9
 global ui_keytext_1, ui_keytext_2, ui_keytext_3, ui_keytext_4, ui_keytext_5, ui_keytext_6, ui_keytext_7, ui_keytext_8, ui_keytext_9
@@ -39,20 +45,10 @@ create_gui()
 
 create_systray()
 {
-    ; The hotkey selection menu
-    for key, val in C.keys.valid
-        menu, hotkeymenu, add, %val%, hotkeymenu_callback
-
-    ; The delay selection menu
-    for key, val in C.delays.valid
-        menu, delaymenu, add, %val%, delaymenu_callback
-
     ; Build the systray menu
     menu tray, click, 1
     menu tray, NoStandard
-    menu tray, add, % _("Sequences…"), showgui_callback
-    menu tray, add, % _("Compose Key"), :hotkeymenu
-    menu tray, add, % _("Timeout"), :delaymenu
+    menu tray, add, % _("Show Sequences"), showsequences_callback
     menu tray, add, % _("Disable"), toggle_callback
     menu tray, add, % _("Restart"), restart_callback
     menu tray, add
@@ -60,42 +56,41 @@ create_systray()
     {
         menu tray, add, % _("&History"), history_callback
         menu tray, add, % _("Hotkey &List"), hotkeylist_callback
+        menu tray, add
     }
+    menu tray, add, % _("Settings"), showsettings_callback
     menu tray, add, % _("&About"), about_callback
     menu tray, add, % _("&Visit Website"), website_callback
     menu tray, add, % _("E&xit"), exit_callback
-    menu tray, default, % _("Sequences…")
+    menu tray, default, % _("Show Sequences")
 
     return
 
-showgui_callback:
+showsequences_callback:
+showsettings_callback:
     critical on
-    gui_title := _("@APP_NAME@ - List of sequences")
+    gui_title := _("@APP_NAME@")
     if (winexist(gui_title))
         goto hidegui_callback
+
+    is_sequences := instr(a_thislabel, "sequences", true)
+    is_settings := instr(a_thislabel, "settings", true)
+
+    if (is_sequences)
+        guicontrol choose, ui_tab, 1
+    else if (is_settings)
+        guicontrol choose, ui_tab, 2
+
     recompute_gui_filter()
     gui show, , %gui_title%
-    guicontrol focus, ui_edit_filter
+
+    if (is_settings)
+        guicontrol focus, ui_edit_filter
+
     return
 
 hidegui_callback:
     hide_app_win()
-    return
-
-hotkeymenu_callback:
-    set_compose_hotkeys(false)
-    for key, val in C.keys.valid
-        if (val == a_thismenuitem)
-            R.compose_key := key
-    refresh_systray()
-    set_compose_hotkeys(true)
-    return
-
-delaymenu_callback:
-    for key, val in C.delays.valid
-        if (val == a_thismenuitem)
-            R.reset_delay := key
-    refresh_systray()
     return
 
 restart_callback:
@@ -137,7 +132,7 @@ create_app_win()
 
     gui add, tab2, vui_tab, % _("Sequences") "|" _("Settings")
 
-    ; Build the sequence list table
+    ; Build the sequence list pane
     gui tab, 1
 
     gui font, s11
@@ -145,7 +140,7 @@ create_app_win()
     gui font, s11, Lucida Console
     gui font, s11, Consolas
     columns := _("Sequence") "|" _("Char") "|" _("Unicode")
-    gui add, listview, % "vui_listbox glistview_callback w" UI.app_win.listview.width " r5 altsubmit -multi", % columns
+    gui add, listview, % "vui_listbox gon_select_sequence w" UI.app_win.listview.width " r5 altsubmit -multi", % columns
 
     gui font, s100
     gui add, text, vui_text_bigchar center +E0x200, % ""
@@ -171,15 +166,46 @@ create_app_win()
     gui add, text, vui_text_filter, % _("Search Filter:")
     guicontrolget ui_text_filter, pos
 
-    gui add, edit, vui_edit_filter gedit_callback
+    gui add, edit, vui_edit_filter gon_set_filter
 
-    ; The copy character menu
-    menu, contextmenu, add, % _("Copy Character"), copychar_callback
+    ; Build the settings pane
+    gui tab, 2
+
+    keylist := ""
+    for key, val in C.keys.valid
+    {
+        keylist .= keylist ? "|" val : val
+        if (key == R.compose_key)
+            keylist .= "||"
+    }
+    keylist := regexreplace(keylist, "\\|\\|\\|", "||")
+    gui add, text, vui_text_composekey, % _("Compose Key:")
+    gui add, dropdownlist, vui_dropdown_composekey gon_set_compose, %keylist%
+
+    delaylist := ""
+    for key, val in C.delays.valid
+    {
+        delaylist .= delaylist ? "|" val : val
+        if (key == R.reset_delay)
+            delaylist .= "||"
+    }
+    delaylist := regexreplace(delaylist, "\\|\\|\\|", "||")
+    gui add, text, vui_text_delay, % _("Delay:")
+    gui add, dropdownlist, vui_dropdown_delay gon_set_delay, %delaylist%
+
+    ; TODO
+    ;  - behaviour
+    ;     - try case-insensitive variations if sequence is invalid
+    ;     - discard letters from invalid sequences
+    ;     - beep after invalid sequences
 
     ; Build the rest of the window
     gui tab
 
     gui add, button, vui_button default, % _("Close")
+
+    ; The copy character menu
+    menu contextmenu, add, % _("Copy Character"), on_copy_char
 
     return
 
@@ -201,19 +227,37 @@ guicontextmenu:
             S.selected_char := tmp
         }
     }
-    menu, contextmenu, show
+    menu contextmenu, show
     return
 
-copychar_callback:
+on_copy_char:
     clipboard := S.selected_char
     return
 
-edit_callback:
+on_set_filter:
     critical on ; don't self-interrupt or we will corrupt the listview
     recompute_gui_filter()
     return
 
-listview_callback:
+on_set_compose:
+    guicontrolget tmp, , ui_dropdown_composekey
+    set_compose_hotkeys(false)
+    for key, val in C.keys.valid
+        if (val == tmp)
+            R.compose_key := key
+    refresh_systray()
+    set_compose_hotkeys(true)
+    return
+
+on_set_delay:
+    guicontrolget tmp, , ui_dropdown_delay
+    for key, val in C.delays.valid
+        if (val == tmp)
+            R.reset_delay := key
+    refresh_systray()
+    return
+
+on_select_sequence:
     critical on
     if (a_guievent == "I")
     {
@@ -268,11 +312,18 @@ refresh_gui()
 
     guicontrol move, ui_button, % "x" (w - 80 - m) " y" (h - 30) " w80"
 
+    ; First tab (settings)
+    guicontrol move, ui_text_composekey, % "x" 3 * m " y" (40 + m)
+    guicontrol move, ui_dropdown_composekey, % "x" (120) " y" (40 - 4 + m)
+
+    guicontrol move, ui_text_delay, % "x" 3 * m " y" (40 + 32 + m)
+    guicontrol move, ui_dropdown_delay, % "x" (120) " y" (40 + 32 - 4 + m)
+
     ; Second tab (sequences)
     lb_w := UI.app_win.listview.width
     lb_h := t_h - 22 - 40 - m
-    bc_w := 180
-    bc_h := 180
+    bc_w := UI.app_win.bigchar.width
+    bc_h := UI.app_win.bigchar.height
 
     guicontrol move, ui_listbox, % "w" lb_w " h" lb_h
 
@@ -281,7 +332,7 @@ refresh_gui()
     guicontrol move, ui_text_bigchar, % "x" lb_w + (w - lb_w - bc_w) / 2 " y" 64 + (h - bc_h) / 2 " w" bc_w " h" bc_h
 
     guicontrol move, ui_text_filter, % "x" 2 * m " y" (t_h - 10 - m)
-    guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 3 * m) " w" (lb_w - m - ui_text_filterw) " y" (t_h - 22)
+    guicontrol move, ui_edit_filter, % "x" (ui_text_filterw + 3 * m) " w" (lb_w - m - ui_text_filterw) " y" (t_h - 10 - 4 - m)
 
     guicontrol move, ui_keycap_0, % "x" (lb_w + 20 + m) " y" 120
 
@@ -336,12 +387,6 @@ refresh_systray()
         menu tray, icon, %tmp%, 2
         menu tray, tip, % _("@APP_NAME@ (typing)")
     }
-
-    for key, val in C.keys.valid
-        menu, hotkeymenu, % (key == R.compose_key) ? "check" : "uncheck", %val%
-
-    for key, val in C.delays.valid
-        menu, delaymenu, % (key == R.reset_delay) ? "check" : "uncheck", %val%
 }
 
 recompute_gui_filter()

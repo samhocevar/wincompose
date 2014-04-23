@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
 #
-#: ui.ahk:116
+#: ui.ahk:111
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-22 19:26+0200\n"
+"POT-Creation-Date: 2014-04-23 15:10+0200\n"
 "PO-Revision-Date: 2014-04-12 11:54+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
@@ -108,107 +108,109 @@ msgstr "10 sekund"
 msgid "None"
 msgstr ""
 
-#: ui.ahk:53 ui.ahk:67
-msgid "Sequences…"
-msgstr ""
+#: ui.ahk:51 ui.ahk:65
+#, fuzzy
+msgid "Show Sequences"
+msgstr "Sekvence"
 
-#: ui.ahk:54
-msgid "Compose Key"
-msgstr ""
-
-#: ui.ahk:55
-msgid "Timeout"
-msgstr ""
-
-#: ui.ahk:56 ui.ahk:314 ui.ahk:324 ui.ahk:333
+#: ui.ahk:52 ui.ahk:365 ui.ahk:375 ui.ahk:384
 msgid "Disable"
 msgstr ""
 
-#: ui.ahk:57
+#: ui.ahk:53
 msgid "Restart"
 msgstr ""
 
-#: ui.ahk:61
+#: ui.ahk:57
 msgid "&History"
 msgstr ""
 
-#: ui.ahk:62
+#: ui.ahk:58
 msgid "Hotkey &List"
 msgstr ""
 
-#: ui.ahk:64
+#: ui.ahk:61 ui.ahk:133
+msgid "Settings"
+msgstr ""
+
+#: ui.ahk:62
 msgid "&About"
 msgstr ""
 
-#: ui.ahk:65
+#: ui.ahk:63
 msgid "&Visit Website"
 msgstr ""
 
-#: ui.ahk:66
+#: ui.ahk:64
 msgid "E&xit"
 msgstr ""
 
-#: ui.ahk:73
-msgid "@APP_NAME@ - List of sequences"
-msgstr ""
+#: ui.ahk:72
+#, fuzzy
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@ (aktivní)"
 
-#: ui.ahk:115
+#: ui.ahk:110
 msgid "@APP_NAME@ v@APP_VERSION@"
 msgstr ""
 
-#: ui.ahk:117
+#: ui.ahk:112
 msgid "by Sam Hocevar <sam@hocevar.net>"
 msgstr "napsal Sam Hocevar <sam@hocevar.net>"
 
-#: ui.ahk:118
+#: ui.ahk:113
 msgid "running on AHK v@AHK_VERSION@"
 msgstr ""
 
-#: ui.ahk:138
+#: ui.ahk:133
 #, fuzzy
 msgid "Sequences"
 msgstr "Sekvence"
 
-#: ui.ahk:138
-msgid "Settings"
-msgstr ""
-
-#: ui.ahk:147
+#: ui.ahk:142
 msgid "Sequence"
 msgstr "Sekvence"
 
-#: ui.ahk:147
+#: ui.ahk:142
 msgid "Char"
 msgstr "Znak"
 
-#: ui.ahk:147
+#: ui.ahk:142
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ui.ahk:171
+#: ui.ahk:166
 msgid "Search Filter:"
 msgstr ""
 
-#: ui.ahk:177
-msgid "Copy Character"
+#: ui.ahk:182
+msgid "Compose Key:"
 msgstr ""
 
-#: ui.ahk:182
+#: ui.ahk:193
+msgid "Delay:"
+msgstr ""
+
+#: ui.ahk:205
 msgid "Close"
 msgstr "Zavřít"
 
-#: ui.ahk:238
+#: ui.ahk:208
+msgid "Copy Character"
+msgstr ""
+
+#: ui.ahk:282
 msgid "Description:"
 msgstr "Popis:"
 
-#: ui.ahk:318
+#: ui.ahk:369
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (vypnuto)"
 
-#: ui.ahk:328
+#: ui.ahk:379
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (aktivní)"
 
-#: ui.ahk:337
+#: ui.ahk:388
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (píše)"

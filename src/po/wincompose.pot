@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ui.ahk:116
+#: ui.ahk:111
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-22 19:27+0200\n"
+"POT-Creation-Date: 2014-04-23 15:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.ahk:450
@@ -106,106 +106,106 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: ui.ahk:53 ui.ahk:67
-msgid "Sequences…"
+#: ui.ahk:51 ui.ahk:65
+msgid "Show Sequences"
 msgstr ""
 
-#: ui.ahk:54
-msgid "Compose Key"
-msgstr ""
-
-#: ui.ahk:55
-msgid "Timeout"
-msgstr ""
-
-#: ui.ahk:56 ui.ahk:314 ui.ahk:324 ui.ahk:333
+#: ui.ahk:52 ui.ahk:365 ui.ahk:375 ui.ahk:384
 msgid "Disable"
 msgstr ""
 
-#: ui.ahk:57
+#: ui.ahk:53
 msgid "Restart"
 msgstr ""
 
-#: ui.ahk:61
+#: ui.ahk:57
 msgid "&History"
 msgstr ""
 
-#: ui.ahk:62
+#: ui.ahk:58
 msgid "Hotkey &List"
 msgstr ""
 
-#: ui.ahk:64
-msgid "&About"
-msgstr ""
-
-#: ui.ahk:65
-msgid "&Visit Website"
-msgstr ""
-
-#: ui.ahk:66
-msgid "E&xit"
-msgstr ""
-
-#: ui.ahk:73
-msgid "@APP_NAME@ - List of sequences"
-msgstr ""
-
-#: ui.ahk:115
-msgid "@APP_NAME@ v@APP_VERSION@"
-msgstr ""
-
-#: ui.ahk:117
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr ""
-
-#: ui.ahk:118
-msgid "running on AHK v@AHK_VERSION@"
-msgstr ""
-
-#: ui.ahk:138
-msgid "Sequences"
-msgstr ""
-
-#: ui.ahk:138
+#: ui.ahk:61 ui.ahk:133
 msgid "Settings"
 msgstr ""
 
-#: ui.ahk:147
+#: ui.ahk:62
+msgid "&About"
+msgstr ""
+
+#: ui.ahk:63
+msgid "&Visit Website"
+msgstr ""
+
+#: ui.ahk:64
+msgid "E&xit"
+msgstr ""
+
+#: ui.ahk:72
+msgid "@APP_NAME@"
+msgstr ""
+
+#: ui.ahk:110
+msgid "@APP_NAME@ v@APP_VERSION@"
+msgstr ""
+
+#: ui.ahk:112
+msgid "by Sam Hocevar <sam@hocevar.net>"
+msgstr ""
+
+#: ui.ahk:113
+msgid "running on AHK v@AHK_VERSION@"
+msgstr ""
+
+#: ui.ahk:133
+msgid "Sequences"
+msgstr ""
+
+#: ui.ahk:142
 msgid "Sequence"
 msgstr ""
 
-#: ui.ahk:147
+#: ui.ahk:142
 msgid "Char"
 msgstr ""
 
-#: ui.ahk:147
+#: ui.ahk:142
 msgid "Unicode"
 msgstr ""
 
-#: ui.ahk:171
+#: ui.ahk:166
 msgid "Search Filter:"
 msgstr ""
 
-#: ui.ahk:177
-msgid "Copy Character"
+#: ui.ahk:182
+msgid "Compose Key:"
 msgstr ""
 
-#: ui.ahk:182
+#: ui.ahk:193
+msgid "Delay:"
+msgstr ""
+
+#: ui.ahk:205
 msgid "Close"
 msgstr ""
 
-#: ui.ahk:238
+#: ui.ahk:208
+msgid "Copy Character"
+msgstr ""
+
+#: ui.ahk:282
 msgid "Description:"
 msgstr ""
 
-#: ui.ahk:318
+#: ui.ahk:369
 msgid "@APP_NAME@ (disabled)"
 msgstr ""
 
-#: ui.ahk:328
+#: ui.ahk:379
 msgid "@APP_NAME@ (active)"
 msgstr ""
 
-#: ui.ahk:337
+#: ui.ahk:388
 msgid "@APP_NAME@ (typing)"
 msgstr ""

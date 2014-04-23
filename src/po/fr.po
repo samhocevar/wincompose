@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ui.ahk:116
+#: ui.ahk:111
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-22 19:26+0200\n"
+"POT-Creation-Date: 2014-04-23 15:10+0200\n"
 "PO-Revision-Date: 2014-04-13 20:01+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
@@ -106,106 +106,115 @@ msgstr "10 secondes"
 msgid "None"
 msgstr "Aucun"
 
-#: ui.ahk:53 ui.ahk:67
-msgid "Sequences…"
-msgstr "&Séquences…"
+#: ui.ahk:51 ui.ahk:65
+msgid "Show Sequences"
+msgstr "Afficher les séquences"
 
-#: ui.ahk:54
-msgid "Compose Key"
-msgstr "Touche compose"
-
-#: ui.ahk:55
-msgid "Timeout"
-msgstr "Délai"
-
-#: ui.ahk:56 ui.ahk:314 ui.ahk:324 ui.ahk:333
+#: ui.ahk:52 ui.ahk:365 ui.ahk:375 ui.ahk:384
 msgid "Disable"
 msgstr "Désactiver"
 
-#: ui.ahk:57
+#: ui.ahk:53
 msgid "Restart"
 msgstr "Réinitialiser"
 
-#: ui.ahk:61
+#: ui.ahk:57
 msgid "&History"
 msgstr "&Historique"
 
-#: ui.ahk:62
+#: ui.ahk:58
 msgid "Hotkey &List"
 msgstr "&Liste de touches"
 
-#: ui.ahk:64
-msgid "&About"
-msgstr "&À propos"
-
-#: ui.ahk:65
-msgid "&Visit Website"
-msgstr "Site web"
-
-#: ui.ahk:66
-msgid "E&xit"
-msgstr "Quitter"
-
-#: ui.ahk:73
-msgid "@APP_NAME@ - List of sequences"
-msgstr "@APP_NAME@ - Liste des séquences"
-
-#: ui.ahk:115
-msgid "@APP_NAME@ v@APP_VERSION@"
-msgstr "@APP_NAME@ v@APP_VERSION@"
-
-#: ui.ahk:117
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "par Sam Hocevar <sam@hocevar.net>"
-
-#: ui.ahk:118
-msgid "running on AHK v@AHK_VERSION@"
-msgstr "propulsé par AHK v@AHK_VERSION@"
-
-#: ui.ahk:138
-msgid "Sequences"
-msgstr "Séquences"
-
-#: ui.ahk:138
+#: ui.ahk:61 ui.ahk:133
 msgid "Settings"
 msgstr "Réglages"
 
-#: ui.ahk:147
+#: ui.ahk:62
+msgid "&About"
+msgstr "&À propos"
+
+#: ui.ahk:63
+msgid "&Visit Website"
+msgstr "Site web"
+
+#: ui.ahk:64
+msgid "E&xit"
+msgstr "Quitter"
+
+#: ui.ahk:72
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
+
+#: ui.ahk:110
+msgid "@APP_NAME@ v@APP_VERSION@"
+msgstr "@APP_NAME@ v@APP_VERSION@"
+
+#: ui.ahk:112
+msgid "by Sam Hocevar <sam@hocevar.net>"
+msgstr "par Sam Hocevar <sam@hocevar.net>"
+
+#: ui.ahk:113
+msgid "running on AHK v@AHK_VERSION@"
+msgstr "propulsé par AHK v@AHK_VERSION@"
+
+#: ui.ahk:133
+msgid "Sequences"
+msgstr "Séquences"
+
+#: ui.ahk:142
 msgid "Sequence"
 msgstr "Séquence"
 
-#: ui.ahk:147
+#: ui.ahk:142
 msgid "Char"
 msgstr "Car"
 
-#: ui.ahk:147
+#: ui.ahk:142
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ui.ahk:171
+#: ui.ahk:166
 msgid "Search Filter:"
 msgstr "Filtre de recherche :"
 
-#: ui.ahk:177
-msgid "Copy Character"
-msgstr "Copier le caractère"
-
 #: ui.ahk:182
+msgid "Compose Key:"
+msgstr "Touche compose :"
+
+#: ui.ahk:193
+msgid "Delay:"
+msgstr "Délai :"
+
+#: ui.ahk:205
 msgid "Close"
 msgstr "Fermer"
 
-#: ui.ahk:238
+#: ui.ahk:208
+msgid "Copy Character"
+msgstr "Copier le caractère"
+
+#: ui.ahk:282
 msgid "Description:"
 msgstr "Description :"
 
-#: ui.ahk:318
+#: ui.ahk:369
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (inactif)"
 
-#: ui.ahk:328
+#: ui.ahk:379
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (actif)"
 
-#: ui.ahk:337
+#: ui.ahk:388
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (en cours)"
+
+#~ msgid "Sequences…"
+#~ msgstr "&Séquences…"
+
+#~ msgid "Timeout"
+#~ msgstr "Délai"
+
+#~ msgid "@APP_NAME@ - List of sequences"
+#~ msgstr "@APP_NAME@ - Liste des séquences"
