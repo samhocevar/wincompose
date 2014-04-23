@@ -28,6 +28,7 @@ global ui_listbox, ui_edit_filter, ui_button
 global ui_text_filter, ui_text_filterw, ui_text_bigchar, ui_text_desc
 global ui_text_composekey, ui_dropdown_composekey
 global ui_text_delay, ui_dropdown_delay
+global ui_checkbox_case, ui_checkbox_discard, ui_checkbox_beep
 global ui_keycap_0
 global ui_keycap_1, ui_keycap_2, ui_keycap_3, ui_keycap_4, ui_keycap_5, ui_keycap_6, ui_keycap_7, ui_keycap_8, ui_keycap_9
 global ui_keytext_1, ui_keytext_2, ui_keytext_3, ui_keytext_4, ui_keytext_5, ui_keytext_6, ui_keytext_7, ui_keytext_8, ui_keytext_9
@@ -208,11 +209,15 @@ create_app_win()
     gui add, text, vui_text_delay, % _("Delay:")
     gui add, dropdownlist, vui_dropdown_delay gon_set_delay, %delaylist%
 
-    ; TODO
-    ;  - behaviour
-    ;     - try case-insensitive variations if sequence is invalid
-    ;     - discard letters from invalid sequences
-    ;     - beep after invalid sequences
+    gui add, checkbox, vui_checkbox_case gon_toggle_case, % _("If a sequence is invalid, try to match an existing case-insensitive sequence.")
+    guicontrol ,, ui_checkbox_case, % R.opt_case ? 1 : 0
+    guicontrol disable, ui_checkbox_case
+
+    gui add, checkbox, vui_checkbox_discard gon_toggle_discard, % _("Discard characters from invalid sequences instead of printing them.")
+    guicontrol ,, ui_checkbox_discard, % R.opt_discard ? 1 : 0
+
+    gui add, checkbox, vui_checkbox_beep gon_toggle_beep, % _("Beep on invalid sequences.")
+    guicontrol ,, ui_checkbox_beep, % R.opt_beep ? 1 : 0
 
     ; Build the rest of the window
     gui tab
@@ -270,6 +275,13 @@ on_set_delay:
         if (val == tmp)
             R.reset_delay := key
     refresh_systray()
+    return
+
+on_toggle_case:
+on_toggle_discard:
+on_toggle_beep:
+    guicontrolget val, , % regexreplace(a_thislabel, "on_toggle", "ui_checkbox")
+    R[regexreplace(a_thislabel, "on_toggle_", "opt_")] := val
     return
 
 on_select_sequence:
@@ -333,6 +345,10 @@ refresh_gui()
 
     guicontrol move, ui_text_delay, % "x" 3 * m " y" (40 + 32 + m)
     guicontrol move, ui_dropdown_delay, % "x" (120) " y" (40 + 32 - 4 + m)
+
+    guicontrol move, ui_checkbox_case, % "x" 3 * m " y" 120 + m
+    guicontrol move, ui_checkbox_discard, % "x" 3 * m " y" 120 + 25 + m
+    guicontrol move, ui_checkbox_beep, % "x" 3 * m " y" 120 + 50 + m
 
     ; Second tab (sequences)
     lb_w := UI.app_win.listview.width

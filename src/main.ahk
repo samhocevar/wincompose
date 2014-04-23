@@ -42,7 +42,10 @@ global R := { sequences:    {}
             , descriptions: {}
             , keynames:     {}
             , compose_key:  C.keys.default
-            , reset_delay:  C.delays.valid }
+            , reset_delay:  C.delays.valid
+            , opt_case:     false
+            , opt_discard:  false
+            , opt_beep:     false }
 
 main()
 return
@@ -76,12 +79,19 @@ main()
 load_settings()
 {
     ; Read the compose key value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % "compose_key", ""
+    iniread tmp, %config_file%, Global, % "compose_key", % ""
     R.compose_key := C.keys.valid.haskey(tmp) ? tmp : C.keys.default
 
     ; Read the reset delay value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % "reset_delay", ""
+    iniread tmp, %config_file%, Global, % "reset_delay", % ""
     R.reset_delay := C.delays.valid.haskey(tmp) ? tmp : C.delays.default
+
+    iniread tmp, %config_file%, Global, % "case_insensitive", false
+    R.opt_case := tmp == "true"
+    iniread tmp, %config_file%, Global, % "discard_on_invalid", false
+    R.opt_discard := tmp == "true"
+    iniread tmp, %config_file%, Global, % "beep_on_invalid", false
+    R.opt_beep := tmp == "true"
 
     save_settings()
 }
@@ -91,6 +101,9 @@ save_settings()
     filecreatedir %config_dir%
     iniwrite % R.compose_key, %config_file%, Global, % "compose_key"
     iniwrite % R.reset_delay, %config_file%, Global, % "reset_delay"
+    iniwrite % R.opt_case ? "true" : "false", %config_file%, Global, % "case_insensitive"
+    iniwrite % R.opt_discard ? "true" : "false", %config_file%, Global, % "discard_on_invalid"
+    iniwrite % R.opt_beep ? "true" : "false", %config_file%, Global, % "beep_on_invalid"
 }
 
 ;
@@ -166,9 +179,12 @@ send_keystroke(keystroke)
             else if (!has_prefix(sequence))
             {
                 info .= " ABORTED"
-                send_raw(sequence)
+                if (!R.opt_discard)
+                    send_raw(sequence)
                 S.typing := false
                 sequence := ""
+                if (R.opt_beep)
+                    soundplay *-1
             }
             else
             {
