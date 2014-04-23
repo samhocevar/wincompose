@@ -100,7 +100,7 @@ save_settings()
 send_keystroke(keystroke)
 {
     static sequence := ""
-    settimer, reset_callback, off
+    settimer on_delay_expired, off
 
     if (S.disabled)
     {
@@ -123,7 +123,7 @@ send_keystroke(keystroke)
             check_keyboard_layout()
             S.typing := true
             if (R.reset_delay > 0)
-                settimer, reset_callback, % R.reset_delay
+                settimer on_delay_expired, % R.reset_delay
         }
         else
             send_raw(char)
@@ -138,7 +138,7 @@ send_keystroke(keystroke)
 
         if (keystroke == "compose")
         {
-            settimer, reset_callback, off
+            settimer on_delay_expired, off
             sequence := ""
             S.typing := false
         }
@@ -173,7 +173,7 @@ send_keystroke(keystroke)
             else
             {
                 if (R.reset_delay > 0)
-                    settimer, reset_callback, % R.reset_delay
+                    settimer on_delay_expired, % R.reset_delay
             }
 
             debug(info)
@@ -183,25 +183,10 @@ send_keystroke(keystroke)
     refresh_systray()
     return
 
-reset_callback:
-    settimer, reset_callback, off
+on_delay_expired:
+    settimer on_delay_expired, off
     sequence := ""
     S.typing := false
-    refresh_systray()
-    return
-
-toggle_callback:
-    if (S.disabled)
-    {
-        S.disabled := false
-        S.typing := false
-        set_compose_hotkeys(true)
-    }
-    else
-    {
-        set_compose_hotkeys(false)
-        S.disabled := true
-    }
     refresh_systray()
     return
 }
@@ -283,23 +268,24 @@ set_printable_hotkeys(must_enable)
     ; Register hotkeys for all keys that potentially display something, including
     ; combinations with Shift or Ctrl+Alt (aka AltGr). We must use virtual keys
     ; instead of characters because we have no way to know what keys are available
-    ; on the currently active keyboard layout.
+    ; on the currently active keyboard layout. The list of virtual keys has been
+    ; manually compiled into C.keys.printable.
     manifesthooks off
     for ignored, range in C.keys.printable
     {
         loop % (range[2] - range[1])
         {
             i := range[1] + a_index - 1
-            hotkey % "$vk" num_to_hex(i, 2), key_callback, %flag%, useerrorlevel
-            hotkey % "$+vk" num_to_hex(i, 2), key_callback, %flag%, useerrorlevel
-            hotkey % "$<^>!vk" num_to_hex(i, 2), key_callback, %flag%, useerrorlevel
+            hotkey % "$vk" num_to_hex(i, 2), on_printable_key, %flag%, useerrorlevel
+            hotkey % "$+vk" num_to_hex(i, 2), on_printable_key, %flag%, useerrorlevel
+            hotkey % "$<^>!vk" num_to_hex(i, 2), on_printable_key, %flag%, useerrorlevel
         }
     }
     manifesthooks on
 
     return
 
-key_callback:
+on_printable_key:
     ; This hotkey must always be high priority
     critical on
     vk := regexreplace(a_thishotkey, ".*vk", "vk")
@@ -341,14 +327,14 @@ set_special_hotkeys(must_enable)
     manifesthooks off
     for ignored, key in C.keys.special
     {
-        hotkey $%key%, special_callback, %flag%, useerrorlevel
-        hotkey $%key% up, special_callback, %flag%, useerrorlevel
+        hotkey $%key%, on_special_hotkey, %flag%, useerrorlevel
+        hotkey $%key% up, on_special_hotkey, %flag%, useerrorlevel
     }
     manifesthooks on
 
     return
 
-special_callback:
+on_special_hotkey:
     ; This hotkey must always be active and high priority
     suspend permit
     critical on
@@ -389,8 +375,8 @@ set_compose_hotkeys(must_enable)
         ; Activate the compose key for real
         for ignored, prefix in compose_prefixes
         {
-            hotkey % prefix R.compose_key, compose_callback, on, useerrorlevel
-            hotkey % prefix R.compose_key " up", compose_callback, on, useerrorlevel
+            hotkey % prefix R.compose_key, on_compose_key, on, useerrorlevel
+            hotkey % prefix R.compose_key " up", on_compose_key, on, useerrorlevel
         }
     }
     else
@@ -409,7 +395,7 @@ set_compose_hotkeys(must_enable)
 
     return
 
-compose_callback:
+on_compose_key:
     ; This hotkey must always be active and high priority
     suspend permit
     critical on

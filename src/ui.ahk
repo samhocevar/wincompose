@@ -35,7 +35,7 @@ global ui_keytext_1, ui_keytext_2, ui_keytext_3, ui_keytext_4, ui_keytext_5, ui_
 
 create_gui()
 {
-    onexit exit_callback
+    onexit on_exit
 
     create_systray()
     create_app_win()
@@ -48,33 +48,33 @@ create_systray()
     ; Build the systray menu
     menu tray, click, 1
     menu tray, NoStandard
-    menu tray, add, % _("Show Sequences"), showsequences_callback
-    menu tray, add, % _("Disable"), toggle_callback
-    menu tray, add, % _("Restart"), restart_callback
+    menu tray, add, % _("Show &Sequences"), on_show_sequences
+    menu tray, add, % _("Disable"), on_disable
+    menu tray, add, % _("Restart"), on_restart
     menu tray, add
     if (have_debug)
     {
-        menu tray, add, % _("&History"), history_callback
-        menu tray, add, % _("Hotkey &List"), hotkeylist_callback
+        menu tray, add, % _("&History"), on_show_history
+        menu tray, add, % _("Hotkey &List"), on_show_hotkeys
         menu tray, add
     }
-    menu tray, add, % _("Settings"), showsettings_callback
-    menu tray, add, % _("&About"), about_callback
-    menu tray, add, % _("&Visit Website"), website_callback
-    menu tray, add, % _("E&xit"), exit_callback
-    menu tray, default, % _("Show Sequences")
+    menu tray, add, % _("&Options"), on_show_options
+    menu tray, add, % _("&About"), on_show_about
+    menu tray, add, % _("&Visit Website"), on_show_website
+    menu tray, add, % _("E&xit"), on_exit
+    menu tray, default, % _("Show &Sequences")
 
     return
 
-showsequences_callback:
-showsettings_callback:
+on_show_sequences:
+on_show_options:
     critical on
     gui_title := _("@APP_NAME@")
     if (winexist(gui_title))
-        goto hidegui_callback
+        goto on_hide_app_win
 
     is_sequences := instr(a_thislabel, "sequences", true)
-    is_settings := instr(a_thislabel, "settings", true)
+    is_settings := instr(a_thislabel, "options", true)
 
     if (is_sequences)
         guicontrol choose, ui_tab, 1
@@ -89,24 +89,39 @@ showsettings_callback:
 
     return
 
-hidegui_callback:
+on_hide_app_win:
     hide_app_win()
     return
 
-restart_callback:
+on_restart:
     save_settings()
     reload
     return
 
-history_callback:
+on_disable:
+    if (S.disabled)
+    {
+        S.disabled := false
+        S.typing := false
+        set_compose_hotkeys(true)
+    }
+    else
+    {
+        set_compose_hotkeys(false)
+        S.disabled := true
+    }
+    refresh_systray()
+    return
+
+on_show_history:
     keyhistory
     return
 
-hotkeylist_callback:
+on_show_hotkeys:
     listhotkeys
     return
 
-about_callback:
+on_show_about:
     about_text := _("@APP_NAME@ v@APP_VERSION@") . "\n"
     about_text .= _("") . "\n"
     about_text .= _("by Sam Hocevar <sam@hocevar.net>") . "\n"
@@ -114,11 +129,11 @@ about_callback:
     msgbox 64, %app%, %about_text%
     return
 
-website_callback:
+on_show_website:
     run %website%
     return
 
-exit_callback:
+on_exit:
     save_settings()
     exitapp
     return
@@ -130,7 +145,7 @@ create_app_win()
     gui +resize +minsize720x450
     gui margin, 8, 8
 
-    gui add, tab2, vui_tab, % _("Sequences") "|" _("Settings")
+    gui add, tab2, vui_tab, % _("Sequences") "|" _("Options")
 
     ; Build the sequence list pane
     gui tab, 1
