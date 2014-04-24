@@ -17,8 +17,9 @@ Quick start
 -----------
 
 After installation, WinCompose should appear in the System Tray. Press and
-release the <kbd>Right Alt</kbd> key to initiate a compose sequence; the icon
-should change to indicate a compose sequence is in progress.
+release the <kbd>⎄ Compose</kbd> key to initiate a compose sequence (this key
+defaults to <kbd>Right Alt</kbd>); the icon should change to indicate a compose
+sequence is in progress.
 
 Then type in the keys for a compose sequence, such as <kbd>A</kbd> then
 <kbd>E</kbd> for **Æ**:
@@ -33,18 +34,18 @@ Examples
 
 Compose rules are supposed to be intuitive. Here are some examples:
 
- - <kbd>\`</kbd> <kbd>a</kbd> → **à**
- - <kbd>'</kbd> <kbd>e</kbd> → **é**
- - <kbd>^</kbd> <kbd>i</kbd> → **î**
- - <kbd>~</kbd> <kbd>n</kbd> → **ñ**
- - <kbd>/</kbd> <kbd>o</kbd> → **ø**
- - <kbd>"</kbd> <kbd>u</kbd> → **ü**
- - <kbd>o</kbd> <kbd>c</kbd> → **©**
- - <kbd>+</kbd> <kbd>-</kbd> → **±**
- - <kbd>:</kbd> <kbd>-</kbd> → **÷**
- - <kbd>(</kbd> <kbd>7</kbd> <kbd>)</kbd> → **⑦**
- - <kbd>C</kbd> <kbd>C</kbd> <kbd>C</kbd> <kbd>P</kbd> → **☭**
- - <kbd>&lt;</kbd> <kbd>3</kbd> → **♥**
+ - <kbd>⎄ Compose</kbd> <kbd>\`</kbd> <kbd>a</kbd> → **à**
+ - <kbd>⎄ Compose</kbd> <kbd>'</kbd> <kbd>e</kbd> → **é**
+ - <kbd>⎄ Compose</kbd> <kbd>^</kbd> <kbd>i</kbd> → **î**
+ - <kbd>⎄ Compose</kbd> <kbd>~</kbd> <kbd>n</kbd> → **ñ**
+ - <kbd>⎄ Compose</kbd> <kbd>/</kbd> <kbd>o</kbd> → **ø**
+ - <kbd>⎄ Compose</kbd> <kbd>"</kbd> <kbd>u</kbd> → **ü**
+ - <kbd>⎄ Compose</kbd> <kbd>o</kbd> <kbd>c</kbd> → **©**
+ - <kbd>⎄ Compose</kbd> <kbd>+</kbd> <kbd>-</kbd> → **±**
+ - <kbd>⎄ Compose</kbd> <kbd>:</kbd> <kbd>-</kbd> → **÷**
+ - <kbd>⎄ Compose</kbd> <kbd>(</kbd> <kbd>7</kbd> <kbd>)</kbd> → **⑦**
+ - <kbd>⎄ Compose</kbd> <kbd>C</kbd> <kbd>C</kbd> <kbd>C</kbd> <kbd>P</kbd> → **☭**
+ - <kbd>⎄ Compose</kbd> <kbd>&lt;</kbd> <kbd>3</kbd> → **♥**
 
 The full list of rules can be found by clicking on the WinCompose system tray
 icon or using the “Show Sequences…” menu entry:
@@ -62,10 +63,10 @@ WinCompose supports the standard Compose file format. It provides more than
 rules by creating a file named `.XCompose` or `.XCompose.txt` in your
 `%USERPROFILE%` directory.
 
-WinCompose supports rules of more than 2 characters such as <kbd>(</kbd> <kbd>3</kbd> <kbd>)</kbd>
-for **③**.
+WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kbd>
+<kbd>(</kbd> <kbd>3</kbd> <kbd>)</kbd> for **③**.
 
-WinCompose supports early exits. For instance, <kbd>Compose</kbd> <kbd>&</kbd> will
+WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>&</kbd> will
 immediately type **&** because there is currently no rule starting with <kbd>&</kbd>.
 
 WinCompose does not emit unnecessary keystrokes, such as a backspace keystroke
