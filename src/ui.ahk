@@ -50,7 +50,7 @@ create_systray()
     ; Build the systray menu
     menu tray, click, 1
     menu tray, NoStandard
-    menu tray, add, % _("Show &Sequences"), on_show_sequences
+    menu tray, add, % _("Show &Sequences…"), on_show_sequences
     menu tray, add, % _("Disable"), on_disable
     menu tray, add, % _("Restart"), on_restart
     menu tray, add
@@ -60,11 +60,11 @@ create_systray()
         menu tray, add, % _("Hotkey &List"), on_show_hotkeys
         menu tray, add
     }
-    menu tray, add, % _("&Options"), on_show_options
+    menu tray, add, % _("&Options…"), on_show_options
     menu tray, add, % _("&About"), on_show_about
     menu tray, add, % _("&Visit Website"), on_show_website
     menu tray, add, % _("E&xit"), on_exit
-    menu tray, default, % _("Show &Sequences")
+    menu tray, default, % _("Show &Sequences…")
 
     return
 
@@ -124,10 +124,10 @@ on_show_hotkeys:
     return
 
 on_show_about:
-    about_text := _("@APP_NAME@ v@APP_VERSION@") . "\n"
-    about_text .= _("") . "\n"
-    about_text .= _("by Sam Hocevar <sam@hocevar.net>") . "\n"
-    about_text .= _("running on AHK v@AHK_VERSION@") . "\n"
+    about_text := _("@APP_NAME@ v@APP_VERSION@\n")
+    about_text .= _("\n")
+    about_text .= _("by Sam Hocevar <sam@hocevar.net>\n")
+    about_text .= _("running on AHK v@AHK_VERSION@\n")
     msgbox 64, %app%, %about_text%
     return
 

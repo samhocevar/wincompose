@@ -11,7 +11,7 @@ combinations. For instance, **ö** is obtained using <kbd>o</kbd> and <kbd>"</kb
 Download
 --------
 
-Latest release is [WinCompose-Setup-0.6.3.exe](https://github.com/samhocevar/wincompose/releases/download/v0.6.3/WinCompose-Setup-0.6.3.exe). Older releases are available [here](https://github.com/samhocevar/wincompose/releases/).
+Latest release is [WinCompose-Setup-0.6.4.exe](https://github.com/samhocevar/wincompose/releases/download/v0.6.4/WinCompose-Setup-0.6.4.exe). Older releases are available [here](https://github.com/samhocevar/wincompose/releases/).
 
 Quick start
 -----------

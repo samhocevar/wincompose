@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ui.ahk:126
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-23 19:22+0200\n"
+"POT-Creation-Date: 2014-04-24 11:50+0200\n"
 "PO-Revision-Date: 2014-04-13 20:01+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
@@ -18,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.ahk:436
+#: main.ahk:454
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ séquences chargées"
 
-#: main.ahk:436
+#: main.ahk:454
 msgid "Compose Key is @1@"
 msgstr "Touche compose : @1@"
 
@@ -106,111 +105,127 @@ msgstr "10 secondes"
 msgid "None"
 msgstr "Aucun"
 
-#: ui.ahk:51 ui.ahk:65
-msgid "Show &Sequences"
-msgstr "Afficher les &séquences"
+#: ui.ahk:53 ui.ahk:67
+msgid "Show &Sequences…"
+msgstr "Afficher les &séquences…"
 
-#: ui.ahk:52 ui.ahk:380 ui.ahk:390 ui.ahk:399
+#: ui.ahk:54 ui.ahk:400 ui.ahk:410 ui.ahk:419
 msgid "Disable"
 msgstr "Désactiver"
 
-#: ui.ahk:53
+#: ui.ahk:55
 msgid "Restart"
 msgstr "Réinitialiser"
 
-#: ui.ahk:57
+#: ui.ahk:59
 msgid "&History"
 msgstr "&Historique"
 
-#: ui.ahk:58
+#: ui.ahk:60
 msgid "Hotkey &List"
 msgstr "&Liste de touches"
 
-#: ui.ahk:61
-msgid "&Options"
-msgstr "&Options"
+#: ui.ahk:63
+msgid "&Options…"
+msgstr "&Options…"
 
-#: ui.ahk:62
+#: ui.ahk:64
 msgid "&About"
 msgstr "&À propos"
 
-#: ui.ahk:63
+#: ui.ahk:65
 msgid "&Visit Website"
 msgstr "Site web"
 
-#: ui.ahk:64
+#: ui.ahk:66
 msgid "E&xit"
 msgstr "Quitter"
 
-#: ui.ahk:72
+#: ui.ahk:74
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: ui.ahk:125
-msgid "@APP_NAME@ v@APP_VERSION@"
-msgstr "@APP_NAME@ v@APP_VERSION@"
-
 #: ui.ahk:127
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "par Sam Hocevar <sam@hocevar.net>"
+msgid "@APP_NAME@ v@APP_VERSION@\n"
+msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
 #: ui.ahk:128
-msgid "running on AHK v@AHK_VERSION@"
-msgstr "propulsé par AHK v@AHK_VERSION@"
+msgid "\n"
+msgstr "\n"
 
-#: ui.ahk:148
+#: ui.ahk:129
+msgid "by Sam Hocevar <sam@hocevar.net>\n"
+msgstr "par Sam Hocevar <sam@hocevar.net>\n"
+
+#: ui.ahk:130
+msgid "running on AHK v@AHK_VERSION@\n"
+msgstr "propulsé par AHK v@AHK_VERSION@\n"
+
+#: ui.ahk:150
 msgid "Sequences"
 msgstr "Séquences"
 
-#: ui.ahk:148
+#: ui.ahk:150
 msgid "Options"
 msgstr "Options"
 
-#: ui.ahk:157
+#: ui.ahk:159
 msgid "Sequence"
 msgstr "Séquence"
 
-#: ui.ahk:157
+#: ui.ahk:159
 msgid "Char"
 msgstr "Car"
 
-#: ui.ahk:157
+#: ui.ahk:159
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ui.ahk:181
+#: ui.ahk:183
 msgid "Search Filter:"
 msgstr "Filtre de recherche :"
 
-#: ui.ahk:197
+#: ui.ahk:199
 msgid "Compose Key:"
 msgstr "Touche compose :"
 
-#: ui.ahk:208
+#: ui.ahk:210
 msgid "Delay:"
 msgstr "Délai :"
 
-#: ui.ahk:220
+#: ui.ahk:215
+msgid "Fall back to case insensitive matches on invalid sequences"
+msgstr "Réessayer sans tenir compte de la casse si une séquence est invalide"
+
+#: ui.ahk:218
+msgid "Discard characters from invalid sequences"
+msgstr "Ne pas afficher les caractères tapés si une séquence est invalide"
+
+#: ui.ahk:221
+msgid "Beep on invalid sequences"
+msgstr "Émettre un son si une séquence est invalide"
+
+#: ui.ahk:227
 msgid "Close"
 msgstr "Fermer"
 
-#: ui.ahk:223
+#: ui.ahk:230
 msgid "Copy Character"
 msgstr "Copier le caractère"
 
-#: ui.ahk:297
+#: ui.ahk:311
 msgid "Description:"
 msgstr "Description :"
 
-#: ui.ahk:384
+#: ui.ahk:404
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (inactif)"
 
-#: ui.ahk:394
+#: ui.ahk:414
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (actif)"
 
-#: ui.ahk:403
+#: ui.ahk:423
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (en cours)"
 
