@@ -169,14 +169,30 @@ send_keystroke(keystroke)
 
             info := "Sequence: [ " sequence " ]"
 
-            if (has_sequence(sequence))
+            valid_sequence := has_sequence(sequence)
+            valid_prefix := valid_sequence ? true : has_prefix(sequence)
+
+            ; If sequence is a dead-end, try a case-insensitive match
+            if (!valid_sequence && !valid_prefix && R.opt_case)
+            {
+                if (toupper(sequence) != tolower(sequence))
+                {
+                }
+            }
+
+            if (valid_sequence)
             {
                 info .= " -> [ " get_sequence(sequence) " ]"
                 send_unicode(get_sequence(sequence))
                 S.typing := false
                 sequence := ""
             }
-            else if (!has_prefix(sequence))
+            else if (valid_prefix)
+            {
+                if (R.reset_delay > 0)
+                    settimer on_delay_expired, % R.reset_delay
+            }
+            else
             {
                 info .= " ABORTED"
                 if (!R.opt_discard)
@@ -185,11 +201,6 @@ send_keystroke(keystroke)
                 sequence := ""
                 if (R.opt_beep)
                     soundplay *-1
-            }
-            else
-            {
-                if (R.reset_delay > 0)
-                    settimer on_delay_expired, % R.reset_delay
             }
 
             debug(info)
@@ -543,7 +554,7 @@ add_sequence(seq, char, desc)
     if (!has_sequence(seq))
         R.seq_count += 1
 
-    ; Insert into our lookup table
+    ; Insert into our [sequence → character] lookup table
     R.sequences.insert(string_to_hex(seq), [seq, char])
 
     ; Insert into the prefix lookup table

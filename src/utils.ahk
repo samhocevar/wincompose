@@ -15,6 +15,20 @@ length(array)
     return ret ? ret : 0
 }
 
+; Convert string to uppercase
+toupper(string)
+{
+    stringupper ret, string
+    return ret
+}
+
+; Convert string to lowercase
+tolower(string)
+{
+    stringlower ret, string
+    return ret
+}
+
 ; We need to encode our strings somehow because AutoHotKey objects have
 ; case-insensitive hash tables. How retarded is that? Also, make sure the
 ; first character is special.
