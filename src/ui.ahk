@@ -28,6 +28,7 @@ global ui_listbox, ui_edit_filter, ui_button
 global ui_text_filter, ui_text_filterw, ui_text_bigchar, ui_text_desc
 global ui_text_composekey, ui_dropdown_composekey
 global ui_text_delay, ui_dropdown_delay
+global ui_text_separator1
 global ui_checkbox_case, ui_checkbox_discard, ui_checkbox_beep
 global ui_keycap_0
 global ui_keycap_1, ui_keycap_2, ui_keycap_3, ui_keycap_4, ui_keycap_5, ui_keycap_6, ui_keycap_7, ui_keycap_8, ui_keycap_9
@@ -143,7 +144,7 @@ on_exit:
 create_app_win()
 {
     ; Build the main window
-    gui +resize +minsize720x450
+    gui +resize +minsize720x450 +labelon_app_win_
     gui margin, 8, 8
 
     gui add, tab2, vui_tab, % _("Sequences") "|" _("Options")
@@ -209,14 +210,15 @@ create_app_win()
     gui add, text, vui_text_delay, % _("Delay:")
     gui add, dropdownlist, vui_dropdown_delay gon_set_delay, %delaylist%
 
-    gui add, checkbox, vui_checkbox_case gon_toggle_case, % _("If a sequence is invalid, try to match an existing case-insensitive sequence.")
-    guicontrol ,, ui_checkbox_case, % R.opt_case ? 1 : 0
-    guicontrol disable, ui_checkbox_case
+    gui add, text, vui_text_separator1 0x10
 
-    gui add, checkbox, vui_checkbox_discard gon_toggle_discard, % _("Discard characters from invalid sequences instead of printing them.")
+    gui add, checkbox, vui_checkbox_case gon_toggle_case, % _("Fall back to case insensitive matches on invalid sequences")
+    guicontrol ,, ui_checkbox_case, % R.opt_case ? 1 : 0
+
+    gui add, checkbox, vui_checkbox_discard gon_toggle_discard, % _("Discard characters from invalid sequences")
     guicontrol ,, ui_checkbox_discard, % R.opt_discard ? 1 : 0
 
-    gui add, checkbox, vui_checkbox_beep gon_toggle_beep, % _("Beep on invalid sequences.")
+    gui add, checkbox, vui_checkbox_beep gon_toggle_beep, % _("Beep on invalid sequences")
     guicontrol ,, ui_checkbox_beep, % R.opt_beep ? 1 : 0
 
     ; Build the rest of the window
@@ -229,7 +231,7 @@ create_app_win()
 
     return
 
-guisize:
+on_app_win_size:
     if (a_eventinfo != 1) ; Ignore minimising
     {
         UI.app_win.width := a_guiwidth
@@ -238,7 +240,7 @@ guisize:
     }
     return
 
-guicontextmenu:
+on_app_win_contextmenu:
     if (a_guicontrol == "ui_listbox")
     {
         if (a_eventinfo > 0)
@@ -315,8 +317,8 @@ on_select_sequence:
     return
 
 buttonclose:
-guiclose:
-guiescape:
+on_app_win_close:
+on_app_win_escape:
     hide_app_win()
     return
 }
@@ -345,6 +347,8 @@ refresh_gui()
 
     guicontrol move, ui_text_delay, % "x" 3 * m " y" (40 + 32 + m)
     guicontrol move, ui_dropdown_delay, % "x" (120) " y" (40 + 32 - 4 + m)
+
+    guicontrol move, ui_text_separator1, % "x" (3 * m) " y" (40 + 64 + m) " w" (t_w - 4 * m)
 
     guicontrol move, ui_checkbox_case, % "x" 3 * m " y" 120 + m
     guicontrol move, ui_checkbox_discard, % "x" 3 * m " y" 120 + 25 + m

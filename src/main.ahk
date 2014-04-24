@@ -36,16 +36,18 @@ global S := { typing: false          ; Is the user typing something?
             , selected_seq: "" }     ; The sequence currently selected
 
 ; Runtime configuration, imported from the config files
-global R := { sequences:    {}
-            , seq_count:    0
-            , prefixes:     {}
-            , descriptions: {}
-            , keynames:     {}
-            , compose_key:  C.keys.default
-            , reset_delay:  C.delays.valid
-            , opt_case:     false
-            , opt_discard:  false
-            , opt_beep:     false }
+global R := { sequences:     {}      ; List of valid sequences
+            , sequences_alt: {}      ; Alt table for case insensitive
+            , seq_count:     0
+            , prefixes:      {}      ; List of valid prefixes
+            , prefixes_alt:  {}      ; Alt table for case insensitive
+            , descriptions:  {}
+            , keynames:      {}
+            , compose_key:   C.keys.default
+            , reset_delay:   C.delays.valid
+            , opt_case:      false
+            , opt_discard:   false
+            , opt_beep:      false }
 
 main()
 return
@@ -169,25 +171,14 @@ send_keystroke(keystroke)
 
             info := "Sequence: [ " sequence " ]"
 
-            valid_sequence := has_sequence(sequence)
-            valid_prefix := valid_sequence ? true : has_prefix(sequence)
-
-            ; If sequence is a dead-end, try a case-insensitive match
-            if (!valid_sequence && !valid_prefix && R.opt_case)
-            {
-                if (toupper(sequence) != tolower(sequence))
-                {
-                }
-            }
-
-            if (valid_sequence)
+            if (has_sequence(sequence))
             {
                 info .= " -> [ " get_sequence(sequence) " ]"
                 send_unicode(get_sequence(sequence))
                 S.typing := false
                 sequence := ""
             }
-            else if (valid_prefix)
+            else if (has_prefix(sequence))
             {
                 if (R.reset_delay > 0)
                     settimer on_delay_expired, % R.reset_delay
@@ -556,10 +547,15 @@ add_sequence(seq, char, desc)
 
     ; Insert into our [sequence → character] lookup table
     R.sequences.insert(string_to_hex(seq), [seq, char])
+    R.sequences_alt.insert(seq, seq)
 
     ; Insert into the prefix lookup table
     loop % strlen(seq) - 1
-        R.prefixes.insert(string_to_hex(substr(seq, 1, a_index)), true)
+    {
+        prefix := substr(seq, 1, a_index)
+        R.prefixes.insert(string_to_hex(prefix), true)
+        R.prefixes_alt.insert(prefix, prefix)
+    }
 
     ; Insert into Unicode description list
     R.descriptions.insert(string_to_hex(seq), desc)
@@ -609,12 +605,20 @@ fill_sequences(filter)
 
 has_sequence(seq)
 {
-    return R.sequences.haskey(string_to_hex(seq))
+    ret := R.sequences.haskey(string_to_hex(seq))
+    ; Try to match case-insensitive, but only if it is not a valid prefix
+    if (!ret && R.opt_case && !R.prefixes_alt.haskey(seq))
+        ret := R.sequences_alt.haskey(seq)
+    return ret
 }
 
 get_sequence(seq)
 {
-    return R.sequences[string_to_hex(seq)][2]
+    ret := R.sequences[string_to_hex(seq)][2]
+    ; Try to match case-insensitive
+    if (!ret && R.opt_case)
+        ret := R.sequences[string_to_hex(R.sequences_alt[seq])][2]
+    return ret
 }
 
 get_description(seq)
@@ -624,6 +628,10 @@ get_description(seq)
 
 has_prefix(seq)
 {
-    return R.prefixes.haskey(string_to_hex(seq))
+    ret := R.prefixes.haskey(string_to_hex(seq))
+    ; Try to match case-insensitive
+    if (!ret && R.opt_case)
+        ret := R.prefixes_alt.haskey(seq)
+    return ret
 }
 
