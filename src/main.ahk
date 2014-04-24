@@ -58,6 +58,10 @@ return
 
 main()
 {
+    ; We know what we are doing, so run at full speed
+    setbatchlines -1
+    listlines off
+
     ; Don't crash if the icons cannot be found
     menu tray, useerrorlevel
 
