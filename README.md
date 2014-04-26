@@ -3,15 +3,16 @@
 
 A robust compose key for Windows, written by Sam Hocevar.
 
-A **compose key** allows to easily write characters such as **é ž à ō û ø ☺ ¤
-∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often very intuitive key
-combinations. For instance, **ö** is obtained using <kbd>o</kbd> and <kbd>"</kbd>, and
-**♥** is obtained using <kbd>&lt;</kbd> and <kbd>3</kbd>.
+A **compose key** allows to easily write special characters such as **é
+ž à ō û ø ☺ ¤ ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often
+very intuitive key combinations. For instance, **ö** is obtained using
+<kbd>o</kbd> + <kbd>"</kbd>, and **♥** is obtained using <kbd>&lt;</kbd>
+\+ <kbd>3</kbd>.
 
-Download
---------
+Download latest: [WinCompose 0.6.4](https://github.com/samhocevar/wincompose/releases/download/v0.6.4/WinCompose-Setup-0.6.4.exe)
+-----------------------------------
 
-Latest release is [WinCompose-Setup-0.6.4.exe](https://github.com/samhocevar/wincompose/releases/download/v0.6.4/WinCompose-Setup-0.6.4.exe). Older releases are available [here](https://github.com/samhocevar/wincompose/releases/).
+Latest release is [WinCompose 0.6.4](https://github.com/samhocevar/wincompose/releases/download/v0.6.4/WinCompose-Setup-0.6.4.exe). Older releases are available [here](https://github.com/samhocevar/wincompose/releases/).
 
 Quick start
 -----------
@@ -26,8 +27,7 @@ Then type in the keys for a compose sequence, such as <kbd>A</kbd> then
 
 ![Quick Launch](/web/shot1.png)
 
-If <kbd>Right Alt</kbd> is not suitable for you, right click on the tray icon to
-choose another key.
+If <kbd>Right Alt</kbd> is not suitable for you, you can change it in the settings.
 
 Examples
 --------
@@ -58,7 +58,7 @@ Features
 --------
 
 WinCompose supports the standard Compose file format. It provides more than
-1500 compose rules from the [Xorg](http://www.x.org/wiki/) project and the
+1600 compose rules from the [Xorg](http://www.x.org/wiki/) project and the
 [dotXCompose](https://github.com/kragen/xcompose) project. You can add custom
 rules by creating a file named `.XCompose` or `.XCompose.txt` in your
 `%USERPROFILE%` directory.
@@ -68,10 +68,6 @@ WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kb
 
 WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>&</kbd> will
 immediately type **&** because there is currently no rule starting with <kbd>&</kbd>.
-
-WinCompose does not emit unnecessary keystrokes, such as a backspace keystroke
-to erase the composing characters. Only the final character is sent to the
-current application.
 
 Bugs
 ----
