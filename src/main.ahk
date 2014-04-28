@@ -234,9 +234,8 @@ send_keystroke(char)
 
 on_delay_expired:
     settimer on_delay_expired, off
-    S.sequence := ""
-    S.typing := false
-    refresh_systray()
+    if (S.typing)
+        send_keystroke("compose")
     return
 }
 
