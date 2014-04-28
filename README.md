@@ -12,7 +12,7 @@ very intuitive key combinations. For instance, **ö** is obtained using
 I wrote WinCompose because I found none of the alternatives (FreeCompose,
 CKFW, AllChars or Unichars) to be satisfying.
 
-Download latest: [WinCompose 0.6.6](https://github.com/samhocevar/wincompose/releases/download/v0.6.6/WinCompose-Setup-0.6.6.exe)
+Download latest: [WinCompose 0.6.6](https://github.com/samhocevar/wincompose/releases/download/v0.6.6/WinCompose-Setup-0.6.6.exe) (April 28, 2014)
 -----------------------------------
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
