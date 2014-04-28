@@ -1,5 +1,5 @@
 
-VERSION = 0.6.4
+VERSION = 0.6.5
 
 ISS = installer.iss
 SRC_AHK = main.ahk

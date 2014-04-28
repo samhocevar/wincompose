@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-24 11:50+0200\n"
+"POT-Creation-Date: 2014-04-28 19:24+0200\n"
 "PO-Revision-Date: 2014-04-13 20:01+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.ahk:454
+#: main.ahk:485
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ séquences chargées"
 
-#: main.ahk:454
+#: main.ahk:485
 msgid "Compose Key is @1@"
 msgstr "Touche compose : @1@"
 
