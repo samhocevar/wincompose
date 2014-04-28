@@ -28,7 +28,8 @@ global config_file := config_dir . "\\settings.ini"
 ;global have_debug := true
 
 ; Global runtime variables
-global S := { typing: false          ; Is the user typing something?
+global S := { sequence: ""           ; The sequence being typed
+            , typing: false          ; Is the user typing something?
             , disabled: false        ; Is everything disabled?
             , compose_down: false    ; Is the compose key down?
             , special_down: false    ; Is a special key down?
@@ -116,9 +117,8 @@ save_settings()
 ; Keystroke logic
 ;
 
-send_keystroke(keystroke)
+send_keystroke(char)
 {
-    static sequence := ""
     settimer on_delay_expired, off
 
     if (S.disabled)
@@ -127,17 +127,17 @@ send_keystroke(keystroke)
         ; completely disable the compose key and the other callbacks
         ; are automatically disabled in suspend mode, but I guess it
         ; doesn't hurt to have some fallback solution.
-        if (keystroke == "compose")
+        if (char == "compose")
             send % R.compose_key
         else
             send_raw(char)
-        sequence := ""
+        S.sequence := ""
     }
     else if (!S.typing)
     {
-        ; Enter typing state if compose was pressed; otherwise we
-        ; should not be here but send the character anyway.
-        if (keystroke == "compose")
+        ; Enter typing state if compose was pressed. Otherwise, we
+        ; should not be here, but send the character anyway.
+        if (char == "compose")
         {
             check_keyboard_layout()
             S.typing := true
@@ -146,56 +146,83 @@ send_keystroke(keystroke)
         }
         else
             send_raw(char)
-        sequence := ""
+        S.sequence := ""
     }
     else ; if (S.typing)
     {
         ; If the compose key is an actual character, don't cancel the compose
         ; sequence since the character could be used in the sequence itself.
-        if (keystroke == "compose" && strlen(R.compose_key) == 1)
-            keystroke := R.compose_key
+        if (char == "compose" && strlen(R.compose_key) == 1)
+            char := R.compose_key
 
-        if (keystroke == "compose")
+        if (char == "compose")
         {
             settimer on_delay_expired, off
-            sequence := ""
+            ; Maybe we actually typed a valid sequence; output it
+            if (has_sequence(S.sequence))
+                send_unicode(get_sequence(S.sequence))
+            else if (!R.opt_discard)
+                send_raw(S.sequence)
             S.typing := false
+            S.sequence := ""
         }
         else
         {
-            ; The actual character is the last char of the keystroke
-            char := substr(keystroke, strlen(keystroke))
-
             ; If holding shift, switch letters to uppercase
             if (asc(char) >= asc("a") && asc(char) <= asc("z"))
                 if (getkeystate("Capslock", "T") != getkeystate("Shift"))
                     char := chr(asc(char) - asc("a") + asc("A"))
 
-            sequence .= char
+            ; Decide whether we need to (1) keep on building the sequence, or
+            ; (2) build it and print it, or (3) print it and output the remaining
+            ; character. (0) means invalid sequence.
+            if (has_exact_prefix(S.sequence char))
+                action := 1
+            else if (has_exact_sequence(S.sequence char))
+                action := 2
+            else if (has_exact_sequence(S.sequence))
+                action := 3
+            ; ... optionally, retry with a case insensitive match
+            else if (R.opt_case && has_prefix(S.sequence char))
+                action := 1
+            else if (R.opt_case && has_sequence(S.sequence char))
+                action := 2
+            else if (R.opt_case && has_sequence(S.sequence))
+                action := 3
+            ; Every attempt failed, abort sequence
+            else
+                action := 0
 
-            info := "Sequence: [ " sequence " ]"
-
-            if (has_sequence(sequence))
+            ; Now apply the decision.
+            if (action == 0)
             {
-                info .= " -> [ " get_sequence(sequence) " ]"
-                send_unicode(get_sequence(sequence))
+                S.sequence .= char
+                info := "Sequence: [ " S.sequence " ] ABORTED"
+                if (!R.opt_discard)
+                    send_raw(S.sequence)
                 S.typing := false
-                sequence := ""
+                S.sequence := ""
+                if (R.opt_beep)
+                    soundplay *-1
             }
-            else if (has_prefix(sequence))
+            else if (action == 1)
             {
+                S.sequence .= char
+                info := "Sequence: [ " S.sequence " ]"
                 if (R.reset_delay > 0)
                     settimer on_delay_expired, % R.reset_delay
             }
-            else
+            else ; action == 2 or action == 3
             {
-                info .= " ABORTED"
-                if (!R.opt_discard)
-                    send_raw(sequence)
+                if (action == 2)
+                    S.sequence .= char
+
+                info := "Sequence: [ " S.sequence " ] -> [ " get_sequence(S.sequence) " ]"
+                send_unicode(get_sequence(S.sequence))
+                if (action == 3)
+                    send_raw(char)
                 S.typing := false
-                sequence := ""
-                if (R.opt_beep)
-                    soundplay *-1
+                S.sequence := ""
             }
 
             debug(info)
@@ -207,7 +234,7 @@ send_keystroke(keystroke)
 
 on_delay_expired:
     settimer on_delay_expired, off
-    sequence := ""
+    S.sequence := ""
     S.typing := false
     refresh_systray()
     return
@@ -317,12 +344,13 @@ on_printable_key:
     numput(has_shift ? 0x80 : 0x00, mods, 0x10, "uchar")
     numput(has_altgr ? 0x80 : 0x00, mods, 0x11, "uchar")
     numput(has_altgr ? 0x80 : 0x00, mods, 0x12, "uchar")
-    err := dllcall("ToAscii", "uint", getkeyvk(vk), "uint", getkeysc(vk), "ptr", &mods, "uintp", ascii, "uint", 0, "uint")
-    if (err > 0 && ascii > 0)
+    err := dllcall("ToAscii", "uint", getkeyvk(vk), "uint", getkeysc(vk)
+                 , "ptr", &mods, "uintp", unicode_char, "uint", 0, "uint")
+    if (err > 0 && unicode_char > 0)
     {
         ; If the system was able to translate the key, pass it to the
         ; composition handler.
-        send_keystroke(chr(ascii))
+        send_keystroke(chr(unicode_char))
     }
     else
     {
@@ -546,7 +574,7 @@ read_sequence_file(file)
 add_sequence(seq, char, desc)
 {
     ; Only increment sequence count if we're not replacing one
-    if (!has_sequence(seq))
+    if (!has_exact_sequence(seq))
         R.seq_count += 1
 
     ; Insert into our [sequence → character] lookup table
@@ -607,13 +635,24 @@ fill_sequences(filter)
     }
 }
 
+has_exact_prefix(seq)
+{
+    return R.prefixes.haskey(string_to_hex(seq))
+}
+
+has_prefix(seq)
+{
+    return R.prefixes_alt.haskey(seq)
+}
+
+has_exact_sequence(seq)
+{
+    return R.sequences.haskey(string_to_hex(seq))
+}
+
 has_sequence(seq)
 {
-    ret := R.sequences.haskey(string_to_hex(seq))
-    ; Try to match case-insensitive, but only if it is not a valid prefix
-    if (!ret && R.opt_case && !R.prefixes_alt.haskey(seq))
-        ret := R.sequences_alt.haskey(seq)
-    return ret
+    return R.sequences_alt.haskey(seq)
 }
 
 get_sequence(seq)
@@ -628,14 +667,5 @@ get_sequence(seq)
 get_description(seq)
 {
     return R.descriptions[string_to_hex(seq)]
-}
-
-has_prefix(seq)
-{
-    ret := R.prefixes.haskey(string_to_hex(seq))
-    ; Try to match case-insensitive
-    if (!ret && R.opt_case)
-        ret := R.prefixes_alt.haskey(seq)
-    return ret
 }
 
