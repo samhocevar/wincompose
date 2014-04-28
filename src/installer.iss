@@ -18,8 +18,9 @@ Source: "obj\resources.dll"; DestDir: "{app}\res"
 Source: "res\Keys.txt"; DestDir: "{app}\res"
 Source: "res\Xorg.txt"; DestDir: "{app}\res"
 Source: "res\Xcompose.txt"; DestDir: "{app}\res"
-Source: "po\fr.po"; DestDir: "{app}\po"
 Source: "po\cs.po"; DestDir: "{app}\po"
+Source: "po\el.po"; DestDir: "{app}\po"
+Source: "po\fr.po"; DestDir: "{app}\po"
 
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"

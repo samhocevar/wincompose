@@ -1,230 +1,230 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: WinCompose 0.6.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-28 21:01+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: \n"
+"Last-Translator: geogeo.gr\n"
+"Language-Team: geogeo.gr <www.geogeo.gr>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: main.ahk:485
 msgid "Loaded @1@ Sequences"
-msgstr ""
+msgstr "Φορτώθηκαν @1@ Ακολουθίες"
 
 #: main.ahk:485
 msgid "Compose Key is @1@"
-msgstr ""
+msgstr "Πλήκτρο σύνθεσης είναι το @1@"
 
 #: constants.ahk:30
 msgid "Left Alt"
-msgstr ""
+msgstr "Αριστερό Alt"
 
 #: constants.ahk:31
 msgid "Right Alt"
-msgstr ""
+msgstr "Δεξί Alt"
 
 #: constants.ahk:32
 msgid "Left Control"
-msgstr ""
+msgstr "Αριστερό Control"
 
 #: constants.ahk:33
 msgid "Right Control"
-msgstr ""
+msgstr "Δεξί Control"
 
 #: constants.ahk:34
 msgid "Left Windows"
-msgstr ""
+msgstr "Αριστερό Windows"
 
 #: constants.ahk:35
 msgid "Right Windows"
-msgstr ""
+msgstr "Δεξί Windows"
 
 #: constants.ahk:36
 msgid "Caps Lock"
-msgstr ""
+msgstr "Caps Lock"
 
 #: constants.ahk:37
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock"
 
 #: constants.ahk:38
 msgid "Pause"
-msgstr ""
+msgstr "Παύση"
 
 #: constants.ahk:39
 msgid "Menu"
-msgstr ""
+msgstr "Μενού"
 
 #: constants.ahk:40
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 #: constants.ahk:41
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #: constants.ahk:42
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Βαρεία `"
 
 #: constants.ahk:67
 msgid "500 milliseconds"
-msgstr ""
+msgstr "0,5 δευτερόλεπτο"
 
 #: constants.ahk:68
 msgid "1 second"
-msgstr ""
+msgstr "1 δευτερόλεπτο"
 
 #: constants.ahk:69
 msgid "2 seconds"
-msgstr ""
+msgstr "2 δευτερόλεπτα"
 
 #: constants.ahk:70
 msgid "3 seconds"
-msgstr ""
+msgstr "3 δευτερόλεπτα"
 
 #: constants.ahk:71
 msgid "5 seconds"
-msgstr ""
+msgstr "5 δευτερόλεπτα"
 
 #: constants.ahk:72
 msgid "10 seconds"
-msgstr ""
+msgstr "10 δευτερόλεπτα"
 
 #: constants.ahk:73
 msgid "None"
-msgstr ""
+msgstr "Καμία"
 
 #: ui.ahk:53 ui.ahk:67
 msgid "Show &Sequences…"
-msgstr ""
+msgstr "Εμφάνιση &Ακολουθιών…"
 
 #: ui.ahk:54 ui.ahk:400 ui.ahk:410 ui.ahk:419
 msgid "Disable"
-msgstr ""
+msgstr "Απενεργοποίηση"
 
 #: ui.ahk:55
 msgid "Restart"
-msgstr ""
+msgstr "Επανεκκίνηση"
 
 #: ui.ahk:59
 msgid "&History"
-msgstr ""
+msgstr "&Ιστορικό"
 
 #: ui.ahk:60
 msgid "Hotkey &List"
-msgstr ""
+msgstr "&Λίστα πλήκτρων συντόμευσης"
 
 #: ui.ahk:63
 msgid "&Options…"
-msgstr ""
+msgstr "Επι&λογές…"
 
 #: ui.ahk:64
 msgid "&About"
-msgstr ""
+msgstr "&Περί"
 
 #: ui.ahk:65
 msgid "&Visit Website"
-msgstr ""
+msgstr "&Ιστοσελίδα"
 
 #: ui.ahk:66
 msgid "E&xit"
-msgstr ""
+msgstr "Έ&ξοδος"
 
 #: ui.ahk:74
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: ui.ahk:127
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr ""
+msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
 #: ui.ahk:128
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: ui.ahk:129
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
-msgstr ""
+msgstr "από τον Sam Hocevar <sam@hocevar.net>\n"
 
 #: ui.ahk:130
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr ""
+msgstr "βασισμένο στο AHK v@AHK_VERSION@\n"
 
 #: ui.ahk:150
 msgid "Sequences"
-msgstr ""
+msgstr "Ακολουθίες"
 
 #: ui.ahk:150
 msgid "Options"
-msgstr ""
+msgstr "Επιλογές"
 
 #: ui.ahk:159
 msgid "Sequence"
-msgstr ""
+msgstr "Ακολουθία"
 
 #: ui.ahk:159
 msgid "Char"
-msgstr ""
+msgstr "Χαρακτ."
 
 #: ui.ahk:159
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: ui.ahk:183
 msgid "Search Filter:"
-msgstr ""
+msgstr "Φίλτρο αναζήτησης:"
 
 #: ui.ahk:199
 msgid "Compose Key:"
-msgstr ""
+msgstr "Πλήκτρο σύνθεσης:"
 
 #: ui.ahk:210
 msgid "Delay:"
-msgstr ""
+msgstr "Καθυστέρηση:"
 
 #: ui.ahk:215
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
+"Επιστροφή στη λειτουργία χωρίς διάκριση πεζών-κεφαλαίων, σε μη έγκυρες "
+"ακολουθίες"
 
 #: ui.ahk:218
 msgid "Discard characters from invalid sequences"
-msgstr ""
+msgstr "Απόρριψη χαρακτήρων από μη έγκυρες ακολουθίες"
 
 #: ui.ahk:221
 msgid "Beep on invalid sequences"
-msgstr ""
+msgstr "Ήχος μπιπ σε μη έγκυρες ακολουθίες"
 
 #: ui.ahk:227
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #: ui.ahk:230
 msgid "Copy Character"
-msgstr ""
+msgstr "Αντιγραφή χαρακτήρα"
 
 #: ui.ahk:311
 msgid "Description:"
-msgstr ""
+msgstr "Περιγραφή:"
 
 #: ui.ahk:404
 msgid "@APP_NAME@ (disabled)"
-msgstr ""
+msgstr "@APP_NAME@ (απενεργοποιημένο)"
 
 #: ui.ahk:414
 msgid "@APP_NAME@ (active)"
-msgstr ""
+msgstr "@APP_NAME@ (ενεργό)"
 
 #: ui.ahk:423
 msgid "@APP_NAME@ (typing)"
-msgstr ""
+msgstr "@APP_NAME@ (πληκτρολόγηση)"
