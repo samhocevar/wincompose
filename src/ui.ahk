@@ -224,7 +224,7 @@ create_app_win()
     ; Build the rest of the window
     gui tab
 
-    gui add, button, vui_button default, % _("Close")
+    gui add, button, vui_button gon_click_close default, % _("Close")
 
     ; The copy character menu
     menu contextmenu, add, % _("Copy Character"), on_copy_char
@@ -316,7 +316,7 @@ on_select_sequence:
     }
     return
 
-buttonclose:
+on_click_close:
 on_app_win_close:
 on_app_win_escape:
     hide_app_win()
