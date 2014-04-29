@@ -106,18 +106,20 @@ setlocale(locale)
     for ignored, lang in languages
     {
         fuzzy := false
+        msgstr := false
         src := false
         dst := false
         loop read, % "po/" lang ".po"
         {
             if (regexmatch(a_loopreadline, "^ *$") > 0)
             {
-                if (dst)
+                if (msgstr)
                     fuzzy := false
             }
             else if (regexmatch(a_loopreadline, "^#, fuzzy") > 0)
             {
                 fuzzy := true
+                msgstr := false
                 src := false
                 dst := false
             }
@@ -138,13 +140,14 @@ setlocale(locale)
                 if (ret == 1)
                 {
                    dst := s
+                   msgstr := true
                    continue
                 }
 
                 s := regexreplace(a_loopreadline, "^ *""(.*)"".*", "$1", ret)
                 if (ret == 1)
                 {
-                    if (dst)
+                    if (msgstr)
                         dst .= s
                     else
                         src .= s
