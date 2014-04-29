@@ -128,7 +128,10 @@ send_keystroke(char)
         ; are automatically disabled in suspend mode, but I guess it
         ; doesn't hurt to have some fallback solution.
         if (char == "compose")
-            send % R.compose_key
+        {
+            set_compose_hotkeys(false) ; Try again to disable these
+            sendinput % "{" R.compose_key "}"
+        }
         else
             send_raw(char)
         S.sequence := ""
