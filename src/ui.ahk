@@ -28,7 +28,8 @@ global ui_listbox, ui_edit_filter, ui_button
 global ui_text_filter, ui_text_filterw, ui_text_bigchar, ui_text_desc
 global ui_text_composekey, ui_dropdown_composekey
 global ui_text_delay, ui_dropdown_delay
-global ui_text_separator1
+global ui_text_language, ui_dropdown_language
+global ui_separator1, ui_separator2
 global ui_checkbox_case, ui_checkbox_discard, ui_checkbox_beep
 global ui_keycap_0
 global ui_keycap_1, ui_keycap_2, ui_keycap_3, ui_keycap_4, ui_keycap_5, ui_keycap_6, ui_keycap_7, ui_keycap_8, ui_keycap_9
@@ -210,7 +211,7 @@ create_app_win()
     gui add, text, vui_text_delay, % _("Delay:")
     gui add, dropdownlist, vui_dropdown_delay gon_set_delay, %delaylist%
 
-    gui add, text, vui_text_separator1 0x10
+    gui add, text, vui_separator1 0x10
 
     gui add, checkbox, vui_checkbox_case gon_toggle_case, % _("Fall back to case insensitive matches on invalid sequences")
     guicontrol ,, ui_checkbox_case, % R.opt_case ? 1 : 0
@@ -220,6 +221,19 @@ create_app_win()
 
     gui add, checkbox, vui_checkbox_beep gon_toggle_beep, % _("Beep on invalid sequences")
     guicontrol ,, ui_checkbox_beep, % R.opt_beep ? 1 : 0
+
+    gui add, text, vui_separator2 0x10
+
+    langlist := ""
+    for key, val in C.languages.valid
+    {
+        langlist .= langlist ? "|" val : val
+        if (key == R.language)
+            langlist .= "||"
+    }
+    langlist := regexreplace(langlist, "\\|\\|\\|", "||")
+    gui add, text, vui_text_language, % _("Interface language:")
+    gui add, dropdownlist, vui_dropdown_language gon_set_language, %langlist%
 
     ; Build the rest of the window
     gui tab
@@ -286,6 +300,17 @@ on_toggle_beep:
     R[regexreplace(a_thislabel, "on_toggle_", "opt_")] := val
     return
 
+on_set_language:
+    guicontrolget tmp, , ui_dropdown_language
+    old_language := R.language
+    for key, val in C.languages.valid
+        if (val == tmp)
+            R.language := key
+    save_settings()
+    if (old_language != R.language)
+        reload
+    return
+
 on_select_sequence:
     critical on
     if (a_guievent == "I")
@@ -343,16 +368,21 @@ refresh_gui()
 
     ; First tab (settings)
     guicontrol move, ui_text_composekey, % "x" 3 * m " y" (40 + m)
-    guicontrol move, ui_dropdown_composekey, % "x" (120) " y" (40 - 4 + m)
+    guicontrol move, ui_dropdown_composekey, % "x" (150) " y" (40 - 4 + m)
 
     guicontrol move, ui_text_delay, % "x" 3 * m " y" (40 + 32 + m)
-    guicontrol move, ui_dropdown_delay, % "x" (120) " y" (40 + 32 - 4 + m)
+    guicontrol move, ui_dropdown_delay, % "x" (150) " y" (40 + 32 - 4 + m)
 
-    guicontrol move, ui_text_separator1, % "x" (3 * m) " y" (40 + 64 + m) " w" (t_w - 4 * m)
+    guicontrol move, ui_separator1, % "x" (3 * m) " y" (40 + 64 + m) " w" (t_w - 4 * m)
 
     guicontrol move, ui_checkbox_case, % "x" 3 * m " y" 120 + m
     guicontrol move, ui_checkbox_discard, % "x" 3 * m " y" 120 + 25 + m
     guicontrol move, ui_checkbox_beep, % "x" 3 * m " y" 120 + 50 + m
+
+    guicontrol move, ui_separator2, % "x" (3 * m) " y" (200 + m) " w" (t_w - 4 * m)
+
+    guicontrol move, ui_text_language, % "x" 3 * m " y" (200 + 24 + m)
+    guicontrol move, ui_dropdown_language, % "x" (150) " y" (200 + 24 - 4 + m) " w" (150)
 
     ; Second tab (sequences)
     lb_w := UI.app_win.listview.width

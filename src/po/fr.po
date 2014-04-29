@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-28 21:01+0200\n"
+"POT-Creation-Date: 2014-04-29 18:09+0200\n"
 "PO-Revision-Date: 2014-04-13 20:01+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
@@ -17,215 +17,223 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.ahk:485
+#: main.ahk:496
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ séquences chargées"
 
-#: main.ahk:485
+#: main.ahk:496
 msgid "Compose Key is @1@"
 msgstr "Touche compose : @1@"
 
 #: constants.ahk:30
+msgid "Autodetect"
+msgstr "Détecter automatiquement"
+
+#: constants.ahk:44
 msgid "Left Alt"
 msgstr "Alt gauche"
 
-#: constants.ahk:31
+#: constants.ahk:45
 msgid "Right Alt"
 msgstr "Alt droit"
 
-#: constants.ahk:32
+#: constants.ahk:46
 msgid "Left Control"
 msgstr "Ctrl gauche"
 
-#: constants.ahk:33
+#: constants.ahk:47
 msgid "Right Control"
 msgstr "Ctrl droit"
 
-#: constants.ahk:34
+#: constants.ahk:48
 msgid "Left Windows"
 msgstr "Windows gauche"
 
-#: constants.ahk:35
+#: constants.ahk:49
 msgid "Right Windows"
 msgstr "Windows droit"
 
-#: constants.ahk:36
+#: constants.ahk:50
 msgid "Caps Lock"
 msgstr "Verr Maj"
 
-#: constants.ahk:37
+#: constants.ahk:51
 msgid "Num Lock"
 msgstr "Verr num"
 
-#: constants.ahk:38
+#: constants.ahk:52
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:39
+#: constants.ahk:53
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:40
+#: constants.ahk:54
 msgid "Escape"
 msgstr "Échap"
 
-#: constants.ahk:41
+#: constants.ahk:55
 msgid "Scroll Lock"
 msgstr "Arrêt défil"
 
-#: constants.ahk:42
+#: constants.ahk:56
 msgid "Grave Accent `"
 msgstr "Accent grave `"
 
-#: constants.ahk:67
+#: constants.ahk:81
 msgid "500 milliseconds"
 msgstr "500 millisecondes"
 
-#: constants.ahk:68
+#: constants.ahk:82
 msgid "1 second"
 msgstr "1 seconde"
 
-#: constants.ahk:69
+#: constants.ahk:83
 msgid "2 seconds"
 msgstr "2 secondes"
 
-#: constants.ahk:70
+#: constants.ahk:84
 msgid "3 seconds"
 msgstr "3 secondes"
 
-#: constants.ahk:71
+#: constants.ahk:85
 msgid "5 seconds"
 msgstr "5 secondes"
 
-#: constants.ahk:72
+#: constants.ahk:86
 msgid "10 seconds"
 msgstr "10 secondes"
 
-#: constants.ahk:73
+#: constants.ahk:87
 msgid "None"
 msgstr "Aucun"
 
-#: ui.ahk:53 ui.ahk:67
+#: ui.ahk:54 ui.ahk:68
 msgid "Show &Sequences…"
 msgstr "Afficher les &séquences…"
 
-#: ui.ahk:54 ui.ahk:400 ui.ahk:410 ui.ahk:419
+#: ui.ahk:55 ui.ahk:430 ui.ahk:440 ui.ahk:449
 msgid "Disable"
 msgstr "Désactiver"
 
-#: ui.ahk:55
+#: ui.ahk:56
 msgid "Restart"
 msgstr "Réinitialiser"
 
-#: ui.ahk:59
+#: ui.ahk:60
 msgid "&History"
 msgstr "&Historique"
 
-#: ui.ahk:60
+#: ui.ahk:61
 msgid "Hotkey &List"
 msgstr "&Liste de touches"
 
-#: ui.ahk:63
+#: ui.ahk:64
 msgid "&Options…"
 msgstr "&Options…"
 
-#: ui.ahk:64
+#: ui.ahk:65
 msgid "&About"
 msgstr "&À propos"
 
-#: ui.ahk:65
+#: ui.ahk:66
 msgid "&Visit Website"
 msgstr "Site web"
 
-#: ui.ahk:66
+#: ui.ahk:67
 msgid "E&xit"
 msgstr "Quitter"
 
-#: ui.ahk:74
+#: ui.ahk:75
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: ui.ahk:127
+#: ui.ahk:128
 msgid "@APP_NAME@ v@APP_VERSION@\n"
 msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
-#: ui.ahk:128
+#: ui.ahk:129
 msgid "\n"
 msgstr "\n"
 
-#: ui.ahk:129
+#: ui.ahk:130
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "par Sam Hocevar <sam@hocevar.net>\n"
 
-#: ui.ahk:130
+#: ui.ahk:131
 msgid "running on AHK v@AHK_VERSION@\n"
 msgstr "propulsé par AHK v@AHK_VERSION@\n"
 
-#: ui.ahk:150
+#: ui.ahk:151
 msgid "Sequences"
 msgstr "Séquences"
 
-#: ui.ahk:150
+#: ui.ahk:151
 msgid "Options"
 msgstr "Options"
 
-#: ui.ahk:159
+#: ui.ahk:160
 msgid "Sequence"
 msgstr "Séquence"
 
-#: ui.ahk:159
+#: ui.ahk:160
 msgid "Char"
 msgstr "Car"
 
-#: ui.ahk:159
+#: ui.ahk:160
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ui.ahk:183
+#: ui.ahk:184
 msgid "Search Filter:"
 msgstr "Filtre de recherche :"
 
-#: ui.ahk:199
+#: ui.ahk:200
 msgid "Compose Key:"
 msgstr "Touche compose :"
 
-#: ui.ahk:210
+#: ui.ahk:211
 msgid "Delay:"
 msgstr "Délai :"
 
-#: ui.ahk:215
+#: ui.ahk:216
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr "Réessayer sans tenir compte de la casse si une séquence est invalide"
 
-#: ui.ahk:218
+#: ui.ahk:219
 msgid "Discard characters from invalid sequences"
 msgstr "Ne pas afficher les caractères tapés si une séquence est invalide"
 
-#: ui.ahk:221
+#: ui.ahk:222
 msgid "Beep on invalid sequences"
 msgstr "Émettre un son si une séquence est invalide"
 
-#: ui.ahk:227
+#: ui.ahk:235
+msgid "Interface language:"
+msgstr "Langue de l’interface :"
+
+#: ui.ahk:241
 msgid "Close"
 msgstr "Fermer"
 
-#: ui.ahk:230
+#: ui.ahk:244
 msgid "Copy Character"
 msgstr "Copier le caractère"
 
-#: ui.ahk:311
+#: ui.ahk:336
 msgid "Description:"
 msgstr "Description :"
 
-#: ui.ahk:404
+#: ui.ahk:434
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (inactif)"
 
-#: ui.ahk:414
+#: ui.ahk:444
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (actif)"
 
-#: ui.ahk:423
+#: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (en cours)"
 

@@ -62,7 +62,16 @@ _(str, args*)
     static translations
 
     if (!translations)
-        translations := setlocale()
+    {
+        ; HACK: we cannot rely on settings being loaded at this point, because
+        ; they require the translation system to be initialised. There is no
+        ; clean solution to this catch-22, so we just break the dependency
+        ; cycle. The worst that can happen is probably a UI in English, and
+        ; that will be fixed the next time the app is launched.
+        iniread tmp, %config_file%, Global, % "language", % ""
+
+        translations := setlocale(tmp)
+    }
 
     key := string_to_hex(str)
     ret := translations.haskey(key) ? translations[key] : str
@@ -78,15 +87,18 @@ _(str, args*)
 }
 
 ; Load appropriate .po file
-setlocale()
+setlocale(locale)
 {
     t := {_:_}
 
-    regread, locale, HKEY_CURRENT_USER, Control Panel\\Desktop, PreferredUILanguages
+    ; If no locale specified, try to autodetect
+    if (!locale)
+        regread, locale, HKEY_CURRENT_USER, Control Panel\\Desktop, PreferredUILanguages
     if (!locale)
         regread, locale, HKEY_CURRENT_USER, Control Panel\\Desktop\\MuiCached, MachinePreferredUILanguages
     if (!locale)
         regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
+
     languages := [ substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
 
     FileEncoding UTF-8
