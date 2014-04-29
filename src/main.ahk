@@ -197,7 +197,7 @@ send_keystroke(char)
             if (action == 0)
             {
                 S.sequence .= char
-                info := "Sequence: [ " S.sequence " ] ABORTED"
+                info := "Sequence: [ " S.sequence " (" string_to_hex(S.sequence) ") ] ABORTED"
                 if (!R.opt_discard)
                     send_raw(S.sequence)
                 S.typing := false
@@ -343,13 +343,18 @@ on_printable_key:
     numput(has_shift ? 0x80 : 0x00, mods, 0x10, "uchar")
     numput(has_altgr ? 0x80 : 0x00, mods, 0x11, "uchar")
     numput(has_altgr ? 0x80 : 0x00, mods, 0x12, "uchar")
-    err := dllcall("ToAscii", "uint", getkeyvk(vk), "uint", getkeysc(vk)
-                 , "ptr", &mods, "uintp", unicode_char, "uint", 0, "uint")
-    if (err > 0 && unicode_char > 0)
+    ; Use ToUnicode instead of ToAscii because a lot of languages have non-ASCII chars
+    ; available on their keyboards.
+    ret := dllcall("ToUnicode", "uint", getkeyvk(vk), "uint", getkeysc(vk)
+                 , "ptr", &mods, "uintp", unicode_char, "int", 2, "uint", 0, "uint")
+    if (ret > 0 && unicode_char > 0)
     {
         ; If the system was able to translate the key, pass it to the
-        ; composition handler.
-        send_keystroke(chr(unicode_char))
+        ; composition handler. There might be two keys (in the case of
+        ; dead keys).
+        if (ret >= 2)
+            send_keystroke(chr((unicode_char >> 16) & 0xffff))
+        send_keystroke(chr(unicode_char & 0xffff))
     }
     else
     {
