@@ -73,7 +73,7 @@ on_show_sequences:
 on_show_options:
     critical on
     gui_title := _("@APP_NAME@")
-    if (winexist(gui_title))
+    if (winexist(gui_title " ahk_class AutoHotkeyGUI"))
         goto on_hide_app_win
 
     is_sequences := instr(a_thislabel, "sequences", true)
