@@ -1,0 +1,203 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2014.
+#
+#: ui.ahk:114
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-11 17:38+0200\n"
+"PO-Revision-Date: 2014-04-11 17:38+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: main.ahk:417
+msgid "Loaded @1@ Sequences"
+msgstr ""
+
+#: main.ahk:417
+msgid "Compose Key is @1@"
+msgstr ""
+
+#: constants.ahk:30
+msgid "Left Alt"
+msgstr ""
+
+#: constants.ahk:31
+msgid "Right Alt"
+msgstr ""
+
+#: constants.ahk:32
+msgid "Left Control"
+msgstr ""
+
+#: constants.ahk:33
+msgid "Right Control"
+msgstr ""
+
+#: constants.ahk:34
+msgid "Left Windows"
+msgstr ""
+
+#: constants.ahk:35
+msgid "Right Windows"
+msgstr ""
+
+#: constants.ahk:36
+msgid "Caps Lock"
+msgstr ""
+
+#: constants.ahk:37
+msgid "Num Lock"
+msgstr ""
+
+#: constants.ahk:38
+msgid "Pause"
+msgstr ""
+
+#: constants.ahk:39
+msgid "Menu"
+msgstr ""
+
+#: constants.ahk:40
+msgid "Escape"
+msgstr ""
+
+#: constants.ahk:41
+msgid "Scroll Lock"
+msgstr ""
+
+#: constants.ahk:42
+msgid "Grave Accent `"
+msgstr ""
+
+#: constants.ahk:75
+msgid "500 milliseconds"
+msgstr ""
+
+#: constants.ahk:76
+msgid "1 second"
+msgstr ""
+
+#: constants.ahk:77
+msgid "2 seconds"
+msgstr ""
+
+#: constants.ahk:78
+msgid "3 seconds"
+msgstr ""
+
+#: constants.ahk:79
+msgid "5 seconds"
+msgstr ""
+
+#: constants.ahk:80
+msgid "10 seconds"
+msgstr ""
+
+#: constants.ahk:81
+msgid "None"
+msgstr ""
+
+#: ui.ahk:51 ui.ahk:65
+msgid "Sequences…"
+msgstr ""
+
+#: ui.ahk:52
+msgid "Compose Key"
+msgstr ""
+
+#: ui.ahk:53
+msgid "Timeout"
+msgstr ""
+
+#: ui.ahk:54 ui.ahk:299 ui.ahk:308 ui.ahk:316
+msgid "Disable"
+msgstr ""
+
+#: ui.ahk:55
+msgid "Restart"
+msgstr ""
+
+#: ui.ahk:59
+msgid "&History"
+msgstr ""
+
+#: ui.ahk:60
+msgid "Hotkey &List"
+msgstr ""
+
+#: ui.ahk:62
+msgid "&About"
+msgstr ""
+
+#: ui.ahk:63
+msgid "&Visit Website"
+msgstr ""
+
+#: ui.ahk:64
+msgid "E&xit"
+msgstr ""
+
+#: ui.ahk:71
+msgid "@APP_NAME@ - List of sequences"
+msgstr ""
+
+#: ui.ahk:113
+msgid "@APP_NAME@ v@APP_VERSION@"
+msgstr ""
+
+#: ui.ahk:115
+msgid "by Sam Hocevar <sam@hocevar.net>"
+msgstr ""
+
+#: ui.ahk:116
+msgid "running on AHK v@AHK_VERSION@"
+msgstr ""
+
+#: ui.ahk:140
+msgid "Sequence"
+msgstr ""
+
+#: ui.ahk:140
+msgid "Char"
+msgstr ""
+
+#: ui.ahk:140
+msgid "Unicode"
+msgstr ""
+
+#: ui.ahk:164
+msgid "Search Filter:"
+msgstr ""
+
+#: ui.ahk:169
+msgid "Close"
+msgstr ""
+
+#: ui.ahk:172
+msgid "Copy Character"
+msgstr ""
+
+#: ui.ahk:232
+msgid "Description:"
+msgstr ""
+
+#: ui.ahk:302
+msgid "@APP_NAME@ (disabled)"
+msgstr ""
+
+#: ui.ahk:311
+msgid "@APP_NAME@ (active)"
+msgstr ""
+
+#: ui.ahk:319
+msgid "@APP_NAME@ (typing)"
+msgstr ""
