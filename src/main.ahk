@@ -171,11 +171,6 @@ send_keystroke(char)
         }
         else
         {
-            ; If holding shift, switch letters to uppercase
-            if (asc(char) >= asc("a") && asc(char) <= asc("z"))
-                if (getkeystate("Capslock", "T") != getkeystate("Shift"))
-                    char := chr(asc(char) - asc("a") + asc("A"))
-
             ; Decide whether we need to (1) keep on building the sequence, or
             ; (2) build it and print it, or (3) print it and output the remaining
             ; character. (0) means invalid sequence.
@@ -342,10 +337,12 @@ on_printable_key:
     vk := regexreplace(a_thishotkey, ".*vk", "vk")
     has_shift := instr(a_thishotkey, "$+")
     has_altgr := instr(a_thishotkey, "$<^>!")
+    has_capslock := getkeystate("capslock", "T")
     varsetcapacity(mods, 256, 0)
     numput(has_shift ? 0x80 : 0x00, mods, 0x10, "uchar")
     numput(has_altgr ? 0x80 : 0x00, mods, 0x11, "uchar")
     numput(has_altgr ? 0x80 : 0x00, mods, 0x12, "uchar")
+    numput(has_capslock ? 0x01 : 0x00, mods, 0x14, "uchar")
     ; Use ToUnicode instead of ToAscii because a lot of languages have non-ASCII chars
     ; available on their keyboards.
     ret := dllcall("ToUnicode", "uint", getkeyvk(vk), "uint", getkeysc(vk)
