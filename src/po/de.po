@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-11 17:38+0200\n"
-"PO-Revision-Date: 2014-05-04 06:05+0200\n"
-"Last-Translator: Ira Hanson <hanson.ira@gmail.com>\n"
+"PO-Revision-Date: 2014-05-04 11:45+0200\n"
+"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: German "
 "<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
@@ -30,11 +30,11 @@ msgstr "Compose-Taste ist @1@"
 
 #: constants.ahk:30
 msgid "Left Alt"
-msgstr ""
+msgstr "Linke Alt"
 
 #: constants.ahk:31
 msgid "Right Alt"
-msgstr "Rechte Strg"
+msgstr "Rechte Alt"
 
 #: constants.ahk:32
 msgid "Left Control"
@@ -114,7 +114,7 @@ msgstr "Sequenzen…"
 
 #: ui.ahk:52
 msgid "Compose Key"
-msgstr ""
+msgstr "Compose-Taste"
 
 #: ui.ahk:53
 msgid "Timeout"
