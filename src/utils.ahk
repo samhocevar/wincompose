@@ -59,87 +59,22 @@ num_to_hex(x, mindigits)
 ; Handle i18n
 _(str, args*)
 {
-    static t
+    static translations
 
-    if (!t)
+    if (!translations)
     {
-        t := {_:_}
+        ; HACK: we cannot rely on settings being loaded at this point, because
+        ; they require the translation system to be initialised. There is no
+        ; clean solution to this catch-22, so we just break the dependency
+        ; cycle. The worst that can happen is probably a UI in English, and
+        ; that will be fixed the next time the app is launched.
+        iniread tmp, %config_file%, Global, % "language", % ""
 
-        regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
-        languages := [ substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
-
-        FileEncoding UTF-8
-
-        for ignored, lang in languages
-        {
-            fuzzy := false
-            src := false
-            dst := false
-            loop read, % "po/" lang ".po"
-            {
-                if (regexmatch(a_loopreadline, "^ *$") > 0)
-                {
-                    if (dst)
-                        fuzzy := false
-                }
-                else if (regexmatch(a_loopreadline, "^#, fuzzy") > 0)
-                {
-                    fuzzy := true
-                    src := false
-                    dst := false
-                }
-                else if (regexmatch(a_loopreadline, "^#") > 0)
-                {
-                    ; do nothing
-                }
-                else
-                {
-                    s := regexreplace(a_loopreadline, "^msgid *""(.*)"".*", "$1", ret)
-                    if (ret == 1)
-                    {
-                       src := s
-                       continue
-                    }
-
-                    s := regexreplace(a_loopreadline, "^msgstr *""(.*)"".*", "$1", ret)
-                    if (ret == 1)
-                    {
-                       dst := s
-                       continue
-                    }
-
-                    s := regexreplace(a_loopreadline, "^ *""(.*)"".*", "$1", ret)
-                    if (ret == 1)
-                    {
-                        if (dst)
-                            dst .= s
-                        else
-                            src .= s
-                        continue
-                    }
-                }
-
-                ; Always try to insert the line, even if "dst" isn't fully built,
-                ; because we may hit the last line of the script a bit too early
-                if (dst && !fuzzy)
-                {
-                    replaces := { "\\n": "\n"
-                                , "\\r": "\r"
-                                , "\\""": """"
-                                , "\\\\": "\\" }
-                    for before, after in replaces
-                    {
-                        src := regexreplace(src, before, after)
-                        dst := regexreplace(dst, before, after)
-                    }
-                    t.insert(string_to_hex(src), dst)
-                }
-            }
-        }
+        translations := setlocale(tmp)
     }
 
     key := string_to_hex(str)
-    ret := t.haskey(key) ? t[key] : str
+    ret := translations.haskey(key) ? translations[key] : str
 
     ret := regexreplace(ret, "@APP_NAME@", app)
     ret := regexreplace(ret, "@APP_VERSION@", version)
@@ -149,5 +84,95 @@ _(str, args*)
         ret := regexreplace(ret, "@" index "@", arg)
 
     return ret
+}
+
+; Load appropriate .po file
+setlocale(locale)
+{
+    t := {_:_}
+
+    ; If no locale specified, try to autodetect
+    if (!locale)
+        regread, locale, HKEY_CURRENT_USER, Control Panel\\Desktop, PreferredUILanguages
+    if (!locale)
+        regread, locale, HKEY_CURRENT_USER, Control Panel\\Desktop\\MuiCached, MachinePreferredUILanguages
+    if (!locale)
+        regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
+
+    languages := [ substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
+
+    FileEncoding UTF-8
+
+    for ignored, lang in languages
+    {
+        fuzzy := false
+        msgstr := false
+        src := false
+        dst := false
+        loop read, % "po/" lang ".po"
+        {
+            if (regexmatch(a_loopreadline, "^ *$") > 0)
+            {
+                if (msgstr)
+                    fuzzy := false
+            }
+            else if (regexmatch(a_loopreadline, "^#, fuzzy") > 0)
+            {
+                fuzzy := true
+                msgstr := false
+                src := false
+                dst := false
+            }
+            else if (regexmatch(a_loopreadline, "^#") > 0)
+            {
+                ; do nothing
+            }
+            else
+            {
+                s := regexreplace(a_loopreadline, "^msgid *""(.*)"".*", "$1", ret)
+                if (ret == 1)
+                {
+                   src := s
+                   continue
+                }
+
+                s := regexreplace(a_loopreadline, "^msgstr *""(.*)"".*", "$1", ret)
+                if (ret == 1)
+                {
+                   dst := s
+                   msgstr := true
+                   continue
+                }
+
+                s := regexreplace(a_loopreadline, "^ *""(.*)"".*", "$1", ret)
+                if (ret == 1)
+                {
+                    if (msgstr)
+                        dst .= s
+                    else
+                        src .= s
+                    continue
+                }
+            }
+
+            ; Always try to insert the line, even if "dst" isn't fully built,
+            ; because we may hit the last line of the script a bit too early
+            if (dst && !fuzzy)
+            {
+                replaces := { "\\n": "\n"
+                            , "\\r": "\r"
+                            , "\\""": """"
+                            , "\\\\": "\\" }
+                for before, after in replaces
+                {
+                    src := regexreplace(src, before, after)
+                    dst := regexreplace(dst, before, after)
+                }
+                t.insert(string_to_hex(src), dst)
+            }
+        }
+    }
+
+    return t
 }
 

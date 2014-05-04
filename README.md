@@ -1,7 +1,7 @@
 ﻿WinCompose
 ==========
 
-A robust compose key for Windows, written by Sam Hocevar.
+A compose key for Windows, written by Sam Hocevar.
 
 A **compose key** allows to easily write special characters such as **é
 ž à ō û ø ☺ ¤ ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often
@@ -9,10 +9,13 @@ very intuitive key combinations. For instance, **ö** is obtained using
 <kbd>o</kbd> + <kbd>"</kbd>, and **♥** is obtained using <kbd>&lt;</kbd>
 \+ <kbd>3</kbd>.
 
-Download latest: [WinCompose 0.6.4](https://github.com/samhocevar/wincompose/releases/download/v0.6.4/WinCompose-Setup-0.6.4.exe)
+I wrote WinCompose because I found none of the alternatives (FreeCompose,
+CKFW, AllChars or Unichars) to be satisfying.
+
+Download latest: [WinCompose 0.6.6](https://github.com/samhocevar/wincompose/releases/download/v0.6.6/WinCompose-Setup-0.6.6.exe) (April 28, 2014)
 -----------------------------------
 
-Latest release is [WinCompose 0.6.4](https://github.com/samhocevar/wincompose/releases/download/v0.6.4/WinCompose-Setup-0.6.4.exe). Older releases are available [here](https://github.com/samhocevar/wincompose/releases/).
+Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
 Quick start
 -----------
@@ -68,6 +71,10 @@ WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kb
 
 WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>&</kbd> will
 immediately type **&** because there is currently no rule starting with <kbd>&</kbd>.
+
+As of now, WinCompose is fully translated in two languages: French and Greek. You can help us translate it to more languages using the Weblate project:
+
+<a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
 
 Bugs
 ----

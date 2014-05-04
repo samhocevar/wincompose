@@ -1,11 +1,11 @@
 
-VERSION = 0.6.4
+VERSION = 0.6.6
 
 ISS = installer.iss
 SRC_AHK = main.ahk
 SRC_INC = constants.ahk ui.ahk utils.ahk
 RC = resources.rc
-PO = fr cs
+PO = cs el fr
 
 ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_empty.ico
 

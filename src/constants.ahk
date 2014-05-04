@@ -22,6 +22,20 @@ global C := { _:_
       , resources : "res/resources.dll" }
 
     ;
+    ; Available translation languages
+    ;
+
+  , languages : { _:_
+        ; List of available languages for the UI
+      , valid : { ""   : _("Autodetect")
+                , "cs" : "Čeština"
+                , "el" : "Ελληνικά"
+                , "en" : "English"
+                , "fr" : "Français" }
+        ; Default language means try to autodetect
+      , default : "" }
+
+    ;
     ; Keyboard-related constants
     ;
 
