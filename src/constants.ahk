@@ -29,6 +29,7 @@ global C := { _:_
         ; List of available languages for the UI
       , valid : { ""   : _("Autodetect")
                 , "cs" : "Čeština"
+                , "de" : "Deutsch"
                 , "el" : "Ελληνικά"
                 , "en" : "English"
                 , "fr" : "Français" }

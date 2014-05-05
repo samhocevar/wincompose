@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-29 18:13+0200\n"
+"POT-Creation-Date: 2014-05-05 16:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.ahk:496
+#: main.ahk:503 ui.ahk:447
 msgid "Loaded @1@ Sequences"
 msgstr ""
 
-#: main.ahk:496
+#: main.ahk:503 ui.ahk:448
 msgid "Compose Key is @1@"
 msgstr ""
 
@@ -29,83 +29,83 @@ msgstr ""
 msgid "Autodetect"
 msgstr ""
 
-#: constants.ahk:44
+#: constants.ahk:45
 msgid "Left Alt"
 msgstr ""
 
-#: constants.ahk:45
+#: constants.ahk:46
 msgid "Right Alt"
 msgstr ""
 
-#: constants.ahk:46
+#: constants.ahk:47
 msgid "Left Control"
 msgstr ""
 
-#: constants.ahk:47
+#: constants.ahk:48
 msgid "Right Control"
 msgstr ""
 
-#: constants.ahk:48
+#: constants.ahk:49
 msgid "Left Windows"
 msgstr ""
 
-#: constants.ahk:49
+#: constants.ahk:50
 msgid "Right Windows"
 msgstr ""
 
-#: constants.ahk:50
+#: constants.ahk:51
 msgid "Caps Lock"
 msgstr ""
 
-#: constants.ahk:51
+#: constants.ahk:52
 msgid "Num Lock"
 msgstr ""
 
-#: constants.ahk:52
+#: constants.ahk:53
 msgid "Pause"
 msgstr ""
 
-#: constants.ahk:53
+#: constants.ahk:54
 msgid "Menu"
 msgstr ""
 
-#: constants.ahk:54
+#: constants.ahk:55
 msgid "Escape"
 msgstr ""
 
-#: constants.ahk:55
+#: constants.ahk:56
 msgid "Scroll Lock"
 msgstr ""
 
-#: constants.ahk:56
+#: constants.ahk:57
 msgid "Grave Accent `"
 msgstr ""
 
-#: constants.ahk:81
+#: constants.ahk:82
 msgid "500 milliseconds"
 msgstr ""
 
-#: constants.ahk:82
+#: constants.ahk:83
 msgid "1 second"
 msgstr ""
 
-#: constants.ahk:83
+#: constants.ahk:84
 msgid "2 seconds"
 msgstr ""
 
-#: constants.ahk:84
+#: constants.ahk:85
 msgid "3 seconds"
 msgstr ""
 
-#: constants.ahk:85
+#: constants.ahk:86
 msgid "5 seconds"
 msgstr ""
 
-#: constants.ahk:86
+#: constants.ahk:87
 msgid "10 seconds"
 msgstr ""
 
-#: constants.ahk:87
+#: constants.ahk:88
 msgid "None"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Show &Sequences…"
 msgstr ""
 
-#: ui.ahk:55 ui.ahk:430 ui.ahk:440 ui.ahk:449
+#: ui.ahk:55 ui.ahk:450
 msgid "Disable"
 msgstr ""
 
@@ -149,79 +149,79 @@ msgstr ""
 msgid "@APP_NAME@"
 msgstr ""
 
-#: ui.ahk:128
+#: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
 msgstr ""
 
-#: ui.ahk:129
+#: ui.ahk:130
 msgid "\n"
 msgstr ""
 
-#: ui.ahk:130
+#: ui.ahk:131
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr ""
 
-#: ui.ahk:131
+#: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
 msgstr ""
 
-#: ui.ahk:151
+#: ui.ahk:152
 msgid "Sequences"
 msgstr ""
 
-#: ui.ahk:151
+#: ui.ahk:152
 msgid "Options"
 msgstr ""
 
-#: ui.ahk:160
+#: ui.ahk:161
 msgid "Sequence"
 msgstr ""
 
-#: ui.ahk:160
+#: ui.ahk:161
 msgid "Char"
 msgstr ""
 
-#: ui.ahk:160
+#: ui.ahk:161
 msgid "Unicode"
 msgstr ""
 
-#: ui.ahk:184
+#: ui.ahk:185
 msgid "Search Filter:"
 msgstr ""
 
-#: ui.ahk:200
+#: ui.ahk:201
 msgid "Compose Key:"
 msgstr ""
 
-#: ui.ahk:211
+#: ui.ahk:212
 msgid "Delay:"
 msgstr ""
 
-#: ui.ahk:216
+#: ui.ahk:217
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 
-#: ui.ahk:219
+#: ui.ahk:220
 msgid "Discard characters from invalid sequences"
 msgstr ""
 
-#: ui.ahk:222
+#: ui.ahk:223
 msgid "Beep on invalid sequences"
 msgstr ""
 
-#: ui.ahk:235
+#: ui.ahk:236
 msgid "Interface language:"
 msgstr ""
 
-#: ui.ahk:241
+#: ui.ahk:242
 msgid "Close"
 msgstr ""
 
-#: ui.ahk:244
+#: ui.ahk:245
 msgid "Copy Character"
 msgstr ""
 
-#: ui.ahk:336
+#: ui.ahk:337
 msgid "Description:"
 msgstr ""
 
@@ -229,10 +229,10 @@ msgstr ""
 msgid "@APP_NAME@ (disabled)"
 msgstr ""
 
-#: ui.ahk:444
+#: ui.ahk:439
 msgid "@APP_NAME@ (active)"
 msgstr ""
 
-#: ui.ahk:453
+#: ui.ahk:444
 msgid "@APP_NAME@ (typing)"
 msgstr ""
