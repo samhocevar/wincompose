@@ -112,6 +112,7 @@ on_disable:
     {
         set_compose_hotkeys(false)
         S.disabled := true
+        S.typing := false
     }
     refresh_systray()
     return
@@ -424,34 +425,34 @@ refresh_gui()
 
 refresh_systray()
 {
+    ; Disable hotkeys except during a compose sequence
+    suspend % S.typing ? "off" : "on"
+
     if (S.disabled)
     {
-        suspend on
-        menu tray, check, % _("Disable")
-        tmp := C.files.resources
-        menu tray, icon
-        menu tray, icon, %tmp%, 3, 1
-        menu tray, tip, % _("@APP_NAME@ (disabled)")
+        icon := 3
+        tip := _("@APP_NAME@ (disabled)") "\n"
     }
     else if (!S.typing)
     {
-        ; Disable hotkeys; we only want them on during a compose sequence
-        suspend on
-        menu tray, uncheck, % _("Disable")
-        tmp := C.files.resources
-        menu tray, icon
-        menu tray, icon, %tmp%, 1, 1
-        menu tray, tip, % _("@APP_NAME@ (active)")
+        icon := 1
+        tip := _("@APP_NAME@ (active)") "\n"
     }
     else ; if (S.typing)
     {
-        suspend off
-        menu tray, uncheck, % _("Disable")
-        tmp := C.files.resources
-        menu tray, icon
-        menu tray, icon, %tmp%, 2
-        menu tray, tip, % _("@APP_NAME@ (typing)")
+        icon := 2
+        tip := _("@APP_NAME@ (typing)") "\n"
     }
+
+    tip .= _("Loaded @1@ Sequences", R.seq_count) "\n"
+    tip .= _("Compose Key is @1@", C.keys.valid[R.compose_key]) "\n"
+
+    menu tray, % S.disabled ? "check" : "uncheck", % _("Disable")
+    tmp := C.files.resources
+    menu tray, icon
+    menu tray, icon, %tmp%, %icon%, 1
+
+    menu tray, tip, %tip%
 }
 
 recompute_gui_filter()
