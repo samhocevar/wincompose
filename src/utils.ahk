@@ -29,13 +29,25 @@ tolower(string)
     return ret
 }
 
+; Unescape \ in string
+unescape(string)
+{
+    replaces := { "\\n": "\n"
+                , "\\r": "\r"
+                , "\\""": """"
+                , "\\\\": "\\" }
+    for before, after in replaces
+        string := regexreplace(string, before, after)
+    return string
+}
+
 ; We need to encode our strings somehow because AutoHotKey objects have
 ; case-insensitive hash tables. How retarded is that? Also, make sure the
 ; first character is special.
-string_to_hex(str)
+string_to_hex(string)
 {
     hex := "*"
-    loop, parse, str
+    loop, parse, string
         hex .= num_to_hex(asc(a_loopfield), 2)
     return hex
 }
@@ -73,8 +85,8 @@ _(str, args*)
         translations := setlocale(tmp)
     }
 
-    key := string_to_hex(str)
-    ret := translations.haskey(key) ? translations[key] : str
+    ret := translations[string_to_hex(str)]
+    ret := ret ? ret : str
 
     ret := regexreplace(ret, "@APP_NAME@", app)
     ret := regexreplace(ret, "@APP_VERSION@", version)
@@ -107,21 +119,17 @@ setlocale(locale)
     {
         fuzzy := false
         msgstr := false
-        src := false
-        dst := false
         loop read, % "po/" lang ".po"
         {
             if (regexmatch(a_loopreadline, "^ *$") > 0)
             {
-                if (msgstr)
-                    fuzzy := false
+                fuzzy := false
+                msgstr := false
             }
             else if (regexmatch(a_loopreadline, "^#, fuzzy") > 0)
             {
                 fuzzy := true
                 msgstr := false
-                src := false
-                dst := false
             }
             else if (regexmatch(a_loopreadline, "^#") > 0)
             {
@@ -132,44 +140,27 @@ setlocale(locale)
                 s := regexreplace(a_loopreadline, "^msgid *""(.*)"".*", "$1", ret)
                 if (ret == 1)
                 {
-                   src := s
-                   continue
+                    src := s
                 }
 
                 s := regexreplace(a_loopreadline, "^msgstr *""(.*)"".*", "$1", ret)
                 if (ret == 1)
                 {
-                   dst := s
-                   msgstr := true
-                   continue
+                    dst := s
+                    msgstr := true
                 }
 
                 s := regexreplace(a_loopreadline, "^ *""(.*)"".*", "$1", ret)
                 if (ret == 1)
                 {
-                    if (msgstr)
-                        dst .= s
-                    else
-                        src .= s
-                    continue
+                    (msgstr ? dst : src) .= s
                 }
             }
 
             ; Always try to insert the line, even if "dst" isn't fully built,
             ; because we may hit the last line of the script a bit too early
-            if (dst && !fuzzy)
-            {
-                replaces := { "\\n": "\n"
-                            , "\\r": "\r"
-                            , "\\""": """"
-                            , "\\\\": "\\" }
-                for before, after in replaces
-                {
-                    src := regexreplace(src, before, after)
-                    dst := regexreplace(dst, before, after)
-                }
-                t.insert(string_to_hex(src), dst)
-            }
+            if (msgstr && !fuzzy)
+                t.insert(string_to_hex(unescape(src)), unescape(dst))
         }
     }
 
