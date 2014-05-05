@@ -32,7 +32,7 @@ global S := { sequence: ""           ; The sequence being typed
             , typing: false          ; Is the user typing something?
             , disabled: false        ; Is everything disabled?
             , compose_down: false    ; Is the compose key down?
-            , special_down: false    ; Is a special key down?
+            , special_down: false    ; Was at least one special key down?
             , selected_char: ""      ; The character currently selected in GUI
             , selected_seq: "" }     ; The sequence currently selected
 
@@ -387,10 +387,17 @@ set_special_hotkeys(must_enable)
     manifesthooks off
     for ignored, key in C.keys.special
     {
-        hotkey $%key%, on_special_hotkey, %flag%, useerrorlevel
-        hotkey $%key% up, on_special_hotkey, %flag%, useerrorlevel
+        if (%key% != R.compose_key)
+        {
+            hotkey $%key%, on_special_hotkey, %flag%, useerrorlevel
+            hotkey $%key% up, on_special_hotkey, %flag%, useerrorlevel
+        }
     }
     manifesthooks on
+
+    if (!must_enable && S.special_down)
+        sendinput % "{" R.compose_key " up}"
+    S.special_down := false
 
     return
 
@@ -401,7 +408,6 @@ on_special_hotkey:
     key := regexreplace(a_thishotkey, "[^a-z0-9]*([a-z0-9]*).*", "$1", ret)
     if (instr(a_thishotkey, " up"))
     {
-        S.special_down := false
         sendinput {%key% up}
     }
     else
@@ -444,7 +450,7 @@ set_compose_hotkeys(must_enable)
         ; Disable any existing hotkeys
         for ignored, prefix in compose_prefixes
         {
-            for key, val in C.keys.valid
+            for key, ignored in C.keys.valid
             {
                 hotkey % prefix key, off, useerrorlevel
                 hotkey % prefix key " up", off, useerrorlevel
@@ -463,9 +469,8 @@ on_compose_key:
     {
         ; Compose was released
         S.compose_down := false
-        ; Tell the system it was released, just in case a special
-        ; hotkey was triggered.
-        sendinput % "{" R.compose_key " up}"
+        ; In case the compose key is a modifier (see below), tell the system it was
+        ; released, just in case a special hotkey was triggered.
         set_special_hotkeys(false)
     }
     else if (!S.compose_down)
@@ -473,6 +478,8 @@ on_compose_key:
         ; Compose was pressed down -- protect against autorepeat
         S.compose_down := true
         send_keystroke("compose")
+        ; In case the compose key is a modifier (e.g. Alt or Ctrl) we bind some
+        ; additional special hotkeys to allow shortcuts such as Alt-F4.
         set_special_hotkeys(true)
     }
     return

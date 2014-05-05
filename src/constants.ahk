@@ -65,12 +65,12 @@ global C := { _:_
                     , [ 0xdb, 0xe0 ] ; misc
                     , [ 0xe1, 0xe7 ] ] ; misc
         ; List of special keys that we need to hijack
-      , special : [ "tab" ; for Alt-Tab
+      , special : [ "tab", "esc" ; for Alt-Tab and Alt-Escapce
                   , "left", "right", "up", "down" ; for Windows-Left etc.
-                  , "f1",  "f2",  "f3",  "f4",  "f5",  "f6"
+                  , "f1",  "f2",  "f3",  "f4",  "f5",  "f6" ; for Alt-F4 etc.
                   , "f7",  "f8",  "f9",  "f10", "f11", "f12"
                   , "f13", "f14", "f15", "f16", "f17", "f18"
-                  , "f19", "f20", "f21", "f22", "f23", "f24" ] } ; for Alt-F4 etc.
+                  , "f19", "f20", "f21", "f22", "f23", "f24" ] }
 
     ;
     ; Timeout-related constants
