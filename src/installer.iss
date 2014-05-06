@@ -18,7 +18,9 @@ Source: "obj\resources.dll"; DestDir: "{app}\res"
 Source: "res\Keys.txt"; DestDir: "{app}\res"
 Source: "res\Xorg.txt"; DestDir: "{app}\res"
 Source: "res\Xcompose.txt"; DestDir: "{app}\res"
+; This should match constants.ahk
 Source: "po\cs.po"; DestDir: "{app}\po"
+Source: "po\de.po"; DestDir: "{app}\po"
 Source: "po\el.po"; DestDir: "{app}\po"
 Source: "po\fr.po"; DestDir: "{app}\po"
 

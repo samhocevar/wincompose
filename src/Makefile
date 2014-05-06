@@ -5,7 +5,7 @@ ISS = installer.iss
 SRC_AHK = main.ahk
 SRC_INC = constants.ahk ui.ahk utils.ahk
 RC = resources.rc
-PO = cs el fr
+PO = $(filter-out en, $(shell sed -ne '/available languages/,/}/p' < constants.ahk  | sed -ne 's/.*"\(..\)".*/\1/p'))
 
 ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_empty.ico
 
@@ -58,6 +58,7 @@ update-source:
 update-po:
 	$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ $(SRC_AHK) $(SRC_INC)
 	for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
+	X=true; for l in $(PO); do if grep -q '"po.'$$l'[.]po"' $(ISS); then : ; else echo "po/$$l.po" not in $(ISS); X=false; fi; done; $$X || exit 1
 
 update-ahk:
 	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Release //project AutoHotkeyx
