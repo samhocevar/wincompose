@@ -157,9 +157,8 @@ msgid "E&xit"
 msgstr "B&eenden"
 
 #: ui.ahk:75
-#, fuzzy
 msgid "@APP_NAME@"
-msgstr "@APP_NAME@ (aktiv)"
+msgstr "@APP_NAME@"
 
 #: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
@@ -178,9 +177,8 @@ msgid "running on AHK v@AHK_VERSION@\n"
 msgstr ""
 
 #: ui.ahk:152
-#, fuzzy
 msgid "Sequences"
-msgstr "Sequenz"
+msgstr "Sequenzen"
 
 #: ui.ahk:152
 msgid "Options"
@@ -203,9 +201,8 @@ msgid "Search Filter:"
 msgstr ""
 
 #: ui.ahk:201
-#, fuzzy
 msgid "Compose Key:"
-msgstr "Compose-Taste ist @1@"
+msgstr "Compose-Taste:"
 
 #: ui.ahk:212
 msgid "Delay:"
