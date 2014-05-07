@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 16:23+0200\n"
-"PO-Revision-Date: 2014-05-04 06:05+0200\n"
-"Last-Translator: Ira Hanson <hanson.ira@gmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
-"de/>\n"
+"POT-Creation-Date: 2014-04-11 17:38+0200\n"
+"PO-Revision-Date: 2014-05-04 11:45+0200\n"
+"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,11 +33,11 @@ msgstr ""
 
 #: constants.ahk:45
 msgid "Left Alt"
-msgstr ""
+msgstr "Linke Alt"
 
 #: constants.ahk:46
 msgid "Right Alt"
-msgstr "Rechte Strg"
+msgstr "Rechte Alt"
 
 #: constants.ahk:47
 msgid "Left Control"
@@ -116,7 +116,15 @@ msgstr "Keine"
 msgid "Show &Sequences…"
 msgstr "Sequenzen…"
 
-#: ui.ahk:55 ui.ahk:450
+#: ui.ahk:52
+msgid "Compose Key"
+msgstr "Compose-Taste"
+
+#: ui.ahk:53
+msgid "Timeout"
+msgstr "Verzögerung"
+
+#: ui.ahk:54 ui.ahk:299 ui.ahk:308 ui.ahk:316
 msgid "Disable"
 msgstr "Deaktivieren"
 
