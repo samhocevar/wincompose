@@ -13,7 +13,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.6.6"
+global version := "0.6.7"
 global website := "https://github.com/samhocevar/wincompose"
 
 ; Configuration directory and file

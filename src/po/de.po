@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-11 17:38+0200\n"
+"POT-Creation-Date: 2014-05-13 18:20+0200\n"
 "PO-Revision-Date: 2014-05-04 11:45+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: German "
-"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
+"de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,15 +116,7 @@ msgstr "Keine"
 msgid "Show &Sequences…"
 msgstr "Sequenzen…"
 
-#: ui.ahk:52
-msgid "Compose Key"
-msgstr "Compose-Taste"
-
-#: ui.ahk:53
-msgid "Timeout"
-msgstr "Verzögerung"
-
-#: ui.ahk:54 ui.ahk:299 ui.ahk:308 ui.ahk:316
+#: ui.ahk:55 ui.ahk:450
 msgid "Disable"
 msgstr "Deaktivieren"
 
@@ -247,6 +239,9 @@ msgstr "@APP_NAME@ (aktiv)"
 #: ui.ahk:444
 msgid "@APP_NAME@ (typing)"
 msgstr ""
+
+#~ msgid "Compose Key"
+#~ msgstr "Compose-Taste"
 
 #~ msgid "Timeout"
 #~ msgstr "Verzögerung"
