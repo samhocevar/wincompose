@@ -97,7 +97,7 @@ on_hide_app_win:
     return
 
 on_restart:
-    save_settings()
+    save_all_settings()
     reload
     return
 
@@ -138,7 +138,7 @@ on_show_website:
     return
 
 on_exit:
-    save_settings()
+    save_all_settings()
     exitapp
     return
 }
@@ -282,6 +282,7 @@ on_set_compose:
     for key, val in C.keys.valid
         if (val == tmp)
             R.compose_key := key
+    save_all_settings()
     refresh_systray()
     set_compose_hotkeys(true)
     return
@@ -291,6 +292,7 @@ on_set_delay:
     for key, val in C.delays.valid
         if (val == tmp)
             R.reset_delay := key
+    save_all_settings()
     refresh_systray()
     return
 
@@ -299,6 +301,7 @@ on_toggle_discard:
 on_toggle_beep:
     guicontrolget val, , % regexreplace(a_thislabel, "on_toggle", "ui_checkbox")
     R[regexreplace(a_thislabel, "on_toggle_", "opt_")] := val
+    save_all_settings()
     return
 
 on_set_language:
@@ -307,7 +310,7 @@ on_set_language:
     for key, val in C.languages.valid
         if (val == tmp)
             R.language := key
-    save_settings()
+    save_all_settings()
     if (old_language != R.language)
         reload
     return

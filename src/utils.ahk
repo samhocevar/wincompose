@@ -68,6 +68,65 @@ num_to_hex(x, mindigits)
     return ret
 }
 
+;
+; Handle Settings
+;
+
+load_all_settings()
+{
+    ; Read the compose key value and sanitise it if necessary
+    tmp := load_setting("global", "compose_key")
+    R.compose_key := C.keys.valid.haskey(tmp) ? tmp : C.keys.default
+
+    ; Read the reset delay value and sanitise it if necessary
+    tmp := load_setting("global", "reset_delay")
+    R.reset_delay := C.delays.valid.haskey(tmp) ? tmp : C.delays.default
+
+    ; Read the UI language value and sanitise it if necessary
+    tmp := load_setting("global", "language")
+    R.language := C.languages.valid.haskey(tmp) ? tmp : C.languages.default
+
+    R.opt_case := load_setting("global", "case_insensitive", "false") == "true"
+    R.opt_discard := load_setting("global", "discard_on_invalid", "false") == "true"
+    R.opt_beep := load_setting("global", "beep_on_invalid", "false") == "true"
+
+    save_all_settings()
+}
+
+save_all_settings()
+{
+    save_setting("global", "compose_key", R.compose_key)
+    save_setting("global", "reset_delay", R.reset_delay)
+    save_setting("global", "language", R.language)
+
+    save_setting("global", "case_insensitive", R.opt_case ? "true" : "false")
+    save_setting("global", "discard_on_invalid", R.opt_discard ? "true" : "false")
+    save_setting("global", "beep_on_invalid", R.opt_beep ? "true" : "false")
+}
+
+; Read one entry from the configuration file
+load_setting(section, key, default = "")
+{
+    ; We cannot read R.config_file from the configuration file, so we decide
+    ; right now whether it'll be in %a_appdata% (installed application) or
+    ; %a_workingdir% (portable application).
+    if (R.config_file == "")
+    {
+        dir := fileexist("unins000.dat") ? a_appdata "\\" app : a_workingdir
+        filecreatedir %dir%
+        R.config_file := dir "\\settings.ini"
+    }
+
+    iniread tmp, % R.config_file, %section%, %key%, %default%
+    return tmp
+}
+
+; Write one entry to the configuration file
+save_setting(section, key, value)
+{
+    iniwrite %value%, % R.config_file, %section%, %key%
+}
+
 ; Handle i18n
 _(str, args*)
 {
@@ -80,9 +139,7 @@ _(str, args*)
         ; clean solution to this catch-22, so we just break the dependency
         ; cycle. The worst that can happen is probably a UI in English, and
         ; that will be fixed the next time the app is launched.
-        iniread tmp, %config_file%, Global, % "language", % ""
-
-        translations := setlocale(tmp)
+        translations := setlocale(load_setting("global", "language"))
     }
 
     ret := translations[string_to_hex(str)]

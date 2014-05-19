@@ -16,10 +16,6 @@ global app := "WinCompose"
 global version := "0.6.7"
 global website := "https://github.com/samhocevar/wincompose"
 
-; Configuration directory and file
-global config_dir := a_appdata . "\\" . app
-global config_file := config_dir . "\\settings.ini"
-
 #include utils.ahk
 #include constants.ahk
 #include ui.ahk
@@ -44,6 +40,7 @@ global R := { sequences:     {}      ; List of valid sequences
             , prefixes_alt:  {}      ; Alt table for case insensitive
             , descriptions:  {}
             , keynames:      {}
+            , config_file:   ""      ; Configuration file location
             , compose_key:   C.keys.default
             , reset_delay:   C.delays.default
             , language:      C.languages.default
@@ -71,52 +68,13 @@ main()
     tmp := C.files.resources
     menu tray, icon, %tmp%, 1
 
-    load_settings()
+    load_all_settings()
     load_sequences()
 
     create_gui()
 
     set_printable_hotkeys(true)
     set_compose_hotkeys(true)
-}
-
-;
-; Handle Settings
-;
-
-load_settings()
-{
-    ; Read the compose key value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % "compose_key", % ""
-    R.compose_key := C.keys.valid.haskey(tmp) ? tmp : C.keys.default
-
-    ; Read the reset delay value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % "reset_delay", % ""
-    R.reset_delay := C.delays.valid.haskey(tmp) ? tmp : C.delays.default
-
-    ; Read the UI language value and sanitise it if necessary
-    iniread tmp, %config_file%, Global, % "language", % ""
-    R.language := C.languages.valid.haskey(tmp) ? tmp : C.languages.default
-
-    iniread tmp, %config_file%, Global, % "case_insensitive", false
-    R.opt_case := tmp == "true"
-    iniread tmp, %config_file%, Global, % "discard_on_invalid", false
-    R.opt_discard := tmp == "true"
-    iniread tmp, %config_file%, Global, % "beep_on_invalid", false
-    R.opt_beep := tmp == "true"
-
-    save_settings()
-}
-
-save_settings()
-{
-    filecreatedir %config_dir%
-    iniwrite % R.compose_key, %config_file%, Global, % "compose_key"
-    iniwrite % R.reset_delay, %config_file%, Global, % "reset_delay"
-    iniwrite % R.language, %config_file%, Global, % "language"
-    iniwrite % R.opt_case ? "true" : "false", %config_file%, Global, % "case_insensitive"
-    iniwrite % R.opt_discard ? "true" : "false", %config_file%, Global, % "discard_on_invalid"
-    iniwrite % R.opt_beep ? "true" : "false", %config_file%, Global, % "beep_on_invalid"
 }
 
 ;
