@@ -1,0 +1,5 @@
+WinCompose-*.zip
+WinCompose-Setup-*.exe
+obj/
+res/resources.dll
+po/*.po~

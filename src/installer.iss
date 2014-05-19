@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.6.7"
+#define VERSION "0.6.8"
 
 [Setup]
 AppName = {#NAME}
@@ -14,7 +14,7 @@ OutputDir = .
 
 [Files]
 Source: "obj\{#NAME}.exe"; DestDir: "{app}"; Flags: replacesameversion
-Source: "obj\resources.dll"; DestDir: "{app}\res"
+Source: "res\resources.dll"; DestDir: "{app}\res"
 Source: "res\Keys.txt"; DestDir: "{app}\res"
 Source: "res\Xorg.txt"; DestDir: "{app}\res"
 Source: "res\Xcompose.txt"; DestDir: "{app}\res"

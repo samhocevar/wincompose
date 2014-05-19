@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 16:23+0200\n"
+"POT-Creation-Date: 2014-05-19 14:45+0200\n"
 "PO-Revision-Date: 2014-04-30 10:02+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 1.9-dev\n"
 
-#: main.ahk:503 ui.ahk:447
+#: main.ahk:461 ui.ahk:450
 msgid "Loaded @1@ Sequences"
 msgstr "Nahráno @1@ sekvencí"
 
-#: main.ahk:503 ui.ahk:448
+#: main.ahk:461 ui.ahk:451
 msgid "Compose Key is @1@"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr "Žádné"
 msgid "Show &Sequences…"
 msgstr "Sekvence"
 
-#: ui.ahk:55 ui.ahk:450
+#: ui.ahk:55 ui.ahk:453
 msgid "Disable"
 msgstr "Vypnout"
 
@@ -225,18 +225,18 @@ msgstr "Zavřít"
 msgid "Copy Character"
 msgstr ""
 
-#: ui.ahk:337
+#: ui.ahk:340
 msgid "Description:"
 msgstr "Popis:"
 
-#: ui.ahk:434
+#: ui.ahk:437
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (vypnuto)"
 
-#: ui.ahk:439
+#: ui.ahk:442
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (aktivní)"
 
-#: ui.ahk:444
+#: ui.ahk:447
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (píše)"

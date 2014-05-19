@@ -1,5 +1,11 @@
 
-VERSION = 0.6.7
+# Requirements:
+#  - Inno Setup 5 (download and install)
+#  - zip/unzip (mingw-get install msys-zip msys-unzip)
+#  - Visual Studio (ensure devenv.exe is in %PATH%)
+#  - gettext (mingw-get install msys-gettext)
+
+VERSION = 0.6.8
 
 ISS = installer.iss
 SRC_AHK = main.ahk
@@ -10,8 +16,9 @@ PO = $(filter-out en, $(shell sed -ne '/available languages/,/}/p' < constants.a
 ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_empty.ico
 
 EXE = obj/WinCompose.exe
-DLL = obj/resources.dll
+DLL = res/resources.dll
 INSTALLER = WinCompose-Setup-$(VERSION).exe
+PORTABLE = WinCompose-$(VERSION).zip
 
 ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
 AHKDIR = ./ahk
@@ -22,10 +29,11 @@ WINDRES = windres
 XGETTEXT = xgettext
 MSGMERGE = msgmerge
 
-all: installer
+all: installer portable
 
 clean:
-	rm -f $(DLL) $(DLL:%.dll:%.o) $(EXE) $(INSTALLER)
+	rm -f $(INSTALLER) $(PORTABLE)
+	rm -f $(DLL) $(DLL:%.dll:%.o) $(EXE)
 	@rmdir obj >/dev/null 2>&1 || true
 
 run:
@@ -35,15 +43,25 @@ check:
 	$(AHK) tests.ahk
 
 installer: update-source update-po $(DLL) $(EXE) $(ISS)
-	rm -f $@
+	rm -f $(INSTALLER)
 	"$(ISCC)" $(ISS)
+
+portable: update-source update-po $(DLL) $(EXE)
+	rm -f $(PORTABLE)
+	rm -rf $(PORTABLE:.zip=)
+	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/res
+	cp $(EXE) $(PORTABLE:.zip=)
+	cp $(PO:%=po/%.po) $(PORTABLE:.zip=)/po
+	cp res/resources.dll res/Keys.txt res/Xorg.txt res/Xcompose.txt $(PORTABLE:.zip=)/res
+	zip -r $(PORTABLE) $(PORTABLE:.zip=)
+	rm -rf $(PORTABLE:.zip=)
 
 obj/%.exe: update-ahk $(SRC_AHK) $(SRC_INC)
 	@mkdir -p obj
 	@rm -f $@
 	$(AHK) 'ahk2exe\\ahk2exe.ahk' //in $(SRC_AHK) //out $@ //icon res/icon_normal.ico //bin $(AHKDIR)/bin/Win32w/AutoHotkeySC.bin
 
-%.dll: %.o
+res/%.dll: obj/%.o
 	$(CC) -shared $^ -o $@
 
 obj/%.o: $(RC) $(ICONS)

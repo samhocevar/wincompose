@@ -13,7 +13,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.6.7"
+global version := "0.6.8"
 global website := "https://github.com/samhocevar/wincompose"
 
 #include utils.ahk
