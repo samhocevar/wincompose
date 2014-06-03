@@ -15,6 +15,17 @@ length(array)
     return ret ? ret : 0
 }
 
+; I can't believe AHK doesn't have these
+min(a, b)
+{
+    return a < b ? a : b
+}
+
+max(a, b)
+{
+    return a > b ? a : b
+}
+
 ; Convert string to uppercase
 toupper(string)
 {

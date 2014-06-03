@@ -19,7 +19,7 @@ global UI := { _:_
           , width: 260 }
         ; The big char
       , bigchar : { _:_
-          , width: 180
+          , width: 360
           , height: 180 } } }
 
 ; Global GUI variables
@@ -333,6 +333,9 @@ on_select_sequence:
                 lv_gettext(unicode, a_eventinfo, 3)
 
                 guicontrol text, ui_text_bigchar, %str%
+                gui font, % "s" (10 + min(90, 300 / (1 + strlen(str))))
+                guicontrol font, ui_text_bigchar
+
                 ; HACK: remove the non-printable character we added for sorting purposes
                 desc := " " regexreplace(unicode, ".*U", "U") " " str "\n"
                 desc .= substr("————————————————————", 1, strlen(desc) + 2) "\n"
