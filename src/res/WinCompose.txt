@@ -1,0 +1,5 @@
+# for Emacs: -*- coding: utf-8 -*-
+
+# Custom additions for WinCompose
+<Multi_key> <t> <f>			: "(ﾉಥ益ಥ）ﾉ﻿ ┻━┻"	# Flip table like a boss.
+

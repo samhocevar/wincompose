@@ -16,6 +16,7 @@ OutputDir = .
 Source: "obj\{#NAME}.exe"; DestDir: "{app}"; Flags: replacesameversion
 Source: "res\resources.dll"; DestDir: "{app}\res"
 Source: "res\Keys.txt"; DestDir: "{app}\res"
+Source: "res\WinCompose.txt"; DestDir: "{app}\res"
 Source: "res\Xorg.txt"; DestDir: "{app}\res"
 Source: "res\Xcompose.txt"; DestDir: "{app}\res"
 ; This should match constants.ahk

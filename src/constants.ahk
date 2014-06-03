@@ -17,7 +17,9 @@ global C := { _:_
     ;
 
   , files : { _:_
-      , sequences : [ "res/Xorg.txt", "res/Xcompose.txt" ]
+      , sequences : [ "res/Xorg.txt"
+                    , "res/Xcompose.txt"
+                    , "res/WinCompose.txt" ]
       , keys      : [ "res/Keys.txt" ]
       , resources : "res/resources.dll" }
 

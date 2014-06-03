@@ -13,6 +13,7 @@ SRC_INC = constants.ahk ui.ahk utils.ahk
 RC = resources.rc
 PO = $(filter-out en, $(shell sed -ne '/available languages/,/}/p' < constants.ahk  | sed -ne 's/.*"\(..\)".*/\1/p'))
 
+TXT = res/Keys.txt res/Xorg.txt res/Xcompose.txt res/WinCompose.txt
 ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_empty.ico
 
 EXE = obj/WinCompose.exe
@@ -52,7 +53,7 @@ portable: update-source update-po $(DLL) $(EXE)
 	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/res
 	cp $(EXE) $(PORTABLE:.zip=)
 	cp $(PO:%=po/%.po) $(PORTABLE:.zip=)/po
-	cp res/resources.dll res/Keys.txt res/Xorg.txt res/Xcompose.txt $(PORTABLE:.zip=)/res
+	cp res/resources.dll $(TXT) $(PORTABLE:.zip=)/res
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 

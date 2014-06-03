@@ -260,15 +260,15 @@ on_app_win_contextmenu:
     {
         if (a_eventinfo > 0)
         {
-            lv_gettext(tmp, a_eventinfo, 2)
-            S.selected_char := tmp
+            lv_gettext(tmp, a_eventinfo, 1)
+            S.selected_seq := dehumanize_sequence(tmp)
         }
     }
     menu contextmenu, show
     return
 
 on_copy_char:
-    clipboard := S.selected_char
+    clipboard := get_sequence(S.selected_seq)
     return
 
 on_set_filter:
@@ -322,21 +322,20 @@ on_select_sequence:
         ; If a new line was selected, update all the information
         if (instr(errorlevel, "S", true))
         {
-            lv_gettext(char, a_eventinfo, 2)
-            if (char != S.selected_char)
+            lv_gettext(sequence, a_eventinfo, 1)
+            sequence := dehumanize_sequence(sequence)
+
+            if (sequence != S.selected_seq)
             {
-                lv_gettext(sequence, a_eventinfo, 1)
-                sequence := regexreplace(sequence, " ", "")
-                sequence := regexreplace(sequence, "space", " ")
+                S.selected_seq := sequence
+                str := get_sequence(S.selected_seq)
+
                 lv_gettext(unicode, a_eventinfo, 3)
 
-                S.selected_char := char
-                S.selected_seq := sequence
-
-                guicontrol text, ui_text_bigchar, %char%
+                guicontrol text, ui_text_bigchar, %str%
                 ; HACK: remove the non-printable character we added for sorting purposes
-                desc := " " regexreplace(unicode, ".*U", "U") " " char "\n"
-                desc .= substr("————————————————————", 1, strlen(unicode) + 4) "\n"
+                desc := " " regexreplace(unicode, ".*U", "U") " " str "\n"
+                desc .= substr("————————————————————", 1, strlen(desc) + 2) "\n"
                 desc .= _("Description:") " " get_description(sequence)
                 guicontrol text, ui_text_desc, %desc%
             }

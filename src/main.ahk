@@ -29,7 +29,6 @@ global S := { sequence: ""           ; The sequence being typed
             , disabled: false        ; Is everything disabled?
             , compose_down: false    ; Is the compose key down?
             , special_down: false    ; Was at least one special key down?
-            , selected_char: ""      ; The character currently selected in GUI
             , selected_seq: "" }     ; The sequence currently selected
 
 ; Runtime configuration, imported from the config files
@@ -469,7 +468,7 @@ read_key_file(file)
     ; a colon, i.e. the X in lines such as:
     ;  ... any stuff ... : "X"  # optional comment
     ; XXX: The result is put in either $2 or $3.
-    r_right := "^[^"":#]*:[^""#]*""(\\\\(.)|([^\\""]))"".*$"
+    r_right := "^[^"":#]*:[^""#]*""((\\\\.|[^\\""])*)"".*$"
 
     ; Regex to match a key sequence between brackets and before a colon,
     ; such as:
@@ -479,9 +478,10 @@ read_key_file(file)
     loop read, %file%
     {
         ; Retrieve destination character
-        right := regexreplace(a_loopreadline, r_right, "$2$3", ret)
+        right := regexreplace(a_loopreadline, r_right, "$1", ret)
         if (ret != 1)
             continue
+        right := regexreplace(right, "\\\\(.)", "$1")
 
         ; Retrieve sequence (in this case, only one key)
         left := regexreplace(a_loopreadline, r_left, "$1", ret)
@@ -498,15 +498,16 @@ read_sequence_file(file)
     FileEncoding UTF-8
 
     ; See read_key_file() for more explanations
-    r_right := "^[^"":#]*:[^""#]*""(\\\\(.)|([^\\""]))"".*$"
+    r_right := "^[^"":#]*:[^""#]*""((\\\\.|[^\\""])*)"".*$"
     r_left := "^[ \\t]*(([ \\t]*<[^>]*>)*)([^:]*):.*$"
 
     loop read, %file%
     {
         ; Retrieve destination character(s) -- could be an UTF-16 sequence
-        right := regexreplace(a_loopreadline, r_right, "$2$3", ret)
-        if (ret != 1)
+        right := regexreplace(a_loopreadline, r_right, "$1", ret)
+        if (ret < 1)
             continue
+        right := regexreplace(right, "\\\\(.)", "$1")
 
         ; Retrieve sequence
         left := regexreplace(a_loopreadline, r_left, "$1", ret)
@@ -577,36 +578,35 @@ fill_sequences(filter)
     for k, v in R.sequences
     {
         seq := v[1]
-        char := v[2]
+        str := v[2]
         desc := R.descriptions[k]
 
         ; Filter out if necessary
-        if (filter != char && !instr(seq, filter) && !instr(desc, filter_low))
+        if (filter != str && !instr(seq, filter) && !instr(desc, filter_low))
             continue
 
-        ; Insert into the GUI if applicable
-        sequence := regexreplace(seq, "(.)", " $1")
-        sequence := regexreplace(sequence, "  ", " space")
-        sequence := regexreplace(sequence, "^ ", "")
-        uni := "U+"
-
-        if (strlen(char) == 1)
+        ; Now insert into the GUI
+        if (strlen(str) == 1)
         {
-            code := asc(char)
             digits := 4
+            uni := "U+" num_to_hex(asc(str), digits)
         }
-        else if (strlen(char) == 2)
+        else if ((strlen(str) == 2) && ((asc(substr(str, 1, 1)) & 0xf800) == 0xd800))
         {
-            code := (asc(substr(char, 1, 1)) - 0xd800) << 10
-            code += asc(substr(char, 2, 1)) + 0x10000 - 0xdc00
+            code := (asc(substr(str, 1, 1)) - 0xd800) << 10
+            code += asc(substr(str, 2, 1)) + 0x10000 - 0xdc00
             digits := 6
             ; HACK: prepend a non-printable character to fix sorting
-            uni := chr(0x2063) . uni
+            uni := chr(0x2063) "U+" num_to_hex(code, digits)
+        }
+        else
+        {
+            if (strlen(str) > 3)
+                str := substr(str, 1, 2) "…"
+            uni := chr(0x2063) chr(0x2063)
         }
 
-        uni .= num_to_hex(code, digits)
-
-        lv_add("", sequence, char, uni)
+        lv_add("", humanize_sequence(seq), str, uni)
     }
 }
 

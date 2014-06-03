@@ -41,6 +41,24 @@ unescape(string)
     return string
 }
 
+; Humanise sequence
+humanize_sequence(string)
+{
+    string := regexreplace(string, "(.)", " $1")
+    string := regexreplace(string, "  ", " space")
+    string := regexreplace(string, "^ ", "")
+    return string
+}
+
+; Dehumanise sequence
+dehumanize_sequence(string)
+{
+    ; FIXME: this will fail if string contains "s p a c e", but do we care?
+    string := regexreplace(string, " ", "")
+    string := regexreplace(string, "space", " ")
+    return string
+}
+
 ; We need to encode our strings somehow because AutoHotKey objects have
 ; case-insensitive hash tables. How retarded is that? Also, make sure the
 ; first character is special.
