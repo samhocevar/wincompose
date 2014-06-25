@@ -2,12 +2,12 @@
 # Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-19 14:45+0200\n"
+"POT-Creation-Date: 2014-06-25 15:34+0200\n"
 "PO-Revision-Date: 2014-04-30 10:02+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
@@ -19,95 +19,95 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 1.9-dev\n"
 
-#: main.ahk:461 ui.ahk:450
+#: main.ahk:465 ui.ahk:455
 msgid "Loaded @1@ Sequences"
 msgstr "Nahráno @1@ sekvencí"
 
-#: main.ahk:461 ui.ahk:451
+#: main.ahk:465 ui.ahk:456
 msgid "Compose Key is @1@"
 msgstr ""
 
-#: constants.ahk:30
+#: constants.ahk:32
 msgid "Autodetect"
 msgstr "Automaticky detekovat"
 
-#: constants.ahk:45
+#: constants.ahk:47
 msgid "Left Alt"
 msgstr "Levý Alt"
 
-#: constants.ahk:46
+#: constants.ahk:48
 msgid "Right Alt"
 msgstr "Pravý Alt"
 
-#: constants.ahk:47
+#: constants.ahk:49
 msgid "Left Control"
 msgstr "Levý Control"
 
-#: constants.ahk:48
+#: constants.ahk:50
 msgid "Right Control"
 msgstr "Pravý Control"
 
-#: constants.ahk:49
+#: constants.ahk:51
 msgid "Left Windows"
 msgstr "Levé Windows"
 
-#: constants.ahk:50
+#: constants.ahk:52
 msgid "Right Windows"
 msgstr "Pravé Windows"
 
-#: constants.ahk:51
+#: constants.ahk:53
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:52
+#: constants.ahk:54
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:53
+#: constants.ahk:55
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:54
+#: constants.ahk:56
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:55
+#: constants.ahk:57
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:56
+#: constants.ahk:58
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:57
+#: constants.ahk:59
 msgid "Grave Accent `"
 msgstr ""
 
-#: constants.ahk:82
+#: constants.ahk:84
 msgid "500 milliseconds"
 msgstr "500 milisekund"
 
-#: constants.ahk:83
+#: constants.ahk:85
 msgid "1 second"
 msgstr "1 sekunda"
 
-#: constants.ahk:84
+#: constants.ahk:86
 msgid "2 seconds"
 msgstr "2 sekundy"
 
-#: constants.ahk:85
+#: constants.ahk:87
 msgid "3 seconds"
 msgstr "3 sekundy"
 
-#: constants.ahk:86
+#: constants.ahk:88
 msgid "5 seconds"
 msgstr "5 sekundy"
 
-#: constants.ahk:87
+#: constants.ahk:89
 msgid "10 seconds"
 msgstr "10 sekund"
 
-#: constants.ahk:88
+#: constants.ahk:90
 msgid "None"
 msgstr "Žádné"
 
@@ -116,7 +116,7 @@ msgstr "Žádné"
 msgid "Show &Sequences…"
 msgstr "Sekvence"
 
-#: ui.ahk:55 ui.ahk:453
+#: ui.ahk:55 ui.ahk:458
 msgid "Disable"
 msgstr "Vypnout"
 
@@ -189,54 +189,54 @@ msgstr "Znak"
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ui.ahk:185
+#: ui.ahk:188
 msgid "Search Filter:"
 msgstr ""
 
-#: ui.ahk:201
+#: ui.ahk:204
 msgid "Compose Key:"
 msgstr ""
 
-#: ui.ahk:212
+#: ui.ahk:215
 msgid "Delay:"
 msgstr ""
 
-#: ui.ahk:217
+#: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 
-#: ui.ahk:220
+#: ui.ahk:223
 msgid "Discard characters from invalid sequences"
 msgstr ""
 
-#: ui.ahk:223
+#: ui.ahk:226
 msgid "Beep on invalid sequences"
 msgstr ""
 
-#: ui.ahk:236
+#: ui.ahk:239
 msgid "Interface language:"
 msgstr ""
 
-#: ui.ahk:242
+#: ui.ahk:245
 msgid "Close"
 msgstr "Zavřít"
 
-#: ui.ahk:245
+#: ui.ahk:248
 msgid "Copy Character"
 msgstr ""
 
-#: ui.ahk:340
+#: ui.ahk:345
 msgid "Description:"
 msgstr "Popis:"
 
-#: ui.ahk:437
+#: ui.ahk:442
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (vypnuto)"
 
-#: ui.ahk:442
+#: ui.ahk:447
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (aktivní)"
 
-#: ui.ahk:447
+#: ui.ahk:452
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (píše)"
