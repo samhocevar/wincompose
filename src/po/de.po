@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-19 14:45+0200\n"
-"PO-Revision-Date: 2014-06-19 11:56+0200\n"
-"Last-Translator: Kevin Robert Michelson <kevinrobertmichelson@live.de>\n"
+"PO-Revision-Date: 2014-06-25 15:37+0200\n"
+"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: German "
 "<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
@@ -198,7 +198,7 @@ msgstr "Compose-Taste:"
 
 #: ui.ahk:212
 msgid "Delay:"
-msgstr "Verzögerung"
+msgstr "Verzögerung:"
 
 #: ui.ahk:217
 msgid "Fall back to case insensitive matches on invalid sequences"
