@@ -16,6 +16,11 @@ global app := "WinCompose"
 global version := "0.6.8"
 global website := "https://github.com/samhocevar/wincompose"
 
+; Configuration file location -- this needs to exist early, before
+; any calls to _() are made. It will be replaced with the proper
+; version later.
+global R := { config_file: "" }
+
 #include utils.ahk
 #include constants.ahk
 #include ui.ahk
