@@ -5,7 +5,7 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.8
+VERSION = 0.6.9
 
 ISS = installer.iss
 SRC_AHK = main.ahk

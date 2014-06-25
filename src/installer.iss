@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.6.8"
+#define VERSION "0.6.9"
 
 [Setup]
 AppName = {#NAME}
@@ -24,6 +24,7 @@ Source: "po\cs.po"; DestDir: "{app}\po"
 Source: "po\de.po"; DestDir: "{app}\po"
 Source: "po\el.po"; DestDir: "{app}\po"
 Source: "po\fr.po"; DestDir: "{app}\po"
+Source: "po\id.po"; DestDir: "{app}\po"
 
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
