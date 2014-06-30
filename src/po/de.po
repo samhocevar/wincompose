@@ -198,7 +198,7 @@ msgstr "Compose-Taste:"
 
 #: ui.ahk:215
 msgid "Delay:"
-msgstr "Verzögerung"
+msgstr "Verzögerung:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
