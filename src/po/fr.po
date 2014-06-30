@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-25 15:34+0200\n"
+"POT-Creation-Date: 2014-06-30 16:32+0200\n"
 "PO-Revision-Date: 2014-04-13 20:01+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
@@ -29,83 +29,83 @@ msgstr "Touche compose : @1@"
 msgid "Autodetect"
 msgstr "Détecter automatiquement"
 
-#: constants.ahk:47
+#: constants.ahk:48
 msgid "Left Alt"
 msgstr "Alt gauche"
 
-#: constants.ahk:48
+#: constants.ahk:49
 msgid "Right Alt"
 msgstr "Alt droit"
 
-#: constants.ahk:49
+#: constants.ahk:50
 msgid "Left Control"
 msgstr "Ctrl gauche"
 
-#: constants.ahk:50
+#: constants.ahk:51
 msgid "Right Control"
 msgstr "Ctrl droit"
 
-#: constants.ahk:51
+#: constants.ahk:52
 msgid "Left Windows"
 msgstr "Windows gauche"
 
-#: constants.ahk:52
+#: constants.ahk:53
 msgid "Right Windows"
 msgstr "Windows droit"
 
-#: constants.ahk:53
+#: constants.ahk:54
 msgid "Caps Lock"
 msgstr "Verr Maj"
 
-#: constants.ahk:54
+#: constants.ahk:55
 msgid "Num Lock"
 msgstr "Verr num"
 
-#: constants.ahk:55
+#: constants.ahk:56
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:56
+#: constants.ahk:57
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:57
+#: constants.ahk:58
 msgid "Escape"
 msgstr "Échap"
 
-#: constants.ahk:58
+#: constants.ahk:59
 msgid "Scroll Lock"
 msgstr "Arrêt défil"
 
-#: constants.ahk:59
+#: constants.ahk:60
 msgid "Grave Accent `"
 msgstr "Accent grave `"
 
-#: constants.ahk:84
+#: constants.ahk:85
 msgid "500 milliseconds"
 msgstr "500 millisecondes"
 
-#: constants.ahk:85
+#: constants.ahk:86
 msgid "1 second"
 msgstr "1 seconde"
 
-#: constants.ahk:86
+#: constants.ahk:87
 msgid "2 seconds"
 msgstr "2 secondes"
 
-#: constants.ahk:87
+#: constants.ahk:88
 msgid "3 seconds"
 msgstr "3 secondes"
 
-#: constants.ahk:88
+#: constants.ahk:89
 msgid "5 seconds"
 msgstr "5 secondes"
 
-#: constants.ahk:89
+#: constants.ahk:90
 msgid "10 seconds"
 msgstr "10 secondes"
 
-#: constants.ahk:90
+#: constants.ahk:91
 msgid "None"
 msgstr "Aucun"
 

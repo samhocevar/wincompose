@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-25 15:34+0200\n"
+"POT-Creation-Date: 2014-06-30 16:32+0200\n"
 "PO-Revision-Date: 2014-04-30 10:02+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
@@ -31,83 +31,83 @@ msgstr ""
 msgid "Autodetect"
 msgstr "Automaticky detekovat"
 
-#: constants.ahk:47
+#: constants.ahk:48
 msgid "Left Alt"
 msgstr "Levý Alt"
 
-#: constants.ahk:48
+#: constants.ahk:49
 msgid "Right Alt"
 msgstr "Pravý Alt"
 
-#: constants.ahk:49
+#: constants.ahk:50
 msgid "Left Control"
 msgstr "Levý Control"
 
-#: constants.ahk:50
+#: constants.ahk:51
 msgid "Right Control"
 msgstr "Pravý Control"
 
-#: constants.ahk:51
+#: constants.ahk:52
 msgid "Left Windows"
 msgstr "Levé Windows"
 
-#: constants.ahk:52
+#: constants.ahk:53
 msgid "Right Windows"
 msgstr "Pravé Windows"
 
-#: constants.ahk:53
+#: constants.ahk:54
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:54
+#: constants.ahk:55
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:55
+#: constants.ahk:56
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:56
+#: constants.ahk:57
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:57
+#: constants.ahk:58
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:58
+#: constants.ahk:59
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:59
+#: constants.ahk:60
 msgid "Grave Accent `"
 msgstr ""
 
-#: constants.ahk:84
+#: constants.ahk:85
 msgid "500 milliseconds"
 msgstr "500 milisekund"
 
-#: constants.ahk:85
+#: constants.ahk:86
 msgid "1 second"
 msgstr "1 sekunda"
 
-#: constants.ahk:86
+#: constants.ahk:87
 msgid "2 seconds"
 msgstr "2 sekundy"
 
-#: constants.ahk:87
+#: constants.ahk:88
 msgid "3 seconds"
 msgstr "3 sekundy"
 
-#: constants.ahk:88
+#: constants.ahk:89
 msgid "5 seconds"
 msgstr "5 sekundy"
 
-#: constants.ahk:89
+#: constants.ahk:90
 msgid "10 seconds"
 msgstr "10 sekund"
 
-#: constants.ahk:90
+#: constants.ahk:91
 msgid "None"
 msgstr "Žádné"
 
