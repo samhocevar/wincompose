@@ -34,7 +34,8 @@ global C := { _:_
                 , "de" : "Deutsch"
                 , "el" : "Ελληνικά"
                 , "en" : "English"
-                , "fr" : "Français" }
+                , "fr" : "Français"
+                , "id" : "Bahasa Indonesia" }
         ; Default language means try to autodetect
       , default : "" }
 

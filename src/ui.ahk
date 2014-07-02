@@ -155,13 +155,16 @@ create_app_win()
     gui tab, 1
 
     gui font, s11
-    gui font, s11, Courier New
-    gui font, s11, Lucida Console
-    gui font, s11, Consolas
+;    gui font, s11, Courier New
+;    gui font, s11, Lucida Console
+;    gui font, s11, Consolas
     columns := _("Sequence") "|" _("Char") "|" _("Unicode")
     gui add, listview, % "vui_listbox gon_select_sequence w" UI.app_win.listview.width " r5 altsubmit -multi", % columns
 
     gui font, s100
+    gui font, s100, Courier New
+    gui font, s100, Lucida Console
+    gui font, s100, Consolas
     gui add, text, vui_text_bigchar center +E0x200, % ""
 
     gui font, s11

@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.6.8"
+#define VERSION "0.6.10"
 
 [Setup]
 AppName = {#NAME}
@@ -11,6 +11,7 @@ SetupIconFile = "res\icon_normal.ico"
 Compression = lzma2
 SolidCompression = yes
 OutputDir = .
+ShowLanguageDialog = auto
 
 [Files]
 Source: "obj\{#NAME}.exe"; DestDir: "{app}"; Flags: replacesameversion
@@ -24,6 +25,15 @@ Source: "po\cs.po"; DestDir: "{app}\po"
 Source: "po\de.po"; DestDir: "{app}\po"
 Source: "po\el.po"; DestDir: "{app}\po"
 Source: "po\fr.po"; DestDir: "{app}\po"
+Source: "po\id.po"; DestDir: "{app}\po"
+
+[Languages]
+Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "cs"; MessagesFile: "compiler:Languages\Czech.isl"
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+Name: "el"; MessagesFile: "compiler:Languages\Greek.isl"
+Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
+; Name: "id" ; Unavailable
 
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"

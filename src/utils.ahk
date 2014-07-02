@@ -197,6 +197,32 @@ setlocale(locale)
     if (!locale)
         regread, locale, HKEY_CURRENT_USER, Control Panel\\International, localename
 
+    if (!locale)
+    {
+        ; Retrieve locale numeral value, and ask the system for its
+        ; corresponding SISO639LANGNAME (0x00000059). This might be
+        ; necessary on Windows XP where all else fails.
+        regread, localenum, HKEY_CURRENT_USER, Control Panel\\International, locale
+        tmp := "xxxxxx"
+        varsetcapacity(tmp, 6 * 2, 0)
+        n := dllcall("GetLocaleInfo", "uint", localenum
+                   , "uint", 0x59, "str", tmp, "int", 6, "int")
+        if (!n)
+        {
+            ; This too can fail on Windows XP! Try one more time with the
+            ; default system locale LOCALE_USER_DEFAULT (0x0400).
+            n := dllcall("GetLocaleInfo", "uint", 0x400
+                       , "uint", 0x59, "str", tmp, "int", 6, "int")
+        }
+
+        if (n > 0)
+            locale := tmp
+    }
+
+    ; Fall back to British English
+    if (!locale)
+        locale := "en_GB"
+
     languages := [ substr(locale, 1, 2), regexreplace(locale, "-", "_") ]
 
     FileEncoding UTF-8
