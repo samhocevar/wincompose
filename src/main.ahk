@@ -101,7 +101,7 @@ send_keystroke(char)
             sendinput % "{" R.compose_key "}"
         }
         else
-            send_raw(char)
+            send_raw_string(char)
         S.sequence := ""
     }
     else if (!S.typing)
@@ -116,7 +116,7 @@ send_keystroke(char)
                 settimer on_delay_expired, % R.reset_delay
         }
         else
-            send_raw(char)
+            send_raw_string(char)
         S.sequence := ""
     }
     else ; if (S.typing)
@@ -131,9 +131,9 @@ send_keystroke(char)
             settimer on_delay_expired, off
             ; Maybe we actually typed a valid sequence; output it
             if (has_sequence(S.sequence))
-                send_unicode(get_sequence(S.sequence))
+                send_unicode_string(get_sequence(S.sequence))
             else if (!R.opt_discard)
-                send_raw(S.sequence)
+                send_raw_string(S.sequence)
             S.typing := false
             S.sequence := ""
         }
@@ -165,7 +165,7 @@ send_keystroke(char)
                 S.sequence .= char
                 info := "Sequence: [ " S.sequence " (" string_to_hex(S.sequence) ") ] ABORTED"
                 if (!R.opt_discard)
-                    send_raw(S.sequence)
+                    send_raw_string(S.sequence)
                 S.typing := false
                 S.sequence := ""
                 if (R.opt_beep)
@@ -184,9 +184,9 @@ send_keystroke(char)
                     S.sequence .= char
 
                 info := "Sequence: [ " S.sequence " ] -> [ " get_sequence(S.sequence) " ]"
-                send_unicode(get_sequence(S.sequence))
+                send_unicode_string(get_sequence(S.sequence))
                 if (action == 3)
-                    send_raw(char)
+                    send_raw_string(char)
                 S.typing := false
                 S.sequence := ""
             }
@@ -205,31 +205,40 @@ on_delay_expired:
     return
 }
 
-send_unicode(char)
+send_unicode_string(string)
 {
     ; HACK: GTK+ applications behave differently with Unicode, and some applications
-    ; such as XChat for Windows rename their own top-level window
+    ; such as XChat for Windows rename their own top-level window, so we parse through
+    ; the names we know in order to detect a GTK+ application.
+    app_is_gtk := false
     for ignored, class in C.hacks.gdk_classes
     {
         if (winactive("ahk class " class))
         {
-            sendinput % "{ctrl down}{shift down}u" num_to_hex(asc(char), 4) "{space}{shift up}{ctrl up}"
-            return
+            app_is_gtk := true
         }
     }
 
-    ; HACK: if the character is pure ASCII, we need raw send otherwise AHK
-    ; may think it's a control character of some sort.
-    if (asc(char) < 0x7f)
+    loop, parse, string
     {
-        send {raw}%char%
-        return
+        ; HACK: if the character is pure ASCII, we need raw send otherwise AHK
+        ; may think it's a control character of some sort.
+        if (asc(a_loopfield) < 0x7f)
+        {
+            send % "{raw}" a_loopfield
+        }
+        else if (app_is_gtk)
+        {
+            sendinput % "{ctrl down}{shift down}u" num_to_hex(asc(a_loopfield), 4) "{space}{shift up}{ctrl up}"
+        }
+        else
+        {
+            send % a_loopfield
+        }
     }
-
-    send %char%
 }
 
-send_raw(string)
+send_raw_string(string)
 {
     loop, parse, string
     {
