@@ -5,7 +5,7 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.10
+VERSION = 0.6.11
 
 ISS = installer.iss
 SRC_AHK = main.ahk
@@ -19,7 +19,7 @@ ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_e
 EXE = obj/WinCompose.exe
 DLL = res/resources.dll
 INSTALLER = WinCompose-Setup-$(VERSION).exe
-PORTABLE = WinCompose-$(VERSION).zip
+PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
 ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
 AHKDIR = ./ahk

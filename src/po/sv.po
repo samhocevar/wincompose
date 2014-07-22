@@ -2,16 +2,16 @@
 # Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 16:32+0200\n"
+"POT-Creation-Date: 2014-07-22 18:58+0200\n"
 "PO-Revision-Date: 2014-07-04 16:31+0200\n"
 "Last-Translator: ExCe.EssE <exce.esse@gmail.com>\n"
-"Language-Team: Swedish "
-"<https://hosted.weblate.org/projects/wincompose/master/sv/>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
+"master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,95 +19,95 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: main.ahk:465 ui.ahk:455
+#: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "Läste in @1@ sekvenser"
 
-#: main.ahk:465 ui.ahk:456
+#: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr ""
 
-#: constants.ahk:32
+#: constants.ahk:34
 msgid "Autodetect"
 msgstr "Autodetektera"
 
-#: constants.ahk:48
+#: constants.ahk:52
 msgid "Left Alt"
 msgstr "Vänster Alt"
 
-#: constants.ahk:49
+#: constants.ahk:53
 msgid "Right Alt"
 msgstr "Höger Alt"
 
-#: constants.ahk:50
+#: constants.ahk:54
 msgid "Left Control"
 msgstr "Vänster Ctrl"
 
-#: constants.ahk:51
+#: constants.ahk:55
 msgid "Right Control"
 msgstr "Höger Ctrl"
 
-#: constants.ahk:52
+#: constants.ahk:56
 msgid "Left Windows"
 msgstr "Vänster Win"
 
-#: constants.ahk:53
+#: constants.ahk:57
 msgid "Right Windows"
 msgstr "Höger Win"
 
-#: constants.ahk:54
+#: constants.ahk:58
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:55
+#: constants.ahk:59
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:56
+#: constants.ahk:60
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:57
+#: constants.ahk:61
 msgid "Menu"
 msgstr "Meny"
 
-#: constants.ahk:58
+#: constants.ahk:62
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:59
+#: constants.ahk:63
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:60
+#: constants.ahk:64
 msgid "Grave Accent `"
 msgstr "Grav accent `"
 
-#: constants.ahk:85
+#: constants.ahk:89
 msgid "500 milliseconds"
 msgstr "500 millisekunder"
 
-#: constants.ahk:86
+#: constants.ahk:90
 msgid "1 second"
 msgstr "1 sekund"
 
-#: constants.ahk:87
+#: constants.ahk:91
 msgid "2 seconds"
 msgstr "2 sekunder"
 
-#: constants.ahk:88
+#: constants.ahk:92
 msgid "3 seconds"
 msgstr "3 sekunder"
 
-#: constants.ahk:89
+#: constants.ahk:93
 msgid "5 seconds"
 msgstr "5 sekunder"
 
-#: constants.ahk:90
+#: constants.ahk:94
 msgid "10 seconds"
 msgstr "10 sekunder"
 
-#: constants.ahk:91
+#: constants.ahk:95
 msgid "None"
 msgstr "Ingen"
 
@@ -115,7 +115,7 @@ msgstr "Ingen"
 msgid "Show &Sequences…"
 msgstr "Visa &sekvenser…"
 
-#: ui.ahk:55 ui.ahk:458
+#: ui.ahk:55 ui.ahk:459
 msgid "Disable"
 msgstr "Inaktivera"
 
@@ -223,18 +223,18 @@ msgstr "Stäng"
 msgid "Copy Character"
 msgstr "Kopiera tecken"
 
-#: ui.ahk:345
+#: ui.ahk:346
 msgid "Description:"
 msgstr "Beskrivning:"
 
-#: ui.ahk:442
+#: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (inaktiverad)"
 
-#: ui.ahk:447
+#: ui.ahk:448
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (aktiv)"
 
-#: ui.ahk:452
+#: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (skriver)"
