@@ -17,8 +17,10 @@ global C := { _:_
     ;
 
   , files : { _:_
-      , sequences : [ "res/Xorg.txt"
-                    , "res/Xcompose.txt"
+        ; List of sequences files; we first import Xcompose.txt because
+        ; we don't want it to override sequences in Xorg.txt.
+      , sequences : [ "res/Xcompose.txt"
+                    , "res/Xorg.txt"
                     , "res/WinCompose.txt" ]
       , keys      : [ "res/Keys.txt" ]
       , resources : "res/resources.dll" }
