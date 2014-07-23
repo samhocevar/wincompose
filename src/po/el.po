@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.6.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 16:32+0200\n"
+"POT-Creation-Date: 2014-07-22 18:58+0200\n"
 "PO-Revision-Date: 2014-04-29 20:45+0200\n"
 "Last-Translator: geogeo.gr <geogeo.gr@users.sourceforge.net>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
@@ -17,95 +17,95 @@ msgstr ""
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: main.ahk:465 ui.ahk:455
+#: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "Φορτώθηκαν @1@ Ακολουθίες"
 
-#: main.ahk:465 ui.ahk:456
+#: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Πλήκτρο σύνθεσης είναι το @1@"
 
-#: constants.ahk:32
+#: constants.ahk:34
 msgid "Autodetect"
 msgstr "Αυτόματος εντοπισμός"
 
-#: constants.ahk:48
+#: constants.ahk:52
 msgid "Left Alt"
 msgstr "Αριστερό Alt"
 
-#: constants.ahk:49
+#: constants.ahk:53
 msgid "Right Alt"
 msgstr "Δεξί Alt"
 
-#: constants.ahk:50
+#: constants.ahk:54
 msgid "Left Control"
 msgstr "Αριστερό Control"
 
-#: constants.ahk:51
+#: constants.ahk:55
 msgid "Right Control"
 msgstr "Δεξί Control"
 
-#: constants.ahk:52
+#: constants.ahk:56
 msgid "Left Windows"
 msgstr "Αριστερό Windows"
 
-#: constants.ahk:53
+#: constants.ahk:57
 msgid "Right Windows"
 msgstr "Δεξί Windows"
 
-#: constants.ahk:54
+#: constants.ahk:58
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:55
+#: constants.ahk:59
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:56
+#: constants.ahk:60
 msgid "Pause"
 msgstr "Παύση"
 
-#: constants.ahk:57
+#: constants.ahk:61
 msgid "Menu"
 msgstr "Μενού"
 
-#: constants.ahk:58
+#: constants.ahk:62
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:59
+#: constants.ahk:63
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:60
+#: constants.ahk:64
 msgid "Grave Accent `"
 msgstr "Βαρεία `"
 
-#: constants.ahk:85
+#: constants.ahk:89
 msgid "500 milliseconds"
 msgstr "0,5 δευτερόλεπτο"
 
-#: constants.ahk:86
+#: constants.ahk:90
 msgid "1 second"
 msgstr "1 δευτερόλεπτο"
 
-#: constants.ahk:87
+#: constants.ahk:91
 msgid "2 seconds"
 msgstr "2 δευτερόλεπτα"
 
-#: constants.ahk:88
+#: constants.ahk:92
 msgid "3 seconds"
 msgstr "3 δευτερόλεπτα"
 
-#: constants.ahk:89
+#: constants.ahk:93
 msgid "5 seconds"
 msgstr "5 δευτερόλεπτα"
 
-#: constants.ahk:90
+#: constants.ahk:94
 msgid "10 seconds"
 msgstr "10 δευτερόλεπτα"
 
-#: constants.ahk:91
+#: constants.ahk:95
 msgid "None"
 msgstr "Καμία"
 
@@ -113,7 +113,7 @@ msgstr "Καμία"
 msgid "Show &Sequences…"
 msgstr "Εμφάνιση &Ακολουθιών…"
 
-#: ui.ahk:55 ui.ahk:458
+#: ui.ahk:55 ui.ahk:459
 msgid "Disable"
 msgstr "Απενεργοποίηση"
 
@@ -223,18 +223,18 @@ msgstr "Κλείσιμο"
 msgid "Copy Character"
 msgstr "Αντιγραφή χαρακτήρα"
 
-#: ui.ahk:345
+#: ui.ahk:346
 msgid "Description:"
 msgstr "Περιγραφή:"
 
-#: ui.ahk:442
+#: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (απενεργοποιημένο)"
 
-#: ui.ahk:447
+#: ui.ahk:448
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (ενεργό)"
 
-#: ui.ahk:452
+#: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (πληκτρολόγηση)"

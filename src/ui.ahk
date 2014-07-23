@@ -328,7 +328,7 @@ on_select_sequence:
             lv_gettext(sequence, a_eventinfo, 1)
             sequence := dehumanize_sequence(sequence)
 
-            if (sequence != S.selected_seq)
+            if (!(sequence == S.selected_seq))
             {
                 S.selected_seq := sequence
                 str := get_sequence(S.selected_seq)
@@ -341,6 +341,7 @@ on_select_sequence:
 
                 ; HACK: remove the non-printable character we added for sorting purposes
                 desc := " " regexreplace(unicode, ".*U", "U") " " str "\n"
+
                 desc .= substr("————————————————————", 1, strlen(desc) + 2) "\n"
                 desc .= _("Description:") " " get_description(sequence)
                 guicontrol text, ui_text_desc, %desc%

@@ -12,10 +12,10 @@ very intuitive key combinations. For instance, **ö** is obtained using
 I wrote WinCompose because I found none of the alternatives (FreeCompose,
 CKFW, AllChars or Unichars) to be satisfying.
 
-Download latest: [WinCompose 0.6.10](https://github.com/samhocevar/wincompose/releases/download/v0.6.10/WinCompose-Setup-0.6.10.exe) (June 25, 2014)
+Download latest: [WinCompose 0.6.11](https://github.com/samhocevar/wincompose/releases/download/v0.6.11/WinCompose-Setup-0.6.11.exe) (July 22, 2014)
 -----------------------------------
 
-Portable version: [WinCompose 0.6.10 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.6.10/WinCompose-0.6.10.zip).
+Portable version: [WinCompose 0.6.11 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.6.11/WinCompose-NoInstall.0.6.11.zip).
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
@@ -78,17 +78,9 @@ As of now, WinCompose is fully translated in two languages: French and Greek. Yo
 
 <a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
 
-Bugs
-----
+Bugs and Improvements
+---------------------
 
-WinCompose is known to *sometimes* misbehave in the following situations:
- - When the Synergy keyboard sharing software is running.
- - When several keyboard layouts are installed on the computer and they are
-   changed on the fly.
-
-Most of these issues are actually bugs in the AutoHotKey software upon which
-WinCompose is based.
-
-Please report bugs to Sam Hocevar <sam@hocevar.net> or to the [GitHub issue
-tracker](https://github.com/samhocevar/wincompose/issues).
+Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>
+or to the [GitHub issue tracker](https://github.com/samhocevar/wincompose/issues).
 

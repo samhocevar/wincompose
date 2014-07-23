@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.6.10"
+#define VERSION "0.6.11"
 
 [Setup]
 AppName = {#NAME}
@@ -26,6 +26,8 @@ Source: "po\de.po"; DestDir: "{app}\po"
 Source: "po\el.po"; DestDir: "{app}\po"
 Source: "po\fr.po"; DestDir: "{app}\po"
 Source: "po\id.po"; DestDir: "{app}\po"
+Source: "po\nl.po"; DestDir: "{app}\po"
+Source: "po\sv.po"; DestDir: "{app}\po"
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
@@ -34,6 +36,8 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 Name: "el"; MessagesFile: "compiler:Languages\Greek.isl"
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 ; Name: "id" ; Unavailable
+Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
+; Name: "sv" ; Unavailable
 
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"

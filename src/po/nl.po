@@ -2,16 +2,16 @@
 # Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-19 15:25+0200\n"
+"POT-Creation-Date: 2014-07-22 18:58+0200\n"
 "PO-Revision-Date: 2014-07-02 09:46+0200\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch "
-"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
+"nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,95 +19,95 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: main.ahk:461 ui.ahk:450
+#: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ sequentie(s) geladen"
 
-#: main.ahk:461 ui.ahk:451
+#: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Compositietoets is @1@"
 
-#: constants.ahk:30
+#: constants.ahk:34
 msgid "Autodetect"
 msgstr "Automatische detectie"
 
-#: constants.ahk:45
+#: constants.ahk:52
 msgid "Left Alt"
 msgstr "Linker Alt-toets"
 
-#: constants.ahk:46
+#: constants.ahk:53
 msgid "Right Alt"
 msgstr "Rechter Alt-toets"
 
-#: constants.ahk:47
+#: constants.ahk:54
 msgid "Left Control"
 msgstr "Linker Ctrl-toets"
 
-#: constants.ahk:48
+#: constants.ahk:55
 msgid "Right Control"
 msgstr "Rechter Ctrl-toets"
 
-#: constants.ahk:49
+#: constants.ahk:56
 msgid "Left Windows"
 msgstr "Linker Windows-toets"
 
-#: constants.ahk:50
+#: constants.ahk:57
 msgid "Right Windows"
 msgstr "Rechter Windows-toets"
 
-#: constants.ahk:51
+#: constants.ahk:58
 msgid "Caps Lock"
 msgstr "Caps Lock-toets"
 
-#: constants.ahk:52
+#: constants.ahk:59
 msgid "Num Lock"
 msgstr "Num Lock-toets"
 
-#: constants.ahk:53
+#: constants.ahk:60
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:54
+#: constants.ahk:61
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:55
+#: constants.ahk:62
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:56
+#: constants.ahk:63
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:57
+#: constants.ahk:64
 msgid "Grave Accent `"
 msgstr "Accent Grave `"
 
-#: constants.ahk:82
+#: constants.ahk:89
 msgid "500 milliseconds"
 msgstr "500 milliseconden"
 
-#: constants.ahk:83
+#: constants.ahk:90
 msgid "1 second"
 msgstr "1 seconde"
 
-#: constants.ahk:84
+#: constants.ahk:91
 msgid "2 seconds"
 msgstr "2 seconden"
 
-#: constants.ahk:85
+#: constants.ahk:92
 msgid "3 seconds"
 msgstr "3 seconden"
 
-#: constants.ahk:86
+#: constants.ahk:93
 msgid "5 seconds"
 msgstr "5 seconden"
 
-#: constants.ahk:87
+#: constants.ahk:94
 msgid "10 seconds"
 msgstr "10 seconden"
 
-#: constants.ahk:88
+#: constants.ahk:95
 msgid "None"
 msgstr "Geen"
 
@@ -115,7 +115,7 @@ msgstr "Geen"
 msgid "Show &Sequences…"
 msgstr "Toon &sequenties…"
 
-#: ui.ahk:55 ui.ahk:453
+#: ui.ahk:55 ui.ahk:459
 msgid "Disable"
 msgstr "Uitschakelen"
 
@@ -189,56 +189,56 @@ msgstr "Karakter"
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ui.ahk:185
+#: ui.ahk:188
 msgid "Search Filter:"
 msgstr "Zoek filter:"
 
-#: ui.ahk:201
+#: ui.ahk:204
 msgid "Compose Key:"
 msgstr "Compositietoets:"
 
-#: ui.ahk:212
+#: ui.ahk:215
 msgid "Delay:"
 msgstr "Vertraging:"
 
-#: ui.ahk:217
+#: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 "Noodoplossing bij hoofdletterongevoelige overeenkomsten voor ongeldige "
 "sequenties"
 
-#: ui.ahk:220
+#: ui.ahk:223
 msgid "Discard characters from invalid sequences"
 msgstr "Karakters uit ongeldige sequenties verwijderen"
 
-#: ui.ahk:223
+#: ui.ahk:226
 msgid "Beep on invalid sequences"
 msgstr "Auditief signaal bij ongeldige sequenties"
 
-#: ui.ahk:236
+#: ui.ahk:239
 msgid "Interface language:"
 msgstr "Interface taal:"
 
-#: ui.ahk:242
+#: ui.ahk:245
 msgid "Close"
 msgstr "Sluiten"
 
-#: ui.ahk:245
+#: ui.ahk:248
 msgid "Copy Character"
 msgstr "Karakter kopiëren"
 
-#: ui.ahk:340
+#: ui.ahk:346
 msgid "Description:"
 msgstr "Beschrijving:"
 
-#: ui.ahk:437
+#: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (inactief)"
 
-#: ui.ahk:442
+#: ui.ahk:448
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (actief)"
 
-#: ui.ahk:447
+#: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (aan het typen)"

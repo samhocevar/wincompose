@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 16:32+0200\n"
+"POT-Creation-Date: 2014-07-22 18:58+0200\n"
 "PO-Revision-Date: 2014-06-19 11:56+0200\n"
 "Last-Translator: Kevin Robert Michelson <kevinrobertmichelson@live.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
@@ -19,95 +19,95 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: main.ahk:465 ui.ahk:455
+#: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr ""
 
-#: main.ahk:465 ui.ahk:456
+#: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Compose-Taste ist @1@"
 
-#: constants.ahk:32
+#: constants.ahk:34
 msgid "Autodetect"
 msgstr "automatische Erkennung"
 
-#: constants.ahk:48
+#: constants.ahk:52
 msgid "Left Alt"
 msgstr "linke Alt-Taste"
 
-#: constants.ahk:49
+#: constants.ahk:53
 msgid "Right Alt"
 msgstr "rechte Alt-Taste"
 
-#: constants.ahk:50
+#: constants.ahk:54
 msgid "Left Control"
 msgstr "linke Strg-Taste"
 
-#: constants.ahk:51
+#: constants.ahk:55
 msgid "Right Control"
 msgstr "rechte Strg-Taste"
 
-#: constants.ahk:52
+#: constants.ahk:56
 msgid "Left Windows"
 msgstr "linke Windows-Taste"
 
-#: constants.ahk:53
+#: constants.ahk:57
 msgid "Right Windows"
 msgstr "rechte Windows-Taste"
 
-#: constants.ahk:54
+#: constants.ahk:58
 msgid "Caps Lock"
 msgstr "Feststelltaste"
 
-#: constants.ahk:55
+#: constants.ahk:59
 msgid "Num Lock"
 msgstr "Num-Taste"
 
-#: constants.ahk:56
+#: constants.ahk:60
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:57
+#: constants.ahk:61
 msgid "Menu"
 msgstr "Menü"
 
-#: constants.ahk:58
+#: constants.ahk:62
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:59
+#: constants.ahk:63
 msgid "Scroll Lock"
 msgstr "Rollen"
 
-#: constants.ahk:60
+#: constants.ahk:64
 msgid "Grave Accent `"
 msgstr "Gravis `"
 
-#: constants.ahk:85
+#: constants.ahk:89
 msgid "500 milliseconds"
 msgstr "500 Millisekunden"
 
-#: constants.ahk:86
+#: constants.ahk:90
 msgid "1 second"
 msgstr "1 Sekunde"
 
-#: constants.ahk:87
+#: constants.ahk:91
 msgid "2 seconds"
 msgstr "2 Sekunden"
 
-#: constants.ahk:88
+#: constants.ahk:92
 msgid "3 seconds"
 msgstr "3 Sekunden"
 
-#: constants.ahk:89
+#: constants.ahk:93
 msgid "5 seconds"
 msgstr "5 Sekunden"
 
-#: constants.ahk:90
+#: constants.ahk:94
 msgid "10 seconds"
 msgstr "10 Sekunden"
 
-#: constants.ahk:91
+#: constants.ahk:95
 msgid "None"
 msgstr "Keine"
 
@@ -116,7 +116,7 @@ msgstr "Keine"
 msgid "Show &Sequences…"
 msgstr "Sequenzen…"
 
-#: ui.ahk:55 ui.ahk:458
+#: ui.ahk:55 ui.ahk:459
 msgid "Disable"
 msgstr "Deaktivieren"
 
@@ -224,19 +224,19 @@ msgstr "Schließen"
 msgid "Copy Character"
 msgstr "Zeichen kopieren"
 
-#: ui.ahk:345
+#: ui.ahk:346
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: ui.ahk:442
+#: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (deaktiviert)"
 
-#: ui.ahk:447
+#: ui.ahk:448
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (aktiv)"
 
-#: ui.ahk:452
+#: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (eingeben)"
 
