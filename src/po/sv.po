@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 18:58+0200\n"
-"PO-Revision-Date: 2014-07-04 16:31+0200\n"
+"PO-Revision-Date: 2014-07-25 20:20+0200\n"
 "Last-Translator: ExCe.EssE <exce.esse@gmail.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
-"master/sv/>\n"
+"Language-Team: Swedish "
+"<https://hosted.weblate.org/projects/wincompose/master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr "Läste in @1@ sekvenser"
 
 #: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
-msgstr ""
+msgstr "@1@ är hopfogningstangent"
 
 #: constants.ahk:34
 msgid "Autodetect"
@@ -121,7 +121,7 @@ msgstr "Inaktivera"
 
 #: ui.ahk:56
 msgid "Restart"
-msgstr ""
+msgstr "Starta om"
 
 #: ui.ahk:60
 msgid "&History"
@@ -129,7 +129,7 @@ msgstr "&Historik"
 
 #: ui.ahk:61
 msgid "Hotkey &List"
-msgstr ""
+msgstr "Snabbkommando-&lista"
 
 #: ui.ahk:64
 msgid "&Options…"
@@ -149,15 +149,17 @@ msgstr "&Avsluta"
 
 #: ui.ahk:75
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr ""
+msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
 #: ui.ahk:130
 msgid "\n"
 msgstr ""
+"\n"
+"\n"
 
 #: ui.ahk:131
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
@@ -165,7 +167,7 @@ msgstr "av Sam Hocevar <sam@hocevar.net>\n"
 
 #: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr ""
+msgstr "körs på AHK v@AHK_VERSION@\n"
 
 #: ui.ahk:152
 msgid "Sequences"
@@ -181,7 +183,7 @@ msgstr "Sekvens"
 
 #: ui.ahk:161
 msgid "Char"
-msgstr ""
+msgstr "Teckn"
 
 #: ui.ahk:161
 msgid "Unicode"
@@ -193,7 +195,7 @@ msgstr "Sökfilter:"
 
 #: ui.ahk:204
 msgid "Compose Key:"
-msgstr ""
+msgstr "Hopfogningstangent:"
 
 #: ui.ahk:215
 msgid "Delay:"
@@ -201,11 +203,11 @@ msgstr "Fördröjning:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr ""
+msgstr "Fall tillbaka på icke-skriftlägeskänsliga träffar på ogiltiga sekvenser"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr ""
+msgstr "Förkasta tecken från ogiltiga sekvenser"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
