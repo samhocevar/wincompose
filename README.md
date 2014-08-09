@@ -74,7 +74,7 @@ WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kb
 WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>&</kbd> will
 immediately type **&** because there is currently no rule starting with <kbd>&</kbd>.
 
-As of now, WinCompose is fully translated in two languages: French and Greek. You can help us translate it to more languages using the Weblate project:
+As of now, WinCompose is fully translated in Dutch, French, Greek, Russian and Swedish, and partially translated in Czech, German and Indonesian. You can help us translate it to more languages using the Weblate project:
 
 <a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
 
