@@ -15,7 +15,7 @@ CKFW, AllChars or Unichars) to be satisfying.
 Download latest: [WinCompose 0.6.11](https://github.com/samhocevar/wincompose/releases/download/v0.6.11/WinCompose-Setup-0.6.11.exe) (July 22, 2014)
 -----------------------------------
 
-Portable version: [WinCompose 0.6.11 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.6.11/WinCompose-NoInstall.0.6.11.zip).
+Portable version: [WinCompose 0.6.11 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.6.11/WinCompose-NoInstall-0.6.11.zip).
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
