@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-08-17 22:50+0200\n"
+"PO-Revision-Date: 2014-08-17 23:03+0200\n"
 "Last-Translator: Fanael Linithien <Fanael@users.noreply.github.com>\n"
 "Language-Team: Polish "
 "<https://hosted.weblate.org/projects/wincompose/master/pl/>\n"
@@ -114,7 +114,7 @@ msgstr "Brak"
 
 #: ui.ahk:54 ui.ahk:68
 msgid "Show &Sequences…"
-msgstr "Wyświelt &sekwencje…"
+msgstr "Pokaż &sekwencje…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
@@ -154,7 +154,7 @@ msgstr "@APP_NAME@"
 
 #: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr "@APP_NAME@ v@APP_VERSION@\n"
+msgstr "@APP_NAME@ wersja @APP_VERSION@\n"
 
 #: ui.ahk:130
 msgid "\n"
@@ -166,7 +166,7 @@ msgstr "napisał Sam Hocevar <sam@hocevar.net>\n"
 
 #: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr "uruchomiono na AHK v@AHK_VERSION@\n"
+msgstr "korzysta z AHK v@AHK_VERSION@\n"
 
 #: ui.ahk:152
 msgid "Sequences"
@@ -210,7 +210,7 @@ msgstr "Ignoruj znaki z niepoprawnych sekwencji"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr "Używaj sygnału dźwiękowego przy niepoprawnych sekwencjach"
+msgstr "Używaj sygnału dźwiękowego dla niepoprawnych sekwencji"
 
 #: ui.ahk:239
 msgid "Interface language:"
