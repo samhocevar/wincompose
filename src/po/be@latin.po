@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-08-22 03:45+0200\n"
+"PO-Revision-Date: 2014-08-22 03:57+0200\n"
 "Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
 "Language-Team: Belarusian (latin) "
 "<https://hosted.weblate.org/projects/wincompose/master/be%40latin/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
-msgstr "⇒ @1@ kambinacyj"
+msgstr "@1@ kambinacyj"
 
 #: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
@@ -202,11 +202,11 @@ msgstr "Zatrymka:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr "Pry niadziejsnuch paśliadoŭnaściah mianiać rahistar litaraŭ"
+msgstr "Pry niadziejsnych paśliadoŭnaściah mianiać rahistar litaraŭ"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr "Ignarawać symbali ź niaprawiĺnych paśliadoŭnaściau"
+msgstr "Ignarawać symbali ź niaprawiĺnych paśliadoŭnaściaŭ"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
