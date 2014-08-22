@@ -26,216 +26,216 @@ msgstr "⇒ @1@ kambinacyj"
 
 #: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
-msgstr ""
+msgstr "Klawiša — @1@"
 
 #: constants.ahk:34
 msgid "Autodetect"
-msgstr ""
+msgstr "Aŭtawyjaŭlieńnie"
 
 #: constants.ahk:52
 msgid "Left Alt"
-msgstr ""
+msgstr "Liewy Alt"
 
 #: constants.ahk:53
 msgid "Right Alt"
-msgstr ""
+msgstr "Prawy Alt"
 
 #: constants.ahk:54
 msgid "Left Control"
-msgstr ""
+msgstr "Liewy Kontrol"
 
 #: constants.ahk:55
 msgid "Right Control"
-msgstr ""
+msgstr "Prawy Kontrol"
 
 #: constants.ahk:56
 msgid "Left Windows"
-msgstr ""
+msgstr "Liewy Windoŭs"
 
 #: constants.ahk:57
 msgid "Right Windows"
-msgstr ""
+msgstr "Prawy Windoŭs"
 
 #: constants.ahk:58
 msgid "Caps Lock"
-msgstr ""
+msgstr "«Caps Lock»"
 
 #: constants.ahk:59
 msgid "Num Lock"
-msgstr ""
+msgstr "«Num Lock»"
 
 #: constants.ahk:60
 msgid "Pause"
-msgstr ""
+msgstr "Paŭse"
 
 #: constants.ahk:61
 msgid "Menu"
-msgstr ""
+msgstr "Meniu"
 
 #: constants.ahk:62
 msgid "Escape"
-msgstr ""
+msgstr "«Escape»"
 
 #: constants.ahk:63
 msgid "Scroll Lock"
-msgstr ""
+msgstr "«Scroll Lock»"
 
 #: constants.ahk:64
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Grawis `"
 
 #: constants.ahk:89
 msgid "500 milliseconds"
-msgstr ""
+msgstr "½ siakundy"
 
 #: constants.ahk:90
 msgid "1 second"
-msgstr ""
+msgstr "1 siakunda"
 
 #: constants.ahk:91
 msgid "2 seconds"
-msgstr ""
+msgstr "2 siakundy"
 
 #: constants.ahk:92
 msgid "3 seconds"
-msgstr ""
+msgstr "3 siakundy"
 
 #: constants.ahk:93
 msgid "5 seconds"
-msgstr ""
+msgstr "5 siakundaŭ"
 
 #: constants.ahk:94
 msgid "10 seconds"
-msgstr ""
+msgstr "10 siakund"
 
 #: constants.ahk:95
 msgid "None"
-msgstr ""
+msgstr "Niama"
 
 #: ui.ahk:54 ui.ahk:68
 msgid "Show &Sequences…"
-msgstr ""
+msgstr "Pakazać &paśliadoŭnaści…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
-msgstr ""
+msgstr "Wymknuć"
 
 #: ui.ahk:56
 msgid "Restart"
-msgstr ""
+msgstr "Pierazapusk"
 
 #: ui.ahk:60
 msgid "&History"
-msgstr ""
+msgstr "&Historyja"
 
 #: ui.ahk:61
 msgid "Hotkey &List"
-msgstr ""
+msgstr "&Śpis haračych klawiš"
 
 #: ui.ahk:64
 msgid "&Options…"
-msgstr ""
+msgstr "&Opcyji…"
 
 #: ui.ahk:65
 msgid "&About"
-msgstr ""
+msgstr "P&ra pragramu"
 
 #: ui.ahk:66
 msgid "&Visit Website"
-msgstr ""
+msgstr "&Nawiedać websajt"
 
 #: ui.ahk:67
 msgid "E&xit"
-msgstr ""
+msgstr "&Wychad"
 
 #: ui.ahk:75
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr ""
+msgstr "@APP_NAME@ wersyji @APP_VERSION@\n"
 
 #: ui.ahk:130
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: ui.ahk:131
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
-msgstr ""
+msgstr "napisaŭ Sam Hocevar <sam@hocevar.net>\n"
 
 #: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr ""
+msgstr "wykonwajecca na AHK wer. @AHK_VERSION@\n"
 
 #: ui.ahk:152
 msgid "Sequences"
-msgstr ""
+msgstr "Paśliadoŭnaści"
 
 #: ui.ahk:152
 msgid "Options"
-msgstr ""
+msgstr "Opcyji"
 
 #: ui.ahk:161
 msgid "Sequence"
-msgstr ""
+msgstr "Kambinacyja"
 
 #: ui.ahk:161
 msgid "Char"
-msgstr ""
+msgstr "Symbal"
 
 #: ui.ahk:161
 msgid "Unicode"
-msgstr ""
+msgstr "Unikod"
 
 #: ui.ahk:188
 msgid "Search Filter:"
-msgstr ""
+msgstr "Fiĺtar pošuku:"
 
 #: ui.ahk:204
 msgid "Compose Key:"
-msgstr ""
+msgstr "Kampanawaĺnaja klawiša:"
 
 #: ui.ahk:215
 msgid "Delay:"
-msgstr ""
+msgstr "Zatrymka:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr ""
+msgstr "Pry niadziejsnuch paśliadoŭnaściah mianiać rahistar litaraŭ"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr ""
+msgstr "Ignarawać symbali ź niaprawiĺnych paśliadoŭnaściau"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr ""
+msgstr "Sygnalizawaci pra niaprawiĺnyja paśliadoŭnaści"
 
 #: ui.ahk:239
 msgid "Interface language:"
-msgstr ""
+msgstr "Mowa intarfejsu:"
 
 #: ui.ahk:245
 msgid "Close"
-msgstr ""
+msgstr "Začynić"
 
 #: ui.ahk:248
 msgid "Copy Character"
-msgstr ""
+msgstr "Kapijawaci symbal"
 
 #: ui.ahk:346
 msgid "Description:"
-msgstr ""
+msgstr "Apisańnie:"
 
 #: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
-msgstr ""
+msgstr "@APP_NAME@ (wymknieny)"
 
 #: ui.ahk:448
 msgid "@APP_NAME@ (active)"
-msgstr ""
+msgstr "@APP_NAME@ (uwamkniony)"
 
 #: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
-msgstr ""
+msgstr "@APP_NAME@ (nabiraje)"
