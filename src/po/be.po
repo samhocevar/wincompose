@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-08-22 01:53+0200\n"
-"Last-Translator: Kastuś Kaszenia <KKaszenia@tut.by>\n"
+"PO-Revision-Date: 2014-08-22 03:35+0200\n"
+"Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
 "Language-Team: Belarusian "
 "<https://hosted.weblate.org/projects/wincompose/master/be/>\n"
 "Language: be\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
-msgstr "Загружана @1@ пасьлядоўнасьцей"
+msgstr "@1@ камбінацый"
 
 #: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
-msgstr "Капанавальная клавіша — @1@"
+msgstr "Клавіша — @1@"
 
 #: constants.ahk:34
 msgid "Autodetect"
@@ -166,7 +166,7 @@ msgstr "напісаў Sam Hocevar <sam@hocevar.net>\n"
 
 #: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr "выконваецца на AHK v@AHK_VERSION@\n"
+msgstr "выконваецца на AHK вэр. @AHK_VERSION@\n"
 
 #: ui.ahk:152
 msgid "Sequences"
@@ -206,15 +206,15 @@ msgstr "Пры нядзейсных пасьлядоўнасьцях мяняц�
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr "Іґнараваць сымбалі з неправільных пасьлядоўнасьцяў"
+msgstr "Іґнараваць сымбалі зь няправільных пасьлядоўнасьцяў"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr "Сыґналізаваць пра няправільныя пасьлядоўнасьці"
+msgstr "Сыґналізаваці пра няправільныя пасьлядоўнасьці"
 
 #: ui.ahk:239
 msgid "Interface language:"
-msgstr "Мова їнтарфэйсу:"
+msgstr "Мова інтарфэйсу:"
 
 #: ui.ahk:245
 msgid "Close"
