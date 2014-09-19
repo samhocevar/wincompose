@@ -8,231 +8,233 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-07-22 19:00+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2014-09-19 13:14+0200\n"
+"Last-Translator: Nikolaj Holmquist Pedersen <nikolajholmquist@gmail.com>\n"
+"Language-Team: Danish "
+"<https://hosted.weblate.org/projects/wincompose/master/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.10-dev\n"
 
 #: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
-msgstr ""
+msgstr "Indlæste @1@ sekvenser"
 
 #: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
-msgstr ""
+msgstr "Compose-tast er @1@"
 
 #: constants.ahk:34
 msgid "Autodetect"
-msgstr ""
+msgstr "Autodetektering"
 
 #: constants.ahk:52
 msgid "Left Alt"
-msgstr ""
+msgstr "Venstre Alt"
 
 #: constants.ahk:53
 msgid "Right Alt"
-msgstr ""
+msgstr "Alt Gr"
 
 #: constants.ahk:54
 msgid "Left Control"
-msgstr ""
+msgstr "Venstre Control"
 
 #: constants.ahk:55
 msgid "Right Control"
-msgstr ""
+msgstr "Højre Control"
 
 #: constants.ahk:56
 msgid "Left Windows"
-msgstr ""
+msgstr "Venstre Windows"
 
 #: constants.ahk:57
 msgid "Right Windows"
-msgstr ""
+msgstr "Højre Windows"
 
 #: constants.ahk:58
 msgid "Caps Lock"
-msgstr ""
+msgstr "Caps Lock"
 
 #: constants.ahk:59
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock"
 
 #: constants.ahk:60
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #: constants.ahk:61
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: constants.ahk:62
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 #: constants.ahk:63
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #: constants.ahk:64
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Accent grave"
 
 #: constants.ahk:89
 msgid "500 milliseconds"
-msgstr ""
+msgstr "500 millisekunder"
 
 #: constants.ahk:90
 msgid "1 second"
-msgstr ""
+msgstr "1 sekund"
 
 #: constants.ahk:91
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekunder"
 
 #: constants.ahk:92
 msgid "3 seconds"
-msgstr ""
+msgstr "3 sekunder"
 
 #: constants.ahk:93
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekunder"
 
 #: constants.ahk:94
 msgid "10 seconds"
-msgstr ""
+msgstr "10 sekunder"
 
 #: constants.ahk:95
 msgid "None"
-msgstr ""
+msgstr "Intet"
 
 #: ui.ahk:54 ui.ahk:68
 msgid "Show &Sequences…"
-msgstr ""
+msgstr "Vis &sekvenser…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
-msgstr ""
+msgstr "Deaktiver"
 
 #: ui.ahk:56
 msgid "Restart"
-msgstr ""
+msgstr "Genstart"
 
 #: ui.ahk:60
 msgid "&History"
-msgstr ""
+msgstr "&Historik"
 
 #: ui.ahk:61
 msgid "Hotkey &List"
-msgstr ""
+msgstr "&Liste over genvejstaster"
 
 #: ui.ahk:64
 msgid "&Options…"
-msgstr ""
+msgstr "&Indstillinger…"
 
 #: ui.ahk:65
 msgid "&About"
-msgstr ""
+msgstr "&Om"
 
 #: ui.ahk:66
 msgid "&Visit Website"
-msgstr ""
+msgstr "&Besøg webside"
 
 #: ui.ahk:67
 msgid "E&xit"
-msgstr ""
+msgstr "Af&slut"
 
 #: ui.ahk:75
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr ""
+msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
 #: ui.ahk:130
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: ui.ahk:131
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
-msgstr ""
+msgstr "af Sam Hocevar <sam@hocevar.net>↵\n"
 
 #: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr ""
+msgstr "Kører på AHK v@AHK_VERSION@\n"
 
 #: ui.ahk:152
 msgid "Sequences"
-msgstr ""
+msgstr "Sekvenser"
 
 #: ui.ahk:152
 msgid "Options"
-msgstr ""
+msgstr "Indstillinger"
 
 #: ui.ahk:161
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvens"
 
 #: ui.ahk:161
 msgid "Char"
-msgstr ""
+msgstr "Tegn"
 
 #: ui.ahk:161
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: ui.ahk:188
 msgid "Search Filter:"
-msgstr ""
+msgstr "Søgefilter:"
 
 #: ui.ahk:204
 msgid "Compose Key:"
-msgstr ""
+msgstr "Compose-tast:"
 
 #: ui.ahk:215
 msgid "Delay:"
-msgstr ""
+msgstr "Forsinkning:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr ""
+msgstr "Ingen forskel på små og store bogstaver ved mangel på resultat"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr ""
+msgstr "Kasser tegn fra forkerte sekvenser"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr ""
+msgstr "Bip ved forkerte sekvenser"
 
 #: ui.ahk:239
 msgid "Interface language:"
-msgstr ""
+msgstr "Sprog i programmet:"
 
 #: ui.ahk:245
 msgid "Close"
-msgstr ""
+msgstr "Luk"
 
 #: ui.ahk:248
 msgid "Copy Character"
-msgstr ""
+msgstr "Kopier tegn"
 
 #: ui.ahk:346
 msgid "Description:"
-msgstr ""
+msgstr "Beskrivelse:"
 
 #: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
-msgstr ""
+msgstr "@APP_NAME@ (deaktiveret)"
 
 #: ui.ahk:448
 msgid "@APP_NAME@ (active)"
-msgstr ""
+msgstr "@APP_NAME@ (aktiv)"
 
 #: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
-msgstr ""
+msgstr "@APP_NAME@ (skriver)"
