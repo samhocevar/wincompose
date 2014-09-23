@@ -2,4 +2,5 @@
 
 # Custom additions for WinCompose
 <Multi_key> <t> <f>			: "(ﾉಥ益ಥ）ﾉ﻿ ┻━┻"	# Flip table like a boss.
-
+<Multi_key> <P> <minus>		: "₽"	# Russian ruble sign
+<Multi_key> <p> <minus>		: "₽"	# Russian ruble sign
