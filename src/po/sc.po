@@ -8,230 +8,235 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-07-22 19:00+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2014-11-10 15:01+0200\n"
+"Last-Translator: Lu Ca <lmelonimamo@yahoo.it>\n"
+"Language-Team: Sardinian "
+"<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.0\n"
 
 #: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
-msgstr ""
+msgstr "@1@ fileras carrigadas"
 
 #: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
-msgstr ""
+msgstr "Sa tecla Compose est @1@"
 
 #: constants.ahk:34
 msgid "Autodetect"
-msgstr ""
+msgstr "Releva automaticamente"
 
 #: constants.ahk:52
 msgid "Left Alt"
-msgstr ""
+msgstr "Alt de manca"
 
 #: constants.ahk:53
 msgid "Right Alt"
-msgstr ""
+msgstr "Alt de destra"
 
 #: constants.ahk:54
 msgid "Left Control"
-msgstr ""
+msgstr "Ctrl de manca"
 
 #: constants.ahk:55
 msgid "Right Control"
-msgstr ""
+msgstr "Ctrl de destra"
 
 #: constants.ahk:56
 msgid "Left Windows"
-msgstr ""
+msgstr "Win de manca"
 
 #: constants.ahk:57
 msgid "Right Windows"
-msgstr ""
+msgstr "Win de destra"
 
 #: constants.ahk:58
 msgid "Caps Lock"
-msgstr ""
+msgstr "Bloc Maiusc"
 
 #: constants.ahk:59
 msgid "Num Lock"
-msgstr ""
+msgstr "Bloc Num"
 
 #: constants.ahk:60
 msgid "Pause"
-msgstr ""
+msgstr "Pausa"
 
 #: constants.ahk:61
 msgid "Menu"
-msgstr ""
+msgstr "Menù"
 
 #: constants.ahk:62
 msgid "Escape"
-msgstr ""
+msgstr "Esc"
 
 #: constants.ahk:63
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Bloc Scorr"
 
 #: constants.ahk:64
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Atzentu grave"
 
 #: constants.ahk:89
 msgid "500 milliseconds"
-msgstr ""
+msgstr "500 ms"
 
 #: constants.ahk:90
 msgid "1 second"
-msgstr ""
+msgstr "1 s"
 
 #: constants.ahk:91
 msgid "2 seconds"
-msgstr ""
+msgstr "2 s"
 
 #: constants.ahk:92
 msgid "3 seconds"
-msgstr ""
+msgstr "3 s"
 
 #: constants.ahk:93
 msgid "5 seconds"
-msgstr ""
+msgstr "5 s"
 
 #: constants.ahk:94
 msgid "10 seconds"
-msgstr ""
+msgstr "10 s"
 
 #: constants.ahk:95
 msgid "None"
-msgstr ""
+msgstr "Infinita"
 
 #: ui.ahk:54 ui.ahk:68
 msgid "Show &Sequences…"
-msgstr ""
+msgstr "Ammustra &Filaduras…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
-msgstr ""
+msgstr "Disabìlita"
 
 #: ui.ahk:56
 msgid "Restart"
-msgstr ""
+msgstr "Torra a aviare"
 
 #: ui.ahk:60
 msgid "&History"
-msgstr ""
+msgstr "&Istòria"
 
 #: ui.ahk:61
 msgid "Hotkey &List"
-msgstr ""
+msgstr "Teclas lestras &Lista"
 
 #: ui.ahk:64
 msgid "&Options…"
-msgstr ""
+msgstr "&Optziones…"
 
 #: ui.ahk:65
 msgid "&About"
-msgstr ""
+msgstr "&Informatziones"
 
 #: ui.ahk:66
 msgid "&Visit Website"
-msgstr ""
+msgstr "&Bìsita su giassu/situ"
 
 #: ui.ahk:67
 msgid "E&xit"
-msgstr ""
+msgstr "&Essi"
 
 #: ui.ahk:75
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr ""
+msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
 #: ui.ahk:130
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: ui.ahk:131
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
-msgstr ""
+msgstr "de Sam Hocevar <sam@hocevar.net>\n"
 
 #: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr ""
+msgstr "esecutada in AHK v@AHK_VERSION@\n"
 
 #: ui.ahk:152
 msgid "Sequences"
-msgstr ""
+msgstr "Filaduras"
 
 #: ui.ahk:152
 msgid "Options"
-msgstr ""
+msgstr "Optziones"
 
 #: ui.ahk:161
 msgid "Sequence"
-msgstr ""
+msgstr "Filadura"
 
 #: ui.ahk:161
 msgid "Char"
-msgstr ""
+msgstr "Caràtere"
 
 #: ui.ahk:161
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: ui.ahk:188
 msgid "Search Filter:"
-msgstr ""
+msgstr "Chirca filtrada:"
 
 #: ui.ahk:204
 msgid "Compose Key:"
-msgstr ""
+msgstr "Tecla Compose:"
 
 #: ui.ahk:215
 msgid "Delay:"
-msgstr ""
+msgstr "Durada ativatzione:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
+"Gesti sas filaduras non vàlidas sena distinghimentu intre maiùscolas e "
+"minùscolas"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr ""
+msgstr "Irbòlica sos caràteres de sas filaduras non vàlidas"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr ""
+msgstr "Sona si una filadura no est vàlida"
 
 #: ui.ahk:239
 msgid "Interface language:"
-msgstr ""
+msgstr "Limba de s'interfàtzia:"
 
 #: ui.ahk:245
 msgid "Close"
-msgstr ""
+msgstr "Serra"
 
 #: ui.ahk:248
 msgid "Copy Character"
-msgstr ""
+msgstr "Copia caràtere"
 
 #: ui.ahk:346
 msgid "Description:"
-msgstr ""
+msgstr "Descritzione:"
 
 #: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
-msgstr ""
+msgstr "@APP_NAME@ (disabilitada)"
 
 #: ui.ahk:448
 msgid "@APP_NAME@ (active)"
-msgstr ""
+msgstr "@APP_NAME@ (ativa)"
 
 #: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
-msgstr ""
+msgstr "@APP_NAME@ (ses iscriende)"
