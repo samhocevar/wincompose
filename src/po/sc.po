@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-11-10 15:01+0200\n"
+"PO-Revision-Date: 2014-11-15 02:08+0200\n"
 "Last-Translator: Lu Ca <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian "
 "<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.0\n"
+"X-Generator: Weblate 2.1-dev\n"
 
 #: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
@@ -113,7 +113,7 @@ msgstr "Infinita"
 
 #: ui.ahk:54 ui.ahk:68
 msgid "Show &Sequences…"
-msgstr "Ammustra &Filaduras…"
+msgstr "Ammustra &Fileras…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
@@ -169,7 +169,7 @@ msgstr "esecutada in AHK v@AHK_VERSION@\n"
 
 #: ui.ahk:152
 msgid "Sequences"
-msgstr "Filaduras"
+msgstr "Fileras"
 
 #: ui.ahk:152
 msgid "Options"
@@ -177,7 +177,7 @@ msgstr "Optziones"
 
 #: ui.ahk:161
 msgid "Sequence"
-msgstr "Filadura"
+msgstr "Filera"
 
 #: ui.ahk:161
 msgid "Char"
@@ -202,16 +202,16 @@ msgstr "Durada ativatzione:"
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
-"Gesti sas filaduras non vàlidas sena distinghimentu intre maiùscolas e "
+"Gesti sas fileras non vàlidas sena distinghimentu intre maiùscolas e "
 "minùscolas"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr "Irbòlica sos caràteres de sas filaduras non vàlidas"
+msgstr "Irbòlica sos caràteres de sas fileras non vàlidas"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr "Sona si una filadura no est vàlida"
+msgstr "Sona si una filera no est vàlida"
 
 #: ui.ahk:239
 msgid "Interface language:"
