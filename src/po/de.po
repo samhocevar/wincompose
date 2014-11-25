@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 18:58+0200\n"
-"PO-Revision-Date: 2014-06-19 11:56+0200\n"
-"Last-Translator: Kevin Robert Michelson <kevinrobertmichelson@live.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
-"de/>\n"
+"PO-Revision-Date: 2014-11-25 18:54+0200\n"
+"Last-Translator: Henrik Gebauer <code@henrik-gebauer.de>\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.1-dev\n"
 
 #: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
-msgstr ""
+msgstr "@1@ Sequenzen geladen"
 
 #: main.ahk:474 ui.ahk:457
 msgid "Compose Key is @1@"
@@ -112,9 +112,8 @@ msgid "None"
 msgstr "Keine"
 
 #: ui.ahk:54 ui.ahk:68
-#, fuzzy
 msgid "Show &Sequences…"
-msgstr "Sequenzen…"
+msgstr "&Sequenzen anzeigen…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
@@ -126,11 +125,11 @@ msgstr "Neustart"
 
 #: ui.ahk:60
 msgid "&History"
-msgstr ""
+msgstr "&Verlauf"
 
 #: ui.ahk:61
 msgid "Hotkey &List"
-msgstr ""
+msgstr "&Liste der Tastenkombinationen"
 
 #: ui.ahk:64
 msgid "&Options…"
@@ -154,19 +153,21 @@ msgstr "@APP_NAME@"
 
 #: ui.ahk:129
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr ""
+msgstr "@APP_NAME@ v@APP_VERSION@↵\n"
 
 #: ui.ahk:130
 msgid "\n"
 msgstr ""
+"\n"
+"↵\n"
 
 #: ui.ahk:131
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
-msgstr ""
+msgstr "von Sam Hocevar <sam@hocevar.net>↵\n"
 
 #: ui.ahk:132
 msgid "running on AHK v@AHK_VERSION@\n"
-msgstr ""
+msgstr "basierend auf AHK v@AHK_VERSION@↵\n"
 
 #: ui.ahk:152
 msgid "Sequences"
@@ -190,7 +191,7 @@ msgstr "Unicode"
 
 #: ui.ahk:188
 msgid "Search Filter:"
-msgstr ""
+msgstr "Suchfilter:"
 
 #: ui.ahk:204
 msgid "Compose Key:"
@@ -202,19 +203,19 @@ msgstr "Verzögerung:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr ""
+msgstr "Groß- und Kleinschreibung im Zweifel ignorieren"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr ""
+msgstr "Zeichen von ungültigen Sequenzen verwerfen"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr ""
+msgstr "Signalton bei ungültigen Sequenzen"
 
 #: ui.ahk:239
 msgid "Interface language:"
-msgstr ""
+msgstr "Sprache der Benutzeroberfläche:"
 
 #: ui.ahk:245
 msgid "Close"
