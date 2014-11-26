@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-11-26 17:37+0200\n"
+"PO-Revision-Date: 2014-11-26 17:47+0200\n"
 "Last-Translator: Cosmo Console <cosmoconsole@gmail.com>\n"
 "Language-Team: Finnish "
 "<https://hosted.weblate.org/projects/wincompose/master/fi/>\n"
@@ -209,7 +209,7 @@ msgstr "Hylkää merkkejä vääränlaisista merkkisarjoista"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr "Piippaa, jos merkkijono on vääränlainen"
+msgstr "Piippaa, jos merkkisarja on vääränlainen"
 
 #: ui.ahk:239
 msgid "Interface language:"
