@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-10-08 06:35+0200\n"
-"Last-Translator: Michael Robert Lawrence <michaellonewolf359@gmail.com>\n"
+"PO-Revision-Date: 2014-12-03 05:05+0200\n"
+"Last-Translator: Marco González Luengo <marco.gonzalez@alumnos.usm.cl>\n"
 "Language-Team: Spanish "
 "<https://hosted.weblate.org/projects/wincompose/master/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.1-dev\n"
 
 #: main.ahk:474 ui.ahk:456
 msgid "Loaded @1@ Sequences"
@@ -129,8 +129,9 @@ msgid "&History"
 msgstr "&Historia"
 
 #: ui.ahk:61
+#, fuzzy
 msgid "Hotkey &List"
-msgstr ""
+msgstr "&Lista de atajos"
 
 #: ui.ahk:64
 msgid "&Options…"
@@ -138,23 +139,25 @@ msgstr "&Opciones…"
 
 #: ui.ahk:65
 msgid "&About"
-msgstr ""
+msgstr "&Acerca de"
 
 #: ui.ahk:66
 msgid "&Visit Website"
-msgstr ""
+msgstr "&Visitar sitio web"
 
 #: ui.ahk:67
 msgid "E&xit"
 msgstr "&Salir"
 
 #: ui.ahk:75
+#, fuzzy
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: ui.ahk:129
+#, fuzzy
 msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr ""
+msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
 #: ui.ahk:130
 msgid "\n"
