@@ -7,108 +7,108 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 16:32+0200\n"
+"POT-Creation-Date: 2014-12-12 00:47+0100\n"
 "PO-Revision-Date: 2014-07-23 22:18+0200\n"
 "Last-Translator: Valerij Romanovskij <valerik-roma@mail.ru>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/wincompose/master/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
+"master/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: main.ahk:465 ui.ahk:455
+#: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "Загружено @1@ комбинаций"
 
-#: main.ahk:465 ui.ahk:456
+#: main.ahk:512 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Модификатор: @1@"
 
-#: constants.ahk:32
+#: constants.ahk:34
 msgid "Autodetect"
 msgstr "Автоопределение"
 
-#: constants.ahk:48
+#: constants.ahk:60
 msgid "Left Alt"
 msgstr "Левая Alt"
 
-#: constants.ahk:49
+#: constants.ahk:61
 msgid "Right Alt"
 msgstr "Правая Alt"
 
-#: constants.ahk:50
+#: constants.ahk:62
 msgid "Left Control"
 msgstr "Левая Control"
 
-#: constants.ahk:51
+#: constants.ahk:63
 msgid "Right Control"
 msgstr "Правая Control"
 
-#: constants.ahk:52
+#: constants.ahk:64
 msgid "Left Windows"
 msgstr "Левая Windows"
 
-#: constants.ahk:53
+#: constants.ahk:65
 msgid "Right Windows"
 msgstr "Правая Windows"
 
-#: constants.ahk:54
+#: constants.ahk:66
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:55
+#: constants.ahk:67
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:56
+#: constants.ahk:68
 msgid "Pause"
 msgstr "Pause Break"
 
-#: constants.ahk:57
+#: constants.ahk:69
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:58
+#: constants.ahk:70
 msgid "Escape"
 msgstr "Esc"
 
-#: constants.ahk:59
+#: constants.ahk:71
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:60
+#: constants.ahk:72
 msgid "Grave Accent `"
 msgstr "Тильда `"
 
-#: constants.ahk:85
+#: constants.ahk:100
 msgid "500 milliseconds"
 msgstr "500 милисекунд"
 
-#: constants.ahk:86
+#: constants.ahk:101
 msgid "1 second"
 msgstr "1 секунда"
 
-#: constants.ahk:87
+#: constants.ahk:102
 msgid "2 seconds"
 msgstr "2 секунды"
 
-#: constants.ahk:88
+#: constants.ahk:103
 msgid "3 seconds"
 msgstr "3 секунды"
 
-#: constants.ahk:89
+#: constants.ahk:104
 msgid "5 seconds"
 msgstr "5 секунд"
 
-#: constants.ahk:90
+#: constants.ahk:105
 msgid "10 seconds"
 msgstr "10 секунд"
 
-#: constants.ahk:91
+#: constants.ahk:106
 msgid "None"
 msgstr "Нет"
 
@@ -116,7 +116,7 @@ msgstr "Нет"
 msgid "Show &Sequences…"
 msgstr "Показать &комбинации…"
 
-#: ui.ahk:55 ui.ahk:458
+#: ui.ahk:55 ui.ahk:459
 msgid "Disable"
 msgstr "Отключить"
 
@@ -225,18 +225,18 @@ msgstr "Закрыть"
 msgid "Copy Character"
 msgstr "Копировать символ"
 
-#: ui.ahk:345
+#: ui.ahk:346
 msgid "Description:"
 msgstr "Описание:"
 
-#: ui.ahk:442
+#: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (отключен)"
 
-#: ui.ahk:447
+#: ui.ahk:448
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (активен)"
 
-#: ui.ahk:452
+#: ui.ahk:453
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (идет набор)"

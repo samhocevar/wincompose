@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.6.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-22 18:58+0200\n"
+"POT-Creation-Date: 2014-12-12 00:47+0100\n"
 "PO-Revision-Date: 2014-04-29 20:45+0200\n"
 "Last-Translator: geogeo.gr <geogeo.gr@users.sourceforge.net>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
@@ -17,11 +17,11 @@ msgstr ""
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: main.ahk:474 ui.ahk:456
+#: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "Φορτώθηκαν @1@ Ακολουθίες"
 
-#: main.ahk:474 ui.ahk:457
+#: main.ahk:512 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Πλήκτρο σύνθεσης είναι το @1@"
 
@@ -29,83 +29,83 @@ msgstr "Πλήκτρο σύνθεσης είναι το @1@"
 msgid "Autodetect"
 msgstr "Αυτόματος εντοπισμός"
 
-#: constants.ahk:52
+#: constants.ahk:60
 msgid "Left Alt"
 msgstr "Αριστερό Alt"
 
-#: constants.ahk:53
+#: constants.ahk:61
 msgid "Right Alt"
 msgstr "Δεξί Alt"
 
-#: constants.ahk:54
+#: constants.ahk:62
 msgid "Left Control"
 msgstr "Αριστερό Control"
 
-#: constants.ahk:55
+#: constants.ahk:63
 msgid "Right Control"
 msgstr "Δεξί Control"
 
-#: constants.ahk:56
+#: constants.ahk:64
 msgid "Left Windows"
 msgstr "Αριστερό Windows"
 
-#: constants.ahk:57
+#: constants.ahk:65
 msgid "Right Windows"
 msgstr "Δεξί Windows"
 
-#: constants.ahk:58
+#: constants.ahk:66
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:59
+#: constants.ahk:67
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:60
+#: constants.ahk:68
 msgid "Pause"
 msgstr "Παύση"
 
-#: constants.ahk:61
+#: constants.ahk:69
 msgid "Menu"
 msgstr "Μενού"
 
-#: constants.ahk:62
+#: constants.ahk:70
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:63
+#: constants.ahk:71
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:64
+#: constants.ahk:72
 msgid "Grave Accent `"
 msgstr "Βαρεία `"
 
-#: constants.ahk:89
+#: constants.ahk:100
 msgid "500 milliseconds"
 msgstr "0,5 δευτερόλεπτο"
 
-#: constants.ahk:90
+#: constants.ahk:101
 msgid "1 second"
 msgstr "1 δευτερόλεπτο"
 
-#: constants.ahk:91
+#: constants.ahk:102
 msgid "2 seconds"
 msgstr "2 δευτερόλεπτα"
 
-#: constants.ahk:92
+#: constants.ahk:103
 msgid "3 seconds"
 msgstr "3 δευτερόλεπτα"
 
-#: constants.ahk:93
+#: constants.ahk:104
 msgid "5 seconds"
 msgstr "5 δευτερόλεπτα"
 
-#: constants.ahk:94
+#: constants.ahk:105
 msgid "10 seconds"
 msgstr "10 δευτερόλεπτα"
 
-#: constants.ahk:95
+#: constants.ahk:106
 msgid "None"
 msgstr "Καμία"
 

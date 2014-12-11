@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-22 19:00+0200\n"
+"POT-Creation-Date: 2014-12-12 00:47+0100\n"
 "PO-Revision-Date: 2014-11-15 02:08+0200\n"
 "Last-Translator: Lu Ca <lmelonimamo@yahoo.it>\n"
-"Language-Team: Sardinian "
-"<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
+"Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
+"master/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.1-dev\n"
 
-#: main.ahk:474 ui.ahk:456
+#: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ fileras carrigadas"
 
-#: main.ahk:474 ui.ahk:457
+#: main.ahk:512 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Sa tecla Compose est @1@"
 
@@ -31,83 +31,83 @@ msgstr "Sa tecla Compose est @1@"
 msgid "Autodetect"
 msgstr "Releva automaticamente"
 
-#: constants.ahk:52
+#: constants.ahk:60
 msgid "Left Alt"
 msgstr "Alt de manca"
 
-#: constants.ahk:53
+#: constants.ahk:61
 msgid "Right Alt"
 msgstr "Alt de destra"
 
-#: constants.ahk:54
+#: constants.ahk:62
 msgid "Left Control"
 msgstr "Ctrl de manca"
 
-#: constants.ahk:55
+#: constants.ahk:63
 msgid "Right Control"
 msgstr "Ctrl de destra"
 
-#: constants.ahk:56
+#: constants.ahk:64
 msgid "Left Windows"
 msgstr "Win de manca"
 
-#: constants.ahk:57
+#: constants.ahk:65
 msgid "Right Windows"
 msgstr "Win de destra"
 
-#: constants.ahk:58
+#: constants.ahk:66
 msgid "Caps Lock"
 msgstr "Bloc Maiusc"
 
-#: constants.ahk:59
+#: constants.ahk:67
 msgid "Num Lock"
 msgstr "Bloc Num"
 
-#: constants.ahk:60
+#: constants.ahk:68
 msgid "Pause"
 msgstr "Pausa"
 
-#: constants.ahk:61
+#: constants.ahk:69
 msgid "Menu"
 msgstr "Menù"
 
-#: constants.ahk:62
+#: constants.ahk:70
 msgid "Escape"
 msgstr "Esc"
 
-#: constants.ahk:63
+#: constants.ahk:71
 msgid "Scroll Lock"
 msgstr "Bloc Scorr"
 
-#: constants.ahk:64
+#: constants.ahk:72
 msgid "Grave Accent `"
 msgstr "Atzentu grave"
 
-#: constants.ahk:89
+#: constants.ahk:100
 msgid "500 milliseconds"
 msgstr "500 ms"
 
-#: constants.ahk:90
+#: constants.ahk:101
 msgid "1 second"
 msgstr "1 s"
 
-#: constants.ahk:91
+#: constants.ahk:102
 msgid "2 seconds"
 msgstr "2 s"
 
-#: constants.ahk:92
+#: constants.ahk:103
 msgid "3 seconds"
 msgstr "3 s"
 
-#: constants.ahk:93
+#: constants.ahk:104
 msgid "5 seconds"
 msgstr "5 s"
 
-#: constants.ahk:94
+#: constants.ahk:105
 msgid "10 seconds"
 msgstr "10 s"
 
-#: constants.ahk:95
+#: constants.ahk:106
 msgid "None"
 msgstr "Infinita"
 

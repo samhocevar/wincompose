@@ -2,16 +2,16 @@
 # Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-22 18:58+0200\n"
+"POT-Creation-Date: 2014-12-12 00:47+0100\n"
 "PO-Revision-Date: 2014-11-25 18:54+0200\n"
 "Last-Translator: Henrik Gebauer <code@henrik-gebauer.de>\n"
-"Language-Team: German "
-"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
+"de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.1-dev\n"
 
-#: main.ahk:474 ui.ahk:456
+#: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ Sequenzen geladen"
 
-#: main.ahk:474 ui.ahk:457
+#: main.ahk:512 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Compose-Taste ist @1@"
 
@@ -31,83 +31,83 @@ msgstr "Compose-Taste ist @1@"
 msgid "Autodetect"
 msgstr "automatische Erkennung"
 
-#: constants.ahk:52
+#: constants.ahk:60
 msgid "Left Alt"
 msgstr "linke Alt-Taste"
 
-#: constants.ahk:53
+#: constants.ahk:61
 msgid "Right Alt"
 msgstr "rechte Alt-Taste"
 
-#: constants.ahk:54
+#: constants.ahk:62
 msgid "Left Control"
 msgstr "linke Strg-Taste"
 
-#: constants.ahk:55
+#: constants.ahk:63
 msgid "Right Control"
 msgstr "rechte Strg-Taste"
 
-#: constants.ahk:56
+#: constants.ahk:64
 msgid "Left Windows"
 msgstr "linke Windows-Taste"
 
-#: constants.ahk:57
+#: constants.ahk:65
 msgid "Right Windows"
 msgstr "rechte Windows-Taste"
 
-#: constants.ahk:58
+#: constants.ahk:66
 msgid "Caps Lock"
 msgstr "Feststelltaste"
 
-#: constants.ahk:59
+#: constants.ahk:67
 msgid "Num Lock"
 msgstr "Num-Taste"
 
-#: constants.ahk:60
+#: constants.ahk:68
 msgid "Pause"
 msgstr "Pause"
 
-#: constants.ahk:61
+#: constants.ahk:69
 msgid "Menu"
 msgstr "Menü"
 
-#: constants.ahk:62
+#: constants.ahk:70
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:63
+#: constants.ahk:71
 msgid "Scroll Lock"
 msgstr "Rollen"
 
-#: constants.ahk:64
+#: constants.ahk:72
 msgid "Grave Accent `"
 msgstr "Gravis `"
 
-#: constants.ahk:89
+#: constants.ahk:100
 msgid "500 milliseconds"
 msgstr "500 Millisekunden"
 
-#: constants.ahk:90
+#: constants.ahk:101
 msgid "1 second"
 msgstr "1 Sekunde"
 
-#: constants.ahk:91
+#: constants.ahk:102
 msgid "2 seconds"
 msgstr "2 Sekunden"
 
-#: constants.ahk:92
+#: constants.ahk:103
 msgid "3 seconds"
 msgstr "3 Sekunden"
 
-#: constants.ahk:93
+#: constants.ahk:104
 msgid "5 seconds"
 msgstr "5 Sekunden"
 
-#: constants.ahk:94
+#: constants.ahk:105
 msgid "10 seconds"
 msgstr "10 Sekunden"
 
-#: constants.ahk:95
+#: constants.ahk:106
 msgid "None"
 msgstr "Keine"
 

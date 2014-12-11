@@ -5,7 +5,7 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.11
+VERSION = 0.6.12
 
 ISS = installer.iss
 SRC_AHK = main.ahk
@@ -77,6 +77,7 @@ update-source:
 update-po:
 	$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ $(SRC_AHK) $(SRC_INC)
 	for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
+	rm -f po/*~
 	X=true; for l in $(PO); do if grep -q '"po.'$$l'[.]po"' $(ISS); then : ; else echo "po/$$l.po" not in $(ISS); X=false; fi; done; $$X || exit 1
 
 update-ahk:

@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-22 19:00+0200\n"
+"POT-Creation-Date: 2014-12-12 00:47+0100\n"
 "PO-Revision-Date: 2014-11-26 17:47+0200\n"
 "Last-Translator: Cosmo Console <cosmoconsole@gmail.com>\n"
-"Language-Team: Finnish "
-"<https://hosted.weblate.org/projects/wincompose/master/fi/>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/wincompose/"
+"master/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.1-dev\n"
 
-#: main.ahk:474 ui.ahk:456
+#: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
 msgstr "Ladattu @1@ merkkisarjaa"
 
-#: main.ahk:474 ui.ahk:457
+#: main.ahk:512 ui.ahk:457
 msgid "Compose Key is @1@"
 msgstr "Compose-näppäin on @1@"
 
@@ -31,83 +31,83 @@ msgstr "Compose-näppäin on @1@"
 msgid "Autodetect"
 msgstr "Tunnista automaattisesti"
 
-#: constants.ahk:52
+#: constants.ahk:60
 msgid "Left Alt"
 msgstr "Vasen Alt"
 
-#: constants.ahk:53
+#: constants.ahk:61
 msgid "Right Alt"
 msgstr "Oikea Alt"
 
-#: constants.ahk:54
+#: constants.ahk:62
 msgid "Left Control"
 msgstr "Vasen Ctrl"
 
-#: constants.ahk:55
+#: constants.ahk:63
 msgid "Right Control"
 msgstr "Oikea Ctrl"
 
-#: constants.ahk:56
+#: constants.ahk:64
 msgid "Left Windows"
 msgstr "Vasen Windows-näppäin"
 
-#: constants.ahk:57
+#: constants.ahk:65
 msgid "Right Windows"
 msgstr "Oikea Windows-näppäin"
 
-#: constants.ahk:58
+#: constants.ahk:66
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:59
+#: constants.ahk:67
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:60
+#: constants.ahk:68
 msgid "Pause"
 msgstr "Pause / Break"
 
-#: constants.ahk:61
+#: constants.ahk:69
 msgid "Menu"
 msgstr "Valikkonäppäin"
 
-#: constants.ahk:62
+#: constants.ahk:70
 msgid "Escape"
 msgstr "Esc"
 
-#: constants.ahk:63
+#: constants.ahk:71
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:64
+#: constants.ahk:72
 msgid "Grave Accent `"
 msgstr "Gravis-tarkenäppäin (`)"
 
-#: constants.ahk:89
+#: constants.ahk:100
 msgid "500 milliseconds"
 msgstr "500 millisekuntia"
 
-#: constants.ahk:90
+#: constants.ahk:101
 msgid "1 second"
 msgstr "1 sekunti"
 
-#: constants.ahk:91
+#: constants.ahk:102
 msgid "2 seconds"
 msgstr "2 sekuntia"
 
-#: constants.ahk:92
+#: constants.ahk:103
 msgid "3 seconds"
 msgstr "3 sekuntia"
 
-#: constants.ahk:93
+#: constants.ahk:104
 msgid "5 seconds"
 msgstr "5 sekuntia"
 
-#: constants.ahk:94
+#: constants.ahk:105
 msgid "10 seconds"
 msgstr "10 sekuntia"
 
-#: constants.ahk:95
+#: constants.ahk:106
 msgid "None"
 msgstr "Ei mitään"
 

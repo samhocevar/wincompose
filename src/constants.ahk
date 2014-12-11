@@ -32,13 +32,21 @@ global C := { _:_
   , languages : { _:_
         ; List of available languages for the UI
       , valid : { ""   : _("Autodetect")
+                , "be" : "Беларуская"
                 , "cs" : "Čeština"
+                , "da" : "Dansk"
                 , "de" : "Deutsch"
                 , "el" : "Ελληνικά"
                 , "en" : "English"
+                , "es" : "Español"
+                , "et" : "Eesti"
+                , "fi" : "Suomi"
                 , "fr" : "Français"
                 , "id" : "Bahasa Indonesia"
                 , "nl" : "Nederlands"
+                , "pl" : "Polski"
+                , "ru" : "Русский"
+                , "sc" : "Sardu"
                 , "sv" : "Svenska" }
         ; Default language means try to autodetect
       , default : "" }
