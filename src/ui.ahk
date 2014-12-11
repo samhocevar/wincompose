@@ -32,8 +32,8 @@ global ui_text_language, ui_dropdown_language
 global ui_separator1, ui_separator2
 global ui_checkbox_case, ui_checkbox_discard, ui_checkbox_beep
 global ui_keycap_0
-global ui_keycap_1, ui_keycap_2, ui_keycap_3, ui_keycap_4, ui_keycap_5, ui_keycap_6, ui_keycap_7, ui_keycap_8, ui_keycap_9
-global ui_keytext_1, ui_keytext_2, ui_keytext_3, ui_keytext_4, ui_keytext_5, ui_keytext_6, ui_keytext_7, ui_keytext_8, ui_keytext_9
+global ui_keycap_1, ui_keycap_2, ui_keycap_3, ui_keycap_4, ui_keycap_5, ui_keycap_6, ui_keycap_7, ui_keycap_8, ui_keycap_9, ui_keycap_10, ui_keycap_11, ui_keycap_12
+global ui_keytext_1, ui_keytext_2, ui_keytext_3, ui_keytext_4, ui_keytext_5, ui_keytext_6, ui_keytext_7, ui_keytext_8, ui_keytext_9, ui_keytext_10, ui_keytext_11, ui_keytext_12
 
 
 create_gui()
@@ -175,7 +175,7 @@ create_app_win()
 
     gui font, s22
     gui font, w700
-    loop % 9
+    loop % 12
     {
         tmp := C.files.resources
         gui add, picture, x0 y0 w48 h48 vui_keycap_%a_index% icon4, %tmp%
@@ -411,7 +411,7 @@ refresh_gui()
 
     guicontrol move, ui_keycap_0, % "x" (lb_w + 20 + m) " y" 120
 
-    loop % 9
+    loop % 12
     {
         if (a_index > strlen(S.selected_seq))
         {
