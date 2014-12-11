@@ -80,6 +80,6 @@ update-po:
 	X=true; for l in $(PO); do if grep -q '"po.'$$l'[.]po"' $(ISS); then : ; else echo "po/$$l.po" not in $(ISS); X=false; fi; done; $$X || exit 1
 
 update-ahk:
-	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Release //project AutoHotkeyx
-	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Self-contained //project AutoHotkeyx
+	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Release //project AutoHotkeyx.vcxproj
+	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Self-contained //project AutoHotkeyx.vcxproj
 
