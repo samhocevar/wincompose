@@ -21,6 +21,7 @@
 <equal>         : "=" # 0x3d
 <greater>       : ">" # 0x3e
 <question>      : "?" # 0x3f
+<at>            : "@" # 0x40
 <bracketleft>   : "[" # 0x5b
 <backslash>     : "\\" # 0x5c
 <bracketright>  : "]" # 0x5d
@@ -31,4 +32,10 @@
 <bar>           : "|" # 0x7c
 <braceright>    : "}" # 0x7d
 <asciitilde>    : "~" # 0x7e
+
+# Non-printing keys; but we need an internal representation
+<up>            : "▲"
+<down>          : "▼"
+<left>          : "▶"
+<right>         : "◀"
 

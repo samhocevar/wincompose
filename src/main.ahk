@@ -77,7 +77,7 @@ main()
 
     create_gui()
 
-    set_printable_hotkeys(true)
+    set_general_hotkeys(true)
     set_compose_hotkeys(true)
 }
 
@@ -101,13 +101,13 @@ send_keystroke(char)
             sendinput % "{" R.compose_key "}"
         }
         else
-            send_raw_string(char)
+            send_fallback_string(char)
         S.sequence := ""
     }
     else if (!S.typing)
     {
         ; Enter typing state if compose was pressed. Otherwise, we
-        ; should not be here, but send the character anyway.
+        ; should not be here (but we send the character anyway).
         if (char == "compose")
         {
             check_keyboard_layout()
@@ -116,7 +116,7 @@ send_keystroke(char)
                 settimer on_delay_expired, % R.reset_delay
         }
         else
-            send_raw_string(char)
+            send_fallback_string(char)
         S.sequence := ""
     }
     else ; if (S.typing)
@@ -133,7 +133,7 @@ send_keystroke(char)
             if (has_sequence(S.sequence))
                 send_unicode_string(get_sequence(S.sequence))
             else if (!R.opt_discard)
-                send_raw_string(S.sequence)
+                send_fallback_string(S.sequence)
             S.typing := false
             S.sequence := ""
         }
@@ -165,7 +165,7 @@ send_keystroke(char)
                 S.sequence .= char
                 info := "Sequence: [ " S.sequence " (" string_to_hex(S.sequence) ") ] ABORTED"
                 if (!R.opt_discard)
-                    send_raw_string(S.sequence)
+                    send_fallback_string(S.sequence)
                 S.typing := false
                 S.sequence := ""
                 if (R.opt_beep)
@@ -186,7 +186,7 @@ send_keystroke(char)
                 info := "Sequence: [ " S.sequence " ] -> [ " get_sequence(S.sequence) " ]"
                 send_unicode_string(get_sequence(S.sequence))
                 if (action == 3)
-                    send_raw_string(char)
+                    send_fallback_string(char)
                 S.typing := false
                 S.sequence := ""
             }
@@ -238,12 +238,17 @@ send_unicode_string(string)
     }
 }
 
-send_raw_string(string)
+; Send a string as a fallback when the sequence being typed did not match any
+; known sequence. Don’t forget to replace arrow characters with the proper keys.
+send_fallback_string(string)
 {
     loop, parse, string
     {
         if (a_loopfield == " ")
             send {space}
+        else if (a_loopfield == "▲" || a_loopfield == "▼"
+                  || a_loopfield == "▶" || a_loopfield == "◀")
+            continue
         else
             sendinput {raw}%a_loopfield%
     }
@@ -265,7 +270,7 @@ check_keyboard_layout()
     if (client_layout == script_layout)
         return
 
-    set_printable_hotkeys(false)
+    set_general_hotkeys(false)
 
     WM_INPUTLANGCHANGEREQUEST := 0x50
     postmessage %WM_INPUTLANGCHANGEREQUEST%, 0, %client_layout%, , ahk_id %script_hwnd%
@@ -281,34 +286,45 @@ check_keyboard_layout()
     ;if (client_layout != script_layout)
     ;    msgbox, Something went wrong!
 
-    set_printable_hotkeys(true)
+    set_general_hotkeys(true)
 }
 
-set_printable_hotkeys(must_enable)
+set_general_hotkeys(must_enable)
 {
     flag := must_enable ? "on" : "off"
-
-    ; Register hotkeys for all keys that potentially display something, including
-    ; combinations with Shift or Ctrl+Alt (aka AltGr). We must use virtual keys
-    ; instead of characters because we have no way to know what keys are available
-    ; on the currently active keyboard layout. The list of virtual keys has been
-    ; manually compiled into C.keys.printable.
     manifesthooks off
-    for ignored, range in C.keys.printable
+
+    ; Register hotkeys for all keys that potentially display something,
+    ; including combinations with Shift or Ctrl+Alt (aka AltGr). We must
+    ; use virtual keys instead of characters because we have no way to know
+    ; what keys are available on the currently active keyboard layout. The
+    ; list of virtual keys has been manually compiled into C.keys.printing.
+    for ignored, range in C.keys.printing
     {
         loop % (range[2] - range[1])
         {
-            i := range[1] + a_index - 1
-            hotkey % "$vk" num_to_hex(i, 2), on_printable_key, %flag%, useerrorlevel
-            hotkey % "$+vk" num_to_hex(i, 2), on_printable_key, %flag%, useerrorlevel
-            hotkey % "$<^>!vk" num_to_hex(i, 2), on_printable_key, %flag%, useerrorlevel
+            vk := "vk" num_to_hex(range[1] + a_index - 1, 2)
+            hotkey % "$" vk, on_general_key, %flag%, useerrorlevel
+            hotkey % "$+" vk, on_general_key, %flag%, useerrorlevel
+            hotkey % "$<^>!" vk, on_general_key, %flag%, useerrorlevel
         }
     }
-    manifesthooks on
 
+    ; Register hotkeys for non-printing keys that can be used in compose
+    ; sequences, such as the arrow keys.
+    for ignored, range in C.keys.nonprinting
+    {
+        loop % (range[2] - range[1])
+        {
+            vk := "vk" num_to_hex(range[1] + a_index - 1, 2)
+            hotkey % vk, on_general_key, %flag%, useerrorlevel
+        }
+    }
+
+    manifesthooks on
     return
 
-on_printable_key:
+on_general_key:
     ; This hotkey must always be high priority
     critical on
     vk := regexreplace(a_thishotkey, ".*vk", "vk")
@@ -320,10 +336,11 @@ on_printable_key:
     numput(has_altgr ? 0x80 : 0x00, mods, 0x11, "uchar")
     numput(has_altgr ? 0x80 : 0x00, mods, 0x12, "uchar")
     numput(has_capslock ? 0x01 : 0x00, mods, 0x14, "uchar")
-    ; Use ToUnicode instead of ToAscii because a lot of languages have non-ASCII chars
-    ; available on their keyboards.
-    ret := dllcall("ToUnicode", "uint", getkeyvk(vk), "uint", getkeysc(vk)
-                 , "ptr", &mods, "uintp", unicode_char, "int", 2, "uint", 0, "uint")
+    ; Use ToUnicode instead of ToAscii because a lot of languages have
+    ; non-ASCII chars available on their keyboards.
+    ret := dllcall("ToUnicode", "uint", getkeyvk(vk), "uint"
+                 , getkeysc(vk), "ptr", &mods, "uintp", unicode_char, "int"
+                 , 2, "uint", 0, "uint")
     if (ret > 0 && unicode_char > 0)
     {
         ; If the system was able to translate the key, pass it to the
@@ -332,19 +349,40 @@ on_printable_key:
         if (ret >= 2)
             send_keystroke(chr((unicode_char >> 16) & 0xffff))
         send_keystroke(chr(unicode_char & 0xffff))
+        return
     }
-    else
+
+    ret := decode_vk(vk)
+    if (ret != 0)
     {
-        ; If the system doesn't know the key, make an honest attempt at sending
-        ; it anyways. Note that I have never seen this happen yet.
-        tosend := "{" vk "}"
-        if (has_shift)
-            tosend := "{shift down}" tosend "{shift up}"
-        if (has_altgr)
-            tosend := "{sc138 down}" tosend "{sc138 up}"
-        send %tosend%
+        ; If this is a VK we know, pass a special character to the
+        ; composition handler.
+        send_keystroke(ret)
+        return
     }
+
+    ; If the system doesn't know the key, make an honest attempt at sending
+    ; it anyways. Note that I have never seen this happen yet.
+    tosend := "{" vk "}"
+    if (has_shift)
+        tosend := "{shift down}" tosend "{shift up}"
+    if (has_altgr)
+        tosend := "{sc138 down}" tosend "{sc138 up}"
+    send %tosend%
     return
+}
+
+decode_vk(vk)
+{
+    if (getkeyvk(vk) == 0x25)
+        return "▶"
+    if (getkeyvk(vk) == 0x26)
+        return "▲"
+    if (getkeyvk(vk) == 0x27)
+        return "◀"
+    if (getkeyvk(vk) == 0x28)
+        return "▼"
+    return 0
 }
 
 ;
@@ -495,6 +533,7 @@ read_key_file(file)
         right := regexreplace(a_loopreadline, r_right, "$1", ret)
         if (ret != 1)
             continue
+        ; Replace e.g. \" with "
         right := regexreplace(right, "\\\\(.)", "$1")
 
         ; Retrieve sequence (in this case, only one key)

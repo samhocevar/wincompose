@@ -64,14 +64,17 @@ global C := { _:_
                 , "`"          : _("Grave Accent `") }
         ; Default key used as compose key
       , default : "ralt"
-        ; List of virtual keycodes that lead to printable things
-      , printable : [ [ 0x20, 0x21 ] ; Space
-                    , [ 0x30, 0x3a ] ; 0-9
-                    , [ 0x41, 0x5b ] ; A-Z
-                    , [ 0x60, 0x70 ] ; keypad
-                    , [ 0xba, 0xc1 ] ; misc
-                    , [ 0xdb, 0xe0 ] ; misc
-                    , [ 0xe1, 0xe7 ] ] ; misc
+        ; List of virtual keycodes that lead to printing things
+      , printing : [ [ 0x20, 0x21 ]   ; space
+                   , [ 0x30, 0x3a ]   ; 0-9
+                   , [ 0x41, 0x5b ]   ; A-Z
+                   , [ 0x60, 0x70 ]   ; keypad
+                   , [ 0xba, 0xc1 ]   ; misc
+                   , [ 0xdb, 0xe0 ]   ; misc
+                   , [ 0xe1, 0xe7 ] ] ; misc
+        ; List of virtual keycodes that lead to non-printing things
+        ; but can still be part of a compose sequence
+      , nonprinting : [ [ 0x25, 0x29 ] ] ; left/up/right/down arrows
         ; List of special keys that we need to hijack
       , special : [ "tab", "esc" ; for Alt-Tab and Alt-Escapce
                   , "left", "right", "up", "down" ; for Windows-Left etc.
