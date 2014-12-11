@@ -560,6 +560,9 @@ read_sequence_file(file)
         right := regexreplace(a_loopreadline, r_right, "$1", ret)
         if (ret < 1)
             continue
+        right := regexreplace(right, "\\\\n", "\n")
+        right := regexreplace(right, "\\\\r", "\r")
+        right := regexreplace(right, "\\\\t", "\t")
         right := regexreplace(right, "\\\\(.)", "$1")
 
         ; Retrieve sequence

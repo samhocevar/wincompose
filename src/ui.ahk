@@ -340,8 +340,8 @@ on_select_sequence:
                 guicontrol font, ui_text_bigchar
 
                 ; HACK: remove the non-printable character we added for sorting purposes
-                desc := " " regexreplace(unicode, ".*U", "U") " " str "\n"
-
+                desc := " " regexreplace(unicode, ".*U", "U")
+                desc .= " " regexreplace(str, "\n..*", "…") "\n"
                 desc .= substr("————————————————————", 1, strlen(desc) + 2) "\n"
                 desc .= _("Description:") " " get_description(sequence)
                 guicontrol text, ui_text_desc, %desc%
