@@ -12,10 +12,10 @@ very intuitive key combinations. For instance, **ö** is obtained using
 I wrote WinCompose because I found none of the alternatives (FreeCompose,
 CKFW, AllChars or Unichars) to be satisfying.
 
-Download latest: [WinCompose 0.6.11](https://github.com/samhocevar/wincompose/releases/download/v0.6.11/WinCompose-Setup-0.6.11.exe) (July 22, 2014)
+Download latest: [WinCompose 0.6.13](https://github.com/samhocevar/wincompose/releases/download/v0.6.13/WinCompose-Setup-0.6.13.exe) (December 12, 2014)
 -----------------------------------
 
-Portable version: [WinCompose 0.6.11 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.6.11/WinCompose-NoInstall-0.6.11.zip).
+Portable version: [WinCompose 0.6.13 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.6.13/WinCompose-NoInstall-0.6.13.zip).
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
@@ -63,7 +63,7 @@ Features
 --------
 
 WinCompose supports the standard Compose file format. It provides more than
-1600 compose rules from the [Xorg](http://www.x.org/wiki/) project and the
+1700 compose rules from the [Xorg](http://www.x.org/wiki/) project and the
 [dotXCompose](https://github.com/kragen/xcompose) project. You can add custom
 rules by creating a file named `.XCompose` or `.XCompose.txt` in your
 `%USERPROFILE%` directory.
