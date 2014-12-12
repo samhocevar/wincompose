@@ -13,7 +13,7 @@
 
 ; The name and version of this script
 global app := "WinCompose"
-global version := "0.6.12"
+global version := "0.6.13"
 global website := "https://github.com/samhocevar/wincompose"
 
 ; Configuration file location -- this needs to exist early, before
