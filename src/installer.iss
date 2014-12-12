@@ -4,6 +4,8 @@
 [Setup]
 AppName = {#NAME}
 AppVersion = {#VERSION}
+AppPublisher = Sam Hocevar
+AppPublisherURL = http://sam.hocevar.net/
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 DefaultDirName = {pf}\{#NAME}
 DefaultGroupName = {#NAME}
