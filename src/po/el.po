@@ -161,10 +161,6 @@ msgstr "\n"
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "από τον Sam Hocevar <sam@hocevar.net>\n"
 
-#: ui.ahk:132
-msgid "running on AHK v@AHK_VERSION@\n"
-msgstr "βασισμένο στο AHK v@AHK_VERSION@\n"
-
 #: ui.ahk:152
 msgid "Sequences"
 msgstr "Ακολουθίες"

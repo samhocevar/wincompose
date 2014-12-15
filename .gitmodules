@@ -1,6 +1,0 @@
-[submodule "src/ahk"]
-	path = src/ahk
-	url = https://github.com/samhocevar/AutoHotkey_L.git
-[submodule "src/ahk2exe"]
-	path = src/ahk2exe
-	url = https://github.com/fincs/Ahk2Exe.git
