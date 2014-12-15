@@ -4,3 +4,5 @@ settings.ini
 obj/
 bin/
 po/*.po~
+
+*.suo

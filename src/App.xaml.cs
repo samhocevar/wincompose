@@ -8,10 +8,16 @@ using System.Windows;
 
 namespace wincompose
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        App()
+        {
+            keyboardhook.init();
+        }
+
+        ~App()
+        {
+            keyboardhook.fini();
+        }
     }
 }
