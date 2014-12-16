@@ -40,15 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="keyboardhook.cs" />
-    <Compile Include="window.cs">
+    <Compile Include="about.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="window.designer.cs">
-      <DependentUpon>window.cs</DependentUpon>
+    <Compile Include="about.designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="keyboardhook.cs" />
+    <Compile Include="gui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui.designer.cs">
+      <DependentUpon>gui.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
+    <Compile Include="settings.cs" />
+    <EmbeddedResource Include="about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="properties\resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>resources.designer.cs</LastGenOutput>
@@ -58,6 +68,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="gui.resx">
+      <DependentUpon>gui.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="properties\settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>settings.designer.cs</LastGenOutput>

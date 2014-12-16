@@ -18,8 +18,9 @@ class keyboardhook
     public static void init()
     {
         m_callback = key_callback;
-        m_hook = SetWindowsHookEx(WH.KEYBOARD_LL, m_callback, LoadLibrary("user32.dll"), 0);
-        if (m_hook == 0)
+        m_hook = SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
+                                  LoadLibrary("user32.dll"), 0);
+        if (m_hook == HOOK.INVALID)
             throw new Win32Exception(Marshal.GetLastWin32Error());
     }
 
@@ -29,15 +30,15 @@ class keyboardhook
         int ret = UnhookWindowsHookEx(m_hook);
         if (ret == 0)
             throw new Win32Exception(Marshal.GetLastWin32Error());
-        m_hook = 0;
+        m_hook = HOOK.INVALID;
         m_callback = null;
     }
 
-    private delegate int hook_t(HC nCode, WM wParam, IntPtr lParam);
+    private delegate int callback_t(HC nCode, WM wParam, IntPtr lParam);
 
     private static byte[] m_keystate = new byte[256];
-    private static hook_t m_callback;
-    private static int m_hook;
+    private static callback_t m_callback;
+    private static HOOK m_hook;
 
     private static int key_callback(HC nCode, WM wParam, IntPtr lParam)
     {
@@ -45,7 +46,8 @@ class keyboardhook
             return CallNextHookEx(m_hook, nCode, wParam, lParam);
 
         // Retrieve event data from native structure
-        KBDLLHOOKSTRUCT data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
+        var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
+                                                     typeof(KBDLLHOOKSTRUCT));
 
         // Pass to other applications or keep it to ourselves?
         bool eat_key = false;
@@ -67,15 +69,22 @@ class keyboardhook
             bool has_shift = (GetKeyState(VK.SHIFT) & 0x80) == 0x80;
             bool has_capslock = GetKeyState(VK.CAPITAL) != 0;
 
-            byte[] tmp = new byte[2];
-            int ret = ToUnicode(data.vkCode, data.scanCode, m_keystate, tmp, 2, data.flags);
+            byte[] buf = new byte[2];
+            int ret = ToUnicode(data.vkCode, data.scanCode, m_keystate,
+                                buf, 2, data.flags);
             if (ret != 0)
-                Console.WriteLine("Got Key: {0}", (char)tmp[0]);
+                Console.WriteLine("Got Key: {0}", (char)buf[0]);
         }
 
         return eat_key ? 0 : CallNextHookEx(m_hook, nCode, wParam, lParam);
     }
 
+    private enum HOOK : int
+    {
+        INVALID = 0,
+    };
+
+    /* Enums from winuser.h */
     private enum HC : int
     {
         ACTION      = 0,
@@ -115,8 +124,9 @@ class keyboardhook
         RMENU    = 0xa5,
     };
 
-    /// http://msdn.microsoft.com/en-us/library/windows/desktop/ms644967%28v=vs.85%29.aspx
-    /// Contains information about a low-level keyboard input event. 
+    /* Low-level keyboard input event.
+     *   http://msdn.microsoft.com/en-us/library/windows/desktop/ms644967%28v=vs.85%29.aspx
+     */
     [StructLayout(LayoutKind.Sequential)]
     private struct KBDLLHOOKSTRUCT
     {
@@ -126,18 +136,24 @@ class keyboardhook
         public IntPtr dwExtraInfo;
     }
 
+    /* Imports from kernel32.dll */
     [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
     private static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)]string lpFileName);
 
+    /* Imports from user32.dll */
     [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int CallNextHookEx(int hhk, HC nCode, WM wParam, IntPtr lParam);
+    private static extern int CallNextHookEx(HOOK hhk, HC nCode, WM wParam,
+                                             IntPtr lParam);
     [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
-    private static extern int SetWindowsHookEx(WH idHook, hook_t lpfn, IntPtr hMod, int dwThreadId);
+    private static extern HOOK SetWindowsHookEx(WH idHook, callback_t lpfn,
+                                                IntPtr hMod, int dwThreadId);
     [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
-    private static extern int UnhookWindowsHookEx(int hhk);
+    private static extern int UnhookWindowsHookEx(HOOK hhk);
 
     [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int ToUnicode(VK wVirtKey, uint wScanCode, byte[] lpKeyState, byte[] pwszBuff, int cchBuff, uint wFlags);
+    private static extern int ToUnicode(VK wVirtKey, uint wScanCode,
+                                        byte[] lpKeyState, byte[] pwszBuff,
+                                        int cchBuff, uint wFlags);
     [DllImport("user32", CharSet = CharSet.Auto)]
     private static extern int GetKeyboardState(byte[] lpKeyState);
     [DllImport("user32", CharSet = CharSet.Auto)]

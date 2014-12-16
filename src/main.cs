@@ -10,11 +10,8 @@ using System.Windows.Forms;
 
 namespace wincompose
 {
-    static class Program
+    static class program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -22,7 +19,10 @@ namespace wincompose
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new window());
+
+            var gui = new gui();
+            Application.Run();
+            gui.Dispose();
 
             keyboardhook.fini();
         }
