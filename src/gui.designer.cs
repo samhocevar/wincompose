@@ -73,7 +73,7 @@
             this.visitWebsiteToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.systraymenu.Name = "contextMenuStrip1";
-            this.systraymenu.Size = new System.Drawing.Size(172, 186);
+            this.systraymenu.Size = new System.Drawing.Size(172, 164);
             // 
             // showSequencesToolStripMenuItem
             // 
@@ -136,7 +136,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(621, 408);
+            this.tabControl1.Size = new System.Drawing.Size(731, 491);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -145,7 +145,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(613, 382);
+            this.tabPage1.Size = new System.Drawing.Size(723, 465);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -165,22 +165,28 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.83784F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.16216F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(601, 370);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(711, 453);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // treeView1
             // 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(294, 281);
+            this.treeView1.Size = new System.Drawing.Size(349, 346);
             this.treeView1.TabIndex = 0;
             // 
             // webbrowser
             // 
-            this.webbrowser.Location = new System.Drawing.Point(303, 3);
+            this.webbrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webbrowser.Location = new System.Drawing.Point(358, 3);
             this.webbrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webbrowser.Name = "webbrowser";
-            this.webbrowser.Size = new System.Drawing.Size(295, 281);
+            this.webbrowser.Size = new System.Drawing.Size(350, 346);
             this.webbrowser.TabIndex = 1;
             // 
             // tabPage2
@@ -197,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 432);
+            this.ClientSize = new System.Drawing.Size(755, 515);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
             this.Enabled = false;

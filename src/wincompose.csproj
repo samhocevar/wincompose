@@ -46,6 +46,7 @@
     <Compile Include="about.designer.cs">
       <DependentUpon>about.cs</DependentUpon>
     </Compile>
+    <Compile Include="compose.cs" />
     <Compile Include="keyboardhook.cs" />
     <Compile Include="gui.cs">
       <SubType>Form</SubType>
@@ -56,6 +57,7 @@
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
     <Compile Include="settings.cs" />
+    <Compile Include="types.cs" />
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
