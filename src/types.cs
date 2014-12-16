@@ -27,6 +27,7 @@ public enum WH : int
 
 public enum WM : int
 {
+    INPUTLANGCHANGEREQUEST = 0x50,
     KEYDOWN    = 0x100,
     KEYUP      = 0x101,
     SYSKEYDOWN = 0x104,
@@ -49,6 +50,7 @@ public enum VK : int
 
 public enum SC : uint
 {
+    // Not needed
 };
 
 }

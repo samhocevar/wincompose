@@ -44,11 +44,14 @@ static class compose
         string str = null;
 
         // Generate a keystate suitable for ToUnicode()
-        // FIXME: this code is missing AltGr for now
         GetKeyboardState(m_keystate);
         bool has_shift = (GetKeyState(VK.SHIFT) & 0x80) == 0x80;
+        bool has_altgr = (GetKeyState(VK.RMENU) & 0x80) == 0x80
+                          && (GetKeyState(VK.LCONTROL) & 0x80) == 0x80;
         bool has_capslock = GetKeyState(VK.CAPITAL) != 0;
         m_keystate[0x10] = has_shift ? (byte)0x80 : (byte)0x00;
+        m_keystate[0x11] = has_altgr ? (byte)0x80 : (byte)0x00;
+        m_keystate[0x12] = has_altgr ? (byte)0x80 : (byte)0x00;
         m_keystate[0x14] = has_capslock ? (byte)0x01 : (byte)0x00;
 
         int buflen = 4;
@@ -100,7 +103,6 @@ static class compose
 
         for (int i = 0; i < input.Length; i++)
         {
-            input[i] = new INPUT();
             input[i].type = EINPUT.KEYBOARD;
             input[i].U.ki.wVk = 0;
             input[i].U.ki.wScan = (ScanCodeShort)str[i];
@@ -157,6 +159,8 @@ static class compose
     [StructLayout(LayoutKind.Explicit)]
     internal struct UINPUT
     {
+        // All union members need to be included, because they contribute
+        // to the final size of struct INPUT.
         [FieldOffset(0)]
         internal MOUSEINPUT mi;
         [FieldOffset(0)]
