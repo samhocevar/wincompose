@@ -33,6 +33,11 @@ namespace wincompose.gui
             }
         }
 
+        private void CloseClicked(object sender, RoutedEventArgs e)
+        {
+            close_to_tray();
+        }
+        
         private void open_from_tray()
         {
             ShowInTaskbar = true;

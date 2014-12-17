@@ -67,7 +67,7 @@
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="properties\resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>resources.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
