@@ -5,8 +5,7 @@
 //   See http://www.wtfpl.net/ for more details.using System;
 
 using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+using wincompose.gui;
 
 namespace wincompose
 {
@@ -16,15 +15,16 @@ namespace wincompose
         static void Main()
         {
             keyboardhook.install();
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            var gui = new gui();
-            Application.Run();
-            gui.Dispose();
-
-            keyboardhook.uninstall();
+            try
+            {
+                var app = new App();
+                app.InitializeComponent();
+                app.Run();
+            }
+            finally
+            {
+                keyboardhook.uninstall();
+            }
         }
     }
 }

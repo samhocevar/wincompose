@@ -34,12 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="about.cs">
@@ -48,14 +51,14 @@
     <Compile Include="about.designer.cs">
       <DependentUpon>about.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\app.xaml.cs">
+      <DependentUpon>app.xaml</DependentUpon>
+    </Compile>
     <Compile Include="compose.cs" />
+    <Compile Include="gui\mainwindow.xaml.cs">
+      <DependentUpon>mainwindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="keyboardhook.cs" />
-    <Compile Include="gui.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui.designer.cs">
-      <DependentUpon>gui.cs</DependentUpon>
-    </Compile>
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
     <Compile Include="settings.cs" />
@@ -73,10 +76,6 @@
       <DependentUpon>resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="gui.resx">
-      <DependentUpon>gui.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="properties\settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>settings.designer.cs</LastGenOutput>
@@ -86,6 +85,16 @@
       <DependentUpon>settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="gui\app.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="gui\mainwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
