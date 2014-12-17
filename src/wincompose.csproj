@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>wincompose</RootNamespace>
     <AssemblyName>wincompose</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -69,10 +70,12 @@
     <Compile Include="properties\resources.designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="gui.resx">
       <DependentUpon>gui.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="properties\settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>settings.designer.cs</LastGenOutput>
