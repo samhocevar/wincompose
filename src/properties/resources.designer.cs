@@ -59,5 +59,45 @@ namespace wincompose.properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon_active {
+            get {
+                object obj = ResourceManager.GetObject("icon_active", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon_disabled {
+            get {
+                object obj = ResourceManager.GetObject("icon_disabled", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon_empty {
+            get {
+                object obj = ResourceManager.GetObject("icon_empty", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon_normal {
+            get {
+                object obj = ResourceManager.GetObject("icon_normal", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

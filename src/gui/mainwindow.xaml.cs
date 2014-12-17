@@ -1,25 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
+using WinForms = System.Windows.Forms;
 namespace wincompose.gui
 {
     /// <summary>
     /// Interaction logic for mainwindow.xaml
     /// </summary>
-    public partial class mainwindow : Window
+    public partial class mainwindow
     {
         public mainwindow()
         {
             InitializeComponent();
+            var notifyicon = new WinForms.NotifyIcon
+            {
+                Visible = true,
+                Icon = properties.resources.icon_normal
+            };
+
+            notifyicon.DoubleClick += notifyicon_doubleclicked;
+            close_to_tray();
+        }
+
+        private void notifyicon_doubleclicked(object sender, EventArgs e)
+        {
+            if (!IsVisible)
+            {
+                open_from_tray();
+            }
+            else
+            {
+                close_to_tray();
+            }
+        }
+
+        private void open_from_tray()
+        {
+            ShowInTaskbar = true;
+            Show();
+            Activate();
+        }
+
+        private void close_to_tray()
+        {
+            ShowInTaskbar = false;
+            Hide();
         }
 
         // Code from WinForms

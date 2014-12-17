@@ -96,6 +96,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon_active.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon_disabled.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon_empty.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon_normal.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
