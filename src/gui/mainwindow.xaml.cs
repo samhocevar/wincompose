@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using WinForms = System.Windows.Forms;
-namespace wincompose.gui
+namespace WinCompose.gui
 {
     /// <summary>
     /// Interaction logic for mainwindow.xaml

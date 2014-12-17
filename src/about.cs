@@ -11,7 +11,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace wincompose
+namespace WinCompose
 {
     partial class about : Form
     {

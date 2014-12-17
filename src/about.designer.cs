@@ -1,4 +1,4 @@
-﻿namespace wincompose
+﻿namespace WinCompose
 {
     partial class about
     {

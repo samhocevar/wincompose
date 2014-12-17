@@ -10,19 +10,19 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace wincompose
+namespace WinCompose
 {
 
-static class keyboardhook
+static class KeyboardHook
 {
-    public static void install()
+    public static void Install()
     {
         if (Environment.OSVersion.Platform == PlatformID.Win32NT
              || Environment.OSVersion.Platform == PlatformID.Win32S
              || Environment.OSVersion.Platform == PlatformID.Win32Windows
              || Environment.OSVersion.Platform == PlatformID.WinCE)
         {
-            m_callback = key_callback; // Keep a reference on key_callback
+            m_callback = OnKey; // Keep a reference on OnKey
             m_hook = SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
                                       LoadLibrary("user32.dll"), 0);
             if (m_hook == HOOK.INVALID)
@@ -30,7 +30,7 @@ static class keyboardhook
         }
     }
 
-    public static void uninstall()
+    public static void Uninstall()
     {
         // XXX: this will crash if called from the GC Finalizer Thread because
         // the hook needs to be removed from the same thread that installed it.
@@ -49,7 +49,7 @@ static class keyboardhook
     private static CALLBACK m_callback;
     private static HOOK m_hook;
 
-    private static int key_callback(HC nCode, WM wParam, IntPtr lParam)
+    private static int OnKey(HC nCode, WM wParam, IntPtr lParam)
     {
         if (nCode == HC.ACTION)
         {
@@ -60,7 +60,7 @@ static class keyboardhook
             if (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
                 || wParam == WM.KEYUP || wParam == WM.SYSKEYUP)
             {
-                if (compose.on_key(wParam, data.vkCode, data.scanCode, data.flags))
+                if (Compose.OnKey(wParam, data.vkCode, data.scanCode, data.flags))
                 {
                     // Do not process further: that key was for us.
                     return -1;

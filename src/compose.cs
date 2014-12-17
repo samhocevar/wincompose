@@ -9,18 +9,18 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace wincompose
+namespace WinCompose
 {
 
-static class compose
+static class Compose
 {
     // Get input from the keyboard hook; return true if the key was handled
     // and needs to be removed from the input chain.
-    public static bool on_key(WM ev, VK vk, SC sc, uint flags)
+    public static bool OnKey(WM ev, VK vk, SC sc, uint flags)
     {
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
-        bool is_compose = settings.is_compose_key(vk);
+        bool is_compose = Settings.IsComposeKey(vk);
 
         if (is_compose)
         {
@@ -81,14 +81,14 @@ static class compose
             else if (m_sequence == ":)")
             {
                 // Sequence finished, print it
-                send_str("☺");
+                SendString("☺");
                 m_composing = false;
                 m_sequence = "";
             }
             else
             {
                 // Unknown characters for sequence, print them
-                send_str(m_sequence);
+                SendString(m_sequence);
                 m_composing = false;
                 m_sequence = "";
             }
@@ -97,7 +97,7 @@ static class compose
         return true;
     }
 
-    private static void send_str(string str)
+    private static void SendString(string str)
     {
         /* HACK: GTK+ applications behave differently with Unicode, and some
          * applications such as XChat for Windows rename their own top-level
@@ -116,23 +116,23 @@ static class compose
         if (is_gtk)
         {
             /* FIXME: this does not work properly yet, but you get the idea. */
-            key_down(VK.LCONTROL);
-            key_down(VK.LSHIFT);
+            SendKeyDown(VK.LCONTROL);
+            SendKeyDown(VK.LSHIFT);
             foreach (var ch in str)
             {
-                key_press((VK)'u');
+                SendKeyPress((VK)'u');
                 for (int i = 0; i < 4; ++i)
                 {
                     int nybble = (int)ch >> (12 - 4 * i);
                     if (nybble < 10)
-                        key_press((VK)(0x30 + nybble));
+                        SendKeyPress((VK)(0x30 + nybble));
                     else
-                        key_press((VK)(0x41 + nybble - 10));
+                        SendKeyPress((VK)(0x41 + nybble - 10));
                 }
-                key_press((VK)' ');
+                SendKeyPress((VK)' ');
             }
-            key_up(VK.LSHIFT);
-            key_up(VK.LCONTROL);
+            SendKeyUp(VK.LSHIFT);
+            SendKeyUp(VK.LCONTROL);
         }
         else
         {
@@ -152,20 +152,20 @@ static class compose
         }
     }
 
-    private static void key_down(VK vk)
+    private static void SendKeyDown(VK vk)
     {
         keybd_event(vk, 0, KEYEVENTF.EXTENDEDKEY, 0);
     }
 
-    private static void key_up(VK vk)
+    private static void SendKeyUp(VK vk)
     {
         keybd_event(vk, 0, KEYEVENTF.KEYUP, 0);
     }
 
-    private static void key_press(VK vk)
+    private static void SendKeyPress(VK vk)
     {
-        key_down(vk);
-        key_up(vk);
+        SendKeyDown(vk);
+        SendKeyUp(vk);
     }
 
     private static byte[] m_keystate = new byte[256];

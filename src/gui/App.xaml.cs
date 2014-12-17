@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace wincompose.gui
+namespace WinCompose.gui
 {
     /// <summary>
     /// Interaction logic for App.xaml

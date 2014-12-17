@@ -11,60 +11,78 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace wincompose
+namespace WinCompose
 {
-    static class settings
+    static class Settings
     {
-        public static void load_config()
+        public static void LoadConfig()
         {
             string val;
             
             // The key used as the compose key
-            val = load_config_entry("compose_key");
+            val = LoadEntry("compose_key");
             if (!m_valid_compose_keys.ContainsKey(val))
                 val = "ralt";
             m_compose_key = m_valid_compose_keys[val];
 
             // The timeout delay
-            val = load_config_entry("reset_delay");
+            val = LoadEntry("reset_delay");
 
             // The interface language
-            val = load_config_entry("language");
+            val = LoadEntry("language");
             if (!m_valid_languages.ContainsKey(val))
                 val = "";
             m_language = val;
 
             // Various options
-            val = load_config_entry("case_insensitive");
-            val = load_config_entry("discard_on_invalid");
-            val = load_config_entry("beep_on_invalid");
+            val = LoadEntry("case_insensitive");
+            val = LoadEntry("discard_on_invalid");
+            val = LoadEntry("beep_on_invalid");
 
             // Save config to sanitise it
-            save_config();
+            SaveConfig();
         }
 
-        public static void save_config()
+        public static void SaveConfig()
         {
-            save_config_entry("compose_key", "ralt");
-            save_config_entry("reset_delay", m_delay.ToString());
-            save_config_entry("language", "");
+            SaveEntry("compose_key", "ralt");
+            SaveEntry("reset_delay", m_delay.ToString());
+            SaveEntry("language", "");
+            SaveEntry("case_insensitive", m_case_insensitive.ToString());
+            SaveEntry("discard_on_invalid", m_discard_on_invalid.ToString());
+            SaveEntry("beep_on_invalid", m_beep_on_invalid.ToString());
         }
 
-        public static bool is_compose_key(VK key)
+        public static bool IsComposeKey(VK key)
         {
             return m_compose_key == key;
         }
 
-        private static string load_config_entry(string key)
+        public static bool IsCaseInsensitive()
+        {
+            return m_case_insensitive;
+        }
+
+        public static bool ShouldDiscardOnInvalid()
+        {
+            return m_discard_on_invalid;
+        }
+
+        public static bool ShouldBeepOnInvalid()
+        {
+            return m_beep_on_invalid;
+        }
+
+        private static string LoadEntry(string key)
         {
             var tmp = new StringBuilder(255);
-            GetPrivateProfileString("global", key, "", tmp, 255, get_config_file());
+            GetPrivateProfileString("global", key, "", tmp, 255, GetConfigFile());
             return tmp.ToString();
         }
 
-        private static void save_config_entry(string key, string val)
+        private static void SaveEntry(string key, string val)
         {
-            WritePrivateProfileString("global", key, val, get_config_file());
+            WritePrivateProfileString("global", key, val, GetConfigFile());
         }
 
         private static readonly Dictionary<string, VK> m_valid_compose_keys = new Dictionary<string, VK>()
@@ -87,7 +105,7 @@ namespace wincompose
 
         private static readonly Dictionary<string, string> m_valid_languages = new Dictionary<string, string>()
         {
-            { ""  , "Autodetect" },
+            { "",   "Autodetect" },
             { "be", "Беларуская" },
             { "cs", "Čeština" },
             { "da", "Dansk" },
@@ -121,30 +139,34 @@ namespace wincompose
 
         private static int m_delay = 500;
 
-        private static string get_config_file()
+        private static bool m_case_insensitive = false;
+        private static bool m_discard_on_invalid = false;
+        private static bool m_beep_on_invalid = false;
+
+        private static string GetConfigFile()
         {
-            return Path.Combine(get_config_dir(), "settings.ini");
+            return Path.Combine(GetConfigDir(), "settings.ini");
         }
 
-        private static string get_config_dir()
+        private static string GetConfigDir()
         {
-            return is_portable() ? "." : Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            return IsPortable() ? "." : Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         }
 
-        private static string get_install_dir()
+        private static string GetInstallDir()
         {
-            return is_portable() ? "." : get_exe_dir();
+            return IsPortable() ? "." : GetExeDir();
         }
 
-        private static string get_exe_dir()
+        private static string GetExeDir()
         {
             var assembly = Assembly.GetExecutingAssembly();
             return Path.GetDirectoryName(assembly.GetName().CodeBase);
         }
 
-        private static bool is_portable()
+        private static bool IsPortable()
         {
-            return !File.Exists(Path.Combine(get_exe_dir(), "unins000.dat"));
+            return !File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
         }
 
         [DllImport("kernel32")]

@@ -5,17 +5,17 @@
 //   See http://www.wtfpl.net/ for more details.using System;
 
 using System;
-using wincompose.gui;
+using WinCompose.gui;
 
-namespace wincompose
+namespace WinCompose
 {
-    static class program
+    static class Program
     {
         [STAThread]
         static void Main()
         {
-            settings.load_config();
-            keyboardhook.install();
+            Settings.LoadConfig();
+            KeyboardHook.Install();
             try
             {
                 var app = new App();
@@ -24,7 +24,7 @@ namespace wincompose
             }
             finally
             {
-                keyboardhook.uninstall();
+                KeyboardHook.Uninstall();
             }
         }
     }
