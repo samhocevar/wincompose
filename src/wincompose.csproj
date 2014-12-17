@@ -6,6 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{892F7967-2DB6-4425-81FA-3B246889FA3B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>wincompose</RootNamespace>
     <AssemblyName>wincompose</AssemblyName>
