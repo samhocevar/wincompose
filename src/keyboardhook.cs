@@ -32,7 +32,8 @@ static class keyboardhook
 
     public static void uninstall()
     {
-        // FIXME: this will crash if called from the GC Finalizer Thread
+        // XXX: this will crash if called from the GC Finalizer Thread because
+        // the hook needs to be removed from the same thread that installed it.
         if (m_hook != HOOK.INVALID)
         {
             int ret = UnhookWindowsHookEx(m_hook);
