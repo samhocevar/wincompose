@@ -20,7 +20,7 @@ static class compose
     {
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
-        bool is_compose = (vk == VK.RMENU);
+        bool is_compose = settings.is_compose_key(vk);
 
         if (is_compose)
         {
@@ -99,19 +99,73 @@ static class compose
 
     private static void send_str(string str)
     {
-        INPUT[] input = new INPUT[str.Length];
-
-        for (int i = 0; i < input.Length; i++)
+        /* HACK: GTK+ applications behave differently with Unicode, and some
+         * applications such as XChat for Windows rename their own top-level
+         * window, so we parse through the names we know in order to detect
+         * a GTK+ application. */
+        bool is_gtk = false;
+        const int len = 256;
+        StringBuilder buf = new StringBuilder(len);
+        if (GetClassName(GetForegroundWindow(), buf, len) > 0)
         {
-            input[i].type = EINPUT.KEYBOARD;
-            input[i].U.ki.wVk = 0;
-            input[i].U.ki.wScan = (ScanCodeShort)str[i];
-            input[i].U.ki.time = 0;
-            input[i].U.ki.dwFlags = KEYEVENTF.UNICODE;
-            input[i].U.ki.dwExtraInfo = UIntPtr.Zero;
+            string wclass = buf.ToString();
+            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
+                is_gtk = true;
         }
 
-        SendInput((uint)input.Length, input, Marshal.SizeOf(typeof(INPUT)));
+        if (is_gtk)
+        {
+            /* FIXME: this does not work properly yet, but you get the idea. */
+            key_down(VK.LCONTROL);
+            key_down(VK.LSHIFT);
+            foreach (var ch in str)
+            {
+                key_press((VK)'u');
+                for (int i = 0; i < 4; ++i)
+                {
+                    int nybble = (int)ch >> (12 - 4 * i);
+                    if (nybble < 10)
+                        key_press((VK)(0x30 + nybble));
+                    else
+                        key_press((VK)(0x41 + nybble - 10));
+                }
+                key_press((VK)' ');
+            }
+            key_up(VK.LSHIFT);
+            key_up(VK.LCONTROL);
+        }
+        else
+        {
+            INPUT[] input = new INPUT[str.Length];
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                input[i].type = EINPUT.KEYBOARD;
+                input[i].U.ki.wVk = 0;
+                input[i].U.ki.wScan = (ScanCodeShort)str[i];
+                input[i].U.ki.time = 0;
+                input[i].U.ki.dwFlags = KEYEVENTF.UNICODE;
+                input[i].U.ki.dwExtraInfo = UIntPtr.Zero;
+            }
+
+            SendInput((uint)input.Length, input, Marshal.SizeOf(typeof(INPUT)));
+        }
+    }
+
+    private static void key_down(VK vk)
+    {
+        keybd_event(vk, 0, KEYEVENTF.EXTENDEDKEY, 0);
+    }
+
+    private static void key_up(VK vk)
+    {
+        keybd_event(vk, 0, KEYEVENTF.KEYUP, 0);
+    }
+
+    private static void key_press(VK vk)
+    {
+        key_down(vk);
+        key_up(vk);
     }
 
     private static byte[] m_keystate = new byte[256];
@@ -198,6 +252,8 @@ static class compose
     [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
     private static extern uint SendInput(uint nInputs,
         [MarshalAs(UnmanagedType.LPArray), In] INPUT[] pInputs, int cbSize);
+    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
+    private static extern void keybd_event(VK vk, SC sc, KEYEVENTF flags, int dwExtraInfo); 
 
     [DllImport("user32", CharSet = CharSet.Auto)]
     private static extern int ToUnicode(VK wVirtKey, SC wScanCode,
@@ -207,6 +263,13 @@ static class compose
     private static extern int GetKeyboardState(byte[] lpKeyState);
     [DllImport("user32", CharSet = CharSet.Auto)]
     private static extern short GetKeyState(VK nVirtKey);
+
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    private static extern IntPtr GetForegroundWindow();
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    private static extern int GetClassName(IntPtr hWnd, StringBuilder text, int count);
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    private static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 }
 
 }

@@ -14,6 +14,7 @@ namespace wincompose
         [STAThread]
         static void Main()
         {
+            settings.load_config();
             keyboardhook.install();
             try
             {
