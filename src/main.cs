@@ -15,7 +15,7 @@ namespace wincompose
         [STAThread]
         static void Main()
         {
-            keyboardhook.init();
+            keyboardhook.install();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -24,7 +24,7 @@ namespace wincompose
             Application.Run();
             gui.Dispose();
 
-            keyboardhook.fini();
+            keyboardhook.uninstall();
         }
     }
 }

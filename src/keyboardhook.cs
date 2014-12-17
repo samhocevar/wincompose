@@ -15,22 +15,31 @@ namespace wincompose
 
 static class keyboardhook
 {
-    public static void init()
+    public static void install()
     {
-        m_callback = key_callback; // Keep a reference on key_callback
-        m_hook = SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
-                                  LoadLibrary("user32.dll"), 0);
-        if (m_hook == HOOK.INVALID)
-            throw new Win32Exception(Marshal.GetLastWin32Error());
+        if (Environment.OSVersion.Platform == PlatformID.Win32NT
+             || Environment.OSVersion.Platform == PlatformID.Win32S
+             || Environment.OSVersion.Platform == PlatformID.Win32Windows
+             || Environment.OSVersion.Platform == PlatformID.WinCE)
+        {
+            m_callback = key_callback; // Keep a reference on key_callback
+            m_hook = SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
+                                      LoadLibrary("user32.dll"), 0);
+            if (m_hook == HOOK.INVALID)
+                throw new Win32Exception(Marshal.GetLastWin32Error());
+        }
     }
 
-    public static void fini()
+    public static void uninstall()
     {
         // FIXME: this will crash if called from the GC Finalizer Thread
-        int ret = UnhookWindowsHookEx(m_hook);
-        if (ret == 0)
-            throw new Win32Exception(Marshal.GetLastWin32Error());
-        m_hook = HOOK.INVALID;
+        if (m_hook != HOOK.INVALID)
+        {
+            int ret = UnhookWindowsHookEx(m_hook);
+            if (ret == 0)
+                throw new Win32Exception(Marshal.GetLastWin32Error());
+            m_hook = HOOK.INVALID;
+        }
         m_callback = null;
     }
 
