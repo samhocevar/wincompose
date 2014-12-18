@@ -119,18 +119,8 @@ static class Compose
             SendKeyDown(VK.LCONTROL);
             SendKeyDown(VK.LSHIFT);
             foreach (var ch in str)
-            {
-                SendKeyPress((VK)'u');
-                for (int i = 0; i < 4; ++i)
-                {
-                    int nybble = (int)ch >> (12 - 4 * i);
-                    if (nybble < 10)
-                        SendKeyPress((VK)(0x30 + nybble));
-                    else
-                        SendKeyPress((VK)(0x41 + nybble - 10));
-                }
-                SendKeyPress((VK)' ');
-            }
+                foreach (var key in String.Format("u{0:x04} ", (short)ch))
+                    SendKeyPress((VK)key);
             SendKeyUp(VK.LSHIFT);
             SendKeyUp(VK.LCONTROL);
         }
