@@ -55,14 +55,22 @@
       <DependentUpon>app.xaml</DependentUpon>
     </Compile>
     <Compile Include="compose.cs" />
-    <Compile Include="gui\mainwindow.xaml.cs">
-      <DependentUpon>mainwindow.xaml</DependentUpon>
+    <Compile Include="gui\CategoryViewModel.cs" />
+    <Compile Include="gui\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="gui\RootViewModel.cs" />
+    <Compile Include="gui\SequenceViewModel.cs" />
     <Compile Include="keyboardhook.cs" />
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
     <Compile Include="settings.cs" />
     <Compile Include="types.cs" />
+    <Compile Include="gui\UnicodeBlocks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnicodeBlocks.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +84,10 @@
       <DependentUpon>resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="gui\UnicodeBlocks.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnicodeBlocks.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="properties\settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>settings.designer.cs</LastGenOutput>
@@ -91,7 +103,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="gui\mainwindow.xaml">
+    <Page Include="gui\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
