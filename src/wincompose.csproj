@@ -61,6 +61,11 @@
     </Compile>
     <Compile Include="gui\RootViewModel.cs" />
     <Compile Include="gui\SequenceViewModel.cs" />
+    <Compile Include="gui\UnicodeCategories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnicodeCategories.resx</DependentUpon>
+    </Compile>
     <Compile Include="keyboardhook.cs" />
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
@@ -73,6 +78,10 @@
     </Compile>
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\UnicodeCategories.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnicodeCategories.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="properties\resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
