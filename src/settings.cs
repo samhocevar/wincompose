@@ -18,7 +18,7 @@ namespace WinCompose
         public static void LoadConfig()
         {
             string val;
-            
+
             // The key used as the compose key
             val = LoadEntry("compose_key");
             if (!m_valid_compose_keys.ContainsKey(val))

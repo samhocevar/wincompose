@@ -55,12 +55,15 @@ static class KeyboardHook
         {
             // Retrieve event data from native structure
             var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
-                                                        typeof(KBDLLHOOKSTRUCT));
+                                                      typeof(KBDLLHOOKSTRUCT));
 
-            if (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
-                || wParam == WM.KEYUP || wParam == WM.SYSKEYUP)
+            bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
+                            || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
+            bool is_injected = (data.flags & LLKHF.INJECTED) == 0;
+
+            if (is_key && !is_injected)
             {
-                if (Compose.OnKey(wParam, data.vkCode, data.scanCode, data.flags))
+                if (Compose.OnKey(wParam, data.vk, data.sc, data.flags))
                 {
                     // Do not process further: that key was for us.
                     return -1;
@@ -77,9 +80,9 @@ static class KeyboardHook
     [StructLayout(LayoutKind.Sequential)]
     private struct KBDLLHOOKSTRUCT
     {
-        public VK vkCode;
-        public SC scanCode;
-        public uint flags;
+        public VK vk;
+        public SC sc;
+        public LLKHF flags;
         public int time;
         public IntPtr dwExtraInfo;
     }

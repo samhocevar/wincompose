@@ -16,7 +16,7 @@ static class Compose
 {
     // Get input from the keyboard hook; return true if the key was handled
     // and needs to be removed from the input chain.
-    public static bool OnKey(WM ev, VK vk, SC sc, uint flags)
+    public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
@@ -49,10 +49,10 @@ static class Compose
         bool has_altgr = (GetKeyState(VK.RMENU) & 0x80) == 0x80
                           && (GetKeyState(VK.LCONTROL) & 0x80) == 0x80;
         bool has_capslock = GetKeyState(VK.CAPITAL) != 0;
-        m_keystate[0x10] = has_shift ? (byte)0x80 : (byte)0x00;
-        m_keystate[0x11] = has_altgr ? (byte)0x80 : (byte)0x00;
-        m_keystate[0x12] = has_altgr ? (byte)0x80 : (byte)0x00;
-        m_keystate[0x14] = has_capslock ? (byte)0x01 : (byte)0x00;
+        m_keystate[0x10] = (byte)(has_shift ? 0x80 : 0x00);
+        m_keystate[0x11] = (byte)(has_altgr ? 0x80 : 0x00);
+        m_keystate[0x12] = (byte)(has_altgr ? 0x80 : 0x00);
+        m_keystate[0x14] = (byte)(has_capslock ? 0x01 : 0x00);
 
         int buflen = 4;
         byte[] buf = new byte[2 * buflen];
@@ -253,12 +253,13 @@ static class Compose
     private static extern uint SendInput(uint nInputs,
         [MarshalAs(UnmanagedType.LPArray), In] INPUT[] pInputs, int cbSize);
     [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
-    private static extern void keybd_event(VK vk, SC sc, KEYEVENTF flags, int dwExtraInfo); 
+    private static extern void keybd_event(VK vk, SC sc, KEYEVENTF flags,
+                                           int dwExtraInfo);
 
     [DllImport("user32", CharSet = CharSet.Auto)]
     private static extern int ToUnicode(VK wVirtKey, SC wScanCode,
                                         byte[] lpKeyState, byte[] pwszBuff,
-                                        int cchBuff, uint wFlags);
+                                        int cchBuff, LLKHF flags);
     [DllImport("user32", CharSet = CharSet.Auto)]
     private static extern int GetKeyboardState(byte[] lpKeyState);
     [DllImport("user32", CharSet = CharSet.Auto)]
