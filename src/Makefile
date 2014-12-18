@@ -1,12 +1,14 @@
 
 EXE = wincompose.exe
 
-CS = main.cs types.cs compose.cs keyboardhook.cs settings.cs \
-     about.cs about.designer.cs \
-     gui.cs gui.designer.cs \
+CS = about.cs about.designer.cs \
+     compose.cs \
+     gui/App.xaml.cs gui/mainwindow.xaml.cs \
+     keyboardhook.cs main.cs \
      properties/assemblyinfo.cs \
      properties/resources.designer.cs \
-     properties/settings.designer.cs
+     properties/settings.designer.cs \
+     settings.cs types.cs
 
 RESX = properties/resources.resx
 RES = properties/wincompose.gui.resources
@@ -22,5 +24,5 @@ $(EXE): $(CS) $(RES)
 	gmcs $(CS) $(REFS:%=-r:%) $(RES:%=-resource:%) -out:$@
 
 $(RES): $(RESX)
-	resgen2 $^ $@
+	resgen2 -useSourcePath $^ $@
 
