@@ -5,6 +5,7 @@
 //   See http://www.wtfpl.net/ for more details.using System;
 
 using System;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -87,8 +88,11 @@ static class Compose
             }
             else
             {
-                // Unknown characters for sequence, print them
-                SendString(m_sequence);
+                // Unknown characters for sequence, print them if necessary
+                if (!Settings.ShouldDiscardOnInvalid())
+                    SendString(m_sequence);
+                if (Settings.ShouldBeepOnInvalid())
+                    SystemSounds.Beep.Play();
                 m_composing = false;
                 m_sequence = "";
             }

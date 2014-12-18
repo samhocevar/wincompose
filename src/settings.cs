@@ -58,9 +58,9 @@ namespace WinCompose
 
             SaveEntry("reset_delay", m_delay.ToString());
             SaveEntry("language", "");
-            SaveEntry("case_insensitive", m_case_insensitive.ToString());
-            SaveEntry("discard_on_invalid", m_discard_on_invalid.ToString());
-            SaveEntry("beep_on_invalid", m_beep_on_invalid.ToString());
+            SaveEntry("case_insensitive", m_case_insensitive);
+            SaveEntry("discard_on_invalid", m_discard_on_invalid);
+            SaveEntry("beep_on_invalid", m_beep_on_invalid);
         }
 
         public static bool IsComposeKey(VK key)
@@ -95,6 +95,16 @@ namespace WinCompose
         private static void SaveEntry(string key, string val)
         {
             WritePrivateProfileString("global", key, val, GetConfigFile());
+        }
+
+        private static void SaveEntry(string key, int val)
+        {
+            SaveEntry(key, val.ToString());
+        }
+
+        private static void SaveEntry(string key, bool val)
+        {
+            SaveEntry(key, val ? "true" : "false");
         }
 
         private static readonly Dictionary<string, VK> m_valid_compose_keys
