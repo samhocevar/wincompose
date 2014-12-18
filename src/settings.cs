@@ -57,7 +57,7 @@ namespace WinCompose
                     SaveEntry("compose_key", entry.Key);
 
             SaveEntry("reset_delay", m_delay.ToString());
-            SaveEntry("language", "");
+            SaveEntry("language", m_language);
             SaveEntry("case_insensitive", m_case_insensitive);
             SaveEntry("discard_on_invalid", m_discard_on_invalid);
             SaveEntry("beep_on_invalid", m_beep_on_invalid);
