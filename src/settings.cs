@@ -34,7 +34,7 @@ namespace WinCompose
             if (m_valid_languages.ContainsKey(val))
                 m_language = val;
             else
-                m_language_val = m_default_language;
+                m_language = m_default_language;
 
             // Various options
             val = LoadEntry("case_insensitive");
