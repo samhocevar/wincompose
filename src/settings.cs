@@ -21,23 +21,30 @@ namespace WinCompose
 
             // The key used as the compose key
             val = LoadEntry("compose_key");
-            if (!m_valid_compose_keys.ContainsKey(val))
-                val = "ralt";
-            m_compose_key = m_valid_compose_keys[val];
+            if (m_valid_compose_keys.ContainsKey(val))
+                m_compose_key = m_valid_compose_keys[val];
+            else
+                m_compose_key = m_default_compose_key;
 
             // The timeout delay
             val = LoadEntry("reset_delay");
 
             // The interface language
             val = LoadEntry("language");
-            if (!m_valid_languages.ContainsKey(val))
-                val = "";
-            m_language = val;
+            if (m_valid_languages.ContainsKey(val))
+                m_language = val;
+            else
+                m_language_val = m_default_language;
 
             // Various options
             val = LoadEntry("case_insensitive");
+            m_case_insensitive = (val == "true");
+
             val = LoadEntry("discard_on_invalid");
+            m_discard_on_invalid = (val == "true");
+
             val = LoadEntry("beep_on_invalid");
+            m_beep_on_invalid = (val == "true");
 
             // Save config to sanitise it
             SaveConfig();
@@ -45,7 +52,10 @@ namespace WinCompose
 
         public static void SaveConfig()
         {
-            SaveEntry("compose_key", "ralt");
+            foreach (var entry in m_valid_compose_keys)
+                if (entry.Value == m_compose_key)
+                    SaveEntry("compose_key", entry.Key);
+
             SaveEntry("reset_delay", m_delay.ToString());
             SaveEntry("language", "");
             SaveEntry("case_insensitive", m_case_insensitive.ToString());
@@ -75,8 +85,10 @@ namespace WinCompose
 
         private static string LoadEntry(string key)
         {
-            var tmp = new StringBuilder(255);
-            GetPrivateProfileString("global", key, "", tmp, 255, GetConfigFile());
+            const int len = 255;
+            var tmp = new StringBuilder(len);
+            GetPrivateProfileString("global", key, "",
+                                    tmp, len, GetConfigFile());
             return tmp.ToString();
         }
 
@@ -85,7 +97,8 @@ namespace WinCompose
             WritePrivateProfileString("global", key, val, GetConfigFile());
         }
 
-        private static readonly Dictionary<string, VK> m_valid_compose_keys = new Dictionary<string, VK>()
+        private static readonly Dictionary<string, VK> m_valid_compose_keys
+         = new Dictionary<string, VK>()
         {
             { "lalt",       VK.LMENU },
             { "ralt",       VK.RMENU },
@@ -101,9 +114,11 @@ namespace WinCompose
             { "scrolllock", VK.SCROLL },
         };
 
-        private static VK m_compose_key = VK.RMENU;
+        private static readonly VK m_default_compose_key = VK.RMENU;
+        private static VK m_compose_key = m_default_compose_key;
 
-        private static readonly Dictionary<string, string> m_valid_languages = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> m_valid_languages
+         = new Dictionary<string, string>()
         {
             { "",   "Autodetect" },
             { "be", "Беларуская" },
@@ -124,9 +139,11 @@ namespace WinCompose
             { "sv", "Svenska" },
         };
 
-        private static string m_language = "";
+        private static readonly string m_default_language = "";
+        private static string m_language = m_default_language;
 
-        private static readonly Dictionary<int, string> m_valid_delays = new Dictionary<int, string>()
+        private static readonly Dictionary<int, string> m_valid_delays
+         = new Dictionary<int, string>()
         {
             { 500,   "500 milliseconds" },
             { 1000,  "1 second" },
@@ -150,7 +167,8 @@ namespace WinCompose
 
         private static string GetConfigDir()
         {
-            return IsPortable() ? "." : Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var appdata = Environment.SpecialFolder.ApplicationData;
+            return IsPortable() ? "." : Environment.GetFolderPath(appdata);
         }
 
         private static string GetInstallDir()
@@ -170,8 +188,10 @@ namespace WinCompose
         }
 
         [DllImport("kernel32")]
-        static extern long WritePrivateProfileString(string Section, string Key, string Value, string FilePath);
+        static extern long WritePrivateProfileString(string Section,
+                                    string Key, string Value, string FilePath);
         [DllImport("kernel32")]
-        static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
+        static extern int GetPrivateProfileString(string Section, string Key,
+              string Default, StringBuilder RetVal, int Size, string FilePath);
     }
 }
