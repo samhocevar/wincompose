@@ -19,7 +19,9 @@ namespace WinCompose.gui
 
             DataContext = new RootViewModel();
             notifyicon.DoubleClick += NotifyiconDoubleclicked;
-            //CloseToTray();
+#if RELEASE
+            CloseToTray();
+#endif
         }
 
         private void NotifyiconDoubleclicked(object sender, EventArgs e)

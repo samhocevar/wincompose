@@ -69,10 +69,15 @@
 
             <DockPanel Grid.Column="2">
                 <TextBlock DockPanel.Dock="Top" Text="{x:Static properties:resources.Mappings}" Margin="8"/>
-                <DockPanel DockPanel.Dock="Bottom">
-                    <TextBlock DockPanel.Dock="Left" Text="{x:Static properties:resources.Search}" Margin="8" VerticalAlignment="Center"/>
-                    <TextBox Margin="8"/>
-                </DockPanel>
+                <Expander DockPanel.Dock="Right" ExpandDirection="Left" Margin="0,8">
+                    <StackPanel>
+                        <Border Width="128" Height="128">
+                            <Viewbox Margin="4">
+                                <TextBlock Text="%"/>
+                            </Viewbox>
+                        </Border>
+                    </StackPanel>
+                </Expander>
                 <ListBox Margin="8">
 
                 </ListBox>
