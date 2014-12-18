@@ -2,8 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:properties="clr-namespace:WinCompose.properties"
+        xmlns:gui="clr-namespace:WinCompose.gui"
         Title="WinCompose" Height="600" Width="800">
     <Window.Resources>
+        <Style x:Key="SmallTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <DataTemplate x:Key="SearchText">
             <Grid>
                 <TextBox x:Name="SearchBox"/>                
@@ -39,11 +47,19 @@
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                             <Setter Property="Padding" Value="4,16"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                         </Style>
                     </ListBox.ItemContainerStyle>
                     <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}"/>
+                        <DataTemplate DataType="gui:CategoryViewModel">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}" HorizontalAlignment="Left"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <TextBlock Text="{Binding RangeStart, StringFormat=U+{0:X4}}" Style="{StaticResource SmallTextBlock}"/>
+                                    <TextBlock Text=" - " Style="{StaticResource SmallTextBlock}"/>
+                                    <TextBlock Text="{Binding RangeEnd, StringFormat=U+{0:X4}}" Style="{StaticResource SmallTextBlock}"/>
+                                </StackPanel>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
