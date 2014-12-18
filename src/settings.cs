@@ -63,6 +63,16 @@ namespace WinCompose
             SaveEntry("beep_on_invalid", m_beep_on_invalid);
         }
 
+        public static void LoadSequences()
+        {
+            LoadSequences(Path.Combine(GetDataDir(), "Xorg.txt"));
+            LoadSequences(Path.Combine(GetDataDir(), "XCompose.txt"));
+            LoadSequences(Path.Combine(GetDataDir(), "WinCompose.txt"));
+
+            LoadSequences(Path.Combine(GetUserDir(), ".XCompose"));
+            LoadSequences(Path.Combine(GetUserDir(), ".XCompose.txt"));
+        }
+
         public static bool IsComposeKey(VK key)
         {
             return m_compose_key == key;
@@ -105,6 +115,11 @@ namespace WinCompose
         private static void SaveEntry(string key, bool val)
         {
             SaveEntry(key, val ? "true" : "false");
+        }
+
+        private static void LoadSequences(string path)
+        {
+            // TODO
         }
 
         private static readonly Dictionary<string, VK> m_valid_compose_keys
@@ -170,6 +185,55 @@ namespace WinCompose
         private static bool m_discard_on_invalid = false;
         private static bool m_beep_on_invalid = false;
 
+        private static readonly Dictionary<string, SC> m_sc_names
+         = new Dictionary<string, SC>()
+        {
+            // ASCII-mapped keys
+            { "space",        (SC)' ' },  // 0x20
+            { "exclam",       (SC)'!' },  // 0x21
+            { "quotedbl",     (SC)'"' },  // 0x22
+            { "numbersign",   (SC)'#' },  // 0x23
+            { "dollar",       (SC)'$' },  // 0x24
+            { "percent",      (SC)'%' },  // 0x25
+            { "ampersand",    (SC)'&' },  // 0x26
+            { "apostrophe",   (SC)'\'' }, // 0x27
+            { "parenleft",    (SC)'(' },  // 0x28
+            { "parenright",   (SC)')' },  // 0x29
+            { "asterisk",     (SC)'*' },  // 0x2a
+            { "plus",         (SC)'+' },  // 0x2b
+            { "comma",        (SC)',' },  // 0x2c
+            { "minus",        (SC)'-' },  // 0x2d
+            { "period",       (SC)'.' },  // 0x2e
+            { "slash",        (SC)'/' },  // 0x2f
+            { "colon",        (SC)':' },  // 0x3a
+            { "semicolon",    (SC)';' },  // 0x3b
+            { "less",         (SC)'<' },  // 0x3c
+            { "equal",        (SC)'=' },  // 0x3d
+            { "greater",      (SC)'>' },  // 0x3e
+            { "question",     (SC)'?' },  // 0x3f
+            { "at",           (SC)'@' },  // 0x40
+            { "bracketleft",  (SC)'[' },  // 0x5b
+            { "backslash",    (SC)'\\' }, // 0x5c
+            { "bracketright", (SC)']' },  // 0x5d
+            { "asciicircum",  (SC)'^' },  // 0x5e
+            { "underscore",   (SC)'_' },  // 0x5f
+            { "grave",        (SC)'`' },  // 0x60
+            { "braceleft",    (SC)'{' },  // 0x7b
+            { "bar",          (SC)'|' },  // 0x7c
+            { "braceright",   (SC)'}' },  // 0x7d
+            { "asciitilde",   (SC)'~' },  // 0x7e
+        };
+
+        private static readonly Dictionary<string, VK> m_vk_names
+         = new Dictionary<string, VK>()
+        {
+            // Non-printing keys; but we need an internal representation
+            { "up",     VK.UP },
+            { "down",   VK.DOWN },
+            { "left",   VK.LEFT },
+            { "right",  VK.RIGHT },
+        };
+
         private static string GetConfigFile()
         {
             return Path.Combine(GetConfigDir(), "settings.ini");
@@ -186,6 +250,11 @@ namespace WinCompose
             return IsInstalled() ? GetExeDir()
                  : IsDebugging() ? "../../res"
                  : ".";
+        }
+
+        private static string GetUserDir()
+        {
+            return Environment.ExpandEnvironmentVariables("%USERPROFILE%");
         }
 
         private static string GetExeName()

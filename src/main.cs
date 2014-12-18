@@ -15,7 +15,9 @@ namespace WinCompose
         static void Main()
         {
             Settings.LoadConfig();
+            Settings.LoadSequences();
             KeyboardHook.Install();
+
             try
             {
                 var app = new App();
