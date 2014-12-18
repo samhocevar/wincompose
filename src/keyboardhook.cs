@@ -59,7 +59,7 @@ static class KeyboardHook
 
             bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
                             || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
-            bool is_injected = (data.flags & LLKHF.INJECTED) == 0;
+            bool is_injected = (data.flags & LLKHF.INJECTED) != 0;
 
             if (is_key && !is_injected)
             {
