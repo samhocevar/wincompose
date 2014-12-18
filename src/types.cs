@@ -4,6 +4,8 @@
 //   Public License, Version 2, as published by the WTFPL Task Force.
 //   See http://www.wtfpl.net/ for more details.using System;
 
+using System;
+
 namespace WinCompose
 {
 
