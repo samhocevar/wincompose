@@ -6,9 +6,9 @@ namespace WinCompose.gui
     /// <summary>
     /// Interaction logic for mainwindow.xaml
     /// </summary>
-    public partial class mainwindow
+    public partial class Mainwindow
     {
-        public mainwindow()
+        public Mainwindow()
         {
             InitializeComponent();
             var notifyicon = new WinForms.NotifyIcon
@@ -17,35 +17,38 @@ namespace WinCompose.gui
                 Icon = properties.resources.icon_normal
             };
 
-            notifyicon.DoubleClick += notifyicon_doubleclicked;
-            close_to_tray();
+            DataContext = new RootViewModel();
+            notifyicon.DoubleClick += NotifyiconDoubleclicked;
+#if RELEASE
+            CloseToTray();
+#endif
         }
 
-        private void notifyicon_doubleclicked(object sender, EventArgs e)
+        private void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
             if (!IsVisible)
             {
-                open_from_tray();
+                OpenFromTray();
             }
             else
             {
-                close_to_tray();
+                CloseToTray();
             }
         }
 
         private void CloseClicked(object sender, RoutedEventArgs e)
         {
-            close_to_tray();
+            CloseToTray();
         }
         
-        private void open_from_tray()
+        private void OpenFromTray()
         {
             ShowInTaskbar = true;
             Show();
             Activate();
         }
 
-        private void close_to_tray()
+        private void CloseToTray()
         {
             ShowInTaskbar = false;
             Hide();
