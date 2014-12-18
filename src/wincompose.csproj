@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UnicodeCategories.resx</DependentUpon>
     </Compile>
+    <Compile Include="gui\UnicodeCategoryConverter.cs" />
     <Compile Include="keyboardhook.cs" />
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
@@ -128,6 +129,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\icon_normal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\key_compose.png" />
+    <Resource Include="res\key_empty.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

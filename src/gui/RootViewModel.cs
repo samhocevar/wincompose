@@ -22,6 +22,13 @@ namespace WinCompose.gui
             }
             categories.Sort((x, y) => string.Compare(x.Name, y.Name));
             Categories = categories;
+
+            var seq = new List<SequenceViewModel>();
+            for (char c = ' '; c < 'Ǘ'; ++c)
+            {
+                seq.Add(new SequenceViewModel(categories[0], c, "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum " + c));
+            }
+            Sequences = seq;
         }
 
         public IEnumerable<CategoryViewModel> Categories { get; private set; }

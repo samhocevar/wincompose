@@ -5,6 +5,9 @@
         xmlns:gui="clr-namespace:WinCompose.gui"
         Title="WinCompose" Height="600" Width="800">
     <Window.Resources>
+        <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
+        <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
+        
         <Style x:Key="SmallTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
             <Setter Property="LayoutTransform">
                 <Setter.Value>
@@ -78,7 +81,55 @@
                         </Border>
                     </StackPanel>
                 </Expander>
-                <ListBox Margin="8">
+                <ListBox Margin="8" ItemsSource="{Binding Sequences}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel Margin="0,2">
+                                <Viewbox Width="32" Height="32" DockPanel.Dock="Left">
+                                    <TextBlock Text="{Binding Character}"/>
+                                </Viewbox>
+                                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
+                                    <Border Width="32" Height="32">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{StaticResource ComposeKeyImage}"/>
+                                        </Border.Background>                                        
+                                    </Border>
+                                    <Viewbox>
+                                        <TextBlock Text=" + "/>
+                                    </Viewbox>
+                                    <Border Width="32" Height="32">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
+                                        </Border.Background>
+                                        <Viewbox Margin="4">
+                                            <TextBlock Text="{Binding Character}" Foreground="Black"/>
+                                        </Viewbox>
+                                    </Border>
+                                    <Viewbox>
+                                        <TextBlock Text=" + "/>
+                                    </Viewbox>
+                                    <Border Width="32" Height="32">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
+                                        </Border.Background>
+                                        <Viewbox Margin="4">
+                                            <TextBlock Text="(spc)" Foreground="Black"/>
+                                        </Viewbox>
+                                    </Border>                                    
+                                </StackPanel>
+                                <TextBlock DockPanel.Dock="Bottom" Text="{Binding Description}" TextTrimming="WordEllipsis"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Unicode, StringFormat=U+{0:X4}}"/>
+                                    <TextBlock Text="{Binding UnicodeCategory, Converter={gui:UnicodeCategoryConverter}}" HorizontalAlignment="Right" Margin="10,0"/>
+                                </StackPanel>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
 
                 </ListBox>
             </DockPanel>
