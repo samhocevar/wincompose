@@ -25,6 +25,7 @@ namespace WinCompose
             finally
             {
                 KeyboardHook.Uninstall();
+                Settings.SaveConfig();
             }
         }
     }
