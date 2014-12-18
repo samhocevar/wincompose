@@ -178,23 +178,37 @@ namespace WinCompose
         private static string GetConfigDir()
         {
             var appdata = Environment.SpecialFolder.ApplicationData;
-            return IsPortable() ? "." : Environment.GetFolderPath(appdata);
+            return IsInstalled() ? Environment.GetFolderPath(appdata) : ".";
         }
 
-        private static string GetInstallDir()
+        private static string GetDataDir()
         {
-            return IsPortable() ? "." : GetExeDir();
+            return IsInstalled() ? GetExeDir()
+                 : IsDebugging() ? "../../res"
+                 : ".";
+        }
+
+        private static string GetExeName()
+        {
+            var codebase = Assembly.GetExecutingAssembly().GetName().CodeBase;
+            return Uri.UnescapeDataString(new UriBuilder(codebase).Path);
         }
 
         private static string GetExeDir()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            return Path.GetDirectoryName(assembly.GetName().CodeBase);
+            return Path.GetDirectoryName(GetExeName());
         }
 
-        private static bool IsPortable()
+        private static bool IsInstalled()
         {
-            return !File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
+            return File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
+        }
+
+        private static bool IsDebugging()
+        {
+            string exe = GetExeName();
+            var lol = Path.ChangeExtension(exe, ".vshost.exe");
+            return File.Exists(Path.ChangeExtension(exe, ".vshost.exe"));
         }
 
         [DllImport("kernel32")]
