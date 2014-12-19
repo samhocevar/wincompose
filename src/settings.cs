@@ -326,14 +326,15 @@ namespace WinCompose
         private static string GetConfigDir()
         {
             var appdata = Environment.SpecialFolder.ApplicationData;
-            return IsInstalled() ? Environment.GetFolderPath(appdata) : ".";
+            return IsInstalled() ? Environment.GetFolderPath(appdata)
+                                 : GetExeDir();
         }
 
         private static string GetDataDir()
         {
-            return IsInstalled() ? GetExeDir()
-                 : IsDebugging() ? "../../res"
-                 : ".";
+            return IsInstalled() ? Path.Combine(GetExeDir(), "res")
+                 : IsDebugging() ? Path.Combine(GetExeDir(), "../../res")
+                 : GetExeDir();
         }
 
         private static string GetUserDir()
