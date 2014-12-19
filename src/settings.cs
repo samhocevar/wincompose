@@ -10,6 +10,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
@@ -65,12 +66,12 @@ namespace WinCompose
 
         public static void LoadSequences()
         {
-            LoadSequences(Path.Combine(GetDataDir(), "Xorg.txt"));
-            LoadSequences(Path.Combine(GetDataDir(), "XCompose.txt"));
-            LoadSequences(Path.Combine(GetDataDir(), "WinCompose.txt"));
+            LoadSequenceFile(Path.Combine(GetDataDir(), "Xorg.txt"));
+            LoadSequenceFile(Path.Combine(GetDataDir(), "XCompose.txt"));
+            LoadSequenceFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
 
-            LoadSequences(Path.Combine(GetUserDir(), ".XCompose"));
-            LoadSequences(Path.Combine(GetUserDir(), ".XCompose.txt"));
+            LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose"));
+            LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
         }
 
         public static bool IsComposeKey(VK key)
@@ -91,6 +92,28 @@ namespace WinCompose
         public static bool ShouldBeepOnInvalid()
         {
             return m_beep_on_invalid;
+        }
+
+        public static Dictionary<string, Sequence> GetSequences()
+        {
+            return m_sequences;
+        }
+
+        public static bool IsValidPrefix(string prefix)
+        {
+            return m_prefixes.ContainsKey(prefix);
+        }
+
+        public static bool IsValidSequence(string sequence)
+        {
+            return m_sequences.ContainsKey(sequence);
+        }
+
+        public static Sequence GetSequence(string sequence)
+        {
+            Sequence ret = null;
+            m_sequences.TryGetValue(sequence, out ret);
+            return ret;
         }
 
         private static string LoadEntry(string key)
@@ -117,10 +140,71 @@ namespace WinCompose
             SaveEntry(key, val ? "true" : "false");
         }
 
-        private static void LoadSequences(string path)
+        private static void LoadSequenceFile(string path)
         {
-            // TODO
+            string[] contents = null;
+
+            try
+            {
+                contents = File.ReadAllLines(path);
+            }
+            catch (Exception) { return; }
+
+            foreach (string line in contents)
+            {
+                // Only bother with sequences that start with <Multi_key>
+                var m1 = Regex.Match(line, @"\s*<Multi_key>\s*([^:]*):[^""]*""([^""]|\"")*""[^#]*#\s*(.*)");
+                //                                            ^^^^^^^         ^^^^^^^^^^^^           ^^^^
+                //                                             keys              result              desc
+                if (m1.Groups.Count >= 3)
+                {
+                    var keys = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
+
+                    if (keys.Length >= 4) // We need 2 keys + 2 empty strings
+                    {
+                        string sequence = "";
+                        bool is_valid = true;
+
+                        for (int i = 1; i < keys.Length; ++i)
+                        {
+                            if (keys[i] == String.Empty)
+                                continue;
+                            else if (keys[i].Length == 1)
+                                sequence += keys[i];
+                            else if (m_sc_names.ContainsKey(keys[i]))
+                                sequence += (char)m_sc_names[keys[i]];
+                            else
+                                is_valid = false;
+                        }
+
+                        if (is_valid)
+                        {
+                            Sequence seq = new Sequence();
+                            seq.m_keys = sequence;
+                            seq.m_result = m1.Groups[2].Captures[0].ToString();
+                            seq.m_description = m1.Groups.Count >= 4 ? m1.Groups[3].Captures[0].ToString() : "";
+
+                            m_sequences[sequence] = seq;
+
+                            // FIXME: find what to put in there
+                            for (int i = 1; i < sequence.Length; ++i)
+                                m_prefixes[sequence.Substring(1, i)] = null;
+                        }
+                    }
+
+                }
+            }
         }
+
+        // FIXME: this should be an acyclic graph so that we immediately
+        // know whether a character is part of a valid sequence, plus we
+        // could do some typing predictions!
+        private static Dictionary<string, Sequence> m_sequences
+         = new Dictionary<string, Sequence>();
+
+        private static Dictionary<string, object> m_prefixes
+         = new Dictionary<string, object>();
+
 
         private static readonly Dictionary<string, VK> m_valid_compose_keys
          = new Dictionary<string, VK>()

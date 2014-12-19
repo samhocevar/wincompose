@@ -23,6 +23,7 @@ static class Compose
         bool is_keyup = !is_keydown;
         bool is_compose = Settings.IsComposeKey(vk);
 
+        // FIXME: we don’t support using e.g. ` as the compose key yet
         if (is_compose)
         {
             if (is_keyup)
@@ -64,8 +65,8 @@ static class Compose
             str = Encoding.Unicode.GetString(buf, 0, ret + 1);
         }
 
-        // Don't know what to do with these for now, but we need to handle some
-        // of them, for instance the arrow keys
+        // FIXME: don't know what to do with these for now, but we need to
+        // handle some of them, for instance the arrow keys
         if (str == null)
             return false;
 
@@ -75,16 +76,17 @@ static class Compose
         {
             m_sequence += str;
 
-            if (m_sequence == ":")
-            {
-                // Do nothing, sequence in progress
-            }
-            else if (m_sequence == ":)")
+            // FIXME: we don’t support case-insensitive yet
+            if (Settings.IsValidSequence(m_sequence))
             {
                 // Sequence finished, print it
-                SendString("☺");
+                SendString(Settings.GetSequence(m_sequence).m_result);
                 m_composing = false;
                 m_sequence = "";
+            }
+            else if (Settings.IsValidPrefix(m_sequence))
+            {
+                // Still a valid prefix, continue building sequence
             }
             else
             {
