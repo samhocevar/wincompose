@@ -142,58 +142,50 @@ namespace WinCompose
 
         private static void LoadSequenceFile(string path)
         {
-            string[] contents = null;
-
             try
             {
-                contents = File.ReadAllLines(path);
+                foreach (string line in File.ReadAllLines(path))
+                    LoadSequenceString(line);
             }
-            catch (Exception) { return; }
+            catch (Exception) { }
+        }
 
-            foreach (string line in contents)
+        private static void LoadSequenceString(string line)
+        {
+            // Only bother with sequences that start with <Multi_key>
+            var m1 = Regex.Match(line, @"\s*<Multi_key>\s*([^:]*):[^""]*""([^""]|\"")*""[^#]*#\s*(.*)");
+            //                                            ^^^^^^^         ^^^^^^^^^^^^           ^^^^
+            //                                             keys              result              desc
+            if (m1.Groups.Count < 3)
+                return;
+
+            var keys = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
+
+            if (keys.Length < 4) // We need 2 keys + 2 empty strings
+                return;
+
+            Sequence seq = new Sequence();
+
+            for (int i = 1; i < keys.Length; ++i)
             {
-                // Only bother with sequences that start with <Multi_key>
-                var m1 = Regex.Match(line, @"\s*<Multi_key>\s*([^:]*):[^""]*""([^""]|\"")*""[^#]*#\s*(.*)");
-                //                                            ^^^^^^^         ^^^^^^^^^^^^           ^^^^
-                //                                             keys              result              desc
-                if (m1.Groups.Count >= 3)
-                {
-                    var keys = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
-
-                    if (keys.Length >= 4) // We need 2 keys + 2 empty strings
-                    {
-                        string sequence = "";
-                        bool is_valid = true;
-
-                        for (int i = 1; i < keys.Length; ++i)
-                        {
-                            if (keys[i] == String.Empty)
-                                continue;
-                            else if (keys[i].Length == 1)
-                                sequence += keys[i];
-                            else if (m_sc_names.ContainsKey(keys[i]))
-                                sequence += (char)m_sc_names[keys[i]];
-                            else
-                                is_valid = false;
-                        }
-
-                        if (is_valid)
-                        {
-                            Sequence seq = new Sequence();
-                            seq.m_keys = sequence;
-                            seq.m_result = m1.Groups[2].Captures[0].ToString();
-                            seq.m_description = m1.Groups.Count >= 4 ? m1.Groups[3].Captures[0].ToString() : "";
-
-                            m_sequences[sequence] = seq;
-
-                            // FIXME: find what to put in there
-                            for (int i = 1; i < sequence.Length; ++i)
-                                m_prefixes[sequence.Substring(1, i)] = null;
-                        }
-                    }
-
-                }
+                if (keys[i] == String.Empty)
+                    continue;
+                else if (keys[i].Length == 1)
+                    seq.m_keys += keys[i];
+                else if (m_sc_names.ContainsKey(keys[i]))
+                    seq.m_keys += (char)m_sc_names[keys[i]];
+                else
+                    return; // Unknown key name! Better bail out
             }
+
+            seq.m_result = m1.Groups[2].Captures[0].ToString();
+            seq.m_description = m1.Groups.Count >= 4 ? m1.Groups[3].Captures[0].ToString() : "";
+
+            m_sequences[seq.m_keys] = seq;
+
+            // FIXME: find what to put in there
+            for (int i = 1; i < seq.m_keys.Length; ++i)
+                m_prefixes[seq.m_keys.Substring(1, i)] = null;
         }
 
         // FIXME: this should be an acyclic graph so that we immediately
