@@ -6,4 +6,7 @@
 # Konami code
 <Multi_key> <up> <up> <down> <down> <left> <right> <left> <right> <b> <a> : "(ノಠ益ಠ)ノ彡┻━┻" # ANGRY TABLE FLIP
 
+# Russian Ruble sign
+<Multi_key> <P> <minus>		: "₽"	# Russian ruble sign
+<Multi_key> <p> <minus>		: "₽"	# Russian ruble sign
 
