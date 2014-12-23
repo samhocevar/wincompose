@@ -129,4 +129,748 @@
   <data name="U0180U024F" xml:space="preserve">
     <value>Latin Extended-B</value>
   </data>
+  <data name="U0250U02AF" xml:space="preserve">
+    <value>IPA Extensions</value>
+  </data>
+  <data name="U02B0U02FF" xml:space="preserve">
+    <value>Spacing Modifier Letters</value>
+  </data>
+  <data name="U0300U036F" xml:space="preserve">
+    <value>Combining Diacritical Marks</value>
+  </data>
+  <data name="U0370U03FF" xml:space="preserve">
+    <value>Greek and Coptic</value>
+  </data>
+  <data name="U0400U04FF" xml:space="preserve">
+    <value>Cyrillic</value>
+  </data>
+  <data name="U0500U052F" xml:space="preserve">
+    <value>Cyrillic Supplement</value>
+  </data>
+  <data name="U0530U058F" xml:space="preserve">
+    <value>Armenian</value>
+  </data>
+  <data name="U0590U05FF" xml:space="preserve">
+    <value>Hebrew</value>
+  </data>
+  <data name="U0600U06FF" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="U0700U074F" xml:space="preserve">
+    <value>Syriac</value>
+  </data>
+  <data name="U0750U077F" xml:space="preserve">
+    <value>Arabic Supplement</value>
+  </data>
+  <data name="U0780U07BF" xml:space="preserve">
+    <value>Thaana</value>
+  </data>
+  <data name="U07C0U07FF" xml:space="preserve">
+    <value>NKo</value>
+  </data>
+  <data name="U0800U083F" xml:space="preserve">
+    <value>Samaritan</value>
+  </data>
+  <data name="U0840U085F" xml:space="preserve">
+    <value>Mandaic</value>
+  </data>
+  <data name="U08A0U08FF" xml:space="preserve">
+    <value>Arabic Extended-A</value>
+  </data>
+  <data name="U0900U097F" xml:space="preserve">
+    <value>Devanagari</value>
+  </data>
+  <data name="U0980U09FF" xml:space="preserve">
+    <value>Bengali</value>
+  </data>
+  <data name="U0A00U0A7F" xml:space="preserve">
+    <value>Gurmukhi</value>
+  </data>
+  <data name="U0A80U0AFF" xml:space="preserve">
+    <value>Gujarati</value>
+  </data>
+  <data name="U0B00U0B7F" xml:space="preserve">
+    <value>Oriya</value>
+  </data>
+  <data name="U0B80U0BFF" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="U0C00U0C7F" xml:space="preserve">
+    <value>Telugu</value>
+  </data>
+  <data name="U0C80U0CFF" xml:space="preserve">
+    <value>Kannada</value>
+  </data>
+  <data name="U0D00U0D7F" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="U0D80U0DFF" xml:space="preserve">
+    <value>Sinhala</value>
+  </data>
+  <data name="U0E00U0E7F" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="U0E80U0EFF" xml:space="preserve">
+    <value>Lao</value>
+  </data>
+  <data name="U0F00U0FFF" xml:space="preserve">
+    <value>Tibetan</value>
+  </data>
+  <data name="U100000U10FFFF" xml:space="preserve">
+    <value>Supplementary Private Use Area-B</value>
+  </data>
+  <data name="U10000U1007F" xml:space="preserve">
+    <value>Linear B Syllabary</value>
+  </data>
+  <data name="U1000U109F" xml:space="preserve">
+    <value>Myanmar</value>
+  </data>
+  <data name="U10080U100FF" xml:space="preserve">
+    <value>Linear B Ideograms</value>
+  </data>
+  <data name="U10100U1013F" xml:space="preserve">
+    <value>Aegean Numbers</value>
+  </data>
+  <data name="U10140U1018F" xml:space="preserve">
+    <value>Ancient Greek Numbers</value>
+  </data>
+  <data name="U10190U101CF" xml:space="preserve">
+    <value>Ancient Symbols</value>
+  </data>
+  <data name="U101D0U101FF" xml:space="preserve">
+    <value>Phaistos Disc</value>
+  </data>
+  <data name="U10280U1029F" xml:space="preserve">
+    <value>Lycian</value>
+  </data>
+  <data name="U102A0U102DF" xml:space="preserve">
+    <value>Carian</value>
+  </data>
+  <data name="U102E0U102FF" xml:space="preserve">
+    <value>Coptic Epact Numbers</value>
+  </data>
+  <data name="U10300U1032F" xml:space="preserve">
+    <value>Old Italic</value>
+  </data>
+  <data name="U10330U1034F" xml:space="preserve">
+    <value>Gothic</value>
+  </data>
+  <data name="U10350U1037F" xml:space="preserve">
+    <value>Old Permic</value>
+  </data>
+  <data name="U10380U1039F" xml:space="preserve">
+    <value>Ugaritic</value>
+  </data>
+  <data name="U103A0U103DF" xml:space="preserve">
+    <value>Old Persian</value>
+  </data>
+  <data name="U10400U1044F" xml:space="preserve">
+    <value>Deseret</value>
+  </data>
+  <data name="U10450U1047F" xml:space="preserve">
+    <value>Shavian</value>
+  </data>
+  <data name="U10480U104AF" xml:space="preserve">
+    <value>Osmanya</value>
+  </data>
+  <data name="U10500U1052F" xml:space="preserve">
+    <value>Elbasan</value>
+  </data>
+  <data name="U10530U1056F" xml:space="preserve">
+    <value>Caucasian Albanian</value>
+  </data>
+  <data name="U10600U1077F" xml:space="preserve">
+    <value>Linear A</value>
+  </data>
+  <data name="U10800U1083F" xml:space="preserve">
+    <value>Cypriot Syllabary</value>
+  </data>
+  <data name="U10840U1085F" xml:space="preserve">
+    <value>Imperial Aramaic</value>
+  </data>
+  <data name="U10860U1087F" xml:space="preserve">
+    <value>Palmyrene</value>
+  </data>
+  <data name="U10880U108AF" xml:space="preserve">
+    <value>Nabataean</value>
+  </data>
+  <data name="U10900U1091F" xml:space="preserve">
+    <value>Phoenician</value>
+  </data>
+  <data name="U10920U1093F" xml:space="preserve">
+    <value>Lydian</value>
+  </data>
+  <data name="U10980U1099F" xml:space="preserve">
+    <value>Meroitic Hieroglyphs</value>
+  </data>
+  <data name="U109A0U109FF" xml:space="preserve">
+    <value>Meroitic Cursive</value>
+  </data>
+  <data name="U10A00U10A5F" xml:space="preserve">
+    <value>Kharoshthi</value>
+  </data>
+  <data name="U10A0U10FF" xml:space="preserve">
+    <value>Georgian</value>
+  </data>
+  <data name="U10A60U10A7F" xml:space="preserve">
+    <value>Old South Arabian</value>
+  </data>
+  <data name="U10A80U10A9F" xml:space="preserve">
+    <value>Old North Arabian</value>
+  </data>
+  <data name="U10AC0U10AFF" xml:space="preserve">
+    <value>Manichaean</value>
+  </data>
+  <data name="U10B00U10B3F" xml:space="preserve">
+    <value>Avestan</value>
+  </data>
+  <data name="U10B40U10B5F" xml:space="preserve">
+    <value>Inscriptional Parthian</value>
+  </data>
+  <data name="U10B60U10B7F" xml:space="preserve">
+    <value>Inscriptional Pahlavi</value>
+  </data>
+  <data name="U10B80U10BAF" xml:space="preserve">
+    <value>Psalter Pahlavi</value>
+  </data>
+  <data name="U10C00U10C4F" xml:space="preserve">
+    <value>Old Turkic</value>
+  </data>
+  <data name="U10E60U10E7F" xml:space="preserve">
+    <value>Rumi Numeral Symbols</value>
+  </data>
+  <data name="U11000U1107F" xml:space="preserve">
+    <value>Brahmi</value>
+  </data>
+  <data name="U1100U11FF" xml:space="preserve">
+    <value>Hangul Jamo</value>
+  </data>
+  <data name="U11080U110CF" xml:space="preserve">
+    <value>Kaithi</value>
+  </data>
+  <data name="U110D0U110FF" xml:space="preserve">
+    <value>Sora Sompeng</value>
+  </data>
+  <data name="U11100U1114F" xml:space="preserve">
+    <value>Chakma</value>
+  </data>
+  <data name="U11150U1117F" xml:space="preserve">
+    <value>Mahajani</value>
+  </data>
+  <data name="U11180U111DF" xml:space="preserve">
+    <value>Sharada</value>
+  </data>
+  <data name="U111E0U111FF" xml:space="preserve">
+    <value>Sinhala Archaic Numbers</value>
+  </data>
+  <data name="U11200U1124F" xml:space="preserve">
+    <value>Khojki</value>
+  </data>
+  <data name="U112B0U112FF" xml:space="preserve">
+    <value>Khudawadi</value>
+  </data>
+  <data name="U11300U1137F" xml:space="preserve">
+    <value>Grantha</value>
+  </data>
+  <data name="U11480U114DF" xml:space="preserve">
+    <value>Tirhuta</value>
+  </data>
+  <data name="U11580U115FF" xml:space="preserve">
+    <value>Siddham</value>
+  </data>
+  <data name="U11600U1165F" xml:space="preserve">
+    <value>Modi</value>
+  </data>
+  <data name="U11680U116CF" xml:space="preserve">
+    <value>Takri</value>
+  </data>
+  <data name="U118A0U118FF" xml:space="preserve">
+    <value>Warang Citi</value>
+  </data>
+  <data name="U11AC0U11AFF" xml:space="preserve">
+    <value>Pau Cin Hau</value>
+  </data>
+  <data name="U12000U123FF" xml:space="preserve">
+    <value>Cuneiform</value>
+  </data>
+  <data name="U1200U137F" xml:space="preserve">
+    <value>Ethiopic</value>
+  </data>
+  <data name="U12400U1247F" xml:space="preserve">
+    <value>Cuneiform Numbers and Punctuation</value>
+  </data>
+  <data name="U13000U1342F" xml:space="preserve">
+    <value>Egyptian Hieroglyphs</value>
+  </data>
+  <data name="U1380U139F" xml:space="preserve">
+    <value>Ethiopic Supplement</value>
+  </data>
+  <data name="U13A0U13FF" xml:space="preserve">
+    <value>Cherokee</value>
+  </data>
+  <data name="U1400U167F" xml:space="preserve">
+    <value>Unified Canadian Aboriginal Syllabics</value>
+  </data>
+  <data name="U16800U16A3F" xml:space="preserve">
+    <value>Bamum Supplement</value>
+  </data>
+  <data name="U1680U169F" xml:space="preserve">
+    <value>Ogham</value>
+  </data>
+  <data name="U16A0U16FF" xml:space="preserve">
+    <value>Runic</value>
+  </data>
+  <data name="U16A40U16A6F" xml:space="preserve">
+    <value>Mro</value>
+  </data>
+  <data name="U16AD0U16AFF" xml:space="preserve">
+    <value>Bassa Vah</value>
+  </data>
+  <data name="U16B00U16B8F" xml:space="preserve">
+    <value>Pahawh Hmong</value>
+  </data>
+  <data name="U16F00U16F9F" xml:space="preserve">
+    <value>Miao</value>
+  </data>
+  <data name="U1700U171F" xml:space="preserve">
+    <value>Tagalog</value>
+  </data>
+  <data name="U1720U173F" xml:space="preserve">
+    <value>Hanunoo</value>
+  </data>
+  <data name="U1740U175F" xml:space="preserve">
+    <value>Buhid</value>
+  </data>
+  <data name="U1760U177F" xml:space="preserve">
+    <value>Tagbanwa</value>
+  </data>
+  <data name="U1780U17FF" xml:space="preserve">
+    <value>Khmer</value>
+  </data>
+  <data name="U1800U18AF" xml:space="preserve">
+    <value>Mongolian</value>
+  </data>
+  <data name="U18B0U18FF" xml:space="preserve">
+    <value>Unified Canadian Aboriginal Syllabics Extended</value>
+  </data>
+  <data name="U1900U194F" xml:space="preserve">
+    <value>Limbu</value>
+  </data>
+  <data name="U1950U197F" xml:space="preserve">
+    <value>Tai Le</value>
+  </data>
+  <data name="U1980U19DF" xml:space="preserve">
+    <value>New Tai Lue</value>
+  </data>
+  <data name="U19E0U19FF" xml:space="preserve">
+    <value>Khmer Symbols</value>
+  </data>
+  <data name="U1A00U1A1F" xml:space="preserve">
+    <value>Buginese</value>
+  </data>
+  <data name="U1A20U1AAF" xml:space="preserve">
+    <value>Tai Tham</value>
+  </data>
+  <data name="U1AB0U1AFF" xml:space="preserve">
+    <value>Combining Diacritical Marks Extended</value>
+  </data>
+  <data name="U1B000U1B0FF" xml:space="preserve">
+    <value>Kana Supplement</value>
+  </data>
+  <data name="U1B00U1B7F" xml:space="preserve">
+    <value>Balinese</value>
+  </data>
+  <data name="U1B80U1BBF" xml:space="preserve">
+    <value>Sundanese</value>
+  </data>
+  <data name="U1BC00U1BC9F" xml:space="preserve">
+    <value>Duployan</value>
+  </data>
+  <data name="U1BC0U1BFF" xml:space="preserve">
+    <value>Batak</value>
+  </data>
+  <data name="U1BCA0U1BCAF" xml:space="preserve">
+    <value>Shorthand Format Controls</value>
+  </data>
+  <data name="U1C00U1C4F" xml:space="preserve">
+    <value>Lepcha</value>
+  </data>
+  <data name="U1C50U1C7F" xml:space="preserve">
+    <value>Ol Chiki</value>
+  </data>
+  <data name="U1CC0U1CCF" xml:space="preserve">
+    <value>Sundanese Supplement</value>
+  </data>
+  <data name="U1CD0U1CFF" xml:space="preserve">
+    <value>Vedic Extensions</value>
+  </data>
+  <data name="U1D000U1D0FF" xml:space="preserve">
+    <value>Byzantine Musical Symbols</value>
+  </data>
+  <data name="U1D00U1D7F" xml:space="preserve">
+    <value>Phonetic Extensions</value>
+  </data>
+  <data name="U1D100U1D1FF" xml:space="preserve">
+    <value>Musical Symbols</value>
+  </data>
+  <data name="U1D200U1D24F" xml:space="preserve">
+    <value>Ancient Greek Musical Notation</value>
+  </data>
+  <data name="U1D300U1D35F" xml:space="preserve">
+    <value>Tai Xuan Jing Symbols</value>
+  </data>
+  <data name="U1D360U1D37F" xml:space="preserve">
+    <value>Counting Rod Numerals</value>
+  </data>
+  <data name="U1D400U1D7FF" xml:space="preserve">
+    <value>Mathematical Alphanumeric Symbols</value>
+  </data>
+  <data name="U1D80U1DBF" xml:space="preserve">
+    <value>Phonetic Extensions Supplement</value>
+  </data>
+  <data name="U1DC0U1DFF" xml:space="preserve">
+    <value>Combining Diacritical Marks Supplement</value>
+  </data>
+  <data name="U1E00U1EFF" xml:space="preserve">
+    <value>Latin Extended Additional</value>
+  </data>
+  <data name="U1E800U1E8DF" xml:space="preserve">
+    <value>Mende Kikakui</value>
+  </data>
+  <data name="U1EE00U1EEFF" xml:space="preserve">
+    <value>Arabic Mathematical Alphabetic Symbols</value>
+  </data>
+  <data name="U1F000U1F02F" xml:space="preserve">
+    <value>Mahjong Tiles</value>
+  </data>
+  <data name="U1F00U1FFF" xml:space="preserve">
+    <value>Greek Extended</value>
+  </data>
+  <data name="U1F030U1F09F" xml:space="preserve">
+    <value>Domino Tiles</value>
+  </data>
+  <data name="U1F0A0U1F0FF" xml:space="preserve">
+    <value>Playing Cards</value>
+  </data>
+  <data name="U1F100U1F1FF" xml:space="preserve">
+    <value>Enclosed Alphanumeric Supplement</value>
+  </data>
+  <data name="U1F200U1F2FF" xml:space="preserve">
+    <value>Enclosed Ideographic Supplement</value>
+  </data>
+  <data name="U1F300U1F5FF" xml:space="preserve">
+    <value>Miscellaneous Symbols and Pictographs</value>
+  </data>
+  <data name="U1F600U1F64F" xml:space="preserve">
+    <value>Emoticons</value>
+  </data>
+  <data name="U1F650U1F67F" xml:space="preserve">
+    <value>Ornamental Dingbats</value>
+  </data>
+  <data name="U1F680U1F6FF" xml:space="preserve">
+    <value>Transport and Map Symbols</value>
+  </data>
+  <data name="U1F700U1F77F" xml:space="preserve">
+    <value>Alchemical Symbols</value>
+  </data>
+  <data name="U1F780U1F7FF" xml:space="preserve">
+    <value>Geometric Shapes Extended</value>
+  </data>
+  <data name="U1F800U1F8FF" xml:space="preserve">
+    <value>Supplemental Arrows-C</value>
+  </data>
+  <data name="U20000U2A6DF" xml:space="preserve">
+    <value>CJK Unified Ideographs Extension B</value>
+  </data>
+  <data name="U2000U206F" xml:space="preserve">
+    <value>General Punctuation</value>
+  </data>
+  <data name="U2070U209F" xml:space="preserve">
+    <value>Superscripts and Subscripts</value>
+  </data>
+  <data name="U20A0U20CF" xml:space="preserve">
+    <value>Currency Symbols</value>
+  </data>
+  <data name="U20D0U20FF" xml:space="preserve">
+    <value>Combining Diacritical Marks for Symbols</value>
+  </data>
+  <data name="U2100U214F" xml:space="preserve">
+    <value>Letterlike Symbols</value>
+  </data>
+  <data name="U2150U218F" xml:space="preserve">
+    <value>Number Forms</value>
+  </data>
+  <data name="U2190U21FF" xml:space="preserve">
+    <value>Arrows</value>
+  </data>
+  <data name="U2200U22FF" xml:space="preserve">
+    <value>Mathematical Operators</value>
+  </data>
+  <data name="U2300U23FF" xml:space="preserve">
+    <value>Miscellaneous Technical</value>
+  </data>
+  <data name="U2400U243F" xml:space="preserve">
+    <value>Control Pictures</value>
+  </data>
+  <data name="U2440U245F" xml:space="preserve">
+    <value>Optical Character Recognition</value>
+  </data>
+  <data name="U2460U24FF" xml:space="preserve">
+    <value>Enclosed Alphanumerics</value>
+  </data>
+  <data name="U2500U257F" xml:space="preserve">
+    <value>Box Drawing</value>
+  </data>
+  <data name="U2580U259F" xml:space="preserve">
+    <value>Block Elements</value>
+  </data>
+  <data name="U25A0U25FF" xml:space="preserve">
+    <value>Geometric Shapes</value>
+  </data>
+  <data name="U2600U26FF" xml:space="preserve">
+    <value>Miscellaneous Symbols</value>
+  </data>
+  <data name="U2700U27BF" xml:space="preserve">
+    <value>Dingbats</value>
+  </data>
+  <data name="U27C0U27EF" xml:space="preserve">
+    <value>Miscellaneous Mathematical Symbols-A</value>
+  </data>
+  <data name="U27F0U27FF" xml:space="preserve">
+    <value>Supplemental Arrows-A</value>
+  </data>
+  <data name="U2800U28FF" xml:space="preserve">
+    <value>Braille Patterns</value>
+  </data>
+  <data name="U2900U297F" xml:space="preserve">
+    <value>Supplemental Arrows-B</value>
+  </data>
+  <data name="U2980U29FF" xml:space="preserve">
+    <value>Miscellaneous Mathematical Symbols-B</value>
+  </data>
+  <data name="U2A00U2AFF" xml:space="preserve">
+    <value>Supplemental Mathematical Operators</value>
+  </data>
+  <data name="U2A700U2B73F" xml:space="preserve">
+    <value>CJK Unified Ideographs Extension C</value>
+  </data>
+  <data name="U2B00U2BFF" xml:space="preserve">
+    <value>Miscellaneous Symbols and Arrows</value>
+  </data>
+  <data name="U2B740U2B81F" xml:space="preserve">
+    <value>CJK Unified Ideographs Extension D</value>
+  </data>
+  <data name="U2C00U2C5F" xml:space="preserve">
+    <value>Glagolitic</value>
+  </data>
+  <data name="U2C60U2C7F" xml:space="preserve">
+    <value>Latin Extended-C</value>
+  </data>
+  <data name="U2C80U2CFF" xml:space="preserve">
+    <value>Coptic</value>
+  </data>
+  <data name="U2D00U2D2F" xml:space="preserve">
+    <value>Georgian Supplement</value>
+  </data>
+  <data name="U2D30U2D7F" xml:space="preserve">
+    <value>Tifinagh</value>
+  </data>
+  <data name="U2D80U2DDF" xml:space="preserve">
+    <value>Ethiopic Extended</value>
+  </data>
+  <data name="U2DE0U2DFF" xml:space="preserve">
+    <value>Cyrillic Extended-A</value>
+  </data>
+  <data name="U2E00U2E7F" xml:space="preserve">
+    <value>Supplemental Punctuation</value>
+  </data>
+  <data name="U2E80U2EFF" xml:space="preserve">
+    <value>CJK Radicals Supplement</value>
+  </data>
+  <data name="U2F00U2FDF" xml:space="preserve">
+    <value>Kangxi Radicals</value>
+  </data>
+  <data name="U2F800U2FA1F" xml:space="preserve">
+    <value>CJK Compatibility Ideographs Supplement</value>
+  </data>
+  <data name="U2FF0U2FFF" xml:space="preserve">
+    <value>Ideographic Description Characters</value>
+  </data>
+  <data name="U3000U303F" xml:space="preserve">
+    <value>CJK Symbols and Punctuation</value>
+  </data>
+  <data name="U3040U309F" xml:space="preserve">
+    <value>Hiragana</value>
+  </data>
+  <data name="U30A0U30FF" xml:space="preserve">
+    <value>Katakana</value>
+  </data>
+  <data name="U3100U312F" xml:space="preserve">
+    <value>Bopomofo</value>
+  </data>
+  <data name="U3130U318F" xml:space="preserve">
+    <value>Hangul Compatibility Jamo</value>
+  </data>
+  <data name="U3190U319F" xml:space="preserve">
+    <value>Kanbun</value>
+  </data>
+  <data name="U31A0U31BF" xml:space="preserve">
+    <value>Bopomofo Extended</value>
+  </data>
+  <data name="U31C0U31EF" xml:space="preserve">
+    <value>CJK Strokes</value>
+  </data>
+  <data name="U31F0U31FF" xml:space="preserve">
+    <value>Katakana Phonetic Extensions</value>
+  </data>
+  <data name="U3200U32FF" xml:space="preserve">
+    <value>Enclosed CJK Letters and Months</value>
+  </data>
+  <data name="U3300U33FF" xml:space="preserve">
+    <value>CJK Compatibility</value>
+  </data>
+  <data name="U3400U4DBF" xml:space="preserve">
+    <value>CJK Unified Ideographs Extension A</value>
+  </data>
+  <data name="U4DC0U4DFF" xml:space="preserve">
+    <value>Yijing Hexagram Symbols</value>
+  </data>
+  <data name="U4E00U9FFF" xml:space="preserve">
+    <value>CJK Unified Ideographs</value>
+  </data>
+  <data name="UA000UA48F" xml:space="preserve">
+    <value>Yi Syllables</value>
+  </data>
+  <data name="UA490UA4CF" xml:space="preserve">
+    <value>Yi Radicals</value>
+  </data>
+  <data name="UA4D0UA4FF" xml:space="preserve">
+    <value>Lisu</value>
+  </data>
+  <data name="UA500UA63F" xml:space="preserve">
+    <value>Vai</value>
+  </data>
+  <data name="UA640UA69F" xml:space="preserve">
+    <value>Cyrillic Extended-B</value>
+  </data>
+  <data name="UA6A0UA6FF" xml:space="preserve">
+    <value>Bamum</value>
+  </data>
+  <data name="UA700UA71F" xml:space="preserve">
+    <value>Modifier Tone Letters</value>
+  </data>
+  <data name="UA720UA7FF" xml:space="preserve">
+    <value>Latin Extended-D</value>
+  </data>
+  <data name="UA800UA82F" xml:space="preserve">
+    <value>Syloti Nagri</value>
+  </data>
+  <data name="UA830UA83F" xml:space="preserve">
+    <value>Common Indic Number Forms</value>
+  </data>
+  <data name="UA840UA87F" xml:space="preserve">
+    <value>Phags-pa</value>
+  </data>
+  <data name="UA880UA8DF" xml:space="preserve">
+    <value>Saurashtra</value>
+  </data>
+  <data name="UA8E0UA8FF" xml:space="preserve">
+    <value>Devanagari Extended</value>
+  </data>
+  <data name="UA900UA92F" xml:space="preserve">
+    <value>Kayah Li</value>
+  </data>
+  <data name="UA930UA95F" xml:space="preserve">
+    <value>Rejang</value>
+  </data>
+  <data name="UA960UA97F" xml:space="preserve">
+    <value>Hangul Jamo Extended-A</value>
+  </data>
+  <data name="UA980UA9DF" xml:space="preserve">
+    <value>Javanese</value>
+  </data>
+  <data name="UA9E0UA9FF" xml:space="preserve">
+    <value>Myanmar Extended-B</value>
+  </data>
+  <data name="UAA00UAA5F" xml:space="preserve">
+    <value>Cham</value>
+  </data>
+  <data name="UAA60UAA7F" xml:space="preserve">
+    <value>Myanmar Extended-A</value>
+  </data>
+  <data name="UAA80UAADF" xml:space="preserve">
+    <value>Tai Viet</value>
+  </data>
+  <data name="UAAE0UAAFF" xml:space="preserve">
+    <value>Meetei Mayek Extensions</value>
+  </data>
+  <data name="UAB00UAB2F" xml:space="preserve">
+    <value>Ethiopic Extended-A</value>
+  </data>
+  <data name="UAB30UAB6F" xml:space="preserve">
+    <value>Latin Extended-E</value>
+  </data>
+  <data name="UABC0UABFF" xml:space="preserve">
+    <value>Meetei Mayek</value>
+  </data>
+  <data name="UAC00UD7AF" xml:space="preserve">
+    <value>Hangul Syllables</value>
+  </data>
+  <data name="UD7B0UD7FF" xml:space="preserve">
+    <value>Hangul Jamo Extended-B</value>
+  </data>
+  <data name="UD800UDB7F" xml:space="preserve">
+    <value>High Surrogates</value>
+  </data>
+  <data name="UDB80UDBFF" xml:space="preserve">
+    <value>High Private Use Surrogates</value>
+  </data>
+  <data name="UDC00UDFFF" xml:space="preserve">
+    <value>Low Surrogates</value>
+  </data>
+  <data name="UE0000UE007F" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="UE000UF8FF" xml:space="preserve">
+    <value>Private Use Area</value>
+  </data>
+  <data name="UE0100UE01EF" xml:space="preserve">
+    <value>Variation Selectors Supplement</value>
+  </data>
+  <data name="UF0000UFFFFF" xml:space="preserve">
+    <value>Supplementary Private Use Area-A</value>
+  </data>
+  <data name="UF900UFAFF" xml:space="preserve">
+    <value>CJK Compatibility Ideographs</value>
+  </data>
+  <data name="UFB00UFB4F" xml:space="preserve">
+    <value>Alphabetic Presentation Forms</value>
+  </data>
+  <data name="UFB50UFDFF" xml:space="preserve">
+    <value>Arabic Presentation Forms-A</value>
+  </data>
+  <data name="UFE00UFE0F" xml:space="preserve">
+    <value>Variation Selectors</value>
+  </data>
+  <data name="UFE10UFE1F" xml:space="preserve">
+    <value>Vertical Forms</value>
+  </data>
+  <data name="UFE20UFE2F" xml:space="preserve">
+    <value>Combining Half Marks</value>
+  </data>
+  <data name="UFE30UFE4F" xml:space="preserve">
+    <value>CJK Compatibility Forms</value>
+  </data>
+  <data name="UFE50UFE6F" xml:space="preserve">
+    <value>Small Form Variants</value>
+  </data>
+  <data name="UFE70UFEFF" xml:space="preserve">
+    <value>Arabic Presentation Forms-B</value>
+  </data>
+  <data name="UFF00UFFEF" xml:space="preserve">
+    <value>Halfwidth and Fullwidth Forms</value>
+  </data>
+  <data name="UFFF0UFFFF" xml:space="preserve">
+    <value>Specials</value>
+  </data>
 </root>

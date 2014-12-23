@@ -46,7 +46,7 @@
             <DockPanel Grid.Column="0">
                 <TextBlock DockPanel.Dock="Top" Text="{x:Static properties:resources.Categories}" Margin="8"/>
                 <ContentPresenter Margin="8" DockPanel.Dock="Bottom" ContentTemplate="{StaticResource SearchText}"/>
-                <ListBox Margin="8" ItemsSource="{Binding Categories}">
+                <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                             <Setter Property="Padding" Value="4,16"/>
@@ -56,7 +56,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate DataType="gui:CategoryViewModel">
                             <StackPanel>
-                                <TextBlock Text="{Binding Name}" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                     <TextBlock Text="{Binding RangeStart, StringFormat=U+{0:X4}}" Style="{StaticResource SmallTextBlock}"/>
                                     <TextBlock Text=" - " Style="{StaticResource SmallTextBlock}"/>
@@ -81,7 +81,7 @@
                         </Border>
                     </StackPanel>
                 </Expander>
-                <ListBox Margin="8" ItemsSource="{Binding Sequences}">
+                <ListBox Margin="8" ItemsSource="{Binding Sequences}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

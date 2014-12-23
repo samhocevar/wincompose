@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WinCompose.gui
 {
@@ -16,8 +17,9 @@ namespace WinCompose.gui
                     continue;
 
                 var name = (string)property.GetValue(null, null);
-                var start = Convert.ToInt32(property.Name.Substring(1, 4), 16);
-                var end = Convert.ToInt32(property.Name.Substring(6, 4), 16);
+                var range = property.Name.Split(new[] { 'U' });
+                var start = Convert.ToInt32(range[1], 16);
+                var end = Convert.ToInt32(range[2], 16);
                 categories.Add(new CategoryViewModel(name, start, end));
             }
             categories.Sort((x, y) => string.Compare(x.Name, y.Name));
@@ -26,7 +28,17 @@ namespace WinCompose.gui
             var sequences = new List<SequenceViewModel>();
             foreach (var sequence in Settings.GetSequences().Values)
             {
-                sequences.Add(new SequenceViewModel(categories[0], sequence));
+                // TODO: optimize me
+                CategoryViewModel category = null;
+                foreach (var cat in Categories)
+                {
+                    if (cat.RangeStart < sequence.m_result[0])
+                    {
+                        category = cat;
+                        break;
+                    }
+                }
+                sequences.Add(new SequenceViewModel(category, sequence));
             }
             Sequences = sequences;
         }
