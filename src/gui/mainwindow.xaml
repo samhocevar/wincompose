@@ -90,9 +90,11 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel Margin="0,2">
-                                <Viewbox Width="32" Height="32" DockPanel.Dock="Left">
-                                    <TextBlock Text="{Binding Character}"/>
-                                </Viewbox>
+                                <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
+                                    <Viewbox Width="32" Height="32" DockPanel.Dock="Left">
+                                        <TextBlock Text="{Binding Character}" Foreground="Black"/>
+                                    </Viewbox>
+                                </Border>
                                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
                                     <Border Width="32" Height="32">
                                         <Border.Background>
@@ -122,11 +124,11 @@
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
                                 </StackPanel>
-                                <TextBlock DockPanel.Dock="Bottom" Text="{Binding Description}" TextTrimming="WordEllipsis"/>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                                     <TextBlock Text="{Binding Unicode, StringFormat=U+{0:X4}}"/>
                                     <TextBlock Text="{Binding UnicodeCategory, Converter={gui:UnicodeCategoryConverter}}" HorizontalAlignment="Right" Margin="10,0"/>
                                 </StackPanel>
+                                <TextBlock Text="{Binding Description}" TextTrimming="WordEllipsis"/>
                             </DockPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
