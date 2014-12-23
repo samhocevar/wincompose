@@ -23,7 +23,9 @@
                         <Path Width="12" Height="12" Stretch="Fill" Fill="#FF000000" Data="F1 M 26.9166,22.1667L 37.9999,33.25L 49.0832,22.1668L 53.8332,26.9168L 42.7499,38L 53.8332,49.0834L 49.0833,53.8334L 37.9999,42.75L 26.9166,53.8334L 22.1666,49.0833L 33.25,38L 22.1667,26.9167L 26.9166,22.1667 Z "/>
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                <Border Background="Transparent">
+                                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                                </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
@@ -139,10 +141,10 @@
                                     </ItemsControl>
                                 </StackPanel>
                                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Unicode, StringFormat=U+{0:X4}}"/>
-                                    <TextBlock Text="{Binding UnicodeCategory, Converter={gui:UnicodeCategoryConverter}}" HorizontalAlignment="Right" Margin="10,0"/>
+                                    <TextBlock Text="{Binding Unicode, StringFormat=U+{0:X4}, Mode=OneTime}"/>
+                                    <TextBlock Text="{Binding UnicodeCategory, Converter={gui:UnicodeCategoryConverter}, Mode=OneTime}" HorizontalAlignment="Right" Margin="10,0"/>
                                 </StackPanel>
-                                <TextBlock Text="{Binding Description}" TextTrimming="WordEllipsis"/>
+                                <TextBlock Text="{Binding Description, Mode=OneTime}" TextTrimming="WordEllipsis"/>
                             </DockPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
