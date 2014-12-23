@@ -17,7 +17,7 @@
         </Style>
         <DataTemplate x:Key="SearchText">
             <Grid>
-                <TextBox x:Name="SearchBox"/>                
+                <TextBox x:Name="SearchBox" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>                
                 <TextBlock x:Name="Watermark" Text="{x:Static properties:resources.Search}" VerticalAlignment="Center"
                                    Margin="8,0" FontStyle="Italic" Foreground="DarkGray" Visibility="Collapsed" IsHitTestVisible="False"/>
                 </Grid>
@@ -45,11 +45,12 @@
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0">
                 <TextBlock DockPanel.Dock="Top" Text="{x:Static properties:resources.Categories}" Margin="8"/>
-                <ContentPresenter Margin="8" DockPanel.Dock="Bottom" ContentTemplate="{StaticResource SearchText}"/>
-                <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ContentPresenter Margin="8" DockPanel.Dock="Bottom" ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
+                <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                            <Setter Property="Padding" Value="4,16"/>
+                            <Setter Property="Padding" Value="4,8"/>
+                            <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                         </Style>
                     </ListBox.ItemContainerStyle>

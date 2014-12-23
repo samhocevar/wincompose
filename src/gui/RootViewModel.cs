@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
+using System.Windows.Data;
 
 namespace WinCompose.gui
 {
-    public class RootViewModel
+    public class RootViewModel : ViewModelBase
     {
+        private string searchText;
+        private SearchTokens searchTokens = new SearchTokens(null);
+
         public RootViewModel()
         {
             var categories = new List<CategoryViewModel>();
@@ -41,10 +44,36 @@ namespace WinCompose.gui
                 sequences.Add(new SequenceViewModel(category, sequence));
             }
             Sequences = sequences;
+            Instance = this;
+            var collectionView = CollectionViewSource.GetDefaultView(Sequences);
+            collectionView.Filter = FilterFunc;
         }
+
+        public static RootViewModel Instance { get; private set; }
 
         public IEnumerable<CategoryViewModel> Categories { get; private set; }
 
-        public IEnumerable<SequenceViewModel> Sequences { get; private set; } 
+        public IEnumerable<SequenceViewModel> Sequences { get; private set; }
+
+        public string SearchText { get { return searchText; } set { SetValue(ref searchText, value, "SearchText", RefreshFilters); } }
+
+        public void RefreshFilters()
+        {
+            var collectionView = CollectionViewSource.GetDefaultView(Sequences);
+            collectionView.Refresh();
+        }
+
+        private void RefreshFilters(string text)
+        {
+            searchTokens = new SearchTokens(text);
+            RefreshFilters();
+        }
+
+        private bool FilterFunc(object obj)
+        {
+            var sequence = (SequenceViewModel)obj;
+            return sequence.Category.IsSelected && sequence.Match(searchTokens);
+
+        }
     }
 }

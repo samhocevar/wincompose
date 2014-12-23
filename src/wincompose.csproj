@@ -60,6 +60,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="gui\RootViewModel.cs" />
+    <Compile Include="gui\SearchTokens.cs" />
     <Compile Include="gui\SequenceViewModel.cs" />
     <Compile Include="gui\UnicodeCategories.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -67,6 +68,7 @@
       <DependentUpon>UnicodeCategories.resx</DependentUpon>
     </Compile>
     <Compile Include="gui\UnicodeCategoryConverter.cs" />
+    <Compile Include="gui\ViewModelBase.cs" />
     <Compile Include="keyboardhook.cs" />
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
