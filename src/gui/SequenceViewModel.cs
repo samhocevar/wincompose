@@ -5,11 +5,12 @@ namespace WinCompose.gui
 {
     public class SequenceViewModel
     {
-        public SequenceViewModel(CategoryViewModel category, char character, string desc)
+        public SequenceViewModel(CategoryViewModel category, Sequence sequence)
         {
             Category = category;
-            Character = character;
-            Description = desc;
+            Character = sequence.m_result[0];
+            Description = sequence.m_description;
+            Sequence = sequence.m_keys;
         }
 
         public CategoryViewModel Category { get; private set; }
@@ -23,6 +24,6 @@ namespace WinCompose.gui
 
         public string Description { get; private set; }
 
-        public object Sequence { get; set; }
+        public string Sequence { get; set; }
     }
 }

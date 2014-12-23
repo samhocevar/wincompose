@@ -99,28 +99,28 @@
                                             <ImageBrush ImageSource="{StaticResource ComposeKeyImage}"/>
                                         </Border.Background>                                        
                                     </Border>
-                                    <Viewbox>
-                                        <TextBlock Text=" + "/>
-                                    </Viewbox>
-                                    <Border Width="32" Height="32">
-                                        <Border.Background>
-                                            <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
-                                        </Border.Background>
-                                        <Viewbox Margin="4">
-                                            <TextBlock Text="{Binding Character}" Foreground="Black"/>
-                                        </Viewbox>
-                                    </Border>
-                                    <Viewbox>
-                                        <TextBlock Text=" + "/>
-                                    </Viewbox>
-                                    <Border Width="32" Height="32">
-                                        <Border.Background>
-                                            <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
-                                        </Border.Background>
-                                        <Viewbox Margin="4">
-                                            <TextBlock Text="(spc)" Foreground="Black"/>
-                                        </Viewbox>
-                                    </Border>                                    
+                                    <ItemsControl ItemsSource="{Binding Sequence}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text=" + " VerticalAlignment="Center"/>
+                                                    <Border Width="32" Height="32">
+                                                        <Border.Background>
+                                                            <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
+                                                        </Border.Background>
+                                                        <Viewbox Margin="4">
+                                                            <TextBlock Text="{Binding}" Foreground="Black"/>
+                                                        </Viewbox>
+                                                    </Border>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
                                 </StackPanel>
                                 <TextBlock DockPanel.Dock="Bottom" Text="{Binding Description}" TextTrimming="WordEllipsis"/>
                                 <StackPanel Orientation="Horizontal">
