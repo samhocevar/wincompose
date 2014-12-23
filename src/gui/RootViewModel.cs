@@ -12,6 +12,7 @@ namespace WinCompose.gui
     {
         private string searchText;
         private SearchTokens searchTokens = new SearchTokens(null);
+        private bool searchInSelection;
 
         public RootViewModel()
         {
@@ -69,7 +70,9 @@ namespace WinCompose.gui
 
         public IEnumerable<SequenceViewModel> Sequences { get; private set; }
 
-        public string SearchText { get { return searchText; } set { SetValue(ref searchText, value, "SearchText", RefreshFilters); } }
+        public string SearchText { get { return searchText; } set { SetValue(ref searchText, value, "SearchText", RefreshSearch); } }
+
+        public bool SearchInSelection { get { return searchInSelection; } set { SetValue(ref searchInSelection, value, "SearchInSelection", x => RefreshFilters()); } }
 
         public void RefreshFilters()
         {
@@ -77,7 +80,7 @@ namespace WinCompose.gui
             collectionView.Refresh();
         }
 
-        private void RefreshFilters(string text)
+        private void RefreshSearch(string text)
         {
             searchTokens = new SearchTokens(text);
             RefreshFilters();
@@ -86,7 +89,13 @@ namespace WinCompose.gui
         private bool FilterFunc(object obj)
         {
             var sequence = (SequenceViewModel)obj;
-            return sequence.Category.IsSelected && sequence.Match(searchTokens);
+            if (searchTokens.IsEmpty)
+                return sequence.Category.IsSelected;
+
+            if (SearchInSelection)
+                return sequence.Category.IsSelected && sequence.Match(searchTokens);
+
+            return sequence.Match(searchTokens);
         }
     }
 }

@@ -142,4 +142,7 @@
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>In selected categories</value>
+  </data>
 </root>

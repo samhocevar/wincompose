@@ -8,6 +8,8 @@ namespace WinCompose.gui
     /// </summary>
     public partial class Mainwindow
     {
+        private RootViewModel viewModel;
+
         public Mainwindow()
         {
             InitializeComponent();
@@ -17,7 +19,8 @@ namespace WinCompose.gui
                 Icon = properties.resources.icon_normal
             };
 
-            DataContext = new RootViewModel();
+            viewModel = new RootViewModel();
+            DataContext = viewModel;
             notifyicon.DoubleClick += NotifyiconDoubleclicked;
 #if RELEASE
             CloseToTray();
@@ -108,5 +111,9 @@ namespace WinCompose.gui
 
         //private about m_about;
 
+        private void ClearSearchClicked(object sender, RoutedEventArgs e)
+        {
+            viewModel.SearchText = "";
+        }
     }
 }
