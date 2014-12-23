@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Data;
+using System.Xml;
 
 namespace WinCompose.gui
 {
@@ -25,24 +28,35 @@ namespace WinCompose.gui
                 var end = Convert.ToInt32(range[2], 16);
                 categories.Add(new CategoryViewModel(name, start, end));
             }
-            categories.Sort((x, y) => string.Compare(x.Name, y.Name));
-            Categories = categories;
+            categories.Sort((x, y) => string.Compare(x.Name, y.Name, Thread.CurrentThread.CurrentCulture, CompareOptions.StringSort));
+
+            var sortedCategories = new SortedList<int, CategoryViewModel>();
+            foreach (var category in categories)
+            {
+                sortedCategories.Add(category.RangeEnd, category);
+            }
 
             var sequences = new List<SequenceViewModel>();
             foreach (var sequence in Settings.GetSequences().Values)
             {
                 // TODO: optimize me
-                CategoryViewModel category = null;
-                foreach (var cat in Categories)
+                foreach (var category in sortedCategories)
                 {
-                    if (cat.RangeStart < sequence.m_result[0])
+                    if (category.Key > sequence.m_result[0])
                     {
-                        category = cat;
+                        sequences.Add(new SequenceViewModel(category.Value, sequence));
                         break;
                     }
                 }
-                sequences.Add(new SequenceViewModel(category, sequence));
             }
+            var nonEmptyCategories = new List<CategoryViewModel>();
+            foreach (var category in categories)
+            {
+                if (!category.IsEmpty)
+                    nonEmptyCategories.Add(category);
+            }
+            Categories = nonEmptyCategories;
+
             Sequences = sequences;
             Instance = this;
             var collectionView = CollectionViewSource.GetDefaultView(Sequences);
@@ -73,7 +87,6 @@ namespace WinCompose.gui
         {
             var sequence = (SequenceViewModel)obj;
             return sequence.Category.IsSelected && sequence.Match(searchTokens);
-
         }
     }
 }

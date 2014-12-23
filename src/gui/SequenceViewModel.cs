@@ -23,6 +23,7 @@ namespace WinCompose.gui
         public SequenceViewModel(CategoryViewModel category, Sequence sequence)
         {
             Category = category;
+            Category.IsEmpty = false;
             Character = sequence.m_result[0];
             Description = sequence.m_description;
             Sequence = sequence.m_keys;

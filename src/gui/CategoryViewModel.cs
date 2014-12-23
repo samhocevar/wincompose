@@ -3,6 +3,7 @@
     public class CategoryViewModel : ViewModelBase
     {
         private bool isSelected;
+        private bool isEmpty = true;
 
         public CategoryViewModel(string name, int start, int end)
         {
@@ -19,7 +20,9 @@
 
         public bool IsSelected { get { return isSelected; } set { SetValue(ref isSelected, value, "IsSelected", RefreshFilter); } }
 
-        private void RefreshFilter(bool obj)
+        public bool IsEmpty { get { return isEmpty; } set { SetValue(ref isEmpty, value, "IsEmpty"); } }
+
+        private static void RefreshFilter(bool obj)
         {
             RootViewModel.Instance.RefreshFilters();
         }

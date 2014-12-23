@@ -12,7 +12,7 @@ namespace WinCompose.gui
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void SetValue<T>(ref T field, T value, string propertyName, Action<T> callback)
+        protected virtual void SetValue<T>(ref T field, T value, string propertyName, Action<T> callback = null)
         {
             if (!Equals(field, value))
             {
