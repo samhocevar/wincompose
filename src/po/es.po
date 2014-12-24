@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2014-12-03 05:05+0200\n"
-"Last-Translator: Michael R. Lawrence <michaellonewolf359@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/wincompose/"
-"master/es/>\n"
+"PO-Revision-Date: 2014-12-20 21:50+0200\n"
+"Last-Translator: Luis García Sevillano <floss.dev@gmail.com>\n"
+"Language-Team: Spanish "
+"<https://hosted.weblate.org/projects/wincompose/master/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.1-dev\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
@@ -112,9 +112,8 @@ msgid "None"
 msgstr "Ninguno"
 
 #: ui.ahk:54 ui.ahk:68
-#, fuzzy
 msgid "Show &Sequences…"
-msgstr "Mostrar las secuencias de &…"
+msgstr "Mostrar las &Secuencias…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
@@ -129,9 +128,8 @@ msgid "&History"
 msgstr "&Historia"
 
 #: ui.ahk:61
-#, fuzzy
 msgid "Hotkey &List"
-msgstr "&Lista de atajos"
+msgstr "&Lista de Atajos"
 
 #: ui.ahk:64
 msgid "&Options…"
@@ -150,12 +148,10 @@ msgid "E&xit"
 msgstr "&Salir"
 
 #: ui.ahk:75
-#, fuzzy
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
 #: ui.ahk:129
-#, fuzzy
 msgid "@APP_NAME@ v@APP_VERSION@\n"
 msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
@@ -193,7 +189,7 @@ msgstr "Filtro de búsqueda:"
 
 #: ui.ahk:204
 msgid "Compose Key:"
-msgstr ""
+msgstr "Componer tecla:"
 
 #: ui.ahk:215
 msgid "Delay:"
