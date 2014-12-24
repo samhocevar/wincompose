@@ -1,7 +1,8 @@
 ﻿WinCompose
 ==========
 
-A compose key for Windows, written by Sam Hocevar.
+A compose key for Windows, free and opensource, written by Sam Hocevar
+and Benjamin Litzelmann.
 
 A **compose key** allows to easily write special characters such as **é
 ž à ō û ø ☺ ¤ ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often
@@ -9,8 +10,8 @@ very intuitive key combinations. For instance, **ö** is obtained using
 <kbd>o</kbd> + <kbd>"</kbd>, and **♥** is obtained using <kbd>&lt;</kbd>
 \+ <kbd>3</kbd>.
 
-I wrote WinCompose because I found none of the alternatives (FreeCompose,
-CKFW, AllChars or Unichars) to be satisfying.
+The authors wrote WinCompose because none of the alternatives (FreeCompose,
+CKFW, AllChars or Unichars) were found to be satisfying.
 
 Download latest: [WinCompose 0.6.13](https://github.com/samhocevar/wincompose/releases/download/v0.6.13/WinCompose-Setup-0.6.13.exe) (December 12, 2014)
 -----------------------------------
