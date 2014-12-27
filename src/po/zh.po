@@ -1,0 +1,237 @@
+# Chinese translations for PACKAGE package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-12 01:23+0100\n"
+"PO-Revision-Date: 2014-12-12 01:23+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.ahk:512 ui.ahk:456
+msgid "Loaded @1@ Sequences"
+msgstr ""
+
+#: main.ahk:512 ui.ahk:457
+msgid "Compose Key is @1@"
+msgstr ""
+
+#: constants.ahk:34
+msgid "Autodetect"
+msgstr ""
+
+#: constants.ahk:60
+msgid "Left Alt"
+msgstr ""
+
+#: constants.ahk:61
+msgid "Right Alt"
+msgstr ""
+
+#: constants.ahk:62
+msgid "Left Control"
+msgstr ""
+
+#: constants.ahk:63
+msgid "Right Control"
+msgstr ""
+
+#: constants.ahk:64
+msgid "Left Windows"
+msgstr ""
+
+#: constants.ahk:65
+msgid "Right Windows"
+msgstr ""
+
+#: constants.ahk:66
+msgid "Caps Lock"
+msgstr ""
+
+#: constants.ahk:67
+msgid "Num Lock"
+msgstr ""
+
+#: constants.ahk:68
+msgid "Pause"
+msgstr ""
+
+#: constants.ahk:69
+msgid "Menu"
+msgstr ""
+
+#: constants.ahk:70
+msgid "Escape"
+msgstr ""
+
+#: constants.ahk:71
+msgid "Scroll Lock"
+msgstr ""
+
+#: constants.ahk:72
+msgid "Grave Accent `"
+msgstr ""
+
+#: constants.ahk:100
+msgid "500 milliseconds"
+msgstr ""
+
+#: constants.ahk:101
+msgid "1 second"
+msgstr ""
+
+#: constants.ahk:102
+msgid "2 seconds"
+msgstr ""
+
+#: constants.ahk:103
+msgid "3 seconds"
+msgstr ""
+
+#: constants.ahk:104
+msgid "5 seconds"
+msgstr ""
+
+#: constants.ahk:105
+msgid "10 seconds"
+msgstr ""
+
+#: constants.ahk:106
+msgid "None"
+msgstr ""
+
+#: ui.ahk:54 ui.ahk:68
+msgid "Show &Sequences…"
+msgstr ""
+
+#: ui.ahk:55 ui.ahk:459
+msgid "Disable"
+msgstr ""
+
+#: ui.ahk:56
+msgid "Restart"
+msgstr ""
+
+#: ui.ahk:60
+msgid "&History"
+msgstr ""
+
+#: ui.ahk:61
+msgid "Hotkey &List"
+msgstr ""
+
+#: ui.ahk:64
+msgid "&Options…"
+msgstr ""
+
+#: ui.ahk:65
+msgid "&About"
+msgstr ""
+
+#: ui.ahk:66
+msgid "&Visit Website"
+msgstr ""
+
+#: ui.ahk:67
+msgid "E&xit"
+msgstr ""
+
+#: ui.ahk:75
+msgid "@APP_NAME@"
+msgstr ""
+
+#: ui.ahk:129
+msgid "@APP_NAME@ v@APP_VERSION@\n"
+msgstr ""
+
+#: ui.ahk:130
+msgid "\n"
+msgstr ""
+
+#: ui.ahk:131
+msgid "by Sam Hocevar <sam@hocevar.net>\n"
+msgstr ""
+
+#: ui.ahk:132
+msgid "running on AHK v@AHK_VERSION@\n"
+msgstr ""
+
+#: ui.ahk:152
+msgid "Sequences"
+msgstr ""
+
+#: ui.ahk:152
+msgid "Options"
+msgstr ""
+
+#: ui.ahk:161
+msgid "Sequence"
+msgstr ""
+
+#: ui.ahk:161
+msgid "Char"
+msgstr ""
+
+#: ui.ahk:161
+msgid "Unicode"
+msgstr ""
+
+#: ui.ahk:188
+msgid "Search Filter:"
+msgstr ""
+
+#: ui.ahk:204
+msgid "Compose Key:"
+msgstr ""
+
+#: ui.ahk:215
+msgid "Delay:"
+msgstr ""
+
+#: ui.ahk:220
+msgid "Fall back to case insensitive matches on invalid sequences"
+msgstr ""
+
+#: ui.ahk:223
+msgid "Discard characters from invalid sequences"
+msgstr ""
+
+#: ui.ahk:226
+msgid "Beep on invalid sequences"
+msgstr ""
+
+#: ui.ahk:239
+msgid "Interface language:"
+msgstr ""
+
+#: ui.ahk:245
+msgid "Close"
+msgstr ""
+
+#: ui.ahk:248
+msgid "Copy Character"
+msgstr ""
+
+#: ui.ahk:346
+msgid "Description:"
+msgstr ""
+
+#: ui.ahk:443
+msgid "@APP_NAME@ (disabled)"
+msgstr ""
+
+#: ui.ahk:448
+msgid "@APP_NAME@ (active)"
+msgstr ""
+
+#: ui.ahk:453
+msgid "@APP_NAME@ (typing)"
+msgstr ""
