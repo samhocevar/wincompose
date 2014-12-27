@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 01:23+0100\n"
-"PO-Revision-Date: 2014-12-27 04:20+0200\n"
+"PO-Revision-Date: 2014-12-27 08:08+0200\n"
 "Last-Translator: Wei-cheng Kung <wck317@pchome.com.tw>\n"
 "Language-Team: Chinese "
 "<https://hosted.weblate.org/projects/wincompose/master/zh/>\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
-msgstr "已載入 @1@ 串列"
+msgstr "已載入 @1@ 按鍵系列"
 
 #: main.ahk:512 ui.ahk:457
 msgid "Compose Key is @1@"
-msgstr "組合鍵是 @1@"
+msgstr "前導鍵是 @1@"
 
 #: constants.ahk:34
 msgid "Autodetect"
@@ -57,7 +57,7 @@ msgstr "右 Win"
 
 #: constants.ahk:66
 msgid "Caps Lock"
-msgstr "Caps Lock (大寫鎖定鍵)"
+msgstr "Caps Lock"
 
 #: constants.ahk:67
 msgid "Num Lock"
@@ -113,11 +113,11 @@ msgstr "無"
 
 #: ui.ahk:54 ui.ahk:68
 msgid "Show &Sequences…"
-msgstr "顯示組合系列(&S)…"
+msgstr "顯示按鍵系列(&S)…"
 
 #: ui.ahk:55 ui.ahk:459
 msgid "Disable"
-msgstr "關閉"
+msgstr "停用"
 
 #: ui.ahk:56
 msgid "Restart"
@@ -195,7 +195,7 @@ msgstr "搜尋篩選器:"
 
 #: ui.ahk:204
 msgid "Compose Key:"
-msgstr "組合鍵:"
+msgstr "前導鍵:"
 
 #: ui.ahk:215
 msgid "Delay:"
@@ -203,15 +203,15 @@ msgstr "延遲:"
 
 #: ui.ahk:220
 msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr "無效鍵組時忽略大小寫"
+msgstr "無效按鍵系列時忽略大小寫"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr "丟棄無效鍵組中的字元"
+msgstr "丟棄無效按鍵系列中的字元"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
-msgstr "無效鍵組時發出嗶聲"
+msgstr "無效按鍵系列時發出嗶聲"
 
 #: ui.ahk:239
 msgid "Interface language:"
@@ -231,7 +231,7 @@ msgstr "描述:"
 
 #: ui.ahk:443
 msgid "@APP_NAME@ (disabled)"
-msgstr "@APP_NAME@ (關閉)"
+msgstr "@APP_NAME@ (停用)"
 
 #: ui.ahk:448
 msgid "@APP_NAME@ (active)"
