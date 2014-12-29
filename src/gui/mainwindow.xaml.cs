@@ -61,5 +61,11 @@ namespace WinCompose.gui
         {
             viewModel.SearchText = "";
         }
+
+        private void CloseWindowClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            CloseToTray();
+            e.Cancel = true;
+        }
     }
 }
