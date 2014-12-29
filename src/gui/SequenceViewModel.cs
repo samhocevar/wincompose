@@ -16,7 +16,7 @@ namespace WinCompose.gui
         {
             foreach (var value in Enum.GetValues(typeof(UnicodeCategory)))
             {
-               UnicodeCategoryStrings.Add((UnicodeCategory)value, value.ToString());
+                UnicodeCategoryStrings.Add((UnicodeCategory)value, value.ToString());
             }
         }
 

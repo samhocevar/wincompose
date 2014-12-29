@@ -7,6 +7,7 @@
     <Window.Resources>
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
+        <BitmapImage x:Key="SpaceKeyImage" UriSource="../res/key_space.png"/>
         
         <Style x:Key="SmallTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock">
             <Setter Property="LayoutTransform">
