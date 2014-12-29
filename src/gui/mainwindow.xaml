@@ -4,7 +4,7 @@
         xmlns:properties="clr-namespace:WinCompose.properties"
         xmlns:gui="clr-namespace:WinCompose.gui"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WinCompose.gui.Mainwindow"
-        Title="WinCompose" Height="600" Width="800" Icon="/wincompose;component/res/key_compose.png" Closing="CloseWindowClicked">
+        Title="WinCompose" Height="600" Width="800" Icon="/wincompose;component/res/key_compose.png" Closing="CloseWindowClicked" Visibility="Hidden">
     <Window.Resources>
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
