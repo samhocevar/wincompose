@@ -6,6 +6,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WinCompose.gui.Mainwindow"
         Title="WinCompose" Height="600" Width="800" Icon="/wincompose;component/res/key_compose.png" Closing="CloseWindowClicked" Visibility="Hidden">
     <Window.Resources>
+        <ContextMenu x:Key="NotifierContextMenu" Placement="MousePoint">
+            <MenuItem Header="Show Sequences…" Click="ContextMenuShowSequences"/>
+            <MenuItem Header="Exit" Click="ContextMenuExit"/>
+        </ContextMenu>
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
         <BitmapImage x:Key="SpaceKeyImage" UriSource="../res/key_space.png"/>

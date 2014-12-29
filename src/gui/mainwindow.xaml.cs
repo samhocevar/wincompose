@@ -18,13 +18,22 @@ namespace WinCompose.gui
                 Visible = true,
                 Icon = properties.resources.icon_normal
             };
-
+            notifyicon.DoubleClick += NotifyiconDoubleclicked;
+            notifyicon.MouseDown += new WinForms.MouseEventHandler(NotifyiconMouseDown);
             viewModel = new RootViewModel();
             DataContext = viewModel;
-            notifyicon.DoubleClick += NotifyiconDoubleclicked;
-#if RELEASE
-            CloseToTray();
+#if !RELEASE
+            OpenFromTray();
 #endif
+        }
+
+        private void NotifyiconMouseDown(object sender, WinForms.MouseEventArgs e)
+        {
+            if (e.Button == WinForms.MouseButtons.Right)
+            {
+                System.Windows.Controls.ContextMenu menu = (System.Windows.Controls.ContextMenu)this.FindResource("NotifierContextMenu");
+                menu.IsOpen = true;
+            }
         }
 
         private void NotifyiconDoubleclicked(object sender, EventArgs e)
@@ -37,6 +46,16 @@ namespace WinCompose.gui
             {
                 CloseToTray();
             }
+        }
+
+        private void ContextMenuShowSequences(object sender, RoutedEventArgs e)
+        {
+            OpenFromTray();
+        }
+
+        private void ContextMenuExit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
         private void CloseClicked(object sender, RoutedEventArgs e)
