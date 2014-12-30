@@ -22,15 +22,9 @@ namespace WinCompose
 
 public class Key
 {
-    public Key(string str)
-    {
-        m_str = str;
-    }
+    public Key(string str) { m_str = str; }
 
-    public Key(VK vk)
-    {
-        m_vk = vk;
-    }
+    public Key(VK vk) { m_vk = vk; }
 
     public bool IsPrintable()
     {
@@ -39,7 +33,12 @@ public class Key
 
     public override string ToString()
     {
-        return m_str;
+        if (m_str != "")
+            return m_str;
+
+        string ret = "";
+        m_key_symbols.TryGetValue(m_vk, out ret);
+        return ret;
     }
 
     public override bool Equals(object o)
@@ -68,6 +67,15 @@ public class Key
 
     private VK m_vk = 0;
     private string m_str = "";
+
+    private static readonly Dictionary<VK, string> m_key_symbols
+     = new Dictionary<VK, string>()
+    {
+        { VK.UP,    "▲" },
+        { VK.DOWN,  "▼" },
+        { VK.LEFT,  "▶" },
+        { VK.RIGHT, "◀" },
+    };
 };
 
 /*
@@ -139,7 +147,8 @@ public class SequenceTree
         return ret;
     }
 
-    private void BuildSequenceDescriptions(List<SequenceDescription> list, List<Key> path)
+    private void BuildSequenceDescriptions(List<SequenceDescription> list,
+                                           List<Key> path)
     {
         if (m_result != null)
         {
