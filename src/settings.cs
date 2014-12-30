@@ -166,10 +166,10 @@ namespace WinCompose
         private static void LoadSequenceString(string line)
         {
             // Only bother with sequences that start with <Multi_key>
-            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""([^""]|\"")*""[^#]*#\s*(.*)");
-            //                                             ^^^^^^^         ^^^^^^^^^^^^           ^^^^
-            //                                              keys              result              desc
-            if (m1.Groups.Count < 3)
+            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\"")*)""[^#]*#\s*(.*)");
+            //                                             ^^^^^^^         ^^^^^^^^^^^^^^           ^^^^
+            //                                              keys              result                desc
+            if (m1.Groups.Count < 4)
                 return;
 
             var keys = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
@@ -193,7 +193,7 @@ namespace WinCompose
             }
 
             string result = m1.Groups[2].Captures[0].ToString();
-            string description = m1.Groups.Count >= 4 ? m1.Groups[3].Captures[0].ToString() : "";
+            string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
 
             m_sequences.Add(seq, result, description);
         }
