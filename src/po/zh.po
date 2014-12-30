@@ -1,0 +1,242 @@
+# Chinese translations for PACKAGE package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-12 01:23+0100\n"
+"PO-Revision-Date: 2014-12-27 08:08+0200\n"
+"Last-Translator: Wei-cheng Kung <wck317@pchome.com.tw>\n"
+"Language-Team: Chinese "
+"<https://hosted.weblate.org/projects/wincompose/master/zh/>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.2-dev\n"
+
+#: main.ahk:512 ui.ahk:456
+msgid "Loaded @1@ Sequences"
+msgstr "已載入 @1@ 按鍵系列"
+
+#: main.ahk:512 ui.ahk:457
+msgid "Compose Key is @1@"
+msgstr "前導鍵是 @1@"
+
+#: constants.ahk:34
+msgid "Autodetect"
+msgstr "自動偵測"
+
+#: constants.ahk:60
+msgid "Left Alt"
+msgstr "左 Alt"
+
+#: constants.ahk:61
+msgid "Right Alt"
+msgstr "右 Alt"
+
+#: constants.ahk:62
+msgid "Left Control"
+msgstr "左 Control"
+
+#: constants.ahk:63
+msgid "Right Control"
+msgstr "右 Contriol"
+
+#: constants.ahk:64
+msgid "Left Windows"
+msgstr "左 Win"
+
+#: constants.ahk:65
+msgid "Right Windows"
+msgstr "右 Win"
+
+#: constants.ahk:66
+msgid "Caps Lock"
+msgstr "Caps Lock"
+
+#: constants.ahk:67
+msgid "Num Lock"
+msgstr "Num Lock"
+
+#: constants.ahk:68
+msgid "Pause"
+msgstr "Pause"
+
+#: constants.ahk:69
+msgid "Menu"
+msgstr "功能列"
+
+#: constants.ahk:70
+msgid "Escape"
+msgstr "Escape"
+
+#: constants.ahk:71
+msgid "Scroll Lock"
+msgstr "Scroll Lock"
+
+#: constants.ahk:72
+msgid "Grave Accent `"
+msgstr "重音符 `"
+
+#: constants.ahk:100
+msgid "500 milliseconds"
+msgstr "500 毫秒"
+
+#: constants.ahk:101
+msgid "1 second"
+msgstr "1 秒"
+
+#: constants.ahk:102
+msgid "2 seconds"
+msgstr "2 秒"
+
+#: constants.ahk:103
+msgid "3 seconds"
+msgstr "3 秒"
+
+#: constants.ahk:104
+msgid "5 seconds"
+msgstr "5 秒"
+
+#: constants.ahk:105
+msgid "10 seconds"
+msgstr "10 秒"
+
+#: constants.ahk:106
+msgid "None"
+msgstr "無"
+
+#: ui.ahk:54 ui.ahk:68
+msgid "Show &Sequences…"
+msgstr "顯示按鍵系列(&S)…"
+
+#: ui.ahk:55 ui.ahk:459
+msgid "Disable"
+msgstr "停用"
+
+#: ui.ahk:56
+msgid "Restart"
+msgstr "重新啟動"
+
+#: ui.ahk:60
+msgid "&History"
+msgstr "歷史(&H)"
+
+#: ui.ahk:61
+msgid "Hotkey &List"
+msgstr "快鍵清單(&L)"
+
+#: ui.ahk:64
+msgid "&Options…"
+msgstr "選項(&O)…"
+
+#: ui.ahk:65
+msgid "&About"
+msgstr "關於(&A)"
+
+#: ui.ahk:66
+msgid "&Visit Website"
+msgstr "拜訪網站(&V)"
+
+#: ui.ahk:67
+msgid "E&xit"
+msgstr "離開(&X)"
+
+#: ui.ahk:75
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
+
+#: ui.ahk:129
+msgid "@APP_NAME@ v@APP_VERSION@\n"
+msgstr "@APP_NAME@ v@APP_VERSION@\n"
+
+#: ui.ahk:130
+msgid "\n"
+msgstr ""
+"\n"
+"↵\n"
+
+#: ui.ahk:131
+msgid "by Sam Hocevar <sam@hocevar.net>\n"
+msgstr "開發者：Sam Hocevar <sam@hocevar.net>↵\n"
+
+#: ui.ahk:132
+msgid "running on AHK v@AHK_VERSION@\n"
+msgstr "於 AHK v@AHK_VERSION@ 執行↵\n"
+
+#: ui.ahk:152
+msgid "Sequences"
+msgstr "按鍵系列"
+
+#: ui.ahk:152
+msgid "Options"
+msgstr "選項"
+
+#: ui.ahk:161
+msgid "Sequence"
+msgstr "按鍵系列"
+
+#: ui.ahk:161
+msgid "Char"
+msgstr "字元"
+
+#: ui.ahk:161
+msgid "Unicode"
+msgstr "萬國碼(Unicode)"
+
+#: ui.ahk:188
+msgid "Search Filter:"
+msgstr "搜尋篩選器:"
+
+#: ui.ahk:204
+msgid "Compose Key:"
+msgstr "前導鍵:"
+
+#: ui.ahk:215
+msgid "Delay:"
+msgstr "延遲:"
+
+#: ui.ahk:220
+msgid "Fall back to case insensitive matches on invalid sequences"
+msgstr "無效按鍵系列時忽略大小寫"
+
+#: ui.ahk:223
+msgid "Discard characters from invalid sequences"
+msgstr "丟棄無效按鍵系列中的字元"
+
+#: ui.ahk:226
+msgid "Beep on invalid sequences"
+msgstr "無效按鍵系列時發出嗶聲"
+
+#: ui.ahk:239
+msgid "Interface language:"
+msgstr "介面語言:"
+
+#: ui.ahk:245
+msgid "Close"
+msgstr "關閉"
+
+#: ui.ahk:248
+msgid "Copy Character"
+msgstr "複製字元"
+
+#: ui.ahk:346
+msgid "Description:"
+msgstr "描述:"
+
+#: ui.ahk:443
+msgid "@APP_NAME@ (disabled)"
+msgstr "@APP_NAME@ (停用)"
+
+#: ui.ahk:448
+msgid "@APP_NAME@ (active)"
+msgstr "@APP_NAME@ (啟用)"
+
+#: ui.ahk:453
+msgid "@APP_NAME@ (typing)"
+msgstr "@APP_NAME@ (輸入)"
