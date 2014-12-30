@@ -38,18 +38,19 @@ namespace WinCompose.gui
             }
 
             var sequences = new List<SequenceViewModel>();
-            foreach (var sequence in Settings.GetSequences().Values)
+            foreach (var desc in Settings.GetSequenceDescriptions())
             {
                 // TODO: optimize me
                 foreach (var category in sortedCategories)
                 {
-                    if (category.Key > sequence.m_result[0])
+                    if (category.Key > desc.Result[0])
                     {
-                        sequences.Add(new SequenceViewModel(category.Value, sequence));
+                        sequences.Add(new SequenceViewModel(category.Value, desc));
                         break;
                     }
                 }
             }
+
             var nonEmptyCategories = new List<CategoryViewModel>();
             foreach (var category in categories)
             {

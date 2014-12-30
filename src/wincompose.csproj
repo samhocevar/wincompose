@@ -75,6 +75,7 @@
     <Compile Include="keyboardhook.cs" />
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
+    <Compile Include="sequence.cs" />
     <Compile Include="settings.cs" />
     <Compile Include="types.cs" />
     <Compile Include="gui\UnicodeBlocks.Designer.cs">

@@ -14,13 +14,6 @@ using System;
 namespace WinCompose
 {
 
-public class Sequence
-{
-    public string m_keys;
-    public string m_result;
-    public string m_description;
-};
-
 /* Enums from winuser.h */
 public enum HC : int
 {

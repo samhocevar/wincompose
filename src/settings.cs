@@ -79,9 +79,14 @@ namespace WinCompose
             LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
         }
 
-        public static bool IsComposeKey(VK key)
+        public static bool IsComposeKey(Key key)
         {
             return m_compose_key == key;
+        }
+
+        public static bool IsUsableKey(Key key)
+        {
+            return key.IsPrintable() || m_key_names.ContainsValue(key);
         }
 
         public static bool IsCaseInsensitive()
@@ -99,26 +104,29 @@ namespace WinCompose
             return m_beep_on_invalid;
         }
 
-        public static Dictionary<string, Sequence> GetSequences()
+        public static SequenceTree GetSequenceList()
         {
             return m_sequences;
         }
 
-        public static bool IsValidPrefix(string prefix)
+        public static bool IsValidPrefix(List<Key> sequence)
         {
-            return m_prefixes.ContainsKey(prefix);
+            return m_sequences.IsValidPrefix(sequence);
         }
 
-        public static bool IsValidSequence(string sequence)
+        public static bool IsValidSequence(List<Key> sequence)
         {
-            return m_sequences.ContainsKey(sequence);
+            return m_sequences.IsValidSequence(sequence);
         }
 
-        public static Sequence GetSequence(string sequence)
+        public static string GetSequenceResult(List<Key> sequence)
         {
-            Sequence ret = null;
-            m_sequences.TryGetValue(sequence, out ret);
-            return ret;
+            return m_sequences.GetSequenceResult(sequence);
+        }
+
+        public static List<SequenceDescription> GetSequenceDescriptions()
+        {
+            return m_sequences.GetSequenceDescriptions();
         }
 
         private static string LoadEntry(string key)
@@ -169,59 +177,51 @@ namespace WinCompose
             if (keys.Length < 4) // We need 2 keys + 2 empty strings
                 return;
 
-            Sequence seq = new Sequence();
+            List<Key> seq = new List<Key>();
 
             for (int i = 1; i < keys.Length; ++i)
             {
                 if (keys[i] == String.Empty)
                     continue;
+
+                if (m_key_names.ContainsKey(keys[i]))
+                    seq.Add(m_key_names[keys[i]]);
                 else if (keys[i].Length == 1)
-                    seq.m_keys += keys[i];
-                else if (m_sc_names.ContainsKey(keys[i]))
-                    seq.m_keys += (char)m_sc_names[keys[i]];
+                    seq.Add(new Key(keys[i]));
                 else
                     return; // Unknown key name! Better bail out
             }
 
-            seq.m_result = m1.Groups[2].Captures[0].ToString();
-            seq.m_description = m1.Groups.Count >= 4 ? m1.Groups[3].Captures[0].ToString() : "";
+            string result = m1.Groups[2].Captures[0].ToString();
+            string description = m1.Groups.Count >= 4 ? m1.Groups[3].Captures[0].ToString() : "";
 
-            m_sequences[seq.m_keys] = seq;
-
-            // FIXME: find what to put in there
-            for (int i = 1; i < seq.m_keys.Length; ++i)
-                m_prefixes[seq.m_keys.Substring(1, i)] = null;
+            m_sequences.Add(seq, result, description);
         }
 
-        // FIXME: this should be an acyclic graph so that we immediately
-        // know whether a character is part of a valid sequence, plus we
-        // could do some typing predictions!
-        private static Dictionary<string, Sequence> m_sequences
-         = new Dictionary<string, Sequence>();
-
-        private static Dictionary<string, object> m_prefixes
-         = new Dictionary<string, object>();
+        // Tree of all known sequences
+        private static SequenceTree m_sequences = new SequenceTree();
 
 
-        private static readonly Dictionary<string, VK> m_valid_compose_keys
-         = new Dictionary<string, VK>()
+        private static readonly Dictionary<string, Key> m_valid_compose_keys
+         = new Dictionary<string, Key>()
         {
-            { "lalt",       VK.LMENU },
-            { "ralt",       VK.RMENU },
-            { "lcontrol",   VK.LCONTROL },
-            { "rcontrol",   VK.RCONTROL },
-            { "lwin",       VK.LWIN },
-            { "rwin",       VK.RWIN },
-            { "capslock",   VK.CAPITAL },
-            { "numlock",    VK.NUMLOCK },
-            { "pause",      VK.PAUSE },
-            { "appskey",    VK.APPS },
-            { "esc",        VK.ESCAPE },
-            { "scrolllock", VK.SCROLL },
+            { "lalt",       new Key(VK.LMENU) },
+            { "ralt",       new Key(VK.RMENU) },
+            { "lcontrol",   new Key(VK.LCONTROL) },
+            { "rcontrol",   new Key(VK.RCONTROL) },
+            { "lwin",       new Key(VK.LWIN) },
+            { "rwin",       new Key(VK.RWIN) },
+            { "capslock",   new Key(VK.CAPITAL) },
+            { "numlock",    new Key(VK.NUMLOCK) },
+            { "pause",      new Key(VK.PAUSE) },
+            { "appskey",    new Key(VK.APPS) },
+            { "esc",        new Key(VK.ESCAPE) },
+            { "scrolllock", new Key(VK.SCROLL) },
+            { "`",          new Key("`") },
         };
 
-        private static readonly VK m_default_compose_key = VK.RMENU;
-        private static VK m_compose_key = m_default_compose_key;
+        private static readonly Key m_default_compose_key = new Key(VK.RMENU);
+        private static Key m_compose_key = m_default_compose_key;
 
         private static readonly Dictionary<string, string> m_valid_languages
          = new Dictionary<string, string>()
@@ -260,59 +260,55 @@ namespace WinCompose
             { -1,    "None" },
         };
 
-        private static int m_delay = 500;
+        private static int m_delay = -1;
 
         private static bool m_case_insensitive = false;
         private static bool m_discard_on_invalid = false;
         private static bool m_beep_on_invalid = false;
 
-        private static readonly Dictionary<string, SC> m_sc_names
-         = new Dictionary<string, SC>()
+        private static readonly Dictionary<string, Key> m_key_names
+         = new Dictionary<string, Key>()
         {
             // ASCII-mapped keys
-            { "space",        (SC)' ' },  // 0x20
-            { "exclam",       (SC)'!' },  // 0x21
-            { "quotedbl",     (SC)'"' },  // 0x22
-            { "numbersign",   (SC)'#' },  // 0x23
-            { "dollar",       (SC)'$' },  // 0x24
-            { "percent",      (SC)'%' },  // 0x25
-            { "ampersand",    (SC)'&' },  // 0x26
-            { "apostrophe",   (SC)'\'' }, // 0x27
-            { "parenleft",    (SC)'(' },  // 0x28
-            { "parenright",   (SC)')' },  // 0x29
-            { "asterisk",     (SC)'*' },  // 0x2a
-            { "plus",         (SC)'+' },  // 0x2b
-            { "comma",        (SC)',' },  // 0x2c
-            { "minus",        (SC)'-' },  // 0x2d
-            { "period",       (SC)'.' },  // 0x2e
-            { "slash",        (SC)'/' },  // 0x2f
-            { "colon",        (SC)':' },  // 0x3a
-            { "semicolon",    (SC)';' },  // 0x3b
-            { "less",         (SC)'<' },  // 0x3c
-            { "equal",        (SC)'=' },  // 0x3d
-            { "greater",      (SC)'>' },  // 0x3e
-            { "question",     (SC)'?' },  // 0x3f
-            { "at",           (SC)'@' },  // 0x40
-            { "bracketleft",  (SC)'[' },  // 0x5b
-            { "backslash",    (SC)'\\' }, // 0x5c
-            { "bracketright", (SC)']' },  // 0x5d
-            { "asciicircum",  (SC)'^' },  // 0x5e
-            { "underscore",   (SC)'_' },  // 0x5f
-            { "grave",        (SC)'`' },  // 0x60
-            { "braceleft",    (SC)'{' },  // 0x7b
-            { "bar",          (SC)'|' },  // 0x7c
-            { "braceright",   (SC)'}' },  // 0x7d
-            { "asciitilde",   (SC)'~' },  // 0x7e
-        };
+            { "space",        new Key(" ") },  // 0x20
+            { "exclam",       new Key("!") },  // 0x21
+            { "quotedbl",     new Key("\"") }, // 0x22
+            { "numbersign",   new Key("#") },  // 0x23
+            { "dollar",       new Key("$") },  // 0x24
+            { "percent",      new Key("%") },  // 0x25
+            { "ampersand",    new Key("&") },  // 0x26
+            { "apostrophe",   new Key("'") },  // 0x27
+            { "parenleft",    new Key("(") },  // 0x28
+            { "parenright",   new Key(")") },  // 0x29
+            { "asterisk",     new Key("*") },  // 0x2a
+            { "plus",         new Key("+") },  // 0x2b
+            { "comma",        new Key(",") },  // 0x2c
+            { "minus",        new Key("-") },  // 0x2d
+            { "period",       new Key(".") },  // 0x2e
+            { "slash",        new Key("/") },  // 0x2f
+            { "colon",        new Key(":") },  // 0x3a
+            { "semicolon",    new Key(";") },  // 0x3b
+            { "less",         new Key("<") },  // 0x3c
+            { "equal",        new Key("=") },  // 0x3d
+            { "greater",      new Key(">") },  // 0x3e
+            { "question",     new Key("?") },  // 0x3f
+            { "at",           new Key("@") },  // 0x40
+            { "bracketleft",  new Key("[") },  // 0x5b
+            { "backslash",    new Key("\\") }, // 0x5c
+            { "bracketright", new Key("]") },  // 0x5d
+            { "asciicircum",  new Key("^") },  // 0x5e
+            { "underscore",   new Key("_") },  // 0x5f
+            { "grave",        new Key("`") },  // 0x60
+            { "braceleft",    new Key("{") },  // 0x7b
+            { "bar",          new Key("|") },  // 0x7c
+            { "braceright",   new Key("}") },  // 0x7d
+            { "asciitilde",   new Key("~") },  // 0x7e
 
-        private static readonly Dictionary<string, VK> m_vk_names
-         = new Dictionary<string, VK>()
-        {
-            // Non-printing keys; but we need an internal representation
-            { "up",     VK.UP },
-            { "down",   VK.DOWN },
-            { "left",   VK.LEFT },
-            { "right",  VK.RIGHT },
+            // Non-printing keys
+            { "up",     new Key(VK.UP) },
+            { "down",   new Key(VK.DOWN) },
+            { "left",   new Key(VK.LEFT) },
+            { "right",  new Key(VK.RIGHT) },
         };
 
         private static string GetConfigFile()

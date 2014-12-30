@@ -20,13 +20,13 @@ namespace WinCompose.gui
             }
         }
 
-        public SequenceViewModel(CategoryViewModel category, Sequence sequence)
+        public SequenceViewModel(CategoryViewModel category, SequenceDescription desc)
         {
             Category = category;
             Category.IsEmpty = false;
-            Character = sequence.m_result[0];
-            Description = sequence.m_description;
-            Sequence = sequence.m_keys;
+            Character = desc.Result[0]; // FIXME: sequence results can be longer
+            Description = desc.Description;
+            Sequence = desc.Sequence;
         }
 
         public CategoryViewModel Category { get; private set; }
@@ -40,7 +40,7 @@ namespace WinCompose.gui
 
         public string Description { get; private set; }
 
-        public string Sequence { get; set; }
+        public List<Key> Sequence { get; set; }
 
         public bool Match(SearchTokens searchText)
         {

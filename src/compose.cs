@@ -10,6 +10,7 @@
 //   See http://www.wtfpl.net/ for more details.
 
 using System;
+using System.Collections.Generic;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -26,29 +27,10 @@ static class Compose
     {
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
-        bool is_compose = Settings.IsComposeKey(vk);
 
-        // FIXME: we don’t support using e.g. ` as the compose key yet
-        if (is_compose)
-        {
-            if (is_keyup)
-            {
-                m_compose_down = false;
-            }
-            else if (is_keydown && !m_compose_down)
-            {
-                m_compose_down = true;
-                m_composing = !m_composing;
-                if (!m_composing)
-                    m_sequence = "";
-            }
-            return true;
-        }
-
-        if (!m_composing)
-            return false;
-
-        string str = null;
+        // If we can not find a printable representation for the key, use its
+        // virtual key code instead.
+        Key key = new Key(vk);
 
         // Generate a keystate suitable for ToUnicode()
         GetKeyboardState(m_keystate);
@@ -67,27 +49,51 @@ static class Compose
         if (ret > 0 && ret < buflen)
         {
             buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
-            str = Encoding.Unicode.GetString(buf, 0, ret + 1);
+            key = new Key(Encoding.Unicode.GetString(buf, 0, ret + 1));
         }
 
-        // FIXME: don't know what to do with these for now, but we need to
-        // handle some of them, for instance the arrow keys
-        if (str == null)
+        // FIXME: we don’t properly support compose keys that also normally
+        // print stuff, such as `.
+        if (Settings.IsComposeKey(key))
+        {
+            if (is_keyup)
+            {
+                m_compose_down = false;
+            }
+            else if (is_keydown && !m_compose_down)
+            {
+                m_compose_down = true;
+                m_composing = !m_composing;
+                if (!m_composing)
+                    m_sequence = new List<Key>();
+            }
+            return true;
+        }
+
+        // If we are not currently composing a sequence, do nothing
+        if (!m_composing)
+        {
             return false;
+        }
+
+        if (!Settings.IsUsableKey(key))
+        {
+            return false;
+        }
 
         // Finally, this is a key we must add to our compose sequence and
         // decide whether we'll eventually output a character.
         if (is_keydown)
         {
-            m_sequence += str;
+            m_sequence.Add(key);
 
             // FIXME: we don’t support case-insensitive yet
             if (Settings.IsValidSequence(m_sequence))
             {
                 // Sequence finished, print it
-                SendString(Settings.GetSequence(m_sequence).m_result);
+                SendString(Settings.GetSequenceResult(m_sequence));
                 m_composing = false;
-                m_sequence = "";
+                m_sequence = new List<Key>();
             }
             else if (Settings.IsValidPrefix(m_sequence))
             {
@@ -97,11 +103,20 @@ static class Compose
             {
                 // Unknown characters for sequence, print them if necessary
                 if (!Settings.ShouldDiscardOnInvalid())
-                    SendString(m_sequence);
+                {
+                    foreach (Key k in m_sequence)
+                    {
+                        // FIXME: what if the key is e.g. left arrow?
+                        if (k.IsPrintable())
+                            SendString(k.ToString());
+                    }
+                }
+
                 if (Settings.ShouldBeepOnInvalid())
                     SystemSounds.Beep.Play();
+
                 m_composing = false;
-                m_sequence = "";
+                m_sequence = new List<Key>();
             }
         }
 
@@ -130,7 +145,7 @@ static class Compose
             SendKeyDown(VK.LCONTROL);
             SendKeyDown(VK.LSHIFT);
             foreach (var ch in str)
-                foreach (var key in String.Format("u{0:x04} ", (short)ch))
+                foreach (var key in String.Format("U{0:X04} ", (short)ch))
                     SendKeyPress((VK)key);
             SendKeyUp(VK.LSHIFT);
             SendKeyUp(VK.LCONTROL);
@@ -170,7 +185,7 @@ static class Compose
     }
 
     private static byte[] m_keystate = new byte[256];
-    private static string m_sequence = "";
+    private static List<Key> m_sequence = new List<Key>();
     private static bool m_compose_down = false;
     private static bool m_composing = false;
 
