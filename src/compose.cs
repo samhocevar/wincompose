@@ -141,14 +141,17 @@ static class Compose
 
         if (is_gtk)
         {
-            /* FIXME: this does not work properly yet, but you get the idea. */
+            /* Wikipedia says Ctrl+Shift+u, release, then type the four hex digits, and
+             * press Enter (http://en.wikipedia.org/wiki/Unicode_input). */
             SendKeyDown(VK.LCONTROL);
             SendKeyDown(VK.LSHIFT);
-            foreach (var ch in str)
-                foreach (var key in String.Format("U{0:X04} ", (short)ch))
-                    SendKeyPress((VK)key);
+            SendKeyPress((VK)'U');
             SendKeyUp(VK.LSHIFT);
             SendKeyUp(VK.LCONTROL);
+
+            foreach (var ch in str)
+                foreach (var key in String.Format("{0:X04} ", (short)ch))
+                    SendKeyPress((VK)key);
         }
         else
         {
@@ -170,7 +173,7 @@ static class Compose
 
     private static void SendKeyDown(VK vk)
     {
-        keybd_event(vk, 0, KEYEVENTF.EXTENDEDKEY, 0);
+        keybd_event(vk, 0, 0, 0);
     }
 
     private static void SendKeyUp(VK vk)
