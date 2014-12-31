@@ -80,11 +80,19 @@ public class Key
  * This data structure is used for communication with the GUI
  */
 
-public class SequenceDescription
+public class SequenceDescription : IComparable<SequenceDescription>
 {
-    public List<Key> Sequence;
-    public string Result;
-    public string Description;
+    public List<Key> Sequence = new List<Key>();
+    public string Result = "";
+    public string Description = "";
+
+    public int CompareTo(SequenceDescription other)
+    {
+        // Compare actual Unicode codepoints rather than characters
+        int ch1 = Result.Length > 0 ? (int)(char)Result[0] : 0;
+        int ch2 = other.Result.Length > 0 ? (int)(char)other.Result[0] : 0;
+        return ch1.CompareTo(ch2);
+    }
 };
 
 /*
@@ -142,6 +150,7 @@ public class SequenceTree
     {
         List<SequenceDescription> ret = new List<SequenceDescription>();
         BuildSequenceDescriptions(ret, new List<Key>());
+        ret.Sort();
         return ret;
     }
 
