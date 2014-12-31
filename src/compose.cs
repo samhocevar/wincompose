@@ -25,8 +25,15 @@ static class Compose
     // and needs to be removed from the input chain.
     public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
+        CheckKeyboardLayout();
+
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
+
+        bool has_shift = (GetKeyState(VK.SHIFT) & 0x80) == 0x80;
+        bool has_altgr = (GetKeyState(VK.RMENU) & 0x80) == 0x80
+                          && (GetKeyState(VK.LCONTROL) & 0x80) == 0x80;
+        bool has_capslock = GetKeyState(VK.CAPITAL) != 0;
 
         // If we can not find a printable representation for the key, use its
         // virtual key code instead.
@@ -34,20 +41,16 @@ static class Compose
 
         // Generate a keystate suitable for ToUnicode()
         GetKeyboardState(m_keystate);
-        bool has_shift = (GetKeyState(VK.SHIFT) & 0x80) == 0x80;
-        bool has_altgr = (GetKeyState(VK.RMENU) & 0x80) == 0x80
-                          && (GetKeyState(VK.LCONTROL) & 0x80) == 0x80;
-        bool has_capslock = GetKeyState(VK.CAPITAL) != 0;
         m_keystate[0x10] = (byte)(has_shift ? 0x80 : 0x00);
         m_keystate[0x11] = (byte)(has_altgr ? 0x80 : 0x00);
         m_keystate[0x12] = (byte)(has_altgr ? 0x80 : 0x00);
         m_keystate[0x14] = (byte)(has_capslock ? 0x01 : 0x00);
-
         int buflen = 4;
         byte[] buf = new byte[2 * buflen];
         int ret = ToUnicode(vk, sc, m_keystate, buf, buflen, flags);
         if (ret > 0 && ret < buflen)
         {
+            // FIXME: if using dead keys, we may receive two keys from GetString!
             buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
             key = new Key(Encoding.Unicode.GetString(buf, 0, ret + 1));
         }
@@ -78,6 +81,8 @@ static class Compose
 
         if (!Settings.IsUsableKey(key))
         {
+            // FIXME: if compose key is down, maybe there is a key combination
+            // going on, such as Alt+Tab or Windows+Up
             return false;
         }
 
@@ -187,6 +192,21 @@ static class Compose
         SendKeyUp(vk);
     }
 
+    // FIXME: this is useless for now
+    private static void CheckKeyboardLayout()
+    {
+        // FIXME: the foreground window doesn't seem to notice keyboard
+        // layout changes caused by the Win+Space combination.
+        IntPtr hwnd = GetForegroundWindow();
+        uint pid, tid = GetWindowThreadProcessId(hwnd, out pid);
+        IntPtr active_layout = GetKeyboardLayout(tid);
+        //Console.WriteLine("Active layout is {0:X}", (int)active_layout);
+
+        tid = GetCurrentThreadId();
+        IntPtr my_layout = GetKeyboardLayout(tid);
+        //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
+    }
+
     private static byte[] m_keystate = new byte[256];
     private static List<Key> m_sequence = new List<Key>();
     private static bool m_compose_down = false;
@@ -290,6 +310,15 @@ static class Compose
     private static extern int GetClassName(IntPtr hWnd, StringBuilder text, int count);
     [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
     private static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+
+    [DllImport("kernel32")]
+    private static extern uint GetCurrentThreadId();
+    [DllImport("user32", SetLastError = true)]
+    private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+    [DllImport("user32")]
+    private static extern IntPtr GetKeyboardLayout(uint idThread);
+    [DllImport("imm32", CharSet = CharSet.Auto)]
+    private static extern IntPtr ImmGetDefaultIMEWnd(HandleRef hwnd);
 }
 
 }
