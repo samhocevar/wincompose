@@ -28,15 +28,12 @@ public class Key
 
     public bool IsPrintable()
     {
-        return m_str != "";
+        return m_str != null;
     }
 
     public override string ToString()
     {
-        if (m_str != "")
-            return m_str;
-
-        string ret = "";
+        string ret = m_str ?? "";
         m_key_symbols.TryGetValue(m_vk, out ret);
         return ret;
     }
@@ -52,7 +49,7 @@ public class Key
         bool is_b_null = object.ReferenceEquals(b, null);
         if (is_a_null || is_b_null)
             return is_a_null == is_b_null;
-        return a.m_vk != 0 ? a.m_vk == b.m_vk : a.m_str == b.m_str;
+        return a.m_str != null ? a.m_str == b.m_str : a.m_vk == b.m_vk;
     }
 
     public static bool operator !=(Key a, Key b)
@@ -62,19 +59,19 @@ public class Key
 
     public override int GetHashCode()
     {
-        return ((int)m_vk).GetHashCode() ^ m_str.GetHashCode();
+        return m_str != null ? m_str.GetHashCode() : ((int)m_vk).GetHashCode();
     }
 
-    private VK m_vk = 0;
-    private string m_str = "";
+    private VK m_vk;
+    private string m_str;
 
     private static readonly Dictionary<VK, string> m_key_symbols
      = new Dictionary<VK, string>()
     {
         { VK.UP,    "▲" },
         { VK.DOWN,  "▼" },
-        { VK.LEFT,  "▶" },
-        { VK.RIGHT, "◀" },
+        { VK.LEFT,  "◀" },
+        { VK.RIGHT, "▶" },
     };
 };
 
