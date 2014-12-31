@@ -33,9 +33,10 @@ public class Key
 
     public override string ToString()
     {
-        string ret = m_str ?? "";
-        m_key_symbols.TryGetValue(m_vk, out ret);
-        return ret;
+        string ret;
+        if (m_key_symbols.TryGetValue(m_vk, out ret))
+            return ret;
+        return m_str ?? "";
     }
 
     public override bool Equals(object o)
