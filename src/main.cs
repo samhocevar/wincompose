@@ -33,12 +33,12 @@ namespace WinCompose
                 var notifyicon = new NotifyIcon
                 {
                     Visible = true,
-                    Icon = properties.resources.icon_normal,
+                    Icon = Properties.Resources.IconNormal,
                     ContextMenu = new ContextMenu(new[]
                     {
-                        new MenuItem(properties.resources.ShowSequences, ShowSequencesClicked),
-                        new MenuItem(properties.resources.ShowSettings, ShowSettingsClicked),
-                        new MenuItem(properties.resources.Exit, ExitClicked)
+                        new MenuItem(Properties.Resources.ShowSequences, ShowSequencesClicked),
+                        new MenuItem(Properties.Resources.ShowSettings, ShowSettingsClicked),
+                        new MenuItem(Properties.Resources.Exit, ExitClicked)
                     })
                 };
                 notifyicon.DoubleClick += NotifyiconDoubleclicked;
@@ -92,7 +92,7 @@ namespace WinCompose
             }
             catch (Exception)
             {
-                MessageBox.Show("Unable to start the GUI process.", "WinCompose", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Properties.Resources.ErrorStartingGui, Properties.Resources.AppName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

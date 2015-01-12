@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinCompose.properties {
+namespace WinCompose.Properties {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace WinCompose.properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal resources() {
+        internal Resources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.properties.resources", typeof(resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace WinCompose.properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,27 +61,27 @@ namespace WinCompose.properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Categories.
+        ///   Looks up a localized string similar to WinCompose.
         /// </summary>
-        public static string Categories {
+        internal static string AppName {
             get {
-                return ResourceManager.GetString("Categories", resourceCulture);
+                return ResourceManager.GetString("AppName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close.
+        ///   Looks up a localized string similar to Unable to start the GUI process. Please reinstall WinCompose.
         /// </summary>
-        public static string Close {
+        internal static string ErrorStartingGui {
             get {
-                return ResourceManager.GetString("Close", resourceCulture);
+                return ResourceManager.GetString("ErrorStartingGui", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
-        public static string Exit {
+        internal static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
             }
@@ -90,9 +90,9 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_active {
+        internal static System.Drawing.Icon IconActive {
             get {
-                object obj = ResourceManager.GetObject("icon_active", resourceCulture);
+                object obj = ResourceManager.GetObject("IconActive", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -100,9 +100,9 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_disabled {
+        internal static System.Drawing.Icon IconDisabled {
             get {
-                object obj = ResourceManager.GetObject("icon_disabled", resourceCulture);
+                object obj = ResourceManager.GetObject("IconDisabled", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -110,9 +110,9 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_empty {
+        internal static System.Drawing.Icon IconEmpty {
             get {
-                object obj = ResourceManager.GetObject("icon_empty", resourceCulture);
+                object obj = ResourceManager.GetObject("IconEmpty", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -120,62 +120,17 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_normal {
+        internal static System.Drawing.Icon IconNormal {
             get {
-                object obj = ResourceManager.GetObject("icon_normal", resourceCulture);
+                object obj = ResourceManager.GetObject("IconNormal", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to In selected categories.
-        /// </summary>
-        public static string InSelectedCategories {
-            get {
-                return ResourceManager.GetString("InSelectedCategories", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mappings.
-        /// </summary>
-        public static string Mappings {
-            get {
-                return ResourceManager.GetString("Mappings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search.
-        /// </summary>
-        public static string Search {
-            get {
-                return ResourceManager.GetString("Search", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sequences.
-        /// </summary>
-        public static string Sequences {
-            get {
-                return ResourceManager.GetString("Sequences", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Settings.
-        /// </summary>
-        public static string Settings {
-            get {
-                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Show sequences….
         /// </summary>
-        public static string ShowSequences {
+        internal static string ShowSequences {
             get {
                 return ResourceManager.GetString("ShowSequences", resourceCulture);
             }
@@ -184,7 +139,7 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized string similar to Settings….
         /// </summary>
-        public static string ShowSettings {
+        internal static string ShowSettings {
             get {
                 return ResourceManager.GetString("ShowSettings", resourceCulture);
             }

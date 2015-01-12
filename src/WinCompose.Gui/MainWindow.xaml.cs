@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using WinCompose.Gui;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose.gui
@@ -136,9 +135,9 @@ namespace WinCompose.gui
                 case GuiPage.None:
                     return string.Empty;
                 case GuiPage.Sequences:
-                    return properties.resources.Settings;
+                    return Gui.Properties.Resources.Settings;
                 case GuiPage.Settings:
-                    return properties.resources.Sequences;
+                    return Gui.Properties.Resources.Sequences;
                 default:
                     throw new ArgumentOutOfRangeException("page");
             }

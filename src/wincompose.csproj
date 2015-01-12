@@ -52,31 +52,31 @@
     <Compile Include="GuiPage.cs" />
     <Compile Include="keyboardhook.cs" />
     <Compile Include="main.cs" />
-    <Compile Include="properties\assemblyinfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sequence.cs" />
     <Compile Include="settings.cs" />
     <Compile Include="types.cs" />
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="properties\resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>resources.designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="properties\resources.designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>resources.resx</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="properties\settings.settings">
+    <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>settings.designer.cs</LastGenOutput>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="properties\settings.designer.cs">
+    <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>settings.settings</DependentUpon>
+      <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
