@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="compose.cs" />
     <Compile Include="gui\CategoryViewModel.cs" />
+    <Compile Include="gui\GuiPage.cs" />
     <Compile Include="gui\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>

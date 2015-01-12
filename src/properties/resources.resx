@@ -151,4 +151,10 @@
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>Show sequences…</value>
+  </data>
+  <data name="ShowSettings" xml:space="preserve">
+    <value>Settings…</value>
+  </data>
 </root>

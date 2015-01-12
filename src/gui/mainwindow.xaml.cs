@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
+
 namespace WinCompose.gui
 {
     /// <summary>
@@ -12,8 +13,7 @@ namespace WinCompose.gui
     {
         private readonly RootViewModel viewModel;
 
-        private Page activePage;
-        private string switchPageName = properties.resources.Settings;
+        private GuiPage activePage;
 
         public Mainwindow()
         {
@@ -28,20 +28,26 @@ namespace WinCompose.gui
             viewModel = new RootViewModel();
             DataContext = viewModel;
 #if !RELEASE
-            OpenFromTray();
+            OpenFromTray(GuiPage.Sequences);
 #endif
         }
 
-        public string SwitchPageName { get { return switchPageName; } set { switchPageName = value; OnPropertyChanged("SwitchPageName"); } }
+        public string SwitchPageName { get { return GetSwitchPageName(ActivePage); } }
+
+        public GuiPage ActivePage { get { return activePage; } set { activePage = value; OnPropertyChanged("ActivePage", "SwitchPageName"); } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName)
+        protected virtual void OnPropertyChanged(params string[] propertyNames)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            if (handler != null)
+            {
+                foreach (var propertyName in propertyNames)
+                    handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
-        
+
         private void NotifyiconMouseDown(object sender, WinForms.MouseEventArgs e)
         {
             if (e.Button == WinForms.MouseButtons.Right)
@@ -55,7 +61,7 @@ namespace WinCompose.gui
         {
             if (!IsVisible)
             {
-                OpenFromTray();
+                OpenFromTray(ActivePage);
             }
             else
             {
@@ -65,7 +71,12 @@ namespace WinCompose.gui
 
         private void ContextMenuShowSequences(object sender, RoutedEventArgs e)
         {
-            OpenFromTray();
+            OpenFromTray(GuiPage.Sequences);
+        }
+
+        private void ContextMenuShowSettings(object sender, RoutedEventArgs e)
+        {
+            OpenFromTray(GuiPage.Settings);
         }
 
         private void ContextMenuExit(object sender, RoutedEventArgs e)
@@ -77,20 +88,20 @@ namespace WinCompose.gui
         {
             CloseToTray();
         }
-        
-        private void OpenFromTray()
+
+        private void OpenFromTray(GuiPage page)
         {
             ShowInTaskbar = true;
             Show();
             Activate();
-            activePage = new SequencePage(viewModel);
-            MainFrame.Navigate(activePage);
+            LoadPage(page);
+            ActivePage = page;
         }
 
         private void CloseToTray()
         {
             ShowInTaskbar = false;
-            MainFrame.Navigate(null);
+            LoadPage(GuiPage.None);
             Hide();
         }
 
@@ -102,17 +113,42 @@ namespace WinCompose.gui
 
         private void PageSwitchClicked(object sender, RoutedEventArgs e)
         {
-            if (SwitchPageName == properties.resources.Settings)
+            var nextPage = ActivePage == GuiPage.Sequences ? GuiPage.Settings : GuiPage.Sequences;
+            LoadPage(nextPage);
+            ActivePage = nextPage;
+        }
+
+        private void LoadPage(GuiPage page)
+        {
+            switch (page)
             {
-                activePage = new SettingsPage();
-                SwitchPageName = properties.resources.Sequences;
+                case GuiPage.None:
+                    MainFrame.Navigate(null);
+                    break;
+                case GuiPage.Sequences:
+                    MainFrame.Navigate(new SequencePage(viewModel));
+                    break;
+                case GuiPage.Settings:
+                    MainFrame.Navigate(new SettingsPage());
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("page");
             }
-            else
+        }
+
+        private static string GetSwitchPageName(GuiPage page)
+        {
+            switch (page)
             {
-                activePage = new SequencePage(viewModel);
-                SwitchPageName = properties.resources.Settings;
+                case GuiPage.None:
+                    return string.Empty;
+                case GuiPage.Sequences:
+                    return properties.resources.Settings;
+                case GuiPage.Settings:
+                    return properties.resources.Sequences;
+                default:
+                    throw new ArgumentOutOfRangeException("page");
             }
-            MainFrame.Navigate(activePage);
         }
     }
 }

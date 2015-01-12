@@ -162,5 +162,23 @@ namespace WinCompose.properties {
                 return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show sequences….
+        /// </summary>
+        public static string ShowSequences {
+            get {
+                return ResourceManager.GetString("ShowSequences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings….
+        /// </summary>
+        public static string ShowSettings {
+            get {
+                return ResourceManager.GetString("ShowSettings", resourceCulture);
+            }
+        }
     }
 }

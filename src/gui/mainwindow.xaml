@@ -6,7 +6,8 @@
         Title="WinCompose" Height="600" Width="800" Icon="/wincompose;component/res/key_compose.png" Closing="CloseWindowClicked" Visibility="Hidden">
     <Window.Resources>
         <ContextMenu x:Key="NotifierContextMenu" Placement="MousePoint">
-            <MenuItem Header="Show Sequences…" Click="ContextMenuShowSequences"/>
+            <MenuItem Header="{x:Static properties:resources.ShowSequences}" Click="ContextMenuShowSequences"/>
+            <MenuItem Header="{x:Static properties:resources.ShowSettings}" Click="ContextMenuShowSettings"/>
             <MenuItem Header="Exit" Click="ContextMenuExit"/>
         </ContextMenu>
     </Window.Resources>
