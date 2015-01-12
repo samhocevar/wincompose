@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinCompose.gui {
+namespace WinCompose.Gui {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WinCompose.gui {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.gui.UnicodeCategories", typeof(UnicodeCategories).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.Gui.UnicodeCategories", typeof(UnicodeCategories).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

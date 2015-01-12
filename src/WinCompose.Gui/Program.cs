@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using WinCompose.gui;
 
 namespace WinCompose.Gui
 {

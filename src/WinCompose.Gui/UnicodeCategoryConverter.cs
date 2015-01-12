@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace WinCompose.gui
+namespace WinCompose.Gui
 {
     public class UnicodeCategoryConverter : MarkupExtension, IValueConverter
     {

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
-namespace WinCompose.gui
+namespace WinCompose.Gui
 {
     /// <summary>
     /// A minimal implementation of the <see cref="INotifyPropertyChanged"/> interface

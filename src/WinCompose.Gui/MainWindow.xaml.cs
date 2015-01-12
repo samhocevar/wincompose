@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
 
-namespace WinCompose.gui
+namespace WinCompose.Gui
 {
     /// <summary>
     /// Interaction logic for mainwindow.xaml
@@ -135,9 +135,9 @@ namespace WinCompose.gui
                 case GuiPage.None:
                     return string.Empty;
                 case GuiPage.Sequences:
-                    return Gui.Properties.Resources.Settings;
+                    return Properties.Resources.Settings;
                 case GuiPage.Settings:
-                    return Gui.Properties.Resources.Sequences;
+                    return Properties.Resources.Sequences;
                 default:
                     throw new ArgumentOutOfRangeException("page");
             }

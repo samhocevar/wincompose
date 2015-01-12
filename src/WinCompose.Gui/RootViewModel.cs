@@ -6,7 +6,7 @@ using System.Threading;
 using System.Windows.Data;
 using System.Xml;
 
-namespace WinCompose.gui
+namespace WinCompose.Gui
 {
     public class RootViewModel : ViewModelBase
     {

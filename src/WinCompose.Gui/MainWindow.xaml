@@ -1,15 +1,13 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:properties="clr-namespace:WinCompose.Gui.Properties"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WinCompose.gui.Mainwindow"
-        Title="WinCompose" Height="600" Width="800" Icon="/wincompose;component/res/key_compose.png" Closing="CloseWindowClicked">
+        mc:Ignorable="d" x:Class="WinCompose.Gui.Mainwindow"
+        Title="WinCompose" Height="600" Width="800"
+        Icon="/WinCompose.Gui;component/res/key_compose.png" Closing="CloseWindowClicked">
     <Window.Resources>
-        <ContextMenu x:Key="NotifierContextMenu" Placement="MousePoint">
-            <MenuItem Header="{x:Static properties:Resources.ShowSequences}" Click="ContextMenuShowSequences"/>
-            <MenuItem Header="{x:Static properties:Resources.ShowSettings}" Click="ContextMenuShowSettings"/>
-            <MenuItem Header="Exit" Click="ContextMenuExit"/>
-        </ContextMenu>
     </Window.Resources>
     <DockPanel Margin="8">
         <StackPanel DockPanel.Dock="Bottom"

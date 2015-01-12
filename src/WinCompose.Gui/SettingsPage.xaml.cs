@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WinCompose.gui
+namespace WinCompose.Gui
 {
     /// <summary>
     /// Interaction logic for SettingsPage.xaml
