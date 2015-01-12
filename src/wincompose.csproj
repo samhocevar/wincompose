@@ -64,6 +64,9 @@
     </Compile>
     <Compile Include="gui\RootViewModel.cs" />
     <Compile Include="gui\SearchTokens.cs" />
+    <Compile Include="gui\SequencePage.xaml.cs">
+      <DependentUpon>SequencePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="gui\SequenceViewModel.cs" />
     <Compile Include="gui\UnicodeCategories.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -120,6 +123,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="gui\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\SequencePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

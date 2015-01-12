@@ -8,7 +8,7 @@ namespace WinCompose.gui
     /// </summary>
     public partial class Mainwindow
     {
-        private RootViewModel viewModel;
+        private readonly RootViewModel viewModel;
 
         public Mainwindow()
         {
@@ -19,7 +19,7 @@ namespace WinCompose.gui
                 Icon = properties.resources.icon_normal
             };
             notifyicon.DoubleClick += NotifyiconDoubleclicked;
-            notifyicon.MouseDown += new WinForms.MouseEventHandler(NotifyiconMouseDown);
+            notifyicon.MouseDown += NotifyiconMouseDown;
             viewModel = new RootViewModel();
             DataContext = viewModel;
 #if !RELEASE
@@ -31,7 +31,7 @@ namespace WinCompose.gui
         {
             if (e.Button == WinForms.MouseButtons.Right)
             {
-                System.Windows.Controls.ContextMenu menu = (System.Windows.Controls.ContextMenu)this.FindResource("NotifierContextMenu");
+                var menu = (System.Windows.Controls.ContextMenu)this.FindResource("NotifierContextMenu");
                 menu.IsOpen = true;
             }
         }
@@ -68,17 +68,14 @@ namespace WinCompose.gui
             ShowInTaskbar = true;
             Show();
             Activate();
+            MainFrame.Navigate(new SequencePage(viewModel));
         }
 
         private void CloseToTray()
         {
             ShowInTaskbar = false;
+            MainFrame.Navigate(null);
             Hide();
-        }
-
-        private void ClearSearchClicked(object sender, RoutedEventArgs e)
-        {
-            viewModel.SearchText = "";
         }
 
         private void CloseWindowClicked(object sender, System.ComponentModel.CancelEventArgs e)
