@@ -19,7 +19,7 @@ using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
-    static class Settings
+    public static class Settings
     {
         public static void LoadConfig()
         {

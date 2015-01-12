@@ -37,15 +37,9 @@
     <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="about.cs">
@@ -54,48 +48,16 @@
     <Compile Include="about.designer.cs">
       <DependentUpon>about.cs</DependentUpon>
     </Compile>
-    <Compile Include="gui\app.xaml.cs">
-      <DependentUpon>app.xaml</DependentUpon>
-    </Compile>
     <Compile Include="compose.cs" />
-    <Compile Include="gui\CategoryViewModel.cs" />
-    <Compile Include="gui\GuiPage.cs" />
-    <Compile Include="gui\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="gui\RootViewModel.cs" />
-    <Compile Include="gui\SearchTokens.cs" />
-    <Compile Include="gui\SequencePage.xaml.cs">
-      <DependentUpon>SequencePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="gui\SequenceViewModel.cs" />
-    <Compile Include="gui\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="gui\UnicodeCategories.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UnicodeCategories.resx</DependentUpon>
-    </Compile>
-    <Compile Include="gui\UnicodeCategoryConverter.cs" />
-    <Compile Include="gui\ViewModelBase.cs" />
+    <Compile Include="GuiPage.cs" />
     <Compile Include="keyboardhook.cs" />
     <Compile Include="main.cs" />
     <Compile Include="properties\assemblyinfo.cs" />
     <Compile Include="sequence.cs" />
     <Compile Include="settings.cs" />
     <Compile Include="types.cs" />
-    <Compile Include="gui\UnicodeBlocks.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UnicodeBlocks.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui\UnicodeCategories.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UnicodeCategories.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="properties\resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -107,10 +69,7 @@
       <DependentUpon>resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="gui\UnicodeBlocks.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UnicodeBlocks.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="properties\settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>settings.designer.cs</LastGenOutput>
@@ -120,24 +79,6 @@
       <DependentUpon>settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="gui\app.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="gui\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="gui\SequencePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="gui\SettingsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\icon_active.ico" />

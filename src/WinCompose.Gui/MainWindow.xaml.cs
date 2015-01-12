@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using WinCompose.Gui;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose.gui
@@ -15,21 +16,12 @@ namespace WinCompose.gui
 
         private GuiPage activePage;
 
-        public Mainwindow()
+        public Mainwindow(GuiPage initialPage)
         {
             InitializeComponent();
-            var notifyicon = new WinForms.NotifyIcon
-            {
-                Visible = true,
-                Icon = properties.resources.icon_normal
-            };
-            notifyicon.DoubleClick += NotifyiconDoubleclicked;
-            notifyicon.MouseDown += NotifyiconMouseDown;
             viewModel = new RootViewModel();
             DataContext = viewModel;
-#if !RELEASE
-            OpenFromTray(GuiPage.Sequences);
-#endif
+            OpenFromTray(initialPage);
         }
 
         public string SwitchPageName { get { return GetSwitchPageName(ActivePage); } }
@@ -103,12 +95,13 @@ namespace WinCompose.gui
             ShowInTaskbar = false;
             LoadPage(GuiPage.None);
             Hide();
+            Close();
         }
 
         private void CloseWindowClicked(object sender, CancelEventArgs e)
         {
-            CloseToTray();
-            e.Cancel = true;
+            //CloseToTray();
+            //e.Cancel = true;
         }
 
         private void PageSwitchClicked(object sender, RoutedEventArgs e)
@@ -118,7 +111,7 @@ namespace WinCompose.gui
             ActivePage = nextPage;
         }
 
-        private void LoadPage(GuiPage page)
+        public void LoadPage(GuiPage page)
         {
             switch (page)
             {

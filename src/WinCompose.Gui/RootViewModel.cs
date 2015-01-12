@@ -16,6 +16,9 @@ namespace WinCompose.gui
 
         public RootViewModel()
         {
+            Settings.LoadConfig();
+            Settings.LoadSequences();
+            
             var categories = new List<CategoryViewModel>();
             const BindingFlags flags = BindingFlags.Static | BindingFlags.Public;
             foreach (var property in typeof(UnicodeBlocks).GetProperties(flags))

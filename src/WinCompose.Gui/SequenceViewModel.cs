@@ -26,19 +26,19 @@ namespace WinCompose.gui
         {
             Category = category;
             Category.IsEmpty = false;
-            Character = desc.Result[0]; // FIXME: sequence results can be longer
+            Result = desc.Result; // FIXME: sequence results can be longer
             Description = desc.Description;
             Sequence = desc.Sequence;
         }
 
         public CategoryViewModel Category { get; private set; }
 
-        public char Character { get; private set; }
+        public string Result { get; private set; }
 
         // TODO: verify this actually returns the Unicode of the char...
-        public int Unicode { get { return Character; } }
+        public int Unicode { get { return Result[0]; } }
 
-        public UnicodeCategory UnicodeCategory { get { return CharUnicodeInfo.GetUnicodeCategory(Character); } }
+        public UnicodeCategory UnicodeCategory { get { return CharUnicodeInfo.GetUnicodeCategory(Result[0]); } }
 
         public string Description { get; private set; }
 

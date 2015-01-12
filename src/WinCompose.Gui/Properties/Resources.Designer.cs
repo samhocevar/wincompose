@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinCompose.properties {
+namespace WinCompose.Gui.Properties {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace WinCompose.properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal resources() {
+        internal Resources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace WinCompose.properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.properties.resources", typeof(resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.Gui.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,20 +79,11 @@ namespace WinCompose.properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exit.
-        /// </summary>
-        public static string Exit {
-            get {
-                return ResourceManager.GetString("Exit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_active {
+        public static System.Drawing.Icon IconActive {
             get {
-                object obj = ResourceManager.GetObject("icon_active", resourceCulture);
+                object obj = ResourceManager.GetObject("IconActive", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -100,9 +91,9 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_disabled {
+        public static System.Drawing.Icon IconDisabled {
             get {
-                object obj = ResourceManager.GetObject("icon_disabled", resourceCulture);
+                object obj = ResourceManager.GetObject("IconDisabled", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -110,9 +101,9 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_empty {
+        public static System.Drawing.Icon IconEmpty {
             get {
-                object obj = ResourceManager.GetObject("icon_empty", resourceCulture);
+                object obj = ResourceManager.GetObject("IconEmpty", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -120,9 +111,9 @@ namespace WinCompose.properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon icon_normal {
+        public static System.Drawing.Icon IconNormal {
             get {
-                object obj = ResourceManager.GetObject("icon_normal", resourceCulture);
+                object obj = ResourceManager.GetObject("IconNormal", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
