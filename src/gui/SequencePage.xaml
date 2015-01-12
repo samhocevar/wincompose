@@ -7,7 +7,7 @@
       xmlns:gui="clr-namespace:WinCompose.gui"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="SequencePage">
+	Title="SequencePage" d:DataContext="{d:DesignInstance gui:RootViewModel}">
     <Page.Resources>
 
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
@@ -70,7 +70,7 @@
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="Padding" Value="4,8"/>
-                        <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                        <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance gui:CategoryViewModel}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
                 </ListBox.ItemContainerStyle>
@@ -142,6 +142,7 @@
                                                 </Border>
                                             </StackPanel>
                                             <DataTemplate.Triggers>
+                                                <!-- Change the key image and size when the value matches the space key -->
                                                 <DataTrigger Binding="{Binding}" Value="{x:Static gui:SequenceViewModel.SpaceKey}">
                                                     <Setter TargetName="KeyImage" Property="Width" Value="64"/>                                                   
                                                     <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->                                                   

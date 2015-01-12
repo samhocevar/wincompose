@@ -14,7 +14,12 @@
         <StackPanel DockPanel.Dock="Bottom"
                     Orientation="Horizontal"
                     HorizontalAlignment="Right">
-            <Button Padding="20, 2"
+            <Button x:Name="PageSwitchButton"
+                    Padding="20, 2"
+                    Content="{Binding SwitchPageName, RelativeSource={RelativeSource AncestorType=Window}}"
+                    Click="PageSwitchClicked"
+                    Margin="8"/>
+                <Button Padding="20, 2"
                     Content="{x:Static properties:resources.Close}"
                     Click="CloseClicked"
                     Margin="8"/>

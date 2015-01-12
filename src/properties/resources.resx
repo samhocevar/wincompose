@@ -145,4 +145,10 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In selected categories</value>
   </data>
+  <data name="Sequences" xml:space="preserve">
+    <value>Sequences</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>
