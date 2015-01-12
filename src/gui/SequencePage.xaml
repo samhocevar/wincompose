@@ -132,7 +132,7 @@
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text=" + " VerticalAlignment="Center"/>
-                                                <Border Width="32" Height="32">
+                                                <Border Width="32" Height="32" x:Name="KeyImage">
                                                     <Border.Background>
                                                         <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
                                                     </Border.Background>
@@ -141,6 +141,17 @@
                                                     </Viewbox>
                                                 </Border>
                                             </StackPanel>
+                                            <DataTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding}" Value="{x:Static gui:SequenceViewModel.SpaceKey}">
+                                                    <Setter TargetName="KeyImage" Property="Width" Value="64"/>                                                   
+                                                    <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->                                                   
+                                                    <Setter TargetName="KeyImage" Property="Background">
+                                                        <Setter.Value>
+                                                            <ImageBrush ImageSource="{StaticResource SpaceKeyImage}"/>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
+                                            </DataTemplate.Triggers>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>

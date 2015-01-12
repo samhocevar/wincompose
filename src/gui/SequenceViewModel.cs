@@ -12,6 +12,8 @@ namespace WinCompose.gui
         /// </summary>
         private readonly static Dictionary<UnicodeCategory, string> UnicodeCategoryStrings = new Dictionary<UnicodeCategory, string>();
 
+        public static Key SpaceKey = new Key(" ");
+
         static SequenceViewModel()
         {
             foreach (var value in Enum.GetValues(typeof(UnicodeCategory)))
