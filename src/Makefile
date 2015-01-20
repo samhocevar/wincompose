@@ -13,6 +13,7 @@ PO = be fr de
 TXT = res/Xorg.txt res/Xcompose.txt res/WinCompose.txt
 
 EXE = bin/Release/WinCompose.exe
+GUIEXE = WinCompose.Gui/obj/Release/WinCompose.Gui.exe
 INSTALLER = WinCompose-Setup-$(VERSION).exe
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
@@ -28,15 +29,15 @@ clean:
 	rm -f $(INSTALLER) $(PORTABLE)
 	@rmdir obj >/dev/null 2>&1 || true
 
-installer: update-po $(EXE) $(ISS)
+installer: update-po $(EXE) $(GUIEXE) $(ISS)
 	rm -f $(INSTALLER)
 	"$(ISCC)" $(ISS)
 
-portable: update-po $(EXE)
+portable: update-po $(EXE) $(GUIEXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
 	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/res
-	cp $(EXE) $(PORTABLE:.zip=)
+	cp $(EXE) $(GUIEXE) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/res
 	cp $(PO:%=po/%.po) $(PORTABLE:.zip=)/po
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
@@ -46,6 +47,11 @@ bin/Release/%.exe:
 	@mkdir -p bin/Release
 	@rm -f $@
 	devenv wincompose.sln //build Release //project wincompose.csproj
+
+WinCompose.Gui/obj/Release/%.exe:
+	@mkdir -p WinCompose.Gui/obj/Release
+	@rm -f $@
+	devenv wincompose.sln //build Release //project wincompose.gui\\wincompose.gui.csproj
 
 update-po:
 	#$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ *.cs
