@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sequence.cs" />
     <Compile Include="settings.cs" />
+    <Compile Include="SettingsEntry.cs" />
     <Compile Include="types.cs" />
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>

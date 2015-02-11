@@ -311,7 +311,7 @@ namespace WinCompose
             { "right",  new Key(VK.RIGHT) },
         };
 
-        private static string GetConfigFile()
+        public static string GetConfigFile()
         {
             return Path.Combine(GetConfigDir(), "settings.ini");
         }
