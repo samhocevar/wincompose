@@ -21,6 +21,21 @@ namespace WinCompose
 {
     public static class Settings
     {
+        private const string GlobalSection = "global";
+
+        static Settings()
+        {
+            CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
+            DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
+            BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
+        }
+
+        public static SettingsEntry<bool> CaseInsensitive { get; private set; }
+
+        public static SettingsEntry<bool> DiscardOnInvalid { get; private set; }
+        
+        public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
+
         public static void LoadConfig()
         {
             string val;
@@ -43,14 +58,9 @@ namespace WinCompose
                 m_language = m_default_language;
 
             // Various options
-            val = LoadEntry("case_insensitive");
-            m_case_insensitive = (val == "true");
-
-            val = LoadEntry("discard_on_invalid");
-            m_discard_on_invalid = (val == "true");
-
-            val = LoadEntry("beep_on_invalid");
-            m_beep_on_invalid = (val == "true");
+            CaseInsensitive.Load();
+            DiscardOnInvalid.Load();
+            BeepOnInvalid.Load();
 
             // Save config to sanitise it
             SaveConfig();
@@ -64,9 +74,9 @@ namespace WinCompose
 
             SaveEntry("reset_delay", m_delay.ToString());
             SaveEntry("language", m_language);
-            SaveEntry("case_insensitive", m_case_insensitive);
-            SaveEntry("discard_on_invalid", m_discard_on_invalid);
-            SaveEntry("beep_on_invalid", m_beep_on_invalid);
+            CaseInsensitive.Save();
+            DiscardOnInvalid.Save();
+            BeepOnInvalid.Save();
         }
 
         public static void LoadSequences()
@@ -87,21 +97,6 @@ namespace WinCompose
         public static bool IsUsableKey(Key key)
         {
             return key.IsPrintable() || m_key_names.ContainsValue(key);
-        }
-
-        public static bool IsCaseInsensitive()
-        {
-            return m_case_insensitive;
-        }
-
-        public static bool ShouldDiscardOnInvalid()
-        {
-            return m_discard_on_invalid;
-        }
-
-        public static bool ShouldBeepOnInvalid()
-        {
-            return m_beep_on_invalid;
         }
 
         public static SequenceTree GetSequenceList()
@@ -141,16 +136,6 @@ namespace WinCompose
         private static void SaveEntry(string key, string val)
         {
             WritePrivateProfileString("global", key, val, GetConfigFile());
-        }
-
-        private static void SaveEntry(string key, int val)
-        {
-            SaveEntry(key, val.ToString());
-        }
-
-        private static void SaveEntry(string key, bool val)
-        {
-            SaveEntry(key, val ? "true" : "false");
         }
 
         private static void LoadSequenceFile(string path)
@@ -261,10 +246,6 @@ namespace WinCompose
         };
 
         private static int m_delay = -1;
-
-        private static bool m_case_insensitive = false;
-        private static bool m_discard_on_invalid = false;
-        private static bool m_beep_on_invalid = false;
 
         private static readonly Dictionary<string, Key> m_key_names
          = new Dictionary<string, Key>()

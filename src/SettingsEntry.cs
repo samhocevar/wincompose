@@ -24,18 +24,25 @@ namespace WinCompose
         private const string MutexName = "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}";     
         private static readonly Mutex SettingsMutex = new Mutex(false, MutexName);
 
-        /// <summary>
-        /// Gets or sets the section of this settings entry.
-        /// </summary>
-        public string Section { get; set; }
+        protected SettingsEntry(string section, string key, object defaultValue)
+        {
+            Section = section;
+            Key = key;
+            Value = defaultValue;
+        }
 
         /// <summary>
-        /// Gets or sets the key identifying this settings entry.
+        /// Gets the section of this settings entry.
         /// </summary>
-        public string Key { get; set; }
+        public string Section { get; private set; }
 
         /// <summary>
-        /// Gets or sets the value of this settings entry.
+        /// Gets the key identifying this settings entry.
+        /// </summary>
+        public string Key { get; private set; }
+
+        /// <summary>
+        /// Gets the value of this settings entry.
         /// </summary>
         public object Value { get; set; }
 
@@ -119,10 +126,15 @@ namespace WinCompose
     /// <typeparam name="T">The type of data this entry contains.</typeparam>
     public class SettingsEntry<T> : SettingsEntry
     {
+        public SettingsEntry(string section, string key, T defaultValue)
+            : base(section, key, defaultValue)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value of this settings entry.
         /// </summary>
-        public new T Value { get; set; }
+        public new T Value { get { return (T)base.Value; } set { base.Value = value; } }
 
         /// <inheritdoc/>
         protected override string Serialize(object value)

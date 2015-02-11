@@ -107,7 +107,7 @@ static class Compose
             else
             {
                 // Unknown characters for sequence, print them if necessary
-                if (!Settings.ShouldDiscardOnInvalid())
+                if (!Settings.DiscardOnInvalid.Value)
                 {
                     foreach (Key k in m_sequence)
                     {
@@ -117,7 +117,7 @@ static class Compose
                     }
                 }
 
-                if (Settings.ShouldBeepOnInvalid())
+                if (Settings.BeepOnInvalid.Value)
                     SystemSounds.Beep.Play();
 
                 m_composing = false;
