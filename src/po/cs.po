@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2014-11-04 15:09+0200\n"
+"PO-Revision-Date: 2015-02-13 13:16+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
-"cs/>\n"
+"Language-Team: Czech "
+"<https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.0-dev\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
@@ -137,11 +137,11 @@ msgstr ""
 
 #: ui.ahk:65
 msgid "&About"
-msgstr ""
+msgstr "&O aplikaci"
 
 #: ui.ahk:66
 msgid "&Visit Website"
-msgstr ""
+msgstr "Navštívit &web"
 
 #: ui.ahk:67
 msgid "E&xit"
