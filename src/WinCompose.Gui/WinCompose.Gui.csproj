@@ -75,7 +75,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="UnicodeCategoryConverter.cs" />
+    <Compile Include="ValueConverters.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -61,6 +61,33 @@ namespace WinCompose.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply.
+        /// </summary>
+        public static string Apply {
+            get {
+                return ResourceManager.GetString("Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beep on invalid.
+        /// </summary>
+        public static string BeepOnInvalid {
+            get {
+                return ResourceManager.GetString("BeepOnInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Case insensitive.
+        /// </summary>
+        public static string CaseInsensitive {
+            get {
+                return ResourceManager.GetString("CaseInsensitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categories.
         /// </summary>
         public static string Categories {
@@ -79,6 +106,24 @@ namespace WinCompose.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compose key.
+        /// </summary>
+        public static string ComposeKey {
+            get {
+                return ResourceManager.GetString("ComposeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discard on invalid.
+        /// </summary>
+        public static string DiscardOnInvalid {
+            get {
+                return ResourceManager.GetString("DiscardOnInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In selected categories.
         /// </summary>
         public static string InSelectedCategories {
@@ -88,11 +133,137 @@ namespace WinCompose.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application key.
+        /// </summary>
+        public static string KeyApps {
+            get {
+                return ResourceManager.GetString("KeyApps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caps Lock.
+        /// </summary>
+        public static string KeyCapital {
+            get {
+                return ResourceManager.GetString("KeyCapital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Escape.
+        /// </summary>
+        public static string KeyEscape {
+            get {
+                return ResourceManager.GetString("KeyEscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left control.
+        /// </summary>
+        public static string KeyLControl {
+            get {
+                return ResourceManager.GetString("KeyLControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Alt.
+        /// </summary>
+        public static string KeyLMenu {
+            get {
+                return ResourceManager.GetString("KeyLMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Windows Key.
+        /// </summary>
+        public static string KeyLWin {
+            get {
+                return ResourceManager.GetString("KeyLWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NumLock.
+        /// </summary>
+        public static string KeyNumLock {
+            get {
+                return ResourceManager.GetString("KeyNumLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pause.
+        /// </summary>
+        public static string KeyPause {
+            get {
+                return ResourceManager.GetString("KeyPause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right control.
+        /// </summary>
+        public static string KeyRControl {
+            get {
+                return ResourceManager.GetString("KeyRControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Alt.
+        /// </summary>
+        public static string KeyRMenu {
+            get {
+                return ResourceManager.GetString("KeyRMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Windows Key.
+        /// </summary>
+        public static string KeyRWin {
+            get {
+                return ResourceManager.GetString("KeyRWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scroll Lock.
+        /// </summary>
+        public static string KeyScroll {
+            get {
+                return ResourceManager.GetString("KeyScroll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mappings.
         /// </summary>
         public static string Mappings {
             get {
                 return ResourceManager.GetString("Mappings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset delay.
+        /// </summary>
+        public static string ResetDelay {
+            get {
+                return ResourceManager.GetString("ResetDelay", resourceCulture);
             }
         }
         

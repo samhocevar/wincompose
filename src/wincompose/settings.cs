@@ -16,26 +16,86 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace WinCompose
 {
     public static class Settings
     {
+        private const string GlobalSection = "global";
+        private const string ConfigFileName = "settings.ini";
+        private static FileSystemWatcher watcher;
+        private static Timer reloadTimer;
+
+        static Settings()
+        {
+            ComposeKey = new SettingsEntry<Key>(GlobalSection, "compose_key", m_default_compose_key);
+            ResetDelay = new SettingsEntry<int>(GlobalSection, "reset_delay", -1);
+            CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
+            DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
+            BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
+            KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
+        }
+
+        public static SettingsEntry<Key> ComposeKey { get; private set; }
+
+        public static SettingsEntry<int> ResetDelay { get; private set; }
+
+        public static SettingsEntry<bool> CaseInsensitive { get; private set; }
+
+        public static SettingsEntry<bool> DiscardOnInvalid { get; private set; }
+        
+        public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
+
+        public static SettingsEntry<bool> KeepOriginalKey { get; private set; }
+
+        public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
+
+        public static void StartWatchConfigFile()
+        {
+            watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
+            watcher.Changed += ConfigFileChanged;
+            watcher.EnableRaisingEvents = true;
+        }
+
+        public static void StopWatchConfigFile()
+        {
+            watcher.Dispose();
+            watcher = null;
+        }
+
+        private static void ConfigFileChanged(object sender, FileSystemEventArgs e)
+        {
+            if (reloadTimer == null)
+            {
+                // This event is triggered multiple times.
+                // Let's defer its handling to reload the config only once.
+                reloadTimer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
+            }
+        }
+
+        private static void ReloadConfig(object state)
+        {
+            reloadTimer.Dispose();
+            reloadTimer = null;
+            LoadConfig();
+        }
+
         public static void LoadConfig()
         {
             string val;
 
             // The key used as the compose key
-            val = LoadEntry("compose_key");
-            if (m_valid_compose_keys.ContainsKey(val))
-                m_compose_key = m_valid_compose_keys[val];
-            else
-                m_compose_key = m_default_compose_key;
+            ComposeKey.Load();
+
+            if (!m_valid_compose_keys.Contains(ComposeKey.Value))
+                ComposeKey.Value = m_default_compose_key;
 
             // The timeout delay
-            val = LoadEntry("reset_delay");
+            ResetDelay.Load();
 
             // The interface language
+            // TODO: language settings
             val = LoadEntry("language");
             if (m_valid_languages.ContainsKey(val))
                 m_language = val;
@@ -43,27 +103,21 @@ namespace WinCompose
                 m_language = m_default_language;
 
             // Various options
-            m_case_insensitive = LoadBoolEntry("case_insensitive");
-            m_discard_on_invalid = LoadBoolEntry("discard_on_invalid");
-            m_beep_on_invalid = LoadBoolEntry("beep_on_invalid");
-            m_keep_original_key = LoadBoolEntry("keep_original_key");
-
-            // Save config to sanitise it
-            SaveConfig();
+            CaseInsensitive.Load();
+            DiscardOnInvalid.Load();
+            BeepOnInvalid.Load();
+            KeepOriginalKey.Load();
         }
 
         public static void SaveConfig()
         {
-            foreach (var entry in m_valid_compose_keys)
-                if (entry.Value == m_compose_key)
-                    SaveEntry("compose_key", entry.Key);
-
             SaveEntry("reset_delay", m_delay.ToString());
             SaveEntry("language", m_language);
-            SaveEntry("case_insensitive", m_case_insensitive);
-            SaveEntry("discard_on_invalid", m_discard_on_invalid);
-            SaveEntry("beep_on_invalid", m_beep_on_invalid);
-            SaveEntry("keep_original_key", m_keep_original_key);
+            ComposeKey.Save();
+            CaseInsensitive.Save();
+            DiscardOnInvalid.Save();
+            BeepOnInvalid.Save();
+            KeepOriginalKey.Save();
         }
 
         public static void LoadSequences()
@@ -78,32 +132,12 @@ namespace WinCompose
 
         public static bool IsComposeKey(Key key)
         {
-            return m_compose_key == key;
+            return ComposeKey.Value == key;
         }
 
         public static bool IsUsableKey(Key key)
         {
             return key.IsPrintable() || m_key_names.ContainsValue(key);
-        }
-
-        public static bool IsCaseInsensitive()
-        {
-            return m_case_insensitive;
-        }
-
-        public static bool ShouldDiscardOnInvalid()
-        {
-            return m_discard_on_invalid;
-        }
-
-        public static bool ShouldBeepOnInvalid()
-        {
-            return m_beep_on_invalid;
-        }
-
-        public static bool ShouldKeepOriginalKey()
-        {
-            return m_keep_original_key;
         }
 
         public static SequenceTree GetSequenceList()
@@ -140,25 +174,9 @@ namespace WinCompose
             return tmp.ToString();
         }
 
-        private static bool LoadBoolEntry(string key)
-        {
-            string val = LoadEntry(key).ToLower();
-            return new List<string>{ "true", "on", "1" }.Contains(val);
-        }
-
         private static void SaveEntry(string key, string val)
         {
             WritePrivateProfileString("global", key, val, GetConfigFile());
-        }
-
-        private static void SaveEntry(string key, int val)
-        {
-            SaveEntry(key, val.ToString());
-        }
-
-        private static void SaveEntry(string key, bool val)
-        {
-            SaveEntry(key, val ? "true" : "false");
         }
 
         private static void LoadSequenceFile(string path)
@@ -210,26 +228,24 @@ namespace WinCompose
         private static SequenceTree m_sequences = new SequenceTree();
 
 
-        private static readonly Dictionary<string, Key> m_valid_compose_keys
-         = new Dictionary<string, Key>()
+        private static readonly List<Key> m_valid_compose_keys = new List<Key>
         {
-            { "lalt",       new Key(VK.LMENU) },
-            { "ralt",       new Key(VK.RMENU) },
-            { "lcontrol",   new Key(VK.LCONTROL) },
-            { "rcontrol",   new Key(VK.RCONTROL) },
-            { "lwin",       new Key(VK.LWIN) },
-            { "rwin",       new Key(VK.RWIN) },
-            { "capslock",   new Key(VK.CAPITAL) },
-            { "numlock",    new Key(VK.NUMLOCK) },
-            { "pause",      new Key(VK.PAUSE) },
-            { "appskey",    new Key(VK.APPS) },
-            { "esc",        new Key(VK.ESCAPE) },
-            { "scrolllock", new Key(VK.SCROLL) },
-            { "`",          new Key("`") },
+           new Key(VK.LMENU),
+           new Key(VK.RMENU),
+           new Key(VK.LCONTROL),
+           new Key(VK.RCONTROL),
+           new Key(VK.LWIN),
+           new Key(VK.RWIN),
+           new Key(VK.CAPITAL),
+           new Key(VK.NUMLOCK),
+           new Key(VK.PAUSE),
+           new Key(VK.APPS),
+           new Key(VK.ESCAPE),
+           new Key(VK.SCROLL),
+           new Key("`"),
         };
 
         private static readonly Key m_default_compose_key = new Key(VK.RMENU);
-        private static Key m_compose_key = m_default_compose_key;
 
         private static readonly Dictionary<string, string> m_valid_languages
          = new Dictionary<string, string>()
@@ -269,11 +285,6 @@ namespace WinCompose
         };
 
         private static int m_delay = -1;
-
-        private static bool m_case_insensitive = false;
-        private static bool m_discard_on_invalid = false;
-        private static bool m_beep_on_invalid = false;
-        private static bool m_keep_original_key = false;
 
         private static readonly Dictionary<string, Key> m_key_names
          = new Dictionary<string, Key>()
@@ -320,9 +331,9 @@ namespace WinCompose
             { "right",  new Key(VK.RIGHT) },
         };
 
-        private static string GetConfigFile()
+        public static string GetConfigFile()
         {
-            return Path.Combine(GetConfigDir(), "settings.ini");
+            return Path.Combine(GetConfigDir(), ConfigFileName);
         }
 
         private static string GetConfigDir()
