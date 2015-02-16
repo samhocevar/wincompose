@@ -26,6 +26,8 @@ namespace WinCompose
             Settings.LoadSequences();
             KeyboardHook.Install();
 
+            Settings.StartWatchConfigFile();
+
             try
             {
                 Application.EnableVisualStyles();
@@ -48,6 +50,7 @@ namespace WinCompose
             finally
             {
                 KeyboardHook.Uninstall();
+                Settings.StopWatchConfigFile();
                 Settings.SaveConfig();
             }
         }

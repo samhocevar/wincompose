@@ -16,12 +16,16 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace WinCompose
 {
     public static class Settings
     {
         private const string GlobalSection = "global";
+        private const string ConfigFileName = "settings.ini";
+        private static FileSystemWatcher watcher;
+        private static Timer reloadTimer;
 
         static Settings()
         {
@@ -42,7 +46,37 @@ namespace WinCompose
         
         public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
 
-        public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } } 
+        public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
+
+        public static void StartWatchConfigFile()
+        {
+            watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
+            watcher.Changed += ConfigFileChanged;
+            watcher.EnableRaisingEvents = true;
+        }
+
+        public static void StopWatchConfigFile()
+        {
+            watcher.Dispose();
+            watcher = null;
+        }
+
+        private static void ConfigFileChanged(object sender, FileSystemEventArgs e)
+        {
+            if (reloadTimer == null)
+            {
+                // This event is triggered multiple times.
+                // Let's defer its handling to reload the config only once.
+                reloadTimer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
+            }
+        }
+
+        private static void ReloadConfig(object state)
+        {
+            reloadTimer.Dispose();
+            reloadTimer = null;
+            LoadConfig();
+        }
 
         public static void LoadConfig()
         {
@@ -69,9 +103,6 @@ namespace WinCompose
             CaseInsensitive.Load();
             DiscardOnInvalid.Load();
             BeepOnInvalid.Load();
-
-            // Save config to sanitise it
-            SaveConfig();
         }
 
         public static void SaveConfig()
@@ -297,7 +328,7 @@ namespace WinCompose
 
         public static string GetConfigFile()
         {
-            return Path.Combine(GetConfigDir(), "settings.ini");
+            return Path.Combine(GetConfigDir(), ConfigFileName);
         }
 
         private static string GetConfigDir()
