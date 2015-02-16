@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.6.99"
+#define VERSION "0.6.99beta"
 
 [Setup]
 AppName = {#NAME}
@@ -9,7 +9,7 @@ AppPublisherURL = http://sam.hocevar.net/
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 DefaultDirName = {pf}\{#NAME}
 DefaultGroupName = {#NAME}
-SetupIconFile = "res\icon_normal.ico"
+SetupIconFile = "wincompose\res\icon_normal.ico"
 Compression = lzma2
 SolidCompression = yes
 OutputDir = .
@@ -18,9 +18,9 @@ ShowLanguageDialog = auto
 [Files]
 Source: "bin\Release\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\{#NAME}.gui.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "res\WinCompose.txt"; DestDir: "{app}\res"
-Source: "res\Xorg.txt"; DestDir: "{app}\res"
-Source: "res\Xcompose.txt"; DestDir: "{app}\res"
+Source: "wincompose\res\WinCompose.txt"; DestDir: "{app}\res"
+Source: "wincompose\res\Xorg.txt"; DestDir: "{app}\res"
+Source: "wincompose\res\Xcompose.txt"; DestDir: "{app}\res"
 Source: "po\??.po"; DestDir: "{app}\po"
 
 [Languages]

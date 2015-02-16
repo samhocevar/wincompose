@@ -131,7 +131,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\wincompose.csproj">
+    <ProjectReference Include="..\wincompose\wincompose.csproj">
       <Project>{892f7967-2db6-4425-81fa-3b246889fa3b}</Project>
       <Name>wincompose</Name>
     </ProjectReference>
