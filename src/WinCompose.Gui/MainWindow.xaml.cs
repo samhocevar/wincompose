@@ -95,6 +95,7 @@ namespace WinCompose.Gui
             LoadPage(GuiPage.None);
             Hide();
             Close();
+            Settings.SaveConfig();
         }
 
         private void CloseWindowClicked(object sender, CancelEventArgs e)

@@ -62,6 +62,8 @@ public class Key
 
     public Key(VK vk) { m_vk = vk; }
 
+    public VK VirtualKey { get { return m_vk; } }
+
     public bool IsPrintable()
     {
         return m_str != null;

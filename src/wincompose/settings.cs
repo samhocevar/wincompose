@@ -42,6 +42,8 @@ namespace WinCompose
         
         public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
 
+        public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } } 
+
         public static void LoadConfig()
         {
             string val;
