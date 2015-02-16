@@ -42,12 +42,6 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="about.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="about.designer.cs">
-      <DependentUpon>about.cs</DependentUpon>
-    </Compile>
     <Compile Include="compose.cs" />
     <Compile Include="GuiPage.cs" />
     <Compile Include="keyboardhook.cs" />
@@ -57,9 +51,6 @@
     <Compile Include="settings.cs" />
     <Compile Include="SettingsEntry.cs" />
     <Compile Include="types.cs" />
-    <EmbeddedResource Include="about.resx">
-      <DependentUpon>about.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
