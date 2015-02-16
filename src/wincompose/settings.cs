@@ -43,14 +43,10 @@ namespace WinCompose
                 m_language = m_default_language;
 
             // Various options
-            val = LoadEntry("case_insensitive");
-            m_case_insensitive = (val == "true");
-
-            val = LoadEntry("discard_on_invalid");
-            m_discard_on_invalid = (val == "true");
-
-            val = LoadEntry("beep_on_invalid");
-            m_beep_on_invalid = (val == "true");
+            m_case_insensitive = LoadBoolEntry("case_insensitive");
+            m_discard_on_invalid = LoadBoolEntry("discard_on_invalid");
+            m_beep_on_invalid = LoadBoolEntry("beep_on_invalid");
+            m_keep_original_key = LoadBoolEntry("keep_original_key");
 
             // Save config to sanitise it
             SaveConfig();
@@ -67,6 +63,7 @@ namespace WinCompose
             SaveEntry("case_insensitive", m_case_insensitive);
             SaveEntry("discard_on_invalid", m_discard_on_invalid);
             SaveEntry("beep_on_invalid", m_beep_on_invalid);
+            SaveEntry("keep_original_key", m_keep_original_key);
         }
 
         public static void LoadSequences()
@@ -104,6 +101,11 @@ namespace WinCompose
             return m_beep_on_invalid;
         }
 
+        public static bool ShouldKeepOriginalKey()
+        {
+            return m_keep_original_key;
+        }
+
         public static SequenceTree GetSequenceList()
         {
             return m_sequences;
@@ -136,6 +138,12 @@ namespace WinCompose
             GetPrivateProfileString("global", key, "",
                                     tmp, len, GetConfigFile());
             return tmp.ToString();
+        }
+
+        private static bool LoadBoolEntry(string key)
+        {
+            string val = LoadEntry(key).ToLower();
+            return new List<string>{ "true", "on", "1" }.Contains(val);
         }
 
         private static void SaveEntry(string key, string val)
@@ -265,6 +273,7 @@ namespace WinCompose
         private static bool m_case_insensitive = false;
         private static bool m_discard_on_invalid = false;
         private static bool m_beep_on_invalid = false;
+        private static bool m_keep_original_key = false;
 
         private static readonly Dictionary<string, Key> m_key_names
          = new Dictionary<string, Key>()
