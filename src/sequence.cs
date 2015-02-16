@@ -11,15 +11,51 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 
 namespace WinCompose
 {
 
+public class KeyConverter : TypeConverter
+{
+    public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+    {
+        return sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
+    }
+
+    public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+    {
+        var strValue = value as string;
+        if (strValue != null)
+        {
+            if (strValue.StartsWith("VK."))
+            {
+                try
+                {
+                    var enumValue = Enum.Parse(typeof(VK), strValue.Substring(3));
+                    return new Key((VK)enumValue);
+                }
+                catch
+                {
+                    // Silently catch parsing exception.
+                }
+            }
+            return new Key(strValue);
+        }
+        return base.ConvertFrom(context, culture, value);
+    }
+
+    public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+    {
+        return destinationType == typeof(string) ? value.ToString() : base.ConvertTo(context, culture, value, destinationType);
+    }
+}
 /*
  * The Key class describes anything that can be done on the keyboard,
  * so either a printable string or a virtual key code.
  */
-
+[TypeConverter(typeof(KeyConverter))]
 public class Key
 {
     public Key(string str) { m_str = str; }
@@ -33,6 +69,11 @@ public class Key
 
     public override string ToString()
     {
+        if (m_vk != VK.NONE)
+        {
+            return string.Format("VK.{0}", m_vk);
+        }
+
         string ret;
         if (m_key_symbols.TryGetValue(m_vk, out ret))
             return ret;

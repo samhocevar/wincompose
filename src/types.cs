@@ -43,6 +43,7 @@ public enum WM : int
 
 public enum VK : int
 {
+    NONE     = 0x00,
     SHIFT    = 0x10,
     CONTROL  = 0x11,
     PAUSE    = 0x13,

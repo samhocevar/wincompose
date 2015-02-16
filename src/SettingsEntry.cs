@@ -10,6 +10,7 @@
 //   See http://www.wtfpl.net/ for more details.
 
 using System;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -83,7 +84,7 @@ namespace WinCompose
                 {
                     var stringBuilder = new StringBuilder(len);
                     var result = GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
-                    if (result != 0)
+                    if (result == 0)
                         return false;
 
                     var strVal = stringBuilder.ToString();
@@ -148,6 +149,10 @@ namespace WinCompose
         {
             try
             {
+                var converter = System.ComponentModel.TypeDescriptor.GetConverter(typeof(T));
+                if (converter.CanConvertFrom(typeof(string)))
+                    return converter.ConvertFrom(str);
+                
                 // The default implementation of Deserialize uses the Convert class.
                 return (T)Convert.ChangeType(str, typeof(T));
             }
