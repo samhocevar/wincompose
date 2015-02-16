@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wincompose", "wincompose.csproj", "{892F7967-2DB6-4425-81FA-3B246889FA3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wincompose", "wincompose\wincompose.csproj", "{892F7967-2DB6-4425-81FA-3B246889FA3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinCompose.Gui", "WinCompose.Gui\WinCompose.Gui.csproj", "{E00DB4B7-3738-47F4-B430-B10EFFB36205}"
 EndProject
