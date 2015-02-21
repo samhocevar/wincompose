@@ -341,7 +341,7 @@ namespace WinCompose
         private static string GetDataDir()
         {
             return IsInstalled() ? Path.Combine(GetExeDir(), "res")
-                 : IsDebugging() ? Path.Combine(GetExeDir(), "../../res")
+                 : IsDebugging() ? Path.Combine(GetExeDir(), "../../wincompose/res")
                  : GetExeDir();
         }
 
