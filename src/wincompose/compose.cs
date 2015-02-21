@@ -176,6 +176,11 @@ static class Compose
         }
     }
 
+    public static bool IsComposing()
+    {
+        return m_composing;
+    }
+
     private static void SendKeyDown(VK vk)
     {
         keybd_event(vk, 0, 0, 0);

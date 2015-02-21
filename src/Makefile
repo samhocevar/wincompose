@@ -10,10 +10,12 @@ VERSION = 0.6.99beta
 ISS = installer.iss
 PO = be fr de
 
-TXT = res/Xorg.txt res/Xcompose.txt res/WinCompose.txt
+TXT = wincompose/res/Xorg.txt \
+      wincompose/res/Xcompose.txt \
+      wincompose/res/WinCompose.txt
 
 EXE = bin/Release/WinCompose.exe
-GUIEXE = WinCompose.Gui/obj/Release/WinCompose.Gui.exe
+GUIEXE = bin/Release/WinCompose.Gui.exe
 INSTALLER = WinCompose-Setup-$(VERSION).exe
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
@@ -27,7 +29,8 @@ all: installer portable
 
 clean:
 	rm -f $(INSTALLER) $(PORTABLE)
-	@rmdir obj >/dev/null 2>&1 || true
+	rm -rf obj wincompose/obj wincompose.gui/obj || true
+	rm -rf bin wincompose/bin wincompose.gui/bin || true
 
 installer: update-po $(EXE) $(GUIEXE) $(ISS)
 	rm -f $(INSTALLER)
@@ -43,13 +46,13 @@ portable: update-po $(EXE) $(GUIEXE)
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
-bin/Release/%.exe:
+bin/Release/WinCompose.exe:
 	@mkdir -p bin/Release
 	@rm -f $@
-	devenv wincompose.sln //build Release //project wincompose.csproj
+	devenv wincompose.sln //build Release //project wincompose\\wincompose.csproj
 
-WinCompose.Gui/obj/Release/%.exe:
-	@mkdir -p WinCompose.Gui/obj/Release
+bin/Release/WinCompose.Gui.exe:
+	@mkdir -p bin/Release
 	@rm -f $@
 	devenv wincompose.sln //build Release //project wincompose.gui\\wincompose.gui.csproj
 

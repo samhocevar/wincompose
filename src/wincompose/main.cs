@@ -18,6 +18,7 @@ namespace WinCompose
     static class Program
     {
         private static Process guiProcess;
+        private static NotifyIcon m_notifyicon;
 
         [STAThread]
         static void Main()
@@ -32,7 +33,8 @@ namespace WinCompose
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                var notifyicon = new NotifyIcon
+
+                m_notifyicon = new NotifyIcon
                 {
                     Visible = true,
                     Icon = Properties.Resources.IconNormal,
@@ -43,9 +45,17 @@ namespace WinCompose
                         new MenuItem(Properties.Resources.Exit, ExitClicked)
                     })
                 };
-                notifyicon.DoubleClick += NotifyiconDoubleclicked;
+                m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
+
+                var timer = new Timer
+                {
+                    Enabled = true,
+                    Interval = 50, /* 50 milliseconds is probably enough */
+                };
+                timer.Tick += TimerTicked;
+
                 Application.Run();
-                GC.KeepAlive(notifyicon);
+                GC.KeepAlive(m_notifyicon);
             }
             finally
             {
@@ -65,6 +75,12 @@ namespace WinCompose
             {
                 TerminateGui();
             }
+        }
+
+        private static void TimerTicked(object sender, EventArgs e)
+        {
+            m_notifyicon.Icon = Compose.IsComposing() ? Properties.Resources.IconActive
+                                                      : Properties.Resources.IconNormal;
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)

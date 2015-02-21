@@ -34,6 +34,7 @@ namespace WinCompose
             CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
             DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
             BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
+            KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
         }
 
         public static SettingsEntry<Key> ComposeKey { get; private set; }
@@ -45,6 +46,8 @@ namespace WinCompose
         public static SettingsEntry<bool> DiscardOnInvalid { get; private set; }
         
         public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
+
+        public static SettingsEntry<bool> KeepOriginalKey { get; private set; }
 
         public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
 
@@ -103,6 +106,7 @@ namespace WinCompose
             CaseInsensitive.Load();
             DiscardOnInvalid.Load();
             BeepOnInvalid.Load();
+            KeepOriginalKey.Load();
         }
 
         public static void SaveConfig()
@@ -113,6 +117,7 @@ namespace WinCompose
             CaseInsensitive.Save();
             DiscardOnInvalid.Save();
             BeepOnInvalid.Save();
+            KeepOriginalKey.Save();
         }
 
         public static void LoadSequences()
