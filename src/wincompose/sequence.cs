@@ -51,13 +51,26 @@ public class KeyConverter : TypeConverter
         return destinationType == typeof(string) ? value.ToString() : base.ConvertTo(context, culture, value, destinationType);
     }
 }
-/*
- * The Key class describes anything that can be done on the keyboard,
- * so either a printable string or a virtual key code.
- */
+
+/// <summary>
+/// The Key class describes anything that can be done on the keyboard,
+/// so either a printable string or a virtual key code.
+/// </summary>
 [TypeConverter(typeof(KeyConverter))]
 public class Key
 {
+    private static readonly Dictionary<VK, string> m_key_symbols = new Dictionary<VK, string>
+    {
+        { VK.UP,    "▲" },
+        { VK.DOWN,  "▼" },
+        { VK.LEFT,  "◀" },
+        { VK.RIGHT, "▶" },
+    };
+    
+    private readonly VK m_vk;
+
+    private readonly string m_str;
+
     public Key(string str) { m_str = str; }
 
     public Key(VK vk) { m_vk = vk; }
@@ -71,14 +84,15 @@ public class Key
 
     public override string ToString()
     {
+        string ret;
+        if (m_key_symbols.TryGetValue(m_vk, out ret))
+            return ret;
+        
         if (m_vk != VK.NONE)
         {
             return string.Format("VK.{0}", m_vk);
         }
 
-        string ret;
-        if (m_key_symbols.TryGetValue(m_vk, out ret))
-            return ret;
         return m_str ?? "";
     }
 
@@ -89,8 +103,8 @@ public class Key
 
     public static bool operator ==(Key a, Key b)
     {
-        bool is_a_null = object.ReferenceEquals(a, null);
-        bool is_b_null = object.ReferenceEquals(b, null);
+        bool is_a_null = ReferenceEquals(a, null);
+        bool is_b_null = ReferenceEquals(b, null);
         if (is_a_null || is_b_null)
             return is_a_null == is_b_null;
         return a.m_str != null ? a.m_str == b.m_str : a.m_vk == b.m_vk;
@@ -105,18 +119,6 @@ public class Key
     {
         return m_str != null ? m_str.GetHashCode() : ((int)m_vk).GetHashCode();
     }
-
-    private VK m_vk;
-    private string m_str;
-
-    private static readonly Dictionary<VK, string> m_key_symbols
-     = new Dictionary<VK, string>()
-    {
-        { VK.UP,    "▲" },
-        { VK.DOWN,  "▼" },
-        { VK.LEFT,  "◀" },
-        { VK.RIGHT, "▶" },
-    };
 };
 
 /*
