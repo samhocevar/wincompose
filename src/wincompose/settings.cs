@@ -325,10 +325,10 @@ namespace WinCompose
             { "asciitilde",   new Key("~") },  // 0x7e
 
             // Non-printing keys
-            { "up",     new Key(VK.UP) },
-            { "down",   new Key(VK.DOWN) },
-            { "left",   new Key(VK.LEFT) },
-            { "right",  new Key(VK.RIGHT) },
+            { "Up",     new Key(VK.UP) },
+            { "Down",   new Key(VK.DOWN) },
+            { "Left",   new Key(VK.LEFT) },
+            { "Right",  new Key(VK.RIGHT) },
         };
 
         public static string GetConfigFile()
