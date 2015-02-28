@@ -4,9 +4,9 @@ using System.Globalization;
 using System.Reflection;
 using System.Windows.Data;
 using System.Windows.Markup;
-using WinCompose.Gui.Properties;
+using WinCompose.Properties;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     public abstract class ValueConverter<T> : MarkupExtension, IValueConverter where T : class, new()
     {

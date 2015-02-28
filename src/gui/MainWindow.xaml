@@ -3,11 +3,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:properties="clr-namespace:WinCompose.Gui.Properties"
-        mc:Ignorable="d" x:Class="WinCompose.Gui.Mainwindow"
+        xmlns:properties="clr-namespace:WinCompose.Properties"
+        mc:Ignorable="d" x:Class="WinCompose.Mainwindow"
         Title="WinCompose" Height="600" Width="800"
-        Icon="/WinCompose.Gui;component/res/key_compose.png" Closing="CloseWindowClicked">
+        Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
     <Window.Resources>
+        <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
+        <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
     </Window.Resources>
     <DockPanel Margin="8">
         <StackPanel DockPanel.Dock="Bottom"
@@ -19,9 +21,9 @@
                     Click="PageSwitchClicked"
                     Margin="8"/>
                 <Button Padding="20, 2"
-                    Content="{x:Static properties:Resources.Close}"
                     Click="CloseClicked"
                     Margin="8"/>
+                <!--Content="{x:Static properties:Resources.Close}"-->
         </StackPanel>
         <Frame x:Name="MainFrame">
             <Frame.Template>

@@ -346,7 +346,7 @@ namespace WinCompose
         private static string GetDataDir()
         {
             return IsInstalled() ? Path.Combine(GetExeDir(), "res")
-                 : IsDebugging() ? Path.Combine(GetExeDir(), "../../wincompose/res")
+                 : IsDebugging() ? Path.Combine(GetExeDir(), "../../res")
                  : GetExeDir();
         }
 
@@ -374,7 +374,6 @@ namespace WinCompose
         private static bool IsDebugging()
         {
             string exe = GetExeName();
-            var lol = Path.ChangeExtension(exe, ".vshost.exe");
             return File.Exists(Path.ChangeExtension(exe, ".vshost.exe"));
         }
 

@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E00DB4B7-3738-47F4-B430-B10EFFB36205}</ProjectGuid>
+    <ProjectGuid>{892F7967-2DB6-4425-81FA-3B246889FA3B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinCompose.Gui</RootNamespace>
-    <AssemblyName>WinCompose.Gui</AssemblyName>
+    <RootNamespace>WinCompose</RootNamespace>
+    <AssemblyName>wincompose</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,13 +28,13 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>WinCompose.Gui.Program</StartupObject>
+    <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,94 +47,90 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="RootViewModel.cs" />
-    <Compile Include="SearchTokens.cs" />
-    <Compile Include="SequencePage.xaml.cs">
+    <Compile Include="gui\RootViewModel.cs" />
+    <Compile Include="gui\SearchTokens.cs" />
+    <Compile Include="gui\SequencePage.xaml.cs">
       <DependentUpon>SequencePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SequenceViewModel.cs" />
-    <Compile Include="SettingsPage.xaml.cs">
+    <Compile Include="gui\SequenceViewModel.cs" />
+    <Compile Include="gui\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UnicodeBlocks.Designer.cs">
+    <Compile Include="gui\UnicodeBlocks.Designer.cs">
       <DependentUpon>UnicodeBlocks.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="UnicodeCategories.Designer.cs">
+    <Compile Include="gui\UnicodeCategories.Designer.cs">
       <DependentUpon>UnicodeCategories.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="ValueConverters.cs" />
-    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="gui\ValueConverters.cs" />
+    <Compile Include="gui\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryViewModel.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="gui\CategoryViewModel.cs" />
+    <Compile Include="gui\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UnicodeBlocks.resx">
+    <EmbeddedResource Include="gui\UnicodeBlocks.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnicodeBlocks.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnicodeCategories.resx">
+    <EmbeddedResource Include="gui\UnicodeCategories.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnicodeCategories.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="main\Compose.cs" />
+    <Compile Include="main\GuiPage.cs" />
+    <Compile Include="main\KeyboardHook.cs" />
+    <Compile Include="main\Main.cs" />
+    <Compile Include="main\Sequence.cs" />
+    <Compile Include="main\Settings.cs" />
+    <Compile Include="main\SettingsEntry.cs" />
+    <Compile Include="main\Types.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="main\App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainWindow.xaml">
+    <Page Include="gui\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SequencePage.xaml">
+    <Page Include="gui\SequencePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SettingsPage.xaml">
+    <Page Include="gui\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\wincompose\wincompose.csproj">
-      <Project>{892f7967-2db6-4425-81fa-3b246889fa3b}</Project>
-      <Name>wincompose</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\key_compose.png" />
@@ -144,6 +140,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\key_space.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\icon_active.ico" />
+    <None Include="res\icon_disabled.ico" />
+    <None Include="res\icon_empty.ico" />
+    <None Include="res\icon_normal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_compose.png.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

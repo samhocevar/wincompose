@@ -19,6 +19,7 @@ namespace WinCompose
     {
         private static Process guiProcess;
         private static NotifyIcon m_notifyicon;
+        private static Mainwindow m_mainwindow;
 
         [STAThread]
         static void Main()
@@ -47,6 +48,8 @@ namespace WinCompose
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
 
+                m_mainwindow = new Mainwindow(GuiPage.None);
+
                 var timer = new Timer
                 {
                     Enabled = true,
@@ -67,13 +70,13 @@ namespace WinCompose
 
         private static void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
-            if (guiProcess == null)
+            if (!m_mainwindow.IsVisible)
             {
-                StartGui(GuiPage.Sequences);
+                m_mainwindow.OpenFromTray(GuiPage.Sequences);
             }
             else
             {
-                TerminateGui();
+                m_mainwindow.CloseToTray();
             }
         }
 

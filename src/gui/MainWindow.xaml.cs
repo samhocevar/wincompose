@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     /// <summary>
     /// Interaction logic for mainwindow.xaml
@@ -80,7 +80,7 @@ namespace WinCompose.Gui
             CloseToTray();
         }
 
-        private void OpenFromTray(GuiPage page)
+        public void OpenFromTray(GuiPage page)
         {
             ShowInTaskbar = true;
             Show();
@@ -89,7 +89,7 @@ namespace WinCompose.Gui
             ActivePage = page;
         }
 
-        private void CloseToTray()
+        public void CloseToTray()
         {
             ShowInTaskbar = false;
             LoadPage(GuiPage.None);

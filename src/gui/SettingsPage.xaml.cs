@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     /// <summary>
     /// Interaction logic for SettingsPage.xaml

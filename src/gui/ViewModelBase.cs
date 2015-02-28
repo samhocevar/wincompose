@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     /// <summary>
     /// A minimal implementation of the <see cref="INotifyPropertyChanged"/> interface

@@ -145,4 +145,82 @@
   <data name="ErrorStartingGui" xml:space="preserve">
     <value>Unable to start the GUI process. Please reinstall WinCompose</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Beep on invalid</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Case insensitive</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Compose key</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Discard on invalid</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>In selected categories</value>
+  </data>
+  <data name="KeyApps" xml:space="preserve">
+    <value>Application key</value>
+  </data>
+  <data name="KeyCapital" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="KeyEscape" xml:space="preserve">
+    <value>Escape</value>
+  </data>
+  <data name="KeyLControl" xml:space="preserve">
+    <value>Left control</value>
+  </data>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Left Alt</value>
+  </data>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>Left Windows Key</value>
+  </data>
+  <data name="KeyNumLock" xml:space="preserve">
+    <value>NumLock</value>
+  </data>
+  <data name="KeyPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="KeyRControl" xml:space="preserve">
+    <value>Right control</value>
+  </data>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Right Alt</value>
+  </data>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>Right Windows Key</value>
+  </data>
+  <data name="KeyScroll" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Mappings" xml:space="preserve">
+    <value>Mappings</value>
+  </data>
+  <data name="ResetDelay" xml:space="preserve">
+    <value>Reset delay</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Sequences" xml:space="preserve">
+    <value>Sequences</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     public class SequenceViewModel
     {

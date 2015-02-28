@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     public class SearchTokens
     {
