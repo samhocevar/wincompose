@@ -5,10 +5,10 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.99beta
+VERSION = 0.6.99beta20150201
 
 ISS = installer.iss
-PO = be fr de
+PO = $(wildcard po/*.po)
 
 TXT = wincompose/res/Xorg.txt \
       wincompose/res/Xcompose.txt \
@@ -42,7 +42,7 @@ portable: update-po $(EXE) $(GUIEXE)
 	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/res
 	cp $(EXE) $(GUIEXE) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/res
-	cp $(PO:%=po/%.po) $(PORTABLE:.zip=)/po
+	cp $(PO) $(PORTABLE:.zip=)/po
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
