@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
@@ -45,7 +45,7 @@ namespace WinCompose.Gui
                 // TODO: optimize me
                 foreach (var category in sortedCategories)
                 {
-                    if (category.Key > desc.Result[0])
+                    if (desc.Result.Length > 0 && category.Key > desc.Result[0])
                     {
                         sequences.Add(new SequenceViewModel(category.Value, desc));
                         break;
