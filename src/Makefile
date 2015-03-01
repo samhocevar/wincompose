@@ -10,12 +10,11 @@ VERSION = 0.6.99beta20150201
 ISS = installer.iss
 PO = $(wildcard po/*.po)
 
-TXT = wincompose/res/Xorg.txt \
-      wincompose/res/Xcompose.txt \
-      wincompose/res/WinCompose.txt
+TXT = rules/Xorg.txt \
+      rules/Xcompose.txt \
+      rules/WinCompose.txt
 
 EXE = bin/Release/WinCompose.exe
-GUIEXE = bin/Release/WinCompose.Gui.exe
 INSTALLER = WinCompose-Setup-$(VERSION).exe
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
@@ -32,15 +31,15 @@ clean:
 	rm -rf obj wincompose/obj wincompose.gui/obj || true
 	rm -rf bin wincompose/bin wincompose.gui/bin || true
 
-installer: update-po $(EXE) $(GUIEXE) $(ISS)
+installer: update-po $(EXE) $(ISS)
 	rm -f $(INSTALLER)
 	"$(ISCC)" $(ISS)
 
-portable: update-po $(EXE) $(GUIEXE)
+portable: update-po $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
 	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/res
-	cp $(EXE) $(GUIEXE) $(PORTABLE:.zip=)
+	cp $(EXE) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/res
 	cp $(PO) $(PORTABLE:.zip=)/po
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
@@ -49,12 +48,7 @@ portable: update-po $(EXE) $(GUIEXE)
 bin/Release/WinCompose.exe:
 	@mkdir -p bin/Release
 	@rm -f $@
-	devenv wincompose.sln //build Release //project wincompose\\wincompose.csproj
-
-bin/Release/WinCompose.Gui.exe:
-	@mkdir -p bin/Release
-	@rm -f $@
-	devenv wincompose.sln //build Release //project wincompose.gui\\wincompose.gui.csproj
+	devenv wincompose.sln //build Release //project wincompose.csproj
 
 update-po:
 	#$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ *.cs
