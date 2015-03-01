@@ -72,12 +72,12 @@
     <Compile Include="window\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UnicodeBlocks.Designer.cs">
+    <Compile Include="Properties\UnicodeBlocks.Designer.cs">
       <DependentUpon>UnicodeBlocks.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="UnicodeCategories.Designer.cs">
+    <Compile Include="Properties\UnicodeCategories.Designer.cs">
       <DependentUpon>UnicodeCategories.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,11 +108,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnicodeBlocks.resx">
+    <EmbeddedResource Include="Properties\UnicodeBlocks.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnicodeBlocks.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnicodeCategories.resx">
+    <EmbeddedResource Include="Properties\UnicodeCategories.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnicodeCategories.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>

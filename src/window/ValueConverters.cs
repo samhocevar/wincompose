@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Windows.Data;
 using System.Windows.Markup;
-using WinCompose.Properties;
+using WinCompose.Properties; // for UnicodeCategories
 
 namespace WinCompose
 {

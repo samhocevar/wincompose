@@ -47,7 +47,10 @@ namespace WinCompose
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
 
-                m_mainwindow = new Mainwindow(GuiPage.Sequences);
+                m_mainwindow = new Mainwindow(GuiPage.Sequences)
+                {
+                    Visibility = System.Windows.Visibility.Hidden
+                };
 
                 var timer = new Timer
                 {

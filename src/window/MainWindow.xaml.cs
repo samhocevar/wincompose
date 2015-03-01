@@ -94,7 +94,7 @@ namespace WinCompose
             ShowInTaskbar = false;
             LoadPage(GuiPage.None);
             Hide();
-            Close();
+            //Close();
             Settings.SaveConfig();
         }
 
