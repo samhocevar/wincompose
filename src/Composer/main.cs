@@ -12,9 +12,8 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using WinCompose.Gui;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
 #if false
     static class Program
@@ -104,7 +103,7 @@ namespace WinCompose.Gui
         {
             try
             {
-                guiProcess = Process.Start("WinCompose.Gui.exe", page.ToString());
+                guiProcess = Process.Start("WinCompose.exe", page.ToString());
                 if (guiProcess != null)
                 {
                     guiProcess.EnableRaisingEvents = true;

@@ -3,10 +3,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:properties="clr-namespace:WinCompose.Gui.Properties"
-        mc:Ignorable="d" x:Class="WinCompose.Gui.Mainwindow"
+        xmlns:properties="clr-namespace:WinCompose.Properties"
+        mc:Ignorable="d" x:Class="WinCompose.Mainwindow"
         Title="WinCompose" Height="600" Width="800"
-        Icon="/WinCompose.Gui;component/res/key_compose.png" Closing="CloseWindowClicked">
+        Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
     <Window.Resources>
     </Window.Resources>
     <DockPanel Margin="8">

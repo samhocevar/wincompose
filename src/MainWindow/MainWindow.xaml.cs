@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     /// <summary>
     /// Interaction logic for mainwindow.xaml

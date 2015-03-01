@@ -18,7 +18,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     public static class Settings
     {

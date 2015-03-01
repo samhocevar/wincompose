@@ -1,13 +1,13 @@
-﻿<Page x:Class="WinCompose.Gui.SequencePage"
+﻿<Page x:Class="WinCompose.SequencePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:gui="clr-namespace:WinCompose.Gui"
-      xmlns:properties="clr-namespace:WinCompose.Gui.Properties"
+      xmlns:wc="clr-namespace:WinCompose"
+      xmlns:properties="clr-namespace:WinCompose.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="SequencePage" d:DataContext="{d:DesignInstance gui:RootViewModel}">
+	Title="SequencePage" d:DataContext="{d:DesignInstance wc:RootViewModel}">
     <Page.Resources>
 
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
@@ -70,12 +70,12 @@
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="Padding" Value="4,8"/>
-                        <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance gui:CategoryViewModel}"/>
+                        <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance wc:CategoryViewModel}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
                 </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>
-                    <DataTemplate DataType="gui:CategoryViewModel">
+                    <DataTemplate DataType="wc:CategoryViewModel">
                         <StackPanel>
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -143,7 +143,7 @@
                                             </StackPanel>
                                             <DataTemplate.Triggers>
                                                 <!-- Change the key image and size when the value matches the space key -->
-                                                <DataTrigger Binding="{Binding}" Value="{x:Static gui:SequenceViewModel.SpaceKey}">
+                                                <DataTrigger Binding="{Binding}" Value="{x:Static wc:SequenceViewModel.SpaceKey}">
                                                     <Setter TargetName="KeyImage" Property="Width" Value="64"/>                                                   
                                                     <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->                                                   
                                                     <Setter TargetName="KeyImage" Property="Background">
@@ -159,7 +159,7 @@
                             </StackPanel>
                             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                                 <TextBlock Text="{Binding Unicode, Mode=OneTime, StringFormat=U+\{0:X4\}}"/>
-                                <TextBlock Text="{Binding UnicodeCategory, Converter={gui:UnicodeCategoryConverter}, Mode=OneTime}" HorizontalAlignment="Right" Margin="10,0"/>
+                                <TextBlock Text="{Binding UnicodeCategory, Converter={wc:UnicodeCategoryConverter}, Mode=OneTime}" HorizontalAlignment="Right" Margin="10,0"/>
                             </StackPanel>
                             <TextBlock Text="{Binding Description, Mode=OneTime}" TextTrimming="WordEllipsis"/>
                         </DockPanel>

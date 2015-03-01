@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace WinCompose.Gui
+﻿namespace WinCompose
 {
     public class CategoryViewModel : ViewModelBase
     {

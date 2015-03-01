@@ -1,4 +1,4 @@
-namespace WinCompose.Gui
+namespace WinCompose
 {
     /// <summary>
     /// Identifies a page of the GUI.

@@ -1,4 +1,4 @@
-﻿namespace WinCompose.Gui
+﻿namespace WinCompose
 {
     /// <summary>
     /// Interaction logic for App.xaml

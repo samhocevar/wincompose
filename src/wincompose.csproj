@@ -7,8 +7,8 @@
     <ProjectGuid>{E00DB4B7-3738-47F4-B430-B10EFFB36205}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinCompose.Gui</RootNamespace>
-    <AssemblyName>WinCompose.Gui</AssemblyName>
+    <RootNamespace>WinCompose</RootNamespace>
+    <AssemblyName>WinCompose</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>WinCompose.Gui.Program</StartupObject>
+    <StartupObject>WinCompose.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

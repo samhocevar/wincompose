@@ -11,7 +11,7 @@
 
 using System;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
 
 /* Enums from winuser.h */
