@@ -47,18 +47,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\GuiPage.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
-    <Compile Include="composer\Main.cs" />
+    <Compile Include="composer\Program.cs" />
     <Compile Include="composer\Sequence.cs" />
     <Compile Include="composer\Settings.cs" />
     <Compile Include="composer\SettingsEntry.cs" />
