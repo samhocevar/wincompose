@@ -55,22 +55,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Composer\compose.cs" />
-    <Compile Include="Composer\GuiPage.cs" />
-    <Compile Include="Composer\keyboardhook.cs" />
-    <Compile Include="Composer\main.cs" />
-    <Compile Include="Composer\sequence.cs" />
-    <Compile Include="Composer\settings.cs" />
-    <Compile Include="Composer\SettingsEntry.cs" />
-    <Compile Include="Composer\types.cs" />
-    <Compile Include="MainWindow\Program.cs" />
-    <Compile Include="MainWindow\RootViewModel.cs" />
-    <Compile Include="MainWindow\SearchTokens.cs" />
-    <Compile Include="MainWindow\SequencePage.xaml.cs">
+    <Compile Include="composer\Composer.cs" />
+    <Compile Include="composer\GuiPage.cs" />
+    <Compile Include="composer\KeyboardHook.cs" />
+    <Compile Include="composer\Main.cs" />
+    <Compile Include="composer\Sequence.cs" />
+    <Compile Include="composer\Settings.cs" />
+    <Compile Include="composer\SettingsEntry.cs" />
+    <Compile Include="composer\Types.cs" />
+    <Compile Include="window\Program.cs" />
+    <Compile Include="window\RootViewModel.cs" />
+    <Compile Include="window\SearchTokens.cs" />
+    <Compile Include="window\SequencePage.xaml.cs">
       <DependentUpon>SequencePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow\SequenceViewModel.cs" />
-    <Compile Include="MainWindow\SettingsPage.xaml.cs">
+    <Compile Include="window\SequenceViewModel.cs" />
+    <Compile Include="window\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UnicodeBlocks.Designer.cs">
@@ -83,12 +83,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="MainWindow\ValueConverters.cs" />
-    <Compile Include="MainWindow\ViewModelBase.cs" />
+    <Compile Include="window\ValueConverters.cs" />
+    <Compile Include="window\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindow\CategoryViewModel.cs" />
-    <Compile Include="MainWindow\MainWindow.xaml.cs">
+    <Compile Include="window\CategoryViewModel.cs" />
+    <Compile Include="window\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -125,15 +125,15 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainWindow\MainWindow.xaml">
+    <Page Include="window\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainWindow\SequencePage.xaml">
+    <Page Include="window\SequencePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainWindow\SettingsPage.xaml">
+    <Page Include="window\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

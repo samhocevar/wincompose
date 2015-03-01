@@ -68,7 +68,7 @@ static class KeyboardHook
 
             if (is_key && !is_injected)
             {
-                if (Compose.OnKey(wParam, data.vk, data.sc, data.flags))
+                if (Composer.OnKey(wParam, data.vk, data.sc, data.flags))
                 {
                     // Do not process further: that key was for us.
                     return -1;
