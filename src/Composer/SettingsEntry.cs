@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     /// <summary>
     /// The base class to represent an entry in the settings file. It handles thread-safe and process-safe saving and loading.

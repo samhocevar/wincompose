@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinCompose.Gui.Properties
+namespace WinCompose.Properties
 {
 
 

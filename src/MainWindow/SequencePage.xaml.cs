@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
     /// <summary>
     /// Interaction logic for SequencePage.xaml

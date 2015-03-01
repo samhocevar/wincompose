@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace WinCompose.Gui
+namespace WinCompose
 {
 
 public class KeyConverter : TypeConverter
