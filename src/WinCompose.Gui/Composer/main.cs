@@ -14,7 +14,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using WinCompose.Gui;
 
-namespace WinCompose
+namespace WinCompose.Gui
 {
 #if false
     static class Program
