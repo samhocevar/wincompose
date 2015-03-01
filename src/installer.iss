@@ -9,7 +9,7 @@ AppPublisherURL = http://sam.hocevar.net/
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 DefaultDirName = {pf}\{#NAME}
 DefaultGroupName = {#NAME}
-SetupIconFile = "wincompose\res\icon_normal.ico"
+SetupIconFile = "res\icon_normal.ico"
 Compression = lzma2
 SolidCompression = yes
 OutputDir = .
@@ -18,9 +18,9 @@ ShowLanguageDialog = auto
 [Files]
 Source: "bin\Release\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\{#NAME}.gui.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "wincompose\res\WinCompose.txt"; DestDir: "{app}\res"
-Source: "wincompose\res\Xorg.txt"; DestDir: "{app}\res"
-Source: "wincompose\res\Xcompose.txt"; DestDir: "{app}\res"
+Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
+Source: "rules\Xorg.txt"; DestDir: "{app}\res"
+Source: "rules\Xcompose.txt"; DestDir: "{app}\res"
 Source: "po\??.po"; DestDir: "{app}\po"
 
 [Languages]
