@@ -63,7 +63,6 @@
     <Compile Include="composer\Settings.cs" />
     <Compile Include="composer\SettingsEntry.cs" />
     <Compile Include="composer\Types.cs" />
-    <Compile Include="window\Program.cs" />
     <Compile Include="window\RootViewModel.cs" />
     <Compile Include="window\SearchTokens.cs" />
     <Compile Include="window\SequencePage.xaml.cs">

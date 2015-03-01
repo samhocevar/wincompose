@@ -15,11 +15,10 @@ using System.Windows.Forms;
 
 namespace WinCompose
 {
-#if false
     static class Program
     {
-        private static Process guiProcess;
         private static NotifyIcon m_notifyicon;
+        private static Mainwindow m_mainwindow;
 
         [STAThread]
         static void Main()
@@ -48,6 +47,8 @@ namespace WinCompose
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
 
+                m_mainwindow = new Mainwindow(GuiPage.Sequences);
+
                 var timer = new Timer
                 {
                     Enabled = true,
@@ -68,68 +69,37 @@ namespace WinCompose
 
         private static void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
-            if (guiProcess == null)
+            if (m_mainwindow.IsVisible)
             {
-                StartGui(GuiPage.Sequences);
+                m_mainwindow.Hide();
             }
             else
             {
-                TerminateGui();
+                m_mainwindow.Show();
             }
         }
 
         private static void TimerTicked(object sender, EventArgs e)
         {
-            m_notifyicon.Icon = Compose.IsComposing() ? Properties.Resources.IconActive
-                                                      : Properties.Resources.IconNormal;
+            m_notifyicon.Icon = Composer.IsComposing() ? Properties.Resources.IconActive
+                                                       : Properties.Resources.IconNormal;
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
         {
-            StartGui(GuiPage.Sequences);
+            // TODO: change page
+            m_mainwindow.Show();
         }
 
         private static void ShowSettingsClicked(object sender, EventArgs e)
         {
-            StartGui(GuiPage.Settings);
+            // TODO: change page
+            m_mainwindow.Show();
         }
 
         private static void ExitClicked(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private static void StartGui(GuiPage page)
-        {
-            try
-            {
-                guiProcess = Process.Start("WinCompose.exe", page.ToString());
-                if (guiProcess != null)
-                {
-                    guiProcess.EnableRaisingEvents = true;
-                    guiProcess.Exited += (s, e) => guiProcess = null;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(Properties.Resources.ErrorStartingGui, Properties.Resources.AppName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private static void TerminateGui()
-        {
-            try
-            {
-                if (guiProcess != null)
-                {
-                    guiProcess.Kill();
-                }
-            }
-            finally
-            {
-                guiProcess = null;
-            }
-        }
     }
-#endif
 }

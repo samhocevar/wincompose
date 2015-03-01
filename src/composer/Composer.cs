@@ -19,7 +19,7 @@ using System.Windows.Forms;
 namespace WinCompose
 {
 
-static class Compose
+static class Composer
 {
     // Get input from the keyboard hook; return true if the key was handled
     // and needs to be removed from the input chain.
