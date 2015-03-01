@@ -15,7 +15,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace WinCompose
+namespace WinCompose.Gui
 {
 
 static class KeyboardHook

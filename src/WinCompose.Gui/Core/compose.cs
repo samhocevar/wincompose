@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WinCompose
+namespace WinCompose.Gui
 {
 
 static class Compose

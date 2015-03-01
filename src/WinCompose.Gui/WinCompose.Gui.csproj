@@ -55,6 +55,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Core\compose.cs" />
+    <Compile Include="Core\GuiPage.cs" />
+    <Compile Include="Core\keyboardhook.cs" />
+    <Compile Include="Core\main.cs" />
+    <Compile Include="Core\sequence.cs" />
+    <Compile Include="Core\settings.cs" />
+    <Compile Include="Core\SettingsEntry.cs" />
+    <Compile Include="Core\types.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RootViewModel.cs" />
     <Compile Include="SearchTokens.cs" />
@@ -129,12 +137,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\wincompose\wincompose.csproj">
-      <Project>{892f7967-2db6-4425-81fa-3b246889fa3b}</Project>
-      <Name>wincompose</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\key_compose.png" />
