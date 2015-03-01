@@ -18,9 +18,10 @@ ShowLanguageDialog = auto
 [Files]
 Source: "bin\Release\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\{#NAME}.gui.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 Source: "rules\Xorg.txt"; DestDir: "{app}\res"
 Source: "rules\Xcompose.txt"; DestDir: "{app}\res"
+Source: "rules\Emoji.txt"; DestDir: "{app}\res"
+Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 Source: "po\??.po"; DestDir: "{app}\po"
 
 [Languages]

@@ -124,6 +124,7 @@ namespace WinCompose
         {
             LoadSequenceFile(Path.Combine(GetDataDir(), "Xorg.txt"));
             LoadSequenceFile(Path.Combine(GetDataDir(), "XCompose.txt"));
+            LoadSequenceFile(Path.Combine(GetDataDir(), "Emoji.txt"));
             LoadSequenceFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
 
             LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose"));

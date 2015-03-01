@@ -12,6 +12,7 @@ PO = $(wildcard po/*.po)
 
 TXT = rules/Xorg.txt \
       rules/Xcompose.txt \
+      rules/Emoji.txt \
       rules/WinCompose.txt
 
 EXE = bin/Release/WinCompose.exe
