@@ -77,8 +77,8 @@ namespace WinCompose
 
             Sequences = sequences;
             Instance = this;
-            var collectionView = CollectionViewSource.GetDefaultView(Sequences);
-            collectionView.Filter = FilterFunc;
+
+            RefreshFilters();
         }
 
         public static RootViewModel Instance { get; private set; }
@@ -94,6 +94,7 @@ namespace WinCompose
         public void RefreshFilters()
         {
             var collectionView = CollectionViewSource.GetDefaultView(Sequences);
+            collectionView.Filter = FilterFunc;
             collectionView.Refresh();
         }
 
