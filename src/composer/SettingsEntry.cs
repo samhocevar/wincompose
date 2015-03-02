@@ -1,16 +1,17 @@
 //
-// WinCompose � a compose key for Windows
+//  WinCompose — a compose key for Windows
 //
-// Copyright: (c) 2013-2014 Sam Hocevar <sam@hocevar.net>
-//                     2014 Benjamin Litzelmann
-//   This program is free software. It comes without any warranty, to
-//   the extent permitted by applicable law. You can redistribute it
-//   and/or modify it under the terms of the Do What the Fuck You Want
-//   to Public License, Version 2, as published by the WTFPL Task Force.
-//   See http://www.wtfpl.net/ for more details.
+//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//              2014—2015 Benjamin Litzelmann
+//
+//  This program is free software. It comes without any warranty, to
+//  the extent permitted by applicable law. You can redistribute it
+//  and/or modify it under the terms of the Do What the Fuck You Want
+//  to Public License, Version 2, as published by the WTFPL Task Force.
+//  See http://www.wtfpl.net/ for more details.
+//
 
 using System;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
@@ -57,7 +58,7 @@ namespace WinCompose
                 try
                 {
                     var stringVal = Serialize(Value);
-                    var result = WritePrivateProfileString(Section, Key, stringVal, Settings.GetConfigFile());
+                    var result = NativeMethods.WritePrivateProfileString(Section, Key, stringVal, Settings.GetConfigFile());
                     return result == 0;
                 }
                 finally
@@ -82,7 +83,7 @@ namespace WinCompose
                 try
                 {
                     var stringBuilder = new StringBuilder(len);
-                    var result = GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
+                    var result = NativeMethods.GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
                     if (result == 0)
                         return false;
 
@@ -112,12 +113,6 @@ namespace WinCompose
         /// <param name="str">The string to deserialize.</param>
         /// <returns>An instance of the type of this entry.</returns>
         protected abstract object Deserialize(string str);
-
-        [DllImport("kernel32")]
-        static extern long WritePrivateProfileString(string section, string key, string value, string filePath);
-
-        [DllImport("kernel32")]
-        static extern int GetPrivateProfileString(string section, string key, string @default, StringBuilder retVal, int size, string filePath);
     }
 
     /// <summary>

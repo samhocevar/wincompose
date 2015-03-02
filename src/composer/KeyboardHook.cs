@@ -1,13 +1,15 @@
 ﻿//
-// WinCompose — a compose key for Windows
+//  WinCompose — a compose key for Windows
 //
-// Copyright: (c) 2013-2014 Sam Hocevar <sam@hocevar.net>
-//                     2014 Benjamin Litzelmann
-//   This program is free software. It comes without any warranty, to
-//   the extent permitted by applicable law. You can redistribute it
-//   and/or modify it under the terms of the Do What the Fuck You Want
-//   to Public License, Version 2, as published by the WTFPL Task Force.
-//   See http://www.wtfpl.net/ for more details.
+//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//              2014—2015 Benjamin Litzelmann
+//
+//  This program is free software. It comes without any warranty, to
+//  the extent permitted by applicable law. You can redistribute it
+//  and/or modify it under the terms of the Do What the Fuck You Want
+//  to Public License, Version 2, as published by the WTFPL Task Force.
+//  See http://www.wtfpl.net/ for more details.
+//
 
 using System;
 using System.ComponentModel;
@@ -28,8 +30,8 @@ static class KeyboardHook
              || Environment.OSVersion.Platform == PlatformID.WinCE)
         {
             m_callback = OnKey; // Keep a reference on OnKey
-            m_hook = SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
-                                      LoadLibrary("user32.dll"), 0);
+            m_hook = NativeMethods.SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
+                                   NativeMethods.LoadLibrary("user32.dll"), 0);
             if (m_hook == HOOK.INVALID)
                 throw new Win32Exception(Marshal.GetLastWin32Error());
         }
@@ -41,15 +43,13 @@ static class KeyboardHook
         // the hook needs to be removed from the same thread that installed it.
         if (m_hook != HOOK.INVALID)
         {
-            int ret = UnhookWindowsHookEx(m_hook);
+            int ret = NativeMethods.UnhookWindowsHookEx(m_hook);
             if (ret == 0)
                 throw new Win32Exception(Marshal.GetLastWin32Error());
             m_hook = HOOK.INVALID;
         }
         m_callback = null;
     }
-
-    private delegate int CALLBACK(HC nCode, WM wParam, IntPtr lParam);
 
     private static CALLBACK m_callback;
     private static HOOK m_hook;
@@ -76,40 +76,8 @@ static class KeyboardHook
             }
         }
 
-        return CallNextHookEx(m_hook, nCode, wParam, lParam);
+        return NativeMethods.CallNextHookEx(m_hook, nCode, wParam, lParam);
     }
-
-    /* Low-level keyboard input event.
-     *   http://msdn.microsoft.com/en-us/library/windows/desktop/ms644967%28v=vs.85%29.aspx
-     */
-    [StructLayout(LayoutKind.Sequential)]
-    private struct KBDLLHOOKSTRUCT
-    {
-        public VK vk;
-        public SC sc;
-        public LLKHF flags;
-        public int time;
-        public IntPtr dwExtraInfo;
-    }
-
-    private enum HOOK : int
-    {
-        INVALID = 0,
-    };
-
-    /* Imports from kernel32.dll */
-    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
-    private static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)]string lpFileName);
-
-    /* Imports from user32.dll */
-    [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int CallNextHookEx(HOOK hhk, HC nCode, WM wParam,
-                                             IntPtr lParam);
-    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
-    private static extern HOOK SetWindowsHookEx(WH idHook, CALLBACK lpfn,
-                                                IntPtr hMod, int dwThreadId);
-    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
-    private static extern int UnhookWindowsHookEx(HOOK hhk);
 }
 
 }

@@ -1,19 +1,20 @@
 ﻿//
-// WinCompose — a compose key for Windows
+//  WinCompose — a compose key for Windows
 //
-// Copyright: (c) 2013-2014 Sam Hocevar <sam@hocevar.net>
-//                     2014 Benjamin Litzelmann
-//   This program is free software. It comes without any warranty, to
-//   the extent permitted by applicable law. You can redistribute it
-//   and/or modify it under the terms of the Do What the Fuck You Want
-//   to Public License, Version 2, as published by the WTFPL Task Force.
-//   See http://www.wtfpl.net/ for more details.
+//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//              2014—2015 Benjamin Litzelmann
+//
+//  This program is free software. It comes without any warranty, to
+//  the extent permitted by applicable law. You can redistribute it
+//  and/or modify it under the terms of the Do What the Fuck You Want
+//  to Public License, Version 2, as published by the WTFPL Task Force.
+//  See http://www.wtfpl.net/ for more details.
+//
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -170,14 +171,15 @@ namespace WinCompose
         {
             const int len = 255;
             var tmp = new StringBuilder(len);
-            GetPrivateProfileString("global", key, "",
-                                    tmp, len, GetConfigFile());
+            NativeMethods.GetPrivateProfileString("global", key, "",
+                                                  tmp, len, GetConfigFile());
             return tmp.ToString();
         }
 
         private static void SaveEntry(string key, string val)
         {
-            WritePrivateProfileString("global", key, val, GetConfigFile());
+            NativeMethods.WritePrivateProfileString("global", key, val,
+                                                    GetConfigFile());
         }
 
         private static void LoadSequenceFile(string path)
@@ -378,12 +380,5 @@ namespace WinCompose
             var lol = Path.ChangeExtension(exe, ".vshost.exe");
             return File.Exists(Path.ChangeExtension(exe, ".vshost.exe"));
         }
-
-        [DllImport("kernel32")]
-        static extern long WritePrivateProfileString(string Section,
-                                    string Key, string Value, string FilePath);
-        [DllImport("kernel32")]
-        static extern int GetPrivateProfileString(string Section, string Key,
-              string Default, StringBuilder RetVal, int Size, string FilePath);
     }
 }

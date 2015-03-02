@@ -1,13 +1,15 @@
 ﻿//
-// WinCompose — a compose key for Windows
+//  WinCompose — a compose key for Windows
 //
-// Copyright: (c) 2013-2014 Sam Hocevar <sam@hocevar.net>
-//                     2014 Benjamin Litzelmann
-//   This program is free software. It comes without any warranty, to
-//   the extent permitted by applicable law. You can redistribute it
-//   and/or modify it under the terms of the Do What the Fuck You Want
-//   to Public License, Version 2, as published by the WTFPL Task Force.
-//   See http://www.wtfpl.net/ for more details.
+//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//              2014—2015 Benjamin Litzelmann
+//
+//  This program is free software. It comes without any warranty, to
+//  the extent permitted by applicable law. You can redistribute it
+//  and/or modify it under the terms of the Do What the Fuck You Want
+//  to Public License, Version 2, as published by the WTFPL Task Force.
+//  See http://www.wtfpl.net/ for more details.
+//
 
 using System;
 using System.Collections.Generic;
@@ -30,24 +32,24 @@ static class Composer
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
 
-        bool has_shift = (GetKeyState(VK.SHIFT) & 0x80) == 0x80;
-        bool has_altgr = (GetKeyState(VK.RMENU) & 0x80) == 0x80
-                          && (GetKeyState(VK.LCONTROL) & 0x80) == 0x80;
-        bool has_capslock = GetKeyState(VK.CAPITAL) != 0;
+        bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) == 0x80;
+        bool has_altgr = (NativeMethods.GetKeyState(VK.RMENU) & 0x80) == 0x80
+                          && (NativeMethods.GetKeyState(VK.LCONTROL) & 0x80) == 0x80;
+        bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
 
         // If we can not find a printable representation for the key, use its
         // virtual key code instead.
         Key key = new Key(vk);
 
         // Generate a keystate suitable for ToUnicode()
-        GetKeyboardState(m_keystate);
+        NativeMethods.GetKeyboardState(m_keystate);
         m_keystate[0x10] = (byte)(has_shift ? 0x80 : 0x00);
         m_keystate[0x11] = (byte)(has_altgr ? 0x80 : 0x00);
         m_keystate[0x12] = (byte)(has_altgr ? 0x80 : 0x00);
         m_keystate[0x14] = (byte)(has_capslock ? 0x01 : 0x00);
         int buflen = 4;
         byte[] buf = new byte[2 * buflen];
-        int ret = ToUnicode(vk, sc, m_keystate, buf, buflen, flags);
+        int ret = NativeMethods.ToUnicode(vk, sc, m_keystate, buf, buflen, flags);
         if (ret > 0 && ret < buflen)
         {
             // FIXME: if using dead keys, we may receive two keys from GetString!
@@ -137,7 +139,8 @@ static class Composer
         bool is_gtk = false;
         const int len = 256;
         StringBuilder buf = new StringBuilder(len);
-        if (GetClassName(GetForegroundWindow(), buf, len) > 0)
+        var hwnd = NativeMethods.GetForegroundWindow();
+        if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
         {
             string wclass = buf.ToString();
             if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
@@ -172,7 +175,7 @@ static class Composer
                 input[i].U.ki.dwExtraInfo = UIntPtr.Zero;
             }
 
-            SendInput((uint)input.Length, input, Marshal.SizeOf(typeof(INPUT)));
+            NativeMethods.SendInput((uint)input.Length, input, Marshal.SizeOf(typeof(INPUT)));
         }
     }
 
@@ -183,12 +186,12 @@ static class Composer
 
     private static void SendKeyDown(VK vk)
     {
-        keybd_event(vk, 0, 0, 0);
+        NativeMethods.keybd_event(vk, 0, 0, 0);
     }
 
     private static void SendKeyUp(VK vk)
     {
-        keybd_event(vk, 0, KEYEVENTF.KEYUP, 0);
+        NativeMethods.keybd_event(vk, 0, KEYEVENTF.KEYUP, 0);
     }
 
     private static void SendKeyPress(VK vk)
@@ -202,13 +205,13 @@ static class Composer
     {
         // FIXME: the foreground window doesn't seem to notice keyboard
         // layout changes caused by the Win+Space combination.
-        IntPtr hwnd = GetForegroundWindow();
-        uint pid, tid = GetWindowThreadProcessId(hwnd, out pid);
-        IntPtr active_layout = GetKeyboardLayout(tid);
+        IntPtr hwnd = NativeMethods.GetForegroundWindow();
+        uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
+        IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
         //Console.WriteLine("Active layout is {0:X}", (int)active_layout);
 
-        tid = GetCurrentThreadId();
-        IntPtr my_layout = GetKeyboardLayout(tid);
+        tid = NativeMethods.GetCurrentThreadId();
+        IntPtr my_layout = NativeMethods.GetKeyboardLayout(tid);
         //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
     }
 
@@ -216,114 +219,6 @@ static class Composer
     private static List<Key> m_sequence = new List<Key>();
     private static bool m_compose_down = false;
     private static bool m_composing = false;
-
-    internal enum EINPUT : uint
-    {
-        MOUSE    = 0,
-        KEYBOARD = 1,
-        HARDWARE = 2,
-    }
-
-    [Flags]
-    internal enum KEYEVENTF : uint
-    {
-        EXTENDEDKEY = 0x0001,
-        KEYUP       = 0x0002,
-        UNICODE     = 0x0004,
-        SCANCODE    = 0x0008,
-    }
-
-    [Flags]
-    internal enum MOUSEEVENTF : uint
-    {
-        // Not needed
-    }
-
-    internal enum VirtualKeyShort : short
-    {
-    }
-
-    internal enum ScanCodeShort : short
-    {
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct INPUT
-    {
-        internal EINPUT type;
-        internal UINPUT U;
-    }
-
-    [StructLayout(LayoutKind.Explicit)]
-    internal struct UINPUT
-    {
-        // All union members need to be included, because they contribute
-        // to the final size of struct INPUT.
-        [FieldOffset(0)]
-        internal MOUSEINPUT mi;
-        [FieldOffset(0)]
-        internal KEYBDINPUT ki;
-        [FieldOffset(0)]
-        internal HARDWAREINPUT hi;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct MOUSEINPUT
-    {
-        internal int dx, dy, mouseData;
-        internal MOUSEEVENTF dwFlags;
-        internal uint time;
-        internal UIntPtr dwExtraInfo;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct KEYBDINPUT
-    {
-        internal VirtualKeyShort wVk;
-        internal ScanCodeShort wScan;
-        internal KEYEVENTF dwFlags;
-        internal int time;
-        internal UIntPtr dwExtraInfo;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct HARDWAREINPUT
-    {
-        internal int uMsg;
-        internal short wParamL, wParamH;
-    }
-
-    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
-    private static extern uint SendInput(uint nInputs,
-        [MarshalAs(UnmanagedType.LPArray), In] INPUT[] pInputs, int cbSize);
-    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
-    private static extern void keybd_event(VK vk, SC sc, KEYEVENTF flags,
-                                           int dwExtraInfo);
-
-    [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int ToUnicode(VK wVirtKey, SC wScanCode,
-                                        byte[] lpKeyState, byte[] pwszBuff,
-                                        int cchBuff, LLKHF flags);
-    [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int GetKeyboardState(byte[] lpKeyState);
-    [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern short GetKeyState(VK nVirtKey);
-
-    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-    private static extern IntPtr GetForegroundWindow();
-    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-    private static extern int GetClassName(IntPtr hWnd, StringBuilder text, int count);
-    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-    private static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
-
-    [DllImport("kernel32")]
-    private static extern uint GetCurrentThreadId();
-    [DllImport("user32", SetLastError = true)]
-    private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
-    [DllImport("user32")]
-    private static extern IntPtr GetKeyboardLayout(uint idThread);
-    [DllImport("imm32", CharSet = CharSet.Auto)]
-    private static extern IntPtr ImmGetDefaultIMEWnd(HandleRef hwnd);
 }
 
 }
