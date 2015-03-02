@@ -1,151 +1,159 @@
 # for Emacs: -*- coding: utf-8 -*-
 
 # Emoji compose rules
+# ===================
 # By Sam Hocevar <sam@hocevar.net>
 
+# Some notes about this file
+# ==========================
+# Extract all descriptions:
+#  sed -ne 's/.* # //p' Emoji.txt | sort
+# Extract descriptions that are unique words:
+#  sed -ne 's/.* # //p' Emoji.txt | sort | grep -v ' ' | while read i; do echo "$(grep "# $i" Emoji.txt | wc -l) $i"; done | grep '^1 '
+
 # Emoticons (1F601 — 1F64F)
-# "😁" # U+1F601 grinning face with smiling eyes
-# "😂" # U+1F602 face with tears of joy
-# "😃" # U+1F603 smiling face with open mouth
-# "😄" # U+1F604 smiling face with open mouth and smiling eyes
-# "😅" # U+1F605 smiling face with open mouth and cold sweat
-# "😆" # U+1F606 smiling face with open mouth and tightly-closed eyes
-# "😉" # U+1F609 winking face
-# "😊" # U+1F60A smiling face with smiling eyes
-# "😋" # U+1F60B face savouring delicious food
-# "😌" # U+1F60C relieved face
-# "😍" # U+1F60D smiling face with heart-shaped eyes
-# "😏" # U+1F60F smirking face
-# "😒" # U+1F612 unamused face
-# "😓" # U+1F613 face with cold sweat
-# "😔" # U+1F614 pensive face
-# "😖" # U+1F616 confounded face
-# "😘" # U+1F618 face throwing a kiss
-# "😚" # U+1F61A kissing face with closed eyes
-# "😜" # U+1F61C face with stuck-out tongue and winking eye
-# "😝" # U+1F61D face with stuck-out tongue and tightly-closed eyes
-# "😞" # U+1F61E disappointed face
-# "😠" # U+1F620 angry face
-# "😡" # U+1F621 pouting face
-# "😢" # U+1F622 crying face
-# "😣" # U+1F623 persevering face
-# "😤" # U+1F624 face with look of triumph
-# "😥" # U+1F625 disappointed but relieved face
-# "😨" # U+1F628 fearful face
-# "😩" # U+1F629 weary face
-# "😪" # U+1F62A sleepy face
-# "😫" # U+1F62B tired face
-# "😭" # U+1F62D loudly crying face
-# "😰" # U+1F630 face with open mouth and cold sweat
-# "😱" # U+1F631 face screaming in fear
-# "😲" # U+1F632 astonished face
-# "😳" # U+1F633 flushed face
-# "😵" # U+1F635 dizzy face
-# "😷" # U+1F637 face with medical mask
-# "😸" # U+1F638 grinning cat face with smiling eyes
-# "😹" # U+1F639 cat face with tears of joy
-# "😺" # U+1F63A smiling cat face with open mouth
-# "😻" # U+1F63B smiling cat face with heart-shaped eyes
-# "😼" # U+1F63C cat face with wry smile
-# "😽" # U+1F63D kissing cat face with closed eyes
-# "😾" # U+1F63E pouting cat face
-# "😿" # U+1F63F crying cat face
-# "🙀" # U+1F640 weary cat face
-# "🙅" # U+1F645 face with no good gesture
-# "🙆" # U+1F646 face with ok gesture
-# "🙇" # U+1F647 person bowing deeply
-# "🙈" # U+1F648 see-no-evil monkey
-# "🙉" # U+1F649 hear-no-evil monkey
-# "🙊" # U+1F64A speak-no-evil monkey
-# "🙋" # U+1F64B happy person raising one hand
-# "🙌" # U+1F64C person raising both hands in celebration
-# "🙍" # U+1F64D person frowning
-# "🙎" # U+1F64E person with pouting face
-# "🙏" # U+1F64F person with folded hands
+# "😁" U1F601 # grinning face with smiling eyes
+# "😂" U1F602 # face with tears of joy
+# "😃" U1F603 # smiling face with open mouth
+# "😄" U1F604 # smiling face with open mouth and smiling eyes
+# "😅" U1F605 # smiling face with open mouth and cold sweat
+# "😆" U1F606 # smiling face with open mouth and tightly-closed eyes
+# "😉" U1F609 # winking face
+# "😊" U1F60A # smiling face with smiling eyes
+# "😋" U1F60B # face savouring delicious food
+# "😌" U1F60C # relieved face
+# "😍" U1F60D # smiling face with heart-shaped eyes
+# "😏" U1F60F # smirking face
+# "😒" U1F612 # unamused face
+# "😓" U1F613 # face with cold sweat
+# "😔" U1F614 # pensive face
+# "😖" U1F616 # confounded face
+# "😘" U1F618 # face throwing a kiss
+# "😚" U1F61A # kissing face with closed eyes
+# "😜" U1F61C # face with stuck-out tongue and winking eye
+# "😝" U1F61D # face with stuck-out tongue and tightly-closed eyes
+# "😞" U1F61E # disappointed face
+# "😠" U1F620 # angry face
+# "😡" U1F621 # pouting face
+# "😢" U1F622 # crying face
+# "😣" U1F623 # persevering face
+# "😤" U1F624 # face with look of triumph
+# "😥" U1F625 # disappointed but relieved face
+# "😨" U1F628 # fearful face
+# "😩" U1F629 # weary face
+# "😪" U1F62A # sleepy face
+# "😫" U1F62B # tired face
+# "😭" U1F62D # loudly crying face
+# "😰" U1F630 # face with open mouth and cold sweat
+# "😱" U1F631 # face screaming in fear
+# "😲" U1F632 # astonished face
+# "😳" U1F633 # flushed face
+# "😵" U1F635 # dizzy face
+# "😷" U1F637 # face with medical mask
+# "😸" U1F638 # grinning cat face with smiling eyes
+# "😹" U1F639 # cat face with tears of joy
+# "😺" U1F63A # smiling cat face with open mouth
+# "😻" U1F63B # smiling cat face with heart-shaped eyes
+# "😼" U1F63C # cat face with wry smile
+# "😽" U1F63D # kissing cat face with closed eyes
+# "😾" U1F63E # pouting cat face
+# "😿" U1F63F # crying cat face
+# "🙀" U1F640 # weary cat face
+# "🙅" U1F645 # face with no good gesture
+# "🙆" U1F646 # face with ok gesture
+# "🙇" U1F647 # person bowing deeply
+# "🙈" U1F648 # see-no-evil monkey
+# "🙉" U1F649 # hear-no-evil monkey
+# "🙊" U1F64A # speak-no-evil monkey
+# "🙋" U1F64B # happy person raising one hand
+# "🙌" U1F64C # person raising both hands in celebration
+# "🙍" U1F64D # person frowning
+# "🙎" U1F64E # person with pouting face
+# "🙏" U1F64F # person with folded hands
 
 # Dingbats (2702 — 27B0)
-# "✂" # U+2702 black scissors
-# "✅" # U+2705 white heavy check mark
-<Multi_key> <ampersand> <a> <i> <r> <p> <l> <a> <n> <e>                        : "✈" # U+2708 airplane
-<Multi_key> <ampersand> <e> <n> <v> <e> <l> <o> <p> <e>                        : "✉" # U+2709 envelope
-# "✊" # U+270A raised fist
-# "✋" # U+270B raised hand
-# "✌" # U+270C victory hand
-<Multi_key> <ampersand> <p> <e> <n> <c> <i> <l>                                : "✏" # U+270F pencil
-# "✒" # U+2712 black nib
-# "✔" # U+2714 heavy check mark
-# "✖" # U+2716 heavy multiplication x
-<Multi_key> <ampersand> <s> <p> <a> <r> <k> <l> <e> <s>                        : "✨" # U+2728 sparkles
-# "✳" # U+2733 eight spoked asterisk
-# "✴" # U+2734 eight pointed black star
-<Multi_key> <ampersand> <s> <n> <o> <w> <f> <l> <a> <k> <e>                    : "❄" # U+2744 snowflake
-<Multi_key> <ampersand> <s> <p> <a> <r> <k> <l> <e>                            : "❇" # U+2747 sparkle
-# "❌" # U+274C cross mark
-# "❎" # U+274E negative squared cross mark
-# "❓" # U+2753 black question mark ornament
-# "❔" # U+2754 white question mark ornament
-# "❕" # U+2755 white exclamation mark ornament
-# "❗" # U+2757 heavy exclamation mark symbol
-# "❤" # U+2764 heavy black heart
-# "➕" # U+2795 heavy plus sign
-# "➖" # U+2796 heavy minus sign
-# "➗" # U+2797 heavy division sign
-# "➡" # U+27A1 black rightwards arrow
-# "➰" # U+27B0 curly loop
+# "✂" U2702 # black scissors
+# "✅" U2705 # white heavy check mark
+<Multi_key> <ampersand> <a> <i> <r> <p> <l> <a> <n> <e>                         : "✈" U2708 # airplane
+# "✉" U2709 # envelope
+# "✊" U270A # raised fist
+# "✋" U270B # raised hand
+# "✌" U270C # victory hand
+<Multi_key> <ampersand> <p> <e> <n> <c> <i> <l>                                 : "✏" U270F # pencil
+# "✒" U2712 # black nib
+# "✔" U2714 # heavy check mark
+# "✖" U2716 # heavy multiplication x
+<Multi_key> <ampersand> <s> <p> <a> <r> <k> <l> <e> <s>                         : "✨" U2728 # sparkles
+# "✳" U2733 # eight spoked asterisk
+# "✴" U2734 # eight pointed black star
+<Multi_key> <ampersand> <s> <n> <o> <w> <f> <l> <a> <k> <e>                     : "❄" U2744 # snowflake
+# "❇" U2747 # sparkle
+# "❌" U274C # cross mark
+# "❎" U274E # negative squared cross mark
+# "❓" U2753 # black question mark ornament
+# "❔" U2754 # white question mark ornament
+# "❕" U2755 # white exclamation mark ornament
+# "❗" U2757 # heavy exclamation mark symbol
+# "❤" U2764 # heavy black heart
+# "➕" U2795 # heavy plus sign
+# "➖" U2796 # heavy minus sign
+# "➗" U2797 # heavy division sign
+# "➡" U27A1 # black rightwards arrow
+# "➰" U27B0 # curly loop
 
 # Transport and map symbols (1F680 — 1F6C0)
-<Multi_key> <ampersand> <r> <o> <c> <k> <e> <t>                                : "🚀" # U+1F680 rocket
-# "🚃" # U+1F683 railway car
-# "🚄" # U+1F684 high-speed train
-# "🚅" # U+1F685 high-speed train with bullet nose
-<Multi_key> <ampersand> <m> <e> <t> <r> <o>                                    : "🚇" # U+1F687 metro
-<Multi_key> <ampersand> <s> <t> <a> <t> <i> <o> <n>                            : "🚉" # U+1F689 station
-<Multi_key> <ampersand> <b> <u> <s>                                            : "🚌" # U+1F68C bus
-# "🚏" # U+1F68F bus stop
-<Multi_key> <ampersand> <a> <m> <b> <u> <l> <a> <n> <c> <e>                    : "🚑" # U+1F691 ambulance
-# "🚒" # U+1F692 fire engine
-# "🚓" # U+1F693 police car
-<Multi_key> <ampersand> <t> <a> <x> <i>                                        : "🚕" # U+1F695 taxi
-<Multi_key> <ampersand> <a> <u> <t> <o> <m> <o> <b> <i> <l> <e>                : "🚗" # U+1F697 automobile
-# "🚙" # U+1F699 recreational vehicle
-# "🚚" # U+1F69A delivery truck
-<Multi_key> <ampersand> <s> <h> <i> <p>                                        : "🚢" # U+1F6A2 ship
-<Multi_key> <ampersand> <s> <p> <e> <e> <d> <b> <o> <a> <t>                    : "🚤" # U+1F6A4 speedboat
-# "🚥" # U+1F6A5 horizontal traffic light
-# "🚧" # U+1F6A7 construction sign
-# "🚨" # U+1F6A8 police cars revolving light
-# "🚩" # U+1F6A9 triangular flag on post
-<Multi_key> <ampersand> <d> <o> <o> <r>                                        : "🚪" # U+1F6AA door
-# "🚫" # U+1F6AB no entry sign
-# "🚬" # U+1F6AC smoking symbol
-# "🚭" # U+1F6AD no smoking symbol
-<Multi_key> <ampersand> <b> <i> <c> <y> <c> <l> <e>                            : "🚲" # U+1F6B2 bicycle
-<Multi_key> <ampersand> <p> <e> <d> <e> <s> <t> <r> <i> <a> <n>                : "🚶" # U+1F6B6 pedestrian
-# "🚹" # U+1F6B9 mens symbol
-# "🚺" # U+1F6BA womens symbol
-<Multi_key> <ampersand> <r> <e> <s> <t> <r> <o> <o> <m>                        : "🚻" # U+1F6BB restroom
-# "🚼" # U+1F6BC baby symbol
-<Multi_key> <ampersand> <t> <o> <i> <l> <e> <t>                                : "🚽" # U+1F6BD toilet
-# "🚾" # U+1F6BE water closet
-<Multi_key> <ampersand> <b> <a> <t> <h>                                        : "🛀" # U+1F6C0 bath
+<Multi_key> <ampersand> <r> <o> <c> <k> <e> <t>                                 : "🚀" U1F680 # rocket
+# "🚃" U1F683 # railway car
+# "🚄" U1F684 # high-speed train
+# "🚅" U1F685 # high-speed train with bullet nose
+<Multi_key> <ampersand> <m> <e> <t> <r> <o>                                     : "🚇" U1F687 # metro
+<Multi_key> <ampersand> <s> <t> <a> <t> <i> <o> <n>                             : "🚉" U1F689 # station
+# "🚌" U1F68C # bus
+# "🚏" U1F68F # bus stop
+<Multi_key> <ampersand> <a> <m> <b> <u> <l> <a> <n> <c> <e>                     : "🚑" U1F691 # ambulance
+# "🚒" U1F692 # fire engine
+# "🚓" U1F693 # police car
+<Multi_key> <ampersand> <t> <a> <x> <i>                                         : "🚕" U1F695 # taxi
+<Multi_key> <ampersand> <a> <u> <t> <o> <m> <o> <b> <i> <l> <e>                 : "🚗" U1F697 # automobile
+# "🚙" U1F699 # recreational vehicle
+# "🚚" U1F69A # delivery truck
+<Multi_key> <ampersand> <s> <h> <i> <p>                                         : "🚢" U1F6A2 # ship
+<Multi_key> <ampersand> <s> <p> <e> <e> <d> <b> <o> <a> <t>                     : "🚤" U1F6A4 # speedboat
+# "🚥" U1F6A5 # horizontal traffic light
+# "🚧" U1F6A7 # construction sign
+# "🚨" U1F6A8 # police cars revolving light
+# "🚩" U1F6A9 # triangular flag on post
+<Multi_key> <ampersand> <d> <o> <o> <r>                                         : "🚪" U1F6AA # door
+# "🚫" U1F6AB # no entry sign
+# "🚬" U1F6AC # smoking symbol
+# "🚭" U1F6AD # no smoking symbol
+<Multi_key> <ampersand> <b> <i> <c> <y> <c> <l> <e>                             : "🚲" U1F6B2 # bicycle
+<Multi_key> <ampersand> <p> <e> <d> <e> <s> <t> <r> <i> <a> <n>                 : "🚶" U1F6B6 # pedestrian
+# "🚹" U1F6B9 # mens symbol
+# "🚺" U1F6BA # womens symbol
+<Multi_key> <ampersand> <r> <e> <s> <t> <r> <o> <o> <m>                         : "🚻" U1F6BB # restroom
+# "🚼" U1F6BC # baby symbol
+<Multi_key> <ampersand> <t> <o> <i> <l> <e> <t>                                 : "🚽" U1F6BD # toilet
+# "🚾" U1F6BE # water closet
+# "🛀" U1F6C0 # bath
 
 # Enclosed characters (24C2 — 1F251)
-# "Ⓜ" # U+24C2 circled latin capital letter m
-# "🅰" # U+1F170 negative squared latin capital letter a
-# "🅱" # U+1F171 negative squared latin capital letter b
-# "🅾" # U+1F17E negative squared latin capital letter o
-# "🅿" # U+1F17F negative squared latin capital letter p
-# "🆎" # U+1F18E negative squared ab
-# "🆑" # U+1F191 squared cl
-# "🆒" # U+1F192 squared cool
-# "🆓" # U+1F193 squared free
-# "🆔" # U+1F194 squared id
-# "🆕" # U+1F195 squared new
-# "🆖" # U+1F196 squared ng
-# "🆗" # U+1F197 squared ok
-# "🆘" # U+1F198 squared sos
-# "🆙" # U+1F199 squared up with exclamation mark
-# "🆚" # U+1F19A squared vs
+# "Ⓜ" U24C2 # circled latin capital letter m
+# "🅰" U1F170 # negative squared latin capital letter a
+# "🅱" U1F171 # negative squared latin capital letter b
+# "🅾" U1F17E # negative squared latin capital letter o
+# "🅿" U1F17F # negative squared latin capital letter p
+# "🆎" U1F18E # negative squared ab
+# "🆑" U1F191 # squared cl
+# "🆒" U1F192 # squared cool
+# "🆓" U1F193 # squared free
+# "🆔" U1F194 # squared id
+# "🆕" U1F195 # squared new
+# "🆖" U1F196 # squared ng
+# "🆗" U1F197 # squared ok
+# "🆘" U1F198 # squared sos
+# "🆙" U1F199 # squared up with exclamation mark
+# "🆚" U1F19A # squared vs
 # "🇪" #  🇩🇪U+1F1E9 regional indicator symbol letter d + regional indicator symbol letter e
 # "🇧" #  🇬🇧U+1F1EC regional indicator symbol letter g + regional indicator symbol letter b
 # "🇳" #  🇨🇳U+1F1E8 regional indicator symbol letter c + regional indicator symbol letter n
@@ -156,707 +164,707 @@
 # "🇹" #  🇮🇹U+1F1EE regional indicator symbol letter i + regional indicator symbol letter t
 # "🇸" #  🇺🇸U+1F1FA regional indicator symbol letter u + regional indicator symbol letter s
 # "🇺" #  🇷🇺U+1F1F7 regional indicator symbol letter r + regional indicator symbol letter u
-# "🈁" # U+1F201 squared katakana koko
-# "🈂" # U+1F202 squared katakana sa
-# "🈚" # U+1F21A squared cjk unified ideograph-7121
-# "🈯" # U+1F22F squared cjk unified ideograph-6307
-# "🈲" # U+1F232 squared cjk unified ideograph-7981
-# "🈳" # U+1F233 squared cjk unified ideograph-7a7a
-# "🈴" # U+1F234 squared cjk unified ideograph-5408
-# "🈵" # U+1F235 squared cjk unified ideograph-6e80
-# "🈶" # U+1F236 squared cjk unified ideograph-6709
-# "🈷" # U+1F237 squared cjk unified ideograph-6708
-# "🈸" # U+1F238 squared cjk unified ideograph-7533
-# "🈹" # U+1F239 squared cjk unified ideograph-5272
-# "🈺" # U+1F23A squared cjk unified ideograph-55b6
-# "🉐" # U+1F250 circled ideograph advantage
-# "🉑" # U+1F251 circled ideograph accept
+# "🈁" U1F201 # squared katakana koko
+# "🈂" U1F202 # squared katakana sa
+# "🈚" U1F21A # squared cjk unified ideograph-7121
+# "🈯" U1F22F # squared cjk unified ideograph-6307
+# "🈲" U1F232 # squared cjk unified ideograph-7981
+# "🈳" U1F233 # squared cjk unified ideograph-7a7a
+# "🈴" U1F234 # squared cjk unified ideograph-5408
+# "🈵" U1F235 # squared cjk unified ideograph-6e80
+# "🈶" U1F236 # squared cjk unified ideograph-6709
+# "🈷" U1F237 # squared cjk unified ideograph-6708
+# "🈸" U1F238 # squared cjk unified ideograph-7533
+# "🈹" U1F239 # squared cjk unified ideograph-5272
+# "🈺" U1F23A # squared cjk unified ideograph-55b6
+# "🉐" U1F250 # circled ideograph advantage
+# "🉑" U1F251 # circled ideograph accept
 
-# "©" # U+00A9 copyright sign
-# "®" # U+00AE registered sign
-# "‼" # U+203C double exclamation mark
-# "⁉" # U+2049 exclamation question mark
-# "8⃣" # U+0038 digit eight + combining enclosing keycap
-# "9⃣" # U+0039 digit nine + combining enclosing keycap
-# "7⃣" # U+0037 digit seven + combining enclosing keycap
-# "6⃣" # U+0036 digit six + combining enclosing keycap
-# "1⃣" # U+0031 digit one + combining enclosing keycap
-# "0⃣" # U+0030 digit zero + combining enclosing keycap
-# "2⃣" # U+0032 digit two + combining enclosing keycap
-# "3⃣" # U+0033 digit three + combining enclosing keycap
-# "5⃣" # U+0035 digit five + combining enclosing keycap
-# "4⃣" # U+0034 digit four + combining enclosing keycap
-# "#⃣" # U+0023 number sign + combining enclosing keycap
-# "™" # U+2122 trade mark sign
-# "ℹ" # U+2139 information source
-# "↔" # U+2194 left right arrow
-# "↕" # U+2195 up down arrow
-# "↖" # U+2196 north west arrow
-# "↗" # U+2197 north east arrow
-# "↘" # U+2198 south east arrow
-# "↙" # U+2199 south west arrow
-# "↩" # U+21A9 leftwards arrow with hook
-# "↪" # U+21AA rightwards arrow with hook
-<Multi_key> <ampersand> <w> <a> <t> <c> <h>                                    : "⌚" # U+231A watch
-<Multi_key> <ampersand> <h> <o> <u> <r> <g> <l> <a> <s> <s>                    : "⌛" # U+231B hourglass
-# "⏩" # U+23E9 black right-pointing double triangle
-# "⏪" # U+23EA black left-pointing double triangle
-# "⏫" # U+23EB black up-pointing double triangle
-# "⏬" # U+23EC black down-pointing double triangle
-# "⏰" # U+23F0 alarm clock
-# "⏳" # U+23F3 hourglass with flowing sand
-# "▪" # U+25AA black small square
-# "▫" # U+25AB white small square
-# "▶" # U+25B6 black right-pointing triangle
-# "◀" # U+25C0 black left-pointing triangle
-# "◻" # U+25FB white medium square
-# "◼" # U+25FC black medium square
-# "◽" # U+25FD white medium small square
-# "◾" # U+25FE black medium small square
-# "☀" # U+2600 black sun with rays
-<Multi_key> <ampersand> <c> <l> <o> <u> <d>                                    : "☁" # U+2601 cloud
-# "☎" # U+260E black telephone
-# "☑" # U+2611 ballot box with check
-# "☔" # U+2614 umbrella with rain drops
-# "☕" # U+2615 hot beverage
-# "☝" # U+261D white up pointing index
-# "☺" # U+263A white smiling face
-<Multi_key> <ampersand> <a> <r> <i> <e> <s>                                    : "♈" # U+2648 aries
-<Multi_key> <ampersand> <t> <a> <u> <r> <u> <s>                                : "♉" # U+2649 taurus
-<Multi_key> <ampersand> <g> <e> <m> <i> <n> <i>                                : "♊" # U+264A gemini
-<Multi_key> <ampersand> <c> <a> <n> <c> <e> <r>                                : "♋" # U+264B cancer
-<Multi_key> <ampersand> <l> <e> <o>                                            : "♌" # U+264C leo
-<Multi_key> <ampersand> <v> <i> <r> <g> <o>                                    : "♍" # U+264D virgo
-<Multi_key> <ampersand> <l> <i> <b> <r> <a>                                    : "♎" # U+264E libra
-<Multi_key> <ampersand> <s> <c> <o> <r> <p> <i> <u> <s>                        : "♏" # U+264F scorpius
-<Multi_key> <ampersand> <s> <a> <g> <i> <t> <t> <a> <r> <i> <u> <s>            : "♐" # U+2650 sagittarius
-<Multi_key> <ampersand> <c> <a> <p> <r> <i> <c> <o> <r> <n>                    : "♑" # U+2651 capricorn
-<Multi_key> <ampersand> <a> <q> <u> <a> <r> <i> <u> <s>                        : "♒" # U+2652 aquarius
-<Multi_key> <ampersand> <p> <i> <s> <c> <e> <s>                                : "♓" # U+2653 pisces
-# "♠" # U+2660 black spade suit
-# "♣" # U+2663 black club suit
-# "♥" # U+2665 black heart suit
-# "♦" # U+2666 black diamond suit
-# "♨" # U+2668 hot springs
-# "♻" # U+267B black universal recycling symbol
-# "♿" # U+267F wheelchair symbol
-<Multi_key> <ampersand> <a> <n> <c> <h> <o> <r>                                : "⚓" # U+2693 anchor
-# "⚠" # U+26A0 warning sign
-# "⚡" # U+26A1 high voltage sign
-# "⚪" # U+26AA medium white circle
-# "⚫" # U+26AB medium black circle
-# "⚽" # U+26BD soccer ball
-<Multi_key> <ampersand> <b> <a> <s> <e> <b> <a> <l> <l>                        : "⚾" # U+26BE baseball
-# "⛄" # U+26C4 snowman without snow
-# "⛅" # U+26C5 sun behind cloud
-<Multi_key> <ampersand> <o> <p> <h> <i> <u> <c> <h> <u> <s>                    : "⛎" # U+26CE ophiuchus
-# "⛔" # U+26D4 no entry
-<Multi_key> <ampersand> <c> <h> <u> <r> <c> <h>                                : "⛪" # U+26EA church
-<Multi_key> <ampersand> <f> <o> <u> <n> <t> <a> <i> <n>                        : "⛲" # U+26F2 fountain
-# "⛳" # U+26F3 flag in hole
-<Multi_key> <ampersand> <s> <a> <i> <l> <b> <o> <a> <t>                        : "⛵" # U+26F5 sailboat
-<Multi_key> <ampersand> <t> <e> <n> <t>                                        : "⛺" # U+26FA tent
-# "⛽" # U+26FD fuel pump
-# "⤴" # U+2934 arrow pointing rightwards then curving upwards
-# "⤵" # U+2935 arrow pointing rightwards then curving downwards
-# "⬅" # U+2B05 leftwards black arrow
-# "⬆" # U+2B06 upwards black arrow
-# "⬇" # U+2B07 downwards black arrow
-# "⬛" # U+2B1B black large square
-# "⬜" # U+2B1C white large square
-# "⭐" # U+2B50 white medium star
-# "⭕" # U+2B55 heavy large circle
-# "〰" # U+3030 wavy dash
-# "〽" # U+303D part alternation mark
-# "㊗" # U+3297 circled ideograph congratulation
-# "㊙" # U+3299 circled ideograph secret
-# "🀄" # U+1F004 mahjong tile red dragon
-# "🃏" # U+1F0CF playing card black joker
-<Multi_key> <ampersand> <c> <y> <c> <l> <o> <n> <e>                            : "🌀" # U+1F300 cyclone
-<Multi_key> <ampersand> <f> <o> <g> <g> <y>                                    : "🌁" # U+1F301 foggy
-# "🌂" # U+1F302 closed umbrella
-# "🌃" # U+1F303 night with stars
-# "🌄" # U+1F304 sunrise over mountains
-<Multi_key> <ampersand> <s> <u> <n> <r> <i> <s> <e>                            : "🌅" # U+1F305 sunrise
-# "🌆" # U+1F306 cityscape at dusk
-# "🌇" # U+1F307 sunset over buildings
-<Multi_key> <ampersand> <r> <a> <i> <n> <b> <o> <w>                            : "🌈" # U+1F308 rainbow
-# "🌉" # U+1F309 bridge at night
-# "🌊" # U+1F30A water wave
-<Multi_key> <ampersand> <v> <o> <l> <c> <a> <n> <o>                            : "🌋" # U+1F30B volcano
-# "🌌" # U+1F30C milky way
-# "🌏" # U+1F30F earth globe asia-australia
-# "🌑" # U+1F311 new moon symbol
-# "🌓" # U+1F313 first quarter moon symbol
-# "🌔" # U+1F314 waxing gibbous moon symbol
-# "🌕" # U+1F315 full moon symbol
-# "🌙" # U+1F319 crescent moon
-# "🌛" # U+1F31B first quarter moon with face
-# "🌟" # U+1F31F glowing star
-# "🌠" # U+1F320 shooting star
-<Multi_key> <ampersand> <c> <h> <e> <s> <t> <n> <u> <t>                        : "🌰" # U+1F330 chestnut
-<Multi_key> <ampersand> <s> <e> <e> <d> <l> <i> <n> <g>                        : "🌱" # U+1F331 seedling
-# "🌴" # U+1F334 palm tree
-<Multi_key> <ampersand> <c> <a> <c> <t> <u> <s>                                : "🌵" # U+1F335 cactus
-<Multi_key> <ampersand> <t> <u> <l> <i> <p>                                    : "🌷" # U+1F337 tulip
-# "🌸" # U+1F338 cherry blossom
-<Multi_key> <ampersand> <r> <o> <s> <e>                                        : "🌹" # U+1F339 rose
-<Multi_key> <ampersand> <h> <i> <b> <i> <s> <c> <u> <s>                        : "🌺" # U+1F33A hibiscus
-<Multi_key> <ampersand> <s> <u> <n> <f> <l> <o> <w> <e> <r>                    : "🌻" # U+1F33B sunflower
-<Multi_key> <ampersand> <b> <l> <o> <s> <s> <o> <m>                            : "🌼" # U+1F33C blossom
-# "🌽" # U+1F33D ear of maize
-# "🌾" # U+1F33E ear of rice
-<Multi_key> <ampersand> <h> <e> <r> <b>                                        : "🌿" # U+1F33F herb
-# "🍀" # U+1F340 four leaf clover
-# "🍁" # U+1F341 maple leaf
-# "🍂" # U+1F342 fallen leaf
-# "🍃" # U+1F343 leaf fluttering in wind
-<Multi_key> <ampersand> <m> <u> <s> <h> <r> <o> <o> <m>                        : "🍄" # U+1F344 mushroom
-<Multi_key> <ampersand> <t> <o> <m> <a> <t> <o>                                : "🍅" # U+1F345 tomato
-<Multi_key> <ampersand> <a> <u> <b> <e> <r> <g> <i> <n> <e>                    : "🍆" # U+1F346 aubergine
-<Multi_key> <ampersand> <g> <r> <a> <p> <e> <s>                                : "🍇" # U+1F347 grapes
-<Multi_key> <ampersand> <m> <e> <l> <o> <n>                                    : "🍈" # U+1F348 melon
-<Multi_key> <ampersand> <w> <a> <t> <e> <r> <m> <e> <l> <o> <n>                : "🍉" # U+1F349 watermelon
-<Multi_key> <ampersand> <t> <a> <n> <g> <e> <r> <i> <n> <e>                    : "🍊" # U+1F34A tangerine
-<Multi_key> <ampersand> <b> <a> <n> <a> <n> <a>                                : "🍌" # U+1F34C banana
-<Multi_key> <ampersand> <p> <i> <n> <e> <a> <p> <p> <l> <e>                    : "🍍" # U+1F34D pineapple
-# "🍎" # U+1F34E red apple
-# "🍏" # U+1F34F green apple
-<Multi_key> <ampersand> <p> <e> <a> <c> <h>                                    : "🍑" # U+1F351 peach
-<Multi_key> <ampersand> <c> <h> <e> <r> <r> <i> <e> <s>                        : "🍒" # U+1F352 cherries
-<Multi_key> <ampersand> <s> <t> <r> <a> <w> <b> <e> <r> <r> <y>                : "🍓" # U+1F353 strawberry
-<Multi_key> <ampersand> <h> <a> <m> <b> <u> <r> <g> <e> <r>                    : "🍔" # U+1F354 hamburger
-# "🍕" # U+1F355 slice of pizza
-# "🍖" # U+1F356 meat on bone
-# "🍗" # U+1F357 poultry leg
-# "🍘" # U+1F358 rice cracker
-# "🍙" # U+1F359 rice ball
-# "🍚" # U+1F35A cooked rice
-# "🍛" # U+1F35B curry and rice
-# "🍜" # U+1F35C steaming bowl
-<Multi_key> <ampersand> <s> <p> <a> <g> <h> <e> <t> <t> <i>                    : "🍝" # U+1F35D spaghetti
-<Multi_key> <ampersand> <b> <r> <e> <a> <d>                                    : "🍞" # U+1F35E bread
-# "🍟" # U+1F35F french fries
-# "🍠" # U+1F360 roasted sweet potato
-<Multi_key> <ampersand> <d> <a> <n> <g> <o>                                    : "🍡" # U+1F361 dango
-<Multi_key> <ampersand> <o> <d> <e> <n>                                        : "🍢" # U+1F362 oden
-<Multi_key> <ampersand> <s> <u> <s> <h> <i>                                    : "🍣" # U+1F363 sushi
-# "🍤" # U+1F364 fried shrimp
-# "🍥" # U+1F365 fish cake with swirl design
-# "🍦" # U+1F366 soft ice cream
-# "🍧" # U+1F367 shaved ice
-# "🍨" # U+1F368 ice cream
-<Multi_key> <ampersand> <d> <o> <u> <g> <h> <n> <u> <t>                        : "🍩" # U+1F369 doughnut
-<Multi_key> <ampersand> <c> <o> <o> <k> <i> <e>                                : "🍪" # U+1F36A cookie
-# "🍫" # U+1F36B chocolate bar
-<Multi_key> <ampersand> <c> <a> <n> <d> <y>                                    : "🍬" # U+1F36C candy
-<Multi_key> <ampersand> <l> <o> <l> <l> <i> <p> <o> <p>                        : "🍭" # U+1F36D lollipop
-<Multi_key> <ampersand> <c> <u> <s> <t> <a> <r> <d>                            : "🍮" # U+1F36E custard
-# "🍯" # U+1F36F honey pot
-<Multi_key> <ampersand> <s> <h> <o> <r> <t> <c> <a> <k> <e>                    : "🍰" # U+1F370 shortcake
-# "🍱" # U+1F371 bento box
-# "🍲" # U+1F372 pot of food
-<Multi_key> <ampersand> <c> <o> <o> <k> <i> <n> <g>                            : "🍳" # U+1F373 cooking
-# "🍴" # U+1F374 fork and knife
-# "🍵" # U+1F375 teacup without handle
-# "🍶" # U+1F376 sake bottle and cup
-# "🍷" # U+1F377 wine glass
-# "🍸" # U+1F378 cocktail glass
-# "🍹" # U+1F379 tropical drink
-# "🍺" # U+1F37A beer mug
-# "🍻" # U+1F37B clinking beer mugs
-<Multi_key> <ampersand> <r> <i> <b> <b> <o> <n>                                : "🎀" # U+1F380 ribbon
-# "🎁" # U+1F381 wrapped present
-# "🎂" # U+1F382 birthday cake
-<Multi_key> <ampersand> <j> <a> <c> <k> <-> <o> <-> <l> <a> <n> <t> <e> <r> <n> : "🎃" # U+1F383 jack-o-lantern
-# "🎄" # U+1F384 christmas tree
-# "🎅" # U+1F385 father christmas
-<Multi_key> <ampersand> <f> <i> <r> <e> <w> <o> <r> <k> <s>                    : "🎆" # U+1F386 fireworks
-# "🎇" # U+1F387 firework sparkler
-<Multi_key> <ampersand> <b> <a> <l> <l> <o> <o> <n>                            : "🎈" # U+1F388 balloon
-# "🎉" # U+1F389 party popper
-# "🎊" # U+1F38A confetti ball
-# "🎋" # U+1F38B tanabata tree
-# "🎌" # U+1F38C crossed flags
-# "🎍" # U+1F38D pine decoration
-# "🎎" # U+1F38E japanese dolls
-# "🎏" # U+1F38F carp streamer
-# "🎐" # U+1F390 wind chime
-# "🎑" # U+1F391 moon viewing ceremony
-# "🎒" # U+1F392 school satchel
-# "🎓" # U+1F393 graduation cap
-# "🎠" # U+1F3A0 carousel horse
-# "🎡" # U+1F3A1 ferris wheel
-# "🎢" # U+1F3A2 roller coaster
-# "🎣" # U+1F3A3 fishing pole and fish
-<Multi_key> <ampersand> <m> <i> <c> <r> <o> <p> <h> <o> <n> <e>                : "🎤" # U+1F3A4 microphone
-# "🎥" # U+1F3A5 movie camera
-<Multi_key> <ampersand> <c> <i> <n> <e> <m> <a>                                : "🎦" # U+1F3A6 cinema
-<Multi_key> <ampersand> <h> <e> <a> <d> <p> <h> <o> <n> <e>                    : "🎧" # U+1F3A7 headphone
-# "🎨" # U+1F3A8 artist palette
-# "🎩" # U+1F3A9 top hat
-# "🎪" # U+1F3AA circus tent
-<Multi_key> <ampersand> <t> <i> <c> <k> <e> <t>                                : "🎫" # U+1F3AB ticket
-# "🎬" # U+1F3AC clapper board
-# "🎭" # U+1F3AD performing arts
-# "🎮" # U+1F3AE video game
-# "🎯" # U+1F3AF direct hit
-# "🎰" # U+1F3B0 slot machine
-<Multi_key> <ampersand> <b> <i> <l> <l> <i> <a> <r> <d> <s>                    : "🎱" # U+1F3B1 billiards
-# "🎲" # U+1F3B2 game die
-<Multi_key> <ampersand> <b> <o> <w> <l> <i> <n> <g>                            : "🎳" # U+1F3B3 bowling
-# "🎴" # U+1F3B4 flower playing cards
-# "🎵" # U+1F3B5 musical note
-# "🎶" # U+1F3B6 multiple musical notes
-<Multi_key> <ampersand> <s> <a> <x> <o> <p> <h> <o> <n> <e>                    : "🎷" # U+1F3B7 saxophone
-<Multi_key> <ampersand> <g> <u> <i> <t> <a> <r>                                : "🎸" # U+1F3B8 guitar
-# "🎹" # U+1F3B9 musical keyboard
-<Multi_key> <ampersand> <t> <r> <u> <m> <p> <e> <t>                            : "🎺" # U+1F3BA trumpet
-<Multi_key> <ampersand> <v> <i> <o> <l> <i> <n>                                : "🎻" # U+1F3BB violin
-# "🎼" # U+1F3BC musical score
-# "🎽" # U+1F3BD running shirt with sash
-# "🎾" # U+1F3BE tennis racquet and ball
-# "🎿" # U+1F3BF ski and ski boot
-# "🏀" # U+1F3C0 basketball and hoop
-# "🏁" # U+1F3C1 chequered flag
-<Multi_key> <ampersand> <s> <n> <o> <w> <b> <o> <a> <r> <d> <e> <r>            : "🏂" # U+1F3C2 snowboarder
-<Multi_key> <ampersand> <r> <u> <n> <n> <e> <r>                                : "🏃" # U+1F3C3 runner
-<Multi_key> <ampersand> <s> <u> <r> <f> <e> <r>                                : "🏄" # U+1F3C4 surfer
-<Multi_key> <ampersand> <t> <r> <o> <p> <h> <y>                                : "🏆" # U+1F3C6 trophy
-# "🏈" # U+1F3C8 american football
-<Multi_key> <ampersand> <s> <w> <i> <m> <m> <e> <r>                            : "🏊" # U+1F3CA swimmer
-# "🏠" # U+1F3E0 house building
-# "🏡" # U+1F3E1 house with garden
-# "🏢" # U+1F3E2 office building
-# "🏣" # U+1F3E3 japanese post office
-<Multi_key> <ampersand> <h> <o> <s> <p> <i> <t> <a> <l>                        : "🏥" # U+1F3E5 hospital
-<Multi_key> <ampersand> <b> <a> <n> <k>                                        : "🏦" # U+1F3E6 bank
-# "🏧" # U+1F3E7 automated teller machine
-<Multi_key> <ampersand> <h> <o> <t> <e> <l>                                    : "🏨" # U+1F3E8 hotel
-# "🏩" # U+1F3E9 love hotel
-# "🏪" # U+1F3EA convenience store
-<Multi_key> <ampersand> <s> <c> <h> <o> <o> <l>                                : "🏫" # U+1F3EB school
-# "🏬" # U+1F3EC department store
-<Multi_key> <ampersand> <f> <a> <c> <t> <o> <r> <y>                            : "🏭" # U+1F3ED factory
-# "🏮" # U+1F3EE izakaya lantern
-# "🏯" # U+1F3EF japanese castle
-# "🏰" # U+1F3F0 european castle
-<Multi_key> <ampersand> <s> <n> <a> <i> <l>                                    : "🐌" # U+1F40C snail
-<Multi_key> <ampersand> <s> <n> <a> <k> <e>                                    : "🐍" # U+1F40D snake
-<Multi_key> <ampersand> <h> <o> <r> <s> <e>                                    : "🐎" # U+1F40E horse
-<Multi_key> <ampersand> <s> <h> <e> <e> <p>                                    : "🐑" # U+1F411 sheep
-<Multi_key> <ampersand> <m> <o> <n> <k> <e> <y>                                : "🐒" # U+1F412 monkey
-<Multi_key> <ampersand> <c> <h> <i> <c> <k> <e> <n>                            : "🐔" # U+1F414 chicken
-<Multi_key> <ampersand> <b> <o> <a> <r>                                        : "🐗" # U+1F417 boar
-<Multi_key> <ampersand> <e> <l> <e> <p> <h> <a> <n> <t>                        : "🐘" # U+1F418 elephant
-<Multi_key> <ampersand> <o> <c> <t> <o> <p> <u> <s>                            : "🐙" # U+1F419 octopus
-# "🐚" # U+1F41A spiral shell
-<Multi_key> <ampersand> <b> <u> <g>                                            : "🐛" # U+1F41B bug
-<Multi_key> <ampersand> <a> <n> <t>                                            : "🐜" # U+1F41C ant
-<Multi_key> <ampersand> <h> <o> <n> <e> <y> <b> <e> <e>                        : "🐝" # U+1F41D honeybee
-# "🐞" # U+1F41E lady beetle
-<Multi_key> <ampersand> <f> <i> <s> <h>                                        : "🐟" # U+1F41F fish
-# "🐠" # U+1F420 tropical fish
-<Multi_key> <ampersand> <b> <l> <o> <w> <f> <i> <s> <h>                        : "🐡" # U+1F421 blowfish
-<Multi_key> <ampersand> <t> <u> <r> <t> <l> <e>                                : "🐢" # U+1F422 turtle
-# "🐣" # U+1F423 hatching chick
-# "🐤" # U+1F424 baby chick
-# "🐥" # U+1F425 front-facing baby chick
-<Multi_key> <ampersand> <b> <i> <r> <d>                                        : "🐦" # U+1F426 bird
-<Multi_key> <ampersand> <p> <e> <n> <g> <u> <i> <n>                            : "🐧" # U+1F427 penguin
-<Multi_key> <ampersand> <k> <o> <a> <l> <a>                                    : "🐨" # U+1F428 koala
-<Multi_key> <ampersand> <p> <o> <o> <d> <l> <e>                                : "🐩" # U+1F429 poodle
-# "🐫" # U+1F42B bactrian camel
-<Multi_key> <ampersand> <d> <o> <l> <p> <h> <i> <n>                            : "🐬" # U+1F42C dolphin
-# "🐭" # U+1F42D mouse face
-# "🐮" # U+1F42E cow face
-# "🐯" # U+1F42F tiger face
-# "🐰" # U+1F430 rabbit face
-# "🐱" # U+1F431 cat face
-# "🐲" # U+1F432 dragon face
-# "🐳" # U+1F433 spouting whale
-# "🐴" # U+1F434 horse face
-# "🐵" # U+1F435 monkey face
-# "🐶" # U+1F436 dog face
-# "🐷" # U+1F437 pig face
-# "🐸" # U+1F438 frog face
-# "🐹" # U+1F439 hamster face
-# "🐺" # U+1F43A wolf face
-# "🐻" # U+1F43B bear face
-# "🐼" # U+1F43C panda face
-# "🐽" # U+1F43D pig nose
-# "🐾" # U+1F43E paw prints
-<Multi_key> <ampersand> <e> <y> <e> <s>                                        : "👀" # U+1F440 eyes
-<Multi_key> <ampersand> <e> <a> <r>                                            : "👂" # U+1F442 ear
-<Multi_key> <ampersand> <n> <o> <s> <e>                                        : "👃" # U+1F443 nose
-<Multi_key> <ampersand> <m> <o> <u> <t> <h>                                    : "👄" # U+1F444 mouth
-<Multi_key> <ampersand> <t> <o> <n> <g> <u> <e>                                : "👅" # U+1F445 tongue
-# "👆" # U+1F446 white up pointing backhand index
-# "👇" # U+1F447 white down pointing backhand index
-# "👈" # U+1F448 white left pointing backhand index
-# "👉" # U+1F449 white right pointing backhand index
-# "👊" # U+1F44A fisted hand sign
-# "👋" # U+1F44B waving hand sign
-# "👌" # U+1F44C ok hand sign
-# "👍" # U+1F44D thumbs up sign
-# "👎" # U+1F44E thumbs down sign
-# "👏" # U+1F44F clapping hands sign
-# "👐" # U+1F450 open hands sign
-<Multi_key> <ampersand> <c> <r> <o> <w> <n>                                    : "👑" # U+1F451 crown
-# "👒" # U+1F452 womans hat
-<Multi_key> <ampersand> <e> <y> <e> <g> <l> <a> <s> <s> <e> <s>                : "👓" # U+1F453 eyeglasses
-<Multi_key> <ampersand> <n> <e> <c> <k> <t> <i> <e>                            : "👔" # U+1F454 necktie
-<Multi_key> <ampersand> <t> <-> <s> <h> <i> <r> <t>                            : "👕" # U+1F455 t-shirt
-<Multi_key> <ampersand> <j> <e> <a> <n> <s>                                    : "👖" # U+1F456 jeans
-<Multi_key> <ampersand> <d> <r> <e> <s> <s>                                    : "👗" # U+1F457 dress
-<Multi_key> <ampersand> <k> <i> <m> <o> <n> <o>                                : "👘" # U+1F458 kimono
-<Multi_key> <ampersand> <b> <i> <k> <i> <n> <i>                                : "👙" # U+1F459 bikini
-# "👚" # U+1F45A womans clothes
-<Multi_key> <ampersand> <p> <u> <r> <s> <e>                                    : "👛" # U+1F45B purse
-<Multi_key> <ampersand> <h> <a> <n> <d> <b> <a> <g>                            : "👜" # U+1F45C handbag
-<Multi_key> <ampersand> <p> <o> <u> <c> <h>                                    : "👝" # U+1F45D pouch
-# "👞" # U+1F45E mans shoe
-# "👟" # U+1F45F athletic shoe
-# "👠" # U+1F460 high-heeled shoe
-# "👡" # U+1F461 womans sandal
-# "👢" # U+1F462 womans boots
-<Multi_key> <ampersand> <f> <o> <o> <t> <p> <r> <i> <n> <t> <s>                : "👣" # U+1F463 footprints
-# "👤" # U+1F464 bust in silhouette
-<Multi_key> <ampersand> <b> <o> <y>                                            : "👦" # U+1F466 boy
-<Multi_key> <ampersand> <g> <i> <r> <l>                                        : "👧" # U+1F467 girl
-<Multi_key> <ampersand> <m> <a> <n>                                            : "👨" # U+1F468 man
-<Multi_key> <ampersand> <w> <o> <m> <a> <n>                                    : "👩" # U+1F469 woman
-<Multi_key> <ampersand> <f> <a> <m> <i> <l> <y>                                : "👪" # U+1F46A family
-# "👫" # U+1F46B man and woman holding hands
-# "👮" # U+1F46E police officer
-# "👯" # U+1F46F woman with bunny ears
-# "👰" # U+1F470 bride with veil
-# "👱" # U+1F471 person with blond hair
-# "👲" # U+1F472 man with gua pi mao
-# "👳" # U+1F473 man with turban
-# "👴" # U+1F474 older man
-# "👵" # U+1F475 older woman
-<Multi_key> <ampersand> <b> <a> <b> <y>                                        : "👶" # U+1F476 baby
-# "👷" # U+1F477 construction worker
-<Multi_key> <ampersand> <p> <r> <i> <n> <c> <e> <s> <s>                        : "👸" # U+1F478 princess
-# "👹" # U+1F479 japanese ogre
-# "👺" # U+1F47A japanese goblin
-<Multi_key> <ampersand> <g> <h> <o> <s> <t>                                    : "👻" # U+1F47B ghost
-# "👼" # U+1F47C baby angel
-# "👽" # U+1F47D extraterrestrial alien
-# "👾" # U+1F47E alien monster
-<Multi_key> <ampersand> <i> <m> <p>                                            : "👿" # U+1F47F imp
-<Multi_key> <ampersand> <s> <k> <u> <l> <l>                                    : "💀" # U+1F480 skull
-# "💁" # U+1F481 information desk person
-<Multi_key> <ampersand> <g> <u> <a> <r> <d> <s> <m> <a> <n>                    : "💂" # U+1F482 guardsman
-<Multi_key> <ampersand> <d> <a> <n> <c> <e> <r>                                : "💃" # U+1F483 dancer
-<Multi_key> <ampersand> <l> <i> <p> <s> <t> <i> <c> <k>                        : "💄" # U+1F484 lipstick
-# "💅" # U+1F485 nail polish
-# "💆" # U+1F486 face massage
-<Multi_key> <ampersand> <h> <a> <i> <r> <c> <u> <t>                            : "💇" # U+1F487 haircut
-# "💈" # U+1F488 barber pole
-<Multi_key> <ampersand> <s> <y> <r> <i> <n> <g> <e>                            : "💉" # U+1F489 syringe
-<Multi_key> <ampersand> <p> <i> <l> <l>                                        : "💊" # U+1F48A pill
-# "💋" # U+1F48B kiss mark
-# "💌" # U+1F48C love letter
-<Multi_key> <ampersand> <r> <i> <n> <g>                                        : "💍" # U+1F48D ring
-# "💎" # U+1F48E gem stone
-<Multi_key> <ampersand> <k> <i> <s> <s>                                        : "💏" # U+1F48F kiss
-<Multi_key> <ampersand> <b> <o> <u> <q> <u> <e> <t>                            : "💐" # U+1F490 bouquet
-# "💑" # U+1F491 couple with heart
-<Multi_key> <ampersand> <w> <e> <d> <d> <i> <n> <g>                            : "💒" # U+1F492 wedding
-# "💓" # U+1F493 beating heart
-# "💔" # U+1F494 broken heart
-# "💕" # U+1F495 two hearts
-# "💖" # U+1F496 sparkling heart
-# "💗" # U+1F497 growing heart
-# "💘" # U+1F498 heart with arrow
-# "💙" # U+1F499 blue heart
-# "💚" # U+1F49A green heart
-# "💛" # U+1F49B yellow heart
-# "💜" # U+1F49C purple heart
-# "💝" # U+1F49D heart with ribbon
-# "💞" # U+1F49E revolving hearts
-# "💟" # U+1F49F heart decoration
-# "💠" # U+1F4A0 diamond shape with a dot inside
-# "💡" # U+1F4A1 electric light bulb
-# "💢" # U+1F4A2 anger symbol
-<Multi_key> <ampersand> <b> <o> <m> <b>                                        : "💣" # U+1F4A3 bomb
-# "💤" # U+1F4A4 sleeping symbol
-# "💥" # U+1F4A5 collision symbol
-# "💦" # U+1F4A6 splashing sweat symbol
-<Multi_key> <ampersand> <d> <r> <o> <p> <l> <e> <t>                            : "💧" # U+1F4A7 droplet
-# "💨" # U+1F4A8 dash symbol
-# "💩" # U+1F4A9 pile of poo
-# "💪" # U+1F4AA flexed biceps
-# "💫" # U+1F4AB dizzy symbol
-# "💬" # U+1F4AC speech balloon
-# "💮" # U+1F4AE white flower
-# "💯" # U+1F4AF hundred points symbol
-# "💰" # U+1F4B0 money bag
-# "💱" # U+1F4B1 currency exchange
-# "💲" # U+1F4B2 heavy dollar sign
-# "💳" # U+1F4B3 credit card
-# "💴" # U+1F4B4 banknote with yen sign
-# "💵" # U+1F4B5 banknote with dollar sign
-# "💸" # U+1F4B8 money with wings
-# "💹" # U+1F4B9 chart with upwards trend and yen sign
-<Multi_key> <ampersand> <s> <e> <a> <t>                                        : "💺" # U+1F4BA seat
-# "💻" # U+1F4BB personal computer
-<Multi_key> <ampersand> <b> <r> <i> <e> <f> <c> <a> <s> <e>                    : "💼" # U+1F4BC briefcase
-<Multi_key> <ampersand> <m> <i> <n> <i> <d> <i> <s> <c>                        : "💽" # U+1F4BD minidisc
-# "💾" # U+1F4BE floppy disk
-# "💿" # U+1F4BF optical disc
-<Multi_key> <ampersand> <d> <v> <d>                                            : "📀" # U+1F4C0 dvd
-# "📁" # U+1F4C1 file folder
-# "📂" # U+1F4C2 open file folder
-# "📃" # U+1F4C3 page with curl
-# "📄" # U+1F4C4 page facing up
-<Multi_key> <ampersand> <c> <a> <l> <e> <n> <d> <a> <r>                        : "📅" # U+1F4C5 calendar
-# "📆" # U+1F4C6 tear-off calendar
-# "📇" # U+1F4C7 card index
-# "📈" # U+1F4C8 chart with upwards trend
-# "📉" # U+1F4C9 chart with downwards trend
-# "📊" # U+1F4CA bar chart
-<Multi_key> <ampersand> <c> <l> <i> <p> <b> <o> <a> <r> <d>                    : "📋" # U+1F4CB clipboard
-<Multi_key> <ampersand> <p> <u> <s> <h> <p> <i> <n>                            : "📌" # U+1F4CC pushpin
-# "📍" # U+1F4CD round pushpin
-<Multi_key> <ampersand> <p> <a> <p> <e> <r> <c> <l> <i> <p>                    : "📎" # U+1F4CE paperclip
-# "📏" # U+1F4CF straight ruler
-# "📐" # U+1F4D0 triangular ruler
-# "📑" # U+1F4D1 bookmark tabs
-<Multi_key> <ampersand> <l> <e> <d> <g> <e> <r>                                : "📒" # U+1F4D2 ledger
-<Multi_key> <ampersand> <n> <o> <t> <e> <b> <o> <o> <k>                        : "📓" # U+1F4D3 notebook
-# "📔" # U+1F4D4 notebook with decorative cover
-# "📕" # U+1F4D5 closed book
-# "📖" # U+1F4D6 open book
-# "📗" # U+1F4D7 green book
-# "📘" # U+1F4D8 blue book
-# "📙" # U+1F4D9 orange book
-<Multi_key> <ampersand> <b> <o> <o> <k> <s>                                    : "📚" # U+1F4DA books
-# "📛" # U+1F4DB name badge
-<Multi_key> <ampersand> <s> <c> <r> <o> <l> <l>                                : "📜" # U+1F4DC scroll
-<Multi_key> <ampersand> <m> <e> <m> <o>                                        : "📝" # U+1F4DD memo
-# "📞" # U+1F4DE telephone receiver
-<Multi_key> <ampersand> <p> <a> <g> <e> <r>                                    : "📟" # U+1F4DF pager
-# "📠" # U+1F4E0 fax machine
-# "📡" # U+1F4E1 satellite antenna
-# "📢" # U+1F4E2 public address loudspeaker
-# "📣" # U+1F4E3 cheering megaphone
-# "📤" # U+1F4E4 outbox tray
-# "📥" # U+1F4E5 inbox tray
-<Multi_key> <ampersand> <p> <a> <c> <k> <a> <g> <e>                            : "📦" # U+1F4E6 package
-# "📧" # U+1F4E7 e-mail symbol
-# "📨" # U+1F4E8 incoming envelope
-# "📩" # U+1F4E9 envelope with downwards arrow above
-# "📪" # U+1F4EA closed mailbox with lowered flag
-# "📫" # U+1F4EB closed mailbox with raised flag
-<Multi_key> <ampersand> <p> <o> <s> <t> <b> <o> <x>                            : "📮" # U+1F4EE postbox
-<Multi_key> <ampersand> <n> <e> <w> <s> <p> <a> <p> <e> <r>                    : "📰" # U+1F4F0 newspaper
-# "📱" # U+1F4F1 mobile phone
-# "📲" # U+1F4F2 mobile phone with rightwards arrow at left
-# "📳" # U+1F4F3 vibration mode
-# "📴" # U+1F4F4 mobile phone off
-# "📶" # U+1F4F6 antenna with bars
-<Multi_key> <ampersand> <c> <a> <m> <e> <r> <a>                                : "📷" # U+1F4F7 camera
-# "📹" # U+1F4F9 video camera
-<Multi_key> <ampersand> <t> <e> <l> <e> <v> <i> <s> <i> <o> <n>                : "📺" # U+1F4FA television
-<Multi_key> <ampersand> <r> <a> <d> <i> <o>                                    : "📻" # U+1F4FB radio
-<Multi_key> <ampersand> <v> <i> <d> <e> <o> <c> <a> <s> <s> <e> <t> <t> <e>    : "📼" # U+1F4FC videocassette
-# "🔃" # U+1F503 clockwise downwards and upwards open circle arrows
-# "🔊" # U+1F50A speaker with three sound waves
-<Multi_key> <ampersand> <b> <a> <t> <t> <e> <r> <y>                            : "🔋" # U+1F50B battery
-# "🔌" # U+1F50C electric plug
-# "🔍" # U+1F50D left-pointing magnifying glass
-# "🔎" # U+1F50E right-pointing magnifying glass
-# "🔏" # U+1F50F lock with ink pen
-# "🔐" # U+1F510 closed lock with key
-<Multi_key> <ampersand> <k> <e> <y>                                            : "🔑" # U+1F511 key
-<Multi_key> <ampersand> <l> <o> <c> <k>                                        : "🔒" # U+1F512 lock
-# "🔓" # U+1F513 open lock
-<Multi_key> <ampersand> <b> <e> <l> <l>                                        : "🔔" # U+1F514 bell
-<Multi_key> <ampersand> <b> <o> <o> <k> <m> <a> <r> <k>                        : "🔖" # U+1F516 bookmark
-# "🔗" # U+1F517 link symbol
-# "🔘" # U+1F518 radio button
-# "🔙" # U+1F519 back with leftwards arrow above
-# "🔚" # U+1F51A end with leftwards arrow above
-# "🔛" # U+1F51B on with exclamation mark with left right arrow above
-# "🔜" # U+1F51C soon with rightwards arrow above
-# "🔝" # U+1F51D top with upwards arrow above
-# "🔞" # U+1F51E no one under eighteen symbol
-# "🔟" # U+1F51F keycap ten
-# "🔠" # U+1F520 input symbol for latin capital letters
-# "🔡" # U+1F521 input symbol for latin small letters
-# "🔢" # U+1F522 input symbol for numbers
-# "🔣" # U+1F523 input symbol for symbols
-# "🔤" # U+1F524 input symbol for latin letters
-<Multi_key> <ampersand> <f> <i> <r> <e>                                        : "🔥" # U+1F525 fire
-# "🔦" # U+1F526 electric torch
-<Multi_key> <ampersand> <w> <r> <e> <n> <c> <h>                                : "🔧" # U+1F527 wrench
-<Multi_key> <ampersand> <h> <a> <m> <m> <e> <r>                                : "🔨" # U+1F528 hammer
-# "🔩" # U+1F529 nut and bolt
-<Multi_key> <ampersand> <h> <o> <c> <h> <o>                                    : "🔪" # U+1F52A hocho
-<Multi_key> <ampersand> <p> <i> <s> <t> <o> <l>                                : "🔫" # U+1F52B pistol
-# "🔮" # U+1F52E crystal ball
-# "🔯" # U+1F52F six pointed star with middle dot
-# "🔰" # U+1F530 japanese symbol for beginner
-# "🔱" # U+1F531 trident emblem
-# "🔲" # U+1F532 black square button
-# "🔳" # U+1F533 white square button
-# "🔴" # U+1F534 large red circle
-# "🔵" # U+1F535 large blue circle
-# "🔶" # U+1F536 large orange diamond
-# "🔷" # U+1F537 large blue diamond
-# "🔸" # U+1F538 small orange diamond
-# "🔹" # U+1F539 small blue diamond
-# "🔺" # U+1F53A up-pointing red triangle
-# "🔻" # U+1F53B down-pointing red triangle
-# "🔼" # U+1F53C up-pointing small red triangle
-# "🔽" # U+1F53D down-pointing small red triangle
-# "🕐" # U+1F550 clock face one oclock
-# "🕑" # U+1F551 clock face two oclock
-# "🕒" # U+1F552 clock face three oclock
-# "🕓" # U+1F553 clock face four oclock
-# "🕔" # U+1F554 clock face five oclock
-# "🕕" # U+1F555 clock face six oclock
-# "🕖" # U+1F556 clock face seven oclock
-# "🕗" # U+1F557 clock face eight oclock
-# "🕘" # U+1F558 clock face nine oclock
-# "🕙" # U+1F559 clock face ten oclock
-# "🕚" # U+1F55A clock face eleven oclock
-# "🕛" # U+1F55B clock face twelve oclock
-# "🗻" # U+1F5FB mount fuji
-# "🗼" # U+1F5FC tokyo tower
-# "🗽" # U+1F5FD statue of liberty
-# "🗾" # U+1F5FE silhouette of japan
-<Multi_key> <ampersand> <m> <o> <y> <a> <i>                                    : "🗿" # U+1F5FF moyai
+# "©" U00A9 # copyright sign
+# "®" U00AE # registered sign
+# "‼" U203C # double exclamation mark
+# "⁉" U2049 # exclamation question mark
+# "8⃣" U0038 # digit eight + combining enclosing keycap
+# "9⃣" U0039 # digit nine + combining enclosing keycap
+# "7⃣" U0037 # digit seven + combining enclosing keycap
+# "6⃣" U0036 # digit six + combining enclosing keycap
+# "1⃣" U0031 # digit one + combining enclosing keycap
+# "0⃣" U0030 # digit zero + combining enclosing keycap
+# "2⃣" U0032 # digit two + combining enclosing keycap
+# "3⃣" U0033 # digit three + combining enclosing keycap
+# "5⃣" U0035 # digit five + combining enclosing keycap
+# "4⃣" U0034 # digit four + combining enclosing keycap
+# "#⃣" U0023 # number sign + combining enclosing keycap
+# "™" U2122 # trade mark sign
+# "ℹ" U2139 # information source
+# "↔" U2194 # left right arrow
+# "↕" U2195 # up down arrow
+# "↖" U2196 # north west arrow
+# "↗" U2197 # north east arrow
+# "↘" U2198 # south east arrow
+# "↙" U2199 # south west arrow
+# "↩" U21A9 # leftwards arrow with hook
+# "↪" U21AA # rightwards arrow with hook
+<Multi_key> <ampersand> <w> <a> <t> <c> <h>                                     : "⌚" U231A # watch
+# "⌛" U231B # hourglass
+# "⏩" U23E9 # black right-pointing double triangle
+# "⏪" U23EA # black left-pointing double triangle
+# "⏫" U23EB # black up-pointing double triangle
+# "⏬" U23EC # black down-pointing double triangle
+# "⏰" U23F0 # alarm clock
+# "⏳" U23F3 # hourglass with flowing sand
+# "▪" U25AA # black small square
+# "▫" U25AB # white small square
+# "▶" U25B6 # black right-pointing triangle
+# "◀" U25C0 # black left-pointing triangle
+# "◻" U25FB # white medium square
+# "◼" U25FC # black medium square
+# "◽" U25FD # white medium small square
+# "◾" U25FE # black medium small square
+# "☀" U2600 # black sun with rays
+<Multi_key> <ampersand> <c> <l> <o> <u> <d>                                     : "☁" U2601 # cloud
+# "☎" U260E # black telephone
+# "☑" U2611 # ballot box with check
+# "☔" U2614 # umbrella with rain drops
+# "☕" U2615 # hot beverage
+# "☝" U261D # white up pointing index
+# "☺" U263A # white smiling face
+<Multi_key> <ampersand> <a> <r> <i> <e> <s>                                     : "♈" U2648 # aries
+<Multi_key> <ampersand> <t> <a> <u> <r> <u> <s>                                 : "♉" U2649 # taurus
+<Multi_key> <ampersand> <g> <e> <m> <i> <n> <i>                                 : "♊" U264A # gemini
+<Multi_key> <ampersand> <c> <a> <n> <c> <e> <r>                                 : "♋" U264B # cancer
+# "♌" U264C # leo
+<Multi_key> <ampersand> <v> <i> <r> <g> <o>                                     : "♍" U264D # virgo
+<Multi_key> <ampersand> <l> <i> <b> <r> <a>                                     : "♎" U264E # libra
+<Multi_key> <ampersand> <s> <c> <o> <r> <p> <i> <u> <s>                         : "♏" U264F # scorpius
+<Multi_key> <ampersand> <s> <a> <g> <i> <t> <t> <a> <r> <i> <u> <s>             : "♐" U2650 # sagittarius
+<Multi_key> <ampersand> <c> <a> <p> <r> <i> <c> <o> <r> <n>                     : "♑" U2651 # capricorn
+<Multi_key> <ampersand> <a> <q> <u> <a> <r> <i> <u> <s>                         : "♒" U2652 # aquarius
+<Multi_key> <ampersand> <p> <i> <s> <c> <e> <s>                                 : "♓" U2653 # pisces
+# "♠" U2660 # black spade suit
+# "♣" U2663 # black club suit
+# "♥" U2665 # black heart suit
+# "♦" U2666 # black diamond suit
+# "♨" U2668 # hot springs
+# "♻" U267B # black universal recycling symbol
+# "♿" U267F # wheelchair symbol
+<Multi_key> <ampersand> <a> <n> <c> <h> <o> <r>                                 : "⚓" U2693 # anchor
+# "⚠" U26A0 # warning sign
+# "⚡" U26A1 # high voltage sign
+# "⚪" U26AA # medium white circle
+# "⚫" U26AB # medium black circle
+# "⚽" U26BD # soccer ball
+<Multi_key> <ampersand> <b> <a> <s> <e> <b> <a> <l> <l>                         : "⚾" U26BE # baseball
+# "⛄" U26C4 # snowman without snow
+# "⛅" U26C5 # sun behind cloud
+<Multi_key> <ampersand> <o> <p> <h> <i> <u> <c> <h> <u> <s>                     : "⛎" U26CE # ophiuchus
+# "⛔" U26D4 # no entry
+<Multi_key> <ampersand> <c> <h> <u> <r> <c> <h>                                 : "⛪" U26EA # church
+<Multi_key> <ampersand> <f> <o> <u> <n> <t> <a> <i> <n>                         : "⛲" U26F2 # fountain
+# "⛳" U26F3 # flag in hole
+<Multi_key> <ampersand> <s> <a> <i> <l> <b> <o> <a> <t>                         : "⛵" U26F5 # sailboat
+<Multi_key> <ampersand> <t> <e> <n> <t>                                         : "⛺" U26FA # tent
+# "⛽" U26FD # fuel pump
+# "⤴" U2934 # arrow pointing rightwards then curving upwards
+# "⤵" U2935 # arrow pointing rightwards then curving downwards
+# "⬅" U2B05 # leftwards black arrow
+# "⬆" U2B06 # upwards black arrow
+# "⬇" U2B07 # downwards black arrow
+# "⬛" U2B1B # black large square
+# "⬜" U2B1C # white large square
+# "⭐" U2B50 # white medium star
+# "⭕" U2B55 # heavy large circle
+# "〰" U3030 # wavy dash
+# "〽" U303D # part alternation mark
+# "㊗" U3297 # circled ideograph congratulation
+# "㊙" U3299 # circled ideograph secret
+# "🀄" U1F004 # mahjong tile red dragon
+# "🃏" U1F0CF # playing card black joker
+<Multi_key> <ampersand> <c> <y> <c> <l> <o> <n> <e>                             : "🌀" U1F300 # cyclone
+<Multi_key> <ampersand> <f> <o> <g> <g> <y>                                     : "🌁" U1F301 # foggy
+# "🌂" U1F302 # closed umbrella
+# "🌃" U1F303 # night with stars
+# "🌄" U1F304 # sunrise over mountains
+# "🌅" U1F305 # sunrise
+# "🌆" U1F306 # cityscape at dusk
+# "🌇" U1F307 # sunset over buildings
+<Multi_key> <ampersand> <r> <a> <i> <n> <b> <o> <w>                             : "🌈" U1F308 # rainbow
+# "🌉" U1F309 # bridge at night
+# "🌊" U1F30A # water wave
+<Multi_key> <ampersand> <v> <o> <l> <c> <a> <n> <o>                             : "🌋" U1F30B # volcano
+# "🌌" U1F30C # milky way
+# "🌏" U1F30F # earth globe asia-australia
+# "🌑" U1F311 # new moon symbol
+# "🌓" U1F313 # first quarter moon symbol
+# "🌔" U1F314 # waxing gibbous moon symbol
+# "🌕" U1F315 # full moon symbol
+# "🌙" U1F319 # crescent moon
+# "🌛" U1F31B # first quarter moon with face
+# "🌟" U1F31F # glowing star
+# "🌠" U1F320 # shooting star
+<Multi_key> <ampersand> <c> <h> <e> <s> <t> <n> <u> <t>                         : "🌰" U1F330 # chestnut
+<Multi_key> <ampersand> <s> <e> <e> <d> <l> <i> <n> <g>                         : "🌱" U1F331 # seedling
+# "🌴" U1F334 # palm tree
+<Multi_key> <ampersand> <c> <a> <c> <t> <u> <s>                                 : "🌵" U1F335 # cactus
+<Multi_key> <ampersand> <t> <u> <l> <i> <p>                                     : "🌷" U1F337 # tulip
+# "🌸" U1F338 # cherry blossom
+<Multi_key> <ampersand> <r> <o> <s> <e>                                         : "🌹" U1F339 # rose
+<Multi_key> <ampersand> <h> <i> <b> <i> <s> <c> <u> <s>                         : "🌺" U1F33A # hibiscus
+<Multi_key> <ampersand> <s> <u> <n> <f> <l> <o> <w> <e> <r>                     : "🌻" U1F33B # sunflower
+<Multi_key> <ampersand> <b> <l> <o> <s> <s> <o> <m>                             : "🌼" U1F33C # blossom
+# "🌽" U1F33D # ear of maize
+# "🌾" U1F33E # ear of rice
+<Multi_key> <ampersand> <h> <e> <r> <b>                                         : "🌿" U1F33F # herb
+# "🍀" U1F340 # four leaf clover
+# "🍁" U1F341 # maple leaf
+# "🍂" U1F342 # fallen leaf
+# "🍃" U1F343 # leaf fluttering in wind
+<Multi_key> <ampersand> <m> <u> <s> <h> <r> <o> <o> <m>                         : "🍄" U1F344 # mushroom
+<Multi_key> <ampersand> <t> <o> <m> <a> <t> <o>                                 : "🍅" U1F345 # tomato
+<Multi_key> <ampersand> <a> <u> <b> <e> <r> <g> <i> <n> <e>                     : "🍆" U1F346 # aubergine
+<Multi_key> <ampersand> <g> <r> <a> <p> <e> <s>                                 : "🍇" U1F347 # grapes
+<Multi_key> <ampersand> <m> <e> <l> <o> <n>                                     : "🍈" U1F348 # melon
+<Multi_key> <ampersand> <w> <a> <t> <e> <r> <m> <e> <l> <o> <n>                 : "🍉" U1F349 # watermelon
+<Multi_key> <ampersand> <t> <a> <n> <g> <e> <r> <i> <n> <e>                     : "🍊" U1F34A # tangerine
+<Multi_key> <ampersand> <b> <a> <n> <a> <n> <a>                                 : "🍌" U1F34C # banana
+<Multi_key> <ampersand> <p> <i> <n> <e> <a> <p> <p> <l> <e>                     : "🍍" U1F34D # pineapple
+# "🍎" U1F34E # red apple
+# "🍏" U1F34F # green apple
+<Multi_key> <ampersand> <p> <e> <a> <c> <h>                                     : "🍑" U1F351 # peach
+<Multi_key> <ampersand> <c> <h> <e> <r> <r> <i> <e> <s>                         : "🍒" U1F352 # cherries
+<Multi_key> <ampersand> <s> <t> <r> <a> <w> <b> <e> <r> <r> <y>                 : "🍓" U1F353 # strawberry
+<Multi_key> <ampersand> <h> <a> <m> <b> <u> <r> <g> <e> <r>                     : "🍔" U1F354 # hamburger
+# "🍕" U1F355 # slice of pizza
+# "🍖" U1F356 # meat on bone
+# "🍗" U1F357 # poultry leg
+# "🍘" U1F358 # rice cracker
+# "🍙" U1F359 # rice ball
+# "🍚" U1F35A # cooked rice
+# "🍛" U1F35B # curry and rice
+# "🍜" U1F35C # steaming bowl
+<Multi_key> <ampersand> <s> <p> <a> <g> <h> <e> <t> <t> <i>                     : "🍝" U1F35D # spaghetti
+<Multi_key> <ampersand> <b> <r> <e> <a> <d>                                     : "🍞" U1F35E # bread
+# "🍟" U1F35F # french fries
+# "🍠" U1F360 # roasted sweet potato
+<Multi_key> <ampersand> <d> <a> <n> <g> <o>                                     : "🍡" U1F361 # dango
+<Multi_key> <ampersand> <o> <d> <e> <n>                                         : "🍢" U1F362 # oden
+<Multi_key> <ampersand> <s> <u> <s> <h> <i>                                     : "🍣" U1F363 # sushi
+# "🍤" U1F364 # fried shrimp
+# "🍥" U1F365 # fish cake with swirl design
+# "🍦" U1F366 # soft ice cream
+# "🍧" U1F367 # shaved ice
+# "🍨" U1F368 # ice cream
+<Multi_key> <ampersand> <d> <o> <u> <g> <h> <n> <u> <t>                         : "🍩" U1F369 # doughnut
+<Multi_key> <ampersand> <c> <o> <o> <k> <i> <e>                                 : "🍪" U1F36A # cookie
+# "🍫" U1F36B # chocolate bar
+<Multi_key> <ampersand> <c> <a> <n> <d> <y>                                     : "🍬" U1F36C # candy
+<Multi_key> <ampersand> <l> <o> <l> <l> <i> <p> <o> <p>                         : "🍭" U1F36D # lollipop
+<Multi_key> <ampersand> <c> <u> <s> <t> <a> <r> <d>                             : "🍮" U1F36E # custard
+# "🍯" U1F36F # honey pot
+<Multi_key> <ampersand> <s> <h> <o> <r> <t> <c> <a> <k> <e>                     : "🍰" U1F370 # shortcake
+# "🍱" U1F371 # bento box
+# "🍲" U1F372 # pot of food
+<Multi_key> <ampersand> <c> <o> <o> <k> <i> <n> <g>                             : "🍳" U1F373 # cooking
+# "🍴" U1F374 # fork and knife
+# "🍵" U1F375 # teacup without handle
+# "🍶" U1F376 # sake bottle and cup
+# "🍷" U1F377 # wine glass
+# "🍸" U1F378 # cocktail glass
+# "🍹" U1F379 # tropical drink
+# "🍺" U1F37A # beer mug
+# "🍻" U1F37B # clinking beer mugs
+<Multi_key> <ampersand> <r> <i> <b> <b> <o> <n>                                 : "🎀" U1F380 # ribbon
+# "🎁" U1F381 # wrapped present
+# "🎂" U1F382 # birthday cake
+<Multi_key> <ampersand> <j> <a> <c> <k> <-> <o> <-> <l> <a> <n> <t> <e> <r> <n>  : "🎃" U1F383 # jack-o-lantern
+# "🎄" U1F384 # christmas tree
+# "🎅" U1F385 # father christmas
+<Multi_key> <ampersand> <f> <i> <r> <e> <w> <o> <r> <k> <s>                     : "🎆" U1F386 # fireworks
+# "🎇" U1F387 # firework sparkler
+<Multi_key> <ampersand> <b> <a> <l> <l> <o> <o> <n>                             : "🎈" U1F388 # balloon
+# "🎉" U1F389 # party popper
+# "🎊" U1F38A # confetti ball
+# "🎋" U1F38B # tanabata tree
+# "🎌" U1F38C # crossed flags
+# "🎍" U1F38D # pine decoration
+# "🎎" U1F38E # japanese dolls
+# "🎏" U1F38F # carp streamer
+# "🎐" U1F390 # wind chime
+# "🎑" U1F391 # moon viewing ceremony
+# "🎒" U1F392 # school satchel
+# "🎓" U1F393 # graduation cap
+# "🎠" U1F3A0 # carousel horse
+# "🎡" U1F3A1 # ferris wheel
+# "🎢" U1F3A2 # roller coaster
+# "🎣" U1F3A3 # fishing pole and fish
+<Multi_key> <ampersand> <m> <i> <c> <r> <o> <p> <h> <o> <n> <e>                 : "🎤" U1F3A4 # microphone
+# "🎥" U1F3A5 # movie camera
+<Multi_key> <ampersand> <c> <i> <n> <e> <m> <a>                                 : "🎦" U1F3A6 # cinema
+<Multi_key> <ampersand> <h> <e> <a> <d> <p> <h> <o> <n> <e>                     : "🎧" U1F3A7 # headphone
+# "🎨" U1F3A8 # artist palette
+# "🎩" U1F3A9 # top hat
+# "🎪" U1F3AA # circus tent
+<Multi_key> <ampersand> <t> <i> <c> <k> <e> <t>                                 : "🎫" U1F3AB # ticket
+# "🎬" U1F3AC # clapper board
+# "🎭" U1F3AD # performing arts
+# "🎮" U1F3AE # video game
+# "🎯" U1F3AF # direct hit
+# "🎰" U1F3B0 # slot machine
+<Multi_key> <ampersand> <b> <i> <l> <l> <i> <a> <r> <d> <s>                     : "🎱" U1F3B1 # billiards
+# "🎲" U1F3B2 # game die
+<Multi_key> <ampersand> <b> <o> <w> <l> <i> <n> <g>                             : "🎳" U1F3B3 # bowling
+# "🎴" U1F3B4 # flower playing cards
+# "🎵" U1F3B5 # musical note
+# "🎶" U1F3B6 # multiple musical notes
+<Multi_key> <ampersand> <s> <a> <x> <o> <p> <h> <o> <n> <e>                     : "🎷" U1F3B7 # saxophone
+<Multi_key> <ampersand> <g> <u> <i> <t> <a> <r>                                 : "🎸" U1F3B8 # guitar
+# "🎹" U1F3B9 # musical keyboard
+<Multi_key> <ampersand> <t> <r> <u> <m> <p> <e> <t>                             : "🎺" U1F3BA # trumpet
+<Multi_key> <ampersand> <v> <i> <o> <l> <i> <n>                                 : "🎻" U1F3BB # violin
+# "🎼" U1F3BC # musical score
+# "🎽" U1F3BD # running shirt with sash
+# "🎾" U1F3BE # tennis racquet and ball
+# "🎿" U1F3BF # ski and ski boot
+# "🏀" U1F3C0 # basketball and hoop
+# "🏁" U1F3C1 # chequered flag
+<Multi_key> <ampersand> <s> <n> <o> <w> <b> <o> <a> <r> <d> <e> <r>             : "🏂" U1F3C2 # snowboarder
+<Multi_key> <ampersand> <r> <u> <n> <n> <e> <r>                                 : "🏃" U1F3C3 # runner
+<Multi_key> <ampersand> <s> <u> <r> <f> <e> <r>                                 : "🏄" U1F3C4 # surfer
+<Multi_key> <ampersand> <t> <r> <o> <p> <h> <y>                                 : "🏆" U1F3C6 # trophy
+# "🏈" U1F3C8 # american football
+<Multi_key> <ampersand> <s> <w> <i> <m> <m> <e> <r>                             : "🏊" U1F3CA # swimmer
+# "🏠" U1F3E0 # house building
+# "🏡" U1F3E1 # house with garden
+# "🏢" U1F3E2 # office building
+# "🏣" U1F3E3 # japanese post office
+<Multi_key> <ampersand> <h> <o> <s> <p> <i> <t> <a> <l>                         : "🏥" U1F3E5 # hospital
+# "🏦" U1F3E6 # bank
+# "🏧" U1F3E7 # automated teller machine
+<Multi_key> <ampersand> <h> <o> <t> <e> <l>                                     : "🏨" U1F3E8 # hotel
+# "🏩" U1F3E9 # love hotel
+# "🏪" U1F3EA # convenience store
+# "🏫" U1F3EB # school
+# "🏬" U1F3EC # department store
+<Multi_key> <ampersand> <f> <a> <c> <t> <o> <r> <y>                             : "🏭" U1F3ED # factory
+# "🏮" U1F3EE # izakaya lantern
+# "🏯" U1F3EF # japanese castle
+# "🏰" U1F3F0 # european castle
+<Multi_key> <ampersand> <s> <n> <a> <i> <l>                                     : "🐌" U1F40C # snail
+<Multi_key> <ampersand> <s> <n> <a> <k> <e>                                     : "🐍" U1F40D # snake
+# "🐎" U1F40E # horse
+<Multi_key> <ampersand> <s> <h> <e> <e> <p>                                     : "🐑" U1F411 # sheep
+# "🐒" U1F412 # monkey
+<Multi_key> <ampersand> <c> <h> <i> <c> <k> <e> <n>                             : "🐔" U1F414 # chicken
+<Multi_key> <ampersand> <b> <o> <a> <r>                                         : "🐗" U1F417 # boar
+<Multi_key> <ampersand> <e> <l> <e> <p> <h> <a> <n> <t>                         : "🐘" U1F418 # elephant
+<Multi_key> <ampersand> <o> <c> <t> <o> <p> <u> <s>                             : "🐙" U1F419 # octopus
+# "🐚" U1F41A # spiral shell
+<Multi_key> <ampersand> <b> <u> <g>                                             : "🐛" U1F41B # bug
+# "🐜" U1F41C # ant
+<Multi_key> <ampersand> <h> <o> <n> <e> <y> <b> <e> <e>                         : "🐝" U1F41D # honeybee
+# "🐞" U1F41E # lady beetle
+# "🐟" U1F41F # fish
+# "🐠" U1F420 # tropical fish
+<Multi_key> <ampersand> <b> <l> <o> <w> <f> <i> <s> <h>                         : "🐡" U1F421 # blowfish
+<Multi_key> <ampersand> <t> <u> <r> <t> <l> <e>                                 : "🐢" U1F422 # turtle
+# "🐣" U1F423 # hatching chick
+# "🐤" U1F424 # baby chick
+# "🐥" U1F425 # front-facing baby chick
+<Multi_key> <ampersand> <b> <i> <r> <d>                                         : "🐦" U1F426 # bird
+<Multi_key> <ampersand> <p> <e> <n> <g> <u> <i> <n>                             : "🐧" U1F427 # penguin
+<Multi_key> <ampersand> <k> <o> <a> <l> <a>                                     : "🐨" U1F428 # koala
+<Multi_key> <ampersand> <p> <o> <o> <d> <l> <e>                                 : "🐩" U1F429 # poodle
+# "🐫" U1F42B # bactrian camel
+<Multi_key> <ampersand> <d> <o> <l> <p> <h> <i> <n>                             : "🐬" U1F42C # dolphin
+# "🐭" U1F42D # mouse face
+# "🐮" U1F42E # cow face
+# "🐯" U1F42F # tiger face
+# "🐰" U1F430 # rabbit face
+# "🐱" U1F431 # cat face
+# "🐲" U1F432 # dragon face
+# "🐳" U1F433 # spouting whale
+# "🐴" U1F434 # horse face
+# "🐵" U1F435 # monkey face
+# "🐶" U1F436 # dog face
+# "🐷" U1F437 # pig face
+# "🐸" U1F438 # frog face
+# "🐹" U1F439 # hamster face
+# "🐺" U1F43A # wolf face
+# "🐻" U1F43B # bear face
+# "🐼" U1F43C # panda face
+# "🐽" U1F43D # pig nose
+# "🐾" U1F43E # paw prints
+<Multi_key> <ampersand> <e> <y> <e> <s>                                         : "👀" U1F440 # eyes
+# "👂" U1F442 # ear
+<Multi_key> <ampersand> <n> <o> <s> <e>                                         : "👃" U1F443 # nose
+<Multi_key> <ampersand> <m> <o> <u> <t> <h>                                     : "👄" U1F444 # mouth
+<Multi_key> <ampersand> <t> <o> <n> <g> <u> <e>                                 : "👅" U1F445 # tongue
+# "👆" U1F446 # white up pointing backhand index
+# "👇" U1F447 # white down pointing backhand index
+# "👈" U1F448 # white left pointing backhand index
+# "👉" U1F449 # white right pointing backhand index
+# "👊" U1F44A # fisted hand sign
+# "👋" U1F44B # waving hand sign
+# "👌" U1F44C # ok hand sign
+# "👍" U1F44D # thumbs up sign
+# "👎" U1F44E # thumbs down sign
+# "👏" U1F44F # clapping hands sign
+# "👐" U1F450 # open hands sign
+<Multi_key> <ampersand> <c> <r> <o> <w> <n>                                     : "👑" U1F451 # crown
+# "👒" U1F452 # womans hat
+<Multi_key> <ampersand> <e> <y> <e> <g> <l> <a> <s> <s> <e> <s>                 : "👓" U1F453 # eyeglasses
+<Multi_key> <ampersand> <n> <e> <c> <k> <t> <i> <e>                             : "👔" U1F454 # necktie
+<Multi_key> <ampersand> <t> <-> <s> <h> <i> <r> <t>                             : "👕" U1F455 # t-shirt
+<Multi_key> <ampersand> <j> <e> <a> <n> <s>                                     : "👖" U1F456 # jeans
+<Multi_key> <ampersand> <d> <r> <e> <s> <s>                                     : "👗" U1F457 # dress
+<Multi_key> <ampersand> <k> <i> <m> <o> <n> <o>                                 : "👘" U1F458 # kimono
+<Multi_key> <ampersand> <b> <i> <k> <i> <n> <i>                                 : "👙" U1F459 # bikini
+# "👚" U1F45A # womans clothes
+<Multi_key> <ampersand> <p> <u> <r> <s> <e>                                     : "👛" U1F45B # purse
+<Multi_key> <ampersand> <h> <a> <n> <d> <b> <a> <g>                             : "👜" U1F45C # handbag
+<Multi_key> <ampersand> <p> <o> <u> <c> <h>                                     : "👝" U1F45D # pouch
+# "👞" U1F45E # mans shoe
+# "👟" U1F45F # athletic shoe
+# "👠" U1F460 # high-heeled shoe
+# "👡" U1F461 # womans sandal
+# "👢" U1F462 # womans boots
+<Multi_key> <ampersand> <f> <o> <o> <t> <p> <r> <i> <n> <t> <s>                 : "👣" U1F463 # footprints
+# "👤" U1F464 # bust in silhouette
+<Multi_key> <ampersand> <b> <o> <y>                                             : "👦" U1F466 # boy
+<Multi_key> <ampersand> <g> <i> <r> <l>                                         : "👧" U1F467 # girl
+# "👨" U1F468 # man
+# "👩" U1F469 # woman
+<Multi_key> <ampersand> <f> <a> <m> <i> <l> <y>                                 : "👪" U1F46A # family
+# "👫" U1F46B # man and woman holding hands
+# "👮" U1F46E # police officer
+# "👯" U1F46F # woman with bunny ears
+# "👰" U1F470 # bride with veil
+# "👱" U1F471 # person with blond hair
+# "👲" U1F472 # man with gua pi mao
+# "👳" U1F473 # man with turban
+# "👴" U1F474 # older man
+# "👵" U1F475 # older woman
+# "👶" U1F476 # baby
+# "👷" U1F477 # construction worker
+<Multi_key> <ampersand> <p> <r> <i> <n> <c> <e> <s> <s>                         : "👸" U1F478 # princess
+# "👹" U1F479 # japanese ogre
+# "👺" U1F47A # japanese goblin
+<Multi_key> <ampersand> <g> <h> <o> <s> <t>                                     : "👻" U1F47B # ghost
+# "👼" U1F47C # baby angel
+# "👽" U1F47D # extraterrestrial alien
+# "👾" U1F47E # alien monster
+<Multi_key> <ampersand> <i> <m> <p>                                             : "👿" U1F47F # imp
+<Multi_key> <ampersand> <s> <k> <u> <l> <l>                                     : "💀" U1F480 # skull
+# "💁" U1F481 # information desk person
+<Multi_key> <ampersand> <g> <u> <a> <r> <d> <s> <m> <a> <n>                     : "💂" U1F482 # guardsman
+<Multi_key> <ampersand> <d> <a> <n> <c> <e> <r>                                 : "💃" U1F483 # dancer
+<Multi_key> <ampersand> <l> <i> <p> <s> <t> <i> <c> <k>                         : "💄" U1F484 # lipstick
+# "💅" U1F485 # nail polish
+# "💆" U1F486 # face massage
+<Multi_key> <ampersand> <h> <a> <i> <r> <c> <u> <t>                             : "💇" U1F487 # haircut
+# "💈" U1F488 # barber pole
+<Multi_key> <ampersand> <s> <y> <r> <i> <n> <g> <e>                             : "💉" U1F489 # syringe
+<Multi_key> <ampersand> <p> <i> <l> <l>                                         : "💊" U1F48A # pill
+# "💋" U1F48B # kiss mark
+# "💌" U1F48C # love letter
+<Multi_key> <ampersand> <r> <i> <n> <g>                                         : "💍" U1F48D # ring
+# "💎" U1F48E # gem stone
+# "💏" U1F48F # kiss
+<Multi_key> <ampersand> <b> <o> <u> <q> <u> <e> <t>                             : "💐" U1F490 # bouquet
+# "💑" U1F491 # couple with heart
+<Multi_key> <ampersand> <w> <e> <d> <d> <i> <n> <g>                             : "💒" U1F492 # wedding
+# "💓" U1F493 # beating heart
+# "💔" U1F494 # broken heart
+# "💕" U1F495 # two hearts
+# "💖" U1F496 # sparkling heart
+# "💗" U1F497 # growing heart
+# "💘" U1F498 # heart with arrow
+# "💙" U1F499 # blue heart
+# "💚" U1F49A # green heart
+# "💛" U1F49B # yellow heart
+# "💜" U1F49C # purple heart
+# "💝" U1F49D # heart with ribbon
+# "💞" U1F49E # revolving hearts
+# "💟" U1F49F # heart decoration
+# "💠" U1F4A0 # diamond shape with a dot inside
+# "💡" U1F4A1 # electric light bulb
+# "💢" U1F4A2 # anger symbol
+<Multi_key> <ampersand> <b> <o> <m> <b>                                         : "💣" U1F4A3 # bomb
+# "💤" U1F4A4 # sleeping symbol
+# "💥" U1F4A5 # collision symbol
+# "💦" U1F4A6 # splashing sweat symbol
+<Multi_key> <ampersand> <d> <r> <o> <p> <l> <e> <t>                             : "💧" U1F4A7 # droplet
+# "💨" U1F4A8 # dash symbol
+# "💩" U1F4A9 # pile of poo
+# "💪" U1F4AA # flexed biceps
+# "💫" U1F4AB # dizzy symbol
+# "💬" U1F4AC # speech balloon
+# "💮" U1F4AE # white flower
+# "💯" U1F4AF # hundred points symbol
+# "💰" U1F4B0 # money bag
+# "💱" U1F4B1 # currency exchange
+# "💲" U1F4B2 # heavy dollar sign
+# "💳" U1F4B3 # credit card
+# "💴" U1F4B4 # banknote with yen sign
+# "💵" U1F4B5 # banknote with dollar sign
+# "💸" U1F4B8 # money with wings
+# "💹" U1F4B9 # chart with upwards trend and yen sign
+<Multi_key> <ampersand> <s> <e> <a> <t>                                         : "💺" U1F4BA # seat
+# "💻" U1F4BB # personal computer
+<Multi_key> <ampersand> <b> <r> <i> <e> <f> <c> <a> <s> <e>                     : "💼" U1F4BC # briefcase
+<Multi_key> <ampersand> <m> <i> <n> <i> <d> <i> <s> <c>                         : "💽" U1F4BD # minidisc
+# "💾" U1F4BE # floppy disk
+# "💿" U1F4BF # optical disc
+<Multi_key> <ampersand> <d> <v> <d>                                             : "📀" U1F4C0 # dvd
+# "📁" U1F4C1 # file folder
+# "📂" U1F4C2 # open file folder
+# "📃" U1F4C3 # page with curl
+# "📄" U1F4C4 # page facing up
+<Multi_key> <ampersand> <c> <a> <l> <e> <n> <d> <a> <r>                         : "📅" U1F4C5 # calendar
+# "📆" U1F4C6 # tear-off calendar
+# "📇" U1F4C7 # card index
+# "📈" U1F4C8 # chart with upwards trend
+# "📉" U1F4C9 # chart with downwards trend
+# "📊" U1F4CA # bar chart
+<Multi_key> <ampersand> <c> <l> <i> <p> <b> <o> <a> <r> <d>                     : "📋" U1F4CB # clipboard
+<Multi_key> <ampersand> <p> <u> <s> <h> <p> <i> <n>                             : "📌" U1F4CC # pushpin
+# "📍" U1F4CD # round pushpin
+<Multi_key> <ampersand> <p> <a> <p> <e> <r> <c> <l> <i> <p>                     : "📎" U1F4CE # paperclip
+# "📏" U1F4CF # straight ruler
+# "📐" U1F4D0 # triangular ruler
+# "📑" U1F4D1 # bookmark tabs
+<Multi_key> <ampersand> <l> <e> <d> <g> <e> <r>                                 : "📒" U1F4D2 # ledger
+# "📓" U1F4D3 # notebook
+# "📔" U1F4D4 # notebook with decorative cover
+# "📕" U1F4D5 # closed book
+# "📖" U1F4D6 # open book
+# "📗" U1F4D7 # green book
+# "📘" U1F4D8 # blue book
+# "📙" U1F4D9 # orange book
+<Multi_key> <ampersand> <b> <o> <o> <k> <s>                                     : "📚" U1F4DA # books
+# "📛" U1F4DB # name badge
+<Multi_key> <ampersand> <s> <c> <r> <o> <l> <l>                                 : "📜" U1F4DC # scroll
+<Multi_key> <ampersand> <m> <e> <m> <o>                                         : "📝" U1F4DD # memo
+# "📞" U1F4DE # telephone receiver
+<Multi_key> <ampersand> <p> <a> <g> <e> <r>                                     : "📟" U1F4DF # pager
+# "📠" U1F4E0 # fax machine
+# "📡" U1F4E1 # satellite antenna
+# "📢" U1F4E2 # public address loudspeaker
+# "📣" U1F4E3 # cheering megaphone
+# "📤" U1F4E4 # outbox tray
+# "📥" U1F4E5 # inbox tray
+<Multi_key> <ampersand> <p> <a> <c> <k> <a> <g> <e>                             : "📦" U1F4E6 # package
+# "📧" U1F4E7 # e-mail symbol
+# "📨" U1F4E8 # incoming envelope
+# "📩" U1F4E9 # envelope with downwards arrow above
+# "📪" U1F4EA # closed mailbox with lowered flag
+# "📫" U1F4EB # closed mailbox with raised flag
+<Multi_key> <ampersand> <p> <o> <s> <t> <b> <o> <x>                             : "📮" U1F4EE # postbox
+<Multi_key> <ampersand> <n> <e> <w> <s> <p> <a> <p> <e> <r>                     : "📰" U1F4F0 # newspaper
+# "📱" U1F4F1 # mobile phone
+# "📲" U1F4F2 # mobile phone with rightwards arrow at left
+# "📳" U1F4F3 # vibration mode
+# "📴" U1F4F4 # mobile phone off
+# "📶" U1F4F6 # antenna with bars
+<Multi_key> <ampersand> <c> <a> <m> <e> <r> <a>                                 : "📷" U1F4F7 # camera
+# "📹" U1F4F9 # video camera
+<Multi_key> <ampersand> <t> <e> <l> <e> <v> <i> <s> <i> <o> <n>                 : "📺" U1F4FA # television
+# "📻" U1F4FB # radio
+<Multi_key> <ampersand> <v> <i> <d> <e> <o> <c> <a> <s> <s> <e> <t> <t> <e>     : "📼" U1F4FC # videocassette
+# "🔃" U1F503 # clockwise downwards and upwards open circle arrows
+# "🔊" U1F50A # speaker with three sound waves
+<Multi_key> <ampersand> <b> <a> <t> <t> <e> <r> <y>                             : "🔋" U1F50B # battery
+# "🔌" U1F50C # electric plug
+# "🔍" U1F50D # left-pointing magnifying glass
+# "🔎" U1F50E # right-pointing magnifying glass
+# "🔏" U1F50F # lock with ink pen
+# "🔐" U1F510 # closed lock with key
+# "🔑" U1F511 # key
+# "🔒" U1F512 # lock
+# "🔓" U1F513 # open lock
+# "🔔" U1F514 # bell
+# "🔖" U1F516 # bookmark
+# "🔗" U1F517 # link symbol
+# "🔘" U1F518 # radio button
+# "🔙" U1F519 # back with leftwards arrow above
+# "🔚" U1F51A # end with leftwards arrow above
+# "🔛" U1F51B # on with exclamation mark with left right arrow above
+# "🔜" U1F51C # soon with rightwards arrow above
+# "🔝" U1F51D # top with upwards arrow above
+# "🔞" U1F51E # no one under eighteen symbol
+# "🔟" U1F51F # keycap ten
+# "🔠" U1F520 # input symbol for latin capital letters
+# "🔡" U1F521 # input symbol for latin small letters
+# "🔢" U1F522 # input symbol for numbers
+# "🔣" U1F523 # input symbol for symbols
+# "🔤" U1F524 # input symbol for latin letters
+# "🔥" U1F525 # fire
+# "🔦" U1F526 # electric torch
+<Multi_key> <ampersand> <w> <r> <e> <n> <c> <h>                                 : "🔧" U1F527 # wrench
+<Multi_key> <ampersand> <h> <a> <m> <m> <e> <r>                                 : "🔨" U1F528 # hammer
+# "🔩" U1F529 # nut and bolt
+<Multi_key> <ampersand> <h> <o> <c> <h> <o>                                     : "🔪" U1F52A # hocho
+<Multi_key> <ampersand> <p> <i> <s> <t> <o> <l>                                 : "🔫" U1F52B # pistol
+# "🔮" U1F52E # crystal ball
+# "🔯" U1F52F # six pointed star with middle dot
+# "🔰" U1F530 # japanese symbol for beginner
+# "🔱" U1F531 # trident emblem
+# "🔲" U1F532 # black square button
+# "🔳" U1F533 # white square button
+# "🔴" U1F534 # large red circle
+# "🔵" U1F535 # large blue circle
+# "🔶" U1F536 # large orange diamond
+# "🔷" U1F537 # large blue diamond
+# "🔸" U1F538 # small orange diamond
+# "🔹" U1F539 # small blue diamond
+# "🔺" U1F53A # up-pointing red triangle
+# "🔻" U1F53B # down-pointing red triangle
+# "🔼" U1F53C # up-pointing small red triangle
+# "🔽" U1F53D # down-pointing small red triangle
+# "🕐" U1F550 # clock face one oclock
+# "🕑" U1F551 # clock face two oclock
+# "🕒" U1F552 # clock face three oclock
+# "🕓" U1F553 # clock face four oclock
+# "🕔" U1F554 # clock face five oclock
+# "🕕" U1F555 # clock face six oclock
+# "🕖" U1F556 # clock face seven oclock
+# "🕗" U1F557 # clock face eight oclock
+# "🕘" U1F558 # clock face nine oclock
+# "🕙" U1F559 # clock face ten oclock
+# "🕚" U1F55A # clock face eleven oclock
+# "🕛" U1F55B # clock face twelve oclock
+# "🗻" U1F5FB # mount fuji
+# "🗼" U1F5FC # tokyo tower
+# "🗽" U1F5FD # statue of liberty
+# "🗾" U1F5FE # silhouette of japan
+<Multi_key> <ampersand> <m> <o> <y> <a> <i>                                     : "🗿" U1F5FF # moyai
 
 # Additional emoticons (1F600 — 1F636)
-# "😀" # U+1F600 grinning face
-# "😇" # U+1F607 smiling face with halo
-# "😈" # U+1F608 smiling face with horns
-# "😎" # U+1F60E smiling face with sunglasses
-# "😐" # U+1F610 neutral face
-# "😑" # U+1F611 expressionless face
-# "😕" # U+1F615 confused face
-# "😗" # U+1F617 kissing face
-# "😙" # U+1F619 kissing face with smiling eyes
-# "😛" # U+1F61B face with stuck-out tongue
-# "😟" # U+1F61F worried face
-# "😦" # U+1F626 frowning face with open mouth
-# "😧" # U+1F627 anguished face
-# "😬" # U+1F62C grimacing face
-# "😮" # U+1F62E face with open mouth
-# "😯" # U+1F62F hushed face
-# "😴" # U+1F634 sleeping face
-# "😶" # U+1F636 face without mouth
+# "😀" U1F600 # grinning face
+# "😇" U1F607 # smiling face with halo
+# "😈" U1F608 # smiling face with horns
+# "😎" U1F60E # smiling face with sunglasses
+# "😐" U1F610 # neutral face
+# "😑" U1F611 # expressionless face
+# "😕" U1F615 # confused face
+# "😗" U1F617 # kissing face
+# "😙" U1F619 # kissing face with smiling eyes
+# "😛" U1F61B # face with stuck-out tongue
+# "😟" U1F61F # worried face
+# "😦" U1F626 # frowning face with open mouth
+# "😧" U1F627 # anguished face
+# "😬" U1F62C # grimacing face
+# "😮" U1F62E # face with open mouth
+# "😯" U1F62F # hushed face
+# "😴" U1F634 # sleeping face
+# "😶" U1F636 # face without mouth
 
 # Additional transport and map symbols (1F681 — 1F6C5)
-<Multi_key> <ampersand> <h> <e> <l> <i> <c> <o> <p> <t> <e> <r>                : "🚁" # U+1F681 helicopter
-# "🚂" # U+1F682 steam locomotive
-<Multi_key> <ampersand> <t> <r> <a> <i> <n>                                    : "🚆" # U+1F686 train
-# "🚈" # U+1F688 light rail
-<Multi_key> <ampersand> <t> <r> <a> <m>                                        : "🚊" # U+1F68A tram
-# "🚍" # U+1F68D oncoming bus
-<Multi_key> <ampersand> <t> <r> <o> <l> <l> <e> <y> <b> <u> <s>                : "🚎" # U+1F68E trolleybus
-<Multi_key> <ampersand> <m> <i> <n> <i> <b> <u> <s>                            : "🚐" # U+1F690 minibus
-# "🚔" # U+1F694 oncoming police car
-# "🚖" # U+1F696 oncoming taxi
-# "🚘" # U+1F698 oncoming automobile
-# "🚛" # U+1F69B articulated lorry
-<Multi_key> <ampersand> <t> <r> <a> <c> <t> <o> <r>                            : "🚜" # U+1F69C tractor
-<Multi_key> <ampersand> <m> <o> <n> <o> <r> <a> <i> <l>                        : "🚝" # U+1F69D monorail
-# "🚞" # U+1F69E mountain railway
-# "🚟" # U+1F69F suspension railway
-# "🚠" # U+1F6A0 mountain cableway
-# "🚡" # U+1F6A1 aerial tramway
-<Multi_key> <ampersand> <r> <o> <w> <b> <o> <a> <t>                            : "🚣" # U+1F6A3 rowboat
-# "🚦" # U+1F6A6 vertical traffic light
-# "🚮" # U+1F6AE put litter in its place symbol
-# "🚯" # U+1F6AF do not litter symbol
-# "🚰" # U+1F6B0 potable water symbol
-# "🚱" # U+1F6B1 non-potable water symbol
-# "🚳" # U+1F6B3 no bicycles
-<Multi_key> <ampersand> <b> <i> <c> <y> <c> <l> <i> <s> <t>                    : "🚴" # U+1F6B4 bicyclist
-# "🚵" # U+1F6B5 mountain bicyclist
-# "🚷" # U+1F6B7 no pedestrians
-# "🚸" # U+1F6B8 children crossing
-<Multi_key> <ampersand> <s> <h> <o> <w> <e> <r>                                : "🚿" # U+1F6BF shower
-<Multi_key> <ampersand> <b> <a> <t> <h> <t> <u> <b>                            : "🛁" # U+1F6C1 bathtub
-# "🛂" # U+1F6C2 passport control
-<Multi_key> <ampersand> <c> <u> <s> <t> <o> <m> <s>                            : "🛃" # U+1F6C3 customs
-# "🛄" # U+1F6C4 baggage claim
-# "🛅" # U+1F6C5 left luggage
+<Multi_key> <ampersand> <h> <e> <l> <i> <c> <o> <p> <t> <e> <r>                 : "🚁" U1F681 # helicopter
+# "🚂" U1F682 # steam locomotive
+<Multi_key> <ampersand> <t> <r> <a> <i> <n>                                     : "🚆" U1F686 # train
+# "🚈" U1F688 # light rail
+<Multi_key> <ampersand> <t> <r> <a> <m>                                         : "🚊" U1F68A # tram
+# "🚍" U1F68D # oncoming bus
+<Multi_key> <ampersand> <t> <r> <o> <l> <l> <e> <y> <b> <u> <s>                 : "🚎" U1F68E # trolleybus
+<Multi_key> <ampersand> <m> <i> <n> <i> <b> <u> <s>                             : "🚐" U1F690 # minibus
+# "🚔" U1F694 # oncoming police car
+# "🚖" U1F696 # oncoming taxi
+# "🚘" U1F698 # oncoming automobile
+# "🚛" U1F69B # articulated lorry
+<Multi_key> <ampersand> <t> <r> <a> <c> <t> <o> <r>                             : "🚜" U1F69C # tractor
+<Multi_key> <ampersand> <m> <o> <n> <o> <r> <a> <i> <l>                         : "🚝" U1F69D # monorail
+# "🚞" U1F69E # mountain railway
+# "🚟" U1F69F # suspension railway
+# "🚠" U1F6A0 # mountain cableway
+# "🚡" U1F6A1 # aerial tramway
+<Multi_key> <ampersand> <r> <o> <w> <b> <o> <a> <t>                             : "🚣" U1F6A3 # rowboat
+# "🚦" U1F6A6 # vertical traffic light
+# "🚮" U1F6AE # put litter in its place symbol
+# "🚯" U1F6AF # do not litter symbol
+# "🚰" U1F6B0 # potable water symbol
+# "🚱" U1F6B1 # non-potable water symbol
+# "🚳" U1F6B3 # no bicycles
+<Multi_key> <ampersand> <b> <i> <c> <y> <c> <l> <i> <s> <t>                     : "🚴" U1F6B4 # bicyclist
+# "🚵" U1F6B5 # mountain bicyclist
+# "🚷" U1F6B7 # no pedestrians
+# "🚸" U1F6B8 # children crossing
+<Multi_key> <ampersand> <s> <h> <o> <w> <e> <r>                                 : "🚿" U1F6BF # shower
+<Multi_key> <ampersand> <b> <a> <t> <h> <t> <u> <b>                             : "🛁" U1F6C1 # bathtub
+# "🛂" U1F6C2 # passport control
+<Multi_key> <ampersand> <c> <u> <s> <t> <o> <m> <s>                             : "🛃" U1F6C3 # customs
+# "🛄" U1F6C4 # baggage claim
+# "🛅" U1F6C5 # left luggage
 
 # Other additional symbols (1F30D — 1F567)
-# "🌍" # U+1F30D earth globe europe-africa
-# "🌎" # U+1F30E earth globe americas
-# "🌐" # U+1F310 globe with meridians
-# "🌒" # U+1F312 waxing crescent moon symbol
-# "🌖" # U+1F316 waning gibbous moon symbol
-# "🌗" # U+1F317 last quarter moon symbol
-# "🌘" # U+1F318 waning crescent moon symbol
-# "🌚" # U+1F31A new moon with face
-# "🌜" # U+1F31C last quarter moon with face
-# "🌝" # U+1F31D full moon with face
-# "🌞" # U+1F31E sun with face
-# "🌲" # U+1F332 evergreen tree
-# "🌳" # U+1F333 deciduous tree
-<Multi_key> <ampersand> <l> <e> <m> <o> <n>                                    : "🍋" # U+1F34B lemon
-<Multi_key> <ampersand> <p> <e> <a> <r>                                        : "🍐" # U+1F350 pear
-# "🍼" # U+1F37C baby bottle
-# "🏇" # U+1F3C7 horse racing
-# "🏉" # U+1F3C9 rugby football
-# "🏤" # U+1F3E4 european post office
-<Multi_key> <ampersand> <r> <a> <t>                                            : "🐀" # U+1F400 rat
-<Multi_key> <ampersand> <m> <o> <u> <s> <e>                                    : "🐁" # U+1F401 mouse
-<Multi_key> <ampersand> <o> <x>                                                : "🐂" # U+1F402 ox
-# "🐃" # U+1F403 water buffalo
-<Multi_key> <ampersand> <c> <o> <w>                                            : "🐄" # U+1F404 cow
-<Multi_key> <ampersand> <t> <i> <g> <e> <r>                                    : "🐅" # U+1F405 tiger
-<Multi_key> <ampersand> <l> <e> <o> <p> <a> <r> <d>                            : "🐆" # U+1F406 leopard
-<Multi_key> <ampersand> <r> <a> <b> <b> <i> <t>                                : "🐇" # U+1F407 rabbit
-<Multi_key> <ampersand> <c> <a> <t>                                            : "🐈" # U+1F408 cat
-<Multi_key> <ampersand> <d> <r> <a> <g> <o> <n>                                : "🐉" # U+1F409 dragon
-<Multi_key> <ampersand> <c> <r> <o> <c> <o> <d> <i> <l> <e>                    : "🐊" # U+1F40A crocodile
-<Multi_key> <ampersand> <w> <h> <a> <l> <e>                                    : "🐋" # U+1F40B whale
-<Multi_key> <ampersand> <r> <a> <m>                                            : "🐏" # U+1F40F ram
-<Multi_key> <ampersand> <g> <o> <a> <t>                                        : "🐐" # U+1F410 goat
-<Multi_key> <ampersand> <r> <o> <o> <s> <t> <e> <r>                            : "🐓" # U+1F413 rooster
-<Multi_key> <ampersand> <d> <o> <g>                                            : "🐕" # U+1F415 dog
-<Multi_key> <ampersand> <p> <i> <g>                                            : "🐖" # U+1F416 pig
-# "🐪" # U+1F42A dromedary camel
-# "👥" # U+1F465 busts in silhouette
-# "👬" # U+1F46C two men holding hands
-# "👭" # U+1F46D two women holding hands
-# "💭" # U+1F4AD thought balloon
-# "💶" # U+1F4B6 banknote with euro sign
-# "💷" # U+1F4B7 banknote with pound sign
-# "📬" # U+1F4EC open mailbox with raised flag
-# "📭" # U+1F4ED open mailbox with lowered flag
-# "📯" # U+1F4EF postal horn
-# "📵" # U+1F4F5 no mobile phones
-# "🔀" # U+1F500 twisted rightwards arrows
-# "🔁" # U+1F501 clockwise rightwards and leftwards open circle arrows
-# "🔂" # U+1F502 clockwise rightwards and leftwards open circle arrows with circled one overlay
-# "🔄" # U+1F504 anticlockwise downwards and upwards open circle arrows
-# "🔅" # U+1F505 low brightness symbol
-# "🔆" # U+1F506 high brightness symbol
-# "🔇" # U+1F507 speaker with cancellation stroke
-# "🔉" # U+1F509 speaker with one sound wave
-# "🔕" # U+1F515 bell with cancellation stroke
-<Multi_key> <ampersand> <m> <i> <c> <r> <o> <s> <c> <o> <p> <e>                : "🔬" # U+1F52C microscope
-<Multi_key> <ampersand> <t> <e> <l> <e> <s> <c> <o> <p> <e>                    : "🔭" # U+1F52D telescope
-# "🕜" # U+1F55C clock face one-thirty
-# "🕝" # U+1F55D clock face two-thirty
-# "🕞" # U+1F55E clock face three-thirty
-# "🕟" # U+1F55F clock face four-thirty
-# "🕠" # U+1F560 clock face five-thirty
-# "🕡" # U+1F561 clock face six-thirty
-# "🕢" # U+1F562 clock face seven-thirty
-# "🕣" # U+1F563 clock face eight-thirty
-# "🕤" # U+1F564 clock face nine-thirty
-# "🕥" # U+1F565 clock face ten-thirty
-# "🕦" # U+1F566 clock face eleven-thirty
-# "🕧" # U+1F567 clock face twelve-thirty
+# "🌍" U1F30D # earth globe europe-africa
+# "🌎" U1F30E # earth globe americas
+# "🌐" U1F310 # globe with meridians
+# "🌒" U1F312 # waxing crescent moon symbol
+# "🌖" U1F316 # waning gibbous moon symbol
+# "🌗" U1F317 # last quarter moon symbol
+# "🌘" U1F318 # waning crescent moon symbol
+# "🌚" U1F31A # new moon with face
+# "🌜" U1F31C # last quarter moon with face
+# "🌝" U1F31D # full moon with face
+# "🌞" U1F31E # sun with face
+# "🌲" U1F332 # evergreen tree
+# "🌳" U1F333 # deciduous tree
+<Multi_key> <ampersand> <l> <e> <m> <o> <n>                                     : "🍋" U1F34B # lemon
+<Multi_key> <ampersand> <p> <e> <a> <r>                                         : "🍐" U1F350 # pear
+# "🍼" U1F37C # baby bottle
+# "🏇" U1F3C7 # horse racing
+# "🏉" U1F3C9 # rugby football
+# "🏤" U1F3E4 # european post office
+<Multi_key> <ampersand> <r> <a> <t>                                             : "🐀" U1F400 # rat
+# "🐁" U1F401 # mouse
+<Multi_key> <ampersand> <o> <x>                                                 : "🐂" U1F402 # ox
+# "🐃" U1F403 # water buffalo
+# "🐄" U1F404 # cow
+# "🐅" U1F405 # tiger
+<Multi_key> <ampersand> <l> <e> <o> <p> <a> <r> <d>                             : "🐆" U1F406 # leopard
+# "🐇" U1F407 # rabbit
+# "🐈" U1F408 # cat
+# "🐉" U1F409 # dragon
+<Multi_key> <ampersand> <c> <r> <o> <c> <o> <d> <i> <l> <e>                     : "🐊" U1F40A # crocodile
+<Multi_key> <ampersand> <w> <h> <a> <l> <e>                                     : "🐋" U1F40B # whale
+<Multi_key> <ampersand> <r> <a> <m>                                             : "🐏" U1F40F # ram
+<Multi_key> <ampersand> <g> <o> <a> <t>                                         : "🐐" U1F410 # goat
+<Multi_key> <ampersand> <r> <o> <o> <s> <t> <e> <r>                             : "🐓" U1F413 # rooster
+# "🐕" U1F415 # dog
+# "🐖" U1F416 # pig
+# "🐪" U1F42A # dromedary camel
+# "👥" U1F465 # busts in silhouette
+# "👬" U1F46C # two men holding hands
+# "👭" U1F46D # two women holding hands
+# "💭" U1F4AD # thought balloon
+# "💶" U1F4B6 # banknote with euro sign
+# "💷" U1F4B7 # banknote with pound sign
+# "📬" U1F4EC # open mailbox with raised flag
+# "📭" U1F4ED # open mailbox with lowered flag
+# "📯" U1F4EF # postal horn
+# "📵" U1F4F5 # no mobile phones
+# "🔀" U1F500 # twisted rightwards arrows
+# "🔁" U1F501 # clockwise rightwards and leftwards open circle arrows
+# "🔂" U1F502 # clockwise rightwards and leftwards open circle arrows with circled one overlay
+# "🔄" U1F504 # anticlockwise downwards and upwards open circle arrows
+# "🔅" U1F505 # low brightness symbol
+# "🔆" U1F506 # high brightness symbol
+# "🔇" U1F507 # speaker with cancellation stroke
+# "🔉" U1F509 # speaker with one sound wave
+# "🔕" U1F515 # bell with cancellation stroke
+<Multi_key> <ampersand> <m> <i> <c> <r> <o> <s> <c> <o> <p> <e>                 : "🔬" U1F52C # microscope
+<Multi_key> <ampersand> <t> <e> <l> <e> <s> <c> <o> <p> <e>                     : "🔭" U1F52D # telescope
+# "🕜" U1F55C # clock face one-thirty
+# "🕝" U1F55D # clock face two-thirty
+# "🕞" U1F55E # clock face three-thirty
+# "🕟" U1F55F # clock face four-thirty
+# "🕠" U1F560 # clock face five-thirty
+# "🕡" U1F561 # clock face six-thirty
+# "🕢" U1F562 # clock face seven-thirty
+# "🕣" U1F563 # clock face eight-thirty
+# "🕤" U1F564 # clock face nine-thirty
+# "🕥" U1F565 # clock face ten-thirty
+# "🕦" U1F566 # clock face eleven-thirty
+# "🕧" U1F567 # clock face twelve-thirty
 
