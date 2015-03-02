@@ -24,6 +24,8 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.Language}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
                 <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"></ComboBox>
@@ -54,6 +56,14 @@
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static p:Resources.BeepOnInvalid}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
                 <CheckBox Grid.Row="5" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
                           IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static p:Resources.KeepOriginalKey}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="6" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
+                          IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{x:Static p:Resources.InsertZwsp}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="7" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
+                          IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"/>
 
             </Grid>
         </GroupBox>

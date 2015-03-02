@@ -198,7 +198,7 @@ static class Composer
 
             if (is_office)
             {
-                input.Add(NewInputKey((ScanCodeShort)' '));
+                input.Add(NewInputKey((ScanCodeShort)'\u200b'));
                 input.Add(NewInputKey((VirtualKeyShort)VK.LEFT));
             }
 
@@ -210,7 +210,8 @@ static class Composer
             if (is_office)
             {
                 input.Add(NewInputKey((VirtualKeyShort)VK.RIGHT));
-                input.Add(NewInputKey((VirtualKeyShort)VK.BACK));
+                if (!Settings.InsertZwsp.Value)
+                    input.Add(NewInputKey((VirtualKeyShort)VK.BACK));
             }
 
             NativeMethods.SendInput((uint)input.Count, input.ToArray(),

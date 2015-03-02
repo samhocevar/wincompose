@@ -36,6 +36,7 @@ namespace WinCompose
             DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
             BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
             KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
+            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
         }
 
         public static SettingsEntry<Key> ComposeKey { get; private set; }
@@ -49,6 +50,8 @@ namespace WinCompose
         public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
 
         public static SettingsEntry<bool> KeepOriginalKey { get; private set; }
+
+        public static SettingsEntry<bool> InsertZwsp { get; private set; }
 
         public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
 
@@ -108,6 +111,7 @@ namespace WinCompose
             DiscardOnInvalid.Load();
             BeepOnInvalid.Load();
             KeepOriginalKey.Load();
+            InsertZwsp.Load();
         }
 
         public static void SaveConfig()
@@ -119,6 +123,7 @@ namespace WinCompose
             DiscardOnInvalid.Save();
             BeepOnInvalid.Save();
             KeepOriginalKey.Save();
+            InsertZwsp.Save();
         }
 
         public static void LoadSequences()

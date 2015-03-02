@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="IconActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>../res/icon_active.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -131,6 +132,12 @@
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Keep original compose key</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Insert zero-width spaces</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Beep on invalid</value>
@@ -213,19 +220,10 @@
   <data name="ShowSettings" xml:space="preserve">
     <value>Settings…</value>
   </data>
-  <data name="ShowSequences" xml:space="preserve">
-    <value>Show sequences…</value>
-  </data>
-  <data name="ShowSettings" xml:space="preserve">
-    <value>Settings…</value>
-  </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>WinCompose</value>
-  </data>
-  <data name="ErrorStartingGui" xml:space="preserve">
-    <value>Unable to start the GUI process. Please reinstall WinCompose</value>
   </data>
 </root>
