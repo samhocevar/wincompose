@@ -132,19 +132,30 @@ static class Composer
 
     private static void SendString(string str)
     {
-        /* HACK: GTK+ applications behave differently with Unicode, and some
-         * applications such as XChat for Windows rename their own top-level
-         * window, so we parse through the names we know in order to detect
-         * a GTK+ application. */
-        bool is_gtk = false;
+        bool is_gtk = false, is_office = false;
+
         const int len = 256;
         StringBuilder buf = new StringBuilder(len);
         var hwnd = NativeMethods.GetForegroundWindow();
         if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
         {
             string wclass = buf.ToString();
+
+            /* HACK: GTK+ applications behave differently with Unicode, and some
+             * applications such as XChat for Windows rename their own top-level
+             * window, so we parse through the names we know in order to detect
+             * a GTK+ application. */
             if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
                 is_gtk = true;
+
+            /* HACK: in MS Office, some symbol insertions change the text font
+             * without returning to the original font. To avoid this, we output
+             * a space character, then go left, insert our actual symbol, then
+             * go right and backspace. */
+            /* These are the actual window class names for Outlook and Word…
+             * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
+            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
+                is_office = true;
         }
 
         if (is_gtk)
@@ -163,25 +174,45 @@ static class Composer
         }
         else
         {
-            INPUT[] input = new INPUT[str.Length];
+            List<INPUT> input = new List<INPUT>();
 
-            for (int i = 0; i < input.Length; i++)
+            if (is_office)
             {
-                input[i].type = EINPUT.KEYBOARD;
-                input[i].U.ki.wVk = 0;
-                input[i].U.ki.wScan = (ScanCodeShort)str[i];
-                input[i].U.ki.time = 0;
-                input[i].U.ki.dwFlags = KEYEVENTF.UNICODE;
-                input[i].U.ki.dwExtraInfo = UIntPtr.Zero;
+                input.Add(NewInputKey((ScanCodeShort)' '));
+                input.Add(NewInputKey((VirtualKeyShort)VK.LEFT));
             }
 
-            NativeMethods.SendInput((uint)input.Length, input, Marshal.SizeOf(typeof(INPUT)));
+            for (int i = 0; i < str.Length; i++)
+            {
+                input.Add(NewInputKey((ScanCodeShort)str[i]));
+            }
+
+            if (is_office)
+            {
+                input.Add(NewInputKey((VirtualKeyShort)VK.RIGHT));
+                input.Add(NewInputKey((VirtualKeyShort)VK.BACK));
+            }
+
+            NativeMethods.SendInput((uint)input.Count, input.ToArray(),
+                                    Marshal.SizeOf(typeof(INPUT)));
         }
     }
 
     public static bool IsComposing()
     {
         return m_composing;
+    }
+
+    private static INPUT NewInputKey(object o)
+    {
+        INPUT ret = new INPUT();
+        ret.type = EINPUT.KEYBOARD;
+        ret.U.ki.wVk = (VirtualKeyShort)(o is VirtualKeyShort ? o : 0);
+        ret.U.ki.wScan = (ScanCodeShort)(o is ScanCodeShort ? o : 0);
+        ret.U.ki.time = 0;
+        ret.U.ki.dwFlags = KEYEVENTF.UNICODE;
+        ret.U.ki.dwExtraInfo = UIntPtr.Zero;
+        return ret;
     }
 
     private static void SendKeyDown(VK vk)
