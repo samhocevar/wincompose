@@ -21,14 +21,14 @@ namespace WinCompose
         public CategoryViewModel(string name, int start, int end)
         {
             Name = name;
-            RangeStart = start;          
+            RangeStart = start;
             RangeEnd = end;
         }
 
         public string Name { get; private set; }
 
         public int RangeStart { get; private set; }
-        
+
         public int RangeEnd { get; private set; }
 
         public bool IsSelected { get { return isSelected; } set { SetValue(ref isSelected, value, "IsSelected", RefreshFilter); } }

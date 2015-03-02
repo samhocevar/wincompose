@@ -68,7 +68,7 @@ public class Key
         { VK.LEFT,  "◀" },
         { VK.RIGHT, "▶" },
     };
-    
+
     private readonly VK m_vk;
 
     private readonly string m_str;
@@ -89,7 +89,7 @@ public class Key
         string ret;
         if (m_key_symbols.TryGetValue(m_vk, out ret))
             return ret;
-        
+
         if (m_vk != VK.NONE)
         {
             return string.Format("VK.{0}", m_vk);

@@ -46,7 +46,7 @@ namespace WinCompose
         public static SettingsEntry<bool> CaseInsensitive { get; private set; }
 
         public static SettingsEntry<bool> DiscardOnInvalid { get; private set; }
-        
+
         public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
 
         public static SettingsEntry<bool> KeepOriginalKey { get; private set; }

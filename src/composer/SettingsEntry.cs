@@ -22,7 +22,7 @@ namespace WinCompose
     /// </summary>
     public abstract class SettingsEntry
     {
-        private const string MutexName = "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}";     
+        private const string MutexName = "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}";
         private static readonly Mutex SettingsMutex = new Mutex(false, MutexName);
 
         protected SettingsEntry(string section, string key, object defaultValue)
@@ -146,7 +146,7 @@ namespace WinCompose
                 var converter = System.ComponentModel.TypeDescriptor.GetConverter(typeof(T));
                 if (converter.CanConvertFrom(typeof(string)))
                     return converter.ConvertFrom(str);
-                
+
                 // The default implementation of Deserialize uses the Convert class.
                 return (T)Convert.ChangeType(str, typeof(T));
             }
