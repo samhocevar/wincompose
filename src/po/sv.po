@@ -165,10 +165,6 @@ msgstr ""
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "av Sam Hocevar <sam@hocevar.net>\n"
 
-#: ui.ahk:132
-msgid "running on AHK v@AHK_VERSION@\n"
-msgstr "körs på AHK v@AHK_VERSION@\n"
-
 #: ui.ahk:152
 msgid "Sequences"
 msgstr "Sekvenser"
