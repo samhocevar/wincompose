@@ -5,7 +5,7 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.99beta20150201
+VERSION = 0.6.99beta20150302
 
 ISS = installer.iss
 PO = $(wildcard po/*.po)

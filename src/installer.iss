@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.6.99beta"
+#define VERSION "0.6.99beta20150302"
 
 [Setup]
 AppName = {#NAME}
@@ -17,7 +17,6 @@ ShowLanguageDialog = auto
 
 [Files]
 Source: "bin\Release\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\{#NAME}.gui.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "rules\Xorg.txt"; DestDir: "{app}\res"
 Source: "rules\Xcompose.txt"; DestDir: "{app}\res"
 Source: "rules\Emoji.txt"; DestDir: "{app}\res"
@@ -64,7 +63,6 @@ Type: dirifempty; Name: "{app}\locale"
 
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#NAME}.exe"; Flags: runhidden
-Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#NAME}.gui.exe"; Flags: runhidden
 
 [UninstallDelete]
 Type: dirifempty; Name: "{app}\res"
