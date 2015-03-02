@@ -1,5 +1,5 @@
 //
-//  WinCompose — a compose key for Windows
+//  WinCompose — a compose key for Windows — http://wincompose.info/
 //
 //  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
