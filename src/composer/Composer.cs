@@ -132,6 +132,7 @@ static class Composer
 
     private static void SendString(string str)
     {
+        List<VK> modifiers = new List<VK>();
         bool is_gtk = false, is_office = false;
 
         const int len = 256;
@@ -158,10 +159,29 @@ static class Composer
                 is_office = true;
         }
 
+        /* Clear keyboard modifiers if we need one of our custom hacks */
+        if (is_gtk || is_office)
+        {
+            VK[] all_modifiers = new VK[]
+            {
+                VK.LSHIFT, VK.RSHIFT,
+                VK.LCONTROL, VK.RCONTROL,
+                VK.LMENU, VK.RMENU,
+            };
+
+            foreach (VK vk in all_modifiers)
+                if ((NativeMethods.GetKeyState(vk) & 0x80) == 0x80)
+                    modifiers.Add(vk);
+
+            foreach (VK vk in modifiers)
+                SendKeyUp(vk);
+        }
+
         if (is_gtk)
         {
-            /* Wikipedia says Ctrl+Shift+u, release, then type the four hex digits, and
-             * press Enter (http://en.wikipedia.org/wiki/Unicode_input). */
+            /* Wikipedia says Ctrl+Shift+u, release, then type the four hex
+             * digits, and press Enter.
+             * (http://en.wikipedia.org/wiki/Unicode_input). */
             SendKeyDown(VK.LCONTROL);
             SendKeyDown(VK.LSHIFT);
             SendKeyPress((VK)'U');
@@ -196,6 +216,13 @@ static class Composer
             NativeMethods.SendInput((uint)input.Count, input.ToArray(),
                                     Marshal.SizeOf(typeof(INPUT)));
         }
+
+        /* Restore keyboard modifiers if we needed one of our custom hacks */
+        if (is_gtk || is_office)
+        {
+            foreach (VK vk in modifiers)
+                SendKeyDown(vk);
+        }
     }
 
     public static bool IsComposing()
@@ -203,12 +230,26 @@ static class Composer
         return m_composing;
     }
 
-    private static INPUT NewInputKey(object o)
+    private static INPUT NewInputKey(VirtualKeyShort vk)
+    {
+        INPUT ret = NewInputKey();
+        ret.U.ki.wVk = vk;
+        return ret;
+    }
+
+    private static INPUT NewInputKey(ScanCodeShort sc)
+    {
+        INPUT ret = NewInputKey();
+        ret.U.ki.wScan = sc;
+        return ret;
+    }
+
+    private static INPUT NewInputKey()
     {
         INPUT ret = new INPUT();
         ret.type = EINPUT.KEYBOARD;
-        ret.U.ki.wVk = (VirtualKeyShort)(o is VirtualKeyShort ? o : 0);
-        ret.U.ki.wScan = (ScanCodeShort)(o is ScanCodeShort ? o : 0);
+        ret.U.ki.wVk = (VirtualKeyShort)0;
+        ret.U.ki.wScan = (ScanCodeShort)0;
         ret.U.ki.time = 0;
         ret.U.ki.dwFlags = KEYEVENTF.UNICODE;
         ret.U.ki.dwExtraInfo = UIntPtr.Zero;
