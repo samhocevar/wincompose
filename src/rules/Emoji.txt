@@ -12,19 +12,19 @@
 #  sed -ne 's/.* # //p' Emoji.txt | sort | grep -v ' ' | while read i; do echo "$(grep "# $i" Emoji.txt | wc -l) $i"; done | grep '^1 '
 
 # Emoticons (1F601 — 1F64F)
-# "😁" U1F601 # grinning face with smiling eyes
+<Multi_key> <ampersand> <g> <r> <i> <n> <n> <i> <n> <g>                         : "😁" U1F601 # grinning face with smiling eyes
 # "😂" U1F602 # face with tears of joy
 # "😃" U1F603 # smiling face with open mouth
 # "😄" U1F604 # smiling face with open mouth and smiling eyes
 # "😅" U1F605 # smiling face with open mouth and cold sweat
 # "😆" U1F606 # smiling face with open mouth and tightly-closed eyes
-# "😉" U1F609 # winking face
+<Multi_key> <ampersand> <w> <i> <n> <k> <i> <n> <g>                             : "😉" U1F609 # winking face
 # "😊" U1F60A # smiling face with smiling eyes
 # "😋" U1F60B # face savouring delicious food
-# "😌" U1F60C # relieved face
+<Multi_key> <ampersand> <r> <e> <l> <i> <e> <v> <e> <d>                         : "😌" U1F60C # relieved face
 # "😍" U1F60D # smiling face with heart-shaped eyes
-# "😏" U1F60F # smirking face
-# "😒" U1F612 # unamused face
+<Multi_key> <ampersand> <s> <m> <i> <r> <k> <i> <n> <g>                         : "😏" U1F60F # smirking face
+<Multi_key> <ampersand> <u> <n> <a> <m> <u> <s> <e> <d>                         : "😒" U1F612 # unamused face
 # "😓" U1F613 # face with cold sweat
 # "😔" U1F614 # pensive face
 # "😖" U1F616 # confounded face
@@ -124,9 +124,9 @@
 # "🚨" U1F6A8 # police cars revolving light
 # "🚩" U1F6A9 # triangular flag on post
 <Multi_key> <ampersand> <d> <o> <o> <r>                                         : "🚪" U1F6AA # door
-# "🚫" U1F6AB # no entry sign
-# "🚬" U1F6AC # smoking symbol
-# "🚭" U1F6AD # no smoking symbol
+<Multi_key> <ampersand> <n> <o> <e> <n> <t> <r> <y>                             : "🚫" U1F6AB # no entry sign
+<Multi_key> <ampersand> <s> <m> <o> <k> <i> <n> <g>                             : "🚬" U1F6AC # smoking symbol
+<Multi_key> <ampersand> <n> <o> <s> <m> <o> <k> <i> <n> <g>                     : "🚭" U1F6AD # no smoking symbol
 <Multi_key> <ampersand> <b> <i> <c> <y> <c> <l> <e>                             : "🚲" U1F6B2 # bicycle
 <Multi_key> <ampersand> <p> <e> <d> <e> <s> <t> <r> <i> <a> <n>                 : "🚶" U1F6B6 # pedestrian
 # "🚹" U1F6B9 # mens symbol
@@ -144,26 +144,26 @@
 # "🅾" U1F17E # negative squared latin capital letter o
 # "🅿" U1F17F # negative squared latin capital letter p
 # "🆎" U1F18E # negative squared ab
-# "🆑" U1F191 # squared cl
-# "🆒" U1F192 # squared cool
-# "🆓" U1F193 # squared free
-# "🆔" U1F194 # squared id
-# "🆕" U1F195 # squared new
-# "🆖" U1F196 # squared ng
-# "🆗" U1F197 # squared ok
-# "🆘" U1F198 # squared sos
-# "🆙" U1F199 # squared up with exclamation mark
-# "🆚" U1F19A # squared vs
-# "🇪" #  🇩🇪U+1F1E9 regional indicator symbol letter d + regional indicator symbol letter e
-# "🇧" #  🇬🇧U+1F1EC regional indicator symbol letter g + regional indicator symbol letter b
-# "🇳" #  🇨🇳U+1F1E8 regional indicator symbol letter c + regional indicator symbol letter n
-# "🇵" #  🇯🇵U+1F1EF regional indicator symbol letter j + regional indicator symbol letter p
-# "🇷" #  🇰🇷U+1F1F0 regional indicator symbol letter k + regional indicator symbol letter r
-# "🇷" #  🇫🇷U+1F1EB regional indicator symbol letter f + regional indicator symbol letter r
-# "🇸" #  🇪🇸U+1F1EA regional indicator symbol letter e + regional indicator symbol letter s
-# "🇹" #  🇮🇹U+1F1EE regional indicator symbol letter i + regional indicator symbol letter t
-# "🇸" #  🇺🇸U+1F1FA regional indicator symbol letter u + regional indicator symbol letter s
-# "🇺" #  🇷🇺U+1F1F7 regional indicator symbol letter r + regional indicator symbol letter u
+<Multi_key> <ampersand> <bracketleft> <c> <l> <bracketright>                    : "🆑" U1F191 # squared cl
+<Multi_key> <ampersand> <bracketleft> <c> <o> <o> <l> <bracketright>            : "🆒" U1F192 # squared cool
+<Multi_key> <ampersand> <bracketleft> <f> <r> <e> <e> <bracketright>            : "🆓" U1F193 # squared free
+<Multi_key> <ampersand> <bracketleft> <i> <d> <bracketright>                    : "🆔" U1F194 # squared id
+<Multi_key> <ampersand> <bracketleft> <n> <e> <w> <bracketright>                : "🆕" U1F195 # squared new
+<Multi_key> <ampersand> <bracketleft> <n> <g> <bracketright>                    : "🆖" U1F196 # squared ng
+<Multi_key> <ampersand> <bracketleft> <o> <k> <bracketright>                    : "🆗" U1F197 # squared ok
+<Multi_key> <ampersand> <bracketleft> <s> <o> <s> <bracketright>                : "🆘" U1F198 # squared sos
+<Multi_key> <ampersand> <bracketleft> <u> <p> <!> <bracketright>                : "🆙" U1F199 # squared up with exclamation mark
+<Multi_key> <ampersand> <bracketleft> <v> <s> <bracketright>                    : "🆚" U1F19A # squared vs
+# "🇩🇪" # U+1F1E9 regional indicator symbol letter d + regional indicator symbol letter e
+# "🇬🇧" # U+1F1EC regional indicator symbol letter g + regional indicator symbol letter b
+# "🇨🇳" # U+1F1E8 regional indicator symbol letter c + regional indicator symbol letter n
+# "🇯🇵" # U+1F1EF regional indicator symbol letter j + regional indicator symbol letter p
+# "🇰🇷" # U+1F1F0 regional indicator symbol letter k + regional indicator symbol letter r
+# "🇫🇷" # U+1F1EB regional indicator symbol letter f + regional indicator symbol letter r
+# "🇪🇸" # U+1F1EA regional indicator symbol letter e + regional indicator symbol letter s
+# "🇮🇹" # U+1F1EE regional indicator symbol letter i + regional indicator symbol letter t
+# "🇺🇸" # U+1F1FA regional indicator symbol letter u + regional indicator symbol letter s
+# "🇷🇺" # U+1F1F7 regional indicator symbol letter r + regional indicator symbol letter u
 # "🈁" U1F201 # squared katakana koko
 # "🈂" U1F202 # squared katakana sa
 # "🈚" U1F21A # squared cjk unified ideograph-7121
@@ -180,22 +180,17 @@
 # "🉐" U1F250 # circled ideograph advantage
 # "🉑" U1F251 # circled ideograph accept
 
-# "©" U00A9 # copyright sign
-# "®" U00AE # registered sign
-# "‼" U203C # double exclamation mark
-# "⁉" U2049 # exclamation question mark
-# "8⃣" U0038 # digit eight + combining enclosing keycap
-# "9⃣" U0039 # digit nine + combining enclosing keycap
-# "7⃣" U0037 # digit seven + combining enclosing keycap
-# "6⃣" U0036 # digit six + combining enclosing keycap
-# "1⃣" U0031 # digit one + combining enclosing keycap
+# "#⃣" U0023 # number sign + combining enclosing keycap
 # "0⃣" U0030 # digit zero + combining enclosing keycap
+# "1⃣" U0031 # digit one + combining enclosing keycap
 # "2⃣" U0032 # digit two + combining enclosing keycap
 # "3⃣" U0033 # digit three + combining enclosing keycap
-# "5⃣" U0035 # digit five + combining enclosing keycap
 # "4⃣" U0034 # digit four + combining enclosing keycap
-# "#⃣" U0023 # number sign + combining enclosing keycap
-# "™" U2122 # trade mark sign
+# "5⃣" U0035 # digit five + combining enclosing keycap
+# "6⃣" U0036 # digit six + combining enclosing keycap
+# "7⃣" U0037 # digit seven + combining enclosing keycap
+# "8⃣" U0038 # digit eight + combining enclosing keycap
+# "9⃣" U0039 # digit nine + combining enclosing keycap
 # "ℹ" U2139 # information source
 # "↔" U2194 # left right arrow
 # "↕" U2195 # up down arrow
@@ -206,13 +201,13 @@
 # "↩" U21A9 # leftwards arrow with hook
 # "↪" U21AA # rightwards arrow with hook
 <Multi_key> <ampersand> <w> <a> <t> <c> <h>                                     : "⌚" U231A # watch
-# "⌛" U231B # hourglass
+<Multi_key> <ampersand> <h> <o> <u> <r> <g> <l> <a> <s> <s>                     : "⌛" U231B # hourglass
 # "⏩" U23E9 # black right-pointing double triangle
 # "⏪" U23EA # black left-pointing double triangle
 # "⏫" U23EB # black up-pointing double triangle
 # "⏬" U23EC # black down-pointing double triangle
 # "⏰" U23F0 # alarm clock
-# "⏳" U23F3 # hourglass with flowing sand
+<Multi_key> <ampersand> <s> <a> <n> <d> <g> <l> <a> <s> <s>                     : "⏳" U23F3 # hourglass with flowing sand
 # "▪" U25AA # black small square
 # "▫" U25AB # white small square
 # "▶" U25B6 # black right-pointing triangle
@@ -334,13 +329,13 @@
 <Multi_key> <ampersand> <c> <h> <e> <r> <r> <i> <e> <s>                         : "🍒" U1F352 # cherries
 <Multi_key> <ampersand> <s> <t> <r> <a> <w> <b> <e> <r> <r> <y>                 : "🍓" U1F353 # strawberry
 <Multi_key> <ampersand> <h> <a> <m> <b> <u> <r> <g> <e> <r>                     : "🍔" U1F354 # hamburger
-# "🍕" U1F355 # slice of pizza
+<Multi_key> <ampersand> <p> <i> <z> <z> <a>                                     : "🍕" U1F355 # slice of pizza
 # "🍖" U1F356 # meat on bone
-# "🍗" U1F357 # poultry leg
+<Multi_key> <ampersand> <p> <o> <u> <l> <t> <r> <y>                             : "🍗" U1F357 # poultry leg
 # "🍘" U1F358 # rice cracker
 # "🍙" U1F359 # rice ball
 # "🍚" U1F35A # cooked rice
-# "🍛" U1F35B # curry and rice
+<Multi_key> <ampersand> <c> <u> <r> <r> <y>                                     : "🍛" U1F35B # curry and rice
 # "🍜" U1F35C # steaming bowl
 <Multi_key> <ampersand> <s> <p> <a> <g> <h> <e> <t> <t> <i>                     : "🍝" U1F35D # spaghetti
 <Multi_key> <ampersand> <b> <r> <e> <a> <d>                                     : "🍞" U1F35E # bread
@@ -349,20 +344,20 @@
 <Multi_key> <ampersand> <d> <a> <n> <g> <o>                                     : "🍡" U1F361 # dango
 <Multi_key> <ampersand> <o> <d> <e> <n>                                         : "🍢" U1F362 # oden
 <Multi_key> <ampersand> <s> <u> <s> <h> <i>                                     : "🍣" U1F363 # sushi
-# "🍤" U1F364 # fried shrimp
+<Multi_key> <ampersand> <s> <h> <r> <i> <m> <p>                                 : "🍤" U1F364 # fried shrimp
 # "🍥" U1F365 # fish cake with swirl design
 # "🍦" U1F366 # soft ice cream
 # "🍧" U1F367 # shaved ice
 # "🍨" U1F368 # ice cream
 <Multi_key> <ampersand> <d> <o> <u> <g> <h> <n> <u> <t>                         : "🍩" U1F369 # doughnut
 <Multi_key> <ampersand> <c> <o> <o> <k> <i> <e>                                 : "🍪" U1F36A # cookie
-# "🍫" U1F36B # chocolate bar
+<Multi_key> <ampersand> <c> <h> <o> <c> <o> <l> <a> <t> <e>                     : "🍫" U1F36B # chocolate bar
 <Multi_key> <ampersand> <c> <a> <n> <d> <y>                                     : "🍬" U1F36C # candy
 <Multi_key> <ampersand> <l> <o> <l> <l> <i> <p> <o> <p>                         : "🍭" U1F36D # lollipop
 <Multi_key> <ampersand> <c> <u> <s> <t> <a> <r> <d>                             : "🍮" U1F36E # custard
 # "🍯" U1F36F # honey pot
 <Multi_key> <ampersand> <s> <h> <o> <r> <t> <c> <a> <k> <e>                     : "🍰" U1F370 # shortcake
-# "🍱" U1F371 # bento box
+<Multi_key> <ampersand> <b> <e> <n> <t> <o>                                     : "🍱" U1F371 # bento box
 # "🍲" U1F372 # pot of food
 <Multi_key> <ampersand> <c> <o> <o> <k> <i> <n> <g>                             : "🍳" U1F373 # cooking
 # "🍴" U1F374 # fork and knife
@@ -376,7 +371,7 @@
 <Multi_key> <ampersand> <r> <i> <b> <b> <o> <n>                                 : "🎀" U1F380 # ribbon
 # "🎁" U1F381 # wrapped present
 # "🎂" U1F382 # birthday cake
-<Multi_key> <ampersand> <j> <a> <c> <k> <-> <o> <-> <l> <a> <n> <t> <e> <r> <n>  : "🎃" U1F383 # jack-o-lantern
+<Multi_key> <ampersand> <j> <a> <c> <k> <o>                                     : "🎃" U1F383 # jack-o-lantern
 # "🎄" U1F384 # christmas tree
 # "🎅" U1F385 # father christmas
 <Multi_key> <ampersand> <f> <i> <r> <e> <w> <o> <r> <k> <s>                     : "🎆" U1F386 # fireworks
@@ -421,11 +416,11 @@
 # "🎹" U1F3B9 # musical keyboard
 <Multi_key> <ampersand> <t> <r> <u> <m> <p> <e> <t>                             : "🎺" U1F3BA # trumpet
 <Multi_key> <ampersand> <v> <i> <o> <l> <i> <n>                                 : "🎻" U1F3BB # violin
-# "🎼" U1F3BC # musical score
+<Multi_key> <ampersand> <s> <c> <o> <r> <e>                                     : "🎼" U1F3BC # musical score
 # "🎽" U1F3BD # running shirt with sash
-# "🎾" U1F3BE # tennis racquet and ball
-# "🎿" U1F3BF # ski and ski boot
-# "🏀" U1F3C0 # basketball and hoop
+<Multi_key> <ampersand> <t> <e> <n> <n> <i> <s>                                 : "🎾" U1F3BE # tennis racquet and ball
+<Multi_key> <ampersand> <s> <k> <i>                                             : "🎿" U1F3BF # ski and ski boot
+<Multi_key> <ampersand> <b> <a> <s> <k> <e> <t>                                 : "🏀" U1F3C0 # basketball and hoop
 # "🏁" U1F3C1 # chequered flag
 <Multi_key> <ampersand> <s> <n> <o> <w> <b> <o> <a> <r> <d> <e> <r>             : "🏂" U1F3C2 # snowboarder
 <Multi_key> <ampersand> <r> <u> <n> <n> <e> <r>                                 : "🏃" U1F3C3 # runner
@@ -441,7 +436,7 @@
 # "🏦" U1F3E6 # bank
 # "🏧" U1F3E7 # automated teller machine
 <Multi_key> <ampersand> <h> <o> <t> <e> <l>                                     : "🏨" U1F3E8 # hotel
-# "🏩" U1F3E9 # love hotel
+<Multi_key> <ampersand> <l> <o> <v> <e> <h> <o> <t> <e> <l>                     : "🏩" U1F3E9 # love hotel
 # "🏪" U1F3EA # convenience store
 # "🏫" U1F3EB # school
 # "🏬" U1F3EC # department store
@@ -514,7 +509,7 @@
 # "👒" U1F452 # womans hat
 <Multi_key> <ampersand> <e> <y> <e> <g> <l> <a> <s> <s> <e> <s>                 : "👓" U1F453 # eyeglasses
 <Multi_key> <ampersand> <n> <e> <c> <k> <t> <i> <e>                             : "👔" U1F454 # necktie
-<Multi_key> <ampersand> <t> <-> <s> <h> <i> <r> <t>                             : "👕" U1F455 # t-shirt
+<Multi_key> <ampersand> <t> <s> <h> <i> <r> <t>                                 : "👕" U1F455 # t-shirt
 <Multi_key> <ampersand> <j> <e> <a> <n> <s>                                     : "👖" U1F456 # jeans
 <Multi_key> <ampersand> <d> <r> <e> <s> <s>                                     : "👗" U1F457 # dress
 <Multi_key> <ampersand> <k> <i> <m> <o> <n> <o>                                 : "👘" U1F458 # kimono
@@ -542,8 +537,8 @@
 # "👱" U1F471 # person with blond hair
 # "👲" U1F472 # man with gua pi mao
 # "👳" U1F473 # man with turban
-# "👴" U1F474 # older man
-# "👵" U1F475 # older woman
+<Multi_key> <ampersand> <o> <l> <d> <m> <a> <n>                                 : "👴" U1F474 # older man
+<Multi_key> <ampersand> <o> <l> <d> <w> <o> <m> <a> <n>                         : "👵" U1F475 # older woman
 # "👶" U1F476 # baby
 # "👷" U1F477 # construction worker
 <Multi_key> <ampersand> <p> <r> <i> <n> <c> <e> <s> <s>                         : "👸" U1F478 # princess
@@ -594,9 +589,9 @@
 # "💥" U1F4A5 # collision symbol
 # "💦" U1F4A6 # splashing sweat symbol
 <Multi_key> <ampersand> <d> <r> <o> <p> <l> <e> <t>                             : "💧" U1F4A7 # droplet
-# "💨" U1F4A8 # dash symbol
+<Multi_key> <ampersand> <d> <a> <s> <h>                                         : "💨" U1F4A8 # dash symbol
 # "💩" U1F4A9 # pile of poo
-# "💪" U1F4AA # flexed biceps
+<Multi_key> <ampersand> <b> <i> <c> <e> <p> <s>                                 : "💪" U1F4AA # flexed biceps
 # "💫" U1F4AB # dizzy symbol
 # "💬" U1F4AC # speech balloon
 # "💮" U1F4AE # white flower
@@ -613,8 +608,8 @@
 # "💻" U1F4BB # personal computer
 <Multi_key> <ampersand> <b> <r> <i> <e> <f> <c> <a> <s> <e>                     : "💼" U1F4BC # briefcase
 <Multi_key> <ampersand> <m> <i> <n> <i> <d> <i> <s> <c>                         : "💽" U1F4BD # minidisc
-# "💾" U1F4BE # floppy disk
-# "💿" U1F4BF # optical disc
+<Multi_key> <ampersand> <f> <l> <o> <p> <p> <y>                                 : "💾" U1F4BE # floppy disk
+<Multi_key> <ampersand> <c> <d>                                                 : "💿" U1F4BF # optical disc
 <Multi_key> <ampersand> <d> <v> <d>                                             : "📀" U1F4C0 # dvd
 # "📁" U1F4C1 # file folder
 # "📂" U1F4C2 # open file folder
@@ -638,24 +633,24 @@
 # "📔" U1F4D4 # notebook with decorative cover
 # "📕" U1F4D5 # closed book
 # "📖" U1F4D6 # open book
-# "📗" U1F4D7 # green book
-# "📘" U1F4D8 # blue book
-# "📙" U1F4D9 # orange book
+<Multi_key> <ampersand> <g> <r> <e> <e> <n> <b> <o> <o> <k>                     : "📗" U1F4D7 # green book
+<Multi_key> <ampersand> <b> <l> <u> <e> <b> <o> <o> <k>                         : "📘" U1F4D8 # blue book
+<Multi_key> <ampersand> <o> <r> <a> <n> <g> <e> <b> <o> <o> <k>                 : "📙" U1F4D9 # orange book
 <Multi_key> <ampersand> <b> <o> <o> <k> <s>                                     : "📚" U1F4DA # books
 # "📛" U1F4DB # name badge
 <Multi_key> <ampersand> <s> <c> <r> <o> <l> <l>                                 : "📜" U1F4DC # scroll
 <Multi_key> <ampersand> <m> <e> <m> <o>                                         : "📝" U1F4DD # memo
-# "📞" U1F4DE # telephone receiver
+<Multi_key> <ampersand> <t> <e> <l> <e> <p> <h> <o> <n> <e>                     : "📞" U1F4DE # telephone receiver
 <Multi_key> <ampersand> <p> <a> <g> <e> <r>                                     : "📟" U1F4DF # pager
-# "📠" U1F4E0 # fax machine
+<Multi_key> <ampersand> <f> <a> <x>                                             : "📠" U1F4E0 # fax machine
 # "📡" U1F4E1 # satellite antenna
 # "📢" U1F4E2 # public address loudspeaker
 # "📣" U1F4E3 # cheering megaphone
-# "📤" U1F4E4 # outbox tray
-# "📥" U1F4E5 # inbox tray
+<Multi_key> <ampersand> <o> <u> <t> <b> <o> <x>                                 : "📤" U1F4E4 # outbox tray
+<Multi_key> <ampersand> <i> <n> <b> <o> <x>                                     : "📥" U1F4E5 # inbox tray
 <Multi_key> <ampersand> <p> <a> <c> <k> <a> <g> <e>                             : "📦" U1F4E6 # package
-# "📧" U1F4E7 # e-mail symbol
-# "📨" U1F4E8 # incoming envelope
+<Multi_key> <ampersand> <e> <m> <a> <i> <l>                                     : "📧" U1F4E7 # e-mail symbol
+<Multi_key> <ampersand> <i> <n> <c> <o> <m> <i> <n> <g>                         : "📨" U1F4E8 # incoming envelope
 # "📩" U1F4E9 # envelope with downwards arrow above
 # "📪" U1F4EA # closed mailbox with lowered flag
 # "📫" U1F4EB # closed mailbox with raised flag
@@ -663,7 +658,7 @@
 <Multi_key> <ampersand> <n> <e> <w> <s> <p> <a> <p> <e> <r>                     : "📰" U1F4F0 # newspaper
 # "📱" U1F4F1 # mobile phone
 # "📲" U1F4F2 # mobile phone with rightwards arrow at left
-# "📳" U1F4F3 # vibration mode
+<Multi_key> <ampersand> <v> <i> <b> <r> <a> <t> <i> <o> <n>                     : "📳" U1F4F3 # vibration mode
 # "📴" U1F4F4 # mobile phone off
 # "📶" U1F4F6 # antenna with bars
 <Multi_key> <ampersand> <c> <a> <m> <e> <r> <a>                                 : "📷" U1F4F7 # camera
@@ -708,7 +703,7 @@
 # "🔮" U1F52E # crystal ball
 # "🔯" U1F52F # six pointed star with middle dot
 # "🔰" U1F530 # japanese symbol for beginner
-# "🔱" U1F531 # trident emblem
+<Multi_key> <ampersand> <t> <r> <i> <d> <e> <n> <t>                             : "🔱" U1F531 # trident emblem
 # "🔲" U1F532 # black square button
 # "🔳" U1F533 # white square button
 # "🔴" U1F534 # large red circle
