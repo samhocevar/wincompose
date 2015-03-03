@@ -50,6 +50,7 @@ public enum VK : int
     BACK     = 0x08,
     SHIFT    = 0x10,
     CONTROL  = 0x11,
+    MENU     = 0x12,
     PAUSE    = 0x13,
     CAPITAL  = 0x14,
     ESCAPE   = 0x1b,

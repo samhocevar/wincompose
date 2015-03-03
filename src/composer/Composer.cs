@@ -45,10 +45,10 @@ static class Composer
 
         // Generate a keystate suitable for ToUnicode()
         NativeMethods.GetKeyboardState(m_keystate);
-        m_keystate[0x10] = (byte)(has_shift ? 0x80 : 0x00);
-        m_keystate[0x11] = (byte)(has_altgr ? 0x80 : 0x00);
-        m_keystate[0x12] = (byte)(has_altgr ? 0x80 : 0x00);
-        m_keystate[0x14] = (byte)(has_capslock ? 0x01 : 0x00);
+        m_keystate[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
+        m_keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
+        m_keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
+        m_keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
         int buflen = 4;
         byte[] buf = new byte[2 * buflen];
         int ret = NativeMethods.ToUnicode(vk, sc, m_keystate, buf, buflen, flags);
