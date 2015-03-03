@@ -36,7 +36,7 @@ namespace WinCompose
             DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
             BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
             KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
-            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
+            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", true);
             EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
             ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
         }
