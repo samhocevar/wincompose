@@ -382,7 +382,7 @@ namespace WinCompose
         {
             return IsInstalled() ? Path.Combine(GetExeDir(), "res")
                  : IsDebugging() ? Path.Combine(GetExeDir(), "../../rules")
-                 : GetExeDir();
+                 : Path.Combine(GetExeDir(), "rules");
         }
 
         private static string GetUserDir()

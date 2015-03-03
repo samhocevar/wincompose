@@ -5,7 +5,7 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.99beta20150302
+VERSION = 0.6.99beta20150303
 
 ISS = installer.iss
 PO = $(wildcard po/*.po)
@@ -39,9 +39,9 @@ installer: update-po $(EXE) $(ISS)
 portable: update-po $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
-	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/res
+	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/rules
 	cp $(EXE) $(PORTABLE:.zip=)
-	cp $(TXT) $(PORTABLE:.zip=)/res
+	cp $(TXT) $(PORTABLE:.zip=)/rules
 	cp $(PO) $(PORTABLE:.zip=)/po
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
