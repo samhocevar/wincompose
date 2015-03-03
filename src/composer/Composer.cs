@@ -152,7 +152,7 @@ static class Composer
     private static void SendString(string str)
     {
         List<VK> modifiers = new List<VK>();
-        bool is_gtk = false, is_office = false;
+        bool use_gtk_hack = false, use_office_hack = false;
 
         const int len = 256;
         StringBuilder buf = new StringBuilder(len);
@@ -166,7 +166,7 @@ static class Composer
              * window, so we parse through the names we know in order to detect
              * a GTK+ application. */
             if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
-                is_gtk = true;
+                use_gtk_hack = true;
 
             /* HACK: in MS Office, some symbol insertions change the text font
              * without returning to the original font. To avoid this, we output
@@ -175,11 +175,11 @@ static class Composer
             /* These are the actual window class names for Outlook and Word…
              * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
             if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
-                is_office = true;
+                use_office_hack = true && Settings.InsertZwsp.Value;
         }
 
         /* Clear keyboard modifiers if we need one of our custom hacks */
-        if (is_gtk || is_office)
+        if (use_gtk_hack || use_office_hack)
         {
             VK[] all_modifiers = new VK[]
             {
@@ -196,7 +196,7 @@ static class Composer
                 SendKeyUp(vk);
         }
 
-        if (is_gtk)
+        if (use_gtk_hack)
         {
             /* Wikipedia says Ctrl+Shift+u, release, then type the four hex
              * digits, and press Enter.
@@ -215,7 +215,7 @@ static class Composer
         {
             List<INPUT> input = new List<INPUT>();
 
-            if (is_office)
+            if (use_office_hack)
             {
                 input.Add(NewInputKey((ScanCodeShort)'\u200b'));
                 input.Add(NewInputKey((VirtualKeyShort)VK.LEFT));
@@ -226,11 +226,9 @@ static class Composer
                 input.Add(NewInputKey((ScanCodeShort)str[i]));
             }
 
-            if (is_office)
+            if (use_office_hack)
             {
                 input.Add(NewInputKey((VirtualKeyShort)VK.RIGHT));
-                if (!Settings.InsertZwsp.Value)
-                    input.Add(NewInputKey((VirtualKeyShort)VK.BACK));
             }
 
             NativeMethods.SendInput((uint)input.Count, input.ToArray(),
@@ -238,7 +236,7 @@ static class Composer
         }
 
         /* Restore keyboard modifiers if we needed one of our custom hacks */
-        if (is_gtk || is_office)
+        if (use_gtk_hack || use_office_hack)
         {
             foreach (VK vk in modifiers)
                 SendKeyDown(vk);
