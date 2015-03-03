@@ -138,6 +138,9 @@ namespace WinCompose
 
         public static void LoadSequences()
         {
+            m_sequences = new SequenceTree();
+            m_sequence_count = 0;
+
             LoadSequenceFile(Path.Combine(GetDataDir(), "Xorg.txt"));
             LoadSequenceFile(Path.Combine(GetDataDir(), "XCompose.txt"));
             LoadSequenceFile(Path.Combine(GetDataDir(), "Emoji.txt"));
@@ -150,6 +153,13 @@ namespace WinCompose
         public static bool IsComposeKey(Key key)
         {
             return ComposeKey.Value == key;
+        }
+
+        public static string GetComposeKeyName()
+        {
+            var key_conv = new ComposeKeyValueConverter();
+            return key_conv.Convert(Settings.ComposeKey.Value,
+                                    typeof(string), null, null).ToString();
         }
 
         public static bool IsUsableKey(Key key)
@@ -180,6 +190,11 @@ namespace WinCompose
         public static List<SequenceDescription> GetSequenceDescriptions()
         {
             return m_sequences.GetSequenceDescriptions();
+        }
+
+        public static int GetSequenceCount()
+        {
+            return m_sequence_count;
         }
 
         private static string LoadEntry(string key)
@@ -240,11 +255,13 @@ namespace WinCompose
             string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
 
             m_sequences.Add(seq, result, description);
+            ++m_sequence_count;
         }
 
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
 
+        private static int m_sequence_count = 0;
 
         private static readonly List<Key> m_valid_compose_keys = new List<Key>
         {

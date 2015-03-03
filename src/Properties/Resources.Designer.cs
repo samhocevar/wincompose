@@ -405,5 +405,14 @@ namespace WinCompose.Properties {
                 return ResourceManager.GetString("ShowSettings", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WinCompose on {0} ({1} sequences).
+        /// </summary>
+        public static string TrayToolTip {
+            get {
+                return ResourceManager.GetString("TrayToolTip", resourceCulture);
+            }
+        }
     }
 }

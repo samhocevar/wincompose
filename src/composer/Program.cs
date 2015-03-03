@@ -88,6 +88,9 @@ namespace WinCompose
         {
             m_notifyicon.Icon = Composer.IsComposing() ? Properties.Resources.IconActive
                                                        : Properties.Resources.IconNormal;
+            m_notifyicon.Text = String.Format(Properties.Resources.TrayToolTip,
+                                              Settings.GetComposeKeyName(),
+                                              Settings.GetSequenceCount());
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)

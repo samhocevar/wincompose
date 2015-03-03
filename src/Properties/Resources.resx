@@ -233,4 +233,8 @@
   <data name="AppName" xml:space="preserve">
     <value>WinCompose</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose on {0} ({1} sequences)</value>
+    <comment>{0}: compose key name, {1}: number of sequences</comment>
+  </data>
 </root>
