@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="composer\Composer.cs" />
-    <Compile Include="composer\GuiPage.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Program.cs" />
     <Compile Include="composer\Sequence.cs" />
