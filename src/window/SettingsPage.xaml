@@ -26,6 +26,8 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.Language}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
                 <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"></ComboBox>
@@ -64,6 +66,14 @@
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{x:Static p:Resources.InsertZwsp}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
                 <CheckBox Grid.Row="7" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
                           IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{x:Static p:Resources.EmulateCapsLock}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="8" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
+                          IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{x:Static p:Resources.ShiftDisablesCapsLock}" Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="9" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
+                          IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"/>
 
             </Grid>
         </GroupBox>

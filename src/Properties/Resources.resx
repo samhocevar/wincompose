@@ -139,6 +139,12 @@
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insert zero-width spaces</value>
   </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emulate CapsLock using both Shift keys</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Pressing Shift disables CapsLock</value>
+  </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Beep on invalid</value>
   </data>

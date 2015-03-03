@@ -37,6 +37,8 @@ namespace WinCompose
             BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
             KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
             InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
+            EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
+            ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
         }
 
         public static SettingsEntry<Key> ComposeKey { get; private set; }
@@ -52,6 +54,10 @@ namespace WinCompose
         public static SettingsEntry<bool> KeepOriginalKey { get; private set; }
 
         public static SettingsEntry<bool> InsertZwsp { get; private set; }
+
+        public static SettingsEntry<bool> EmulateCapsLock { get; private set; }
+
+        public static SettingsEntry<bool> ShiftDisablesCapsLock { get; private set; }
 
         public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
 
@@ -112,6 +118,8 @@ namespace WinCompose
             BeepOnInvalid.Load();
             KeepOriginalKey.Load();
             InsertZwsp.Load();
+            EmulateCapsLock.Load();
+            ShiftDisablesCapsLock.Load();
         }
 
         public static void SaveConfig()
@@ -124,6 +132,8 @@ namespace WinCompose
             BeepOnInvalid.Save();
             KeepOriginalKey.Save();
             InsertZwsp.Save();
+            EmulateCapsLock.Save();
+            ShiftDisablesCapsLock.Save();
         }
 
         public static void LoadSequences()

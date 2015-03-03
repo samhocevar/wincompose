@@ -33,8 +33,10 @@ static class Composer
         bool is_keyup = !is_keydown;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) == 0x80;
-        bool has_altgr = (NativeMethods.GetKeyState(VK.RMENU) & 0x80) == 0x80
-                          && (NativeMethods.GetKeyState(VK.LCONTROL) & 0x80) == 0x80;
+        bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
+                          NativeMethods.GetKeyState(VK.RMENU) & 0x80) == 0x80;
+        bool has_lrshift = (NativeMethods.GetKeyState(VK.LSHIFT) &
+                            NativeMethods.GetKeyState(VK.RSHIFT) & 0x80) == 0x80;
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
 
         // If we can not find a printable representation for the key, use its
@@ -73,6 +75,23 @@ static class Composer
                     m_sequence = new List<Key>();
             }
             return true;
+        }
+
+        // Feature: emulate capslock key with both shift keys, and optionally
+        // disable capslock using only one shift key.
+        if (key.VirtualKey == VK.LSHIFT || key.VirtualKey == VK.RSHIFT)
+        {
+            if (is_keyup && has_lrshift && Settings.EmulateCapsLock.Value)
+            {
+                SendKeyPress(VK.CAPITAL);
+                return false;
+            }
+
+            if (is_keydown && has_capslock && Settings.ShiftDisablesCapsLock.Value)
+            {
+                SendKeyPress(VK.CAPITAL);
+                return false;
+            }
         }
 
         // If we are not currently composing a sequence, do nothing
