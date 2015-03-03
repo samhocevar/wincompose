@@ -134,19 +134,20 @@
     <value>Apply</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Keep original compose key</value>
+    <value>Compose key maintains original behaviour</value>
+    <comment>Should this say “retain” instead?</comment>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Insert zero-width spaces</value>
+    <value>Insert zero-width spaces in Office apps</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emulate CapsLock using both Shift keys</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Pressing Shift disables CapsLock</value>
+    <value>Shift key disables CapsLock</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Beep on invalid</value>
+    <value>Beep on invalid sequences</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>Case insensitive</value>
@@ -161,7 +162,7 @@
     <value>Compose key</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Discard on invalid</value>
+    <value>Discard on invalid sequences</value>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In selected categories</value>
