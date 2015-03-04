@@ -19,218 +19,266 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: main.ahk:512 ui.ahk:456
+#: ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr ""
 
-#: main.ahk:512 ui.ahk:457
+#: ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr ""
 
-#: constants.ahk:34
+#: ID:Obsolete003
 msgid "Autodetect"
 msgstr ""
 
-#: constants.ahk:60
+#: ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Alt bagian kiri"
 
-#: constants.ahk:61
+#: ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Alt bagian kanan"
 
-#: constants.ahk:62
+#: ID:KeyLControl
 msgid "Left Control"
 msgstr "Control bagian kiri"
 
-#: constants.ahk:63
+#: ID:KeyRControl
 msgid "Right Control"
 msgstr "Control bagian kanan"
 
-#: constants.ahk:64
+#: ID:KeyLWin
 msgid "Left Windows"
 msgstr "Windows bagian kiri"
 
-#: constants.ahk:65
+#: ID:KeyRWin
 msgid "Right Windows"
 msgstr "Windows bagian kanan"
 
-#: constants.ahk:66
+#: ID:KeyCapital
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:67
+#: ID:KeyNumLock
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:68
+#: ID:KeyPause
 msgid "Pause"
 msgstr "Jeda"
 
-#: constants.ahk:69
+#: ID:KeyApps Also known as Application key
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:70
+#: ID:KeyEscape
 msgid "Escape"
 msgstr "Escape"
 
-#: constants.ahk:71
+#: ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:72
+#: ID:Obsolete016
 msgid "Grave Accent `"
 msgstr ""
 
-#: constants.ahk:100
+#: ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "500 milidetik"
 
-#: constants.ahk:101
+#: ID:Obsolete018
 msgid "1 second"
 msgstr "1 detik"
 
-#: constants.ahk:102
+#: ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 detik"
 
-#: constants.ahk:103
+#: ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 detik"
 
-#: constants.ahk:104
+#: ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 detik"
 
-#: constants.ahk:105
+#: ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 detik"
 
-#: constants.ahk:106
+#: ID:Obsolete023
 msgid "None"
 msgstr "Kosong"
 
-#: ui.ahk:54 ui.ahk:68
+#: ID:ShowSequences
 msgid "Show &Sequences…"
 msgstr ""
 
-#: ui.ahk:55 ui.ahk:459
+#: ID:Obsolete025
 msgid "Disable"
 msgstr "Non-aktifkan"
 
-#: ui.ahk:56
+#: ID:Obsolete026
 msgid "Restart"
 msgstr "Restart"
 
-#: ui.ahk:60
+#: ID:Obsolete027
 msgid "&History"
 msgstr ""
 
-#: ui.ahk:61
+#: ID:Obsolete028
 msgid "Hotkey &List"
 msgstr ""
 
-#: ui.ahk:64
+#: ID:Obsolete029
 msgid "&Options…"
 msgstr ""
 
-#: ui.ahk:65
+#: ID:Obsolete030
 msgid "&About"
 msgstr ""
 
-#: ui.ahk:66
+#: ID:Obsolete031
 msgid "&Visit Website"
 msgstr ""
 
-#: ui.ahk:67
+#: ID:Exit
 msgid "E&xit"
 msgstr ""
 
-#: ui.ahk:75
+#: ID:Obsolete033
 msgid "@APP_NAME@"
 msgstr ""
 
-#: ui.ahk:129
+#: ID:Obsolete034
 msgid "@APP_NAME@ v@APP_VERSION@\n"
 msgstr ""
 
-#: ui.ahk:130
+#: ID:Obsolete035
 msgid "\n"
 msgstr ""
 
-#: ui.ahk:131
+#: ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr ""
 
-#: ui.ahk:152
+#: ID:Sequences
 msgid "Sequences"
 msgstr ""
 
-#: ui.ahk:152
+#: ID:Obsolete038
 msgid "Options"
 msgstr ""
 
-#: ui.ahk:161
+#: ID:Obsolete039
 msgid "Sequence"
 msgstr ""
 
-#: ui.ahk:161
+#: ID:Obsolete040
 msgid "Char"
 msgstr ""
 
-#: ui.ahk:161
+#: ID:Obsolete041
 msgid "Unicode"
 msgstr ""
 
-#: ui.ahk:188
+#: ID:Search
 msgid "Search Filter:"
 msgstr ""
 
-#: ui.ahk:204
+#: ID:ComposeKey
 msgid "Compose Key:"
 msgstr ""
 
-#: ui.ahk:215
+#: ID:ResetDelay
 msgid "Delay:"
 msgstr ""
 
-#: ui.ahk:220
+#: ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 
-#: ui.ahk:223
+#: ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr ""
 
-#: ui.ahk:226
+#: ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr ""
 
-#: ui.ahk:239
+#: ID:Language
 msgid "Interface language:"
 msgstr ""
 
-#: ui.ahk:245
+#: ID:Close
 msgid "Close"
 msgstr ""
 
-#: ui.ahk:248
+#: ID:Obsolete050
 msgid "Copy Character"
 msgstr ""
 
-#: ui.ahk:346
+#: ID:Obsolete051
 msgid "Description:"
 msgstr ""
 
-#: ui.ahk:443
+#: ID:Obsolete052
 msgid "@APP_NAME@ (disabled)"
 msgstr ""
 
-#: ui.ahk:448
+#: ID:Obsolete053
 msgid "@APP_NAME@ (active)"
 msgstr ""
 
-#: ui.ahk:453
+#: ID:Obsolete054
 msgid "@APP_NAME@ (typing)"
+msgstr ""
+
+#: ID:Apply
+msgid "Apply"
+msgstr ""
+
+#: ID:KeepOriginalKey Should this say “retain” instead?
+msgid "Compose key maintains original behaviour"
+msgstr ""
+
+#: ID:InsertZwsp
+msgid "Insert zero-width spaces in Office apps"
+msgstr ""
+
+#: ID:EmulateCapsLock
+msgid "Emulate CapsLock using both Shift keys"
+msgstr ""
+
+#: ID:ShiftDisablesCapsLock
+msgid "Shift key disables CapsLock"
+msgstr ""
+
+#: ID:Categories
+msgid "Categories"
+msgstr ""
+
+#: ID:InSelectedCategories
+msgid "In selected categories"
+msgstr ""
+
+#: ID:Mappings
+msgid "Mappings"
+msgstr ""
+
+#: ID:Settings
+msgid "Settings"
+msgstr ""
+
+#: ID:ShowSettings
+msgid "Settings…"
+msgstr ""
+
+#: ID:AppName
+msgid "WinCompose"
+msgstr ""
+
+#: ID:TrayToolTip {0}: compose key name, {1}: number of sequences
+msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""

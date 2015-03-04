@@ -57,3 +57,16 @@ update-po:
 	#rm -f po/*~
 	#X=true; for l in $(PO); do if grep -q '"po.'$$l'[.]po"' $(ISS); then : ; else echo "po/$$l.po" not in $(ISS); X=false; fi; done; $$X || exit 1
 
+resx2pot:
+	cat i18n/Text.resx | awk '\
+	    /<!--/      { off=1 } \
+	    /-->/       { off=0 } \
+	    /^ *<data / { split($$0, a, "\""); id=a[2]; comment=""; } \
+	    /<value>/   { split ($$0, a, /[<>]/); value=a[3]; } \
+	    /<comment>/ { split ($$0, a, /[<>]/); comment=a[3]; } \
+	    /<\/data>/  { if (!off) { print "#: ID:" id; if (comment) { print "#: " comment; } print "msgid \"" value "\""; print "msgstr \"\""; print ""; } }' \
+	| sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
+	> po/wincompose.pot
+	for l in $(PO); do printf %s $$l && msgmerge -U $$l po/wincompose.pot; done
+	rm -f po/*~
+
