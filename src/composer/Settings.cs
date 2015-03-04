@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -94,6 +95,10 @@ namespace WinCompose
         public static void LoadConfig()
         {
             string val;
+
+            // Test translation
+            Thread.CurrentThread.CurrentUICulture =
+                            CultureInfo.GetCultureInfo("fr-FR");
 
             // The key used as the compose key
             ComposeKey.Load();

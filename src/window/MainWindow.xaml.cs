@@ -170,9 +170,9 @@ namespace WinCompose
                 case GuiPage.None:
                     return string.Empty;
                 case GuiPage.Sequences:
-                    return Properties.Resources.Settings;
+                    return i18n.Text.Settings;
                 case GuiPage.Settings:
-                    return Properties.Resources.Sequences;
+                    return i18n.Text.Sequences;
                 default:
                     throw new ArgumentOutOfRangeException("page");
             }

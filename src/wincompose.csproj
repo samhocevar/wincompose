@@ -55,6 +55,11 @@
     <Compile Include="composer\SettingsEntry.cs" />
     <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\WinTypes.cs" />
+    <Compile Include="i18n\Text.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.fr.resx</DependentUpon>
+    </Compile>
     <Compile Include="window\RootViewModel.cs" />
     <Compile Include="window\SearchTokens.cs" />
     <Compile Include="window\SequencePage.xaml.cs">
@@ -90,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -100,6 +110,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\UnicodeBlocks.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnicodeBlocks.Designer.cs</LastGenOutput>
@@ -108,6 +123,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnicodeCategories.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

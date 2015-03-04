@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:wc="clr-namespace:WinCompose"
-      xmlns:properties="clr-namespace:WinCompose.Properties"
+      xmlns:i18n="clr-namespace:WinCompose.i18n"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="SequencePage" d:DataContext="{d:DesignInstance wc:RootViewModel}">
@@ -38,7 +38,7 @@
                         </Button.Template>
                         <Path Width="12" Height="12" Stretch="Fill" Fill="#FF000000" Data="F1 M 26.9166,22.1667L 37.9999,33.25L 49.0832,22.1668L 53.8332,26.9168L 42.7499,38L 53.8332,49.0834L 49.0833,53.8334L 37.9999,42.75L 26.9166,53.8334L 22.1666,49.0833L 33.25,38L 22.1667,26.9167L 26.9166,22.1667 Z "/>
                     </Button>
-                    <TextBlock x:Name="Watermark" Text="{x:Static properties:Resources.Search}" VerticalAlignment="Center"
+                    <TextBlock x:Name="Watermark" Text="{x:Static i18n:Text.Search}" VerticalAlignment="Center"
         				Margin="8,0" FontStyle="Italic" Foreground="DarkGray" Visibility="Collapsed" IsHitTestVisible="False"/>
                 </DockPanel>
             </Grid>
@@ -61,10 +61,10 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0">
-            <TextBlock DockPanel.Dock="Top" Text="{x:Static properties:Resources.Categories}" Margin="8"/>
+            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Categories}" Margin="8"/>
             <StackPanel DockPanel.Dock="Bottom" Margin="8">
                 <ContentPresenter ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
-                <CheckBox Margin="0,4,0,0" Content="{x:Static properties:Resources.InSelectedCategories}" IsChecked="{Binding SearchInSelection}"/>
+                <CheckBox Margin="0,4,0,0" Content="{x:Static i18n:Text.InSelectedCategories}" IsChecked="{Binding SearchInSelection}"/>
             </StackPanel>
             <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
                 <ListBox.ItemContainerStyle>
@@ -92,7 +92,7 @@
         <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent"/>
 
         <DockPanel Grid.Column="2">
-            <TextBlock DockPanel.Dock="Top" Text="{x:Static properties:Resources.Mappings}" Margin="8"/>
+            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Mappings}" Margin="8"/>
             <Expander DockPanel.Dock="Right" ExpandDirection="Left" Margin="0,8">
                 <StackPanel>
                     <Border Width="128" Height="128">

@@ -13,13 +13,13 @@
 
 using System;
 using System.Diagnostics;
-using System.Windows.Forms;
+using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {
     static class Program
     {
-        private static NotifyIcon m_notifyicon;
+        private static WinForms.NotifyIcon m_notifyicon;
         private static Mainwindow m_mainwindow;
 
         [STAThread]
@@ -33,18 +33,18 @@ namespace WinCompose
 
             try
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
+                WinForms.Application.EnableVisualStyles();
+                WinForms.Application.SetCompatibleTextRenderingDefault(false);
 
-                m_notifyicon = new NotifyIcon
+                m_notifyicon = new WinForms.NotifyIcon
                 {
                     Visible = true,
                     Icon = Properties.Resources.IconNormal,
-                    ContextMenu = new ContextMenu(new[]
+                    ContextMenu = new WinForms.ContextMenu(new[]
                     {
-                        new MenuItem(Properties.Resources.ShowSequences, ShowSequencesClicked),
-                        new MenuItem(Properties.Resources.ShowSettings, ShowSettingsClicked),
-                        new MenuItem(Properties.Resources.Exit, ExitClicked)
+                        new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
+                        new WinForms.MenuItem(i18n.Text.ShowSettings, ShowSettingsClicked),
+                        new WinForms.MenuItem(i18n.Text.Exit, ExitClicked)
                     })
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
@@ -54,14 +54,14 @@ namespace WinCompose
                     Visibility = System.Windows.Visibility.Hidden
                 };
 
-                var timer = new Timer
+                var timer = new WinForms.Timer
                 {
                     Enabled = true,
                     Interval = 50, /* 50 milliseconds is probably enough */
                 };
                 timer.Tick += TimerTicked;
 
-                Application.Run();
+                WinForms.Application.Run();
                 GC.KeepAlive(m_notifyicon);
             }
             finally
@@ -88,7 +88,7 @@ namespace WinCompose
         {
             m_notifyicon.Icon = Composer.IsComposing() ? Properties.Resources.IconActive
                                                        : Properties.Resources.IconNormal;
-            m_notifyicon.Text = String.Format(Properties.Resources.TrayToolTip,
+            m_notifyicon.Text = String.Format(i18n.Text.TrayToolTip,
                                               Settings.GetComposeKeyName(),
                                               Settings.GetSequenceCount());
         }
@@ -107,7 +107,7 @@ namespace WinCompose
 
         private static void ExitClicked(object sender, EventArgs e)
         {
-            Application.Exit();
+            WinForms.Application.Exit();
         }
     }
 }
