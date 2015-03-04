@@ -61,7 +61,7 @@ resx2pot:
 	cat i18n/Text.resx | awk '\
 	    /<!--/      { off=1 } \
 	    /-->/       { off=0 } \
-	    /^ *<data / { split($$0, a, "\""); id=a[2]; comment=""; } \
+	    /<data /    { split($$0, a, "\""); id=a[2]; comment=""; } \
 	    /<value>/   { split ($$0, a, /[<>]/); value=a[3]; } \
 	    /<comment>/ { split ($$0, a, /[<>]/); comment=a[3]; } \
 	    /<\/data>/  { if (!off) { print "#: ID:" id; if (comment) { print "#: " comment; } print "msgid \"" value "\""; print "msgstr \"\""; print ""; } }' \
@@ -69,4 +69,16 @@ resx2pot:
 	> po/wincompose.pot
 	for l in $(PO); do printf %s $$l && msgmerge -U $$l po/wincompose.pot; done
 	rm -f po/*~
+
+pot2resx:
+	for l in $(PO); do \
+	  cat $$l \
+          | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
+          | awk '\
+	    /^$$/     { if (id) { print "<foo name=\"" id "\">"; print "<lol>" msgstr "</lol>"; print "</foo>"; id="" } } \
+            /^#: ID:/ { split($$0, a, ":"); id=a[3]; } \
+            /^ *"/    { split($$0, a, "\""); msgstr=msgstr a[2]; } \
+	    /^msgstr/ { split($$0, a, "\""); msgstr=a[2]; }'; \
+	  break; \
+	done
 
