@@ -26,22 +26,22 @@
 <Multi_key> <ampersand> <s> <m> <i> <r> <k> <i> <n> <g>                         : "😏" U1F60F # smirking face
 <Multi_key> <ampersand> <u> <n> <a> <m> <u> <s> <e> <d>                         : "😒" U1F612 # unamused face
 # "😓" U1F613 # face with cold sweat
-# "😔" U1F614 # pensive face
-# "😖" U1F616 # confounded face
+<Multi_key> <ampersand> <p> <e> <n> <s> <i> <v> <e>                             : "😔" U1F614 # pensive face
+<Multi_key> <ampersand> <c> <o> <f> <o> <u> <n> <d> <e> <d>                     : "😖" U1F616 # confounded face
 # "😘" U1F618 # face throwing a kiss
 # "😚" U1F61A # kissing face with closed eyes
 # "😜" U1F61C # face with stuck-out tongue and winking eye
 # "😝" U1F61D # face with stuck-out tongue and tightly-closed eyes
-# "😞" U1F61E # disappointed face
-# "😠" U1F620 # angry face
-# "😡" U1F621 # pouting face
-# "😢" U1F622 # crying face
-# "😣" U1F623 # persevering face
-# "😤" U1F624 # face with look of triumph
+<Multi_key> <ampersand> <d> <i> <s> <a> <p> <p> <o> <i> <n> <t>                 : "😞" U1F61E # disappointed face
+<Multi_key> <ampersand> <a> <n> <g> <r> <y>                                     : "😠" U1F620 # angry face
+<Multi_key> <ampersand> <p> <o> <u> <t> <i> <n> <g>                             : "😡" U1F621 # pouting face
+<Multi_key> <ampersand> <c> <r> <y> <i> <n> <g>                                 : "😢" U1F622 # crying face
+<Multi_key> <ampersand> <p> <e> <r> <s> <e> <v> <e> <r> <i> <n> <g>             : "😣" U1F623 # persevering face
+<Multi_key> <ampersand> <t> <r> <i> <u> <m> <p> <h>                             : "😤" U1F624 # face with look of triumph
 # "😥" U1F625 # disappointed but relieved face
-# "😨" U1F628 # fearful face
-# "😩" U1F629 # weary face
-# "😪" U1F62A # sleepy face
+<Multi_key> <ampersand> <f> <e> <a> <r> <f> <u> <l>                             : "😨" U1F628 # fearful face
+<Multi_key> <ampersand> <w> <e> <a> <r> <y>                                     : "😩" U1F629 # weary face
+<Multi_key> <ampersand> <s> <l> <e> <e> <p> <y>                                 : "😪" U1F62A # sleepy face
 # "😫" U1F62B # tired face
 # "😭" U1F62D # loudly crying face
 # "😰" U1F630 # face with open mouth and cold sweat
@@ -285,9 +285,9 @@
 # "🌇" U1F307 # sunset over buildings
 <Multi_key> <ampersand> <r> <a> <i> <n> <b> <o> <w>                             : "🌈" U1F308 # rainbow
 # "🌉" U1F309 # bridge at night
-# "🌊" U1F30A # water wave
+<Multi_key> <ampersand> <w> <a> <v> <e>                                         : "🌊" U1F30A # water wave
 <Multi_key> <ampersand> <v> <o> <l> <c> <a> <n> <o>                             : "🌋" U1F30B # volcano
-# "🌌" U1F30C # milky way
+<Multi_key> <ampersand> <m> <i> <l> <k> <y> <w> <a> <y>                         : "🌌" U1F30C # milky way
 # "🌏" U1F30F # earth globe asia-australia
 # "🌑" U1F311 # new moon symbol
 # "🌓" U1F313 # first quarter moon symbol
@@ -299,7 +299,7 @@
 # "🌠" U1F320 # shooting star
 <Multi_key> <ampersand> <c> <h> <e> <s> <t> <n> <u> <t>                         : "🌰" U1F330 # chestnut
 <Multi_key> <ampersand> <s> <e> <e> <d> <l> <i> <n> <g>                         : "🌱" U1F331 # seedling
-# "🌴" U1F334 # palm tree
+<Multi_key> <ampersand> <p> <a> <l> <m> <t> <r> <e> <e>                         : "🌴" U1F334 # palm tree
 <Multi_key> <ampersand> <c> <a> <c> <t> <u> <s>                                 : "🌵" U1F335 # cactus
 <Multi_key> <ampersand> <t> <u> <l> <i> <p>                                     : "🌷" U1F337 # tulip
 # "🌸" U1F338 # cherry blossom
@@ -323,8 +323,8 @@
 <Multi_key> <ampersand> <t> <a> <n> <g> <e> <r> <i> <n> <e>                     : "🍊" U1F34A # tangerine
 <Multi_key> <ampersand> <b> <a> <n> <a> <n> <a>                                 : "🍌" U1F34C # banana
 <Multi_key> <ampersand> <p> <i> <n> <e> <a> <p> <p> <l> <e>                     : "🍍" U1F34D # pineapple
-# "🍎" U1F34E # red apple
-# "🍏" U1F34F # green apple
+<Multi_key> <ampersand> <r> <e> <d> <a> <p> <p> <l> <e>                         : "🍎" U1F34E # red apple
+<Multi_key> <ampersand> <g> <r> <e> <e> <n> <a> <p> <p> <l> <e>                 : "🍏" U1F34F # green apple
 <Multi_key> <ampersand> <p> <e> <a> <c> <h>                                     : "🍑" U1F351 # peach
 <Multi_key> <ampersand> <c> <h> <e> <r> <r> <i> <e> <s>                         : "🍒" U1F352 # cherries
 <Multi_key> <ampersand> <s> <t> <r> <a> <w> <b> <e> <r> <r> <y>                 : "🍓" U1F353 # strawberry
@@ -362,22 +362,22 @@
 <Multi_key> <ampersand> <c> <o> <o> <k> <i> <n> <g>                             : "🍳" U1F373 # cooking
 # "🍴" U1F374 # fork and knife
 # "🍵" U1F375 # teacup without handle
-# "🍶" U1F376 # sake bottle and cup
-# "🍷" U1F377 # wine glass
-# "🍸" U1F378 # cocktail glass
+<Multi_key> <ampersand> <s> <a> <k> <e>                                         : "🍶" U1F376 # sake bottle and cup
+<Multi_key> <ampersand> <w> <i> <n> <e>                                         : "🍷" U1F377 # wine glass
+<Multi_key> <ampersand> <c> <o> <c> <k> <t> <a> <i> <l>                         : "🍸" U1F378 # cocktail glass
 # "🍹" U1F379 # tropical drink
 # "🍺" U1F37A # beer mug
 # "🍻" U1F37B # clinking beer mugs
 <Multi_key> <ampersand> <r> <i> <b> <b> <o> <n>                                 : "🎀" U1F380 # ribbon
-# "🎁" U1F381 # wrapped present
+<Multi_key> <ampersand> <p> <r> <e> <s> <e> <n> <t>                             : "🎁" U1F381 # wrapped present
 # "🎂" U1F382 # birthday cake
 <Multi_key> <ampersand> <j> <a> <c> <k> <o>                                     : "🎃" U1F383 # jack-o-lantern
 # "🎄" U1F384 # christmas tree
-# "🎅" U1F385 # father christmas
+<Multi_key> <ampersand> <s> <a> <n> <t> <a>                                     : "🎅" U1F385 # father christmas
 <Multi_key> <ampersand> <f> <i> <r> <e> <w> <o> <r> <k> <s>                     : "🎆" U1F386 # fireworks
 # "🎇" U1F387 # firework sparkler
 <Multi_key> <ampersand> <b> <a> <l> <l> <o> <o> <n>                             : "🎈" U1F388 # balloon
-# "🎉" U1F389 # party popper
+<Multi_key> <ampersand> <p> <o> <p> <p> <e> <r>                                 : "🎉" U1F389 # party popper
 # "🎊" U1F38A # confetti ball
 # "🎋" U1F38B # tanabata tree
 # "🎌" U1F38C # crossed flags
