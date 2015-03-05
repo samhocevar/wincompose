@@ -50,29 +50,25 @@
                  <TextBox Margin="8,2" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
              </UniformGrid>
 
-             <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.CaseInsensitive}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <CheckBox Grid.Row="3" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
+             <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.CaseInsensitive}"
+                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}"/>
 
-             <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static i18n:Text.DiscardOnInvalid}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <CheckBox Grid.Row="4" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
+             <CheckBox Grid.Row="4" Grid.Column="0" Content="{x:Static i18n:Text.DiscardOnInvalid}"
+                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}"/>
 
-             <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static i18n:Text.BeepOnInvalid}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <CheckBox Grid.Row="5" Grid.Column="1" Content="" Margin="8,2" VerticalAlignment="Center"
+             <CheckBox Grid.Row="5" Grid.Column="0" Content="{x:Static i18n:Text.BeepOnInvalid}"
+                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"/>
          </Grid>
-     </GroupBox>
+      </GroupBox>
 
-     <!-- The Tweaks group -->
-     <GroupBox DockPanel.Dock="Top" Header="Tweaks" VerticalAlignment="Top">
+      <!-- The Tweaks group -->
+      <GroupBox DockPanel.Dock="Top" Header="Tweaks" VerticalAlignment="Top">
          <Grid VerticalAlignment="Center">
              <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="Auto"/>
-                 <ColumnDefinition Width="30"/>
                  <ColumnDefinition Width="*"/>
              </Grid.ColumnDefinitions>
              <Grid.RowDefinitions>
@@ -82,24 +78,20 @@
                  <RowDefinition Height="30"/>
              </Grid.RowDefinitions>
 
-             <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.KeepOriginalKey}"
-                        Margin="8,7.02" TextAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-             <CheckBox Grid.Row="0" Grid.Column="2" Content="" Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+             <CheckBox Grid.Row="0" Grid.Column="0" Content="{x:Static i18n:Text.KeepOriginalKey}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"/>
 
-             <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.InsertZwsp}"
-                        Margin="8,7.02" TextAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-             <CheckBox Grid.Row="1" Grid.Column="2" Content="" Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+             <CheckBox Grid.Row="1" Grid.Column="0" Content="{x:Static i18n:Text.InsertZwsp}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"/>
 
-             <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static i18n:Text.EmulateCapsLock}"
-                        Margin="8,7.02" TextAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-             <CheckBox Grid.Row="2" Grid.Column="2" Content="" Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+             <CheckBox Grid.Row="2" Grid.Column="0" Content="{x:Static i18n:Text.EmulateCapsLock}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}"/>
 
-             <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.ShiftDisablesCapsLock}"
-                        Margin="8,7.02" TextAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-             <CheckBox Grid.Row="3" Grid.Column="2" Content="" Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+             <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.ShiftDisablesCapsLock}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"/>
          </Grid>
      </GroupBox>

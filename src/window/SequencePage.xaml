@@ -131,7 +131,7 @@
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text=" + " VerticalAlignment="Center"/>
+                                                <TextBlock Text=" " VerticalAlignment="Center"/>
                                                 <Border Width="32" Height="32" x:Name="KeyImage">
                                                     <Border.Background>
                                                         <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>

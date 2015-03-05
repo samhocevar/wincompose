@@ -254,7 +254,10 @@ namespace WinCompose
                 else if (keys[i].Length == 1)
                     seq.Add(new Key(keys[i]));
                 else
+                {
+                    //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keys[i]);
                     return; // Unknown key name! Better bail out
+                }
             }
 
             string result = m1.Groups[2].Captures[0].ToString();

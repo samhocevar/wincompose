@@ -241,7 +241,7 @@ msgid "Apply"
 msgstr ""
 
 #: ID:KeepOriginalKey -- Should this say “retain” instead?
-msgid "Compose key maintains original behaviour"
+msgid "Maintain original compose key behaviour"
 msgstr ""
 
 #: ID:InsertZwsp

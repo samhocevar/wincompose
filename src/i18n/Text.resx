@@ -280,12 +280,11 @@
   <data name="Obsolete054" xml:space="preserve">
     <value>@APP_NAME@ (typing)</value>
   </data>
-
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Compose key maintains original behaviour</value>
+    <value>Maintain original compose key behaviour</value>
     <comment>Should this say “retain” instead?</comment>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
