@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2014-04-13 20:01+0200\n"
+"PO-Revision-Date: 2015-03-05 20:08+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
-"fr/>\n"
+"Language-Team: French "
+"<https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #: main.ahk:512 ui.ahk:456
 msgid "Loaded @1@ Sequences"
@@ -203,7 +205,7 @@ msgstr "Réessayer sans tenir compte de la casse si une séquence est invalide"
 
 #: ui.ahk:223
 msgid "Discard characters from invalid sequences"
-msgstr "Ne pas afficher les caractères tapés si une séquence est invalide"
+msgstr "Ne pas afficher les caractères d’une séquence invalide"
 
 #: ui.ahk:226
 msgid "Beep on invalid sequences"
