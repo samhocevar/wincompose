@@ -280,39 +280,4 @@
   <data name="Obsolete054" xml:space="preserve">
     <value>@APP_NAME@ (ses iscriende)</value>
   </data>
-  <data name="Apply" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="KeepOriginalKey" xml:space="preserve">
-    <value></value>
-    <comment>Should this say “retain” instead?</comment>
-  </data>
-  <data name="InsertZwsp" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="EmulateCapsLock" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="InSelectedCategories" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Mappings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ShowSettings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="TrayToolTip" xml:space="preserve">
-    <value></value>
-    <comment>{0}: compose key name, {1}: number of sequences</comment>
-  </data>
 </root>

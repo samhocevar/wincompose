@@ -120,9 +120,6 @@
   <data name="Obsolete001" xml:space="preserve">
     <value>Nahráno @1@ sekvencí</value>
   </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="Obsolete003" xml:space="preserve">
     <value>Automaticky detekovat</value>
   </data>
@@ -163,9 +160,6 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="Obsolete017" xml:space="preserve">
     <value>500 milisekund</value>
   </data>
@@ -199,20 +193,11 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>&amp;Historie</value>
   </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="Obsolete030" xml:space="preserve">
     <value>&amp;O aplikaci</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
     <value>Navštívit &amp;web</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value></value>
   </data>
   <data name="Obsolete033" xml:space="preserve">
     <value>@APP_NAME@</value>
@@ -229,9 +214,6 @@
   <data name="Sequences" xml:space="preserve">
     <value>Sekvence</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Sekvence</value>
   </data>
@@ -241,32 +223,8 @@
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ComposeKey" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="Close" xml:space="preserve">
     <value>Zavřít</value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value></value>
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Popis:</value>
@@ -279,43 +237,5 @@
   </data>
   <data name="Obsolete054" xml:space="preserve">
     <value>@APP_NAME@ (píše)</value>
-  </data>
-  <data name="Apply" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="KeepOriginalKey" xml:space="preserve">
-    <value></value>
-    <comment>Should this say “retain” instead?</comment>
-  </data>
-  <data name="InsertZwsp" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="EmulateCapsLock" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="InSelectedCategories" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Mappings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ShowSettings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="TrayToolTip" xml:space="preserve">
-    <value></value>
-    <comment>{0}: compose key name, {1}: number of sequences</comment>
   </data>
 </root>

@@ -88,7 +88,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Case insensitive.
+        ///   Looks up a localized string similar to Fall back to case insensitive matches on invalid sequences.
         /// </summary>
         public static string CaseInsensitive {
             get {
@@ -115,7 +115,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Compose key.
+        ///   Looks up a localized string similar to Compose Key:.
         /// </summary>
         public static string ComposeKey {
             get {
@@ -124,7 +124,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discard on invalid sequences.
+        ///   Looks up a localized string similar to Discard characters from invalid sequences.
         /// </summary>
         public static string DiscardOnInvalid {
             get {
@@ -142,7 +142,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exit.
+        ///   Looks up a localized string similar to E&amp;xit.
         /// </summary>
         public static string Exit {
             get {
@@ -178,7 +178,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application key.
+        ///   Looks up a localized string similar to Menu.
         /// </summary>
         public static string KeyApps {
             get {
@@ -205,7 +205,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Left control.
+        ///   Looks up a localized string similar to Left Control.
         /// </summary>
         public static string KeyLControl {
             get {
@@ -223,7 +223,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Left Windows Key.
+        ///   Looks up a localized string similar to Left Windows.
         /// </summary>
         public static string KeyLWin {
             get {
@@ -232,7 +232,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NumLock.
+        ///   Looks up a localized string similar to Num Lock.
         /// </summary>
         public static string KeyNumLock {
             get {
@@ -250,7 +250,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Right control.
+        ///   Looks up a localized string similar to Right Control.
         /// </summary>
         public static string KeyRControl {
             get {
@@ -268,7 +268,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Right Windows Key.
+        ///   Looks up a localized string similar to Right Windows.
         /// </summary>
         public static string KeyRWin {
             get {
@@ -286,7 +286,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Language.
+        ///   Looks up a localized string similar to Interface language:.
         /// </summary>
         public static string Language {
             get {
@@ -304,7 +304,286 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reset delay.
+        ///   Looks up a localized string similar to Loaded @1@ Sequences.
+        /// </summary>
+        public static string Obsolete001 {
+            get {
+                return ResourceManager.GetString("Obsolete001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compose Key is @1@.
+        /// </summary>
+        public static string Obsolete002 {
+            get {
+                return ResourceManager.GetString("Obsolete002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autodetect.
+        /// </summary>
+        public static string Obsolete003 {
+            get {
+                return ResourceManager.GetString("Obsolete003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grave Accent `.
+        /// </summary>
+        public static string Obsolete016 {
+            get {
+                return ResourceManager.GetString("Obsolete016", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 500 milliseconds.
+        /// </summary>
+        public static string Obsolete017 {
+            get {
+                return ResourceManager.GetString("Obsolete017", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 second.
+        /// </summary>
+        public static string Obsolete018 {
+            get {
+                return ResourceManager.GetString("Obsolete018", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2 seconds.
+        /// </summary>
+        public static string Obsolete019 {
+            get {
+                return ResourceManager.GetString("Obsolete019", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 seconds.
+        /// </summary>
+        public static string Obsolete020 {
+            get {
+                return ResourceManager.GetString("Obsolete020", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5 seconds.
+        /// </summary>
+        public static string Obsolete021 {
+            get {
+                return ResourceManager.GetString("Obsolete021", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10 seconds.
+        /// </summary>
+        public static string Obsolete022 {
+            get {
+                return ResourceManager.GetString("Obsolete022", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string Obsolete023 {
+            get {
+                return ResourceManager.GetString("Obsolete023", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable.
+        /// </summary>
+        public static string Obsolete025 {
+            get {
+                return ResourceManager.GetString("Obsolete025", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        public static string Obsolete026 {
+            get {
+                return ResourceManager.GetString("Obsolete026", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;History.
+        /// </summary>
+        public static string Obsolete027 {
+            get {
+                return ResourceManager.GetString("Obsolete027", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hotkey &amp;List.
+        /// </summary>
+        public static string Obsolete028 {
+            get {
+                return ResourceManager.GetString("Obsolete028", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Options….
+        /// </summary>
+        public static string Obsolete029 {
+            get {
+                return ResourceManager.GetString("Obsolete029", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;About.
+        /// </summary>
+        public static string Obsolete030 {
+            get {
+                return ResourceManager.GetString("Obsolete030", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Visit Website.
+        /// </summary>
+        public static string Obsolete031 {
+            get {
+                return ResourceManager.GetString("Obsolete031", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @APP_NAME@.
+        /// </summary>
+        public static string Obsolete033 {
+            get {
+                return ResourceManager.GetString("Obsolete033", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @APP_NAME@ v@APP_VERSION@\n.
+        /// </summary>
+        public static string Obsolete034 {
+            get {
+                return ResourceManager.GetString("Obsolete034", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to \n.
+        /// </summary>
+        public static string Obsolete035 {
+            get {
+                return ResourceManager.GetString("Obsolete035", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to by Sam Hocevar &lt;sam@hocevar.net&gt;\n.
+        /// </summary>
+        public static string Obsolete036 {
+            get {
+                return ResourceManager.GetString("Obsolete036", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string Obsolete038 {
+            get {
+                return ResourceManager.GetString("Obsolete038", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sequence.
+        /// </summary>
+        public static string Obsolete039 {
+            get {
+                return ResourceManager.GetString("Obsolete039", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Char.
+        /// </summary>
+        public static string Obsolete040 {
+            get {
+                return ResourceManager.GetString("Obsolete040", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unicode.
+        /// </summary>
+        public static string Obsolete041 {
+            get {
+                return ResourceManager.GetString("Obsolete041", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Character.
+        /// </summary>
+        public static string Obsolete050 {
+            get {
+                return ResourceManager.GetString("Obsolete050", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description:.
+        /// </summary>
+        public static string Obsolete051 {
+            get {
+                return ResourceManager.GetString("Obsolete051", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @APP_NAME@ (disabled).
+        /// </summary>
+        public static string Obsolete052 {
+            get {
+                return ResourceManager.GetString("Obsolete052", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @APP_NAME@ (active).
+        /// </summary>
+        public static string Obsolete053 {
+            get {
+                return ResourceManager.GetString("Obsolete053", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @APP_NAME@ (typing).
+        /// </summary>
+        public static string Obsolete054 {
+            get {
+                return ResourceManager.GetString("Obsolete054", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delay:.
         /// </summary>
         public static string ResetDelay {
             get {
@@ -313,7 +592,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search.
+        ///   Looks up a localized string similar to Search Filter:.
         /// </summary>
         public static string Search {
             get {
@@ -349,7 +628,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show sequences….
+        ///   Looks up a localized string similar to Show &amp;Sequences….
         /// </summary>
         public static string ShowSequences {
             get {

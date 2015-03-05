@@ -50,6 +50,7 @@ bin/Release/WinCompose.exe:
 	@rm -f $@
 	devenv wincompose.sln //build Release //project wincompose.csproj
 
+# Populate po/wincompose.pot with strings from Text.resx and update *.po
 resx2pot:
 	cat i18n/Text.resx | awk '\
 	    /<!--/      { off=1 } \
@@ -63,13 +64,14 @@ resx2pot:
 	for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
 	rm -f po/*~
 
+# Update each Text.*.resx with contents from *.po
 pot2resx:
 	for l in $(PO); do \
 	  sed -e '/^  <data/,$$d' < i18n/Text.resx > i18n/Text.$$l.resx; \
 	  cat po/$$l.po \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk '\
-	    function f() { if (id) { print "  <data name=\"" id "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; if (comment) { print "    <comment>" comment "</comment>"; } print "  </data>"; id="" } } \
+	    function f() { if (id && msgstr) { print "  <data name=\"" id "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; if (comment) { print "    <comment>" comment "</comment>"; } print "  </data>"; id="" } } \
 	    /^$$/       { f(); } \
 	    END         { f(); } \
             /^#: ID:/   { split($$0, a, "(ID:| -- )"); id=a[2]; comment=a[3]; } \

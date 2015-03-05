@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete003" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Alt bagian kiri</value>
   </data>
@@ -163,9 +154,6 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="Obsolete017" xml:space="preserve">
     <value>500 milidetik</value>
   </data>
@@ -187,135 +175,10 @@
   <data name="Obsolete023" xml:space="preserve">
     <value>Kosong</value>
   </data>
-  <data name="ShowSequences" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Non-aktifkan</value>
   </data>
   <data name="Obsolete026" xml:space="preserve">
     <value>Restart</value>
-  </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete031" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete033" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete034" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Sequences" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ComposeKey" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Close" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete052" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete053" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Obsolete054" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Apply" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="KeepOriginalKey" xml:space="preserve">
-    <value></value>
-    <comment>Should this say “retain” instead?</comment>
-  </data>
-  <data name="InsertZwsp" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="EmulateCapsLock" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="InSelectedCategories" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Mappings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ShowSettings" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="TrayToolTip" xml:space="preserve">
-    <value></value>
-    <comment>{0}: compose key name, {1}: number of sequences</comment>
   </data>
 </root>
