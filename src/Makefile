@@ -8,7 +8,6 @@
 VERSION = 0.6.99beta20150303
 
 ISS = installer.iss
-PO = $(notdir $(basename $(wildcard po/*.po)))
 
 TXT = rules/Xorg.txt \
       rules/Xcompose.txt \
@@ -31,17 +30,16 @@ clean:
 	rm -rf obj wincompose/obj wincompose.gui/obj || true
 	rm -rf bin wincompose/bin wincompose.gui/bin || true
 
-installer: update-po $(EXE) $(ISS)
+installer: $(EXE) $(ISS)
 	rm -f $(INSTALLER)
 	"$(ISCC)" $(ISS)
 
-portable: update-po $(EXE)
+portable: $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
-	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/rules
+	mkdir -p $(PORTABLE:.zip=)/rules
 	cp $(EXE) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
-	cp $(PO:%=po/%.po) $(PORTABLE:.zip=)/po
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
@@ -49,6 +47,12 @@ bin/Release/WinCompose.exe:
 	@mkdir -p bin/Release
 	@rm -f $@
 	devenv wincompose.sln //build Release //project wincompose.csproj
+
+#
+# Translation stuff we need to deprecate one day
+#
+
+PO := $(notdir $(basename $(wildcard po/*.po)))
 
 # Populate po/wincompose.pot with strings from Text.resx and update *.po
 resx2pot:
