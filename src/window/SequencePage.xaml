@@ -92,7 +92,7 @@
         <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent"/>
 
         <DockPanel Grid.Column="2">
-            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Mappings}" Margin="8"/>
+            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
             <Expander DockPanel.Dock="Right" ExpandDirection="Left" Margin="0,8">
                 <StackPanel>
                     <Border Width="128" Height="128">

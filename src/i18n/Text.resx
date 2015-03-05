@@ -303,9 +303,6 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In selected categories</value>
   </data>
-  <data name="Mappings" xml:space="preserve">
-    <value>Mappings</value>
-  </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>

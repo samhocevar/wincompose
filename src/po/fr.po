@@ -261,10 +261,6 @@ msgstr ""
 msgid "In selected categories"
 msgstr ""
 
-#: ID:Mappings
-msgid "Mappings"
-msgstr ""
-
 #: ID:Settings
 msgid "Settings"
 msgstr "Réglages"
