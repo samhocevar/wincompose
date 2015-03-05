@@ -65,7 +65,7 @@ msgstr "Verr num"
 msgid "Pause"
 msgstr "Pause"
 
-#: ID:KeyApps Also known as Application key
+#: ID:KeyApps -- Also known as Application key
 msgid "Menu"
 msgstr "Menu"
 
@@ -237,7 +237,7 @@ msgstr "@APP_NAME@ (en cours)"
 msgid "Apply"
 msgstr ""
 
-#: ID:KeepOriginalKey Should this say “retain” instead?
+#: ID:KeepOriginalKey -- Should this say “retain” instead?
 msgid "Compose key maintains original behaviour"
 msgstr ""
 
@@ -279,9 +279,9 @@ msgstr "Réglages"
 msgid "WinCompose"
 msgstr "Touche compose :"
 
-#: ID:TrayToolTip {0}: compose key name, {1}: number of sequences
+#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose sur {0} ({1} séquences)"
 
 #~ msgid "Sequences…"
 #~ msgstr "&Séquences…"

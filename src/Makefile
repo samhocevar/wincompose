@@ -8,7 +8,7 @@
 VERSION = 0.6.99beta20150303
 
 ISS = installer.iss
-PO = $(wildcard po/*.po)
+PO = $(notdir $(basename $(wildcard po/*.po)))
 
 TXT = rules/Xorg.txt \
       rules/Xcompose.txt \
@@ -22,7 +22,6 @@ PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
 
 ISCC = $(ISCCDIR)\\ISCC.exe
-XGETTEXT = xgettext
 MSGMERGE = msgmerge
 
 all: installer portable
@@ -42,7 +41,7 @@ portable: update-po $(EXE)
 	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/rules
 	cp $(EXE) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
-	cp $(PO) $(PORTABLE:.zip=)/po
+	cp $(PO:%=po/%.po) $(PORTABLE:.zip=)/po
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
@@ -51,34 +50,34 @@ bin/Release/WinCompose.exe:
 	@rm -f $@
 	devenv wincompose.sln //build Release //project wincompose.csproj
 
-update-po:
-	#$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ *.cs
-	#for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
-	#rm -f po/*~
-	#X=true; for l in $(PO); do if grep -q '"po.'$$l'[.]po"' $(ISS); then : ; else echo "po/$$l.po" not in $(ISS); X=false; fi; done; $$X || exit 1
-
 resx2pot:
 	cat i18n/Text.resx | awk '\
 	    /<!--/      { off=1 } \
 	    /-->/       { off=0 } \
 	    /<data /    { split($$0, a, "\""); id=a[2]; comment=""; } \
 	    /<value>/   { split ($$0, a, /[<>]/); value=a[3]; } \
-	    /<comment>/ { split ($$0, a, /[<>]/); comment=a[3]; } \
-	    /<\/data>/  { if (!off) { print "#: ID:" id; if (comment) { print "#: " comment; } print "msgid \"" value "\""; print "msgstr \"\""; print ""; } }' \
+	    /<comment>/ { split ($$0, a, /[<>]/); id=id " -- " a[3]; } \
+	    /<\/data>/  { if (!off) { print "#: ID:" id; print "msgid \"" value "\""; print "msgstr \"\""; print ""; } }' \
 	| sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
 	> po/wincompose.pot
-	for l in $(PO); do printf %s $$l && msgmerge -U $$l po/wincompose.pot; done
+	for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
 	rm -f po/*~
 
 pot2resx:
 	for l in $(PO); do \
-	  cat $$l \
+	  sed -e '/^  <data/,$$d' < i18n/Text.resx > i18n/Text.$$l.resx; \
+	  cat po/$$l.po \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk '\
-	    /^$$/     { if (id) { print "<foo name=\"" id "\">"; print "<lol>" msgstr "</lol>"; print "</foo>"; id="" } } \
-            /^#: ID:/ { split($$0, a, ":"); id=a[3]; } \
-            /^ *"/    { split($$0, a, "\""); msgstr=msgstr a[2]; } \
-	    /^msgstr/ { split($$0, a, "\""); msgstr=a[2]; }'; \
-	  break; \
+	    function f() { if (id) { print "  <data name=\"" id "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; if (comment) { print "    <comment>" comment "</comment>"; } print "  </data>"; id="" } } \
+	    /^$$/       { f(); } \
+	    END         { f(); } \
+            /^#: ID:/   { split($$0, a, "(ID:| -- )"); id=a[2]; comment=a[3]; } \
+            /^#, fuzzy/ { id=""; } \
+            /^ *"/      { split($$0, a, "\""); msgstr=msgstr a[2]; } \
+	    /^msgstr/   { split($$0, a, "\""); msgstr=a[2]; }' \
+	  >> i18n/Text.$$l.resx; \
+	  echo "</root>" >> i18n/Text.$$l.resx; \
+	  touch i18n/Text.$$l.Designer.cs; \
 	done
 

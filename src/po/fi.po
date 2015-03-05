@@ -67,7 +67,7 @@ msgstr "Num Lock"
 msgid "Pause"
 msgstr "Pause / Break"
 
-#: ID:KeyApps Also known as Application key
+#: ID:KeyApps -- Also known as Application key
 msgid "Menu"
 msgstr "Valikkonäppäin"
 
@@ -239,7 +239,7 @@ msgstr "@APP_NAME@ (kirjoitetaan)"
 msgid "Apply"
 msgstr ""
 
-#: ID:KeepOriginalKey Should this say “retain” instead?
+#: ID:KeepOriginalKey -- Should this say “retain” instead?
 msgid "Compose key maintains original behaviour"
 msgstr ""
 
@@ -280,6 +280,6 @@ msgstr ""
 msgid "WinCompose"
 msgstr "Compose-näppäin:"
 
-#: ID:TrayToolTip {0}: compose key name, {1}: number of sequences
+#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
