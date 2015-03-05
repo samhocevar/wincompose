@@ -69,6 +69,22 @@ public class Key
         { VK.RIGHT, "▶" },
     };
 
+    private static readonly Dictionary<VK, string> m_compose_key_symbols = new Dictionary<VK, string>
+    {
+        { VK.LMENU, i18n.Text.KeyLMenu },
+        { VK.RMENU, i18n.Text.KeyRMenu },
+        { VK.LCONTROL, i18n.Text.KeyLControl },
+        { VK.RCONTROL, i18n.Text.KeyRControl },
+        { VK.LWIN, i18n.Text.KeyLWin },
+        { VK.RWIN, i18n.Text.KeyRWin },
+        { VK.CAPITAL, i18n.Text.KeyCapital },
+        { VK.NUMLOCK, i18n.Text.KeyNumLock },
+        { VK.PAUSE, i18n.Text.KeyPause },
+        { VK.APPS, i18n.Text.KeyApps },
+        { VK.ESCAPE, i18n.Text.KeyEscape },
+        { VK.SCROLL, i18n.Text.KeyScroll },
+    };
+
     private readonly VK m_vk;
 
     private readonly string m_str;
@@ -89,6 +105,10 @@ public class Key
         string ret;
         if (m_key_symbols.TryGetValue(m_vk, out ret))
             return ret;
+
+        // FIXME: Benlitz apparently had something else in mind for this feature
+        //if (m_compose_key_symbols.TryGetValue(m_vk, out ret))
+        //    return ret;
 
         if (m_vk != VK.NONE)
         {

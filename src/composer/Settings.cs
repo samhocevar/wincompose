@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -94,12 +95,6 @@ namespace WinCompose
 
         public static void LoadConfig()
         {
-            string val;
-
-            // Test translation
-            Thread.CurrentThread.CurrentUICulture =
-                            CultureInfo.GetCultureInfo("fr-FR");
-
             // The key used as the compose key
             ComposeKey.Load();
 
@@ -109,13 +104,19 @@ namespace WinCompose
             // The timeout delay
             ResetDelay.Load();
 
-            // The interface language
-            // TODO: language settings
-            val = LoadEntry("language");
-            if (m_valid_languages.ContainsKey(val))
-                m_language = val;
+            // Activate the desired interface language
+            string language = LoadEntry("language");
+            if (language == "" || m_valid_languages.ContainsKey(language))
+                m_language = language;
             else
                 m_language = m_default_language;
+
+            if (m_language != "") try
+            {
+                var culture = CultureInfo.GetCultureInfo(m_language);
+                Thread.CurrentThread.CurrentUICulture = culture;
+            }
+            catch (Exception) { }
 
             // Various options
             CaseInsensitive.Load();
@@ -287,27 +288,8 @@ namespace WinCompose
 
         private static readonly Key m_default_compose_key = new Key(VK.RMENU);
 
-        private static readonly Dictionary<string, string> m_valid_languages
-         = new Dictionary<string, string>()
-        {
-            { "",   "Autodetect" },
-            { "be", "Беларуская" },
-            { "cs", "Čeština" },
-            { "da", "Dansk" },
-            { "de", "Deutsch" },
-            { "el", "Ελληνικά" },
-            { "en", "English" },
-            { "es", "Español" },
-            { "et", "Eesti" },
-            { "fi", "Suomi" },
-            { "fr", "Français" },
-            { "id", "Bahasa Indonesia" },
-            { "nl", "Nederlands" },
-            { "pl", "Polski" },
-            { "ru", "Русский" },
-            { "sc", "Sardu" },
-            { "sv", "Svenska" },
-        };
+        private static readonly
+        Dictionary<string, string> m_valid_languages = GetSupportedLanguages();
 
         private static readonly string m_default_language = "";
         private static string m_language = m_default_language;
@@ -371,6 +353,29 @@ namespace WinCompose
             { "Right",  new Key(VK.RIGHT) },
         };
 
+        private static Dictionary<string, string> GetSupportedLanguages()
+        {
+            Dictionary<string, string> ret = new Dictionary<string, string>()
+            {
+                { "en", "English" },
+            };
+
+            // Enumerate all languages that have an embedded resource file version
+            ResourceManager rm = new ResourceManager(typeof(i18n.Text));
+            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            foreach (CultureInfo culture in cultures)
+            {
+                if (culture.Name != "") try
+                {
+                    if (rm.GetResourceSet(culture, true, false) != null)
+                        ret.Add(culture.Name, culture.NativeName);
+                }
+                catch(Exception) {}
+            }
+
+            return ret;
+        }
+
         public static string GetConfigFile()
         {
             return Path.Combine(GetConfigDir(), ConfigFileName);
@@ -414,7 +419,6 @@ namespace WinCompose
         private static bool IsDebugging()
         {
             string exe = GetExeName();
-            var lol = Path.ChangeExtension(exe, ".vshost.exe");
             return File.Exists(Path.ChangeExtension(exe, ".vshost.exe"));
         }
     }
