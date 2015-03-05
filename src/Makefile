@@ -67,8 +67,13 @@ resx2pot:
 # Update each Text.*.resx with contents from *.po
 pot2resx:
 	for l in $(PO); do \
+	  src=po/$$l.po; \
+          case $$l in \
+	    zh) l=zh-CHT;; \
+	    *@*) continue;; \
+	  esac; \
 	  sed -e '/^  <data/,$$d' < i18n/Text.resx > i18n/Text.$$l.resx; \
-	  cat po/$$l.po \
+	  cat $$src \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk '\
 	    function f() { if (id && msgstr) { print "  <data name=\"" id "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; if (comment) { print "    <comment>" comment "</comment>"; } print "  </data>"; id="" } } \
