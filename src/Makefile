@@ -80,6 +80,5 @@ pot2resx:
 	    /^msgstr/   { split($$0, a, "\""); msgstr=a[2]; }' \
 	  >> i18n/Text.$$l.resx; \
 	  echo "</root>" >> i18n/Text.$$l.resx; \
-	  touch i18n/Text.$$l.Designer.cs; \
 	done
 

@@ -1,7 +1,8 @@
+*.Designer.cs
 *.exe
 *.suo
-properties/*.resources
 WinCompose-*.zip
+WinCompose-*.exe
 settings.ini
 obj/
 bin/
