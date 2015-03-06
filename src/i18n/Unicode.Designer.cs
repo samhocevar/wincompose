@@ -59,5 +59,14 @@ namespace WinCompose.i18n {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _.
+        /// </summary>
+        public static string _ {
+            get {
+                return ResourceManager.GetString("_", resourceCulture);
+            }
+        }
     }
 }
