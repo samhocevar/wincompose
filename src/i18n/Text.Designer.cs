@@ -88,6 +88,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General Behavior.
+        /// </summary>
+        public static string Behavior {
+            get {
+                return ResourceManager.GetString("Behavior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fall back to case insensitive matches on invalid sequences.
         /// </summary>
         public static string CaseInsensitive {

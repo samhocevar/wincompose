@@ -146,8 +146,8 @@
       <DependentUpon>SequencePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="window\SequenceViewModel.cs" />
-    <Compile Include="window\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    <Compile Include="settings\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\UnicodeBlocks.Designer.cs">
       <DependentUpon>UnicodeBlocks.resx</DependentUpon>
@@ -287,7 +287,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="window\SettingsPage.xaml">
+    <Page Include="settings\SettingsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

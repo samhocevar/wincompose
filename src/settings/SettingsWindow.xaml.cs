@@ -12,23 +12,31 @@
 //
 
 using System.Windows;
+using System.ComponentModel;
 
 namespace WinCompose
 {
     /// <summary>
-    /// Interaction logic for SettingsPage.xaml
+    /// Interaction logic for SettingsWindow.xaml
     /// </summary>
-    public partial class SettingsPage
+    public partial class SettingsWindow
     {
-        public SettingsPage()
+        public SettingsWindow()
         {
             InitializeComponent();
-            Unloaded += ApplySettings;
         }
 
-        private void ApplySettings(object sender, RoutedEventArgs e)
+        private void CloseWindowClicked(object sender, CancelEventArgs e)
         {
             Settings.SaveConfig();
+            Hide();
+            e.Cancel = true;
+        }
+
+        private void CloseButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Settings.SaveConfig();
+            Hide();
         }
     }
 }

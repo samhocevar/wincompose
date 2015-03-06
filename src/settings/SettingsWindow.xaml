@@ -1,18 +1,22 @@
-﻿<Page x:Class="WinCompose.SettingsPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:i18n="clr-namespace:WinCompose.i18n"
-      xmlns:wc="clr-namespace:WinCompose"
-      mc:Ignorable="d" 
-      d:DesignHeight="460" d:DesignWidth="600"
-	Title="SettingsPage">
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i18n="clr-namespace:WinCompose.i18n"
+        xmlns:wc="clr-namespace:WinCompose"
+        mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
+        Title="{x:Static i18n:Text.Settings}" Height="450" Width="400"
+        Icon="/WinCompose;component/res/key_compose.png"
+        WindowStyle="ToolWindow"
+        Closing="CloseWindowClicked">
+    <Window.Resources>
+    </Window.Resources>
 
-    <DockPanel>
+    <DockPanel Margin="8">
 
       <!-- The Settings group -->
-      <GroupBox DockPanel.Dock="Top" Header="Settings" VerticalAlignment="Top">
+      <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.Behavior}" VerticalAlignment="Top">
          <Grid VerticalAlignment="Top">
              <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="Auto"/>
@@ -96,9 +100,9 @@
          </Grid>
      </GroupBox>
 
-     <!-- The Apply button -->
-     <Button DockPanel.Dock="Top" VerticalAlignment="Top" Margin="20" MaxWidth="100" MaxHeight="30"
-             Content="{x:Static i18n:Text.Apply}" Click="ApplySettings"/>
+     <!-- The Close button -->
+     <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
+             Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked"/>
 
   </DockPanel>
-</Page>
+</Window>

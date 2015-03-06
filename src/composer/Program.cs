@@ -21,6 +21,7 @@ namespace WinCompose
     {
         private static WinForms.NotifyIcon m_notifyicon;
         private static Mainwindow m_mainwindow;
+        private static SettingsWindow m_settingswindow;
 
         [STAThread]
         static void Main()
@@ -48,6 +49,11 @@ namespace WinCompose
                     })
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
+
+                m_settingswindow = new SettingsWindow()
+                {
+                    Visibility = System.Windows.Visibility.Hidden
+                };
 
                 m_mainwindow = new Mainwindow(Mainwindow.GuiPage.Sequences)
                 {
@@ -95,14 +101,12 @@ namespace WinCompose
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
         {
-            // TODO: change page
             m_mainwindow.Show();
         }
 
         private static void ShowSettingsClicked(object sender, EventArgs e)
         {
-            // TODO: change page
-            m_mainwindow.Show();
+            m_settingswindow.Show();
         }
 
         private static void ExitClicked(object sender, EventArgs e)

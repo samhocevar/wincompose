@@ -315,4 +315,7 @@
     <value>WinCompose on {0} ({1} sequences)</value>
     <comment>{0}: compose key name, {1}: number of sequences</comment>
   </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>General Behavior</value>
+  </data>
 </root>

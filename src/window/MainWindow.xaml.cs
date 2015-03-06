@@ -155,9 +155,6 @@ namespace WinCompose
                 case GuiPage.Sequences:
                     MainFrame.Navigate(new SequencePage(viewModel));
                     break;
-                case GuiPage.Settings:
-                    MainFrame.Navigate(new SettingsPage());
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException("page");
             }
