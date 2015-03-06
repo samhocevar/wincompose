@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2015-03-06 15:24+0200\n"
+"PO-Revision-Date: 2015-03-06 15:25+0200\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
 "Language-Team: Dutch "
 "<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
@@ -276,7 +276,7 @@ msgstr "Algemeen gedrag"
 #. The title of the Sequences window
 #: ID:WindowTitle
 msgid "WinCompose Sequences"
-msgstr "WinCompose voor {0} ({1} sequentie(s))"
+msgstr "WinCompose sequenties"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"
