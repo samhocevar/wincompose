@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2015-03-05 20:08+0200\n"
+"PO-Revision-Date: 2015-03-06 14:40+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
-"fr/>\n"
+"Language-Team: French "
+"<https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -237,45 +237,43 @@ msgstr "@APP_NAME@ (en cours)"
 
 #: ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Appliquer"
 
 #: ID:KeepOriginalKey -- Should this say “retain” instead?
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "La touche compose conserve aussi son comportement original"
 
 #: ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Insérer des espaces invisibles dans les applications Office"
 
 #: ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Émuler Verr Maj par appui simultané sur les deux touches Shift"
 
 #: ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "La touche Shift désactive Verr Maj"
 
 #: ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
 #: ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "Dans les catégories sélectionnées"
 
 #: ID:Settings
 msgid "Settings"
 msgstr "Réglages"
 
 #: ID:ShowSettings
-#, fuzzy
 msgid "Settings…"
-msgstr "Réglages"
+msgstr "Réglages…"
 
 #: ID:AppName
-#, fuzzy
 msgid "WinCompose"
-msgstr "Touche compose :"
+msgstr "WinCompose"
 
 #: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
@@ -283,7 +281,7 @@ msgstr "WinCompose sur {0} ({1} séquences)"
 
 #: ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Comportement"
 
 #: ID:WindowTitle
 #, fuzzy
