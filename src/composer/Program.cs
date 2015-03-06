@@ -50,16 +50,6 @@ namespace WinCompose
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
 
-                m_settingswindow = new SettingsWindow()
-                {
-                    Visibility = System.Windows.Visibility.Hidden
-                };
-
-                m_sequencewindow = new SequenceWindow()
-                {
-                    Visibility = System.Windows.Visibility.Hidden
-                };
-
                 var timer = new WinForms.Timer
                 {
                     Enabled = true,
@@ -80,7 +70,11 @@ namespace WinCompose
 
         private static void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
-            if (m_sequencewindow.IsVisible)
+            if (m_sequencewindow == null)
+            {
+                m_sequencewindow = new SequenceWindow();
+            }
+            else if (m_sequencewindow.IsVisible)
             {
                 m_sequencewindow.Hide();
             }
@@ -101,12 +95,26 @@ namespace WinCompose
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
         {
-            m_sequencewindow.Show();
+            if (m_sequencewindow == null)
+            {
+                m_sequencewindow = new SequenceWindow();
+            }
+            else
+            {
+                m_sequencewindow.Show();
+            }
         }
 
         private static void ShowSettingsClicked(object sender, EventArgs e)
         {
-            m_settingswindow.Show();
+            if (m_settingswindow == null)
+            {
+                m_settingswindow = new SettingsWindow();
+            }
+            else
+            {
+                m_settingswindow.Show();
+            }
         }
 
         private static void ExitClicked(object sender, EventArgs e)
