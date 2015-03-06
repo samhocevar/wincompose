@@ -10,232 +10,273 @@ msgstr ""
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
 "PO-Revision-Date: 2014-08-22 03:57+0200\n"
 "Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
-"Language-Team: Belarusian (latin) "
-"<https://hosted.weblate.org/projects/wincompose/master/be%40latin/>\n"
+"Language-Team: Belarusian (latin) <https://hosted.weblate.org/projects/"
+"wincompose/master/be%40latin/>\n"
 "Language: be@latin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: main.ahk:474 ui.ahk:456
+#: ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr "@1@ kambinacyj"
 
-#: main.ahk:474 ui.ahk:457
+#: ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr "Klawiša — @1@"
 
-#: constants.ahk:34
+#: ID:Obsolete003
 msgid "Autodetect"
 msgstr "Aŭtawyjaŭlieńnie"
 
-#: constants.ahk:52
+#: ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Liewy Alt"
 
-#: constants.ahk:53
+#: ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Prawy Alt"
 
-#: constants.ahk:54
+#: ID:KeyLControl
 msgid "Left Control"
 msgstr "Liewy Kontrol"
 
-#: constants.ahk:55
+#: ID:KeyRControl
 msgid "Right Control"
 msgstr "Prawy Kontrol"
 
-#: constants.ahk:56
+#: ID:KeyLWin
 msgid "Left Windows"
 msgstr "Liewy Windoŭs"
 
-#: constants.ahk:57
+#: ID:KeyRWin
 msgid "Right Windows"
 msgstr "Prawy Windoŭs"
 
-#: constants.ahk:58
+#: ID:KeyCapital
 msgid "Caps Lock"
 msgstr "«Caps Lock»"
 
-#: constants.ahk:59
+#: ID:KeyNumLock
 msgid "Num Lock"
 msgstr "«Num Lock»"
 
-#: constants.ahk:60
+#: ID:KeyPause
 msgid "Pause"
 msgstr "Paŭse"
 
-#: constants.ahk:61
+#: ID:KeyApps -- Also known as Application key
 msgid "Menu"
 msgstr "Meniu"
 
-#: constants.ahk:62
+#: ID:KeyEscape
 msgid "Escape"
 msgstr "«Escape»"
 
-#: constants.ahk:63
+#: ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "«Scroll Lock»"
 
-#: constants.ahk:64
+#: ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "Grawis `"
 
-#: constants.ahk:89
+#: ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "½ siakundy"
 
-#: constants.ahk:90
+#: ID:Obsolete018
 msgid "1 second"
 msgstr "1 siakunda"
 
-#: constants.ahk:91
+#: ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 siakundy"
 
-#: constants.ahk:92
+#: ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 siakundy"
 
-#: constants.ahk:93
+#: ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 siakundaŭ"
 
-#: constants.ahk:94
+#: ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 siakund"
 
-#: constants.ahk:95
+#: ID:Obsolete023
 msgid "None"
 msgstr "Niama"
 
-#: ui.ahk:54 ui.ahk:68
+#: ID:ShowSequences
 msgid "Show &Sequences…"
 msgstr "Pakazać &paśliadoŭnaści…"
 
-#: ui.ahk:55 ui.ahk:459
+#: ID:Obsolete025
 msgid "Disable"
 msgstr "Wymknuć"
 
-#: ui.ahk:56
+#: ID:Obsolete026
 msgid "Restart"
 msgstr "Pierazapusk"
 
-#: ui.ahk:60
+#: ID:Obsolete027
 msgid "&History"
 msgstr "&Historyja"
 
-#: ui.ahk:61
+#: ID:Obsolete028
 msgid "Hotkey &List"
 msgstr "&Śpis haračych klawiš"
 
-#: ui.ahk:64
+#: ID:Obsolete029
 msgid "&Options…"
 msgstr "&Opcyji…"
 
-#: ui.ahk:65
+#: ID:Obsolete030
 msgid "&About"
 msgstr "P&ra pragramu"
 
-#: ui.ahk:66
+#: ID:Obsolete031
 msgid "&Visit Website"
 msgstr "&Nawiedać websajt"
 
-#: ui.ahk:67
+#: ID:Exit
 msgid "E&xit"
 msgstr "&Wychad"
 
-#: ui.ahk:75
+#: ID:Obsolete033
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: ui.ahk:129
+#: ID:Obsolete034
 msgid "@APP_NAME@ v@APP_VERSION@\n"
 msgstr "@APP_NAME@ wersyji @APP_VERSION@\n"
 
-#: ui.ahk:130
+#: ID:Obsolete035
 msgid "\n"
 msgstr "\n"
 
-#: ui.ahk:131
+#: ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "napisaŭ Sam Hocevar <sam@hocevar.net>\n"
 
-#: ui.ahk:132
-msgid "running on AHK v@AHK_VERSION@\n"
-msgstr "wykonwajecca na AHK wer. @AHK_VERSION@\n"
-
-#: ui.ahk:152
+#: ID:Sequences
 msgid "Sequences"
 msgstr "Paśliadoŭnaści"
 
-#: ui.ahk:152
+#: ID:Obsolete038
 msgid "Options"
 msgstr "Opcyji"
 
-#: ui.ahk:161
+#: ID:Obsolete039
 msgid "Sequence"
 msgstr "Kambinacyja"
 
-#: ui.ahk:161
+#: ID:Obsolete040
 msgid "Char"
 msgstr "Symbal"
 
-#: ui.ahk:161
+#: ID:Obsolete041
 msgid "Unicode"
 msgstr "Unikod"
 
-#: ui.ahk:188
+#: ID:Search
 msgid "Search Filter:"
 msgstr "Fiĺtar pošuku:"
 
-#: ui.ahk:204
+#: ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Kampanawaĺnaja klawiša:"
 
-#: ui.ahk:215
+#: ID:ResetDelay
 msgid "Delay:"
 msgstr "Zatrymka:"
 
-#: ui.ahk:220
+#: ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr "Pry niadziejsnych paśliadoŭnaściah mianiać rahistar litaraŭ"
 
-#: ui.ahk:223
+#: ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr "Ignarawać symbali ź niaprawiĺnych paśliadoŭnaściaŭ"
 
-#: ui.ahk:226
+#: ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr "Sygnalizawaci pra niaprawiĺnyja paśliadoŭnaści"
 
-#: ui.ahk:239
+#: ID:Language
 msgid "Interface language:"
 msgstr "Mowa intarfejsu:"
 
-#: ui.ahk:245
+#: ID:Close
 msgid "Close"
 msgstr "Začynić"
 
-#: ui.ahk:248
+#: ID:Obsolete050
 msgid "Copy Character"
 msgstr "Kapijawaci symbal"
 
-#: ui.ahk:346
+#: ID:Obsolete051
 msgid "Description:"
 msgstr "Apisańnie:"
 
-#: ui.ahk:443
+#: ID:Obsolete052
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (wymknieny)"
 
-#: ui.ahk:448
+#: ID:Obsolete053
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (uwamkniony)"
 
-#: ui.ahk:453
+#: ID:Obsolete054
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (nabiraje)"
+
+#: ID:Apply
+msgid "Apply"
+msgstr ""
+
+#: ID:KeepOriginalKey -- Should this say “retain” instead?
+msgid "Maintain original compose key behaviour"
+msgstr ""
+
+#: ID:InsertZwsp
+msgid "Insert zero-width spaces in Office apps"
+msgstr ""
+
+#: ID:EmulateCapsLock
+msgid "Emulate CapsLock using both Shift keys"
+msgstr ""
+
+#: ID:ShiftDisablesCapsLock
+msgid "Shift key disables CapsLock"
+msgstr ""
+
+#: ID:Categories
+msgid "Categories"
+msgstr ""
+
+#: ID:InSelectedCategories
+msgid "In selected categories"
+msgstr ""
+
+#: ID:Settings
+msgid "Settings"
+msgstr ""
+
+#: ID:ShowSettings
+msgid "Settings…"
+msgstr ""
+
+#: ID:AppName
+#, fuzzy
+msgid "WinCompose"
+msgstr "Kampanawaĺnaja klawiša:"
+
+#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
+msgid "WinCompose on {0} ({1} sequences)"
+msgstr ""

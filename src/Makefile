@@ -5,82 +5,89 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.13
+VERSION = 0.6.99beta20150303
 
 ISS = installer.iss
-SRC_AHK = main.ahk
-SRC_INC = constants.ahk ui.ahk utils.ahk
-RC = resources.rc
-PO = $(filter-out en, $(shell sed -ne '/available languages/,/}/p' < constants.ahk  | sed -ne 's/.*"\(..\)".*/\1/p'))
 
-TXT = res/Keys.txt res/Xorg.txt res/Xcompose.txt res/WinCompose.txt
-ICONS = res/icon_normal.ico res/icon_active.ico res/icon_disabled.ico res/icon_empty.ico
+TXT = rules/Xorg.txt \
+      rules/Xcompose.txt \
+      rules/Emoji.txt \
+      rules/WinCompose.txt
 
-EXE = obj/WinCompose.exe
-DLL = res/resources.dll
+EXE = bin/Release/WinCompose.exe
 INSTALLER = WinCompose-Setup-$(VERSION).exe
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
 ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
-AHKDIR = ./ahk
 
-AHK = $(AHKDIR)/bin/Win32w/AutoHotkey.exe
 ISCC = $(ISCCDIR)\\ISCC.exe
-WINDRES = windres
-XGETTEXT = xgettext
 MSGMERGE = msgmerge
 
 all: installer portable
 
 clean:
 	rm -f $(INSTALLER) $(PORTABLE)
-	rm -f $(DLL) $(DLL:%.dll:%.o) $(EXE)
-	@rmdir obj >/dev/null 2>&1 || true
+	rm -rf obj wincompose/obj wincompose.gui/obj || true
+	rm -rf bin wincompose/bin wincompose.gui/bin || true
 
-run:
-	$(AHK) main.ahk
-
-check:
-	$(AHK) tests.ahk
-
-installer: update-source update-po $(DLL) $(EXE) $(ISS)
+installer: $(EXE) $(ISS)
 	rm -f $(INSTALLER)
 	"$(ISCC)" $(ISS)
 
-portable: update-source update-po $(DLL) $(EXE)
+portable: $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
-	mkdir -p $(PORTABLE:.zip=)/po $(PORTABLE:.zip=)/res
+	mkdir -p $(PORTABLE:.zip=)/rules
 	cp $(EXE) $(PORTABLE:.zip=)
-	cp $(PO:%=po/%.po) $(PORTABLE:.zip=)/po
-	cp res/resources.dll $(TXT) $(PORTABLE:.zip=)/res
+	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
-obj/%.exe: update-ahk $(SRC_AHK) $(SRC_INC)
-	@mkdir -p obj
+bin/Release/WinCompose.exe:
+	@mkdir -p bin/Release
 	@rm -f $@
-	$(AHK) 'ahk2exe\\ahk2exe.ahk' //in $(SRC_AHK) //out $@ //icon res/icon_normal.ico //bin $(AHKDIR)/bin/Win32w/AutoHotkeySC.bin
+	devenv wincompose.sln //build Release //project wincompose.csproj
 
-res/%.dll: obj/%.o
-	$(CC) -shared $^ -o $@
+#
+# Translation stuff we need to deprecate one day
+#
 
-obj/%.o: $(RC) $(ICONS)
-	mkdir -p obj
-	rm -f $@
-	$(WINDRES) $(RC) -o $@
+PO := $(notdir $(basename $(wildcard po/*.po)))
 
-update-source:
-	sed -i 's/\(#define *VERSION *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(ISS)
-	sed -i 's/\(global *version *:= *"\)[^"]*\(".*\)/\1$(VERSION)\2/' $(SRC_AHK)
-
-update-po:
-	$(XGETTEXT) -LC -opo/wincompose.pot --from-code=utf-8 -k_ $(SRC_AHK) $(SRC_INC)
+# Populate po/wincompose.pot with strings from Text.resx and update *.po
+resx2pot:
+	cat i18n/Text.resx | awk '\
+	    /<!--/      { off=1 } \
+	    /-->/       { off=0 } \
+	    /<data /    { split($$0, a, "\""); id=a[2]; comment=""; } \
+	    /<value>/   { split ($$0, a, /[<>]/); value=a[3]; } \
+	    /<comment>/ { split ($$0, a, /[<>]/); id=id " -- " a[3]; } \
+	    /<\/data>/  { if (!off) { print "#: ID:" id; print "msgid \"" value "\""; print "msgstr \"\""; print ""; } }' \
+	| sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
+	> po/wincompose.pot
 	for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
 	rm -f po/*~
-	X=true; for l in $(PO); do if grep -q '"po.'$$l'[.]po"' $(ISS); then : ; else echo "po/$$l.po" not in $(ISS); X=false; fi; done; $$X || exit 1
 
-update-ahk:
-	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Release //project AutoHotkeyx.vcxproj
-	cd $(AHKDIR) && devenv AutoHotkeyx.sln //build Self-contained //project AutoHotkeyx.vcxproj
+# Update each Text.*.resx with contents from *.po
+pot2resx:
+	for l in $(PO); do \
+	  src=po/$$l.po; \
+          case $$l in \
+	    zh) l=zh-CHT;; \
+	    *@*) continue;; \
+	  esac; \
+	  sed -e '/^  <data/,$$d' < i18n/Text.resx > i18n/Text.$$l.resx; \
+	  cat $$src \
+          | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
+          | awk '\
+	    function f() { if (id && msgstr) { print "  <data name=\"" id "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; if (comment) { print "    <comment>" comment "</comment>"; } print "  </data>"; id="" } } \
+	    /^$$/       { f(); } \
+	    END         { f(); } \
+            /^#: ID:/   { split($$0, a, "(ID:| -- )"); id=a[2]; comment=a[3]; } \
+            /^#, fuzzy/ { id=""; } \
+            /^ *"/      { split($$0, a, "\""); msgstr=msgstr a[2]; } \
+	    /^msgstr/   { split($$0, a, "\""); msgstr=a[2]; }' \
+	  >> i18n/Text.$$l.resx; \
+	  echo "</root>" >> i18n/Text.$$l.resx; \
+	done
 

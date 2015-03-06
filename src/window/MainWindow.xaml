@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i18n="clr-namespace:WinCompose.i18n"
+        mc:Ignorable="d" x:Class="WinCompose.Mainwindow"
+        Title="WinCompose" Height="600" Width="800"
+        Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
+    <Window.Resources>
+    </Window.Resources>
+    <DockPanel Margin="8">
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button x:Name="PageSwitchButton"
+                    Padding="20, 2"
+                    Content="{Binding SwitchPageName, RelativeSource={RelativeSource AncestorType=Window}}"
+                    Click="PageSwitchClicked"
+                    Margin="8"/>
+                <Button Padding="20, 2"
+                    Content="{x:Static i18n:Text.Close}"
+                    Click="CloseClicked"
+                    Margin="8"/>
+        </StackPanel>
+        <Frame x:Name="MainFrame">
+            <Frame.Template>
+                <ControlTemplate TargetType="Frame">
+                    <Border BorderThickness="{TemplateBinding Border.BorderThickness}"
+                            Padding="{TemplateBinding Control.Padding}"
+                            BorderBrush="{TemplateBinding Border.BorderBrush}"
+                            Background="{TemplateBinding Panel.Background}">
+                        <ContentPresenter Content="{TemplateBinding ContentControl.Content}"
+                                          ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                          ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                                          Name="PART_FrameCP"/>
+                    </Border>
+                </ControlTemplate>
+            </Frame.Template>
+        </Frame>
+    </DockPanel>
+</Window>

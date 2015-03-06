@@ -1,0 +1,104 @@
+﻿<Page x:Class="WinCompose.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:i18n="clr-namespace:WinCompose.i18n"
+      xmlns:wc="clr-namespace:WinCompose"
+      mc:Ignorable="d" 
+      d:DesignHeight="460" d:DesignWidth="600"
+	Title="SettingsPage">
+
+    <DockPanel>
+
+      <!-- The Settings group -->
+      <GroupBox DockPanel.Dock="Top" Header="Settings" VerticalAlignment="Top">
+         <Grid VerticalAlignment="Top">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="Auto"/>
+                 <ColumnDefinition Width="200"/>
+                 <ColumnDefinition Width="*"/>
+             </Grid.ColumnDefinitions>
+             <Grid.RowDefinitions>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+             </Grid.RowDefinitions>
+
+             <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
+                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+             <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"></ComboBox>
+
+             <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.ComposeKey}"
+                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+             <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"
+                       ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
+                       SelectedItem="{Binding Value, Source={x:Static wc:Settings.ComposeKey}}">
+                 <ComboBox.ItemTemplate>
+                     <DataTemplate>
+                         <TextBlock Text="{Binding Converter={wc:ComposeKeyValueConverter}}"/>
+                     </DataTemplate>
+                 </ComboBox.ItemTemplate>
+             </ComboBox>
+
+             <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"
+                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+             <UniformGrid Columns="2" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+                 <TextBox Margin="8,2" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
+             </UniformGrid>
+
+             <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.CaseInsensitive}"
+                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}"/>
+
+             <CheckBox Grid.Row="4" Grid.Column="0" Content="{x:Static i18n:Text.DiscardOnInvalid}"
+                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}"/>
+
+             <CheckBox Grid.Row="5" Grid.Column="0" Content="{x:Static i18n:Text.BeepOnInvalid}"
+                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"/>
+         </Grid>
+      </GroupBox>
+
+      <!-- The Tweaks group -->
+      <GroupBox DockPanel.Dock="Top" Header="Tweaks" VerticalAlignment="Top">
+         <Grid VerticalAlignment="Center">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="Auto"/>
+                 <ColumnDefinition Width="*"/>
+             </Grid.ColumnDefinitions>
+             <Grid.RowDefinitions>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="30"/>
+             </Grid.RowDefinitions>
+
+             <CheckBox Grid.Row="0" Grid.Column="0" Content="{x:Static i18n:Text.KeepOriginalKey}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"/>
+
+             <CheckBox Grid.Row="1" Grid.Column="0" Content="{x:Static i18n:Text.InsertZwsp}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"/>
+
+             <CheckBox Grid.Row="2" Grid.Column="0" Content="{x:Static i18n:Text.EmulateCapsLock}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}"/>
+
+             <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.ShiftDisablesCapsLock}"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"/>
+         </Grid>
+     </GroupBox>
+
+     <!-- The Apply button -->
+     <Button DockPanel.Dock="Top" VerticalAlignment="Top" Margin="20" MaxWidth="100" MaxHeight="30"
+             Content="{x:Static i18n:Text.Apply}" Click="ApplySettings"/>
+
+  </DockPanel>
+</Page>

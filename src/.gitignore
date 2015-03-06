@@ -1,6 +1,8 @@
+*.exe
+*.suo
 WinCompose-*.zip
-WinCompose-Setup-*.exe
+WinCompose-*.exe
 settings.ini
 obj/
-res/resources.dll
+bin/
 po/*.po~

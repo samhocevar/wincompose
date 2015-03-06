@@ -20,223 +20,264 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: main.ahk:512 ui.ahk:456
+#: ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr "Загружено @1@ комбинаций"
 
-#: main.ahk:512 ui.ahk:457
+#: ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr "Модификатор: @1@"
 
-#: constants.ahk:34
+#: ID:Obsolete003
 msgid "Autodetect"
 msgstr "Автоопределение"
 
-#: constants.ahk:60
+#: ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Левая Alt"
 
-#: constants.ahk:61
+#: ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Правая Alt"
 
-#: constants.ahk:62
+#: ID:KeyLControl
 msgid "Left Control"
 msgstr "Левая Control"
 
-#: constants.ahk:63
+#: ID:KeyRControl
 msgid "Right Control"
 msgstr "Правая Control"
 
-#: constants.ahk:64
+#: ID:KeyLWin
 msgid "Left Windows"
 msgstr "Левая Windows"
 
-#: constants.ahk:65
+#: ID:KeyRWin
 msgid "Right Windows"
 msgstr "Правая Windows"
 
-#: constants.ahk:66
+#: ID:KeyCapital
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: constants.ahk:67
+#: ID:KeyNumLock
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: constants.ahk:68
+#: ID:KeyPause
 msgid "Pause"
 msgstr "Pause Break"
 
-#: constants.ahk:69
+#: ID:KeyApps -- Also known as Application key
 msgid "Menu"
 msgstr "Menu"
 
-#: constants.ahk:70
+#: ID:KeyEscape
 msgid "Escape"
 msgstr "Esc"
 
-#: constants.ahk:71
+#: ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: constants.ahk:72
+#: ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "Тильда `"
 
-#: constants.ahk:100
+#: ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "500 милисекунд"
 
-#: constants.ahk:101
+#: ID:Obsolete018
 msgid "1 second"
 msgstr "1 секунда"
 
-#: constants.ahk:102
+#: ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 секунды"
 
-#: constants.ahk:103
+#: ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 секунды"
 
-#: constants.ahk:104
+#: ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 секунд"
 
-#: constants.ahk:105
+#: ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 секунд"
 
-#: constants.ahk:106
+#: ID:Obsolete023
 msgid "None"
 msgstr "Нет"
 
-#: ui.ahk:54 ui.ahk:68
+#: ID:ShowSequences
 msgid "Show &Sequences…"
 msgstr "Показать &комбинации…"
 
-#: ui.ahk:55 ui.ahk:459
+#: ID:Obsolete025
 msgid "Disable"
 msgstr "Отключить"
 
-#: ui.ahk:56
+#: ID:Obsolete026
 msgid "Restart"
 msgstr "Перезапуск"
 
-#: ui.ahk:60
+#: ID:Obsolete027
 msgid "&History"
 msgstr "&История"
 
-#: ui.ahk:61
+#: ID:Obsolete028
 msgid "Hotkey &List"
 msgstr "Список &горячих клавиш"
 
-#: ui.ahk:64
+#: ID:Obsolete029
 msgid "&Options…"
 msgstr "&Опции…"
 
-#: ui.ahk:65
+#: ID:Obsolete030
 msgid "&About"
 msgstr "&О программе"
 
-#: ui.ahk:66
+#: ID:Obsolete031
 msgid "&Visit Website"
 msgstr "&Посетить веб-сайт"
 
-#: ui.ahk:67
+#: ID:Exit
 msgid "E&xit"
 msgstr "В&ыйти"
 
-#: ui.ahk:75
+#: ID:Obsolete033
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
-#: ui.ahk:129
+#: ID:Obsolete034
 msgid "@APP_NAME@ v@APP_VERSION@\n"
 msgstr "@APP_NAME@ в.@APP_VERSION@\n"
 
-#: ui.ahk:130
+#: ID:Obsolete035
 msgid "\n"
 msgstr "\n"
 
-#: ui.ahk:131
+#: ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "Sam Hocevar <sam@hocevar.net>\n"
 
-#: ui.ahk:132
-msgid "running on AHK v@AHK_VERSION@\n"
-msgstr "написана на AHK v@AHK_VERSION@\n"
-
-#: ui.ahk:152
+#: ID:Sequences
 msgid "Sequences"
 msgstr "Комбинации"
 
-#: ui.ahk:152
+#: ID:Obsolete038
 msgid "Options"
 msgstr "Опции"
 
-#: ui.ahk:161
+#: ID:Obsolete039
 msgid "Sequence"
 msgstr "Комбинация"
 
-#: ui.ahk:161
+#: ID:Obsolete040
 msgid "Char"
 msgstr "Символ"
 
-#: ui.ahk:161
+#: ID:Obsolete041
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ui.ahk:188
+#: ID:Search
 msgid "Search Filter:"
 msgstr "Фильтр поиска:"
 
-#: ui.ahk:204
+#: ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Модификатор:"
 
-#: ui.ahk:215
+#: ID:ResetDelay
 msgid "Delay:"
 msgstr "Задержка:"
 
-#: ui.ahk:220
+#: ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 "Отступ к соответствиям без учета регистра при недействительных комбинациях"
 
-#: ui.ahk:223
+#: ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr "Отклонять символы из недопустимых комбинаций"
 
-#: ui.ahk:226
+#: ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr "Сигнал при недопустимых комбинациях"
 
-#: ui.ahk:239
+#: ID:Language
 msgid "Interface language:"
 msgstr "Язык интерфейса:"
 
-#: ui.ahk:245
+#: ID:Close
 msgid "Close"
 msgstr "Закрыть"
 
-#: ui.ahk:248
+#: ID:Obsolete050
 msgid "Copy Character"
 msgstr "Копировать символ"
 
-#: ui.ahk:346
+#: ID:Obsolete051
 msgid "Description:"
 msgstr "Описание:"
 
-#: ui.ahk:443
+#: ID:Obsolete052
 msgid "@APP_NAME@ (disabled)"
 msgstr "@APP_NAME@ (отключен)"
 
-#: ui.ahk:448
+#: ID:Obsolete053
 msgid "@APP_NAME@ (active)"
 msgstr "@APP_NAME@ (активен)"
 
-#: ui.ahk:453
+#: ID:Obsolete054
 msgid "@APP_NAME@ (typing)"
 msgstr "@APP_NAME@ (идет набор)"
+
+#: ID:Apply
+msgid "Apply"
+msgstr ""
+
+#: ID:KeepOriginalKey -- Should this say “retain” instead?
+msgid "Maintain original compose key behaviour"
+msgstr ""
+
+#: ID:InsertZwsp
+msgid "Insert zero-width spaces in Office apps"
+msgstr ""
+
+#: ID:EmulateCapsLock
+msgid "Emulate CapsLock using both Shift keys"
+msgstr ""
+
+#: ID:ShiftDisablesCapsLock
+msgid "Shift key disables CapsLock"
+msgstr ""
+
+#: ID:Categories
+msgid "Categories"
+msgstr ""
+
+#: ID:InSelectedCategories
+msgid "In selected categories"
+msgstr ""
+
+#: ID:Settings
+msgid "Settings"
+msgstr ""
+
+#: ID:ShowSettings
+msgid "Settings…"
+msgstr ""
+
+#: ID:AppName
+#, fuzzy
+msgid "WinCompose"
+msgstr "Модификатор:"
+
+#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
+msgid "WinCompose on {0} ({1} sequences)"
+msgstr ""
