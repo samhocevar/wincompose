@@ -1,15 +1,14 @@
-﻿<Page x:Class="WinCompose.SequencePage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:wc="clr-namespace:WinCompose"
-      xmlns:i18n="clr-namespace:WinCompose.i18n"
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="SequencePage" d:DataContext="{d:DesignInstance wc:RootViewModel}">
-    <Page.Resources>
-
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i18n="clr-namespace:WinCompose.i18n"
+        xmlns:wc="clr-namespace:WinCompose"
+        mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
+        Title="WinCompose" Width="1024" Height="768"
+        Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
+    <Window.Resources>
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
         <BitmapImage x:Key="SpaceKeyImage" UriSource="../res/key_space.png"/>
@@ -52,9 +51,9 @@
                 </MultiTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
+    </Window.Resources>
 
-    </Page.Resources>
-    <Grid>
+    <Grid Margin="8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="5"/>
@@ -168,5 +167,20 @@
 
             </ListBox>
         </DockPanel>
+        <Frame x:Name="MainFrame">
+            <Frame.Template>
+                <ControlTemplate TargetType="Frame">
+                    <Border BorderThickness="{TemplateBinding Border.BorderThickness}"
+                            Padding="{TemplateBinding Control.Padding}"
+                            BorderBrush="{TemplateBinding Border.BorderBrush}"
+                            Background="{TemplateBinding Panel.Background}">
+                        <ContentPresenter Content="{TemplateBinding ContentControl.Content}"
+                                          ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                          ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                                          Name="PART_FrameCP"/>
+                    </Border>
+                </ControlTemplate>
+            </Frame.Template>
+        </Frame>
     </Grid>
-</Page>
+</Window>

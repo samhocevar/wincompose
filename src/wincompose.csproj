@@ -50,9 +50,9 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Program.cs" />
-    <Compile Include="composer\Sequence.cs" />
-    <Compile Include="composer\Settings.cs" />
-    <Compile Include="composer\SettingsEntry.cs" />
+    <Compile Include="sequences\Sequence.cs" />
+    <Compile Include="settings\Settings.cs" />
+    <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\WinTypes.cs" />
     <Compile Include="i18n\Text.be.Designer.cs">
@@ -140,12 +140,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.zh-CHT.resx</DependentUpon>
     </Compile>
-    <Compile Include="window\RootViewModel.cs" />
-    <Compile Include="window\SearchTokens.cs" />
-    <Compile Include="window\SequencePage.xaml.cs">
-      <DependentUpon>SequencePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="window\SequenceViewModel.cs" />
+    <Compile Include="sequences\RootViewModel.cs" />
+    <Compile Include="sequences\SearchTokens.cs" />
+    <Compile Include="sequences\SequenceViewModel.cs" />
     <Compile Include="settings\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
@@ -159,13 +156,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="window\ValueConverters.cs" />
-    <Compile Include="window\ViewModelBase.cs" />
+    <Compile Include="sequences\ValueConverters.cs" />
+    <Compile Include="sequences\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="window\CategoryViewModel.cs" />
-    <Compile Include="window\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="sequences\CategoryViewModel.cs" />
+    <Compile Include="sequences\SequenceWindow.xaml.cs">
+      <DependentUpon>SequenceWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -279,11 +276,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="window\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="window\SequencePage.xaml">
+    <Page Include="sequences\SequenceWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

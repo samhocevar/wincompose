@@ -20,7 +20,7 @@ namespace WinCompose
     static class Program
     {
         private static WinForms.NotifyIcon m_notifyicon;
-        private static Mainwindow m_mainwindow;
+        private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_settingswindow;
 
         [STAThread]
@@ -55,7 +55,7 @@ namespace WinCompose
                     Visibility = System.Windows.Visibility.Hidden
                 };
 
-                m_mainwindow = new Mainwindow(Mainwindow.GuiPage.Sequences)
+                m_sequencewindow = new SequenceWindow()
                 {
                     Visibility = System.Windows.Visibility.Hidden
                 };
@@ -80,13 +80,13 @@ namespace WinCompose
 
         private static void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
-            if (m_mainwindow.IsVisible)
+            if (m_sequencewindow.IsVisible)
             {
-                m_mainwindow.Hide();
+                m_sequencewindow.Hide();
             }
             else
             {
-                m_mainwindow.Show();
+                m_sequencewindow.Show();
             }
         }
 
@@ -101,7 +101,7 @@ namespace WinCompose
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
         {
-            m_mainwindow.Show();
+            m_sequencewindow.Show();
         }
 
         private static void ShowSettingsClicked(object sender, EventArgs e)
