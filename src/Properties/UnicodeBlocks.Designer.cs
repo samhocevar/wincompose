@@ -63,2268 +63,2268 @@ namespace WinCompose.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Basic Latin.
         /// </summary>
-        public static string U0000U007F {
+        public static string U000000_U00007F {
             get {
-                return ResourceManager.GetString("U0000U007F", resourceCulture);
+                return ResourceManager.GetString("U000000_U00007F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latin-1 Supplement.
         /// </summary>
-        public static string U0080U00FF {
+        public static string U000080_U0000FF {
             get {
-                return ResourceManager.GetString("U0080U00FF", resourceCulture);
+                return ResourceManager.GetString("U000080_U0000FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latin Extended-A.
         /// </summary>
-        public static string U0100U017F {
+        public static string U000100_U00017F {
             get {
-                return ResourceManager.GetString("U0100U017F", resourceCulture);
+                return ResourceManager.GetString("U000100_U00017F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latin Extended-B.
         /// </summary>
-        public static string U0180U024F {
+        public static string U000180_U00024F {
             get {
-                return ResourceManager.GetString("U0180U024F", resourceCulture);
+                return ResourceManager.GetString("U000180_U00024F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to IPA Extensions.
         /// </summary>
-        public static string U0250U02AF {
+        public static string U000250_U0002AF {
             get {
-                return ResourceManager.GetString("U0250U02AF", resourceCulture);
+                return ResourceManager.GetString("U000250_U0002AF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Spacing Modifier Letters.
         /// </summary>
-        public static string U02B0U02FF {
+        public static string U0002B0_U0002FF {
             get {
-                return ResourceManager.GetString("U02B0U02FF", resourceCulture);
+                return ResourceManager.GetString("U0002B0_U0002FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Combining Diacritical Marks.
         /// </summary>
-        public static string U0300U036F {
+        public static string U000300_U00036F {
             get {
-                return ResourceManager.GetString("U0300U036F", resourceCulture);
+                return ResourceManager.GetString("U000300_U00036F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Greek and Coptic.
         /// </summary>
-        public static string U0370U03FF {
+        public static string U000370_U0003FF {
             get {
-                return ResourceManager.GetString("U0370U03FF", resourceCulture);
+                return ResourceManager.GetString("U000370_U0003FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cyrillic.
         /// </summary>
-        public static string U0400U04FF {
+        public static string U000400_U0004FF {
             get {
-                return ResourceManager.GetString("U0400U04FF", resourceCulture);
+                return ResourceManager.GetString("U000400_U0004FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cyrillic Supplement.
         /// </summary>
-        public static string U0500U052F {
+        public static string U000500_U00052F {
             get {
-                return ResourceManager.GetString("U0500U052F", resourceCulture);
+                return ResourceManager.GetString("U000500_U00052F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Armenian.
         /// </summary>
-        public static string U0530U058F {
+        public static string U000530_U00058F {
             get {
-                return ResourceManager.GetString("U0530U058F", resourceCulture);
+                return ResourceManager.GetString("U000530_U00058F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hebrew.
         /// </summary>
-        public static string U0590U05FF {
+        public static string U000590_U0005FF {
             get {
-                return ResourceManager.GetString("U0590U05FF", resourceCulture);
+                return ResourceManager.GetString("U000590_U0005FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Arabic.
         /// </summary>
-        public static string U0600U06FF {
+        public static string U000600_U0006FF {
             get {
-                return ResourceManager.GetString("U0600U06FF", resourceCulture);
+                return ResourceManager.GetString("U000600_U0006FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Syriac.
         /// </summary>
-        public static string U0700U074F {
+        public static string U000700_U00074F {
             get {
-                return ResourceManager.GetString("U0700U074F", resourceCulture);
+                return ResourceManager.GetString("U000700_U00074F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Arabic Supplement.
         /// </summary>
-        public static string U0750U077F {
+        public static string U000750_U00077F {
             get {
-                return ResourceManager.GetString("U0750U077F", resourceCulture);
+                return ResourceManager.GetString("U000750_U00077F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Thaana.
         /// </summary>
-        public static string U0780U07BF {
+        public static string U000780_U0007BF {
             get {
-                return ResourceManager.GetString("U0780U07BF", resourceCulture);
+                return ResourceManager.GetString("U000780_U0007BF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to NKo.
         /// </summary>
-        public static string U07C0U07FF {
+        public static string U0007C0_U0007FF {
             get {
-                return ResourceManager.GetString("U07C0U07FF", resourceCulture);
+                return ResourceManager.GetString("U0007C0_U0007FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Samaritan.
         /// </summary>
-        public static string U0800U083F {
+        public static string U000800_U00083F {
             get {
-                return ResourceManager.GetString("U0800U083F", resourceCulture);
+                return ResourceManager.GetString("U000800_U00083F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Mandaic.
         /// </summary>
-        public static string U0840U085F {
+        public static string U000840_U00085F {
             get {
-                return ResourceManager.GetString("U0840U085F", resourceCulture);
+                return ResourceManager.GetString("U000840_U00085F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Arabic Extended-A.
         /// </summary>
-        public static string U08A0U08FF {
+        public static string U0008A0_U0008FF {
             get {
-                return ResourceManager.GetString("U08A0U08FF", resourceCulture);
+                return ResourceManager.GetString("U0008A0_U0008FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Devanagari.
         /// </summary>
-        public static string U0900U097F {
+        public static string U000900_U00097F {
             get {
-                return ResourceManager.GetString("U0900U097F", resourceCulture);
+                return ResourceManager.GetString("U000900_U00097F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Bengali.
         /// </summary>
-        public static string U0980U09FF {
+        public static string U000980_U0009FF {
             get {
-                return ResourceManager.GetString("U0980U09FF", resourceCulture);
+                return ResourceManager.GetString("U000980_U0009FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Gurmukhi.
         /// </summary>
-        public static string U0A00U0A7F {
+        public static string U000A00_U000A7F {
             get {
-                return ResourceManager.GetString("U0A00U0A7F", resourceCulture);
+                return ResourceManager.GetString("U000A00_U000A7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Gujarati.
         /// </summary>
-        public static string U0A80U0AFF {
+        public static string U000A80_U000AFF {
             get {
-                return ResourceManager.GetString("U0A80U0AFF", resourceCulture);
+                return ResourceManager.GetString("U000A80_U000AFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Oriya.
         /// </summary>
-        public static string U0B00U0B7F {
+        public static string U000B00_U000B7F {
             get {
-                return ResourceManager.GetString("U0B00U0B7F", resourceCulture);
+                return ResourceManager.GetString("U000B00_U000B7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tamil.
         /// </summary>
-        public static string U0B80U0BFF {
+        public static string U000B80_U000BFF {
             get {
-                return ResourceManager.GetString("U0B80U0BFF", resourceCulture);
+                return ResourceManager.GetString("U000B80_U000BFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Telugu.
         /// </summary>
-        public static string U0C00U0C7F {
+        public static string U000C00_U000C7F {
             get {
-                return ResourceManager.GetString("U0C00U0C7F", resourceCulture);
+                return ResourceManager.GetString("U000C00_U000C7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Kannada.
         /// </summary>
-        public static string U0C80U0CFF {
+        public static string U000C80_U000CFF {
             get {
-                return ResourceManager.GetString("U0C80U0CFF", resourceCulture);
+                return ResourceManager.GetString("U000C80_U000CFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Malayalam.
         /// </summary>
-        public static string U0D00U0D7F {
+        public static string U000D00_U000D7F {
             get {
-                return ResourceManager.GetString("U0D00U0D7F", resourceCulture);
+                return ResourceManager.GetString("U000D00_U000D7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sinhala.
         /// </summary>
-        public static string U0D80U0DFF {
+        public static string U000D80_U000DFF {
             get {
-                return ResourceManager.GetString("U0D80U0DFF", resourceCulture);
+                return ResourceManager.GetString("U000D80_U000DFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Thai.
         /// </summary>
-        public static string U0E00U0E7F {
+        public static string U000E00_U000E7F {
             get {
-                return ResourceManager.GetString("U0E00U0E7F", resourceCulture);
+                return ResourceManager.GetString("U000E00_U000E7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Lao.
         /// </summary>
-        public static string U0E80U0EFF {
+        public static string U000E80_U000EFF {
             get {
-                return ResourceManager.GetString("U0E80U0EFF", resourceCulture);
+                return ResourceManager.GetString("U000E80_U000EFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tibetan.
         /// </summary>
-        public static string U0F00U0FFF {
+        public static string U000F00_U000FFF {
             get {
-                return ResourceManager.GetString("U0F00U0FFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Supplementary Private Use Area-B.
-        /// </summary>
-        public static string U100000U10FFFF {
-            get {
-                return ResourceManager.GetString("U100000U10FFFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Linear B Syllabary.
-        /// </summary>
-        public static string U10000U1007F {
-            get {
-                return ResourceManager.GetString("U10000U1007F", resourceCulture);
+                return ResourceManager.GetString("U000F00_U000FFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Myanmar.
         /// </summary>
-        public static string U1000U109F {
+        public static string U001000_U00109F {
             get {
-                return ResourceManager.GetString("U1000U109F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Linear B Ideograms.
-        /// </summary>
-        public static string U10080U100FF {
-            get {
-                return ResourceManager.GetString("U10080U100FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Aegean Numbers.
-        /// </summary>
-        public static string U10100U1013F {
-            get {
-                return ResourceManager.GetString("U10100U1013F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ancient Greek Numbers.
-        /// </summary>
-        public static string U10140U1018F {
-            get {
-                return ResourceManager.GetString("U10140U1018F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ancient Symbols.
-        /// </summary>
-        public static string U10190U101CF {
-            get {
-                return ResourceManager.GetString("U10190U101CF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Phaistos Disc.
-        /// </summary>
-        public static string U101D0U101FF {
-            get {
-                return ResourceManager.GetString("U101D0U101FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lycian.
-        /// </summary>
-        public static string U10280U1029F {
-            get {
-                return ResourceManager.GetString("U10280U1029F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Carian.
-        /// </summary>
-        public static string U102A0U102DF {
-            get {
-                return ResourceManager.GetString("U102A0U102DF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Coptic Epact Numbers.
-        /// </summary>
-        public static string U102E0U102FF {
-            get {
-                return ResourceManager.GetString("U102E0U102FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Old Italic.
-        /// </summary>
-        public static string U10300U1032F {
-            get {
-                return ResourceManager.GetString("U10300U1032F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gothic.
-        /// </summary>
-        public static string U10330U1034F {
-            get {
-                return ResourceManager.GetString("U10330U1034F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Old Permic.
-        /// </summary>
-        public static string U10350U1037F {
-            get {
-                return ResourceManager.GetString("U10350U1037F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ugaritic.
-        /// </summary>
-        public static string U10380U1039F {
-            get {
-                return ResourceManager.GetString("U10380U1039F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Old Persian.
-        /// </summary>
-        public static string U103A0U103DF {
-            get {
-                return ResourceManager.GetString("U103A0U103DF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Deseret.
-        /// </summary>
-        public static string U10400U1044F {
-            get {
-                return ResourceManager.GetString("U10400U1044F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shavian.
-        /// </summary>
-        public static string U10450U1047F {
-            get {
-                return ResourceManager.GetString("U10450U1047F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Osmanya.
-        /// </summary>
-        public static string U10480U104AF {
-            get {
-                return ResourceManager.GetString("U10480U104AF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Elbasan.
-        /// </summary>
-        public static string U10500U1052F {
-            get {
-                return ResourceManager.GetString("U10500U1052F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Caucasian Albanian.
-        /// </summary>
-        public static string U10530U1056F {
-            get {
-                return ResourceManager.GetString("U10530U1056F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Linear A.
-        /// </summary>
-        public static string U10600U1077F {
-            get {
-                return ResourceManager.GetString("U10600U1077F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cypriot Syllabary.
-        /// </summary>
-        public static string U10800U1083F {
-            get {
-                return ResourceManager.GetString("U10800U1083F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Imperial Aramaic.
-        /// </summary>
-        public static string U10840U1085F {
-            get {
-                return ResourceManager.GetString("U10840U1085F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Palmyrene.
-        /// </summary>
-        public static string U10860U1087F {
-            get {
-                return ResourceManager.GetString("U10860U1087F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nabataean.
-        /// </summary>
-        public static string U10880U108AF {
-            get {
-                return ResourceManager.GetString("U10880U108AF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Phoenician.
-        /// </summary>
-        public static string U10900U1091F {
-            get {
-                return ResourceManager.GetString("U10900U1091F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lydian.
-        /// </summary>
-        public static string U10920U1093F {
-            get {
-                return ResourceManager.GetString("U10920U1093F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Meroitic Hieroglyphs.
-        /// </summary>
-        public static string U10980U1099F {
-            get {
-                return ResourceManager.GetString("U10980U1099F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Meroitic Cursive.
-        /// </summary>
-        public static string U109A0U109FF {
-            get {
-                return ResourceManager.GetString("U109A0U109FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kharoshthi.
-        /// </summary>
-        public static string U10A00U10A5F {
-            get {
-                return ResourceManager.GetString("U10A00U10A5F", resourceCulture);
+                return ResourceManager.GetString("U001000_U00109F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Georgian.
         /// </summary>
-        public static string U10A0U10FF {
+        public static string U0010A0_U0010FF {
             get {
-                return ResourceManager.GetString("U10A0U10FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Old South Arabian.
-        /// </summary>
-        public static string U10A60U10A7F {
-            get {
-                return ResourceManager.GetString("U10A60U10A7F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Old North Arabian.
-        /// </summary>
-        public static string U10A80U10A9F {
-            get {
-                return ResourceManager.GetString("U10A80U10A9F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manichaean.
-        /// </summary>
-        public static string U10AC0U10AFF {
-            get {
-                return ResourceManager.GetString("U10AC0U10AFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Avestan.
-        /// </summary>
-        public static string U10B00U10B3F {
-            get {
-                return ResourceManager.GetString("U10B00U10B3F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inscriptional Parthian.
-        /// </summary>
-        public static string U10B40U10B5F {
-            get {
-                return ResourceManager.GetString("U10B40U10B5F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inscriptional Pahlavi.
-        /// </summary>
-        public static string U10B60U10B7F {
-            get {
-                return ResourceManager.GetString("U10B60U10B7F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Psalter Pahlavi.
-        /// </summary>
-        public static string U10B80U10BAF {
-            get {
-                return ResourceManager.GetString("U10B80U10BAF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Old Turkic.
-        /// </summary>
-        public static string U10C00U10C4F {
-            get {
-                return ResourceManager.GetString("U10C00U10C4F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rumi Numeral Symbols.
-        /// </summary>
-        public static string U10E60U10E7F {
-            get {
-                return ResourceManager.GetString("U10E60U10E7F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Brahmi.
-        /// </summary>
-        public static string U11000U1107F {
-            get {
-                return ResourceManager.GetString("U11000U1107F", resourceCulture);
+                return ResourceManager.GetString("U0010A0_U0010FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hangul Jamo.
         /// </summary>
-        public static string U1100U11FF {
+        public static string U001100_U0011FF {
             get {
-                return ResourceManager.GetString("U1100U11FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kaithi.
-        /// </summary>
-        public static string U11080U110CF {
-            get {
-                return ResourceManager.GetString("U11080U110CF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sora Sompeng.
-        /// </summary>
-        public static string U110D0U110FF {
-            get {
-                return ResourceManager.GetString("U110D0U110FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chakma.
-        /// </summary>
-        public static string U11100U1114F {
-            get {
-                return ResourceManager.GetString("U11100U1114F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mahajani.
-        /// </summary>
-        public static string U11150U1117F {
-            get {
-                return ResourceManager.GetString("U11150U1117F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sharada.
-        /// </summary>
-        public static string U11180U111DF {
-            get {
-                return ResourceManager.GetString("U11180U111DF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sinhala Archaic Numbers.
-        /// </summary>
-        public static string U111E0U111FF {
-            get {
-                return ResourceManager.GetString("U111E0U111FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Khojki.
-        /// </summary>
-        public static string U11200U1124F {
-            get {
-                return ResourceManager.GetString("U11200U1124F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Khudawadi.
-        /// </summary>
-        public static string U112B0U112FF {
-            get {
-                return ResourceManager.GetString("U112B0U112FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Grantha.
-        /// </summary>
-        public static string U11300U1137F {
-            get {
-                return ResourceManager.GetString("U11300U1137F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tirhuta.
-        /// </summary>
-        public static string U11480U114DF {
-            get {
-                return ResourceManager.GetString("U11480U114DF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Siddham.
-        /// </summary>
-        public static string U11580U115FF {
-            get {
-                return ResourceManager.GetString("U11580U115FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Modi.
-        /// </summary>
-        public static string U11600U1165F {
-            get {
-                return ResourceManager.GetString("U11600U1165F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Takri.
-        /// </summary>
-        public static string U11680U116CF {
-            get {
-                return ResourceManager.GetString("U11680U116CF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Warang Citi.
-        /// </summary>
-        public static string U118A0U118FF {
-            get {
-                return ResourceManager.GetString("U118A0U118FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pau Cin Hau.
-        /// </summary>
-        public static string U11AC0U11AFF {
-            get {
-                return ResourceManager.GetString("U11AC0U11AFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cuneiform.
-        /// </summary>
-        public static string U12000U123FF {
-            get {
-                return ResourceManager.GetString("U12000U123FF", resourceCulture);
+                return ResourceManager.GetString("U001100_U0011FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ethiopic.
         /// </summary>
-        public static string U1200U137F {
+        public static string U001200_U00137F {
             get {
-                return ResourceManager.GetString("U1200U137F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cuneiform Numbers and Punctuation.
-        /// </summary>
-        public static string U12400U1247F {
-            get {
-                return ResourceManager.GetString("U12400U1247F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Egyptian Hieroglyphs.
-        /// </summary>
-        public static string U13000U1342F {
-            get {
-                return ResourceManager.GetString("U13000U1342F", resourceCulture);
+                return ResourceManager.GetString("U001200_U00137F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ethiopic Supplement.
         /// </summary>
-        public static string U1380U139F {
+        public static string U001380_U00139F {
             get {
-                return ResourceManager.GetString("U1380U139F", resourceCulture);
+                return ResourceManager.GetString("U001380_U00139F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cherokee.
         /// </summary>
-        public static string U13A0U13FF {
+        public static string U0013A0_U0013FF {
             get {
-                return ResourceManager.GetString("U13A0U13FF", resourceCulture);
+                return ResourceManager.GetString("U0013A0_U0013FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unified Canadian Aboriginal Syllabics.
         /// </summary>
-        public static string U1400U167F {
+        public static string U001400_U00167F {
             get {
-                return ResourceManager.GetString("U1400U167F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bamum Supplement.
-        /// </summary>
-        public static string U16800U16A3F {
-            get {
-                return ResourceManager.GetString("U16800U16A3F", resourceCulture);
+                return ResourceManager.GetString("U001400_U00167F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ogham.
         /// </summary>
-        public static string U1680U169F {
+        public static string U001680_U00169F {
             get {
-                return ResourceManager.GetString("U1680U169F", resourceCulture);
+                return ResourceManager.GetString("U001680_U00169F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Runic.
         /// </summary>
-        public static string U16A0U16FF {
+        public static string U0016A0_U0016FF {
             get {
-                return ResourceManager.GetString("U16A0U16FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mro.
-        /// </summary>
-        public static string U16A40U16A6F {
-            get {
-                return ResourceManager.GetString("U16A40U16A6F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bassa Vah.
-        /// </summary>
-        public static string U16AD0U16AFF {
-            get {
-                return ResourceManager.GetString("U16AD0U16AFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pahawh Hmong.
-        /// </summary>
-        public static string U16B00U16B8F {
-            get {
-                return ResourceManager.GetString("U16B00U16B8F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Miao.
-        /// </summary>
-        public static string U16F00U16F9F {
-            get {
-                return ResourceManager.GetString("U16F00U16F9F", resourceCulture);
+                return ResourceManager.GetString("U0016A0_U0016FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tagalog.
         /// </summary>
-        public static string U1700U171F {
+        public static string U001700_U00171F {
             get {
-                return ResourceManager.GetString("U1700U171F", resourceCulture);
+                return ResourceManager.GetString("U001700_U00171F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hanunoo.
         /// </summary>
-        public static string U1720U173F {
+        public static string U001720_U00173F {
             get {
-                return ResourceManager.GetString("U1720U173F", resourceCulture);
+                return ResourceManager.GetString("U001720_U00173F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Buhid.
         /// </summary>
-        public static string U1740U175F {
+        public static string U001740_U00175F {
             get {
-                return ResourceManager.GetString("U1740U175F", resourceCulture);
+                return ResourceManager.GetString("U001740_U00175F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tagbanwa.
         /// </summary>
-        public static string U1760U177F {
+        public static string U001760_U00177F {
             get {
-                return ResourceManager.GetString("U1760U177F", resourceCulture);
+                return ResourceManager.GetString("U001760_U00177F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Khmer.
         /// </summary>
-        public static string U1780U17FF {
+        public static string U001780_U0017FF {
             get {
-                return ResourceManager.GetString("U1780U17FF", resourceCulture);
+                return ResourceManager.GetString("U001780_U0017FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Mongolian.
         /// </summary>
-        public static string U1800U18AF {
+        public static string U001800_U0018AF {
             get {
-                return ResourceManager.GetString("U1800U18AF", resourceCulture);
+                return ResourceManager.GetString("U001800_U0018AF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unified Canadian Aboriginal Syllabics Extended.
         /// </summary>
-        public static string U18B0U18FF {
+        public static string U0018B0_U0018FF {
             get {
-                return ResourceManager.GetString("U18B0U18FF", resourceCulture);
+                return ResourceManager.GetString("U0018B0_U0018FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Limbu.
         /// </summary>
-        public static string U1900U194F {
+        public static string U001900_U00194F {
             get {
-                return ResourceManager.GetString("U1900U194F", resourceCulture);
+                return ResourceManager.GetString("U001900_U00194F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tai Le.
         /// </summary>
-        public static string U1950U197F {
+        public static string U001950_U00197F {
             get {
-                return ResourceManager.GetString("U1950U197F", resourceCulture);
+                return ResourceManager.GetString("U001950_U00197F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to New Tai Lue.
         /// </summary>
-        public static string U1980U19DF {
+        public static string U001980_U0019DF {
             get {
-                return ResourceManager.GetString("U1980U19DF", resourceCulture);
+                return ResourceManager.GetString("U001980_U0019DF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Khmer Symbols.
         /// </summary>
-        public static string U19E0U19FF {
+        public static string U0019E0_U0019FF {
             get {
-                return ResourceManager.GetString("U19E0U19FF", resourceCulture);
+                return ResourceManager.GetString("U0019E0_U0019FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Buginese.
         /// </summary>
-        public static string U1A00U1A1F {
+        public static string U001A00_U001A1F {
             get {
-                return ResourceManager.GetString("U1A00U1A1F", resourceCulture);
+                return ResourceManager.GetString("U001A00_U001A1F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tai Tham.
         /// </summary>
-        public static string U1A20U1AAF {
+        public static string U001A20_U001AAF {
             get {
-                return ResourceManager.GetString("U1A20U1AAF", resourceCulture);
+                return ResourceManager.GetString("U001A20_U001AAF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Combining Diacritical Marks Extended.
         /// </summary>
-        public static string U1AB0U1AFF {
+        public static string U001AB0_U001AFF {
             get {
-                return ResourceManager.GetString("U1AB0U1AFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kana Supplement.
-        /// </summary>
-        public static string U1B000U1B0FF {
-            get {
-                return ResourceManager.GetString("U1B000U1B0FF", resourceCulture);
+                return ResourceManager.GetString("U001AB0_U001AFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Balinese.
         /// </summary>
-        public static string U1B00U1B7F {
+        public static string U001B00_U001B7F {
             get {
-                return ResourceManager.GetString("U1B00U1B7F", resourceCulture);
+                return ResourceManager.GetString("U001B00_U001B7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sundanese.
         /// </summary>
-        public static string U1B80U1BBF {
+        public static string U001B80_U001BBF {
             get {
-                return ResourceManager.GetString("U1B80U1BBF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Duployan.
-        /// </summary>
-        public static string U1BC00U1BC9F {
-            get {
-                return ResourceManager.GetString("U1BC00U1BC9F", resourceCulture);
+                return ResourceManager.GetString("U001B80_U001BBF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Batak.
         /// </summary>
-        public static string U1BC0U1BFF {
+        public static string U001BC0_U001BFF {
             get {
-                return ResourceManager.GetString("U1BC0U1BFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shorthand Format Controls.
-        /// </summary>
-        public static string U1BCA0U1BCAF {
-            get {
-                return ResourceManager.GetString("U1BCA0U1BCAF", resourceCulture);
+                return ResourceManager.GetString("U001BC0_U001BFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Lepcha.
         /// </summary>
-        public static string U1C00U1C4F {
+        public static string U001C00_U001C4F {
             get {
-                return ResourceManager.GetString("U1C00U1C4F", resourceCulture);
+                return ResourceManager.GetString("U001C00_U001C4F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ol Chiki.
         /// </summary>
-        public static string U1C50U1C7F {
+        public static string U001C50_U001C7F {
             get {
-                return ResourceManager.GetString("U1C50U1C7F", resourceCulture);
+                return ResourceManager.GetString("U001C50_U001C7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sundanese Supplement.
         /// </summary>
-        public static string U1CC0U1CCF {
+        public static string U001CC0_U001CCF {
             get {
-                return ResourceManager.GetString("U1CC0U1CCF", resourceCulture);
+                return ResourceManager.GetString("U001CC0_U001CCF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Vedic Extensions.
         /// </summary>
-        public static string U1CD0U1CFF {
+        public static string U001CD0_U001CFF {
             get {
-                return ResourceManager.GetString("U1CD0U1CFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Byzantine Musical Symbols.
-        /// </summary>
-        public static string U1D000U1D0FF {
-            get {
-                return ResourceManager.GetString("U1D000U1D0FF", resourceCulture);
+                return ResourceManager.GetString("U001CD0_U001CFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Phonetic Extensions.
         /// </summary>
-        public static string U1D00U1D7F {
+        public static string U001D00_U001D7F {
             get {
-                return ResourceManager.GetString("U1D00U1D7F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Musical Symbols.
-        /// </summary>
-        public static string U1D100U1D1FF {
-            get {
-                return ResourceManager.GetString("U1D100U1D1FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ancient Greek Musical Notation.
-        /// </summary>
-        public static string U1D200U1D24F {
-            get {
-                return ResourceManager.GetString("U1D200U1D24F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tai Xuan Jing Symbols.
-        /// </summary>
-        public static string U1D300U1D35F {
-            get {
-                return ResourceManager.GetString("U1D300U1D35F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Counting Rod Numerals.
-        /// </summary>
-        public static string U1D360U1D37F {
-            get {
-                return ResourceManager.GetString("U1D360U1D37F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mathematical Alphanumeric Symbols.
-        /// </summary>
-        public static string U1D400U1D7FF {
-            get {
-                return ResourceManager.GetString("U1D400U1D7FF", resourceCulture);
+                return ResourceManager.GetString("U001D00_U001D7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Phonetic Extensions Supplement.
         /// </summary>
-        public static string U1D80U1DBF {
+        public static string U001D80_U001DBF {
             get {
-                return ResourceManager.GetString("U1D80U1DBF", resourceCulture);
+                return ResourceManager.GetString("U001D80_U001DBF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Combining Diacritical Marks Supplement.
         /// </summary>
-        public static string U1DC0U1DFF {
+        public static string U001DC0_U001DFF {
             get {
-                return ResourceManager.GetString("U1DC0U1DFF", resourceCulture);
+                return ResourceManager.GetString("U001DC0_U001DFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latin Extended Additional.
         /// </summary>
-        public static string U1E00U1EFF {
+        public static string U001E00_U001EFF {
             get {
-                return ResourceManager.GetString("U1E00U1EFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mende Kikakui.
-        /// </summary>
-        public static string U1E800U1E8DF {
-            get {
-                return ResourceManager.GetString("U1E800U1E8DF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Arabic Mathematical Alphabetic Symbols.
-        /// </summary>
-        public static string U1EE00U1EEFF {
-            get {
-                return ResourceManager.GetString("U1EE00U1EEFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mahjong Tiles.
-        /// </summary>
-        public static string U1F000U1F02F {
-            get {
-                return ResourceManager.GetString("U1F000U1F02F", resourceCulture);
+                return ResourceManager.GetString("U001E00_U001EFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Greek Extended.
         /// </summary>
-        public static string U1F00U1FFF {
+        public static string U001F00_U001FFF {
             get {
-                return ResourceManager.GetString("U1F00U1FFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Domino Tiles.
-        /// </summary>
-        public static string U1F030U1F09F {
-            get {
-                return ResourceManager.GetString("U1F030U1F09F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Playing Cards.
-        /// </summary>
-        public static string U1F0A0U1F0FF {
-            get {
-                return ResourceManager.GetString("U1F0A0U1F0FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enclosed Alphanumeric Supplement.
-        /// </summary>
-        public static string U1F100U1F1FF {
-            get {
-                return ResourceManager.GetString("U1F100U1F1FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enclosed Ideographic Supplement.
-        /// </summary>
-        public static string U1F200U1F2FF {
-            get {
-                return ResourceManager.GetString("U1F200U1F2FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Miscellaneous Symbols and Pictographs.
-        /// </summary>
-        public static string U1F300U1F5FF {
-            get {
-                return ResourceManager.GetString("U1F300U1F5FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Emoticons.
-        /// </summary>
-        public static string U1F600U1F64F {
-            get {
-                return ResourceManager.GetString("U1F600U1F64F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ornamental Dingbats.
-        /// </summary>
-        public static string U1F650U1F67F {
-            get {
-                return ResourceManager.GetString("U1F650U1F67F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Transport and Map Symbols.
-        /// </summary>
-        public static string U1F680U1F6FF {
-            get {
-                return ResourceManager.GetString("U1F680U1F6FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alchemical Symbols.
-        /// </summary>
-        public static string U1F700U1F77F {
-            get {
-                return ResourceManager.GetString("U1F700U1F77F", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Geometric Shapes Extended.
-        /// </summary>
-        public static string U1F780U1F7FF {
-            get {
-                return ResourceManager.GetString("U1F780U1F7FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Supplemental Arrows-C.
-        /// </summary>
-        public static string U1F800U1F8FF {
-            get {
-                return ResourceManager.GetString("U1F800U1F8FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CJK Unified Ideographs Extension B.
-        /// </summary>
-        public static string U20000U2A6DF {
-            get {
-                return ResourceManager.GetString("U20000U2A6DF", resourceCulture);
+                return ResourceManager.GetString("U001F00_U001FFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to General Punctuation.
         /// </summary>
-        public static string U2000U206F {
+        public static string U002000_U00206F {
             get {
-                return ResourceManager.GetString("U2000U206F", resourceCulture);
+                return ResourceManager.GetString("U002000_U00206F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Superscripts and Subscripts.
         /// </summary>
-        public static string U2070U209F {
+        public static string U002070_U00209F {
             get {
-                return ResourceManager.GetString("U2070U209F", resourceCulture);
+                return ResourceManager.GetString("U002070_U00209F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Currency Symbols.
         /// </summary>
-        public static string U20A0U20CF {
+        public static string U0020A0_U0020CF {
             get {
-                return ResourceManager.GetString("U20A0U20CF", resourceCulture);
+                return ResourceManager.GetString("U0020A0_U0020CF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Combining Diacritical Marks for Symbols.
         /// </summary>
-        public static string U20D0U20FF {
+        public static string U0020D0_U0020FF {
             get {
-                return ResourceManager.GetString("U20D0U20FF", resourceCulture);
+                return ResourceManager.GetString("U0020D0_U0020FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Letterlike Symbols.
         /// </summary>
-        public static string U2100U214F {
+        public static string U002100_U00214F {
             get {
-                return ResourceManager.GetString("U2100U214F", resourceCulture);
+                return ResourceManager.GetString("U002100_U00214F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Number Forms.
         /// </summary>
-        public static string U2150U218F {
+        public static string U002150_U00218F {
             get {
-                return ResourceManager.GetString("U2150U218F", resourceCulture);
+                return ResourceManager.GetString("U002150_U00218F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Arrows.
         /// </summary>
-        public static string U2190U21FF {
+        public static string U002190_U0021FF {
             get {
-                return ResourceManager.GetString("U2190U21FF", resourceCulture);
+                return ResourceManager.GetString("U002190_U0021FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Mathematical Operators.
         /// </summary>
-        public static string U2200U22FF {
+        public static string U002200_U0022FF {
             get {
-                return ResourceManager.GetString("U2200U22FF", resourceCulture);
+                return ResourceManager.GetString("U002200_U0022FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Miscellaneous Technical.
         /// </summary>
-        public static string U2300U23FF {
+        public static string U002300_U0023FF {
             get {
-                return ResourceManager.GetString("U2300U23FF", resourceCulture);
+                return ResourceManager.GetString("U002300_U0023FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Control Pictures.
         /// </summary>
-        public static string U2400U243F {
+        public static string U002400_U00243F {
             get {
-                return ResourceManager.GetString("U2400U243F", resourceCulture);
+                return ResourceManager.GetString("U002400_U00243F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Optical Character Recognition.
         /// </summary>
-        public static string U2440U245F {
+        public static string U002440_U00245F {
             get {
-                return ResourceManager.GetString("U2440U245F", resourceCulture);
+                return ResourceManager.GetString("U002440_U00245F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Enclosed Alphanumerics.
         /// </summary>
-        public static string U2460U24FF {
+        public static string U002460_U0024FF {
             get {
-                return ResourceManager.GetString("U2460U24FF", resourceCulture);
+                return ResourceManager.GetString("U002460_U0024FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Box Drawing.
         /// </summary>
-        public static string U2500U257F {
+        public static string U002500_U00257F {
             get {
-                return ResourceManager.GetString("U2500U257F", resourceCulture);
+                return ResourceManager.GetString("U002500_U00257F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Block Elements.
         /// </summary>
-        public static string U2580U259F {
+        public static string U002580_U00259F {
             get {
-                return ResourceManager.GetString("U2580U259F", resourceCulture);
+                return ResourceManager.GetString("U002580_U00259F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Geometric Shapes.
         /// </summary>
-        public static string U25A0U25FF {
+        public static string U0025A0_U0025FF {
             get {
-                return ResourceManager.GetString("U25A0U25FF", resourceCulture);
+                return ResourceManager.GetString("U0025A0_U0025FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Miscellaneous Symbols.
         /// </summary>
-        public static string U2600U26FF {
+        public static string U002600_U0026FF {
             get {
-                return ResourceManager.GetString("U2600U26FF", resourceCulture);
+                return ResourceManager.GetString("U002600_U0026FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Dingbats.
         /// </summary>
-        public static string U2700U27BF {
+        public static string U002700_U0027BF {
             get {
-                return ResourceManager.GetString("U2700U27BF", resourceCulture);
+                return ResourceManager.GetString("U002700_U0027BF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Miscellaneous Mathematical Symbols-A.
         /// </summary>
-        public static string U27C0U27EF {
+        public static string U0027C0_U0027EF {
             get {
-                return ResourceManager.GetString("U27C0U27EF", resourceCulture);
+                return ResourceManager.GetString("U0027C0_U0027EF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Supplemental Arrows-A.
         /// </summary>
-        public static string U27F0U27FF {
+        public static string U0027F0_U0027FF {
             get {
-                return ResourceManager.GetString("U27F0U27FF", resourceCulture);
+                return ResourceManager.GetString("U0027F0_U0027FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Braille Patterns.
         /// </summary>
-        public static string U2800U28FF {
+        public static string U002800_U0028FF {
             get {
-                return ResourceManager.GetString("U2800U28FF", resourceCulture);
+                return ResourceManager.GetString("U002800_U0028FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Supplemental Arrows-B.
         /// </summary>
-        public static string U2900U297F {
+        public static string U002900_U00297F {
             get {
-                return ResourceManager.GetString("U2900U297F", resourceCulture);
+                return ResourceManager.GetString("U002900_U00297F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Miscellaneous Mathematical Symbols-B.
         /// </summary>
-        public static string U2980U29FF {
+        public static string U002980_U0029FF {
             get {
-                return ResourceManager.GetString("U2980U29FF", resourceCulture);
+                return ResourceManager.GetString("U002980_U0029FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Supplemental Mathematical Operators.
         /// </summary>
-        public static string U2A00U2AFF {
+        public static string U002A00_U002AFF {
             get {
-                return ResourceManager.GetString("U2A00U2AFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CJK Unified Ideographs Extension C.
-        /// </summary>
-        public static string U2A700U2B73F {
-            get {
-                return ResourceManager.GetString("U2A700U2B73F", resourceCulture);
+                return ResourceManager.GetString("U002A00_U002AFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Miscellaneous Symbols and Arrows.
         /// </summary>
-        public static string U2B00U2BFF {
+        public static string U002B00_U002BFF {
             get {
-                return ResourceManager.GetString("U2B00U2BFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CJK Unified Ideographs Extension D.
-        /// </summary>
-        public static string U2B740U2B81F {
-            get {
-                return ResourceManager.GetString("U2B740U2B81F", resourceCulture);
+                return ResourceManager.GetString("U002B00_U002BFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Glagolitic.
         /// </summary>
-        public static string U2C00U2C5F {
+        public static string U002C00_U002C5F {
             get {
-                return ResourceManager.GetString("U2C00U2C5F", resourceCulture);
+                return ResourceManager.GetString("U002C00_U002C5F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latin Extended-C.
         /// </summary>
-        public static string U2C60U2C7F {
+        public static string U002C60_U002C7F {
             get {
-                return ResourceManager.GetString("U2C60U2C7F", resourceCulture);
+                return ResourceManager.GetString("U002C60_U002C7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Coptic.
         /// </summary>
-        public static string U2C80U2CFF {
+        public static string U002C80_U002CFF {
             get {
-                return ResourceManager.GetString("U2C80U2CFF", resourceCulture);
+                return ResourceManager.GetString("U002C80_U002CFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Georgian Supplement.
         /// </summary>
-        public static string U2D00U2D2F {
+        public static string U002D00_U002D2F {
             get {
-                return ResourceManager.GetString("U2D00U2D2F", resourceCulture);
+                return ResourceManager.GetString("U002D00_U002D2F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tifinagh.
         /// </summary>
-        public static string U2D30U2D7F {
+        public static string U002D30_U002D7F {
             get {
-                return ResourceManager.GetString("U2D30U2D7F", resourceCulture);
+                return ResourceManager.GetString("U002D30_U002D7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ethiopic Extended.
         /// </summary>
-        public static string U2D80U2DDF {
+        public static string U002D80_U002DDF {
             get {
-                return ResourceManager.GetString("U2D80U2DDF", resourceCulture);
+                return ResourceManager.GetString("U002D80_U002DDF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cyrillic Extended-A.
         /// </summary>
-        public static string U2DE0U2DFF {
+        public static string U002DE0_U002DFF {
             get {
-                return ResourceManager.GetString("U2DE0U2DFF", resourceCulture);
+                return ResourceManager.GetString("U002DE0_U002DFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Supplemental Punctuation.
         /// </summary>
-        public static string U2E00U2E7F {
+        public static string U002E00_U002E7F {
             get {
-                return ResourceManager.GetString("U2E00U2E7F", resourceCulture);
+                return ResourceManager.GetString("U002E00_U002E7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Radicals Supplement.
         /// </summary>
-        public static string U2E80U2EFF {
+        public static string U002E80_U002EFF {
             get {
-                return ResourceManager.GetString("U2E80U2EFF", resourceCulture);
+                return ResourceManager.GetString("U002E80_U002EFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Kangxi Radicals.
         /// </summary>
-        public static string U2F00U2FDF {
+        public static string U002F00_U002FDF {
             get {
-                return ResourceManager.GetString("U2F00U2FDF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CJK Compatibility Ideographs Supplement.
-        /// </summary>
-        public static string U2F800U2FA1F {
-            get {
-                return ResourceManager.GetString("U2F800U2FA1F", resourceCulture);
+                return ResourceManager.GetString("U002F00_U002FDF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ideographic Description Characters.
         /// </summary>
-        public static string U2FF0U2FFF {
+        public static string U002FF0_U002FFF {
             get {
-                return ResourceManager.GetString("U2FF0U2FFF", resourceCulture);
+                return ResourceManager.GetString("U002FF0_U002FFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Symbols and Punctuation.
         /// </summary>
-        public static string U3000U303F {
+        public static string U003000_U00303F {
             get {
-                return ResourceManager.GetString("U3000U303F", resourceCulture);
+                return ResourceManager.GetString("U003000_U00303F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hiragana.
         /// </summary>
-        public static string U3040U309F {
+        public static string U003040_U00309F {
             get {
-                return ResourceManager.GetString("U3040U309F", resourceCulture);
+                return ResourceManager.GetString("U003040_U00309F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Katakana.
         /// </summary>
-        public static string U30A0U30FF {
+        public static string U0030A0_U0030FF {
             get {
-                return ResourceManager.GetString("U30A0U30FF", resourceCulture);
+                return ResourceManager.GetString("U0030A0_U0030FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Bopomofo.
         /// </summary>
-        public static string U3100U312F {
+        public static string U003100_U00312F {
             get {
-                return ResourceManager.GetString("U3100U312F", resourceCulture);
+                return ResourceManager.GetString("U003100_U00312F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hangul Compatibility Jamo.
         /// </summary>
-        public static string U3130U318F {
+        public static string U003130_U00318F {
             get {
-                return ResourceManager.GetString("U3130U318F", resourceCulture);
+                return ResourceManager.GetString("U003130_U00318F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Kanbun.
         /// </summary>
-        public static string U3190U319F {
+        public static string U003190_U00319F {
             get {
-                return ResourceManager.GetString("U3190U319F", resourceCulture);
+                return ResourceManager.GetString("U003190_U00319F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Bopomofo Extended.
         /// </summary>
-        public static string U31A0U31BF {
+        public static string U0031A0_U0031BF {
             get {
-                return ResourceManager.GetString("U31A0U31BF", resourceCulture);
+                return ResourceManager.GetString("U0031A0_U0031BF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Strokes.
         /// </summary>
-        public static string U31C0U31EF {
+        public static string U0031C0_U0031EF {
             get {
-                return ResourceManager.GetString("U31C0U31EF", resourceCulture);
+                return ResourceManager.GetString("U0031C0_U0031EF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Katakana Phonetic Extensions.
         /// </summary>
-        public static string U31F0U31FF {
+        public static string U0031F0_U0031FF {
             get {
-                return ResourceManager.GetString("U31F0U31FF", resourceCulture);
+                return ResourceManager.GetString("U0031F0_U0031FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Enclosed CJK Letters and Months.
         /// </summary>
-        public static string U3200U32FF {
+        public static string U003200_U0032FF {
             get {
-                return ResourceManager.GetString("U3200U32FF", resourceCulture);
+                return ResourceManager.GetString("U003200_U0032FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Compatibility.
         /// </summary>
-        public static string U3300U33FF {
+        public static string U003300_U0033FF {
             get {
-                return ResourceManager.GetString("U3300U33FF", resourceCulture);
+                return ResourceManager.GetString("U003300_U0033FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Unified Ideographs Extension A.
         /// </summary>
-        public static string U3400U4DBF {
+        public static string U003400_U004DBF {
             get {
-                return ResourceManager.GetString("U3400U4DBF", resourceCulture);
+                return ResourceManager.GetString("U003400_U004DBF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Yijing Hexagram Symbols.
         /// </summary>
-        public static string U4DC0U4DFF {
+        public static string U004DC0_U004DFF {
             get {
-                return ResourceManager.GetString("U4DC0U4DFF", resourceCulture);
+                return ResourceManager.GetString("U004DC0_U004DFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Unified Ideographs.
         /// </summary>
-        public static string U4E00U9FFF {
+        public static string U004E00_U009FFF {
             get {
-                return ResourceManager.GetString("U4E00U9FFF", resourceCulture);
+                return ResourceManager.GetString("U004E00_U009FFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Yi Syllables.
         /// </summary>
-        public static string UA000UA48F {
+        public static string U00A000_U00A48F {
             get {
-                return ResourceManager.GetString("UA000UA48F", resourceCulture);
+                return ResourceManager.GetString("U00A000_U00A48F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Yi Radicals.
         /// </summary>
-        public static string UA490UA4CF {
+        public static string U00A490_U00A4CF {
             get {
-                return ResourceManager.GetString("UA490UA4CF", resourceCulture);
+                return ResourceManager.GetString("U00A490_U00A4CF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Lisu.
         /// </summary>
-        public static string UA4D0UA4FF {
+        public static string U00A4D0_U00A4FF {
             get {
-                return ResourceManager.GetString("UA4D0UA4FF", resourceCulture);
+                return ResourceManager.GetString("U00A4D0_U00A4FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Vai.
         /// </summary>
-        public static string UA500UA63F {
+        public static string U00A500_U00A63F {
             get {
-                return ResourceManager.GetString("UA500UA63F", resourceCulture);
+                return ResourceManager.GetString("U00A500_U00A63F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cyrillic Extended-B.
         /// </summary>
-        public static string UA640UA69F {
+        public static string U00A640_U00A69F {
             get {
-                return ResourceManager.GetString("UA640UA69F", resourceCulture);
+                return ResourceManager.GetString("U00A640_U00A69F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Bamum.
         /// </summary>
-        public static string UA6A0UA6FF {
+        public static string U00A6A0_U00A6FF {
             get {
-                return ResourceManager.GetString("UA6A0UA6FF", resourceCulture);
+                return ResourceManager.GetString("U00A6A0_U00A6FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Modifier Tone Letters.
         /// </summary>
-        public static string UA700UA71F {
+        public static string U00A700_U00A71F {
             get {
-                return ResourceManager.GetString("UA700UA71F", resourceCulture);
+                return ResourceManager.GetString("U00A700_U00A71F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latin Extended-D.
         /// </summary>
-        public static string UA720UA7FF {
+        public static string U00A720_U00A7FF {
             get {
-                return ResourceManager.GetString("UA720UA7FF", resourceCulture);
+                return ResourceManager.GetString("U00A720_U00A7FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Syloti Nagri.
         /// </summary>
-        public static string UA800UA82F {
+        public static string U00A800_U00A82F {
             get {
-                return ResourceManager.GetString("UA800UA82F", resourceCulture);
+                return ResourceManager.GetString("U00A800_U00A82F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Common Indic Number Forms.
         /// </summary>
-        public static string UA830UA83F {
+        public static string U00A830_U00A83F {
             get {
-                return ResourceManager.GetString("UA830UA83F", resourceCulture);
+                return ResourceManager.GetString("U00A830_U00A83F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Phags-pa.
         /// </summary>
-        public static string UA840UA87F {
+        public static string U00A840_U00A87F {
             get {
-                return ResourceManager.GetString("UA840UA87F", resourceCulture);
+                return ResourceManager.GetString("U00A840_U00A87F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Saurashtra.
         /// </summary>
-        public static string UA880UA8DF {
+        public static string U00A880_U00A8DF {
             get {
-                return ResourceManager.GetString("UA880UA8DF", resourceCulture);
+                return ResourceManager.GetString("U00A880_U00A8DF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Devanagari Extended.
         /// </summary>
-        public static string UA8E0UA8FF {
+        public static string U00A8E0_U00A8FF {
             get {
-                return ResourceManager.GetString("UA8E0UA8FF", resourceCulture);
+                return ResourceManager.GetString("U00A8E0_U00A8FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Kayah Li.
         /// </summary>
-        public static string UA900UA92F {
+        public static string U00A900_U00A92F {
             get {
-                return ResourceManager.GetString("UA900UA92F", resourceCulture);
+                return ResourceManager.GetString("U00A900_U00A92F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Rejang.
         /// </summary>
-        public static string UA930UA95F {
+        public static string U00A930_U00A95F {
             get {
-                return ResourceManager.GetString("UA930UA95F", resourceCulture);
+                return ResourceManager.GetString("U00A930_U00A95F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hangul Jamo Extended-A.
         /// </summary>
-        public static string UA960UA97F {
+        public static string U00A960_U00A97F {
             get {
-                return ResourceManager.GetString("UA960UA97F", resourceCulture);
+                return ResourceManager.GetString("U00A960_U00A97F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Javanese.
         /// </summary>
-        public static string UA980UA9DF {
+        public static string U00A980_U00A9DF {
             get {
-                return ResourceManager.GetString("UA980UA9DF", resourceCulture);
+                return ResourceManager.GetString("U00A980_U00A9DF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Myanmar Extended-B.
         /// </summary>
-        public static string UA9E0UA9FF {
+        public static string U00A9E0_U00A9FF {
             get {
-                return ResourceManager.GetString("UA9E0UA9FF", resourceCulture);
+                return ResourceManager.GetString("U00A9E0_U00A9FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cham.
         /// </summary>
-        public static string UAA00UAA5F {
+        public static string U00AA00_U00AA5F {
             get {
-                return ResourceManager.GetString("UAA00UAA5F", resourceCulture);
+                return ResourceManager.GetString("U00AA00_U00AA5F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Myanmar Extended-A.
         /// </summary>
-        public static string UAA60UAA7F {
+        public static string U00AA60_U00AA7F {
             get {
-                return ResourceManager.GetString("UAA60UAA7F", resourceCulture);
+                return ResourceManager.GetString("U00AA60_U00AA7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Tai Viet.
         /// </summary>
-        public static string UAA80UAADF {
+        public static string U00AA80_U00AADF {
             get {
-                return ResourceManager.GetString("UAA80UAADF", resourceCulture);
+                return ResourceManager.GetString("U00AA80_U00AADF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Meetei Mayek Extensions.
         /// </summary>
-        public static string UAAE0UAAFF {
+        public static string U00AAE0_U00AAFF {
             get {
-                return ResourceManager.GetString("UAAE0UAAFF", resourceCulture);
+                return ResourceManager.GetString("U00AAE0_U00AAFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ethiopic Extended-A.
         /// </summary>
-        public static string UAB00UAB2F {
+        public static string U00AB00_U00AB2F {
             get {
-                return ResourceManager.GetString("UAB00UAB2F", resourceCulture);
+                return ResourceManager.GetString("U00AB00_U00AB2F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latin Extended-E.
         /// </summary>
-        public static string UAB30UAB6F {
+        public static string U00AB30_U00AB6F {
             get {
-                return ResourceManager.GetString("UAB30UAB6F", resourceCulture);
+                return ResourceManager.GetString("U00AB30_U00AB6F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Meetei Mayek.
         /// </summary>
-        public static string UABC0UABFF {
+        public static string U00ABC0_U00ABFF {
             get {
-                return ResourceManager.GetString("UABC0UABFF", resourceCulture);
+                return ResourceManager.GetString("U00ABC0_U00ABFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hangul Syllables.
         /// </summary>
-        public static string UAC00UD7AF {
+        public static string U00AC00_U00D7AF {
             get {
-                return ResourceManager.GetString("UAC00UD7AF", resourceCulture);
+                return ResourceManager.GetString("U00AC00_U00D7AF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Hangul Jamo Extended-B.
         /// </summary>
-        public static string UD7B0UD7FF {
+        public static string U00D7B0_U00D7FF {
             get {
-                return ResourceManager.GetString("UD7B0UD7FF", resourceCulture);
+                return ResourceManager.GetString("U00D7B0_U00D7FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to High Surrogates.
         /// </summary>
-        public static string UD800UDB7F {
+        public static string U00D800_U00DB7F {
             get {
-                return ResourceManager.GetString("UD800UDB7F", resourceCulture);
+                return ResourceManager.GetString("U00D800_U00DB7F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to High Private Use Surrogates.
         /// </summary>
-        public static string UDB80UDBFF {
+        public static string U00DB80_U00DBFF {
             get {
-                return ResourceManager.GetString("UDB80UDBFF", resourceCulture);
+                return ResourceManager.GetString("U00DB80_U00DBFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Low Surrogates.
         /// </summary>
-        public static string UDC00UDFFF {
+        public static string U00DC00_U00DFFF {
             get {
-                return ResourceManager.GetString("UDC00UDFFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tags.
-        /// </summary>
-        public static string UE0000UE007F {
-            get {
-                return ResourceManager.GetString("UE0000UE007F", resourceCulture);
+                return ResourceManager.GetString("U00DC00_U00DFFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Private Use Area.
         /// </summary>
-        public static string UE000UF8FF {
+        public static string U00E000_U00F8FF {
             get {
-                return ResourceManager.GetString("UE000UF8FF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Variation Selectors Supplement.
-        /// </summary>
-        public static string UE0100UE01EF {
-            get {
-                return ResourceManager.GetString("UE0100UE01EF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Supplementary Private Use Area-A.
-        /// </summary>
-        public static string UF0000UFFFFF {
-            get {
-                return ResourceManager.GetString("UF0000UFFFFF", resourceCulture);
+                return ResourceManager.GetString("U00E000_U00F8FF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Compatibility Ideographs.
         /// </summary>
-        public static string UF900UFAFF {
+        public static string U00F900_U00FAFF {
             get {
-                return ResourceManager.GetString("UF900UFAFF", resourceCulture);
+                return ResourceManager.GetString("U00F900_U00FAFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Alphabetic Presentation Forms.
         /// </summary>
-        public static string UFB00UFB4F {
+        public static string U00FB00_U00FB4F {
             get {
-                return ResourceManager.GetString("UFB00UFB4F", resourceCulture);
+                return ResourceManager.GetString("U00FB00_U00FB4F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Arabic Presentation Forms-A.
         /// </summary>
-        public static string UFB50UFDFF {
+        public static string U00FB50_U00FDFF {
             get {
-                return ResourceManager.GetString("UFB50UFDFF", resourceCulture);
+                return ResourceManager.GetString("U00FB50_U00FDFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Variation Selectors.
         /// </summary>
-        public static string UFE00UFE0F {
+        public static string U00FE00_U00FE0F {
             get {
-                return ResourceManager.GetString("UFE00UFE0F", resourceCulture);
+                return ResourceManager.GetString("U00FE00_U00FE0F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Vertical Forms.
         /// </summary>
-        public static string UFE10UFE1F {
+        public static string U00FE10_U00FE1F {
             get {
-                return ResourceManager.GetString("UFE10UFE1F", resourceCulture);
+                return ResourceManager.GetString("U00FE10_U00FE1F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Combining Half Marks.
         /// </summary>
-        public static string UFE20UFE2F {
+        public static string U00FE20_U00FE2F {
             get {
-                return ResourceManager.GetString("UFE20UFE2F", resourceCulture);
+                return ResourceManager.GetString("U00FE20_U00FE2F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to CJK Compatibility Forms.
         /// </summary>
-        public static string UFE30UFE4F {
+        public static string U00FE30_U00FE4F {
             get {
-                return ResourceManager.GetString("UFE30UFE4F", resourceCulture);
+                return ResourceManager.GetString("U00FE30_U00FE4F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Small Form Variants.
         /// </summary>
-        public static string UFE50UFE6F {
+        public static string U00FE50_U00FE6F {
             get {
-                return ResourceManager.GetString("UFE50UFE6F", resourceCulture);
+                return ResourceManager.GetString("U00FE50_U00FE6F", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Arabic Presentation Forms-B.
         /// </summary>
-        public static string UFE70UFEFF {
+        public static string U00FE70_U00FEFF {
             get {
-                return ResourceManager.GetString("UFE70UFEFF", resourceCulture);
+                return ResourceManager.GetString("U00FE70_U00FEFF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Halfwidth and Fullwidth Forms.
         /// </summary>
-        public static string UFF00UFFEF {
+        public static string U00FF00_U00FFEF {
             get {
-                return ResourceManager.GetString("UFF00UFFEF", resourceCulture);
+                return ResourceManager.GetString("U00FF00_U00FFEF", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Specials.
         /// </summary>
-        public static string UFFF0UFFFF {
+        public static string U00FFF0_U00FFFF {
             get {
-                return ResourceManager.GetString("UFFF0UFFFF", resourceCulture);
+                return ResourceManager.GetString("U00FFF0_U00FFFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linear B Syllabary.
+        /// </summary>
+        public static string U010000_U01007F {
+            get {
+                return ResourceManager.GetString("U010000_U01007F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linear B Ideograms.
+        /// </summary>
+        public static string U010080_U0100FF {
+            get {
+                return ResourceManager.GetString("U010080_U0100FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aegean Numbers.
+        /// </summary>
+        public static string U010100_U01013F {
+            get {
+                return ResourceManager.GetString("U010100_U01013F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ancient Greek Numbers.
+        /// </summary>
+        public static string U010140_U01018F {
+            get {
+                return ResourceManager.GetString("U010140_U01018F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ancient Symbols.
+        /// </summary>
+        public static string U010190_U0101CF {
+            get {
+                return ResourceManager.GetString("U010190_U0101CF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phaistos Disc.
+        /// </summary>
+        public static string U0101D0_U0101FF {
+            get {
+                return ResourceManager.GetString("U0101D0_U0101FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lycian.
+        /// </summary>
+        public static string U010280_U01029F {
+            get {
+                return ResourceManager.GetString("U010280_U01029F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carian.
+        /// </summary>
+        public static string U0102A0_U0102DF {
+            get {
+                return ResourceManager.GetString("U0102A0_U0102DF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coptic Epact Numbers.
+        /// </summary>
+        public static string U0102E0_U0102FF {
+            get {
+                return ResourceManager.GetString("U0102E0_U0102FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old Italic.
+        /// </summary>
+        public static string U010300_U01032F {
+            get {
+                return ResourceManager.GetString("U010300_U01032F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gothic.
+        /// </summary>
+        public static string U010330_U01034F {
+            get {
+                return ResourceManager.GetString("U010330_U01034F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old Permic.
+        /// </summary>
+        public static string U010350_U01037F {
+            get {
+                return ResourceManager.GetString("U010350_U01037F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ugaritic.
+        /// </summary>
+        public static string U010380_U01039F {
+            get {
+                return ResourceManager.GetString("U010380_U01039F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old Persian.
+        /// </summary>
+        public static string U0103A0_U0103DF {
+            get {
+                return ResourceManager.GetString("U0103A0_U0103DF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deseret.
+        /// </summary>
+        public static string U010400_U01044F {
+            get {
+                return ResourceManager.GetString("U010400_U01044F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shavian.
+        /// </summary>
+        public static string U010450_U01047F {
+            get {
+                return ResourceManager.GetString("U010450_U01047F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Osmanya.
+        /// </summary>
+        public static string U010480_U0104AF {
+            get {
+                return ResourceManager.GetString("U010480_U0104AF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elbasan.
+        /// </summary>
+        public static string U010500_U01052F {
+            get {
+                return ResourceManager.GetString("U010500_U01052F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caucasian Albanian.
+        /// </summary>
+        public static string U010530_U01056F {
+            get {
+                return ResourceManager.GetString("U010530_U01056F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linear A.
+        /// </summary>
+        public static string U010600_U01077F {
+            get {
+                return ResourceManager.GetString("U010600_U01077F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cypriot Syllabary.
+        /// </summary>
+        public static string U010800_U01083F {
+            get {
+                return ResourceManager.GetString("U010800_U01083F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imperial Aramaic.
+        /// </summary>
+        public static string U010840_U01085F {
+            get {
+                return ResourceManager.GetString("U010840_U01085F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Palmyrene.
+        /// </summary>
+        public static string U010860_U01087F {
+            get {
+                return ResourceManager.GetString("U010860_U01087F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nabataean.
+        /// </summary>
+        public static string U010880_U0108AF {
+            get {
+                return ResourceManager.GetString("U010880_U0108AF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phoenician.
+        /// </summary>
+        public static string U010900_U01091F {
+            get {
+                return ResourceManager.GetString("U010900_U01091F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lydian.
+        /// </summary>
+        public static string U010920_U01093F {
+            get {
+                return ResourceManager.GetString("U010920_U01093F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meroitic Hieroglyphs.
+        /// </summary>
+        public static string U010980_U01099F {
+            get {
+                return ResourceManager.GetString("U010980_U01099F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meroitic Cursive.
+        /// </summary>
+        public static string U0109A0_U0109FF {
+            get {
+                return ResourceManager.GetString("U0109A0_U0109FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kharoshthi.
+        /// </summary>
+        public static string U010A00_U010A5F {
+            get {
+                return ResourceManager.GetString("U010A00_U010A5F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old South Arabian.
+        /// </summary>
+        public static string U010A60_U010A7F {
+            get {
+                return ResourceManager.GetString("U010A60_U010A7F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old North Arabian.
+        /// </summary>
+        public static string U010A80_U010A9F {
+            get {
+                return ResourceManager.GetString("U010A80_U010A9F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manichaean.
+        /// </summary>
+        public static string U010AC0_U010AFF {
+            get {
+                return ResourceManager.GetString("U010AC0_U010AFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avestan.
+        /// </summary>
+        public static string U010B00_U010B3F {
+            get {
+                return ResourceManager.GetString("U010B00_U010B3F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inscriptional Parthian.
+        /// </summary>
+        public static string U010B40_U010B5F {
+            get {
+                return ResourceManager.GetString("U010B40_U010B5F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inscriptional Pahlavi.
+        /// </summary>
+        public static string U010B60_U010B7F {
+            get {
+                return ResourceManager.GetString("U010B60_U010B7F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Psalter Pahlavi.
+        /// </summary>
+        public static string U010B80_U010BAF {
+            get {
+                return ResourceManager.GetString("U010B80_U010BAF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old Turkic.
+        /// </summary>
+        public static string U010C00_U010C4F {
+            get {
+                return ResourceManager.GetString("U010C00_U010C4F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rumi Numeral Symbols.
+        /// </summary>
+        public static string U010E60_U010E7F {
+            get {
+                return ResourceManager.GetString("U010E60_U010E7F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brahmi.
+        /// </summary>
+        public static string U011000_U01107F {
+            get {
+                return ResourceManager.GetString("U011000_U01107F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kaithi.
+        /// </summary>
+        public static string U011080_U0110CF {
+            get {
+                return ResourceManager.GetString("U011080_U0110CF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sora Sompeng.
+        /// </summary>
+        public static string U0110D0_U0110FF {
+            get {
+                return ResourceManager.GetString("U0110D0_U0110FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chakma.
+        /// </summary>
+        public static string U011100_U01114F {
+            get {
+                return ResourceManager.GetString("U011100_U01114F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mahajani.
+        /// </summary>
+        public static string U011150_U01117F {
+            get {
+                return ResourceManager.GetString("U011150_U01117F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharada.
+        /// </summary>
+        public static string U011180_U0111DF {
+            get {
+                return ResourceManager.GetString("U011180_U0111DF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sinhala Archaic Numbers.
+        /// </summary>
+        public static string U0111E0_U0111FF {
+            get {
+                return ResourceManager.GetString("U0111E0_U0111FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Khojki.
+        /// </summary>
+        public static string U011200_U01124F {
+            get {
+                return ResourceManager.GetString("U011200_U01124F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Khudawadi.
+        /// </summary>
+        public static string U0112B0_U0112FF {
+            get {
+                return ResourceManager.GetString("U0112B0_U0112FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grantha.
+        /// </summary>
+        public static string U011300_U01137F {
+            get {
+                return ResourceManager.GetString("U011300_U01137F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tirhuta.
+        /// </summary>
+        public static string U011480_U0114DF {
+            get {
+                return ResourceManager.GetString("U011480_U0114DF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Siddham.
+        /// </summary>
+        public static string U011580_U0115FF {
+            get {
+                return ResourceManager.GetString("U011580_U0115FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modi.
+        /// </summary>
+        public static string U011600_U01165F {
+            get {
+                return ResourceManager.GetString("U011600_U01165F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Takri.
+        /// </summary>
+        public static string U011680_U0116CF {
+            get {
+                return ResourceManager.GetString("U011680_U0116CF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warang Citi.
+        /// </summary>
+        public static string U0118A0_U0118FF {
+            get {
+                return ResourceManager.GetString("U0118A0_U0118FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pau Cin Hau.
+        /// </summary>
+        public static string U011AC0_U011AFF {
+            get {
+                return ResourceManager.GetString("U011AC0_U011AFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cuneiform.
+        /// </summary>
+        public static string U012000_U0123FF {
+            get {
+                return ResourceManager.GetString("U012000_U0123FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cuneiform Numbers and Punctuation.
+        /// </summary>
+        public static string U012400_U01247F {
+            get {
+                return ResourceManager.GetString("U012400_U01247F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Egyptian Hieroglyphs.
+        /// </summary>
+        public static string U013000_U01342F {
+            get {
+                return ResourceManager.GetString("U013000_U01342F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bamum Supplement.
+        /// </summary>
+        public static string U016800_U016A3F {
+            get {
+                return ResourceManager.GetString("U016800_U016A3F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mro.
+        /// </summary>
+        public static string U016A40_U016A6F {
+            get {
+                return ResourceManager.GetString("U016A40_U016A6F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bassa Vah.
+        /// </summary>
+        public static string U016AD0_U016AFF {
+            get {
+                return ResourceManager.GetString("U016AD0_U016AFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pahawh Hmong.
+        /// </summary>
+        public static string U016B00_U016B8F {
+            get {
+                return ResourceManager.GetString("U016B00_U016B8F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miao.
+        /// </summary>
+        public static string U016F00_U016F9F {
+            get {
+                return ResourceManager.GetString("U016F00_U016F9F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kana Supplement.
+        /// </summary>
+        public static string U01B000_U01B0FF {
+            get {
+                return ResourceManager.GetString("U01B000_U01B0FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duployan.
+        /// </summary>
+        public static string U01BC00_U01BC9F {
+            get {
+                return ResourceManager.GetString("U01BC00_U01BC9F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shorthand Format Controls.
+        /// </summary>
+        public static string U01BCA0_U01BCAF {
+            get {
+                return ResourceManager.GetString("U01BCA0_U01BCAF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Byzantine Musical Symbols.
+        /// </summary>
+        public static string U01D000_U01D0FF {
+            get {
+                return ResourceManager.GetString("U01D000_U01D0FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Musical Symbols.
+        /// </summary>
+        public static string U01D100_U01D1FF {
+            get {
+                return ResourceManager.GetString("U01D100_U01D1FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ancient Greek Musical Notation.
+        /// </summary>
+        public static string U01D200_U01D24F {
+            get {
+                return ResourceManager.GetString("U01D200_U01D24F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tai Xuan Jing Symbols.
+        /// </summary>
+        public static string U01D300_U01D35F {
+            get {
+                return ResourceManager.GetString("U01D300_U01D35F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Counting Rod Numerals.
+        /// </summary>
+        public static string U01D360_U01D37F {
+            get {
+                return ResourceManager.GetString("U01D360_U01D37F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mathematical Alphanumeric Symbols.
+        /// </summary>
+        public static string U01D400_U01D7FF {
+            get {
+                return ResourceManager.GetString("U01D400_U01D7FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mende Kikakui.
+        /// </summary>
+        public static string U01E800_U01E8DF {
+            get {
+                return ResourceManager.GetString("U01E800_U01E8DF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arabic Mathematical Alphabetic Symbols.
+        /// </summary>
+        public static string U01EE00_U01EEFF {
+            get {
+                return ResourceManager.GetString("U01EE00_U01EEFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mahjong Tiles.
+        /// </summary>
+        public static string U01F000_U01F02F {
+            get {
+                return ResourceManager.GetString("U01F000_U01F02F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domino Tiles.
+        /// </summary>
+        public static string U01F030_U01F09F {
+            get {
+                return ResourceManager.GetString("U01F030_U01F09F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Playing Cards.
+        /// </summary>
+        public static string U01F0A0_U01F0FF {
+            get {
+                return ResourceManager.GetString("U01F0A0_U01F0FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enclosed Alphanumeric Supplement.
+        /// </summary>
+        public static string U01F100_U01F1FF {
+            get {
+                return ResourceManager.GetString("U01F100_U01F1FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enclosed Ideographic Supplement.
+        /// </summary>
+        public static string U01F200_U01F2FF {
+            get {
+                return ResourceManager.GetString("U01F200_U01F2FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous Symbols and Pictographs.
+        /// </summary>
+        public static string U01F300_U01F5FF {
+            get {
+                return ResourceManager.GetString("U01F300_U01F5FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emoticons.
+        /// </summary>
+        public static string U01F600_U01F64F {
+            get {
+                return ResourceManager.GetString("U01F600_U01F64F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ornamental Dingbats.
+        /// </summary>
+        public static string U01F650_U01F67F {
+            get {
+                return ResourceManager.GetString("U01F650_U01F67F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transport and Map Symbols.
+        /// </summary>
+        public static string U01F680_U01F6FF {
+            get {
+                return ResourceManager.GetString("U01F680_U01F6FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alchemical Symbols.
+        /// </summary>
+        public static string U01F700_U01F77F {
+            get {
+                return ResourceManager.GetString("U01F700_U01F77F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geometric Shapes Extended.
+        /// </summary>
+        public static string U01F780_U01F7FF {
+            get {
+                return ResourceManager.GetString("U01F780_U01F7FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supplemental Arrows-C.
+        /// </summary>
+        public static string U01F800_U01F8FF {
+            get {
+                return ResourceManager.GetString("U01F800_U01F8FF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CJK Unified Ideographs Extension B.
+        /// </summary>
+        public static string U020000_U02A6DF {
+            get {
+                return ResourceManager.GetString("U020000_U02A6DF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CJK Unified Ideographs Extension C.
+        /// </summary>
+        public static string U02A700_U02B73F {
+            get {
+                return ResourceManager.GetString("U02A700_U02B73F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CJK Unified Ideographs Extension D.
+        /// </summary>
+        public static string U02B740_U02B81F {
+            get {
+                return ResourceManager.GetString("U02B740_U02B81F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CJK Compatibility Ideographs Supplement.
+        /// </summary>
+        public static string U02F800_U02FA1F {
+            get {
+                return ResourceManager.GetString("U02F800_U02FA1F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tags.
+        /// </summary>
+        public static string U0E0000_U0E007F {
+            get {
+                return ResourceManager.GetString("U0E0000_U0E007F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Variation Selectors Supplement.
+        /// </summary>
+        public static string U0E0100_U0E01EF {
+            get {
+                return ResourceManager.GetString("U0E0100_U0E01EF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supplementary Private Use Area-A.
+        /// </summary>
+        public static string U0F0000_U0FFFFF {
+            get {
+                return ResourceManager.GetString("U0F0000_U0FFFFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supplementary Private Use Area-B.
+        /// </summary>
+        public static string U100000_U10FFFF {
+            get {
+                return ResourceManager.GetString("U100000_U10FFFF", resourceCulture);
             }
         }
     }

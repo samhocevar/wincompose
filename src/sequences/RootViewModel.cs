@@ -39,10 +39,11 @@ namespace WinCompose
                 if (property.Name == "ResourceManager" || property.Name == "Culture")
                     continue;
 
+                // FIXME: this could be made more robust
                 var name = (string)property.GetValue(null, null);
-                var range = property.Name.Split(new[] { 'U' });
+                var range = property.Name.Split(new[] { 'U', '_' });
                 var start = Convert.ToInt32(range[1], 16);
-                var end = Convert.ToInt32(range[2], 16);
+                var end = Convert.ToInt32(range[3], 16);
                 categories.Add(new CategoryViewModel(name, start, end));
             }
             categories.Sort((x, y) => string.Compare(x.Name, y.Name, Thread.CurrentThread.CurrentCulture, CompareOptions.StringSort));
