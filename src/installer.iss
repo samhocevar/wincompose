@@ -1,5 +1,5 @@
 #define NAME "WinCompose"
-#define VERSION "0.6.99beta20150303"
+#define VERSION "0.6.99beta20150306"
 
 [Setup]
 AppName = {#NAME}
@@ -7,6 +7,7 @@ AppVersion = {#VERSION}
 AppPublisher = Sam Hocevar
 AppPublisherURL = http://sam.hocevar.net/
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
+ArchitecturesInstallIn64BitMode = x64
 DefaultDirName = {pf}\{#NAME}
 DefaultGroupName = {#NAME}
 SetupIconFile = "res\icon_normal.ico"
