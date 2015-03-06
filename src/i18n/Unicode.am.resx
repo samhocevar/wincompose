@@ -1,0 +1,1172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+</root>  <data name="U0020" xml:space="preserve">
+    <value>እስፔስ</value>
+  </data>
+  <data name="U0BE6" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="U1200" xml:space="preserve">
+    <value>ሆይ፡ግዕዝ</value>
+  </data>
+  <data name="U1201" xml:space="preserve">
+    <value>ሆይ፡ካዕብ</value>
+  </data>
+  <data name="U1202" xml:space="preserve">
+    <value>ሆይ፡ሣልስ</value>
+  </data>
+  <data name="U1203" xml:space="preserve">
+    <value>ሆይ፡ራዕብ</value>
+  </data>
+  <data name="U1204" xml:space="preserve">
+    <value>ሆይ፡ኃምስ</value>
+  </data>
+  <data name="U1205" xml:space="preserve">
+    <value>ሆይ፡ሳድስ</value>
+  </data>
+  <data name="U1206" xml:space="preserve">
+    <value>ሆይ፡ሳብዕ</value>
+  </data>
+  <data name="U1208" xml:space="preserve">
+    <value>ላዊ፡ግዕዝ</value>
+  </data>
+  <data name="U1209" xml:space="preserve">
+    <value>ላዊ፡ካዕብ</value>
+  </data>
+  <data name="U120A" xml:space="preserve">
+    <value>ላዊ፡ሣልስ</value>
+  </data>
+  <data name="U120B" xml:space="preserve">
+    <value>ላዊ፡ራዕብ</value>
+  </data>
+  <data name="U120C" xml:space="preserve">
+    <value>ላዊ፡ኃምስ</value>
+  </data>
+  <data name="U120D" xml:space="preserve">
+    <value>ላዊ፡ሳድስ</value>
+  </data>
+  <data name="U120E" xml:space="preserve">
+    <value>ላዊ፡ሳብዕ</value>
+  </data>
+  <data name="U120F" xml:space="preserve">
+    <value>ላዊ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1210" xml:space="preserve">
+    <value>ሐውት፡ግዕዝ</value>
+  </data>
+  <data name="U1211" xml:space="preserve">
+    <value>ሐውት፡ካዕብ</value>
+  </data>
+  <data name="U1212" xml:space="preserve">
+    <value>ሐውት፡ሣልስ</value>
+  </data>
+  <data name="U1213" xml:space="preserve">
+    <value>ሐውት፡ራዕብ</value>
+  </data>
+  <data name="U1214" xml:space="preserve">
+    <value>ሐውት፡ኃምስ</value>
+  </data>
+  <data name="U1215" xml:space="preserve">
+    <value>ሐውት፡ሳድስ</value>
+  </data>
+  <data name="U1216" xml:space="preserve">
+    <value>ሐውት፡ሳብዕ</value>
+  </data>
+  <data name="U1217" xml:space="preserve">
+    <value>ሐውት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1218" xml:space="preserve">
+    <value>ማይ፡ግዕዝ</value>
+  </data>
+  <data name="U1219" xml:space="preserve">
+    <value>ማይ፡ካዕብ</value>
+  </data>
+  <data name="U121A" xml:space="preserve">
+    <value>ማይ፡ሣልስ</value>
+  </data>
+  <data name="U121B" xml:space="preserve">
+    <value>ማይ፡ራዕብ</value>
+  </data>
+  <data name="U121C" xml:space="preserve">
+    <value>ማይ፡ኃምስ</value>
+  </data>
+  <data name="U121D" xml:space="preserve">
+    <value>ማይ፡ሳድስ</value>
+  </data>
+  <data name="U121E" xml:space="preserve">
+    <value>ማይ፡ሳብዕ</value>
+  </data>
+  <data name="U121F" xml:space="preserve">
+    <value>ማይ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1220" xml:space="preserve">
+    <value>ሠውት፡ግዕዝ</value>
+  </data>
+  <data name="U1221" xml:space="preserve">
+    <value>ሠውት፡ካዕብ</value>
+  </data>
+  <data name="U1222" xml:space="preserve">
+    <value>ሠውት፡ሣልስ</value>
+  </data>
+  <data name="U1223" xml:space="preserve">
+    <value>ሠውት፡ራዕብ</value>
+  </data>
+  <data name="U1224" xml:space="preserve">
+    <value>ሠውት፡ኃምስ</value>
+  </data>
+  <data name="U1225" xml:space="preserve">
+    <value>ሠውት፡ሳድስ</value>
+  </data>
+  <data name="U1226" xml:space="preserve">
+    <value>ሠውት፡ሳብዕ</value>
+  </data>
+  <data name="U1227" xml:space="preserve">
+    <value>ሠውት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1228" xml:space="preserve">
+    <value>ርእስ፡ግዕዝ</value>
+  </data>
+  <data name="U1229" xml:space="preserve">
+    <value>ርእስ፡ካዕብ</value>
+  </data>
+  <data name="U122A" xml:space="preserve">
+    <value>ርእስ፡ሣልስ</value>
+  </data>
+  <data name="U122B" xml:space="preserve">
+    <value>ርእስ፡ራዕብ</value>
+  </data>
+  <data name="U122C" xml:space="preserve">
+    <value>ርእስ፡ኃምስ</value>
+  </data>
+  <data name="U122D" xml:space="preserve">
+    <value>ርእስ፡ሳድስ</value>
+  </data>
+  <data name="U122E" xml:space="preserve">
+    <value>ርእስ፡ሳብዕ</value>
+  </data>
+  <data name="U122F" xml:space="preserve">
+    <value>ርእስ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1230" xml:space="preserve">
+    <value>ሳት፡ግዕዝ</value>
+  </data>
+  <data name="U1231" xml:space="preserve">
+    <value>ሳት፡ካዕብ</value>
+  </data>
+  <data name="U1232" xml:space="preserve">
+    <value>ሳት፡ሣልስ</value>
+  </data>
+  <data name="U1233" xml:space="preserve">
+    <value>ሳት፡ራዕብ</value>
+  </data>
+  <data name="U1234" xml:space="preserve">
+    <value>ሳት፡ኃምስ</value>
+  </data>
+  <data name="U1235" xml:space="preserve">
+    <value>ሳት፡ሳድስ</value>
+  </data>
+  <data name="U1236" xml:space="preserve">
+    <value>ሳት፡ሳብዕ</value>
+  </data>
+  <data name="U1237" xml:space="preserve">
+    <value>ሳት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1238" xml:space="preserve">
+    <value>ሻ፡ሳት፡ግዕዝ</value>
+  </data>
+  <data name="U1239" xml:space="preserve">
+    <value>ሻ፡ሳት፡ካዕብ</value>
+  </data>
+  <data name="U123A" xml:space="preserve">
+    <value>ሻ፡ሳት፡ሣልስ</value>
+  </data>
+  <data name="U123B" xml:space="preserve">
+    <value>ሻ፡ሳት፡ራዕብ</value>
+  </data>
+  <data name="U123C" xml:space="preserve">
+    <value>ሻ፡ሳት፡ኃምስ</value>
+  </data>
+  <data name="U123D" xml:space="preserve">
+    <value>ሻ፡ሳት፡ሳድስ</value>
+  </data>
+  <data name="U123E" xml:space="preserve">
+    <value>ሻ፡ሳት፡ሳብዕ</value>
+  </data>
+  <data name="U123F" xml:space="preserve">
+    <value>ሻ፡ሳት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1240" xml:space="preserve">
+    <value>ቃፍ፡ግዕዝ</value>
+  </data>
+  <data name="U1241" xml:space="preserve">
+    <value>ቃፍ፡ካዕብ</value>
+  </data>
+  <data name="U1242" xml:space="preserve">
+    <value>ቃፍ፡ሣልስ</value>
+  </data>
+  <data name="U1243" xml:space="preserve">
+    <value>ቃፍ፡ራዕብ</value>
+  </data>
+  <data name="U1244" xml:space="preserve">
+    <value>ቃፍ፡ኃምስ</value>
+  </data>
+  <data name="U1245" xml:space="preserve">
+    <value>ቃፍ፡ሳድስ</value>
+  </data>
+  <data name="U1246" xml:space="preserve">
+    <value>ቃፍ፡ሳብዕ</value>
+  </data>
+  <data name="U1248" xml:space="preserve">
+    <value>ቃፍ፡ዘመደ፡ግዕዝ</value>
+  </data>
+  <data name="U124A" xml:space="preserve">
+    <value>ቃፍ፡ዘመደ፡ሣልስ</value>
+  </data>
+  <data name="U124B" xml:space="preserve">
+    <value>ቃፍ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U124C" xml:space="preserve">
+    <value>ቃፍ፡ዘመደ፡ኃምስ</value>
+  </data>
+  <data name="U124D" xml:space="preserve">
+    <value>ቃፍ፡ዘመደ፡ካዕብ</value>
+  </data>
+  <data name="U1250" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ግዕዝ</value>
+  </data>
+  <data name="U1251" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ካዕብ</value>
+  </data>
+  <data name="U1252" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ሣልስ</value>
+  </data>
+  <data name="U1253" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ራዕብ</value>
+  </data>
+  <data name="U1254" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ኃምስ</value>
+  </data>
+  <data name="U1255" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ሳድስ</value>
+  </data>
+  <data name="U1256" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ሳብዕ</value>
+  </data>
+  <data name="U1258" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ዘመደ፡ግዕዝ</value>
+  </data>
+  <data name="U125A" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ዘመደ፡ሣልስ</value>
+  </data>
+  <data name="U125B" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U125C" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ዘመደ፡ኃምስ</value>
+  </data>
+  <data name="U125D" xml:space="preserve">
+    <value>ቓ፡ቃፍ፡ዘመደ፡ካዕብ</value>
+  </data>
+  <data name="U1260" xml:space="preserve">
+    <value>ቤት፡ግዕዝ</value>
+  </data>
+  <data name="U1261" xml:space="preserve">
+    <value>ቤት፡ካዕብ</value>
+  </data>
+  <data name="U1262" xml:space="preserve">
+    <value>ቤት፡ሣልስ</value>
+  </data>
+  <data name="U1263" xml:space="preserve">
+    <value>ቤት፡ራዕብ</value>
+  </data>
+  <data name="U1264" xml:space="preserve">
+    <value>ቤት፡ኃምስ</value>
+  </data>
+  <data name="U1265" xml:space="preserve">
+    <value>ቤት፡ሳድስ</value>
+  </data>
+  <data name="U1266" xml:space="preserve">
+    <value>ቤት፡ሳብዕ</value>
+  </data>
+  <data name="U1267" xml:space="preserve">
+    <value>ቤት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1268" xml:space="preserve">
+    <value>ቬ፡ቤት፡ግዕዝ</value>
+  </data>
+  <data name="U1269" xml:space="preserve">
+    <value>ቬ፡ቤት፡ካዕብ</value>
+  </data>
+  <data name="U126A" xml:space="preserve">
+    <value>ቬ፡ቤት፡ሣልስ</value>
+  </data>
+  <data name="U126B" xml:space="preserve">
+    <value>ቬ፡ቤት፡ራዕብ</value>
+  </data>
+  <data name="U126C" xml:space="preserve">
+    <value>ቬ፡ቤት፡ኃምስ</value>
+  </data>
+  <data name="U126D" xml:space="preserve">
+    <value>ቬ፡ቤት፡ሳድስ</value>
+  </data>
+  <data name="U126E" xml:space="preserve">
+    <value>ቬ፡ቤት፡ሳብዕ</value>
+  </data>
+  <data name="U126F" xml:space="preserve">
+    <value>ቬት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1270" xml:space="preserve">
+    <value>ታው፡ግዕዝ</value>
+  </data>
+  <data name="U1271" xml:space="preserve">
+    <value>ታው፡ካዕብ</value>
+  </data>
+  <data name="U1272" xml:space="preserve">
+    <value>ታው፡ሣልስ</value>
+  </data>
+  <data name="U1273" xml:space="preserve">
+    <value>ታው፡ራዕብ</value>
+  </data>
+  <data name="U1274" xml:space="preserve">
+    <value>ታው፡ኃምስ</value>
+  </data>
+  <data name="U1275" xml:space="preserve">
+    <value>ታው፡ሳድስ</value>
+  </data>
+  <data name="U1276" xml:space="preserve">
+    <value>ታው፡ሳብዕ</value>
+  </data>
+  <data name="U1277" xml:space="preserve">
+    <value>ታው፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1278" xml:space="preserve">
+    <value>ቻ፡ታው፡ግዕዝ</value>
+  </data>
+  <data name="U1279" xml:space="preserve">
+    <value>ቻ፡ታው፡ካዕብ</value>
+  </data>
+  <data name="U127A" xml:space="preserve">
+    <value>ቻ፡ታው፡ሣልስ</value>
+  </data>
+  <data name="U127B" xml:space="preserve">
+    <value>ቻ፡ታው፡ራዕብ</value>
+  </data>
+  <data name="U127C" xml:space="preserve">
+    <value>ቻ፡ታው፡ኃምስ</value>
+  </data>
+  <data name="U127D" xml:space="preserve">
+    <value>ቻ፡ታው፡ሳድስ</value>
+  </data>
+  <data name="U127E" xml:space="preserve">
+    <value>ቻ፡ታው፡ሳብዕ</value>
+  </data>
+  <data name="U127F" xml:space="preserve">
+    <value>ቻ፡ታው፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1280" xml:space="preserve">
+    <value>ኀርም፡ግዕዝ</value>
+  </data>
+  <data name="U1281" xml:space="preserve">
+    <value>ኀርም፡ካዕብ</value>
+  </data>
+  <data name="U1282" xml:space="preserve">
+    <value>ኀርም፡ሣልስ</value>
+  </data>
+  <data name="U1283" xml:space="preserve">
+    <value>ኀርም፡ራዕብ</value>
+  </data>
+  <data name="U1284" xml:space="preserve">
+    <value>ኀርም፡ኃምስ</value>
+  </data>
+  <data name="U1285" xml:space="preserve">
+    <value>ኀርም፡ሳድስ</value>
+  </data>
+  <data name="U1286" xml:space="preserve">
+    <value>ኀርም፡ሳብዕ</value>
+  </data>
+  <data name="U1288" xml:space="preserve">
+    <value>ኀርም፡ዘመደ፡ግዕዝ</value>
+  </data>
+  <data name="U128A" xml:space="preserve">
+    <value>ኀርም፡ዘመደ፡ሣልስ</value>
+  </data>
+  <data name="U128B" xml:space="preserve">
+    <value>ኀርም፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U128C" xml:space="preserve">
+    <value>ኀርም፡ዘመደ፡ኃምስ</value>
+  </data>
+  <data name="U128D" xml:space="preserve">
+    <value>ኀርም፡ዘመደ፡ካዕብ</value>
+  </data>
+  <data name="U1290" xml:space="preserve">
+    <value>ነሐስ፡ግዕዝ</value>
+  </data>
+  <data name="U1291" xml:space="preserve">
+    <value>ነሐስ፡ካዕብ</value>
+  </data>
+  <data name="U1292" xml:space="preserve">
+    <value>ነሐስ፡ሣልስ</value>
+  </data>
+  <data name="U1293" xml:space="preserve">
+    <value>ነሐስ፡ራዕብ</value>
+  </data>
+  <data name="U1294" xml:space="preserve">
+    <value>ነሐስ፡ኃምስ</value>
+  </data>
+  <data name="U1295" xml:space="preserve">
+    <value>ነሐስ፡ሳድስ</value>
+  </data>
+  <data name="U1296" xml:space="preserve">
+    <value>ነሐስ፡ሳብዕ</value>
+  </data>
+  <data name="U1297" xml:space="preserve">
+    <value>ነሐስ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1298" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ግዕዝ</value>
+  </data>
+  <data name="U1299" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ካዕብ</value>
+  </data>
+  <data name="U129A" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ሣልስ</value>
+  </data>
+  <data name="U129B" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ራዕብ</value>
+  </data>
+  <data name="U129C" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ኃምስ</value>
+  </data>
+  <data name="U129D" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ሳድስ</value>
+  </data>
+  <data name="U129E" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ሳብዕ</value>
+  </data>
+  <data name="U129F" xml:space="preserve">
+    <value>ኘ፡ነሐስ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U12A0" xml:space="preserve">
+    <value>አልፍ፡ግዕዝ</value>
+  </data>
+  <data name="U12A1" xml:space="preserve">
+    <value>አልፍ፡ካዕብ</value>
+  </data>
+  <data name="U12A2" xml:space="preserve">
+    <value>አልፍ፡ሣልስ</value>
+  </data>
+  <data name="U12A3" xml:space="preserve">
+    <value>አልፍ፡ራዕብ</value>
+  </data>
+  <data name="U12A4" xml:space="preserve">
+    <value>አልፍ፡ኃምስ</value>
+  </data>
+  <data name="U12A5" xml:space="preserve">
+    <value>አልፍ፡ሳድስ</value>
+  </data>
+  <data name="U12A6" xml:space="preserve">
+    <value>አልፍ፡ሳብዕ</value>
+  </data>
+  <data name="U12A7" xml:space="preserve">
+    <value>አልፍ፡ዘመደ፡ግዕዝ</value>
+  </data>
+  <data name="U12A8" xml:space="preserve">
+    <value>ካፍ፡ግዕዝ</value>
+  </data>
+  <data name="U12A9" xml:space="preserve">
+    <value>ካፍ፡ካዕብ</value>
+  </data>
+  <data name="U12AA" xml:space="preserve">
+    <value>ካፍ፡ሣልስ</value>
+  </data>
+  <data name="U12AB" xml:space="preserve">
+    <value>ካፍ፡ራዕብ</value>
+  </data>
+  <data name="U12AC" xml:space="preserve">
+    <value>ካፍ፡ኃምስ</value>
+  </data>
+  <data name="U12AD" xml:space="preserve">
+    <value>ካፍ፡ሳድስ</value>
+  </data>
+  <data name="U12AE" xml:space="preserve">
+    <value>ካፍ፡ሳብዕ</value>
+  </data>
+  <data name="U12B0" xml:space="preserve">
+    <value>ካፍ፡ዘመደ፡ግዕዝ</value>
+  </data>
+  <data name="U12B2" xml:space="preserve">
+    <value>ካፍ፡ዘመደ፡ሣልስ</value>
+  </data>
+  <data name="U12B3" xml:space="preserve">
+    <value>ካፍ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U12B4" xml:space="preserve">
+    <value>ካፍ፡ዘመደ፡ኃምስ</value>
+  </data>
+  <data name="U12B5" xml:space="preserve">
+    <value>ካፍ፡ዘመደ፡ካዕብ</value>
+  </data>
+  <data name="U12B8" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ግዕዝ</value>
+  </data>
+  <data name="U12B9" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ካዕብ</value>
+  </data>
+  <data name="U12BA" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ሣልስ</value>
+  </data>
+  <data name="U12BB" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ራዕብ</value>
+  </data>
+  <data name="U12BC" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ኃምስ</value>
+  </data>
+  <data name="U12BD" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ሳድስ</value>
+  </data>
+  <data name="U12BE" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ሳብዕ</value>
+  </data>
+  <data name="U12C0" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ዘመደ፡ግዕዝ</value>
+  </data>
+  <data name="U12C2" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ዘመደ፡ሣልስ</value>
+  </data>
+  <data name="U12C3" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U12C4" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ዘመደ፡ኃምስ</value>
+  </data>
+  <data name="U12C5" xml:space="preserve">
+    <value>ኻ፡ካፍ፡ዘመደ፡ካዕብ</value>
+  </data>
+  <data name="U12C8" xml:space="preserve">
+    <value>ወዌ፡ግዕዝ</value>
+  </data>
+  <data name="U12C9" xml:space="preserve">
+    <value>ወዌ፡ካዕብ</value>
+  </data>
+  <data name="U12CA" xml:space="preserve">
+    <value>ወዌ፡ሣልስ</value>
+  </data>
+  <data name="U12CB" xml:space="preserve">
+    <value>ወዌ፡ራዕብ</value>
+  </data>
+  <data name="U12CC" xml:space="preserve">
+    <value>ወዌ፡ኃምስ</value>
+  </data>
+  <data name="U12CD" xml:space="preserve">
+    <value>ወዌ፡ሳድስ</value>
+  </data>
+  <data name="U12CE" xml:space="preserve">
+    <value>ወዌ፡ሳብዕ</value>
+  </data>
+  <data name="U12D0" xml:space="preserve">
+    <value>ዐይን፡ግዕዝ</value>
+  </data>
+  <data name="U12D1" xml:space="preserve">
+    <value>ዐይን፡ካዕብ</value>
+  </data>
+  <data name="U12D2" xml:space="preserve">
+    <value>ዐይን፡ሣልስ</value>
+  </data>
+  <data name="U12D3" xml:space="preserve">
+    <value>ዐይን፡ራዕብ</value>
+  </data>
+  <data name="U12D4" xml:space="preserve">
+    <value>ዐይን፡ኃምስ</value>
+  </data>
+  <data name="U12D5" xml:space="preserve">
+    <value>ዐይን፡ሳድስ</value>
+  </data>
+  <data name="U12D6" xml:space="preserve">
+    <value>ዐይን፡ሳብዕ</value>
+  </data>
+  <data name="U12D8" xml:space="preserve">
+    <value>ዘይ፡ግዕዝ</value>
+  </data>
+  <data name="U12D9" xml:space="preserve">
+    <value>ዘይ፡ካዕብ</value>
+  </data>
+  <data name="U12DA" xml:space="preserve">
+    <value>ዘይ፡ሣልስ</value>
+  </data>
+  <data name="U12DB" xml:space="preserve">
+    <value>ዘይ፡ራዕብ</value>
+  </data>
+  <data name="U12DC" xml:space="preserve">
+    <value>ዘይ፡ኃምስ</value>
+  </data>
+  <data name="U12DD" xml:space="preserve">
+    <value>ዘይ፡ሳድስ</value>
+  </data>
+  <data name="U12DE" xml:space="preserve">
+    <value>ዘይ፡ሳብዕ</value>
+  </data>
+  <data name="U12DF" xml:space="preserve">
+    <value>ዘይ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U12E0" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ግዕዝ</value>
+  </data>
+  <data name="U12E1" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ካዕብ</value>
+  </data>
+  <data name="U12E2" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ሣልስ</value>
+  </data>
+  <data name="U12E3" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ራዕብ</value>
+  </data>
+  <data name="U12E4" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ኃምስ</value>
+  </data>
+  <data name="U12E5" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ሳድስ</value>
+  </data>
+  <data name="U12E6" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ሳብዕ</value>
+  </data>
+  <data name="U12E7" xml:space="preserve">
+    <value>ዠ፡ዘይ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U12E8" xml:space="preserve">
+    <value>የመን፡ግዕዝ</value>
+  </data>
+  <data name="U12E9" xml:space="preserve">
+    <value>የመን፡ካዕብ</value>
+  </data>
+  <data name="U12EA" xml:space="preserve">
+    <value>የመን፡ሣልስ</value>
+  </data>
+  <data name="U12EB" xml:space="preserve">
+    <value>የመን፡ራዕብ</value>
+  </data>
+  <data name="U12EC" xml:space="preserve">
+    <value>የመን፡ኃምስ</value>
+  </data>
+  <data name="U12ED" xml:space="preserve">
+    <value>የመን፡ሳድስ</value>
+  </data>
+  <data name="U12EE" xml:space="preserve">
+    <value>የመን፡ሳብዕ</value>
+  </data>
+  <data name="U12F0" xml:space="preserve">
+    <value>ድንት፡ግዕዝ</value>
+  </data>
+  <data name="U12F1" xml:space="preserve">
+    <value>ድንት፡ካዕብ</value>
+  </data>
+  <data name="U12F2" xml:space="preserve">
+    <value>ድንት፡ሣልስ</value>
+  </data>
+  <data name="U12F3" xml:space="preserve">
+    <value>ድንት፡ራዕብ</value>
+  </data>
+  <data name="U12F4" xml:space="preserve">
+    <value>ድንት፡ኃምስ</value>
+  </data>
+  <data name="U12F5" xml:space="preserve">
+    <value>ድንት፡ሳድስ</value>
+  </data>
+  <data name="U12F6" xml:space="preserve">
+    <value>ድንት፡ሳብዕ</value>
+  </data>
+  <data name="U12F7" xml:space="preserve">
+    <value>ድንት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U12F8" xml:space="preserve">
+    <value>ዽ፡ድንት፡ግዕዝ</value>
+  </data>
+  <data name="U12F9" xml:space="preserve">
+    <value>ዽ፡ድንት፡ካዕብ</value>
+  </data>
+  <data name="U12FA" xml:space="preserve">
+    <value>ዽ፡ድንት፡ሣልስ</value>
+  </data>
+  <data name="U12FB" xml:space="preserve">
+    <value>ዽ፡ድንት፡ራዕብ</value>
+  </data>
+  <data name="U12FC" xml:space="preserve">
+    <value>ዽ፡ድንት፡ኃምስ</value>
+  </data>
+  <data name="U12FD" xml:space="preserve">
+    <value>ዽ፡ድንት፡ሳድስ</value>
+  </data>
+  <data name="U12FE" xml:space="preserve">
+    <value>ዽ፡ድንት፡ሳብዕ</value>
+  </data>
+  <data name="U12FF" xml:space="preserve">
+    <value>ዽ፡ድንት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1300" xml:space="preserve">
+    <value>ጅ፡ድንት፡ግዕዝ</value>
+  </data>
+  <data name="U1301" xml:space="preserve">
+    <value>ጅ፡ድንት፡ካዕብ</value>
+  </data>
+  <data name="U1302" xml:space="preserve">
+    <value>ጅ፡ድንት፡ሣልስ</value>
+  </data>
+  <data name="U1303" xml:space="preserve">
+    <value>ጅ፡ድንት፡ራዕብ</value>
+  </data>
+  <data name="U1304" xml:space="preserve">
+    <value>ጅ፡ድንት፡ኃምስ</value>
+  </data>
+  <data name="U1305" xml:space="preserve">
+    <value>ጅ፡ድንት፡ሳድስ</value>
+  </data>
+  <data name="U1306" xml:space="preserve">
+    <value>ጅ፡ድንት፡ሳብዕ</value>
+  </data>
+  <data name="U1307" xml:space="preserve">
+    <value>ጅ፡ድንት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1308" xml:space="preserve">
+    <value>ገምል፡ግዕዝ</value>
+  </data>
+  <data name="U1309" xml:space="preserve">
+    <value>ገምል፡ካዕብ</value>
+  </data>
+  <data name="U130A" xml:space="preserve">
+    <value>ገምል፡ሣልስ</value>
+  </data>
+  <data name="U130B" xml:space="preserve">
+    <value>ገምል፡ራዕብ</value>
+  </data>
+  <data name="U130C" xml:space="preserve">
+    <value>ገምል፡ኃምስ</value>
+  </data>
+  <data name="U130D" xml:space="preserve">
+    <value>ገምል፡ሳድስ</value>
+  </data>
+  <data name="U130E" xml:space="preserve">
+    <value>ገምል፡ሳብዕ</value>
+  </data>
+  <data name="U1310" xml:space="preserve">
+    <value>ገምል፡ዘመደ፡ግዕዝ</value>
+  </data>
+  <data name="U1312" xml:space="preserve">
+    <value>ገምል፡ዘመደ፡ሣልስ</value>
+  </data>
+  <data name="U1313" xml:space="preserve">
+    <value>ገምል፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1314" xml:space="preserve">
+    <value>ገምል፡ዘመደ፡ኃምስ</value>
+  </data>
+  <data name="U1315" xml:space="preserve">
+    <value>ገምል፡ዘመደ፡ካዕብ</value>
+  </data>
+  <data name="U1318" xml:space="preserve">
+    <value>ጘ፡ገምል፡ግዕዝ</value>
+  </data>
+  <data name="U1319" xml:space="preserve">
+    <value>ጘ፡ገምል፡ካዕብ</value>
+  </data>
+  <data name="U131A" xml:space="preserve">
+    <value>ጘ፡ገምል፡ሣልስ</value>
+  </data>
+  <data name="U131B" xml:space="preserve">
+    <value>ጘ፡ገምል፡ራዕብ</value>
+  </data>
+  <data name="U131C" xml:space="preserve">
+    <value>ጘ፡ገምል፡ኃምስ</value>
+  </data>
+  <data name="U131D" xml:space="preserve">
+    <value>ጘ፡ገምል፡ሳድስ</value>
+  </data>
+  <data name="U131E" xml:space="preserve">
+    <value>ጘ፡ገምል፡ሳብዕ</value>
+  </data>
+  <data name="U1320" xml:space="preserve">
+    <value>ጠይት፡ግዕዝ</value>
+  </data>
+  <data name="U1321" xml:space="preserve">
+    <value>ጠይት፡ካዕብ</value>
+  </data>
+  <data name="U1322" xml:space="preserve">
+    <value>ጠይት፡ሣልስ</value>
+  </data>
+  <data name="U1323" xml:space="preserve">
+    <value>ጠይት፡ራዕብ</value>
+  </data>
+  <data name="U1324" xml:space="preserve">
+    <value>ጠይት፡ኃምስ</value>
+  </data>
+  <data name="U1325" xml:space="preserve">
+    <value>ጠይት፡ሳድስ</value>
+  </data>
+  <data name="U1326" xml:space="preserve">
+    <value>ጠይት፡ሳብዕ</value>
+  </data>
+  <data name="U1327" xml:space="preserve">
+    <value>ጠይት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1328" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ግዕዝ</value>
+  </data>
+  <data name="U1329" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ካዕብ</value>
+  </data>
+  <data name="U132A" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ሣልስ</value>
+  </data>
+  <data name="U132B" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ራዕብ</value>
+  </data>
+  <data name="U132C" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ኃምስ</value>
+  </data>
+  <data name="U132D" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ሳድስ</value>
+  </data>
+  <data name="U132E" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ሳብዕ</value>
+  </data>
+  <data name="U132F" xml:space="preserve">
+    <value>ጨ፡ጠይት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1330" xml:space="preserve">
+    <value>ጰይት፡ግዕዝ</value>
+  </data>
+  <data name="U1331" xml:space="preserve">
+    <value>ጰይት፡ካዕብ</value>
+  </data>
+  <data name="U1332" xml:space="preserve">
+    <value>ጰይት፡ሣልስ</value>
+  </data>
+  <data name="U1333" xml:space="preserve">
+    <value>ጰይት፡ራዕብ</value>
+  </data>
+  <data name="U1334" xml:space="preserve">
+    <value>ጰይት፡ኃምስ</value>
+  </data>
+  <data name="U1335" xml:space="preserve">
+    <value>ጰይት፡ሳድስ</value>
+  </data>
+  <data name="U1336" xml:space="preserve">
+    <value>ጰይት፡ሳብዕ</value>
+  </data>
+  <data name="U1337" xml:space="preserve">
+    <value>ጰይት፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1338" xml:space="preserve">
+    <value>ጸደይ፡ግዕዝ</value>
+  </data>
+  <data name="U1339" xml:space="preserve">
+    <value>ጸደይ፡ካዕብ</value>
+  </data>
+  <data name="U133A" xml:space="preserve">
+    <value>ጸደይ፡ሣልስ</value>
+  </data>
+  <data name="U133B" xml:space="preserve">
+    <value>ጸደይ፡ራዕብ</value>
+  </data>
+  <data name="U133C" xml:space="preserve">
+    <value>ጸደይ፡ኃምስ</value>
+  </data>
+  <data name="U133D" xml:space="preserve">
+    <value>ጸደይ፡ሳድስ</value>
+  </data>
+  <data name="U133E" xml:space="preserve">
+    <value>ጸደይ፡ሳብዕ</value>
+  </data>
+  <data name="U133F" xml:space="preserve">
+    <value>ጸደይ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1340" xml:space="preserve">
+    <value>ፀጳ፡ግዕዝ</value>
+  </data>
+  <data name="U1341" xml:space="preserve">
+    <value>ፀጳ፡ካዕብ</value>
+  </data>
+  <data name="U1342" xml:space="preserve">
+    <value>ፀጳ፡ሣልስ</value>
+  </data>
+  <data name="U1343" xml:space="preserve">
+    <value>ፀጳ፡ራዕብ</value>
+  </data>
+  <data name="U1344" xml:space="preserve">
+    <value>ፀጳ፡ኃምስ</value>
+  </data>
+  <data name="U1345" xml:space="preserve">
+    <value>ፀጳ፡ሳድስ</value>
+  </data>
+  <data name="U1346" xml:space="preserve">
+    <value>ፀጳ፡ሳብዕ</value>
+  </data>
+  <data name="U1348" xml:space="preserve">
+    <value>አፍ፡ግዕዝ</value>
+  </data>
+  <data name="U1349" xml:space="preserve">
+    <value>አፍ፡ካዕብ</value>
+  </data>
+  <data name="U134A" xml:space="preserve">
+    <value>አፍ፡ሣልስ</value>
+  </data>
+  <data name="U134B" xml:space="preserve">
+    <value>አፍ፡ራዕብ</value>
+  </data>
+  <data name="U134C" xml:space="preserve">
+    <value>አፍ፡ኃምስ</value>
+  </data>
+  <data name="U134D" xml:space="preserve">
+    <value>አፍ፡ሳድስ</value>
+  </data>
+  <data name="U134E" xml:space="preserve">
+    <value>አፍ፡ሳብዕ</value>
+  </data>
+  <data name="U134F" xml:space="preserve">
+    <value>አፍ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1350" xml:space="preserve">
+    <value>ፕሳ፡ግዕዝ</value>
+  </data>
+  <data name="U1351" xml:space="preserve">
+    <value>ፕሳ፡ካዕብ</value>
+  </data>
+  <data name="U1352" xml:space="preserve">
+    <value>ፕሳ፡ሣልስ</value>
+  </data>
+  <data name="U1353" xml:space="preserve">
+    <value>ፕሳ፡ራዕብ</value>
+  </data>
+  <data name="U1354" xml:space="preserve">
+    <value>ፕሳ፡ኃምስ</value>
+  </data>
+  <data name="U1355" xml:space="preserve">
+    <value>ፕሳ፡ሳድስ</value>
+  </data>
+  <data name="U1356" xml:space="preserve">
+    <value>ፕሳ፡ሳብዕ</value>
+  </data>
+  <data name="U1357" xml:space="preserve">
+    <value>ፕሳ፡ዘመደ፡ራዕብ</value>
+  </data>
+  <data name="U1358" xml:space="preserve">
+    <value>ርዕስ፡ዘመደ፡ያ</value>
+  </data>
+  <data name="U1359" xml:space="preserve">
+    <value>ማይ፡ዘመደ፡ያ</value>
+  </data>
+  <data name="U135A" xml:space="preserve">
+    <value>ፈፍ፡ዘመደ፡ያ</value>
+  </data>
+  <data name="U1361" xml:space="preserve">
+    <value>ንዑስ፡ነጥብ</value>
+  </data>
+  <data name="U1362" xml:space="preserve">
+    <value>ዐቢይ፡ነጥብ</value>
+  </data>
+  <data name="U1363" xml:space="preserve">
+    <value>ነጠላ፡ሠረዝ</value>
+  </data>
+  <data name="U1364" xml:space="preserve">
+    <value>ንዑስ፡ሠረዝ</value>
+  </data>
+  <data name="U1365" xml:space="preserve">
+    <value>አስተአምሮ</value>
+  </data>
+  <data name="U1366" xml:space="preserve">
+    <value>ዐቢይ፡ሠረዝ</value>
+  </data>
+  <data name="U1367" xml:space="preserve">
+    <value>ሠለስተ፡ነጥብ</value>
+  </data>
+  <data name="U1368" xml:space="preserve">
+    <value>ሰብዐተ፡ነጥብ</value>
+  </data>
+  <data name="U1369" xml:space="preserve">
+    <value>አሐዱ</value>
+  </data>
+  <data name="U136A" xml:space="preserve">
+    <value>ክልኤቱ</value>
+  </data>
+  <data name="U136B" xml:space="preserve">
+    <value>ሠለስቱ</value>
+  </data>
+  <data name="U136C" xml:space="preserve">
+    <value>አርባዕቱ</value>
+  </data>
+  <data name="U136D" xml:space="preserve">
+    <value>ኀምስቱ</value>
+  </data>
+  <data name="U136E" xml:space="preserve">
+    <value>ስድስቱ</value>
+  </data>
+  <data name="U136F" xml:space="preserve">
+    <value>ሰብዐቱ</value>
+  </data>
+  <data name="U1370" xml:space="preserve">
+    <value>ሰመንት</value>
+  </data>
+  <data name="U1371" xml:space="preserve">
+    <value>ተስዐቱ</value>
+  </data>
+  <data name="U1372" xml:space="preserve">
+    <value>ዐሠርቱ</value>
+  </data>
+  <data name="U1373" xml:space="preserve">
+    <value>ዕሥራ</value>
+  </data>
+  <data name="U1374" xml:space="preserve">
+    <value>ሠላሳ</value>
+  </data>
+  <data name="U1375" xml:space="preserve">
+    <value>አርብዓ</value>
+  </data>
+  <data name="U1376" xml:space="preserve">
+    <value>ኀምሳ</value>
+  </data>
+  <data name="U1377" xml:space="preserve">
+    <value>ስሳ</value>
+  </data>
+  <data name="U1378" xml:space="preserve">
+    <value>ሰብዓ</value>
+  </data>
+  <data name="U1379" xml:space="preserve">
+    <value>ሰማንያ</value>
+  </data>
+  <data name="U137A" xml:space="preserve">
+    <value>ተስዓ</value>
+  </data>
+  <data name="U137B" xml:space="preserve">
+    <value>ምእት</value>
+  </data>
+  <data name="U137C" xml:space="preserve">
+    <value>እልፍ</value>
+  </data>
+  <data name="U2022" xml:space="preserve">
+    <value>ምልክት</value>
+  </data>
+  <data name="U203E" xml:space="preserve">
+    <value>የላይ መስመር</value>
+  </data>
+  <data name="U22A8" xml:space="preserve">
+    <value>እውነት</value>
+  </data>
+  <data name="U2302" xml:space="preserve">
+    <value>ቤት</value>
+  </data>
+  <data name="U2328" xml:space="preserve">
+    <value>የፊደል ሠሌዳ</value>
+  </data>
+  <data name="U2397" xml:space="preserve">
+    <value>ያለፈው ገጽ</value>
+  </data>
+  <data name="U2398" xml:space="preserve">
+    <value>የሚቀጥለው ገጽ</value>
+  </data>
+  <data name="U2609" xml:space="preserve">
+    <value>ፀሐይ</value>
+  </data>
+  <data name="U270F" xml:space="preserve">
+    <value>እርሳስ</value>
+  </data>
+  <data name="U29FE" xml:space="preserve">
+    <value>ትናንሽ</value>
+  </data>
+</root>

@@ -263,6 +263,15 @@ namespace WinCompose
             string result = m1.Groups[2].Captures[0].ToString();
             string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
 
+            // Try to translate the description if appropriate
+            if (result.Length == 1)
+            {
+                var key = String.Format("U{0:X04}", (int)result[0]);
+                var alt_desc = i18n.Unicode.ResourceManager.GetString(key);
+                if (alt_desc != null && alt_desc.Length > 0)
+                    description = alt_desc;
+            }
+
             m_sequences.Add(seq, result, description);
             ++m_sequence_count;
         }

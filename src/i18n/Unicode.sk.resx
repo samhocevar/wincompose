@@ -1,0 +1,1217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+</root>  <data name="U0020" xml:space="preserve">
+    <value>MEDZERNÍK</value>
+  </data>
+  <data name="U0021" xml:space="preserve">
+    <value>VÝKRIČNÍK</value>
+  </data>
+  <data name="U0022" xml:space="preserve">
+    <value>ÚVODZOVKY</value>
+  </data>
+  <data name="U0023" xml:space="preserve">
+    <value>asi dvojkríž alebo mreža?</value>
+  </data>
+  <data name="U0024" xml:space="preserve">
+    <value>ZNAK DOLÁRU</value>
+  </data>
+  <data name="U0025" xml:space="preserve">
+    <value>ZNAK PERCENTA</value>
+  </data>
+  <data name="U0026" xml:space="preserve">
+    <value>ZNAK AND</value>
+  </data>
+  <data name="U0027" xml:space="preserve">
+    <value>APOSTROF</value>
+  </data>
+  <data name="U0028" xml:space="preserve">
+    <value>ĽAVÁ ZÁTVORKA</value>
+  </data>
+  <data name="U0029" xml:space="preserve">
+    <value>PRAVÁ ZÁTVORKA</value>
+  </data>
+  <data name="U002A" xml:space="preserve">
+    <value>HVIEZDIČKA</value>
+  </data>
+  <data name="U002B" xml:space="preserve">
+    <value>ZNAK PLUS</value>
+  </data>
+  <data name="U002C" xml:space="preserve">
+    <value>ČIARKA</value>
+  </data>
+  <data name="U002D" xml:space="preserve">
+    <value>POMLČKA-MÍNUS</value>
+  </data>
+  <data name="U002E" xml:space="preserve">
+    <value>BODKA</value>
+  </data>
+  <data name="U002F" xml:space="preserve">
+    <value>LOMÍTKO</value>
+  </data>
+  <data name="U0030" xml:space="preserve">
+    <value>ČÍSLICA NULA</value>
+  </data>
+  <data name="U0031" xml:space="preserve">
+    <value>ČÍSLICA JEDNA</value>
+  </data>
+  <data name="U0032" xml:space="preserve">
+    <value>ČÍSLICA DVA</value>
+  </data>
+  <data name="U0033" xml:space="preserve">
+    <value>ČÍSLICA TRI</value>
+  </data>
+  <data name="U0034" xml:space="preserve">
+    <value>ČÍSLICA ŠTYRI</value>
+  </data>
+  <data name="U0035" xml:space="preserve">
+    <value>ČÍSLICA PÄŤ</value>
+  </data>
+  <data name="U0036" xml:space="preserve">
+    <value>ČÍSLICA ŠESŤ</value>
+  </data>
+  <data name="U0037" xml:space="preserve">
+    <value>ČÍSLICA SEDEM</value>
+  </data>
+  <data name="U0038" xml:space="preserve">
+    <value>ČÍSLICA OSEM</value>
+  </data>
+  <data name="U0039" xml:space="preserve">
+    <value>ČÍSLICA DEVÄŤ</value>
+  </data>
+  <data name="U003A" xml:space="preserve">
+    <value>DVOJBODKA</value>
+  </data>
+  <data name="U003B" xml:space="preserve">
+    <value>BODKOČIARKA</value>
+  </data>
+  <data name="U003C" xml:space="preserve">
+    <value>MENŠÍ AKO</value>
+  </data>
+  <data name="U003D" xml:space="preserve">
+    <value>ROVNÁ SA</value>
+  </data>
+  <data name="U003E" xml:space="preserve">
+    <value>VÄČŠÍ AKO</value>
+  </data>
+  <data name="U003F" xml:space="preserve">
+    <value>OTÁZNIK</value>
+  </data>
+  <data name="U0040" xml:space="preserve">
+    <value>ZAVINÁČ</value>
+  </data>
+  <data name="U0041" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A</value>
+  </data>
+  <data name="U0042" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO B</value>
+  </data>
+  <data name="U0043" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO C</value>
+  </data>
+  <data name="U0044" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO D</value>
+  </data>
+  <data name="U0045" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E</value>
+  </data>
+  <data name="U0046" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO F</value>
+  </data>
+  <data name="U0047" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO G</value>
+  </data>
+  <data name="U0048" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO H</value>
+  </data>
+  <data name="U0049" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I</value>
+  </data>
+  <data name="U004A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO J</value>
+  </data>
+  <data name="U004B" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO K</value>
+  </data>
+  <data name="U004C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO L</value>
+  </data>
+  <data name="U004D" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO M</value>
+  </data>
+  <data name="U004E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO N</value>
+  </data>
+  <data name="U004F" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O</value>
+  </data>
+  <data name="U0050" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO P</value>
+  </data>
+  <data name="U0051" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Q</value>
+  </data>
+  <data name="U0052" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO R</value>
+  </data>
+  <data name="U0053" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO S</value>
+  </data>
+  <data name="U0054" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO T</value>
+  </data>
+  <data name="U0055" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U</value>
+  </data>
+  <data name="U0056" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO V</value>
+  </data>
+  <data name="U0057" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO W</value>
+  </data>
+  <data name="U0058" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO X</value>
+  </data>
+  <data name="U0059" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Y</value>
+  </data>
+  <data name="U005A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Z</value>
+  </data>
+  <data name="U005B" xml:space="preserve">
+    <value>ĽAVÁ HRANATÁ ZÁTVORKA</value>
+  </data>
+  <data name="U005C" xml:space="preserve">
+    <value>SPÄTNÉ LOMÍTKO</value>
+  </data>
+  <data name="U005D" xml:space="preserve">
+    <value>PRAVÁ HRANATÁ ZÁTVORKA</value>
+  </data>
+  <data name="U005E" xml:space="preserve">
+    <value>OPAČNÝ MÄKČEŇ</value>
+  </data>
+  <data name="U005F" xml:space="preserve">
+    <value>PODTRHOVNÍK</value>
+  </data>
+  <data name="U0060" xml:space="preserve">
+    <value>OPAČNÝ DĹŽEŇ</value>
+  </data>
+  <data name="U0061" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A</value>
+  </data>
+  <data name="U0062" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO B</value>
+  </data>
+  <data name="U0063" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO C</value>
+  </data>
+  <data name="U0064" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO D</value>
+  </data>
+  <data name="U0065" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E</value>
+  </data>
+  <data name="U0066" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO F</value>
+  </data>
+  <data name="U0067" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO G</value>
+  </data>
+  <data name="U0068" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO H</value>
+  </data>
+  <data name="U0069" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I</value>
+  </data>
+  <data name="U006A" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO J</value>
+  </data>
+  <data name="U006B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO K</value>
+  </data>
+  <data name="U006C" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO L</value>
+  </data>
+  <data name="U006D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO M</value>
+  </data>
+  <data name="U006E" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO N</value>
+  </data>
+  <data name="U006F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O</value>
+  </data>
+  <data name="U0070" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO P</value>
+  </data>
+  <data name="U0071" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Q</value>
+  </data>
+  <data name="U0072" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO R</value>
+  </data>
+  <data name="U0073" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO S</value>
+  </data>
+  <data name="U0074" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO T</value>
+  </data>
+  <data name="U0075" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U</value>
+  </data>
+  <data name="U0076" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO V</value>
+  </data>
+  <data name="U0077" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO W</value>
+  </data>
+  <data name="U0078" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO X</value>
+  </data>
+  <data name="U0079" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Y</value>
+  </data>
+  <data name="U007A" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Z</value>
+  </data>
+  <data name="U007B" xml:space="preserve">
+    <value>ĽAVÁ ZLOŽENÁ ZÁTVORKA</value>
+  </data>
+  <data name="U007C" xml:space="preserve">
+    <value>ZVISLÁ ČIARA</value>
+  </data>
+  <data name="U007D" xml:space="preserve">
+    <value>PRAVÁ ZLOŽENÁ ZÁTVORKA</value>
+  </data>
+  <data name="U007E" xml:space="preserve">
+    <value>TILDA</value>
+  </data>
+  <data name="U00A0" xml:space="preserve">
+    <value>MEDZERA</value>
+  </data>
+  <data name="U00A1" xml:space="preserve">
+    <value>OBRÁTENÝ VÝKRIČNÍK</value>
+  </data>
+  <data name="U00A2" xml:space="preserve">
+    <value>ZNAK CENTU</value>
+  </data>
+  <data name="U00A3" xml:space="preserve">
+    <value>ZNAK LIBRY</value>
+  </data>
+  <data name="U00A4" xml:space="preserve">
+    <value>ZNAK MENY</value>
+  </data>
+  <data name="U00A5" xml:space="preserve">
+    <value>ZNAK YENU</value>
+  </data>
+  <data name="U00A6" xml:space="preserve">
+    <value>ROZDELENÁ RÚRA</value>
+  </data>
+  <data name="U00A7" xml:space="preserve">
+    <value>PARAGRAF</value>
+  </data>
+  <data name="U00A8" xml:space="preserve">
+    <value>PREHLÁSKA</value>
+  </data>
+  <data name="U00A9" xml:space="preserve">
+    <value>ZNAK COPYRIGHTU</value>
+  </data>
+  <data name="U00AB" xml:space="preserve">
+    <value>ĽAVÁ DVOJITÁ LOMENÁ ZÁTVORKA *</value>
+  </data>
+  <data name="U00AC" xml:space="preserve">
+    <value>ZNAK ZÁPORU</value>
+  </data>
+  <data name="U00AD" xml:space="preserve">
+    <value>MÄKKÁ POMLČKA</value>
+  </data>
+  <data name="U00AE" xml:space="preserve">
+    <value>ZNAK REGISTRÁCIE</value>
+  </data>
+  <data name="U00AF" xml:space="preserve">
+    <value>ČIARA NAD</value>
+  </data>
+  <data name="U00B0" xml:space="preserve">
+    <value>ZNAK STUPŇA</value>
+  </data>
+  <data name="U00B1" xml:space="preserve">
+    <value>ZNAK PLUS-MÍNUS</value>
+  </data>
+  <data name="U00B2" xml:space="preserve">
+    <value>HORNÝ INDEX DVA</value>
+  </data>
+  <data name="U00B3" xml:space="preserve">
+    <value>HORNÝ INDEX TRI</value>
+  </data>
+  <data name="U00B4" xml:space="preserve">
+    <value>DĹŽEŇ</value>
+  </data>
+  <data name="U00B5" xml:space="preserve">
+    <value>ZNAK MICRO</value>
+  </data>
+  <data name="U00B6" xml:space="preserve">
+    <value>ZNAK ODSTAVCA</value>
+  </data>
+  <data name="U00B7" xml:space="preserve">
+    <value>BODKA V STREDE</value>
+  </data>
+  <data name="U00B8" xml:space="preserve">
+    <value>CEDILLA</value>
+  </data>
+  <data name="U00B9" xml:space="preserve">
+    <value>HORNÝ INDEX JEDNA</value>
+  </data>
+  <data name="U00BB" xml:space="preserve">
+    <value>PRAVÁ DVOJITÁ LOMENÁ ZÁTVORKA *</value>
+  </data>
+  <data name="U00BC" xml:space="preserve">
+    <value>ZLOMOK JEDNA ŠTVRTINA</value>
+  </data>
+  <data name="U00BD" xml:space="preserve">
+    <value>ZLOMOK JEDNA POLOVICA</value>
+  </data>
+  <data name="U00BE" xml:space="preserve">
+    <value>ZLOMOK TRI ŠTVRTINY</value>
+  </data>
+  <data name="U00BF" xml:space="preserve">
+    <value>OBRÁTENÝ OTÁZNIK</value>
+  </data>
+  <data name="U00C0" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00C1" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S DĹŽŇOM</value>
+  </data>
+  <data name="U00C2" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00C3" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S TILDOU</value>
+  </data>
+  <data name="U00C4" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00C5" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S KRÚŽKOM NAD</value>
+  </data>
+  <data name="U00C6" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO AE (ash) *</value>
+  </data>
+  <data name="U00C7" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO C S CEDILLOU</value>
+  </data>
+  <data name="U00C8" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00C9" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S DĹŽŇOM</value>
+  </data>
+  <data name="U00CA" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00CB" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00CC" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00CD" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S DĹŽŇOM</value>
+  </data>
+  <data name="U00CE" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00CF" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00D0" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO ETH (Islandské)</value>
+  </data>
+  <data name="U00D1" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO N S TILDOU</value>
+  </data>
+  <data name="U00D2" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00D3" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S DĹŽŇOM</value>
+  </data>
+  <data name="U00D4" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00D5" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S TILDOU</value>
+  </data>
+  <data name="U00D6" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00D7" xml:space="preserve">
+    <value>ZNAK NÁSOBENIA</value>
+  </data>
+  <data name="U00D8" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ O</value>
+  </data>
+  <data name="U00D9" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00DA" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S DĹŽŇOM</value>
+  </data>
+  <data name="U00DB" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00DC" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00DD" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Y S DĹŽŇOM</value>
+  </data>
+  <data name="U00DE" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO THORN (Islandské)</value>
+  </data>
+  <data name="U00DF" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO OSTRÉ S (Nemecké)</value>
+  </data>
+  <data name="U00EA" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00EB" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00EC" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00ED" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00EE" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00EF" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00F0" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO ETH (Islandské)</value>
+  </data>
+  <data name="U00F1" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO N S TILDOU</value>
+  </data>
+  <data name="U00F2" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00F3" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S DĹŽŇOM</value>
+  </data>
+  <data name="U00F4" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00F5" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S TILDOU</value>
+  </data>
+  <data name="U00F6" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00F7" xml:space="preserve">
+    <value>ZNAK DELENIA</value>
+  </data>
+  <data name="U00F8" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ O</value>
+  </data>
+  <data name="U00F9" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00FA" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S DĹŽŇOM</value>
+  </data>
+  <data name="U00FB" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00FC" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00FD" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Y S DĹŽŇOM</value>
+  </data>
+  <data name="U00FE" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO THORN (Islandské)</value>
+  </data>
+  <data name="U00FF" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Y S DVOMA BODKAMI</value>
+  </data>
+  <data name="U0100" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S ČIAROU NAD</value>
+  </data>
+  <data name="U0101" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S ČIAROU NAD</value>
+  </data>
+  <data name="U0102" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U0103" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U0104" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO A S OGONEKOM</value>
+  </data>
+  <data name="U0105" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S OGONEKOM</value>
+  </data>
+  <data name="U0106" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO C S DĹŽŇOM</value>
+  </data>
+  <data name="U0107" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO C S DĹŽŇOM</value>
+  </data>
+  <data name="U0108" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO C S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0109" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO C S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U010A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO C S BODKOU NAD</value>
+  </data>
+  <data name="U010B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO C S BODKOU NAD</value>
+  </data>
+  <data name="U010C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO C S MÄKČEŇOM</value>
+  </data>
+  <data name="U010D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO C S MÄKČEŇOM</value>
+  </data>
+  <data name="U010E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO D S MÄKČEŇOM</value>
+  </data>
+  <data name="U010F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO D S MÄKČEŇOM</value>
+  </data>
+  <data name="U0110" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ D</value>
+  </data>
+  <data name="U0111" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ D</value>
+  </data>
+  <data name="U0112" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S ČIAROU NAD</value>
+  </data>
+  <data name="U0113" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S ČIAROU NAD</value>
+  </data>
+  <data name="U0114" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U0115" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U0116" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S BODKOU NAD</value>
+  </data>
+  <data name="U0117" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S BODKOU NAD</value>
+  </data>
+  <data name="U0118" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S OGONEKOM</value>
+  </data>
+  <data name="U0119" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S OGONEKOM</value>
+  </data>
+  <data name="U011A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO E S MÄKČEŇOM</value>
+  </data>
+  <data name="U011B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S MÄKČEŇOM</value>
+  </data>
+  <data name="U011C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO G S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U011D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO G S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U011E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO G SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U011F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO G SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U0120" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO G S BODKOU NAD</value>
+  </data>
+  <data name="U0121" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO G S BODKOU NAD</value>
+  </data>
+  <data name="U0122" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO G S CEDILLOU</value>
+  </data>
+  <data name="U0123" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO G S CEDILLOU</value>
+  </data>
+  <data name="U0124" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO H S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0125" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO H S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0126" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ H</value>
+  </data>
+  <data name="U0127" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ H</value>
+  </data>
+  <data name="U0128" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S TILDOU</value>
+  </data>
+  <data name="U0129" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I S TILDOU</value>
+  </data>
+  <data name="U012A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S ČIAROU NAD</value>
+  </data>
+  <data name="U012B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I S ČIAROU NAD</value>
+  </data>
+  <data name="U012C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U012D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U012E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S OGONEKOM</value>
+  </data>
+  <data name="U012F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I S OGONEKOM</value>
+  </data>
+  <data name="U0130" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO I S BODKOU NAD</value>
+  </data>
+  <data name="U0131" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO I BEZ BODKY</value>
+  </data>
+  <data name="U0132" xml:space="preserve">
+    <value>LATINSKÁ VEĽKÁ LIGATÚRA IJ</value>
+  </data>
+  <data name="U0133" xml:space="preserve">
+    <value>LATINSKÁ MALÁ LIGATÚRA IJ</value>
+  </data>
+  <data name="U0134" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO J S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0135" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO J S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0136" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO K S CEDILLOU</value>
+  </data>
+  <data name="U0137" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO K S CEDILLOU</value>
+  </data>
+  <data name="U0138" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO KRA (Grónske)</value>
+  </data>
+  <data name="U0139" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO L S DĹŽŇOM</value>
+  </data>
+  <data name="U013A" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO L S DĹŽŇOM</value>
+  </data>
+  <data name="U013B" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO L S CEDILLOU</value>
+  </data>
+  <data name="U013C" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO L S CEDILLOU</value>
+  </data>
+  <data name="U013D" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO L S MÄKČEŇOM</value>
+  </data>
+  <data name="U013E" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO L S MÄKČEŇOM</value>
+  </data>
+  <data name="U013F" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO L S BODKOU V STREDE</value>
+  </data>
+  <data name="U0140" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO L S BODKOU V STREDE</value>
+  </data>
+  <data name="U0141" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ L</value>
+  </data>
+  <data name="U0142" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ L</value>
+  </data>
+  <data name="U0143" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO N S DĹŽŇOM</value>
+  </data>
+  <data name="U0144" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO N S DĹŽŇOM</value>
+  </data>
+  <data name="U0145" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO N S CEDILLOU</value>
+  </data>
+  <data name="U0146" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO N S CEDILLOU</value>
+  </data>
+  <data name="U0147" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO N S MÄKČEŇOM</value>
+  </data>
+  <data name="U0148" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO N S MÄKČEŇOM</value>
+  </data>
+  <data name="U0149" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO N PO APOSTROFE</value>
+  </data>
+  <data name="U014A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO ENG(Sami)</value>
+  </data>
+  <data name="U014B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO ENG(Sami)</value>
+  </data>
+  <data name="U014C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S ČIAROU NAD</value>
+  </data>
+  <data name="U014D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S ČIAROU NAD</value>
+  </data>
+  <data name="U014E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U014F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U0150" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S DVOJITÝM DĹŽŇOM</value>
+  </data>
+  <data name="U0151" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S DVOJITÝM DĹŽŇOM</value>
+  </data>
+  <data name="U0152" xml:space="preserve">
+    <value>LATINSKÁ VEĽKÁ LIGATÚRA OE</value>
+  </data>
+  <data name="U0153" xml:space="preserve">
+    <value>LATINSKÁ MALÁ LIGATÚRA OE</value>
+  </data>
+  <data name="U0154" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO R S DĹŽŇOM</value>
+  </data>
+  <data name="U0155" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO R S DĹŽŇOM</value>
+  </data>
+  <data name="U0156" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO R S CEDILLOU</value>
+  </data>
+  <data name="U0157" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO R S CEDILLOU</value>
+  </data>
+  <data name="U0158" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO R S MÄKČEŇOM</value>
+  </data>
+  <data name="U0159" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO R S MÄKČEŇOM</value>
+  </data>
+  <data name="U015A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO S S DĹŽŇOM</value>
+  </data>
+  <data name="U015B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO S S DĹŽŇOM</value>
+  </data>
+  <data name="U015C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO S S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U015D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO S S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U015E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO S S CEDILLOU *</value>
+  </data>
+  <data name="U015F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO S S CEDILLOU *</value>
+  </data>
+  <data name="U0160" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO S S MÄKČEŇOM</value>
+  </data>
+  <data name="U0161" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO S S MÄKČEŇOM</value>
+  </data>
+  <data name="U0162" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO T S CEDILLOU *</value>
+  </data>
+  <data name="U0163" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO T S CEDILLOU *</value>
+  </data>
+  <data name="U0164" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO T S MÄKČEŇOM</value>
+  </data>
+  <data name="U0165" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO T S MÄKČEŇOM</value>
+  </data>
+  <data name="U0166" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ T</value>
+  </data>
+  <data name="U0167" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ T</value>
+  </data>
+  <data name="U0168" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S TILDOU</value>
+  </data>
+  <data name="U0169" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S TILDOU</value>
+  </data>
+  <data name="U016A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S ČIAROU NAD</value>
+  </data>
+  <data name="U016B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S ČIAROU NAD</value>
+  </data>
+  <data name="U016C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U016D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U SO SPODNÝM OBLÚKOM</value>
+  </data>
+  <data name="U016E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S KRÚŽKOM NAD</value>
+  </data>
+  <data name="U016F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S KRÚŽKOM NAD</value>
+  </data>
+  <data name="U0170" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S DVOJITÝM DĹŽŇOM</value>
+  </data>
+  <data name="U0171" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S DVOJITÝM DĹŽŇOM</value>
+  </data>
+  <data name="U0172" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S OGONEKOM</value>
+  </data>
+  <data name="U0173" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S OGONEKOM</value>
+  </data>
+  <data name="U0174" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO W S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0175" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO W S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0176" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Y S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0177" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Y S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U0178" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Y S PREHLÁSKOU</value>
+  </data>
+  <data name="U0179" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Z S DĹŽŇOM</value>
+  </data>
+  <data name="U017A" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Z S DĹŽŇOM</value>
+  </data>
+  <data name="U017B" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Z S BODKOU NAD</value>
+  </data>
+  <data name="U017C" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Z S BODKOU NAD</value>
+  </data>
+  <data name="U017D" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Z S MÄKČEŇOM</value>
+  </data>
+  <data name="U017E" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Z S MÄKČEŇOM</value>
+  </data>
+  <data name="U017F" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO DLHÉ S</value>
+  </data>
+  <data name="U0180" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ B</value>
+  </data>
+  <data name="U0181" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO B S HÁČIKOM</value>
+  </data>
+  <data name="U0182" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO B S HORNOU ČIAROU</value>
+  </data>
+  <data name="U0183" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO B S HORNOU ČIAROU</value>
+  </data>
+  <data name="U0184" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO TÓN ŠESŤ</value>
+  </data>
+  <data name="U0185" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO TÓN ŠESŤ</value>
+  </data>
+  <data name="U0186" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO OTVORENÉ O</value>
+  </data>
+  <data name="U0187" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO C S HÁČIKOM</value>
+  </data>
+  <data name="U0188" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO C S HÁČIKOM</value>
+  </data>
+  <data name="U0189" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ D (AFRICKÉ)</value>
+  </data>
+  <data name="U018A" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO D S HÁČIKOM</value>
+  </data>
+  <data name="U018B" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO D S HORNOU ČIAROU</value>
+  </data>
+  <data name="U018C" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO D S HORNOU ČIAROU</value>
+  </data>
+  <data name="U018D" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO OBRÁTENÁ DELTA</value>
+  </data>
+  <data name="U018E" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO OPAČNÉ E</value>
+  </data>
+  <data name="U018F" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO SCHWA</value>
+  </data>
+  <data name="U0190" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO OTVORENÉ E</value>
+  </data>
+  <data name="U0191" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO F S HÁČIKOM</value>
+  </data>
+  <data name="U0192" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO F S HÁČIKOM</value>
+  </data>
+  <data name="U0193" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO G S HÁČIKOM</value>
+  </data>
+  <data name="U0194" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO GAMA</value>
+  </data>
+  <data name="U0195" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO HV (hwair)</value>
+  </data>
+  <data name="U0196" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO IOTA</value>
+  </data>
+  <data name="U0197" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ I</value>
+  </data>
+  <data name="U0198" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO K S HÁČIKOM</value>
+  </data>
+  <data name="U0199" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO K S HÁČIKOMLATINSK</value>
+  </data>
+  <data name="U019A" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ L</value>
+  </data>
+  <data name="U019B" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÁ LAMBDA</value>
+  </data>
+  <data name="U019C" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO OBRÁTENÉ M</value>
+  </data>
+  <data name="U019D" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO N S HÁČIKOM VĽAVO</value>
+  </data>
+  <data name="U019E" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO N S DLHŠOU PRAVOU NOHOU</value>
+  </data>
+  <data name="U019F" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S ČIAROU V STREDE *</value>
+  </data>
+  <data name="U01A0" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S APOSTROFOM</value>
+  </data>
+  <data name="U01A1" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S APOSTROFOM</value>
+  </data>
+  <data name="U01A2" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO OI (gha)</value>
+  </data>
+  <data name="U01A3" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO OI (gha)</value>
+  </data>
+  <data name="U01A4" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO P S HÁČIKOM</value>
+  </data>
+  <data name="U01A5" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO P S HÁČIKOM</value>
+  </data>
+  <data name="U01A6" xml:space="preserve">
+    <value>LATINSKÉ PÍSMENO YR *</value>
+  </data>
+  <data name="U01A7" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO TÓN DVA</value>
+  </data>
+  <data name="U01A8" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO TÓN DVA</value>
+  </data>
+  <data name="U01A9" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO ESH</value>
+  </data>
+  <data name="U01AA" xml:space="preserve">
+    <value>LATINSKÉ PÍSMENO OBRÁTENÁ ESH SLUČKA</value>
+  </data>
+  <data name="U01AB" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO T S PALATÁLNYM HÁČIKOM</value>
+  </data>
+  <data name="U01AC" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO T S HÁČIKOM</value>
+  </data>
+  <data name="U01AD" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO T S HÁČIKOM</value>
+  </data>
+  <data name="U01AE" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO T S RETROFLEXNÝM HÁČIKOM</value>
+  </data>
+  <data name="U01AF" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO U S ROHOM</value>
+  </data>
+  <data name="U01B0" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO U S ROHOM</value>
+  </data>
+  <data name="U01B1" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO UPSILON</value>
+  </data>
+  <data name="U01B2" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO V S HÁČIKOM</value>
+  </data>
+  <data name="U01B3" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO Y S HÁČIKOM</value>
+  </data>
+  <data name="U01B4" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO Y S HÁČIKOM</value>
+  </data>
+  <data name="U01B5" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO PREČIARKNUTÉ Z</value>
+  </data>
+  <data name="U01B6" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO PREČIARKNUTÉ Z</value>
+  </data>
+  <data name="U01B7" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO EZH</value>
+  </data>
+  <data name="U01B8" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO OBRÁTENÉ EZH</value>
+  </data>
+  <data name="U01B9" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO OBRÁTENÉ EZH</value>
+  </data>
+  <data name="U01BA" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO EZH S CHVOSTÍKOM</value>
+  </data>
+  <data name="U01BB" xml:space="preserve">
+    <value>LATINSKÝ ZNAK PREČIARKNUTÁ DVOJKA</value>
+  </data>
+  <data name="U01BC" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO TÓN PÄŤ</value>
+  </data>
+  <data name="U01BD" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO TÓN PÄŤ</value>
+  </data>
+  <data name="U01EA" xml:space="preserve">
+    <value>LATINSKÉ VEĽKÉ PÍSMENO O S OGONEKOM</value>
+  </data>
+  <data name="U01EB" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO O S OGONEKOM</value>
+  </data>
+  <data name="U02DB" xml:space="preserve">
+    <value>OGONEK</value>
+  </data>
+</root>

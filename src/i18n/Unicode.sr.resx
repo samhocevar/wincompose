@@ -1,0 +1,3389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+</root>  <data name="U0020" xml:space="preserve">
+    <value>РАЗМАК</value>
+  </data>
+  <data name="U0021" xml:space="preserve">
+    <value>УЗВИЧНИК</value>
+  </data>
+  <data name="U0022" xml:space="preserve">
+    <value>НАВОДНИК</value>
+  </data>
+  <data name="U0023" xml:space="preserve">
+    <value>ТАРАБА</value>
+  </data>
+  <data name="U0024" xml:space="preserve">
+    <value>ДОЛАР</value>
+  </data>
+  <data name="U0025" xml:space="preserve">
+    <value>ПРОЦЕНАТ</value>
+  </data>
+  <data name="U0027" xml:space="preserve">
+    <value>АПОСТРОФ</value>
+  </data>
+  <data name="U0028" xml:space="preserve">
+    <value>ОТВОРЕНА ЗАГРАДА</value>
+  </data>
+  <data name="U0029" xml:space="preserve">
+    <value>ЗАТВОРЕНА ЗАГРАДА</value>
+  </data>
+  <data name="U002A" xml:space="preserve">
+    <value>ЗВЕЗДИЦА</value>
+  </data>
+  <data name="U002B" xml:space="preserve">
+    <value>ПЛУС</value>
+  </data>
+  <data name="U002C" xml:space="preserve">
+    <value>ЗАПЕТА</value>
+  </data>
+  <data name="U002D" xml:space="preserve">
+    <value>ЦРТИЦА-МИНУС</value>
+  </data>
+  <data name="U002E" xml:space="preserve">
+    <value>ТАЧКА</value>
+  </data>
+  <data name="U002F" xml:space="preserve">
+    <value>КРОЗ</value>
+  </data>
+  <data name="U0030" xml:space="preserve">
+    <value>ЦИФРА НУЛА</value>
+  </data>
+  <data name="U0031" xml:space="preserve">
+    <value>ЦИФРА ЈЕДАН</value>
+  </data>
+  <data name="U0032" xml:space="preserve">
+    <value>ЦИФРА ДВА</value>
+  </data>
+  <data name="U0033" xml:space="preserve">
+    <value>ЦИФРА ТРИ</value>
+  </data>
+  <data name="U0034" xml:space="preserve">
+    <value>ЦИФРА ЧЕТИРИ</value>
+  </data>
+  <data name="U0035" xml:space="preserve">
+    <value>ЦИФРА ПЕТ</value>
+  </data>
+  <data name="U0036" xml:space="preserve">
+    <value>ЦИФРА ШЕСТ</value>
+  </data>
+  <data name="U0037" xml:space="preserve">
+    <value>ЦИФРА СЕДАМ</value>
+  </data>
+  <data name="U0038" xml:space="preserve">
+    <value>ЦИФРА ОСАМ</value>
+  </data>
+  <data name="U0039" xml:space="preserve">
+    <value>ЦИФРА ДЕВЕТ</value>
+  </data>
+  <data name="U003A" xml:space="preserve">
+    <value>ДВЕ ТАЧКЕ</value>
+  </data>
+  <data name="U003B" xml:space="preserve">
+    <value>ТАЧКА ЗАПЕТА</value>
+  </data>
+  <data name="U003C" xml:space="preserve">
+    <value>МАЊЕ ОД</value>
+  </data>
+  <data name="U003D" xml:space="preserve">
+    <value>ЈЕДНАКО</value>
+  </data>
+  <data name="U003E" xml:space="preserve">
+    <value>ВЕЋЕ ОД</value>
+  </data>
+  <data name="U003F" xml:space="preserve">
+    <value>УПИТНИК</value>
+  </data>
+  <data name="U0040" xml:space="preserve">
+    <value>МАЈМУНЧЕ</value>
+  </data>
+  <data name="U0041" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО А</value>
+  </data>
+  <data name="U0042" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Б</value>
+  </data>
+  <data name="U0043" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ц</value>
+  </data>
+  <data name="U0044" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Д</value>
+  </data>
+  <data name="U0045" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Е</value>
+  </data>
+  <data name="U0046" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ф</value>
+  </data>
+  <data name="U0047" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Г</value>
+  </data>
+  <data name="U0048" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Х</value>
+  </data>
+  <data name="U0049" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО И</value>
+  </data>
+  <data name="U004A" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ј</value>
+  </data>
+  <data name="U004B" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО К</value>
+  </data>
+  <data name="U004C" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Л</value>
+  </data>
+  <data name="U004D" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО М</value>
+  </data>
+  <data name="U004E" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Н</value>
+  </data>
+  <data name="U004F" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО О</value>
+  </data>
+  <data name="U0050" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО П</value>
+  </data>
+  <data name="U0051" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО КУ</value>
+  </data>
+  <data name="U0052" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Р</value>
+  </data>
+  <data name="U0053" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО С</value>
+  </data>
+  <data name="U0054" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Т</value>
+  </data>
+  <data name="U0055" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО У</value>
+  </data>
+  <data name="U0056" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО В</value>
+  </data>
+  <data name="U0057" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО ДВОСТРУКО В</value>
+  </data>
+  <data name="U0058" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО ИКС</value>
+  </data>
+  <data name="U0059" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО ИПСИЛОН</value>
+  </data>
+  <data name="U005A" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО З</value>
+  </data>
+  <data name="U005B" xml:space="preserve">
+    <value>ОТВОРЕНА УГЛАСТА ЗАГРАДА</value>
+  </data>
+  <data name="U005C" xml:space="preserve">
+    <value>ОКРЕНУТО КРОЗ</value>
+  </data>
+  <data name="U005D" xml:space="preserve">
+    <value>ЗАТВОРЕНА УГЛАСТА ЗАГРАДА</value>
+  </data>
+  <data name="U005E" xml:space="preserve">
+    <value>ДУГОСИЛАЗНИ АКЦЕНАТ</value>
+  </data>
+  <data name="U005F" xml:space="preserve">
+    <value>НИСКА ЦРТА</value>
+  </data>
+  <data name="U0060" xml:space="preserve">
+    <value>КРАТКОУЗЛАЗНИ АКЦЕНАТ</value>
+  </data>
+  <data name="U0061" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО А</value>
+  </data>
+  <data name="U0062" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Б</value>
+  </data>
+  <data name="U0063" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ц</value>
+  </data>
+  <data name="U0064" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Д</value>
+  </data>
+  <data name="U0065" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Е</value>
+  </data>
+  <data name="U0066" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ф</value>
+  </data>
+  <data name="U0067" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Г</value>
+  </data>
+  <data name="U0068" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Х</value>
+  </data>
+  <data name="U0069" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО И</value>
+  </data>
+  <data name="U006A" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ј</value>
+  </data>
+  <data name="U006B" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО К</value>
+  </data>
+  <data name="U006C" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Л</value>
+  </data>
+  <data name="U006D" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО М</value>
+  </data>
+  <data name="U006E" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Н</value>
+  </data>
+  <data name="U006F" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО О</value>
+  </data>
+  <data name="U0070" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО П</value>
+  </data>
+  <data name="U0071" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО КУ</value>
+  </data>
+  <data name="U0072" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Р</value>
+  </data>
+  <data name="U0073" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО С</value>
+  </data>
+  <data name="U0074" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Т</value>
+  </data>
+  <data name="U0075" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО У</value>
+  </data>
+  <data name="U0076" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО В</value>
+  </data>
+  <data name="U0077" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ДВОСТРУКО В</value>
+  </data>
+  <data name="U0078" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ИКС</value>
+  </data>
+  <data name="U0079" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ИПСИЛОН</value>
+  </data>
+  <data name="U007A" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО З</value>
+  </data>
+  <data name="U007B" xml:space="preserve">
+    <value>ОТВОРЕНА ВИТИЧАСТА ЗАГРАДА</value>
+  </data>
+  <data name="U007C" xml:space="preserve">
+    <value>УСПРАВНА ЦРТА</value>
+  </data>
+  <data name="U007D" xml:space="preserve">
+    <value>ЗАТВОРЕНА ВИТИЧАСТА ЗАГРАДА</value>
+  </data>
+  <data name="U007E" xml:space="preserve">
+    <value>ТИЛДА</value>
+  </data>
+  <data name="U00A0" xml:space="preserve">
+    <value>НЕПРЕЛАМАЈУЋИ РАЗМАК</value>
+  </data>
+  <data name="U00A1" xml:space="preserve">
+    <value>ОБРНУТИ УЗВИЧНИК</value>
+  </data>
+  <data name="U00A2" xml:space="preserve">
+    <value>ЦЕНТ</value>
+  </data>
+  <data name="U00A3" xml:space="preserve">
+    <value>ФУНТА</value>
+  </data>
+  <data name="U00A4" xml:space="preserve">
+    <value>ВАЛУТА</value>
+  </data>
+  <data name="U00A5" xml:space="preserve">
+    <value>ЈЕН</value>
+  </data>
+  <data name="U00A7" xml:space="preserve">
+    <value>ПАРАГРАФ</value>
+  </data>
+  <data name="U00A8" xml:space="preserve">
+    <value>УМЛАУТ</value>
+  </data>
+  <data name="U00A9" xml:space="preserve">
+    <value>АУТОРСКА ПРАВА</value>
+  </data>
+  <data name="U00AC" xml:space="preserve">
+    <value>НЕ</value>
+  </data>
+  <data name="U00AD" xml:space="preserve">
+    <value>МЕКА ЦРТИЦА</value>
+  </data>
+  <data name="U00AE" xml:space="preserve">
+    <value>РЕГИСТРОВАНО</value>
+  </data>
+  <data name="U00B0" xml:space="preserve">
+    <value>СТЕПЕН</value>
+  </data>
+  <data name="U00B1" xml:space="preserve">
+    <value>ПЛУС-МИНУС</value>
+  </data>
+  <data name="U00B4" xml:space="preserve">
+    <value>ДУГОУЗЛАЗНИ АКЦЕНАТ</value>
+  </data>
+  <data name="U00B5" xml:space="preserve">
+    <value>МИКРО</value>
+  </data>
+  <data name="U00B7" xml:space="preserve">
+    <value>СРЕДИШЊА ТАЧКА</value>
+  </data>
+  <data name="U00BF" xml:space="preserve">
+    <value>ОБРНУТИ УПИТНИК</value>
+  </data>
+  <data name="U00C6" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО АЕ</value>
+  </data>
+  <data name="U00D7" xml:space="preserve">
+    <value>МНОЖЕЊЕ</value>
+  </data>
+  <data name="U00F7" xml:space="preserve">
+    <value>ДЕЉЕЊЕ</value>
+  </data>
+  <data name="U0106" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ћ</value>
+  </data>
+  <data name="U0107" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ћ</value>
+  </data>
+  <data name="U010C" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ч</value>
+  </data>
+  <data name="U010D" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ч</value>
+  </data>
+  <data name="U0110" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ђ</value>
+  </data>
+  <data name="U0111" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ђ</value>
+  </data>
+  <data name="U0130" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО И СА ТАЧКОМ</value>
+  </data>
+  <data name="U0131" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО И БЕЗ ТАЧКЕ</value>
+  </data>
+  <data name="U0132" xml:space="preserve">
+    <value>ЛАТИНИЧНА ВЕЛИКА ЛИГАТУРА ИЈ</value>
+  </data>
+  <data name="U0133" xml:space="preserve">
+    <value>ЛАТИНИЧНА МАЛА ЛИГАТУРА ИЈ</value>
+  </data>
+  <data name="U0152" xml:space="preserve">
+    <value>ЛАТИНИЧНА ВЕЛИКА ЛИГАТУРА ОЕ</value>
+  </data>
+  <data name="U0153" xml:space="preserve">
+    <value>ЛАТИНИЧНА МАЛА ЛИГАТУРА ОЕ</value>
+  </data>
+  <data name="U0160" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ш</value>
+  </data>
+  <data name="U0161" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ш</value>
+  </data>
+  <data name="U017D" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Ж</value>
+  </data>
+  <data name="U017E" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Ж</value>
+  </data>
+  <data name="U017F" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ДУГО С</value>
+  </data>
+  <data name="U018E" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО ОКРЕНУТО Е</value>
+  </data>
+  <data name="U01C4" xml:space="preserve">
+    <value>ЛАТИНИЧНО НАСЛОВНО СЛОВО Џ</value>
+  </data>
+  <data name="U01C5" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Џ</value>
+  </data>
+  <data name="U01C6" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Џ</value>
+  </data>
+  <data name="U01C7" xml:space="preserve">
+    <value>ЛАТИНИЧНО НАСЛОВНО СЛОВО Љ</value>
+  </data>
+  <data name="U01C8" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Љ</value>
+  </data>
+  <data name="U01C9" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Љ</value>
+  </data>
+  <data name="U01CA" xml:space="preserve">
+    <value>ЛАТИНИЧНО НАСЛОВНО СЛОВО Њ</value>
+  </data>
+  <data name="U01CB" xml:space="preserve">
+    <value>ЛАТИНИЧНО ВЕЛИКО СЛОВО Њ</value>
+  </data>
+  <data name="U01CC" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО Њ</value>
+  </data>
+  <data name="U0251" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО АЛФА</value>
+  </data>
+  <data name="U0258" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ОКРЕНУТО Е</value>
+  </data>
+  <data name="U025B" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ОТВОРЕНО Е</value>
+  </data>
+  <data name="U025C" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ОКРЕНУТО ОТВОРЕНО Е</value>
+  </data>
+  <data name="U025E" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ЗАТВОРЕНО ОКРЕНУТО ОТВОРЕНО Е</value>
+  </data>
+  <data name="U0263" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ГАМА</value>
+  </data>
+  <data name="U0265" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО ПРЕВРНУТО Х</value>
+  </data>
+  <data name="U0391" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО АЛФА</value>
+  </data>
+  <data name="U0392" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО БЕТА</value>
+  </data>
+  <data name="U0393" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ГАМА</value>
+  </data>
+  <data name="U0394" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ДЕЛТА</value>
+  </data>
+  <data name="U0395" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ЕПСИЛОН</value>
+  </data>
+  <data name="U0396" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ЗЕТА</value>
+  </data>
+  <data name="U0397" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ЕТА</value>
+  </data>
+  <data name="U0398" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ТЕТА</value>
+  </data>
+  <data name="U0399" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ЈОТА</value>
+  </data>
+  <data name="U039A" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО КАПА</value>
+  </data>
+  <data name="U039B" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ЛАМБДА</value>
+  </data>
+  <data name="U039C" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО МУ</value>
+  </data>
+  <data name="U039D" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО НУ</value>
+  </data>
+  <data name="U039E" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО КСИ</value>
+  </data>
+  <data name="U039F" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ОМИКРОН</value>
+  </data>
+  <data name="U03A0" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ПИ</value>
+  </data>
+  <data name="U03A1" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО РО</value>
+  </data>
+  <data name="U03A3" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО СИГМА</value>
+  </data>
+  <data name="U03A4" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ТАУ</value>
+  </data>
+  <data name="U03A5" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ИПСИЛОН</value>
+  </data>
+  <data name="U03A6" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ФИ</value>
+  </data>
+  <data name="U03A7" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ХИ</value>
+  </data>
+  <data name="U03A8" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ПСИ</value>
+  </data>
+  <data name="U03A9" xml:space="preserve">
+    <value>ГРЧКО ВЕЛИКО СЛОВО ОМЕГА</value>
+  </data>
+  <data name="U03B1" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО АЛФА</value>
+  </data>
+  <data name="U03B2" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО БЕТА</value>
+  </data>
+  <data name="U03B3" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ГАМА</value>
+  </data>
+  <data name="U03B4" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ДЕЛТА</value>
+  </data>
+  <data name="U03B5" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ЕПСИЛОН</value>
+  </data>
+  <data name="U03B6" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ЗЕТА</value>
+  </data>
+  <data name="U03B7" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ЕТА</value>
+  </data>
+  <data name="U03B8" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ТЕТА</value>
+  </data>
+  <data name="U03B9" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ЈОТА</value>
+  </data>
+  <data name="U03BA" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО КАПА</value>
+  </data>
+  <data name="U03BB" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ЛАМБДА</value>
+  </data>
+  <data name="U03BC" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО МУ</value>
+  </data>
+  <data name="U03BD" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО НУ</value>
+  </data>
+  <data name="U03BE" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО КСИ</value>
+  </data>
+  <data name="U03BF" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ОМИКРОН</value>
+  </data>
+  <data name="U03C0" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ПИ</value>
+  </data>
+  <data name="U03C1" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО РО</value>
+  </data>
+  <data name="U03C2" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ЗАВРШНА СИГМА</value>
+  </data>
+  <data name="U03C3" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО СИГМА</value>
+  </data>
+  <data name="U03C4" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ТАУ</value>
+  </data>
+  <data name="U03C5" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ИПСИЛОН</value>
+  </data>
+  <data name="U03C6" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ФИ</value>
+  </data>
+  <data name="U03C7" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ХИ</value>
+  </data>
+  <data name="U03C8" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ПСИ</value>
+  </data>
+  <data name="U03C9" xml:space="preserve">
+    <value>ГРЧКО МАЛО СЛОВО ОМЕГА</value>
+  </data>
+  <data name="U0402" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ђ</value>
+  </data>
+  <data name="U0405" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ДЗ</value>
+  </data>
+  <data name="U0408" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ј</value>
+  </data>
+  <data name="U0409" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Љ</value>
+  </data>
+  <data name="U040A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Њ</value>
+  </data>
+  <data name="U040B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ћ</value>
+  </data>
+  <data name="U040F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Џ</value>
+  </data>
+  <data name="U0410" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО А</value>
+  </data>
+  <data name="U0411" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Б</value>
+  </data>
+  <data name="U0412" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО В</value>
+  </data>
+  <data name="U0413" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Г</value>
+  </data>
+  <data name="U0414" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Д</value>
+  </data>
+  <data name="U0415" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Е</value>
+  </data>
+  <data name="U0416" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ж</value>
+  </data>
+  <data name="U0417" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО З</value>
+  </data>
+  <data name="U0418" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО И</value>
+  </data>
+  <data name="U041A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО К</value>
+  </data>
+  <data name="U041B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Л</value>
+  </data>
+  <data name="U041C" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО М</value>
+  </data>
+  <data name="U041D" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Н</value>
+  </data>
+  <data name="U041E" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО О</value>
+  </data>
+  <data name="U041F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО П</value>
+  </data>
+  <data name="U0420" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Р</value>
+  </data>
+  <data name="U0421" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО С</value>
+  </data>
+  <data name="U0422" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Т</value>
+  </data>
+  <data name="U0423" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО У</value>
+  </data>
+  <data name="U0424" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ф</value>
+  </data>
+  <data name="U0425" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Х</value>
+  </data>
+  <data name="U0426" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ц</value>
+  </data>
+  <data name="U0427" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ч</value>
+  </data>
+  <data name="U0428" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО Ш</value>
+  </data>
+  <data name="U0429" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ШЧ</value>
+  </data>
+  <data name="U042A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ДЕБЕЛО ЈЕР</value>
+  </data>
+  <data name="U042B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ЈЕРИ</value>
+  </data>
+  <data name="U042C" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ТАНКО ЈЕР</value>
+  </data>
+  <data name="U042E" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ЈУ</value>
+  </data>
+  <data name="U042F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ЈА</value>
+  </data>
+  <data name="U0430" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО А</value>
+  </data>
+  <data name="U0431" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Б</value>
+  </data>
+  <data name="U0432" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО В</value>
+  </data>
+  <data name="U0433" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Г</value>
+  </data>
+  <data name="U0434" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Д</value>
+  </data>
+  <data name="U0435" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Е</value>
+  </data>
+  <data name="U0436" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ж</value>
+  </data>
+  <data name="U0437" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО З</value>
+  </data>
+  <data name="U0438" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО И</value>
+  </data>
+  <data name="U043A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО К</value>
+  </data>
+  <data name="U043B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Л</value>
+  </data>
+  <data name="U043C" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО М</value>
+  </data>
+  <data name="U043D" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Н</value>
+  </data>
+  <data name="U043E" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО О</value>
+  </data>
+  <data name="U043F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО П</value>
+  </data>
+  <data name="U0440" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Р</value>
+  </data>
+  <data name="U0441" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО С</value>
+  </data>
+  <data name="U0442" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Т</value>
+  </data>
+  <data name="U0443" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО У</value>
+  </data>
+  <data name="U0444" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ф</value>
+  </data>
+  <data name="U0445" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Х</value>
+  </data>
+  <data name="U0446" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ц</value>
+  </data>
+  <data name="U0447" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ч</value>
+  </data>
+  <data name="U0448" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ш</value>
+  </data>
+  <data name="U0449" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ШЧ</value>
+  </data>
+  <data name="U044A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ДЕБЕЛО ЈЕР</value>
+  </data>
+  <data name="U044B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ЈЕРИ</value>
+  </data>
+  <data name="U044C" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ТАНКО ЈЕР</value>
+  </data>
+  <data name="U044E" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ЈУ</value>
+  </data>
+  <data name="U044F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ЈА</value>
+  </data>
+  <data name="U0452" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ђ</value>
+  </data>
+  <data name="U0455" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ДЗ</value>
+  </data>
+  <data name="U0458" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ј</value>
+  </data>
+  <data name="U0459" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Љ</value>
+  </data>
+  <data name="U045A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Њ</value>
+  </data>
+  <data name="U045B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Ћ</value>
+  </data>
+  <data name="U045F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО Џ</value>
+  </data>
+  <data name="U0460" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ОМЕГА</value>
+  </data>
+  <data name="U0461" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ОМЕГА</value>
+  </data>
+  <data name="U0462" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ЈАТ</value>
+  </data>
+  <data name="U0463" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ЈАТ</value>
+  </data>
+  <data name="U0466" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО МАЛО ЈУС</value>
+  </data>
+  <data name="U0467" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО МАЛО ЈУС</value>
+  </data>
+  <data name="U046A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ВЕЛИКО ЈУС</value>
+  </data>
+  <data name="U046B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ВЕЛИКО ЈУС</value>
+  </data>
+  <data name="U046E" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО КСИ</value>
+  </data>
+  <data name="U046F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО КСИ</value>
+  </data>
+  <data name="U0470" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ПСИ</value>
+  </data>
+  <data name="U0471" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ПСИ</value>
+  </data>
+  <data name="U0472" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ФИТА</value>
+  </data>
+  <data name="U0473" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ФИТА</value>
+  </data>
+  <data name="U0474" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ИЖИЦА</value>
+  </data>
+  <data name="U0475" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ИЖИЦА</value>
+  </data>
+  <data name="U047A" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ОКРУГЛО ОМЕГА</value>
+  </data>
+  <data name="U047B" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ОКРУГЛО ОМЕГА</value>
+  </data>
+  <data name="U047C" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ОМЕГА СА ТИТЛОМ</value>
+  </data>
+  <data name="U047D" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ОМЕГА СА ТИТЛОМ</value>
+  </data>
+  <data name="U047E" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО ОТ</value>
+  </data>
+  <data name="U047F" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО ОТ</value>
+  </data>
+  <data name="U0482" xml:space="preserve">
+    <value>ЋИРИЛИЧНИ ЗНАК ХИЉАДА</value>
+  </data>
+  <data name="U0483" xml:space="preserve">
+    <value>КОМБИНИРАЈУЋА ЋИРИЛИЧНА ТИТЛА</value>
+  </data>
+  <data name="U0488" xml:space="preserve">
+    <value>КОМБИНИРАЈУЋЕ ЋИРИЛИЧНЕ СТОТИНЕ ХИЉАДА</value>
+  </data>
+  <data name="U0489" xml:space="preserve">
+    <value>КОМБИНИРАЈУЋИ ЋИРИЛИЧНИ МИЛИОНИ</value>
+  </data>
+  <data name="U04A0" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО БАШКИРСКО К</value>
+  </data>
+  <data name="U04A1" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО БАШКИРСКО К</value>
+  </data>
+  <data name="U04A4" xml:space="preserve">
+    <value>ЋИРИЛИЧНА ВЕЛИКА ЛИГАТУРА НГ</value>
+  </data>
+  <data name="U04A5" xml:space="preserve">
+    <value>ЋИРИЛИЧНА МАЛА ЛИГАТУРА НГ</value>
+  </data>
+  <data name="U04A8" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО АБХАСКО Х</value>
+  </data>
+  <data name="U04A9" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО АБХАСКО Х</value>
+  </data>
+  <data name="U04B4" xml:space="preserve">
+    <value>ЋИРИЛИЧНА ВЕЛИКА ЛИГАТУРА ТЦ</value>
+  </data>
+  <data name="U04B5" xml:space="preserve">
+    <value>ЋИРИЛИЧНА МАЛА ЛИГАТУРА ТЦ</value>
+  </data>
+  <data name="U04BC" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО АБХАСКО Ч</value>
+  </data>
+  <data name="U04BD" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО АБХАСКО Ч</value>
+  </data>
+  <data name="U04D4" xml:space="preserve">
+    <value>ЋИРИЛИЧНА ВЕЛИКА ЛИГАТУРА АЕ</value>
+  </data>
+  <data name="U04D5" xml:space="preserve">
+    <value>ЋИРИЛИЧНА МАЛА ЛИГАТУРА АЕ</value>
+  </data>
+  <data name="U04E0" xml:space="preserve">
+    <value>ЋИРИЛИЧНО ВЕЛИКО СЛОВО АБХАСКО ДЗ</value>
+  </data>
+  <data name="U04E1" xml:space="preserve">
+    <value>ЋИРИЛИЧНО МАЛО СЛОВО АБХАСКО ДЗ</value>
+  </data>
+  <data name="U058A" xml:space="preserve">
+    <value>ЈЕРМЕНСКА ЦРТИЦА</value>
+  </data>
+  <data name="U05D0" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО АЛЕФ</value>
+  </data>
+  <data name="U05D1" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО БЕТ</value>
+  </data>
+  <data name="U05D2" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ГИМЕЛ</value>
+  </data>
+  <data name="U05D3" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ДАЛЕТ</value>
+  </data>
+  <data name="U05D4" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ХЕ</value>
+  </data>
+  <data name="U05D5" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ВАУ</value>
+  </data>
+  <data name="U05D6" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ЗАЈИН</value>
+  </data>
+  <data name="U05D7" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ХЕТ</value>
+  </data>
+  <data name="U05D8" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ТЕТ</value>
+  </data>
+  <data name="U05D9" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ЈОД</value>
+  </data>
+  <data name="U05DA" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ЗАВРШНО КАФ</value>
+  </data>
+  <data name="U05DB" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО КАФ</value>
+  </data>
+  <data name="U05DC" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ЛАМЕД</value>
+  </data>
+  <data name="U05DD" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ЗАВРШНО МЕМ</value>
+  </data>
+  <data name="U05DE" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО МЕМ</value>
+  </data>
+  <data name="U05DF" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО НУН</value>
+  </data>
+  <data name="U05E0" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО НУН</value>
+  </data>
+  <data name="U05E1" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО САМЕК</value>
+  </data>
+  <data name="U05E2" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО АЈИН</value>
+  </data>
+  <data name="U05E3" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ЗАВРШНО ПЕ</value>
+  </data>
+  <data name="U05E4" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ПЕ</value>
+  </data>
+  <data name="U05E5" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ЗАВРШНО ТСАДЕ</value>
+  </data>
+  <data name="U05E6" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ТСАДЕ</value>
+  </data>
+  <data name="U05E7" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО КОФ</value>
+  </data>
+  <data name="U05E8" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО РЕШ</value>
+  </data>
+  <data name="U05E9" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ШИН</value>
+  </data>
+  <data name="U05EA" xml:space="preserve">
+    <value>ХЕБРЕЈСКО СЛОВО ТАУ</value>
+  </data>
+  <data name="U05F0" xml:space="preserve">
+    <value>ХЕБРЕЈСКА ЛИГАТУРА ЈИДИШКО ДВОСТРУКО ВАУ</value>
+  </data>
+  <data name="U05F1" xml:space="preserve">
+    <value>ХЕБРЕЈСКА ЛИГАТУРА ЈИДИШКО ВАУ ЈОД</value>
+  </data>
+  <data name="U05F2" xml:space="preserve">
+    <value>ХЕБРЕЈСКА ЛИГАТУРА ЈИДИШКО ДВОСТРУКО ЈОД</value>
+  </data>
+  <data name="U060C" xml:space="preserve">
+    <value>АРАПСКА ЗАПЕТА</value>
+  </data>
+  <data name="U061B" xml:space="preserve">
+    <value>АРАПСКА ТАЧКА ЗАРЕЗ</value>
+  </data>
+  <data name="U061F" xml:space="preserve">
+    <value>АРАПСКИ УПИТНИК</value>
+  </data>
+  <data name="U0660" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА НУЛА</value>
+  </data>
+  <data name="U0661" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U0662" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ДВОЈКА</value>
+  </data>
+  <data name="U0663" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ТРОЈКА</value>
+  </data>
+  <data name="U0664" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ЧЕТВОРКА</value>
+  </data>
+  <data name="U0665" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ПЕТИЦА</value>
+  </data>
+  <data name="U0666" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ШЕСТИЦА</value>
+  </data>
+  <data name="U0667" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА СЕДМИЦА</value>
+  </data>
+  <data name="U0668" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ОСМИЦА</value>
+  </data>
+  <data name="U0669" xml:space="preserve">
+    <value>АРАПСКО-ИНДИЈСКА ДЕВЕТКА</value>
+  </data>
+  <data name="U066A" xml:space="preserve">
+    <value>АРАПСКИ ПРОЦЕНАТ</value>
+  </data>
+  <data name="U0966" xml:space="preserve">
+    <value>ДЕВАНАГАРИ НУЛА</value>
+  </data>
+  <data name="U0967" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ЈЕДИНИЦА</value>
+  </data>
+  <data name="U0968" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ДВОЈКА</value>
+  </data>
+  <data name="U0969" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ТРОЈКА</value>
+  </data>
+  <data name="U096A" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ЧЕТВОРКА</value>
+  </data>
+  <data name="U096B" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ПЕТИЦА</value>
+  </data>
+  <data name="U096C" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ШЕСТИЦА</value>
+  </data>
+  <data name="U096D" xml:space="preserve">
+    <value>ДЕВАНАГАРИ СЕДМИЦА</value>
+  </data>
+  <data name="U096E" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ОСМИЦА</value>
+  </data>
+  <data name="U096F" xml:space="preserve">
+    <value>ДЕВАНАГАРИ ДЕВЕТКА</value>
+  </data>
+  <data name="U09E6" xml:space="preserve">
+    <value>БЕНГАЛСКА НУЛА</value>
+  </data>
+  <data name="U09E7" xml:space="preserve">
+    <value>БЕНГАЛСКА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U09E8" xml:space="preserve">
+    <value>БЕНГАЛСКА ДВОЈКА</value>
+  </data>
+  <data name="U09E9" xml:space="preserve">
+    <value>БЕНГАЛСКА ТРОЈКА</value>
+  </data>
+  <data name="U09EA" xml:space="preserve">
+    <value>БЕНГАЛСКА ЧЕТВОРКА</value>
+  </data>
+  <data name="U09EB" xml:space="preserve">
+    <value>БЕНГАЛСКА ПЕТИЦА</value>
+  </data>
+  <data name="U09EC" xml:space="preserve">
+    <value>БЕНГАЛСКА ШЕСТИЦА</value>
+  </data>
+  <data name="U09ED" xml:space="preserve">
+    <value>БЕНГАЛСКА СЕДМИЦА</value>
+  </data>
+  <data name="U09EE" xml:space="preserve">
+    <value>БЕНГАЛСКА ОСМИЦА</value>
+  </data>
+  <data name="U09EF" xml:space="preserve">
+    <value>БЕНГАЛСКА ДЕВЕТКА</value>
+  </data>
+  <data name="U0BE7" xml:space="preserve">
+    <value>ТАМИЛСКА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U0BE8" xml:space="preserve">
+    <value>ТАМИЛСКА ДВОЈКА</value>
+  </data>
+  <data name="U0BE9" xml:space="preserve">
+    <value>ТАМИЛСКА ТРОЈКА</value>
+  </data>
+  <data name="U0BEA" xml:space="preserve">
+    <value>ТАМИЛСКА ЧЕТВОРКА</value>
+  </data>
+  <data name="U0BEB" xml:space="preserve">
+    <value>ТАМИЛСКА ПЕТИЦА</value>
+  </data>
+  <data name="U0BEC" xml:space="preserve">
+    <value>ТАМИЛСКА ШЕСТИЦА</value>
+  </data>
+  <data name="U0BED" xml:space="preserve">
+    <value>ТАМИЛСКА СЕДМИЦА</value>
+  </data>
+  <data name="U0BEE" xml:space="preserve">
+    <value>ТАМИЛСКА ОСМИЦА</value>
+  </data>
+  <data name="U0BEF" xml:space="preserve">
+    <value>ТАМИЛСКА ДЕВЕТКА</value>
+  </data>
+  <data name="U0BF0" xml:space="preserve">
+    <value>ТАМИЛСКА ДЕСЕТКА</value>
+  </data>
+  <data name="U0BF1" xml:space="preserve">
+    <value>ТАМИЛСКА СТОТИНА</value>
+  </data>
+  <data name="U0BF2" xml:space="preserve">
+    <value>ТАМИЛСКА ХИЉАДА</value>
+  </data>
+  <data name="U0F20" xml:space="preserve">
+    <value>ТИБЕТАНСКА НУЛА</value>
+  </data>
+  <data name="U0F21" xml:space="preserve">
+    <value>ТИБЕТАНСКА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U0F22" xml:space="preserve">
+    <value>ТИБЕТАНСКА ДВОЈКА</value>
+  </data>
+  <data name="U0F23" xml:space="preserve">
+    <value>ТИБЕТАНСКА ТРОЈКА</value>
+  </data>
+  <data name="U0F24" xml:space="preserve">
+    <value>ТИБЕТАНСКА ЧЕТВОРКА</value>
+  </data>
+  <data name="U0F25" xml:space="preserve">
+    <value>ТИБЕТАНСКА ПЕТИЦА</value>
+  </data>
+  <data name="U0F26" xml:space="preserve">
+    <value>ТИБЕТАНСКА ШЕСТИЦА</value>
+  </data>
+  <data name="U0F27" xml:space="preserve">
+    <value>ТИБЕТАНСКА СЕДМИЦА</value>
+  </data>
+  <data name="U0F28" xml:space="preserve">
+    <value>ТИБЕТАНСКА ОСМИЦА</value>
+  </data>
+  <data name="U0F29" xml:space="preserve">
+    <value>ТИБЕТАНСКА ДЕВЕТКА</value>
+  </data>
+  <data name="U1362" xml:space="preserve">
+    <value>ЕТИОПСКА ТАЧКА</value>
+  </data>
+  <data name="U1363" xml:space="preserve">
+    <value>ЕТИОПСКА ЗАПЕТА</value>
+  </data>
+  <data name="U1364" xml:space="preserve">
+    <value>ЕТИОПСКА ТАЧКА ЗАПЕТА</value>
+  </data>
+  <data name="U1365" xml:space="preserve">
+    <value>ЕТИОПСКЕ ДВЕ ТАЧКЕ</value>
+  </data>
+  <data name="U1367" xml:space="preserve">
+    <value>ЕТИОПСКИ УПИТНИК</value>
+  </data>
+  <data name="U1369" xml:space="preserve">
+    <value>ЕТИОПСКА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U136A" xml:space="preserve">
+    <value>ЕТИОПСКА ДВОЈКА</value>
+  </data>
+  <data name="U136B" xml:space="preserve">
+    <value>ЕТИОПСКА ТРОЈКА</value>
+  </data>
+  <data name="U136C" xml:space="preserve">
+    <value>ЕТИОПСКА ЧЕТВОРКА</value>
+  </data>
+  <data name="U136D" xml:space="preserve">
+    <value>ЕТИОПСКА ПЕТИЦА</value>
+  </data>
+  <data name="U136E" xml:space="preserve">
+    <value>ЕТИОПСКА ШЕСТИЦА</value>
+  </data>
+  <data name="U136F" xml:space="preserve">
+    <value>ЕТИОПСКА СЕДМИЦА</value>
+  </data>
+  <data name="U1370" xml:space="preserve">
+    <value>ЕТИОПСКА ОСМИЦА</value>
+  </data>
+  <data name="U1371" xml:space="preserve">
+    <value>ЕТИОПСКА ДЕВЕТКА</value>
+  </data>
+  <data name="U1372" xml:space="preserve">
+    <value>ЕТИОПСКА ДЕСЕТКА</value>
+  </data>
+  <data name="U1373" xml:space="preserve">
+    <value>ЕТИОПСКА ДВАДЕСЕТИЦА</value>
+  </data>
+  <data name="U1374" xml:space="preserve">
+    <value>ЕТИОПСКА ТРИДЕСЕТИЦА</value>
+  </data>
+  <data name="U1375" xml:space="preserve">
+    <value>ЕТИОПСКА ЧЕТРДЕСЕТИЦА</value>
+  </data>
+  <data name="U1376" xml:space="preserve">
+    <value>ЕТИОПСКА ПЕДЕСЕТИЦА</value>
+  </data>
+  <data name="U1377" xml:space="preserve">
+    <value>ЕТИОПСКА ШЕЗДЕСЕТИЦА</value>
+  </data>
+  <data name="U1378" xml:space="preserve">
+    <value>ЕТИОПСКА СЕДАМДЕСЕТИЦА</value>
+  </data>
+  <data name="U1379" xml:space="preserve">
+    <value>ЕТИОПСКА ОСАМДЕСЕТИЦА</value>
+  </data>
+  <data name="U137A" xml:space="preserve">
+    <value>ЕТИОПСКА ДЕВЕДЕСЕТИЦА</value>
+  </data>
+  <data name="U137B" xml:space="preserve">
+    <value>ЕТИОПСКА СТОТИНА</value>
+  </data>
+  <data name="U137C" xml:space="preserve">
+    <value>ЕТИОПСКО ДЕСЕТ ХИЉАДА</value>
+  </data>
+  <data name="U17E0" xml:space="preserve">
+    <value>КМЕРСКА НУЛА</value>
+  </data>
+  <data name="U17E1" xml:space="preserve">
+    <value>КМЕРСКА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U17E2" xml:space="preserve">
+    <value>КМЕРСКА ДВОЈКА</value>
+  </data>
+  <data name="U17E3" xml:space="preserve">
+    <value>КМЕРСКА ТРОЈКА</value>
+  </data>
+  <data name="U17E4" xml:space="preserve">
+    <value>КМЕРСКА ЧЕТВОРКА</value>
+  </data>
+  <data name="U17E5" xml:space="preserve">
+    <value>КМЕРСКА ПЕТИЦА</value>
+  </data>
+  <data name="U17E6" xml:space="preserve">
+    <value>КМЕРСКА ШЕСТИЦА</value>
+  </data>
+  <data name="U17E7" xml:space="preserve">
+    <value>КМЕРСКА СЕДМИЦА</value>
+  </data>
+  <data name="U17E8" xml:space="preserve">
+    <value>КМЕРСКА ОСМИЦА</value>
+  </data>
+  <data name="U17E9" xml:space="preserve">
+    <value>КМЕРСКА ДЕВЕТКА</value>
+  </data>
+  <data name="U1810" xml:space="preserve">
+    <value>МОНГОЛСКА НУЛА</value>
+  </data>
+  <data name="U1811" xml:space="preserve">
+    <value>МОНГОЛСКА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U1812" xml:space="preserve">
+    <value>МОНГОЛСКА ДВОЈКА</value>
+  </data>
+  <data name="U1813" xml:space="preserve">
+    <value>МОНГОЛСКА ТРОЈКА</value>
+  </data>
+  <data name="U1814" xml:space="preserve">
+    <value>МОНГОЛСКА ЧЕТВОРКА</value>
+  </data>
+  <data name="U1815" xml:space="preserve">
+    <value>МОНГОЛСКА ПЕТИЦА</value>
+  </data>
+  <data name="U1816" xml:space="preserve">
+    <value>МОНГОЛСКА ШЕСТИЦА</value>
+  </data>
+  <data name="U1817" xml:space="preserve">
+    <value>МОНГОЛСКА СЕДМИЦА</value>
+  </data>
+  <data name="U1818" xml:space="preserve">
+    <value>МОНГОЛСКА ОСМИЦА</value>
+  </data>
+  <data name="U1819" xml:space="preserve">
+    <value>МОНГОЛСКА ДЕВЕТКА</value>
+  </data>
+  <data name="U2010" xml:space="preserve">
+    <value>ЦРТИЦА</value>
+  </data>
+  <data name="U2011" xml:space="preserve">
+    <value>НЕПРЕЛАМАЈУЋА ЦРТИЦА</value>
+  </data>
+  <data name="U2018" xml:space="preserve">
+    <value>ЛЕВИ ПОЛУНАВОДНИК „ШЕСТИЦА“</value>
+  </data>
+  <data name="U2019" xml:space="preserve">
+    <value>ДЕСНИ ПОЛУНАВОДНИК „ДЕВЕТКА“</value>
+  </data>
+  <data name="U201A" xml:space="preserve">
+    <value>ДОЊИ ПОЛУНАВОДНИК „ДЕВЕТКА“</value>
+  </data>
+  <data name="U201B" xml:space="preserve">
+    <value>ГОРЊИ ПОЛУНАВОДНИК „ОКРЕНУТА ДЕВЕТКА“</value>
+  </data>
+  <data name="U201C" xml:space="preserve">
+    <value>ЗАТВОРЕНИ НАВОДНИК „ШЕСТИЦЕ“</value>
+  </data>
+  <data name="U201D" xml:space="preserve">
+    <value>ЗАТВОРЕНИ НАВОДНИК „ДЕВЕТКЕ“</value>
+  </data>
+  <data name="U201E" xml:space="preserve">
+    <value>ОТВОРЕНИ НАВОДНИК „ДЕВЕТКЕ“</value>
+  </data>
+  <data name="U201F" xml:space="preserve">
+    <value>ЗАТВОРЕНИ НАВОДНИК „ОКРЕНУТЕ ДЕВЕТКЕ“</value>
+  </data>
+  <data name="U202F" xml:space="preserve">
+    <value>УСКИ НЕПРЕЛАМАЈУЋИ РАЗМАК</value>
+  </data>
+  <data name="U2030" xml:space="preserve">
+    <value>ПРОМИЛ</value>
+  </data>
+  <data name="U203C" xml:space="preserve">
+    <value>ДВОСТРУКИ УЗВИЧНИК</value>
+  </data>
+  <data name="U2047" xml:space="preserve">
+    <value>ДВОСТРУКИ УПИТНИК</value>
+  </data>
+  <data name="U2048" xml:space="preserve">
+    <value>УПИТНИК И УЗВИЧНИК</value>
+  </data>
+  <data name="U2049" xml:space="preserve">
+    <value>УЗВИЧНИК И УПИТНИК</value>
+  </data>
+  <data name="U204F" xml:space="preserve">
+    <value>ОКРЕНУТО ТАЧКА ЗАРЕЗ</value>
+  </data>
+  <data name="U20A0" xml:space="preserve">
+    <value>ЕВРО-ВАЛУТА</value>
+  </data>
+  <data name="U20A2" xml:space="preserve">
+    <value>КРУЗЕИРОС</value>
+  </data>
+  <data name="U20A3" xml:space="preserve">
+    <value>ФРАНЦУСКИ ФРАНАК</value>
+  </data>
+  <data name="U20A4" xml:space="preserve">
+    <value>ЛИРА</value>
+  </data>
+  <data name="U20A7" xml:space="preserve">
+    <value>ПЕЗЕТА</value>
+  </data>
+  <data name="U20A8" xml:space="preserve">
+    <value>РУПИЈА</value>
+  </data>
+  <data name="U20AA" xml:space="preserve">
+    <value>НОВИ ШЕКЕЛ</value>
+  </data>
+  <data name="U20AC" xml:space="preserve">
+    <value>ЕВРО</value>
+  </data>
+  <data name="U20AF" xml:space="preserve">
+    <value>ДРАХМА</value>
+  </data>
+  <data name="U20B1" xml:space="preserve">
+    <value>ПЕЗОС</value>
+  </data>
+  <data name="U2103" xml:space="preserve">
+    <value>СТЕПЕН ЦЕЛЗИЈУСА</value>
+  </data>
+  <data name="U2107" xml:space="preserve">
+    <value>ОЈЛЕРОВА КОНСТАНТА</value>
+  </data>
+  <data name="U2109" xml:space="preserve">
+    <value>СТЕПЕН ФАРЕНХАЈТА</value>
+  </data>
+  <data name="U210E" xml:space="preserve">
+    <value>ПЛАНКОВА КОНСТАНТА</value>
+  </data>
+  <data name="U2116" xml:space="preserve">
+    <value>НУМЕРА</value>
+  </data>
+  <data name="U2125" xml:space="preserve">
+    <value>УНЦА</value>
+  </data>
+  <data name="U2126" xml:space="preserve">
+    <value>ОМ</value>
+  </data>
+  <data name="U2127" xml:space="preserve">
+    <value>ОБРНУТИ ОМ</value>
+  </data>
+  <data name="U212A" xml:space="preserve">
+    <value>КЕЛВИН</value>
+  </data>
+  <data name="U212B" xml:space="preserve">
+    <value>АНГСТРЕМ</value>
+  </data>
+  <data name="U2135" xml:space="preserve">
+    <value>АЛЕФ</value>
+  </data>
+  <data name="U2136" xml:space="preserve">
+    <value>БЕТ</value>
+  </data>
+  <data name="U2137" xml:space="preserve">
+    <value>ГИМЕЛ</value>
+  </data>
+  <data name="U2138" xml:space="preserve">
+    <value>ДАЛЕТ</value>
+  </data>
+  <data name="U2160" xml:space="preserve">
+    <value>РИМСКО ЈЕДАН</value>
+  </data>
+  <data name="U2161" xml:space="preserve">
+    <value>РИМСКО ДВА</value>
+  </data>
+  <data name="U2162" xml:space="preserve">
+    <value>РИМСКО ТРИ</value>
+  </data>
+  <data name="U2163" xml:space="preserve">
+    <value>РИМСКО ЧЕТИРИ</value>
+  </data>
+  <data name="U2164" xml:space="preserve">
+    <value>РИМСКО ПЕТ</value>
+  </data>
+  <data name="U2165" xml:space="preserve">
+    <value>РИМСКО ШЕСТ</value>
+  </data>
+  <data name="U2166" xml:space="preserve">
+    <value>РИМСКО СЕДАМ</value>
+  </data>
+  <data name="U2167" xml:space="preserve">
+    <value>РИМСКО ОСАМ</value>
+  </data>
+  <data name="U2168" xml:space="preserve">
+    <value>РИМСКО ДЕВЕТ</value>
+  </data>
+  <data name="U2169" xml:space="preserve">
+    <value>РИМСКО ДЕСЕТ</value>
+  </data>
+  <data name="U216A" xml:space="preserve">
+    <value>РИМСКО ЈЕДАНАЕСТ</value>
+  </data>
+  <data name="U216B" xml:space="preserve">
+    <value>РИМСКО ДВАНАЕСТ</value>
+  </data>
+  <data name="U216C" xml:space="preserve">
+    <value>РИМСКО ПЕДЕСЕТ</value>
+  </data>
+  <data name="U216D" xml:space="preserve">
+    <value>РИМСКО СТО</value>
+  </data>
+  <data name="U216E" xml:space="preserve">
+    <value>РИМСКО ПЕТСТО</value>
+  </data>
+  <data name="U216F" xml:space="preserve">
+    <value>РИМСКО ХИЉАДУ</value>
+  </data>
+  <data name="U2170" xml:space="preserve">
+    <value>МАЛО РИМСКО ЈЕДАН</value>
+  </data>
+  <data name="U2171" xml:space="preserve">
+    <value>МАЛО РИМСКО ДВА</value>
+  </data>
+  <data name="U2172" xml:space="preserve">
+    <value>МАЛО РИМСКО ТРИ</value>
+  </data>
+  <data name="U2173" xml:space="preserve">
+    <value>МАЛО РИМСКО ЧЕТИРИ</value>
+  </data>
+  <data name="U2174" xml:space="preserve">
+    <value>МАЛО РИМСКО ПЕТ</value>
+  </data>
+  <data name="U2175" xml:space="preserve">
+    <value>МАЛО РИМСКО ШЕСТ</value>
+  </data>
+  <data name="U2176" xml:space="preserve">
+    <value>МАЛО РИМСКО СЕДАМ</value>
+  </data>
+  <data name="U2177" xml:space="preserve">
+    <value>МАЛО РИМСКО ОСАМ</value>
+  </data>
+  <data name="U2178" xml:space="preserve">
+    <value>МАЛО РИМСКО ДЕВЕТ</value>
+  </data>
+  <data name="U2179" xml:space="preserve">
+    <value>МАЛО РИМСКО ДЕСЕТ</value>
+  </data>
+  <data name="U217A" xml:space="preserve">
+    <value>МАЛО РИМСКО ЈЕДАНАЕСТ</value>
+  </data>
+  <data name="U217B" xml:space="preserve">
+    <value>МАЛО РИМСКО ДВАНАЕСТ</value>
+  </data>
+  <data name="U217C" xml:space="preserve">
+    <value>МАЛО РИМСКО ПЕДЕСЕТ</value>
+  </data>
+  <data name="U217D" xml:space="preserve">
+    <value>МАЛО РИМСКО СТО</value>
+  </data>
+  <data name="U217E" xml:space="preserve">
+    <value>МАЛО РИМСКО ПЕТСТО</value>
+  </data>
+  <data name="U217F" xml:space="preserve">
+    <value>МАЛО РИМСКО ХИЉАДУ</value>
+  </data>
+  <data name="U2181" xml:space="preserve">
+    <value>РИМСКО ПЕТ ХИЉАДА</value>
+  </data>
+  <data name="U2182" xml:space="preserve">
+    <value>РИМСКО ДЕСЕТ ХИЉАДА</value>
+  </data>
+  <data name="U2183" xml:space="preserve">
+    <value>РИМСКО ОБРНУТО СТО</value>
+  </data>
+  <data name="U2190" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ЛЕВО</value>
+  </data>
+  <data name="U2191" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ГОРЕ</value>
+  </data>
+  <data name="U2192" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ДЕСНО</value>
+  </data>
+  <data name="U2193" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ДОЛЕ</value>
+  </data>
+  <data name="U219A" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ЛЕВО СА ЦРТОМ</value>
+  </data>
+  <data name="U219B" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ДЕСНО СА ЦРТОМ</value>
+  </data>
+  <data name="U219C" xml:space="preserve">
+    <value>ТАЛАСАСТА СТРЕЛИЦА ОКРЕНУТА ЛЕВО</value>
+  </data>
+  <data name="U219D" xml:space="preserve">
+    <value>ТАЛАСАСТА СТРЕЛИЦА ОКРЕНУТА ДЕСНО</value>
+  </data>
+  <data name="U219E" xml:space="preserve">
+    <value>ДВОГЛАВА СТРЕЛИЦА ОКРЕНУТА ЛЕВО</value>
+  </data>
+  <data name="U219F" xml:space="preserve">
+    <value>ДВОГЛАВА СТРЕЛИЦА ОКРЕНУТА ГОРЕ</value>
+  </data>
+  <data name="U21A0" xml:space="preserve">
+    <value>ДВОГЛАВА СТРЕЛИЦА ОКРЕНУТА ДЕСНО</value>
+  </data>
+  <data name="U21A1" xml:space="preserve">
+    <value>ДВОГЛАВА СТРЕЛИЦА ОКРЕНУТА ДОЛЕ</value>
+  </data>
+  <data name="U21A2" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ЛЕВО СА РЕПОМ</value>
+  </data>
+  <data name="U21A3" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ДЕСНО СА РЕПОМ</value>
+  </data>
+  <data name="U21AF" xml:space="preserve">
+    <value>СТРЕЛИЦА „МУЊА“</value>
+  </data>
+  <data name="U21C4" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ДЕСНО ИЗНАД СТРЕЛИЦЕ ОКРЕНУТЕ ЛЕВО</value>
+  </data>
+  <data name="U21C5" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ГОРЕ ЛЕВО ОД СТРЕЛИЦЕ ОКРЕНУТЕ ДОЛЕ</value>
+  </data>
+  <data name="U21C6" xml:space="preserve">
+    <value>СТРЕЛИЦА ОКРЕНУТА ЛЕВО ИЗНАД СТРЕЛИЦЕ ОКРЕНУТЕ ДЕСНО</value>
+  </data>
+  <data name="U21C7" xml:space="preserve">
+    <value>ПАР СТРЕЛИЦА ОКРЕНУТИХ ЛЕВО</value>
+  </data>
+  <data name="U21C8" xml:space="preserve">
+    <value>ПАР СТРЕЛИЦА ОКРЕНУТИХ ГОРЕ</value>
+  </data>
+  <data name="U21C9" xml:space="preserve">
+    <value>ПАР СТРЕЛИЦА ОКРЕНУТИХ ДЕСНО</value>
+  </data>
+  <data name="U21CA" xml:space="preserve">
+    <value>ПАР СТРЕЛИЦА ОКРЕНУТИХ ДОЛЕ</value>
+  </data>
+  <data name="U21CD" xml:space="preserve">
+    <value>ДВОСТРУКА СТРЕЛИЦА ОКРЕНУТА ЛЕВО СА ЦРТОМ</value>
+  </data>
+  <data name="U21CF" xml:space="preserve">
+    <value>ДВОСТРУКА СТРЕЛИЦА ОКРЕНУТА ДЕСНО СА ЦРТОМ</value>
+  </data>
+  <data name="U21D0" xml:space="preserve">
+    <value>ДВОСТРУКА СТРЕЛИЦА ОКРЕНУТА ЛЕВО</value>
+  </data>
+  <data name="U21D1" xml:space="preserve">
+    <value>ДВОСТРУКА СТРЕЛИЦА ОКРЕНУТА ГОРЕ</value>
+  </data>
+  <data name="U21D2" xml:space="preserve">
+    <value>ДВОСТРУКА СТРЕЛИЦА ОКРЕНУТА ДЕСНО</value>
+  </data>
+  <data name="U21D3" xml:space="preserve">
+    <value>ДВОСТРУКА СТРЕЛИЦА ОКРЕНУТА ДОЛЕ</value>
+  </data>
+  <data name="U21DA" xml:space="preserve">
+    <value>ТРОСТРУКА СТРЕЛИЦА ОКРЕНУТА ЛЕВО</value>
+  </data>
+  <data name="U21DB" xml:space="preserve">
+    <value>ТРОСТРУКА СТРЕЛИЦА ОКРЕНУТА ДЕСНО</value>
+  </data>
+  <data name="U21DC" xml:space="preserve">
+    <value>ВИЈУГАВА СТРЕЛИЦА ОКРЕНУТА ЛЕВО</value>
+  </data>
+  <data name="U21DD" xml:space="preserve">
+    <value>ВИЈУГАВА СТРЕЛИЦА ОКРЕНУТА ДЕСНО</value>
+  </data>
+  <data name="U21E6" xml:space="preserve">
+    <value>БЕЛА СТРЕЛИЦА ОКРЕНУТА ЛЕВО</value>
+  </data>
+  <data name="U21E7" xml:space="preserve">
+    <value>БЕЛА СТРЕЛИЦА ОКРЕНУТА ГОРЕ</value>
+  </data>
+  <data name="U21E8" xml:space="preserve">
+    <value>БЕЛА СТРЕЛИЦА ОКРЕНУТА ДЕСНО</value>
+  </data>
+  <data name="U21E9" xml:space="preserve">
+    <value>БЕЛА СТРЕЛИЦА ОКРЕНУТА ДОЛЕ</value>
+  </data>
+  <data name="U2200" xml:space="preserve">
+    <value>ЗА СВАКО</value>
+  </data>
+  <data name="U2203" xml:space="preserve">
+    <value>ПОСТОЈИ НЕКО</value>
+  </data>
+  <data name="U2204" xml:space="preserve">
+    <value>НЕ ПОСТОЈИ НЕКО</value>
+  </data>
+  <data name="U2205" xml:space="preserve">
+    <value>ПРАЗАН СКУП</value>
+  </data>
+  <data name="U2208" xml:space="preserve">
+    <value>ПРИПАДА</value>
+  </data>
+  <data name="U2209" xml:space="preserve">
+    <value>НЕ ПРИПАДА</value>
+  </data>
+  <data name="U220B" xml:space="preserve">
+    <value>САДРЖИ</value>
+  </data>
+  <data name="U220C" xml:space="preserve">
+    <value>НЕ САДРЖИ</value>
+  </data>
+  <data name="U220F" xml:space="preserve">
+    <value>Н-АРНИ ПРОИЗВОД</value>
+  </data>
+  <data name="U2211" xml:space="preserve">
+    <value>Н-АРНА СУМА</value>
+  </data>
+  <data name="U2212" xml:space="preserve">
+    <value>МИНУС</value>
+  </data>
+  <data name="U2213" xml:space="preserve">
+    <value>МИНУС ИЛИ ПЛУС</value>
+  </data>
+  <data name="U2216" xml:space="preserve">
+    <value>РАЗЛИКА СКУПОВА</value>
+  </data>
+  <data name="U221A" xml:space="preserve">
+    <value>КВАДРАТНИ КОРЕН</value>
+  </data>
+  <data name="U221B" xml:space="preserve">
+    <value>КУБНИ КОРЕН</value>
+  </data>
+  <data name="U221C" xml:space="preserve">
+    <value>ЧЕТВРТИ КОРЕН</value>
+  </data>
+  <data name="U221E" xml:space="preserve">
+    <value>БЕСКОНАЧНОСТ</value>
+  </data>
+  <data name="U221F" xml:space="preserve">
+    <value>ПРАВ УГАО БЕЗ ЛУКА</value>
+  </data>
+  <data name="U2220" xml:space="preserve">
+    <value>УГАО</value>
+  </data>
+  <data name="U2225" xml:space="preserve">
+    <value>ПАРАЛЕЛНО</value>
+  </data>
+  <data name="U2226" xml:space="preserve">
+    <value>НЕПАРАЛЕЛНО</value>
+  </data>
+  <data name="U2227" xml:space="preserve">
+    <value>ЛОГИЧКО И</value>
+  </data>
+  <data name="U2228" xml:space="preserve">
+    <value>ЛОГИЧКО ИЛИ</value>
+  </data>
+  <data name="U2229" xml:space="preserve">
+    <value>ПРЕСЕК</value>
+  </data>
+  <data name="U222A" xml:space="preserve">
+    <value>УНИЈА</value>
+  </data>
+  <data name="U222B" xml:space="preserve">
+    <value>ИНТЕГРАЛ</value>
+  </data>
+  <data name="U222C" xml:space="preserve">
+    <value>ДВОСТРУКИ ИНТЕГРАЛ</value>
+  </data>
+  <data name="U222D" xml:space="preserve">
+    <value>ТРОСТРУКИ ИНТЕГРАЛ</value>
+  </data>
+  <data name="U2248" xml:space="preserve">
+    <value>ПРИБЛИЖНО ЈЕДНАКО</value>
+  </data>
+  <data name="U2249" xml:space="preserve">
+    <value>НИЈЕ ПРИБЛИЖНО ЈЕДНАКО</value>
+  </data>
+  <data name="U224A" xml:space="preserve">
+    <value>ПРИБЛИЖНО ЈЕДНАКО ИЛИ ЈЕДНАКО</value>
+  </data>
+  <data name="U2264" xml:space="preserve">
+    <value>МАЊЕ ИЛИ ЈЕДНАКО</value>
+  </data>
+  <data name="U2265" xml:space="preserve">
+    <value>ВЕЋЕ ИЛИ ЈЕДНАКО</value>
+  </data>
+  <data name="U226A" xml:space="preserve">
+    <value>МНОГО МАЊЕ</value>
+  </data>
+  <data name="U226B" xml:space="preserve">
+    <value>МНОГО ВЕЋЕ</value>
+  </data>
+  <data name="U2282" xml:space="preserve">
+    <value>ПОДСКУП</value>
+  </data>
+  <data name="U2283" xml:space="preserve">
+    <value>НАДСКУП</value>
+  </data>
+  <data name="U2284" xml:space="preserve">
+    <value>НИЈЕ ПОДСКУП</value>
+  </data>
+  <data name="U2285" xml:space="preserve">
+    <value>НИЈЕ НАДСКУП</value>
+  </data>
+  <data name="U2286" xml:space="preserve">
+    <value>ПОДСКУП ИЛИ ЈЕДНАК</value>
+  </data>
+  <data name="U2287" xml:space="preserve">
+    <value>НАДСКУП ИЛИ ЈЕДНАК</value>
+  </data>
+  <data name="U2288" xml:space="preserve">
+    <value>НИТИ ПОДСКУП НИТИ ЈЕДНАК</value>
+  </data>
+  <data name="U2289" xml:space="preserve">
+    <value>НИТИ НАДСКУП НИТИ ЈЕДНАК</value>
+  </data>
+  <data name="U22BB" xml:space="preserve">
+    <value>ЕКСКЛУЗИВНО ИЛИ</value>
+  </data>
+  <data name="U22BC" xml:space="preserve">
+    <value>НИ</value>
+  </data>
+  <data name="U22BD" xml:space="preserve">
+    <value>НИЛИ</value>
+  </data>
+  <data name="U22BE" xml:space="preserve">
+    <value>ПРАВ УГАО</value>
+  </data>
+  <data name="U22BF" xml:space="preserve">
+    <value>ПРАВОУГЛИ ТРОУГАО</value>
+  </data>
+  <data name="U22C0" xml:space="preserve">
+    <value>Н-АРНО ЛОГИЧКО И</value>
+  </data>
+  <data name="U22C1" xml:space="preserve">
+    <value>Н-АРНО ЛОГИЧКО ИЛИ</value>
+  </data>
+  <data name="U22C2" xml:space="preserve">
+    <value>Н-АРНИ ПРЕСЕК</value>
+  </data>
+  <data name="U22C3" xml:space="preserve">
+    <value>Н-АРНА УНИЈА</value>
+  </data>
+  <data name="U2302" xml:space="preserve">
+    <value>КУЋА</value>
+  </data>
+  <data name="U2319" xml:space="preserve">
+    <value>ПРЕВРНУТО НЕ</value>
+  </data>
+  <data name="U231A" xml:space="preserve">
+    <value>РУЧНИ САТ</value>
+  </data>
+  <data name="U231B" xml:space="preserve">
+    <value>ПЕШЧАНИ САТ</value>
+  </data>
+  <data name="U2328" xml:space="preserve">
+    <value>ТАСТАТУРА</value>
+  </data>
+  <data name="U232C" xml:space="preserve">
+    <value>БЕНЗЕНОВ ПРСТЕН</value>
+  </data>
+  <data name="U2460" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U2461" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ДВОЈКА</value>
+  </data>
+  <data name="U2462" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ТРОЈКА</value>
+  </data>
+  <data name="U2463" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ЧЕТВОРКА</value>
+  </data>
+  <data name="U2464" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ПЕТИЦА</value>
+  </data>
+  <data name="U2465" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ШЕСТИЦА</value>
+  </data>
+  <data name="U2466" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА СЕДМИЦА</value>
+  </data>
+  <data name="U2467" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ОСМИЦА</value>
+  </data>
+  <data name="U2468" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ДЕВЕТКА</value>
+  </data>
+  <data name="U2469" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ДЕСЕТКА</value>
+  </data>
+  <data name="U246A" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ЈЕДАНАЕСТИЦА</value>
+  </data>
+  <data name="U246B" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ДВАНАЕСТИЦА</value>
+  </data>
+  <data name="U246C" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ТРИНАЕСТИЦА</value>
+  </data>
+  <data name="U246D" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ЧЕТРНАЕСТИЦА</value>
+  </data>
+  <data name="U246E" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ПЕТНАЕСТИЦА</value>
+  </data>
+  <data name="U246F" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ШЕСНАЕСТИЦА</value>
+  </data>
+  <data name="U2470" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА СЕДАМНАЕСТИЦА</value>
+  </data>
+  <data name="U2471" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ОСАМНАЕСТИЦА</value>
+  </data>
+  <data name="U2472" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ДЕВЕТНАЕСТИЦА</value>
+  </data>
+  <data name="U2473" xml:space="preserve">
+    <value>ЗАОКРУЖЕНА ДВАДЕСЕТИЦА</value>
+  </data>
+  <data name="U2474" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ЈЕДИНИЦА</value>
+  </data>
+  <data name="U2475" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ДВОЈКА</value>
+  </data>
+  <data name="U2476" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ТРОЈКА</value>
+  </data>
+  <data name="U2477" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ЧЕТВОРКА</value>
+  </data>
+  <data name="U2478" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ПЕТИЦА</value>
+  </data>
+  <data name="U2479" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ШЕСТИЦА</value>
+  </data>
+  <data name="U247A" xml:space="preserve">
+    <value>ЗАГРАЂЕНА СЕДМИЦА</value>
+  </data>
+  <data name="U247B" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ОСМИЦА</value>
+  </data>
+  <data name="U247C" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ДЕВЕТКА</value>
+  </data>
+  <data name="U247D" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ДЕСЕТКА</value>
+  </data>
+  <data name="U247E" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ЈЕДАНАЕСТИЦА</value>
+  </data>
+  <data name="U247F" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ДВАНАЕСТИЦА</value>
+  </data>
+  <data name="U2480" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ТРИНАЕСТИЦА</value>
+  </data>
+  <data name="U2481" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ЧЕТРНАЕСТИЦА</value>
+  </data>
+  <data name="U2482" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ПЕТНАЕСТИЦА</value>
+  </data>
+  <data name="U2483" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ШЕСНАЕСТИЦА</value>
+  </data>
+  <data name="U2484" xml:space="preserve">
+    <value>ЗАГРАЂЕНА СЕДАМНАЕСТИЦА</value>
+  </data>
+  <data name="U2485" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ОСАМНАЕСТИЦА</value>
+  </data>
+  <data name="U2486" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ДЕВЕТНАЕСТИЦА</value>
+  </data>
+  <data name="U2487" xml:space="preserve">
+    <value>ЗАГРАЂЕНА ДВАДЕСЕТИЦА</value>
+  </data>
+  <data name="U249C" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО А</value>
+  </data>
+  <data name="U249D" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Б</value>
+  </data>
+  <data name="U249E" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Ц</value>
+  </data>
+  <data name="U249F" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Д</value>
+  </data>
+  <data name="U24A0" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Е</value>
+  </data>
+  <data name="U24A1" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Ф</value>
+  </data>
+  <data name="U24A2" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Г</value>
+  </data>
+  <data name="U24A3" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Х</value>
+  </data>
+  <data name="U24A4" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО И</value>
+  </data>
+  <data name="U24A5" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Ј</value>
+  </data>
+  <data name="U24A6" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО К</value>
+  </data>
+  <data name="U24A7" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Л</value>
+  </data>
+  <data name="U24A8" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО М</value>
+  </data>
+  <data name="U24A9" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Н</value>
+  </data>
+  <data name="U24AA" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО О</value>
+  </data>
+  <data name="U24AB" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО П</value>
+  </data>
+  <data name="U24AC" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО КУ</value>
+  </data>
+  <data name="U24AD" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Р</value>
+  </data>
+  <data name="U24AE" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО С</value>
+  </data>
+  <data name="U24AF" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО Т</value>
+  </data>
+  <data name="U24B0" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО У</value>
+  </data>
+  <data name="U24B1" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО В</value>
+  </data>
+  <data name="U24B2" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО ДВОСТРУКО В</value>
+  </data>
+  <data name="U24B3" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО ИКС</value>
+  </data>
+  <data name="U24B4" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО ИПСИЛОН</value>
+  </data>
+  <data name="U24B5" xml:space="preserve">
+    <value>ЗАГРАЂЕНО ЛАТИНИЧНО МАЛО СЛОВО З</value>
+  </data>
+  <data name="U24B6" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО А</value>
+  </data>
+  <data name="U24B7" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Б</value>
+  </data>
+  <data name="U24B8" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Ц</value>
+  </data>
+  <data name="U24B9" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Д</value>
+  </data>
+  <data name="U24BA" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Е</value>
+  </data>
+  <data name="U24BB" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Ф</value>
+  </data>
+  <data name="U24BC" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Г</value>
+  </data>
+  <data name="U24BD" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Х</value>
+  </data>
+  <data name="U24BE" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО И</value>
+  </data>
+  <data name="U24BF" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Ј</value>
+  </data>
+  <data name="U24C0" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО К</value>
+  </data>
+  <data name="U24C1" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Л</value>
+  </data>
+  <data name="U24C2" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО М</value>
+  </data>
+  <data name="U24C3" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Н</value>
+  </data>
+  <data name="U24C4" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО О</value>
+  </data>
+  <data name="U24C5" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО П</value>
+  </data>
+  <data name="U24C6" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО КУ</value>
+  </data>
+  <data name="U24C7" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Р</value>
+  </data>
+  <data name="U24C8" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО С</value>
+  </data>
+  <data name="U24C9" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО Т</value>
+  </data>
+  <data name="U24CA" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО У</value>
+  </data>
+  <data name="U24CB" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО В</value>
+  </data>
+  <data name="U24CC" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО ДВОСТРУКО В</value>
+  </data>
+  <data name="U24CD" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО ИКС</value>
+  </data>
+  <data name="U24CE" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО ИПСИЛОН</value>
+  </data>
+  <data name="U24CF" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО ВЕЛИКО СЛОВО З</value>
+  </data>
+  <data name="U24D0" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО А</value>
+  </data>
+  <data name="U24D1" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Б</value>
+  </data>
+  <data name="U24D2" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Ц</value>
+  </data>
+  <data name="U24D3" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Д</value>
+  </data>
+  <data name="U24D4" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Е</value>
+  </data>
+  <data name="U24D5" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Ф</value>
+  </data>
+  <data name="U24D6" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Г</value>
+  </data>
+  <data name="U24D7" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Х</value>
+  </data>
+  <data name="U24D8" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО И</value>
+  </data>
+  <data name="U24D9" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Ј</value>
+  </data>
+  <data name="U24DA" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО К</value>
+  </data>
+  <data name="U24DB" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Л</value>
+  </data>
+  <data name="U24DC" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО М</value>
+  </data>
+  <data name="U24DD" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Н</value>
+  </data>
+  <data name="U24DE" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО О</value>
+  </data>
+  <data name="U24DF" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО П</value>
+  </data>
+  <data name="U24E0" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО КУ</value>
+  </data>
+  <data name="U24E1" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Р</value>
+  </data>
+  <data name="U24E2" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО С</value>
+  </data>
+  <data name="U24E3" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Т</value>
+  </data>
+  <data name="U24E4" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО У</value>
+  </data>
+  <data name="U24E5" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО В</value>
+  </data>
+  <data name="U24E6" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО Њ</value>
+  </data>
+  <data name="U24E7" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО ИКС</value>
+  </data>
+  <data name="U24E8" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО ИПСИЛОН</value>
+  </data>
+  <data name="U24E9" xml:space="preserve">
+    <value>ЗАОКРУЖЕНО ЛАТИНИЧНО МАЛО СЛОВО З</value>
+  </data>
+  <data name="U25A0" xml:space="preserve">
+    <value>ЦРНИ КВАДРАТ</value>
+  </data>
+  <data name="U25A1" xml:space="preserve">
+    <value>БЕЛИ КВАДРАТ</value>
+  </data>
+  <data name="U25A2" xml:space="preserve">
+    <value>БЕЛИ КВАДРАТ СА ЗАОБЉЕНИМ УГЛОВИМА</value>
+  </data>
+  <data name="U25A3" xml:space="preserve">
+    <value>БЕЛИ КВАДРАТ КОЈИ САДРЖИ ЦРНИ КВАДРАТ</value>
+  </data>
+  <data name="U25A4" xml:space="preserve">
+    <value>КВАДРАТ СА ВОДОРАВНОМ ИСПУНОМ</value>
+  </data>
+  <data name="U25A5" xml:space="preserve">
+    <value>КВАДРАТ СА УСПРАВНОМ ИСПУНОМ</value>
+  </data>
+  <data name="U25AA" xml:space="preserve">
+    <value>ЦРНИ МАЛИ КВАДРАТ</value>
+  </data>
+  <data name="U25AB" xml:space="preserve">
+    <value>БЕЛИ МАЛИ КВАДРАТ</value>
+  </data>
+  <data name="U25AC" xml:space="preserve">
+    <value>ЦРНИ ПРАВОУГАОНИК</value>
+  </data>
+  <data name="U25AD" xml:space="preserve">
+    <value>БЕЛИ ПРАВОУГАОНИК</value>
+  </data>
+  <data name="U25AE" xml:space="preserve">
+    <value>ЦРНИ УСПРАВНИ ПРАВОУГАОНИК</value>
+  </data>
+  <data name="U25AF" xml:space="preserve">
+    <value>БЕЛИ УСПРАВНИ ПРАВОУГАОНИК</value>
+  </data>
+  <data name="U25B0" xml:space="preserve">
+    <value>ЦРНИ ПАРАЛЕЛОГРАМ</value>
+  </data>
+  <data name="U25B1" xml:space="preserve">
+    <value>БЕЛИ ПАРАЛЕЛОГРАМ</value>
+  </data>
+  <data name="U25CB" xml:space="preserve">
+    <value>БЕЛИ КРУГ</value>
+  </data>
+  <data name="U25CC" xml:space="preserve">
+    <value>ТАЧКАСТИ КРУГ</value>
+  </data>
+  <data name="U25CE" xml:space="preserve">
+    <value>МЕТА</value>
+  </data>
+  <data name="U25CF" xml:space="preserve">
+    <value>ЦРНИ КРУГ</value>
+  </data>
+  <data name="U25D0" xml:space="preserve">
+    <value>КРУГ СА ЦРНОМ ЛЕВОМ ПОЛОВИНОМ</value>
+  </data>
+  <data name="U25D1" xml:space="preserve">
+    <value>КРУГ СА ЦРНОМ ДЕСНОМ ПОЛОВИНОМ</value>
+  </data>
+  <data name="U25D2" xml:space="preserve">
+    <value>КРУГ СА ЦРНОМ ДОЊОМ ПОЛОВИНОМ</value>
+  </data>
+  <data name="U25D3" xml:space="preserve">
+    <value>КРУГ СА ЦРНОМ ГОРЊОМ ПОЛОВИНОМ</value>
+  </data>
+  <data name="U25D4" xml:space="preserve">
+    <value>КРУГ СА ЦРНОМ ГОРЊОМ ДЕСНОМ ЧЕТВРТИНОМ</value>
+  </data>
+  <data name="U25D5" xml:space="preserve">
+    <value>КРУГ СА ЦРНИМ СВИМ СЕМ ГОРЊОМ ЛЕВОМ ЧЕТВРТИНОМ</value>
+  </data>
+  <data name="U25D6" xml:space="preserve">
+    <value>ЛЕВИ ЦРНИ ПОЛУКРУГ</value>
+  </data>
+  <data name="U25D7" xml:space="preserve">
+    <value>ДЕСНИ ЦРНИ ПОЛУКРУГ</value>
+  </data>
+  <data name="U25E0" xml:space="preserve">
+    <value>ГОРЊИ ПОЛУКРУГ</value>
+  </data>
+  <data name="U25E1" xml:space="preserve">
+    <value>ДОЊИ ПОЛУКРУГ</value>
+  </data>
+  <data name="U25E2" xml:space="preserve">
+    <value>ЦРНИ ДОЊИ ДЕСНИ ТРОУГАО</value>
+  </data>
+  <data name="U25E3" xml:space="preserve">
+    <value>ЦРНИ ДОЊИ ЛЕВИ ТРОУГАО</value>
+  </data>
+  <data name="U25E4" xml:space="preserve">
+    <value>ЦРНИ ГОРЊИ ЛЕВИ ТРОУГАО</value>
+  </data>
+  <data name="U25E5" xml:space="preserve">
+    <value>ЦРНИ ГОРЊИ ДЕСНИ ТРОУГАО</value>
+  </data>
+  <data name="U25E7" xml:space="preserve">
+    <value>КВАДРАТ СА ЦРНОМ ЛЕВОМ ПОЛОВИНОМ</value>
+  </data>
+  <data name="U25E8" xml:space="preserve">
+    <value>КВАДРАТ СА ЦРНОМ ДЕСНОМ ПОЛОВИНОМ</value>
+  </data>
+  <data name="U25EF" xml:space="preserve">
+    <value>ВЕЛИКИ КРУГ</value>
+  </data>
+  <data name="U25F8" xml:space="preserve">
+    <value>ГОРЊИ ЛЕВИ ТРОУГАО</value>
+  </data>
+  <data name="U25F9" xml:space="preserve">
+    <value>ГОРЊИ ДЕСНИ ТРОУГАО</value>
+  </data>
+  <data name="U25FA" xml:space="preserve">
+    <value>ДОЊИ ЛЕВИ ТРОУГАО</value>
+  </data>
+  <data name="U25FB" xml:space="preserve">
+    <value>БЕЛИ СРЕДЊИ КВАДРАТ</value>
+  </data>
+  <data name="U25FC" xml:space="preserve">
+    <value>ЦРНИ СРЕДЊИ КВАДРАТ</value>
+  </data>
+  <data name="U2600" xml:space="preserve">
+    <value>ЦРНО СУНЦЕ СА ЗРАЦИМА</value>
+  </data>
+  <data name="U2601" xml:space="preserve">
+    <value>ОБЛАК</value>
+  </data>
+  <data name="U2602" xml:space="preserve">
+    <value>КИШОБРАН</value>
+  </data>
+  <data name="U2603" xml:space="preserve">
+    <value>СНЕШКО БЕЛИЋ</value>
+  </data>
+  <data name="U2604" xml:space="preserve">
+    <value>КОМЕТА</value>
+  </data>
+  <data name="U2605" xml:space="preserve">
+    <value>ЦРНА ЗВЕЗДА</value>
+  </data>
+  <data name="U2606" xml:space="preserve">
+    <value>БЕЛА ЗВЕЗДА</value>
+  </data>
+  <data name="U2607" xml:space="preserve">
+    <value>МУЊА</value>
+  </data>
+  <data name="U2608" xml:space="preserve">
+    <value>ОЛУЈА СА ГРМЉАВИНОМ</value>
+  </data>
+  <data name="U2609" xml:space="preserve">
+    <value>СУНЦЕ</value>
+  </data>
+  <data name="U260E" xml:space="preserve">
+    <value>ЦРНИ ТЕЛЕФОН</value>
+  </data>
+  <data name="U260F" xml:space="preserve">
+    <value>БЕЛИ ТЕЛЕФОН</value>
+  </data>
+  <data name="U2610" xml:space="preserve">
+    <value>КУЋИЦА</value>
+  </data>
+  <data name="U2612" xml:space="preserve">
+    <value>КУЋИЦА СА Х</value>
+  </data>
+  <data name="U2614" xml:space="preserve">
+    <value>КИШОБРАН СА КАПИМА КИШЕ</value>
+  </data>
+  <data name="U2622" xml:space="preserve">
+    <value>РАДИОАКТИВНОСТ</value>
+  </data>
+  <data name="U2623" xml:space="preserve">
+    <value>БИОЛОШКА ОПАСНОСТ</value>
+  </data>
+  <data name="U2625" xml:space="preserve">
+    <value>АНКХ</value>
+  </data>
+  <data name="U2627" xml:space="preserve">
+    <value>ХИ РО</value>
+  </data>
+  <data name="U2629" xml:space="preserve">
+    <value>ЈЕРУСАЛИМСКИ КРСТ</value>
+  </data>
+  <data name="U262A" xml:space="preserve">
+    <value>ЗВЕЗДА И ПОЛУМЕСЕЦ</value>
+  </data>
+  <data name="U262D" xml:space="preserve">
+    <value>ЧЕКИЋ И СРП</value>
+  </data>
+  <data name="U262F" xml:space="preserve">
+    <value>ЈИН ЈАНГ</value>
+  </data>
+  <data name="U263C" xml:space="preserve">
+    <value>БЕЛО СУНЦЕ СА ЗРАЦИМА</value>
+  </data>
+  <data name="U263D" xml:space="preserve">
+    <value>МЕСЕЦ У ПРВОЈ ЧЕТВРТИ</value>
+  </data>
+  <data name="U263E" xml:space="preserve">
+    <value>МЕСЕЦ У ПОСЛЕДЊОЈ ЧЕТВРТИ</value>
+  </data>
+  <data name="U263F" xml:space="preserve">
+    <value>МЕРКУР</value>
+  </data>
+  <data name="U2640" xml:space="preserve">
+    <value>ЖЕНСКО</value>
+  </data>
+  <data name="U2641" xml:space="preserve">
+    <value>ЗЕМЉА</value>
+  </data>
+  <data name="U2642" xml:space="preserve">
+    <value>МУШКО</value>
+  </data>
+  <data name="U2643" xml:space="preserve">
+    <value>ЈУПИТЕР</value>
+  </data>
+  <data name="U2644" xml:space="preserve">
+    <value>САТУРН</value>
+  </data>
+  <data name="U2645" xml:space="preserve">
+    <value>УРАН</value>
+  </data>
+  <data name="U2646" xml:space="preserve">
+    <value>НЕПТУН</value>
+  </data>
+  <data name="U2647" xml:space="preserve">
+    <value>ПЛУТОН</value>
+  </data>
+  <data name="U2648" xml:space="preserve">
+    <value>РИБЕ</value>
+  </data>
+  <data name="U2649" xml:space="preserve">
+    <value>БИК</value>
+  </data>
+  <data name="U264A" xml:space="preserve">
+    <value>БЛИЗАНЦИ</value>
+  </data>
+  <data name="U264B" xml:space="preserve">
+    <value>РАК</value>
+  </data>
+  <data name="U264C" xml:space="preserve">
+    <value>ЛАВ</value>
+  </data>
+  <data name="U264D" xml:space="preserve">
+    <value>ДЕВИЦА</value>
+  </data>
+  <data name="U264E" xml:space="preserve">
+    <value>ВАГА</value>
+  </data>
+  <data name="U264F" xml:space="preserve">
+    <value>ШКОРПИЈА</value>
+  </data>
+  <data name="U2650" xml:space="preserve">
+    <value>СТРЕЛАЦ</value>
+  </data>
+  <data name="U2651" xml:space="preserve">
+    <value>ЈАРАЦ</value>
+  </data>
+  <data name="U2652" xml:space="preserve">
+    <value>ВОДОЛИЈА</value>
+  </data>
+  <data name="U2653" xml:space="preserve">
+    <value>РИБЕ</value>
+  </data>
+  <data name="U2654" xml:space="preserve">
+    <value>БЕЛИ ШАХОВСКИ КРАЉ</value>
+  </data>
+  <data name="U2655" xml:space="preserve">
+    <value>БЕЛА ШАХОВСКА КРАЉИЦА</value>
+  </data>
+  <data name="U2656" xml:space="preserve">
+    <value>БЕЛИ ШАХОВСКИ ТОП</value>
+  </data>
+  <data name="U2657" xml:space="preserve">
+    <value>БЕЛИ ШАХОВСКИ ЛОВАЦ</value>
+  </data>
+  <data name="U2658" xml:space="preserve">
+    <value>БЕЛИ ШАХОВСКИ КОЊ</value>
+  </data>
+  <data name="U2659" xml:space="preserve">
+    <value>БЕЛИ ШАХОВСКИ ПЕШАК</value>
+  </data>
+  <data name="U265A" xml:space="preserve">
+    <value>ЦРНИ ШАХОВСКИ КРАЉ</value>
+  </data>
+  <data name="U265B" xml:space="preserve">
+    <value>ЦРНА ШАХОВСКА КРАЉИЦА</value>
+  </data>
+  <data name="U265C" xml:space="preserve">
+    <value>ЦРНИ ШАХОВСКИ ТОП</value>
+  </data>
+  <data name="U265D" xml:space="preserve">
+    <value>ЦРНИ ШАХОВСКИ ЛОВАЦ</value>
+  </data>
+  <data name="U265E" xml:space="preserve">
+    <value>ЦРНИ ШАХОВСКИ КОЊ</value>
+  </data>
+  <data name="U265F" xml:space="preserve">
+    <value>ЦРНИ ШАХОВСКИ ПЕШАК</value>
+  </data>
+  <data name="U2660" xml:space="preserve">
+    <value>ЦРНИ ПИК</value>
+  </data>
+  <data name="U2661" xml:space="preserve">
+    <value>БЕЛИ ХЕРЦ</value>
+  </data>
+  <data name="U2662" xml:space="preserve">
+    <value>БЕЛИ КАРО</value>
+  </data>
+  <data name="U2663" xml:space="preserve">
+    <value>ЦРНИ ТРЕФ</value>
+  </data>
+  <data name="U2664" xml:space="preserve">
+    <value>БЕЛИ ПИК</value>
+  </data>
+  <data name="U2665" xml:space="preserve">
+    <value>ЦРНИ ХЕРЦ</value>
+  </data>
+  <data name="U2666" xml:space="preserve">
+    <value>ЦРНИ КАРО</value>
+  </data>
+  <data name="U2667" xml:space="preserve">
+    <value>БЕЛИ ТРЕФ</value>
+  </data>
+  <data name="U2669" xml:space="preserve">
+    <value>ЧЕТВРТИНСКА НОТА</value>
+  </data>
+  <data name="U266A" xml:space="preserve">
+    <value>ОСМИНСКА НОТА</value>
+  </data>
+  <data name="U266B" xml:space="preserve">
+    <value>СПОЈЕНЕ ОСМИНЕ</value>
+  </data>
+  <data name="U266C" xml:space="preserve">
+    <value>СПОЈЕНЕ ШЕСНАЕСТИНЕ</value>
+  </data>
+  <data name="U266D" xml:space="preserve">
+    <value>СНИЗИЛИЦА</value>
+  </data>
+  <data name="U266E" xml:space="preserve">
+    <value>РАЗРЕШИЛИЦА</value>
+  </data>
+  <data name="U266F" xml:space="preserve">
+    <value>ПОВИСИЛИЦА</value>
+  </data>
+  <data name="U2690" xml:space="preserve">
+    <value>БЕЛА ЗАСТАВА</value>
+  </data>
+  <data name="U2691" xml:space="preserve">
+    <value>ЦРНА ЗАСТАВА</value>
+  </data>
+  <data name="U2702" xml:space="preserve">
+    <value>ЦРНЕ МАКАЗЕ</value>
+  </data>
+  <data name="U2704" xml:space="preserve">
+    <value>БЕЛЕ МАКАЗЕ</value>
+  </data>
+  <data name="U2708" xml:space="preserve">
+    <value>АВИОН</value>
+  </data>
+  <data name="U2709" xml:space="preserve">
+    <value>КОВЕРТА</value>
+  </data>
+  <data name="U2720" xml:space="preserve">
+    <value>МАЛТЕШКИ КРСТ</value>
+  </data>
+  <data name="U2721" xml:space="preserve">
+    <value>ДАВИДОВА ЗВЕЗДА</value>
+  </data>
+  <data name="U2726" xml:space="preserve">
+    <value>ЦРНА ЧЕТВОРОЗРАКА ЗВЕЗДА</value>
+  </data>
+  <data name="U2727" xml:space="preserve">
+    <value>БЕЛА ЧЕТВОРОЗРАКА ЗВЕЗДА</value>
+  </data>
+  <data name="U2744" xml:space="preserve">
+    <value>ПАХУЉИЦА</value>
+  </data>
+  <data name="U274D" xml:space="preserve">
+    <value>ОСЕНЧЕНИ БЕЛИ КРУГ</value>
+  </data>
+  <data name="U2751" xml:space="preserve">
+    <value>ДОЛЕ ДЕСНО ОСЕНЧЕНИ БЕЛИ КВАДРАТ</value>
+  </data>
+  <data name="U2752" xml:space="preserve">
+    <value>ГОРЕ ДЕСНО ОСЕНЧЕНИ БЕЛИ КВАДРАТ</value>
+  </data>
+  <data name="U3041" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО А</value>
+  </data>
+  <data name="U3042" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО А</value>
+  </data>
+  <data name="U3043" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО И</value>
+  </data>
+  <data name="U3044" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО И</value>
+  </data>
+  <data name="U3045" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО У</value>
+  </data>
+  <data name="U3046" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО У</value>
+  </data>
+  <data name="U3047" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО Е</value>
+  </data>
+  <data name="U3048" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО Е</value>
+  </data>
+  <data name="U3049" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО О</value>
+  </data>
+  <data name="U304A" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО О</value>
+  </data>
+  <data name="U304B" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО КА</value>
+  </data>
+  <data name="U304C" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ГА</value>
+  </data>
+  <data name="U304D" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО КИ</value>
+  </data>
+  <data name="U304E" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ГИ</value>
+  </data>
+  <data name="U304F" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО КУ</value>
+  </data>
+  <data name="U3050" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ГУ</value>
+  </data>
+  <data name="U3051" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО КЕ</value>
+  </data>
+  <data name="U3052" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ГЕ</value>
+  </data>
+  <data name="U3053" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО КО</value>
+  </data>
+  <data name="U3054" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ГО</value>
+  </data>
+  <data name="U3055" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО СА</value>
+  </data>
+  <data name="U3056" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЗА</value>
+  </data>
+  <data name="U3057" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ШИ</value>
+  </data>
+  <data name="U3058" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЈИ</value>
+  </data>
+  <data name="U3059" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО СУ</value>
+  </data>
+  <data name="U305A" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЗУ</value>
+  </data>
+  <data name="U305B" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО СЕ</value>
+  </data>
+  <data name="U305C" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЗЕ</value>
+  </data>
+  <data name="U305D" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО СО</value>
+  </data>
+  <data name="U305E" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЗО</value>
+  </data>
+  <data name="U305F" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ТА</value>
+  </data>
+  <data name="U3060" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ДА</value>
+  </data>
+  <data name="U3061" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЋИ</value>
+  </data>
+  <data name="U3062" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЂИ</value>
+  </data>
+  <data name="U3063" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО ЋУ</value>
+  </data>
+  <data name="U3064" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЋУ</value>
+  </data>
+  <data name="U3065" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ДЗУ</value>
+  </data>
+  <data name="U3066" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ТЕ</value>
+  </data>
+  <data name="U3067" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ДЕ</value>
+  </data>
+  <data name="U3068" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ТО</value>
+  </data>
+  <data name="U3069" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ДО</value>
+  </data>
+  <data name="U306A" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО НА</value>
+  </data>
+  <data name="U306B" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО НИ</value>
+  </data>
+  <data name="U306C" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО НУ</value>
+  </data>
+  <data name="U306D" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО НЕ</value>
+  </data>
+  <data name="U306E" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО НО</value>
+  </data>
+  <data name="U306F" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ХА</value>
+  </data>
+  <data name="U3070" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО БА</value>
+  </data>
+  <data name="U3071" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ПА</value>
+  </data>
+  <data name="U3072" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ХИ</value>
+  </data>
+  <data name="U3073" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО БИ</value>
+  </data>
+  <data name="U3074" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ПИ</value>
+  </data>
+  <data name="U3075" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ФУ</value>
+  </data>
+  <data name="U3076" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО БУ</value>
+  </data>
+  <data name="U3077" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ПУ</value>
+  </data>
+  <data name="U3078" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ХЕ</value>
+  </data>
+  <data name="U3079" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО БЕ</value>
+  </data>
+  <data name="U307A" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ПЕ</value>
+  </data>
+  <data name="U307B" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ХО</value>
+  </data>
+  <data name="U307C" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО БО</value>
+  </data>
+  <data name="U307D" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ПО</value>
+  </data>
+  <data name="U307E" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МА</value>
+  </data>
+  <data name="U307F" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МИ</value>
+  </data>
+  <data name="U3080" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МУ</value>
+  </data>
+  <data name="U3081" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МЕ</value>
+  </data>
+  <data name="U3082" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МО</value>
+  </data>
+  <data name="U3083" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО ЈА</value>
+  </data>
+  <data name="U3084" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЈА</value>
+  </data>
+  <data name="U3085" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО ЈУ</value>
+  </data>
+  <data name="U3086" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЈУ</value>
+  </data>
+  <data name="U3087" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО ЈО</value>
+  </data>
+  <data name="U3088" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ЈО</value>
+  </data>
+  <data name="U3089" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО РА</value>
+  </data>
+  <data name="U308A" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО РИ</value>
+  </data>
+  <data name="U308B" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО РУ</value>
+  </data>
+  <data name="U308C" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО РЕ</value>
+  </data>
+  <data name="U308D" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО РО</value>
+  </data>
+  <data name="U308E" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО ВА</value>
+  </data>
+  <data name="U308F" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ВА</value>
+  </data>
+  <data name="U3090" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ВИ</value>
+  </data>
+  <data name="U3091" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ВЕ</value>
+  </data>
+  <data name="U3092" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ВО</value>
+  </data>
+  <data name="U3093" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО Н</value>
+  </data>
+  <data name="U3094" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО ВУ</value>
+  </data>
+  <data name="U3095" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО КА</value>
+  </data>
+  <data name="U3096" xml:space="preserve">
+    <value>ХИРАГАНА СЛОВО МАЛО КЕ</value>
+  </data>
+  <data name="U30A0" xml:space="preserve">
+    <value>КАТАКАНА-ХИРАГАНА ДВОСТРУКА ЦРТИЦА</value>
+  </data>
+  <data name="U30A1" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО А</value>
+  </data>
+  <data name="U30A2" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО А</value>
+  </data>
+  <data name="U30A3" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО И</value>
+  </data>
+  <data name="U30A4" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО И</value>
+  </data>
+  <data name="U30A5" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО У</value>
+  </data>
+  <data name="U30A6" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО У</value>
+  </data>
+  <data name="U30A7" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО Е</value>
+  </data>
+  <data name="U30A8" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО Е</value>
+  </data>
+  <data name="U30A9" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО О</value>
+  </data>
+  <data name="U30AA" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО О</value>
+  </data>
+  <data name="U30AB" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО КА</value>
+  </data>
+  <data name="U30AC" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ГА</value>
+  </data>
+  <data name="U30AD" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО КИ</value>
+  </data>
+  <data name="U30AE" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ГИ</value>
+  </data>
+  <data name="U30AF" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО КУ</value>
+  </data>
+  <data name="U30B0" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ГУ</value>
+  </data>
+  <data name="U30B1" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО КЕ</value>
+  </data>
+  <data name="U30B2" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ГЕ</value>
+  </data>
+  <data name="U30B3" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО КО</value>
+  </data>
+  <data name="U30B4" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ГО</value>
+  </data>
+  <data name="U30B5" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО СА</value>
+  </data>
+  <data name="U30B6" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЗА</value>
+  </data>
+  <data name="U30B7" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ШИ</value>
+  </data>
+  <data name="U30B8" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЈИ</value>
+  </data>
+  <data name="U30B9" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО СУ</value>
+  </data>
+  <data name="U30BA" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЗУ</value>
+  </data>
+  <data name="U30BB" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО СЕ</value>
+  </data>
+  <data name="U30BC" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЗЕ</value>
+  </data>
+  <data name="U30BD" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО СО</value>
+  </data>
+  <data name="U30BE" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЗО</value>
+  </data>
+  <data name="U30BF" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ТА</value>
+  </data>
+  <data name="U30C0" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ДА</value>
+  </data>
+  <data name="U30C1" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЋИ</value>
+  </data>
+  <data name="U30C2" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЂИ</value>
+  </data>
+  <data name="U30C3" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО ЋУ</value>
+  </data>
+  <data name="U30C4" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЋУ</value>
+  </data>
+  <data name="U30C5" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ДЗУ</value>
+  </data>
+  <data name="U30C6" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ТЕ</value>
+  </data>
+  <data name="U30C7" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ДЕ</value>
+  </data>
+  <data name="U30C8" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ТО</value>
+  </data>
+  <data name="U30C9" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ДО</value>
+  </data>
+  <data name="U30CA" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО НА</value>
+  </data>
+  <data name="U30CB" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО НИ</value>
+  </data>
+  <data name="U30CC" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО НУ</value>
+  </data>
+  <data name="U30CD" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО НЕ</value>
+  </data>
+  <data name="U30CE" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО НО</value>
+  </data>
+  <data name="U30CF" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ХА</value>
+  </data>
+  <data name="U30D0" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО БА</value>
+  </data>
+  <data name="U30D1" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ПА</value>
+  </data>
+  <data name="U30D2" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ХИ</value>
+  </data>
+  <data name="U30D3" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО БИ</value>
+  </data>
+  <data name="U30D4" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ПИ</value>
+  </data>
+  <data name="U30D5" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ФУ</value>
+  </data>
+  <data name="U30D6" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО БУ</value>
+  </data>
+  <data name="U30D7" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ПУ</value>
+  </data>
+  <data name="U30D8" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ХЕ</value>
+  </data>
+  <data name="U30D9" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО БЕ</value>
+  </data>
+  <data name="U30DA" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ПЕ</value>
+  </data>
+  <data name="U30DB" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ХО</value>
+  </data>
+  <data name="U30DC" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО БО</value>
+  </data>
+  <data name="U30DD" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ПО</value>
+  </data>
+  <data name="U30DE" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МА</value>
+  </data>
+  <data name="U30DF" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МИ</value>
+  </data>
+  <data name="U30E0" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МУ</value>
+  </data>
+  <data name="U30E1" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МЕ</value>
+  </data>
+  <data name="U30E2" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МО</value>
+  </data>
+  <data name="U30E3" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО ЈА</value>
+  </data>
+  <data name="U30E4" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЈА</value>
+  </data>
+  <data name="U30E5" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО ЈУ</value>
+  </data>
+  <data name="U30E6" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЈУ</value>
+  </data>
+  <data name="U30E7" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО ЈО</value>
+  </data>
+  <data name="U30E8" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ЈО</value>
+  </data>
+  <data name="U30E9" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО РА</value>
+  </data>
+  <data name="U30EA" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО РИ</value>
+  </data>
+  <data name="U30EB" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО РУ</value>
+  </data>
+  <data name="U30EC" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО РЕ</value>
+  </data>
+  <data name="U30ED" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО РО</value>
+  </data>
+  <data name="U30EE" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО ВА</value>
+  </data>
+  <data name="U30EF" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВА</value>
+  </data>
+  <data name="U30F0" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВИ</value>
+  </data>
+  <data name="U30F1" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВЕ</value>
+  </data>
+  <data name="U30F2" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВО</value>
+  </data>
+  <data name="U30F3" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО Н</value>
+  </data>
+  <data name="U30F4" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВУ</value>
+  </data>
+  <data name="U30F5" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО КА</value>
+  </data>
+  <data name="U30F6" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО МАЛО КЕ</value>
+  </data>
+  <data name="U30F7" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВА</value>
+  </data>
+  <data name="U30F8" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВИ</value>
+  </data>
+  <data name="U30F9" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВЕ</value>
+  </data>
+  <data name="U30FA" xml:space="preserve">
+    <value>КАТАКАНА СЛОВО ВО</value>
+  </data>
+  <data name="U30FF" xml:space="preserve">
+    <value>КАТАКАНА ДИГРАФ КОТО</value>
+  </data>
+  <data name="UFE50" xml:space="preserve">
+    <value>МАЛА ЗАПЕТА</value>
+  </data>
+  <data name="UFE52" xml:space="preserve">
+    <value>МАЛА ТАЧКА</value>
+  </data>
+  <data name="UFE54" xml:space="preserve">
+    <value>МАЛИ ТАЧКА ЗАРЕЗ</value>
+  </data>
+  <data name="UFE55" xml:space="preserve">
+    <value>МАЛЕ ДВЕ ТАЧКЕ</value>
+  </data>
+  <data name="UFE56" xml:space="preserve">
+    <value>МАЛИ УПИТНИК</value>
+  </data>
+  <data name="UFE57" xml:space="preserve">
+    <value>МАЛИ УЗВИЧНИК</value>
+  </data>
+  <data name="UFE59" xml:space="preserve">
+    <value>МАЛА ОТВОРЕНА ЗАГРАДА</value>
+  </data>
+  <data name="UFE5A" xml:space="preserve">
+    <value>МАЛА ЗАТВОРЕНА ЗАГРАДА</value>
+  </data>
+  <data name="UFE5B" xml:space="preserve">
+    <value>МАЛА ОТВОРЕНА ВИТИЧАСТА ЗАГРАДА</value>
+  </data>
+  <data name="UFE5C" xml:space="preserve">
+    <value>МАЛА ЗАТВОРЕНА ВИТИЧАСТА ЗАГРАДА</value>
+  </data>
+  <data name="UFE5F" xml:space="preserve">
+    <value>МАЛА ТАРАБА</value>
+  </data>
+  <data name="UFE61" xml:space="preserve">
+    <value>МАЛА ЗВЕЗДИЦА</value>
+  </data>
+  <data name="UFE62" xml:space="preserve">
+    <value>МАЛИ ПЛУС</value>
+  </data>
+  <data name="UFE63" xml:space="preserve">
+    <value>МАЛА ЦРТИЦА-МИНУС</value>
+  </data>
+  <data name="UFE69" xml:space="preserve">
+    <value>МАЛИ ДОЛАР</value>
+  </data>
+  <data name="UFE6A" xml:space="preserve">
+    <value>МАЛИ ПРОЦЕНАТ</value>
+  </data>
+  <data name="UFE6B" xml:space="preserve">
+    <value>МАЛО МАЈМУНЧЕ</value>
+  </data>
+  <data name="U1D100" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ТАКТНА ЦРТА</value>
+  </data>
+  <data name="U1D101" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ДВОСТРУКА ТАКТНА ЦРТА</value>
+  </data>
+  <data name="U1D110" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ФЕРМАТА</value>
+  </data>
+  <data name="U1D116" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ НОТНА ЛИНИЈА</value>
+  </data>
+  <data name="U1D117" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ДВЕ НОТНЕ ЛИНИЈЕ</value>
+  </data>
+  <data name="U1D118" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ТРИ НОТНЕ ЛИНИЈЕ</value>
+  </data>
+  <data name="U1D119" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЧЕТИРИ НОТНЕ ЛИНИЈЕ</value>
+  </data>
+  <data name="U1D11A" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ПЕТ НОТНИХ ЛИНИЈА</value>
+  </data>
+  <data name="U1D11B" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ШЕСТ НОТНИХ ЛИНИЈА</value>
+  </data>
+  <data name="U1D11E" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ АЛТ КЉУЧ</value>
+  </data>
+  <data name="U1D121" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ВИОЛИНСКИ КЉУЧ</value>
+  </data>
+  <data name="U1D122" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ БАС КЉУЧ</value>
+  </data>
+  <data name="U1D12A" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ДВОСТРУКА ПОВИСИЛИЦА</value>
+  </data>
+  <data name="U1D12B" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ДВОСТРУКА СНИЗИЛИЦА</value>
+  </data>
+  <data name="U1D13B" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЦЕЛА ПАУЗА</value>
+  </data>
+  <data name="U1D13C" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ПОЛОВИНСКА ПАУЗА</value>
+  </data>
+  <data name="U1D13D" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЧЕТВРТИНСКА ПАУЗА</value>
+  </data>
+  <data name="U1D13E" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ОСМИНСКА ПАУЗА</value>
+  </data>
+  <data name="U1D13F" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ШЕСНАЕСТИНСКА ПАУЗА</value>
+  </data>
+  <data name="U1D140" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ТРИДЕСЕТДВОЈИНСКА ПАУЗА</value>
+  </data>
+  <data name="U1D141" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ШЕЗДЕСЕТЧЕТВРТИНСКА ПАУЗА</value>
+  </data>
+  <data name="U1D142" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ СТОДВАСЕСЕТОСМИНСКА ПАУЗА</value>
+  </data>
+  <data name="U1D146" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЧЕТВРТАСТА БЕЛА НОТНА ГЛАВА</value>
+  </data>
+  <data name="U1D147" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЧЕТВРТАСТА ЦРНА НОТНА ГЛАВА</value>
+  </data>
+  <data name="U1D158" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЦРНА НОТНА ГЛАВА</value>
+  </data>
+  <data name="U1D15D" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЦЕЛА НОТА</value>
+  </data>
+  <data name="U1D15E" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ПОЛОВИНСКА НОТА</value>
+  </data>
+  <data name="U1D15F" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ЧЕТВРТИНСКА НОТА</value>
+  </data>
+  <data name="U1D160" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ОСМИНСКА НОТА</value>
+  </data>
+  <data name="U1D161" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ШЕСНАЕСТИНСКА НОТА</value>
+  </data>
+  <data name="U1D162" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ТРИДЕСЕТДВОЈИНСКА НОТА</value>
+  </data>
+  <data name="U1D163" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ШЕЗДЕСЕТЧЕТВРТИНСКА НОТА</value>
+  </data>
+  <data name="U1D164" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ СТОДВАДЕСЕТОСМИНСКА НОТА</value>
+  </data>
+  <data name="U1D16D" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ КОМБИНИРАЈУЋА АУГМЕНТАЦИЈА</value>
+  </data>
+  <data name="U1D18F" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ПИАНО</value>
+  </data>
+  <data name="U1D190" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ МЕЦО</value>
+  </data>
+  <data name="U1D191" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ФОРТЕ</value>
+  </data>
+  <data name="U1D192" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ КРЕШЧЕНДО</value>
+  </data>
+  <data name="U1D193" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ДЕКРЕШЧЕНДО</value>
+  </data>
+  <data name="U1D1D0" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ГРЕГОРИЈАНСКИ ВИОЛИНСКИ КЉУЧ</value>
+  </data>
+  <data name="U1D1D1" xml:space="preserve">
+    <value>МУЗИЧКИ СИМБОЛ ГРЕГОРИЈАНСКИ АЛТ КЉУЧ</value>
+  </data>
+</root>

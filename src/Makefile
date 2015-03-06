@@ -76,7 +76,8 @@ pot2resx:
 	    zh) l=zh-CHT;; \
 	    *@*) continue;; \
 	  esac; \
-	  sed -e '/^  <data/,$$d' < i18n/Text.resx > i18n/Text.$$l.resx; \
+	  dst=i18n/Text.$$l.resx; \
+	  sed -e '/^  <data/,$$d' < i18n/Text.resx > $$dst; \
 	  cat $$src \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk '\
@@ -89,7 +90,24 @@ pot2resx:
             /^#, fuzzy/ { reset(); } \
             /^ *"/      { split($$0, a, "\""); msgstr=msgstr a[2]; } \
 	    /^msgstr/   { split($$0, a, "\""); msgstr=a[2]; }' \
-	  >> i18n/Text.$$l.resx; \
-	  echo "</root>" >> i18n/Text.$$l.resx; \
+	  >> $$dst; \
+	  echo "</root>" >> $$dst; \
+	done
+
+# Download Unicode description files from the unicode translation project
+unicode2resx:
+	for l in am da de fi fr ga nl pl rw sk sr; do \
+	  src=translationproject.org/latest/unicode-translation/$$l.po; \
+	  dst=i18n/Unicode.$$l.resx; \
+	  sed -e '/^  <data/,$$d' < i18n/Unicode.resx > $$dst; \
+	  wget -qO- $$src \
+          | unix2dos \
+          | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
+	  | awk '\
+            function f() { if (c && msgstr) { print "  <data name=\"U" c "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; print "  </data>"; } c=""; msgstr=""; } \
+	    /^#[.] CHARACTER NAME for /  { split($$0, a, "+"); c=a[2]; } \
+            /^msgstr/ { split($$0, a, "\""); msgstr=a[2]; f(); } ' \
+	  >> $$dst; \
+	  echo "</root>" >> $$dst; \
 	done
 
