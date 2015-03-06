@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2014-07-02 09:46+0200\n"
+"PO-Revision-Date: 2015-03-06 09:44+0200\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
-"nl/>\n"
+"Language-Team: Dutch "
+"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #: ID:Obsolete001
 msgid "Loaded @1@ Sequences"
@@ -241,45 +241,44 @@ msgstr "@APP_NAME@ (aan het typen)"
 
 #: ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Toepassen"
 
 #: ID:KeepOriginalKey -- Should this say “retain” instead?
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Gedrag van oorspronkelijke compositietoets behouden"
 
 #: ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Nul-breedte spaties invoegen in Office apps"
 
 #: ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "CapsLock emuleren met beide Shift-toetsen"
 
 #: ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Shift-toets schakelt CapsLock uit"
 
 #: ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Categorieën"
 
 #: ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "In geselecteerde categorieën"
 
 #: ID:Settings
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: ID:ShowSettings
 msgid "Settings…"
-msgstr ""
+msgstr "Instellingen…"
 
 #: ID:AppName
-#, fuzzy
 msgid "WinCompose"
-msgstr "Compositietoets:"
+msgstr "WinCompose"
 
 #: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose voor {0} ({1} sequentie(s))"
