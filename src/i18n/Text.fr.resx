@@ -264,10 +264,37 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Description :</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>La touche compose conserve aussi son comportement original</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Insérer des espaces invisibles dans les applications Office</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Émuler Verr Maj par appui simultané sur les deux touches Shift</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>La touche Shift désactive Verr Maj</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Catégories</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>Dans les catégories sélectionnées</value>
+  </data>
   <data name="Settings" xml:space="preserve">
     <value>Réglages</value>
   </data>
+  <data name="ShowSettings" xml:space="preserve">
+    <value>Réglages…</value>
+  </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose sur {0} ({1} séquences)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Comportement</value>
   </data>
 </root>

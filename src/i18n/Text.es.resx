@@ -264,4 +264,7 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Descripción:</value>
   </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Mantener funcionamiento original de la tecla de composición</value>
+  </data>
 </root>
