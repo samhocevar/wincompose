@@ -28,7 +28,8 @@ msgstr "@1@ камбінацый"
 msgid "Compose Key is @1@"
 msgstr "Клавіша — @1@"
 
-#: ID:Obsolete003
+#. The user can configure the application language and choose between English, French, etc. and Autodetect
+#: ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "Аўтавыяўленьне"
 
@@ -68,7 +69,8 @@ msgstr "Num Lock"
 msgid "Pause"
 msgstr "Pause"
 
-#: ID:KeyApps -- Also known as Application key
+#. Also known as Application key
+#: ID:KeyApps
 msgid "Menu"
 msgstr "Меню"
 
@@ -148,14 +150,6 @@ msgstr "&Наведаць вэбсайт"
 msgid "E&xit"
 msgstr "Вы&xад"
 
-#: ID:Obsolete033
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
-#: ID:Obsolete034
-msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr "@APP_NAME@ вэрсыї @APP_VERSION@\n"
-
 #: ID:Obsolete035
 msgid "\n"
 msgstr "\n"
@@ -192,6 +186,7 @@ msgstr "Фільтар пошуку:"
 msgid "Compose Key:"
 msgstr "Кампанавальная клавіша:"
 
+#. The compose key deactivates itself after a certain configurable delay
 #: ID:ResetDelay
 msgid "Delay:"
 msgstr "Затрымка:"
@@ -212,35 +207,28 @@ msgstr "Сыґналізаваці пра няправільныя пасьля�
 msgid "Interface language:"
 msgstr "Мова інтарфэйсу:"
 
+#. Close the settings window
 #: ID:Close
 msgid "Close"
 msgstr "Зачыніць"
 
+#. Copy character to the clipboard
 #: ID:Obsolete050
 msgid "Copy Character"
 msgstr "Капіяваці сымбаль"
 
+#. Description of a Unicode character or group of characters
 #: ID:Obsolete051
 msgid "Description:"
 msgstr "Апісаньне:"
 
-#: ID:Obsolete052
-msgid "@APP_NAME@ (disabled)"
-msgstr "@APP_NAME@ (вымкнены)"
-
-#: ID:Obsolete053
-msgid "@APP_NAME@ (active)"
-msgstr "@APP_NAME@ (увамкнёны)"
-
-#: ID:Obsolete054
-msgid "@APP_NAME@ (typing)"
-msgstr "@APP_NAME@ (набірае)"
-
+#. Apply changes from the settings window
 #: ID:Apply
 msgid "Apply"
 msgstr ""
 
-#: ID:KeepOriginalKey -- Should this say “retain” instead?
+#. Should this say “retain” instead of “maintain”?
+#: ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr ""
 
@@ -256,6 +244,7 @@ msgstr ""
 msgid "Shift key disables CapsLock"
 msgstr ""
 
+#. Header for the list of Unicode character categories
 #: ID:Categories
 msgid "Categories"
 msgstr ""
@@ -272,12 +261,8 @@ msgstr ""
 msgid "Settings…"
 msgstr ""
 
-#: ID:AppName
-#, fuzzy
-msgid "WinCompose"
-msgstr "Кампанавальная клавіша:"
-
-#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences
+#: ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
@@ -285,7 +270,27 @@ msgstr ""
 msgid "General Behavior"
 msgstr ""
 
+#. The title of the Sequences window
 #: ID:WindowTitle
 #, fuzzy
 msgid "WinCompose Sequences"
 msgstr "Кампанавальная клавіша:"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
+
+#~ msgid "@APP_NAME@ v@APP_VERSION@\n"
+#~ msgstr "@APP_NAME@ вэрсыї @APP_VERSION@\n"
+
+#~ msgid "@APP_NAME@ (disabled)"
+#~ msgstr "@APP_NAME@ (вымкнены)"
+
+#~ msgid "@APP_NAME@ (active)"
+#~ msgstr "@APP_NAME@ (увамкнёны)"
+
+#~ msgid "@APP_NAME@ (typing)"
+#~ msgstr "@APP_NAME@ (набірае)"
+
+#, fuzzy
+#~ msgid "WinCompose"
+#~ msgstr "Кампанавальная клавіша:"

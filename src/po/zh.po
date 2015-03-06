@@ -27,7 +27,8 @@ msgstr "已載入 @1@ 按鍵系列"
 msgid "Compose Key is @1@"
 msgstr "前導鍵是 @1@"
 
-#: ID:Obsolete003
+#. The user can configure the application language and choose between English, French, etc. and Autodetect
+#: ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "自動偵測"
 
@@ -67,7 +68,8 @@ msgstr "Num Lock"
 msgid "Pause"
 msgstr "Pause"
 
-#: ID:KeyApps -- Also known as Application key
+#. Also known as Application key
+#: ID:KeyApps
 msgid "Menu"
 msgstr "功能列"
 
@@ -147,14 +149,6 @@ msgstr "拜訪網站(&V)"
 msgid "E&xit"
 msgstr "離開(&X)"
 
-#: ID:Obsolete033
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
-#: ID:Obsolete034
-msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr "@APP_NAME@ v@APP_VERSION@\n"
-
 #: ID:Obsolete035
 msgid "\n"
 msgstr ""
@@ -193,6 +187,7 @@ msgstr "搜尋篩選器:"
 msgid "Compose Key:"
 msgstr "前導鍵:"
 
+#. The compose key deactivates itself after a certain configurable delay
 #: ID:ResetDelay
 msgid "Delay:"
 msgstr "延遲:"
@@ -213,35 +208,28 @@ msgstr "無效按鍵系列時發出嗶聲"
 msgid "Interface language:"
 msgstr "介面語言:"
 
+#. Close the settings window
 #: ID:Close
 msgid "Close"
 msgstr "關閉"
 
+#. Copy character to the clipboard
 #: ID:Obsolete050
 msgid "Copy Character"
 msgstr "複製字元"
 
+#. Description of a Unicode character or group of characters
 #: ID:Obsolete051
 msgid "Description:"
 msgstr "描述:"
 
-#: ID:Obsolete052
-msgid "@APP_NAME@ (disabled)"
-msgstr "@APP_NAME@ (停用)"
-
-#: ID:Obsolete053
-msgid "@APP_NAME@ (active)"
-msgstr "@APP_NAME@ (啟用)"
-
-#: ID:Obsolete054
-msgid "@APP_NAME@ (typing)"
-msgstr "@APP_NAME@ (輸入)"
-
+#. Apply changes from the settings window
 #: ID:Apply
 msgid "Apply"
 msgstr ""
 
-#: ID:KeepOriginalKey -- Should this say “retain” instead?
+#. Should this say “retain” instead of “maintain”?
+#: ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr ""
 
@@ -257,6 +245,7 @@ msgstr ""
 msgid "Shift key disables CapsLock"
 msgstr ""
 
+#. Header for the list of Unicode character categories
 #: ID:Categories
 msgid "Categories"
 msgstr ""
@@ -273,12 +262,8 @@ msgstr ""
 msgid "Settings…"
 msgstr ""
 
-#: ID:AppName
-#, fuzzy
-msgid "WinCompose"
-msgstr "前導鍵:"
-
-#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences
+#: ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
@@ -286,10 +271,30 @@ msgstr ""
 msgid "General Behavior"
 msgstr ""
 
+#. The title of the Sequences window
 #: ID:WindowTitle
 #, fuzzy
 msgid "WinCompose Sequences"
 msgstr "前導鍵:"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
+
+#~ msgid "@APP_NAME@ v@APP_VERSION@\n"
+#~ msgstr "@APP_NAME@ v@APP_VERSION@\n"
+
+#~ msgid "@APP_NAME@ (disabled)"
+#~ msgstr "@APP_NAME@ (停用)"
+
+#~ msgid "@APP_NAME@ (active)"
+#~ msgstr "@APP_NAME@ (啟用)"
+
+#~ msgid "@APP_NAME@ (typing)"
+#~ msgstr "@APP_NAME@ (輸入)"
+
+#, fuzzy
+#~ msgid "WinCompose"
+#~ msgstr "前導鍵:"
 
 #~ msgid "running on AHK v@AHK_VERSION@\n"
 #~ msgstr "於 AHK v@AHK_VERSION@ 執行↵\n"

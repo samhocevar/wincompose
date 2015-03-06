@@ -28,7 +28,8 @@ msgstr "Załadowano @1@ sekwencji"
 msgid "Compose Key is @1@"
 msgstr "Klawisz Compose to @1@"
 
-#: ID:Obsolete003
+#. The user can configure the application language and choose between English, French, etc. and Autodetect
+#: ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "Wykryj automatycznie"
 
@@ -68,7 +69,8 @@ msgstr "Num Lock"
 msgid "Pause"
 msgstr "Pause"
 
-#: ID:KeyApps -- Also known as Application key
+#. Also known as Application key
+#: ID:KeyApps
 msgid "Menu"
 msgstr "Menu"
 
@@ -148,14 +150,6 @@ msgstr "Odwiedź &stronę"
 msgid "E&xit"
 msgstr "W&yjdź"
 
-#: ID:Obsolete033
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
-#: ID:Obsolete034
-msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr "@APP_NAME@ wersja @APP_VERSION@\n"
-
 #: ID:Obsolete035
 msgid "\n"
 msgstr "\n"
@@ -192,6 +186,7 @@ msgstr "Filtr wyszukiwania:"
 msgid "Compose Key:"
 msgstr "Klawisz Compose:"
 
+#. The compose key deactivates itself after a certain configurable delay
 #: ID:ResetDelay
 msgid "Delay:"
 msgstr "Opóźnienie:"
@@ -212,35 +207,28 @@ msgstr "Używaj sygnału dźwiękowego dla niepoprawnych sekwencji"
 msgid "Interface language:"
 msgstr "Język interfejsu:"
 
+#. Close the settings window
 #: ID:Close
 msgid "Close"
 msgstr "Zamknij"
 
+#. Copy character to the clipboard
 #: ID:Obsolete050
 msgid "Copy Character"
 msgstr "Skopiuj znak"
 
+#. Description of a Unicode character or group of characters
 #: ID:Obsolete051
 msgid "Description:"
 msgstr "Opis:"
 
-#: ID:Obsolete052
-msgid "@APP_NAME@ (disabled)"
-msgstr "@APP_NAME@ (wyłączony)"
-
-#: ID:Obsolete053
-msgid "@APP_NAME@ (active)"
-msgstr "@APP_NAME@ (aktywny)"
-
-#: ID:Obsolete054
-msgid "@APP_NAME@ (typing)"
-msgstr "@APP_NAME@ (pisze)"
-
+#. Apply changes from the settings window
 #: ID:Apply
 msgid "Apply"
 msgstr ""
 
-#: ID:KeepOriginalKey -- Should this say “retain” instead?
+#. Should this say “retain” instead of “maintain”?
+#: ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr ""
 
@@ -256,6 +244,7 @@ msgstr ""
 msgid "Shift key disables CapsLock"
 msgstr ""
 
+#. Header for the list of Unicode character categories
 #: ID:Categories
 msgid "Categories"
 msgstr ""
@@ -272,12 +261,8 @@ msgstr ""
 msgid "Settings…"
 msgstr ""
 
-#: ID:AppName
-#, fuzzy
-msgid "WinCompose"
-msgstr "Klawisz Compose:"
-
-#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences
+#: ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
@@ -285,7 +270,27 @@ msgstr ""
 msgid "General Behavior"
 msgstr ""
 
+#. The title of the Sequences window
 #: ID:WindowTitle
 #, fuzzy
 msgid "WinCompose Sequences"
 msgstr "Klawisz Compose:"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
+
+#~ msgid "@APP_NAME@ v@APP_VERSION@\n"
+#~ msgstr "@APP_NAME@ wersja @APP_VERSION@\n"
+
+#~ msgid "@APP_NAME@ (disabled)"
+#~ msgstr "@APP_NAME@ (wyłączony)"
+
+#~ msgid "@APP_NAME@ (active)"
+#~ msgstr "@APP_NAME@ (aktywny)"
+
+#~ msgid "@APP_NAME@ (typing)"
+#~ msgstr "@APP_NAME@ (pisze)"
+
+#, fuzzy
+#~ msgid "WinCompose"
+#~ msgstr "Klawisz Compose:"

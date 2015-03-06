@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
 "PO-Revision-Date: 2015-03-06 14:27+0200\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
-"Language-Team: Estonian "
-"<https://hosted.weblate.org/projects/wincompose/master/et/>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/wincompose/"
+"master/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,8 @@ msgstr "Laeti @1@ kombinatsiooni"
 msgid "Compose Key is @1@"
 msgstr "Kombineerimisklahv on @1@"
 
-#: ID:Obsolete003
+#. The user can configure the application language and choose between English, French, etc. and Autodetect
+#: ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "Tuvasta automaatselt"
 
@@ -67,7 +68,8 @@ msgstr "NUM LOCK"
 msgid "Pause"
 msgstr "PAUSE"
 
-#: ID:KeyApps -- Also known as Application key
+#. Also known as Application key
+#: ID:KeyApps
 msgid "Menu"
 msgstr "MENU"
 
@@ -147,14 +149,6 @@ msgstr "&Veebileht"
 msgid "E&xit"
 msgstr "&Välju"
 
-#: ID:Obsolete033
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
-#: ID:Obsolete034
-msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr "@APP_NAME@ v@APP_VERSION@\n"
-
 #: ID:Obsolete035
 msgid "\n"
 msgstr "\n"
@@ -191,6 +185,7 @@ msgstr "Otsingufilter:"
 msgid "Compose Key:"
 msgstr "Kombineerimisklahv:"
 
+#. The compose key deactivates itself after a certain configurable delay
 #: ID:ResetDelay
 msgid "Delay:"
 msgstr "Viivitus:"
@@ -211,35 +206,28 @@ msgstr "Piiks vigase kombinatsiooni korral"
 msgid "Interface language:"
 msgstr "Kasutajaliidese keel:"
 
+#. Close the settings window
 #: ID:Close
 msgid "Close"
 msgstr "Sulge"
 
+#. Copy character to the clipboard
 #: ID:Obsolete050
 msgid "Copy Character"
 msgstr "Copeeri sümbol"
 
+#. Description of a Unicode character or group of characters
 #: ID:Obsolete051
 msgid "Description:"
 msgstr "Kirjeldus:"
 
-#: ID:Obsolete052
-msgid "@APP_NAME@ (disabled)"
-msgstr "@APP_NAME@ (mitteaktiivne)"
-
-#: ID:Obsolete053
-msgid "@APP_NAME@ (active)"
-msgstr "@APP_NAME@ (aktiivne)"
-
-#: ID:Obsolete054
-msgid "@APP_NAME@ (typing)"
-msgstr "@APP_NAME@ (sisestamine)"
-
+#. Apply changes from the settings window
 #: ID:Apply
 msgid "Apply"
 msgstr "Rakenda"
 
-#: ID:KeepOriginalKey -- Should this say “retain” instead?
+#. Should this say “retain” instead of “maintain”?
+#: ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Säilita algne kombineerimisklahvi käitumine"
 
@@ -255,6 +243,7 @@ msgstr "Emuleeri CapsLock mõlema Shift klahviga"
 msgid "Shift key disables CapsLock"
 msgstr "Shift klahv keelab CapsLocki"
 
+#. Header for the list of Unicode character categories
 #: ID:Categories
 msgid "Categories"
 msgstr "Kategooriad"
@@ -271,11 +260,8 @@ msgstr "Seaded"
 msgid "Settings…"
 msgstr "Seaded…"
 
-#: ID:AppName
-msgid "WinCompose"
-msgstr "WinCompose"
-
-#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences
+#: ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr "WinCompose aktiivne {0} ({1} kombinatsiooni)"
 
@@ -283,6 +269,25 @@ msgstr "WinCompose aktiivne {0} ({1} kombinatsiooni)"
 msgid "General Behavior"
 msgstr "Üldine käitumine"
 
+#. The title of the Sequences window
 #: ID:WindowTitle
 msgid "WinCompose Sequences"
 msgstr "WinCompose'i kombinatsioonid"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
+
+#~ msgid "@APP_NAME@ v@APP_VERSION@\n"
+#~ msgstr "@APP_NAME@ v@APP_VERSION@\n"
+
+#~ msgid "@APP_NAME@ (disabled)"
+#~ msgstr "@APP_NAME@ (mitteaktiivne)"
+
+#~ msgid "@APP_NAME@ (active)"
+#~ msgstr "@APP_NAME@ (aktiivne)"
+
+#~ msgid "@APP_NAME@ (typing)"
+#~ msgstr "@APP_NAME@ (sisestamine)"
+
+#~ msgid "WinCompose"
+#~ msgstr "WinCompose"

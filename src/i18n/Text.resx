@@ -123,8 +123,9 @@
   <data name="Obsolete002" xml:space="preserve">
     <value>Compose Key is @1@</value>
   </data>
-  <data name="Obsolete003" xml:space="preserve">
+  <data name="AutodetectLanguage" xml:space="preserve">
     <value>Autodetect</value>
+    <comment>The user can configure the application language and choose between English, French, etc. and Autodetect</comment>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Left Alt</value>
@@ -214,12 +215,6 @@
   <data name="Exit" xml:space="preserve">
     <value>E&amp;xit</value>
   </data>
-  <data name="Obsolete033" xml:space="preserve">
-    <value>@APP_NAME@</value>
-  </data>
-  <data name="Obsolete034" xml:space="preserve">
-    <value>@APP_NAME@ v@APP_VERSION@\n</value>
-  </data>
   <data name="Obsolete035" xml:space="preserve">
     <value>\n</value>
   </data>
@@ -249,6 +244,7 @@
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Delay:</value>
+    <comment>The compose key deactivates itself after a certain configurable delay</comment>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>Fall back to case insensitive matches on invalid sequences</value>
@@ -264,28 +260,23 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
+    <comment>Close the settings window</comment>
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Copy Character</value>
+    <comment>Copy character to the clipboard</comment>
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Description:</value>
-  </data>
-  <data name="Obsolete052" xml:space="preserve">
-    <value>@APP_NAME@ (disabled)</value>
-  </data>
-  <data name="Obsolete053" xml:space="preserve">
-    <value>@APP_NAME@ (active)</value>
-  </data>
-  <data name="Obsolete054" xml:space="preserve">
-    <value>@APP_NAME@ (typing)</value>
+    <comment>Description of a Unicode character or group of characters</comment>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
+    <comment>Apply changes from the settings window</comment>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Maintain original compose key behaviour</value>
-    <comment>Should this say “retain” instead?</comment>
+    <comment>Should this say “retain” instead of “maintain”?</comment>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insert zero-width spaces in Office apps</value>
@@ -298,6 +289,7 @@
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
+    <comment>Header for the list of Unicode character categories</comment>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In selected categories</value>
@@ -308,9 +300,6 @@
   <data name="ShowSettings" xml:space="preserve">
     <value>Settings…</value>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>WinCompose</value>
-  </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose on {0} ({1} sequences)</value>
     <comment>{0}: compose key name, {1}: number of sequences</comment>
@@ -320,5 +309,6 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>WinCompose Sequences</value>
+    <comment>The title of the Sequences window</comment>
   </data>
 </root>

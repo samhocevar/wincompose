@@ -61,8 +61,8 @@ resx2pot:
 	    /-->/       { off=0 } \
 	    /<data /    { split($$0, a, "\""); id=a[2]; comment=""; } \
 	    /<value>/   { split ($$0, a, /[<>]/); value=a[3]; } \
-	    /<comment>/ { split ($$0, a, /[<>]/); id=id " -- " a[3]; } \
-	    /<\/data>/  { if (!off) { print "#: ID:" id; print "msgid \"" value "\""; print "msgstr \"\""; print ""; } }' \
+	    /<comment>/ { split ($$0, a, /[<>]/); comment=a[3]; } \
+	    /<\/data>/  { if (!off) { if (comment) { print "#. " comment; } print "#: ID:" id; print "msgid \"" value "\""; print "msgstr \"\""; print ""; } }' \
 	| sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
 	> po/wincompose.pot
 	for l in $(PO); do printf %s $$l && msgmerge -U po/$$l.po po/wincompose.pot; done
@@ -80,11 +80,13 @@ pot2resx:
 	  cat $$src \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk '\
-	    function f() { if (id && msgstr) { print "  <data name=\"" id "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; if (comment) { print "    <comment>" comment "</comment>"; } print "  </data>"; id="" } } \
+	    function f() { if (id && msgstr) { print "  <data name=\"" id "\" xml:space=\"preserve\">"; print "    <value>" msgstr "</value>"; if (0 && comment) { print "    <comment>" comment "</comment>"; } print "  </data>"; reset(); } } \
+            function reset() { id=""; comment=""; } \
 	    /^$$/       { f(); } \
 	    END         { f(); } \
-            /^#: ID:/   { split($$0, a, "(ID:| -- )"); id=a[2]; comment=a[3]; } \
-            /^#, fuzzy/ { id=""; } \
+            /^#[.] /    { split($$0, a, "#[.] "); comment=a[2]; } \
+            /^#: ID:/   { split($$0, a, ":"); id=a[3]; } \
+            /^#, fuzzy/ { reset(); } \
             /^ *"/      { split($$0, a, "\""); msgstr=msgstr a[2]; } \
 	    /^msgstr/   { split($$0, a, "\""); msgstr=a[2]; }' \
 	  >> i18n/Text.$$l.resx; \

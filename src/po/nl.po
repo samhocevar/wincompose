@@ -27,7 +27,8 @@ msgstr "@1@ sequentie(s) geladen"
 msgid "Compose Key is @1@"
 msgstr "Compositietoets is @1@"
 
-#: ID:Obsolete003
+#. The user can configure the application language and choose between English, French, etc. and Autodetect
+#: ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "Automatische detectie"
 
@@ -67,7 +68,8 @@ msgstr "Num Lock-toets"
 msgid "Pause"
 msgstr "Pause"
 
-#: ID:KeyApps -- Also known as Application key
+#. Also known as Application key
+#: ID:KeyApps
 msgid "Menu"
 msgstr "Menu"
 
@@ -147,14 +149,6 @@ msgstr "&Website bezoeken"
 msgid "E&xit"
 msgstr "&Afsluiten"
 
-#: ID:Obsolete033
-msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
-
-#: ID:Obsolete034
-msgid "@APP_NAME@ v@APP_VERSION@\n"
-msgstr "@APP_NAME@ v@APP_VERSION@↵\n"
-
 #: ID:Obsolete035
 msgid "\n"
 msgstr ""
@@ -193,6 +187,7 @@ msgstr "Zoek filter:"
 msgid "Compose Key:"
 msgstr "Compositietoets:"
 
+#. The compose key deactivates itself after a certain configurable delay
 #: ID:ResetDelay
 msgid "Delay:"
 msgstr "Vertraging:"
@@ -215,35 +210,28 @@ msgstr "Auditief signaal bij ongeldige sequenties"
 msgid "Interface language:"
 msgstr "Interface taal:"
 
+#. Close the settings window
 #: ID:Close
 msgid "Close"
 msgstr "Sluiten"
 
+#. Copy character to the clipboard
 #: ID:Obsolete050
 msgid "Copy Character"
 msgstr "Karakter kopiëren"
 
+#. Description of a Unicode character or group of characters
 #: ID:Obsolete051
 msgid "Description:"
 msgstr "Beschrijving:"
 
-#: ID:Obsolete052
-msgid "@APP_NAME@ (disabled)"
-msgstr "@APP_NAME@ (inactief)"
-
-#: ID:Obsolete053
-msgid "@APP_NAME@ (active)"
-msgstr "@APP_NAME@ (actief)"
-
-#: ID:Obsolete054
-msgid "@APP_NAME@ (typing)"
-msgstr "@APP_NAME@ (aan het typen)"
-
+#. Apply changes from the settings window
 #: ID:Apply
 msgid "Apply"
 msgstr "Toepassen"
 
-#: ID:KeepOriginalKey -- Should this say “retain” instead?
+#. Should this say “retain” instead of “maintain”?
+#: ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Gedrag van oorspronkelijke compositietoets behouden"
 
@@ -259,6 +247,7 @@ msgstr "CapsLock emuleren met beide Shift-toetsen"
 msgid "Shift key disables CapsLock"
 msgstr "Shift-toets schakelt CapsLock uit"
 
+#. Header for the list of Unicode character categories
 #: ID:Categories
 msgid "Categories"
 msgstr "Categorieën"
@@ -275,11 +264,8 @@ msgstr "Instellingen"
 msgid "Settings…"
 msgstr "Instellingen…"
 
-#: ID:AppName
-msgid "WinCompose"
-msgstr "WinCompose"
-
-#: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences
+#: ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr "WinCompose voor {0} ({1} sequentie(s))"
 
@@ -287,7 +273,26 @@ msgstr "WinCompose voor {0} ({1} sequentie(s))"
 msgid "General Behavior"
 msgstr ""
 
+#. The title of the Sequences window
 #: ID:WindowTitle
 #, fuzzy
 msgid "WinCompose Sequences"
 msgstr "WinCompose voor {0} ({1} sequentie(s))"
+
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
+
+#~ msgid "@APP_NAME@ v@APP_VERSION@\n"
+#~ msgstr "@APP_NAME@ v@APP_VERSION@↵\n"
+
+#~ msgid "@APP_NAME@ (disabled)"
+#~ msgstr "@APP_NAME@ (inactief)"
+
+#~ msgid "@APP_NAME@ (active)"
+#~ msgstr "@APP_NAME@ (actief)"
+
+#~ msgid "@APP_NAME@ (typing)"
+#~ msgstr "@APP_NAME@ (aan het typen)"
+
+#~ msgid "WinCompose"
+#~ msgstr "WinCompose"

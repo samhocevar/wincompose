@@ -120,7 +120,7 @@
   <data name="Obsolete001" xml:space="preserve">
     <value>Nahráno @1@ sekvencí</value>
   </data>
-  <data name="Obsolete003" xml:space="preserve">
+  <data name="AutodetectLanguage" xml:space="preserve">
     <value>Automaticky detekovat</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
@@ -152,7 +152,6 @@
   </data>
   <data name="KeyApps" xml:space="preserve">
     <value>Menu</value>
-    <comment>Also known as Application key</comment>
   </data>
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
@@ -199,12 +198,6 @@
   <data name="Obsolete031" xml:space="preserve">
     <value>Navštívit &amp;web</value>
   </data>
-  <data name="Obsolete033" xml:space="preserve">
-    <value>@APP_NAME@</value>
-  </data>
-  <data name="Obsolete034" xml:space="preserve">
-    <value>@APP_NAME@ v@APP_VERSION@\n</value>
-  </data>
   <data name="Obsolete035" xml:space="preserve">
     <value>\n</value>
   </data>
@@ -228,14 +221,5 @@
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Popis:</value>
-  </data>
-  <data name="Obsolete052" xml:space="preserve">
-    <value>@APP_NAME@ (vypnuto)</value>
-  </data>
-  <data name="Obsolete053" xml:space="preserve">
-    <value>@APP_NAME@ (aktivní)</value>
-  </data>
-  <data name="Obsolete054" xml:space="preserve">
-    <value>@APP_NAME@ (píše)</value>
   </data>
 </root>

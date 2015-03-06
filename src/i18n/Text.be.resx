@@ -123,7 +123,7 @@
   <data name="Obsolete002" xml:space="preserve">
     <value>Клавіша — @1@</value>
   </data>
-  <data name="Obsolete003" xml:space="preserve">
+  <data name="AutodetectLanguage" xml:space="preserve">
     <value>Аўтавыяўленьне</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
@@ -155,7 +155,6 @@
   </data>
   <data name="KeyApps" xml:space="preserve">
     <value>Меню</value>
-    <comment>Also known as Application key</comment>
   </data>
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
@@ -214,12 +213,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Вы&amp;xад</value>
   </data>
-  <data name="Obsolete033" xml:space="preserve">
-    <value>@APP_NAME@</value>
-  </data>
-  <data name="Obsolete034" xml:space="preserve">
-    <value>@APP_NAME@ вэрсыї @APP_VERSION@\n</value>
-  </data>
   <data name="Obsolete035" xml:space="preserve">
     <value>\n</value>
   </data>
@@ -270,14 +263,5 @@
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Апісаньне:</value>
-  </data>
-  <data name="Obsolete052" xml:space="preserve">
-    <value>@APP_NAME@ (вымкнены)</value>
-  </data>
-  <data name="Obsolete053" xml:space="preserve">
-    <value>@APP_NAME@ (увамкнёны)</value>
-  </data>
-  <data name="Obsolete054" xml:space="preserve">
-    <value>@APP_NAME@ (набірае)</value>
   </data>
 </root>

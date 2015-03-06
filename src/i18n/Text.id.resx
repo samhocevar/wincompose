@@ -146,7 +146,6 @@
   </data>
   <data name="KeyApps" xml:space="preserve">
     <value>Menu</value>
-    <comment>Also known as Application key</comment>
   </data>
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
