@@ -278,3 +278,11 @@ msgstr ""
 #: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
+
+#: ID:Behavior
+msgid "General Behavior"
+msgstr ""
+
+#: ID:WindowTitle
+msgid "WinCompose Sequences"
+msgstr ""

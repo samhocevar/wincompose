@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
 "PO-Revision-Date: 2015-03-06 09:44+0200\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch "
-"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
+"nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -281,4 +281,13 @@ msgstr "WinCompose"
 
 #: ID:TrayToolTip -- {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
+msgstr "WinCompose voor {0} ({1} sequentie(s))"
+
+#: ID:Behavior
+msgid "General Behavior"
+msgstr ""
+
+#: ID:WindowTitle
+#, fuzzy
+msgid "WinCompose Sequences"
 msgstr "WinCompose voor {0} ({1} sequentie(s))"

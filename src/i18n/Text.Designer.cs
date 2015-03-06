@@ -653,5 +653,14 @@ namespace WinCompose.i18n {
                 return ResourceManager.GetString("TrayToolTip", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WinCompose Sequences.
+        /// </summary>
+        public static string WindowTitle {
+            get {
+                return ResourceManager.GetString("WindowTitle", resourceCulture);
+            }
+        }
     }
 }

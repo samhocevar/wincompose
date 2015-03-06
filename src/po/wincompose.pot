@@ -258,3 +258,11 @@ msgstr ""
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
+#: ID:Behavior
+msgid "General Behavior"
+msgstr ""
+
+#: ID:WindowTitle
+msgid "WinCompose Sequences"
+msgstr ""
+

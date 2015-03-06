@@ -282,5 +282,14 @@ msgstr "前導鍵:"
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
+#: ID:Behavior
+msgid "General Behavior"
+msgstr ""
+
+#: ID:WindowTitle
+#, fuzzy
+msgid "WinCompose Sequences"
+msgstr "前導鍵:"
+
 #~ msgid "running on AHK v@AHK_VERSION@\n"
 #~ msgstr "於 AHK v@AHK_VERSION@ 執行↵\n"

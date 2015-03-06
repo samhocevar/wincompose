@@ -312,7 +312,7 @@
     <value>WinCompose</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose aktiivne {0} ({1} jada)</value>
+    <value>WinCompose aktiivne {0} ({1} kombinatsiooni)</value>
     <comment>{0}: compose key name, {1}: number of sequences</comment>
   </data>
 </root>

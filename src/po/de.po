@@ -282,5 +282,14 @@ msgstr "Compose-Taste"
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
+#: ID:Behavior
+msgid "General Behavior"
+msgstr ""
+
+#: ID:WindowTitle
+#, fuzzy
+msgid "WinCompose Sequences"
+msgstr "Compose-Taste"
+
 #~ msgid "Timeout"
 #~ msgstr "Verzögerung"
