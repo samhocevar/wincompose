@@ -297,7 +297,4 @@
   <data name="Behavior" xml:space="preserve">
     <value>Üldine käitumine</value>
   </data>
-  <data name="WindowTitle" xml:space="preserve">
-    <value>WinCompose'i kombinatsioonid</value>
-  </data>
 </root>

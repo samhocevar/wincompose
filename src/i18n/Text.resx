@@ -296,6 +296,7 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
+    <comment>The title of the Settings window</comment>
   </data>
   <data name="ShowSettings" xml:space="preserve">
     <value>Settings…</value>
@@ -308,7 +309,7 @@
     <value>General Behavior</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>WinCompose Sequences</value>
+    <value>Sequences — WinCompose</value>
     <comment>The title of the Sequences window</comment>
   </data>
 </root>

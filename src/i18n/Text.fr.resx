@@ -297,4 +297,7 @@
   <data name="Behavior" xml:space="preserve">
     <value>Comportement</value>
   </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Séquences — WinCompose</value>
+  </data>
 </root>

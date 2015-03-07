@@ -19,257 +19,258 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: ID:Obsolete001
+#: i18n/Text.resx:121 ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr ""
 
-#: ID:Obsolete002
+#: i18n/Text.resx:124 ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr ""
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
-#: ID:AutodetectLanguage
+#: i18n/Text.resx:128 ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr ""
 
-#: ID:KeyLMenu
+#: i18n/Text.resx:131 ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Alt bagian kiri"
 
-#: ID:KeyRMenu
+#: i18n/Text.resx:134 ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Alt bagian kanan"
 
-#: ID:KeyLControl
+#: i18n/Text.resx:137 ID:KeyLControl
 msgid "Left Control"
 msgstr "Control bagian kiri"
 
-#: ID:KeyRControl
+#: i18n/Text.resx:140 ID:KeyRControl
 msgid "Right Control"
 msgstr "Control bagian kanan"
 
-#: ID:KeyLWin
+#: i18n/Text.resx:143 ID:KeyLWin
 msgid "Left Windows"
 msgstr "Windows bagian kiri"
 
-#: ID:KeyRWin
+#: i18n/Text.resx:146 ID:KeyRWin
 msgid "Right Windows"
 msgstr "Windows bagian kanan"
 
-#: ID:KeyCapital
+#: i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: ID:KeyNumLock
+#: i18n/Text.resx:152 ID:KeyNumLock
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: ID:KeyPause
+#: i18n/Text.resx:155 ID:KeyPause
 msgid "Pause"
 msgstr "Jeda"
 
 #. Also known as Application key
-#: ID:KeyApps
+#: i18n/Text.resx:159 ID:KeyApps
 msgid "Menu"
 msgstr "Menu"
 
-#: ID:KeyEscape
+#: i18n/Text.resx:162 ID:KeyEscape
 msgid "Escape"
 msgstr "Escape"
 
-#: ID:KeyScroll
+#: i18n/Text.resx:165 ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#: ID:Obsolete016
+#: i18n/Text.resx:168 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr ""
 
-#: ID:Obsolete017
+#: i18n/Text.resx:171 ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "500 milidetik"
 
-#: ID:Obsolete018
+#: i18n/Text.resx:174 ID:Obsolete018
 msgid "1 second"
 msgstr "1 detik"
 
-#: ID:Obsolete019
+#: i18n/Text.resx:177 ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 detik"
 
-#: ID:Obsolete020
+#: i18n/Text.resx:180 ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 detik"
 
-#: ID:Obsolete021
+#: i18n/Text.resx:183 ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 detik"
 
-#: ID:Obsolete022
+#: i18n/Text.resx:186 ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 detik"
 
-#: ID:Obsolete023
+#: i18n/Text.resx:189 ID:Obsolete023
 msgid "None"
 msgstr "Kosong"
 
-#: ID:ShowSequences
+#: i18n/Text.resx:192 ID:ShowSequences
 msgid "Show &Sequences…"
 msgstr ""
 
-#: ID:Obsolete025
+#: i18n/Text.resx:195 ID:Obsolete025
 msgid "Disable"
 msgstr "Non-aktifkan"
 
-#: ID:Obsolete026
+#: i18n/Text.resx:198 ID:Obsolete026
 msgid "Restart"
 msgstr "Restart"
 
-#: ID:Obsolete027
+#: i18n/Text.resx:201 ID:Obsolete027
 msgid "&History"
 msgstr ""
 
-#: ID:Obsolete028
+#: i18n/Text.resx:204 ID:Obsolete028
 msgid "Hotkey &List"
 msgstr ""
 
-#: ID:Obsolete029
+#: i18n/Text.resx:207 ID:Obsolete029
 msgid "&Options…"
 msgstr ""
 
-#: ID:Obsolete030
+#: i18n/Text.resx:210 ID:Obsolete030
 msgid "&About"
 msgstr ""
 
-#: ID:Obsolete031
+#: i18n/Text.resx:213 ID:Obsolete031
 msgid "&Visit Website"
 msgstr ""
 
-#: ID:Exit
+#: i18n/Text.resx:216 ID:Exit
 msgid "E&xit"
 msgstr ""
 
-#: ID:Obsolete035
+#: i18n/Text.resx:219 ID:Obsolete035
 msgid "\n"
 msgstr ""
 
-#: ID:Obsolete036
+#: i18n/Text.resx:222 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr ""
 
-#: ID:Sequences
+#: i18n/Text.resx:225 ID:Sequences
 msgid "Sequences"
 msgstr ""
 
-#: ID:Obsolete038
+#: i18n/Text.resx:228 ID:Obsolete038
 msgid "Options"
 msgstr ""
 
-#: ID:Obsolete039
+#: i18n/Text.resx:231 ID:Obsolete039
 msgid "Sequence"
 msgstr ""
 
-#: ID:Obsolete040
+#: i18n/Text.resx:234 ID:Obsolete040
 msgid "Char"
 msgstr ""
 
-#: ID:Obsolete041
+#: i18n/Text.resx:237 ID:Obsolete041
 msgid "Unicode"
 msgstr ""
 
-#: ID:Search
+#: i18n/Text.resx:240 ID:Search
 msgid "Search Filter:"
 msgstr ""
 
-#: ID:ComposeKey
+#: i18n/Text.resx:243 ID:ComposeKey
 msgid "Compose Key:"
 msgstr ""
 
 #. The compose key deactivates itself after a certain configurable delay
-#: ID:ResetDelay
+#: i18n/Text.resx:247 ID:ResetDelay
 msgid "Delay:"
 msgstr ""
 
-#: ID:CaseInsensitive
+#: i18n/Text.resx:250 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 
-#: ID:DiscardOnInvalid
+#: i18n/Text.resx:253 ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr ""
 
-#: ID:BeepOnInvalid
+#: i18n/Text.resx:256 ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr ""
 
-#: ID:Language
+#: i18n/Text.resx:259 ID:Language
 msgid "Interface language:"
 msgstr ""
 
 #. Close the settings window
-#: ID:Close
+#: i18n/Text.resx:263 ID:Close
 msgid "Close"
 msgstr ""
 
 #. Copy character to the clipboard
-#: ID:Obsolete050
+#: i18n/Text.resx:267 ID:Obsolete050
 msgid "Copy Character"
 msgstr ""
 
 #. Description of a Unicode character or group of characters
-#: ID:Obsolete051
+#: i18n/Text.resx:271 ID:Obsolete051
 msgid "Description:"
 msgstr ""
 
 #. Apply changes from the settings window
-#: ID:Apply
+#: i18n/Text.resx:275 ID:Apply
 msgid "Apply"
 msgstr ""
 
 #. Should this say “retain” instead of “maintain”?
-#: ID:KeepOriginalKey
+#: i18n/Text.resx:279 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr ""
 
-#: ID:InsertZwsp
+#: i18n/Text.resx:282 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr ""
 
-#: ID:EmulateCapsLock
+#: i18n/Text.resx:285 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
 msgstr ""
 
-#: ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:288 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
 msgstr ""
 
 #. Header for the list of Unicode character categories
-#: ID:Categories
+#: i18n/Text.resx:292 ID:Categories
 msgid "Categories"
 msgstr ""
 
-#: ID:InSelectedCategories
+#: i18n/Text.resx:295 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr ""
 
-#: ID:Settings
+#. The title of the Settings window
+#: i18n/Text.resx:299 ID:Settings
 msgid "Settings"
 msgstr ""
 
-#: ID:ShowSettings
+#: i18n/Text.resx:302 ID:ShowSettings
 msgid "Settings…"
 msgstr ""
 
 #. {0}: compose key name, {1}: number of sequences
-#: ID:TrayToolTip
+#: i18n/Text.resx:306 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
-#: ID:Behavior
+#: i18n/Text.resx:309 ID:Behavior
 msgid "General Behavior"
 msgstr ""
 
 #. The title of the Sequences window
-#: ID:WindowTitle
-msgid "WinCompose Sequences"
+#: i18n/Text.resx:313 ID:WindowTitle
+msgid "Sequences — WinCompose"
 msgstr ""
