@@ -12,12 +12,14 @@ echo "[1/3] Rebuild potfiles…"
 awk < i18n/Text.resx '
     /<!--/      { off=1 }
     /-->/       { off=0 }
-    /<data /    { split($0, a, "\""); id=a[2]; comment=""; }
+    /<data /    { split($0, a, "\""); id=a[2]; comment=""; obsolete=0 }
+    /"Obsolete/ { obsolete=1 }
     /<value>/   { split ($0, a, /[<>]/); value=a[3]; }
     /<comment>/ { split ($0, a, /[<>]/); comment=a[3]; }
     /<\/data>/  { if (!off) {
                       print "#: i18n/Text.resx:" (NR - 1) " ID:" id;
                       if (comment) { print "#. " comment }
+                      if (obsolete) { print "#. This string is obsolete but might be used again" }
                       print "msgid \"" value "\"";
                       print "msgstr \"\""; print "";
                   } }' \

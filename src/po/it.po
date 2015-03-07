@@ -19,10 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:121 ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr "Caricate @1@ sequenze"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:124 ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr "Il tasto Compose è @1@"
@@ -81,34 +83,42 @@ msgstr "Esc"
 msgid "Scroll Lock"
 msgstr "Bloc Scorr"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:168 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "Accento grave `"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:171 ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "500 ms"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:174 ID:Obsolete018
 msgid "1 second"
 msgstr "1 s"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:177 ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 s"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:180 ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 s"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:183 ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 s"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:186 ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 s"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:189 ID:Obsolete023
 msgid "None"
 msgstr "Infinita"
@@ -117,30 +127,37 @@ msgstr "Infinita"
 msgid "Show &Sequences…"
 msgstr "Mostra &Sequenze…"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:195 ID:Obsolete025
 msgid "Disable"
 msgstr "Disabilita"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:198 ID:Obsolete026
 msgid "Restart"
 msgstr "Riavvia"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:201 ID:Obsolete027
 msgid "&History"
 msgstr "&Cronologia"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:204 ID:Obsolete028
 msgid "Hotkey &List"
 msgstr "&Tasti rapidi"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:207 ID:Obsolete029
 msgid "&Options…"
 msgstr "&Opzioni…"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:210 ID:Obsolete030
 msgid "&About"
 msgstr "&Informazioni"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:213 ID:Obsolete031
 msgid "&Visit Website"
 msgstr "&Visita il sito"
@@ -149,12 +166,14 @@ msgstr "&Visita il sito"
 msgid "E&xit"
 msgstr "&Esci"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:219 ID:Obsolete035
 msgid "\n"
 msgstr ""
 "\n"
 "↵\n"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:222 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "di Sam Hocevar <sam@hocevar.net>↵\n"
@@ -163,18 +182,22 @@ msgstr "di Sam Hocevar <sam@hocevar.net>↵\n"
 msgid "Sequences"
 msgstr "Sequenze"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:228 ID:Obsolete038
 msgid "Options"
 msgstr "Opzioni"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:231 ID:Obsolete039
 msgid "Sequence"
 msgstr "Sequenza"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:234 ID:Obsolete040
 msgid "Char"
 msgstr "Carattere"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:237 ID:Obsolete041
 msgid "Unicode"
 msgstr "Unicode"
@@ -215,11 +238,13 @@ msgid "Close"
 msgstr "Chiudi"
 
 #. Copy character to the clipboard
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:267 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Copia carattere"
 
 #. Description of a Unicode character or group of characters
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:271 ID:Obsolete051
 msgid "Description:"
 msgstr "Descrizione:"

@@ -19,10 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:121 ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr "已載入 @1@ 按鍵系列"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:124 ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr "前導鍵是 @1@"
@@ -81,34 +83,42 @@ msgstr "Escape"
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:168 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "重音符 `"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:171 ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "500 毫秒"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:174 ID:Obsolete018
 msgid "1 second"
 msgstr "1 秒"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:177 ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 秒"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:180 ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 秒"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:183 ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 秒"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:186 ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 秒"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:189 ID:Obsolete023
 msgid "None"
 msgstr "無"
@@ -117,30 +127,37 @@ msgstr "無"
 msgid "Show &Sequences…"
 msgstr "顯示按鍵系列(&S)…"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:195 ID:Obsolete025
 msgid "Disable"
 msgstr "停用"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:198 ID:Obsolete026
 msgid "Restart"
 msgstr "重新啟動"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:201 ID:Obsolete027
 msgid "&History"
 msgstr "歷史(&H)"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:204 ID:Obsolete028
 msgid "Hotkey &List"
 msgstr "快鍵清單(&L)"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:207 ID:Obsolete029
 msgid "&Options…"
 msgstr "選項(&O)…"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:210 ID:Obsolete030
 msgid "&About"
 msgstr "關於(&A)"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:213 ID:Obsolete031
 msgid "&Visit Website"
 msgstr "拜訪網站(&V)"
@@ -149,12 +166,14 @@ msgstr "拜訪網站(&V)"
 msgid "E&xit"
 msgstr "離開(&X)"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:219 ID:Obsolete035
 msgid "\n"
 msgstr ""
 "\n"
 "↵\n"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:222 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "開發者：Sam Hocevar <sam@hocevar.net>↵\n"
@@ -163,18 +182,22 @@ msgstr "開發者：Sam Hocevar <sam@hocevar.net>↵\n"
 msgid "Sequences"
 msgstr "按鍵系列"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:228 ID:Obsolete038
 msgid "Options"
 msgstr "選項"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:231 ID:Obsolete039
 msgid "Sequence"
 msgstr "按鍵系列"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:234 ID:Obsolete040
 msgid "Char"
 msgstr "字元"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:237 ID:Obsolete041
 msgid "Unicode"
 msgstr "萬國碼(Unicode)"
@@ -214,11 +237,13 @@ msgid "Close"
 msgstr "關閉"
 
 #. Copy character to the clipboard
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:267 ID:Obsolete050
 msgid "Copy Character"
 msgstr "複製字元"
 
 #. Description of a Unicode character or group of characters
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:271 ID:Obsolete051
 msgid "Description:"
 msgstr "描述:"

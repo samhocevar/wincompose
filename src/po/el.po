@@ -17,10 +17,12 @@ msgstr ""
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:121 ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr "Φορτώθηκαν @1@ Ακολουθίες"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:124 ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr "Πλήκτρο σύνθεσης είναι το @1@"
@@ -79,34 +81,42 @@ msgstr "Escape"
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:168 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "Βαρεία `"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:171 ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "0,5 δευτερόλεπτο"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:174 ID:Obsolete018
 msgid "1 second"
 msgstr "1 δευτερόλεπτο"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:177 ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 δευτερόλεπτα"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:180 ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 δευτερόλεπτα"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:183 ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 δευτερόλεπτα"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:186 ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 δευτερόλεπτα"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:189 ID:Obsolete023
 msgid "None"
 msgstr "Καμία"
@@ -115,30 +125,37 @@ msgstr "Καμία"
 msgid "Show &Sequences…"
 msgstr "Εμφάνιση &Ακολουθιών…"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:195 ID:Obsolete025
 msgid "Disable"
 msgstr "Απενεργοποίηση"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:198 ID:Obsolete026
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:201 ID:Obsolete027
 msgid "&History"
 msgstr "&Ιστορικό"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:204 ID:Obsolete028
 msgid "Hotkey &List"
 msgstr "&Λίστα πλήκτρων συντόμευσης"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:207 ID:Obsolete029
 msgid "&Options…"
 msgstr "Επι&λογές…"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:210 ID:Obsolete030
 msgid "&About"
 msgstr "&Περί"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:213 ID:Obsolete031
 msgid "&Visit Website"
 msgstr "&Ιστοσελίδα"
@@ -147,10 +164,12 @@ msgstr "&Ιστοσελίδα"
 msgid "E&xit"
 msgstr "Έ&ξοδος"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:219 ID:Obsolete035
 msgid "\n"
 msgstr "\n"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:222 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "από τον Sam Hocevar <sam@hocevar.net>\n"
@@ -159,18 +178,22 @@ msgstr "από τον Sam Hocevar <sam@hocevar.net>\n"
 msgid "Sequences"
 msgstr "Ακολουθίες"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:228 ID:Obsolete038
 msgid "Options"
 msgstr "Επιλογές"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:231 ID:Obsolete039
 msgid "Sequence"
 msgstr "Ακολουθία"
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:234 ID:Obsolete040
 msgid "Char"
 msgstr "Χαρακτ."
 
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:237 ID:Obsolete041
 msgid "Unicode"
 msgstr "Unicode"
@@ -212,11 +235,13 @@ msgid "Close"
 msgstr "Κλείσιμο"
 
 #. Copy character to the clipboard
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:267 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Αντιγραφή χαρακτήρα"
 
 #. Description of a Unicode character or group of characters
+#. This string is obsolete but might be used again
 #: i18n/Text.resx:271 ID:Obsolete051
 msgid "Description:"
 msgstr "Περιγραφή:"
