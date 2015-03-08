@@ -264,7 +264,34 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Descripción:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Mantener funcionamiento original de la tecla de composición</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Insertar espacios de anchura cero en las programas de Office</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorías</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>En las categorías seleccionadas</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="ShowSettings" xml:space="preserve">
+    <value>Ajustes…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose en {0} ({1} secuencias)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Comportamiento general</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Secuencias — WinCompose</value>
   </data>
 </root>

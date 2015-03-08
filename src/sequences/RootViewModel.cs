@@ -17,7 +17,6 @@ using System.Globalization;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Data;
-using WinCompose.Properties; // for UnicodeBlocks
 
 namespace WinCompose
 {
@@ -34,7 +33,7 @@ namespace WinCompose
 
             var categories = new List<CategoryViewModel>();
             const BindingFlags flags = BindingFlags.Static | BindingFlags.Public;
-            foreach (var property in typeof(UnicodeBlocks).GetProperties(flags))
+            foreach (var property in typeof(unicode.Block).GetProperties(flags))
             {
                 if (property.Name == "ResourceManager" || property.Name == "Culture")
                     continue;

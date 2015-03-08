@@ -39,7 +39,7 @@ done
 
 echo "[2/3] Rebuild resx files…"
 for POFILE in po/*.po; do
-    LANG=$(basename -s.po ${POFILE})
+    LANG=$(basename ${POFILE} .po)
     case $LANG in
         zh_CN) LANG=zh-CHS ;;
         zh) LANG=zh-CHT ;;

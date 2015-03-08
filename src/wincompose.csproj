@@ -211,13 +211,13 @@
     <Compile Include="settings\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\UnicodeBlocks.Designer.cs">
-      <DependentUpon>UnicodeBlocks.resx</DependentUpon>
+    <Compile Include="unicode\Block.Designer.cs">
+      <DependentUpon>Block.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Properties\UnicodeCategories.Designer.cs">
-      <DependentUpon>UnicodeCategories.resx</DependentUpon>
+    <Compile Include="unicode\Category.Designer.cs">
+      <DependentUpon>Category.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -316,13 +316,13 @@
       <LastGenOutput>Text.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\UnicodeBlocks.resx">
+    <EmbeddedResource Include="unicode\Block.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UnicodeBlocks.Designer.cs</LastGenOutput>
+      <LastGenOutput>Block.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\UnicodeCategories.resx">
+    <EmbeddedResource Include="unicode\Category.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UnicodeCategories.Designer.cs</LastGenOutput>
+      <LastGenOutput>Category.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.be.resx">

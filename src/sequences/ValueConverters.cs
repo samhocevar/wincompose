@@ -17,7 +17,6 @@ using System.Globalization;
 using System.Reflection;
 using System.Windows.Data;
 using System.Windows.Markup;
-using WinCompose.Properties; // for UnicodeCategories
 
 namespace WinCompose
 {
@@ -52,7 +51,7 @@ namespace WinCompose
             foreach (var value in Enum.GetValues(typeof(UnicodeCategory)))
             {
                 var name = value.ToString();
-                var prop = typeof(UnicodeCategories).GetProperty(name, BindingFlags.Static | BindingFlags.Public);
+                var prop = typeof(unicode.Category).GetProperty(name, BindingFlags.Static | BindingFlags.Public);
                 var desc = prop.GetValue(null, null);
                 Strings.Add((UnicodeCategory)value, (string)desc);
             }
@@ -73,7 +72,7 @@ namespace WinCompose
             var key = (Key)value;
             var name = string.Format("Key{0}", key.VirtualKey);
             // We use reflection so we can perform a case-insensitive lookup
-            var property = typeof(Resources).GetProperty(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
+            var property = typeof(Properties.Resources).GetProperty(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
             return property != null ? property.GetValue(null, new object[0]) : value.ToString();
         }
     }
