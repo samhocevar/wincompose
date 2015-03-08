@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="U0000" xml:space="preserve">
+    <value>&lt;commande&gt;</value>
+  </data>
   <data name="U0020" xml:space="preserve">
     <value>ESPACE</value>
   </data>
@@ -593,6 +596,36 @@
   </data>
   <data name="U00DF" xml:space="preserve">
     <value>LETTRE MINUSCULE LATINE S DUR (allemand)</value>
+  </data>
+  <data name="U00E0" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE A ACCENT GRAVE</value>
+  </data>
+  <data name="U00E1" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE A ACCENT AIGU</value>
+  </data>
+  <data name="U00E2" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE A ACCENT CIRCONFLEXE</value>
+  </data>
+  <data name="U00E3" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE A TILDE</value>
+  </data>
+  <data name="U00E4" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE A TRÉMA</value>
+  </data>
+  <data name="U00E5" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE A ROND EN CHEF</value>
+  </data>
+  <data name="U00E6" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE AE (ash)</value>
+  </data>
+  <data name="U00E7" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE C CÉDILLE</value>
+  </data>
+  <data name="U00E8" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE E ACCENT GRAVE</value>
+  </data>
+  <data name="U00E9" xml:space="preserve">
+    <value>LETTRE MINUSCULE LATINE E ACCENT AIGU</value>
   </data>
   <data name="U00EA" xml:space="preserve">
     <value>LETTRE MINUSCULE LATINE E ACCENT CIRCONFLEXE</value>
@@ -7632,6 +7665,33 @@
   <data name="U0DF4" xml:space="preserve">
     <value>PONCTUATION SINGHALAISE KOUNDDALIYA</value>
   </data>
+  <data name="U0E01" xml:space="preserve">
+    <value>LETTRE THAÏE KO KAÏ</value>
+  </data>
+  <data name="U0E02" xml:space="preserve">
+    <value>LETTRE THAÏE KHO KHAÏ</value>
+  </data>
+  <data name="U0E03" xml:space="preserve">
+    <value>LETTRE THAÏE KHO KHOUAT</value>
+  </data>
+  <data name="U0E04" xml:space="preserve">
+    <value>LETTRE THAÏE KHO KHWAÏ</value>
+  </data>
+  <data name="U0E05" xml:space="preserve">
+    <value>LETTRE THAÏE KHO KHON</value>
+  </data>
+  <data name="U0E06" xml:space="preserve">
+    <value>LETTRE THAÏE KHO RAKHANG</value>
+  </data>
+  <data name="U0E07" xml:space="preserve">
+    <value>LETTRE THAÏE NGO NGOU</value>
+  </data>
+  <data name="U0E08" xml:space="preserve">
+    <value>LETTRE THAÏE TCHO TCHAN</value>
+  </data>
+  <data name="U0E09" xml:space="preserve">
+    <value>LETTRE THAÏE TCHO TCHING</value>
+  </data>
   <data name="U0E0A" xml:space="preserve">
     <value>LETTRE THAÏE TCHO TCHANG</value>
   </data>
@@ -7649,6 +7709,36 @@
   </data>
   <data name="U0E0F" xml:space="preserve">
     <value>LETTRE THAÏE TO PATAK</value>
+  </data>
+  <data name="U0E10" xml:space="preserve">
+    <value>LETTRE THAÏE THO THAN</value>
+  </data>
+  <data name="U0E11" xml:space="preserve">
+    <value>LETTRE THAÏE THO NANGMONTHO</value>
+  </data>
+  <data name="U0E12" xml:space="preserve">
+    <value>LETTRE THAÏE THO PHOUTHAO</value>
+  </data>
+  <data name="U0E13" xml:space="preserve">
+    <value>LETTRE THAÏE NO NEN</value>
+  </data>
+  <data name="U0E14" xml:space="preserve">
+    <value>LETTRE THAÏE DO DEK</value>
+  </data>
+  <data name="U0E15" xml:space="preserve">
+    <value>LETTRE THAÏE TO TAO</value>
+  </data>
+  <data name="U0E16" xml:space="preserve">
+    <value>LETTRE THAÏE THO THOUNG</value>
+  </data>
+  <data name="U0E17" xml:space="preserve">
+    <value>LETTRE THAÏE THO THAHAN</value>
+  </data>
+  <data name="U0E18" xml:space="preserve">
+    <value>LETTRE THAÏE THO THONG</value>
+  </data>
+  <data name="U0E19" xml:space="preserve">
+    <value>LETTRE THAÏE NO NOU</value>
   </data>
   <data name="U0E1A" xml:space="preserve">
     <value>LETTRE THAÏE BO BAÏMAÏ</value>
@@ -7668,6 +7758,36 @@
   <data name="U0E1F" xml:space="preserve">
     <value>LETTRE THAÏE FO FAN</value>
   </data>
+  <data name="U0E20" xml:space="preserve">
+    <value>LETTRE THAÏE PHO SAMPHAO</value>
+  </data>
+  <data name="U0E21" xml:space="preserve">
+    <value>LETTRE THAÏE MO MA</value>
+  </data>
+  <data name="U0E22" xml:space="preserve">
+    <value>LETTRE THAÏE YO YAK</value>
+  </data>
+  <data name="U0E23" xml:space="preserve">
+    <value>LETTRE THAÏE RO ROUA</value>
+  </data>
+  <data name="U0E24" xml:space="preserve">
+    <value>LETTRE THAÏE ROU</value>
+  </data>
+  <data name="U0E25" xml:space="preserve">
+    <value>LETTRE THAÏE LO LING</value>
+  </data>
+  <data name="U0E26" xml:space="preserve">
+    <value>LETTRE THAÏE LOU</value>
+  </data>
+  <data name="U0E27" xml:space="preserve">
+    <value>LETTRE THAÏE WO WËN</value>
+  </data>
+  <data name="U0E28" xml:space="preserve">
+    <value>LETTRE THAÏE SO SALA</value>
+  </data>
+  <data name="U0E29" xml:space="preserve">
+    <value>LETTRE THAÏE SO ROUSI</value>
+  </data>
   <data name="U0E2A" xml:space="preserve">
     <value>LETTRE THAÏE SO SOUA</value>
   </data>
@@ -7686,11 +7806,71 @@
   <data name="U0E2F" xml:space="preserve">
     <value>LETTRE THAÏE PAÏYANNOÏ (païyan noï)</value>
   </data>
+  <data name="U0E30" xml:space="preserve">
+    <value>LETTRE THAÏE SARA A</value>
+  </data>
+  <data name="U0E31" xml:space="preserve">
+    <value>LETTRE THAÏE MAI HAN AKAT</value>
+  </data>
+  <data name="U0E32" xml:space="preserve">
+    <value>LETTRE THAÏE SARA Â</value>
+  </data>
+  <data name="U0E33" xml:space="preserve">
+    <value>LETTRE THAÏE SARA AM</value>
+  </data>
+  <data name="U0E34" xml:space="preserve">
+    <value>LETTRE THAÏE SARA I</value>
+  </data>
+  <data name="U0E35" xml:space="preserve">
+    <value>LETTRE THAÏE SARA Î</value>
+  </data>
+  <data name="U0E36" xml:space="preserve">
+    <value>LETTRE THAÏE SARA OUÉ</value>
+  </data>
+  <data name="U0E37" xml:space="preserve">
+    <value>LETTRE THAÏE SARA OUÊ (sara ouê)</value>
+  </data>
+  <data name="U0E38" xml:space="preserve">
+    <value>LETTRE THAÏE SARA OU</value>
+  </data>
+  <data name="U0E39" xml:space="preserve">
+    <value>LETTRE THAÏE SARA OÛ</value>
+  </data>
   <data name="U0E3A" xml:space="preserve">
     <value>LETTRE THAÏE PHINTHOU</value>
   </data>
   <data name="U0E3F" xml:space="preserve">
     <value>SYMBOLE MONÉTAIRE THAÏ BAHT</value>
+  </data>
+  <data name="U0E40" xml:space="preserve">
+    <value>LETTRE THAÏE SARA É</value>
+  </data>
+  <data name="U0E41" xml:space="preserve">
+    <value>LETTRE THAÏE SARA Ë</value>
+  </data>
+  <data name="U0E42" xml:space="preserve">
+    <value>LETTRE THAÏE SARA O</value>
+  </data>
+  <data name="U0E43" xml:space="preserve">
+    <value>LETTRE THAÏE SARA AÏ MAÏMOUAN (sara aï maï mouan)</value>
+  </data>
+  <data name="U0E44" xml:space="preserve">
+    <value>LETTRE THAÏE SARA AÏ MAÏMALAÏ (sara aï maï malaï)</value>
+  </data>
+  <data name="U0E45" xml:space="preserve">
+    <value>LETTRE THAÏE LAKKHANGYAO (lakkhang yao)</value>
+  </data>
+  <data name="U0E46" xml:space="preserve">
+    <value>LETTRE THAÏE MAÏYAMOK (maï yamok)</value>
+  </data>
+  <data name="U0E47" xml:space="preserve">
+    <value>LETTRE THAÏE MAÏTAÏKHOU (maï taïkhou)</value>
+  </data>
+  <data name="U0E48" xml:space="preserve">
+    <value>LETTRE THAÏE MAÏ EK</value>
+  </data>
+  <data name="U0E49" xml:space="preserve">
+    <value>LETTRE THAÏE MAÏ THO</value>
   </data>
   <data name="U0E4A" xml:space="preserve">
     <value>LETTRE THAÏE MAÏ TRI</value>
@@ -7710,17 +7890,77 @@
   <data name="U0E4F" xml:space="preserve">
     <value>LETTRE THAÏE FONGMAN</value>
   </data>
+  <data name="U0E50" xml:space="preserve">
+    <value>CHIFFRE THAÏ ZÉRO</value>
+  </data>
+  <data name="U0E51" xml:space="preserve">
+    <value>CHIFFRE THAÏ UN</value>
+  </data>
+  <data name="U0E52" xml:space="preserve">
+    <value>CHIFFRE THAÏ DEUX</value>
+  </data>
+  <data name="U0E53" xml:space="preserve">
+    <value>CHIFFRE THAÏ TROIS</value>
+  </data>
+  <data name="U0E54" xml:space="preserve">
+    <value>CHIFFRE THAÏ QUATRE</value>
+  </data>
+  <data name="U0E55" xml:space="preserve">
+    <value>CHIFFRE THAÏ CINQ</value>
+  </data>
+  <data name="U0E56" xml:space="preserve">
+    <value>CHIFFRE THAÏ SIX</value>
+  </data>
+  <data name="U0E57" xml:space="preserve">
+    <value>CHIFFRE THAÏ SEPT</value>
+  </data>
+  <data name="U0E58" xml:space="preserve">
+    <value>CHIFFRE THAÏ HUIT</value>
+  </data>
+  <data name="U0E59" xml:space="preserve">
+    <value>CHIFFRE THAÏ NEUF</value>
+  </data>
   <data name="U0E5A" xml:space="preserve">
     <value>CARACTÈRE THAÏ ANGKHANKHOU</value>
   </data>
   <data name="U0E5B" xml:space="preserve">
     <value>CARACTÈRE THAÏ KHOMOUT</value>
   </data>
+  <data name="U0E81" xml:space="preserve">
+    <value>LETTRE LAOTIENNE KO</value>
+  </data>
+  <data name="U0E82" xml:space="preserve">
+    <value>LETTRE LAOTIENNE KHO SOUNG</value>
+  </data>
+  <data name="U0E84" xml:space="preserve">
+    <value>LETTRE LAOTIENNE KHO TAM</value>
+  </data>
+  <data name="U0E87" xml:space="preserve">
+    <value>LETTRE LAOTIENNE NGO</value>
+  </data>
+  <data name="U0E88" xml:space="preserve">
+    <value>LETTRE LAOTIENNE TCHO</value>
+  </data>
   <data name="U0E8A" xml:space="preserve">
     <value>LETTRE LAOTIENNE SO TAM</value>
   </data>
   <data name="U0E8D" xml:space="preserve">
     <value>LETTRE LAOTIENNE ÑO</value>
+  </data>
+  <data name="U0E94" xml:space="preserve">
+    <value>LETTRE LAOTIENNE DO</value>
+  </data>
+  <data name="U0E95" xml:space="preserve">
+    <value>LETTRE LAOTIENNE TO</value>
+  </data>
+  <data name="U0E96" xml:space="preserve">
+    <value>LETTRE LAOTIENNE THO SOUNG</value>
+  </data>
+  <data name="U0E97" xml:space="preserve">
+    <value>LETTRE LAOTIENNE THO TAM</value>
+  </data>
+  <data name="U0E99" xml:space="preserve">
+    <value>LETTRE LAOTIENNE NO</value>
   </data>
   <data name="U0E9A" xml:space="preserve">
     <value>LETTRE LAOTIENNE BO</value>

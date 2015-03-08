@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="U0000_U007F" xml:space="preserve">
+    <value>Latinalainen perusosa</value>
+  </data>
+  <data name="U0080_U00FF" xml:space="preserve">
+    <value>Latinalaisen merkistön täydennys Latin-1:ksi</value>
+  </data>
+  <data name="U0100_U017F" xml:space="preserve">
+    <value>Latinalaisen merkistön laajennusosa A</value>
+  </data>
+  <data name="U0180_U024F" xml:space="preserve">
+    <value>Latinalaisen merkistön laajennusosa B</value>
+  </data>
+  <data name="U0250_U02AF" xml:space="preserve">
+    <value>IPA-täydennyksiä</value>
+  </data>
+  <data name="U02B0_U02FF" xml:space="preserve">
+    <value>Tarkkeenomaisia erillisiä merkkejä</value>
+  </data>
+  <data name="U0300_U036F" xml:space="preserve">
+    <value>Tarkkeita</value>
+  </data>
+  <data name="U0370_U03FF" xml:space="preserve">
+    <value>Kreikkalaisia ja koptilaisia merkkejä</value>
+  </data>
+  <data name="U0400_U04FF" xml:space="preserve">
+    <value>Kyrillisiä merkkejä</value>
+  </data>
+  <data name="U0530_U058F" xml:space="preserve">
+    <value>Armenialaisia merkkejä</value>
+  </data>
+  <data name="U0590_U05FF" xml:space="preserve">
+    <value>Heprealaisia merkkejä</value>
+  </data>
+  <data name="U0600_U06FF" xml:space="preserve">
+    <value>Arabialaisia merkkejä</value>
+  </data>
+  <data name="U0700_U074F" xml:space="preserve">
+    <value>Syyrialaisia merkkejä</value>
+  </data>
+  <data name="U0780_U07BF" xml:space="preserve">
+    <value>Thaana</value>
+  </data>
+  <data name="U0900_U097F" xml:space="preserve">
+    <value>Devanagari</value>
+  </data>
+  <data name="U0980_U09FF" xml:space="preserve">
+    <value>Bengali</value>
+  </data>
+  <data name="U0A00_U0A7F" xml:space="preserve">
+    <value>Gurmukhi</value>
+  </data>
+  <data name="U0A80_U0AFF" xml:space="preserve">
+    <value>Gujarati</value>
+  </data>
+  <data name="U0B00_U0B7F" xml:space="preserve">
+    <value>Oriya</value>
+  </data>
+  <data name="U0B80_U0BFF" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="U0C00_U0C7F" xml:space="preserve">
+    <value>Telugu</value>
+  </data>
+  <data name="U0C80_U0CFF" xml:space="preserve">
+    <value>Kannada</value>
+  </data>
+  <data name="U0D00_U0D7F" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="U0D80_U0DFF" xml:space="preserve">
+    <value>Sinhala</value>
+  </data>
+  <data name="U0E00_U0E7F" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="U0E80_U0EFF" xml:space="preserve">
+    <value>Lao</value>
+  </data>
+  <data name="U0F00_U0FFF" xml:space="preserve">
+    <value>Tiibettiläisiä merkkejä</value>
+  </data>
+  <data name="U1000_U109F" xml:space="preserve">
+    <value>Myanmar</value>
+  </data>
+  <data name="U10A0_U10FF" xml:space="preserve">
+    <value>Kartvelilaisia merkkejä</value>
+  </data>
+  <data name="U1100_U11FF" xml:space="preserve">
+    <value>Hangulin jamo-merkkejä</value>
+  </data>
+  <data name="U1200_U137F" xml:space="preserve">
+    <value>Etiopialaisia merkkejä</value>
+  </data>
+  <data name="U13A0_U13FF" xml:space="preserve">
+    <value>Cherokee</value>
+  </data>
+  <data name="U1400_U167F" xml:space="preserve">
+    <value>Kanadalaisia tavumerkkejä</value>
+  </data>
+  <data name="U1680_U169F" xml:space="preserve">
+    <value>Ogham</value>
+  </data>
+  <data name="U16A0_U16FF" xml:space="preserve">
+    <value>Riimukirjaimia</value>
+  </data>
+  <data name="U1780_U17FF" xml:space="preserve">
+    <value>Khmer</value>
+  </data>
+  <data name="U1800_U18AF" xml:space="preserve">
+    <value>Mongolialaisia merkkejä</value>
+  </data>
+  <data name="U1E00_U1EFF" xml:space="preserve">
+    <value>Latinalaisen merkistön lisälaajennuksia</value>
+  </data>
+  <data name="U1F00_U1FFF" xml:space="preserve">
+    <value>Kreikkalaisen merkistön laajennusosa</value>
+  </data>
+  <data name="U2000_U206F" xml:space="preserve">
+    <value>Yleisiä välimerkkejä</value>
+  </data>
+  <data name="U2070_U209F" xml:space="preserve">
+    <value>Ylä- ja alaindeksejä</value>
+  </data>
+  <data name="U20A0_U20CF" xml:space="preserve">
+    <value>Valuuttamerkkejä</value>
+  </data>
+  <data name="U20D0_U20FF" xml:space="preserve">
+    <value>Symbolien tarkkeita</value>
+  </data>
+  <data name="U2100_U214F" xml:space="preserve">
+    <value>Kirjainsymboleita</value>
+  </data>
+  <data name="U2150_U218F" xml:space="preserve">
+    <value>Lukuilmaisuja</value>
+  </data>
+  <data name="U2190_U21FF" xml:space="preserve">
+    <value>Nuolia</value>
+  </data>
+  <data name="U2200_U22FF" xml:space="preserve">
+    <value>Matemaattisia operaattoreita</value>
+  </data>
+  <data name="U2300_U23FF" xml:space="preserve">
+    <value>Sekalaisia teknisiä merkkejä</value>
+  </data>
+  <data name="U2400_U243F" xml:space="preserve">
+    <value>Ohjausmerkkien symboleita</value>
+  </data>
+  <data name="U2440_U245F" xml:space="preserve">
+    <value>OCR-merkkejä</value>
+  </data>
+  <data name="U2460_U24FF" xml:space="preserve">
+    <value>Ympäröityjä alfanumeerisia merkkejä</value>
+  </data>
+  <data name="U2500_U257F" xml:space="preserve">
+    <value>Viivapiirrosmerkkejä</value>
+  </data>
+  <data name="U2580_U259F" xml:space="preserve">
+    <value>Lohko-osia</value>
+  </data>
+  <data name="U25A0_U25FF" xml:space="preserve">
+    <value>Geometrisia muotoja</value>
+  </data>
+  <data name="U2600_U26FF" xml:space="preserve">
+    <value>Sekalaisia symboleita</value>
+  </data>
+  <data name="U2700_U27BF" xml:space="preserve">
+    <value>Dingbats</value>
+  </data>
+  <data name="U2800_U28FF" xml:space="preserve">
+    <value>Braille-merkkejä</value>
+  </data>
+  <data name="U2E80_U2EFF" xml:space="preserve">
+    <value>Lisää CJK-radikaaleja</value>
+  </data>
+  <data name="U2F00_U2FDF" xml:space="preserve">
+    <value>Kangxi-radikaaleja</value>
+  </data>
+  <data name="U2FF0_U2FFF" xml:space="preserve">
+    <value>Ideogrammien kuvailumerkkejä</value>
+  </data>
+  <data name="U3000_U303F" xml:space="preserve">
+    <value>CJK-symboleita ja -välimerkkejä</value>
+  </data>
+  <data name="U3040_U309F" xml:space="preserve">
+    <value>Hiragana</value>
+  </data>
+  <data name="U30A0_U30FF" xml:space="preserve">
+    <value>Katakana</value>
+  </data>
+  <data name="U3100_U312F" xml:space="preserve">
+    <value>Bopomofo</value>
+  </data>
+  <data name="U3130_U318F" xml:space="preserve">
+    <value>Hangulin jamo-erillismerkkejä</value>
+  </data>
+  <data name="U3190_U319F" xml:space="preserve">
+    <value>Kanbun</value>
+  </data>
+  <data name="U31A0_U31BF" xml:space="preserve">
+    <value>Bopomofo-lisämerkkejä</value>
+  </data>
+  <data name="U3200_U32FF" xml:space="preserve">
+    <value>Ympäröityjä CJK-kirjaimia ja -kuukausimerkkejä</value>
+  </data>
+  <data name="U3300_U33FF" xml:space="preserve">
+    <value>CJK-yhteensopivia merkkejä</value>
+  </data>
+  <data name="U3400_U4DBF" xml:space="preserve">
+    <value>CJK-ideogrammien laajennus A</value>
+  </data>
+  <data name="UA000_UA48F" xml:space="preserve">
+    <value>Yi-tavumerkkejä</value>
+  </data>
+  <data name="UA490_UA4CF" xml:space="preserve">
+    <value>Yi-juurimerkkejä</value>
+  </data>
+  <data name="UAC00_UD7AF" xml:space="preserve">
+    <value>Hangul-tavumerkkejä</value>
+  </data>
+  <data name="UD800_UDB7F" xml:space="preserve">
+    <value>Laajennuskoodien ykkösosia</value>
+  </data>
+  <data name="UDB80_UDBFF" xml:space="preserve">
+    <value>Laajennuskoodien ykkösosat erilliskäyttöön</value>
+  </data>
+  <data name="UDC00_UDFFF" xml:space="preserve">
+    <value>Laajennuskoodien kakkososia</value>
+  </data>
+  <data name="UE000_UF8FF" xml:space="preserve">
+    <value>Erilliskäytön lohko</value>
+  </data>
+  <data name="UF900_UFAFF" xml:space="preserve">
+    <value>CJK-yhteensopivuusideogrammeja</value>
+  </data>
+  <data name="UFB00_UFB4F" xml:space="preserve">
+    <value>Kirjainten tulostusmuotoja</value>
+  </data>
+  <data name="UFB50_UFDFF" xml:space="preserve">
+    <value>Arabialaisten merkkien esitysmuotoja A</value>
+  </data>
+  <data name="UFE20_UFE2F" xml:space="preserve">
+    <value>Tarkkeiden puolikkaita</value>
+  </data>
+  <data name="UFE30_UFE4F" xml:space="preserve">
+    <value>CJK-yhteensopivia merkkien muotoja</value>
+  </data>
+  <data name="UFE50_UFE6F" xml:space="preserve">
+    <value>Pienikokoisia muunnelmia</value>
+  </data>
+  <data name="UFE70_UFEFF" xml:space="preserve">
+    <value>Arabialaisten merkkien esitysmuotoja B</value>
+  </data>
+  <data name="UFF00_UFFEF" xml:space="preserve">
+    <value>Puoli- ja täyslevyisiä esitysmuotoja</value>
+  </data>
+  <data name="UFFF0_UFFFF" xml:space="preserve">
+    <value>Erikoismerkkejä</value>
+  </data>
+</root>

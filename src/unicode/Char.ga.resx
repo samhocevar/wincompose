@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="U0000" xml:space="preserve">
+    <value>&lt;rialúchán&gt;</value>
+  </data>
   <data name="U0020" xml:space="preserve">
     <value>SPÁS</value>
   </data>
@@ -581,6 +584,36 @@
   </data>
   <data name="U00DF" xml:space="preserve">
     <value>LITIR BHEAG LAIDINE SHARP S (Gearmáinis)</value>
+  </data>
+  <data name="U00E0" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE A LE GRAIF</value>
+  </data>
+  <data name="U00E1" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE A LE hAGÚID</value>
+  </data>
+  <data name="U00E2" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE A LE CUAIRÍN</value>
+  </data>
+  <data name="U00E3" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE A LE TIOLDA</value>
+  </data>
+  <data name="U00E4" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE A LE DÉIRÉIS</value>
+  </data>
+  <data name="U00E5" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE A LE FÁINNE IN UACHTAR</value>
+  </data>
+  <data name="U00E6" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE AE (ash) *</value>
+  </data>
+  <data name="U00E7" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE C LE STRAITHÍN</value>
+  </data>
+  <data name="U00E8" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE E LE GRAIF</value>
+  </data>
+  <data name="U00E9" xml:space="preserve">
+    <value>LITIR BHEAG LAIDINE E LE hAGÚID</value>
   </data>
   <data name="U00EA" xml:space="preserve">
     <value>LITIR BHEAG LAIDINE E LE CUAIRÍN</value>
@@ -6924,6 +6957,33 @@
   <data name="U0DF3" xml:space="preserve">
     <value>COMHARTHA GUTA SIOLÓINISE DIGA GAYANUKITTA</value>
   </data>
+  <data name="U0E01" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE KO KAI</value>
+  </data>
+  <data name="U0E02" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE KHO KHAI</value>
+  </data>
+  <data name="U0E03" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE KHO KHUAT</value>
+  </data>
+  <data name="U0E04" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE KHO KHWAI</value>
+  </data>
+  <data name="U0E05" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE KHO KHON</value>
+  </data>
+  <data name="U0E06" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE KHO RAKHANG</value>
+  </data>
+  <data name="U0E07" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE NGO NGU</value>
+  </data>
+  <data name="U0E08" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE CHO CHAN</value>
+  </data>
+  <data name="U0E09" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE CHO CHING</value>
+  </data>
   <data name="U0E0A" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE CHO CHANG</value>
   </data>
@@ -6941,6 +7001,36 @@
   </data>
   <data name="U0E0F" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE TO PATAK</value>
+  </data>
+  <data name="U0E10" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE THO THAN</value>
+  </data>
+  <data name="U0E11" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE THO NANGMONTHO</value>
+  </data>
+  <data name="U0E12" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE THO PHUTHAO</value>
+  </data>
+  <data name="U0E13" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE NO NEN</value>
+  </data>
+  <data name="U0E14" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE DO DEK</value>
+  </data>
+  <data name="U0E15" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE TO TAO</value>
+  </data>
+  <data name="U0E16" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE THO THUNG</value>
+  </data>
+  <data name="U0E17" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE THO THAHAN</value>
+  </data>
+  <data name="U0E18" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE THO THONG</value>
+  </data>
+  <data name="U0E19" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE NO NÚ</value>
   </data>
   <data name="U0E1A" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE BO BAIMAI</value>
@@ -6960,6 +7050,36 @@
   <data name="U0E1F" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE FO FAN</value>
   </data>
+  <data name="U0E20" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE PHO SAMPHAO</value>
+  </data>
+  <data name="U0E21" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE MO MA</value>
+  </data>
+  <data name="U0E22" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE YO YAK</value>
+  </data>
+  <data name="U0E23" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE RO RUA</value>
+  </data>
+  <data name="U0E24" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE RU</value>
+  </data>
+  <data name="U0E25" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE LO LING</value>
+  </data>
+  <data name="U0E26" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE LU</value>
+  </data>
+  <data name="U0E27" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE WO WAEN</value>
+  </data>
+  <data name="U0E28" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SO SALA</value>
+  </data>
+  <data name="U0E29" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SO RUSI</value>
+  </data>
   <data name="U0E2A" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE SO SUA</value>
   </data>
@@ -6978,11 +7098,71 @@
   <data name="U0E2F" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE PAIYANNOI (paiyan noi)</value>
   </data>
+  <data name="U0E30" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA A</value>
+  </data>
+  <data name="U0E31" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE MAI HAN-AKAT</value>
+  </data>
+  <data name="U0E32" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA AA</value>
+  </data>
+  <data name="U0E33" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA AM</value>
+  </data>
+  <data name="U0E34" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA I</value>
+  </data>
+  <data name="U0E35" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA II</value>
+  </data>
+  <data name="U0E36" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA UE</value>
+  </data>
+  <data name="U0E37" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA UEE (sara uue)</value>
+  </data>
+  <data name="U0E38" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA U</value>
+  </data>
+  <data name="U0E39" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA UU</value>
+  </data>
   <data name="U0E3A" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE PHINTHU</value>
   </data>
   <data name="U0E3F" xml:space="preserve">
     <value>COMHARTHA AIRGID TÉALAINNISE BAHT</value>
+  </data>
+  <data name="U0E40" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA E</value>
+  </data>
+  <data name="U0E41" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA AE</value>
+  </data>
+  <data name="U0E42" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA O</value>
+  </data>
+  <data name="U0E43" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA AI MAIMUAN (sara ai mai muan)</value>
+  </data>
+  <data name="U0E44" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE SARA AI MAIMALAI (sara ai mai malai)</value>
+  </data>
+  <data name="U0E45" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE LAKKHANGYAO (lakkhang yao)</value>
+  </data>
+  <data name="U0E46" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE MAIYAMOK (mai yamok)</value>
+  </data>
+  <data name="U0E47" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE MAITAIKHU (mai taikhu)</value>
+  </data>
+  <data name="U0E48" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE MAI EK</value>
+  </data>
+  <data name="U0E49" xml:space="preserve">
+    <value>CARACHTAR TÉALAINNISE MAI THO</value>
   </data>
   <data name="U0E4A" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE MAI TRI</value>
@@ -7002,17 +7182,77 @@
   <data name="U0E4F" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE FONGMAN</value>
   </data>
+  <data name="U0E50" xml:space="preserve">
+    <value>DIGIT THAI A NÁID</value>
+  </data>
+  <data name="U0E51" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A HAON</value>
+  </data>
+  <data name="U0E52" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A DÓ</value>
+  </data>
+  <data name="U0E53" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A TRÍ</value>
+  </data>
+  <data name="U0E54" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A CEATHAIR</value>
+  </data>
+  <data name="U0E55" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A CÚIG</value>
+  </data>
+  <data name="U0E56" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A SÉ</value>
+  </data>
+  <data name="U0E57" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A SEACHT</value>
+  </data>
+  <data name="U0E58" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A HOCHT</value>
+  </data>
+  <data name="U0E59" xml:space="preserve">
+    <value>DIGIT TÉALAINNISE A NAOI</value>
+  </data>
   <data name="U0E5A" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE ANGKHANKHU</value>
   </data>
   <data name="U0E5B" xml:space="preserve">
     <value>CARACHTAR TÉALAINNISE KHOMUT</value>
   </data>
+  <data name="U0E81" xml:space="preserve">
+    <value>LITIR LÁÓISE KO</value>
+  </data>
+  <data name="U0E82" xml:space="preserve">
+    <value>LITIR LÁÓISE KHO SUNG</value>
+  </data>
+  <data name="U0E84" xml:space="preserve">
+    <value>LITIR LÁÓISE KHO TAM</value>
+  </data>
+  <data name="U0E87" xml:space="preserve">
+    <value>LITIR LÁÓISE NGO</value>
+  </data>
+  <data name="U0E88" xml:space="preserve">
+    <value>LITIR LÁÓISE CO</value>
+  </data>
   <data name="U0E8A" xml:space="preserve">
     <value>LITIR LÁÓISE SO TAM</value>
   </data>
   <data name="U0E8D" xml:space="preserve">
     <value>LITIR LÁÓISE NYO</value>
+  </data>
+  <data name="U0E94" xml:space="preserve">
+    <value>LITIR LÁÓISE DO</value>
+  </data>
+  <data name="U0E95" xml:space="preserve">
+    <value>LITIR LÁÓISE TO</value>
+  </data>
+  <data name="U0E96" xml:space="preserve">
+    <value>LITIR LÁÓISE THO SUNG</value>
+  </data>
+  <data name="U0E97" xml:space="preserve">
+    <value>LITIR LÁÓISE THO TAM</value>
+  </data>
+  <data name="U0E99" xml:space="preserve">
+    <value>LITIR LÁÓISE NO</value>
   </data>
   <data name="U0E9A" xml:space="preserve">
     <value>LITIR LÁÓISE BO</value>

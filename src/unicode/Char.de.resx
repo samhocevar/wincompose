@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="U0000" xml:space="preserve">
+    <value>&lt;steuerung&gt;</value>
+  </data>
   <data name="U0020" xml:space="preserve">
     <value>LEERZEICHEN</value>
   </data>
@@ -593,6 +596,36 @@
   </data>
   <data name="U00DF" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE ESZETT (deutsch)</value>
+  </data>
+  <data name="U00E0" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE A MIT GRAVE</value>
+  </data>
+  <data name="U00E1" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE A MIT AIGU</value>
+  </data>
+  <data name="U00E2" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE A MIT CIRCUMFLEX</value>
+  </data>
+  <data name="U00E3" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE A MIT TILDE</value>
+  </data>
+  <data name="U00E4" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE A MIT TREMA</value>
+  </data>
+  <data name="U00E5" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE A MIT RING DARÜBER</value>
+  </data>
+  <data name="U00E6" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE AE (ash) *</value>
+  </data>
+  <data name="U00E7" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE C MIT CEDILLE</value>
+  </data>
+  <data name="U00E8" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE E MIT GRAVE</value>
+  </data>
+  <data name="U00E9" xml:space="preserve">
+    <value>LATEINISCHER KLEINBUCHSTABE E MIT AIGU</value>
   </data>
   <data name="U00EA" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE E MIT CIRCUMFLEX</value>
@@ -2823,8 +2856,20 @@
   <data name="U0E0B" xml:space="preserve">
     <value>THAI-ZEICHEN SO SO</value>
   </data>
+  <data name="U0E19" xml:space="preserve">
+    <value>THAI-ZEICHEN NO NU</value>
+  </data>
   <data name="U0E1D" xml:space="preserve">
     <value>THAI-ZEICHEN FO FA</value>
+  </data>
+  <data name="U0E21" xml:space="preserve">
+    <value>THAI-ZEICHEN MO MA</value>
+  </data>
+  <data name="U0E24" xml:space="preserve">
+    <value>THAI-ZEICHEN RU</value>
+  </data>
+  <data name="U0E26" xml:space="preserve">
+    <value>THAI-ZEICHEN LU</value>
   </data>
   <data name="U10E1" xml:space="preserve">
     <value>GEORGISCHER BUCHSTABE SAN</value>

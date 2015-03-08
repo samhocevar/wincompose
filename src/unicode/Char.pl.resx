@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="U0000" xml:space="preserve">
+    <value>&lt;sterujący&gt;</value>
+  </data>
   <data name="U0020" xml:space="preserve">
     <value>SPACJA</value>
   </data>
@@ -590,6 +593,36 @@
   </data>
   <data name="U00DF" xml:space="preserve">
     <value>MAŁA LIGATURA ŁACIŃSKA SZ (niemiecka)</value>
+  </data>
+  <data name="U00E0" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA A Z AKCENTEM SŁABYM</value>
+  </data>
+  <data name="U00E1" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA A Z AKCENTEM OSTRYM</value>
+  </data>
+  <data name="U00E2" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA A Z AKCENTEM PRZECIĄGŁYM</value>
+  </data>
+  <data name="U00E3" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA A Z TYLDĄ</value>
+  </data>
+  <data name="U00E4" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA A Z DIEREZĄ</value>
+  </data>
+  <data name="U00E5" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA A Z KÓŁKIEM GÓRNYM</value>
+  </data>
+  <data name="U00E6" xml:space="preserve">
+    <value>MAŁA LIGATURA ŁACIŃSKA AE</value>
+  </data>
+  <data name="U00E7" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA C Z CÉDILLE</value>
+  </data>
+  <data name="U00E8" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA E Z AKCENTEM SŁABYM</value>
+  </data>
+  <data name="U00E9" xml:space="preserve">
+    <value>MAŁA LITERA ŁACIŃSKA E Z AKCENTEM OSTRYM</value>
   </data>
   <data name="U00EA" xml:space="preserve">
     <value>MAŁA LITERA ŁACIŃSKA E Z AKCENTEM PRZECIĄGŁYM</value>

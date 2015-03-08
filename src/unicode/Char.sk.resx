@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="U0000" xml:space="preserve">
+    <value>&lt;kontrolný znak&gt;</value>
+  </data>
   <data name="U0020" xml:space="preserve">
     <value>MEDZERNÍK</value>
   </data>
@@ -587,6 +590,36 @@
   </data>
   <data name="U00DF" xml:space="preserve">
     <value>LATINSKÉ MALÉ PÍSMENO OSTRÉ S (Nemecké)</value>
+  </data>
+  <data name="U00E0" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00E1" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S DĹŽŇOM</value>
+  </data>
+  <data name="U00E2" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S OPAČNÝM MÄKČEŇOM</value>
+  </data>
+  <data name="U00E3" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S TILDOU</value>
+  </data>
+  <data name="U00E4" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S DVOMA BODKAMI</value>
+  </data>
+  <data name="U00E5" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO A S KRÚŽKOM NAD</value>
+  </data>
+  <data name="U00E6" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO AE (ash) *</value>
+  </data>
+  <data name="U00E7" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO C S CEDILLOU</value>
+  </data>
+  <data name="U00E8" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S OPAČNÝM DĹŽŇOM</value>
+  </data>
+  <data name="U00E9" xml:space="preserve">
+    <value>LATINSKÉ MALÉ PÍSMENO E S DĹŽŇOM</value>
   </data>
   <data name="U00EA" xml:space="preserve">
     <value>LATINSKÉ MALÉ PÍSMENO E S OPAČNÝM MÄKČEŇOM</value>

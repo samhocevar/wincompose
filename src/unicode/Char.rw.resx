@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="U0000" xml:space="preserve">
+    <value>&lt;Igenzura</value>
+  </data>
   <data name="U0020" xml:space="preserve">
     <value>Umwanya</value>
   </data>
@@ -218,6 +221,33 @@
   </data>
   <data name="U00DC" xml:space="preserve">
     <value>U</value>
+  </data>
+  <data name="U00E0" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="U00E1" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="U00E2" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="U00E3" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="U00E4" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="U00E5" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="U00E7" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="U00E8" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="U00E9" xml:space="preserve">
+    <value>E</value>
   </data>
   <data name="U00EA" xml:space="preserve">
     <value>E</value>
@@ -899,6 +929,21 @@
   </data>
   <data name="U0D46" xml:space="preserve">
     <value>E</value>
+  </data>
+  <data name="U0E30" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="U0E32" xml:space="preserve">
+    <value>AA</value>
+  </data>
+  <data name="U0E38" xml:space="preserve">
+    <value>U</value>
+  </data>
+  <data name="U0E40" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="U0E45" xml:space="preserve">
+    <value>Ikiyawo</value>
   </data>
   <data name="U0EB0" xml:space="preserve">
     <value>A</value>

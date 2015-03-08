@@ -110,6 +110,66 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Char.sr.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Block.am.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.am.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.da.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.da.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.ga.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.ga.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.pl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.rw.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.rw.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.sk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Block.sr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Block.sr.resx</DependentUpon>
+    </Compile>
     <Compile Include="sequences\Sequence.cs" />
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
@@ -211,11 +271,6 @@
     <Compile Include="settings\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="unicode\Block.Designer.cs">
-      <DependentUpon>Block.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="unicode\Category.Designer.cs">
       <DependentUpon>Category.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -306,6 +361,65 @@
       <LastGenOutput>Char.sr.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.am.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.am.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.da.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.da.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.fi.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.fi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.fr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.ga.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.ga.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.nl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.nl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.rw.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.rw.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.sk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.sk.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Block.sr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Block.sr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -315,10 +429,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="unicode\Block.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Block.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

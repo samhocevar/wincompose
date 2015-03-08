@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="U0000" xml:space="preserve">
+    <value>&lt;управљање&gt;</value>
+  </data>
   <data name="U0020" xml:space="preserve">
     <value>РАЗМАК</value>
   </data>
@@ -458,6 +461,9 @@
   </data>
   <data name="U00D7" xml:space="preserve">
     <value>МНОЖЕЊЕ</value>
+  </data>
+  <data name="U00E6" xml:space="preserve">
+    <value>ЛАТИНИЧНО МАЛО СЛОВО АЕ</value>
   </data>
   <data name="U00F7" xml:space="preserve">
     <value>ДЕЉЕЊЕ</value>
@@ -1283,6 +1289,36 @@
   </data>
   <data name="U0BF2" xml:space="preserve">
     <value>ТАМИЛСКА ХИЉАДА</value>
+  </data>
+  <data name="U0E50" xml:space="preserve">
+    <value>ТАИ НУЛА</value>
+  </data>
+  <data name="U0E51" xml:space="preserve">
+    <value>ТАИ ЈЕДИНИЦА</value>
+  </data>
+  <data name="U0E52" xml:space="preserve">
+    <value>ТАИ ДВОЈКА</value>
+  </data>
+  <data name="U0E53" xml:space="preserve">
+    <value>ТАИ ТРОЈКА</value>
+  </data>
+  <data name="U0E54" xml:space="preserve">
+    <value>ТАИ ЧЕТВОРКА</value>
+  </data>
+  <data name="U0E55" xml:space="preserve">
+    <value>ТАИ ПЕТИЦА</value>
+  </data>
+  <data name="U0E56" xml:space="preserve">
+    <value>ТАИ ШЕСТИЦА</value>
+  </data>
+  <data name="U0E57" xml:space="preserve">
+    <value>ТАИ СЕДМИЦА</value>
+  </data>
+  <data name="U0E58" xml:space="preserve">
+    <value>ТАИ ОСМИЦА</value>
+  </data>
+  <data name="U0E59" xml:space="preserve">
+    <value>ТАИ ДЕВЕТКА</value>
   </data>
   <data name="U0F20" xml:space="preserve">
     <value>ТИБЕТАНСКА НУЛА</value>
