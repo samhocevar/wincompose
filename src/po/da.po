@@ -300,155 +300,156 @@ msgstr ""
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#. Unicode designation “Pe”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:122 ID:ClosePunctuation
-msgid "Punctuation, close"
-msgstr ""
-
-#. Unicode designation “Pc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:126 ID:ConnectorPunctuation
-msgid "Punctuation, connector"
-msgstr ""
-
 #. Unicode designation “Cc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:130 ID:Control
+#: unicode/Category.resx:122 ID:Control
 #, fuzzy
-msgid "Other, control"
+msgid "Other, Control"
 msgstr "Venstre Control"
 
-#. Unicode designation “Sc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:134 ID:CurrencySymbol
-msgid "Symbol, currency"
-msgstr ""
-
-#. Unicode designation “Pd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:138 ID:DashPunctuation
-msgid "Punctuation, dash"
-msgstr ""
-
-#. Unicode designation “Nd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:142 ID:DecimalDigitNumber
-msgid "Number, decimal digit"
-msgstr ""
-
-#. Unicode designation “Me”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:146 ID:EnclosingMark
-msgid "Mark, enclosing"
-msgstr ""
-
-#. Unicode designation “Pf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:150 ID:FinalQuotePunctuation
-msgid "Punctuation, final quote"
-msgstr ""
-
 #. Unicode designation “Cf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:154 ID:Format
-msgid "Other, format"
+#: unicode/Category.resx:126 ID:Format
+#, fuzzy
+msgid "Other, Format"
+msgstr "Venstre Control"
+
+#. Unicode designation “Cn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:130 ID:OtherNotAssigned
+msgid "Other, Not Assigned"
 msgstr ""
 
-#. Unicode designation “Pi”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:158 ID:InitialQuotePunctuation
-msgid "Punctuation, initial quote"
+#. Unicode designation “Co”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:134 ID:PrivateUse
+msgid "Other, Private Use"
 msgstr ""
 
-#. Unicode designation “Nl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:162 ID:LetterNumber
-msgid "Number, letter"
-msgstr ""
-
-#. Unicode designation “Zl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:166 ID:LineSeparator
-msgid "Separator, line"
+#. Unicode designation “Cs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:138 ID:Surrogate
+msgid "Other, Surrogate"
 msgstr ""
 
 #. Unicode designation “Ll”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:170 ID:LowercaseLetter
-msgid "Letter, lowercase"
-msgstr ""
-
-#. Unicode designation “Sm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:174 ID:MathSymbol
-msgid "Symbol, math"
+#: unicode/Category.resx:142 ID:LowercaseLetter
+msgid "Letter, Lowercase"
 msgstr ""
 
 #. Unicode designation “Lm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:178 ID:ModifierLetter
-msgid "Letter, modifier"
-msgstr ""
-
-#. Unicode designation “Sk”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:182 ID:ModifierSymbol
-msgid "Symbol, modifier"
-msgstr ""
-
-#. Unicode designation “Mn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:186 ID:NonSpacingMark
-msgid "Mark, nonspacing"
-msgstr ""
-
-#. Unicode designation “Ps”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:190 ID:OpenPunctuation
-msgid "Punctuation, open"
+#: unicode/Category.resx:146 ID:ModifierLetter
+msgid "Letter, Modifier"
 msgstr ""
 
 #. Unicode designation “Lo”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:194 ID:OtherLetter
-msgid "Letter, other"
+#: unicode/Category.resx:150 ID:OtherLetter
+msgid "Letter, Other"
 msgstr ""
 
-#. Unicode designation “Cn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:198 ID:OtherNotAssigned
-msgid "Other, not assigned"
+#. Unicode designation “Lt”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:154 ID:TitlecaseLetter
+msgid "Letter, Titlecase"
+msgstr ""
+
+#. Unicode designation “Lu”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:158 ID:UppercaseLetter
+msgid "Letter, Uppercase"
+msgstr ""
+
+#. Unicode designation “Mc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:162 ID:SpacingCombiningMark
+msgid "Mark, Spacing Combining"
+msgstr ""
+
+#. Unicode designation “Me”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:166 ID:EnclosingMark
+msgid "Mark, Enclosing"
+msgstr ""
+
+#. Unicode designation “Mn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:170 ID:NonSpacingMark
+msgid "Mark, Non-Spacing"
+msgstr ""
+
+#. Unicode designation “Nd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:174 ID:DecimalDigitNumber
+msgid "Number, Decimal Digit"
+msgstr ""
+
+#. Unicode designation “Nl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:178 ID:LetterNumber
+msgid "Number, Letter"
 msgstr ""
 
 #. Unicode designation “No”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:202 ID:OtherNumber
-msgid "Number, other"
+#: unicode/Category.resx:182 ID:OtherNumber
+msgid "Number, Other"
+msgstr ""
+
+#. Unicode designation “Pc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:186 ID:ConnectorPunctuation
+msgid "Punctuation, Connector"
+msgstr ""
+
+#. Unicode designation “Pd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:190 ID:DashPunctuation
+msgid "Punctuation, Dash"
+msgstr ""
+
+#. Unicode designation “Pe”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:194 ID:ClosePunctuation
+msgid "Punctuation, Close"
+msgstr ""
+
+#. Unicode designation “Pf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:198 ID:FinalQuotePunctuation
+msgid "Punctuation, Final Quote"
+msgstr ""
+
+#. Unicode designation “Pi”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:202 ID:InitialQuotePunctuation
+msgid "Punctuation, Initial Quote"
 msgstr ""
 
 #. Unicode designation “Po”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
 #: unicode/Category.resx:206 ID:OtherPunctuation
-msgid "Punctuation, other"
+msgid "Punctuation, Other"
+msgstr ""
+
+#. Unicode designation “Ps”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:210 ID:OpenPunctuation
+msgid "Punctuation, Open"
+msgstr ""
+
+#. Unicode designation “Sc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:214 ID:CurrencySymbol
+msgid "Symbol, Currency"
+msgstr ""
+
+#. Unicode designation “Sk”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:218 ID:ModifierSymbol
+msgid "Symbol, Modifier"
+msgstr ""
+
+#. Unicode designation “Sm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:222 ID:MathSymbol
+msgid "Symbol, Math"
 msgstr ""
 
 #. Unicode designation “So”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:210 ID:OtherSymbol
-msgid "Symbol, other"
+#: unicode/Category.resx:226 ID:OtherSymbol
+msgid "Symbol, Other"
+msgstr ""
+
+#. Unicode designation “Zl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:230 ID:LineSeparator
+msgid "Separator, Line"
 msgstr ""
 
 #. Unicode designation “Zp”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:214 ID:ParagraphSeparator
-msgid "Separator, paragraph"
-msgstr ""
-
-#. Unicode designation “Co”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:218 ID:PrivateUse
-msgid "Other, private use"
+#: unicode/Category.resx:234 ID:ParagraphSeparator
+msgid "Separator, Paragraph"
 msgstr ""
 
 #. Unicode designation “Zs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:222 ID:SpaceSeparator
-msgid "Separator, space"
-msgstr ""
-
-#. Unicode designation “Mc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:226 ID:SpacingCombiningMark
-msgid "Mark, spacing combining"
-msgstr ""
-
-#. Unicode designation “Cs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:230 ID:Surrogate
-msgid "Other, Surrogate"
-msgstr ""
-
-#. Unicode designation “Lt”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:234 ID:TitlecaseLetter
-msgid "Letter, titlecase"
-msgstr ""
-
-#. Unicode designation “Lu”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
-#: unicode/Category.resx:238 ID:UppercaseLetter
-msgid "Letter, uppercase"
+#: unicode/Category.resx:238 ID:SpaceSeparator
+msgid "Separator, Space"
 msgstr ""
 
 #, fuzzy
