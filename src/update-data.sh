@@ -9,7 +9,10 @@ mkdir -p ${CACHE}
 #
 
 echo "[1/3] Rebuild potfiles…"
-awk < i18n/Text.resx '
+DEST=po/wincompose.pot
+true > ${DEST}
+for FILE in i18n/Text.resx unicode/Category.resx; do
+    awk < ${FILE} '
     /<!--/      { off=1 }
     /-->/       { off=0 }
     /<data /    { split($0, a, "\""); id=a[2]; comment=""; obsolete=0 }
@@ -17,14 +20,15 @@ awk < i18n/Text.resx '
     /<value>/   { split ($0, a, /[<>]/); value=a[3]; }
     /<comment>/ { split ($0, a, /[<>]/); comment=a[3]; }
     /<\/data>/  { if (!off) {
-                      print "#: i18n/Text.resx:" (NR - 1) " ID:" id;
+                      print "#: '${FILE}':" (NR - 1) " ID:" id;
                       if (comment) { print "#. " comment }
-                      if (obsolete) { print "#. This string is obsolete but might be used again" }
+                      if (obsolete) { print "#. This string is obsolete but might be reused in the future" }
                       print "msgid \"" value "\"";
                       print "msgstr \"\""; print "";
                   } }' \
   | sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
-  > po/wincompose.pot
+  >> ${DEST}
+done
 
 rm -f po/*~
 for POFILE in po/*.po; do
@@ -45,29 +49,33 @@ for POFILE in po/*.po; do
         zh) LANG=zh-CHT ;;
         *@*) continue ;;
     esac
-    DST=i18n/Text.${LANG}.resx
 
-    sed -e '/^  <data/,$d' < i18n/Text.resx > ${DST}
-    cat ${POFILE} \
-      | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
-      | awk 'function f() {
-                 if (id && msgstr) {
-                     print "  <data name=\"" id "\" xml:space=\"preserve\">";
-                     print "    <value>" msgstr "</value>";
-                     if (0 && comment) { print "    <comment>" comment "</comment>"; }
-                     print "  </data>"; reset();
+    for FILE in i18n/Text.resx unicode/Category.resx; do
+        DEST=${FILE%%.resx}.${LANG}.resx
+        sed -e '/^  <data/,$d' < ${FILE} > ${DEST}
+        cat ${POFILE} \
+          | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
+          | awk 'function f() {
+                     if (good && id && msgstr) {
+                         print "  <data name=\"" id "\" xml:space=\"preserve\">";
+                         print "    <value>" msgstr "</value>";
+                         if (0 && comment) { print "    <comment>" comment "</comment>"; }
+                         print "  </data>"; reset();
+                     }
                  }
-             }
-             function reset() { id=""; comment=""; }
-             /^$/        { f(); }
-             END         { f(); }
-             /^#[.] /    { split($0, a, "#[.] "); comment=a[2]; }
-             /^#:.*ID:/  { split($0, a, "ID:"); id=a[2]; }
-             /^#, fuzzy/ { reset(); }
-             /^ *"/      { split($0, a, "\""); msgstr=msgstr a[2]; }
-             /^msgstr/   { split($0, a, "\""); msgstr=a[2]; }' \
-      >> ${DST}
-    echo "</root>" >> ${DST}
+                 function reset() { good=0; id=""; comment=""; }
+                 /^$/        { f(); }
+                 END         { f(); }
+                 /^#[.] /    { split($0, a, "#[.] "); comment=a[2]; }
+                 /^#:.*ID:/  { split($0, a, "ID:"); id=a[2]; }
+                 /^#: .*\/'${FILE##*/}'/ { good=1 }
+                 /^#, fuzzy/ { reset(); }
+                 /^ *"/      { split($0, a, "\""); msgstr=msgstr a[2]; }
+                 /^msgstr/   { split($0, a, "\""); msgstr=a[2]; }' \
+          >> ${DEST}
+        echo "</root>" >> ${DEST}
+        touch ${DEST%%.resx}.Designer.cs
+    done
 done
 
 #

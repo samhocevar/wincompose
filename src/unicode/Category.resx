@@ -119,92 +119,122 @@
   </resheader>
   <data name="ClosePunctuation" xml:space="preserve">
     <value>Punctuation, close</value>
+    <comment>Unicode designation “Pe”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
     <value>Punctuation, connector</value>
+    <comment>Unicode designation “Pc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="Control" xml:space="preserve">
     <value>Other, control</value>
+    <comment>Unicode designation “Cc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
     <value>Symbol, currency</value>
+    <comment>Unicode designation “Sc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
     <value>Punctuation, dash</value>
+    <comment>Unicode designation “Pd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
     <value>Number, decimal digit</value>
+    <comment>Unicode designation “Nd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
     <value>Mark, enclosing</value>
+    <comment>Unicode designation “Me”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
     <value>Punctuation, final quote</value>
+    <comment>Unicode designation “Pf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Other, format</value>
+    <comment>Unicode designation “Cf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
     <value>Punctuation, initial quote</value>
+    <comment>Unicode designation “Pi”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="LetterNumber" xml:space="preserve">
     <value>Number, letter</value>
+    <comment>Unicode designation “Nl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="LineSeparator" xml:space="preserve">
     <value>Separator, line</value>
+    <comment>Unicode designation “Zl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
     <value>Letter, lowercase</value>
+    <comment>Unicode designation “Ll”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="MathSymbol" xml:space="preserve">
     <value>Symbol, math</value>
+    <comment>Unicode designation “Sm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
     <value>Letter, modifier</value>
+    <comment>Unicode designation “Lm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
     <value>Symbol, modifier</value>
+    <comment>Unicode designation “Sk”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
     <value>Mark, nonspacing</value>
+    <comment>Unicode designation “Mn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
     <value>Punctuation, open</value>
+    <comment>Unicode designation “Ps”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="OtherLetter" xml:space="preserve">
     <value>Letter, other</value>
+    <comment>Unicode designation “Lo”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
     <value>Other, not assigned</value>
+    <comment>Unicode designation “Cn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="OtherNumber" xml:space="preserve">
     <value>Number, other</value>
+    <comment>Unicode designation “No”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
     <value>Punctuation, other</value>
+    <comment>Unicode designation “Po”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
     <value>Symbol, other</value>
+    <comment>Unicode designation “So”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
     <value>Separator, paragraph</value>
+    <comment>Unicode designation “Zp”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="PrivateUse" xml:space="preserve">
     <value>Other, private use</value>
+    <comment>Unicode designation “Co”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
     <value>Separator, space</value>
+    <comment>Unicode designation “Zs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
     <value>Mark, spacing combining</value>
+    <comment>Unicode designation “Mc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="Surrogate" xml:space="preserve">
     <value>Other, Surrogate</value>
+    <comment>Unicode designation “Cs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
     <value>Letter, titlecase</value>
+    <comment>Unicode designation “Lt”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
     <value>Letter, uppercase</value>
+    <comment>Unicode designation “Lu”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
   </data>
 </root>

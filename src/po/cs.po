@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:121 ID:Obsolete001
 msgid "Loaded @1@ Sequences"
 msgstr "Nahráno @1@ sekvencí"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:124 ID:Obsolete002
 msgid "Compose Key is @1@"
 msgstr ""
@@ -83,42 +83,42 @@ msgstr "Escape"
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:168 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr ""
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:171 ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "500 milisekund"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:174 ID:Obsolete018
 msgid "1 second"
 msgstr "1 sekunda"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:177 ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 sekundy"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:180 ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 sekundy"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:183 ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 sekundy"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:186 ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 sekund"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:189 ID:Obsolete023
 msgid "None"
 msgstr "Žádné"
@@ -127,37 +127,37 @@ msgstr "Žádné"
 msgid "Show &Sequences…"
 msgstr "Zobrazit &Sekvence…"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:195 ID:Obsolete025
 msgid "Disable"
 msgstr "Vypnout"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:198 ID:Obsolete026
 msgid "Restart"
 msgstr "Restartovat"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:201 ID:Obsolete027
 msgid "&History"
 msgstr "&Historie"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:204 ID:Obsolete028
 msgid "Hotkey &List"
 msgstr ""
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:207 ID:Obsolete029
 msgid "&Options…"
 msgstr ""
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:210 ID:Obsolete030
 msgid "&About"
 msgstr "&O aplikaci"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:213 ID:Obsolete031
 msgid "&Visit Website"
 msgstr "Navštívit &web"
@@ -166,12 +166,12 @@ msgstr "Navštívit &web"
 msgid "E&xit"
 msgstr ""
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:219 ID:Obsolete035
 msgid "\n"
 msgstr "\n"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:222 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>\n"
 msgstr "napsal Sam Hocevar <sam@hocevar.net>\n"
@@ -180,22 +180,22 @@ msgstr "napsal Sam Hocevar <sam@hocevar.net>\n"
 msgid "Sequences"
 msgstr "Sekvence"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:228 ID:Obsolete038
 msgid "Options"
 msgstr ""
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:231 ID:Obsolete039
 msgid "Sequence"
 msgstr "Sekvence"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:234 ID:Obsolete040
 msgid "Char"
 msgstr "Znak"
 
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:237 ID:Obsolete041
 msgid "Unicode"
 msgstr "Unicode"
@@ -235,13 +235,13 @@ msgid "Close"
 msgstr "Zavřít"
 
 #. Copy character to the clipboard
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:267 ID:Obsolete050
 msgid "Copy Character"
 msgstr ""
 
 #. Description of a Unicode character or group of characters
-#. This string is obsolete but might be used again
+#. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:271 ID:Obsolete051
 msgid "Description:"
 msgstr "Popis:"
@@ -298,6 +298,157 @@ msgstr ""
 #. The title of the Sequences window
 #: i18n/Text.resx:313 ID:WindowTitle
 msgid "Sequences — WinCompose"
+msgstr ""
+
+#. Unicode designation “Pe”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:122 ID:ClosePunctuation
+msgid "Punctuation, close"
+msgstr ""
+
+#. Unicode designation “Pc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:126 ID:ConnectorPunctuation
+msgid "Punctuation, connector"
+msgstr ""
+
+#. Unicode designation “Cc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:130 ID:Control
+#, fuzzy
+msgid "Other, control"
+msgstr "Levý Control"
+
+#. Unicode designation “Sc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:134 ID:CurrencySymbol
+msgid "Symbol, currency"
+msgstr ""
+
+#. Unicode designation “Pd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:138 ID:DashPunctuation
+msgid "Punctuation, dash"
+msgstr ""
+
+#. Unicode designation “Nd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:142 ID:DecimalDigitNumber
+msgid "Number, decimal digit"
+msgstr ""
+
+#. Unicode designation “Me”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:146 ID:EnclosingMark
+msgid "Mark, enclosing"
+msgstr ""
+
+#. Unicode designation “Pf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:150 ID:FinalQuotePunctuation
+msgid "Punctuation, final quote"
+msgstr ""
+
+#. Unicode designation “Cf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:154 ID:Format
+msgid "Other, format"
+msgstr ""
+
+#. Unicode designation “Pi”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:158 ID:InitialQuotePunctuation
+msgid "Punctuation, initial quote"
+msgstr ""
+
+#. Unicode designation “Nl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:162 ID:LetterNumber
+msgid "Number, letter"
+msgstr ""
+
+#. Unicode designation “Zl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:166 ID:LineSeparator
+msgid "Separator, line"
+msgstr ""
+
+#. Unicode designation “Ll”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:170 ID:LowercaseLetter
+msgid "Letter, lowercase"
+msgstr ""
+
+#. Unicode designation “Sm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:174 ID:MathSymbol
+msgid "Symbol, math"
+msgstr ""
+
+#. Unicode designation “Lm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:178 ID:ModifierLetter
+msgid "Letter, modifier"
+msgstr ""
+
+#. Unicode designation “Sk”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:182 ID:ModifierSymbol
+msgid "Symbol, modifier"
+msgstr ""
+
+#. Unicode designation “Mn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:186 ID:NonSpacingMark
+msgid "Mark, nonspacing"
+msgstr ""
+
+#. Unicode designation “Ps”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:190 ID:OpenPunctuation
+msgid "Punctuation, open"
+msgstr ""
+
+#. Unicode designation “Lo”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:194 ID:OtherLetter
+msgid "Letter, other"
+msgstr ""
+
+#. Unicode designation “Cn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:198 ID:OtherNotAssigned
+msgid "Other, not assigned"
+msgstr ""
+
+#. Unicode designation “No”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:202 ID:OtherNumber
+msgid "Number, other"
+msgstr ""
+
+#. Unicode designation “Po”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:206 ID:OtherPunctuation
+msgid "Punctuation, other"
+msgstr ""
+
+#. Unicode designation “So”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:210 ID:OtherSymbol
+msgid "Symbol, other"
+msgstr ""
+
+#. Unicode designation “Zp”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:214 ID:ParagraphSeparator
+msgid "Separator, paragraph"
+msgstr ""
+
+#. Unicode designation “Co”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:218 ID:PrivateUse
+msgid "Other, private use"
+msgstr ""
+
+#. Unicode designation “Zs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:222 ID:SpaceSeparator
+msgid "Separator, space"
+msgstr ""
+
+#. Unicode designation “Mc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:226 ID:SpacingCombiningMark
+msgid "Mark, spacing combining"
+msgstr ""
+
+#. Unicode designation “Cs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:230 ID:Surrogate
+msgid "Other, Surrogate"
+msgstr ""
+
+#. Unicode designation “Lt”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:234 ID:TitlecaseLetter
+msgid "Letter, titlecase"
+msgstr ""
+
+#. Unicode designation “Lu”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#: unicode/Category.resx:238 ID:UppercaseLetter
+msgid "Letter, uppercase"
 msgstr ""
 
 #, fuzzy
