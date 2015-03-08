@@ -41,6 +41,7 @@ echo "[2/3] Rebuild resx files…"
 for POFILE in po/*.po; do
     LANG=$(basename -s.po ${POFILE})
     case $LANG in
+        zh_CN) LANG=zh-CHS ;;
         zh) LANG=zh-CHT ;;
         *@*) continue ;;
     esac
@@ -78,10 +79,14 @@ echo "[3/3] Rebuild Unicode translation files…"
 BASE=http://translationproject.org/latest/unicode-translation/
 PO=$(wget -qO- $BASE | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
 for LANG in $PO; do
+    printf "${LANG}... "
     SRC=${CACHE}/unicode-${LANG}.po
     DEST=i18n/Unicode.${LANG}.resx
-    # Get latest translation
-    wget -qO ${SRC} ${BASE}/${LANG}.po
+    # Get latest translation if new
+    (cd ${CACHE}
+     mv unicode-${LANG}.po ${LANG}.po
+     wget -q -N ${BASE}/${LANG}.po
+     mv ${LANG}.po unicode-${LANG}.po)
 
     # Parse data and put it in the .resx file
     sed -e '/^  <data/,$d' < i18n/Unicode.resx > ${DEST}
@@ -100,4 +105,5 @@ for LANG in $PO; do
       >> ${DEST}
     echo "</root>" >> ${DEST}
 done
+echo "done."
 

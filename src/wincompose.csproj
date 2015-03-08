@@ -195,6 +195,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.sv.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.zh-CHS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.zh-CHS.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.zh-CHT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -383,6 +388,10 @@
     <EmbeddedResource Include="i18n\Text.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.zh-CHS.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.zh-CHS.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.zh-CHT.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
