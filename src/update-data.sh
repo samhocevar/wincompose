@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CACHE=i18n/cache
+CACHE=unicode/cache
 mkdir -p ${CACHE}
 
 #
@@ -80,16 +80,13 @@ BASE=http://translationproject.org/latest/unicode-translation/
 PO=$(wget -qO- $BASE | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
 for LANG in $PO; do
     printf "${LANG}... "
-    SRC=${CACHE}/unicode-${LANG}.po
-    DEST=i18n/Unicode.${LANG}.resx
+    SRC=${CACHE}/${LANG}.po
+    DEST=unicode/Char.${LANG}.resx
     # Get latest translation if new
-    (cd ${CACHE}
-     mv unicode-${LANG}.po ${LANG}.po
-     wget -q -N ${BASE}/${LANG}.po
-     mv ${LANG}.po unicode-${LANG}.po)
+    (cd ${CACHE} && wget -q -N ${BASE}/${LANG}.po)
 
     # Parse data and put it in the .resx file
-    sed -e '/^  <data/,$d' < i18n/Unicode.resx > ${DEST}
+    sed -e '/^  <data/,$d' < unicode/Char.resx > ${DEST}
     if uname | grep -qi mingw; then unix2dos; else cat; fi < ${SRC} \
       | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
       | awk 'function f() {

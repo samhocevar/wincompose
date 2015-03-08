@@ -50,65 +50,65 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Program.cs" />
-    <Compile Include="i18n\Unicode.am.Designer.cs">
+    <Compile Include="unicode\Char.am.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.am.resx</DependentUpon>
+      <DependentUpon>Char.am.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.da.Designer.cs">
+    <Compile Include="unicode\Char.da.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.da.resx</DependentUpon>
+      <DependentUpon>Char.da.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.de.Designer.cs">
+    <Compile Include="unicode\Char.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.de.resx</DependentUpon>
+      <DependentUpon>Char.de.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.Designer.cs">
+    <Compile Include="unicode\Char.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.resx</DependentUpon>
+      <DependentUpon>Char.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.fi.Designer.cs">
+    <Compile Include="unicode\Char.fi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.fi.resx</DependentUpon>
+      <DependentUpon>Char.fi.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.fr.Designer.cs">
+    <Compile Include="unicode\Char.fr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.fr.resx</DependentUpon>
+      <DependentUpon>Char.fr.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.ga.Designer.cs">
+    <Compile Include="unicode\Char.ga.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.ga.resx</DependentUpon>
+      <DependentUpon>Char.ga.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.nl.Designer.cs">
+    <Compile Include="unicode\Char.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.nl.resx</DependentUpon>
+      <DependentUpon>Char.nl.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.pl.Designer.cs">
+    <Compile Include="unicode\Char.pl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.pl.resx</DependentUpon>
+      <DependentUpon>Char.pl.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.rw.Designer.cs">
+    <Compile Include="unicode\Char.rw.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.rw.resx</DependentUpon>
+      <DependentUpon>Char.rw.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.sk.Designer.cs">
+    <Compile Include="unicode\Char.sk.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.sk.resx</DependentUpon>
+      <DependentUpon>Char.sk.resx</DependentUpon>
     </Compile>
-    <Compile Include="i18n\Unicode.sr.Designer.cs">
+    <Compile Include="unicode\Char.sr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Unicode.sr.resx</DependentUpon>
+      <DependentUpon>Char.sr.resx</DependentUpon>
     </Compile>
     <Compile Include="sequences\Sequence.cs" />
     <Compile Include="settings\Settings.cs" />
@@ -247,63 +247,63 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="i18n\Unicode.am.resx">
+    <EmbeddedResource Include="unicode\Char.am.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.am.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.am.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.da.resx">
+    <EmbeddedResource Include="unicode\Char.da.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.da.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.da.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.de.resx">
+    <EmbeddedResource Include="unicode\Char.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.de.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.de.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.fi.resx">
+    <EmbeddedResource Include="unicode\Char.fi.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.fi.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.fi.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.fr.resx">
+    <EmbeddedResource Include="unicode\Char.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.fr.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.fr.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.ga.resx">
+    <EmbeddedResource Include="unicode\Char.ga.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.ga.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.ga.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.nl.resx">
+    <EmbeddedResource Include="unicode\Char.nl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.nl.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.nl.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.pl.resx">
+    <EmbeddedResource Include="unicode\Char.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.pl.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.pl.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.resx">
+    <EmbeddedResource Include="unicode\Char.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.rw.resx">
+    <EmbeddedResource Include="unicode\Char.rw.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.rw.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.rw.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.sk.resx">
+    <EmbeddedResource Include="unicode\Char.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.sk.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.sk.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Unicode.sr.resx">
+    <EmbeddedResource Include="unicode\Char.sr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Unicode.sr.Designer.cs</LastGenOutput>
+      <LastGenOutput>Char.sr.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

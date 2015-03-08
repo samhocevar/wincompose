@@ -267,7 +267,7 @@ namespace WinCompose
             if (result.Length == 1)
             {
                 var key = String.Format("U{0:X04}", (int)result[0]);
-                var alt_desc = i18n.Unicode.ResourceManager.GetString(key);
+                var alt_desc = unicode.Char.ResourceManager.GetString(key);
                 if (alt_desc != null && alt_desc.Length > 0)
                     description = alt_desc;
             }

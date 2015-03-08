@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinCompose.i18n {
+namespace WinCompose.unicode {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace WinCompose.i18n {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Unicode {
+    public class Char {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Unicode() {
+        internal Char() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace WinCompose.i18n {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.i18n.Unicode", typeof(Unicode).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinCompose.unicode.Char", typeof(Char).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

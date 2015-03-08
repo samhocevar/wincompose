@@ -6,4 +6,4 @@ settings.ini
 obj/
 bin/
 po/*.po~
-i18n/cache
+unicode/cache
