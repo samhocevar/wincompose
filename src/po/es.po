@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2015-03-06 16:24+0200\n"
-"Last-Translator: Paul Herz <phrz@me.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/wincompose/"
-"master/es/>\n"
+"PO-Revision-Date: 2015-03-08 01:41+0200\n"
+"Last-Translator: Timothy Gu <timothygu99@gmail.com>\n"
+"Language-Team: Spanish "
+"<https://hosted.weblate.org/projects/wincompose/master/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -249,7 +249,7 @@ msgstr "Descripción:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:275 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:279 ID:KeepOriginalKey
@@ -258,7 +258,7 @@ msgstr "Mantener funcionamiento original de la tecla de composición"
 
 #: i18n/Text.resx:282 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Insertar espacios de anchura cero en las programas de Office"
 
 #: i18n/Text.resx:285 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
@@ -271,34 +271,34 @@ msgstr ""
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:292 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Categorías"
 
 #: i18n/Text.resx:295 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "En las categorías seleccionadas"
 
 #. The title of the Settings window
 #: i18n/Text.resx:299 ID:Settings
 msgid "Settings"
-msgstr ""
+msgstr "Ajustes"
 
 #: i18n/Text.resx:302 ID:ShowSettings
 msgid "Settings…"
-msgstr ""
+msgstr "Ajustes…"
 
 #. {0}: compose key name, {1}: number of sequences
 #: i18n/Text.resx:306 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose en {0} ({1} secuencias)"
 
 #: i18n/Text.resx:309 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Comportamiento general"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:313 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Secuencias — WinCompose"
 
 #, fuzzy
 #~ msgid "WinCompose Sequences"
