@@ -1,0 +1,290 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:121 ID:Obsolete001
+msgid "Loaded @1@ Sequences"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:124 ID:Obsolete002
+msgid "Compose Key is @1@"
+msgstr ""
+
+#. The user can configure the application language and choose between English, French, etc. and Autodetect
+#: i18n/Text.resx:128 ID:AutodetectLanguage
+msgid "Autodetect"
+msgstr ""
+
+#: i18n/Text.resx:131 ID:KeyLMenu
+msgid "Left Alt"
+msgstr ""
+
+#: i18n/Text.resx:134 ID:KeyRMenu
+msgid "Right Alt"
+msgstr ""
+
+#: i18n/Text.resx:137 ID:KeyLControl
+msgid "Left Control"
+msgstr ""
+
+#: i18n/Text.resx:140 ID:KeyRControl
+msgid "Right Control"
+msgstr ""
+
+#: i18n/Text.resx:143 ID:KeyLWin
+msgid "Left Windows"
+msgstr ""
+
+#: i18n/Text.resx:146 ID:KeyRWin
+msgid "Right Windows"
+msgstr ""
+
+#: i18n/Text.resx:149 ID:KeyCapital
+msgid "Caps Lock"
+msgstr ""
+
+#: i18n/Text.resx:152 ID:KeyNumLock
+msgid "Num Lock"
+msgstr ""
+
+#: i18n/Text.resx:155 ID:KeyPause
+msgid "Pause"
+msgstr ""
+
+#. Also known as Application key
+#: i18n/Text.resx:159 ID:KeyApps
+msgid "Menu"
+msgstr ""
+
+#: i18n/Text.resx:162 ID:KeyEscape
+msgid "Escape"
+msgstr ""
+
+#: i18n/Text.resx:165 ID:KeyScroll
+msgid "Scroll Lock"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:168 ID:Obsolete016
+msgid "Grave Accent `"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:171 ID:Obsolete017
+msgid "500 milliseconds"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:174 ID:Obsolete018
+msgid "1 second"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:177 ID:Obsolete019
+msgid "2 seconds"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:180 ID:Obsolete020
+msgid "3 seconds"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:183 ID:Obsolete021
+msgid "5 seconds"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:186 ID:Obsolete022
+msgid "10 seconds"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:189 ID:Obsolete023
+msgid "None"
+msgstr ""
+
+#: i18n/Text.resx:192 ID:ShowSequences
+msgid "Show &Sequences"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:195 ID:Obsolete025
+msgid "Disable"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:198 ID:Obsolete026
+msgid "Restart"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:201 ID:Obsolete027
+msgid "&History"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:204 ID:Obsolete028
+msgid "Hotkey &List"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:207 ID:Obsolete029
+msgid "&Options"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:210 ID:Obsolete030
+msgid "&About"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:213 ID:Obsolete031
+msgid "&Visit Website"
+msgstr ""
+
+#: i18n/Text.resx:216 ID:Exit
+msgid "E&xit"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:219 ID:Obsolete035
+msgid "\n"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:222 ID:Obsolete036
+msgid "by Sam Hocevar <sam@hocevar.net>\n"
+msgstr ""
+
+#: i18n/Text.resx:225 ID:Sequences
+msgid "Sequences"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:228 ID:Obsolete038
+msgid "Options"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:231 ID:Obsolete039
+msgid "Sequence"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:234 ID:Obsolete040
+msgid "Char"
+msgstr ""
+
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:237 ID:Obsolete041
+msgid "Unicode"
+msgstr ""
+
+#: i18n/Text.resx:240 ID:Search
+msgid "Search Filter:"
+msgstr ""
+
+#: i18n/Text.resx:243 ID:ComposeKey
+msgid "Compose Key:"
+msgstr ""
+
+#. The compose key deactivates itself after a certain configurable delay
+#: i18n/Text.resx:247 ID:ResetDelay
+msgid "Delay:"
+msgstr ""
+
+#: i18n/Text.resx:250 ID:CaseInsensitive
+msgid "Fall back to case insensitive matches on invalid sequences"
+msgstr ""
+
+#: i18n/Text.resx:253 ID:DiscardOnInvalid
+msgid "Discard characters from invalid sequences"
+msgstr ""
+
+#: i18n/Text.resx:256 ID:BeepOnInvalid
+msgid "Beep on invalid sequences"
+msgstr ""
+
+#: i18n/Text.resx:259 ID:Language
+msgid "Interface language:"
+msgstr ""
+
+#. Close the settings window
+#: i18n/Text.resx:263 ID:Close
+msgid "Close"
+msgstr ""
+
+#. Copy character to the clipboard
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:267 ID:Obsolete050
+msgid "Copy Character"
+msgstr ""
+
+#. Description of a Unicode character or group of characters
+#. This string is obsolete but might be used again
+#: i18n/Text.resx:271 ID:Obsolete051
+msgid "Description:"
+msgstr ""
+
+#. Apply changes from the settings window
+#: i18n/Text.resx:275 ID:Apply
+msgid "Apply"
+msgstr ""
+
+#. Should this say “retain” instead of “maintain”?
+#: i18n/Text.resx:279 ID:KeepOriginalKey
+msgid "Maintain original compose key behaviour"
+msgstr ""
+
+#: i18n/Text.resx:282 ID:InsertZwsp
+msgid "Insert zero-width spaces in Office apps"
+msgstr ""
+
+#: i18n/Text.resx:285 ID:EmulateCapsLock
+msgid "Emulate CapsLock using both Shift keys"
+msgstr ""
+
+#: i18n/Text.resx:288 ID:ShiftDisablesCapsLock
+msgid "Shift key disables CapsLock"
+msgstr ""
+
+#. Header for the list of Unicode character categories
+#: i18n/Text.resx:292 ID:Categories
+msgid "Categories"
+msgstr ""
+
+#: i18n/Text.resx:295 ID:InSelectedCategories
+msgid "In selected categories"
+msgstr ""
+
+#. The title of the Settings window
+#: i18n/Text.resx:299 ID:Settings
+msgid "Settings"
+msgstr ""
+
+#: i18n/Text.resx:302 ID:ShowSettings
+msgid "Settings"
+msgstr ""
+
+#. {0}: compose key name, {1}: number of sequences
+#: i18n/Text.resx:306 ID:TrayToolTip
+msgid "WinCompose on {0} ({1} sequences)"
+msgstr ""
+
+#: i18n/Text.resx:309 ID:Behavior
+msgid "General Behavior"
+msgstr ""
+
+#. The title of the Sequences window
+#: i18n/Text.resx:313 ID:WindowTitle
+msgid "Sequences  WinCompose"
+msgstr ""
