@@ -5,7 +5,7 @@ msgstr ""
 "Language-Team: none\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. This string is obsolete but might be used again
@@ -113,7 +113,7 @@ msgid "None"
 msgstr ""
 
 #: i18n/Text.resx:192 ID:ShowSequences
-msgid "Show &Sequences"
+msgid "Show &Sequences…"
 msgstr ""
 
 #. This string is obsolete but might be used again
@@ -138,7 +138,7 @@ msgstr ""
 
 #. This string is obsolete but might be used again
 #: i18n/Text.resx:207 ID:Obsolete029
-msgid "&Options"
+msgid "&Options…"
 msgstr ""
 
 #. This string is obsolete but might be used again
@@ -272,7 +272,7 @@ msgid "Settings"
 msgstr ""
 
 #: i18n/Text.resx:302 ID:ShowSettings
-msgid "Settings"
+msgid "Settings…"
 msgstr ""
 
 #. {0}: compose key name, {1}: number of sequences
@@ -286,5 +286,5 @@ msgstr ""
 
 #. The title of the Sequences window
 #: i18n/Text.resx:313 ID:WindowTitle
-msgid "Sequences  WinCompose"
+msgid "Sequences — WinCompose"
 msgstr ""
