@@ -59,7 +59,7 @@ namespace WinCompose
                 timer.Tick += TimerTicked;
 
                 WinForms.Application.Run();
-                GC.KeepAlive(m_notifyicon);
+                m_notifyicon.Dispose();
             }
             finally
             {
