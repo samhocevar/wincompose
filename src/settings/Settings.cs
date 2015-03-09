@@ -32,6 +32,7 @@ namespace WinCompose
 
         static Settings()
         {
+            Language = new SettingsEntry<string>(GlobalSection, "language", "");
             ComposeKey = new SettingsEntry<Key>(GlobalSection, "compose_key", m_default_compose_key);
             ResetDelay = new SettingsEntry<int>(GlobalSection, "reset_delay", -1);
             CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
@@ -42,6 +43,8 @@ namespace WinCompose
             EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
             ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
         }
+
+        public static SettingsEntry<string> Language { get; private set; }
 
         public static SettingsEntry<Key> ComposeKey { get; private set; }
 
@@ -105,18 +108,16 @@ namespace WinCompose
             ResetDelay.Load();
 
             // Activate the desired interface language
-            string language = LoadEntry("language");
-            if (language == "" || m_valid_languages.ContainsKey(language))
-                m_language = language;
-            else
-                m_language = m_default_language;
-
-            if (m_language != "") try
+            Language.Load();
+            if (Language.Value != "" && m_valid_languages.ContainsKey(Language.Value))
             {
-                var culture = CultureInfo.GetCultureInfo(m_language);
-                Thread.CurrentThread.CurrentUICulture = culture;
+                try
+                {
+                    var culture = CultureInfo.GetCultureInfo(Language.Value);
+                    Thread.CurrentThread.CurrentUICulture = culture;
+                }
+                catch (Exception) { }
             }
-            catch (Exception) { }
 
             // Various options
             CaseInsensitive.Load();
@@ -131,7 +132,7 @@ namespace WinCompose
         public static void SaveConfig()
         {
             SaveEntry("reset_delay", m_delay.ToString());
-            SaveEntry("language", m_language);
+            Language.Save();
             ComposeKey.Save();
             CaseInsensitive.Save();
             DiscardOnInvalid.Save();
@@ -302,9 +303,6 @@ namespace WinCompose
 
         private static readonly
         Dictionary<string, string> m_valid_languages = GetSupportedLanguages();
-
-        private static readonly string m_default_language = "";
-        private static string m_language = m_default_language;
 
         private static readonly Dictionary<int, string> m_valid_delays
          = new Dictionary<int, string>()
