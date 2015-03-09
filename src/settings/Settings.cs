@@ -444,7 +444,7 @@ namespace WinCompose
         private static bool IsDebugging()
         {
             string exe = GetExeName();
-            return File.Exists(Path.ChangeExtension(exe, ".vshost.exe"));
+            return File.Exists(Path.ChangeExtension(exe, ".pdb"));
         }
     }
 }
