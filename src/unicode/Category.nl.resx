@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Overig, Sturing</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Overig, Formaat</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Overig, Niet toegewezen</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Overig, Privaatgebruik</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Overig, Surrogaat</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Letter, onderkast</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Letter, aanpassend</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Letter, Overig</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Letter, klein kapitaal</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Letter, bovenkast</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Markeringsteken, combinerende spatiëring</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Teken, omvattend</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Teken, niet-spatiëring</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Getal, decimaal cijfer</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Getal, letter</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Getal, overig</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Leesteken, verbindingsstuk</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Leesteken, streep</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Leesteken, afsluiten</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Leesteken, aanhalingsteken sluiten</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Leesteken, aanhalingsteken openen</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Leesteken, overig</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Leesteken, openen</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Symbool, valuta</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Symbool, aanpassend</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Symbool, wiskundig</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Symbool, overig</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Scheiding, lijn</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Scheiding, alinea</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Scheiding, spatie</value>
+  </data>
 </root>

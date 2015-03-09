@@ -303,157 +303,155 @@ msgstr ""
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#. Unicode designation “Cc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
-#, fuzzy
 msgid "Other, Control"
-msgstr "Vänster Ctrl"
+msgstr "Andra, kontroll"
 
-#. Unicode designation “Cf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:126 ID:Format
-#, fuzzy
 msgid "Other, Format"
-msgstr "Vänster Ctrl"
+msgstr "Andra, format"
 
-#. Unicode designation “Cn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:130 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr ""
+msgstr "Andra, inte tilldelade"
 
-#. Unicode designation “Co”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:134 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr ""
+msgstr "Andra, privat användning"
 
-#. Unicode designation “Cs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:138 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr ""
+msgstr "Andra, surrogat"
 
-#. Unicode designation “Ll”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:142 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr ""
+msgstr "Bokstav, gemen"
 
-#. Unicode designation “Lm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:146 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr ""
+msgstr "Bokstav, modifierare"
 
-#. Unicode designation “Lo”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:150 ID:OtherLetter
 msgid "Letter, Other"
-msgstr ""
+msgstr "Bokstav, andra"
 
-#. Unicode designation “Lt”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:154 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr ""
+msgstr "Bokstav, titeltyp"
 
-#. Unicode designation “Lu”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:158 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr ""
+msgstr "Bokstav, versal"
 
-#. Unicode designation “Mc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:162 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr ""
+msgstr "Märke, blankstegskombinerande"
 
-#. Unicode designation “Me”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:166 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr ""
+msgstr "Märke, inneslutande"
 
-#. Unicode designation “Mn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:170 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr ""
+msgstr "Märke, icke-blanksteg"
 
-#. Unicode designation “Nd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:174 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr ""
+msgstr "Tal, decimal siffra"
 
-#. Unicode designation “Nl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:178 ID:LetterNumber
 msgid "Number, Letter"
-msgstr ""
+msgstr "Tal, bokstav"
 
-#. Unicode designation “No”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:182 ID:OtherNumber
 msgid "Number, Other"
-msgstr ""
+msgstr "Tal, andra"
 
-#. Unicode designation “Pc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:186 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr ""
+msgstr "Skiljetecken, sammanfogare"
 
-#. Unicode designation “Pd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:190 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr ""
+msgstr "Skiljetecken, streck"
 
-#. Unicode designation “Pe”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:194 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr ""
+msgstr "Skiljetecken, stäng"
 
-#. Unicode designation “Pf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:198 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr ""
+msgstr "Skiljetecken, slutcitat"
 
-#. Unicode designation “Pi”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:202 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr ""
+msgstr "Skiljetecken, påbörjan av citat"
 
-#. Unicode designation “Po”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:206 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr ""
+msgstr "Skiljetecken, andra"
 
-#. Unicode designation “Ps”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:210 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr ""
+msgstr "Skiljetecken, öppna"
 
-#. Unicode designation “Sc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:214 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr ""
+msgstr "Symbol, valuta"
 
-#. Unicode designation “Sk”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:218 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr ""
+msgstr "Symbol, modifierare"
 
-#. Unicode designation “Sm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:222 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr ""
+msgstr "Symbol, matematik"
 
-#. Unicode designation “So”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:226 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr ""
+msgstr "Symbol, andra"
 
-#. Unicode designation “Zl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:230 ID:LineSeparator
 msgid "Separator, Line"
-msgstr ""
+msgstr "Avskiljare, rad"
 
-#. Unicode designation “Zp”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:234 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr ""
+msgstr "Avskiljare, stycke"
 
-#. Unicode designation “Zs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx
+#. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr ""
+msgstr "Avskiljare, blanksteg"
 
 #, fuzzy
 #~ msgid "WinCompose Sequences"

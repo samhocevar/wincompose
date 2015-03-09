@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Muu, Juhtkood</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Muu, Vormindus</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Muu, Määramata</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Muu, Erakasutuses</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Muu, Asendaja</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Kirjatäht, Suurtäht</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Täht, laiend</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Kirjatäht, Muu</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Kirjatäht, Pealkirjatäht</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Kirjatäht, Väiketäht</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Märk, sõnavahede kombineerimine</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Märk, lisa</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Märk, sammuta</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Arv, Kümnendsüsteemi number</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Arv, Täht</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Arv, Muu</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Kirjavahemärk, ühendaja</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Kirjavahemärk, Kriips</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Kirjavahemärk, Sulgev</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Kirjavahemärk, Lõpetav jutumärk</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Kirjavahemärk, Alustav jutumärk</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Kirjavahemärk, muu</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Kirjavahemärk, Avav</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Sümbol, Rahavääring</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Sümbol, laiend</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Sümbol, Matemaatiline</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Sümbol, Muu</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Eraldaja, Joon</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Eraldaja, Lõik</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Eraldaja, Tühik</value>
+  </data>
 </root>

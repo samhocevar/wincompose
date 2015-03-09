@@ -60,15 +60,16 @@ for POFILE in po/*.po; do
                          print "  <data name=\"" id "\" xml:space=\"preserve\">";
                          print "    <value>" msgstr "</value>";
                          if (0 && comment) { print "    <comment>" comment "</comment>"; }
-                         print "  </data>"; reset();
+                         print "  </data>";
                      }
+                     reset();
                  }
                  function reset() { good=0; id=""; comment=""; }
                  /^$/        { f(); }
                  END         { f(); }
                  /^#[.] /    { split($0, a, "#[.] "); comment=a[2]; }
                  /^#:.*ID:/  { split($0, a, "ID:"); id=a[2]; }
-                 /^#: .*\/'${FILE##*/}'/ { good=1 }
+                 /^#: .*\/'${FILE##*/}':/ { good=1 }
                  /^#, fuzzy/ { reset(); }
                  /^ *"/      { split($0, a, "\""); msgstr=msgstr a[2]; }
                  /^msgstr/   { split($0, a, "\""); msgstr=a[2]; }' \

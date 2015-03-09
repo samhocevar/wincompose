@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Yang lain, Kendali</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Yang lain, susun</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Yang lain, belum ditentukan</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Yang lain, Penggunaan Pribadi</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Yang lain, Surrogate</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Huruf, Huruf kecil</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Huruf, Perubah</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Huruf, Yang Lain</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Huruf, Huruf Judul</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Huruf, Huruf Besar</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Tanda, Kombinasi Spasi</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Tanda, Enclosing</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Tanda, Bukan Spasi</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Nomor, Digit Desimal</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Nomor, Huruf</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Nomor, Yang Lain</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Puntuasi, Penghubung</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Puntuasi, Minus</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Puntuasi, Tutup</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Puntuasi, Kutip Tutup</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Puntuasi, Kutip Buka</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Puntuasi, Yang Lain</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Puntuasi, Buka</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Simbol, Mata Uang</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Simbol, Pengubah</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Simbol, Matematika</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Simbol, Yang Lain</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Pemisah, Garis</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Pemisah, Paragraf</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Pemisah, Spasi</value>
+  </data>
 </root>

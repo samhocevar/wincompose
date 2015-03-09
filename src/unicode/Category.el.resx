@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Άλλο, ελέγχου</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Άλλο, μορφοποίησης</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Άλλο, μη εκχωρημένο</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Άλλο, ιδιωτικής χρήσης</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Άλλο, υποκατάστατο</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Γράμμα, πεζό</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Γράμμα, τροποποιητικό</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Γράμμα, άλλο</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Γράμμα, τίτλων</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Γράμμα, κεφαλαίο</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Σημείο, συνδυαζόμενο που πιάνει χώρο</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Σημείο, παρενθετικό</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Σημείο, δεν πιάνει χώρο</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Αριθμός, δεκαδικό ψηφίο</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Αριθμός, γράμμα</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Αριθμός, άλλο</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Σημείο στίξης, συνδετικό</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Σημείο στίξης, παύλα</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Σημείο στίξης, κλείσιμο</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Σημείο στίξης, κλείσιμο εισαγωγικών</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Σημείο στίξης, άνοιγμα εισαγωγικών</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Σημείο στίξης, άλλο</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Σημείο στίξης, άνοιγμα</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Σύμβολο, νόμισμα</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Σύμβολο, τροποποιητικό</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Σύμβολο, μαθηματικό</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Σύμβολο, άλλο</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Διαχωριστικό, γραμμή</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Διαχωριστικό, παράγραφος</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Διαχωριστικό, κενό</value>
+  </data>
 </root>

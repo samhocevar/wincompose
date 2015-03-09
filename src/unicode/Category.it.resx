@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Altro, controllo</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Altro, formato</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Altro, non assegnato</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Altro, uso privato</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Altro, surrogato</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Lettera, minuscola</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Lettera, modificatrice</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Lettera, altra</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Lettera, titolatrice</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Lettera, maiuscolo</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Segno, combinabile con spaziatura</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Segno, racchiuso</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Segno, senza spaziatura</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Numero, cifra decimale</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Numero, lettera</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Numero, altro</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Punteggiatura, raccordo</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Punteggiatura, trattino</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Punteggiatura, chiusa</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Punteggiatura, fine citazione</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Punteggiatura, inizio citazione</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Punteggiatura, altra</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Punteggiatura, aperta</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Simbolo, valuta</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Simbolo, modificatore</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Simbolo, matematico</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Simbolo, altro</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Separatore, linea</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Separatore, paragrafo</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Separatore, spazio</value>
+  </data>
 </root>

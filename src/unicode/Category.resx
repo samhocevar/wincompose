@@ -119,122 +119,122 @@
   </resheader>
   <data name="Control" xml:space="preserve">
     <value>Other, Control</value>
-    <comment>Unicode designation “Cc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Other, Format</value>
-    <comment>Unicode designation “Cf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
     <value>Other, Not Assigned</value>
-    <comment>Unicode designation “Cn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="PrivateUse" xml:space="preserve">
     <value>Other, Private Use</value>
-    <comment>Unicode designation “Co”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="Surrogate" xml:space="preserve">
     <value>Other, Surrogate</value>
-    <comment>Unicode designation “Cs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
     <value>Letter, Lowercase</value>
-    <comment>Unicode designation “Ll”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
     <value>Letter, Modifier</value>
-    <comment>Unicode designation “Lm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="OtherLetter" xml:space="preserve">
     <value>Letter, Other</value>
-    <comment>Unicode designation “Lo”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
     <value>Letter, Titlecase</value>
-    <comment>Unicode designation “Lt”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
     <value>Letter, Uppercase</value>
-    <comment>Unicode designation “Lu”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
     <value>Mark, Spacing Combining</value>
-    <comment>Unicode designation “Mc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
     <value>Mark, Enclosing</value>
-    <comment>Unicode designation “Me”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
     <value>Mark, Non-Spacing</value>
-    <comment>Unicode designation “Mn”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
     <value>Number, Decimal Digit</value>
-    <comment>Unicode designation “Nd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="LetterNumber" xml:space="preserve">
     <value>Number, Letter</value>
-    <comment>Unicode designation “Nl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="OtherNumber" xml:space="preserve">
     <value>Number, Other</value>
-    <comment>Unicode designation “No”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
     <value>Punctuation, Connector</value>
-    <comment>Unicode designation “Pc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
     <value>Punctuation, Dash</value>
-    <comment>Unicode designation “Pd”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
     <value>Punctuation, Close</value>
-    <comment>Unicode designation “Pe”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
     <value>Punctuation, Final Quote</value>
-    <comment>Unicode designation “Pf”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
     <value>Punctuation, Initial Quote</value>
-    <comment>Unicode designation “Pi”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
     <value>Punctuation, Other</value>
-    <comment>Unicode designation “Po”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
     <value>Punctuation, Open</value>
-    <comment>Unicode designation “Ps”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
     <value>Symbol, Currency</value>
-    <comment>Unicode designation “Sc”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
     <value>Symbol, Modifier</value>
-    <comment>Unicode designation “Sk”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="MathSymbol" xml:space="preserve">
     <value>Symbol, Math</value>
-    <comment>Unicode designation “Sm”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
     <value>Symbol, Other</value>
-    <comment>Unicode designation “So”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="LineSeparator" xml:space="preserve">
     <value>Separator, Line</value>
-    <comment>Unicode designation “Zl”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
     <value>Separator, Paragraph</value>
-    <comment>Unicode designation “Zp”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
     <value>Separator, Space</value>
-    <comment>Unicode designation “Zs”, see https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx</comment>
+    <comment>Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)</comment>
   </data>
 </root>

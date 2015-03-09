@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Inne, kontrola</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Inne, formatowanie</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Inne, nieprzypisany</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Inne, prywatny użytek</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Inne, surogat</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Litera, mała</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Litera, modyfikator</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Litera, inna</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Litera, tytułowa</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Litera, wielka</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Znak, łączenie odstępów</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Znak, otaczanie</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Znak, nie będący odstępem</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Liczba, cyfra dziesiętna</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Liczba, litera</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Liczba, inna</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Interpunkcja, łącznik</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Interpunkcja, myślnik</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Interpunkcja, zamknięcie</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Interpunkcja, cudzysłów zamykający</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Interpunkcja, cudzysłów otwierający</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Interpunkcja, inny</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Interpunkcja, otwarcie</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Symbol, waluta</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Symbol, modyfikator</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Symbol, matematyczny</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Symbol, inny</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Separator, wiersz</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Separator, akapit</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Separator, spacja</value>
+  </data>
 </root>
