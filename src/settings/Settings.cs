@@ -309,6 +309,7 @@ namespace WinCompose
            new Key(VK.PAUSE),
            new Key(VK.APPS),
            new Key(VK.ESCAPE),
+           new Key(VK.INSERT),
            new Key(VK.SCROLL),
            new Key("`"),
         };

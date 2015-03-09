@@ -58,6 +58,7 @@ public enum VK : int
     UP       = 0x26,
     RIGHT    = 0x27,
     DOWN     = 0x28,
+    INSERT   = 0x2d,
     LWIN     = 0x5b,
     RWIN     = 0x5c,
     APPS     = 0x5d,

@@ -123,30 +123,39 @@
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Left Alt</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
     <value>Right Alt</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyLControl" xml:space="preserve">
     <value>Left Control</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyRControl" xml:space="preserve">
     <value>Right Control</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyLWin" xml:space="preserve">
     <value>Left Windows</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyRWin" xml:space="preserve">
     <value>Right Windows</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
     <value>Num Lock</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyPause" xml:space="preserve">
     <value>Pause</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyApps" xml:space="preserve">
     <value>Menu</value>
@@ -154,12 +163,15 @@
   </data>
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Grave Accent `</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="Obsolete017" xml:space="preserve">
     <value>500 milliseconds</value>
@@ -298,5 +310,9 @@
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose is disabled</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+    <comment>The name of the key on the keyboard</comment>
   </data>
 </root>

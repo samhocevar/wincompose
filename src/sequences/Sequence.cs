@@ -83,6 +83,7 @@ public class Key
         { VK.APPS, i18n.Text.KeyApps },
         { VK.ESCAPE, i18n.Text.KeyEscape },
         { VK.SCROLL, i18n.Text.KeyScroll },
+        { VK.INSERT, i18n.Text.KeyInsert },
     };
 
     private readonly VK m_vk;

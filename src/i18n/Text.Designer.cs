@@ -232,6 +232,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insert.
+        /// </summary>
+        public static string KeyInsert {
+            get {
+                return ResourceManager.GetString("KeyInsert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Left Control.
         /// </summary>
         public static string KeyLControl {
