@@ -294,7 +294,6 @@ namespace WinCompose
 
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
-
         private static int m_sequence_count = 0;
 
         private static readonly List<Key> m_valid_compose_keys = new List<Key>
@@ -395,7 +394,7 @@ namespace WinCompose
                     if (rm.GetResourceSet(culture, true, false) != null)
                         ret.Add(culture.Name, culture.NativeName);
                 }
-                catch(Exception) {}
+                catch (Exception) {}
             }
 
             return ret;
@@ -409,8 +408,9 @@ namespace WinCompose
         private static string GetConfigDir()
         {
             var appdata = Environment.SpecialFolder.ApplicationData;
-            return IsInstalled() ? Environment.GetFolderPath(appdata)
-                                 : GetExeDir();
+            var appdatadir = Path.Combine(Environment.GetFolderPath(appdata),
+                                          "WinCompose");
+            return IsInstalled() ? appdatadir : GetExeDir();
         }
 
         private static string GetDataDir()
@@ -444,7 +444,7 @@ namespace WinCompose
         private static bool IsDebugging()
         {
             string exe = GetExeName();
-            return File.Exists(Path.ChangeExtension(exe, ".vshost.exe"));
+            return File.Exists(Path.ChangeExtension(exe, ".pdb"));
         }
     }
 }

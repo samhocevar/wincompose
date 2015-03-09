@@ -18,6 +18,28 @@ ShowLanguageDialog = auto
 
 [Files]
 Source: "bin\Release\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\Release\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
+Source: "bin\Release\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
+Source: "bin\Release\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
+Source: "bin\Release\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
+Source: "bin\Release\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
+Source: "bin\Release\el\*.dll"; DestDir: "{app}\el"; Flags: ignoreversion
+Source: "bin\Release\es\*.dll"; DestDir: "{app}\es"; Flags: ignoreversion
+Source: "bin\Release\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
+Source: "bin\Release\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
+Source: "bin\Release\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "bin\Release\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
+Source: "bin\Release\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
+Source: "bin\Release\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
+Source: "bin\Release\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
+Source: "bin\Release\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
+Source: "bin\Release\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
+Source: "bin\Release\rw\*.dll"; DestDir: "{app}\rw"; Flags: ignoreversion
+Source: "bin\Release\sk\*.dll"; DestDir: "{app}\sk"; Flags: ignoreversion
+Source: "bin\Release\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
+Source: "bin\Release\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
+Source: "bin\Release\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
+Source: "bin\Release\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
 Source: "rules\Xorg.txt"; DestDir: "{app}\res"
 Source: "rules\Xcompose.txt"; DestDir: "{app}\res"
 Source: "rules\Emoji.txt"; DestDir: "{app}\res"

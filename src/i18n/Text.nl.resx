@@ -198,6 +198,9 @@
   <data name="Obsolete031" xml:space="preserve">
     <value>Website bezoeken</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Afsluiten</value>
+  </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>door Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
@@ -275,5 +278,8 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequenties — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Gebruikersmacro's</value>
   </data>
 </root>
