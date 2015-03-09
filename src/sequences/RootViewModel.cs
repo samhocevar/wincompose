@@ -62,7 +62,7 @@ namespace WinCompose
                 // TODO: optimize me
                 foreach (var category in sortedCategories)
                 {
-                    if (category.Key >= desc.Unicode)
+                    if (category.Key >= desc.Utf32)
                     {
                         sequences.Add(new SequenceViewModel(category.Value, desc));
                         break;

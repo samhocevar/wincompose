@@ -29,7 +29,7 @@ namespace WinCompose
             Result = desc.Result; // FIXME: sequence results can be longer
             Description = desc.Description;
             Sequence = desc.Sequence;
-            Unicode = desc.Unicode;
+            Utf32 = desc.Utf32;
         }
 
         public CategoryViewModel Category { get; private set; }
@@ -43,9 +43,9 @@ namespace WinCompose
         /// Return the sequence Unicode codepoint. If the sequence contains
         /// zero, two or more characters, return -1.
         /// </summary>
-        public int Unicode { get; private set; }
+        public int Utf32 { get; private set; }
 
-        public int UnicodeCategory { get { return Unicode == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
+        public int UnicodeCategory { get { return Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
 
         public string Description { get; private set; }
 
@@ -65,7 +65,7 @@ namespace WinCompose
 
             foreach (var number in searchText.Numbers)
             {
-                if (Unicode == number)
+                if (Utf32 == number)
                     return true;
             }
             return false;

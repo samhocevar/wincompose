@@ -262,19 +262,31 @@ namespace WinCompose
             }
 
             string result = m1.Groups[2].Captures[0].ToString();
+            int codepoint = StringToCodepoint(result);
             string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
 
             // Try to translate the description if appropriate
-            if (result.Length == 1)
+            if (codepoint >= 0)
             {
-                var key = String.Format("U{0:X04}", (int)result[0]);
-                var alt_desc = unicode.Char.ResourceManager.GetString(key);
+                string key = String.Format("U{0:X04}", codepoint);
+                string alt_desc = unicode.Char.ResourceManager.GetString(key);
                 if (alt_desc != null && alt_desc.Length > 0)
                     description = alt_desc;
             }
 
-            m_sequences.Add(seq, result, description);
+            m_sequences.Add(seq, result, codepoint, description);
             ++m_sequence_count;
+        }
+
+        private static int StringToCodepoint(string s)
+        {
+            if (s.Length == 1)
+                return (int)s[0];
+
+            if (s.Length == 2 && s[0] >= 0xd800 && s[0] <= 0xdbff)
+                return Char.ConvertToUtf32(s[0], s[1]);
+
+            return -1;
         }
 
         // Tree of all known sequences

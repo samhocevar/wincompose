@@ -157,7 +157,7 @@
                                 </ItemsControl>
                             </StackPanel>
                             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                                <TextBlock Text="{Binding Unicode, Mode=OneTime, StringFormat=U+\{0:X4\}}"/>
+                                <TextBlock Text="{Binding Utf32, Mode=OneTime, StringFormat=U+\{0:X4\}}"/>
                                 <TextBlock Text="{Binding UnicodeCategory, Converter={wc:UnicodeCategoryConverter}, Mode=OneTime}" HorizontalAlignment="Right" Margin="10,0"/>
                             </StackPanel>
                             <TextBlock Text="{Binding Description, Mode=OneTime}" TextTrimming="WordEllipsis"/>
