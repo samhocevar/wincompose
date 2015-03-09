@@ -330,6 +330,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.fr.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.ga.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.ga.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.id.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -359,6 +364,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.sc.resx</DependentUpon>
+    </Compile>
+    <Compile Include="i18n\Text.sk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="i18n\Text.sr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.sr.resx</DependentUpon>
     </Compile>
     <Compile Include="i18n\Text.sv.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -680,6 +695,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.ga.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ga.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.id.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.id.Designer.cs</LastGenOutput>
@@ -703,6 +722,14 @@
     <EmbeddedResource Include="i18n\Text.sc.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.sc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.sk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.sk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.sr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.sr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

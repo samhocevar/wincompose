@@ -1,5 +1,6 @@
 #!/bin/sh
 
+STEPS=4
 CACHE=unicode/cache
 mkdir -p ${CACHE}
 
@@ -8,7 +9,7 @@ mkdir -p ${CACHE}
 # then update all .po files
 #
 
-echo "[1/3] Rebuild potfiles…"
+echo "[1/${STEPS}] Rebuild potfiles…"
 DEST=po/wincompose.pot
 true > ${DEST}
 for FILE in i18n/Text.resx unicode/Category.resx; do
@@ -41,7 +42,7 @@ done
 # work from Weblate translators
 #
 
-echo "[2/3] Rebuild resx files…"
+echo "[2/${STEPS}] Rebuild resx files…"
 for POFILE in po/*.po; do
     LANG=$(basename ${POFILE} .po)
     case $LANG in
@@ -84,7 +85,7 @@ done
 # and create .resx translation files for our project
 #
 
-echo "[3/3] Rebuild Unicode translation files…"
+echo "[3/${STEPS}] Rebuild Unicode translation files…"
 BASE=http://translationproject.org/latest/unicode-translation/
 PO=$(wget -qO- $BASE | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
 for LANG in $PO; do
@@ -121,4 +122,15 @@ for LANG in $PO; do
     done
 done
 echo "done."
+
+#
+# Check some wincompose.csproj consistency
+#
+
+echo "[4/${STEPS}] Check consistency…"
+for x in unicode/*resx i18n/*resx; do
+    if ! grep -q '"'$(echo $x | tr / .)'"' wincompose.csproj; then
+        echo "WARNING: $x not found in wincompose.csproj"
+    fi
+done
 
