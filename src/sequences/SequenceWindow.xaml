@@ -6,7 +6,7 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
         mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
-        Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="768"
+        Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="600"
         Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
     <Window.Resources>
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>

@@ -110,6 +110,7 @@ namespace WinCompose
             if (m_settingswindow == null)
             {
                 m_settingswindow = new SettingsWindow();
+                m_settingswindow.Show();
             }
             else
             {

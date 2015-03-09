@@ -6,7 +6,7 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
-        Title="{x:Static i18n:Text.Settings}" Height="450" Width="400"
+        Title="{x:Static i18n:Text.Settings}" Height="450" Width="450"
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
         Closing="CloseWindowClicked">
@@ -83,7 +83,7 @@
              </Grid.RowDefinitions>
 
              <CheckBox Grid.Row="0" Grid.Column="0" Content="{x:Static i18n:Text.KeepOriginalKey}"
-                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
+                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center" IsEnabled="False"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"/>
 
              <CheckBox Grid.Row="1" Grid.Column="0" Content="{x:Static i18n:Text.InsertZwsp}"
