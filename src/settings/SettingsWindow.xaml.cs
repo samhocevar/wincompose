@@ -28,14 +28,12 @@ namespace WinCompose
 
         private void CloseWindowClicked(object sender, CancelEventArgs e)
         {
-            Settings.SaveConfig();
             Hide();
             e.Cancel = true;
         }
 
         private void CloseButtonClicked(object sender, RoutedEventArgs e)
         {
-            Settings.SaveConfig();
             Hide();
         }
     }
