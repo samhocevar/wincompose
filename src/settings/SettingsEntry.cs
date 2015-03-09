@@ -88,12 +88,22 @@ namespace WinCompose
         /// was successful.</returns>
         public bool Load()
         {
-            const int len = 255;
+            bool got_mutex = false;
+            try
+            {
+                got_mutex = m_mutex.WaitOne(2000);
+            }
+            catch (AbandonedMutexException)
+            {
+                /* Ignore; this might be a previous instance that crashed */
+                got_mutex = true;
+            }
 
-            if (m_mutex.WaitOne(2000))
+            if (got_mutex)
             {
                 try
                 {
+                    const int len = 255;
                     var stringBuilder = new StringBuilder(len);
                     var result = NativeMethods.GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
                     if (result == 0)
