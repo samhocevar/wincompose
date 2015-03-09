@@ -150,16 +150,44 @@ public class Key
 public class SequenceDescription : IComparable<SequenceDescription>
 {
     public List<Key> Sequence = new List<Key>();
-    public string Result = "";
     public string Description = "";
+    public int Unicode { get { return m_unicode; } }
+
+    public string Result
+    {
+        get { return m_result; }
+        set
+        {
+            m_result = value;
+            switch (value.Length)
+            {
+                case 1:
+                    m_unicode = value[0];
+                    break;
+                case 2:
+                    if (value[0] >= 0xd800 && value[0] <= 0xdbff)
+                        m_unicode = Char.ConvertToUtf32(value[0], value[1]);
+                    else
+                        m_unicode = -1;
+                    break;
+                default:
+                    m_unicode = -1;
+                    break;
+            }
+        }
+    }
 
     public int CompareTo(SequenceDescription other)
     {
-        // Compare actual Unicode codepoints rather than characters
-        int ch1 = Result.Length > 0 ? (int)(char)Result[0] : 0;
-        int ch2 = other.Result.Length > 0 ? (int)(char)other.Result[0] : 0;
-        return ch1.CompareTo(ch2);
+        // If any sequence leads to a single character, compare actual
+        // Unicode codepoints rather than strings
+        if (Unicode != -1 || other.Unicode != -1)
+            return Unicode.CompareTo(other.Unicode);
+        return Result.CompareTo(other.Result);
     }
+
+    private string m_result = "";
+    private int m_unicode = -1;
 };
 
 /*

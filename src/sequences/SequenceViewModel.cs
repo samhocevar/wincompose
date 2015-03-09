@@ -42,16 +42,23 @@ namespace WinCompose
             Result = desc.Result; // FIXME: sequence results can be longer
             Description = desc.Description;
             Sequence = desc.Sequence;
+            Unicode = desc.Unicode;
         }
 
         public CategoryViewModel Category { get; private set; }
 
+        /// <summary>
+        /// Return the sequence result in an UTF-16 string
+        /// </summary>
         public string Result { get; private set; }
 
-        // TODO: verify this actually returns the Unicode of the char...
-        public int Unicode { get { return Result[0]; } }
+        /// <summary>
+        /// Return the sequence Unicode codepoint. If the sequence contains
+        /// zero, two or more characters, return -1.
+        /// </summary>
+        public int Unicode { get; private set; }
 
-        public UnicodeCategory UnicodeCategory { get { return CharUnicodeInfo.GetUnicodeCategory(Result[0]); } }
+        public UnicodeCategory UnicodeCategory { get { return CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
 
         public string Description { get; private set; }
 
