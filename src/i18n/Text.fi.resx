@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>Ladattu @1@ merkkisarjaa</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Compose-näppäin on @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>Tunnista automaattisesti</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Ei mitään</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Näytä &amp;merkkisarjat…</value>
+    <value>Näytä merkkisarjat…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Poista käytöstä</value>
@@ -196,40 +190,22 @@
     <value>Käynnistä uudelleen</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;Historia</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>Pikanäppäin&amp;lista</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>&amp;Asetukset…</value>
+    <value>Historia</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;Tietoja</value>
+    <value>Tietoja</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Käy verkkosivuilla</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>&amp;Poistu</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n</value>
+    <value>Käy verkkosivuilla</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>tekijä: Sam Hocevar &lt;sam@hocevar.net&gt;\n</value>
+    <value>tekijä: Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Merkkisarjat</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Asetukset</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Merkkisarja</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Merkki</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>

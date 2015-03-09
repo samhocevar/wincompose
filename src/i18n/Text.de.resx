@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>@1@ Sequenzen geladen</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Compose-Taste ist @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>automatische Erkennung</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Keine</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>&amp;Sequenzen anzeigen…</value>
+    <value>Sequenzen anzeigen…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Deaktivieren</value>
@@ -196,40 +190,22 @@
     <value>Neustart</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;Verlauf</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>&amp;Liste der Tastenkombinationen</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>&amp;Optionen…</value>
+    <value>Verlauf</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;Über</value>
+    <value>Über</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Website besuchen</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>B&amp;eenden</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n↵\n</value>
+    <value>Website besuchen</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>von Sam Hocevar &lt;sam@hocevar.net&gt;↵\n</value>
+    <value>von Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenzen</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Optionen</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Sequenz</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Zeichen</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>

@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>Laeti @1@ kombinatsiooni</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Kombineerimisklahv on @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>Tuvasta automaatselt</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Puudub</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Kuva &amp;kombinatsioonid…</value>
+    <value>Kuva kombinatsioonid…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Keela</value>
@@ -196,40 +190,22 @@
     <value>Taaskäivita</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;Ajalugu</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>&amp;Kiirklahvid</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>&amp;Seaded…</value>
+    <value>Ajalugu</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;Programmist</value>
+    <value>Programmist</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Veebileht</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>&amp;Välju</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n</value>
+    <value>Veebileht</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>autorilt Sam Hocevar &lt;sam@hocevar.net&gt;\n</value>
+    <value>autorilt Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Kombinatsioonid</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Seaded</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Kombinatsioon</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Sümbol</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>
@@ -296,5 +272,8 @@
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Üldine käitumine</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Kombinatsioonid — WinCompose</value>
   </data>
 </root>

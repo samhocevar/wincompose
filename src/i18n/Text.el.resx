@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>Φορτώθηκαν @1@ Ακολουθίες</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Πλήκτρο σύνθεσης είναι το @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>Αυτόματος εντοπισμός</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Καμία</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Εμφάνιση &amp;Ακολουθιών…</value>
+    <value>Εμφάνιση Ακολουθιών…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Απενεργοποίηση</value>
@@ -196,40 +190,22 @@
     <value>Επανεκκίνηση</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;Ιστορικό</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>&amp;Λίστα πλήκτρων συντόμευσης</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>Επι&amp;λογές…</value>
+    <value>Ιστορικό</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;Περί</value>
+    <value>Περί</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Ιστοσελίδα</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Έ&amp;ξοδος</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n</value>
+    <value>Ιστοσελίδα</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>από τον Sam Hocevar &lt;sam@hocevar.net&gt;\n</value>
+    <value>από τον Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Ακολουθίες</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Επιλογές</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Ακολουθία</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Χαρακτ.</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>

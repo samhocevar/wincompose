@@ -304,24 +304,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Loaded @1@ Sequences.
-        /// </summary>
-        public static string Obsolete001 {
-            get {
-                return ResourceManager.GetString("Obsolete001", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Compose Key is @1@.
-        /// </summary>
-        public static string Obsolete002 {
-            get {
-                return ResourceManager.GetString("Obsolete002", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Grave Accent `.
         /// </summary>
         public static string Obsolete016 {
@@ -421,24 +403,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hotkey &amp;List.
-        /// </summary>
-        public static string Obsolete028 {
-            get {
-                return ResourceManager.GetString("Obsolete028", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &amp;Options….
-        /// </summary>
-        public static string Obsolete029 {
-            get {
-                return ResourceManager.GetString("Obsolete029", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &amp;About.
         /// </summary>
         public static string Obsolete030 {
@@ -457,15 +421,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \n.
-        /// </summary>
-        public static string Obsolete035 {
-            get {
-                return ResourceManager.GetString("Obsolete035", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to by Sam Hocevar &lt;sam@hocevar.net&gt;\n.
         /// </summary>
         public static string Obsolete036 {
@@ -475,29 +430,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Options.
-        /// </summary>
-        public static string Obsolete038 {
-            get {
-                return ResourceManager.GetString("Obsolete038", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Sequence.
         /// </summary>
         public static string Obsolete039 {
             get {
                 return ResourceManager.GetString("Obsolete039", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Char.
-        /// </summary>
-        public static string Obsolete040 {
-            get {
-                return ResourceManager.GetString("Obsolete040", resourceCulture);
             }
         }
         
