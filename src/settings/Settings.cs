@@ -262,19 +262,22 @@ namespace WinCompose
             }
 
             string result = m1.Groups[2].Captures[0].ToString();
-            int codepoint = StringToCodepoint(result);
             string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
 
+            // Replace \\ and \" in the string output
+            result = new Regex(@"\\(\\|"")").Replace(result, "$1");
+
             // Try to translate the description if appropriate
-            if (codepoint >= 0)
+            int utf32 = StringToCodepoint(result);
+            if (utf32 >= 0)
             {
-                string key = String.Format("U{0:X04}", codepoint);
+                string key = String.Format("U{0:X04}", utf32);
                 string alt_desc = unicode.Char.ResourceManager.GetString(key);
                 if (alt_desc != null && alt_desc.Length > 0)
                     description = alt_desc;
             }
 
-            m_sequences.Add(seq, result, codepoint, description);
+            m_sequences.Add(seq, result, utf32, description);
             ++m_sequence_count;
         }
 
