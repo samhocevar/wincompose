@@ -6,7 +6,7 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
-        Title="{x:Static i18n:Text.Settings}" Height="450" Width="450"
+        Title="{x:Static i18n:Text.Settings}" Height="500" Width="450"
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
         Closing="CloseWindowClicked">
@@ -36,6 +36,7 @@
                  <RowDefinition Height="30"/>
                  <RowDefinition Height="30"/>
                  <RowDefinition Height="30"/>
+                 <RowDefinition Height="Auto"/>
              </Grid.RowDefinitions>
 
              <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
@@ -71,11 +72,17 @@
              <CheckBox Grid.Row="5" Grid.Column="0" Content="{x:Static i18n:Text.BeepOnInvalid}"
                        Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"/>
+
+             <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
+                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+             <TextBox Grid.Row="6" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
+                      Grid.ColumnSpan="2" Height="Auto" FontSize="20" FontWeight="Bold"
+                      ForceCursor="True">ÅḄ₡Đ♥☺</TextBox>
          </Grid>
       </GroupBox>
 
       <!-- The Tweaks group -->
-      <GroupBox DockPanel.Dock="Top" Header="Tweaks" VerticalAlignment="Top">
+      <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.Tweaks}" VerticalAlignment="Top">
          <Grid VerticalAlignment="Center">
              <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="Auto"/>
@@ -104,11 +111,11 @@
                        Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"/>
          </Grid>
-     </GroupBox>
+      </GroupBox>
 
-     <!-- The Close button -->
-     <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
-             Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked" />
+      <!-- The Close button -->
+      <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
+              Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked" />
 
   </DockPanel>
 </Window>

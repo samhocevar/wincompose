@@ -315,4 +315,12 @@
     <value>Insert</value>
     <comment>The name of the key on the keyboard</comment>
   </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Test Typing:</value>
+    <comment>The "Test Typing" section in the settings window</comment>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Tweaks</value>
+    <comment>The "Tweaks" section in the settings window</comment>
+  </data>
 </root>

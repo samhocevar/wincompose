@@ -538,11 +538,29 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Test Typing:.
+        /// </summary>
+        public static string TestTyping {
+            get {
+                return ResourceManager.GetString("TestTyping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WinCompose on {0} ({1} sequences).
         /// </summary>
         public static string TrayToolTip {
             get {
                 return ResourceManager.GetString("TrayToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tweaks.
+        /// </summary>
+        public static string Tweaks {
+            get {
+                return ResourceManager.GetString("Tweaks", resourceCulture);
             }
         }
         
