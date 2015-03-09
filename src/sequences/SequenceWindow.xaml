@@ -79,7 +79,7 @@
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                 <TextBlock Text="{Binding RangeStart, StringFormat=U+\{0:X4\}}" Style="{StaticResource SmallTextBlock}"/>
-                                <TextBlock Text=" - " Style="{StaticResource SmallTextBlock}"/>
+                                <TextBlock Text="…" Style="{StaticResource SmallTextBlock}"/>
                                 <TextBlock Text="{Binding RangeEnd, StringFormat=U+\{0:X4\}}" Style="{StaticResource SmallTextBlock}"/>
                             </StackPanel>
                         </StackPanel>

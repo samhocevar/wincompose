@@ -312,4 +312,7 @@
     <value>Sequences — WinCompose</value>
     <comment>The title of the Sequences window</comment>
   </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>User-defined macros</value>
+  </data>
 </root>

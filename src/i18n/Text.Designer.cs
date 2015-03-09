@@ -70,11 +70,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WinCompose.
+        ///   Looks up a localized string similar to Autodetect.
         /// </summary>
-        public static string AppName {
+        public static string AutodetectLanguage {
             get {
-                return ResourceManager.GetString("AppName", resourceCulture);
+                return ResourceManager.GetString("AutodetectLanguage", resourceCulture);
             }
         }
         
@@ -322,15 +322,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Autodetect.
-        /// </summary>
-        public static string Obsolete003 {
-            get {
-                return ResourceManager.GetString("Obsolete003", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Grave Accent `.
         /// </summary>
         public static string Obsolete016 {
@@ -466,24 +457,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @APP_NAME@.
-        /// </summary>
-        public static string Obsolete033 {
-            get {
-                return ResourceManager.GetString("Obsolete033", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to @APP_NAME@ v@APP_VERSION@\n.
-        /// </summary>
-        public static string Obsolete034 {
-            get {
-                return ResourceManager.GetString("Obsolete034", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to \n.
         /// </summary>
         public static string Obsolete035 {
@@ -552,33 +525,6 @@ namespace WinCompose.i18n {
         public static string Obsolete051 {
             get {
                 return ResourceManager.GetString("Obsolete051", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to @APP_NAME@ (disabled).
-        /// </summary>
-        public static string Obsolete052 {
-            get {
-                return ResourceManager.GetString("Obsolete052", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to @APP_NAME@ (active).
-        /// </summary>
-        public static string Obsolete053 {
-            get {
-                return ResourceManager.GetString("Obsolete053", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to @APP_NAME@ (typing).
-        /// </summary>
-        public static string Obsolete054 {
-            get {
-                return ResourceManager.GetString("Obsolete054", resourceCulture);
             }
         }
         
@@ -655,7 +601,16 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WinCompose Sequences.
+        ///   Looks up a localized string similar to User-defined macros.
+        /// </summary>
+        public static string UserMacros {
+            get {
+                return ResourceManager.GetString("UserMacros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sequences — WinCompose.
         /// </summary>
         public static string WindowTitle {
             get {

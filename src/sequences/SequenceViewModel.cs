@@ -20,20 +20,7 @@ namespace WinCompose
 {
     public class SequenceViewModel
     {
-        /// <summary>
-        /// A dictionary of string representation of the <see cref="UnicodeCategory"/> enum, used to prevent allocations in the <see cref="Match"/> method.
-        /// </summary>
-        private readonly static Dictionary<UnicodeCategory, string> UnicodeCategoryStrings = new Dictionary<UnicodeCategory, string>();
-
         public static Key SpaceKey = new Key(" ");
-
-        static SequenceViewModel()
-        {
-            foreach (var value in Enum.GetValues(typeof(UnicodeCategory)))
-            {
-                UnicodeCategoryStrings.Add((UnicodeCategory)value, value.ToString());
-            }
-        }
 
         public SequenceViewModel(CategoryViewModel category, SequenceDescription desc)
         {
@@ -58,7 +45,7 @@ namespace WinCompose
         /// </summary>
         public int Unicode { get; private set; }
 
-        public UnicodeCategory UnicodeCategory { get { return CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
+        public int UnicodeCategory { get { return Unicode == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
 
         public string Description { get; private set; }
 

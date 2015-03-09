@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Data;
 
@@ -33,18 +34,20 @@ namespace WinCompose
 
             var categories = new List<CategoryViewModel>();
             const BindingFlags flags = BindingFlags.Static | BindingFlags.Public;
+            Regex r = new Regex(@"^U([a-fA-F0-9]*)_U([a-fA-F0-9]*)$");
             foreach (var property in typeof(unicode.Block).GetProperties(flags))
             {
-                if (property.Name == "ResourceManager" || property.Name == "Culture")
-                    continue;
-
-                // FIXME: this could be made more robust
-                var name = (string)property.GetValue(null, null);
-                var range = property.Name.Split(new[] { 'U', '_' });
-                var start = Convert.ToInt32(range[1], 16);
-                var end = Convert.ToInt32(range[3], 16);
-                categories.Add(new CategoryViewModel(name, start, end));
+                Match m = r.Match(property.Name);
+                if (m.Success)
+                {
+                    var name = (string)property.GetValue(null, null);
+                    var start = Convert.ToInt32(m.Groups[1].Value, 16);
+                    var end = Convert.ToInt32(m.Groups[2].Value, 16);
+                    categories.Add(new CategoryViewModel(name, start, end));
+                }
             }
+            categories.Add(new CategoryViewModel(i18n.Text.UserMacros, -1, -1));
+
             categories.Sort((x, y) => string.Compare(x.Name, y.Name, Thread.CurrentThread.CurrentCulture, CompareOptions.StringSort));
 
             var sortedCategories = new SortedList<int, CategoryViewModel>();
@@ -59,7 +62,7 @@ namespace WinCompose
                 // TODO: optimize me
                 foreach (var category in sortedCategories)
                 {
-                    if (category.Key > desc.Unicode)
+                    if (category.Key >= desc.Unicode)
                     {
                         sequences.Add(new SequenceViewModel(category.Value, desc));
                         break;
