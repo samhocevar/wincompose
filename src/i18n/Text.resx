@@ -185,8 +185,9 @@
   <data name="ShowSequences" xml:space="preserve">
     <value>Show Sequences…</value>
   </data>
-  <data name="Obsolete025" xml:space="preserve">
+  <data name="Disable" xml:space="preserve">
     <value>Disable</value>
+    <comment>Menu entry to disable WinCompose</comment>
   </data>
   <data name="Obsolete026" xml:space="preserve">
     <value>Restart</value>
@@ -197,8 +198,9 @@
   <data name="Obsolete030" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="Obsolete031" xml:space="preserve">
+  <data name="VisitWebsite" xml:space="preserve">
     <value>Visit Website</value>
+    <comment>Menu entry to visit the website</comment>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
@@ -293,5 +295,8 @@
   </data>
   <data name="UserMacros" xml:space="preserve">
     <value>User-defined macros</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose is disabled</value>
   </data>
 </root>

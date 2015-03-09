@@ -27,6 +27,9 @@ static class Composer
     // and needs to be removed from the input chain.
     public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
+        if (m_disabled)
+            return false;
+
         CheckKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
@@ -255,9 +258,36 @@ static class Composer
         }
     }
 
+    /// <summary>
+    /// Return whether a compose sequence is in progress
+    /// </summary>
     public static bool IsComposing()
     {
         return m_composing;
+    }
+
+    /// <summary>
+    /// Toggle the disabled state
+    /// </summary>
+    public static void ToggleDisabled()
+    {
+        m_disabled = !m_disabled;
+        m_statechanged = true;
+
+        if (m_disabled)
+        {
+            m_composing = false;
+            m_compose_down = false;
+            m_sequence = new List<Key>();
+        }
+    }
+
+    /// <summary>
+    /// Return whether WinCompose has been disabled
+    /// </summary>
+    public static bool IsDisabled()
+    {
+        return m_disabled;
     }
 
     public static bool HasStateChanged()
@@ -335,6 +365,7 @@ static class Composer
     private static byte[] m_keystate = new byte[256];
     private static List<Key> m_sequence = new List<Key>();
     private static DateTime m_last_key_time = DateTime.Now;
+    private static bool m_disabled = false;
     private static bool m_compose_down = false;
     private static bool m_composing = false;
     private static bool m_statechanged = true;

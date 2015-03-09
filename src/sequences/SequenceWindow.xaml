@@ -8,6 +8,12 @@
         mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
         Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="600"
         Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
+
+    <Window.InputBindings>
+        <!-- TODO: bind this to something -->
+        <!--<KeyBinding Key="Escape" Command=""/>-->
+    </Window.InputBindings>
+
     <Window.Resources>
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>

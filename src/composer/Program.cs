@@ -44,8 +44,16 @@ namespace WinCompose
                     Icon = Properties.Resources.IconNormal,
                     ContextMenu = new WinForms.ContextMenu(new[]
                     {
+                        new WinForms.MenuItem("WinCompose")
+                        {
+                            Enabled = false
+                        },
+                        new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowSettings, ShowSettingsClicked),
+                        new WinForms.MenuItem(i18n.Text.Disable, DisableClicked), 
+                        new WinForms.MenuItem(i18n.Text.VisitWebsite, VisitWebsiteClicked), 
+                        new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.Exit, ExitClicked)
                     })
                 };
@@ -91,9 +99,12 @@ namespace WinCompose
             if (!Composer.HasStateChanged())
                 return;
 
-            m_notifyicon.Icon = Composer.IsComposing() ? Properties.Resources.IconActive
+            m_notifyicon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
+                              : Composer.IsComposing() ? Properties.Resources.IconActive
                                                        : Properties.Resources.IconNormal;
-            m_notifyicon.Text = String.Format(i18n.Text.TrayToolTip,
+            m_notifyicon.Text = Composer.IsDisabled()
+                              ? i18n.Text.DisabledToolTip
+                              : String.Format(i18n.Text.TrayToolTip,
                                               Settings.GetComposeKeyName(),
                                               Settings.GetSequenceCount());
         }
@@ -122,6 +133,18 @@ namespace WinCompose
             {
                 m_settingswindow.Show();
             }
+        }
+
+        private static void DisableClicked(object sender, EventArgs e)
+        {
+            Composer.ToggleDisabled();
+            WinForms.MenuItem item = sender as WinForms.MenuItem;
+            item.Checked = Composer.IsDisabled();
+        }
+
+        private static void VisitWebsiteClicked(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://wincompose.info/");
         }
 
         private static void ExitClicked(object sender, EventArgs e)

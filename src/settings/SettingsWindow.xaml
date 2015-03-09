@@ -10,8 +10,14 @@
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
         Closing="CloseWindowClicked">
+
     <Window.Resources>
     </Window.Resources>
+
+    <Window.InputBindings>
+        <!-- TODO: bind this to something -->
+        <!--<KeyBinding Key="Escape" Command=""/>-->
+    </Window.InputBindings>
 
     <DockPanel Margin="8">
 
@@ -102,7 +108,7 @@
 
      <!-- The Close button -->
      <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
-             Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked"/>
+             Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked" />
 
   </DockPanel>
 </Window>
