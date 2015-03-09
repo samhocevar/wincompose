@@ -13,6 +13,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Windows.Forms.Integration;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
@@ -73,6 +74,7 @@ namespace WinCompose
             if (m_sequencewindow == null)
             {
                 m_sequencewindow = new SequenceWindow();
+                ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
             }
             else if (m_sequencewindow.IsVisible)
             {
@@ -113,6 +115,7 @@ namespace WinCompose
             if (m_settingswindow == null)
             {
                 m_settingswindow = new SettingsWindow();
+                ElementHost.EnableModelessKeyboardInterop(m_settingswindow);
                 m_settingswindow.Show();
             }
             else
