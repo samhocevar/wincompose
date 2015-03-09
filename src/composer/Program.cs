@@ -86,6 +86,9 @@ namespace WinCompose
 
         private static void TimerTicked(object sender, EventArgs e)
         {
+            if (!Composer.HasStateChanged())
+                return;
+
             m_notifyicon.Icon = Composer.IsComposing() ? Properties.Resources.IconActive
                                                        : Properties.Resources.IconNormal;
             m_notifyicon.Text = String.Format(i18n.Text.TrayToolTip,

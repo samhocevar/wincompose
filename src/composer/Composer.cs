@@ -65,10 +65,12 @@ static class Composer
         {
             if (is_keyup)
             {
+                m_statechanged = true;
                 m_compose_down = false;
             }
             else if (is_keydown && !m_compose_down)
             {
+                m_statechanged = true;
                 m_compose_down = true;
                 m_composing = !m_composing;
                 if (!m_composing)
@@ -118,6 +120,7 @@ static class Composer
             {
                 // Sequence finished, print it
                 SendString(Settings.GetSequenceResult(m_sequence));
+                m_statechanged = true;
                 m_composing = false;
                 m_sequence = new List<Key>();
             }
@@ -141,6 +144,7 @@ static class Composer
                 if (Settings.BeepOnInvalid.Value)
                     SystemSounds.Beep.Play();
 
+                m_statechanged = true;
                 m_composing = false;
                 m_sequence = new List<Key>();
             }
@@ -248,6 +252,13 @@ static class Composer
         return m_composing;
     }
 
+    public static bool HasStateChanged()
+    {
+        bool ret = m_statechanged;
+        m_statechanged = false;
+        return ret;
+    }
+
     private static INPUT NewInputKey(VirtualKeyShort vk)
     {
         INPUT ret = NewInputKey();
@@ -309,6 +320,7 @@ static class Composer
     private static List<Key> m_sequence = new List<Key>();
     private static bool m_compose_down = false;
     private static bool m_composing = false;
+    private static bool m_statechanged = true;
 }
 
 }
