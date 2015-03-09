@@ -62,6 +62,12 @@ static class Composer
             key = new Key(Encoding.Unicode.GetString(buf, 0, ret + 1));
         }
 
+        // Special case: we don't consider characters suh as Escape as printable
+        if (key.IsPrintable() && key.ToString()[0] < ' ')
+        {
+            key = new Key(vk);
+        }
+
         // Remember when we pressed a key for the last time
         if (is_keydown)
         {
