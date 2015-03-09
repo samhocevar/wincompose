@@ -408,8 +408,9 @@ namespace WinCompose
         private static string GetConfigDir()
         {
             var appdata = Environment.SpecialFolder.ApplicationData;
-            return IsInstalled() ? Environment.GetFolderPath(appdata)
-                                 : GetExeDir();
+            var appdatadir = Path.Combine(Environment.GetFolderPath(appdata),
+                                          "WinCompose");
+            return IsInstalled() ? appdatadir : GetExeDir();
         }
 
         private static string GetDataDir()
