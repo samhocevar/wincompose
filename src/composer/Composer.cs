@@ -59,6 +59,12 @@ static class Composer
             key = new Key(Encoding.Unicode.GetString(buf, 0, ret + 1));
         }
 
+        // Remember when we pressed a key for the last time
+        if (is_keydown)
+        {
+            m_last_key_time = DateTime.Now;
+        }
+
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
         if (Settings.IsComposeKey(key))
@@ -70,6 +76,8 @@ static class Composer
             }
             else if (is_keydown && !m_compose_down)
             {
+                /* FIXME: we don't want compose + compose to disable composing, since
+                 * there are compose sequences that use Multi_key. */
                 m_statechanged = true;
                 m_compose_down = true;
                 m_composing = !m_composing;
@@ -254,6 +262,14 @@ static class Composer
 
     public static bool HasStateChanged()
     {
+        if (m_composing && Settings.ResetDelay.Value > 0 &&
+            DateTime.Now > m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
+        {
+            m_composing = false;
+            m_statechanged = false;
+            return true;
+        }
+
         bool ret = m_statechanged;
         m_statechanged = false;
         return ret;
@@ -318,6 +334,7 @@ static class Composer
 
     private static byte[] m_keystate = new byte[256];
     private static List<Key> m_sequence = new List<Key>();
+    private static DateTime m_last_key_time = DateTime.Now;
     private static bool m_compose_down = false;
     private static bool m_composing = false;
     private static bool m_statechanged = true;
