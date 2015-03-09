@@ -50,10 +50,15 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Program.cs" />
-    <Compile Include="unicode\Category.am.Designer.cs">
+    <Compile Include="unicode\Category.be.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Category.am.resx</DependentUpon>
+      <DependentUpon>Category.be.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.cs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.cs.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Category.da.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -70,6 +75,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.el.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.el.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.et.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.et.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.fi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +105,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.ga.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.id.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.id.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.it.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,10 +125,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.pl.resx</DependentUpon>
     </Compile>
-    <Compile Include="unicode\Category.rw.Designer.cs">
+    <Compile Include="unicode\Category.ru.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Category.rw.resx</DependentUpon>
+      <DependentUpon>Category.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.sc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.sc.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Category.sk.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +144,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.sr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.zh-CHS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.zh-CHS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.zh-CHT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.zh-CHT.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Char.am.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -357,9 +407,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="unicode\Category.am.resx">
+    <EmbeddedResource Include="unicode\Category.be.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Category.am.Designer.cs</LastGenOutput>
+      <LastGenOutput>Category.be.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.cs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.cs.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.da.resx">
@@ -370,6 +425,21 @@
     <EmbeddedResource Include="unicode\Category.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.el.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.el.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.es.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.et.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.et.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.fi.resx">
@@ -387,6 +457,16 @@
       <LastGenOutput>Category.ga.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.id.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.id.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.it.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.it.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.nl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.nl.Designer.cs</LastGenOutput>
@@ -401,9 +481,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="unicode\Category.rw.resx">
+    <EmbeddedResource Include="unicode\Category.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Category.rw.Designer.cs</LastGenOutput>
+      <LastGenOutput>Category.ru.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.sc.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.sc.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.sk.resx">
@@ -414,6 +499,21 @@
     <EmbeddedResource Include="unicode\Category.sr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.sr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.sv.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.sv.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.zh-CHS.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.zh-CHS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.zh-CHT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.zh-CHT.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Char.am.resx">
