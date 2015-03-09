@@ -1,8 +1,8 @@
 ﻿WinCompose
 ==========
 
-A compose key for Windows, free and opensource, written by Sam Hocevar
-and Benjamin Litzelmann.
+A compose key for Windows, free and opensource, created by Sam Hocevar
+with the help of [dozens of contributors](https://github.com/samhocevar/wincompose/graphs/contributors).
 
 A **compose key** allows to easily write special characters such as **é
 ž à ō û ø ☺ ¤ ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often
@@ -10,7 +10,7 @@ very intuitive key combinations. For instance, **ö** is obtained using
 <kbd>o</kbd> + <kbd>"</kbd>, and **♥** is obtained using <kbd>&lt;</kbd>
 \+ <kbd>3</kbd>.
 
-The authors wrote WinCompose because none of the alternatives (FreeCompose,
+Sam wrote WinCompose because none of the alternatives (FreeCompose,
 CKFW, AllChars or Unichars) were found to be satisfying.
 
 Download latest: [WinCompose 0.6.13](https://github.com/samhocevar/wincompose/releases/download/v0.6.13/WinCompose-Setup-0.6.13.exe) (December 12, 2014)
@@ -77,7 +77,11 @@ WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kb
 WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>&</kbd> will
 immediately type **&** because there is currently no rule starting with <kbd>&</kbd>.
 
-As of now, WinCompose is fully translated in Dutch, French, Greek, Russian and Swedish, and partially translated in Czech, German and Indonesian. You can help us translate it to more languages using the Weblate project:
+As of now, WinCompose is almost fully translated to Belarusian, Chinese,
+Danish, Dutch, Estonian, Finnish, French, German, Greek, Italian, Polish,
+Russian, Spanish and Swedish. It is partially translated to Czech, Indonesian,
+Irish, Sardinian, Serbian and Slovak. You can help us translate it to more
+languages using the Weblate project:
 
 <a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
 
