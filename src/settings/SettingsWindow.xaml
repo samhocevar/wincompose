@@ -6,7 +6,7 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
-        Title="{x:Static i18n:Text.Options}" Width="400" Height="500"
+        Title="{x:Static i18n:Text.Options}" Width="420" Height="520"
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
         Closing="CloseWindowClicked">
@@ -95,7 +95,6 @@
       <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.Tweaks}" VerticalAlignment="Top">
          <Grid VerticalAlignment="Center">
              <Grid.ColumnDefinitions>
-                 <ColumnDefinition Width="Auto"/>
                  <ColumnDefinition Width="*"/>
              </Grid.ColumnDefinitions>
              <Grid.RowDefinitions>
