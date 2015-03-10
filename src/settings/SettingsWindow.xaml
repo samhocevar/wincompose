@@ -50,13 +50,8 @@
                         Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
              <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"
                        ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
-                       SelectedItem="{Binding Value, Source={x:Static wc:Settings.ComposeKey}}">
-                 <ComboBox.ItemTemplate>
-                     <DataTemplate>
-                         <TextBlock Text="{Binding Converter={wc:ComposeKeyValueConverter}}"/>
-                     </DataTemplate>
-                 </ComboBox.ItemTemplate>
-             </ComboBox>
+                       SelectedItem="{Binding Value, Source={x:Static wc:Settings.ComposeKey}}"
+                       SelectedValuePath="" DisplayMemberPath="FriendlyName"/>
 
              <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"
                         Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>

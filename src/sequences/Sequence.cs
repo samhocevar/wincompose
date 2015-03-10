@@ -61,7 +61,7 @@ public class KeyConverter : TypeConverter
 [TypeConverter(typeof(KeyConverter))]
 public class Key
 {
-    private static readonly Dictionary<VK, string> m_key_symbols = new Dictionary<VK, string>
+    private static readonly Dictionary<VK, string> m_key_labels = new Dictionary<VK, string>
     {
         { VK.UP,    "▲" },
         { VK.DOWN,  "▼" },
@@ -69,7 +69,7 @@ public class Key
         { VK.RIGHT, "▶" },
     };
 
-    private static readonly Dictionary<VK, string> m_compose_key_symbols = new Dictionary<VK, string>
+    private static readonly Dictionary<VK, string> m_key_names = new Dictionary<VK, string>
     {
         { VK.LMENU, i18n.Text.KeyLMenu },
         { VK.RMENU, i18n.Text.KeyRMenu },
@@ -101,22 +101,43 @@ public class Key
         return m_str != null;
     }
 
+    /// <summary>
+    /// A friendly name that we can put in e.g. a dropdown menu
+    /// </summary>
+    public string FriendlyName
+    {
+        get
+        {
+            string ret;
+            if (m_key_names.TryGetValue(m_vk, out ret))
+                return ret;
+
+            return m_str ?? string.Format("VK.{0}", m_vk);
+        }
+    }
+
+    /// <summary>
+    /// A label that we can print on keycap icons
+    /// </summary>
+    public string KeyLabel
+    {
+        get
+        {
+            string ret;
+            if (m_key_labels.TryGetValue(m_vk, out ret))
+                return ret;
+
+            return m_str ?? string.Format("VK.{0}", m_vk);
+        }
+    }
+
+    /// <summary>
+    /// Serialize key to a printable string we can parse back into
+    /// a <see cref="Key"/> object
+    /// </summary>
     public override string ToString()
     {
-        string ret;
-        if (m_key_symbols.TryGetValue(m_vk, out ret))
-            return ret;
-
-        // FIXME: Benlitz apparently had something else in mind for this feature
-        //if (m_compose_key_symbols.TryGetValue(m_vk, out ret))
-        //    return ret;
-
-        if (m_vk != VK.NONE)
-        {
-            return string.Format("VK.{0}", m_vk);
-        }
-
-        return m_str ?? "";
+        return m_str ?? string.Format("VK.{0}", m_vk);
     }
 
     public override bool Equals(object o)

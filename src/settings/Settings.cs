@@ -301,6 +301,7 @@ namespace WinCompose
         private static SequenceTree m_sequences = new SequenceTree();
         private static int m_sequence_count = 0;
 
+        // FIXME: couldn't we accept any compose key?
         private static readonly List<Key> m_valid_compose_keys = new List<Key>
         {
            new Key(VK.LMENU),
