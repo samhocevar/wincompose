@@ -183,10 +183,10 @@
   <data name="ShowSequences" xml:space="preserve">
     <value>Mostrar las Secuencias…</value>
   </data>
-  <data name="Obsolete025" xml:space="preserve">
+  <data name="Disable" xml:space="preserve">
     <value>Desactivar</value>
   </data>
-  <data name="Obsolete026" xml:space="preserve">
+  <data name="Restart" xml:space="preserve">
     <value>Reiniciar</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
@@ -195,7 +195,7 @@
   <data name="Obsolete030" xml:space="preserve">
     <value>Acerca de</value>
   </data>
-  <data name="Obsolete031" xml:space="preserve">
+  <data name="VisitWebsite" xml:space="preserve">
     <value>Visitar sitio web</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
@@ -254,9 +254,6 @@
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
     <value>En las categorías seleccionadas</value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Ajustes</value>
   </data>
   <data name="ShowSettings" xml:space="preserve">
     <value>Ajustes…</value>

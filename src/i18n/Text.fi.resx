@@ -183,10 +183,10 @@
   <data name="ShowSequences" xml:space="preserve">
     <value>Näytä merkkisarjat…</value>
   </data>
-  <data name="Obsolete025" xml:space="preserve">
+  <data name="Disable" xml:space="preserve">
     <value>Poista käytöstä</value>
   </data>
-  <data name="Obsolete026" xml:space="preserve">
+  <data name="Restart" xml:space="preserve">
     <value>Käynnistä uudelleen</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
@@ -195,7 +195,7 @@
   <data name="Obsolete030" xml:space="preserve">
     <value>Tietoja</value>
   </data>
-  <data name="Obsolete031" xml:space="preserve">
+  <data name="VisitWebsite" xml:space="preserve">
     <value>Käy verkkosivuilla</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">

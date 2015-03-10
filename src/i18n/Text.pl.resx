@@ -183,10 +183,10 @@
   <data name="ShowSequences" xml:space="preserve">
     <value>Pokaż sekwencje…</value>
   </data>
-  <data name="Obsolete025" xml:space="preserve">
+  <data name="Disable" xml:space="preserve">
     <value>Wyłącz</value>
   </data>
-  <data name="Obsolete026" xml:space="preserve">
+  <data name="Restart" xml:space="preserve">
     <value>Uruchom ponownie</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
@@ -195,7 +195,7 @@
   <data name="Obsolete030" xml:space="preserve">
     <value>O programie</value>
   </data>
-  <data name="Obsolete031" xml:space="preserve">
+  <data name="VisitWebsite" xml:space="preserve">
     <value>Odwiedź stronę</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">

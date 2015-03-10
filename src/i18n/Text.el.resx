@@ -183,10 +183,10 @@
   <data name="ShowSequences" xml:space="preserve">
     <value>Εμφάνιση Ακολουθιών…</value>
   </data>
-  <data name="Obsolete025" xml:space="preserve">
+  <data name="Disable" xml:space="preserve">
     <value>Απενεργοποίηση</value>
   </data>
-  <data name="Obsolete026" xml:space="preserve">
+  <data name="Restart" xml:space="preserve">
     <value>Επανεκκίνηση</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
@@ -195,7 +195,7 @@
   <data name="Obsolete030" xml:space="preserve">
     <value>Περί</value>
   </data>
-  <data name="Obsolete031" xml:space="preserve">
+  <data name="VisitWebsite" xml:space="preserve">
     <value>Ιστοσελίδα</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">

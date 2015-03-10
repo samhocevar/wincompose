@@ -25,250 +25,287 @@ msgstr ""
 msgid "Autodetect"
 msgstr "Аўтавыяўленьне"
 
-#: i18n/Text.resx:125 ID:KeyLMenu
+#. The name of the key on the keyboard
+#: i18n/Text.resx:126 ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Левы Alt"
 
-#: i18n/Text.resx:128 ID:KeyRMenu
+#. The name of the key on the keyboard
+#: i18n/Text.resx:130 ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Правы Alt"
 
-#: i18n/Text.resx:131 ID:KeyLControl
+#. The name of the key on the keyboard
+#: i18n/Text.resx:134 ID:KeyLControl
 msgid "Left Control"
 msgstr "Левы Control"
 
-#: i18n/Text.resx:134 ID:KeyRControl
+#. The name of the key on the keyboard
+#: i18n/Text.resx:138 ID:KeyRControl
 msgid "Right Control"
 msgstr "Правы Control"
 
-#: i18n/Text.resx:137 ID:KeyLWin
+#. The name of the key on the keyboard
+#: i18n/Text.resx:142 ID:KeyLWin
 msgid "Left Windows"
 msgstr "Левы Windows"
 
-#: i18n/Text.resx:140 ID:KeyRWin
+#. The name of the key on the keyboard
+#: i18n/Text.resx:146 ID:KeyRWin
 msgid "Right Windows"
 msgstr "Правы Windows"
 
-#: i18n/Text.resx:143 ID:KeyCapital
+#. The name of the key on the keyboard
+#: i18n/Text.resx:150 ID:KeyCapital
 msgid "Caps Lock"
 msgstr "Caps Lock"
 
-#: i18n/Text.resx:146 ID:KeyNumLock
+#. The name of the key on the keyboard
+#: i18n/Text.resx:154 ID:KeyNumLock
 msgid "Num Lock"
 msgstr "Num Lock"
 
-#: i18n/Text.resx:149 ID:KeyPause
+#. The name of the key on the keyboard
+#: i18n/Text.resx:158 ID:KeyPause
 msgid "Pause"
 msgstr "Pause"
 
 #. Also known as Application key
-#: i18n/Text.resx:153 ID:KeyApps
+#: i18n/Text.resx:162 ID:KeyApps
 msgid "Menu"
 msgstr "Меню"
 
-#: i18n/Text.resx:156 ID:KeyEscape
+#. The name of the key on the keyboard
+#: i18n/Text.resx:166 ID:KeyEscape
 msgid "Escape"
 msgstr "Escape"
 
-#: i18n/Text.resx:159 ID:KeyScroll
+#. The name of the key on the keyboard
+#: i18n/Text.resx:170 ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
+#. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:162 ID:Obsolete016
+#: i18n/Text.resx:174 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "Ґравіс `"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:165 ID:Obsolete017
+#: i18n/Text.resx:177 ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "½ сякунды"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:168 ID:Obsolete018
+#: i18n/Text.resx:180 ID:Obsolete018
 msgid "1 second"
 msgstr "1 сякунда"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:171 ID:Obsolete019
+#: i18n/Text.resx:183 ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 сякунды"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:174 ID:Obsolete020
+#: i18n/Text.resx:186 ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 сякунды"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:177 ID:Obsolete021
+#: i18n/Text.resx:189 ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 сякундаў"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:180 ID:Obsolete022
+#: i18n/Text.resx:192 ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 сякунд"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:183 ID:Obsolete023
+#: i18n/Text.resx:195 ID:Obsolete023
 msgid "None"
 msgstr "Няма"
 
-#: i18n/Text.resx:186 ID:ShowSequences
+#: i18n/Text.resx:198 ID:ShowSequences
 msgid "Show Sequences…"
 msgstr "Паказаць пасьлядоўнасьці…"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:189 ID:Obsolete025
+#. Menu entry to disable WinCompose
+#: i18n/Text.resx:202 ID:Disable
 msgid "Disable"
 msgstr "Вымкнуць"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:192 ID:Obsolete026
+#: i18n/Text.resx:205 ID:Restart
 msgid "Restart"
 msgstr "Перазапуск"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:195 ID:Obsolete027
+#: i18n/Text.resx:208 ID:Obsolete027
 msgid "History"
 msgstr "Гісторыя"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:198 ID:Obsolete030
+#: i18n/Text.resx:211 ID:Obsolete030
 msgid "About"
 msgstr "Пра праґраму"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:201 ID:Obsolete031
+#. Menu entry to visit the website
+#: i18n/Text.resx:215 ID:VisitWebsite
 msgid "Visit Website"
 msgstr "Наведаць вэбсайт"
 
-#: i18n/Text.resx:204 ID:Exit
+#: i18n/Text.resx:218 ID:Exit
 msgid "Exit"
 msgstr ""
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:207 ID:Obsolete036
+#: i18n/Text.resx:221 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>"
 msgstr "напісаў Sam Hocevar <sam@hocevar.net>"
 
-#: i18n/Text.resx:210 ID:Sequences
+#: i18n/Text.resx:224 ID:Sequences
 msgid "Sequences"
 msgstr "Пасьлядоўнасьці"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:213 ID:Obsolete039
+#: i18n/Text.resx:227 ID:Obsolete039
 msgid "Sequence"
 msgstr "Камбінацыя"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:216 ID:Obsolete041
+#: i18n/Text.resx:230 ID:Obsolete041
 msgid "Unicode"
 msgstr "Унікод"
 
-#: i18n/Text.resx:219 ID:Search
+#: i18n/Text.resx:233 ID:Search
 msgid "Search Filter:"
 msgstr "Фільтар пошуку:"
 
-#: i18n/Text.resx:222 ID:ComposeKey
+#: i18n/Text.resx:236 ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Кампанавальная клавіша:"
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:226 ID:ResetDelay
+#: i18n/Text.resx:240 ID:ResetDelay
 msgid "Delay:"
 msgstr "Затрымка:"
 
-#: i18n/Text.resx:229 ID:CaseInsensitive
+#: i18n/Text.resx:243 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr "Пры нядзейсных пасьлядоўнасьцях мяняць раґістар літараў"
 
-#: i18n/Text.resx:232 ID:DiscardOnInvalid
+#: i18n/Text.resx:246 ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr "Іґнараваць сымбалі зь няправільных пасьлядоўнасьцяў"
 
-#: i18n/Text.resx:235 ID:BeepOnInvalid
+#: i18n/Text.resx:249 ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr "Сыґналізаваці пра няправільныя пасьлядоўнасьці"
 
-#: i18n/Text.resx:238 ID:Language
+#: i18n/Text.resx:252 ID:Language
 msgid "Interface language:"
 msgstr "Мова інтарфэйсу:"
 
 #. Close the settings window
-#: i18n/Text.resx:242 ID:Close
+#: i18n/Text.resx:256 ID:Close
 msgid "Close"
 msgstr "Зачыніць"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:246 ID:Obsolete050
+#: i18n/Text.resx:260 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Капіяваці сымбаль"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:250 ID:Obsolete051
+#: i18n/Text.resx:264 ID:Obsolete051
 msgid "Description:"
 msgstr "Апісаньне:"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:254 ID:Apply
+#: i18n/Text.resx:268 ID:Apply
 msgid "Apply"
 msgstr ""
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:258 ID:KeepOriginalKey
+#: i18n/Text.resx:272 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr ""
 
-#: i18n/Text.resx:261 ID:InsertZwsp
+#: i18n/Text.resx:275 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr ""
 
-#: i18n/Text.resx:264 ID:EmulateCapsLock
+#: i18n/Text.resx:278 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
 msgstr ""
 
-#: i18n/Text.resx:267 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:281 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
 msgstr ""
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:271 ID:Categories
+#: i18n/Text.resx:285 ID:Categories
 msgid "Categories"
 msgstr ""
 
-#: i18n/Text.resx:274 ID:InSelectedCategories
+#: i18n/Text.resx:288 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr ""
 
 #. The title of the Settings window
-#: i18n/Text.resx:278 ID:Settings
-msgid "Settings"
-msgstr ""
+#: i18n/Text.resx:292 ID:Settings
+#, fuzzy
+msgid "Settings — WinCompose"
+msgstr "Кампанавальная клавіша:"
 
-#: i18n/Text.resx:281 ID:ShowSettings
+#: i18n/Text.resx:295 ID:ShowSettings
 msgid "Settings…"
 msgstr ""
 
 #. {0}: compose key name, {1}: number of sequences
-#: i18n/Text.resx:285 ID:TrayToolTip
+#: i18n/Text.resx:299 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
-#: i18n/Text.resx:288 ID:Behavior
+#: i18n/Text.resx:302 ID:Behavior
 msgid "General Behavior"
 msgstr ""
 
 #. The title of the Sequences window
-#: i18n/Text.resx:292 ID:WindowTitle
+#: i18n/Text.resx:306 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:295 ID:UserMacros
+#: i18n/Text.resx:309 ID:UserMacros
 msgid "User-defined macros"
 msgstr ""
+
+#: i18n/Text.resx:312 ID:DisabledToolTip
+#, fuzzy
+msgid "WinCompose is disabled"
+msgstr "Кампанавальная клавіша:"
+
+#. The name of the key on the keyboard
+#: i18n/Text.resx:316 ID:KeyInsert
+msgid "Insert"
+msgstr ""
+
+#. The "Test Typing" section in the settings window
+#: i18n/Text.resx:320 ID:TestTyping
+msgid "Test Typing:"
+msgstr ""
+
+#. The "Tweaks" section in the settings window
+#: i18n/Text.resx:324 ID:Tweaks
+msgid "Tweaks"
+msgstr ""
+
+#: i18n/Text.resx:327 ID:Milliseconds
+#, fuzzy
+msgid "(milliseconds)"
+msgstr "½ сякунды"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
@@ -462,7 +499,3 @@ msgstr "Падзяляльнік, прабелы"
 
 #~ msgid "@APP_NAME@ (typing)"
 #~ msgstr "@APP_NAME@ (набірае)"
-
-#, fuzzy
-#~ msgid "WinCompose"
-#~ msgstr "Кампанавальная клавіша:"

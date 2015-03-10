@@ -174,10 +174,10 @@
   <data name="Obsolete023" xml:space="preserve">
     <value>Kosong</value>
   </data>
-  <data name="Obsolete025" xml:space="preserve">
+  <data name="Disable" xml:space="preserve">
     <value>Non-aktifkan</value>
   </data>
-  <data name="Obsolete026" xml:space="preserve">
+  <data name="Restart" xml:space="preserve">
     <value>Restart</value>
   </data>
 </root>

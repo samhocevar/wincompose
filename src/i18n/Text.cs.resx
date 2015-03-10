@@ -180,10 +180,10 @@
   <data name="ShowSequences" xml:space="preserve">
     <value>Zobrazit Sekvence…</value>
   </data>
-  <data name="Obsolete025" xml:space="preserve">
+  <data name="Disable" xml:space="preserve">
     <value>Vypnout</value>
   </data>
-  <data name="Obsolete026" xml:space="preserve">
+  <data name="Restart" xml:space="preserve">
     <value>Restartovat</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
@@ -192,7 +192,7 @@
   <data name="Obsolete030" xml:space="preserve">
     <value>O aplikaci</value>
   </data>
-  <data name="Obsolete031" xml:space="preserve">
+  <data name="VisitWebsite" xml:space="preserve">
     <value>Navštívit web</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">

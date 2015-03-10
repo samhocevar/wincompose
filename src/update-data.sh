@@ -31,11 +31,11 @@ for FILE in i18n/Text.resx unicode/Category.resx; do
   >> ${DEST}
 done
 
-rm -f po/*~
 for POFILE in po/*.po; do
      printf %s ${POFILE}
      msgmerge -U ${POFILE} po/wincompose.pot
 done
+rm -f po/*~
 
 #
 # Update each Text.*.resx with contents from *.po, i.e. the
