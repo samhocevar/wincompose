@@ -6,7 +6,7 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
-        Title="{x:Static i18n:Text.Options}" Height="500" Width="450"
+        Title="{x:Static i18n:Text.Options}" Width="400" Height="500"
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
         Closing="CloseWindowClicked">
@@ -26,57 +26,67 @@
          <Grid VerticalAlignment="Top">
              <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="Auto"/>
-                 <ColumnDefinition Width="200"/>
+                 <ColumnDefinition Width="3*"/>
                  <ColumnDefinition Width="*"/>
              </Grid.ColumnDefinitions>
              <Grid.RowDefinitions>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
                  <RowDefinition Height="Auto"/>
              </Grid.RowDefinitions>
 
              <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"
+                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+             <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                        ItemsSource="{x:Static wc:Settings.ValidLanguages}"
                        SelectedValue="{Binding Value, Source={x:Static wc:Settings.Language}}"
                        SelectedValuePath="Key" DisplayMemberPath="Value"/>
 
              <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.ComposeKey}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"
+                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+             <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                        ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
                        SelectedItem="{Binding Value, Source={x:Static wc:Settings.ComposeKey}}"
                        SelectedValuePath="" DisplayMemberPath="FriendlyName"/>
 
              <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <UniformGrid Columns="2" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
-                 <TextBox Margin="8,2" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
+                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+             <UniformGrid Columns="2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center">
+                 <TextBox Margin="8,4" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
+                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
+                            Grid.ColumnSpan="2" Margin="8,4"
+                            Focusable="False" TextAlignment="Right" VerticalAlignment="Center"/>
              </UniformGrid>
-             <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
 
-             <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.CaseInsensitive}"
-                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}"/>
+             <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                       Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}">
+                 <TextBox Text="{x:Static i18n:Text.CaseInsensitive}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
 
-             <CheckBox Grid.Row="4" Grid.Column="0" Content="{x:Static i18n:Text.DiscardOnInvalid}"
-                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}"/>
+             <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}">
+                 <TextBox Text="{x:Static i18n:Text.DiscardOnInvalid}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
 
-             <CheckBox Grid.Row="5" Grid.Column="0" Content="{x:Static i18n:Text.BeepOnInvalid}"
-                       Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"/>
+             <CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}">
+                 <TextBox Text="{x:Static i18n:Text.BeepOnInvalid}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
 
              <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
-                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
              <TextBox Grid.Row="6" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
-                      Grid.ColumnSpan="2" Height="Auto" FontSize="20" FontWeight="SemiBold"
+                      Grid.ColumnSpan="3" Height="Auto" FontSize="20" FontWeight="SemiBold"
                       Foreground="#434" Background="#eee" ForceCursor="True">ÅḄ₡Đ♥…</TextBox>
          </Grid>
       </GroupBox>
@@ -89,27 +99,39 @@
                  <ColumnDefinition Width="*"/>
              </Grid.ColumnDefinitions>
              <Grid.RowDefinitions>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
-                 <RowDefinition Height="30"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
              </Grid.RowDefinitions>
 
-             <CheckBox Grid.Row="0" Grid.Column="0" Content="{x:Static i18n:Text.KeepOriginalKey}"
-                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center" IsEnabled="False"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"/>
+             <CheckBox Grid.Row="0" Grid.Column="0"
+                       Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}">
+                 <TextBox Text="{x:Static i18n:Text.KeepOriginalKey}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
 
-             <CheckBox Grid.Row="1" Grid.Column="0" Content="{x:Static i18n:Text.InsertZwsp}"
-                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"/>
+             <CheckBox Grid.Row="1" Grid.Column="0"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}">
+                 <TextBox Text="{x:Static i18n:Text.InsertZwsp}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
 
-             <CheckBox Grid.Row="2" Grid.Column="0" Content="{x:Static i18n:Text.EmulateCapsLock}"
-                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}"/>
+             <CheckBox Grid.Row="2" Grid.Column="0"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}">
+                 <TextBox Text="{x:Static i18n:Text.EmulateCapsLock}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
 
-             <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.ShiftDisablesCapsLock}"
-                       Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"/>
+             <CheckBox Grid.Row="3" Grid.Column="0"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}">
+                 <TextBox Text="{x:Static i18n:Text.ShiftDisablesCapsLock}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
          </Grid>
       </GroupBox>
 
