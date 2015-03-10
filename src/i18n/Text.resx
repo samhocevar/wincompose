@@ -201,7 +201,7 @@
     <value>Disable</value>
     <comment>Menu entry to disable WinCompose</comment>
   </data>
-  <data name="Obsolete026" xml:space="preserve">
+  <data name="Restart" xml:space="preserve">
     <value>Restart</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
@@ -288,7 +288,7 @@
     <value>In selected categories</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Settings — WinCompose</value>
     <comment>The title of the Settings window</comment>
   </data>
   <data name="ShowSettings" xml:space="preserve">
@@ -322,5 +322,8 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Tweaks</value>
     <comment>The "Tweaks" section in the settings window</comment>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(milliseconds)</value>
   </data>
 </root>

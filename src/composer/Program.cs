@@ -54,7 +54,8 @@ namespace WinCompose
                         new WinForms.MenuItem(i18n.Text.Disable, DisableClicked), 
                         new WinForms.MenuItem(i18n.Text.VisitWebsite, VisitWebsiteClicked), 
                         new WinForms.MenuItem("-"),
-                        new WinForms.MenuItem(i18n.Text.Exit, ExitClicked)
+                        new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
+                        new WinForms.MenuItem(i18n.Text.Exit, ExitClicked),
                     })
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
@@ -145,6 +146,12 @@ namespace WinCompose
         private static void VisitWebsiteClicked(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://wincompose.info/");
+        }
+
+        private static void RestartClicked(object sender, EventArgs e)
+        {
+            WinForms.Application.Restart();
+            Environment.Exit(0);
         }
 
         private static void ExitClicked(object sender, EventArgs e)

@@ -63,6 +63,8 @@
              <UniformGrid Columns="2" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
                  <TextBox Margin="8,2" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
              </UniformGrid>
+             <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
+                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
 
              <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.CaseInsensitive}"
                        Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
@@ -79,8 +81,8 @@
              <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
                         Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
              <TextBox Grid.Row="6" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
-                      Grid.ColumnSpan="2" Height="Auto" FontSize="20" FontWeight="Bold"
-                      ForceCursor="True">ÅḄ₡Đ♥☺</TextBox>
+                      Grid.ColumnSpan="2" Height="Auto" FontSize="20" FontWeight="SemiBold"
+                      Foreground="#434" Background="#eee" ForceCursor="True">ÅḄ₡Đ♥…</TextBox>
          </Grid>
       </GroupBox>
 

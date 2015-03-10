@@ -331,6 +331,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (milliseconds).
+        /// </summary>
+        public static string Milliseconds {
+            get {
+                return ResourceManager.GetString("Milliseconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grave Accent `.
         /// </summary>
         public static string Obsolete016 {
@@ -399,15 +408,6 @@ namespace WinCompose.i18n {
         public static string Obsolete023 {
             get {
                 return ResourceManager.GetString("Obsolete023", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Restart.
-        /// </summary>
-        public static string Obsolete026 {
-            get {
-                return ResourceManager.GetString("Obsolete026", resourceCulture);
             }
         }
         
@@ -484,6 +484,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        public static string Restart {
+            get {
+                return ResourceManager.GetString("Restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search Filter:.
         /// </summary>
         public static string Search {
@@ -502,7 +511,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to Settings — WinCompose.
         /// </summary>
         public static string Settings {
             get {
