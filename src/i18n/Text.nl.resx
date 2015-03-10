@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>@1@ sequentie(s) geladen</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Compositietoets is @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>Automatische detectie</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Geen</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Toon &amp;sequenties…</value>
+    <value>Toon sequenties…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Uitschakelen</value>
@@ -196,40 +190,25 @@
     <value>Herstarten</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;Historiek</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>&amp;Lijst van hotkeys</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>&amp;Opties…</value>
+    <value>Historiek</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;Over</value>
+    <value>Over</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Website bezoeken</value>
+    <value>Website bezoeken</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>&amp;Afsluiten</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n↵\n</value>
+    <value>Afsluiten</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>door Sam Hocevar &lt;sam@hocevar.net&gt;\n</value>
+    <value>door Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenties</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Opties</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Sequentie</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Karakter</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>
@@ -299,5 +278,8 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequenties — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Gebruikersmacro's</value>
   </data>
 </root>

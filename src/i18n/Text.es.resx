@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>Las secuencias de @1@ cargado</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Componer clave es @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>Autodetectar</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Ninguno</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Mostrar las &amp;Secuencias…</value>
+    <value>Mostrar las Secuencias…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Desactivar</value>
@@ -196,40 +190,22 @@
     <value>Reiniciar</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;Historia</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>&amp;Lista de Atajos</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>&amp;Opciones…</value>
+    <value>Historia</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;Acerca de</value>
+    <value>Acerca de</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Visitar sitio web</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>&amp;Salir</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n</value>
+    <value>Visitar sitio web</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>por Sam Hocevar &lt; sam@hocevar.net &gt;\n</value>
+    <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Secuencias</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Options</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Secuencia</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Carácter</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>

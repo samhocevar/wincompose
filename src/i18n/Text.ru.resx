@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>Загружено @1@ комбинаций</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Модификатор: @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>Автоопределение</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Нет</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Показать &amp;комбинации…</value>
+    <value>Показать комбинации…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Отключить</value>
@@ -196,40 +190,22 @@
     <value>Перезапуск</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;История</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>Список &amp;горячих клавиш</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>&amp;Опции…</value>
+    <value>История</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;О программе</value>
+    <value>О программе</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Посетить веб-сайт</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>В&amp;ыйти</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n</value>
+    <value>Посетить веб-сайт</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>Sam Hocevar &lt;sam@hocevar.net&gt;\n</value>
+    <value>Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Комбинации</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Опции</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Комбинация</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Символ</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>

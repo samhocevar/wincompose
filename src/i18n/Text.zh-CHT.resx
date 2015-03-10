@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>已載入 @1@ 按鍵系列</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>前導鍵是 @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>自動偵測</value>
   </data>
@@ -187,7 +181,7 @@
     <value>無</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>顯示按鍵系列(&amp;S)…</value>
+    <value>顯示按鍵系列…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>停用</value>
@@ -196,40 +190,22 @@
     <value>重新啟動</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>歷史(&amp;H)</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>快鍵清單(&amp;L)</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>選項(&amp;O)…</value>
+    <value>歷史</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>關於(&amp;A)</value>
+    <value>關於</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>拜訪網站(&amp;V)</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>離開(&amp;X)</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n↵\n</value>
+    <value>拜訪網站</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>開發者：Sam Hocevar &lt;sam@hocevar.net&gt;↵\n</value>
+    <value>開發者：Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>按鍵系列</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>選項</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>按鍵系列</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>字元</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>萬國碼(Unicode)</value>

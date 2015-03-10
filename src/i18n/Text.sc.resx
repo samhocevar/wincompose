@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Obsolete001" xml:space="preserve">
-    <value>@1@ fileras carrigadas</value>
-  </data>
-  <data name="Obsolete002" xml:space="preserve">
-    <value>Sa tecla Compose est @1@</value>
-  </data>
   <data name="AutodetectLanguage" xml:space="preserve">
     <value>Releva automaticamente</value>
   </data>
@@ -187,7 +181,7 @@
     <value>Infinita</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Ammustra &amp;Fileras…</value>
+    <value>Ammustra Fileras…</value>
   </data>
   <data name="Obsolete025" xml:space="preserve">
     <value>Disabìlita</value>
@@ -196,40 +190,22 @@
     <value>Torra a aviare</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>&amp;Istòria</value>
-  </data>
-  <data name="Obsolete028" xml:space="preserve">
-    <value>Teclas lestras &amp;Lista</value>
-  </data>
-  <data name="Obsolete029" xml:space="preserve">
-    <value>&amp;Optziones…</value>
+    <value>Istòria</value>
   </data>
   <data name="Obsolete030" xml:space="preserve">
-    <value>&amp;Informatziones</value>
+    <value>Informatziones</value>
   </data>
   <data name="Obsolete031" xml:space="preserve">
-    <value>&amp;Bìsita su giassu/situ</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>&amp;Essi</value>
-  </data>
-  <data name="Obsolete035" xml:space="preserve">
-    <value>\n</value>
+    <value>Bìsita su giassu/situ</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>de Sam Hocevar &lt;sam@hocevar.net&gt;\n</value>
+    <value>de Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Fileras</value>
   </data>
-  <data name="Obsolete038" xml:space="preserve">
-    <value>Optziones</value>
-  </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Filera</value>
-  </data>
-  <data name="Obsolete040" xml:space="preserve">
-    <value>Caràtere</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>

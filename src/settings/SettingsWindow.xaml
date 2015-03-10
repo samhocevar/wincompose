@@ -6,12 +6,18 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
-        Title="{x:Static i18n:Text.Settings}" Height="450" Width="450"
+        Title="{x:Static i18n:Text.Settings}" Height="500" Width="450"
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
         Closing="CloseWindowClicked">
+
     <Window.Resources>
     </Window.Resources>
+
+    <Window.InputBindings>
+        <!-- TODO: bind this to something -->
+        <!--<KeyBinding Key="Escape" Command=""/>-->
+    </Window.InputBindings>
 
     <DockPanel Margin="8">
 
@@ -30,11 +36,15 @@
                  <RowDefinition Height="30"/>
                  <RowDefinition Height="30"/>
                  <RowDefinition Height="30"/>
+                 <RowDefinition Height="Auto"/>
              </Grid.RowDefinitions>
 
              <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
                         Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"></ComboBox>
+             <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"
+                       ItemsSource="{x:Static wc:Settings.ValidLanguages}"
+                       SelectedValue="{Binding Value, Source={x:Static wc:Settings.Language}}"
+                       SelectedValuePath="Key" DisplayMemberPath="Value"/>
 
              <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.ComposeKey}"
                         Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
@@ -53,6 +63,8 @@
              <UniformGrid Columns="2" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
                  <TextBox Margin="8,2" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
              </UniformGrid>
+             <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
+                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
 
              <CheckBox Grid.Row="3" Grid.Column="0" Content="{x:Static i18n:Text.CaseInsensitive}"
                        Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
@@ -65,11 +77,17 @@
              <CheckBox Grid.Row="5" Grid.Column="0" Content="{x:Static i18n:Text.BeepOnInvalid}"
                        Grid.ColumnSpan="2" Margin="8,2" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"/>
+
+             <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
+                        Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
+             <TextBox Grid.Row="6" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
+                      Grid.ColumnSpan="2" Height="Auto" FontSize="20" FontWeight="SemiBold"
+                      Foreground="#434" Background="#eee" ForceCursor="True">ÅḄ₡Đ♥…</TextBox>
          </Grid>
       </GroupBox>
 
       <!-- The Tweaks group -->
-      <GroupBox DockPanel.Dock="Top" Header="Tweaks" VerticalAlignment="Top">
+      <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.Tweaks}" VerticalAlignment="Top">
          <Grid VerticalAlignment="Center">
              <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="Auto"/>
@@ -98,11 +116,11 @@
                        Margin="8,7.45,-8,7.45" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"/>
          </Grid>
-     </GroupBox>
+      </GroupBox>
 
-     <!-- The Close button -->
-     <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
-             Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked"/>
+      <!-- The Close button -->
+      <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
+              Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked" />
 
   </DockPanel>
 </Window>

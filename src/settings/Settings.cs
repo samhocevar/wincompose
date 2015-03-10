@@ -66,6 +66,8 @@ namespace WinCompose
 
         public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
 
+        public static Dictionary<string, string> ValidLanguages { get { return m_valid_languages; } }
+
         public static void StartWatchConfigFile()
         {
             watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
@@ -118,6 +120,9 @@ namespace WinCompose
                 }
                 catch (Exception) { }
             }
+
+            // Catch-22: we can only add this string when the UI language is known
+            m_valid_languages[""] = i18n.Text.AutodetectLanguage;
 
             // Various options
             CaseInsensitive.Load();
@@ -264,22 +269,36 @@ namespace WinCompose
             string result = m1.Groups[2].Captures[0].ToString();
             string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
 
+            // Replace \\ and \" in the string output
+            result = new Regex(@"\\(\\|"")").Replace(result, "$1");
+
             // Try to translate the description if appropriate
-            if (result.Length == 1)
+            int utf32 = StringToCodepoint(result);
+            if (utf32 >= 0)
             {
-                var key = String.Format("U{0:X04}", (int)result[0]);
-                var alt_desc = unicode.Char.ResourceManager.GetString(key);
+                string key = String.Format("U{0:X04}", utf32);
+                string alt_desc = unicode.Char.ResourceManager.GetString(key);
                 if (alt_desc != null && alt_desc.Length > 0)
                     description = alt_desc;
             }
 
-            m_sequences.Add(seq, result, description);
+            m_sequences.Add(seq, result, utf32, description);
             ++m_sequence_count;
+        }
+
+        private static int StringToCodepoint(string s)
+        {
+            if (s.Length == 1)
+                return (int)s[0];
+
+            if (s.Length == 2 && s[0] >= 0xd800 && s[0] <= 0xdbff)
+                return Char.ConvertToUtf32(s[0], s[1]);
+
+            return -1;
         }
 
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
-
         private static int m_sequence_count = 0;
 
         private static readonly List<Key> m_valid_compose_keys = new List<Key>
@@ -295,6 +314,7 @@ namespace WinCompose
            new Key(VK.PAUSE),
            new Key(VK.APPS),
            new Key(VK.ESCAPE),
+           new Key(VK.INSERT),
            new Key(VK.SCROLL),
            new Key("`"),
         };
@@ -380,7 +400,7 @@ namespace WinCompose
                     if (rm.GetResourceSet(culture, true, false) != null)
                         ret.Add(culture.Name, culture.NativeName);
                 }
-                catch(Exception) {}
+                catch (Exception) {}
             }
 
             return ret;
@@ -394,8 +414,9 @@ namespace WinCompose
         private static string GetConfigDir()
         {
             var appdata = Environment.SpecialFolder.ApplicationData;
-            return IsInstalled() ? Environment.GetFolderPath(appdata)
-                                 : GetExeDir();
+            var appdatadir = Path.Combine(Environment.GetFolderPath(appdata),
+                                          "WinCompose");
+            return IsInstalled() ? appdatadir : GetExeDir();
         }
 
         private static string GetDataDir()
@@ -429,7 +450,7 @@ namespace WinCompose
         private static bool IsDebugging()
         {
             string exe = GetExeName();
-            return File.Exists(Path.ChangeExtension(exe, ".vshost.exe"));
+            return File.Exists(Path.ChangeExtension(exe, ".pdb"));
         }
     }
 }

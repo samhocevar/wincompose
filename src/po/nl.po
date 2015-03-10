@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2015-03-07 19:30+0200\n"
+"PO-Revision-Date: 2015-03-09 15:20+0200\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
-"nl/>\n"
+"Language-Team: Dutch "
+"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,290 +19,257 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.3-dev\n"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:121 ID:Obsolete001
-msgid "Loaded @1@ Sequences"
-msgstr "@1@ sequentie(s) geladen"
-
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:124 ID:Obsolete002
-msgid "Compose Key is @1@"
-msgstr "Compositietoets is @1@"
-
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
-#: i18n/Text.resx:128 ID:AutodetectLanguage
+#: i18n/Text.resx:122 ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "Automatische detectie"
 
-#: i18n/Text.resx:131 ID:KeyLMenu
+#: i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Linker Alt-toets"
 
-#: i18n/Text.resx:134 ID:KeyRMenu
+#: i18n/Text.resx:128 ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Rechter Alt-toets"
 
-#: i18n/Text.resx:137 ID:KeyLControl
+#: i18n/Text.resx:131 ID:KeyLControl
 msgid "Left Control"
 msgstr "Linker Ctrl-toets"
 
-#: i18n/Text.resx:140 ID:KeyRControl
+#: i18n/Text.resx:134 ID:KeyRControl
 msgid "Right Control"
 msgstr "Rechter Ctrl-toets"
 
-#: i18n/Text.resx:143 ID:KeyLWin
+#: i18n/Text.resx:137 ID:KeyLWin
 msgid "Left Windows"
 msgstr "Linker Windows-toets"
 
-#: i18n/Text.resx:146 ID:KeyRWin
+#: i18n/Text.resx:140 ID:KeyRWin
 msgid "Right Windows"
 msgstr "Rechter Windows-toets"
 
-#: i18n/Text.resx:149 ID:KeyCapital
+#: i18n/Text.resx:143 ID:KeyCapital
 msgid "Caps Lock"
 msgstr "Caps Lock-toets"
 
-#: i18n/Text.resx:152 ID:KeyNumLock
+#: i18n/Text.resx:146 ID:KeyNumLock
 msgid "Num Lock"
 msgstr "Num Lock-toets"
 
-#: i18n/Text.resx:155 ID:KeyPause
+#: i18n/Text.resx:149 ID:KeyPause
 msgid "Pause"
 msgstr "Pause"
 
 #. Also known as Application key
-#: i18n/Text.resx:159 ID:KeyApps
+#: i18n/Text.resx:153 ID:KeyApps
 msgid "Menu"
 msgstr "Menu"
 
-#: i18n/Text.resx:162 ID:KeyEscape
+#: i18n/Text.resx:156 ID:KeyEscape
 msgid "Escape"
 msgstr "Escape"
 
-#: i18n/Text.resx:165 ID:KeyScroll
+#: i18n/Text.resx:159 ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:168 ID:Obsolete016
+#: i18n/Text.resx:162 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "Accent Grave `"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:171 ID:Obsolete017
+#: i18n/Text.resx:165 ID:Obsolete017
 msgid "500 milliseconds"
 msgstr "500 milliseconden"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:174 ID:Obsolete018
+#: i18n/Text.resx:168 ID:Obsolete018
 msgid "1 second"
 msgstr "1 seconde"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:177 ID:Obsolete019
+#: i18n/Text.resx:171 ID:Obsolete019
 msgid "2 seconds"
 msgstr "2 seconden"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:180 ID:Obsolete020
+#: i18n/Text.resx:174 ID:Obsolete020
 msgid "3 seconds"
 msgstr "3 seconden"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:183 ID:Obsolete021
+#: i18n/Text.resx:177 ID:Obsolete021
 msgid "5 seconds"
 msgstr "5 seconden"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:186 ID:Obsolete022
+#: i18n/Text.resx:180 ID:Obsolete022
 msgid "10 seconds"
 msgstr "10 seconden"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:189 ID:Obsolete023
+#: i18n/Text.resx:183 ID:Obsolete023
 msgid "None"
 msgstr "Geen"
 
-#: i18n/Text.resx:192 ID:ShowSequences
-msgid "Show &Sequences…"
-msgstr "Toon &sequenties…"
+#: i18n/Text.resx:186 ID:ShowSequences
+msgid "Show Sequences…"
+msgstr "Toon sequenties…"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:195 ID:Obsolete025
+#: i18n/Text.resx:189 ID:Obsolete025
 msgid "Disable"
 msgstr "Uitschakelen"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:198 ID:Obsolete026
+#: i18n/Text.resx:192 ID:Obsolete026
 msgid "Restart"
 msgstr "Herstarten"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:201 ID:Obsolete027
-msgid "&History"
-msgstr "&Historiek"
+#: i18n/Text.resx:195 ID:Obsolete027
+msgid "History"
+msgstr "Historiek"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:204 ID:Obsolete028
-msgid "Hotkey &List"
-msgstr "&Lijst van hotkeys"
+#: i18n/Text.resx:198 ID:Obsolete030
+msgid "About"
+msgstr "Over"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:207 ID:Obsolete029
-msgid "&Options…"
-msgstr "&Opties…"
+#: i18n/Text.resx:201 ID:Obsolete031
+msgid "Visit Website"
+msgstr "Website bezoeken"
+
+#: i18n/Text.resx:204 ID:Exit
+msgid "Exit"
+msgstr "Afsluiten"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:210 ID:Obsolete030
-msgid "&About"
-msgstr "&Over"
+#: i18n/Text.resx:207 ID:Obsolete036
+msgid "by Sam Hocevar <sam@hocevar.net>"
+msgstr "door Sam Hocevar <sam@hocevar.net>"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:213 ID:Obsolete031
-msgid "&Visit Website"
-msgstr "&Website bezoeken"
-
-#: i18n/Text.resx:216 ID:Exit
-msgid "E&xit"
-msgstr "&Afsluiten"
-
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:219 ID:Obsolete035
-msgid "\n"
-msgstr ""
-"\n"
-"↵\n"
-
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:222 ID:Obsolete036
-msgid "by Sam Hocevar <sam@hocevar.net>\n"
-msgstr "door Sam Hocevar <sam@hocevar.net>\n"
-
-#: i18n/Text.resx:225 ID:Sequences
+#: i18n/Text.resx:210 ID:Sequences
 msgid "Sequences"
 msgstr "Sequenties"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:228 ID:Obsolete038
-msgid "Options"
-msgstr "Opties"
-
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:231 ID:Obsolete039
+#: i18n/Text.resx:213 ID:Obsolete039
 msgid "Sequence"
 msgstr "Sequentie"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:234 ID:Obsolete040
-msgid "Char"
-msgstr "Karakter"
-
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:237 ID:Obsolete041
+#: i18n/Text.resx:216 ID:Obsolete041
 msgid "Unicode"
 msgstr "Unicode"
 
-#: i18n/Text.resx:240 ID:Search
+#: i18n/Text.resx:219 ID:Search
 msgid "Search Filter:"
 msgstr "Zoek filter:"
 
-#: i18n/Text.resx:243 ID:ComposeKey
+#: i18n/Text.resx:222 ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Compositietoets:"
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:247 ID:ResetDelay
+#: i18n/Text.resx:226 ID:ResetDelay
 msgid "Delay:"
 msgstr "Vertraging:"
 
-#: i18n/Text.resx:250 ID:CaseInsensitive
+#: i18n/Text.resx:229 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 "Noodoplossing bij hoofdletterongevoelige overeenkomsten voor ongeldige "
 "sequenties"
 
-#: i18n/Text.resx:253 ID:DiscardOnInvalid
+#: i18n/Text.resx:232 ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr "Karakters uit ongeldige sequenties verwijderen"
 
-#: i18n/Text.resx:256 ID:BeepOnInvalid
+#: i18n/Text.resx:235 ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr "Auditief signaal bij ongeldige sequenties"
 
-#: i18n/Text.resx:259 ID:Language
+#: i18n/Text.resx:238 ID:Language
 msgid "Interface language:"
 msgstr "Interface taal:"
 
 #. Close the settings window
-#: i18n/Text.resx:263 ID:Close
+#: i18n/Text.resx:242 ID:Close
 msgid "Close"
 msgstr "Sluiten"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:267 ID:Obsolete050
+#: i18n/Text.resx:246 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Karakter kopiëren"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:271 ID:Obsolete051
+#: i18n/Text.resx:250 ID:Obsolete051
 msgid "Description:"
 msgstr "Beschrijving:"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:275 ID:Apply
+#: i18n/Text.resx:254 ID:Apply
 msgid "Apply"
 msgstr "Toepassen"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:279 ID:KeepOriginalKey
+#: i18n/Text.resx:258 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Gedrag van oorspronkelijke compositietoets behouden"
 
-#: i18n/Text.resx:282 ID:InsertZwsp
+#: i18n/Text.resx:261 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Nul-breedte spaties invoegen in Office apps"
 
-#: i18n/Text.resx:285 ID:EmulateCapsLock
+#: i18n/Text.resx:264 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
 msgstr "CapsLock emuleren met beide Shift-toetsen"
 
-#: i18n/Text.resx:288 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:267 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
 msgstr "Shift-toets schakelt CapsLock uit"
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:292 ID:Categories
+#: i18n/Text.resx:271 ID:Categories
 msgid "Categories"
 msgstr "Categorieën"
 
-#: i18n/Text.resx:295 ID:InSelectedCategories
+#: i18n/Text.resx:274 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "In geselecteerde categorieën"
 
 #. The title of the Settings window
-#: i18n/Text.resx:299 ID:Settings
+#: i18n/Text.resx:278 ID:Settings
 msgid "Settings"
 msgstr "Instellingen"
 
-#: i18n/Text.resx:302 ID:ShowSettings
+#: i18n/Text.resx:281 ID:ShowSettings
 msgid "Settings…"
 msgstr "Instellingen…"
 
 #. {0}: compose key name, {1}: number of sequences
-#: i18n/Text.resx:306 ID:TrayToolTip
+#: i18n/Text.resx:285 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr "WinCompose voor {0} ({1} sequentie(s))"
 
-#: i18n/Text.resx:309 ID:Behavior
+#: i18n/Text.resx:288 ID:Behavior
 msgid "General Behavior"
 msgstr "Algemeen gedrag"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:313 ID:WindowTitle
+#: i18n/Text.resx:292 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Sequenties — WinCompose"
+
+#: i18n/Text.resx:295 ID:UserMacros
+msgid "User-defined macros"
+msgstr "Gebruikersmacro's"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
@@ -453,6 +420,32 @@ msgstr "Scheiding, alinea"
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
 msgstr "Scheiding, spatie"
+
+#~ msgid "Loaded @1@ Sequences"
+#~ msgstr "@1@ sequentie(s) geladen"
+
+#~ msgid "Compose Key is @1@"
+#~ msgstr "Compositietoets is @1@"
+
+#~ msgid "Hotkey &List"
+#~ msgstr "&Lijst van hotkeys"
+
+#~ msgid "&Options…"
+#~ msgstr "&Opties…"
+
+#~ msgid "E&xit"
+#~ msgstr "&Afsluiten"
+
+#~ msgid "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "↵\n"
+
+#~ msgid "Options"
+#~ msgstr "Opties"
+
+#~ msgid "Char"
+#~ msgstr "Karakter"
 
 #~ msgid "WinCompose Sequences"
 #~ msgstr "WinCompose sequenties"

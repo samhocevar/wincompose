@@ -83,6 +83,7 @@ public class Key
         { VK.APPS, i18n.Text.KeyApps },
         { VK.ESCAPE, i18n.Text.KeyEscape },
         { VK.SCROLL, i18n.Text.KeyScroll },
+        { VK.INSERT, i18n.Text.KeyInsert },
     };
 
     private readonly VK m_vk;
@@ -150,15 +151,17 @@ public class Key
 public class SequenceDescription : IComparable<SequenceDescription>
 {
     public List<Key> Sequence = new List<Key>();
-    public string Result = "";
     public string Description = "";
+    public string Result = "";
+    public int Utf32 = -1;
 
     public int CompareTo(SequenceDescription other)
     {
-        // Compare actual Unicode codepoints rather than characters
-        int ch1 = Result.Length > 0 ? (int)(char)Result[0] : 0;
-        int ch2 = other.Result.Length > 0 ? (int)(char)other.Result[0] : 0;
-        return ch1.CompareTo(ch2);
+        // If any sequence leads to a single character, compare actual
+        // Unicode codepoints rather than strings
+        if (Utf32 != -1 || other.Utf32 != -1)
+            return Utf32.CompareTo(other.Utf32);
+        return Result.CompareTo(other.Result);
     }
 };
 
@@ -169,12 +172,13 @@ public class SequenceDescription : IComparable<SequenceDescription>
 
 public class SequenceTree
 {
-    public void Add(List<Key> sequence, string result, string description)
+    public void Add(List<Key> sequence, string result, int utf32, string desc)
     {
         if (sequence.Count == 0)
         {
             m_result = result;
-            m_description = description;
+            m_utf32 = utf32;
+            m_description = desc;
             return;
         }
 
@@ -182,7 +186,7 @@ public class SequenceTree
             m_children.Add(sequence[0], new SequenceTree());
 
         var subsequence = sequence.GetRange(1, sequence.Count - 1);
-        m_children[sequence[0]].Add(subsequence, result, description);
+        m_children[sequence[0]].Add(subsequence, result, utf32, desc);
     }
 
     public bool IsValidPrefix(List<Key> sequence)
@@ -230,6 +234,7 @@ public class SequenceTree
             item.Sequence = path;
             item.Result = m_result;
             item.Description = m_description;
+            item.Utf32 = m_utf32;
             list.Add(item);
         }
 
@@ -245,6 +250,7 @@ public class SequenceTree
         = new Dictionary<Key, SequenceTree>();
     private string m_result;
     private string m_description;
+    private int m_utf32;
 };
 
 }

@@ -18,18 +18,19 @@ using System.Threading;
 namespace WinCompose
 {
     /// <summary>
-    /// The base class to represent an entry in the settings file. It handles thread-safe and process-safe saving and loading.
+    /// The base class to represent an entry in the settings file. It handles
+    /// thread-safe and process-safe saving and loading.
     /// </summary>
     public abstract class SettingsEntry
     {
-        private const string MutexName = "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}";
-        private static readonly Mutex SettingsMutex = new Mutex(false, MutexName);
+        private static readonly Mutex m_mutex = new Mutex(false,
+                          "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}");
 
         protected SettingsEntry(string section, string key, object defaultValue)
         {
             Section = section;
             Key = key;
-            Value = defaultValue;
+            m_value = defaultValue;
         }
 
         /// <summary>
@@ -45,15 +46,23 @@ namespace WinCompose
         /// <summary>
         /// Gets the value of this settings entry.
         /// </summary>
-        public object Value { get; set; }
+        public object Value
+        {
+            get { return m_value; }
+            set { m_value = value; Save(); }
+        }
+
+        private object m_value;
 
         /// <summary>
-        /// Saves this settings entry into the settings file. This operation is thread-safe and process-safe.
+        /// Saves this settings entry into the settings file. This operation
+        /// is thread-safe and process-safe.
         /// </summary>
-        /// <returns>A <see cref="bool"/> indicating whether the operation was successful.</returns>
+        /// <returns>A <see cref="bool"/> indicating whether the operation
+        /// was successful.</returns>
         public bool Save()
         {
-            if (SettingsMutex.WaitOne(2000))
+            if (m_mutex.WaitOne(2000))
             {
                 try
                 {
@@ -63,52 +72,68 @@ namespace WinCompose
                 }
                 finally
                 {
-                    // Ensure the mutex is always released even if an exception is thrown
-                    SettingsMutex.ReleaseMutex();
+                    // Ensure the mutex is always released even if an
+                    // exception is thrown
+                    m_mutex.ReleaseMutex();
                 }
             }
             return false;
         }
 
         /// <summary>
-        /// Loads this settings entry from the settings file. This operation is thread-safe and process-safe.
+        /// Loads this settings entry from the settings file. This operation
+        /// is thread-safe and process-safe.
         /// </summary>
-        /// <returns>A <see cref="bool"/> indicating whether the operation was successful.</returns>
+        /// <returns>A <see cref="bool"/> indicating whether the operation
+        /// was successful.</returns>
         public bool Load()
         {
-            const int len = 255;
+            bool got_mutex = false;
+            try
+            {
+                got_mutex = m_mutex.WaitOne(2000);
+            }
+            catch (AbandonedMutexException)
+            {
+                /* Ignore; this might be a previous instance that crashed */
+                got_mutex = true;
+            }
 
-            if (SettingsMutex.WaitOne(2000))
+            if (got_mutex)
             {
                 try
                 {
+                    const int len = 255;
                     var stringBuilder = new StringBuilder(len);
                     var result = NativeMethods.GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
                     if (result == 0)
                         return false;
 
                     var strVal = stringBuilder.ToString();
-                    Value = Deserialize(strVal);
+                    m_value = Deserialize(strVal);
                     return true;
                 }
                 finally
                 {
-                    // Ensure the mutex is always released even if an exception is thrown
-                    SettingsMutex.ReleaseMutex();
+                    // Ensure the mutex is always released even if an
+                    // exception is thrown
+                    m_mutex.ReleaseMutex();
                 }
             }
             return false;
         }
 
         /// <summary>
-        /// Serializes the given value into a <see cref="string"/>. This method should not throw any unhandled exception.
+        /// Serializes the given value into a <see cref="string"/>. This
+        /// method should not throw any unhandled exception.
         /// </summary>
         /// <param name="value">The value to serialize.</param>
         /// <returns>A string representing the given value.</returns>
         protected abstract string Serialize(object value);
 
         /// <summary>
-        /// Deserializes the given string into an object of the type of this entry. This method should not throw any unhandled exception.
+        /// Deserializes the given string into an object of the type of this
+        /// entry. This method should not throw any unhandled exception.
         /// </summary>
         /// <param name="str">The string to deserialize.</param>
         /// <returns>An instance of the type of this entry.</returns>
@@ -116,7 +141,8 @@ namespace WinCompose
     }
 
     /// <summary>
-    /// A generic implementation of the <see cref="SettingsEntry"/> class. It handles serialization for most of the .NET built-in types.
+    /// A generic implementation of the <see cref="SettingsEntry"/> class. It
+    /// handles serialization for most of the .NET built-in types.
     /// </summary>
     /// <typeparam name="T">The type of data this entry contains.</typeparam>
     public class SettingsEntry<T> : SettingsEntry
@@ -129,12 +155,17 @@ namespace WinCompose
         /// <summary>
         /// Gets or sets the value of this settings entry.
         /// </summary>
-        public new T Value { get { return (T)base.Value; } set { base.Value = value; } }
+        public new T Value
+        {
+            get { return (T)base.Value; }
+            set { base.Value = value; }
+        }
 
         /// <inheritdoc/>
         protected override string Serialize(object value)
         {
-            // The default implementation of Serialize just uses the ToString method
+            // The default implementation of Serialize just uses the
+            // ToString method
             return value == null ? string.Empty : value.ToString();
         }
 
@@ -147,7 +178,8 @@ namespace WinCompose
                 if (converter.CanConvertFrom(typeof(string)))
                     return converter.ConvertFrom(str);
 
-                // The default implementation of Deserialize uses the Convert class.
+                // The default implementation of Deserialize uses the
+                // Convert class.
                 return (T)Convert.ChangeType(str, typeof(T));
             }
             catch (Exception)

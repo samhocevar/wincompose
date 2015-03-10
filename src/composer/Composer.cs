@@ -27,6 +27,9 @@ static class Composer
     // and needs to be removed from the input chain.
     public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
+        if (m_disabled)
+            return false;
+
         CheckKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
@@ -59,16 +62,32 @@ static class Composer
             key = new Key(Encoding.Unicode.GetString(buf, 0, ret + 1));
         }
 
+        // Special case: we don't consider characters suh as Escape as printable
+        if (key.IsPrintable() && key.ToString()[0] < ' ')
+        {
+            key = new Key(vk);
+        }
+
+        // Remember when we pressed a key for the last time
+        if (is_keydown)
+        {
+            m_last_key_time = DateTime.Now;
+        }
+
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
         if (Settings.IsComposeKey(key))
         {
             if (is_keyup)
             {
+                m_statechanged = true;
                 m_compose_down = false;
             }
             else if (is_keydown && !m_compose_down)
             {
+                /* FIXME: we don't want compose + compose to disable composing, since
+                 * there are compose sequences that use Multi_key. */
+                m_statechanged = true;
                 m_compose_down = true;
                 m_composing = !m_composing;
                 if (!m_composing)
@@ -118,6 +137,7 @@ static class Composer
             {
                 // Sequence finished, print it
                 SendString(Settings.GetSequenceResult(m_sequence));
+                m_statechanged = true;
                 m_composing = false;
                 m_sequence = new List<Key>();
             }
@@ -141,6 +161,7 @@ static class Composer
                 if (Settings.BeepOnInvalid.Value)
                     SystemSounds.Beep.Play();
 
+                m_statechanged = true;
                 m_composing = false;
                 m_sequence = new List<Key>();
             }
@@ -243,9 +264,51 @@ static class Composer
         }
     }
 
+    /// <summary>
+    /// Return whether a compose sequence is in progress
+    /// </summary>
     public static bool IsComposing()
     {
         return m_composing;
+    }
+
+    /// <summary>
+    /// Toggle the disabled state
+    /// </summary>
+    public static void ToggleDisabled()
+    {
+        m_disabled = !m_disabled;
+        m_statechanged = true;
+
+        if (m_disabled)
+        {
+            m_composing = false;
+            m_compose_down = false;
+            m_sequence = new List<Key>();
+        }
+    }
+
+    /// <summary>
+    /// Return whether WinCompose has been disabled
+    /// </summary>
+    public static bool IsDisabled()
+    {
+        return m_disabled;
+    }
+
+    public static bool HasStateChanged()
+    {
+        if (m_composing && Settings.ResetDelay.Value > 0 &&
+            DateTime.Now > m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
+        {
+            m_composing = false;
+            m_statechanged = false;
+            return true;
+        }
+
+        bool ret = m_statechanged;
+        m_statechanged = false;
+        return ret;
     }
 
     private static INPUT NewInputKey(VirtualKeyShort vk)
@@ -307,8 +370,11 @@ static class Composer
 
     private static byte[] m_keystate = new byte[256];
     private static List<Key> m_sequence = new List<Key>();
+    private static DateTime m_last_key_time = DateTime.Now;
+    private static bool m_disabled = false;
     private static bool m_compose_down = false;
     private static bool m_composing = false;
+    private static bool m_statechanged = true;
 }
 
 }

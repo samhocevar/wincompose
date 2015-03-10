@@ -15,6 +15,8 @@ TXT = rules/Xorg.txt \
       rules/WinCompose.txt
 
 EXE = bin/Release/WinCompose.exe
+LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
+
 INSTALLER = WinCompose-Setup-$(VERSION).exe
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
@@ -23,7 +25,7 @@ ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
 ISCC = $(ISCCDIR)\\ISCC.exe
 MSGMERGE = msgmerge
 
-all: installer portable
+all: clean installer portable
 
 clean:
 	rm -f $(INSTALLER) $(PORTABLE)
@@ -34,10 +36,15 @@ installer: $(EXE) $(ISS)
 	rm -f $(INSTALLER)
 	"$(ISCC)" $(ISS)
 
+installer.iss: Makefile
+	sed -i 's/VERSION ".*"/VERSION "$(VERSION)"/' installer.iss
+
 portable: $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
 	mkdir -p $(PORTABLE:.zip=)/rules
+	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
+	for L in $(LANG); do cp bin/Release/$${L}/WinCompose.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)

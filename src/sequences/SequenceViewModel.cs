@@ -20,20 +20,7 @@ namespace WinCompose
 {
     public class SequenceViewModel
     {
-        /// <summary>
-        /// A dictionary of string representation of the <see cref="UnicodeCategory"/> enum, used to prevent allocations in the <see cref="Match"/> method.
-        /// </summary>
-        private readonly static Dictionary<UnicodeCategory, string> UnicodeCategoryStrings = new Dictionary<UnicodeCategory, string>();
-
         public static Key SpaceKey = new Key(" ");
-
-        static SequenceViewModel()
-        {
-            foreach (var value in Enum.GetValues(typeof(UnicodeCategory)))
-            {
-                UnicodeCategoryStrings.Add((UnicodeCategory)value, value.ToString());
-            }
-        }
 
         public SequenceViewModel(CategoryViewModel category, SequenceDescription desc)
         {
@@ -42,16 +29,23 @@ namespace WinCompose
             Result = desc.Result; // FIXME: sequence results can be longer
             Description = desc.Description;
             Sequence = desc.Sequence;
+            Utf32 = desc.Utf32;
         }
 
         public CategoryViewModel Category { get; private set; }
 
+        /// <summary>
+        /// Return the sequence result in an UTF-16 string
+        /// </summary>
         public string Result { get; private set; }
 
-        // TODO: verify this actually returns the Unicode of the char...
-        public int Unicode { get { return Result[0]; } }
+        /// <summary>
+        /// Return the sequence Unicode codepoint. If the sequence contains
+        /// zero, two or more characters, return -1.
+        /// </summary>
+        public int Utf32 { get; private set; }
 
-        public UnicodeCategory UnicodeCategory { get { return CharUnicodeInfo.GetUnicodeCategory(Result[0]); } }
+        public int UnicodeCategory { get { return Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
 
         public string Description { get; private set; }
 
@@ -71,7 +65,7 @@ namespace WinCompose
 
             foreach (var number in searchText.Numbers)
             {
-                if (Unicode == number)
+                if (Utf32 == number)
                     return true;
             }
             return false;
