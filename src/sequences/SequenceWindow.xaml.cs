@@ -30,7 +30,6 @@ namespace WinCompose
         {
             InitializeComponent();
             DataContext = new RootViewModel();
-            OpenFromTray();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -52,7 +51,7 @@ namespace WinCompose
 
         private void CloseWindowClicked(object sender, CancelEventArgs e)
         {
-            CloseToTray();
+            Hide();
             e.Cancel = true;
         }
     }

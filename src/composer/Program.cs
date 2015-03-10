@@ -22,7 +22,7 @@ namespace WinCompose
     {
         private static WinForms.NotifyIcon m_notifyicon;
         private static SequenceWindow m_sequencewindow;
-        private static SettingsWindow m_settingswindow;
+        private static SettingsWindow m_optionswindow;
 
         [STAThread]
         static void Main()
@@ -115,25 +115,19 @@ namespace WinCompose
             if (m_sequencewindow == null)
             {
                 m_sequencewindow = new SequenceWindow();
+                ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
             }
-            else
-            {
-                m_sequencewindow.Show();
-            }
+            m_sequencewindow.Show();
         }
 
         private static void ShowOptionsClicked(object sender, EventArgs e)
         {
-            if (m_settingswindow == null)
+            if (m_optionswindow == null)
             {
-                m_settingswindow = new SettingsWindow();
-                ElementHost.EnableModelessKeyboardInterop(m_settingswindow);
-                m_settingswindow.Show();
+                m_optionswindow = new SettingsWindow();
+                ElementHost.EnableModelessKeyboardInterop(m_optionswindow);
             }
-            else
-            {
-                m_settingswindow.Show();
-            }
+            m_optionswindow.Show();
         }
 
         private static void DisableClicked(object sender, EventArgs e)
