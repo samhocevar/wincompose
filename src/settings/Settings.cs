@@ -66,6 +66,8 @@ namespace WinCompose
 
         public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
 
+        public static Dictionary<string, string> ValidLanguages { get { return m_valid_languages; } }
+
         public static void StartWatchConfigFile()
         {
             watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
@@ -118,6 +120,9 @@ namespace WinCompose
                 }
                 catch (Exception) { }
             }
+
+            // Catch-22: we can only add this string when the UI language is known
+            m_valid_languages[""] = i18n.Text.AutodetectLanguage;
 
             // Various options
             CaseInsensitive.Load();

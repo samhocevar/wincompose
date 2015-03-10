@@ -41,7 +41,10 @@
 
              <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
                         Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
-             <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"></ComboBox>
+             <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,2" VerticalAlignment="Center"
+                       ItemsSource="{x:Static wc:Settings.ValidLanguages}"
+                       SelectedValue="{Binding Value, Source={x:Static wc:Settings.Language}}"
+                       SelectedValuePath="Key" DisplayMemberPath="Value"/>
 
              <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.ComposeKey}"
                         Margin="8,2" TextAlignment="Right" VerticalAlignment="Center"/>
