@@ -76,7 +76,7 @@ static class Composer
 
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
-        if (Settings.IsComposeKey(key))
+        if (key == Settings.ComposeKey.Value)
         {
             if (is_keyup)
             {

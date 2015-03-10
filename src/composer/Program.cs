@@ -106,8 +106,8 @@ namespace WinCompose
             m_notifyicon.Text = Composer.IsDisabled()
                               ? i18n.Text.DisabledToolTip
                               : String.Format(i18n.Text.TrayToolTip,
-                                              Settings.GetComposeKeyName(),
-                                              Settings.GetSequenceCount());
+                                        Settings.ComposeKey.Value.FriendlyName,
+                                        Settings.GetSequenceCount());
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)

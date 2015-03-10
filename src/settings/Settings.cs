@@ -162,18 +162,6 @@ namespace WinCompose
             LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
         }
 
-        public static bool IsComposeKey(Key key)
-        {
-            return ComposeKey.Value == key;
-        }
-
-        public static string GetComposeKeyName()
-        {
-            var key_conv = new ComposeKeyValueConverter();
-            return key_conv.Convert(Settings.ComposeKey.Value,
-                                    typeof(string), null, null).ToString();
-        }
-
         public static bool IsUsableKey(Key key)
         {
             return key.IsPrintable() || m_key_names.ContainsValue(key);

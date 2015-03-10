@@ -64,16 +64,4 @@ namespace WinCompose
             return Strings.TryGetValue(cat, out result) ? result : cat.ToString();
         }
     }
-
-    public class ComposeKeyValueConverter : OneWayValueConverter<ComposeKeyValueConverter>
-    {
-        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            var key = (Key)value;
-            var name = string.Format("Key{0}", key.VirtualKey);
-            // We use reflection so we can perform a case-insensitive lookup
-            var property = typeof(Properties.Resources).GetProperty(name, BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
-            return property != null ? property.GetValue(null, new object[0]) : value.ToString();
-        }
-    }
 }
