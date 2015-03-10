@@ -5,7 +5,7 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.6.99beta20150306
+VERSION = 0.7.0
 
 ISS = installer.iss
 

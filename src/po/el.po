@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WinCompose 0.6.4\n"
+"Project-Id-Version: WinCompose 0.6.99\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2014-04-29 20:45+0200\n"
-"Last-Translator: geogeo.gr <geogeo.gr@users.sourceforge.net>\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-03-10 21:29+0200\n"
+"Last-Translator: geogeo.gr\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
 "el/>\n"
 "Language: el\n"
@@ -125,7 +125,7 @@ msgstr "Καμία"
 
 #: i18n/Text.resx:198 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "Εμφάνιση Ακολουθιών…"
+msgstr "Εμφάνιση ακολουθιών…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:202 ID:Disable
@@ -149,11 +149,11 @@ msgstr "Περί"
 #. Menu entry to visit the website
 #: i18n/Text.resx:215 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Ιστοσελίδα"
+msgstr "Επίσκεψη ιστοσελίδας"
 
 #: i18n/Text.resx:218 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Έξοδος"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:221 ID:Obsolete036
@@ -225,33 +225,33 @@ msgstr "Περιγραφή:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:268 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Εφαρμογή"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:272 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Διατήρηση αρχικής συμπεριφοράς πλήκτρου σύνθεσης"
 
 #: i18n/Text.resx:275 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Εισαγωγή διαστημάτων χωρίς εύρος στις εφαρμογές Office"
 
 #: i18n/Text.resx:278 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Προσομοίωση CapsLock χρησιμοποιώντας και τα δύο πλήκτρα Shift"
 
 #: i18n/Text.resx:281 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Το πλήκτρο SHIFT να απενεργοποιεί το CapsLock"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:285 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Κατηγορίες"
 
 #: i18n/Text.resx:288 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "Σε επιλεγμένες κατηγορίες"
 
 #. The title of the Options window
 #: i18n/Text.resx:292 ID:Options
@@ -266,195 +266,193 @@ msgstr "Επιλογές…"
 #. {0}: compose key name, {1}: number of sequences
 #: i18n/Text.resx:300 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose σε {0} ({1} ακολουθίες)"
 
 #: i18n/Text.resx:303 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Γενική συμπεριφορά"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:307 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Ακολουθίες — WinCompose"
 
 #: i18n/Text.resx:310 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Μακροεντολές καθορισμένες από το χρήστη"
 
 #: i18n/Text.resx:313 ID:DisabledToolTip
-#, fuzzy
 msgid "WinCompose is disabled"
-msgstr "Πλήκτρο σύνθεσης:"
+msgstr "Το WinCompose είναι απενεργοποιημένο"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:317 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:321 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Δοκιμή πληκτρολόγησης:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:325 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Λεπτομερείς ρυθμίσεις"
 
 #: i18n/Text.resx:328 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "0,5 δευτερόλεπτο"
+msgstr "(χιλιοστά δευτερ.)"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
 msgid "Other, Control"
-msgstr "Άλλο, ελέγχου"
+msgstr "Άλλο. Ελέγχου"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:126 ID:Format
 msgid "Other, Format"
-msgstr "Άλλο, μορφοποίησης"
+msgstr "Άλλο. Μορφοποίησης"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:130 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr "Άλλο, μη εκχωρημένο"
+msgstr "Άλλο. Μη εκχωρημένο"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:134 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "Άλλο, ιδιωτικής χρήσης"
+msgstr "Άλλο. Ιδιωτικής χρήσης"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:138 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Άλλο, υποκατάστατο"
+msgstr "Άλλο. Αντικατάστασης"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:142 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr "Γράμμα, πεζό"
+msgstr "Γράμμα. Πεζά"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:146 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr "Γράμμα, τροποποιητικό"
+msgstr "Γράμμα. Τροποποίησης"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:150 ID:OtherLetter
 msgid "Letter, Other"
-msgstr "Γράμμα, άλλο"
+msgstr "Γράμμα. Άλλο"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:154 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Γράμμα, τίτλων"
+msgstr "Γράμμα. Γράμματα Τίτλου"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:158 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr "Γράμμα, κεφαλαίο"
+msgstr "Γράμμα. Κεφαλαία"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:162 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Σημείο, συνδυαζόμενο που πιάνει χώρο"
+msgstr "Σημάδι. Συνδυάσιμο διάκενο"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:166 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr "Σημείο, παρενθετικό"
+msgstr "Σημάδι. Περίκλεισης"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:170 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Σημείο, δεν πιάνει χώρο"
+msgstr "Σημάδι. Δεν καταλαμβάνει χώρο"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:174 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr "Αριθμός, δεκαδικό ψηφίο"
+msgstr "Αριθμός. Δεκαδικό ψηφίο"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:178 ID:LetterNumber
 msgid "Number, Letter"
-msgstr "Αριθμός, γράμμα"
+msgstr "Αριθμός. Γράμμα"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:182 ID:OtherNumber
 msgid "Number, Other"
-msgstr "Αριθμός, άλλο"
+msgstr "Αριθμός. Άλλο"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:186 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr "Σημείο στίξης, συνδετικό"
+msgstr "Σημείo στίξης. Ενωτικό"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:190 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr "Σημείο στίξης, παύλα"
+msgstr "Σημείo στίξης. Παύλα"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:194 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr "Σημείο στίξης, κλείσιμο"
+msgstr "Σημείo στίξης. Κλείσιμο"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:198 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr "Σημείο στίξης, κλείσιμο εισαγωγικών"
+msgstr "Σημείo στίξης. Κλείσιμο εισαγωγικών"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:202 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr "Σημείο στίξης, άνοιγμα εισαγωγικών"
+msgstr "Σημείo στίξης. Άνοιγμα εισαγωγικών"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:206 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr "Σημείο στίξης, άλλο"
+msgstr "Σημείo στίξης. Άλλο"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:210 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr "Σημείο στίξης, άνοιγμα"
+msgstr "Σημείo στίξης. Άνοιγμα"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:214 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr "Σύμβολο, νόμισμα"
+msgstr "Σύμβολο. Νόμισμα"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:218 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr "Σύμβολο, τροποποιητικό"
+msgstr "Σύμβολο. Τροποποίησης"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:222 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr "Σύμβολο, μαθηματικό"
+msgstr "Σύμβολο. Μαθηματικό"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:226 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr "Σύμβολο, άλλο"
+msgstr "Σύμβολο. Άλλο"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:230 ID:LineSeparator
 msgid "Separator, Line"
-msgstr "Διαχωριστικό, γραμμή"
+msgstr "Διαχωριστικό. Γραμμή"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:234 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr "Διαχωριστικό, παράγραφος"
+msgstr "Διαχωριστικό. Παράγραφος"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr "Διαχωριστικό, κενό"
+msgstr "Διαχωριστικό. Κενό"
 
 #~ msgid "Loaded @1@ Sequences"
 #~ msgstr "Φορτώθηκαν @1@ Ακολουθίες"
@@ -465,8 +463,11 @@ msgstr "Διαχωριστικό, κενό"
 #~ msgid "Hotkey &List"
 #~ msgstr "&Λίστα πλήκτρων συντόμευσης"
 
-#~ msgid "E&xit"
-#~ msgstr "Έ&ξοδος"
+#~ msgid "@APP_NAME@"
+#~ msgstr "@APP_NAME@"
+
+#~ msgid "@APP_NAME@ v@APP_VERSION@\n"
+#~ msgstr "@APP_NAME@ v@APP_VERSION@\n"
 
 #~ msgid "\n"
 #~ msgstr "\n"
@@ -477,16 +478,6 @@ msgstr "Διαχωριστικό, κενό"
 #~ msgid "Char"
 #~ msgstr "Χαρακτ."
 
-#, fuzzy
-#~ msgid "WinCompose Sequences"
-#~ msgstr "Πλήκτρο σύνθεσης:"
-
-#~ msgid "@APP_NAME@"
-#~ msgstr "@APP_NAME@"
-
-#~ msgid "@APP_NAME@ v@APP_VERSION@\n"
-#~ msgstr "@APP_NAME@ v@APP_VERSION@\n"
-
 #~ msgid "@APP_NAME@ (disabled)"
 #~ msgstr "@APP_NAME@ (απενεργοποιημένο)"
 
@@ -495,3 +486,12 @@ msgstr "Διαχωριστικό, κενό"
 
 #~ msgid "@APP_NAME@ (typing)"
 #~ msgstr "@APP_NAME@ (πληκτρολόγηση)"
+
+#~ msgid "Settings"
+#~ msgstr "Ρυθμίσεις"
+
+#~ msgid "Timeout"
+#~ msgstr "Χρονικό όριο"
+
+#~ msgid "@APP_NAME@ - List of sequences"
+#~ msgstr "@APP_NAME@ - Λίστα ακολουθιών"

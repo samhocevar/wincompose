@@ -282,4 +282,19 @@
   <data name="UserMacros" xml:space="preserve">
     <value>Gebruikersmacro’s</value>
   </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose is uitgeschakeld</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Invoegen</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Typen uittesten:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Aanpassingen</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(milliseconden)</value>
+  </data>
 </root>
