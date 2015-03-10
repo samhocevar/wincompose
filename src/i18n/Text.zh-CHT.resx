@@ -240,4 +240,10 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>描述:</value>
   </data>
+  <data name="Options" xml:space="preserve">
+    <value>選項 — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>選項…</value>
+  </data>
 </root>

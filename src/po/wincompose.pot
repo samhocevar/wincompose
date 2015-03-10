@@ -232,53 +232,54 @@ msgstr ""
 msgid "In selected categories"
 msgstr ""
 
-#: i18n/Text.resx:292 ID:Settings
-#. The title of the Settings window
-msgid "Settings — WinCompose"
+#: i18n/Text.resx:292 ID:Options
+#. The title of the Options window
+msgid "Options — WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:295 ID:ShowSettings
-msgid "Settings…"
+#: i18n/Text.resx:296 ID:ShowOptions
+#. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
+msgid "Options…"
 msgstr ""
 
-#: i18n/Text.resx:299 ID:TrayToolTip
+#: i18n/Text.resx:300 ID:TrayToolTip
 #. {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
-#: i18n/Text.resx:302 ID:Behavior
+#: i18n/Text.resx:303 ID:Behavior
 msgid "General Behavior"
 msgstr ""
 
-#: i18n/Text.resx:306 ID:WindowTitle
+#: i18n/Text.resx:307 ID:WindowTitle
 #. The title of the Sequences window
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:309 ID:UserMacros
+#: i18n/Text.resx:310 ID:UserMacros
 msgid "User-defined macros"
 msgstr ""
 
-#: i18n/Text.resx:312 ID:DisabledToolTip
+#: i18n/Text.resx:313 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr ""
 
-#: i18n/Text.resx:316 ID:KeyInsert
+#: i18n/Text.resx:317 ID:KeyInsert
 #. The name of the key on the keyboard
 msgid "Insert"
 msgstr ""
 
-#: i18n/Text.resx:320 ID:TestTyping
+#: i18n/Text.resx:321 ID:TestTyping
 #. The "Test Typing" section in the settings window
 msgid "Test Typing:"
 msgstr ""
 
-#: i18n/Text.resx:324 ID:Tweaks
+#: i18n/Text.resx:325 ID:Tweaks
 #. The "Tweaks" section in the settings window
 msgid "Tweaks"
 msgstr ""
 
-#: i18n/Text.resx:327 ID:Milliseconds
+#: i18n/Text.resx:328 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr ""
 

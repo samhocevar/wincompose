@@ -511,11 +511,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings — WinCompose.
+        ///   Looks up a localized string similar to Options — WinCompose.
         /// </summary>
-        public static string Settings {
+        public static string Options {
             get {
-                return ResourceManager.GetString("Settings", resourceCulture);
+                return ResourceManager.GetString("Options", resourceCulture);
             }
         }
         
@@ -538,11 +538,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings….
+        ///   Looks up a localized string similar to Options….
         /// </summary>
-        public static string ShowSettings {
+        public static string ShowOptions {
             get {
-                return ResourceManager.GetString("ShowSettings", resourceCulture);
+                return ResourceManager.GetString("ShowOptions", resourceCulture);
             }
         }
         

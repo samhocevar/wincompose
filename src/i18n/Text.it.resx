@@ -229,7 +229,7 @@
     <value>Suona se una sequenza è errata</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Lingua dell'interfaccia:</value>
+    <value>Lingua dell’interfaccia:</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Chiudi</value>
@@ -239,5 +239,11 @@
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Descrizione:</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opzioni — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Opzioni…</value>
   </data>
 </root>

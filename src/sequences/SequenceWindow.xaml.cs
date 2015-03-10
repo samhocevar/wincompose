@@ -45,58 +45,9 @@ namespace WinCompose
             }
         }
 
-        private void NotifyiconMouseDown(object sender, WinForms.MouseEventArgs e)
-        {
-            if (e.Button == WinForms.MouseButtons.Right)
-            {
-                var menu = (ContextMenu)FindResource("NotifierContextMenu");
-                menu.IsOpen = true;
-            }
-        }
-
-        private void NotifyiconDoubleclicked(object sender, EventArgs e)
-        {
-            if (!IsVisible)
-            {
-                OpenFromTray();
-            }
-            else
-            {
-                CloseToTray();
-            }
-        }
-
-        private void ContextMenuShowSequences(object sender, RoutedEventArgs e)
-        {
-            OpenFromTray();
-        }
-
-        private void ContextMenuShowSettings(object sender, RoutedEventArgs e)
-        {
-            OpenFromTray();
-        }
-
-        private void ContextMenuExit(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void ClearSearchClicked(object sender, RoutedEventArgs e)
         {
             ViewModel.SearchText = "";
-        }
-
-        private void OpenFromTray()
-        {
-            ShowInTaskbar = true;
-            Show();
-            Activate();
-        }
-
-        private void CloseToTray()
-        {
-            ShowInTaskbar = false;
-            Hide();
         }
 
         private void CloseWindowClicked(object sender, CancelEventArgs e)

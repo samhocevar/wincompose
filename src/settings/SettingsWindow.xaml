@@ -6,7 +6,7 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
-        Title="{x:Static i18n:Text.Settings}" Height="500" Width="450"
+        Title="{x:Static i18n:Text.Options}" Height="500" Width="450"
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
         Closing="CloseWindowClicked">

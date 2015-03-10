@@ -287,12 +287,13 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In selected categories</value>
   </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Settings — WinCompose</value>
-    <comment>The title of the Settings window</comment>
+  <data name="Options" xml:space="preserve">
+    <value>Options — WinCompose</value>
+    <comment>The title of the Options window</comment>
   </data>
-  <data name="ShowSettings" xml:space="preserve">
-    <value>Settings…</value>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Options…</value>
+    <comment>Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)</comment>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose on {0} ({1} sequences)</value>

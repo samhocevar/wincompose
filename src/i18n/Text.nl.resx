@@ -264,8 +264,11 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In geselecteerde categorieën</value>
   </data>
-  <data name="ShowSettings" xml:space="preserve">
-    <value>Instellingen…</value>
+  <data name="Options" xml:space="preserve">
+    <value>Opties — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Opties…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose voor {0} ({1} sequentie(s))</value>
@@ -277,6 +280,6 @@
     <value>Sequenties — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Gebruikersmacro's</value>
+    <value>Gebruikersmacro’s</value>
   </data>
 </root>

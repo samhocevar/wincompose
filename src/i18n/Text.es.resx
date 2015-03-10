@@ -157,7 +157,7 @@
     <value>Bloq Despl</value>
   </data>
   <data name="Obsolete016" xml:space="preserve">
-    <value>Acento grave '</value>
+    <value>Acento grave `</value>
   </data>
   <data name="Obsolete017" xml:space="preserve">
     <value>500 milisegundos</value>
@@ -255,8 +255,11 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>En las categorías seleccionadas</value>
   </data>
-  <data name="ShowSettings" xml:space="preserve">
-    <value>Ajustes…</value>
+  <data name="Options" xml:space="preserve">
+    <value>Opciones — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Opciones…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose en {0} ({1} secuencias)</value>

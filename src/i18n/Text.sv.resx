@@ -240,4 +240,10 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Beskrivning:</value>
   </data>
+  <data name="Options" xml:space="preserve">
+    <value>Alternativ — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Alternativ…</value>
+  </data>
 </root>

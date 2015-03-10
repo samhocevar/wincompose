@@ -253,53 +253,54 @@ msgstr "Catégories"
 msgid "In selected categories"
 msgstr "Dans les catégories sélectionnées"
 
-#. The title of the Settings window
-#: i18n/Text.resx:292 ID:Settings
-msgid "Settings — WinCompose"
+#. The title of the Options window
+#: i18n/Text.resx:292 ID:Options
+msgid "Options — WinCompose"
 msgstr "Réglages — WinCompose"
 
-#: i18n/Text.resx:295 ID:ShowSettings
-msgid "Settings…"
+#. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
+#: i18n/Text.resx:296 ID:ShowOptions
+msgid "Options…"
 msgstr "Réglages…"
 
 #. {0}: compose key name, {1}: number of sequences
-#: i18n/Text.resx:299 ID:TrayToolTip
+#: i18n/Text.resx:300 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr "WinCompose sur {0} ({1} séquences)"
 
-#: i18n/Text.resx:302 ID:Behavior
+#: i18n/Text.resx:303 ID:Behavior
 msgid "General Behavior"
 msgstr "Comportement"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:306 ID:WindowTitle
+#: i18n/Text.resx:307 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Séquences — WinCompose"
 
-#: i18n/Text.resx:309 ID:UserMacros
+#: i18n/Text.resx:310 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Macros utilisateur"
 
-#: i18n/Text.resx:312 ID:DisabledToolTip
+#: i18n/Text.resx:313 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "WinCompose est désactivé"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:316 ID:KeyInsert
+#: i18n/Text.resx:317 ID:KeyInsert
 msgid "Insert"
 msgstr "Inser"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:320 ID:TestTyping
+#: i18n/Text.resx:321 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Tester la frappe :"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:324 ID:Tweaks
+#: i18n/Text.resx:325 ID:Tweaks
 msgid "Tweaks"
 msgstr "Réglages divers"
 
-#: i18n/Text.resx:327 ID:Milliseconds
+#: i18n/Text.resx:328 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(millisecondes)"
 
@@ -453,6 +454,9 @@ msgstr "Séparateur, paragraphes"
 msgid "Separator, Space"
 msgstr "Séparateur, espace"
 
+#~ msgid "Settings…"
+#~ msgstr "Réglages…"
+
 #~ msgid "Settings"
 #~ msgstr "Réglages"
 
@@ -464,9 +468,6 @@ msgstr "Séparateur, espace"
 
 #~ msgid "Hotkey &List"
 #~ msgstr "&Liste de touches"
-
-#~ msgid "&Options…"
-#~ msgstr "&Options…"
 
 #~ msgid "E&xit"
 #~ msgstr "Quitter"

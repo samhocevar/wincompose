@@ -229,7 +229,7 @@
     <value>Sona si una filera no est vàlida</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Limba de s'interfàtzia:</value>
+    <value>Limba de s’interfàtzia:</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Serra</value>
@@ -239,5 +239,11 @@
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Descritzione:</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Optziones — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Optziones…</value>
   </data>
 </root>

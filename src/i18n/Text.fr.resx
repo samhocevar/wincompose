@@ -198,6 +198,9 @@
   <data name="VisitWebsite" xml:space="preserve">
     <value>Site web</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>par Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
@@ -261,7 +264,10 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>Dans les catégories sélectionnées</value>
   </data>
-  <data name="ShowSettings" xml:space="preserve">
+  <data name="Options" xml:space="preserve">
+    <value>Réglages — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
     <value>Réglages…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
@@ -272,5 +278,23 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Séquences — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Macros utilisateur</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose est désactivé</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Inser</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Tester la frappe :</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Réglages divers</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(millisecondes)</value>
   </data>
 </root>

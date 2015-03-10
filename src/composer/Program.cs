@@ -50,9 +50,9 @@ namespace WinCompose
                         },
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
-                        new WinForms.MenuItem(i18n.Text.ShowSettings, ShowSettingsClicked),
-                        new WinForms.MenuItem(i18n.Text.Disable, DisableClicked), 
-                        new WinForms.MenuItem(i18n.Text.VisitWebsite, VisitWebsiteClicked), 
+                        new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
+                        new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
+                        new WinForms.MenuItem(i18n.Text.VisitWebsite, VisitWebsiteClicked),
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
                         new WinForms.MenuItem(i18n.Text.Exit, ExitClicked),
@@ -122,7 +122,7 @@ namespace WinCompose
             }
         }
 
-        private static void ShowSettingsClicked(object sender, EventArgs e)
+        private static void ShowOptionsClicked(object sender, EventArgs e)
         {
             if (m_settingswindow == null)
             {
