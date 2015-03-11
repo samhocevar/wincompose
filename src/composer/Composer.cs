@@ -137,6 +137,11 @@ static class Composer
             {
                 // Sequence finished, print it
                 SendString(Settings.GetSequenceResult(m_sequence));
+
+                int count = 0;
+                m_stats.TryGetValue(new KeySequence(m_sequence), out count);
+                m_stats[new KeySequence(m_sequence)] = count + 1;
+
                 m_statechanged = true;
                 m_composing = false;
                 m_sequence = new List<Key>();
@@ -375,6 +380,8 @@ static class Composer
     private static bool m_compose_down = false;
     private static bool m_composing = false;
     private static bool m_statechanged = true;
+
+    private static Dictionary<KeySequence, int> m_stats = new Dictionary<KeySequence, int>();
 }
 
 }

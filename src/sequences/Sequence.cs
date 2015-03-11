@@ -165,6 +165,40 @@ public class Key
     }
 };
 
+/// <summary>
+/// The KeySequence class describes a sequence of keys, which can be
+/// compared with other lists of keys.
+/// </summary>
+public class KeySequence : List<Key>
+{
+    public KeySequence() : base(new List<Key>()) {}
+
+    public KeySequence(List<Key> val) : base(val) {}
+
+    public override bool Equals(object o)
+    {
+        if (!(o is KeySequence))
+            return false;
+
+        if (Count != (o as KeySequence).Count)
+            return false;
+
+        for (int i = 0; i < Count; ++i)
+            if (this[i] != (o as KeySequence)[i])
+                return false;
+
+        return true;
+    }
+
+    public override int GetHashCode()
+    {
+        int hash = 0x2d2816fe;
+        for (int i = 0; i < Count; ++i)
+            hash = hash * 31 + this[i].GetHashCode();
+        return hash;
+    }
+};
+
 /*
  * This data structure is used for communication with the GUI
  */
