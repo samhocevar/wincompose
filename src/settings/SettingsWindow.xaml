@@ -9,12 +9,20 @@
         Title="{x:Static i18n:Text.Options}" Width="420" Height="520"
         Icon="/WinCompose;component/res/key_compose.png"
         WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
         Closing="CloseWindowClicked">
 
     <Window.Resources>
     </Window.Resources>
-
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="OnCloseCommandExecuted"/>
+    </Window.CommandBindings>
+    
     <Window.InputBindings>
+        <KeyBinding Key="Escape" Command="ApplicationCommands.Close"/>
         <!-- TODO: bind this to something -->
         <!--<KeyBinding Key="Escape" Command=""/>-->
     </Window.InputBindings>
@@ -136,7 +144,7 @@
 
       <!-- The Close button -->
       <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
-              Margin="10" Content="{x:Static i18n:Text.Close}" Click="CloseButtonClicked" />
+              Margin="10" Content="{x:Static i18n:Text.Close}" Command="ApplicationCommands.Close" />
 
   </DockPanel>
 </Window>
