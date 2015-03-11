@@ -40,5 +40,13 @@ namespace WinCompose
         {
             m_execute_handler(parameter);
         }
+
+        public void RaiseCanExecuteChanged()
+        {
+            if(CanExecuteChanged != null)
+            {
+                CanExecuteChanged(this, new EventArgs());
+            }
+        }
     }
 }
