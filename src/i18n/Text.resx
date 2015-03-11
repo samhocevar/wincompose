@@ -327,4 +327,18 @@
   <data name="Milliseconds" xml:space="preserve">
     <value>(milliseconds)</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+    <comment>About box menu entry</comment>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>About Wincompose...</value>
+    <comment>Title of the About box dialog</comment>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
+  <data name="Licence" xml:space="preserve">
+    <value>Licence</value>
+  </data>
 </root>
