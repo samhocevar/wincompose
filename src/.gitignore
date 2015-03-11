@@ -7,3 +7,4 @@ obj/
 bin/
 po/*.po~
 unicode/cache
+*.csproj.user
