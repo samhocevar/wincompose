@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         Icon="/WinCompose;component/res/key_compose.png"
         Height="350"
-        Width="780">
+        Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
