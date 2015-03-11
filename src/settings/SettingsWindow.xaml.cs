@@ -24,6 +24,7 @@ namespace WinCompose
     {
         public SettingsWindow()
         {
+            DataContext = new SettingsWindowViewModel();
             InitializeComponent();
         }
 

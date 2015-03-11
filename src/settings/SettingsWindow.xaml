@@ -51,7 +51,7 @@
                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
              <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                        ItemsSource="{x:Static wc:Settings.ValidLanguages}"
-                       SelectedValue="{Binding Value, Source={x:Static wc:Settings.Language}}"
+                       SelectedValue="{Binding SelectedLanguage}"
                        SelectedValuePath="Key" DisplayMemberPath="Value"/>
 
              <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.ComposeKey}"
@@ -101,50 +101,55 @@
 
       <!-- The Tweaks group -->
       <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.Tweaks}" VerticalAlignment="Top">
-         <Grid VerticalAlignment="Center">
-             <Grid.ColumnDefinitions>
-                 <ColumnDefinition Width="*"/>
-             </Grid.ColumnDefinitions>
-             <Grid.RowDefinitions>
-                 <RowDefinition Height="Auto"/>
-                 <RowDefinition Height="Auto"/>
-                 <RowDefinition Height="Auto"/>
-                 <RowDefinition Height="Auto"/>
-             </Grid.RowDefinitions>
+          <Grid VerticalAlignment="Center">
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
 
-             <CheckBox Grid.Row="0" Grid.Column="0"
-                       Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}">
-                 <TextBox Text="{x:Static i18n:Text.KeepOriginalKey}"
+              <CheckBox Grid.Row="0" Grid.Column="0"
+                      Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}">
+                  <TextBox Text="{x:Static i18n:Text.KeepOriginalKey}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
+              </CheckBox>
 
-             <CheckBox Grid.Row="1" Grid.Column="0"
-                       Margin="8,4" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}">
-                 <TextBox Text="{x:Static i18n:Text.InsertZwsp}"
+              <CheckBox Grid.Row="1" Grid.Column="0"
+                      Margin="8,4" VerticalAlignment="Center"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}">
+                  <TextBox Text="{x:Static i18n:Text.InsertZwsp}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
+              </CheckBox>
 
-             <CheckBox Grid.Row="2" Grid.Column="0"
-                       Margin="8,4" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}">
-                 <TextBox Text="{x:Static i18n:Text.EmulateCapsLock}"
+              <CheckBox Grid.Row="2" Grid.Column="0"
+                      Margin="8,4" VerticalAlignment="Center"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}">
+                  <TextBox Text="{x:Static i18n:Text.EmulateCapsLock}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
+              </CheckBox>
 
-             <CheckBox Grid.Row="3" Grid.Column="0"
-                       Margin="8,4" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}">
-                 <TextBox Text="{x:Static i18n:Text.ShiftDisablesCapsLock}"
+              <CheckBox Grid.Row="3" Grid.Column="0"
+                      Margin="8,4" VerticalAlignment="Center"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}">
+                  <TextBox Text="{x:Static i18n:Text.ShiftDisablesCapsLock}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
-         </Grid>
+              </CheckBox>
+          </Grid>
       </GroupBox>
 
       <!-- The Close button -->
-      <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
-              Margin="10" Content="{x:Static i18n:Text.Close}" Command="ApplicationCommands.Close" />
+      <StackPanel Margin="10" DockPanel.Dock="Bottom" Orientation="Vertical">
+          <TextBlock Foreground="Red" Text="{x:Static i18n:Text.NeedRestart}" HorizontalAlignment="Left"
+                  Visibility="{Binding WarnMessageVisibility}"/>
+          <Button Margin="0, 4, 0, 0" DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
+                      Content="{Binding CloseButtonText}" Command="{Binding CloseButtonCommand}"
+                  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+      </StackPanel>
 
   </DockPanel>
 </Window>

@@ -376,6 +376,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wincompose need to restart for the changes to take effects..
+        /// </summary>
+        public static string NeedRestart {
+            get {
+                return ResourceManager.GetString("NeedRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grave Accent `.
         /// </summary>
         public static string Obsolete016 {

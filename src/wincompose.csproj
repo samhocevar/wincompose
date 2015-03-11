@@ -55,6 +55,7 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Program.cs" />
+    <Compile Include="settings\SettingsWindowViewModel.cs" />
     <Compile Include="ui_common\DelegateCommand.cs" />
     <Compile Include="unicode\Category.be.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -662,7 +663,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Text.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.be.resx">
