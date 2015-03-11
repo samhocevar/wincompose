@@ -404,7 +404,7 @@
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="sequences\ValueConverters.cs" />
-    <Compile Include="sequences\ViewModelBase.cs" />
+    <Compile Include="ui_common\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="sequences\CategoryViewModel.cs" />
