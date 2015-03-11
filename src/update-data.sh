@@ -134,3 +134,11 @@ for x in unicode/*resx i18n/*resx; do
     fi
 done
 
+#
+# Copy system files
+#
+
+if [ -f /usr/share/X11/locale/en_US.UTF-8/Compose ]; then
+    cp /usr/share/X11/locale/en_US.UTF-8/Compose rules/Xorg.txt
+fi
+
