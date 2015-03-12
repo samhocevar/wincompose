@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace WinCompose
@@ -80,7 +81,6 @@ static class Composer
         {
             if (is_keyup)
             {
-                m_statechanged = true;
                 m_compose_down = false;
             }
             else if (is_keydown && !m_compose_down)
@@ -88,12 +88,34 @@ static class Composer
                 // FIXME: we don't want compose + compose to disable composing, since
                 // there are compose sequences that use Multi_key.
                 // FIXME: also, if a sequence was in progress, we need to print it!
-                m_statechanged = true;
                 m_compose_down = true;
                 m_composing = !m_composing;
                 if (!m_composing)
                     m_sequence.Clear();
+
+                // Lauch the sequence reset expiration thread
+                // FIXME: do we need to launch a new thread each time the compose
+                // key is pressed? Let's have a dormant thread instead
+                if (m_composing && Settings.ResetDelay.Value > 0)
+                {
+                    new Thread(() =>
+                    {
+                        while (m_composing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
+                            Thread.Sleep(50);
+                        if (m_composing)
+                        {
+                            m_composing = false;
+                            m_sequence.Clear();
+                            if (Changed != null)
+                                Changed(null, new EventArgs());
+                        }
+                    }).Start();
+                }
             }
+
+            if (Changed != null)
+                Changed(null, new EventArgs());
+
             return true;
         }
 
@@ -138,14 +160,16 @@ static class Composer
             {
                 // Sequence finished, print it
                 string tosend = Settings.GetSequenceResult(m_sequence);
-                m_statechanged = true;
                 m_composing = false;
                 m_sequence.Clear();
 
                 // Do this at the last moment because we might get blocked
-                // by the kernel. FIXME: the whole Composer state should probably
-                // use locking
+                // by the kernel. FIXME: the whole Composer state should
+                // probably use locking
                 SendString(tosend);
+
+                if (Changed != null)
+                    Changed(null, new EventArgs());
             }
             else if (Settings.IsValidPrefix(m_sequence))
             {
@@ -167,9 +191,11 @@ static class Composer
                 if (Settings.BeepOnInvalid.Value)
                     SystemSounds.Beep.Play();
 
-                m_statechanged = true;
                 m_composing = false;
                 m_sequence.Clear();
+
+                if (Changed != null)
+                    Changed(null, new EventArgs());
             }
         }
 
@@ -270,6 +296,8 @@ static class Composer
         }
     }
 
+    public static event EventHandler Changed;
+
     /// <summary>
     /// Return whether a compose sequence is in progress
     /// </summary>
@@ -284,7 +312,6 @@ static class Composer
     public static void ToggleDisabled()
     {
         m_disabled = !m_disabled;
-        m_statechanged = true;
 
         if (m_disabled)
         {
@@ -292,6 +319,9 @@ static class Composer
             m_compose_down = false;
             m_sequence.Clear();
         }
+
+        if (Changed != null)
+            Changed(null, new EventArgs());
     }
 
     /// <summary>
@@ -300,21 +330,6 @@ static class Composer
     public static bool IsDisabled()
     {
         return m_disabled;
-    }
-
-    public static bool HasStateChanged()
-    {
-        if (m_composing && Settings.ResetDelay.Value > 0 &&
-            DateTime.Now > m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
-        {
-            m_composing = false;
-            m_statechanged = false;
-            return true;
-        }
-
-        bool ret = m_statechanged;
-        m_statechanged = false;
-        return ret;
     }
 
     private static INPUT NewInputKey(VirtualKeyShort vk)
@@ -380,7 +395,6 @@ static class Composer
     private static bool m_disabled = false;
     private static bool m_compose_down = false;
     private static bool m_composing = false;
-    private static bool m_statechanged = true;
 }
 
 }
