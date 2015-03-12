@@ -60,18 +60,14 @@ namespace WinCompose
                 };
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
 
-                var timer = new WinForms.Timer
-                {
-                    Enabled = true,
-                    Interval = 50, /* 50 milliseconds is probably enough */
-                };
-                timer.Tick += TimerTicked;
+                Composer.Changed += ComposerStateChanged;
 
                 WinForms.Application.Run();
                 m_notifyicon.Dispose();
             }
             finally
             {
+                Composer.Changed -= ComposerStateChanged;
                 KeyboardHook.Uninstall();
                 Settings.StopWatchConfigFile();
                 Settings.SaveConfig();
@@ -95,11 +91,8 @@ namespace WinCompose
             }
         }
 
-        private static void TimerTicked(object sender, EventArgs e)
+        private static void ComposerStateChanged(object sender, EventArgs e)
         {
-            if (!Composer.HasStateChanged())
-                return;
-
             m_notifyicon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
                               : Composer.IsComposing() ? Properties.Resources.IconActive
                                                        : Properties.Resources.IconNormal;
