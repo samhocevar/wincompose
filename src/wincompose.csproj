@@ -65,6 +65,7 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Program.cs" />
+    <Compile Include="composer\Stats.cs" />
     <Compile Include="settings\SettingsWindowViewModel.cs" />
     <Compile Include="ui_common\DelegateCommand.cs" />
     <Compile Include="unicode\Category.be.Designer.cs">
