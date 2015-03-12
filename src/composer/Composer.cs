@@ -27,9 +27,6 @@ static class Composer
     // and needs to be removed from the input chain.
     public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
-        if (m_disabled)
-            return false;
-
         CheckKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
@@ -68,10 +65,18 @@ static class Composer
             key = new Key(vk);
         }
 
-        // Remember when we pressed a key for the last time
         if (is_keydown)
         {
+            // Update single key statistics
+            Stats.AddKey(key);
+
+            // Remember when we pressed a key for the last time
             m_last_key_time = DateTime.Now;
+        }
+
+        if (m_disabled)
+        {
+            return false;
         }
 
         // FIXME: we don’t properly support compose keys that also normally

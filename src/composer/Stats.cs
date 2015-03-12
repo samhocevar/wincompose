@@ -19,14 +19,32 @@ namespace WinCompose
 
 static class Stats
 {
-    public static AddSequence(KeySequence sequence)
+    /// <summary>
+    /// Add a pressed key to the stats
+    /// </summary>
+    /// <param name="key"></param>
+    public static void AddKey(Key key)
     {
         int count = 0;
-        m_stats.TryGetValue(sequence, out count);
-        m_stats[sequence] = count + 1;
+        m_key_stats.TryGetValue(key, out count);
+        m_key_stats[key] = count + 1;
     }
 
-    private static Dictionary<KeySequence, int> m_stats
+    /// <summary>
+    /// Add a successfully typed sequence to the stats
+    /// </summary>
+    /// <param name="sequence"></param>
+    public static void AddSequence(KeySequence sequence)
+    {
+        int count = 0;
+        m_sequence_stats.TryGetValue(sequence, out count);
+        m_sequence_stats[sequence] = count + 1;
+    }
+
+    private static Dictionary<Key, int> m_key_stats
+        = new Dictionary<Key, int>();
+
+    private static Dictionary<KeySequence, int> m_sequence_stats
         = new Dictionary<KeySequence, int>();
 }
 

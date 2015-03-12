@@ -190,6 +190,11 @@ public class KeySequence : List<Key>
         return true;
     }
 
+    public new KeySequence GetRange(int start, int count)
+    {
+        return new KeySequence(base.GetRange(start, count));
+    }
+
     public override int GetHashCode()
     {
         int hash = 0x2d2816fe;
