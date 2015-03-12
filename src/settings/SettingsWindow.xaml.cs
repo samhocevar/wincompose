@@ -13,6 +13,7 @@
 
 using System.Windows;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace WinCompose
 {
@@ -23,6 +24,7 @@ namespace WinCompose
     {
         public SettingsWindow()
         {
+            DataContext = new SettingsWindowViewModel();
             InitializeComponent();
         }
 
@@ -32,7 +34,7 @@ namespace WinCompose
             e.Cancel = true;
         }
 
-        private void CloseButtonClicked(object sender, RoutedEventArgs e)
+        private void OnCloseCommandExecuted(object Sender, ExecutedRoutedEventArgs e)
         {
             Hide();
         }

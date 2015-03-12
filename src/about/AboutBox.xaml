@@ -1,0 +1,36 @@
+﻿<Window x:Class="WinCompose.AboutBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i18n="clr-namespace:WinCompose.i18n"
+        xmlns:wincompose="clr-namespace:WinCompose"
+        Title="{x:Static i18n:Text.AboutBoxTitle}"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="/WinCompose;component/res/key_compose.png"
+        Height="350"
+        Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <StackPanel Orientation="Vertical">
+                <Image Height="100" Source="/WinCompose;component/res/key_compose_big.png"/>
+                <Label HorizontalAlignment="Center" FontSize="18" Content="Wincompose"/>
+                <Label HorizontalAlignment="Center" FontSize="18" Content="{Binding Version}"/>
+            </StackPanel>
+            <StackPanel Margin="0, 10, 0, 10"  VerticalAlignment="Bottom">
+                <Button Margin="10, 2, 10, 2" Content="Contributors" Command="{Binding SwitchDocumentCommand}" CommandParameter="contributors"/>
+                <Button Margin="10, 2, 10, 2" Content="Licence" Command="{Binding SwitchDocumentCommand}" CommandParameter="licence"/>
+                <Button Margin="10, 2, 10, 2" Content="{x:Static i18n:Text.VisitWebsite}" Command="{Binding OpenWebsiteCommand}"/>
+            </StackPanel>
+        </Grid>
+        <GroupBox Grid.Column="1" Header="{Binding ActiveDocumentTitle}">
+            <ScrollViewer>
+                <RichTextBox Margin="10, 10 10, 10" wincompose:AboutBox.Document="{Binding ActiveDocument}" IsReadOnly="True" IsDocumentEnabled="True"/>
+            </ScrollViewer>
+        </GroupBox>
+    </Grid>
+</Window>

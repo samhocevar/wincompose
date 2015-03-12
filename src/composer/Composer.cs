@@ -85,13 +85,14 @@ static class Composer
             }
             else if (is_keydown && !m_compose_down)
             {
-                /* FIXME: we don't want compose + compose to disable composing, since
-                 * there are compose sequences that use Multi_key. */
+                // FIXME: we don't want compose + compose to disable composing, since
+                // there are compose sequences that use Multi_key.
+                // FIXME: also, if a sequence was in progress, we need to print it!
                 m_statechanged = true;
                 m_compose_down = true;
                 m_composing = !m_composing;
                 if (!m_composing)
-                    m_sequence = new KeySequence();
+                    m_sequence.Clear();
             }
             return true;
         }
@@ -136,15 +137,20 @@ static class Composer
             if (Settings.IsValidSequence(m_sequence))
             {
                 // Sequence finished, print it
-                SendString(Settings.GetSequenceResult(m_sequence));
+                string tosend = Settings.GetSequenceResult(m_sequence);
 
                 int count = 0;
-                m_stats.TryGetValue(new KeySequence(m_sequence), out count);
-                m_stats[new KeySequence(m_sequence)] = count + 1;
+                m_stats.TryGetValue(m_sequence, out count);
+                m_stats[m_sequence] = count + 1;
 
                 m_statechanged = true;
                 m_composing = false;
-                m_sequence = new KeySequence();
+                m_sequence.Clear();
+
+                // Do this at the last moment because we might get blocked
+                // by the kernel. FIXME: the whole Composer state should probably
+                // use locking
+                SendString(tosend);
             }
             else if (Settings.IsValidPrefix(m_sequence))
             {
@@ -168,7 +174,7 @@ static class Composer
 
                 m_statechanged = true;
                 m_composing = false;
-                m_sequence = new KeySequence();
+                m_sequence.Clear();
             }
         }
 
@@ -289,7 +295,7 @@ static class Composer
         {
             m_composing = false;
             m_compose_down = false;
-            m_sequence = new KeySequence();
+            m_sequence.Clear();
         }
     }
 

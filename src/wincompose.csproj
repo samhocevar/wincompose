@@ -36,6 +36,16 @@
   <PropertyGroup>
     <StartupObject>WinCompose.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Installer|AnyCPU'">
+    <OutputPath>bin\Installer\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PostBuildEvent>iscc $(SolutionDir)\installer.iss</PostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -48,9 +58,15 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="about\AboutBox.xaml.cs">
+      <DependentUpon>AboutBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="about\AboutBoxViewModel.cs" />
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Program.cs" />
+    <Compile Include="settings\SettingsWindowViewModel.cs" />
+    <Compile Include="ui_common\DelegateCommand.cs" />
     <Compile Include="unicode\Category.be.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -398,7 +414,7 @@
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="sequences\ValueConverters.cs" />
-    <Compile Include="sequences\ViewModelBase.cs" />
+    <Compile Include="ui_common\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="sequences\CategoryViewModel.cs" />
@@ -657,7 +673,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Text.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.be.resx">
@@ -749,8 +764,14 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="res\contributors.rtf" />
+    <Resource Include="res\copying.rtf" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="about\AboutBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="sequences\SequenceWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -768,6 +789,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\key_space.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\key_compose_big.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -52,7 +52,7 @@ namespace WinCompose
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
                         new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
-                        new WinForms.MenuItem(i18n.Text.VisitWebsite, VisitWebsiteClicked),
+                        new WinForms.MenuItem(i18n.Text.About, AboutClicked),
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
                         new WinForms.MenuItem(i18n.Text.Exit, ExitClicked),
@@ -137,9 +137,10 @@ namespace WinCompose
             item.Checked = Composer.IsDisabled();
         }
 
-        private static void VisitWebsiteClicked(object sender, EventArgs e)
+        private static void AboutClicked(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://wincompose.info/");
+            var about_box = new AboutBox();
+            about_box.ShowDialog();
         }
 
         private static void RestartClicked(object sender, EventArgs e)

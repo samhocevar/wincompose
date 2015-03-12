@@ -1,3 +1,47 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # UTF-8 (Unicode) compose sequence
 # David.Monniaux@ens.fr
 #
@@ -595,6 +639,11 @@
 <Multi_key> <I> <quotedbl> 		: "Ï"   Idiaeresis # LATIN CAPITAL LETTER I WITH DIAERESIS
 <Multi_key> <diaeresis> <I> 		: "Ï"   Idiaeresis # LATIN CAPITAL LETTER I WITH DIAERESIS
 <Multi_key> <I> <diaeresis> 		: "Ï"   Idiaeresis # LATIN CAPITAL LETTER I WITH DIAERESIS
+<dead_acute> <J>	 		: "J́"    # LATIN CAPITAL LETTER J U004A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <apostrophe> <J> 		: "J́"    # LATIN CAPITAL LETTER J U004A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <J> <apostrophe> 		: "J́"    # LATIN CAPITAL LETTER J U004A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <acute> <J> 		: "J́"    # LATIN CAPITAL LETTER J U004A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <J> <acute> 		: "J́"    # LATIN CAPITAL LETTER J U004A with COMBINING ACUTE ACCENT U0301
 <Multi_key> <D> <H>              	: "Ð"   ETH # LATIN CAPITAL LETTER ETH
 <dead_tilde> <N>                 	: "Ñ"   Ntilde # LATIN CAPITAL LETTER N WITH TILDE
 <Multi_key> <asciitilde> <N>     	: "Ñ"   Ntilde # LATIN CAPITAL LETTER N WITH TILDE
@@ -715,6 +764,11 @@
 <Multi_key> <i> <quotedbl> 		: "ï"   idiaeresis # LATIN SMALL LETTER I WITH DIAERESIS
 <Multi_key> <diaeresis> <i> 		: "ï"   idiaeresis # LATIN SMALL LETTER I WITH DIAERESIS
 <Multi_key> <i> <diaeresis> 		: "ï"   idiaeresis # LATIN SMALL LETTER I WITH DIAERESIS
+<dead_acute> <j>	 		: "j́"    # LATIN SMALL LETTER J U006A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <apostrophe> <j> 		: "j́"    # LATIN SMALL LETTER J U006A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <j> <apostrophe> 		: "j́"    # LATIN SMALL LETTER J U006A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <acute> <j> 		: "j́"    # LATIN SMALL LETTER J U006A with COMBINING ACUTE ACCENT U0301
+<Multi_key> <j> <acute> 		: "j́"    # LATIN SMALL LETTER J U006A with COMBINING ACUTE ACCENT U0301
 <Multi_key> <d> <h>              	: "ð"   eth # LATIN SMALL LETTER ETH
 <dead_tilde> <n>                 	: "ñ"   ntilde # LATIN SMALL LETTER N WITH TILDE
 <Multi_key> <asciitilde> <n>     	: "ñ"   ntilde # LATIN SMALL LETTER N WITH TILDE
@@ -1458,30 +1512,30 @@
 <Multi_key> <acute> <KP_Divide> <o> 	: "ǿ"   U01FF # LATIN SMALL LETTER O WITH STROKE AND ACUTE
 <Multi_key> <apostrophe> <KP_Divide> <o> 	: "ǿ"   U01FF # LATIN SMALL LETTER O WITH STROKE AND ACUTE
 <dead_stroke> <dead_acute> <o>  	: "ǿ"   U01FF # LATIN SMALL LETTER O WITH STROKE AND ACUTE
-<dead_double_grave> <A>                  	: "Ȁ"   U0200 # LATIN CAPITAL LETTER A WITH DOUBLE GRAVE
-<dead_double_grave> <a>                  	: "ȁ"   U0201 # LATIN SMALL LETTER A WITH DOUBLE GRAVE
-<dead_inverted_breve> <A>                  	: "Ȃ"   U0202 # LATIN CAPITAL LETTER A WITH INVERTED BREVE
-<dead_inverted_breve> <a>                  	: "ȃ"   U0203 # LATIN SMALL LETTER A WITH INVERTED BREVE
-<dead_double_grave> <E>                  	: "Ȅ"   U0204 # LATIN CAPITAL LETTER E WITH DOUBLE GRAVE
-<dead_double_grave> <e>                  	: "ȅ"   U0205 # LATIN SMALL LETTER E WITH DOUBLE GRAVE
-<dead_inverted_breve> <E>                  	: "Ȇ"   U0206 # LATIN CAPITAL LETTER E WITH INVERTED BREVE
-<dead_inverted_breve> <e>                  	: "ȇ"   U0207 # LATIN SMALL LETTER E WITH INVERTED BREVE
-<dead_double_grave> <I>                  	: "Ȉ"   U0208 # LATIN CAPITAL LETTER I WITH DOUBLE GRAVE
-<dead_double_grave> <i>                  	: "ȉ"   U0209 # LATIN SMALL LETTER I WITH DOUBLE GRAVE
-<dead_inverted_breve> <I>                  	: "Ȋ"   U020A # LATIN CAPITAL LETTER I WITH INVERTED BREVE
-<dead_inverted_breve> <i>                  	: "ȋ"   U020B # LATIN SMALL LETTER I WITH INVERTED BREVE
-<dead_double_grave> <O>                  	: "Ȍ"   U020C # LATIN CAPITAL LETTER O WITH DOUBLE GRAVE
-<dead_double_grave> <o>                  	: "ȍ"   U020D # LATIN SMALL LETTER O WITH DOUBLE GRAVE
-<dead_inverted_breve> <O>                  	: "Ȏ"   U020E # LATIN CAPITAL LETTER O WITH INVERTED BREVE
-<dead_inverted_breve> <o>                  	: "ȏ"   U020F # LATIN SMALL LETTER O WITH INVERTED BREVE
-<dead_double_grave> <R>                  	: "Ȑ"   U0210 # LATIN CAPITAL LETTER R WITH DOUBLE GRAVE
-<dead_double_grave> <r>                  	: "ȑ"   U0211 # LATIN SMALL LETTER R WITH DOUBLE GRAVE
-<dead_inverted_breve> <R>                  	: "Ȓ"   U0212 # LATIN CAPITAL LETTER R WITH INVERTED BREVE
-<dead_inverted_breve> <r>                  	: "ȓ"   U0213 # LATIN SMALL LETTER R WITH INVERTED BREVE
-<dead_double_grave> <U>                  	: "Ȕ"   U0214 # LATIN CAPITAL LETTER U WITH DOUBLE GRAVE
-<dead_double_grave> <u>                  	: "ȕ"   U0215 # LATIN SMALL LETTER U WITH DOUBLE GRAVE
-<dead_inverted_breve> <U>                  	: "Ȗ"   U0216 # LATIN CAPITAL LETTER U WITH INVERTED BREVE
-<dead_inverted_breve> <u>                  	: "ȗ"   U0217 # LATIN SMALL LETTER U WITH INVERTED BREVE
+<dead_doublegrave> <A>                  	: "Ȁ"   U0200 # LATIN CAPITAL LETTER A WITH DOUBLE GRAVE
+<dead_doublegrave> <a>                  	: "ȁ"   U0201 # LATIN SMALL LETTER A WITH DOUBLE GRAVE
+<dead_invertedbreve> <A>                  	: "Ȃ"   U0202 # LATIN CAPITAL LETTER A WITH INVERTED BREVE
+<dead_invertedbreve> <a>                  	: "ȃ"   U0203 # LATIN SMALL LETTER A WITH INVERTED BREVE
+<dead_doublegrave> <E>                  	: "Ȅ"   U0204 # LATIN CAPITAL LETTER E WITH DOUBLE GRAVE
+<dead_doublegrave> <e>                  	: "ȅ"   U0205 # LATIN SMALL LETTER E WITH DOUBLE GRAVE
+<dead_invertedbreve> <E>                  	: "Ȇ"   U0206 # LATIN CAPITAL LETTER E WITH INVERTED BREVE
+<dead_invertedbreve> <e>                  	: "ȇ"   U0207 # LATIN SMALL LETTER E WITH INVERTED BREVE
+<dead_doublegrave> <I>                  	: "Ȉ"   U0208 # LATIN CAPITAL LETTER I WITH DOUBLE GRAVE
+<dead_doublegrave> <i>                  	: "ȉ"   U0209 # LATIN SMALL LETTER I WITH DOUBLE GRAVE
+<dead_invertedbreve> <I>                  	: "Ȋ"   U020A # LATIN CAPITAL LETTER I WITH INVERTED BREVE
+<dead_invertedbreve> <i>                  	: "ȋ"   U020B # LATIN SMALL LETTER I WITH INVERTED BREVE
+<dead_doublegrave> <O>                  	: "Ȍ"   U020C # LATIN CAPITAL LETTER O WITH DOUBLE GRAVE
+<dead_doublegrave> <o>                  	: "ȍ"   U020D # LATIN SMALL LETTER O WITH DOUBLE GRAVE
+<dead_invertedbreve> <O>                  	: "Ȏ"   U020E # LATIN CAPITAL LETTER O WITH INVERTED BREVE
+<dead_invertedbreve> <o>                  	: "ȏ"   U020F # LATIN SMALL LETTER O WITH INVERTED BREVE
+<dead_doublegrave> <R>                  	: "Ȑ"   U0210 # LATIN CAPITAL LETTER R WITH DOUBLE GRAVE
+<dead_doublegrave> <r>                  	: "ȑ"   U0211 # LATIN SMALL LETTER R WITH DOUBLE GRAVE
+<dead_invertedbreve> <R>                  	: "Ȓ"   U0212 # LATIN CAPITAL LETTER R WITH INVERTED BREVE
+<dead_invertedbreve> <r>                  	: "ȓ"   U0213 # LATIN SMALL LETTER R WITH INVERTED BREVE
+<dead_doublegrave> <U>                  	: "Ȕ"   U0214 # LATIN CAPITAL LETTER U WITH DOUBLE GRAVE
+<dead_doublegrave> <u>                  	: "ȕ"   U0215 # LATIN SMALL LETTER U WITH DOUBLE GRAVE
+<dead_invertedbreve> <U>                  	: "Ȗ"   U0216 # LATIN CAPITAL LETTER U WITH INVERTED BREVE
+<dead_invertedbreve> <u>                  	: "ȗ"   U0217 # LATIN SMALL LETTER U WITH INVERTED BREVE
 <dead_caron> <H>                 	: "Ȟ"   U021E # LATIN CAPITAL LETTER H WITH CARON
 <Multi_key> <c> <H>              	: "Ȟ"   U021E # LATIN CAPITAL LETTER H WITH CARON
 <dead_caron> <h>                 	: "ȟ"   U021F # LATIN SMALL LETTER H WITH CARON
@@ -1761,8 +1815,8 @@
 <dead_breve> <Cyrillic_u>        	: "ў"   U045E # CYRILLIC SMALL LETTER SHORT U
 <Multi_key> <U> <Cyrillic_u>     	: "ў"   U045E # CYRILLIC SMALL LETTER SHORT U
 <Multi_key> <b> <Cyrillic_u>     	: "ў"   U045E # CYRILLIC SMALL LETTER SHORT U
-<dead_double_grave> <U0474>          	: "Ѷ"   U0476 # CYRILLIC CAPITAL LETTER IZHITSA WITH DOUBLE GRAVE ACCENT
-<dead_double_grave> <U0475>          	: "ѷ"   U0477 # CYRILLIC SMALL LETTER IZHITSA WITH DOUBLE GRAVE ACCENT
+<dead_doublegrave> <U0474>          	: "Ѷ"   U0476 # CYRILLIC CAPITAL LETTER IZHITSA WITH DOUBLE GRAVE ACCENT
+<dead_doublegrave> <U0475>          	: "ѷ"   U0477 # CYRILLIC SMALL LETTER IZHITSA WITH DOUBLE GRAVE ACCENT
 <Multi_key> <slash> <Cyrillic_GHE> 	: "Ғ"   U0492 # CYRILLIC CAPITAL LETTER GHE WITH STROKE
 <Multi_key> <KP_Divide> <Cyrillic_GHE> 	: "Ғ"   U0492 # CYRILLIC CAPITAL LETTER GHE WITH STROKE
 <Multi_key> <slash> <Cyrillic_ghe> 	: "ғ"   U0493 # CYRILLIC SMALL LETTER GHE WITH STROKE
@@ -5826,6 +5880,8 @@
 <Multi_key> <greater> <less>                    : "⋄"   U22c4   # > < DIAMOND OPERATOR
 <Multi_key> <U2227> <U2228>                     : "⋄"   U22c4   # ∧ ∨ DIAMOND OPERATOR
 <Multi_key> <U2228> <U2227>                     : "⋄"   U22c4   # ∨ ∧ DIAMOND OPERATOR
+<Multi_key> <colon> <period>                    : "∴"   therefore # THEREFORE
+<Multi_key> <period> <colon>                    : "∵"   because # BECAUSE
 
 # Characters from "Miscellaneous Technical"
 
