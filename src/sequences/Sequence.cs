@@ -205,7 +205,7 @@ public class KeySequence : List<Key>
 
 public class SequenceDescription : IComparable<SequenceDescription>
 {
-    public List<Key> Sequence = new List<Key>();
+    public KeySequence Sequence = new KeySequence();
     public string Description = "";
     public string Result = "";
     public int Utf32 = -1;
@@ -227,7 +227,7 @@ public class SequenceDescription : IComparable<SequenceDescription>
 
 public class SequenceTree
 {
-    public void Add(List<Key> sequence, string result, int utf32, string desc)
+    public void Add(KeySequence sequence, string result, int utf32, string desc)
     {
         if (sequence.Count == 0)
         {
@@ -244,25 +244,25 @@ public class SequenceTree
         m_children[sequence[0]].Add(subsequence, result, utf32, desc);
     }
 
-    public bool IsValidPrefix(List<Key> sequence)
+    public bool IsValidPrefix(KeySequence sequence)
     {
         SequenceTree subtree = GetSubtree(sequence);
         return subtree != null;
     }
 
-    public bool IsValidSequence(List<Key> sequence)
+    public bool IsValidSequence(KeySequence sequence)
     {
         SequenceTree subtree = GetSubtree(sequence);
         return subtree != null && subtree.m_result != null;
     }
 
-    public string GetSequenceResult(List<Key> sequence)
+    public string GetSequenceResult(KeySequence sequence)
     {
         SequenceTree tree = GetSubtree(sequence);
         return tree == null ? "" : tree.m_result == null ? "" : tree.m_result;
     }
 
-    public SequenceTree GetSubtree(List<Key> sequence)
+    public SequenceTree GetSubtree(KeySequence sequence)
     {
         if (sequence.Count == 0)
             return this;
@@ -275,13 +275,13 @@ public class SequenceTree
     public List<SequenceDescription> GetSequenceDescriptions()
     {
         List<SequenceDescription> ret = new List<SequenceDescription>();
-        BuildSequenceDescriptions(ret, new List<Key>());
+        BuildSequenceDescriptions(ret, new KeySequence());
         ret.Sort();
         return ret;
     }
 
     private void BuildSequenceDescriptions(List<SequenceDescription> list,
-                                           List<Key> path)
+                                           KeySequence path)
     {
         if (m_result != null)
         {
@@ -295,7 +295,7 @@ public class SequenceTree
 
         foreach (var pair in m_children)
         {
-            var newpath = new List<Key>(path);
+            var newpath = new KeySequence(path);
             newpath.Add(pair.Key);
             pair.Value.BuildSequenceDescriptions(list, newpath);
         }

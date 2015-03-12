@@ -172,17 +172,17 @@ namespace WinCompose
             return m_sequences;
         }
 
-        public static bool IsValidPrefix(List<Key> sequence)
+        public static bool IsValidPrefix(KeySequence sequence)
         {
             return m_sequences.IsValidPrefix(sequence);
         }
 
-        public static bool IsValidSequence(List<Key> sequence)
+        public static bool IsValidSequence(KeySequence sequence)
         {
             return m_sequences.IsValidSequence(sequence);
         }
 
-        public static string GetSequenceResult(List<Key> sequence)
+        public static string GetSequenceResult(KeySequence sequence)
         {
             return m_sequences.GetSequenceResult(sequence);
         }
@@ -236,7 +236,7 @@ namespace WinCompose
             if (keys.Length < 4) // We need 2 keys + 2 empty strings
                 return;
 
-            List<Key> seq = new List<Key>();
+            KeySequence seq = new KeySequence();
 
             for (int i = 1; i < keys.Length; ++i)
             {
@@ -290,7 +290,7 @@ namespace WinCompose
         private static int m_sequence_count = 0;
 
         // FIXME: couldn't we accept any compose key?
-        private static readonly List<Key> m_valid_compose_keys = new List<Key>
+        private static readonly KeySequence m_valid_compose_keys = new KeySequence
         {
            new Key(VK.LMENU),
            new Key(VK.RMENU),

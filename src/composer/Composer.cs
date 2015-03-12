@@ -91,7 +91,7 @@ static class Composer
                 m_compose_down = true;
                 m_composing = !m_composing;
                 if (!m_composing)
-                    m_sequence = new List<Key>();
+                    m_sequence = new KeySequence();
             }
             return true;
         }
@@ -144,7 +144,7 @@ static class Composer
 
                 m_statechanged = true;
                 m_composing = false;
-                m_sequence = new List<Key>();
+                m_sequence = new KeySequence();
             }
             else if (Settings.IsValidPrefix(m_sequence))
             {
@@ -168,7 +168,7 @@ static class Composer
 
                 m_statechanged = true;
                 m_composing = false;
-                m_sequence = new List<Key>();
+                m_sequence = new KeySequence();
             }
         }
 
@@ -289,7 +289,7 @@ static class Composer
         {
             m_composing = false;
             m_compose_down = false;
-            m_sequence = new List<Key>();
+            m_sequence = new KeySequence();
         }
     }
 
@@ -373,8 +373,16 @@ static class Composer
         //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
     }
 
+    /// <summary>
+    /// A buffer used to retrieve the global key state
+    /// </summary>
     private static byte[] m_keystate = new byte[256];
-    private static List<Key> m_sequence = new List<Key>();
+
+    /// <summary>
+    /// The sequence being currently typed
+    /// </summary>
+    private static KeySequence m_sequence = new KeySequence();
+
     private static DateTime m_last_key_time = DateTime.Now;
     private static bool m_disabled = false;
     private static bool m_compose_down = false;
