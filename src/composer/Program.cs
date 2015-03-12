@@ -81,7 +81,8 @@ namespace WinCompose
                 m_sequencewindow = new SequenceWindow();
                 ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
             }
-            else if (m_sequencewindow.IsVisible)
+
+            if (m_sequencewindow.IsVisible)
             {
                 m_sequencewindow.Hide();
             }
