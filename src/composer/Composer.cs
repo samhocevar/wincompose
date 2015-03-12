@@ -102,13 +102,7 @@ static class Composer
                     {
                         while (m_composing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
                             Thread.Sleep(50);
-                        if (m_composing)
-                        {
-                            m_composing = false;
-                            m_sequence.Clear();
-                            if (Changed != null)
-                                Changed(null, new EventArgs());
-                        }
+                        AbortSequence();
                     }).Start();
                 }
             }
@@ -160,16 +154,13 @@ static class Composer
             {
                 // Sequence finished, print it
                 string tosend = Settings.GetSequenceResult(m_sequence);
-                m_composing = false;
-                m_sequence.Clear();
+
+                AbortSequence();
 
                 // Do this at the last moment because we might get blocked
                 // by the kernel. FIXME: the whole Composer state should
                 // probably use locking
                 SendString(tosend);
-
-                if (Changed != null)
-                    Changed(null, new EventArgs());
             }
             else if (Settings.IsValidPrefix(m_sequence))
             {
@@ -191,11 +182,7 @@ static class Composer
                 if (Settings.BeepOnInvalid.Value)
                     SystemSounds.Beep.Play();
 
-                m_composing = false;
-                m_sequence.Clear();
-
-                if (Changed != null)
-                    Changed(null, new EventArgs());
+                AbortSequence();
             }
         }
 
@@ -330,6 +317,16 @@ static class Composer
     public static bool IsDisabled()
     {
         return m_disabled;
+    }
+
+    private static void AbortSequence()
+    {
+        m_composing = false;
+        m_compose_down = false;
+        m_sequence.Clear();
+
+        if (Changed != null)
+            Changed(null, new EventArgs());
     }
 
     private static INPUT NewInputKey(VirtualKeyShort vk)
