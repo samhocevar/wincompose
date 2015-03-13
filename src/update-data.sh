@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 STEPS=4
 CACHE=unicode/cache
 mkdir -p ${CACHE}

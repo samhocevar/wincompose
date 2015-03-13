@@ -122,165 +122,195 @@ msgstr ""
 msgid "History"
 msgstr ""
 
-#: i18n/Text.resx:211 ID:Obsolete030
-#. This string is obsolete but might be reused in the future
-msgid "About"
-msgstr ""
-
-#: i18n/Text.resx:215 ID:VisitWebsite
+#: i18n/Text.resx:212 ID:VisitWebsite
 #. Menu entry to visit the website
 msgid "Visit Website"
 msgstr ""
 
-#: i18n/Text.resx:218 ID:Exit
+#: i18n/Text.resx:215 ID:Exit
 msgid "Exit"
 msgstr ""
 
-#: i18n/Text.resx:221 ID:Obsolete036
+#: i18n/Text.resx:218 ID:Obsolete036
 #. This string is obsolete but might be reused in the future
 msgid "by Sam Hocevar <sam@hocevar.net>"
 msgstr ""
 
-#: i18n/Text.resx:224 ID:Sequences
+#: i18n/Text.resx:221 ID:Sequences
 msgid "Sequences"
 msgstr ""
 
-#: i18n/Text.resx:227 ID:Obsolete039
+#: i18n/Text.resx:224 ID:Obsolete039
 #. This string is obsolete but might be reused in the future
 msgid "Sequence"
 msgstr ""
 
-#: i18n/Text.resx:230 ID:Obsolete041
+#: i18n/Text.resx:227 ID:Obsolete041
 #. This string is obsolete but might be reused in the future
 msgid "Unicode"
 msgstr ""
 
-#: i18n/Text.resx:233 ID:Search
+#: i18n/Text.resx:230 ID:Search
 msgid "Search Filter:"
 msgstr ""
 
-#: i18n/Text.resx:236 ID:ComposeKey
+#: i18n/Text.resx:233 ID:ComposeKey
 msgid "Compose Key:"
 msgstr ""
 
-#: i18n/Text.resx:240 ID:ResetDelay
+#: i18n/Text.resx:237 ID:ResetDelay
 #. The compose key deactivates itself after a certain configurable delay
 msgid "Delay:"
 msgstr ""
 
-#: i18n/Text.resx:243 ID:CaseInsensitive
+#: i18n/Text.resx:240 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 
-#: i18n/Text.resx:246 ID:DiscardOnInvalid
+#: i18n/Text.resx:243 ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr ""
 
-#: i18n/Text.resx:249 ID:BeepOnInvalid
+#: i18n/Text.resx:246 ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr ""
 
-#: i18n/Text.resx:252 ID:Language
+#: i18n/Text.resx:249 ID:Language
 msgid "Interface language:"
 msgstr ""
 
-#: i18n/Text.resx:256 ID:Close
+#: i18n/Text.resx:253 ID:Close
 #. Close the settings window
 msgid "Close"
 msgstr ""
 
-#: i18n/Text.resx:260 ID:Obsolete050
+#: i18n/Text.resx:257 ID:Obsolete050
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
 msgid "Copy Character"
 msgstr ""
 
-#: i18n/Text.resx:264 ID:Obsolete051
+#: i18n/Text.resx:261 ID:Obsolete051
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
 msgid "Description:"
 msgstr ""
 
-#: i18n/Text.resx:268 ID:Apply
+#: i18n/Text.resx:265 ID:Apply
 #. Apply changes from the settings window
 msgid "Apply"
 msgstr ""
 
-#: i18n/Text.resx:272 ID:KeepOriginalKey
+#: i18n/Text.resx:269 ID:KeepOriginalKey
 #. Should this say “retain” instead of “maintain”?
 msgid "Maintain original compose key behaviour"
 msgstr ""
 
-#: i18n/Text.resx:275 ID:InsertZwsp
+#: i18n/Text.resx:272 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr ""
 
-#: i18n/Text.resx:278 ID:EmulateCapsLock
+#: i18n/Text.resx:275 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
 msgstr ""
 
-#: i18n/Text.resx:281 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:278 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
 msgstr ""
 
-#: i18n/Text.resx:285 ID:Categories
+#: i18n/Text.resx:282 ID:Categories
 #. Header for the list of Unicode character categories
 msgid "Categories"
 msgstr ""
 
-#: i18n/Text.resx:288 ID:InSelectedCategories
+#: i18n/Text.resx:285 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr ""
 
-#: i18n/Text.resx:292 ID:Options
+#: i18n/Text.resx:289 ID:Options
 #. The title of the Options window
 msgid "Options — WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:296 ID:ShowOptions
+#: i18n/Text.resx:293 ID:ShowOptions
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 msgid "Options…"
 msgstr ""
 
-#: i18n/Text.resx:300 ID:TrayToolTip
+#: i18n/Text.resx:297 ID:TrayToolTip
 #. {0}: compose key name, {1}: number of sequences
 msgid "WinCompose on {0} ({1} sequences)"
 msgstr ""
 
-#: i18n/Text.resx:303 ID:Behavior
+#: i18n/Text.resx:300 ID:Behavior
 msgid "General Behavior"
 msgstr ""
 
-#: i18n/Text.resx:307 ID:WindowTitle
+#: i18n/Text.resx:304 ID:WindowTitle
 #. The title of the Sequences window
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:310 ID:UserMacros
+#: i18n/Text.resx:307 ID:UserMacros
 msgid "User-defined macros"
 msgstr ""
 
-#: i18n/Text.resx:313 ID:DisabledToolTip
+#: i18n/Text.resx:310 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr ""
 
-#: i18n/Text.resx:317 ID:KeyInsert
+#: i18n/Text.resx:314 ID:KeyInsert
 #. The name of the key on the keyboard
 msgid "Insert"
 msgstr ""
 
-#: i18n/Text.resx:321 ID:TestTyping
+#: i18n/Text.resx:318 ID:TestTyping
 #. The "Test Typing" section in the settings window
 msgid "Test Typing:"
 msgstr ""
 
-#: i18n/Text.resx:325 ID:Tweaks
+#: i18n/Text.resx:322 ID:Tweaks
 #. The "Tweaks" section in the settings window
 msgid "Tweaks"
 msgstr ""
 
-#: i18n/Text.resx:328 ID:Milliseconds
+#: i18n/Text.resx:325 ID:Milliseconds
 msgid "(milliseconds)"
+msgstr ""
+
+#: i18n/Text.resx:329 ID:About
+#. About box menu entry
+msgid "About"
+msgstr ""
+
+#: i18n/Text.resx:333 ID:AboutBoxTitle
+#. Window title of the About box
+msgid "About WinCompose"
+msgstr ""
+
+#: i18n/Text.resx:337 ID:Programming
+#. The section where we list all programmers.
+msgid "Programming"
+msgstr ""
+
+#: i18n/Text.resx:341 ID:Translators
+#. The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!
+msgid "Translation"
+msgstr ""
+
+#: i18n/Text.resx:345 ID:Contributors
+#. The section for random contributors who aren't programmers or translators. Might be empty.
+msgid "Special Thanks"
+msgstr ""
+
+#: i18n/Text.resx:349 ID:License
+#. US: License, UK: Licence
+msgid "License"
+msgstr ""
+
+#: i18n/Text.resx:353 ID:NeedRestart
+#. Warning message when the user changes the language in the settings window
+msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 
 #: unicode/Category.resx:122 ID:Control

@@ -192,9 +192,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Historiek</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>Over</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website bezoeken</value>
   </data>
@@ -296,5 +293,8 @@
   </data>
   <data name="Milliseconds" xml:space="preserve">
     <value>(milliseconden)</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Over</value>
   </data>
 </root>

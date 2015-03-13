@@ -192,9 +192,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Ajalugu</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>Programmist</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Veebileht</value>
   </data>
@@ -296,5 +293,8 @@
   </data>
   <data name="Milliseconds" xml:space="preserve">
     <value>(millisekundit)</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Programmist</value>
   </data>
 </root>

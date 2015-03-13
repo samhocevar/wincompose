@@ -192,9 +192,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Verlauf</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>Über</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website besuchen</value>
   </data>
@@ -245,5 +242,8 @@
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Optionen…</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Über</value>
   </data>
 </root>

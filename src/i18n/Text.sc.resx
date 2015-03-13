@@ -192,11 +192,11 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Istòria</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>Informatziones</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Bìsita su giassu/situ</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Essi</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>de Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -240,10 +240,28 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Descritzione:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Àplica</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorias</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>In sas categorias ischertadas</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Optziones — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Optziones…</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>Wincompose est disabilitadu</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(millisegundos)</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Informatziones</value>
   </data>
 </root>

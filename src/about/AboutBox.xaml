@@ -23,7 +23,7 @@
             </StackPanel>
             <StackPanel Margin="0, 10, 0, 10"  VerticalAlignment="Bottom">
                 <Button Margin="10, 2, 10, 2" Content="Contributors" Command="{Binding SwitchDocumentCommand}" CommandParameter="contributors"/>
-                <Button Margin="10, 2, 10, 2" Content="Licence" Command="{Binding SwitchDocumentCommand}" CommandParameter="licence"/>
+                <Button Margin="10, 2, 10, 2" Content="License" Command="{Binding SwitchDocumentCommand}" CommandParameter="licence"/>
                 <Button Margin="10, 2, 10, 2" Content="{x:Static i18n:Text.VisitWebsite}" Command="{Binding OpenWebsiteCommand}"/>
             </StackPanel>
         </Grid>

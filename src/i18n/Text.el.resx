@@ -192,9 +192,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Ιστορικό</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>Περί</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Επίσκεψη ιστοσελίδας</value>
   </data>
@@ -296,5 +293,8 @@
   </data>
   <data name="Milliseconds" xml:space="preserve">
     <value>(χιλιοστά δευτερ.)</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Περί</value>
   </data>
 </root>
