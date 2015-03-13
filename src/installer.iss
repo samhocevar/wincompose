@@ -15,6 +15,10 @@ Compression = lzma2
 SolidCompression = yes
 OutputDir = .
 ShowLanguageDialog = auto
+; We only install stuff in {userstartup} and in {app}. Since the latter
+; can be overridden, we do not necessarily need elevated privileges, so
+; let the user decide.
+PrivilegesRequired = lowest
 
 [Files]
 Source: "bin\Release\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
