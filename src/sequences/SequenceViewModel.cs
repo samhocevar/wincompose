@@ -26,7 +26,7 @@ namespace WinCompose
         {
             Category = category;
             Category.IsEmpty = false;
-            Result = desc.Result; // FIXME: sequence results can be longer
+            Result = desc.Result;
             Description = desc.Description;
             Sequence = desc.Sequence;
             Utf32 = desc.Utf32;
