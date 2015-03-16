@@ -297,4 +297,22 @@
   <data name="About" xml:space="preserve">
     <value>Programmist</value>
   </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Programmist WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programm</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Tõlge</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Eriline tänu</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Litsents</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose tuleb mõnede muudatuste aktiveerimiseks uuesti käivitada.</value>
+  </data>
 </root>
