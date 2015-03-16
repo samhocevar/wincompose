@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2014-09-19 13:14+0200\n"
-"Last-Translator: Nikolaj Holmquist Pedersen <nikolajholmquist@gmail.com>\n"
-"Language-Team: Danish <https://hosted.weblate.org/projects/wincompose/master/"
-"da/>\n"
+"PO-Revision-Date: 2015-03-16 19:19+0200\n"
+"Last-Translator: Jonas <jonas.den.smarte@gmail.com>\n"
+"Language-Team: Danish "
+"<https://hosted.weblate.org/projects/wincompose/master/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -150,7 +150,7 @@ msgstr "Besøg webside"
 
 #: i18n/Text.resx:215 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Luk"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:218 ID:Obsolete036
@@ -220,33 +220,33 @@ msgstr "Beskrivelse:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:265 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Anvend"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:269 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Behold original compose key opførsel"
 
 #: i18n/Text.resx:272 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Indsæt zero-width mellemrum i Office programmer"
 
 #: i18n/Text.resx:275 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Emulér CapsLock med begge Shift knapper"
 
 #: i18n/Text.resx:278 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Shift knappen slår CapsLock fra"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:282 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #: i18n/Text.resx:285 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "I valgte kategorier"
 
 #. The title of the Options window
 #: i18n/Text.resx:289 ID:Options
@@ -261,45 +261,43 @@ msgstr "Indstillinger…"
 #. {0}: compose key name, {1}: number of sequences
 #: i18n/Text.resx:297 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose på {0} ({1} sekvenser)"
 
 #: i18n/Text.resx:300 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Generel opførsel"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:304 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Sekvenser — WinCompose"
 
 #: i18n/Text.resx:307 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Brugerdefinerede makroer"
 
 #: i18n/Text.resx:310 ID:DisabledToolTip
-#, fuzzy
 msgid "WinCompose is disabled"
-msgstr "Compose-tast:"
+msgstr "WinCompose er slået fra"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:314 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Indsæt"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:318 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Testskrivning:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:322 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Justeringer"
 
 #: i18n/Text.resx:325 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "500 millisekunder"
+msgstr "(millisekunder)"
 
 #. About box menu entry
 #: i18n/Text.resx:329 ID:About
@@ -308,34 +306,33 @@ msgstr "Om"
 
 #. Window title of the About box
 #: i18n/Text.resx:333 ID:AboutBoxTitle
-#, fuzzy
 msgid "About WinCompose"
-msgstr "Indstillinger — WinCompose"
+msgstr "Om WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:337 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programmering"
 
 #. The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!
 #: i18n/Text.resx:341 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Oversættelse"
 
 #. The section for random contributors who aren't programmers or translators. Might be empty.
 #: i18n/Text.resx:345 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Særlig tak"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:349 ID:License
 msgid "License"
-msgstr ""
+msgstr "Licens"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:353 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "WinCompose kræver genstart for at nogle ændringer træder i kraft."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
@@ -345,7 +342,7 @@ msgstr "Anden, kontrol"
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:126 ID:Format
 msgid "Other, Format"
-msgstr "Anden, formatering"
+msgstr "Anden, format"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:130 ID:OtherNotAssigned
