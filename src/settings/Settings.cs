@@ -115,9 +115,24 @@ namespace WinCompose
             // The timeout delay
             ResetDelay.Load();
 
+            // HACK: if the user uses the "it-CH" locale, replace it with "it"
+            // because we use "it-CH" as a special value to mean Sardinian.
+            // The reason is that apparently we cannot define a custom
+            // CultureInfo without registering it, and we cannot register it
+            // without administrator privileges.
+            if (Thread.CurrentThread.CurrentUICulture.Name == "it-CH")
+            {
+                Thread.CurrentThread.CurrentUICulture
+                    = Thread.CurrentThread.CurrentUICulture.Parent;
+            }
+
             // Activate the desired interface language
             Language.Load();
-            if (Language.Value != "" && m_valid_languages.ContainsKey(Language.Value))
+            if (!m_valid_languages.ContainsKey(Language.Value))
+            {
+                Language.Value = "";
+            }
+            else if (Language.Value != "")
             {
                 try
                 {
@@ -393,7 +408,13 @@ namespace WinCompose
                 if (culture.Name != "") try
                 {
                     if (rm.GetResourceSet(culture, true, false) != null)
-                        ret.Add(culture.Name, culture.NativeName);
+                    {
+                        // HACK: second part of our hack to support Sardinian
+                        if (culture.Name == "it-CH")
+                            ret.Add(culture.Name, "Sardo");
+                        else
+                            ret.Add(culture.Name, culture.NativeName);
+                    }
                 }
                 catch (Exception) {}
             }
