@@ -115,6 +115,9 @@ namespace WinCompose
             // The timeout delay
             ResetDelay.Load();
 
+            // Activate the desired interface language
+            Language.Load();
+
             // HACK: if the user uses the "it-CH" locale, replace it with "it"
             // because we use "it-CH" as a special value to mean Sardinian.
             // The reason is that apparently we cannot define a custom
@@ -122,24 +125,29 @@ namespace WinCompose
             // without administrator privileges.
             if (Thread.CurrentThread.CurrentUICulture.Name == "it-CH")
             {
-                Thread.CurrentThread.CurrentUICulture
-                    = Thread.CurrentThread.CurrentUICulture.Parent;
-            }
-
-            // Activate the desired interface language
-            Language.Load();
-            if (!m_valid_languages.ContainsKey(Language.Value))
-            {
-                Language.Value = "";
-            }
-            else if (Language.Value != "")
-            {
                 try
                 {
-                    var culture = CultureInfo.GetCultureInfo(Language.Value);
-                    Thread.CurrentThread.CurrentUICulture = culture;
+                    Thread.CurrentThread.CurrentUICulture
+                        = Thread.CurrentThread.CurrentUICulture.Parent;
                 }
                 catch (Exception) { }
+            }
+
+            if (Language.Value != "")
+            {
+                if (!m_valid_languages.ContainsKey(Language.Value))
+                {
+                    try
+                    {
+                        var ci = CultureInfo.GetCultureInfo(Language.Value);
+                        Thread.CurrentThread.CurrentUICulture = ci;
+                    }
+                    catch (Exception) { }
+                }
+                else
+                {
+                    Language.Value = "";
+                }
             }
 
             // Catch-22: we can only add this string when the UI language is known
