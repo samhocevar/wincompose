@@ -30,7 +30,7 @@ namespace WinCompose
         private readonly DelegateCommand m_openwebsite_command;
         private readonly FlowDocument    m_contributors_document;
         private readonly FlowDocument    m_licence_document;
-        private          String          m_active_document_title;
+        private          string          m_active_document_title;
         private          FlowDocument    m_active_document;
 
         public AboutBoxViewModel()
@@ -43,12 +43,12 @@ namespace WinCompose
             m_active_document_title   = Text.Contributors;
         }
 
-        private FlowDocument LoadDocument(String resource_uri)
+        private FlowDocument LoadDocument(string resource_uri)
         {
             StreamResourceInfo stream_info = Application.GetResourceStream(new Uri(resource_uri));
-            if(stream_info != null)
+            if (stream_info != null)
             {
-                using(Stream stream = stream_info.Stream)
+                using (Stream stream = stream_info.Stream)
                 {
                     var         flow_document   = new FlowDocument();
                     TextRange   text_range      = new TextRange(flow_document.ContentStart, flow_document.ContentEnd);
@@ -62,7 +62,7 @@ namespace WinCompose
         public ICommand SwitchDocumentCommand { get { return m_switch_document_command; } }
         public ICommand OpenWebsiteCommand    { get { return m_openwebsite_command; } }
 
-        public String ActiveDocumentTitle
+        public string ActiveDocumentTitle
         {
             get { return m_active_document_title; }
             set { SetValue(ref m_active_document_title, value, "ActiveDocumentTitle");  }
@@ -74,22 +74,22 @@ namespace WinCompose
             private set { SetValue(ref m_active_document, value, "ActiveDocument"); }
         }
 
-        public String Version
+        public string Version
         {
             get { return Assembly.GetEntryAssembly().GetName().Version.ToString(); }
         }
 
-        private void OnSwitchDocumentCommandExecuted(object Parameter)
+        private void OnSwitchDocumentCommandExecuted(object parameter)
         {
-            var document_name = (String)Parameter;
-            if(document_name == "contributors")
+            var document_name = (string)parameter;
+            if (document_name == "contributors")
             {
                 ActiveDocumentTitle = Text.Contributors;
                 ActiveDocument      = m_contributors_document;
             }
-            else if(document_name == "licence")
+            else if (document_name == "licence")
             {
-                ActiveDocumentTitle = Text.Licence;
+                ActiveDocumentTitle = Text.License;
                 ActiveDocument      = m_licence_document;
             }
         }

@@ -192,9 +192,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Historik</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>Om</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Besök hemsidan</value>
   </data>
@@ -245,5 +242,8 @@
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Alternativ…</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Om</value>
   </data>
 </root>

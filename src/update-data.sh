@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 STEPS=4
 CACHE=unicode/cache
 mkdir -p ${CACHE}
@@ -48,6 +50,7 @@ for POFILE in po/*.po; do
     case $LANG in
         zh_CN) LANG=zh-CHS ;;
         zh) LANG=zh-CHT ;;
+        sc) LANG=it-CH ;;
         *@*) continue ;;
     esac
 

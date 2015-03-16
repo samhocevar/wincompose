@@ -44,9 +44,12 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <PostBuildEvent>iscc $(SolutionDir)\installer.iss</PostBuildEvent>
+    <PostBuildEvent>set CONFIG=$(Configuration)
+set VERSION=0.7.1
+iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="sysglobl" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -133,6 +136,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.it.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.it-CH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.it-CH.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,11 +155,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="unicode\Category.sc.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Category.sc.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Category.sk.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -363,6 +366,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.it.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.it-CH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.it-CH.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -377,11 +385,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="i18n\Text.sc.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Text.sc.resx</DependentUpon>
     </Compile>
     <Compile Include="i18n\Text.sk.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -500,6 +503,11 @@
       <LastGenOutput>Category.it.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.it-CH.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.it-CH.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.nl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.nl.Designer.cs</LastGenOutput>
@@ -517,11 +525,6 @@
     <EmbeddedResource Include="unicode\Category.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.ru.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="unicode\Category.sc.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Category.sc.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.sk.resx">
@@ -724,6 +727,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.it.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.it-CH.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.it-CH.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.nl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.nl.Designer.cs</LastGenOutput>
@@ -735,10 +742,6 @@
     <EmbeddedResource Include="i18n\Text.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="i18n\Text.sc.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Text.sc.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

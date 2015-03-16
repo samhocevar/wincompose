@@ -192,9 +192,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Historia</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>O programie</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Odwiedź stronę</value>
   </data>
@@ -248,5 +245,8 @@
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekwencje — WinCompose</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>O programie</value>
   </data>
 </root>

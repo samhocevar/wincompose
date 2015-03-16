@@ -207,9 +207,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>History</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visit Website</value>
     <comment>Menu entry to visit the website</comment>
@@ -332,17 +329,27 @@
     <comment>About box menu entry</comment>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
-    <value>About Wincompose...</value>
-    <comment>Title of the About box dialog</comment>
+    <value>About WinCompose</value>
+    <comment>Window title of the About box</comment>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programming</value>
+    <comment>The section where we list all programmers.</comment>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Translation</value>
+    <comment>The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
-    <value>Contributors</value>
+    <value>Special Thanks</value>
+    <comment>The section for random contributors who aren't programmers or translators. Might be empty.</comment>
   </data>
-  <data name="Licence" xml:space="preserve">
-    <value>Licence</value>
+  <data name="License" xml:space="preserve">
+    <value>License</value>
+    <comment>US: License, UK: Licence</comment>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>Wincompose need to restart for the changes to take effects.</value>
-    <comment>Warn message when user changes language in the settings window</comment>
+    <value>WinCompose needs to be restarted for some changes to take effect.</value>
+    <comment>Warning message when the user changes the language in the settings window</comment>
   </data>
 </root>

@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Àteru, controllu</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Àteru, formadu</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Àteru, non assegnadu</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Àteru, impreu privadu</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Àteru, surrogadu</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Lìtera, minùscola</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Lìtera, modificadora</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Lìtera, àtera</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Lìtera, titoladora</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Lìtera, maiùscola</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Sinnu, cumbinàbile cun ispatziadura</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Sinnu, serradu</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Sinnu, sena ispatziadura</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Nùmeru, tzifra detzimale</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Nùmeru, lìtera</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Nùmeru, àteru</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Puntegiadura, giuntura</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Puntegiadura, tratigheddu</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Puntegiadura, serrada</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Puntegiadura, tzita/mentovadura finale</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Puntegiadura, tzita/mentovadura de cumentzu</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Puntegiadura, àteru</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Puntegiadura, aberta</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Sìmbolu, moneda</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Sìmbolu, modificadore</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Sìmbolu, matemàticu</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Sìmbolu, àteru</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Iscrobadore, lìnia</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Iscrobadore, paràgrafu</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Iscrobadore, Ispàtziu</value>
+  </data>
 </root>

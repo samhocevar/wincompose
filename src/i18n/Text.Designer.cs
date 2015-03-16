@@ -358,11 +358,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Licence.
+        ///   Looks up a localized string similar to License.
         /// </summary>
-        public static string Licence {
+        public static string License {
             get {
-                return ResourceManager.GetString("Licence", resourceCulture);
+                return ResourceManager.GetString("License", resourceCulture);
             }
         }
         

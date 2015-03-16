@@ -29,9 +29,6 @@ namespace WinCompose
 
         public RootViewModel()
         {
-            Settings.LoadConfig();
-            Settings.LoadSequences();
-
             var categories = new List<CategoryViewModel>();
             const BindingFlags flags = BindingFlags.Static | BindingFlags.Public;
             Regex r = new Regex(@"^U([a-fA-F0-9]*)_U([a-fA-F0-9]*)$");

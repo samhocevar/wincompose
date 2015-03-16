@@ -189,9 +189,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>Historie</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>O aplikaci</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Navštívit web</value>
   </data>
@@ -212,5 +209,8 @@
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Popis:</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>O aplikaci</value>
   </data>
 </root>

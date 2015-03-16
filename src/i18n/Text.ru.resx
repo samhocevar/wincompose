@@ -192,9 +192,6 @@
   <data name="Obsolete027" xml:space="preserve">
     <value>История</value>
   </data>
-  <data name="Obsolete030" xml:space="preserve">
-    <value>О программе</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Посетить веб-сайт</value>
   </data>
@@ -245,5 +242,8 @@
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Опции…</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>О программе</value>
   </data>
 </root>

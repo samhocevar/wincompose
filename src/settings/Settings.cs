@@ -27,8 +27,8 @@ namespace WinCompose
     {
         private const string GlobalSection = "global";
         private const string ConfigFileName = "settings.ini";
-        private static FileSystemWatcher watcher;
-        private static Timer reloadTimer;
+        private static FileSystemWatcher m_watcher;
+        private static Timer m_reload_timer;
 
         static Settings()
         {
@@ -70,31 +70,37 @@ namespace WinCompose
 
         public static void StartWatchConfigFile()
         {
-            watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
-            watcher.Changed += ConfigFileChanged;
-            watcher.EnableRaisingEvents = true;
+            if (CreateConfigDir())
+            {
+                m_watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
+                m_watcher.Changed += ConfigFileChanged;
+                m_watcher.EnableRaisingEvents = true;
+            }
         }
 
         public static void StopWatchConfigFile()
         {
-            watcher.Dispose();
-            watcher = null;
+            if (m_watcher != null)
+            {
+                m_watcher.Dispose();
+                m_watcher = null;
+            }
         }
 
         private static void ConfigFileChanged(object sender, FileSystemEventArgs e)
         {
-            if (reloadTimer == null)
+            if (m_reload_timer == null)
             {
                 // This event is triggered multiple times.
                 // Let's defer its handling to reload the config only once.
-                reloadTimer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
+                m_reload_timer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
             }
         }
 
         private static void ReloadConfig(object state)
         {
-            reloadTimer.Dispose();
-            reloadTimer = null;
+            m_reload_timer.Dispose();
+            m_reload_timer = null;
             LoadConfig();
         }
 
@@ -109,9 +115,24 @@ namespace WinCompose
             // The timeout delay
             ResetDelay.Load();
 
+            // HACK: if the user uses the "it-CH" locale, replace it with "it"
+            // because we use "it-CH" as a special value to mean Sardinian.
+            // The reason is that apparently we cannot define a custom
+            // CultureInfo without registering it, and we cannot register it
+            // without administrator privileges.
+            if (Thread.CurrentThread.CurrentUICulture.Name == "it-CH")
+            {
+                Thread.CurrentThread.CurrentUICulture
+                    = Thread.CurrentThread.CurrentUICulture.Parent;
+            }
+
             // Activate the desired interface language
             Language.Load();
-            if (Language.Value != "" && m_valid_languages.ContainsKey(Language.Value))
+            if (!m_valid_languages.ContainsKey(Language.Value))
+            {
+                Language.Value = "";
+            }
+            else if (Language.Value != "")
             {
                 try
                 {
@@ -225,9 +246,9 @@ namespace WinCompose
         private static void LoadSequenceString(string line)
         {
             // Only bother with sequences that start with <Multi_key>
-            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\"")*)""[^#]*#\s*(.*)");
-            //                                             ^^^^^^^         ^^^^^^^^^^^^^^           ^^^^
-            //                                              keys              result                desc
+            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\"")*)""[^#]*#?\s*(.*)");
+            //                                             ^^^^^^^         ^^^^^^^^^^^^^^            ^^^^
+            //                                              keys              result                 desc
             if (m1.Groups.Count < 4)
                 return;
 
@@ -387,7 +408,13 @@ namespace WinCompose
                 if (culture.Name != "") try
                 {
                     if (rm.GetResourceSet(culture, true, false) != null)
-                        ret.Add(culture.Name, culture.NativeName);
+                    {
+                        // HACK: second part of our hack to support Sardinian
+                        if (culture.Name == "it-CH")
+                            ret.Add(culture.Name, "Sardo");
+                        else
+                            ret.Add(culture.Name, culture.NativeName);
+                    }
                 }
                 catch (Exception) {}
             }
@@ -398,6 +425,23 @@ namespace WinCompose
         public static string GetConfigFile()
         {
             return Path.Combine(GetConfigDir(), ConfigFileName);
+        }
+
+        public static bool CreateConfigDir()
+        {
+            string config_dir = GetConfigDir();
+            if (!Directory.Exists(config_dir))
+            {
+                try
+                {
+                    Directory.CreateDirectory(config_dir);
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private static string GetConfigDir()

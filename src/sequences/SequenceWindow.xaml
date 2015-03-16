@@ -118,7 +118,8 @@
                         <DockPanel Margin="0,2">
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
                                 <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly">
-                                    <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI Symbol, Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface" />
+                                    <!-- We need Segoe UI Symbol, but we put it at the end because it messes with combining character rendering (see #71). -->
+                                    <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface, Segoe UI Symbol" />
                                 </Viewbox>
                             </Border>
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">

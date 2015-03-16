@@ -62,12 +62,12 @@ namespace WinCompose
         /// was successful.</returns>
         public bool Save()
         {
-            if (m_mutex.WaitOne(2000))
+            if (Settings.CreateConfigDir() && m_mutex.WaitOne(2000))
             {
                 try
                 {
-                    var stringVal = Serialize(Value);
-                    var result = NativeMethods.WritePrivateProfileString(Section, Key, stringVal, Settings.GetConfigFile());
+                    var string_value = Serialize(Value);
+                    var result = NativeMethods.WritePrivateProfileString(Section, Key, string_value, Settings.GetConfigFile());
                     return result == 0;
                 }
                 finally
@@ -88,39 +88,38 @@ namespace WinCompose
         /// was successful.</returns>
         public bool Load()
         {
-            bool got_mutex = false;
             try
             {
-                got_mutex = m_mutex.WaitOne(2000);
+                if (!m_mutex.WaitOne(2000))
+                    return false;
             }
             catch (AbandonedMutexException)
             {
                 /* Ignore; this might be a previous instance that crashed */
-                got_mutex = true;
             }
 
-            if (got_mutex)
+            try
             {
-                try
-                {
-                    const int len = 255;
-                    var stringBuilder = new StringBuilder(len);
-                    var result = NativeMethods.GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
-                    if (result == 0)
-                        return false;
+                const int len = 255;
+                var stringBuilder = new StringBuilder(len);
+                var result = NativeMethods.GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
+                if (result == 0)
+                    return false;
 
-                    var strVal = stringBuilder.ToString();
-                    m_value = Deserialize(strVal);
-                    return true;
-                }
-                finally
-                {
-                    // Ensure the mutex is always released even if an
-                    // exception is thrown
-                    m_mutex.ReleaseMutex();
-                }
+                var strVal = stringBuilder.ToString();
+                m_value = Deserialize(strVal);
+                return true;
             }
-            return false;
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                // Ensure the mutex is always released even if an
+                // exception is thrown
+                m_mutex.ReleaseMutex();
+            }
         }
 
         /// <summary>
