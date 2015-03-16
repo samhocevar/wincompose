@@ -405,15 +405,18 @@ namespace WinCompose
             CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo culture in cultures)
             {
-                if (culture.Name != "") try
+                string name = culture.Name;
+                string native_name = culture.NativeName;
+
+                if (name != "") try
                 {
                     if (rm.GetResourceSet(culture, true, false) != null)
                     {
                         // HACK: second part of our hack to support Sardinian
-                        if (culture.Name == "it-CH")
-                            ret.Add(culture.Name, "Sardo");
-                        else
-                            ret.Add(culture.Name, culture.NativeName);
+                        if (name == "it-CH")
+                            native_name = "Sardu";
+
+                        ret.Add(name, native_name);
                     }
                 }
                 catch (Exception) {}
