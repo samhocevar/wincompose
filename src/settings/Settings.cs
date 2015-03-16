@@ -27,8 +27,8 @@ namespace WinCompose
     {
         private const string GlobalSection = "global";
         private const string ConfigFileName = "settings.ini";
-        private static FileSystemWatcher watcher;
-        private static Timer reloadTimer;
+        private static FileSystemWatcher m_watcher;
+        private static Timer m_reload_timer;
 
         static Settings()
         {
@@ -70,31 +70,37 @@ namespace WinCompose
 
         public static void StartWatchConfigFile()
         {
-            watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
-            watcher.Changed += ConfigFileChanged;
-            watcher.EnableRaisingEvents = true;
+            if (CreateConfigDir())
+            {
+                m_watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
+                m_watcher.Changed += ConfigFileChanged;
+                m_watcher.EnableRaisingEvents = true;
+            }
         }
 
         public static void StopWatchConfigFile()
         {
-            watcher.Dispose();
-            watcher = null;
+            if (m_watcher != null)
+            {
+                m_watcher.Dispose();
+                m_watcher = null;
+            }
         }
 
         private static void ConfigFileChanged(object sender, FileSystemEventArgs e)
         {
-            if (reloadTimer == null)
+            if (m_reload_timer == null)
             {
                 // This event is triggered multiple times.
                 // Let's defer its handling to reload the config only once.
-                reloadTimer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
+                m_reload_timer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
             }
         }
 
         private static void ReloadConfig(object state)
         {
-            reloadTimer.Dispose();
-            reloadTimer = null;
+            m_reload_timer.Dispose();
+            m_reload_timer = null;
             LoadConfig();
         }
 
