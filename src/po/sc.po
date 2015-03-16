@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2015-03-11 22:04+0200\n"
+"PO-Revision-Date: 2015-03-16 03:33+0200\n"
 "Last-Translator: Lu Ca <lmelonimamo@yahoo.it>\n"
-"Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
-"master/sc/>\n"
+"Language-Team: Sardinian "
+"<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -227,19 +227,19 @@ msgstr "Àplica"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:269 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Mantènne su cumportamentu originale de sa tecla compose"
 
 #: i18n/Text.resx:272 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Inserta sos ispàtzios invisìbiles in sos aplicos Office"
 
 #: i18n/Text.resx:275 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Dispinta BlocMaiusc impreande totas duas sas teclas Maiùscolu"
 
 #: i18n/Text.resx:278 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Sa tecla Maiùscolu disabilitat BlocMaiusc"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:282 ID:Categories
@@ -263,20 +263,20 @@ msgstr "Optziones…"
 #. {0}: compose key name, {1}: number of sequences
 #: i18n/Text.resx:297 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose pro {0} ({1} fileras)"
 
 #: i18n/Text.resx:300 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Cumportamentu/fattia generale"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:304 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Fileras — WinCompose"
 
 #: i18n/Text.resx:307 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Macros definidas dae s'impitadore"
 
 #: i18n/Text.resx:310 ID:DisabledToolTip
 msgid "WinCompose is disabled"
@@ -285,7 +285,7 @@ msgstr "Wincompose est disabilitadu"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:314 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Inserta"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:318 ID:TestTyping
@@ -295,7 +295,7 @@ msgstr ""
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:322 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Modìficas minores"
 
 #: i18n/Text.resx:325 ID:Milliseconds
 msgid "(milliseconds)"
@@ -308,186 +308,185 @@ msgstr "Informatziones"
 
 #. Window title of the About box
 #: i18n/Text.resx:333 ID:AboutBoxTitle
-#, fuzzy
 msgid "About WinCompose"
-msgstr "Optziones — WinCompose"
+msgstr "WinCompose: informatziones"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:337 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programatzione"
 
 #. The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!
 #: i18n/Text.resx:341 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Bortadura"
 
 #. The section for random contributors who aren't programmers or translators. Might be empty.
 #: i18n/Text.resx:345 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Ringratziamentos ispetziales"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:349 ID:License
 msgid "License"
-msgstr ""
+msgstr "Litzèntzia"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:353 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
+"WinCompose depet èssere torradu a allùere pro che sas sas modìficas potzant "
+"fàghere efetu."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
-#, fuzzy
 msgid "Other, Control"
-msgstr "Ctrl de manca"
+msgstr "Àteru, controllu"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:126 ID:Format
-#, fuzzy
 msgid "Other, Format"
-msgstr "Ctrl de manca"
+msgstr "Àteru, formadu"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:130 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr ""
+msgstr "Àteru, non assegnadu"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:134 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr ""
+msgstr "Àteru, impreu privadu"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:138 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr ""
+msgstr "Àteru, surrogadu"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:142 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr ""
+msgstr "Lìtera, minùscola"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:146 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr ""
+msgstr "Lìtera, modificadora"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:150 ID:OtherLetter
 msgid "Letter, Other"
-msgstr ""
+msgstr "Lìtera, àtera"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:154 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr ""
+msgstr "Lìtera, titoladora"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:158 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr ""
+msgstr "Lìtera, maiùscola"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:162 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr ""
+msgstr "Sinnu, cumbinàbile cun ispatziadura"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:166 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr ""
+msgstr "Sinnu, serradu"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:170 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr ""
+msgstr "Sinnu, sena ispatziadura"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:174 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr ""
+msgstr "Nùmeru, tzifra detzimale"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:178 ID:LetterNumber
 msgid "Number, Letter"
-msgstr ""
+msgstr "Nùmeru, lìtera"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:182 ID:OtherNumber
 msgid "Number, Other"
-msgstr ""
+msgstr "Nùmeru, àteru"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:186 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr ""
+msgstr "Puntegiadura, giuntura"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:190 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr ""
+msgstr "Puntegiadura, tratigheddu"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:194 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr ""
+msgstr "Puntegiadura, serrada"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:198 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr ""
+msgstr "Puntegiadura, tzita/mentovadura finale"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:202 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr ""
+msgstr "Puntegiadura, tzita/mentovadura de cumentzu"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:206 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr ""
+msgstr "Puntegiadura, àteru"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:210 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr ""
+msgstr "Puntegiadura, aberta"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:214 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr ""
+msgstr "Sìmbolu, moneda"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:218 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr ""
+msgstr "Sìmbolu, modificadore"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:222 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr ""
+msgstr "Sìmbolu, matemàticu"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:226 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr ""
+msgstr "Sìmbolu, àteru"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:230 ID:LineSeparator
 msgid "Separator, Line"
-msgstr ""
+msgstr "Iscrobadore, lìnia"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:234 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr ""
+msgstr "Iscrobadore, paràgrafu"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr ""
+msgstr "Iscrobadore, Ispàtziu"
 
 #~ msgid "Loaded @1@ Sequences"
 #~ msgstr "@1@ fileras carrigadas"
