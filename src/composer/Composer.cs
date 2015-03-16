@@ -70,8 +70,16 @@ static class Composer
             // Update single key statistics
             Stats.AddKey(key);
 
+            // Update key pair statistics if applicable
+            if (DateTime.Now < m_last_key_time.AddMilliseconds(2000)
+                 && m_last_key != null)
+            {
+                Stats.AddPair(m_last_key, key);
+            }
+
             // Remember when we pressed a key for the last time
             m_last_key_time = DateTime.Now;
+            m_last_key = key;
         }
 
         if (m_disabled)
@@ -392,7 +400,9 @@ static class Composer
     /// </summary>
     private static KeySequence m_sequence = new KeySequence();
 
+    private static Key m_last_key = null;
     private static DateTime m_last_key_time = DateTime.Now;
+
     private static bool m_disabled = false;
     private static bool m_compose_down = false;
     private static bool m_composing = false;
