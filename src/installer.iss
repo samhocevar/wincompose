@@ -1,5 +1,6 @@
 #define NAME "WinCompose"
-#define VERSION "0.7.0"
+#define VERSION GetEnv('VERSION')
+#define CONFIG GetEnv('CONFIG')
 
 [Setup]
 AppName = {#NAME}
@@ -21,29 +22,29 @@ ShowLanguageDialog = auto
 PrivilegesRequired = lowest
 
 [Files]
-Source: "bin\Release\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
-Source: "bin\Release\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
-Source: "bin\Release\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
-Source: "bin\Release\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
-Source: "bin\Release\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
-Source: "bin\Release\el\*.dll"; DestDir: "{app}\el"; Flags: ignoreversion
-Source: "bin\Release\es\*.dll"; DestDir: "{app}\es"; Flags: ignoreversion
-Source: "bin\Release\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
-Source: "bin\Release\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
-Source: "bin\Release\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
-Source: "bin\Release\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
-Source: "bin\Release\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
-Source: "bin\Release\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
-Source: "bin\Release\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
-Source: "bin\Release\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
-Source: "bin\Release\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
-Source: "bin\Release\rw\*.dll"; DestDir: "{app}\rw"; Flags: ignoreversion
-Source: "bin\Release\sk\*.dll"; DestDir: "{app}\sk"; Flags: ignoreversion
-Source: "bin\Release\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
-Source: "bin\Release\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
-Source: "bin\Release\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
-Source: "bin\Release\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\el\*.dll"; DestDir: "{app}\el"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\es\*.dll"; DestDir: "{app}\es"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\rw\*.dll"; DestDir: "{app}\rw"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\sk\*.dll"; DestDir: "{app}\sk"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
 Source: "rules\Xorg.txt"; DestDir: "{app}\res"
 Source: "rules\Xcompose.txt"; DestDir: "{app}\res"
 Source: "rules\Emoji.txt"; DestDir: "{app}\res"
