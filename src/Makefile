@@ -29,6 +29,7 @@ MSGMERGE = msgmerge
 all: clean installer portable
 
 clean:
+	devenv wincompose.sln //clean $(CONFIG) //project wincompose.csproj
 	rm -f $(INSTALLER) $(PORTABLE)
 	rm -rf obj wincompose/obj wincompose.gui/obj || true
 	rm -rf bin wincompose/bin wincompose.gui/bin || true
