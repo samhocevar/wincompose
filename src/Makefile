@@ -5,7 +5,8 @@
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = 0.7.0
+VERSION = 0.7.1
+CONFIG = Release
 
 ISS = installer.iss
 
@@ -14,7 +15,7 @@ TXT = rules/Xorg.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
-EXE = bin/Release/WinCompose.exe
+EXE = bin/$(CONFIG)/WinCompose.exe
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
 
 INSTALLER = WinCompose-Setup-$(VERSION).exe
@@ -34,24 +35,21 @@ clean:
 
 installer: $(EXE) $(ISS)
 	rm -f $(INSTALLER)
-	"$(ISCC)" $(ISS)
-
-installer.iss: Makefile
-	sed -i 's/VERSION ".*"/VERSION "$(VERSION)"/' installer.iss
+	CONFIG=$(CONFIG) VERSION=$(VERSION) "$(ISCC)" $(ISS)
 
 portable: $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
 	mkdir -p $(PORTABLE:.zip=)/rules
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
-	for L in $(LANG); do cp bin/Release/$${L}/WinCompose.resources.dll $(PORTABLE:.zip=)/$${L}/; done
+	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/WinCompose.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
-bin/Release/WinCompose.exe:
-	@mkdir -p bin/Release
+bin/$(CONFIG)/WinCompose.exe:
+	@mkdir -p bin/$(CONFIG)
 	@rm -f $@
-	devenv wincompose.sln //build Release //project wincompose.csproj
+	devenv wincompose.sln //build $(CONFIG) //project wincompose.csproj
 

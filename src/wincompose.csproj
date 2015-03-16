@@ -44,7 +44,9 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <PostBuildEvent>iscc $(SolutionDir)\installer.iss</PostBuildEvent>
+    <PostBuildEvent>set CONFIG=$(Configuration)
+set VERSION=0.7.1
+iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
