@@ -62,12 +62,12 @@ namespace WinCompose
         /// was successful.</returns>
         public bool Save()
         {
-            if (m_mutex.WaitOne(2000))
+            if (Settings.CreateConfigDir() && m_mutex.WaitOne(2000))
             {
                 try
                 {
-                    var stringVal = Serialize(Value);
-                    var result = NativeMethods.WritePrivateProfileString(Section, Key, stringVal, Settings.GetConfigFile());
+                    var string_value = Serialize(Value);
+                    var result = NativeMethods.WritePrivateProfileString(Section, Key, string_value, Settings.GetConfigFile());
                     return result == 0;
                 }
                 finally

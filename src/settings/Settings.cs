@@ -400,6 +400,23 @@ namespace WinCompose
             return Path.Combine(GetConfigDir(), ConfigFileName);
         }
 
+        public static bool CreateConfigDir()
+        {
+            string config_dir = GetConfigDir();
+            if (!Directory.Exists(config_dir))
+            {
+                try
+                {
+                    Directory.CreateDirectory(config_dir);
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private static string GetConfigDir()
         {
             var appdata = Environment.SpecialFolder.ApplicationData;
