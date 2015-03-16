@@ -13,6 +13,9 @@
 
 using System;
 using System.Diagnostics;
+using System.IO; // for updater
+using System.Net; // for updater
+using System.Text.RegularExpressions; // for updater
 using System.Windows.Forms.Integration;
 using WinForms = System.Windows.Forms;
 
@@ -61,6 +64,9 @@ namespace WinCompose
                 m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
 
                 Composer.Changed += ComposerStateChanged;
+
+                // FIXME: do this in a background thread
+                CheckForUpdates();
 
                 WinForms.Application.Run();
                 m_notifyicon.Dispose();
@@ -146,6 +152,42 @@ namespace WinCompose
         private static void ExitClicked(object sender, EventArgs e)
         {
             WinForms.Application.Exit();
+        }
+
+        private static void CheckForUpdates()
+        {
+            WebClient browser = new WebClient();
+            browser.Headers.Add("user-agent", "WinCompose");
+            Stream s = browser.OpenRead("https://github.com/samhocevar/wincompose/releases");
+            StreamReader sr = new StreamReader(s);
+            string data = sr.ReadToEnd();
+            s.Close();
+            sr.Close();
+
+            // Look for strings matching the following:
+            // href="/samhocevar/wincompose/releases/download/v0.7.1/WinCompose-NoInstall-0.7.1.zip"
+            // href="/samhocevar/wincompose/releases/download/v0.7.1/WinCompose-Setup-0.7.1.exe" 
+            string[] patterns = new string[]
+            {
+                @"href=""/samhocevar/wincompose/releases/download/v([^/]*)/WinCompose-NoInstall-([^/]*).zip""",
+                @"href=""/samhocevar/wincompose/releases/download/v([^/]*)/WinCompose-Setup-([^/]*).exe""",
+            };
+
+            foreach (string pattern in patterns)
+            {
+                var m = Regex.Match(data, pattern);
+
+                if (m.Groups.Count == 3)
+                {
+                    string v1 = m.Groups[1].Captures[0].ToString();
+                    string v2 = m.Groups[1].Captures[0].ToString();
+
+                    if (v1 == v2)
+                    {
+                        Console.WriteLine("Found version {0}", v1);
+                    }
+                }
+            }
         }
     }
 }
