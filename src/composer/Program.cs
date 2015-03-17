@@ -27,9 +27,10 @@ namespace WinCompose
         [STAThread]
         static void Main()
         {
+            Composer.Init();
             Settings.LoadConfig();
             Settings.LoadSequences();
-            KeyboardHook.Install();
+            KeyboardHook.Init();
 
             Settings.StartWatchConfigFile();
 
@@ -68,9 +69,10 @@ namespace WinCompose
             finally
             {
                 Composer.Changed -= ComposerStateChanged;
-                KeyboardHook.Uninstall();
+                KeyboardHook.Fini();
                 Settings.StopWatchConfigFile();
                 Settings.SaveConfig();
+                Composer.Fini();
             }
         }
 
