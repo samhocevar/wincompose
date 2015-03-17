@@ -250,8 +250,7 @@ static class Composer
         int ret = NativeMethods.ToUnicode(vk, sc, keystate, buf, buflen, flags);
         if (ret > 0 && ret < buflen)
         {
-            buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
-            return Encoding.Unicode.GetString(buf, 0, ret + 1);
+            return Encoding.Unicode.GetString(buf, 0, ret * 2);
         }
         return "";
     }
