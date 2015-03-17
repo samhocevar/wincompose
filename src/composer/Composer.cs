@@ -54,6 +54,13 @@ static class Composer
             return false;
         }
 
+        bool ret = OnKeyInternal(ev, vk, sc, flags);
+
+        return ret;
+    }
+
+    private static bool OnKeyInternal(WM ev, VK vk, SC sc, LLKHF flags)
+    {
         CheckKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
@@ -68,7 +75,7 @@ static class Composer
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
 
         // If we had previously recorded some dead keys, restore them
-        // before we analyse the new keypress.
+        // before we analyse a new key press, but not a key release.
         List<int> dead_keys = new List<int>();
         if (is_keydown)
         {
@@ -117,6 +124,7 @@ static class Composer
         }
 
         // Special case: we don't consider characters such as Esc as printable
+        // otherwise they are not properly serialised in the config file.
         if (key.IsPrintable() && key.ToString()[0] < ' ')
         {
             key = new Key(vk);
@@ -182,7 +190,9 @@ static class Composer
         if (!m_composing)
         {
             RestoreDeadKeys(dead_keys);
-            return is_dead;
+            if (is_dead)
+                return true;
+            return false;
         }
 
         if (!Settings.IsUsableKey(key))
@@ -192,50 +202,60 @@ static class Composer
             return false;
         }
 
-        // Finally, this is a key we must add to our compose sequence and
-        // decide whether we'll eventually output a character.
+        // Finally, everything else ignored this key, so it is a key we must
+        // add to our compose sequence.
         if (is_keydown)
         {
-            m_sequence.Add(key);
-
-            // FIXME: we don’t support case-insensitive yet
-            if (Settings.IsValidSequence(m_sequence))
-            {
-                // Sequence finished, print it
-                string tosend = Settings.GetSequenceResult(m_sequence);
-
-                AbortSequence();
-
-                // Do this at the last moment because we might get blocked
-                // by the kernel. FIXME: the whole Composer state should
-                // probably use locking
-                SendString(tosend);
-            }
-            else if (Settings.IsValidPrefix(m_sequence))
-            {
-                // Still a valid prefix, continue building sequence
-            }
-            else
-            {
-                // Unknown characters for sequence, print them if necessary
-                if (!Settings.DiscardOnInvalid.Value)
-                {
-                    foreach (Key k in m_sequence)
-                    {
-                        // FIXME: what if the key is e.g. left arrow?
-                        if (k.IsPrintable())
-                            SendString(k.ToString());
-                    }
-                }
-
-                if (Settings.BeepOnInvalid.Value)
-                    SystemSounds.Beep.Play();
-
-                AbortSequence();
-            }
+            AddToSequence(key);
+            return true;
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Add a key to the sequence currently being built. If necessary, output
+    /// the finished sequence or trigger actions for invalid sequences.
+    /// </summary>
+    private static void AddToSequence(Key key)
+    {
+        m_sequence.Add(key);
+
+        // FIXME: we don’t support case-insensitive yet
+        if (Settings.IsValidSequence(m_sequence))
+        {
+            // Sequence finished, print it
+            string tosend = Settings.GetSequenceResult(m_sequence);
+
+            AbortSequence();
+
+            // Do this at the last moment because we might get blocked
+            // by the kernel. FIXME: the whole Composer state should
+            // probably use locking
+            SendString(tosend);
+        }
+        else if (Settings.IsValidPrefix(m_sequence))
+        {
+            // Still a valid prefix, continue building sequence
+        }
+        else
+        {
+            // Unknown characters for sequence, print them if necessary
+            if (!Settings.DiscardOnInvalid.Value)
+            {
+                foreach (Key k in m_sequence)
+                {
+                    // FIXME: what if the key is e.g. left arrow?
+                    if (k.IsPrintable())
+                        SendString(k.ToString());
+                }
+            }
+
+            if (Settings.BeepOnInvalid.Value)
+                SystemSounds.Beep.Play();
+
+            AbortSequence();
+        }
     }
 
     private static string GetUnicode(VK vk)
