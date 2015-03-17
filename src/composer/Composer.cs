@@ -52,7 +52,6 @@ static class Composer
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
-        bool is_deadkey = false;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) == 0x80;
         bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
@@ -76,17 +75,11 @@ static class Composer
         m_keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
         m_keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         m_keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
-        int buflen = 4;
-        byte[] buf = new byte[2 * buflen];
-        int ret = NativeMethods.ToUnicode(vk, sc, m_keystate, buf, buflen, flags);
-        if (ret > 0 && ret < buflen)
+
+        string result = GetUnicode(vk, sc, m_keystate, flags);
+        if (result != "")
         {
-            buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
-            key = new Key(Encoding.Unicode.GetString(buf, 0, ret + 1));
-        }
-        else if (ret <= 0)
-        {
-            is_deadkey = true;
+            key = new Key(result);
         }
 
         // Restore the dead key if there was any
@@ -219,6 +212,19 @@ static class Composer
         }
 
         return true;
+    }
+
+    private static string GetUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
+    {
+        const int buflen = 4;
+        byte[] buf = new byte[2 * buflen];
+        int ret = NativeMethods.ToUnicode(vk, sc, keystate, buf, buflen, flags);
+        if (ret > 0 && ret < buflen)
+        {
+            buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
+            return Encoding.Unicode.GetString(buf, 0, ret + 1);
+        }
+        return "";
     }
 
     private static void SendString(string str)
@@ -411,11 +417,7 @@ static class Composer
         // dead keys. This way, when later we want to know if a dead key is
         // currently buffered, we just call ToUnicode(VK.SPACE) and match
         // the result with what we found here.
-        const int buflen = 4;
-        const LLKHF f = (LLKHF)0;
-
         byte[] state = new byte[256];
-        byte[] buf = new byte[2 * buflen];
 
         for (int i = 0; i < 0x400; ++i)
         {
@@ -428,53 +430,34 @@ static class Composer
             state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
             // First the key we’re interested in, then the space key
-            NativeMethods.ToUnicode(vk, (SC)0, state, buf, buflen, f);
-            int ret = NativeMethods.ToUnicode(VK.SPACE, (SC)0, state, buf, buflen, f);
+            GetUnicode(vk, (SC)0, state, (LLKHF)0);
+            string result = GetUnicode(VK.SPACE, (SC)0, state, (LLKHF)0);
 
-            if (ret > 0 && ret < buflen)
-            {
-                buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
-                string result = Encoding.Unicode.GetString(buf, 0, ret + 1);
-
-                // If the resulting string is not the space character, it means
-                // that it was a dead key. Good!
-                if (result != " ")
-                    m_dead_keys[result] = i;
-            }
+            // If the resulting string is not the space character, it means
+            // that it was a dead key. Good!
+            if (result != " ")
+                m_dead_keys[result] = i;
         }
 
         // Clean up key buffer
-        NativeMethods.ToUnicode(VK.SPACE, (SC)0, state, buf, buflen, f);
-        NativeMethods.ToUnicode(VK.SPACE, (SC)0, state, buf, buflen, f);
+        GetUnicode(VK.SPACE, (SC)0, state, (LLKHF)0);
+        GetUnicode(VK.SPACE, (SC)0, state, (LLKHF)0);
     }
 
     private static void SaveDeadKey()
     {
-        m_saved_dead_key = 0;
-
-        const int buflen = 4;
-        const LLKHF f = (LLKHF)0;
         byte[] state = new byte[256];
-        byte[] buf = new byte[2 * buflen];
+        string result = GetUnicode(VK.SPACE, (SC)0, state, (LLKHF)0);
 
-        int ret = NativeMethods.ToUnicode(VK.SPACE, (SC)0, state, buf, buflen, f);
-        if (ret > 0 && ret < buflen)
-        {
-            buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
-            string result = Encoding.Unicode.GetString(buf, 0, ret + 1);
-            m_dead_keys.TryGetValue(result, out m_saved_dead_key);
-        }
+        m_saved_dead_key = 0;
+        m_dead_keys.TryGetValue(result, out m_saved_dead_key);
     }
 
     private static void RestoreDeadKey()
     {
         if (m_saved_dead_key > 0)
         {
-            const int buflen = 4;
-            const LLKHF f = (LLKHF)0;
-
             byte[] state = new byte[256];
-            byte[] buf = new byte[2 * buflen];
 
             VK vk = (VK)(m_saved_dead_key & 0xff);
             bool has_shift = (m_saved_dead_key & 0x100) != 0;
@@ -484,7 +467,7 @@ static class Composer
             state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
             state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
-            NativeMethods.ToUnicode(vk, (SC)0, state, buf, buflen, f);
+            GetUnicode(vk, (SC)0, state, (LLKHF)0);
 
             m_saved_dead_key = 0;
         }
