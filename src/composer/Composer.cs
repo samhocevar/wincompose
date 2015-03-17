@@ -24,8 +24,25 @@ namespace WinCompose
 
 static class Composer
 {
-    // Get input from the keyboard hook; return true if the key was handled
-    // and needs to be removed from the input chain.
+    /// <summary>
+    /// Initialize the composer.
+    /// </summary>
+    public static void Init()
+    {
+        AnalyzeDeadkeys();
+    }
+
+    /// <summary>
+    /// Terminate the composer.
+    /// </summary>
+    public static void Fini()
+    {
+    }
+
+    /// <summary>
+    /// Get input from the keyboard hook; return true if the key was handled
+    /// and needs to be removed from the input chain.
+    /// </summary>
     public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
         if (m_disabled)
@@ -369,6 +386,48 @@ static class Composer
     {
         SendKeyDown(vk);
         SendKeyUp(vk);
+    }
+
+    private static void AnalyzeDeadkeys()
+    {
+        // Try every keyboard key followed by space to see which ones are
+        // dead keys. This way, when later we want to know if a dead key is
+        // currently buffered, we just call ToUnicode(VK.SPACE) and match
+        // the result with what we found here.
+        const int buflen = 4;
+        const LLKHF f = (LLKHF)0;
+
+        byte[] state = new byte[256];
+        byte[] buf = new byte[2 * buflen];
+
+        for (int i = 0; i < 0x400; ++i)
+        {
+            VK vk = (VK)(i & 0xff);
+            bool has_shift = (i & 0x100) != 0;
+            bool has_altgr = (i & 0x200) != 0;
+
+            state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
+            state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
+            state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
+
+            // First the key we’re interested in, then the space key
+            NativeMethods.ToUnicode(vk, (SC)0, state, buf, buflen, f);
+            int ret = NativeMethods.ToUnicode(VK.SPACE, (SC)0, state, buf, buflen, f);
+
+            if (ret > 0 && ret < buflen)
+            {
+                buf[ret * 2] = buf[ret * 2 + 1] = 0x00; // Null-terminate the string
+                string result = Encoding.Unicode.GetString(buf, 0, ret + 1);
+
+                // If the resulting string is not the space character, it means
+                // that it was a dead key. Good!
+                if (result != " ")
+                {
+                    Console.WriteLine("VK 0x{0:X02} appears to be a dead key for {1}",
+                                      i, result);
+                }
+            }
+        }
     }
 
     // FIXME: this is useless for now
