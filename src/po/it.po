@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2014-10-15 18:38+0200\n"
-"Last-Translator: Daniele <daniele.viglietti@gmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/wincompose/"
-"master/it/>\n"
+"PO-Revision-Date: 2015-03-17 15:20+0200\n"
+"Last-Translator: TWS <tablettws@gmail.com>\n"
+"Language-Team: Italian "
+"<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -27,32 +27,32 @@ msgstr "Rileva automaticamente"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:126 ID:KeyLMenu
 msgid "Left Alt"
-msgstr "Alt Sx"
+msgstr "Alt Sinistro"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:130 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Alt Dx"
+msgstr "Alt Destro"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:134 ID:KeyLControl
 msgid "Left Control"
-msgstr "Ctrl Sx"
+msgstr "Ctrl Sinistro"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:138 ID:KeyRControl
 msgid "Right Control"
-msgstr "Ctrl Dx"
+msgstr "Ctrl Destro"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:142 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Win Sx"
+msgstr "Windows Sinistro"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:146 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Win Dx"
+msgstr "Windows Destro"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:150 ID:KeyCapital
@@ -98,32 +98,32 @@ msgstr "500 ms"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:180 ID:Obsolete018
 msgid "1 second"
-msgstr "1 s"
+msgstr "1 secondo"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:183 ID:Obsolete019
 msgid "2 seconds"
-msgstr "2 s"
+msgstr "2 secondi"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:186 ID:Obsolete020
 msgid "3 seconds"
-msgstr "3 s"
+msgstr "3 secondi"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:189 ID:Obsolete021
 msgid "5 seconds"
-msgstr "5 s"
+msgstr "5 secondi"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:192 ID:Obsolete022
 msgid "10 seconds"
-msgstr "10 s"
+msgstr "10 secondi"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:195 ID:Obsolete023
 msgid "None"
-msgstr "Infinita"
+msgstr "Nessuna"
 
 #: i18n/Text.resx:198 ID:ShowSequences
 msgid "Show Sequences…"
@@ -150,7 +150,7 @@ msgstr "Visita il sito"
 
 #: i18n/Text.resx:215 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Uscita"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:218 ID:Obsolete036
@@ -182,7 +182,7 @@ msgstr "Tasto Compose:"
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:237 ID:ResetDelay
 msgid "Delay:"
-msgstr "Durata attivazione:"
+msgstr "Ritardo:"
 
 #: i18n/Text.resx:240 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
@@ -221,7 +221,7 @@ msgstr "Descrizione:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:265 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Applica"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:269 ID:KeepOriginalKey
@@ -234,20 +234,20 @@ msgstr ""
 
 #: i18n/Text.resx:275 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Emulare CapsLock usando insieme i due bottoni Shift"
 
 #: i18n/Text.resx:278 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Il Bottone Shift disabilita il CapsLock"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:282 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Categorie"
 
 #: i18n/Text.resx:285 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "Dentro le categorie selezionate"
 
 #. The title of the Options window
 #: i18n/Text.resx:289 ID:Options
@@ -262,16 +262,16 @@ msgstr "Opzioni…"
 #. {0}: compose key name, {1}: number of sequences
 #: i18n/Text.resx:297 ID:TrayToolTip
 msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose su {0} ({1} sequences)"
 
 #: i18n/Text.resx:300 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Comportamento"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:304 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Sequenze — WinCompose"
 
 #: i18n/Text.resx:307 ID:UserMacros
 msgid "User-defined macros"
