@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="build.xml" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -45,7 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <PostBuildEvent>set CONFIG=$(Configuration)
-set VERSION=0.7.1
+set VERSION=$(ApplicationVersion)
 iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
@@ -795,6 +796,9 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\key_compose_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
