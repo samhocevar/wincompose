@@ -115,6 +115,9 @@ namespace WinCompose
             // The timeout delay
             ResetDelay.Load();
 
+            // Activate the desired interface language
+            Language.Load();
+
             // HACK: if the user uses the "it-CH" locale, replace it with "it"
             // because we use "it-CH" as a special value to mean Sardinian.
             // The reason is that apparently we cannot define a custom
@@ -122,24 +125,29 @@ namespace WinCompose
             // without administrator privileges.
             if (Thread.CurrentThread.CurrentUICulture.Name == "it-CH")
             {
-                Thread.CurrentThread.CurrentUICulture
-                    = Thread.CurrentThread.CurrentUICulture.Parent;
-            }
-
-            // Activate the desired interface language
-            Language.Load();
-            if (!m_valid_languages.ContainsKey(Language.Value))
-            {
-                Language.Value = "";
-            }
-            else if (Language.Value != "")
-            {
                 try
                 {
-                    var culture = CultureInfo.GetCultureInfo(Language.Value);
-                    Thread.CurrentThread.CurrentUICulture = culture;
+                    Thread.CurrentThread.CurrentUICulture
+                        = Thread.CurrentThread.CurrentUICulture.Parent;
                 }
                 catch (Exception) { }
+            }
+
+            if (Language.Value != "")
+            {
+                if (!m_valid_languages.ContainsKey(Language.Value))
+                {
+                    try
+                    {
+                        var ci = CultureInfo.GetCultureInfo(Language.Value);
+                        Thread.CurrentThread.CurrentUICulture = ci;
+                    }
+                    catch (Exception) { }
+                }
+                else
+                {
+                    Language.Value = "";
+                }
             }
 
             // Catch-22: we can only add this string when the UI language is known
@@ -405,15 +413,18 @@ namespace WinCompose
             CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo culture in cultures)
             {
-                if (culture.Name != "") try
+                string name = culture.Name;
+                string native_name = culture.NativeName;
+
+                if (name != "") try
                 {
                     if (rm.GetResourceSet(culture, true, false) != null)
                     {
                         // HACK: second part of our hack to support Sardinian
-                        if (culture.Name == "it-CH")
-                            ret.Add(culture.Name, "Sardo");
-                        else
-                            ret.Add(culture.Name, culture.NativeName);
+                        if (name == "it-CH")
+                            native_name = "Sardu";
+
+                        ret.Add(name, native_name);
                     }
                 }
                 catch (Exception) {}
