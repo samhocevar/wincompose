@@ -169,6 +169,14 @@
     <value>Scroll Lock</value>
     <comment>The name of the key on the keyboard</comment>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Space</value>
+    <comment>The name of the key on the keyboard</comment>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Return</value>
+    <comment>The name of the key on the keyboard</comment>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Grave Accent `</value>
     <comment>The name of the key on the keyboard</comment>
