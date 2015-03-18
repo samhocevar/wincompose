@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-22 19:00+0200\n"
-"PO-Revision-Date: 2015-03-17 15:20+0200\n"
+"PO-Revision-Date: 2015-03-17 21:31+0200\n"
 "Last-Translator: TWS <tablettws@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/wincompose/"
 "master/it/>\n"
@@ -236,11 +236,11 @@ msgstr "Applica"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:277 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Il Tasto Compose mantiene il suo comportamento originale"
 
 #: i18n/Text.resx:280 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Inserire spazi invisibili dentro l'applicazione Office"
 
 #: i18n/Text.resx:283 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
@@ -285,7 +285,7 @@ msgstr "Sequenze — WinCompose"
 
 #: i18n/Text.resx:315 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Macro Utilizzatore"
 
 #: i18n/Text.resx:318 ID:DisabledToolTip
 #, fuzzy
@@ -295,33 +295,31 @@ msgstr "Tasto Compose:"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:322 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Inserire"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Scrivi Testo:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Regolazioni"
 
 #: i18n/Text.resx:333 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "500 ms"
+msgstr "500 millisecondi"
 
 #. About box menu entry
 #: i18n/Text.resx:337 ID:About
 msgid "About"
-msgstr "Informazioni"
+msgstr "A Proposito di"
 
 #. Window title of the About box
 #: i18n/Text.resx:341 ID:AboutBoxTitle
-#, fuzzy
 msgid "About WinCompose"
-msgstr "Opzioni — WinCompose"
+msgstr "Informazinoi su — WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:345 ID:Programming
