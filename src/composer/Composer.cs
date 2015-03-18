@@ -67,7 +67,6 @@ static class Composer
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
-        bool is_dead = false;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) != 0;
         bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
@@ -79,7 +78,6 @@ static class Composer
         // Guess what key was just pressed. If we can not find a printable
         // representation for the key, default to its virtual key code.
         Key key;
-        int dead_key = 0;
 
         byte[] keystate = new byte[256];
         NativeMethods.GetKeyboardState(keystate);
@@ -99,8 +97,6 @@ static class Composer
         {
             // This appears to be a dead key
             key = new Key(str_if_dead);
-            is_dead = true;
-            m_possible_dead_keys.TryGetValue(str_if_dead, out dead_key);
         }
         else
         {
