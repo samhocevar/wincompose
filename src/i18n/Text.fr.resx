@@ -297,4 +297,22 @@
   <data name="About" xml:space="preserve">
     <value>À propos</value>
   </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>À propos de WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programmation</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Traduction</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Remerciements</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose nécessite d’être redémarré pour appliquer certains changements.</value>
+  </data>
 </root>
