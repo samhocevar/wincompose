@@ -54,7 +54,9 @@ static class Composer
             return false;
         }
 
+        int dead_key = SaveDeadKey();
         bool ret = OnKeyInternal(ev, vk, sc, flags);
+        RestoreDeadKey(dead_key);
 
         return ret;
     }
@@ -74,19 +76,10 @@ static class Composer
                             NativeMethods.GetKeyState(VK.RSHIFT) & 0x80) != 0;
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
 
-        // If we had previously recorded some dead keys, restore them
-        // before we analyse a new key press, but not a key release.
-        List<int> dead_keys = new List<int>();
-        if (is_keydown)
-        {
-            dead_keys = m_dead_keys;
-            RestoreDeadKeys(m_dead_keys);
-            m_dead_keys = new List<int>();
-        }
-
         // Guess what key was just pressed. If we can not find a printable
         // representation for the key, default to its virtual key code.
         Key key;
+        int dead_key = 0;
 
         byte[] keystate = new byte[256];
         NativeMethods.GetKeyboardState(keystate);
@@ -95,37 +88,23 @@ static class Composer
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
-        string result_this = KeyToUnicode(vk, sc, keystate, flags);
-        string result_space = KeyToUnicode(VK.SPACE);
-        if (result_this != "")
+        string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
+        string str_if_dead = KeyToUnicode(VK.SPACE);
+        if (str_if_normal != "")
         {
-            // This appears to be a normal, printable key, but it could also
-            // be a non-printable key pressend with a dead key previously
-            // active. So we try again.
-            string result_that = KeyToUnicode(vk, sc, keystate, flags);
-            if (result_that == "")
-                key = new Key(vk);
-            else
-                key = new Key(result_that);
+            // This appears to be a normal, printable key
+            key = new Key(str_if_normal);
         }
-        else if (result_space != " ")
+        else if (str_if_dead != " ")
         {
             // This appears to be a dead key
-            key = new Key(result_space);
+            key = new Key(str_if_dead);
             is_dead = true;
-
-            if (is_keydown)
-            {
-                // Store the key somewhere, because our call to ToUnicode()
-                // removed it from the internal buffer.
-                int dead_key = 0;
-                m_possible_dead_keys.TryGetValue(result_space, out dead_key);
-                if (dead_key > 0)
-                    m_dead_keys.Add(dead_key);
-            }
+            m_possible_dead_keys.TryGetValue(str_if_dead, out dead_key);
         }
         else
         {
+            // This appears to be a non-printable, non-dead key
             key = new Key(vk);
         }
 
@@ -197,9 +176,6 @@ static class Composer
         // this was a dead key, eat it.
         if (!m_composing)
         {
-            RestoreDeadKeys(dead_keys);
-            if (is_dead)
-                return true;
             return false;
         }
 
@@ -415,7 +391,7 @@ static class Composer
 
     private static void AbortSequence()
     {
-        m_dead_keys.Clear();
+        // FIXME: clear dead key context?
 
         m_composing = false;
         m_compose_down = false;
@@ -502,22 +478,40 @@ static class Composer
         KeyToUnicode(VK.SPACE);
     }
 
-    private static void RestoreDeadKeys(List<int> dead_keys)
+    /// <summary>
+    /// Save the dead key if there is one, since we'll be calling ToUnicode
+    /// later on. This effectively removes any dead key from the ToUnicode
+    /// internal buffer.
+    /// </summary>
+    private static int SaveDeadKey()
     {
+        int dead_key = 0;
+        string str = KeyToUnicode(VK.SPACE);
+        if (str != " ")
+            m_possible_dead_keys.TryGetValue(str, out dead_key);
+        return dead_key;
+    }
+
+    /// <summary>
+    /// Restore a previously saved dead key. This should restore the ToUnicode
+    /// internal buffer.
+    /// </summary>
+    private static void RestoreDeadKey(int dead_key)
+    {
+        if (dead_key == 0)
+            return;
+
         byte[] state = new byte[256];
 
-        foreach (int dead_key in dead_keys)
-        {
-            VK vk = (VK)(dead_key & 0xff);
-            bool has_shift = (dead_key & 0x100) != 0;
-            bool has_altgr = (dead_key & 0x200) != 0;
+        VK vk = (VK)(dead_key & 0xff);
+        bool has_shift = (dead_key & 0x100) != 0;
+        bool has_altgr = (dead_key & 0x200) != 0;
 
-            state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-            state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-            state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
+        state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
+        state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
+        state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
-            KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
-        }
+        KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
     }
 
     // FIXME: this is useless for now
@@ -547,7 +541,6 @@ static class Composer
     private static List<Key> m_sequence = new List<Key>();
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
-    private static List<int> m_dead_keys = new List<int>();
     private static bool m_disabled = false;
     private static bool m_compose_down = false;
     private static bool m_composing = false;
