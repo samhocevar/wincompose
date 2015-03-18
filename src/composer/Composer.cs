@@ -99,8 +99,14 @@ static class Composer
         string result_space = KeyToUnicode(VK.SPACE);
         if (result_this != "")
         {
-            // This appears to be a normal, printable key
-            key = new Key(result_this);
+            // This appears to be a normal, printable key, but it could also
+            // be a non-printable key pressend with a dead key previously
+            // active. So we try again.
+            string result_that = KeyToUnicode(vk, sc, keystate, flags);
+            if (result_that == "")
+                key = new Key(vk);
+            else
+                key = new Key(result_that);
         }
         else if (result_space != " ")
         {
@@ -122,6 +128,8 @@ static class Composer
         {
             key = new Key(vk);
         }
+
+        Log("Key {0}: {1}", is_keydown ? "Down" : "Up", key.FriendlyName);
 
         // Special case: we don't consider characters such as Esc as printable
         // otherwise they are not properly serialised in the config file.
@@ -525,6 +533,15 @@ static class Composer
         tid = NativeMethods.GetCurrentThreadId();
         IntPtr my_layout = NativeMethods.GetKeyboardLayout(tid);
         //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
+    }
+
+    private static void Log(string format, params object[] args)
+    {
+#if DEBUG
+        string msg = string.Format("{0} {1}", DateTime.Now,
+                                   string.Format(format, args));
+        System.Diagnostics.Debug.WriteLine(msg);
+#endif
     }
 
     private static List<Key> m_sequence = new List<Key>();
