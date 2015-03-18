@@ -95,8 +95,8 @@ static class Composer
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
-        string result_this = GetUnicode(vk, sc, keystate, flags);
-        string result_space = GetUnicode(VK.SPACE);
+        string result_this = KeyToUnicode(vk, sc, keystate, flags);
+        string result_space = KeyToUnicode(VK.SPACE);
         if (result_this != "")
         {
             // This appears to be a normal, printable key
@@ -258,12 +258,12 @@ static class Composer
         }
     }
 
-    private static string GetUnicode(VK vk)
+    private static string KeyToUnicode(VK vk)
     {
-        return GetUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
+        return KeyToUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
     }
 
-    private static string GetUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
+    private static string KeyToUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
     {
         const int buflen = 4;
         byte[] buf = new byte[2 * buflen];
@@ -480,8 +480,8 @@ static class Composer
             state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
             // First the key we’re interested in, then the space key
-            GetUnicode(vk, (SC)0, state, (LLKHF)0);
-            string result = GetUnicode(VK.SPACE);
+            KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
+            string result = KeyToUnicode(VK.SPACE);
 
             // If the resulting string is not the space character, it means
             // that it was a dead key. Good!
@@ -490,8 +490,8 @@ static class Composer
         }
 
         // Clean up key buffer
-        GetUnicode(VK.SPACE);
-        GetUnicode(VK.SPACE);
+        KeyToUnicode(VK.SPACE);
+        KeyToUnicode(VK.SPACE);
     }
 
     private static void RestoreDeadKeys(List<int> dead_keys)
@@ -508,7 +508,7 @@ static class Composer
             state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
             state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
-            GetUnicode(vk, (SC)0, state, (LLKHF)0);
+            KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
         }
     }
 
