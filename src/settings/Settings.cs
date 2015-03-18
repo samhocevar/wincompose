@@ -411,14 +411,14 @@ namespace WinCompose
             // Enumerate all languages that have an embedded resource file version
             ResourceManager rm = new ResourceManager(typeof(i18n.Text));
             CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            foreach (CultureInfo culture in cultures)
+            foreach (CultureInfo ci in cultures)
             {
-                string name = culture.Name;
-                string native_name = culture.NativeName;
+                string name = ci.Name;
+                string native_name = ci.TextInfo.ToTitleCase(ci.NativeName);
 
                 if (name != "") try
                 {
-                    if (rm.GetResourceSet(culture, true, false) != null)
+                    if (rm.GetResourceSet(ci, true, false) != null)
                     {
                         // HACK: second part of our hack to support Sardinian
                         if (name == "it-CH")
