@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-12 00:47+0100\n"
-"PO-Revision-Date: 2015-03-16 03:33+0200\n"
+"PO-Revision-Date: 2015-03-19 17:47+0200\n"
 "Last-Translator: Lu Ca <lmelonimamo@yahoo.it>\n"
-"Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
-"master/sc/>\n"
+"Language-Team: Sardinian "
+"<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,12 +87,12 @@ msgstr "Bloc Scorr"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Ispàtziu"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Imbiu (Return)"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
@@ -300,7 +300,7 @@ msgstr "Inserta"
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Iscrie testu:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
