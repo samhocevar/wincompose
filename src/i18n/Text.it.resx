@@ -243,6 +243,12 @@
   <data name="Apply" xml:space="preserve">
     <value>Applica</value>
   </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Il Tasto Compose mantiene il suo comportamento originale</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Inserire spazi invisibili dentro l’applicazione Office</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emulare CapsLock usando insieme i due bottoni Shift</value>
   </data>
@@ -270,7 +276,25 @@
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequenze — WinCompose</value>
   </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Macro Utilizzatore</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Inserire</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Scrivi Testo:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Regolazioni</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>500 millisecondi</value>
+  </data>
   <data name="About" xml:space="preserve">
-    <value>Informazioni</value>
+    <value>A Proposito di</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Informazinoi su — WinCompose</value>
   </data>
 </root>

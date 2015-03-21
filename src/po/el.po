@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.6.99\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
+"POT-Creation-Date: 2015-03-21 12:37+0100\n"
 "PO-Revision-Date: 2015-03-10 21:29+0200\n"
 "Last-Translator: geogeo.gr\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
@@ -325,12 +325,12 @@ msgstr "Επιλογές — WinCompose"
 msgid "Programming"
 msgstr ""
 
-#. The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!
+#. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
 msgstr ""
 
-#. The section for random contributors who aren't programmers or translators. Might be empty.
+#. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
 msgstr ""

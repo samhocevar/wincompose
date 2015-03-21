@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Arrêt défil</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Espace</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Entrée</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Accent grave `</value>
   </data>

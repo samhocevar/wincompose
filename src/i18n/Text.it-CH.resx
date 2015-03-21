@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Bloc Scorr</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Ispàtziu</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Imbiu (Return)</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Atzentu grave</value>
   </data>
@@ -277,13 +283,16 @@
     <value>Fileras — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Macros definidas dae s'impitadore</value>
+    <value>Macros definidas dae s’impitadore</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>Wincompose est disabilitadu</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Inserta</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Iscrie testu:</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Modìficas minores</value>

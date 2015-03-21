@@ -1,17 +1,17 @@
 # Sardinian translations for PACKAGE package.
-# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-12 00:47+0100\n"
+"Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
+"POT-Creation-Date: 2015-03-21 12:37+0100\n"
 "PO-Revision-Date: 2015-03-19 17:47+0200\n"
 "Last-Translator: Lu Ca <lmelonimamo@yahoo.it>\n"
-"Language-Team: Sardinian "
-"<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
+"Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
+"master/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -286,7 +286,7 @@ msgstr "Fileras — WinCompose"
 
 #: i18n/Text.resx:315 ID:UserMacros
 msgid "User-defined macros"
-msgstr "Macros definidas dae s'impitadore"
+msgstr "Macros definidas dae s’impitadore"
 
 #: i18n/Text.resx:318 ID:DisabledToolTip
 msgid "WinCompose is disabled"
@@ -326,12 +326,12 @@ msgstr "WinCompose: informatziones"
 msgid "Programming"
 msgstr "Programatzione"
 
-#. The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!
+#. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
 msgstr "Bortadura"
 
-#. The section for random contributors who aren't programmers or translators. Might be empty.
+#. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
 msgstr "Ringratziamentos ispetziales"

@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) YEAR THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-12 00:47+0100\n"
+"Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
+"POT-Creation-Date: 2015-03-21 12:37+0100\n"
 "PO-Revision-Date: 2015-03-18 18:43+0200\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: French "
-"<https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
+"fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -324,12 +324,12 @@ msgstr "À propos de WinCompose"
 msgid "Programming"
 msgstr "Programmation"
 
-#. The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!
+#. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
 msgstr "Traduction"
 
-#. The section for random contributors who aren't programmers or translators. Might be empty.
+#. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
 msgstr "Remerciements"

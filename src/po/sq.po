@@ -1,11 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
+"POT-Creation-Date: 2015-03-21 12:37+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
@@ -125,7 +127,7 @@ msgid "None"
 msgstr ""
 
 #: i18n/Text.resx:206 ID:ShowSequences
-msgid "Show Sequences"
+msgid "Show Sequences…"
 msgstr ""
 
 #. Menu entry to disable WinCompose
@@ -249,12 +251,12 @@ msgstr ""
 
 #. The title of the Options window
 #: i18n/Text.resx:297 ID:Options
-msgid "Options  WinCompose"
+msgid "Options — WinCompose"
 msgstr ""
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:301 ID:ShowOptions
-msgid "Options"
+msgid "Options…"
 msgstr ""
 
 #. {0}: compose key name, {1}: number of sequences
@@ -268,7 +270,7 @@ msgstr ""
 
 #. The title of the Sequences window
 #: i18n/Text.resx:312 ID:WindowTitle
-msgid "Sequences  WinCompose"
+msgid "Sequences — WinCompose"
 msgstr ""
 
 #: i18n/Text.resx:315 ID:UserMacros
@@ -313,12 +315,12 @@ msgstr ""
 msgid "Programming"
 msgstr ""
 
-#. The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!
+#. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
 msgstr ""
 
-#. The section for random contributors who aren't programmers or translators. Might be empty.
+#. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
 msgstr ""

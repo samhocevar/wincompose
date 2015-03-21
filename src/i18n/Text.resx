@@ -346,11 +346,11 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Translation</value>
-    <comment>The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!</comment>
+    <comment>The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
     <value>Special Thanks</value>
-    <comment>The section for random contributors who aren't programmers or translators. Might be empty.</comment>
+    <comment>The section for random contributors who aren’t programmers or translators. Might be empty.</comment>
   </data>
   <data name="License" xml:space="preserve">
     <value>License</value>
