@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-21 12:37+0100\n"
-"PO-Revision-Date: 2014-11-25 18:54+0200\n"
-"Last-Translator: Henrik Gebauer <code@henrik-gebauer.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
-"de/>\n"
+"PO-Revision-Date: 2015-03-20 16:06+0200\n"
+"Last-Translator: Gjelbrim Haskaj <ghaskaj@aol.com>\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.1-dev\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -87,7 +87,7 @@ msgstr "Rollen"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Leertaste"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
