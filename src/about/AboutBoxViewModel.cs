@@ -28,6 +28,7 @@ namespace WinCompose
     {
         private readonly DelegateCommand m_switch_document_command;
         private readonly DelegateCommand m_openwebsite_command;
+        private readonly DelegateCommand m_reportbug_command;
         private readonly FlowDocument    m_contributors_document;
         private readonly FlowDocument    m_licence_document;
         private          string          m_active_document_title;
@@ -37,6 +38,7 @@ namespace WinCompose
         {
             m_switch_document_command = new DelegateCommand(OnSwitchDocumentCommandExecuted);
             m_openwebsite_command     = new DelegateCommand(OnOpenWebsiteCommandExecuted);
+            m_reportbug_command       = new DelegateCommand(OnReportBugCommandExecuted);
             m_contributors_document   = LoadDocument("pack://application:,,,/res/contributors.rtf");
             m_licence_document        = LoadDocument("pack://application:,,,/res/copying.rtf");
             m_active_document         = m_contributors_document;
@@ -61,6 +63,7 @@ namespace WinCompose
 
         public ICommand SwitchDocumentCommand { get { return m_switch_document_command; } }
         public ICommand OpenWebsiteCommand    { get { return m_openwebsite_command; } }
+        public ICommand OpenReportBugCommand  { get { return m_reportbug_command; } }
 
         public string ActiveDocumentTitle
         {
@@ -97,6 +100,11 @@ namespace WinCompose
         private static void OnOpenWebsiteCommandExecuted(object parameter)
         {
             System.Diagnostics.Process.Start("http://wincompose.info/");
+        }
+
+        private static void OnReportBugCommandExecuted(object parameter)
+        {
+            System.Diagnostics.Process.Start("https://github.com/samhocevar/wincompose/issues/new");
         }
     }
 }

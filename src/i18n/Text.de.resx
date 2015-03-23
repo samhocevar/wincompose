@@ -156,6 +156,9 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Rollen</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Leertaste</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Gravis `</value>
   </data>

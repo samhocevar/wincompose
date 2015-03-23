@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
-"POT-Creation-Date: 2015-03-21 12:37+0100\n"
+"POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2014-07-23 22:18+0200\n"
 "Last-Translator: Valerij Romanovskij <valerik-roma@mail.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
@@ -154,7 +154,7 @@ msgstr "Перезапуск"
 msgid "History"
 msgstr "История"
 
-#. Menu entry to visit the website
+#. A button to visit the website
 #: i18n/Text.resx:220 ID:VisitWebsite
 msgid "Visit Website"
 msgstr "Посетить веб-сайт"
@@ -347,6 +347,11 @@ msgstr ""
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:361 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
+msgstr ""
+
+#. A button to report bugs (opens web browser)
+#: i18n/Text.resx:365 ID:ReportBug
+msgid "Report a Bug"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)

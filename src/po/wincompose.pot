@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.2\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
-"POT-Creation-Date: 2015-03-21 12:43+0100\n"
+"POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,7 +152,7 @@ msgid "History"
 msgstr ""
 
 #: i18n/Text.resx:220 ID:VisitWebsite
-#. Menu entry to visit the website
+#. A button to visit the website
 msgid "Visit Website"
 msgstr ""
 
@@ -340,6 +340,11 @@ msgstr ""
 #: i18n/Text.resx:361 ID:NeedRestart
 #. Warning message when the user changes the language in the settings window
 msgid "WinCompose needs to be restarted for some changes to take effect."
+msgstr ""
+
+#: i18n/Text.resx:365 ID:ReportBug
+#. A button to report bugs (opens web browser)
+msgid "Report a Bug"
 msgstr ""
 
 #: unicode/Category.resx:122 ID:Control

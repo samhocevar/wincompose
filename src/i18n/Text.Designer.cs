@@ -547,6 +547,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Report a Bug.
+        /// </summary>
+        public static string ReportBug {
+            get {
+                return ResourceManager.GetString("ReportBug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delay:.
         /// </summary>
         public static string ResetDelay {

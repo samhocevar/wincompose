@@ -217,7 +217,7 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visit Website</value>
-    <comment>Menu entry to visit the website</comment>
+    <comment>A button to visit the website</comment>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
@@ -359,5 +359,9 @@
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose needs to be restarted for some changes to take effect.</value>
     <comment>Warning message when the user changes the language in the settings window</comment>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Report a Bug</value>
+    <comment>A button to report bugs (opens web browser)</comment>
   </data>
 </root>
