@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-03-22 22:56+0200\n"
+"PO-Revision-Date: 2015-03-23 22:56+0200\n"
 "Last-Translator: TWS <tablettws@gmail.com>\n"
 "Language-Team: Italian "
 "<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
@@ -328,27 +328,28 @@ msgstr "Programmazione"
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Traduzione"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Ringraziamenti"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:357 ID:License
 msgid "License"
-msgstr ""
+msgstr "Licenza"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:361 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
+"WinCompose ha bisogno di essere riavviato per applicare alcuni cambiamenti."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:365 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Riporta un problema"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
