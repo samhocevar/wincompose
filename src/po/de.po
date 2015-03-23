@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-21 12:37+0100\n"
-"PO-Revision-Date: 2015-03-20 16:06+0200\n"
-"Last-Translator: Gjelbrim Haskaj <ghaskaj@aol.com>\n"
+"PO-Revision-Date: 2015-03-23 02:00+0200\n"
+"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: German "
 "<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
@@ -92,7 +92,7 @@ msgstr "Leertaste"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Eingabe"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
@@ -160,7 +160,7 @@ msgstr "Website besuchen"
 
 #: i18n/Text.resx:223 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Beenden"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
@@ -230,7 +230,7 @@ msgstr "Beschreibung:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:273 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Übernehmen"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:277 ID:KeepOriginalKey
@@ -252,7 +252,7 @@ msgstr ""
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:290 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Kategorien"
 
 #: i18n/Text.resx:293 ID:InSelectedCategories
 msgid "In selected categories"
@@ -275,26 +275,25 @@ msgstr ""
 
 #: i18n/Text.resx:308 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Allgemeines Verhalten"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:312 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Sequenzen — WinCompose"
 
 #: i18n/Text.resx:315 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Benutzerdefinierte Makros"
 
 #: i18n/Text.resx:318 ID:DisabledToolTip
-#, fuzzy
 msgid "WinCompose is disabled"
-msgstr "Compose-Taste"
+msgstr "WinCompose ist ausgeschaltet"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:322 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Einfügen"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
@@ -304,12 +303,11 @@ msgstr ""
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Diverse Einstellungen"
 
 #: i18n/Text.resx:333 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "500 Millisekunden"
+msgstr "(Millisekunden)"
 
 #. About box menu entry
 #: i18n/Text.resx:337 ID:About
@@ -318,19 +316,18 @@ msgstr "Über"
 
 #. Window title of the About box
 #: i18n/Text.resx:341 ID:AboutBoxTitle
-#, fuzzy
 msgid "About WinCompose"
-msgstr "Optionen — WinCompose"
+msgstr "Über WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:345 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programmierung"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Übersetzung"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
@@ -340,7 +337,7 @@ msgstr ""
 #. US: License, UK: Licence
 #: i18n/Text.resx:357 ID:License
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:361 ID:NeedRestart
