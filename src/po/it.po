@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-03-17 21:31+0200\n"
+"PO-Revision-Date: 2015-03-22 22:56+0200\n"
 "Last-Translator: TWS <tablettws@gmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/wincompose/"
-"master/it/>\n"
+"Language-Team: Italian "
+"<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,12 +87,12 @@ msgstr "Bloc Scorr"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Spazio"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Enter"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
@@ -288,9 +288,8 @@ msgid "User-defined macros"
 msgstr "Macro Utilizzatore"
 
 #: i18n/Text.resx:318 ID:DisabledToolTip
-#, fuzzy
 msgid "WinCompose is disabled"
-msgstr "Tasto Compose:"
+msgstr "WinCompose è disabilitato"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:322 ID:KeyInsert
@@ -324,7 +323,7 @@ msgstr "Informazinoi su — WinCompose"
 #. The section where we list all programmers.
 #: i18n/Text.resx:345 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programmazione"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators

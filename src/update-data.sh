@@ -13,6 +13,7 @@ mkdir -p ${CACHE}
 
 echo "[1/${STEPS}] Rebuild potfiles…"
 DEST=po/wincompose.pot
+# Update POT-Creation-Date with: date +'%Y-%m-%d %R%z'
 cat > ${DEST} << EOF
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
@@ -24,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose $(sed -ne 's/.*<ApplicationVersion>\([^<]*\).*/\1/p' build.xml)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
-"POT-Creation-Date: $(date +'%Y-%m-%d %R%z')\n"
+"POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

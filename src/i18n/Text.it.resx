@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Bloc Scorr</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Spazio</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Accento grave `</value>
   </data>
@@ -279,6 +285,9 @@
   <data name="UserMacros" xml:space="preserve">
     <value>Macro Utilizzatore</value>
   </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose è disabilitato</value>
+  </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Inserire</value>
   </data>
@@ -296,5 +305,8 @@
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Informazinoi su — WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programmazione</value>
   </data>
 </root>
