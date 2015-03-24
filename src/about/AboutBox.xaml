@@ -29,9 +29,7 @@
             </StackPanel>
         </Grid>
         <GroupBox Grid.Column="1" Header="{Binding ActiveDocumentTitle}">
-            <ScrollViewer>
-                <RichTextBox Margin="10, 10 10, 10" wincompose:AboutBox.Document="{Binding ActiveDocument}" IsReadOnly="True" IsDocumentEnabled="True"/>
-            </ScrollViewer>
+            <WebBrowser Margin="10, 10 10, 10" wincompose:AboutBox.WebContent="{Binding ActiveDocument}" />
         </GroupBox>
     </Grid>
 </Window>
