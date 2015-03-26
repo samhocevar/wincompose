@@ -54,11 +54,19 @@ static class Composer
             return false;
         }
 
+        int dead_key = SaveDeadKey();
+        bool ret = OnKeyInternal(ev, vk, sc, flags);
+        RestoreDeadKey(dead_key);
+
+        return ret;
+    }
+
+    private static bool OnKeyInternal(WM ev, VK vk, SC sc, LLKHF flags)
+    {
         CheckKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
-        bool is_dead = false;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) != 0;
         bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
@@ -66,16 +74,6 @@ static class Composer
         bool has_lrshift = (NativeMethods.GetKeyState(VK.LSHIFT) &
                             NativeMethods.GetKeyState(VK.RSHIFT) & 0x80) != 0;
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
-
-        // If we had previously recorded some dead keys, restore them
-        // before we analyse the new keypress.
-        List<int> dead_keys = new List<int>();
-        if (is_keydown)
-        {
-            dead_keys = m_dead_keys;
-            RestoreDeadKeys(m_dead_keys);
-            m_dead_keys = new List<int>();
-        }
 
         // Guess what key was just pressed. If we can not find a printable
         // representation for the key, default to its virtual key code.
@@ -88,31 +86,21 @@ static class Composer
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
-        string result_this = GetUnicode(vk, sc, keystate, flags);
-        string result_space = GetUnicode(VK.SPACE);
-        if (result_this != "")
+        string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
+        string str_if_dead = KeyToUnicode(VK.SPACE);
+        if (str_if_normal != "")
         {
             // This appears to be a normal, printable key
-            key = new Key(result_this);
+            key = new Key(str_if_normal);
         }
-        else if (result_space != " ")
+        else if (str_if_dead != " ")
         {
             // This appears to be a dead key
-            key = new Key(result_space);
-            is_dead = true;
-
-            if (is_keydown)
-            {
-                // Store the key somewhere, because our call to ToUnicode()
-                // removed it from the internal buffer.
-                int dead_key = 0;
-                m_possible_dead_keys.TryGetValue(result_space, out dead_key);
-                if (dead_key > 0)
-                    m_dead_keys.Add(dead_key);
-            }
+            key = new Key(str_if_dead);
         }
         else
         {
+            // This appears to be a non-printable, non-dead key
             key = new Key(vk);
         }
 
@@ -133,7 +121,10 @@ static class Composer
             m_last_key = key;
         }
 
+        Log("Key {0}: {1}", is_keydown ? "Down" : "Up", key.FriendlyName);
+
         // Special case: we don't consider characters such as Esc as printable
+        // otherwise they are not properly serialised in the config file.
         if (key.IsPrintable() && key.ToString()[0] < ' ')
         {
             key = new Key(vk);
@@ -166,7 +157,7 @@ static class Composer
                     {
                         while (m_composing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
                             Thread.Sleep(50);
-                        AbortSequence();
+                        ResetSequence();
                     }).Start();
                 }
             }
@@ -198,8 +189,7 @@ static class Composer
         // this was a dead key, eat it.
         if (!m_composing)
         {
-            RestoreDeadKeys(dead_keys);
-            return is_dead;
+            return false;
         }
 
         if (!Settings.IsUsableKey(key))
@@ -209,60 +199,91 @@ static class Composer
             return false;
         }
 
-        // Finally, this is a key we must add to our compose sequence and
-        // decide whether we'll eventually output a character.
+        // Finally, everything else ignored this key, so it is a key we must
+        // add to our compose sequence.
         if (is_keydown)
         {
-            m_sequence.Add(key);
-
-            // FIXME: we don’t support case-insensitive yet
-            if (Settings.IsValidSequence(m_sequence))
-            {
-                // Sequence finished, print it
-                string tosend = Settings.GetSequenceResult(m_sequence);
-
-                Stats.AddSequence(m_sequence);
-
-                AbortSequence();
-
-                // Do this at the last moment because we might get blocked
-                // by the kernel. FIXME: the whole Composer state should
-                // probably use locking
-                SendString(tosend);
-            }
-            else if (Settings.IsValidPrefix(m_sequence))
-            {
-                // Still a valid prefix, continue building sequence
-            }
-            else
-            {
-                // Unknown characters for sequence, print them if necessary
-                if (!Settings.DiscardOnInvalid.Value)
-                {
-                    foreach (Key k in m_sequence)
-                    {
-                        // FIXME: what if the key is e.g. left arrow?
-                        if (k.IsPrintable())
-                            SendString(k.ToString());
-                    }
-                }
-
-                if (Settings.BeepOnInvalid.Value)
-                    SystemSounds.Beep.Play();
-
-                AbortSequence();
-            }
+            AddToSequence(key);
+            return true;
         }
 
         return true;
     }
 
-    private static string GetUnicode(VK vk)
+    /// <summary>
+    /// Add a key to the sequence currently being built. If necessary, output
+    /// the finished sequence or trigger actions for invalid sequences.
+    /// </summary>
+    private static void AddToSequence(Key key)
     {
-        return GetUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
+        // FIXME: we don’t support case-insensitive yet
+        // We try the following, in this order:
+        //  1. if m_sequence + key is a valid prefix, it means the user
+        //     could type other characters to build a longer sequence,
+        //     so just append key to m_sequence.
+        //  2. if m_sequence + key is a valid sequence, we can't go further,
+        //     we append key to m_sequence and output the result.
+        //  3. if m_sequence is a valid sequence, the user didn't type a
+        //     valid key, so output the m_sequence result _and_ process key.
+        //  4. (optionally) try again 1. 2. and 3. ignoring case.
+        //  5. none of the characters make sense, output all of them as if
+        //     the user didn't press Compose.
+        foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
+                              new bool[]{ false, true } : new bool[]{ false })
+        {
+            KeySequence old_sequence = new KeySequence(m_sequence);
+            m_sequence.Add(key);
+
+            if (Settings.IsValidPrefix(m_sequence))
+            {
+                // Still a valid prefix, continue building sequence
+                return;
+            }
+
+            if (Settings.IsValidSequence(m_sequence))
+            {
+                string tosend = Settings.GetSequenceResult(m_sequence);
+                Stats.AddSequence(m_sequence);
+                ResetSequence();
+                SendString(tosend);
+                return;
+            }
+
+            if (Settings.IsValidSequence(old_sequence))
+            {
+                string tosend = Settings.GetSequenceResult(old_sequence);
+                Stats.AddSequence(old_sequence);
+                ResetSequence();
+                SendString(tosend);
+                if (key.IsPrintable())
+                    SendString(key.ToString());
+                return;
+            }
+        }
+
+        // Unknown characters for sequence, print them if necessary
+        if (!Settings.DiscardOnInvalid.Value)
+        {
+            foreach (Key k in m_sequence)
+            {
+                // FIXME: what if the key is e.g. left arrow?
+                if (k.IsPrintable())
+                    SendString(k.ToString());
+            }
+        }
+
+        if (Settings.BeepOnInvalid.Value)
+            SystemSounds.Beep.Play();
+
+        ResetSequence();
     }
 
-    private static string GetUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
+    private static string KeyToUnicode(VK vk)
+    {
+        return KeyToUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
+    }
+
+    private static string KeyToUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
     {
         const int buflen = 4;
         byte[] buf = new byte[2 * buflen];
@@ -404,9 +425,9 @@ static class Composer
         return m_disabled;
     }
 
-    private static void AbortSequence()
+    private static void ResetSequence()
     {
-        m_dead_keys.Clear();
+        // FIXME: clear dead key context?
 
         m_composing = false;
         m_compose_down = false;
@@ -479,8 +500,8 @@ static class Composer
             state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
             // First the key we’re interested in, then the space key
-            GetUnicode(vk, (SC)0, state, (LLKHF)0);
-            string result = GetUnicode(VK.SPACE);
+            KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
+            string result = KeyToUnicode(VK.SPACE);
 
             // If the resulting string is not the space character, it means
             // that it was a dead key. Good!
@@ -489,26 +510,44 @@ static class Composer
         }
 
         // Clean up key buffer
-        GetUnicode(VK.SPACE);
-        GetUnicode(VK.SPACE);
+        KeyToUnicode(VK.SPACE);
+        KeyToUnicode(VK.SPACE);
     }
 
-    private static void RestoreDeadKeys(List<int> dead_keys)
+    /// <summary>
+    /// Save the dead key if there is one, since we'll be calling ToUnicode
+    /// later on. This effectively removes any dead key from the ToUnicode
+    /// internal buffer.
+    /// </summary>
+    private static int SaveDeadKey()
     {
+        int dead_key = 0;
+        string str = KeyToUnicode(VK.SPACE);
+        if (str != " ")
+            m_possible_dead_keys.TryGetValue(str, out dead_key);
+        return dead_key;
+    }
+
+    /// <summary>
+    /// Restore a previously saved dead key. This should restore the ToUnicode
+    /// internal buffer.
+    /// </summary>
+    private static void RestoreDeadKey(int dead_key)
+    {
+        if (dead_key == 0)
+            return;
+
         byte[] state = new byte[256];
 
-        foreach (int dead_key in dead_keys)
-        {
-            VK vk = (VK)(dead_key & 0xff);
-            bool has_shift = (dead_key & 0x100) != 0;
-            bool has_altgr = (dead_key & 0x200) != 0;
+        VK vk = (VK)(dead_key & 0xff);
+        bool has_shift = (dead_key & 0x100) != 0;
+        bool has_altgr = (dead_key & 0x200) != 0;
 
-            state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-            state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-            state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
+        state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
+        state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
+        state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
-            GetUnicode(vk, (SC)0, state, (LLKHF)0);
-        }
+        KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
     }
 
     // FIXME: this is useless for now
@@ -526,15 +565,23 @@ static class Composer
         //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
     }
 
+    private static void Log(string format, params object[] args)
+    {
+#if DEBUG
+        string msg = string.Format("{0} {1}", DateTime.Now,
+                                   string.Format(format, args));
+        System.Diagnostics.Debug.WriteLine(msg);
+#endif
+    }
+
     /// <summary>
     /// The sequence being currently typed
     /// </summary>
     private static KeySequence m_sequence = new KeySequence();
 
-    private static Key m_last_key = null;
+    private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
-    private static List<int> m_dead_keys = new List<int>();
 
     private static bool m_disabled = false;
     private static bool m_compose_down = false;

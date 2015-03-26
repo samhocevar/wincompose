@@ -195,6 +195,9 @@
   <data name="VisitWebsite" xml:space="preserve">
     <value>Besøg webside</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Luk</value>
+  </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>af Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
@@ -237,13 +240,79 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Beskrivelse:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Anvend</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Behold original compose key opførsel</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Indsæt zero-width mellemrum i Office programmer</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emulér CapsLock med begge Shift knapper</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift knappen slår CapsLock fra</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorier</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>I valgte kategorier</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Indstillinger — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Indstillinger…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose på {0} ({1} sekvenser)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Generel opførsel</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Sekvenser — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Brugerdefinerede makroer</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose er slået fra</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Indsæt</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Testskrivning:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Justeringer</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(millisekunder)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Om WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programmering</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Oversættelse</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Særlig tak</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licens</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose kræver genstart for at nogle ændringer træder i kraft.</value>
   </data>
 </root>

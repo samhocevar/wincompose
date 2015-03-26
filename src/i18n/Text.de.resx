@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Rollen</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Leertaste</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Eingabe</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Gravis `</value>
   </data>
@@ -194,6 +200,9 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website besuchen</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Beenden</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>von Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -237,13 +246,52 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Beschreibung:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Übernehmen</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorien</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Optionen — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Optionen…</value>
   </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Allgemeines Verhalten</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Sequenzen — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Benutzerdefinierte Makros</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose ist ausgeschaltet</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Einfügen</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Diverse Einstellungen</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(Millisekunden)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Über</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Über WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programmierung</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Übersetzung</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Lizenz</value>
   </data>
 </root>

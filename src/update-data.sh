@@ -13,7 +13,28 @@ mkdir -p ${CACHE}
 
 echo "[1/${STEPS}] Rebuild potfiles…"
 DEST=po/wincompose.pot
-true > ${DEST}
+# Update POT-Creation-Date with: date +'%Y-%m-%d %R%z'
+cat > ${DEST} << EOF
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WinCompose $(sed -ne 's/.*<ApplicationVersion>\([^<]*\).*/\1/p' build.xml)\n"
+"Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
+"POT-Creation-Date: 2015-03-23 15:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+EOF
 for FILE in i18n/Text.resx unicode/Category.resx; do
     awk < ${FILE} '
     /<!--/      { off=1 }

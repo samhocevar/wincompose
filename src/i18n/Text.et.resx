@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>SCROLL LOCK</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Tühik</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Sisesta</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>GRAAVIS `</value>
   </data>

@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Spatie</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Accent Grave `</value>
   </data>

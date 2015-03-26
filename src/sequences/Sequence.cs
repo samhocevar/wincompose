@@ -69,21 +69,25 @@ public class Key
         { VK.RIGHT, "▶" },
     };
 
-    private static readonly Dictionary<VK, string> m_key_names = new Dictionary<VK, string>
+    private static readonly Dictionary<Key, string> m_key_names = new Dictionary<Key, string>
     {
-        { VK.LMENU, i18n.Text.KeyLMenu },
-        { VK.RMENU, i18n.Text.KeyRMenu },
-        { VK.LCONTROL, i18n.Text.KeyLControl },
-        { VK.RCONTROL, i18n.Text.KeyRControl },
-        { VK.LWIN, i18n.Text.KeyLWin },
-        { VK.RWIN, i18n.Text.KeyRWin },
-        { VK.CAPITAL, i18n.Text.KeyCapital },
-        { VK.NUMLOCK, i18n.Text.KeyNumLock },
-        { VK.PAUSE, i18n.Text.KeyPause },
-        { VK.APPS, i18n.Text.KeyApps },
-        { VK.ESCAPE, i18n.Text.KeyEscape },
-        { VK.SCROLL, i18n.Text.KeyScroll },
-        { VK.INSERT, i18n.Text.KeyInsert },
+        { new Key(VK.LMENU), i18n.Text.KeyLMenu },
+        { new Key(VK.RMENU), i18n.Text.KeyRMenu },
+        { new Key(VK.LCONTROL), i18n.Text.KeyLControl },
+        { new Key(VK.RCONTROL), i18n.Text.KeyRControl },
+        { new Key(VK.LWIN), i18n.Text.KeyLWin },
+        { new Key(VK.RWIN), i18n.Text.KeyRWin },
+        { new Key(VK.CAPITAL), i18n.Text.KeyCapital },
+        { new Key(VK.NUMLOCK), i18n.Text.KeyNumLock },
+        { new Key(VK.PAUSE), i18n.Text.KeyPause },
+        { new Key(VK.APPS), i18n.Text.KeyApps },
+        { new Key(VK.ESCAPE), i18n.Text.KeyEscape },
+        { new Key(VK.SCROLL), i18n.Text.KeyScroll },
+        { new Key(VK.INSERT), i18n.Text.KeyInsert },
+
+        { new Key(" "),    i18n.Text.KeySpace },
+        { new Key("\r"),   i18n.Text.KeyReturn },
+        { new Key("\x1b"), i18n.Text.KeyEscape },
     };
 
     private readonly VK m_vk;
@@ -109,9 +113,8 @@ public class Key
         get
         {
             string ret;
-            if (m_key_names.TryGetValue(m_vk, out ret))
+            if (m_key_names.TryGetValue(this, out ret))
                 return ret;
-
             return m_str ?? string.Format("VK.{0}", m_vk);
         }
     }
