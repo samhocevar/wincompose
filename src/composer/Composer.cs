@@ -140,7 +140,7 @@ static class Composer
                     {
                         while (m_composing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
                             Thread.Sleep(50);
-                        AbortSequence();
+                        ResetSequence();
                     }).Start();
                 }
             }
@@ -199,43 +199,64 @@ static class Composer
     /// </summary>
     private static void AddToSequence(Key key)
     {
-        m_sequence.Add(key);
-
         // FIXME: we don’t support case-insensitive yet
-        if (Settings.IsValidSequence(m_sequence))
+        // We try the following, in this order:
+        //  1. if m_sequence + key is a valid prefix, it means the user
+        //     could type other characters to build a longer sequence,
+        //     so just append key to m_sequence.
+        //  2. if m_sequence + key is a valid sequence, we can't go further,
+        //     we append key to m_sequence and output the result.
+        //  3. if m_sequence is a valid sequence, the user didn't type a
+        //     valid key, so output the m_sequence result _and_ process key.
+        //  4. (optionally) try again 1. 2. and 3. ignoring case.
+        //  5. none of the characters make sense, output all of them as if
+        //     the user didn't press Compose.
+        foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
+                              new bool[]{ false, true } : new bool[]{ false })
         {
-            // Sequence finished, print it
-            string tosend = Settings.GetSequenceResult(m_sequence);
+            List<Key> old_sequence = new List<Key>(m_sequence);
+            m_sequence.Add(key);
 
-            AbortSequence();
-
-            // Do this at the last moment because we might get blocked
-            // by the kernel. FIXME: the whole Composer state should
-            // probably use locking
-            SendString(tosend);
-        }
-        else if (Settings.IsValidPrefix(m_sequence))
-        {
-            // Still a valid prefix, continue building sequence
-        }
-        else
-        {
-            // Unknown characters for sequence, print them if necessary
-            if (!Settings.DiscardOnInvalid.Value)
+            if (Settings.IsValidPrefix(m_sequence))
             {
-                foreach (Key k in m_sequence)
-                {
-                    // FIXME: what if the key is e.g. left arrow?
-                    if (k.IsPrintable())
-                        SendString(k.ToString());
-                }
+                // Still a valid prefix, continue building sequence
+                return;
             }
 
-            if (Settings.BeepOnInvalid.Value)
-                SystemSounds.Beep.Play();
+            if (Settings.IsValidSequence(m_sequence))
+            {
+                string tosend = Settings.GetSequenceResult(m_sequence);
+                ResetSequence();
+                SendString(tosend);
+                return;
+            }
 
-            AbortSequence();
+            if (Settings.IsValidSequence(old_sequence))
+            {
+                string tosend = Settings.GetSequenceResult(old_sequence);
+                ResetSequence();
+                SendString(tosend);
+                if (key.IsPrintable())
+                    SendString(key.ToString());
+                return;
+            }
         }
+
+        // Unknown characters for sequence, print them if necessary
+        if (!Settings.DiscardOnInvalid.Value)
+        {
+            foreach (Key k in m_sequence)
+            {
+                // FIXME: what if the key is e.g. left arrow?
+                if (k.IsPrintable())
+                    SendString(k.ToString());
+            }
+        }
+
+        if (Settings.BeepOnInvalid.Value)
+            SystemSounds.Beep.Play();
+
+        ResetSequence();
     }
 
     private static string KeyToUnicode(VK vk)
@@ -385,7 +406,7 @@ static class Composer
         return m_disabled;
     }
 
-    private static void AbortSequence()
+    private static void ResetSequence()
     {
         // FIXME: clear dead key context?
 
