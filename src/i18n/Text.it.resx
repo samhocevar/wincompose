@@ -309,4 +309,19 @@
   <data name="Programming" xml:space="preserve">
     <value>Programmazione</value>
   </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Traduzione</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Ringraziamenti</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licenza</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose ha bisogno di essere riavviato per applicare alcuni cambiamenti.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Riporta un problema</value>
+  </data>
 </root>

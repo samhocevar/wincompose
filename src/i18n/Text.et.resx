@@ -321,4 +321,7 @@
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose tuleb mõnede muudatuste aktiveerimiseks uuesti käivitada.</value>
   </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Teata veast</value>
+  </data>
 </root>
