@@ -153,8 +153,12 @@ echo "done."
 
 echo "[4/${STEPS}] Check consistency…"
 for x in unicode/*resx i18n/*resx; do
+    lang="$(echo $x | cut -f2 -d.)"
     if ! grep -q '"'$(echo $x | tr / .)'"' wincompose.csproj; then
         echo "WARNING: $x not found in wincompose.csproj"
+    fi
+    if grep -q '^; Name: "'$lang'";' installer.iss; then
+        echo "WARNING: $lang is commented out in installer.iss"
     fi
 done
 
