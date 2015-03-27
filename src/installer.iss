@@ -122,29 +122,17 @@ function exec(hwnd: hwnd; lpOperation: string; lpFile: string;
     external 'ShellExecuteW@shell32.dll stdcall';
 
 // Installer state
-//  0: first run
-//  1: second run, with admin privileges
-//  2: second run, skipped all pages
 var
-    state: integer;
+    state: (s_run_1, s_run_2, s_skipped);
 
 // Initialize installer state.
 procedure InitializeWizard;
 var
     i: integer;
 begin
-    state := 0;
+    state := s_run_1;
     for i := 1 to paramcount do
-        if comparetext(paramstr(i), '/ELEVATE') = 0 then state := 1;
-end;
-
-// If running elevated and we haven't reached the directory selection page,
-// skip all pages, including the directory selection page.
-function ShouldSkipPage(page_id: integer): boolean;
-begin
-    result := (state = 1) and (page_id <= wpselectdir);
-    if (state = 1) and (page_id = wpselectdir) then
-        state := 2;
+        if comparetext(paramstr(i), '/elevate') = 0 then state := s_run_2;
 end;
 
 // If we're in the target directory selection page, check that we
@@ -156,7 +144,7 @@ var
     e2: thandle;
 begin
     result := true;
-    if (state = 0) and (page_id = wpselectdir) then
+    if (state = s_run_1) and (page_id = wpselectdir) then
     begin
         createdir(expandconstant('{app}'));
         e1 := savestringtofile(expandconstant('{app}/.stamp'), '', false);
@@ -165,12 +153,21 @@ begin
         if e1 then exit;
 
         e2 := exec(wizardform.handle, 'runas', expandconstant('{srcexe}'),
-                   expandconstant('/DIR="{app}" /ELEVATE'), '', SW_SHOW);
+                   expandconstant('/dir="{app}" /elevate'), '', SW_SHOW);
         if e2 > 32 then exit_process(0);
 
         result := false;
         msgbox(format('Administrator rights are required. Code: %d', [e2]),
                mberror, MB_OK);
     end;
+end;
+
+// If running elevated and we haven't reached the directory selection page,
+// skip all pages, including the directory selection page.
+function ShouldSkipPage(page_id: integer): boolean;
+begin
+    result := (state = s_run_2) and (page_id <= wpselectdir);
+    if (state = s_run_2) and (page_id = wpselectdir) then
+        state := s_skipped;
 end;
 
