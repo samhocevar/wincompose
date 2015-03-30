@@ -213,22 +213,29 @@ public class SequenceTree
         m_children[sequence[0]].Add(subsequence, result, utf32, desc);
     }
 
-    public bool IsValidPrefix(List<Key> sequence)
+    public bool IsValidPrefix(List<Key> sequence, bool ignore_case)
     {
-        SequenceTree subtree = GetSubtree(sequence, Search.Prefixes);
-        return subtree != null;
+        Search flags = Search.Prefixes;
+        if (ignore_case)
+            flags |= Search.IgnoreCase;
+        return GetSubtree(sequence, flags) != null;
     }
 
-    public bool IsValidSequence(List<Key> sequence)
+    public bool IsValidSequence(List<Key> sequence, bool ignore_case)
     {
-        SequenceTree subtree = GetSubtree(sequence, Search.Sequences);
-        return subtree != null;
+        Search flags = Search.Sequences;
+        if (ignore_case)
+            flags |= Search.IgnoreCase;
+        return GetSubtree(sequence, flags) != null;
     }
 
-    public string GetSequenceResult(List<Key> sequence)
+    public string GetSequenceResult(List<Key> sequence, bool ignore_case)
     {
-        SequenceTree tree = GetSubtree(sequence, Search.Sequences);
-        return tree == null ? "" : tree.m_result;
+        Search flags = Search.Sequences;
+        if (ignore_case)
+            flags |= Search.IgnoreCase;
+        SequenceTree node = GetSubtree(sequence, flags);
+        return node == null ? "" : node.m_result;
     }
 
     /// <summary>
@@ -242,10 +249,12 @@ public class SequenceTree
         return ret;
     }
 
+    [Flags]
     private enum Search
     {
-        Sequences = 0,
-        Prefixes = 1,
+        Sequences  = 1,
+        Prefixes   = 2,
+        IgnoreCase = 4,
     };
 
     /// <summary>
@@ -255,22 +264,41 @@ public class SequenceTree
     /// children, we return null. This lets us check for strict prefixes
     /// in addition to full secquences.
     /// </summary>
-    private SequenceTree GetSubtree(List<Key> sequence, Search what)
+    private SequenceTree GetSubtree(List<Key> sequence, Search flags)
     {
         if (sequence.Count == 0)
         {
-            if (what == Search.Prefixes && m_children.Count == 0)
+            if ((flags & Search.Prefixes) != 0 && m_children.Count == 0)
                 return null;
-            if (what == Search.Sequences && m_result == null)
+            if ((flags & Search.Sequences) != 0 && m_result == null)
                 return null;
             return this;
         }
 
-        if (!m_children.ContainsKey(sequence[0]))
-            return null;
+        List<Key> keys = new List<Key>{ sequence[0] };
+        if ((flags & Search.IgnoreCase) != 0 && sequence[0].IsPrintable())
+        {
+            Key upper = new Key(sequence[0].ToString().ToUpper());
+            if (upper != sequence[0])
+                keys.Add(upper);
 
-        var subsequence = sequence.GetRange(1, sequence.Count - 1);
-        return m_children[sequence[0]].GetSubtree(subsequence, what);
+            Key lower = new Key(sequence[0].ToString().ToLower());
+            if (lower != sequence[0])
+                keys.Add(lower);
+        }
+
+        foreach (Key k in keys)
+        {
+            if (!m_children.ContainsKey(k))
+                continue;
+
+            var subsequence = sequence.GetRange(1, sequence.Count - 1);
+            var node = m_children[k].GetSubtree(subsequence, flags);
+            if (node != null)
+                return node;
+        }
+
+        return null;
     }
 
     /// <summary>

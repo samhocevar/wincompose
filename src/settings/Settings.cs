@@ -201,19 +201,19 @@ namespace WinCompose
             return m_sequences;
         }
 
-        public static bool IsValidPrefix(List<Key> sequence)
+        public static bool IsValidPrefix(List<Key> seq, bool ignore_case)
         {
-            return m_sequences.IsValidPrefix(sequence);
+            return m_sequences.IsValidPrefix(seq, ignore_case);
         }
 
-        public static bool IsValidSequence(List<Key> sequence)
+        public static bool IsValidSequence(List<Key> seq, bool ignore_case)
         {
-            return m_sequences.IsValidSequence(sequence);
+            return m_sequences.IsValidSequence(seq, ignore_case);
         }
 
-        public static string GetSequenceResult(List<Key> sequence)
+        public static string GetSequenceResult(List<Key> seq, bool ignore_case)
         {
-            return m_sequences.GetSequenceResult(sequence);
+            return m_sequences.GetSequenceResult(seq, ignore_case);
         }
 
         public static List<SequenceDescription> GetSequenceDescriptions()

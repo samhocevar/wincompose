@@ -186,8 +186,7 @@ static class Composer
         // add to our compose sequence.
         if (is_keydown)
         {
-            AddToSequence(key);
-            return true;
+            return AddToSequence(key);
         }
 
         return true;
@@ -197,8 +196,11 @@ static class Composer
     /// Add a key to the sequence currently being built. If necessary, output
     /// the finished sequence or trigger actions for invalid sequences.
     /// </summary>
-    private static void AddToSequence(Key key)
+    private static bool AddToSequence(Key key)
     {
+        List<Key> old_sequence = new List<Key>(m_sequence);
+        m_sequence.Add(key);
+
         // FIXME: we don’t support case-insensitive yet
         // We try the following, in this order:
         //  1. if m_sequence + key is a valid prefix, it means the user
@@ -214,31 +216,30 @@ static class Composer
         foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
                               new bool[]{ false, true } : new bool[]{ false })
         {
-            List<Key> old_sequence = new List<Key>(m_sequence);
-            m_sequence.Add(key);
-
-            if (Settings.IsValidPrefix(m_sequence))
+            if (Settings.IsValidPrefix(m_sequence, ignore_case))
             {
                 // Still a valid prefix, continue building sequence
-                return;
+                return true;
             }
 
-            if (Settings.IsValidSequence(m_sequence))
+            if (Settings.IsValidSequence(m_sequence, ignore_case))
             {
-                string tosend = Settings.GetSequenceResult(m_sequence);
+                string tosend = Settings.GetSequenceResult(m_sequence,
+                                                           ignore_case);
                 ResetSequence();
                 SendString(tosend);
-                return;
+                return true;
             }
 
-            if (Settings.IsValidSequence(old_sequence))
+            // Some code duplication with the above block, but this way
+            // what we are doing is more clear.
+            if (Settings.IsValidSequence(old_sequence, ignore_case))
             {
-                string tosend = Settings.GetSequenceResult(old_sequence);
+                string tosend = Settings.GetSequenceResult(old_sequence,
+                                                           ignore_case);
                 ResetSequence();
                 SendString(tosend);
-                if (key.IsPrintable())
-                    SendString(key.ToString());
-                return;
+                return false;
             }
         }
 
@@ -257,6 +258,7 @@ static class Composer
             SystemSounds.Beep.Play();
 
         ResetSequence();
+        return true;
     }
 
     private static string KeyToUnicode(VK vk)
