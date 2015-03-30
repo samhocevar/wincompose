@@ -215,32 +215,25 @@ public class SequenceTree
 
     public bool IsValidPrefix(List<Key> sequence)
     {
-        SequenceTree subtree = GetSubtree(sequence);
+        SequenceTree subtree = GetSubtree(sequence, Search.Prefixes);
         return subtree != null;
     }
 
     public bool IsValidSequence(List<Key> sequence)
     {
-        SequenceTree subtree = GetSubtree(sequence);
-        return subtree != null && subtree.m_result != null;
+        SequenceTree subtree = GetSubtree(sequence, Search.Sequences);
+        return subtree != null;
     }
 
     public string GetSequenceResult(List<Key> sequence)
     {
-        SequenceTree tree = GetSubtree(sequence);
-        return tree == null ? "" : tree.m_result == null ? "" : tree.m_result;
+        SequenceTree tree = GetSubtree(sequence, Search.Sequences);
+        return tree == null ? "" : tree.m_result;
     }
 
-    public SequenceTree GetSubtree(List<Key> sequence)
-    {
-        if (sequence.Count == 0)
-            return this;
-        if (!m_children.ContainsKey(sequence[0]))
-            return null;
-        var subsequence = sequence.GetRange(1, sequence.Count - 1);
-        return m_children[sequence[0]].GetSubtree(subsequence);
-    }
-
+    /// <summary>
+    /// List all possible sequences for the GUI.
+    /// </summary>
     public List<SequenceDescription> GetSequenceDescriptions()
     {
         List<SequenceDescription> ret = new List<SequenceDescription>();
@@ -249,6 +242,42 @@ public class SequenceTree
         return ret;
     }
 
+    private enum Search
+    {
+        Sequences = 0,
+        Prefixes = 1,
+    };
+
+    /// <summary>
+    /// If the first key of <see cref="sequences"/> matches a known child,
+    /// return that child. Otherwise, return null.
+    /// If <see cref="non_terminal"/> is true, but we are a rule with no
+    /// children, we return null. This lets us check for strict prefixes
+    /// in addition to full secquences.
+    /// </summary>
+    private SequenceTree GetSubtree(List<Key> sequence, Search what)
+    {
+        if (sequence.Count == 0)
+        {
+            if (what == Search.Prefixes && m_children.Count == 0)
+                return null;
+            if (what == Search.Sequences && m_result == null)
+                return null;
+            return this;
+        }
+
+        if (!m_children.ContainsKey(sequence[0]))
+            return null;
+
+        var subsequence = sequence.GetRange(1, sequence.Count - 1);
+        return m_children[sequence[0]].GetSubtree(subsequence, what);
+    }
+
+    /// <summary>
+    /// Build a list of sequence descriptions by recursively adding our
+    /// children to <see cref="list"/>. The output structure is suitable
+    /// for the GUI.
+    /// </summary>
     private void BuildSequenceDescriptions(List<SequenceDescription> list,
                                            List<Key> path)
     {
