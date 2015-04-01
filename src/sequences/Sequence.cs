@@ -69,26 +69,38 @@ public class Key
         { VK.RIGHT, "▶" },
     };
 
-    private static readonly Dictionary<Key, string> m_key_names = new Dictionary<Key, string>
-    {
-        { new Key(VK.LMENU), i18n.Text.KeyLMenu },
-        { new Key(VK.RMENU), i18n.Text.KeyRMenu },
-        { new Key(VK.LCONTROL), i18n.Text.KeyLControl },
-        { new Key(VK.RCONTROL), i18n.Text.KeyRControl },
-        { new Key(VK.LWIN), i18n.Text.KeyLWin },
-        { new Key(VK.RWIN), i18n.Text.KeyRWin },
-        { new Key(VK.CAPITAL), i18n.Text.KeyCapital },
-        { new Key(VK.NUMLOCK), i18n.Text.KeyNumLock },
-        { new Key(VK.PAUSE), i18n.Text.KeyPause },
-        { new Key(VK.APPS), i18n.Text.KeyApps },
-        { new Key(VK.ESCAPE), i18n.Text.KeyEscape },
-        { new Key(VK.SCROLL), i18n.Text.KeyScroll },
-        { new Key(VK.INSERT), i18n.Text.KeyInsert },
+    /// <summary>
+    /// A list of keys for which we have a friendly name. This is used in
+    /// the GUI, where the user can choose which key acts as the compose
+    /// key. It needs to be lazy-initialised, because we create Key objects
+    /// way before the application language is set, and we need the
+    /// translated version.
+    /// </summary>
+    private static Dictionary<Key, string> m_key_names = null;
 
-        { new Key(" "),    i18n.Text.KeySpace },
-        { new Key("\r"),   i18n.Text.KeyReturn },
-        { new Key("\x1b"), i18n.Text.KeyEscape },
-    };
+    private static Dictionary<Key, string> GetKeyNames()
+    {
+        return new Dictionary<Key, string>
+        {
+            { new Key(VK.LMENU), i18n.Text.KeyLMenu },
+            { new Key(VK.RMENU), i18n.Text.KeyRMenu },
+            { new Key(VK.LCONTROL), i18n.Text.KeyLControl },
+            { new Key(VK.RCONTROL), i18n.Text.KeyRControl },
+            { new Key(VK.LWIN), i18n.Text.KeyLWin },
+            { new Key(VK.RWIN), i18n.Text.KeyRWin },
+            { new Key(VK.CAPITAL), i18n.Text.KeyCapital },
+            { new Key(VK.NUMLOCK), i18n.Text.KeyNumLock },
+            { new Key(VK.PAUSE), i18n.Text.KeyPause },
+            { new Key(VK.APPS), i18n.Text.KeyApps },
+            { new Key(VK.ESCAPE), i18n.Text.KeyEscape },
+            { new Key(VK.SCROLL), i18n.Text.KeyScroll },
+            { new Key(VK.INSERT), i18n.Text.KeyInsert },
+
+            { new Key(" "),    i18n.Text.KeySpace },
+            { new Key("\r"),   i18n.Text.KeyReturn },
+            { new Key("\x1b"), i18n.Text.KeyEscape },
+        };
+    }
 
     private readonly VK m_vk;
 
@@ -112,6 +124,8 @@ public class Key
     {
         get
         {
+            if (m_key_names == null)
+                m_key_names = GetKeyNames();
             string ret;
             if (m_key_names.TryGetValue(this, out ret))
                 return ret;
