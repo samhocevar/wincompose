@@ -135,7 +135,7 @@ namespace WinCompose
 
             if (Language.Value != "")
             {
-                if (!m_valid_languages.ContainsKey(Language.Value))
+                if (m_valid_languages.ContainsKey(Language.Value))
                 {
                     try
                     {
