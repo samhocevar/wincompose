@@ -201,7 +201,6 @@ static class Composer
         List<Key> old_sequence = new List<Key>(m_sequence);
         m_sequence.Add(key);
 
-        // FIXME: we don’t support case-insensitive yet
         // We try the following, in this order:
         //  1. if m_sequence + key is a valid prefix, it means the user
         //     could type other characters to build a longer sequence,
@@ -410,8 +409,6 @@ static class Composer
 
     private static void ResetSequence()
     {
-        // FIXME: clear dead key context?
-
         m_composing = false;
         m_compose_down = false;
         m_sequence.Clear();
