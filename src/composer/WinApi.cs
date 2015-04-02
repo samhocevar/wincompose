@@ -38,6 +38,8 @@ static internal class NativeMethods
     [DllImport("user32", CharSet = CharSet.Auto)]
     public static extern int GetKeyboardState(byte[] lpKeyState);
     [DllImport("user32", CharSet = CharSet.Auto)]
+    public static extern void SetKeyboardState(byte[] lpKeyState);
+    [DllImport("user32", CharSet = CharSet.Auto)]
     public static extern short GetKeyState(VK nVirtKey);
 
     [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]

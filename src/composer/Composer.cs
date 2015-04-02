@@ -77,7 +77,7 @@ static class Composer
 
         // Guess what key was just pressed. If we can not find a printable
         // representation for the key, default to its virtual key code.
-        Key key;
+        Key key = new Key(vk);
 
         byte[] keystate = new byte[256];
         NativeMethods.GetKeyboardState(keystate);
@@ -98,13 +98,6 @@ static class Composer
             // This appears to be a dead key
             key = new Key(str_if_dead);
         }
-        else
-        {
-            // This appears to be a non-printable, non-dead key
-            key = new Key(vk);
-        }
-
-        Log("Key {0}: {1}", is_keydown ? "Down" : "Up", key.FriendlyName);
 
         // Special case: we don't consider characters such as Esc as printable
         // otherwise they are not properly serialised in the config file.
@@ -113,16 +106,30 @@ static class Composer
             key = new Key(vk);
         }
 
+        Log("Key {0}: {1} (VK {2:X04})", is_keydown ? "Down" : "Up",
+            key.FriendlyName, (int)key.VirtualKey);
+
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
         if (key == Settings.ComposeKey.Value)
         {
             if (is_keyup)
             {
+                // If we receive a keyup for the compose key, but we hadn't
+                // previously marked it as down, it means we're in emulation
+                // mode and we need to cancel it.
+                if (!m_compose_down)
+                {
+                    Log("Emulation Off");
+                    SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
+                }
+
                 m_compose_down = false;
             }
             else if (is_keydown && !m_compose_down)
             {
+                Log("Switching Compose");
+
                 // FIXME: we don't want compose + compose to disable composing,
                 // since there are compose sequences that use Multi_key.
                 // FIXME: also, if a sequence was in progress, print it!
@@ -175,15 +182,26 @@ static class Composer
             return false;
         }
 
-        if (!Settings.IsUsableKey(key))
+        // If the compose key is down, maybe there is a key combination
+        // going on, such as Alt+Tab or Windows+Up, so we abort composing
+        // and tell the OS that the key is down.
+        if (m_compose_down && (Settings.KeepOriginalKey.Value
+                                || !Settings.IsUsableKey(key)))
         {
-            // FIXME: if compose key is down, maybe there is a key combination
-            // going on, such as Alt+Tab or Windows+Up
+            Log("Emulation On");
+            ResetSequence();
+            SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
             return false;
         }
 
-        // Finally, everything else ignored this key, so it is a key we must
-        // add to our compose sequence.
+        // If the key can't be used in a sequence, just ignore it.
+        if (!Settings.IsUsableKey(key))
+        {
+            return false;
+        }
+
+        // If we reached this point, everything else ignored this key, so it
+        // is a key we must add to the current sequence.
         if (is_keydown)
         {
             return AddToSequence(key);
