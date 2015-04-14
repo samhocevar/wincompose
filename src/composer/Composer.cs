@@ -106,8 +106,8 @@ static class Composer
             key = new Key(vk);
         }
 
-        Log("Key {0}: {1} (VK {2:X04})", is_keydown ? "Down" : "Up",
-            key.FriendlyName, (int)key.VirtualKey);
+        Log("WM.{0} {1} (VK:0x{2:X02} SC:0x{3:X02})",
+            ev.ToString(), key.FriendlyName, (int)vk, (int)sc);
 
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
@@ -120,7 +120,7 @@ static class Composer
                 // mode and we need to cancel it.
                 if (!m_compose_down)
                 {
-                    Log("Emulation Off");
+                    Log("Fallback Off");
                     SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
                 }
 
@@ -128,8 +128,6 @@ static class Composer
             }
             else if (is_keydown && !m_compose_down)
             {
-                Log("Switching Compose");
-
                 // FIXME: we don't want compose + compose to disable composing,
                 // since there are compose sequences that use Multi_key.
                 // FIXME: also, if a sequence was in progress, print it!
@@ -137,6 +135,8 @@ static class Composer
                 m_composing = !m_composing;
                 if (!m_composing)
                     m_sequence.Clear();
+
+                Log("{0} Composing", m_composing ? "Now" : "No Longer");
 
                 // Lauch the sequence reset expiration thread
                 // FIXME: do we need to launch a new thread each time the
@@ -188,7 +188,7 @@ static class Composer
         if (m_compose_down && (Settings.KeepOriginalKey.Value
                                 || !Settings.IsUsableKey(key)))
         {
-            Log("Emulation On");
+            Log("Fallback On");
             ResetSequence();
             SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
             return false;
