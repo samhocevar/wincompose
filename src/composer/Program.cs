@@ -21,6 +21,7 @@ namespace WinCompose
     static class Program
     {
         private static WinForms.NotifyIcon m_notifyicon;
+        private static WinForms.MenuItem m_disable_item;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
 
@@ -39,6 +40,8 @@ namespace WinCompose
                 WinForms.Application.EnableVisualStyles();
                 WinForms.Application.SetCompatibleTextRenderingDefault(false);
 
+                m_disable_item = new WinForms.MenuItem(i18n.Text.Disable, DisableClicked);
+
                 m_notifyicon = new WinForms.NotifyIcon
                 {
                     Visible = true,
@@ -52,7 +55,7 @@ namespace WinCompose
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
-                        new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
+                        m_disable_item,
                         new WinForms.MenuItem(i18n.Text.About, AboutClicked),
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
@@ -104,6 +107,8 @@ namespace WinCompose
                               : String.Format(i18n.Text.TrayToolTip,
                                         Settings.ComposeKey.Value.FriendlyName,
                                         Settings.GetSequenceCount());
+
+            m_disable_item.Checked = Composer.IsDisabled();
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
@@ -129,8 +134,6 @@ namespace WinCompose
         private static void DisableClicked(object sender, EventArgs e)
         {
             Composer.ToggleDisabled();
-            WinForms.MenuItem item = sender as WinForms.MenuItem;
-            item.Checked = Composer.IsDisabled();
         }
 
         private static void AboutClicked(object sender, EventArgs e)
