@@ -60,6 +60,8 @@ static internal class NativeMethods
 
     [DllImport("user32")]
     public static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+    [DllImport("user32")]
+    public static extern uint RegisterWindowMessage(string message);
 
     //
     // for KeyboardHook.cs
