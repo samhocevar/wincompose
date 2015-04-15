@@ -47,8 +47,6 @@ namespace WinCompose
                 m_messaging.DisableEvent += DisableReceived;
                 m_messaging.TriggerDisableEvent();
 
-                m_disable_item = new WinForms.MenuItem(i18n.Text.Disable, DisableClicked);
-
                 m_tray_icon = new WinForms.NotifyIcon
                 {
                     Visible = true,
@@ -62,7 +60,8 @@ namespace WinCompose
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
-                        m_disable_item,
+                        /* Keep a reference on this entry */ m_disable_item =
+                        new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
                         new WinForms.MenuItem(i18n.Text.About, AboutClicked),
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
