@@ -152,8 +152,7 @@ static class Composer
                 }
             }
 
-            if (Changed != null)
-                Changed(null, new EventArgs());
+            Changed(null, new EventArgs());
 
             return true;
         }
@@ -389,7 +388,7 @@ static class Composer
         }
     }
 
-    public static event EventHandler Changed;
+    public static event EventHandler Changed = delegate {};
 
     /// <summary>
     /// Return whether a compose sequence is in progress
@@ -413,8 +412,7 @@ static class Composer
             m_sequence.Clear();
         }
 
-        if (Changed != null)
-            Changed(null, new EventArgs());
+        Changed(null, new EventArgs());
     }
 
     /// <summary>
@@ -431,8 +429,7 @@ static class Composer
         m_compose_down = false;
         m_sequence.Clear();
 
-        if (Changed != null)
-            Changed(null, new EventArgs());
+        Changed(null, new EventArgs());
     }
 
     private static INPUT NewInputKey(VirtualKeyShort vk)

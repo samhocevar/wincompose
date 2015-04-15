@@ -186,8 +186,7 @@ namespace WinCompose
             if (m.Msg == WM_WINCOMPOSE_DISABLE)
             {
                 if (Process.GetCurrentProcess().Id != (int)m.WParam)
-                    if (DisableEvent != null)
-                        DisableEvent(null, new EventArgs());
+                    DisableEvent(null, new EventArgs());
                 return;
             }
 
@@ -204,7 +203,7 @@ namespace WinCompose
                                       Process.GetCurrentProcess().Id, 0);
         }
 
-        public event EventHandler DisableEvent;
+        public event EventHandler DisableEvent = delegate {};
 
         /// <summary>
         /// A custom message ID used for inter-process communication
