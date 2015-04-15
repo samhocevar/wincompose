@@ -14,13 +14,22 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms.Integration;
+using System.Windows.Interop;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {
     static class Program
     {
-        private static WinForms.NotifyIcon m_notifyicon;
+        private class TrayIcon : public WinForms.NotifyIcon
+        {
+            protected override void WndProc(ref Message m)
+            {
+                base.WndProc(ref m);
+            }
+        }
+
+        private static TrayIcon m_tray_icon;
         private static WinForms.MenuItem m_disable_item;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
@@ -42,7 +51,7 @@ namespace WinCompose
 
                 m_disable_item = new WinForms.MenuItem(i18n.Text.Disable, DisableClicked);
 
-                m_notifyicon = new WinForms.NotifyIcon
+                m_tray_icon = new TrayIcon
                 {
                     Visible = true,
                     Icon = Properties.Resources.IconNormal,
@@ -62,12 +71,12 @@ namespace WinCompose
                         new WinForms.MenuItem(i18n.Text.Exit, ExitClicked),
                     })
                 };
-                m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
+                m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
 
                 Composer.Changed += ComposerStateChanged;
 
                 WinForms.Application.Run();
-                m_notifyicon.Dispose();
+                m_tray_icon.Dispose();
             }
             finally
             {
@@ -99,10 +108,10 @@ namespace WinCompose
 
         private static void ComposerStateChanged(object sender, EventArgs e)
         {
-            m_notifyicon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
-                              : Composer.IsComposing() ? Properties.Resources.IconActive
-                                                       : Properties.Resources.IconNormal;
-            m_notifyicon.Text = Composer.IsDisabled()
+            m_tray_icon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
+                             : Composer.IsComposing() ? Properties.Resources.IconActive
+                                                      : Properties.Resources.IconNormal;
+            m_tray_icon.Text = Composer.IsDisabled()
                               ? i18n.Text.DisabledToolTip
                               : String.Format(i18n.Text.TrayToolTip,
                                         Settings.ComposeKey.Value.FriendlyName,
@@ -134,6 +143,13 @@ namespace WinCompose
         private static void DisableClicked(object sender, EventArgs e)
         {
             Composer.ToggleDisabled();
+
+            Process[] processes = Process.GetProcessesByName("wincompose");
+
+            foreach (Process p in processes)
+            {
+                NativeMethods.PostMessage(p.MainWindowHandle, 0x0400, 0, 0);
+            }
         }
 
         private static void AboutClicked(object sender, EventArgs e)

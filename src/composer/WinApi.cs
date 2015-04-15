@@ -58,6 +58,9 @@ static internal class NativeMethods
     [DllImport("imm32", CharSet = CharSet.Auto)]
     public static extern IntPtr ImmGetDefaultIMEWnd(HandleRef hwnd);
 
+    [DllImport("user32")]
+    public static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+
     //
     // for KeyboardHook.cs
     //
