@@ -116,9 +116,9 @@ Type: dirifempty; Name: "{app}"
 procedure exit_process(uExitCode: uint);
     external 'ExitProcess@kernel32.dll stdcall';
 
-function exec(hwnd: hwnd; lpOperation: string; lpFile: string;
-              lpParameters: string; lpDirectory: string;
-              nShowCmd: integer): thandle;
+function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
+                lpParameters: string; lpDirectory: string;
+                nShowCmd: integer): thandle;
     external 'ShellExecuteW@shell32.dll stdcall';
 
 // Installer state
@@ -152,14 +152,26 @@ begin
         deltree(expandconstant('{app}'), true, false, false);
         if e1 then exit;
 
-        e2 := exec(wizardform.handle, 'runas', expandconstant('{srcexe}'),
-                   expandconstant('/dir="{app}" /elevate'), '', SW_SHOW);
+        e2 := reexec(wizardform.handle, 'runas', expandconstant('{srcexe}'),
+                     expandconstant('/dir="{app}" /elevate'), '', SW_SHOW);
         if e2 > 32 then exit_process(0);
 
         result := false;
         msgbox(format('Administrator rights are required. Code: %d', [e2]),
                mberror, MB_OK);
     end;
+end;
+
+// Broadcast the WM_WINCOMPOSE_EXIT message for all WinCompose instances
+// to shutdown themselves.
+function PrepareToInstall(var needsrestart: boolean): string;
+var
+    dummy: integer;
+begin
+    postbroadcastmessage(registerwindowmessage('WM_WINCOMPOSE_EXIT'), 0, 0);
+    sleep(1000);
+    exec('>', 'cmd.exe /c taskkill /f /im {#NAME}.exe', '',
+         SW_HIDE, ewwaituntilterminated, dummy);
 end;
 
 // If running elevated and we haven't reached the directory selection page,
