@@ -12,10 +12,8 @@
 //
 
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Security.Permissions;
 using System.Windows.Forms.Integration;
 using System.Windows.Interop;
 using System.Xml;
@@ -28,7 +26,7 @@ namespace WinCompose
     {
         private static WinForms.NotifyIcon m_tray_icon;
         private static WinForms.MenuItem m_disable_item;
-        private static InterProcessMessaging m_messaging;
+        private static RemoteControl m_control;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
 
@@ -47,9 +45,9 @@ namespace WinCompose
                 WinForms.Application.EnableVisualStyles();
                 WinForms.Application.SetCompatibleTextRenderingDefault(false);
 
-                m_messaging = new InterProcessMessaging();
-                m_messaging.DisableEvent += DisableReceived;
-                m_messaging.TriggerDisableEvent();
+                m_control = new RemoteControl();
+                m_control.DisableEvent += DisableReceived;
+                m_control.TriggerDisableEvent();
 
                 m_tray_icon = new WinForms.NotifyIcon
                 {
@@ -82,7 +80,7 @@ namespace WinCompose
             finally
             {
                 Composer.Changed -= ComposerStateChanged;
-                m_messaging.DisableEvent -= DisableReceived;
+                m_control.DisableEvent -= DisableReceived;
 
                 Settings.StopWatchConfigFile();
                 KeyboardHook.Fini();
@@ -147,7 +145,7 @@ namespace WinCompose
         private static void DisableClicked(object sender, EventArgs e)
         {
             if (Composer.IsDisabled())
-                m_messaging.TriggerDisableEvent();
+                m_control.TriggerDisableEvent();
 
             Composer.ToggleDisabled();
         }
@@ -196,44 +194,5 @@ namespace WinCompose
 
         private static string m_version;
     }
-
-    public class InterProcessMessaging : WinForms.Form
-    {
-        public InterProcessMessaging()
-        {
-            // Forcing access to the window handle will let us receive messages
-            var unused = this.Handle;
-        }
-
-        [PermissionSet(SecurityAction.Demand, Name="FullTrust")]
-        protected override void WndProc(ref WinForms.Message m)
-        {
-            if (m.Msg == WM_WINCOMPOSE_DISABLE)
-            {
-                if (Process.GetCurrentProcess().Id != (int)m.WParam)
-                    DisableEvent(null, new EventArgs());
-                return;
-            }
-
-            base.WndProc(ref m);
-        }
-
-        /// <summary>
-        /// Send a message to all other processes to ask them to disable any
-        /// WinCompose hooks they may have installed.
-        /// </summary>
-        public void TriggerDisableEvent()
-        {
-            NativeMethods.PostMessage((IntPtr)0xffff, WM_WINCOMPOSE_DISABLE,
-                                      Process.GetCurrentProcess().Id, 0);
-        }
-
-        public event EventHandler DisableEvent = delegate {};
-
-        /// <summary>
-        /// A custom message ID used for inter-process communication
-        /// </summary>
-        private static readonly uint WM_WINCOMPOSE_DISABLE
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
-    }
 }
+
