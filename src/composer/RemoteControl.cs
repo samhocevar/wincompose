@@ -35,6 +35,12 @@ namespace WinCompose
                     DisableEvent(null, new EventArgs());
                 return;
             }
+            else if (m.Msg == WM_WINCOMPOSE_EXIT)
+            {
+                if (Process.GetCurrentProcess().Id != (int)m.WParam)
+                    ExitEvent(null, new EventArgs());
+                return;
+            }
 
             base.WndProc(ref m);
         }
@@ -50,9 +56,16 @@ namespace WinCompose
         }
 
         public event EventHandler DisableEvent = delegate {};
+        public event EventHandler ExitEvent = delegate {};
 
         /// <summary>
-        /// A custom message ID used for inter-process communication
+        /// A custom message ID used to kill other WinCompose instances
+        /// </summary>
+        private static readonly uint WM_WINCOMPOSE_EXIT
+            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_EXIT");
+
+        /// <summary>
+        /// A custom message ID used to disable other WinCompose instances
         /// </summary>
         private static readonly uint WM_WINCOMPOSE_DISABLE
             = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");

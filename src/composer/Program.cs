@@ -46,7 +46,8 @@ namespace WinCompose
                 WinForms.Application.SetCompatibleTextRenderingDefault(false);
 
                 m_control = new RemoteControl();
-                m_control.DisableEvent += DisableReceived;
+                m_control.DisableEvent += OnDisableEvent;
+                m_control.ExitEvent += OnExitEvent;
                 m_control.TriggerDisableEvent();
 
                 m_tray_icon = new WinForms.NotifyIcon
@@ -67,7 +68,7 @@ namespace WinCompose
                         new WinForms.MenuItem(i18n.Text.About, AboutClicked),
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
-                        new WinForms.MenuItem(i18n.Text.Exit, ExitClicked),
+                        new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
                     })
                 };
                 m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
@@ -80,7 +81,8 @@ namespace WinCompose
             finally
             {
                 Composer.Changed -= ComposerStateChanged;
-                m_control.DisableEvent -= DisableReceived;
+                m_control.DisableEvent -= OnDisableEvent;
+                m_control.ExitEvent -= OnExitEvent;
 
                 Settings.StopWatchConfigFile();
                 KeyboardHook.Fini();
@@ -150,12 +152,6 @@ namespace WinCompose
             Composer.ToggleDisabled();
         }
 
-        private static void DisableReceived(object sender, EventArgs e)
-        {
-            if (!Composer.IsDisabled())
-                Composer.ToggleDisabled();
-        }
-
         private static void AboutClicked(object sender, EventArgs e)
         {
             var about_box = new AboutBox();
@@ -168,7 +164,13 @@ namespace WinCompose
             Environment.Exit(0);
         }
 
-        private static void ExitClicked(object sender, EventArgs e)
+        private static void OnDisableEvent(object sender, EventArgs e)
+        {
+            if (!Composer.IsDisabled())
+                Composer.ToggleDisabled();
+        }
+
+        private static void OnExitEvent(object sender, EventArgs e)
         {
             WinForms.Application.Exit();
         }
