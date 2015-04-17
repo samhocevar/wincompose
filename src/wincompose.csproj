@@ -820,7 +820,7 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <Resource Include="res\key_compose_big.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="build.xml" />
+    <EmbeddedResource Include="build.xml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\contributors.html" />

@@ -13,9 +13,13 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using System.Security.Permissions;
 using System.Windows.Forms.Integration;
 using System.Windows.Interop;
+using System.Xml;
+using System.Xml.XPath;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
@@ -114,7 +118,8 @@ namespace WinCompose
                               ? i18n.Text.DisabledToolTip
                               : String.Format(i18n.Text.TrayToolTip,
                                         Settings.ComposeKey.Value.FriendlyName,
-                                        Settings.GetSequenceCount());
+                                        Settings.GetSequenceCount(),
+                                        Program.Version);
 
             m_disable_item.Checked = Composer.IsDisabled();
         }
@@ -169,6 +174,27 @@ namespace WinCompose
         {
             WinForms.Application.Exit();
         }
+
+        public static string Version
+        {
+            get
+            {
+                if (m_version == null)
+                {
+                    XmlDocument doc = new XmlDocument();
+                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.xml");
+                    doc.Load(stream);
+                    XmlNamespaceManager mgr = new XmlNamespaceManager(doc.NameTable);
+                    mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");
+
+                    m_version = doc.DocumentElement.SelectSingleNode("//ns:Project/ns:PropertyGroup/ns:ApplicationVersion", mgr).InnerText;
+                }
+
+                return m_version;
+            }
+        }
+
+        private static string m_version;
     }
 
     public class InterProcessMessaging : WinForms.Form

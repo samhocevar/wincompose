@@ -637,7 +637,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WinCompose on {0} ({1} sequences).
+        ///   Looks up a localized string similar to WinCompose v{2} on {0} ({1} sequences).
         /// </summary>
         public static string TrayToolTip {
             get {
