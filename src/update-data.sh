@@ -67,16 +67,16 @@ rm -f po/*~
 
 echo "[2/${STEPS}] Rebuild resx files…"
 for POFILE in po/*.po; do
-    LANG=$(basename ${POFILE} .po)
-    case $LANG in
-        zh_CN) LANG=zh-CHS ;;
-        zh) LANG=zh-CHT ;;
-        sc) LANG=it-CH ;;
+    L=$(basename ${POFILE} .po)
+    case $L in
+        zh_CN) L=zh-CHS ;;
+        zh) L=zh-CHT ;;
+        sc) L=it-CH ;;
         *@*) continue ;;
     esac
 
     for FILE in i18n/Text.resx unicode/Category.resx; do
-        DEST=${FILE%%.resx}.${LANG}.resx
+        DEST=${FILE%%.resx}.${L}.resx
         sed -e '/^  <data/,$d' < ${FILE} > ${DEST}
         cat ${POFILE} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
@@ -112,11 +112,11 @@ done
 echo "[3/${STEPS}] Rebuild Unicode translation files…"
 BASE=http://translationproject.org/latest/unicode-translation/
 PO=$(wget -qO- $BASE | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
-for LANG in $PO; do
-    printf "${LANG}... "
-    SRC=${CACHE}/${LANG}.po
+for L in $PO; do
+    printf "${L}... "
+    SRC=${CACHE}/${L}.po
     # Get latest translation if new
-    (cd ${CACHE} && wget -q -N ${BASE}/${LANG}.po)
+    (cd ${CACHE} && wget -q -N ${BASE}/${L}.po)
 
     # Parse data and put it in the Char.*.resx and Block.*.resx files
     for FILE in Char Block; do
@@ -126,7 +126,7 @@ for LANG in $PO; do
             #. UNICODE BLOCK: U+0000..U+007F
             Block) CODE='/^#[.] UNICODE BLOCK: / { split($0, a, /[+.]/); c="U" a[3] "_U" a[6]; }' ;;
         esac
-        DEST=unicode/${FILE}.${LANG}.resx
+        DEST=unicode/${FILE}.${L}.resx
         sed -e '/^  <data/,$d' < unicode/${FILE}.resx > ${DEST}
         if uname | grep -qi mingw; then unix2dos; else cat; fi < ${SRC} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \

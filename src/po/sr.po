@@ -270,9 +270,9 @@ msgstr ""
 msgid "Options…"
 msgstr ""
 
-#. {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:305 ID:TrayToolTip
-msgid "WinCompose on {0} ({1} sequences)"
+msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr ""
 
 #: i18n/Text.resx:308 ID:Behavior

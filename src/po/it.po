@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2015-03-23 22:56+0200\n"
 "Last-Translator: TWS <tablettws@gmail.com>\n"
-"Language-Team: Italian "
-"<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/wincompose/"
+"master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -269,9 +269,10 @@ msgstr "Opzioni — WinCompose"
 msgid "Options…"
 msgstr "Opzioni…"
 
-#. {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:305 ID:TrayToolTip
-msgid "WinCompose on {0} ({1} sequences)"
+#, fuzzy
+msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose su {0} ({1} sequences)"
 
 #: i18n/Text.resx:308 ID:Behavior
