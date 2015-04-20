@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-04-20 19:04+0200\n"
+"PO-Revision-Date: 2015-11-17 01:06+0000\n"
 "Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
-"fr/>\n"
+"Language-Team: French "
+"<https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.3-dev\n"
+"X-Generator: Weblate 2.5-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -196,7 +196,7 @@ msgstr "Délai :"
 
 #: i18n/Text.resx:248 ID:UnicodeInput
 msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
-msgstr ""
+msgstr "Saisie Unicode : Compose U 1 A 3 F insère le caractère U+1A3F"
 
 #: i18n/Text.resx:251 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
