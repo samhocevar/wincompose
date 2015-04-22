@@ -3,27 +3,31 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-04-22 11:27+0200\n"
+"Last-Translator: Arben Çokaj <acokaj@shkoder.net>\n"
+"Language-Team: Albanian "
+"<https://hosted.weblate.org/projects/wincompose/master/sq/>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "Autodetekto"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:126 ID:KeyLMenu
 msgid "Left Alt"
-msgstr ""
+msgstr "Majtas të gjitha"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:130 ID:KeyRMenu
 msgid "Right Alt"
-msgstr ""
+msgstr "Djathtas të gjitha"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:134 ID:KeyLControl
