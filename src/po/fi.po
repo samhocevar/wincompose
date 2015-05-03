@@ -271,7 +271,7 @@ msgstr "Asetukset…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:305 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2}, näppäin {0] ({1} merkkisarjaa)"
+msgstr "WinCompose v{2}, näppäin {0} ({1} merkkisarjaa)"
 
 #: i18n/Text.resx:308 ID:Behavior
 msgid "General Behavior"
