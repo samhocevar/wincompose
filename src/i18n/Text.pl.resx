@@ -156,6 +156,9 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Spacja</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Akcent słaby `</value>
   </data>
@@ -194,6 +197,9 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Odwiedź stronę</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Zakończ</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>napisał Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -237,16 +243,82 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Opis:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Zastosuj</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Zachowaj oryginalne zachowanie klawisza compose</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Wstawiaj spacje zerowej szerokości w aplikacjach Office</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emuluj CapsLock przy pomocy obu klawiszy Shift</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Klawisz Shift wyłącza CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>W wybranych kategoriach</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Opcje — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Opcje…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} na {0} ({1} sekwencji)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Zachowanie ogólne</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekwencje — WinCompose</value>
   </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Makra użytkownika</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose jest wyłączony</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Wstaw</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Test pisania:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Poprawki</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(milisekundy)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>O programie</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>O WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programowanie</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Tłumaczenie</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Specjalne podziękowania</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licencja</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose musi być uruchomione ponownie, by pewne zmiany zostały zastosowane.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Zgłoś błąd</value>
   </data>
 </root>

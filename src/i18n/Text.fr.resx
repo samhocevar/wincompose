@@ -274,7 +274,7 @@
     <value>Réglages…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose sur {0} ({1} séquences)</value>
+    <value>WinCompose v{2} sur {0} — {1} séquences</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Comportement</value>
@@ -320,5 +320,8 @@
   </data>
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose nécessite d’être redémarré pour appliquer certains changements.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Signaler un bug</value>
   </data>
 </root>

@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Välilyönti</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Askelpalautin</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Gravis-tarkenäppäin (`)</value>
   </data>
@@ -194,6 +200,9 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Käy verkkosivuilla</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Poistu</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>tekijä: Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -237,13 +246,82 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Kuvaus:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Käytä</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Säilytä Compose-näppäimen käyttäytyminen</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Lisää olemattoman levyisiä välilyöntejä Office-ohjelmiin</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Jäljittele Caps Lockkia kummallakin Shift-näppäimellä</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift-näppäin kytkee Caps Lockin pois</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Luokat</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>Valituissa luokissa</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Asetukset — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Asetukset…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2}, näppäin {0} ({1} merkkisarjaa)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Yleinen Käytös</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Merkkisarjat — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Käyttäjän makrot</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>Compose-näppäin on pois käytöstä</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Syötä</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Kokeile:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Parannukset</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(millisekunneissa)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Tietoja</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Tietoja WinComposesta</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Ohjelmointi</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Käännös</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Erikoiskiitokset</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Lisenssi</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose joudutaan käynnistämään uudelleen muutosten toimeenpanemiseksi.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Ilmoita viasta</value>
   </data>
 </root>

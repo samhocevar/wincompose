@@ -273,6 +273,9 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Опцыї…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} на {0} ({1} паслядоўнасцяў)</value>
+  </data>
   <data name="Behavior" xml:space="preserve">
     <value>Звычайныя паводзіны</value>
   </data>
