@@ -12,8 +12,11 @@
 //
 
 using System;
+using System.IO;
 using System.Text;
+using System.Threading;
 using System.Runtime.InteropServices;
+using Microsoft.Win32.SafeHandles;
 
 namespace WinCompose
 {
@@ -62,6 +65,25 @@ static internal class NativeMethods
     public static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
     [DllImport("user32")]
     public static extern uint RegisterWindowMessage(string message);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    public static extern bool DefineDosDevice(DDD dwFlags, string lpDeviceName, string lpTargetPath);
+    [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+    public static extern SafeFileHandle CreateFile(string lpFileName, FileAccess dwDesiredAccess,
+            uint dwShareMode, IntPtr SecurityAttributes, FileMode dwCreationDisposition,
+            uint dwFlagsAndAttributes, IntPtr hTemplateFile);
+
+    // General declaration
+    [DllImport("Kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    public static extern bool DeviceIoControl(SafeFileHandle hDevice, int IoControlCode, byte[] InBuffer,
+            int nInBufferSize, byte[] OutBuffer, int nOutBufferSize, out int pBytesReturned,
+            IntPtr Overlapped
+    );
+    // Overload
+    [DllImport("Kernel32.dll", SetLastError = true)]
+    public static extern bool DeviceIoControl(SafeFileHandle hDevice, int IoControlCode,
+            ref KeyboardIndicatorParameters InBuffer, int nInBufferSize, IntPtr OutBuffer,
+            int nOutBufferSize, out int pBytesReturned, IntPtr Overlapped);
 
     //
     // for KeyboardHook.cs

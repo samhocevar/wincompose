@@ -150,6 +150,28 @@ internal enum SC : uint
 };
 
 [Flags]
+internal enum DDD : uint
+{
+    RAW_TARGET_PATH   = 0x00000001,
+    REMOVE_DEFINITION = 0x00000002,
+};
+
+[Flags]
+public enum Locks : ushort
+{
+    None = 0,
+    KeyboardScrollLockOn = 1,
+    KeyboardNumLockOn = 2,
+    KeyboardCapsLockOn = 4
+}
+
+struct KeyboardIndicatorParameters
+{
+   public ushort UnitId;
+   public Locks LedFlags;
+};
+
+[Flags]
 internal enum LLKHF : uint
 {
     EXTENDED          = 0x01,

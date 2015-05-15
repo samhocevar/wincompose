@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -30,6 +31,9 @@ static class Composer
     public static void Init()
     {
         AnalyzeDeadkeys();
+
+        if (!NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, "kbd000000", @"\Device\KeyboardClass0"))
+            Log("DefineDosDevice Error {0}", Marshal.GetLastWin32Error());
     }
 
     /// <summary>
@@ -37,6 +41,36 @@ static class Composer
     /// </summary>
     public static void Fini()
     {
+        NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, "kbd000000", null);
+    }
+
+    private const int FileAnyAccess = 0;
+    private const int MethodBuffered = 0;
+    private const int FileDeviceKeyboard = 0x0000000b;
+
+    public static void ToggleLights(Locks locks)
+    {
+        var indicators = new KeyboardIndicatorParameters();
+
+        using (var hKeybd = NativeMethods.CreateFile(@"\\.\kbd000000", FileAccess.Write, 0, IntPtr.Zero, FileMode.Open, 0, IntPtr.Zero))
+        {
+            Log("CreateFile Error {0}", Marshal.GetLastWin32Error());
+            indicators.UnitId = 0;
+            indicators.LedFlags = locks;
+
+            var size = Marshal.SizeOf(typeof(KeyboardIndicatorParameters));
+
+            int bytesReturned;
+            NativeMethods.DeviceIoControl(hKeybd, IOCTL_KEYBOARD_SET_INDICATORS, ref indicators, (int)size,
+                IntPtr.Zero, 0, out bytesReturned, IntPtr.Zero);
+        }
+    }
+
+    private static int IOCTL_KEYBOARD_SET_INDICATORS = ControlCode(FileDeviceKeyboard, 0x0002, MethodBuffered, FileAnyAccess);
+
+    static int ControlCode(int deviceType, int function, int method, int access)
+    {
+        return ((deviceType) << 16) | ((access) << 14) | ((function) << 2) | (method);
     }
 
     /// <summary>
@@ -45,6 +79,8 @@ static class Composer
     /// </summary>
     public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
+        ToggleLights(Locks.KeyboardCapsLockOn);
+
         // Remember when the user touched a key for the last time
         m_last_key_time = DateTime.Now;
 
@@ -85,6 +121,8 @@ static class Composer
         keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
+
+
 
         string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
         string str_if_dead = KeyToUnicode(VK.SPACE);
