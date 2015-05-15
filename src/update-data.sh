@@ -2,7 +2,7 @@
 
 set -e
 
-STEPS=4
+STEPS=5
 CACHE=unicode/cache
 mkdir -p ${CACHE}
 
@@ -161,6 +161,34 @@ for x in unicode/*resx i18n/*resx; do
         echo "WARNING: $lang is commented out in installer.iss"
     fi
 done
+
+#
+# Build translator list
+#
+
+echo "[5/${STEPS}] Update contributor list…"
+printf '\xef\xbb\xbf' > res/.contributors.html
+cat >> res/.contributors.html << EOF
+<html>
+<body style="font-family: verdana, sans-serif; font-size: .7em;">
+<h3>Programming</h3>
+<ul>
+  <li>Sam Hocevar &lt;sam@hocevar.net&gt;</li>
+  <li>Benlitz &lt;dev@benlitz.net&gt;</li>
+  <li>gdow &lt;gdow@divroet.net&gt;</li>
+</ul>
+<h3>Translation</h3>
+<ul>
+EOF
+git log po | sed -ne 's/^Author: //p' | LANG=C sort | uniq \
+  | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g' | sed 's,.*,<li>&</li>,' \
+  >> res/.contributors.html
+cat >> res/.contributors.html << EOF
+</ul>
+</body>
+</html>
+EOF
+mv res/.contributors.html res/contributors.html
 
 #
 # Copy system files

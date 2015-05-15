@@ -8,8 +8,8 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Icon="/WinCompose;component/res/key_compose.png"
-        Height="350"
-        Width="600">
+        Height="400"
+        Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
