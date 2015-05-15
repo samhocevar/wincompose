@@ -65,7 +65,7 @@
 <Multi_key> <minus> <asciicircum> 	: "¯"   macron # MACRON
 <Multi_key> <asciicircum> <minus> 	: "¯"   macron # MACRON
 <Multi_key> <underscore> <underscore> 	: "¯"   macron # MACRON
-<Multi_key> <underscore> <asciicircum> 	: "¯"   macron # MACRON
+#<Multi_key> <underscore> <asciicircum>  	: "¯"   macron # MACRON
 <dead_breve> <space>             	: "˘"   breve # BREVE
 <dead_breve> <dead_breve>        	: "˘"   breve # BREVE
 <Multi_key> <space> <parenleft>		: "˘"   breve # BREVE
@@ -92,7 +92,7 @@
 
 # ASCII characters that may be difficult to access
 # on some keyboards.
-<Multi_key> <plus> <plus>        	: "#"   numbersign # NUMBER SIGN
+<Multi_key> <plus> <plus> <plus> 	: "#"   numbersign # NUMBER SIGN
 <Multi_key> <apostrophe> <space> 	: "'"   apostrophe # APOSTROPHE
 <Multi_key> <space> <apostrophe> 	: "'"   apostrophe # APOSTROPHE
 <Multi_key> <A> <T>              	: "@"   at # COMMERCIAL AT
@@ -114,7 +114,7 @@
 <Multi_key> <space> <comma>      	: "¸"   cedilla # CEDILLA
 <Multi_key> <comma> <comma> 		: "¸"   cedilla # CEDILLA
 
-<Multi_key> <parenleft> <minus>  	: "{"   braceleft # LEFT CURLY BRACKET
+#<Multi_key> <parenleft> <minus>  	: "{"   braceleft # LEFT CURLY BRACKET
 <Multi_key> <minus> <parenleft>  	: "{"   braceleft # LEFT CURLY BRACKET
 
 <Multi_key> <slash> <asciicircum> 	: "|"   bar # VERTICAL LINE
@@ -222,7 +222,7 @@
 <Multi_key> <equal> <W>          	: "₩"   U20a9 # WON SIGN
 # "₪" U20aa NEW SHEQEL SIGN
 <Multi_key> <d> <equal>          	: "₫"   U20ab # DONG SIGN
-<Multi_key> <equal> <d>          	: "₫"   U20ab # DONG SIGN
+#<Multi_key> <equal> <d>        	: "₫"   U20ab # DONG SIGN
 <Multi_key> <C> <equal>          	: "€"   EuroSign # EURO SIGN
 <Multi_key> <equal> <C>          	: "€"   EuroSign # EURO SIGN
 <Multi_key> <c> <equal>          	: "€"   EuroSign # EURO SIGN
@@ -874,7 +874,7 @@
 <Multi_key> <C> <period> 		: "Ċ"   U010A # LATIN CAPITAL LETTER C WITH DOT ABOVE
 <dead_abovedot> <c>              	: "ċ"   U010B # LATIN SMALL LETTER C WITH DOT ABOVE
 <Multi_key> <period> <c>         	: "ċ"   U010B # LATIN SMALL LETTER C WITH DOT ABOVE
-<Multi_key> <c> <period> 		: "ċ"   U010B # LATIN SMALL LETTER C WITH DOT ABOVE
+#<Multi_key> <c> <period> 	   : "ċ"   U010B # LATIN SMALL LETTER C WITH DOT ABOVE
 <dead_caron> <C>                 	: "Č"   U010C # LATIN CAPITAL LETTER C WITH CARON
 <Multi_key> <c> <C>              	: "Č"   U010C # LATIN CAPITAL LETTER C WITH CARON
 <Multi_key> <less> <C> 			: "Č"   U010C # LATIN CAPITAL LETTER C WITH CARON
@@ -937,7 +937,7 @@
 <Multi_key> <E> <less> 			: "Ě"   U011A # LATIN CAPITAL LETTER E WITH CARON
 <dead_caron> <e>                 	: "ě"   U011B # LATIN SMALL LETTER E WITH CARON
 <Multi_key> <c> <e>              	: "ě"   U011B # LATIN SMALL LETTER E WITH CARON
-<Multi_key> <less> <e> 			: "ě"   U011B # LATIN SMALL LETTER E WITH CARON
+#<Multi_key> <less> <e> 		: "ě"   U011B # LATIN SMALL LETTER E WITH CARON
 <Multi_key> <e> <less> 			: "ě"   U011B # LATIN SMALL LETTER E WITH CARON
 <dead_circumflex> <G>            	: "Ĝ"   U011C # LATIN CAPITAL LETTER G WITH CIRCUMFLEX
 <Multi_key> <asciicircum> <G>    	: "Ĝ"   U011C # LATIN CAPITAL LETTER G WITH CIRCUMFLEX
@@ -1102,7 +1102,7 @@
 <Multi_key> <underscore> <o>     	: "ō"   U014D # LATIN SMALL LETTER O WITH MACRON
 <Multi_key> <o> <underscore>     	: "ō"   U014D # LATIN SMALL LETTER O WITH MACRON
 <Multi_key> <minus> <o>         	: "ō"   U014D # LATIN SMALL LETTER O WITH MACRON
-<Multi_key> <o> <minus>         	: "ō"   U014D # LATIN SMALL LETTER O WITH MACRON
+#<Multi_key> <o> <minus>        	: "ō"   U014D # LATIN SMALL LETTER O WITH MACRON
 <dead_breve> <O>                 	: "Ŏ"   U014E # LATIN CAPITAL LETTER O WITH BREVE
 <Multi_key> <U> <O>              	: "Ŏ"   U014E # LATIN CAPITAL LETTER O WITH BREVE
 <Multi_key> <b> <O>              	: "Ŏ"   U014E # LATIN CAPITAL LETTER O WITH BREVE
@@ -2743,7 +2743,7 @@
 <dead_belowdot> <I>              	: "Ị"   U1ECA # LATIN CAPITAL LETTER I WITH DOT BELOW
 <Multi_key> <exclam> <I>         	: "Ị"   U1ECA # LATIN CAPITAL LETTER I WITH DOT BELOW
 <dead_belowdot> <i>              	: "ị"   U1ECB # LATIN SMALL LETTER I WITH DOT BELOW
-<Multi_key> <exclam> <i>         	: "ị"   U1ECB # LATIN SMALL LETTER I WITH DOT BELOW
+#<Multi_key> <exclam> <i>         : "ị"   U1ECB # LATIN SMALL LETTER I WITH DOT BELOW
 <dead_belowdot> <O>              	: "Ọ"   U1ECC # LATIN CAPITAL LETTER O WITH DOT BELOW
 <Multi_key> <exclam> <O>         	: "Ọ"   U1ECC # LATIN CAPITAL LETTER O WITH DOT BELOW
 <dead_belowdot> <o>              	: "ọ"   U1ECD # LATIN SMALL LETTER O WITH DOT BELOW
@@ -4555,7 +4555,7 @@
 <Multi_key> <KP_Divide> <rightarrow> 	: "↛"   U219B # RIGHTWARDS ARROW WITH STROKE
 <Multi_key> <slash> <U2194>  	: "↮"   U21AE # LEFT RIGHT ARROW WITH STROKE
 <Multi_key> <KP_Divide> <U2194> 	: "↮"   U21AE # LEFT RIGHT ARROW WITH STROKE
-<Multi_key> <less> <minus> 	: "←" U2190 # LEFTWARDS ARROW
+<Multi_key> <less> <minus> <minus> 	: "←" U2190 # LEFTWARDS ARROW
 <Multi_key> <minus> <greater> 	: "→" U2192 # RIGHTWARDS ARROW
 <Multi_key> <U2203> <U0338> 	: "∄"   U2204 # THERE DOES NOT EXIST
 <Multi_key> <braceleft> <braceright>	: "∅"   U2205 # EMPTY SET
