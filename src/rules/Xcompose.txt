@@ -38,7 +38,7 @@ include "%L"
 <Multi_key> <apostrophe> <space>	: "’"	U2019		# RIGHT SINGLE QUOTATION MARK
 <Multi_key> <apostrophe> <apostrophe>	: "”"	U201D		# RIGHT DOUBLE QUOTATION MARK
 <Multi_key> <grave> <space>		: "‘"	U2018		# LEFT SINGLE QUOTATION MARK
-<Multi_key> <grave> <grave>		: "“"	U201C		# LEFT DOUBLE QUOTATION MARK
+<Multi_key> <2> <grave> <space>		: "“"	U201C		# LEFT DOUBLE QUOTATION MARK
 <Multi_key> <6> <apostrophe>		: "‘"	U2018		# LEFT SINGLE QUOTATION MARK (high 6)
 <Multi_key> <6> <quotedbl>		: "“"	U201C		# LEFT DOUBLE QUOTATION MARK (66)
 <Multi_key> <9> <apostrophe>		: "’"	U2019		# RIGHT SINGLE QUOTATION MARK (high 9)
@@ -79,7 +79,7 @@ include "%L"
 <Multi_key> <less> <minus> <greater>	: "↔"	U2194           # LEFT RIGHT ARROW (kragen's)
 
 <Multi_key> <Left> <Left>		: "←"	leftarrow	# LEFTWARDS ARROW
-<Multi_key> <Up> <Up>			: "↑"	uparrow		# UPWARDS ARROW
+<Multi_key> <Up> <Up> <Up>		: "↑"	uparrow		# UPWARDS ARROW
 <Multi_key> <Right> <Right>		: "→"	rightarrow	# RIGHTWARDS ARROW
 <Multi_key> <Down> <Down>		: "↓"	downarrow	# DOWNWARDS ARROW
 <Multi_key> <Left> <Right>		: "↔"	U2194           # LEFT RIGHT ARROW (kragen's)
@@ -432,7 +432,7 @@ include "%L"
 # Sorry, couldn't think of better ones for these.  Might want .s for SAN.
 <Multi_key> <asterisk> <question>      : "Ϛ"	U03DA	# GREEK LETTER STIGMA
 <Multi_key> <asterisk> <slash>	       : "ϛ"	U03DB	# GREEK SMALL LETTER STIGMA
-<Multi_key> <asterisk> <apostrophe>    : "ʹ"	U02B9	# MODIFIER LETTER PRIME, canonically equivalent to U0374 GREEK NUMERAL SIGN
+<Multi_key> <asterisk> <apostrophe> <space>   : "ʹ"	U02B9	# MODIFIER LETTER PRIME, canonically equivalent to U0374 GREEK NUMERAL SIGN
 # While we're at it...
 <Multi_key> <asterisk> <period> <apostrophe>	: "′"	U2032	# PRIME
 <Multi_key> <asterisk> <period> <quotedbl>      : "″"	U2033	# DOUBLE PRIME
@@ -805,7 +805,7 @@ include "%L"
 <Multi_key> <backslash> <period>	: "̇"	U0307	# COMBINING DOT ABOVE
 <Multi_key> <backslash> <quotedbl>	: "̈"	U0308	# COMBINING DIAERESIS
 <Multi_key> <backslash> <question>	: "̉"	U0309	# COMBINING HOOK ABOVE
-<Multi_key> <backslash> <o>		: "̊"	U030a	# COMBINING RING ABOVE
+#<Multi_key> <backslash> <o>		: "̊"	U030a	# COMBINING RING ABOVE
 # That now conflicts with the new 🙌 in the system xcompose.  Alternative:
 <Multi_key> <backslash> <0>   	       	: "̊"	U030a	# COMBINING RING ABOVE
 <Multi_key> <backslash> <backslash> <apostrophe>	: "̋"	U030b	# COMBINING DOUBLE ACUTE ACCENT -- ??
