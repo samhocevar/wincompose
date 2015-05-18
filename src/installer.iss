@@ -111,3 +111,75 @@ Type: dirifempty; Name: "{app}\res"
 Type: dirifempty; Name: "{app}\po"
 Type: dirifempty; Name: "{app}"
 
+[Code]
+// Some Win32 API hooks
+procedure exit_process(uExitCode: uint);
+    external 'ExitProcess@kernel32.dll stdcall';
+
+function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
+                lpParameters: string; lpDirectory: string;
+                nShowCmd: integer): thandle;
+    external 'ShellExecuteW@shell32.dll stdcall';
+
+// Installer state
+var
+    state: (s_run_1, s_run_2, s_skipped);
+
+// Initialize installer state.
+procedure InitializeWizard;
+var
+    i: integer;
+begin
+    state := s_run_1;
+    for i := 1 to paramcount do
+        if comparetext(paramstr(i), '/elevate') = 0 then state := s_run_2;
+end;
+
+// If we're in the target directory selection page, check that we
+// can actually install files in that directory. Otherwise, we hijack
+// NextButtonClick() to re-execute ourselves in admin mode.
+function NextButtonClick(page_id: integer): boolean;
+var
+    e1: boolean;
+    e2: thandle;
+begin
+    result := true;
+    if (state = s_run_1) and (page_id = wpselectdir) then
+    begin
+        createdir(expandconstant('{app}'));
+        e1 := savestringtofile(expandconstant('{app}/.stamp'), '', false);
+        deletefile(expandconstant('{app}/.stamp'));
+        deltree(expandconstant('{app}'), true, false, false);
+        if e1 then exit;
+
+        e2 := reexec(wizardform.handle, 'runas', expandconstant('{srcexe}'),
+                     expandconstant('/dir="{app}" /elevate'), '', SW_SHOW);
+        if e2 > 32 then exit_process(0);
+
+        result := false;
+        msgbox(format('Administrator rights are required. Code: %d', [e2]),
+               mberror, MB_OK);
+    end;
+end;
+
+// Broadcast the WM_WINCOMPOSE_EXIT message for all WinCompose instances
+// to shutdown themselves.
+function PrepareToInstall(var needsrestart: boolean): string;
+var
+    dummy: integer;
+begin
+    postbroadcastmessage(registerwindowmessage('WM_WINCOMPOSE_EXIT'), 0, 0);
+    sleep(1000);
+    exec('>', 'cmd.exe /c taskkill /f /im {#NAME}.exe', '',
+         SW_HIDE, ewwaituntilterminated, dummy);
+end;
+
+// If running elevated and we haven't reached the directory selection page,
+// skip all pages, including the directory selection page.
+function ShouldSkipPage(page_id: integer): boolean;
+begin
+    result := (state = s_run_2) and (page_id <= wpselectdir);
+    if (state = s_run_2) and (page_id = wpselectdir) then
+        state := s_skipped;
+end;
+

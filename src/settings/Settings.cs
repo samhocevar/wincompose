@@ -39,7 +39,7 @@ namespace WinCompose
             DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
             BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
             KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
-            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", true);
+            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
             EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
             ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
         }
@@ -135,7 +135,7 @@ namespace WinCompose
 
             if (Language.Value != "")
             {
-                if (!m_valid_languages.ContainsKey(Language.Value))
+                if (m_valid_languages.ContainsKey(Language.Value))
                 {
                     try
                     {
@@ -201,19 +201,19 @@ namespace WinCompose
             return m_sequences;
         }
 
-        public static bool IsValidPrefix(List<Key> sequence)
+        public static bool IsValidPrefix(List<Key> seq, bool ignore_case)
         {
-            return m_sequences.IsValidPrefix(sequence);
+            return m_sequences.IsValidPrefix(seq, ignore_case);
         }
 
-        public static bool IsValidSequence(List<Key> sequence)
+        public static bool IsValidSequence(List<Key> seq, bool ignore_case)
         {
-            return m_sequences.IsValidSequence(sequence);
+            return m_sequences.IsValidSequence(seq, ignore_case);
         }
 
-        public static string GetSequenceResult(List<Key> sequence)
+        public static string GetSequenceResult(List<Key> seq, bool ignore_case)
         {
-            return m_sequences.GetSequenceResult(sequence);
+            return m_sequences.GetSequenceResult(seq, ignore_case);
         }
 
         public static List<SequenceDescription> GetSequenceDescriptions()
@@ -254,9 +254,9 @@ namespace WinCompose
         private static void LoadSequenceString(string line)
         {
             // Only bother with sequences that start with <Multi_key>
-            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\"")*)""[^#]*#?\s*(.*)");
-            //                                             ^^^^^^^         ^^^^^^^^^^^^^^            ^^^^
-            //                                              keys              result                 desc
+            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
+            //                                             ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
+            //                                              keys               result                 desc
             if (m1.Groups.Count < 4)
                 return;
 
@@ -411,14 +411,14 @@ namespace WinCompose
             // Enumerate all languages that have an embedded resource file version
             ResourceManager rm = new ResourceManager(typeof(i18n.Text));
             CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            foreach (CultureInfo culture in cultures)
+            foreach (CultureInfo ci in cultures)
             {
-                string name = culture.Name;
-                string native_name = culture.NativeName;
+                string name = ci.Name;
+                string native_name = ci.TextInfo.ToTitleCase(ci.NativeName);
 
                 if (name != "") try
                 {
-                    if (rm.GetResourceSet(culture, true, false) != null)
+                    if (rm.GetResourceSet(ci, true, false) != null)
                     {
                         // HACK: second part of our hack to support Sardinian
                         if (name == "it-CH")

@@ -22,7 +22,7 @@ namespace WinCompose
 
 static class KeyboardHook
 {
-    public static void Install()
+    public static void Init()
     {
         if (Environment.OSVersion.Platform == PlatformID.Win32NT
              || Environment.OSVersion.Platform == PlatformID.Win32S
@@ -37,7 +37,7 @@ static class KeyboardHook
         }
     }
 
-    public static void Uninstall()
+    public static void Fini()
     {
         // XXX: this will crash if called from the GC Finalizer Thread because
         // the hook needs to be removed from the same thread that installed it.

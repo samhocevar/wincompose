@@ -69,22 +69,38 @@ public class Key
         { VK.RIGHT, "▶" },
     };
 
-    private static readonly Dictionary<VK, string> m_key_names = new Dictionary<VK, string>
+    /// <summary>
+    /// A list of keys for which we have a friendly name. This is used in
+    /// the GUI, where the user can choose which key acts as the compose
+    /// key. It needs to be lazy-initialised, because we create Key objects
+    /// way before the application language is set, and we need the
+    /// translated version.
+    /// </summary>
+    private static Dictionary<Key, string> m_key_names = null;
+
+    private static Dictionary<Key, string> GetKeyNames()
     {
-        { VK.LMENU, i18n.Text.KeyLMenu },
-        { VK.RMENU, i18n.Text.KeyRMenu },
-        { VK.LCONTROL, i18n.Text.KeyLControl },
-        { VK.RCONTROL, i18n.Text.KeyRControl },
-        { VK.LWIN, i18n.Text.KeyLWin },
-        { VK.RWIN, i18n.Text.KeyRWin },
-        { VK.CAPITAL, i18n.Text.KeyCapital },
-        { VK.NUMLOCK, i18n.Text.KeyNumLock },
-        { VK.PAUSE, i18n.Text.KeyPause },
-        { VK.APPS, i18n.Text.KeyApps },
-        { VK.ESCAPE, i18n.Text.KeyEscape },
-        { VK.SCROLL, i18n.Text.KeyScroll },
-        { VK.INSERT, i18n.Text.KeyInsert },
-    };
+        return new Dictionary<Key, string>
+        {
+            { new Key(VK.LMENU), i18n.Text.KeyLMenu },
+            { new Key(VK.RMENU), i18n.Text.KeyRMenu },
+            { new Key(VK.LCONTROL), i18n.Text.KeyLControl },
+            { new Key(VK.RCONTROL), i18n.Text.KeyRControl },
+            { new Key(VK.LWIN), i18n.Text.KeyLWin },
+            { new Key(VK.RWIN), i18n.Text.KeyRWin },
+            { new Key(VK.CAPITAL), i18n.Text.KeyCapital },
+            { new Key(VK.NUMLOCK), i18n.Text.KeyNumLock },
+            { new Key(VK.PAUSE), i18n.Text.KeyPause },
+            { new Key(VK.APPS), i18n.Text.KeyApps },
+            { new Key(VK.ESCAPE), i18n.Text.KeyEscape },
+            { new Key(VK.SCROLL), i18n.Text.KeyScroll },
+            { new Key(VK.INSERT), i18n.Text.KeyInsert },
+
+            { new Key(" "),    i18n.Text.KeySpace },
+            { new Key("\r"),   i18n.Text.KeyReturn },
+            { new Key("\x1b"), i18n.Text.KeyEscape },
+        };
+    }
 
     private readonly VK m_vk;
 
@@ -108,10 +124,11 @@ public class Key
     {
         get
         {
+            if (m_key_names == null)
+                m_key_names = GetKeyNames();
             string ret;
-            if (m_key_names.TryGetValue(m_vk, out ret))
+            if (m_key_names.TryGetValue(this, out ret))
                 return ret;
-
             return m_str ?? string.Format("VK.{0}", m_vk);
         }
     }
@@ -210,34 +227,34 @@ public class SequenceTree
         m_children[sequence[0]].Add(subsequence, result, utf32, desc);
     }
 
-    public bool IsValidPrefix(List<Key> sequence)
+    public bool IsValidPrefix(List<Key> sequence, bool ignore_case)
     {
-        SequenceTree subtree = GetSubtree(sequence);
-        return subtree != null;
+        Search flags = Search.Prefixes;
+        if (ignore_case)
+            flags |= Search.IgnoreCase;
+        return GetSubtree(sequence, flags) != null;
     }
 
-    public bool IsValidSequence(List<Key> sequence)
+    public bool IsValidSequence(List<Key> sequence, bool ignore_case)
     {
-        SequenceTree subtree = GetSubtree(sequence);
-        return subtree != null && subtree.m_result != null;
+        Search flags = Search.Sequences;
+        if (ignore_case)
+            flags |= Search.IgnoreCase;
+        return GetSubtree(sequence, flags) != null;
     }
 
-    public string GetSequenceResult(List<Key> sequence)
+    public string GetSequenceResult(List<Key> sequence, bool ignore_case)
     {
-        SequenceTree tree = GetSubtree(sequence);
-        return tree == null ? "" : tree.m_result == null ? "" : tree.m_result;
+        Search flags = Search.Sequences;
+        if (ignore_case)
+            flags |= Search.IgnoreCase;
+        SequenceTree node = GetSubtree(sequence, flags);
+        return node == null ? "" : node.m_result;
     }
 
-    public SequenceTree GetSubtree(List<Key> sequence)
-    {
-        if (sequence.Count == 0)
-            return this;
-        if (!m_children.ContainsKey(sequence[0]))
-            return null;
-        var subsequence = sequence.GetRange(1, sequence.Count - 1);
-        return m_children[sequence[0]].GetSubtree(subsequence);
-    }
-
+    /// <summary>
+    /// List all possible sequences for the GUI.
+    /// </summary>
     public List<SequenceDescription> GetSequenceDescriptions()
     {
         List<SequenceDescription> ret = new List<SequenceDescription>();
@@ -246,6 +263,63 @@ public class SequenceTree
         return ret;
     }
 
+    [Flags]
+    private enum Search
+    {
+        Sequences  = 1,
+        Prefixes   = 2,
+        IgnoreCase = 4,
+    };
+
+    /// <summary>
+    /// If the first key of <see cref="sequences"/> matches a known child,
+    /// return that child. Otherwise, return null.
+    /// If <see cref="non_terminal"/> is true, but we are a rule with no
+    /// children, we return null. This lets us check for strict prefixes
+    /// in addition to full secquences.
+    /// </summary>
+    private SequenceTree GetSubtree(List<Key> sequence, Search flags)
+    {
+        if (sequence.Count == 0)
+        {
+            if ((flags & Search.Prefixes) != 0 && m_children.Count == 0)
+                return null;
+            if ((flags & Search.Sequences) != 0 && m_result == null)
+                return null;
+            return this;
+        }
+
+        List<Key> keys = new List<Key>{ sequence[0] };
+        if ((flags & Search.IgnoreCase) != 0 && sequence[0].IsPrintable())
+        {
+            Key upper = new Key(sequence[0].ToString().ToUpper());
+            if (upper != sequence[0])
+                keys.Add(upper);
+
+            Key lower = new Key(sequence[0].ToString().ToLower());
+            if (lower != sequence[0])
+                keys.Add(lower);
+        }
+
+        foreach (Key k in keys)
+        {
+            if (!m_children.ContainsKey(k))
+                continue;
+
+            var subsequence = sequence.GetRange(1, sequence.Count - 1);
+            var node = m_children[k].GetSubtree(subsequence, flags);
+            if (node != null)
+                return node;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Build a list of sequence descriptions by recursively adding our
+    /// children to <see cref="list"/>. The output structure is suitable
+    /// for the GUI.
+    /// </summary>
     private void BuildSequenceDescriptions(List<SequenceDescription> list,
                                            List<Key> path)
     {

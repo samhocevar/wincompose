@@ -8,8 +8,8 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Icon="/WinCompose;component/res/key_compose.png"
-        Height="350"
-        Width="600">
+        Height="400"
+        Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -25,12 +25,11 @@
                 <Button Margin="10, 2, 10, 2" Content="Contributors" Command="{Binding SwitchDocumentCommand}" CommandParameter="contributors"/>
                 <Button Margin="10, 2, 10, 2" Content="License" Command="{Binding SwitchDocumentCommand}" CommandParameter="licence"/>
                 <Button Margin="10, 2, 10, 2" Content="{x:Static i18n:Text.VisitWebsite}" Command="{Binding OpenWebsiteCommand}"/>
+                <Button Margin="10, 2, 10, 2" Content="{x:Static i18n:Text.ReportBug}" Command="{Binding OpenReportBugCommand}"/>
             </StackPanel>
         </Grid>
         <GroupBox Grid.Column="1" Header="{Binding ActiveDocumentTitle}">
-            <ScrollViewer>
-                <RichTextBox Margin="10, 10 10, 10" wincompose:AboutBox.Document="{Binding ActiveDocument}" IsReadOnly="True" IsDocumentEnabled="True"/>
-            </ScrollViewer>
+            <WebBrowser Margin="10, 10 10, 10" wincompose:AboutBox.WebContent="{Binding ActiveDocument}" />
         </GroupBox>
     </Grid>
 </Window>

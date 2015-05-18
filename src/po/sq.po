@@ -1,58 +1,53 @@
-# Indonesian translations for PACKAGE package.
-# Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2014.
-# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2014-06-17 03:33+0200\n"
-"Last-Translator: Rudy Tantono <rudzlong@gmail.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/wincompose/"
-"master/id/>\n"
-"Language: id\n"
+"PO-Revision-Date: 2015-05-03 17:08+0200\n"
+"Last-Translator: Arben Çokaj <acokaj@shkoder.net>\n"
+"Language-Team: Albanian "
+"<https://hosted.weblate.org/projects/wincompose/master/sq/>\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "Autodetekto"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:126 ID:KeyLMenu
 msgid "Left Alt"
-msgstr "Alt bagian kiri"
+msgstr "Majtas të gjitha"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:130 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Alt bagian kanan"
+msgstr "Djathtas të gjitha"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:134 ID:KeyLControl
 msgid "Left Control"
-msgstr "Control bagian kiri"
+msgstr "Kontrolli majtas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:138 ID:KeyRControl
 msgid "Right Control"
-msgstr "Control bagian kanan"
+msgstr "Kontrolli djathtas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:142 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Windows bagian kiri"
+msgstr "Dritaret majtas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:146 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Windows bagian kanan"
+msgstr "Dritaret djathtas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:150 ID:KeyCapital
@@ -67,17 +62,17 @@ msgstr "Num Lock"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:158 ID:KeyPause
 msgid "Pause"
-msgstr "Jeda"
+msgstr "Pauzë"
 
 #. Also known as Application key
 #: i18n/Text.resx:162 ID:KeyApps
 msgid "Menu"
-msgstr "Menu"
+msgstr "Meny"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:166 ID:KeyEscape
 msgid "Escape"
-msgstr "Escape"
+msgstr "Shmang"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:170 ID:KeyScroll
@@ -87,112 +82,112 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Hapësirë"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Enter"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:182 ID:Obsolete016
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Theks solemn `"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:185 ID:Obsolete017
 msgid "500 milliseconds"
-msgstr "500 milidetik"
+msgstr "500 milisekonda"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:188 ID:Obsolete018
 msgid "1 second"
-msgstr "1 detik"
+msgstr "1 sekondë"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:191 ID:Obsolete019
 msgid "2 seconds"
-msgstr "2 detik"
+msgstr "2 sekonda"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:194 ID:Obsolete020
 msgid "3 seconds"
-msgstr "3 detik"
+msgstr "3 sekonda"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:197 ID:Obsolete021
 msgid "5 seconds"
-msgstr "5 detik"
+msgstr "5 sekonda"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:200 ID:Obsolete022
 msgid "10 seconds"
-msgstr "10 detik"
+msgstr "10 sekonda"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:203 ID:Obsolete023
 msgid "None"
-msgstr "Kosong"
+msgstr "Asnjë"
 
 #: i18n/Text.resx:206 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr ""
+msgstr "Shfaq sekuencat…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:210 ID:Disable
 msgid "Disable"
-msgstr "Non-aktifkan"
+msgstr "Pasivizo"
 
 #: i18n/Text.resx:213 ID:Restart
 msgid "Restart"
-msgstr "Restart"
+msgstr "Rifillo"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:216 ID:Obsolete027
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #. A button to visit the website
 #: i18n/Text.resx:220 ID:VisitWebsite
 msgid "Visit Website"
-msgstr ""
+msgstr "Vizito uebfaqen"
 
 #: i18n/Text.resx:223 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Dalje"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr ""
+msgstr "nga Sam Hocevar <sam@hocevar.net>"
 
 #: i18n/Text.resx:229 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "Sekuenca"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:232 ID:Obsolete039
 msgid "Sequence"
-msgstr ""
+msgstr "Sekuencë"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:235 ID:Obsolete041
 msgid "Unicode"
-msgstr ""
+msgstr "Unikod"
 
 #: i18n/Text.resx:238 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "Filtri i kërkimit:"
 
 #: i18n/Text.resx:241 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "Çelësi i kompozimit:"
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:245 ID:ResetDelay
 msgid "Delay:"
-msgstr ""
+msgstr "Vonesa:"
 
 #: i18n/Text.resx:248 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
@@ -208,29 +203,29 @@ msgstr ""
 
 #: i18n/Text.resx:257 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "Gjuha e ndërfaqes:"
 
 #. Close the settings window
 #: i18n/Text.resx:261 ID:Close
 msgid "Close"
-msgstr ""
+msgstr "Mbyll"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:265 ID:Obsolete050
 msgid "Copy Character"
-msgstr ""
+msgstr "Kopjo karakterin"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:269 ID:Obsolete051
 msgid "Description:"
-msgstr ""
+msgstr "Përshkrimi:"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:273 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Apliko"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:277 ID:KeepOriginalKey
@@ -306,9 +301,8 @@ msgid "Tweaks"
 msgstr ""
 
 #: i18n/Text.resx:333 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "500 milidetik"
+msgstr ""
 
 #. About box menu entry
 #: i18n/Text.resx:337 ID:About
@@ -353,149 +347,149 @@ msgstr ""
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
 msgid "Other, Control"
-msgstr "Yang lain, Kendali"
+msgstr ""
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:126 ID:Format
 msgid "Other, Format"
-msgstr "Yang lain, susun"
+msgstr ""
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:130 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr "Yang lain, belum ditentukan"
+msgstr ""
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:134 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "Yang lain, Penggunaan Pribadi"
+msgstr ""
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:138 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Yang lain, Surrogate"
+msgstr ""
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:142 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr "Huruf, Huruf kecil"
+msgstr ""
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:146 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr "Huruf, Perubah"
+msgstr ""
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:150 ID:OtherLetter
 msgid "Letter, Other"
-msgstr "Huruf, Yang Lain"
+msgstr ""
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:154 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Huruf, Huruf Judul"
+msgstr ""
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:158 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr "Huruf, Huruf Besar"
+msgstr ""
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:162 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Tanda, Kombinasi Spasi"
+msgstr ""
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:166 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr "Tanda, Enclosing"
+msgstr ""
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:170 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Tanda, Bukan Spasi"
+msgstr ""
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:174 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr "Nomor, Digit Desimal"
+msgstr ""
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:178 ID:LetterNumber
 msgid "Number, Letter"
-msgstr "Nomor, Huruf"
+msgstr ""
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:182 ID:OtherNumber
 msgid "Number, Other"
-msgstr "Nomor, Yang Lain"
+msgstr ""
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:186 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr "Puntuasi, Penghubung"
+msgstr ""
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:190 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr "Puntuasi, Minus"
+msgstr ""
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:194 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr "Puntuasi, Tutup"
+msgstr ""
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:198 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr "Puntuasi, Kutip Tutup"
+msgstr ""
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:202 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr "Puntuasi, Kutip Buka"
+msgstr ""
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:206 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr "Puntuasi, Yang Lain"
+msgstr ""
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:210 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr "Puntuasi, Buka"
+msgstr ""
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:214 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr "Simbol, Mata Uang"
+msgstr ""
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:218 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr "Simbol, Pengubah"
+msgstr ""
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:222 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr "Simbol, Matematika"
+msgstr ""
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:226 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr "Simbol, Yang Lain"
+msgstr ""
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:230 ID:LineSeparator
 msgid "Separator, Line"
-msgstr "Pemisah, Garis"
+msgstr ""
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:234 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr "Pemisah, Paragraf"
+msgstr ""
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr "Pemisah, Spasi"
+msgstr ""

@@ -13,26 +13,33 @@
 
 using System;
 using System.Diagnostics;
-using System.IO; // for updater
+using System.IO;
 using System.Net; // for updater
+using System.Reflection;
 using System.Text.RegularExpressions; // for updater
 using System.Windows.Forms.Integration;
+using System.Windows.Interop;
+using System.Xml;
+using System.Xml.XPath;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {
     static class Program
     {
-        private static WinForms.NotifyIcon m_notifyicon;
+        private static WinForms.NotifyIcon m_tray_icon;
+        private static WinForms.MenuItem m_disable_item;
+        private static RemoteControl m_control;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
 
         [STAThread]
         static void Main()
         {
+            Composer.Init();
             Settings.LoadConfig();
             Settings.LoadSequences();
-            KeyboardHook.Install();
+            KeyboardHook.Init();
 
             Settings.StartWatchConfigFile();
 
@@ -41,7 +48,12 @@ namespace WinCompose
                 WinForms.Application.EnableVisualStyles();
                 WinForms.Application.SetCompatibleTextRenderingDefault(false);
 
-                m_notifyicon = new WinForms.NotifyIcon
+                m_control = new RemoteControl();
+                m_control.DisableEvent += OnDisableEvent;
+                m_control.ExitEvent += OnExitEvent;
+                m_control.TriggerDisableEvent();
+
+                m_tray_icon = new WinForms.NotifyIcon
                 {
                     Visible = true,
                     Icon = Properties.Resources.IconNormal,
@@ -54,14 +66,15 @@ namespace WinCompose
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
+                        /* Keep a reference on this entry */ m_disable_item =
                         new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
                         new WinForms.MenuItem(i18n.Text.About, AboutClicked),
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
-                        new WinForms.MenuItem(i18n.Text.Exit, ExitClicked),
+                        new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
                     })
                 };
-                m_notifyicon.DoubleClick += NotifyiconDoubleclicked;
+                m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
 
                 Composer.Changed += ComposerStateChanged;
 
@@ -69,14 +82,18 @@ namespace WinCompose
                 CheckForUpdates();
 
                 WinForms.Application.Run();
-                m_notifyicon.Dispose();
+                m_tray_icon.Dispose();
             }
             finally
             {
                 Composer.Changed -= ComposerStateChanged;
-                KeyboardHook.Uninstall();
+                m_control.DisableEvent -= OnDisableEvent;
+                m_control.ExitEvent -= OnExitEvent;
+
                 Settings.StopWatchConfigFile();
+                KeyboardHook.Fini();
                 Settings.SaveConfig();
+                Composer.Fini();
             }
         }
 
@@ -100,14 +117,17 @@ namespace WinCompose
 
         private static void ComposerStateChanged(object sender, EventArgs e)
         {
-            m_notifyicon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
-                              : Composer.IsComposing() ? Properties.Resources.IconActive
-                                                       : Properties.Resources.IconNormal;
-            m_notifyicon.Text = Composer.IsDisabled()
+            m_tray_icon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
+                             : Composer.IsComposing() ? Properties.Resources.IconActive
+                                                      : Properties.Resources.IconNormal;
+            m_tray_icon.Text = Composer.IsDisabled()
                               ? i18n.Text.DisabledToolTip
                               : String.Format(i18n.Text.TrayToolTip,
                                         Settings.ComposeKey.Value.FriendlyName,
-                                        Settings.GetSequenceCount());
+                                        Settings.GetSequenceCount(),
+                                        Program.Version);
+
+            m_disable_item.Checked = Composer.IsDisabled();
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
@@ -132,9 +152,10 @@ namespace WinCompose
 
         private static void DisableClicked(object sender, EventArgs e)
         {
+            if (Composer.IsDisabled())
+                m_control.TriggerDisableEvent();
+
             Composer.ToggleDisabled();
-            WinForms.MenuItem item = sender as WinForms.MenuItem;
-            item.Checked = Composer.IsDisabled();
         }
 
         private static void AboutClicked(object sender, EventArgs e)
@@ -149,7 +170,13 @@ namespace WinCompose
             Environment.Exit(0);
         }
 
-        private static void ExitClicked(object sender, EventArgs e)
+        private static void OnDisableEvent(object sender, EventArgs e)
+        {
+            if (!Composer.IsDisabled())
+                Composer.ToggleDisabled();
+        }
+
+        private static void OnExitEvent(object sender, EventArgs e)
         {
             WinForms.Application.Exit();
         }
@@ -189,5 +216,27 @@ namespace WinCompose
                 }
             }
         }
+
+        public static string Version
+        {
+            get
+            {
+                if (m_version == null)
+                {
+                    XmlDocument doc = new XmlDocument();
+                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.xml");
+                    doc.Load(stream);
+                    XmlNamespaceManager mgr = new XmlNamespaceManager(doc.NameTable);
+                    mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");
+
+                    m_version = doc.DocumentElement.SelectSingleNode("//ns:Project/ns:PropertyGroup/ns:ApplicationVersion", mgr).InnerText;
+                }
+
+                return m_version;
+            }
+        }
+
+        private static string m_version;
     }
 }
+

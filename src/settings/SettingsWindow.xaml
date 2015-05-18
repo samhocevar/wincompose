@@ -71,7 +71,7 @@
              </UniformGrid>
 
              <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
-                       Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
+                       Margin="8,4" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}">
                  <TextBox Text="{x:Static i18n:Text.CaseInsensitive}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
@@ -93,7 +93,7 @@
 
              <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-             <TextBox Grid.Row="6" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
+             <TextBox Grid.Row="6" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto" MaxWidth="200"
                       Grid.ColumnSpan="3" Height="Auto" FontSize="20" FontWeight="SemiBold"
                       Foreground="#434" Background="#eee" ForceCursor="True">ÅḄ₡Đ♥…</TextBox>
          </Grid>

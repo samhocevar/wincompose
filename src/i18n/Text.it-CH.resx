@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Bloc Scorr</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Ispàtziu</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Imbiu (Return)</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Atzentu grave</value>
   </data>
@@ -268,7 +274,7 @@
     <value>Optziones…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose pro {0} ({1} fileras)</value>
+    <value>WinCompose v{2} pro {0} ({1} fileras)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Cumportamentu/fattia generale</value>
@@ -277,13 +283,16 @@
     <value>Fileras — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Macros definidas dae s'impitadore</value>
+    <value>Macros definidas dae s’impitadore</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>Wincompose est disabilitadu</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Inserta</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Iscrie testu:</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Modìficas minores</value>
@@ -311,5 +320,8 @@
   </data>
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose depet èssere torradu a allùere pro che sas sas modìficas potzant fàghere efetu.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Sinnala unu problema</value>
   </data>
 </root>

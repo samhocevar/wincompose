@@ -121,22 +121,22 @@
     <value>Rileva automaticamente</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Alt Sx</value>
+    <value>Alt Sinistro</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt Dx</value>
+    <value>Alt Destro</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Ctrl Sx</value>
+    <value>Ctrl Sinistro</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Ctrl Dx</value>
+    <value>Ctrl Destro</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Win Sx</value>
+    <value>Windows Sinistro</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Win Dx</value>
+    <value>Windows Destro</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Bloc Maiusc</value>
@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Bloc Scorr</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Spazio</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Accento grave `</value>
   </data>
@@ -163,22 +169,22 @@
     <value>500 ms</value>
   </data>
   <data name="Obsolete018" xml:space="preserve">
-    <value>1 s</value>
+    <value>1 secondo</value>
   </data>
   <data name="Obsolete019" xml:space="preserve">
-    <value>2 s</value>
+    <value>2 secondi</value>
   </data>
   <data name="Obsolete020" xml:space="preserve">
-    <value>3 s</value>
+    <value>3 secondi</value>
   </data>
   <data name="Obsolete021" xml:space="preserve">
-    <value>5 s</value>
+    <value>5 secondi</value>
   </data>
   <data name="Obsolete022" xml:space="preserve">
-    <value>10 s</value>
+    <value>10 secondi</value>
   </data>
   <data name="Obsolete023" xml:space="preserve">
-    <value>Infinita</value>
+    <value>Nessuna</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Mostra Sequenze…</value>
@@ -194,6 +200,9 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visita il sito</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Uscita</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>di Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -214,7 +223,7 @@
     <value>Tasto Compose:</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
-    <value>Durata attivazione:</value>
+    <value>Ritardo:</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>Gestisci le sequenze errate senza distinzione fra maiuscole e minuscole</value>
@@ -237,13 +246,82 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Descrizione:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Il Tasto Compose mantiene il suo comportamento originale</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Inserire spazi invisibili dentro l’applicazione Office</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emulare CapsLock usando insieme i due bottoni Shift</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Il Bottone Shift disabilita il CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>Dentro le categorie selezionate</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Opzioni — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Opzioni…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose su {0} ({1} sequences)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Comportamento</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Sequenze — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Macro Utilizzatore</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose è disabilitato</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Inserire</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Scrivi Testo:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Regolazioni</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>500 millisecondi</value>
+  </data>
   <data name="About" xml:space="preserve">
-    <value>Informazioni</value>
+    <value>A Proposito di</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Informazinoi su — WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programmazione</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Traduzione</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Ringraziamenti</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licenza</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose ha bisogno di essere riavviato per applicare alcuni cambiamenti.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Riporta un problema</value>
   </data>
 </root>

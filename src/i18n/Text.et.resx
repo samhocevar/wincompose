@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>SCROLL LOCK</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Tühik</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Sisesta</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>GRAAVIS `</value>
   </data>
@@ -268,7 +274,7 @@
     <value>Seaded…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose aktiivne {0} ({1} kombinatsiooni)</value>
+    <value>WinCompose v{2} masinas {0} ({1} kombinatsiooni)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Üldine käitumine</value>
@@ -314,5 +320,8 @@
   </data>
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose tuleb mõnede muudatuste aktiveerimiseks uuesti käivitada.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Teata veast</value>
   </data>
 </root>

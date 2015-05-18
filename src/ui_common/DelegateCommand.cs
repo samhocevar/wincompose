@@ -34,7 +34,7 @@ namespace WinCompose
             return true;
         }
 
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged = delegate {};
 
         public void Execute(object parameter)
         {
@@ -43,10 +43,7 @@ namespace WinCompose
 
         public void RaiseCanExecuteChanged()
         {
-            if(CanExecuteChanged != null)
-            {
-                CanExecuteChanged(this, new EventArgs());
-            }
+            CanExecuteChanged(this, new EventArgs());
         }
     }
 }

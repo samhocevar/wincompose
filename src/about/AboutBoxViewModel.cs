@@ -17,6 +17,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Resources;
@@ -26,41 +27,29 @@ namespace WinCompose
 {
     public class AboutBoxViewModel : ViewModelBase
     {
-        private readonly DelegateCommand m_switch_document_command;
-        private readonly DelegateCommand m_openwebsite_command;
-        private readonly FlowDocument    m_contributors_document;
-        private readonly FlowDocument    m_licence_document;
-        private          string          m_active_document_title;
-        private          FlowDocument    m_active_document;
+        private readonly DelegateCommand    m_switch_document_command;
+        private readonly DelegateCommand    m_openwebsite_command;
+        private readonly DelegateCommand    m_reportbug_command;
+        private readonly Uri                m_contributors_document_uri;
+        private readonly Uri                m_licence_document_uri;
+        private          string             m_active_document_title;
+        private          Uri                m_active_document_uri;
 
         public AboutBoxViewModel()
         {
-            m_switch_document_command = new DelegateCommand(OnSwitchDocumentCommandExecuted);
-            m_openwebsite_command     = new DelegateCommand(OnOpenWebsiteCommandExecuted);
-            m_contributors_document   = LoadDocument("pack://application:,,,/res/contributors.rtf");
-            m_licence_document        = LoadDocument("pack://application:,,,/res/copying.rtf");
-            m_active_document         = m_contributors_document;
-            m_active_document_title   = Text.Contributors;
+            m_switch_document_command       = new DelegateCommand(OnSwitchDocumentCommandExecuted);
+            m_openwebsite_command           = new DelegateCommand(OnOpenWebsiteCommandExecuted);
+            m_reportbug_command             = new DelegateCommand(OnReportBugCommandExecuted);
+            m_contributors_document_uri     = new Uri("pack://application:,,,/res/contributors.html");
+            m_licence_document_uri          = new Uri("pack://application:,,,/res/copying.html");
+            m_active_document_uri           = m_contributors_document_uri;
+            m_active_document_title         = Text.Contributors;
         }
 
-        private FlowDocument LoadDocument(string resource_uri)
-        {
-            StreamResourceInfo stream_info = Application.GetResourceStream(new Uri(resource_uri));
-            if (stream_info != null)
-            {
-                using (Stream stream = stream_info.Stream)
-                {
-                    var         flow_document   = new FlowDocument();
-                    TextRange   text_range      = new TextRange(flow_document.ContentStart, flow_document.ContentEnd);
-                    text_range.Load(stream, DataFormats.Rtf);
-                    return flow_document;
-                }
-            }
-            return null;
-        }
 
         public ICommand SwitchDocumentCommand { get { return m_switch_document_command; } }
         public ICommand OpenWebsiteCommand    { get { return m_openwebsite_command; } }
+        public ICommand OpenReportBugCommand  { get { return m_reportbug_command; } }
 
         public string ActiveDocumentTitle
         {
@@ -68,15 +57,14 @@ namespace WinCompose
             set { SetValue(ref m_active_document_title, value, "ActiveDocumentTitle");  }
         }
 
-        public FlowDocument ActiveDocument
+        public Stream ActiveDocument
         {
-            get { return m_active_document; }
-            private set { SetValue(ref m_active_document, value, "ActiveDocument"); }
+            get { return Application.GetResourceStream(m_active_document_uri).Stream; }
         }
 
         public string Version
         {
-            get { return Assembly.GetEntryAssembly().GetName().Version.ToString(); }
+            get { return Program.Version; }
         }
 
         private void OnSwitchDocumentCommandExecuted(object parameter)
@@ -85,18 +73,25 @@ namespace WinCompose
             if (document_name == "contributors")
             {
                 ActiveDocumentTitle = Text.Contributors;
-                ActiveDocument      = m_contributors_document;
+                m_active_document_uri = m_contributors_document_uri;
+                OnPropertyChanged("ActiveDocument");
             }
             else if (document_name == "licence")
             {
                 ActiveDocumentTitle = Text.License;
-                ActiveDocument      = m_licence_document;
+                m_active_document_uri = m_licence_document_uri;
+                OnPropertyChanged("ActiveDocument");
             }
         }
 
         private static void OnOpenWebsiteCommandExecuted(object parameter)
         {
             System.Diagnostics.Process.Start("http://wincompose.info/");
+        }
+
+        private static void OnReportBugCommandExecuted(object parameter)
+        {
+            System.Diagnostics.Process.Start("https://github.com/samhocevar/wincompose/issues/new");
         }
     }
 }

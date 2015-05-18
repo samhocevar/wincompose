@@ -169,6 +169,14 @@
     <value>Scroll Lock</value>
     <comment>The name of the key on the keyboard</comment>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Space</value>
+    <comment>The name of the key on the keyboard</comment>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Return</value>
+    <comment>The name of the key on the keyboard</comment>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Grave Accent `</value>
     <comment>The name of the key on the keyboard</comment>
@@ -209,7 +217,7 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visit Website</value>
-    <comment>Menu entry to visit the website</comment>
+    <comment>A button to visit the website</comment>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
@@ -293,8 +301,8 @@
     <comment>Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)</comment>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose on {0} ({1} sequences)</value>
-    <comment>{0}: compose key name, {1}: number of sequences</comment>
+    <value>WinCompose v{2} on {0} ({1} sequences)</value>
+    <comment>{0}: compose key name, {1}: number of sequences, {2}: program version number</comment>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>General Behavior</value>
@@ -338,11 +346,11 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Translation</value>
-    <comment>The section where we list all translators. If you're reading this, you're probably a translator, so thank you! You rock!</comment>
+    <comment>The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
     <value>Special Thanks</value>
-    <comment>The section for random contributors who aren't programmers or translators. Might be empty.</comment>
+    <comment>The section for random contributors who aren’t programmers or translators. Might be empty.</comment>
   </data>
   <data name="License" xml:space="preserve">
     <value>License</value>
@@ -351,5 +359,9 @@
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose needs to be restarted for some changes to take effect.</value>
     <comment>Warning message when the user changes the language in the settings window</comment>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Report a Bug</value>
+    <comment>A button to report bugs (opens web browser)</comment>
   </data>
 </root>
