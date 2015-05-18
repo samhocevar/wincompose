@@ -66,23 +66,20 @@ static internal class NativeMethods
     [DllImport("user32")]
     public static extern uint RegisterWindowMessage(string message);
 
-    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    [DllImport("kernel32", CharSet = CharSet.Auto, SetLastError = true)]
     public static extern bool DefineDosDevice(DDD dwFlags, string lpDeviceName, string lpTargetPath);
     [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
     public static extern SafeFileHandle CreateFile(string lpFileName, FileAccess dwDesiredAccess,
-            uint dwShareMode, IntPtr SecurityAttributes, FileMode dwCreationDisposition,
-            uint dwFlagsAndAttributes, IntPtr hTemplateFile);
+            FileShare dwShareMode, IntPtr SecurityAttributes, FileMode dwCreationDisposition,
+            FileAttributes dwFlagsAndAttributes, IntPtr hTemplateFile);
 
-    // General declaration
-    [DllImport("Kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-    public static extern bool DeviceIoControl(SafeFileHandle hDevice, int IoControlCode, byte[] InBuffer,
-            int nInBufferSize, byte[] OutBuffer, int nOutBufferSize, out int pBytesReturned,
-            IntPtr Overlapped
-    );
-    // Overload
     [DllImport("Kernel32.dll", SetLastError = true)]
-    public static extern bool DeviceIoControl(SafeFileHandle hDevice, int IoControlCode,
-            ref KeyboardIndicatorParameters InBuffer, int nInBufferSize, IntPtr OutBuffer,
+    public static extern bool DeviceIoControl(SafeFileHandle hDevice, IOCTL IoControlCode,
+            ref KEYBOARD_INDICATOR_PARAMETERS InBuffer, int nInBufferSize, IntPtr OutBuffer,
+            int nOutBufferSize, out int pBytesReturned, IntPtr Overlapped);
+    [DllImport("Kernel32.dll", SetLastError = true)]
+    public static extern bool DeviceIoControl(SafeFileHandle hDevice, IOCTL IoControlCode,
+            IntPtr InBuffer, int nInBufferSize, out KEYBOARD_INDICATOR_PARAMETERS OutBuffer,
             int nOutBufferSize, out int pBytesReturned, IntPtr Overlapped);
 
     //

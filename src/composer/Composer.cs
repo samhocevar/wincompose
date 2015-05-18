@@ -30,10 +30,8 @@ static class Composer
     /// </summary>
     public static void Init()
     {
+        StartMonitoringKeyboardLeds();
         AnalyzeDeadkeys();
-
-        if (!NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, "kbd000000", @"\Device\KeyboardClass0"))
-            Log("DefineDosDevice Error {0}", Marshal.GetLastWin32Error());
     }
 
     /// <summary>
@@ -41,36 +39,7 @@ static class Composer
     /// </summary>
     public static void Fini()
     {
-        NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, "kbd000000", null);
-    }
-
-    private const int FileAnyAccess = 0;
-    private const int MethodBuffered = 0;
-    private const int FileDeviceKeyboard = 0x0000000b;
-
-    public static void ToggleLights(Locks locks)
-    {
-        var indicators = new KeyboardIndicatorParameters();
-
-        using (var hKeybd = NativeMethods.CreateFile(@"\\.\kbd000000", FileAccess.Write, 0, IntPtr.Zero, FileMode.Open, 0, IntPtr.Zero))
-        {
-            Log("CreateFile Error {0}", Marshal.GetLastWin32Error());
-            indicators.UnitId = 0;
-            indicators.LedFlags = locks;
-
-            var size = Marshal.SizeOf(typeof(KeyboardIndicatorParameters));
-
-            int bytesReturned;
-            NativeMethods.DeviceIoControl(hKeybd, IOCTL_KEYBOARD_SET_INDICATORS, ref indicators, (int)size,
-                IntPtr.Zero, 0, out bytesReturned, IntPtr.Zero);
-        }
-    }
-
-    private static int IOCTL_KEYBOARD_SET_INDICATORS = ControlCode(FileDeviceKeyboard, 0x0002, MethodBuffered, FileAnyAccess);
-
-    static int ControlCode(int deviceType, int function, int method, int access)
-    {
-        return ((deviceType) << 16) | ((access) << 14) | ((function) << 2) | (method);
+        StopMonitoringKeyboardLeds();
     }
 
     /// <summary>
@@ -79,8 +48,6 @@ static class Composer
     /// </summary>
     public static bool OnKey(WM ev, VK vk, SC sc, LLKHF flags)
     {
-        ToggleLights(Locks.KeyboardCapsLockOn);
-
         // Remember when the user touched a key for the last time
         m_last_key_time = DateTime.Now;
 
@@ -596,6 +563,67 @@ static class Composer
         tid = NativeMethods.GetCurrentThreadId();
         IntPtr my_layout = NativeMethods.GetKeyboardLayout(tid);
         //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
+    }
+
+    private static void StartMonitoringKeyboardLeds()
+    {
+        for (ushort i = 0; i < 4; ++i)
+        {
+            string kbd_name = "dos_kbd" + i.ToString();
+            string kbd_class = @"\Device\KeyboardClass" + i.ToString();
+            NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, kbd_name, kbd_class);
+        }
+
+        Changed += UpdateKeyboardLeds;
+    }
+
+    private static void StopMonitoringKeyboardLeds()
+    {
+        for (ushort i = 0; i < 4; ++i)
+        {
+            string kbd_name = "dos_kbd" + i.ToString();
+            NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, kbd_name, null);
+        }
+        Changed -= UpdateKeyboardLeds;
+    }
+
+    public static void UpdateKeyboardLeds(object sender, EventArgs e)
+    {
+        var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
+        int buffer_size = (int)Marshal.SizeOf(indicators);
+
+        // NOTE: I was unable to make IOCTL.KEYBOARD_QUERY_INDICATORS work
+        // properly, but querying state with GetKeyState() seemed more
+        // robust anyway. Think of the user setting Caps Lock as their
+        // compose key, entering compose state, then suddenly changing
+        // the compose key to Shift: the LED state would be inconsistent.
+        if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
+             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
+            indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
+
+        if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
+             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
+            indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
+
+        if (NativeMethods.GetKeyState(VK.SCROLL) != 0
+             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
+            indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
+
+        for (ushort i = 0; i < 4; ++i)
+        {
+            indicators.UnitId = i;
+
+            using (var handle = NativeMethods.CreateFile(@"\\.\" + "dos_kbd" + i.ToString(),
+                           FileAccess.Write, FileShare.Read, IntPtr.Zero,
+                           FileMode.Open, FileAttributes.Normal, IntPtr.Zero))
+            {
+                int bytesReturned;
+                NativeMethods.DeviceIoControl(handle, IOCTL.KEYBOARD_SET_INDICATORS,
+                                              ref indicators, buffer_size,
+                                              IntPtr.Zero, 0, out bytesReturned,
+                                              IntPtr.Zero);
+            }
+        }
     }
 
     private static void Log(string format, params object[] args)
