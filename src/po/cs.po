@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-02-13 13:16+0200\n"
-"Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
-"cs/>\n"
+"PO-Revision-Date: 2015-06-29 19:15+0200\n"
+"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"Language-Team: Czech "
+"<https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -46,13 +46,15 @@ msgstr "Pravý Control"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:142 ID:KeyLWin
+#, fuzzy
 msgid "Left Windows"
-msgstr "Levé Windows"
+msgstr "Levé tlačítko s logem Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:146 ID:KeyRWin
+#, fuzzy
 msgid "Right Windows"
-msgstr "Pravé Windows"
+msgstr "Pravé tlačítko s logem Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:150 ID:KeyCapital
@@ -87,18 +89,18 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Mezerník"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Enter"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:182 ID:Obsolete016
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Gravis (obrácená čárka) `"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:185 ID:Obsolete017
@@ -123,7 +125,7 @@ msgstr "3 sekundy"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:197 ID:Obsolete021
 msgid "5 seconds"
-msgstr "5 sekundy"
+msgstr "5 sekund"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:200 ID:Obsolete022
@@ -137,7 +139,7 @@ msgstr "Žádné"
 
 #: i18n/Text.resx:206 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "Zobrazit Sekvence…"
+msgstr "Zobrazit sekvence…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:210 ID:Disable
@@ -160,12 +162,12 @@ msgstr "Navštívit web"
 
 #: i18n/Text.resx:223 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Ukončit"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "napsal Sam Hocevar <sam@hocevar.net>"
+msgstr "vytvořil Sam Hocevar <sam@hocevar.net>"
 
 #: i18n/Text.resx:229 ID:Sequences
 msgid "Sequences"
@@ -183,32 +185,32 @@ msgstr "Unicode"
 
 #: i18n/Text.resx:238 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "Filtr vyhledávání:"
 
 #: i18n/Text.resx:241 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "Klávesa Compose:"
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:245 ID:ResetDelay
 msgid "Delay:"
-msgstr ""
+msgstr "Doba trvání:"
 
 #: i18n/Text.resx:248 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr ""
+msgstr "V případě nenalezení sekvence nedbát na velikost písmen"
 
 #: i18n/Text.resx:251 ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
-msgstr ""
+msgstr "Ignorovat znaky z neplatných sekvencí"
 
 #: i18n/Text.resx:254 ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
-msgstr ""
+msgstr "Zvukové upozornění při zadání neplatné sekvence"
 
 #: i18n/Text.resx:257 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "Jazyk rozhraní:"
 
 #. Close the settings window
 #: i18n/Text.resx:261 ID:Close
@@ -219,7 +221,7 @@ msgstr "Zavřít"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:265 ID:Obsolete050
 msgid "Copy Character"
-msgstr ""
+msgstr "Kopírovat znak"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
@@ -230,86 +232,85 @@ msgstr "Popis:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:273 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Použít"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:277 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Zachovat původní chování klávesy Compose"
 
 #: i18n/Text.resx:280 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Vkládat nulovou mezeru v aplikacích Office"
 
 #: i18n/Text.resx:283 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Emulovat CapsLock stisknutím obou kláves Shift"
 
 #: i18n/Text.resx:286 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Klávesa Shift vypne CapsLock"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:290 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 #: i18n/Text.resx:293 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "Ve vybraných kategoriích"
 
 #. The title of the Options window
 #: i18n/Text.resx:297 ID:Options
 msgid "Options — WinCompose"
-msgstr ""
+msgstr "Možnosti — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:301 ID:ShowOptions
 msgid "Options…"
-msgstr ""
+msgstr "Možnosti…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:305 ID:TrayToolTip
-#, fuzzy
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "Sekvence"
+msgstr "WinCompose v{2} (klávesa: {0}; {1} sekvencí)"
 
 #: i18n/Text.resx:308 ID:Behavior
+#, fuzzy
 msgid "General Behavior"
-msgstr ""
+msgstr "Obecné nastavení"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:312 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Sekvence — WinCompose"
 
 #: i18n/Text.resx:315 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Uživatelská makra"
 
 #: i18n/Text.resx:318 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr ""
+msgstr "Program WinCompose je vypnutý"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:322 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Vyzkoušejte psaní:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Vychytávky"
 
 #: i18n/Text.resx:333 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "500 milisekund"
+msgstr "(milisekundy)"
 
 #. About box menu entry
 #: i18n/Text.resx:337 ID:About
@@ -319,37 +320,37 @@ msgstr "O aplikaci"
 #. Window title of the About box
 #: i18n/Text.resx:341 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "O aplikaci WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:345 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programátoři"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Překlad"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Zvláštní poděkování"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:357 ID:License
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:361 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "Aby se projevily změny, WinCompose musí být restartován."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:365 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Nahlásit chybu"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
@@ -374,7 +375,7 @@ msgstr "Jiné, soukromé použití"
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:138 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Jiné, náhražka"
+msgstr "Jiné, „surrogates“"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:142 ID:LowercaseLetter
@@ -394,7 +395,7 @@ msgstr "Písmeno, jiné"
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:154 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Písmeno, titulní"
+msgstr "Písmeno, titulní (první velké)"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:158 ID:UppercaseLetter
@@ -404,7 +405,7 @@ msgstr "Písmeno, velké"
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:162 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Značka, kombinující s prostorem"
+msgstr "Značka, široké kombinující znaky"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:166 ID:EnclosingMark
@@ -414,7 +415,7 @@ msgstr "Značka, uzavírající"
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:170 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Značka, bez prostoru"
+msgstr "Značka, nulové šířky"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:174 ID:DecimalDigitNumber
