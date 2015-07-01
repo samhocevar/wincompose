@@ -273,9 +273,6 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Opzioni…</value>
   </data>
-  <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose su {0} ({1} sequences)</value>
-  </data>
   <data name="Behavior" xml:space="preserve">
     <value>Comportamento</value>
   </data>

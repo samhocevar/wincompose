@@ -267,9 +267,6 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Indstillinger…</value>
   </data>
-  <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose på {0} ({1} sekvenser)</value>
-  </data>
   <data name="Behavior" xml:space="preserve">
     <value>Generel opførsel</value>
   </data>

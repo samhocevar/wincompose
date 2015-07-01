@@ -121,22 +121,22 @@
     <value>Автоопределение</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Левая Alt</value>
+    <value>Левый Alt</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Правая Alt</value>
+    <value>Правый Alt</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Левая Control</value>
+    <value>Левый Control</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Правая Control</value>
+    <value>Правый Control</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Левая Windows</value>
+    <value>Левый Windows</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Правая Windows</value>
+    <value>Правый Windows</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock</value>
@@ -155,6 +155,12 @@
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Пробел</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Ввод</value>
   </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Тильда `</value>
@@ -194,6 +200,9 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Посетить веб-сайт</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выход</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -237,13 +246,79 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Описание:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Принять</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Сохранить оригинальное поведение клавиши Compose</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Вставлять пустой пробел в офисных приложениях</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Эмулировать CapsLock, используя обе клавиши Shift</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift отключает CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>В выбранных категориях</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Опции — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Опции…</value>
   </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Основное поведение</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Последовательности — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Пользовательские макросы</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose отключен</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Протестируйте ввод:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Твики</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(в миллисекундах)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>О программе</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Программирование</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Перевод</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Благодарности</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Лицензия</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>Необходимо перезапустить WinCompose, чтобы изменения вступили в силу.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Сообщить об ошибке</value>
   </data>
 </root>
