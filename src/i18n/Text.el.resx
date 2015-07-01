@@ -267,9 +267,6 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Επιλογές…</value>
   </data>
-  <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose σε {0} ({1} ακολουθίες)</value>
-  </data>
   <data name="Behavior" xml:space="preserve">
     <value>Γενική συμπεριφορά</value>
   </data>

@@ -154,6 +154,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.pl.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.ro.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.ru.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -389,6 +394,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.pl.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.ro.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.ru.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -534,6 +544,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <EmbeddedResource Include="unicode\Category.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.ro.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.ru.resx">
@@ -773,6 +788,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <EmbeddedResource Include="i18n\Text.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ro.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.ru.resx">

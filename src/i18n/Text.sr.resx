@@ -117,4 +117,211 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutodetectLanguage" xml:space="preserve">
+    <value>Препознај</value>
+  </data>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Леви Alt</value>
+  </data>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Десни Alt</value>
+  </data>
+  <data name="KeyLControl" xml:space="preserve">
+    <value>Леви Ctrl</value>
+  </data>
+  <data name="KeyRControl" xml:space="preserve">
+    <value>Десни Ctrl</value>
+  </data>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>Леви Win</value>
+  </data>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>Десни Win</value>
+  </data>
+  <data name="KeyCapital" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="KeyNumLock" xml:space="preserve">
+    <value>Num Lock</value>
+  </data>
+  <data name="KeyPause" xml:space="preserve">
+    <value>Pause Break</value>
+  </data>
+  <data name="KeyApps" xml:space="preserve">
+    <value>Мени</value>
+  </data>
+  <data name="KeyEscape" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="KeyScroll" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Размак</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Ентер</value>
+  </data>
+  <data name="Obsolete016" xml:space="preserve">
+    <value>Обрнути апостроф `</value>
+  </data>
+  <data name="Obsolete017" xml:space="preserve">
+    <value>500 милисекунди</value>
+  </data>
+  <data name="Obsolete018" xml:space="preserve">
+    <value>1 секунда</value>
+  </data>
+  <data name="Obsolete019" xml:space="preserve">
+    <value>2 секунде</value>
+  </data>
+  <data name="Obsolete020" xml:space="preserve">
+    <value>3 секунде</value>
+  </data>
+  <data name="Obsolete021" xml:space="preserve">
+    <value>5 секунди</value>
+  </data>
+  <data name="Obsolete022" xml:space="preserve">
+    <value>10 секунди</value>
+  </data>
+  <data name="Obsolete023" xml:space="preserve">
+    <value>без</value>
+  </data>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>Прикажи комбинације…</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Искључи</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Поново покрени</value>
+  </data>
+  <data name="Obsolete027" xml:space="preserve">
+    <value>Историјат</value>
+  </data>
+  <data name="VisitWebsite" xml:space="preserve">
+    <value>Посети веб сајт</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Излаз</value>
+  </data>
+  <data name="Obsolete036" xml:space="preserve">
+    <value>Сам Хочевар (Sam Hocevar) &lt;sam@hocevar.net&gt;</value>
+  </data>
+  <data name="Sequences" xml:space="preserve">
+    <value>Комбинације</value>
+  </data>
+  <data name="Obsolete039" xml:space="preserve">
+    <value>Комбинација</value>
+  </data>
+  <data name="Obsolete041" xml:space="preserve">
+    <value>Уникод</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Филтер претраге:</value>
+  </data>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Модификатор:</value>
+  </data>
+  <data name="ResetDelay" xml:space="preserve">
+    <value>Задршка:</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Спадни на словно неосетљива поклапања при неисправним комбинацијама</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Одбаци карактере из неисправних комбинација</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Звук при неисправним комбинацијама</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Језик сучеља:</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Затвори</value>
+  </data>
+  <data name="Obsolete050" xml:space="preserve">
+    <value>Копирај знак</value>
+  </data>
+  <data name="Obsolete051" xml:space="preserve">
+    <value>Опис:</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Примени</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Очувај оригинално понашање тастера Compose</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Убаци размаке нулте ширине у Офис апликацијама</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Симулирај CapsLock помоћу оба Shift тастера</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift тастер искључује CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категорије</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>У изабраним категоријама</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Опције — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Опције…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} на {0} ({1} комбинација)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Опште понашање</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Комбинације — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Кориснички макрои</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose је искључен</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Куцајте за пробу:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Штеловања</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(милисекунди)</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>О програму</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>О програму</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Програмирање</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Превод</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Захвалнице</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Лиценца</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>Да би неке измене ступиле на снагу, програм се мора поново покренути.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Пријавите грешку</value>
+  </data>
 </root>

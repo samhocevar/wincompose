@@ -117,4 +117,100 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutodetectLanguage" xml:space="preserve">
+    <value>Automaticky detekovať</value>
+  </data>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Ľavý Alt</value>
+  </data>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Pravý Alt</value>
+  </data>
+  <data name="KeyLControl" xml:space="preserve">
+    <value>Ľavý Control</value>
+  </data>
+  <data name="KeyRControl" xml:space="preserve">
+    <value>Pravý Control</value>
+  </data>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>Ľavé Windows</value>
+  </data>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>Pravé Windows</value>
+  </data>
+  <data name="KeyCapital" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="KeyNumLock" xml:space="preserve">
+    <value>Num Lock</value>
+  </data>
+  <data name="KeyPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="KeyApps" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="KeyEscape" xml:space="preserve">
+    <value>Escape</value>
+  </data>
+  <data name="KeyScroll" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Medzera</value>
+  </data>
+  <data name="Obsolete017" xml:space="preserve">
+    <value>500 milisekúnd</value>
+  </data>
+  <data name="Obsolete018" xml:space="preserve">
+    <value>1 sekunda</value>
+  </data>
+  <data name="Obsolete019" xml:space="preserve">
+    <value>2 sekundy</value>
+  </data>
+  <data name="Obsolete020" xml:space="preserve">
+    <value>3 sekundy</value>
+  </data>
+  <data name="Obsolete021" xml:space="preserve">
+    <value>5 sekúnd</value>
+  </data>
+  <data name="Obsolete022" xml:space="preserve">
+    <value>10 sekúnd</value>
+  </data>
+  <data name="Obsolete023" xml:space="preserve">
+    <value>Žiadne</value>
+  </data>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>Zobraziť sekvencie…</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Vypnúť</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Reštartovať</value>
+  </data>
+  <data name="Obsolete027" xml:space="preserve">
+    <value>História</value>
+  </data>
+  <data name="Obsolete041" xml:space="preserve">
+    <value>Unicode</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Vyhľadávací filter:</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zavrieť</value>
+  </data>
+  <data name="Obsolete050" xml:space="preserve">
+    <value>Kopírovať znak</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>Vo zvolených kategóriách</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Všeobecné správanie sa</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>O programe</value>
+  </data>
 </root>

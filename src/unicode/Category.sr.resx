@@ -118,25 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Control" xml:space="preserve">
-    <value>Остали, контролни</value>
+    <value>Остало, контролни</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>Остали, приказни</value>
+    <value>Остало, форматирајући</value>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
-    <value>Остали, недодељени</value>
+    <value>Остало, недодељени</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>Остали, приватни опсег</value>
+    <value>Остало, лични опсег</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>Остали, замене</value>
+    <value>Остало, замене</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
     <value>Слова, мала</value>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
-    <value>Слова, измењивачи</value>
+    <value>Слова, модификатори</value>
   </data>
   <data name="OtherLetter" xml:space="preserve">
     <value>Слова, остала</value>
@@ -145,13 +145,13 @@
     <value>Слова, насловна</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
-    <value>Слова, велика</value>
+    <value>Слова, ВЕЛИКА</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
     <value>Ознака, размаци</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>Ознака, укључујућа</value>
+    <value>Ознака, заграде</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
     <value>Ознака, без размака</value>
@@ -166,7 +166,7 @@
     <value>Број, остало</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Интерпункција, спајање</value>
+    <value>Интерпункција, повезивач</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
     <value>Интерпункција, црта</value>
@@ -199,12 +199,12 @@
     <value>Симбол, остало</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>Разделник, линија</value>
+    <value>Раздвајач, линија</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
-    <value>Разделник, пасус</value>
+    <value>Раздвајач, пасус</value>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
-    <value>Разделник, размак</value>
+    <value>Раздвајач, размак</value>
   </data>
 </root>
