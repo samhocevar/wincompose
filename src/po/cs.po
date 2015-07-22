@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-06-29 19:21+0200\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
-"cs/>\n"
+"PO-Revision-Date: 2015-07-22 17:11+0200\n"
+"Last-Translator: Michal Čihař <michal@cihar.com>\n"
+"Language-Team: Czech "
+"<https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -274,9 +274,8 @@ msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} (klávesa: {0}; {1} sekvencí)"
 
 #: i18n/Text.resx:308 ID:Behavior
-#, fuzzy
 msgid "General Behavior"
-msgstr "Obecné nastavení"
+msgstr "Obecné chování"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:312 ID:WindowTitle
