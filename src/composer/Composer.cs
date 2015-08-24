@@ -23,6 +23,42 @@ using System.Windows.Forms;
 namespace WinCompose
 {
 
+class InputSequence
+{
+    public void Send()
+    {
+        NativeMethods.SendInput((uint)m_input.Count, m_input.ToArray(),
+                                Marshal.SizeOf(typeof(INPUT)));
+    }
+
+    public void Add(ScanCodeShort sc)
+    {
+        Add((VirtualKeyShort)0, sc);
+    }
+
+    public void Add(VirtualKeyShort vk)
+    {
+        Add(vk, (ScanCodeShort)0);
+    }
+
+    private List<INPUT> m_input = new List<INPUT>();
+
+    private void Add(VirtualKeyShort vk, ScanCodeShort sc)
+    {
+        INPUT tmp = new INPUT();
+        tmp.type = EINPUT.KEYBOARD;
+        tmp.U.ki.wVk = vk;
+        tmp.U.ki.wScan = sc;
+        tmp.U.ki.time = 0;
+        tmp.U.ki.dwFlags = KEYEVENTF.UNICODE;
+        tmp.U.ki.dwExtraInfo = UIntPtr.Zero;
+        m_input.Add(tmp);
+
+        tmp.U.ki.dwFlags |= KEYEVENTF.KEYUP;
+        m_input.Add(tmp);
+    }
+}
+
 static class Composer
 {
     /// <summary>
@@ -363,26 +399,25 @@ static class Composer
         }
         else
         {
-            List<INPUT> input = new List<INPUT>();
+            InputSequence Seq = new InputSequence();
 
             if (use_office_hack)
             {
-                input.Add(NewInputKey((ScanCodeShort)'\u200b'));
-                input.Add(NewInputKey((VirtualKeyShort)VK.LEFT));
+                Seq.Add((ScanCodeShort)'\u200b');
+                Seq.Add((VirtualKeyShort)VK.LEFT);
             }
 
             for (int i = 0; i < str.Length; i++)
             {
-                input.Add(NewInputKey((ScanCodeShort)str[i]));
+                Seq.Add((ScanCodeShort)str[i]);
             }
 
             if (use_office_hack)
             {
-                input.Add(NewInputKey((VirtualKeyShort)VK.RIGHT));
+                Seq.Add((VirtualKeyShort)VK.RIGHT);
             }
 
-            NativeMethods.SendInput((uint)input.Count, input.ToArray(),
-                                    Marshal.SizeOf(typeof(INPUT)));
+            Seq.Send();
         }
 
         /* Restore keyboard modifiers if we needed one of our custom hacks */
@@ -435,32 +470,6 @@ static class Composer
         m_sequence.Clear();
 
         Changed(null, new EventArgs());
-    }
-
-    private static INPUT NewInputKey(VirtualKeyShort vk)
-    {
-        INPUT ret = NewInputKey();
-        ret.U.ki.wVk = vk;
-        return ret;
-    }
-
-    private static INPUT NewInputKey(ScanCodeShort sc)
-    {
-        INPUT ret = NewInputKey();
-        ret.U.ki.wScan = sc;
-        return ret;
-    }
-
-    private static INPUT NewInputKey()
-    {
-        INPUT ret = new INPUT();
-        ret.type = EINPUT.KEYBOARD;
-        ret.U.ki.wVk = (VirtualKeyShort)0;
-        ret.U.ki.wScan = (ScanCodeShort)0;
-        ret.U.ki.time = 0;
-        ret.U.ki.dwFlags = KEYEVENTF.UNICODE;
-        ret.U.ki.dwExtraInfo = UIntPtr.Zero;
-        return ret;
     }
 
     private static void SendKeyDown(VK vk)
