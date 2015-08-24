@@ -167,7 +167,7 @@ done
 #
 
 echo "[5/${STEPS}] Update contributor list…"
-printf '\xef\xbb\xbf' > res/.contributors.html
+printf '﻿' > res/.contributors.html
 cat >> res/.contributors.html << EOF
 <html>
 <body style="font-family: verdana, sans-serif; font-size: .7em;">
