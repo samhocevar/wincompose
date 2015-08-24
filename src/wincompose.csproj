@@ -49,6 +49,9 @@
 set VERSION=$(ApplicationVersion)
 iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_normal.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="sysglobl" />
     <Reference Include="System" />
@@ -868,6 +871,9 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   <ItemGroup>
     <Resource Include="res\contributors.html" />
     <Resource Include="res\copying.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_normal.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
