@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-09-29 10:33+0200\n"
+"PO-Revision-Date: 2015-10-02 14:12+0200\n"
 "Last-Translator: Wei-cheng Kung <wck317@pchome.com.tw>\n"
 "Language-Team: Chinese "
 "<https://hosted.weblate.org/projects/wincompose/master/zh/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.5\n"
+"X-Generator: Weblate 2.5-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -200,7 +200,7 @@ msgstr "無效按鍵系列時忽略大小寫"
 
 #: i18n/Text.resx:251 ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
-msgstr "剔除無效按鍵系列中的字元"
+msgstr "無效按鍵系列時丟棄其中字元"
 
 #: i18n/Text.resx:254 ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
@@ -462,7 +462,7 @@ msgstr "標點符號，其他"
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:210 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr "標點符號，啟始"
+msgstr "標點符號，起始"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:214 ID:CurrencySymbol
