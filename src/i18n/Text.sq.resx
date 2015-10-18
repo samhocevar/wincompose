@@ -240,4 +240,19 @@
   <data name="Apply" xml:space="preserve">
     <value>Apliko</value>
   </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Kyç-ja Shift pamundëson CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>kategori</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>në kategoritë e zgjedhura</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opcionet — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Opcionet…</value>
+  </data>
 </root>
