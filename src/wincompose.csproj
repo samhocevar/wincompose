@@ -50,7 +50,7 @@ set VERSION=$(ApplicationVersion)
 iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon_normal.ico</ApplicationIcon>
+    <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="sysglobl" />
