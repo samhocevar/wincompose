@@ -166,19 +166,19 @@
     <value>Číslo, jiné</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Interpunkce, spojovník</value>
+    <value>Interpunkce, spojující</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>Interpunkce, pomlčka</value>
+    <value>Interpunkce, pomlčky</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
     <value>Interpunkce, uzavření</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>Interpunkce, koncová uvozovka</value>
+    <value>Interpunkce, koncové uvozovky</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>Interpunkce, počáteční uvozovka</value>
+    <value>Interpunkce, počáteční uvozovky</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
     <value>Interpunkce, jiná</value>
