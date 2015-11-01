@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-01 09:25+0200\n"
+"PO-Revision-Date: 2015-11-01 09:47+0200\n"
 "Last-Translator: Daniele Viglietti <daniele.viglietti@gmail.com>\n"
 "Language-Team: Italian "
 "<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
@@ -160,7 +160,7 @@ msgstr "Visita il sito"
 
 #: i18n/Text.resx:223 ID:Exit
 msgid "Exit"
-msgstr "Uscita"
+msgstr "Esci"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
@@ -240,15 +240,15 @@ msgstr "Il Tasto Compose mantiene il suo comportamento originale"
 
 #: i18n/Text.resx:280 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "Inserire spazi invisibili dentro l’applicazione Office"
+msgstr "Inserisci spazi a larghezza zero in Office"
 
 #: i18n/Text.resx:283 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr "Emulare CapsLock usando insieme i due bottoni Shift"
+msgstr "Emula Bloc Maiusc premendo entrambi i tasti Maiusc"
 
 #: i18n/Text.resx:286 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr "Il Bottone Shift disabilita il CapsLock"
+msgstr "Premere Maiusc disabilita Bloc Maiusc"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:290 ID:Categories
@@ -299,7 +299,7 @@ msgstr "Inserire"
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
 msgid "Test Typing:"
-msgstr "Scrivi Testo:"
+msgstr "Prova a scrivere:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
@@ -308,12 +308,12 @@ msgstr "Regolazioni"
 
 #: i18n/Text.resx:333 ID:Milliseconds
 msgid "(milliseconds)"
-msgstr "500 millisecondi"
+msgstr "(millisecondi)"
 
 #. About box menu entry
 #: i18n/Text.resx:337 ID:About
 msgid "About"
-msgstr "A Proposito di"
+msgstr "Informazioni"
 
 #. Window title of the About box
 #: i18n/Text.resx:341 ID:AboutBoxTitle
