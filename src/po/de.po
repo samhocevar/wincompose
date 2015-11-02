@@ -2,16 +2,16 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-03-23 02:00+0200\n"
-"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: German "
-"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
+"PO-Revision-Date: 2015-05-18 20:32+0200\n"
+"Last-Translator: Tom “TomRBify” Beelen <beelen.tom@gmail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
+"de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -235,19 +235,19 @@ msgstr "Übernehmen"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:277 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Originales Compose-Tasten benehmen beibehalten"
 
 #: i18n/Text.resx:280 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Null-Breite Leerzeile in Office-Apps einfügen"
 
 #: i18n/Text.resx:283 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Feststelltaste aktivieren mit beiden Umschalt-Tasten"
 
 #: i18n/Text.resx:286 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Umschalttaste deaktiviert Feststelltaste"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:290 ID:Categories
@@ -256,7 +256,7 @@ msgstr "Kategorien"
 
 #: i18n/Text.resx:293 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "In ausgewählten Kategorien"
 
 #. The title of the Options window
 #: i18n/Text.resx:297 ID:Options
@@ -268,10 +268,10 @@ msgstr "Optionen — WinCompose"
 msgid "Options…"
 msgstr "Optionen…"
 
-#. {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:305 ID:TrayToolTip
-msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgid "WinCompose v{2} on {0} ({1} sequences)"
+msgstr "WinCompose v{2} auf {0} ({1} Sequenzen)"
 
 #: i18n/Text.resx:308 ID:Behavior
 msgid "General Behavior"
@@ -298,7 +298,7 @@ msgstr "Einfügen"
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Tippen Testen:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
@@ -332,7 +332,7 @@ msgstr "Übersetzung"
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Besonderer Dank"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:357 ID:License
@@ -343,11 +343,12 @@ msgstr "Lizenz"
 #: i18n/Text.resx:361 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
+"WinCompose muss neugestartet werden damit alle veränderungen aktiv werden."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:365 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Melde einen Fehler"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
@@ -522,10 +523,6 @@ msgstr "Trenner, Leerzeichen"
 
 #~ msgid "Char"
 #~ msgstr "Zeichen"
-
-#, fuzzy
-#~ msgid "WinCompose Sequences"
-#~ msgstr "Compose-Taste"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

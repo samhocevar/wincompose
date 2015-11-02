@@ -249,14 +249,32 @@
   <data name="Apply" xml:space="preserve">
     <value>Übernehmen</value>
   </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Originales Compose-Tasten benehmen beibehalten</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Null-Breite Leerzeile in Office-Apps einfügen</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Feststelltaste aktivieren mit beiden Umschalt-Tasten</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Umschalttaste deaktiviert Feststelltaste</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategorien</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>In ausgewählten Kategorien</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Optionen — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Optionen…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} auf {0} ({1} Sequenzen)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Allgemeines Verhalten</value>
@@ -272,6 +290,9 @@
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Einfügen</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Tippen Testen:</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Diverse Einstellungen</value>
@@ -291,7 +312,16 @@
   <data name="Translators" xml:space="preserve">
     <value>Übersetzung</value>
   </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Besonderer Dank</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Lizenz</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose muss neugestartet werden damit alle veränderungen aktiv werden.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Melde einen Fehler</value>
   </data>
 </root>

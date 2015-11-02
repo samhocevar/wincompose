@@ -150,6 +150,40 @@ internal enum SC : uint
 };
 
 [Flags]
+internal enum DDD : uint
+{
+    RAW_TARGET_PATH       = 0x00000001,
+    REMOVE_DEFINITION     = 0x00000002,
+    EXACT_MATCH_ON_REMOVE = 0x00000004,
+    NO_BROADCAST_SYSTEM   = 0x00000008,
+};
+
+internal enum IOCTL : uint
+{
+    // ControlCode(FILE_DEVICE_KEYBOARD, 0x0002, METHOD_BUFFERED, FILE_ANY_ACCESS
+    KEYBOARD_SET_INDICATORS   = 0x000b0008,
+    // ControlCode(FILE_DEVICE_KEYBOARD, 0x0010, METHOD_BUFFERED, FILE_ANY_ACCESS
+    KEYBOARD_QUERY_INDICATORS = 0x000b0040,
+};
+
+[Flags]
+internal enum KEYBOARD : ushort
+{
+    SCROLL_LOCK_ON = 0x0001,
+    NUM_LOCK_ON    = 0x0002,
+    CAPS_LOCK_ON   = 0x0004,
+    KANA_LOCK_ON   = 0x0008,
+    SHADOW         = 0x4000,
+    LED_INJECTED   = 0x8000,
+};
+
+internal struct KEYBOARD_INDICATOR_PARAMETERS
+{
+    public ushort UnitId;
+    public KEYBOARD LedFlags;
+};
+
+[Flags]
 internal enum LLKHF : uint
 {
     EXTENDED          = 0x01,

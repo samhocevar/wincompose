@@ -273,9 +273,6 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Opzioni…</value>
   </data>
-  <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose su {0} ({1} sequences)</value>
-  </data>
   <data name="Behavior" xml:space="preserve">
     <value>Comportamento</value>
   </data>
@@ -308,5 +305,20 @@
   </data>
   <data name="Programming" xml:space="preserve">
     <value>Programmazione</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Traduzione</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Ringraziamenti</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licenza</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose ha bisogno di essere riavviato per applicare alcuni cambiamenti.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Riporta un problema</value>
   </data>
 </root>

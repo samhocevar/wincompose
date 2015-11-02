@@ -301,8 +301,8 @@
     <comment>Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)</comment>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose on {0} ({1} sequences)</value>
-    <comment>{0}: compose key name, {1}: number of sequences</comment>
+    <value>WinCompose v{2} on {0} ({1} sequences)</value>
+    <comment>{0}: compose key name, {1}: number of sequences, {2}: program version number</comment>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>General Behavior</value>

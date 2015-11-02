@@ -274,7 +274,7 @@
     <value>Optziones…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose pro {0} ({1} fileras)</value>
+    <value>WinCompose v{2} pro {0} ({1} fileras)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Cumportamentu/fattia generale</value>
@@ -320,5 +320,8 @@
   </data>
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose depet èssere torradu a allùere pro che sas sas modìficas potzant fàghere efetu.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Sinnala unu problema</value>
   </data>
 </root>

@@ -2,13 +2,13 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2014-11-26 17:47+0200\n"
+"PO-Revision-Date: 2015-05-01 23:23+0200\n"
 "Last-Translator: Cosmo Console <cosmoconsole@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/wincompose/"
 "master/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.1-dev\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -87,12 +87,12 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Välilyönti"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Askelpalautin"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
@@ -160,7 +160,7 @@ msgstr "Käy verkkosivuilla"
 
 #: i18n/Text.resx:223 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Poistu"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
@@ -230,33 +230,33 @@ msgstr "Kuvaus:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:273 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Käytä"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:277 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Säilytä Compose-näppäimen käyttäytyminen"
 
 #: i18n/Text.resx:280 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Lisää olemattoman levyisiä välilyöntejä Office-ohjelmiin"
 
 #: i18n/Text.resx:283 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Jäljittele Caps Lockkia kummallakin Shift-näppäimellä"
 
 #: i18n/Text.resx:286 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Shift-näppäin kytkee Caps Lockin pois"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:290 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Luokat"
 
 #: i18n/Text.resx:293 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "Valituissa luokissa"
 
 #. The title of the Options window
 #: i18n/Text.resx:297 ID:Options
@@ -268,48 +268,46 @@ msgstr "Asetukset — WinCompose"
 msgid "Options…"
 msgstr "Asetukset…"
 
-#. {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:305 ID:TrayToolTip
-msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+msgid "WinCompose v{2} on {0} ({1} sequences)"
+msgstr "WinCompose v{2}, näppäin {0} ({1} merkkisarjaa)"
 
 #: i18n/Text.resx:308 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Yleinen Käytös"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:312 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Merkkisarjat — WinCompose"
 
 #: i18n/Text.resx:315 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Käyttäjän makrot"
 
 #: i18n/Text.resx:318 ID:DisabledToolTip
-#, fuzzy
 msgid "WinCompose is disabled"
-msgstr "Compose-näppäin:"
+msgstr "Compose-näppäin on pois käytöstä"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:322 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Syötä"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Kokeile:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Parannukset"
 
 #: i18n/Text.resx:333 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "500 millisekuntia"
+msgstr "(millisekunneissa)"
 
 #. About box menu entry
 #: i18n/Text.resx:337 ID:About
@@ -318,39 +316,39 @@ msgstr "Tietoja"
 
 #. Window title of the About box
 #: i18n/Text.resx:341 ID:AboutBoxTitle
-#, fuzzy
 msgid "About WinCompose"
-msgstr "Asetukset — WinCompose"
+msgstr "Tietoja WinComposesta"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:345 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Ohjelmointi"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Käännös"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Erikoiskiitokset"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:357 ID:License
 msgid "License"
-msgstr ""
+msgstr "Lisenssi"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:361 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
+"WinCompose joudutaan käynnistämään uudelleen muutosten toimeenpanemiseksi."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:365 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Ilmoita viasta"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
@@ -522,10 +520,6 @@ msgstr "Erotinmerkki, välilyönti"
 
 #~ msgid "Char"
 #~ msgstr "Merkki"
-
-#, fuzzy
-#~ msgid "WinCompose Sequences"
-#~ msgstr "Compose-näppäin:"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"

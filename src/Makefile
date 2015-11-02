@@ -21,15 +21,17 @@ LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/
 INSTALLER = WinCompose-Setup-$(VERSION).exe
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
+DEVENVDIR = "$(VS110COMNTOOLS)\\..\\..\\Common7\\IDE"
 ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
 
 ISCC = $(ISCCDIR)\\ISCC.exe
+DEVENV = $(DEVENVDIR)\\devenv.com
 MSGMERGE = msgmerge
 
 all: clean installer portable
 
 clean:
-	devenv wincompose.sln //clean $(CONFIG) //project wincompose.csproj
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project wincompose.csproj
 	rm -f $(INSTALLER) $(PORTABLE)
 	rm -rf obj wincompose/obj wincompose.gui/obj || true
 	rm -rf bin wincompose/bin wincompose.gui/bin || true
@@ -52,5 +54,5 @@ portable: $(EXE)
 bin/$(CONFIG)/WinCompose.exe:
 	@mkdir -p bin/$(CONFIG)
 	@rm -f $@
-	devenv wincompose.sln //build $(CONFIG) //project wincompose.csproj
+	$(DEVENV) wincompose.sln //build $(CONFIG) //project wincompose.csproj
 

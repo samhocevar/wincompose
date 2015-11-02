@@ -148,13 +148,19 @@
     <value>Pause</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>功能列</value>
+    <value>功能表鍵</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>空間鍵</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Return</value>
   </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>重音符 `</value>
@@ -195,6 +201,9 @@
   <data name="VisitWebsite" xml:space="preserve">
     <value>拜訪網站</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>結束</value>
+  </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>開發者：Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
@@ -220,7 +229,7 @@
     <value>無效按鍵系列時忽略大小寫</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>丟棄無效按鍵系列中的字元</value>
+    <value>無效按鍵系列時丟棄其中字元</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>無效按鍵系列時發出嗶聲</value>
@@ -237,13 +246,82 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>描述:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>套用</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>保留前導鍵的原始表現</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>查入零寬空格字元於 Office 應用程式</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>用兩個 Shift 鍵模擬 CapsLock</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift 鍵停用 CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>分類</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>於所選的分類</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>選項 — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>選項…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} 於 {0} ({1} 按鍵系列)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>一般表現</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>按鍵系列 — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>使用者定義的巨集</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose 已停用</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>測試輸入:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>調控</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(毫秒)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>關於</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>關於 — WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>程式設計</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>翻譯</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>特別感謝</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>證書</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose 得重新啟動，以使變更生效。</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>提報程式錯誤</value>
   </data>
 </root>

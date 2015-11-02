@@ -39,7 +39,7 @@ namespace WinCompose
             DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
             BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
             KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
-            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", true);
+            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
             EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
             ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
         }
@@ -135,7 +135,7 @@ namespace WinCompose
 
             if (Language.Value != "")
             {
-                if (!m_valid_languages.ContainsKey(Language.Value))
+                if (m_valid_languages.ContainsKey(Language.Value))
                 {
                     try
                     {
@@ -201,19 +201,19 @@ namespace WinCompose
             return m_sequences;
         }
 
-        public static bool IsValidPrefix(KeySequence sequence)
+        public static bool IsValidPrefix(KeySequence sequence, bool ignore_case)
         {
-            return m_sequences.IsValidPrefix(sequence);
+            return m_sequences.IsValidPrefix(sequence, ignore_case);
         }
 
-        public static bool IsValidSequence(KeySequence sequence)
+        public static bool IsValidSequence(KeySequence sequence, bool ignore_case)
         {
-            return m_sequences.IsValidSequence(sequence);
+            return m_sequences.IsValidSequence(sequence, ignore_case);
         }
 
-        public static string GetSequenceResult(KeySequence sequence)
+        public static string GetSequenceResult(KeySequence sequence, bool ignore_case)
         {
-            return m_sequences.GetSequenceResult(sequence);
+            return m_sequences.GetSequenceResult(sequence, ignore_case);
         }
 
         public static List<SequenceDescription> GetSequenceDescriptions()
@@ -254,9 +254,9 @@ namespace WinCompose
         private static void LoadSequenceString(string line)
         {
             // Only bother with sequences that start with <Multi_key>
-            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\"")*)""[^#]*#?\s*(.*)");
-            //                                             ^^^^^^^         ^^^^^^^^^^^^^^            ^^^^
-            //                                              keys              result                 desc
+            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
+            //                                             ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
+            //                                              keys               result                 desc
             if (m1.Groups.Count < 4)
                 return;
 

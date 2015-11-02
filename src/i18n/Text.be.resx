@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Прагал</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Return</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Ґравіс `</value>
   </data>
@@ -194,6 +200,9 @@
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Наведаць вэбсайт</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выйсці</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>напісаў Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -237,13 +246,82 @@
   <data name="Obsolete051" xml:space="preserve">
     <value>Апісаньне:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Ужыць</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Захаваць зыходныя паводзіны клавішы</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Устаўляць прагалы нулявой шырыні ў офісных праграмах</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Эмуляваць CapsLock выкарыстоўваючы абедзве клавішы Shift</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Клавіша Shift выключае CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Катэгорыі</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>У абраных катэгорыях</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Опцыї — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Опцыї…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} на {0} ({1} паслядоўнасцяў)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Звычайныя паводзіны</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Паслядоўнасці — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Макрасы карыстальніка</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose адключаны</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Праверце набор:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Паляпшэнні</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(мс)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Пра праґраму</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Пра WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Праграмаванне</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Пераклад</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Падзякі</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Ліцэнзія</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose неабходна перазапусціць, каб некаторыя змены ўступілі ў сілу.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Паведаміць пра памылку</value>
   </data>
 </root>

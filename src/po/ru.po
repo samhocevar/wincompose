@@ -2,14 +2,14 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2014-07-23 22:18+0200\n"
-"Last-Translator: Valerij Romanovskij <valerik-roma@mail.ru>\n"
+"PO-Revision-Date: 2015-05-28 23:41+0200\n"
+"Last-Translator: Igor Strebezhev <xamgore@ya.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
 "master/ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -28,32 +28,32 @@ msgstr "Автоопределение"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:126 ID:KeyLMenu
 msgid "Left Alt"
-msgstr "Левая Alt"
+msgstr "Левый Alt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:130 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Правая Alt"
+msgstr "Правый Alt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:134 ID:KeyLControl
 msgid "Left Control"
-msgstr "Левая Control"
+msgstr "Левый Control"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:138 ID:KeyRControl
 msgid "Right Control"
-msgstr "Правая Control"
+msgstr "Правый Control"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:142 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Левая Windows"
+msgstr "Левый Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:146 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Правая Windows"
+msgstr "Правый Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:150 ID:KeyCapital
@@ -88,12 +88,12 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Пробел"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Ввод"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
@@ -161,7 +161,7 @@ msgstr "Посетить веб-сайт"
 
 #: i18n/Text.resx:223 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Выход"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
@@ -232,33 +232,33 @@ msgstr "Описание:"
 #. Apply changes from the settings window
 #: i18n/Text.resx:273 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Принять"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:277 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Сохранить оригинальное поведение клавиши Compose"
 
 #: i18n/Text.resx:280 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Вставлять пустой пробел в офисных приложениях"
 
 #: i18n/Text.resx:283 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
-msgstr ""
+msgstr "Эмулировать CapsLock, используя обе клавиши Shift"
 
 #: i18n/Text.resx:286 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
-msgstr ""
+msgstr "Shift отключает CapsLock"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:290 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 #: i18n/Text.resx:293 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "В выбранных категориях"
 
 #. The title of the Options window
 #: i18n/Text.resx:297 ID:Options
@@ -270,48 +270,47 @@ msgstr "Опции — WinCompose"
 msgid "Options…"
 msgstr "Опции…"
 
-#. {0}: compose key name, {1}: number of sequences
+#. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:305 ID:TrayToolTip
-msgid "WinCompose on {0} ({1} sequences)"
-msgstr ""
+#, fuzzy
+msgid "WinCompose v{2} on {0} ({1} sequences)"
+msgstr "Модификатор:"
 
 #: i18n/Text.resx:308 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "Основное поведение"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:312 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Последовательности — WinCompose"
 
 #: i18n/Text.resx:315 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Пользовательские макросы"
 
 #: i18n/Text.resx:318 ID:DisabledToolTip
-#, fuzzy
 msgid "WinCompose is disabled"
-msgstr "Модификатор:"
+msgstr "WinCompose отключен"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:322 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Вставить"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:326 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "Протестируйте ввод:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:330 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Твики"
 
 #: i18n/Text.resx:333 ID:Milliseconds
-#, fuzzy
 msgid "(milliseconds)"
-msgstr "500 милисекунд"
+msgstr "(в миллисекундах)"
 
 #. About box menu entry
 #: i18n/Text.resx:337 ID:About
@@ -320,39 +319,38 @@ msgstr "О программе"
 
 #. Window title of the About box
 #: i18n/Text.resx:341 ID:AboutBoxTitle
-#, fuzzy
 msgid "About WinCompose"
-msgstr "Опции — WinCompose"
+msgstr "О программе"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:345 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Программирование"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:349 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Перевод"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:353 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Благодарности"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:357 ID:License
 msgid "License"
-msgstr ""
+msgstr "Лицензия"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:361 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "Необходимо перезапустить WinCompose, чтобы изменения вступили в силу."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:365 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Сообщить об ошибке"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
@@ -524,10 +522,6 @@ msgstr "Разделители, пробелы"
 
 #~ msgid "Char"
 #~ msgstr "Символ"
-
-#, fuzzy
-#~ msgid "WinCompose Sequences"
-#~ msgstr "Модификатор:"
 
 #~ msgid "@APP_NAME@"
 #~ msgstr "@APP_NAME@"
