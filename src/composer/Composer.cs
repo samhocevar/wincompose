@@ -125,8 +125,6 @@ static class Composer
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
-
-
         string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
         string str_if_dead = KeyToUnicode(VK.SPACE);
         if (str_if_normal != "")
@@ -157,17 +155,12 @@ static class Composer
             m_last_key = key;
         }
 
-        Log("Key {0}: {1}", is_keydown ? "Down" : "Up", key.FriendlyName);
-
         // Special case: we don't consider characters such as Esc as printable
         // otherwise they are not properly serialised in the config file.
         if (key.IsPrintable() && key.ToString()[0] < ' ')
         {
             key = new Key(vk);
         }
-
-        Log("WM.{0} {1} (VK:0x{2:X02} SC:0x{3:X02})",
-            ev.ToString(), key.FriendlyName, (int)vk, (int)sc);
 
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
@@ -180,7 +173,7 @@ static class Composer
                 // mode and we need to cancel it.
                 if (!m_compose_down)
                 {
-                    Log("Fallback Off");
+                    Log.Debug("Fallback Off");
                     SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
                 }
 
@@ -196,7 +189,7 @@ static class Composer
                 if (!m_composing)
                     m_sequence.Clear();
 
-                Log("{0} Composing", m_composing ? "Now" : "No Longer");
+                Log.Debug("{0} Composing", m_composing ? "Now" : "No Longer");
 
                 // Lauch the sequence reset expiration thread
                 // FIXME: do we need to launch a new thread each time the
@@ -247,7 +240,7 @@ static class Composer
         if (m_compose_down && (Settings.KeepOriginalKey.Value
                                 || !Settings.IsUsableKey(key)))
         {
-            Log("Fallback On");
+            Log.Debug("Fallback On");
             ResetSequence();
             SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
             return false;
@@ -263,6 +256,7 @@ static class Composer
         // is a key we must add to the current sequence.
         if (is_keydown)
         {
+            Log.Debug("Adding To Sequence: {0}", key.FriendlyName);
             return AddToSequence(key);
         }
 
@@ -654,15 +648,6 @@ static class Composer
                                               IntPtr.Zero);
             }
         }
-    }
-
-    private static void Log(string format, params object[] args)
-    {
-#if DEBUG
-        string msg = string.Format("{0} {1}", DateTime.Now,
-                                   string.Format(format, args));
-        System.Diagnostics.Debug.WriteLine(msg);
-#endif
     }
 
     /// <summary>
