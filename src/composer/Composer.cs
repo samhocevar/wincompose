@@ -87,7 +87,7 @@ static class Composer
         // Remember when the user touched a key for the last time
         m_last_key_time = DateTime.Now;
 
-        // Do nothing if we are disabled
+        // Do nothing if we are disabled; NOTE: this disables stats, too
         if (m_disabled)
         {
             return false;
@@ -125,8 +125,6 @@ static class Composer
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
-
-
         string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
         string str_if_dead = KeyToUnicode(VK.SPACE);
         if (str_if_normal != "")
@@ -140,15 +138,29 @@ static class Composer
             key = new Key(str_if_dead);
         }
 
+        if (is_keydown)
+        {
+            // Update single key statistics
+            Stats.AddKey(key);
+
+            // Update key pair statistics if applicable
+            if (DateTime.Now < m_last_key_time.AddMilliseconds(2000)
+                 && m_last_key != null)
+            {
+                Stats.AddPair(m_last_key, key);
+            }
+
+            // Remember when we pressed a key for the last time
+            m_last_key_time = DateTime.Now;
+            m_last_key = key;
+        }
+
         // Special case: we don't consider characters such as Esc as printable
         // otherwise they are not properly serialised in the config file.
         if (key.IsPrintable() && key.ToString()[0] < ' ')
         {
             key = new Key(vk);
         }
-
-        Log("WM.{0} {1} (VK:0x{2:X02} SC:0x{3:X02})",
-            ev.ToString(), key.FriendlyName, (int)vk, (int)sc);
 
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
@@ -161,7 +173,7 @@ static class Composer
                 // mode and we need to cancel it.
                 if (!m_compose_down)
                 {
-                    Log("Fallback Off");
+                    Log.Debug("Fallback Off");
                     SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
                 }
 
@@ -177,7 +189,7 @@ static class Composer
                 if (!m_composing)
                     m_sequence.Clear();
 
-                Log("{0} Composing", m_composing ? "Now" : "No Longer");
+                Log.Debug("{0} Composing", m_composing ? "Now" : "No Longer");
 
                 // Lauch the sequence reset expiration thread
                 // FIXME: do we need to launch a new thread each time the
@@ -228,7 +240,7 @@ static class Composer
         if (m_compose_down && (Settings.KeepOriginalKey.Value
                                 || !Settings.IsUsableKey(key)))
         {
-            Log("Fallback On");
+            Log.Debug("Fallback On");
             ResetSequence();
             SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
             return false;
@@ -244,6 +256,7 @@ static class Composer
         // is a key we must add to the current sequence.
         if (is_keydown)
         {
+            Log.Debug("Adding To Sequence: {0}", key.FriendlyName);
             return AddToSequence(key);
         }
 
@@ -256,7 +269,7 @@ static class Composer
     /// </summary>
     private static bool AddToSequence(Key key)
     {
-        List<Key> old_sequence = new List<Key>(m_sequence);
+        KeySequence old_sequence = new KeySequence(m_sequence);
         m_sequence.Add(key);
 
         // We try the following, in this order:
@@ -283,6 +296,7 @@ static class Composer
             {
                 string tosend = Settings.GetSequenceResult(m_sequence,
                                                            ignore_case);
+                Stats.AddSequence(m_sequence);
                 ResetSequence();
                 SendString(tosend);
                 return true;
@@ -294,6 +308,7 @@ static class Composer
             {
                 string tosend = Settings.GetSequenceResult(old_sequence,
                                                            ignore_case);
+                Stats.AddSequence(old_sequence);
                 ResetSequence();
                 SendString(tosend);
                 return false;
@@ -635,18 +650,15 @@ static class Composer
         }
     }
 
-    private static void Log(string format, params object[] args)
-    {
-#if DEBUG
-        string msg = string.Format("{0} {1}", DateTime.Now,
-                                   string.Format(format, args));
-        System.Diagnostics.Debug.WriteLine(msg);
-#endif
-    }
+    /// <summary>
+    /// The sequence being currently typed
+    /// </summary>
+    private static KeySequence m_sequence = new KeySequence();
 
-    private static List<Key> m_sequence = new List<Key>();
+    private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
+
     private static bool m_disabled = false;
     private static bool m_compose_down = false;
     private static bool m_composing = false;

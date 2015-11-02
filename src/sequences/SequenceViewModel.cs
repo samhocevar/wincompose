@@ -49,7 +49,7 @@ namespace WinCompose
 
         public string Description { get; private set; }
 
-        public List<Key> Sequence { get; set; }
+        public KeySequence Sequence { get; set; }
 
         public bool Match(SearchTokens searchText)
         {

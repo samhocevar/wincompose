@@ -182,13 +182,52 @@ public class Key
     }
 };
 
+/// <summary>
+/// The KeySequence class describes a sequence of keys, which can be
+/// compared with other lists of keys.
+/// </summary>
+public class KeySequence : List<Key>
+{
+    public KeySequence() : base(new List<Key>()) {}
+
+    public KeySequence(List<Key> val) : base(val) {}
+
+    public override bool Equals(object o)
+    {
+        if (!(o is KeySequence))
+            return false;
+
+        if (Count != (o as KeySequence).Count)
+            return false;
+
+        for (int i = 0; i < Count; ++i)
+            if (this[i] != (o as KeySequence)[i])
+                return false;
+
+        return true;
+    }
+
+    public new KeySequence GetRange(int start, int count)
+    {
+        return new KeySequence(base.GetRange(start, count));
+    }
+
+    public override int GetHashCode()
+    {
+        int hash = 0x2d2816fe;
+        for (int i = 0; i < Count; ++i)
+            hash = hash * 31 + this[i].GetHashCode();
+        return hash;
+    }
+};
+
 /*
  * This data structure is used for communication with the GUI
  */
 
 public class SequenceDescription : IComparable<SequenceDescription>
 {
-    public List<Key> Sequence = new List<Key>();
+    public KeySequence Sequence = new KeySequence();
     public string Description = "";
     public string Result = "";
     public int Utf32 = -1;
@@ -210,7 +249,7 @@ public class SequenceDescription : IComparable<SequenceDescription>
 
 public class SequenceTree
 {
-    public void Add(List<Key> sequence, string result, int utf32, string desc)
+    public void Add(KeySequence sequence, string result, int utf32, string desc)
     {
         if (sequence.Count == 0)
         {
@@ -227,7 +266,7 @@ public class SequenceTree
         m_children[sequence[0]].Add(subsequence, result, utf32, desc);
     }
 
-    public bool IsValidPrefix(List<Key> sequence, bool ignore_case)
+    public bool IsValidPrefix(KeySequence sequence, bool ignore_case)
     {
         Search flags = Search.Prefixes;
         if (ignore_case)
@@ -235,7 +274,7 @@ public class SequenceTree
         return GetSubtree(sequence, flags) != null;
     }
 
-    public bool IsValidSequence(List<Key> sequence, bool ignore_case)
+    public bool IsValidSequence(KeySequence sequence, bool ignore_case)
     {
         Search flags = Search.Sequences;
         if (ignore_case)
@@ -243,7 +282,7 @@ public class SequenceTree
         return GetSubtree(sequence, flags) != null;
     }
 
-    public string GetSequenceResult(List<Key> sequence, bool ignore_case)
+    public string GetSequenceResult(KeySequence sequence, bool ignore_case)
     {
         Search flags = Search.Sequences;
         if (ignore_case)
@@ -258,7 +297,7 @@ public class SequenceTree
     public List<SequenceDescription> GetSequenceDescriptions()
     {
         List<SequenceDescription> ret = new List<SequenceDescription>();
-        BuildSequenceDescriptions(ret, new List<Key>());
+        BuildSequenceDescriptions(ret, new KeySequence());
         ret.Sort();
         return ret;
     }
@@ -278,7 +317,7 @@ public class SequenceTree
     /// children, we return null. This lets us check for strict prefixes
     /// in addition to full secquences.
     /// </summary>
-    private SequenceTree GetSubtree(List<Key> sequence, Search flags)
+    private SequenceTree GetSubtree(KeySequence sequence, Search flags)
     {
         if (sequence.Count == 0)
         {
@@ -289,7 +328,7 @@ public class SequenceTree
             return this;
         }
 
-        List<Key> keys = new List<Key>{ sequence[0] };
+        KeySequence keys = new KeySequence{ sequence[0] };
         if ((flags & Search.IgnoreCase) != 0 && sequence[0].IsPrintable())
         {
             Key upper = new Key(sequence[0].ToString().ToUpper());
@@ -321,7 +360,7 @@ public class SequenceTree
     /// for the GUI.
     /// </summary>
     private void BuildSequenceDescriptions(List<SequenceDescription> list,
-                                           List<Key> path)
+                                           KeySequence path)
     {
         if (m_result != null)
         {
@@ -335,7 +374,7 @@ public class SequenceTree
 
         foreach (var pair in m_children)
         {
-            var newpath = new List<Key>(path);
+            var newpath = new KeySequence(path);
             newpath.Add(pair.Key);
             pair.Value.BuildSequenceDescriptions(list, newpath);
         }

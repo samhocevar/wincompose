@@ -56,17 +56,21 @@ static class KeyboardHook
 
     private static int OnKey(HC nCode, WM wParam, IntPtr lParam)
     {
-        if (nCode == HC.ACTION)
+        bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
+                        || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
+
+        if (nCode == HC.ACTION && is_key)
         {
-            // Retrieve event data from native structure
+            // Retrieve key event data from native structure
             var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
                                                       typeof(KBDLLHOOKSTRUCT));
-
-            bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
-                            || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
             bool is_injected = (data.flags & LLKHF.INJECTED) != 0;
 
-            if (is_key && !is_injected)
+            Log.Debug("{0}: OnKey(HC.{1}, WM.{2}, [vk:0x{3:X02} sc:0x{4:X02} flags:{5}])",
+                      is_injected ? "Ignored Event" : "Event",
+                      nCode, wParam, (int)data.vk, (int)data.sc, data.flags);
+
+            if (!is_injected)
             {
                 if (Composer.OnKey(wParam, data.vk, data.sc, data.flags))
                 {
@@ -74,6 +78,10 @@ static class KeyboardHook
                     return -1;
                 }
             }
+        }
+        else
+        {
+            Log.Debug("Ignored Event: OnKey({0}, {1})", nCode, wParam);
         }
 
         return NativeMethods.CallNextHookEx(m_hook, nCode, wParam, lParam);
