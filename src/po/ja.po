@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-05 16:49+0000\n"
+"PO-Revision-Date: 2015-11-05 16:51+0000\n"
 "Last-Translator: Hiroki Yabe <gigysurk@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/wincompose/master/ja/>\n"
@@ -165,7 +165,7 @@ msgstr "終了"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "by Sam Hocevar <sam@hocevar.net>"
+msgstr "作者: Sam Hocevar <sam@hocevar.net>"
 
 #: i18n/Text.resx:229 ID:Sequences
 msgid "Sequences"
