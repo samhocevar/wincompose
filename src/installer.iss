@@ -37,6 +37,7 @@ Source: "bin\{#CONFIG}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\it-CH\*.dll"; DestDir: "{app}\it-CH"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\ja\*.dll"; DestDir: "{app}\ja"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
@@ -66,7 +67,7 @@ Name: "el"; MessagesFile: "compiler:Languages/Greek.isl"
 ; Name: "he"; MessagesFile: "compiler:Languages/Hebrew.isl"
 ; Name: "hu"; MessagesFile: "compiler:Languages/Hungarian.isl"
 Name: "it"; MessagesFile: "compiler:Languages/Italian.isl"
-; Name: "ja"; MessagesFile: "compiler:Languages/Japanese.isl"
+Name: "ja"; MessagesFile: "compiler:Languages/Japanese.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Nepali.isl"
 ; Name: "no"; MessagesFile: "compiler:Languages/Norwegian.isl"
 Name: "pl"; MessagesFile: "compiler:Languages/Polish.isl"

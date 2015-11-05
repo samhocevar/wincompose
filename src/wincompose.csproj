@@ -149,6 +149,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.it-CH.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.ja.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -389,6 +394,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.it-CH.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.ja.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -534,6 +544,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <EmbeddedResource Include="unicode\Category.it-CH.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.it-CH.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.ja.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.nl.resx">
@@ -783,6 +798,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <EmbeddedResource Include="i18n\Text.it-CH.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.it-CH.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ja.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.nl.resx">
