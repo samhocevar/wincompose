@@ -61,6 +61,9 @@ public class KeyConverter : TypeConverter
 [TypeConverter(typeof(KeyConverter))]
 public class Key
 {
+    /// <summary>
+    /// A dictionary of symbols that we use for some non-printable key labels.
+    /// </summary>
     private static readonly Dictionary<VK, string> m_key_labels = new Dictionary<VK, string>
     {
         { VK.UP,    "▲" },
@@ -313,9 +316,12 @@ public class SequenceTree
     /// <summary>
     /// If the first key of <see cref="sequences"/> matches a known child,
     /// return that child. Otherwise, return null.
-    /// If <see cref="non_terminal"/> is true, but we are a rule with no
-    /// children, we return null. This lets us check for strict prefixes
-    /// in addition to full secquences.
+    /// If <see cref="flags"/> has the <see cref="Search.Prefixes"/> flag
+    /// and we are a rule with no children, we return null. This lets us
+    /// check for strict prefixes.
+    /// If <see cref="flags"/> has the <see cref="Search.Sequences"/> flag
+    /// and we are not a rule (just a node in the tree), we do not return
+    /// the current node (but we do return children sequences).
     /// </summary>
     private SequenceTree GetSubtree(KeySequence sequence, Search flags)
     {
