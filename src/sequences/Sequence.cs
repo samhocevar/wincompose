@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
@@ -210,6 +211,17 @@ public class KeySequence : List<Key>
         return true;
     }
 
+    /// <summary>
+    /// Serialize sequence to a printable string.
+    /// </summary>
+    public override string ToString()
+    {
+        string ret = "";
+        for (int i = 0; i < Count; ++i)
+            ret += this[i].ToString();
+        return ret;
+    }
+
     public new KeySequence GetRange(int start, int count)
     {
         return new KeySequence(base.GetRange(start, count));
@@ -245,11 +257,12 @@ public class SequenceDescription : IComparable<SequenceDescription>
     }
 };
 
-/*
- * The SequenceTree class contains a tree of all valid sequences, where
- * each child is indexed by the sequence key.
- */
-
+/// <summary>
+/// The SequenceTree class contains a tree of all valid sequences, where
+/// each child is indexed by the sequence key.
+/// Some functions such as <see cref="IsValidPrefix"/> also work to query
+/// the special Unicode entry mode.
+/// </summary>
 public class SequenceTree
 {
     public void Add(KeySequence sequence, string result, int utf32, string desc)
@@ -274,7 +287,13 @@ public class SequenceTree
         Search flags = Search.Prefixes;
         if (ignore_case)
             flags |= Search.IgnoreCase;
-        return GetSubtree(sequence, flags) != null;
+
+        // First check if we have a real sequence prefix in our tree
+        if (GetSubtree(sequence, flags) != null)
+            return true;
+
+        // Otherwise, check for generic Unicode entry prefix
+        return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{0,4}$").Success;
     }
 
     public bool IsValidSequence(KeySequence sequence, bool ignore_case)
@@ -282,7 +301,13 @@ public class SequenceTree
         Search flags = Search.Sequences;
         if (ignore_case)
             flags |= Search.IgnoreCase;
-        return GetSubtree(sequence, flags) != null;
+
+        // First check if we have a real sequence in our tree
+        if (GetSubtree(sequence, flags) != null)
+            return true;
+
+        // Otherwise, check for generic Unicode sequence
+        return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$").Success;
     }
 
     public string GetSequenceResult(KeySequence sequence, bool ignore_case)
@@ -290,8 +315,21 @@ public class SequenceTree
         Search flags = Search.Sequences;
         if (ignore_case)
             flags |= Search.IgnoreCase;
+
+        // First check if we have a real sequence in our tree
         SequenceTree node = GetSubtree(sequence, flags);
-        return node == null ? "" : node.m_result;
+        if (node != null && node.m_result != "")
+            return node.m_result;
+
+        // Otherwise, check for generic Unicode sequence
+        var m = Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$");
+        if (m.Success)
+        {
+            int codepoint = Convert.ToInt32(m.Groups[0].Value.Substring(1), 16);
+            return char.ConvertFromUtf32(codepoint);
+        }
+
+        return "";
     }
 
     /// <summary>
