@@ -31,19 +31,19 @@ class InputSequence
                                 Marshal.SizeOf(typeof(INPUT)));
     }
 
-    public void Add(ScanCodeShort sc)
+    public void AddInput(ScanCodeShort sc)
     {
-        Add((VirtualKeyShort)0, sc);
+        AddInput((VirtualKeyShort)0, sc);
     }
 
-    public void Add(VirtualKeyShort vk)
+    public void AddInput(VirtualKeyShort vk)
     {
-        Add(vk, (ScanCodeShort)0);
+        AddInput(vk, (ScanCodeShort)0);
     }
 
     private List<INPUT> m_input = new List<INPUT>();
 
-    private void Add(VirtualKeyShort vk, ScanCodeShort sc)
+    private void AddInput(VirtualKeyShort vk, ScanCodeShort sc)
     {
         INPUT tmp = new INPUT();
         tmp.type = EINPUT.KEYBOARD;
@@ -399,18 +399,27 @@ static class Composer
 
         if (use_gtk_hack)
         {
-            /* Wikipedia says Ctrl+Shift+u, release, then type the four hex
-             * digits, and press Enter.
-             * (http://en.wikipedia.org/wiki/Unicode_input). */
-            SendKeyDown(VK.LCONTROL);
-            SendKeyDown(VK.LSHIFT);
-            SendKeyPress((VK)'U');
-            SendKeyUp(VK.LSHIFT);
-            SendKeyUp(VK.LCONTROL);
-
             foreach (var ch in str)
-                foreach (var key in String.Format("{0:X04} ", (short)ch))
-                    SendKeyPress((VK)key);
+            {
+                if (ch >= 0x20 && ch < 0x7f)
+                {
+                    SendKeyPress((VK)char.ToUpper(ch));
+                }
+                else
+                {
+                    /* Wikipedia says Ctrl+Shift+u, release, then type the four hex
+                     * digits, and press Enter.
+                     * (http://en.wikipedia.org/wiki/Unicode_input). */
+                    SendKeyDown(VK.LCONTROL);
+                    SendKeyDown(VK.LSHIFT);
+                    SendKeyPress((VK)'U');
+                    SendKeyUp(VK.LSHIFT);
+                    SendKeyUp(VK.LCONTROL);
+
+                    foreach (var key in String.Format("{0:X04} ", (short)ch))
+                        SendKeyPress((VK)key);
+                }
+            }
         }
         else
         {
@@ -418,18 +427,18 @@ static class Composer
 
             if (use_office_hack)
             {
-                Seq.Add((ScanCodeShort)'\u200b');
-                Seq.Add((VirtualKeyShort)VK.LEFT);
+                Seq.AddInput((ScanCodeShort)'\u200b');
+                Seq.AddInput((VirtualKeyShort)VK.LEFT);
             }
 
             for (int i = 0; i < str.Length; i++)
             {
-                Seq.Add((ScanCodeShort)str[i]);
+                Seq.AddInput((ScanCodeShort)str[i]);
             }
 
             if (use_office_hack)
             {
-                Seq.Add((VirtualKeyShort)VK.RIGHT);
+                Seq.AddInput((VirtualKeyShort)VK.RIGHT);
             }
 
             Seq.Send();
