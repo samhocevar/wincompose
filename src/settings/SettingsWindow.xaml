@@ -45,6 +45,7 @@
                  <RowDefinition Height="Auto"/>
                  <RowDefinition Height="Auto"/>
                  <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
              </Grid.RowDefinitions>
 
              <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
@@ -72,28 +73,35 @@
 
              <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
                        Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}">
+                 <TextBox Text="{x:Static i18n:Text.UnicodeInput}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
+
+             <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+                       Margin="8,4" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}">
                  <TextBox Text="{x:Static i18n:Text.CaseInsensitive}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
              </CheckBox>
 
-             <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+             <CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"
                        Margin="8,4" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}">
                  <TextBox Text="{x:Static i18n:Text.DiscardOnInvalid}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
              </CheckBox>
 
-             <CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"
+             <CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"
                        Margin="8,4" VerticalAlignment="Center"
                        IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}">
                  <TextBox Text="{x:Static i18n:Text.BeepOnInvalid}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
              </CheckBox>
 
-             <TextBlock Grid.Row="6" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
+             <TextBlock Grid.Row="7" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-             <TextBox Grid.Row="6" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto" MaxWidth="200"
+             <TextBox Grid.Row="7" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto" MaxWidth="200"
                       Grid.ColumnSpan="3" Height="Auto" FontSize="20" FontWeight="SemiBold"
                       Foreground="#434" Background="#eee" ForceCursor="True">ÅḄ₡Đ♥…</TextBox>
          </Grid>

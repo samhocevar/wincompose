@@ -293,7 +293,10 @@ public class SequenceTree
             return true;
 
         // Otherwise, check for generic Unicode entry prefix
-        return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{0,4}$").Success;
+        if (Settings.UnicodeInput.Value)
+            return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{0,4}$").Success;
+
+        return false;
     }
 
     public bool IsValidSequence(KeySequence sequence, bool ignore_case)
@@ -307,7 +310,10 @@ public class SequenceTree
             return true;
 
         // Otherwise, check for generic Unicode sequence
-        return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$").Success;
+        if (Settings.UnicodeInput.Value)
+            return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$").Success;
+
+        return false;
     }
 
     public string GetSequenceResult(KeySequence sequence, bool ignore_case)
@@ -321,12 +327,15 @@ public class SequenceTree
         if (node != null && node.m_result != "")
             return node.m_result;
 
-        // Otherwise, check for generic Unicode sequence
-        var m = Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$");
-        if (m.Success)
+        // Otherwise, check for a generic Unicode sequence
+        if (Settings.UnicodeInput.Value)
         {
-            int codepoint = Convert.ToInt32(m.Groups[0].Value.Substring(1), 16);
-            return char.ConvertFromUtf32(codepoint);
+            var m = Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$");
+            if (m.Success)
+            {
+                int codepoint = Convert.ToInt32(m.Groups[0].Value.Substring(1), 16);
+                return char.ConvertFromUtf32(codepoint);
+            }
         }
 
         return "";
