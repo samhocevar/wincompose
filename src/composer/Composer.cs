@@ -88,7 +88,7 @@ static class Composer
         m_last_key_time = DateTime.Now;
 
         // Do nothing if we are disabled; NOTE: this disables stats, too
-        if (m_disabled)
+        if (Settings.Disabled.Value)
         {
             return false;
         }
@@ -467,9 +467,9 @@ static class Composer
     /// </summary>
     public static void ToggleDisabled()
     {
-        m_disabled = !m_disabled;
+        Settings.Disabled.Value = !Settings.Disabled.Value;
 
-        if (m_disabled)
+        if (Settings.Disabled.Value)
         {
             m_composing = false;
             m_compose_down = false;
@@ -484,7 +484,7 @@ static class Composer
     /// </summary>
     public static bool IsDisabled()
     {
-        return m_disabled;
+        return Settings.Disabled.Value;
     }
 
     private static void ResetSequence()
@@ -668,7 +668,6 @@ static class Composer
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
 
-    private static bool m_disabled = false;
     private static bool m_compose_down = false;
     private static bool m_composing = false;
 }

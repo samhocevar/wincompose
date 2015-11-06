@@ -35,6 +35,7 @@ namespace WinCompose
             Language = new SettingsEntry<string>(GlobalSection, "language", "");
             ComposeKey = new SettingsEntry<Key>(GlobalSection, "compose_key", m_default_compose_key);
             ResetDelay = new SettingsEntry<int>(GlobalSection, "reset_delay", -1);
+            Disabled = new SettingsEntry<bool>(GlobalSection, "disabled", false);
             UnicodeInput = new SettingsEntry<bool>(GlobalSection, "unicode_input", true);
             CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
             DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
@@ -50,6 +51,8 @@ namespace WinCompose
         public static SettingsEntry<Key> ComposeKey { get; private set; }
 
         public static SettingsEntry<int> ResetDelay { get; private set; }
+
+        public static SettingsEntry<bool> Disabled { get; private set; }
 
         public static SettingsEntry<bool> UnicodeInput { get; private set; }
 
@@ -157,6 +160,7 @@ namespace WinCompose
             m_valid_languages[""] = i18n.Text.AutodetectLanguage;
 
             // Various options
+            Disabled.Load();
             UnicodeInput.Load();
             CaseInsensitive.Load();
             DiscardOnInvalid.Load();
@@ -172,6 +176,7 @@ namespace WinCompose
             SaveEntry("reset_delay", m_delay.ToString());
             Language.Save();
             ComposeKey.Save();
+            Disabled.Save();
             UnicodeInput.Save();
             CaseInsensitive.Save();
             DiscardOnInvalid.Save();

@@ -33,8 +33,10 @@ namespace WinCompose
         [STAThread]
         static void Main()
         {
-            Composer.Init();
+            // Do this before Composer.Init() because of the Disabled setting
             Settings.LoadConfig();
+
+            Composer.Init();
             Settings.LoadSequences();
             KeyboardHook.Init();
 
@@ -74,6 +76,7 @@ namespace WinCompose
                 m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
 
                 Composer.Changed += ComposerStateChanged;
+                ComposerStateChanged(null, new EventArgs());
 
                 WinForms.Application.Run();
                 m_tray_icon.Dispose();
