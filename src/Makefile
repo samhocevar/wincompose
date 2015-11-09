@@ -18,27 +18,22 @@ TXT = rules/Xorg.txt \
 EXE = bin/$(CONFIG)/WinCompose.exe
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
 
-INSTALLER = WinCompose-Setup-$(VERSION).exe
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
-DEVENVDIR = "$(VS110COMNTOOLS)\\..\\..\\Common7\\IDE"
-ISCCDIR = c:\\Program Files (x86)\\Inno Setup 5
-
-ISCC = $(ISCCDIR)\\ISCC.exe
-DEVENV = $(DEVENVDIR)\\devenv.com
+DEVENV = "$(VS120COMNTOOLS)\\..\\..\\Common7\\IDE\\devenv.com"
 MSGMERGE = msgmerge
 
 all: clean installer portable
 
 clean:
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project wincompose.csproj
-	rm -f $(INSTALLER) $(PORTABLE)
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.vcxproj
+	rm -f $(PORTABLE)
 	rm -rf obj wincompose/obj wincompose.gui/obj || true
 	rm -rf bin wincompose/bin wincompose.gui/bin || true
 
 installer: $(EXE) $(ISS)
-	rm -f $(INSTALLER)
-	CONFIG=$(CONFIG) VERSION=$(VERSION) "$(ISCC)" $(ISS)
+	$(DEVENV) wincompose.sln //rebuild $(CONFIG) //project installer.vcxproj
 
 portable: $(EXE)
 	rm -f $(PORTABLE)
