@@ -1,7 +1,9 @@
 # for Emacs: -*- coding: utf-8 -*-
 
+#
 # Custom additions for WinCompose
-<Multi_key> <t> <f>			: "(ﾉಥ益ಥ）ﾉ﻿ ┻━┻"	# Flip table like a boss.
+# by Sam Hocevar <sam@hocevar.net>
+#
 
 # Konami code
 <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "(ノಠ益ಠ)ノ彡┻━┻" # ANGRY TABLE FLIP
@@ -12,4 +14,8 @@
 
 # Minus sign
 <Multi_key> <minus> <minus> <equal> : "−"    U2212 # MINUS SIGN
+
+# Various tests
+<Multi_key> <t> <f> : "(ﾉಥ益ಥ）ﾉ﻿ ┻━┻" # Flip table like a boss.
+<Multi_key> <h> <w> : "Hello World"
 

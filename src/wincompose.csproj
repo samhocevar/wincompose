@@ -900,6 +900,12 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rules\Emoji.txt" />
+    <Resource Include="rules\WinCompose.txt" />
+    <Resource Include="rules\Xcompose.txt" />
+    <Resource Include="rules\Xorg.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
