@@ -37,18 +37,6 @@
   <PropertyGroup>
     <StartupObject>WinCompose.Program</StartupObject>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Installer|AnyCPU'">
-    <OutputPath>bin\Installer\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <PostBuildEvent>set CONFIG=$(Configuration)
-set VERSION=$(ApplicationVersion)
-iscc $(SolutionDir)\installer.iss</PostBuildEvent>
-  </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
