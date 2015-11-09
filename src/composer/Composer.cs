@@ -401,14 +401,21 @@ static class Composer
         {
             foreach (var ch in str)
             {
-                if (ch >= 0x20 && ch < 0x7f)
+                if (false)
                 {
-                    SendKeyPress((VK)char.ToUpper(ch));
+                    /* FIXME: there is a possible optimisation here where we do
+                     * not have to send the whole unicode sequence for regular
+                     * ASCII characters. However, SendKeyPress() needs a VK, so
+                     * we need an ASCII to VK conversion method, together with
+                     * the proper keyboard modifiers. Maybe not worth it.
+                     * Also, we cannot use KeySequence because GTK+ seems to
+                     * ignore SendInput(). */
+                    //SendKeyPress((VK)char.ToUpper(ch));
                 }
                 else
                 {
-                    /* Wikipedia says Ctrl+Shift+u, release, then type the four hex
-                     * digits, and press Enter.
+                    /* Wikipedia says Ctrl+Shift+u, release, then type the four
+                     * hex digits, and press Enter.
                      * (http://en.wikipedia.org/wiki/Unicode_input). */
                     SendKeyDown(VK.LCONTROL);
                     SendKeyDown(VK.LSHIFT);
