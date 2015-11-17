@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-17 09:56+0000\n"
+"PO-Revision-Date: 2015-11-17 15:33+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
 "Language-Team: Estonian "
 "<https://hosted.weblate.org/projects/wincompose/master/et/>\n"
@@ -239,14 +239,16 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Kui sisestatud jada puudub, siis unusta kõik sisestatud märgid. Vaikimisi "
+"väljastatakse märgid nii nagu kombineerimisklahvi ei ole kasutatud."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Häälitse"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Kui sisestatud jada on tundmatu, siis tee häält."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -257,6 +259,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Vali keel, mida WinCompose kasutab liideses. Vaikmisi kasutatakse "
+"operatsioonisüsteemi keelt."
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -291,6 +295,9 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"See ütleb WinCompose'ile, et ta säilitaks nii palju kui võimalik klahvi "
+"algse käitumise. Näiteks jätkab Alt+Tab oma tööd isegi siis, kui Alt on "
+"valitud kombineerimisklahviks."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -302,6 +309,9 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Microsoft Office programmid muudavad mõnikord käigult dokumendi fonti, kui "
+"sisestatakse teatavaid Unicode märke. See parameeter lisab automaatselt "
+"Unicode märgi taha nähtamatu märgisi, et vältida vea avaldumist."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -313,6 +323,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Kui Caps Lock on valitud kombineerimisklahviks, siis blokeeritakse klahvi "
+"algne käitumine. See parameeter lubab lülitada Caps Locki sisse vajutades "
+"korraga mõlemat Shift klahvi."
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -324,6 +337,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Kui Caps Lock on valitud kombineerimisklahviks, siis blokeeritakse klahvi "
+"algne käitumine. See parameeter lubab lülitada Caps Locki välja vajutades "
+"Shift klahvi."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:327 ID:Categories
