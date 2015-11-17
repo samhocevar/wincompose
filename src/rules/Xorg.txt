@@ -1,47 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # UTF-8 (Unicode) compose sequence
 # David.Monniaux@ens.fr
 #
@@ -88,7 +45,6 @@
 <dead_iota> <space>              	: "ͺ"   U37a # GREEK YPOGEGRAMMENI
 <dead_iota> <dead_iota>          	: "ͺ"   U37a # GREEK YPOGEGRAMMENI
 <Multi_key> <minus> <minus> <space>	: "­"   U00ad # SOFT HYPHEN
-
 
 # ASCII characters that may be difficult to access
 # on some keyboards.
@@ -333,7 +289,6 @@
 # There are some conflicts among sequences, but I left them alone.
 #
 # group 1: cluster jamos made of three basic jamos
-
 
 <Multi_key> <U1100> <U1100> 	: "ᄁ"   U1101 # HANGUL CHOSEONG SSANGKIYEOK
 <Multi_key> <U1103> <U1103> 	: "ᄄ"   U1104 # HANGUL CHOSEONG SSANGTIKEUT
@@ -5167,7 +5122,6 @@
 <Multi_key> <U1D1BB> <U1D16F> 	: "𝆹𝅥𝅯"   U1D1BF # MUSICAL SYMBOL FUSA WHITE
 
 <Multi_key> <U1D1BC> <U1D16F> 	: "𝆺𝅥𝅯"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
-
 
 #
 # Khmer digraphs

@@ -186,7 +186,7 @@ msgid "Delay:"
 msgstr ""
 
 #: i18n/Text.resx:248 ID:UnicodeInput
-msgid "Unicode input: Compose U 1 A 3 F for character U+1A3F"
+msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
 msgstr ""
 
 #: i18n/Text.resx:251 ID:CaseInsensitive
