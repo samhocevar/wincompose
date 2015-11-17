@@ -95,6 +95,11 @@ namespace WinCompose.i18n {
                 return ResourceManager.GetString("AutodetectLanguage", resourceCulture);
             }
         }
+        public static string InvalidSequences {
+            get {
+                return ResourceManager.GetString("InvalidSequences", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Beep on invalid sequences.
@@ -102,6 +107,11 @@ namespace WinCompose.i18n {
         public static string BeepOnInvalid {
             get {
                 return ResourceManager.GetString("BeepOnInvalid", resourceCulture);
+            }
+        }
+        public static string BeepOnInvalidToolTip {
+            get {
+                return ResourceManager.GetString("BeepOnInvalidToolTip", resourceCulture);
             }
         }
         
@@ -117,6 +127,11 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Fall back to case insensitive matches on invalid sequences.
         /// </summary>
+        public static string CaseInsensitiveToolTip {
+            get {
+                return ResourceManager.GetString("CaseInsensitiveToolTip", resourceCulture);
+            }
+        }
         public static string CaseInsensitive {
             get {
                 return ResourceManager.GetString("CaseInsensitive", resourceCulture);
@@ -144,6 +159,11 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Compose Key:.
         /// </summary>
+        public static string ComposeKeyToolTip {
+            get {
+                return ResourceManager.GetString("ComposeKeyToolTip", resourceCulture);
+            }
+        }
         public static string ComposeKey {
             get {
                 return ResourceManager.GetString("ComposeKey", resourceCulture);
@@ -180,6 +200,11 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Discard characters from invalid sequences.
         /// </summary>
+        public static string DiscardOnInvalidToolTip {
+            get {
+                return ResourceManager.GetString("DiscardOnInvalidToolTip", resourceCulture);
+            }
+        }
         public static string DiscardOnInvalid {
             get {
                 return ResourceManager.GetString("DiscardOnInvalid", resourceCulture);
@@ -189,6 +214,11 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Emulate CapsLock using both Shift keys.
         /// </summary>
+        public static string EmulateCapsLockToolTip {
+            get {
+                return ResourceManager.GetString("EmulateCapsLockToolTip", resourceCulture);
+            }
+        }
         public static string EmulateCapsLock {
             get {
                 return ResourceManager.GetString("EmulateCapsLock", resourceCulture);
@@ -216,6 +246,11 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Insert zero-width spaces in Office apps.
         /// </summary>
+        public static string InsertZwspToolTip {
+            get {
+                return ResourceManager.GetString("InsertZwspToolTip", resourceCulture);
+            }
+        }
         public static string InsertZwsp {
             get {
                 return ResourceManager.GetString("InsertZwsp", resourceCulture);
@@ -225,6 +260,11 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Maintain original compose key behaviour.
         /// </summary>
+        public static string KeepOriginalKeyToolTip {
+            get {
+                return ResourceManager.GetString("KeepOriginalKeyToolTip", resourceCulture);
+            }
+        }
         public static string KeepOriginalKey {
             get {
                 return ResourceManager.GetString("KeepOriginalKey", resourceCulture);
@@ -372,6 +412,11 @@ namespace WinCompose.i18n {
         public static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        public static string LanguageToolTip {
+            get {
+                return ResourceManager.GetString("LanguageToolTip", resourceCulture);
             }
         }
         
@@ -594,6 +639,11 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Shift key disables CapsLock.
         /// </summary>
+        public static string ShiftDisablesCapsLockToolTip {
+            get {
+                return ResourceManager.GetString("ShiftDisablesCapsLockToolTip", resourceCulture);
+            }
+        }
         public static string ShiftDisablesCapsLock {
             get {
                 return ResourceManager.GetString("ShiftDisablesCapsLock", resourceCulture);
@@ -660,6 +710,11 @@ namespace WinCompose.i18n {
         public static string UnicodeInput {
             get {
                 return ResourceManager.GetString("UnicodeInput", resourceCulture);
+            }
+        }
+        public static string UnicodeInputToolTip {
+            get {
+                return ResourceManager.GetString("UnicodeInputToolTip", resourceCulture);
             }
         }
         

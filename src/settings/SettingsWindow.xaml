@@ -15,7 +15,29 @@
         Closing="CloseWindowClicked">
 
     <Window.Resources>
+
+       <!-- display tooltips for 30 seconds; they’re supposed to be helpful -->
+       <Style TargetType="TextBlock">
+           <Setter Property="ToolTipService.ShowDuration" Value="30000" />
+       </Style>
+       <Style TargetType="CheckBox">
+           <Setter Property="ToolTipService.ShowDuration" Value="30000" />
+       </Style>
+
+       <!-- wrap tooltips at 350 pixels width -->
+       <Style TargetType="ToolTip">
+          <Setter Property="ContentTemplate">
+             <Setter.Value>
+                <DataTemplate>
+                   <StackPanel>
+                      <TextBlock Text="{Binding}" MaxWidth="350" TextWrapping="Wrap" />
+                   </StackPanel>
+                </DataTemplate>
+             </Setter.Value>
+          </Setter>
+       </Style>
     </Window.Resources>
+
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="OnCloseCommandExecuted"/>
@@ -42,21 +64,19 @@
                  <RowDefinition Height="Auto"/>
                  <RowDefinition Height="Auto"/>
                  <RowDefinition Height="Auto"/>
-                 <RowDefinition Height="Auto"/>
-                 <RowDefinition Height="Auto"/>
-                 <RowDefinition Height="Auto"/>
-                 <RowDefinition Height="Auto"/>
              </Grid.RowDefinitions>
 
              <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
-                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
+                        ToolTipService.ToolTip="{x:Static i18n:Text.LanguageToolTip}"/>
              <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                        ItemsSource="{x:Static wc:Settings.ValidLanguages}"
                        SelectedValue="{Binding SelectedLanguage}"
                        SelectedValuePath="Key" DisplayMemberPath="Value"/>
 
              <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.ComposeKey}"
-                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+                        Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
+                        ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
              <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                        ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
                        SelectedItem="{Binding Value, Source={x:Static wc:Settings.ComposeKey}}"
@@ -71,41 +91,53 @@
                             Focusable="False" TextAlignment="Right" VerticalAlignment="Center"/>
              </UniformGrid>
 
-             <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
-                       Margin="8,4" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}">
-                 <TextBox Text="{x:Static i18n:Text.UnicodeInput}"
-                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
-
-             <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
-                       Margin="8,4" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}">
-                 <TextBox Text="{x:Static i18n:Text.CaseInsensitive}"
-                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
-
-             <CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"
-                       Margin="8,4" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}">
-                 <TextBox Text="{x:Static i18n:Text.DiscardOnInvalid}"
-                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
-
-             <CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"
-                       Margin="8,4" VerticalAlignment="Center"
-                       IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}">
-                 <TextBox Text="{x:Static i18n:Text.BeepOnInvalid}"
-                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
-             </CheckBox>
-
-             <TextBlock Grid.Row="7" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
+             <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-             <TextBox Grid.Row="7" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto" MaxWidth="200"
+             <TextBox Grid.Row="8" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto" MaxWidth="200"
                       Grid.ColumnSpan="3" Height="Auto" FontSize="20" FontWeight="SemiBold"
                       Foreground="#434" Background="#eee" ForceCursor="True">ÅḄ₡Đ♥…</TextBox>
          </Grid>
       </GroupBox>
+
+      <!-- The Invalid Sequences group -->
+      <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.InvalidSequences}" VerticalAlignment="Top">
+          <Grid VerticalAlignment="Center">
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+
+             <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}"
+                       ToolTipService.ToolTip="{x:Static i18n:Text.CaseInsensitiveToolTip}">
+                 <TextBox Text="{x:Static i18n:Text.CaseInsensitive}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
+
+             <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}"
+                       ToolTipService.ToolTip="{x:Static i18n:Text.DiscardOnInvalidToolTip}">
+                 <TextBox Text="{x:Static i18n:Text.DiscardOnInvalid}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
+
+             <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                       Margin="8,4" VerticalAlignment="Center"
+                       IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"
+                       ToolTipService.ToolTip="{x:Static i18n:Text.BeepOnInvalidToolTip}">
+                 <TextBox Text="{x:Static i18n:Text.BeepOnInvalid}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+             </CheckBox>
+
+          </Grid>
+      </GroupBox>
+
 
       <!-- The Tweaks group -->
       <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.Tweaks}" VerticalAlignment="Top">
@@ -118,32 +150,45 @@
                   <RowDefinition Height="Auto"/>
                   <RowDefinition Height="Auto"/>
                   <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
               </Grid.RowDefinitions>
 
-              <CheckBox Grid.Row="0" Grid.Column="0"
-                      Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
-                      IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}">
-                  <TextBox Text="{x:Static i18n:Text.KeepOriginalKey}"
-                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+              <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                      Margin="8,4" VerticalAlignment="Center"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}"
+                      ToolTipService.ToolTip="{x:Static i18n:Text.UnicodeInputToolTip}">
+                  <TextBox Text="{x:Static i18n:Text.UnicodeInput}"
+                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
               </CheckBox>
 
               <CheckBox Grid.Row="1" Grid.Column="0"
-                      Margin="8,4" VerticalAlignment="Center"
-                      IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}">
-                  <TextBox Text="{x:Static i18n:Text.InsertZwsp}"
+                      Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"
+                      ToolTipService.ToolTip="{x:Static i18n:Text.KeepOriginalKeyToolTip}">
+                  <TextBox Text="{x:Static i18n:Text.KeepOriginalKey}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
               </CheckBox>
 
               <CheckBox Grid.Row="2" Grid.Column="0"
                       Margin="8,4" VerticalAlignment="Center"
-                      IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}">
-                  <TextBox Text="{x:Static i18n:Text.EmulateCapsLock}"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"
+                      ToolTipService.ToolTip="{x:Static i18n:Text.InsertZwspToolTip}">
+                  <TextBox Text="{x:Static i18n:Text.InsertZwsp}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
               </CheckBox>
 
               <CheckBox Grid.Row="3" Grid.Column="0"
                       Margin="8,4" VerticalAlignment="Center"
-                      IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}">
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}"
+                      ToolTipService.ToolTip="{x:Static i18n:Text.EmulateCapsLockToolTip}">
+                  <TextBox Text="{x:Static i18n:Text.EmulateCapsLock}"
+                          Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
+              </CheckBox>
+
+              <CheckBox Grid.Row="4" Grid.Column="0"
+                      Margin="8,4" VerticalAlignment="Center"
+                      IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"
+                      ToolTipService.ToolTip="{x:Static i18n:Text.ShiftDisablesCapsLockToolTip}">
                   <TextBox Text="{x:Static i18n:Text.ShiftDisablesCapsLock}"
                           Focusable="False" TextWrapping="Wrap" BorderThickness="0"/>
               </CheckBox>

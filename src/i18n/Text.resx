@@ -240,24 +240,46 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Compose Key:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Select the key that should act as the Compose key.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Delay:</value>
     <comment>The compose key deactivates itself after a certain configurable delay</comment>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
-    <value>Unicode input: Compose U 1 A 3 F outputs character U+1A3F</value>
+    <value>Advanced Unicode input</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>On invalid sequences</value>
+    <comment>This is the name of a category of settings about what happens when invalid sequences are typed</comment>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>Fall back to case insensitive matches on invalid sequences</value>
+    <value>Fall back to case insensitive matches</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>If the entered sequence does not exist, but there is one that only differs by case, automatically correct it.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Discard characters from invalid sequences</value>
+    <value>Discard all typed characters</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Beep on invalid sequences</value>
+    <value>Emit a beep</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>If the entered sequence does not exist, emit a system sound.</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Interface language:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Select the language that WinCompose uses for the interface. By default the operating system language is used.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
@@ -279,14 +301,26 @@
     <value>Maintain original compose key behaviour</value>
     <comment>Should this say “retain” instead of “maintain”?</comment>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insert zero-width spaces in Office apps</value>
   </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug.</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emulate CapsLock using both Shift keys</value>
+    <value>Emulate Caps Lock using both Shift keys</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Shift key disables CapsLock</value>
+    <value>Shift key disables Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
