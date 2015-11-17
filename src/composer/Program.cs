@@ -12,6 +12,7 @@
 //
 
 using System;
+using System.Collections.Generic; // for updater
 using System.Diagnostics;
 using System.IO;
 using System.Net; // for updater
@@ -186,38 +187,31 @@ namespace WinCompose
 
         private static void CheckForUpdates()
         {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+
             WebClient browser = new WebClient();
-            browser.Headers.Add("user-agent", "WinCompose");
-            Stream s = browser.OpenRead("https://github.com/samhocevar/wincompose/releases");
+
+            string agent = string.Format("WinCompose/{0} ({1}{2})",
+                                         Settings.Version,
+                                         Environment.OSVersion,
+                                         Settings.IsInstalled() ? "" : "; Portable");
+            browser.Headers.Add("user-agent", agent);
+            Stream s = browser.OpenRead("http://wincompose.info/status.txt");
             StreamReader sr = new StreamReader(s);
-            string data = sr.ReadToEnd();
-            s.Close();
-            sr.Close();
 
-            // Look for strings matching the following:
-            // href="/samhocevar/wincompose/releases/download/v0.7.1/WinCompose-NoInstall-0.7.1.zip"
-            // href="/samhocevar/wincompose/releases/download/v0.7.1/WinCompose-Setup-0.7.1.exe" 
-            string[] patterns = new string[]
+            for (string line = sr.ReadLine(); line != null;  line = sr.ReadLine())
             {
-                @"href=""/samhocevar/wincompose/releases/download/v([^/]*)/WinCompose-NoInstall-([^/]*).zip""",
-                @"href=""/samhocevar/wincompose/releases/download/v([^/]*)/WinCompose-Setup-([^/]*).exe""",
-            };
-
-            foreach (string pattern in patterns)
-            {
-                var m = Regex.Match(data, pattern);
-
+                string pattern = "([^:]*): (.*[^ ]) *";
+                var m = Regex.Match(line, pattern);
                 if (m.Groups.Count == 3)
-                {
-                    string v1 = m.Groups[1].Captures[0].ToString();
-                    string v2 = m.Groups[1].Captures[0].ToString();
-
-                    if (v1 == v2)
-                    {
-                        Console.WriteLine("Found version {0}", v1);
-                    }
-                }
+                    data[m.Groups[1].Captures[0].ToString()] = m.Groups[2].Captures[0].ToString();
             }
+
+            sr.Close();
+            s.Close();
+
+            foreach (string k in data.Keys)
+                Log.Debug("Update data " + k + ": " + data[k]);
         }
 
         public static string Version

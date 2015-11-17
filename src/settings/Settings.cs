@@ -496,7 +496,7 @@ namespace WinCompose
             return Path.GetDirectoryName(GetExeName());
         }
 
-        private static bool IsInstalled()
+        public static bool IsInstalled()
         {
             return File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
         }
