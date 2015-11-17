@@ -185,7 +185,7 @@ namespace WinCompose
                 if (m_version == null)
                 {
                     XmlDocument doc = new XmlDocument();
-                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.xml");
+                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.config");
                     doc.Load(stream);
                     XmlNamespaceManager mgr = new XmlNamespaceManager(doc.NameTable);
                     mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");
