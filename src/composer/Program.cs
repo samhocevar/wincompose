@@ -12,12 +12,8 @@
 //
 
 using System;
-using System.Collections.Generic; // for updater
 using System.Diagnostics;
-using System.IO;
-using System.Net; // for updater
 using System.Reflection;
-using System.Text.RegularExpressions; // for updater
 using System.Windows.Forms.Integration;
 using System.Windows.Interop;
 using WinForms = System.Windows.Forms;
@@ -81,7 +77,7 @@ namespace WinCompose
                 ComposerStateChanged(null, new EventArgs());
 
                 // FIXME: do this in a background thread
-                CheckForUpdates();
+                Updater.CheckForUpdates();
 
                 WinForms.Application.Run();
                 m_tray_icon.Dispose();
@@ -181,35 +177,6 @@ namespace WinCompose
         private static void OnExitEvent(object sender, EventArgs e)
         {
             WinForms.Application.Exit();
-        }
-
-        private static void CheckForUpdates()
-        {
-            Dictionary<string, string> data = new Dictionary<string, string>();
-
-            WebClient browser = new WebClient();
-
-            string agent = string.Format("WinCompose/{0} ({1}{2})",
-                                         Settings.Version,
-                                         Environment.OSVersion,
-                                         Settings.IsInstalled() ? "" : "; Portable");
-            browser.Headers.Add("user-agent", agent);
-            Stream s = browser.OpenRead("http://wincompose.info/status.txt");
-            StreamReader sr = new StreamReader(s);
-
-            for (string line = sr.ReadLine(); line != null;  line = sr.ReadLine())
-            {
-                string pattern = "([^:]*): (.*[^ ]) *";
-                var m = Regex.Match(line, pattern);
-                if (m.Groups.Count == 3)
-                    data[m.Groups[1].Captures[0].ToString()] = m.Groups[2].Captures[0].ToString();
-            }
-
-            sr.Close();
-            s.Close();
-
-            foreach (string k in data.Keys)
-                Log.Debug("Update data " + k + ": " + data[k]);
         }
     }
 }
