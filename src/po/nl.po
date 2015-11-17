@@ -214,6 +214,7 @@ msgstr ""
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
+#, fuzzy
 msgid "On invalid sequences"
 msgstr "Bij ongeldige sequenties"
 
