@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Viive:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Jätä huomiotta kirjainkoko, jos merkkisarja on vääränlainen</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Hylkää merkkejä vääränlaisista merkkisarjoista</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Piippaa, jos merkkisarja on vääränlainen</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Käyttöliittymän kieli:</value>
   </data>

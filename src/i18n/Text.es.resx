@@ -216,15 +216,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Retardo:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Bajar de nuevo a minúsculas cerillas en secuencias no válidas</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Personajes de descarte de secuencias no válidas</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Un pitido en secuencias no válidas</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Idioma de la interfaz:</value>
   </data>

@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Vertraging:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Noodoplossing bij hoofdletterongevoelige overeenkomsten voor ongeldige sequenties</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Karakters uit ongeldige sequenties verwijderen</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Auditief signaal bij ongeldige sequenties</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Interface taal:</value>
   </data>
@@ -256,10 +247,10 @@
     <value>Nul-breedte spaties invoegen in Office apps</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>CapsLock emuleren met beide Shift-toetsen</value>
+    <value>Caps Lock emuleren met beide Shift-toetsen</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Shift-toets schakelt CapsLock uit</value>
+    <value>Shift-toets schakelt Caps Lock uit</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorieën</value>

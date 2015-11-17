@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Verzögerung:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Groß- und Kleinschreibung im Zweifel ignorieren</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Zeichen von ungültigen Sequenzen verwerfen</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Signalton bei ungültigen Sequenzen</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Sprache der Benutzeroberfläche:</value>
   </data>

@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>遅延:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>無効な入力時、大文字小文字のみが異なるものがある場合は、それを使用する</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>無効な入力は捨てる</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>無効な入力時にビープ音を鳴らす</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>表示言語:</value>
   </data>
@@ -256,10 +247,10 @@
     <value>Officeアプリ使用時ゼロ幅スペースを挿入する</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>両方のShiftキー押下でCapsLockの代わりにする</value>
+    <value>両方のShiftキー押下でCaps Lockの代わりにする</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Shiftキーを押した時にはCapsLockを無効にする</value>
+    <value>Shiftキーを押した時にはCaps Lockを無効にする</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>カテゴリ</value>

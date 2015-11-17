@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Viivitus:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Proovi vigastes kombinatsioonides ka tõstutundetuid vastavusi</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Eemalda vigastest kombinatsioonidest tähed</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Piiks vigase kombinatsiooni korral</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Kasutajaliidese keel:</value>
   </data>
@@ -256,10 +247,7 @@
     <value>Sisesta Office programmides null-laiusega tühikud</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emuleeri CapsLock mõlema Shift klahviga</value>
-  </data>
-  <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Shift klahv keelab CapsLocki</value>
+    <value>Emuleeri Caps Lock mõlema Shift klahviga</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategooriad</value>

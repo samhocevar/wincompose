@@ -219,15 +219,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Καθυστέρηση:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Επιστροφή στη λειτουργία χωρίς διάκριση πεζών-κεφαλαίων, σε μη έγκυρες ακολουθίες</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Απόρριψη χαρακτήρων από μη έγκυρες ακολουθίες</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Ήχος μπιπ σε μη έγκυρες ακολουθίες</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Γλώσσα περιβάλλοντος:</value>
   </data>
@@ -250,10 +241,10 @@
     <value>Εισαγωγή διαστημάτων χωρίς εύρος στις εφαρμογές Office</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Προσομοίωση CapsLock χρησιμοποιώντας και τα δύο πλήκτρα Shift</value>
+    <value>Προσομοίωση Caps Lock χρησιμοποιώντας και τα δύο πλήκτρα Shift</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Το πλήκτρο SHIFT να απενεργοποιεί το CapsLock</value>
+    <value>Το πλήκτρο SHIFT να απενεργοποιεί το Caps Lock</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Κατηγορίες</value>

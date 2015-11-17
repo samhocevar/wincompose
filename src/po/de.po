@@ -189,168 +189,237 @@ msgstr "Suchfilter:"
 msgid "Compose Key:"
 msgstr "Compose-Taste:"
 
+#: i18n/Text.resx:244 ID:ComposeKeyToolTip
+msgid "Select the key that should act as the Compose key."
+msgstr ""
+
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:245 ID:ResetDelay
+#: i18n/Text.resx:248 ID:ResetDelay
 msgid "Delay:"
 msgstr "Verzögerung:"
 
-#: i18n/Text.resx:248 ID:UnicodeInput
-msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
+#: i18n/Text.resx:251 ID:UnicodeInput
+msgid "Advanced Unicode input"
 msgstr ""
 
-#: i18n/Text.resx:251 ID:CaseInsensitive
-msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr "Groß- und Kleinschreibung im Zweifel ignorieren"
+#: i18n/Text.resx:254 ID:UnicodeInputToolTip
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F"
+msgstr ""
 
-#: i18n/Text.resx:254 ID:DiscardOnInvalid
-msgid "Discard characters from invalid sequences"
-msgstr "Zeichen von ungültigen Sequenzen verwerfen"
-
-#: i18n/Text.resx:257 ID:BeepOnInvalid
-msgid "Beep on invalid sequences"
+#. This is the name of a category of settings about what happens when invalid sequences are typed
+#: i18n/Text.resx:258 ID:InvalidSequences
+#, fuzzy
+msgid "On invalid sequences"
 msgstr "Signalton bei ungültigen Sequenzen"
 
-#: i18n/Text.resx:260 ID:Language
+#: i18n/Text.resx:261 ID:CaseInsensitive
+#, fuzzy
+msgid "Fall back to case insensitive matches"
+msgstr "Groß- und Kleinschreibung im Zweifel ignorieren"
+
+#: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
+msgstr ""
+
+#: i18n/Text.resx:267 ID:DiscardOnInvalid
+msgid "Discard all typed characters"
+msgstr ""
+
+#: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
+msgstr ""
+
+#: i18n/Text.resx:273 ID:BeepOnInvalid
+msgid "Emit a beep"
+msgstr ""
+
+#: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
+msgid "If the entered sequence does not exist, emit a system sound."
+msgstr ""
+
+#: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
 msgstr "Sprache der Benutzeroberfläche:"
 
+#: i18n/Text.resx:282 ID:LanguageToolTip
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
+msgstr ""
+
 #. Close the settings window
-#: i18n/Text.resx:264 ID:Close
+#: i18n/Text.resx:286 ID:Close
 msgid "Close"
 msgstr "Schließen"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:268 ID:Obsolete050
+#: i18n/Text.resx:290 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Zeichen kopieren"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:272 ID:Obsolete051
+#: i18n/Text.resx:294 ID:Obsolete051
 msgid "Description:"
 msgstr "Beschreibung:"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:276 ID:Apply
+#: i18n/Text.resx:298 ID:Apply
 msgid "Apply"
 msgstr "Übernehmen"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:280 ID:KeepOriginalKey
+#: i18n/Text.resx:302 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Originales Compose-Tasten benehmen beibehalten"
 
-#: i18n/Text.resx:283 ID:InsertZwsp
+#: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
+msgstr ""
+
+#: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Null-Breite Leerzeile in Office-Apps einfügen"
 
-#: i18n/Text.resx:286 ID:EmulateCapsLock
-msgid "Emulate CapsLock using both Shift keys"
+#: i18n/Text.resx:311 ID:InsertZwspToolTip
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
+msgstr ""
+
+#: i18n/Text.resx:314 ID:EmulateCapsLock
+msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Feststelltaste aktivieren mit beiden Umschalt-Tasten"
 
-#: i18n/Text.resx:289 ID:ShiftDisablesCapsLock
-msgid "Shift key disables CapsLock"
+#: i18n/Text.resx:317 ID:EmulateCapsLockToolTip
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
+msgstr ""
+
+#: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
+msgid "Shift key disables Caps Lock"
 msgstr "Umschalttaste deaktiviert Feststelltaste"
 
+#: i18n/Text.resx:323 ID:ShiftDisablesCapsLockToolTip
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
+msgstr ""
+
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:293 ID:Categories
+#: i18n/Text.resx:327 ID:Categories
 msgid "Categories"
 msgstr "Kategorien"
 
-#: i18n/Text.resx:296 ID:InSelectedCategories
+#: i18n/Text.resx:330 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "In ausgewählten Kategorien"
 
 #. The title of the Options window
-#: i18n/Text.resx:300 ID:Options
+#: i18n/Text.resx:334 ID:Options
 msgid "Options — WinCompose"
 msgstr "Optionen — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:304 ID:ShowOptions
+#: i18n/Text.resx:338 ID:ShowOptions
 msgid "Options…"
 msgstr "Optionen…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:308 ID:TrayToolTip
+#: i18n/Text.resx:342 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} auf {0} ({1} Sequenzen)"
 
-#: i18n/Text.resx:311 ID:Behavior
+#: i18n/Text.resx:345 ID:Behavior
 msgid "General Behavior"
 msgstr "Allgemeines Verhalten"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:315 ID:WindowTitle
+#: i18n/Text.resx:349 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Sequenzen — WinCompose"
 
-#: i18n/Text.resx:318 ID:UserMacros
+#: i18n/Text.resx:352 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Benutzerdefinierte Makros"
 
-#: i18n/Text.resx:321 ID:DisabledToolTip
+#: i18n/Text.resx:355 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "WinCompose ist ausgeschaltet"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:325 ID:KeyInsert
+#: i18n/Text.resx:359 ID:KeyInsert
 msgid "Insert"
 msgstr "Einfügen"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:329 ID:TestTyping
+#: i18n/Text.resx:363 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Tippen Testen:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:333 ID:Tweaks
+#: i18n/Text.resx:367 ID:Tweaks
 msgid "Tweaks"
 msgstr "Diverse Einstellungen"
 
-#: i18n/Text.resx:336 ID:Milliseconds
+#: i18n/Text.resx:370 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(Millisekunden)"
 
 #. About box menu entry
-#: i18n/Text.resx:340 ID:About
+#: i18n/Text.resx:374 ID:About
 msgid "About"
 msgstr "Über"
 
 #. Window title of the About box
-#: i18n/Text.resx:344 ID:AboutBoxTitle
+#: i18n/Text.resx:378 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "Über WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:348 ID:Programming
+#: i18n/Text.resx:382 ID:Programming
 msgid "Programming"
 msgstr "Programmierung"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:352 ID:Translators
+#: i18n/Text.resx:386 ID:Translators
 msgid "Translation"
 msgstr "Übersetzung"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:356 ID:Contributors
+#: i18n/Text.resx:390 ID:Contributors
 msgid "Special Thanks"
 msgstr "Besonderer Dank"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:360 ID:License
+#: i18n/Text.resx:394 ID:License
 msgid "License"
 msgstr "Lizenz"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:364 ID:NeedRestart
+#: i18n/Text.resx:398 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 "WinCompose muss neugestartet werden damit alle veränderungen aktiv werden."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:368 ID:ReportBug
+#: i18n/Text.resx:402 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Melde einen Fehler"
 
@@ -504,6 +573,9 @@ msgstr "Trenner, Absatz"
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
 msgstr "Trenner, Leerzeichen"
+
+#~ msgid "Discard characters from invalid sequences"
+#~ msgstr "Zeichen von ungültigen Sequenzen verwerfen"
 
 #~ msgid "Loaded @1@ Sequences"
 #~ msgstr "@1@ Sequenzen geladen"
