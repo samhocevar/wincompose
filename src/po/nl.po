@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-07 17:27+0000\n"
+"PO-Revision-Date: 2015-11-17 09:38+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
-"nl/>\n"
+"Language-Team: Dutch "
+"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,7 @@ msgstr "Compositietoets:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Selecteer de toets die moet werken als compositietoets."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "Vertraging:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Geavanceerde Unicode input"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -208,29 +208,30 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Unicode input toestaan voor alle karakters, zelfs voor deze zonder "
+"gedefinieerde compositiesequentie. Bv. de volgende sequentie zal het "
+"karakter U+1A3F opleveren: Compositietoets U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
 msgstr "Auditief signaal bij ongeldige sequenties"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr ""
-"Noodoplossing bij hoofdletterongevoelige overeenkomsten voor ongeldige "
-"sequenties"
+msgstr "Noodoplossing voor hoofdletterongevoelige overeenkomsten"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Als de ingetoetste sequentie niet bestaat, maar wel een die enkel qua "
+"hoofdletters verschilt, corrigeer dan automatisch."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Verwijder alle ingetoetste karakters"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -238,14 +239,18 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Als de ingetoetste sequentie niet bestaat, verwijder alle ingetoetste "
+"karakters. Het standaard gedrag is de karakters plaatsen alsof de "
+"compositietoets niet was ingedrukt."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Produceer een auditief signaal"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr ""
+"Als de ingetoetste sequentie niet bestaat, produceer een auditief signaal."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -256,6 +261,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Selecteer de taal die WinCompose gebruikt voor de interface. Standaard wordt "
+"de taal van het besturingssysteem gebruikt."
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -290,6 +297,9 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"Dit vraagt WinCompose om zo goed als mogelijk het originele gedrag van de "
+"toetsen te behouden. Bv. de combinatie Alt-Tab blijft werken ook als Alt als "
+"compositietoets wordt gebruikt."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -301,6 +311,9 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Soms veranderen Microsoft Office toepassingen het lettertype bij het "
+"intoetsen van bepaalde Unicode karakters. Deze optie voegt een onzichtbaar "
+"karakter toe na het Unicode karakter om dat te omzeilen."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -312,6 +325,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Als Caps Lock wordt gebruikt als compositietoets is het originele gedrag van "
+"die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock aan te "
+"schakelen door beide Shift toetsen tegelijkertijd in te drukken."
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -323,6 +339,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Als Caps Lock als compositietoets wordt gebruikt, is het originele gedrag "
+"niet meer beschikbaar. Deze optie laat toe Caps Lock aan te schakelen door "
+"het indrukken van de Shift-toets."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:327 ID:Categories
