@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-09 09:18+0000\n"
+"PO-Revision-Date: 2015-11-17 09:56+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
-"Language-Team: Estonian <https://hosted.weblate.org/projects/wincompose/"
-"master/et/>\n"
+"Language-Team: Estonian "
+"<https://hosted.weblate.org/projects/wincompose/master/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,7 @@ msgstr "Kombineerimisklahv:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Vali klahv, mis peaks käituma kombineerimisklahvina."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "Viivitus:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Täpsem Unicode sisend"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -208,27 +208,30 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Luba kõigi Unicode märkide sisestamine; seda isegi siis, kui "
+"kombineerimisjada on määramata. Näiteks genereerib jada 'Kombineeri U 1 A 3 "
+"F' märgi U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Piiks vigase kombinatsiooni korral"
+msgstr "Vigaste kombinatsioonide korral"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "Proovi vigastes kombinatsioonides ka tõstutundetuid vastavusi"
+msgstr "Pöördu tagasi tõstutundetute vastavuste juurde"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Kui sisestatud jada puudub, kuid erineb ainult tähesuuruses, siis paranda "
+"see automaatselt."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Unusta kõik sisestatud märgid"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -312,7 +315,6 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
-#, fuzzy
 msgid "Shift key disables Caps Lock"
 msgstr "Shift klahv keelab Caps Locki"
 
