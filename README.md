@@ -74,8 +74,8 @@ rules by creating a file named `.XCompose` or `.XCompose.txt` in your
 WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kbd>
 <kbd>(</kbd> <kbd>3</kbd> <kbd>)</kbd> for **③**.
 
-WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>&</kbd> will
-immediately type **&** because there is currently no rule starting with <kbd>&</kbd>.
+WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>q</kbd> will
+immediately type **q** because there is currently no rule starting with <kbd>q</kbd>.
 
 As of now, WinCompose is almost fully translated to Belarusian, Chinese,
 Danish, Dutch, Estonian, Finnish, French, German, Greek, Italian, Polish,
@@ -90,4 +90,3 @@ Bugs and Improvements
 
 Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>
 or to the [GitHub issue tracker](https://github.com/samhocevar/wincompose/issues).
-

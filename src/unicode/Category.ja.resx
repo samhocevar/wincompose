@@ -117,154 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Autodetectar</value>
+  <data name="Control" xml:space="preserve">
+    <value>その他、制御文字</value>
   </data>
-  <data name="KeyLMenu" xml:space="preserve">
-    <value>Alt izquierda</value>
+  <data name="Format" xml:space="preserve">
+    <value>その他、書式文字</value>
   </data>
-  <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt izquierda</value>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>その他、未割り当て</value>
   </data>
-  <data name="KeyLControl" xml:space="preserve">
-    <value>Control izquierdo</value>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>その他、私用</value>
   </data>
-  <data name="KeyRControl" xml:space="preserve">
-    <value>Control derecho</value>
+  <data name="Surrogate" xml:space="preserve">
+    <value>その他、サロゲート</value>
   </data>
-  <data name="KeyLWin" xml:space="preserve">
-    <value>Windows izquierda</value>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>文字、小文字</value>
   </data>
-  <data name="KeyRWin" xml:space="preserve">
-    <value>Windows derecha</value>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>文字、修飾文字</value>
   </data>
-  <data name="KeyCapital" xml:space="preserve">
-    <value>Block mayús</value>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>文字、その他</value>
   </data>
-  <data name="KeyNumLock" xml:space="preserve">
-    <value>Bloq Num</value>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>文字、先頭のみ大文字</value>
   </data>
-  <data name="KeyPause" xml:space="preserve">
-    <value>Pausa</value>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>文字、大文字</value>
   </data>
-  <data name="KeyApps" xml:space="preserve">
-    <value>Menú</value>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>符号、幅あり</value>
   </data>
-  <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>符号、囲み文字</value>
   </data>
-  <data name="KeyScroll" xml:space="preserve">
-    <value>Bloq Despl</value>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>符号、幅なし</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Acento grave `</value>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>数字、10進数字</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisegundos</value>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>数字、文字</value>
   </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 Segundo</value>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>数字、その他</value>
   </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 segundos</value>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>句読点、コネクタ</value>
   </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 segundos</value>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>句読点、ダッシュ</value>
   </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 segundos</value>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>句読点、閉じ</value>
   </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 segundos</value>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>句読点、末尾引用符</value>
   </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Ninguno</value>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>句読点、開始引用符</value>
   </data>
-  <data name="ShowSequences" xml:space="preserve">
-    <value>Mostrar las Secuencias…</value>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>句読点、その他</value>
   </data>
-  <data name="Disable" xml:space="preserve">
-    <value>Desactivar</value>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>句読点、開き</value>
   </data>
-  <data name="Restart" xml:space="preserve">
-    <value>Reiniciar</value>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>記号、通貨</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historia</value>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>記号、修飾文字</value>
   </data>
-  <data name="VisitWebsite" xml:space="preserve">
-    <value>Visitar sitio web</value>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>記号、数学</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>記号、その他</value>
   </data>
-  <data name="Sequences" xml:space="preserve">
-    <value>Secuencias</value>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>区切り、行</value>
   </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Secuencia</value>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>区切り、段落</value>
   </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Filtro de búsqueda:</value>
-  </data>
-  <data name="ComposeKey" xml:space="preserve">
-    <value>Componer tecla:</value>
-  </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Retardo:</value>
-  </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Bajar de nuevo a minúsculas cerillas en secuencias no válidas</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Personajes de descarte de secuencias no válidas</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Un pitido en secuencias no válidas</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Idioma de la interfaz:</value>
-  </data>
-  <data name="Close" xml:space="preserve">
-    <value>Cerrar</value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Carácter de Copia</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Descripción:</value>
-  </data>
-  <data name="Apply" xml:space="preserve">
-    <value>Aplicar</value>
-  </data>
-  <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Mantener funcionamiento original de la tecla de composición</value>
-  </data>
-  <data name="InsertZwsp" xml:space="preserve">
-    <value>Insertar espacios de anchura cero en las programas de Office</value>
-  </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Categorías</value>
-  </data>
-  <data name="InSelectedCategories" xml:space="preserve">
-    <value>En las categorías seleccionadas</value>
-  </data>
-  <data name="Options" xml:space="preserve">
-    <value>Opciones — WinCompose</value>
-  </data>
-  <data name="ShowOptions" xml:space="preserve">
-    <value>Opciones…</value>
-  </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Comportamiento general</value>
-  </data>
-  <data name="WindowTitle" xml:space="preserve">
-    <value>Secuencias — WinCompose</value>
-  </data>
-  <data name="About" xml:space="preserve">
-    <value>Acerca de</value>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>区切り、空白</value>
   </data>
 </root>

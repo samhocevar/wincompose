@@ -35,6 +35,8 @@ namespace WinCompose
             Language = new SettingsEntry<string>(GlobalSection, "language", "");
             ComposeKey = new SettingsEntry<Key>(GlobalSection, "compose_key", m_default_compose_key);
             ResetDelay = new SettingsEntry<int>(GlobalSection, "reset_delay", -1);
+            Disabled = new SettingsEntry<bool>(GlobalSection, "disabled", false);
+            UnicodeInput = new SettingsEntry<bool>(GlobalSection, "unicode_input", true);
             CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
             DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
             BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
@@ -49,6 +51,10 @@ namespace WinCompose
         public static SettingsEntry<Key> ComposeKey { get; private set; }
 
         public static SettingsEntry<int> ResetDelay { get; private set; }
+
+        public static SettingsEntry<bool> Disabled { get; private set; }
+
+        public static SettingsEntry<bool> UnicodeInput { get; private set; }
 
         public static SettingsEntry<bool> CaseInsensitive { get; private set; }
 
@@ -154,6 +160,8 @@ namespace WinCompose
             m_valid_languages[""] = i18n.Text.AutodetectLanguage;
 
             // Various options
+            Disabled.Load();
+            UnicodeInput.Load();
             CaseInsensitive.Load();
             DiscardOnInvalid.Load();
             BeepOnInvalid.Load();
@@ -168,6 +176,8 @@ namespace WinCompose
             SaveEntry("reset_delay", m_delay.ToString());
             Language.Save();
             ComposeKey.Save();
+            Disabled.Save();
+            UnicodeInput.Save();
             CaseInsensitive.Save();
             DiscardOnInvalid.Save();
             BeepOnInvalid.Save();
@@ -201,19 +211,19 @@ namespace WinCompose
             return m_sequences;
         }
 
-        public static bool IsValidPrefix(List<Key> seq, bool ignore_case)
+        public static bool IsValidPrefix(KeySequence sequence, bool ignore_case)
         {
-            return m_sequences.IsValidPrefix(seq, ignore_case);
+            return m_sequences.IsValidPrefix(sequence, ignore_case);
         }
 
-        public static bool IsValidSequence(List<Key> seq, bool ignore_case)
+        public static bool IsValidSequence(KeySequence sequence, bool ignore_case)
         {
-            return m_sequences.IsValidSequence(seq, ignore_case);
+            return m_sequences.IsValidSequence(sequence, ignore_case);
         }
 
-        public static string GetSequenceResult(List<Key> seq, bool ignore_case)
+        public static string GetSequenceResult(KeySequence sequence, bool ignore_case)
         {
-            return m_sequences.GetSequenceResult(seq, ignore_case);
+            return m_sequences.GetSequenceResult(sequence, ignore_case);
         }
 
         public static List<SequenceDescription> GetSequenceDescriptions()
@@ -265,7 +275,7 @@ namespace WinCompose
             if (keys.Length < 4) // We need 2 keys + 2 empty strings
                 return;
 
-            List<Key> seq = new List<Key>();
+            KeySequence seq = new KeySequence();
 
             for (int i = 1; i < keys.Length; ++i)
             {
@@ -319,7 +329,7 @@ namespace WinCompose
         private static int m_sequence_count = 0;
 
         // FIXME: couldn't we accept any compose key?
-        private static readonly List<Key> m_valid_compose_keys = new List<Key>
+        private static readonly KeySequence m_valid_compose_keys = new KeySequence
         {
            new Key(VK.LMENU),
            new Key(VK.RMENU),

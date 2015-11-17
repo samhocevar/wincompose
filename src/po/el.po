@@ -192,162 +192,166 @@ msgstr "Πλήκτρο σύνθεσης:"
 msgid "Delay:"
 msgstr "Καθυστέρηση:"
 
-#: i18n/Text.resx:248 ID:CaseInsensitive
+#: i18n/Text.resx:248 ID:UnicodeInput
+msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
+msgstr ""
+
+#: i18n/Text.resx:251 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches on invalid sequences"
 msgstr ""
 "Επιστροφή στη λειτουργία χωρίς διάκριση πεζών-κεφαλαίων, σε μη έγκυρες "
 "ακολουθίες"
 
-#: i18n/Text.resx:251 ID:DiscardOnInvalid
+#: i18n/Text.resx:254 ID:DiscardOnInvalid
 msgid "Discard characters from invalid sequences"
 msgstr "Απόρριψη χαρακτήρων από μη έγκυρες ακολουθίες"
 
-#: i18n/Text.resx:254 ID:BeepOnInvalid
+#: i18n/Text.resx:257 ID:BeepOnInvalid
 msgid "Beep on invalid sequences"
 msgstr "Ήχος μπιπ σε μη έγκυρες ακολουθίες"
 
-#: i18n/Text.resx:257 ID:Language
+#: i18n/Text.resx:260 ID:Language
 msgid "Interface language:"
 msgstr "Γλώσσα περιβάλλοντος:"
 
 #. Close the settings window
-#: i18n/Text.resx:261 ID:Close
+#: i18n/Text.resx:264 ID:Close
 msgid "Close"
 msgstr "Κλείσιμο"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:265 ID:Obsolete050
+#: i18n/Text.resx:268 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Αντιγραφή χαρακτήρα"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:269 ID:Obsolete051
+#: i18n/Text.resx:272 ID:Obsolete051
 msgid "Description:"
 msgstr "Περιγραφή:"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:273 ID:Apply
+#: i18n/Text.resx:276 ID:Apply
 msgid "Apply"
 msgstr "Εφαρμογή"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:277 ID:KeepOriginalKey
+#: i18n/Text.resx:280 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Διατήρηση αρχικής συμπεριφοράς πλήκτρου σύνθεσης"
 
-#: i18n/Text.resx:280 ID:InsertZwsp
+#: i18n/Text.resx:283 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Εισαγωγή διαστημάτων χωρίς εύρος στις εφαρμογές Office"
 
-#: i18n/Text.resx:283 ID:EmulateCapsLock
+#: i18n/Text.resx:286 ID:EmulateCapsLock
 msgid "Emulate CapsLock using both Shift keys"
 msgstr "Προσομοίωση CapsLock χρησιμοποιώντας και τα δύο πλήκτρα Shift"
 
-#: i18n/Text.resx:286 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:289 ID:ShiftDisablesCapsLock
 msgid "Shift key disables CapsLock"
 msgstr "Το πλήκτρο SHIFT να απενεργοποιεί το CapsLock"
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:290 ID:Categories
+#: i18n/Text.resx:293 ID:Categories
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: i18n/Text.resx:293 ID:InSelectedCategories
+#: i18n/Text.resx:296 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "Σε επιλεγμένες κατηγορίες"
 
 #. The title of the Options window
-#: i18n/Text.resx:297 ID:Options
+#: i18n/Text.resx:300 ID:Options
 msgid "Options — WinCompose"
 msgstr "Επιλογές — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:301 ID:ShowOptions
+#: i18n/Text.resx:304 ID:ShowOptions
 msgid "Options…"
 msgstr "Επιλογές…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:305 ID:TrayToolTip
+#: i18n/Text.resx:308 ID:TrayToolTip
 #, fuzzy
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose σε {0} ({1} ακολουθίες)"
 
-#: i18n/Text.resx:308 ID:Behavior
+#: i18n/Text.resx:311 ID:Behavior
 msgid "General Behavior"
 msgstr "Γενική συμπεριφορά"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:312 ID:WindowTitle
+#: i18n/Text.resx:315 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Ακολουθίες — WinCompose"
 
-#: i18n/Text.resx:315 ID:UserMacros
+#: i18n/Text.resx:318 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Μακροεντολές καθορισμένες από το χρήστη"
 
-#: i18n/Text.resx:318 ID:DisabledToolTip
+#: i18n/Text.resx:321 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "Το WinCompose είναι απενεργοποιημένο"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:322 ID:KeyInsert
+#: i18n/Text.resx:325 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:326 ID:TestTyping
+#: i18n/Text.resx:329 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Δοκιμή πληκτρολόγησης:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:330 ID:Tweaks
+#: i18n/Text.resx:333 ID:Tweaks
 msgid "Tweaks"
 msgstr "Λεπτομερείς ρυθμίσεις"
 
-#: i18n/Text.resx:333 ID:Milliseconds
+#: i18n/Text.resx:336 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(χιλιοστά δευτερ.)"
 
 #. About box menu entry
-#: i18n/Text.resx:337 ID:About
+#: i18n/Text.resx:340 ID:About
 msgid "About"
 msgstr "Περί"
 
 #. Window title of the About box
-#: i18n/Text.resx:341 ID:AboutBoxTitle
+#: i18n/Text.resx:344 ID:AboutBoxTitle
 #, fuzzy
 msgid "About WinCompose"
 msgstr "Επιλογές — WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:345 ID:Programming
+#: i18n/Text.resx:348 ID:Programming
 msgid "Programming"
 msgstr ""
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:349 ID:Translators
+#: i18n/Text.resx:352 ID:Translators
 msgid "Translation"
 msgstr ""
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:353 ID:Contributors
+#: i18n/Text.resx:356 ID:Contributors
 msgid "Special Thanks"
 msgstr ""
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:357 ID:License
+#: i18n/Text.resx:360 ID:License
 msgid "License"
 msgstr ""
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:361 ID:NeedRestart
+#: i18n/Text.resx:364 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:365 ID:ReportBug
+#: i18n/Text.resx:368 ID:ReportBug
 msgid "Report a Bug"
 msgstr ""
 

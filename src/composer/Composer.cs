@@ -23,6 +23,42 @@ using System.Windows.Forms;
 namespace WinCompose
 {
 
+class InputSequence
+{
+    public void Send()
+    {
+        NativeMethods.SendInput((uint)m_input.Count, m_input.ToArray(),
+                                Marshal.SizeOf(typeof(INPUT)));
+    }
+
+    public void AddInput(ScanCodeShort sc)
+    {
+        AddInput((VirtualKeyShort)0, sc);
+    }
+
+    public void AddInput(VirtualKeyShort vk)
+    {
+        AddInput(vk, (ScanCodeShort)0);
+    }
+
+    private List<INPUT> m_input = new List<INPUT>();
+
+    private void AddInput(VirtualKeyShort vk, ScanCodeShort sc)
+    {
+        INPUT tmp = new INPUT();
+        tmp.type = EINPUT.KEYBOARD;
+        tmp.U.ki.wVk = vk;
+        tmp.U.ki.wScan = sc;
+        tmp.U.ki.time = 0;
+        tmp.U.ki.dwFlags = KEYEVENTF.UNICODE;
+        tmp.U.ki.dwExtraInfo = UIntPtr.Zero;
+        m_input.Add(tmp);
+
+        tmp.U.ki.dwFlags |= KEYEVENTF.KEYUP;
+        m_input.Add(tmp);
+    }
+}
+
 static class Composer
 {
     /// <summary>
@@ -51,8 +87,8 @@ static class Composer
         // Remember when the user touched a key for the last time
         m_last_key_time = DateTime.Now;
 
-        // Do nothing if we are disabled
-        if (m_disabled)
+        // Do nothing if we are disabled; NOTE: this disables stats, too
+        if (Settings.Disabled.Value)
         {
             return false;
         }
@@ -89,8 +125,6 @@ static class Composer
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
-
-
         string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
         string str_if_dead = KeyToUnicode(VK.SPACE);
         if (str_if_normal != "")
@@ -104,15 +138,29 @@ static class Composer
             key = new Key(str_if_dead);
         }
 
+        if (is_keydown)
+        {
+            // Update single key statistics
+            Stats.AddKey(key);
+
+            // Update key pair statistics if applicable
+            if (DateTime.Now < m_last_key_time.AddMilliseconds(2000)
+                 && m_last_key != null)
+            {
+                Stats.AddPair(m_last_key, key);
+            }
+
+            // Remember when we pressed a key for the last time
+            m_last_key_time = DateTime.Now;
+            m_last_key = key;
+        }
+
         // Special case: we don't consider characters such as Esc as printable
         // otherwise they are not properly serialised in the config file.
         if (key.IsPrintable() && key.ToString()[0] < ' ')
         {
             key = new Key(vk);
         }
-
-        Log("WM.{0} {1} (VK:0x{2:X02} SC:0x{3:X02})",
-            ev.ToString(), key.FriendlyName, (int)vk, (int)sc);
 
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
@@ -125,7 +173,7 @@ static class Composer
                 // mode and we need to cancel it.
                 if (!m_compose_down)
                 {
-                    Log("Fallback Off");
+                    Log.Debug("Fallback Off");
                     SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
                 }
 
@@ -141,7 +189,7 @@ static class Composer
                 if (!m_composing)
                     m_sequence.Clear();
 
-                Log("{0} Composing", m_composing ? "Now" : "No Longer");
+                Log.Debug("{0} Composing", m_composing ? "Now" : "No Longer");
 
                 // Lauch the sequence reset expiration thread
                 // FIXME: do we need to launch a new thread each time the
@@ -192,7 +240,7 @@ static class Composer
         if (m_compose_down && (Settings.KeepOriginalKey.Value
                                 || !Settings.IsUsableKey(key)))
         {
-            Log("Fallback On");
+            Log.Debug("Fallback On");
             ResetSequence();
             SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
             return false;
@@ -208,6 +256,7 @@ static class Composer
         // is a key we must add to the current sequence.
         if (is_keydown)
         {
+            Log.Debug("Adding To Sequence: {0}", key.FriendlyName);
             return AddToSequence(key);
         }
 
@@ -220,7 +269,7 @@ static class Composer
     /// </summary>
     private static bool AddToSequence(Key key)
     {
-        List<Key> old_sequence = new List<Key>(m_sequence);
+        KeySequence old_sequence = new KeySequence(m_sequence);
         m_sequence.Add(key);
 
         // We try the following, in this order:
@@ -247,6 +296,7 @@ static class Composer
             {
                 string tosend = Settings.GetSequenceResult(m_sequence,
                                                            ignore_case);
+                Stats.AddSequence(m_sequence);
                 ResetSequence();
                 SendString(tosend);
                 return true;
@@ -258,6 +308,7 @@ static class Composer
             {
                 string tosend = Settings.GetSequenceResult(old_sequence,
                                                            ignore_case);
+                Stats.AddSequence(old_sequence);
                 ResetSequence();
                 SendString(tosend);
                 return false;
@@ -348,41 +399,56 @@ static class Composer
 
         if (use_gtk_hack)
         {
-            /* Wikipedia says Ctrl+Shift+u, release, then type the four hex
-             * digits, and press Enter.
-             * (http://en.wikipedia.org/wiki/Unicode_input). */
-            SendKeyDown(VK.LCONTROL);
-            SendKeyDown(VK.LSHIFT);
-            SendKeyPress((VK)'U');
-            SendKeyUp(VK.LSHIFT);
-            SendKeyUp(VK.LCONTROL);
-
             foreach (var ch in str)
-                foreach (var key in String.Format("{0:X04} ", (short)ch))
-                    SendKeyPress((VK)key);
+            {
+                if (false)
+                {
+                    /* FIXME: there is a possible optimisation here where we do
+                     * not have to send the whole unicode sequence for regular
+                     * ASCII characters. However, SendKeyPress() needs a VK, so
+                     * we need an ASCII to VK conversion method, together with
+                     * the proper keyboard modifiers. Maybe not worth it.
+                     * Also, we cannot use KeySequence because GTK+ seems to
+                     * ignore SendInput(). */
+                    //SendKeyPress((VK)char.ToUpper(ch));
+                }
+                else
+                {
+                    /* Wikipedia says Ctrl+Shift+u, release, then type the four
+                     * hex digits, and press Enter.
+                     * (http://en.wikipedia.org/wiki/Unicode_input). */
+                    SendKeyDown(VK.LCONTROL);
+                    SendKeyDown(VK.LSHIFT);
+                    SendKeyPress((VK)'U');
+                    SendKeyUp(VK.LSHIFT);
+                    SendKeyUp(VK.LCONTROL);
+
+                    foreach (var key in String.Format("{0:X04} ", (short)ch))
+                        SendKeyPress((VK)key);
+                }
+            }
         }
         else
         {
-            List<INPUT> input = new List<INPUT>();
+            InputSequence Seq = new InputSequence();
 
             if (use_office_hack)
             {
-                input.Add(NewInputKey((ScanCodeShort)'\u200b'));
-                input.Add(NewInputKey((VirtualKeyShort)VK.LEFT));
+                Seq.AddInput((ScanCodeShort)'\u200b');
+                Seq.AddInput((VirtualKeyShort)VK.LEFT);
             }
 
             for (int i = 0; i < str.Length; i++)
             {
-                input.Add(NewInputKey((ScanCodeShort)str[i]));
+                Seq.AddInput((ScanCodeShort)str[i]);
             }
 
             if (use_office_hack)
             {
-                input.Add(NewInputKey((VirtualKeyShort)VK.RIGHT));
+                Seq.AddInput((VirtualKeyShort)VK.RIGHT);
             }
 
-            NativeMethods.SendInput((uint)input.Count, input.ToArray(),
-                                    Marshal.SizeOf(typeof(INPUT)));
+            Seq.Send();
         }
 
         /* Restore keyboard modifiers if we needed one of our custom hacks */
@@ -408,9 +474,9 @@ static class Composer
     /// </summary>
     public static void ToggleDisabled()
     {
-        m_disabled = !m_disabled;
+        Settings.Disabled.Value = !Settings.Disabled.Value;
 
-        if (m_disabled)
+        if (Settings.Disabled.Value)
         {
             m_composing = false;
             m_compose_down = false;
@@ -425,7 +491,7 @@ static class Composer
     /// </summary>
     public static bool IsDisabled()
     {
-        return m_disabled;
+        return Settings.Disabled.Value;
     }
 
     private static void ResetSequence()
@@ -435,32 +501,6 @@ static class Composer
         m_sequence.Clear();
 
         Changed(null, new EventArgs());
-    }
-
-    private static INPUT NewInputKey(VirtualKeyShort vk)
-    {
-        INPUT ret = NewInputKey();
-        ret.U.ki.wVk = vk;
-        return ret;
-    }
-
-    private static INPUT NewInputKey(ScanCodeShort sc)
-    {
-        INPUT ret = NewInputKey();
-        ret.U.ki.wScan = sc;
-        return ret;
-    }
-
-    private static INPUT NewInputKey()
-    {
-        INPUT ret = new INPUT();
-        ret.type = EINPUT.KEYBOARD;
-        ret.U.ki.wVk = (VirtualKeyShort)0;
-        ret.U.ki.wScan = (ScanCodeShort)0;
-        ret.U.ki.time = 0;
-        ret.U.ki.dwFlags = KEYEVENTF.UNICODE;
-        ret.U.ki.dwExtraInfo = UIntPtr.Zero;
-        return ret;
     }
 
     private static void SendKeyDown(VK vk)
@@ -626,19 +666,15 @@ static class Composer
         }
     }
 
-    private static void Log(string format, params object[] args)
-    {
-#if DEBUG
-        string msg = string.Format("{0} {1}", DateTime.Now,
-                                   string.Format(format, args));
-        System.Diagnostics.Debug.WriteLine(msg);
-#endif
-    }
+    /// <summary>
+    /// The sequence being currently typed
+    /// </summary>
+    private static KeySequence m_sequence = new KeySequence();
 
-    private static List<Key> m_sequence = new List<Key>();
+    private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
-    private static bool m_disabled = false;
+
     private static bool m_compose_down = false;
     private static bool m_composing = false;
 }

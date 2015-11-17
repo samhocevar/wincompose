@@ -118,287 +118,210 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Autodetect</value>
-    <comment>The user can configure the application language and choose between English, French, etc. and Autodetect</comment>
+    <value>自動検出</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Left Alt</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>左Alt</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Right Alt</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>右Alt</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Left Control</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>左Control</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Right Control</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>右Control</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Left Windows</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>左Windowsキー</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Right Windows</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>右Windowsキー</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock</value>
-    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
     <value>Num Lock</value>
-    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyPause" xml:space="preserve">
     <value>Pause</value>
-    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>Menu</value>
-    <comment>Also known as Application key</comment>
+    <value>アプリケーションキー</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>Esc</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
-    <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>Space</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>スペース</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
-    <value>Return</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>Enter</value>
   </data>
   <data name="Obsolete016" xml:space="preserve">
-    <value>Grave Accent `</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>バックティック (`)</value>
   </data>
   <data name="Obsolete017" xml:space="preserve">
-    <value>500 milliseconds</value>
+    <value>500ミリ秒</value>
   </data>
   <data name="Obsolete018" xml:space="preserve">
-    <value>1 second</value>
+    <value>1秒</value>
   </data>
   <data name="Obsolete019" xml:space="preserve">
-    <value>2 seconds</value>
+    <value>2秒</value>
   </data>
   <data name="Obsolete020" xml:space="preserve">
-    <value>3 seconds</value>
+    <value>3秒</value>
   </data>
   <data name="Obsolete021" xml:space="preserve">
-    <value>5 seconds</value>
+    <value>5秒</value>
   </data>
   <data name="Obsolete022" xml:space="preserve">
-    <value>10 seconds</value>
+    <value>10秒</value>
   </data>
   <data name="Obsolete023" xml:space="preserve">
-    <value>None</value>
+    <value>なし</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Show Sequences…</value>
+    <value>シーケンスを表示…</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Disable</value>
-    <comment>Menu entry to disable WinCompose</comment>
+    <value>無効にする</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Restart</value>
+    <value>再起動</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>History</value>
+    <value>履歴</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Visit Website</value>
-    <comment>A button to visit the website</comment>
+    <value>ウェブサイトを表示</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>終了</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>by Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+    <value>作者: Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
-    <value>Sequences</value>
+    <value>シーケンス</value>
   </data>
   <data name="Obsolete039" xml:space="preserve">
-    <value>Sequence</value>
+    <value>シーケンス</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Search Filter:</value>
+    <value>検索フィルタ:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Compose Key:</value>
-  </data>
-  <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Select the key that should act as the Compose key.</value>
+    <value>Composeキー:</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
-    <value>Delay:</value>
-    <comment>The compose key deactivates itself after a certain configurable delay</comment>
-  </data>
-  <data name="UnicodeInput" xml:space="preserve">
-    <value>Advanced Unicode input</value>
-  </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F</value>
-  </data>
-  <data name="InvalidSequences" xml:space="preserve">
-    <value>On invalid sequences</value>
-    <comment>This is the name of a category of settings about what happens when invalid sequences are typed</comment>
+    <value>遅延:</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>Fall back to case insensitive matches</value>
-  </data>
-  <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>If the entered sequence does not exist, but there is one that only differs by case, automatically correct it.</value>
+    <value>無効な入力時、大文字小文字のみが異なるものがある場合は、それを使用する</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Discard all typed characters</value>
-  </data>
-  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used.</value>
+    <value>無効な入力は捨てる</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Emit a beep</value>
-  </data>
-  <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>If the entered sequence does not exist, emit a system sound.</value>
+    <value>無効な入力時にビープ音を鳴らす</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Interface language:</value>
-  </data>
-  <data name="LanguageToolTip" xml:space="preserve">
-    <value>Select the language that WinCompose uses for the interface. By default the operating system language is used.</value>
+    <value>表示言語:</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
-    <comment>Close the settings window</comment>
+    <value>閉じる</value>
   </data>
   <data name="Obsolete050" xml:space="preserve">
-    <value>Copy Character</value>
-    <comment>Copy character to the clipboard</comment>
+    <value>文字をコピー</value>
   </data>
   <data name="Obsolete051" xml:space="preserve">
-    <value>Description:</value>
-    <comment>Description of a Unicode character or group of characters</comment>
+    <value>説明:</value>
   </data>
   <data name="Apply" xml:space="preserve">
-    <value>Apply</value>
-    <comment>Apply changes from the settings window</comment>
+    <value>適用</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Maintain original compose key behaviour</value>
-    <comment>Should this say “retain” instead of “maintain”?</comment>
-  </data>
-  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key.</value>
+    <value>もとのComposeキーの動作を保つ</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Insert zero-width spaces in Office apps</value>
-  </data>
-  <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug.</value>
+    <value>Officeアプリ使用時ゼロ幅スペースを挿入する</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emulate Caps Lock using both Shift keys</value>
-  </data>
-  <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously.</value>
+    <value>両方のShiftキー押下でCapsLockの代わりにする</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Shift key disables Caps Lock</value>
-  </data>
-  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key.</value>
+    <value>Shiftキーを押した時にはCapsLockを無効にする</value>
   </data>
   <data name="Categories" xml:space="preserve">
-    <value>Categories</value>
-    <comment>Header for the list of Unicode character categories</comment>
+    <value>カテゴリ</value>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
-    <value>In selected categories</value>
+    <value>選択されたカテゴリ内を選択</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Options — WinCompose</value>
-    <comment>The title of the Options window</comment>
+    <value>設定 — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
-    <value>Options…</value>
-    <comment>Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)</comment>
+    <value>設定…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} on {0} ({1} sequences)</value>
-    <comment>{0}: compose key name, {1}: number of sequences, {2}: program version number</comment>
+    <value>WinCompose v{2} on {0} ({1} 個のシーケンス)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
-    <value>General Behavior</value>
+    <value>一般的な動作</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Sequences — WinCompose</value>
-    <comment>The title of the Sequences window</comment>
+    <value>シーケンス — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>User-defined macros</value>
+    <value>ユーザー定義マクロ</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
-    <value>WinCompose is disabled</value>
+    <value>WinComposeは無効です</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
-    <value>Insert</value>
-    <comment>The name of the key on the keyboard</comment>
+    <value>挿入</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Test Typing:</value>
-    <comment>The "Test Typing" section in the settings window</comment>
+    <value>ためしてみる:</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
-    <value>Tweaks</value>
-    <comment>The "Tweaks" section in the settings window</comment>
+    <value>細かい設定</value>
   </data>
   <data name="Milliseconds" xml:space="preserve">
-    <value>(milliseconds)</value>
+    <value>(ミリ秒)</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>About</value>
-    <comment>About box menu entry</comment>
+    <value>WinCompose について</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
-    <value>About WinCompose</value>
-    <comment>Window title of the About box</comment>
+    <value>WinCompose について</value>
   </data>
   <data name="Programming" xml:space="preserve">
-    <value>Programming</value>
-    <comment>The section where we list all programmers.</comment>
+    <value>プログラミング</value>
   </data>
   <data name="Translators" xml:space="preserve">
-    <value>Translation</value>
-    <comment>The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!</comment>
+    <value>翻訳</value>
   </data>
   <data name="Contributors" xml:space="preserve">
-    <value>Special Thanks</value>
-    <comment>The section for random contributors who aren’t programmers or translators. Might be empty.</comment>
+    <value>スペシャルサンクス</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>License</value>
-    <comment>US: License, UK: Licence</comment>
+    <value>ライセンス</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose needs to be restarted for some changes to take effect.</value>
-    <comment>Warning message when the user changes the language in the settings window</comment>
+    <value>設定によっては、WinComposeを再起動しないと反映されないものもあります。</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
-    <value>Report a Bug</value>
-    <comment>A button to report bugs (opens web browser)</comment>
+    <value>バグ報告</value>
   </data>
 </root>

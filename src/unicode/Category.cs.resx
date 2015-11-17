@@ -130,7 +130,7 @@
     <value>Jiné, soukromé použití</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>Jiné, náhražka</value>
+    <value>Jiné, „surrogates“</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
     <value>Písmeno, malé</value>
@@ -142,19 +142,19 @@
     <value>Písmeno, jiné</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>Písmeno, titulní</value>
+    <value>Písmeno, titulní (první velké)</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
     <value>Písmeno, velké</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>Značka, kombinující s prostorem</value>
+    <value>Značka, široké kombinující znaky</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
     <value>Značka, uzavírající</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>Značka, bez prostoru</value>
+    <value>Značka, nulové šířky</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
     <value>Číslo, desítková číslice</value>
@@ -166,19 +166,19 @@
     <value>Číslo, jiné</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Interpunkce, spojovník</value>
+    <value>Interpunkce, spojující</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>Interpunkce, pomlčka</value>
+    <value>Interpunkce, pomlčky</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
     <value>Interpunkce, uzavření</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>Interpunkce, koncová uvozovka</value>
+    <value>Interpunkce, koncové uvozovky</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>Interpunkce, počáteční uvozovka</value>
+    <value>Interpunkce, počáteční uvozovky</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
     <value>Interpunkce, jiná</value>

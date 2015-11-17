@@ -36,8 +36,10 @@ namespace WinCompose
         [STAThread]
         static void Main()
         {
-            Composer.Init();
+            // Do this before Composer.Init() because of the Disabled setting
             Settings.LoadConfig();
+
+            Composer.Init();
             Settings.LoadSequences();
             KeyboardHook.Init();
 
@@ -77,6 +79,7 @@ namespace WinCompose
                 m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
 
                 Composer.Changed += ComposerStateChanged;
+                ComposerStateChanged(null, new EventArgs());
 
                 // FIXME: do this in a background thread
                 CheckForUpdates();
@@ -224,7 +227,7 @@ namespace WinCompose
                 if (m_version == null)
                 {
                     XmlDocument doc = new XmlDocument();
-                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.xml");
+                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.config");
                     doc.Load(stream);
                     XmlNamespaceManager mgr = new XmlNamespaceManager(doc.NameTable);
                     mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");

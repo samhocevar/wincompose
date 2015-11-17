@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
@@ -61,6 +62,9 @@ public class KeyConverter : TypeConverter
 [TypeConverter(typeof(KeyConverter))]
 public class Key
 {
+    /// <summary>
+    /// A dictionary of symbols that we use for some non-printable key labels.
+    /// </summary>
     private static readonly Dictionary<VK, string> m_key_labels = new Dictionary<VK, string>
     {
         { VK.UP,    "▲" },
@@ -182,13 +186,63 @@ public class Key
     }
 };
 
+/// <summary>
+/// The KeySequence class describes a sequence of keys, which can be
+/// compared with other lists of keys.
+/// </summary>
+public class KeySequence : List<Key>
+{
+    public KeySequence() : base(new List<Key>()) {}
+
+    public KeySequence(List<Key> val) : base(val) {}
+
+    public override bool Equals(object o)
+    {
+        if (!(o is KeySequence))
+            return false;
+
+        if (Count != (o as KeySequence).Count)
+            return false;
+
+        for (int i = 0; i < Count; ++i)
+            if (this[i] != (o as KeySequence)[i])
+                return false;
+
+        return true;
+    }
+
+    /// <summary>
+    /// Serialize sequence to a printable string.
+    /// </summary>
+    public override string ToString()
+    {
+        string ret = "";
+        for (int i = 0; i < Count; ++i)
+            ret += this[i].ToString();
+        return ret;
+    }
+
+    public new KeySequence GetRange(int start, int count)
+    {
+        return new KeySequence(base.GetRange(start, count));
+    }
+
+    public override int GetHashCode()
+    {
+        int hash = 0x2d2816fe;
+        for (int i = 0; i < Count; ++i)
+            hash = hash * 31 + this[i].GetHashCode();
+        return hash;
+    }
+};
+
 /*
  * This data structure is used for communication with the GUI
  */
 
 public class SequenceDescription : IComparable<SequenceDescription>
 {
-    public List<Key> Sequence = new List<Key>();
+    public KeySequence Sequence = new KeySequence();
     public string Description = "";
     public string Result = "";
     public int Utf32 = -1;
@@ -203,14 +257,15 @@ public class SequenceDescription : IComparable<SequenceDescription>
     }
 };
 
-/*
- * The SequenceTree class contains a tree of all valid sequences, where
- * each child is indexed by the sequence key.
- */
-
+/// <summary>
+/// The SequenceTree class contains a tree of all valid sequences, where
+/// each child is indexed by the sequence key.
+/// Some functions such as <see cref="IsValidPrefix"/> also work to query
+/// the special Unicode entry mode.
+/// </summary>
 public class SequenceTree
 {
-    public void Add(List<Key> sequence, string result, int utf32, string desc)
+    public void Add(KeySequence sequence, string result, int utf32, string desc)
     {
         if (sequence.Count == 0)
         {
@@ -227,29 +282,63 @@ public class SequenceTree
         m_children[sequence[0]].Add(subsequence, result, utf32, desc);
     }
 
-    public bool IsValidPrefix(List<Key> sequence, bool ignore_case)
+    public bool IsValidPrefix(KeySequence sequence, bool ignore_case)
     {
         Search flags = Search.Prefixes;
         if (ignore_case)
             flags |= Search.IgnoreCase;
-        return GetSubtree(sequence, flags) != null;
+
+        // First check if we have a real sequence prefix in our tree
+        if (GetSubtree(sequence, flags) != null)
+            return true;
+
+        // Otherwise, check for generic Unicode entry prefix
+        if (Settings.UnicodeInput.Value)
+            return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{0,4}$").Success;
+
+        return false;
     }
 
-    public bool IsValidSequence(List<Key> sequence, bool ignore_case)
+    public bool IsValidSequence(KeySequence sequence, bool ignore_case)
     {
         Search flags = Search.Sequences;
         if (ignore_case)
             flags |= Search.IgnoreCase;
-        return GetSubtree(sequence, flags) != null;
+
+        // First check if we have a real sequence in our tree
+        if (GetSubtree(sequence, flags) != null)
+            return true;
+
+        // Otherwise, check for generic Unicode sequence
+        if (Settings.UnicodeInput.Value)
+            return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$").Success;
+
+        return false;
     }
 
-    public string GetSequenceResult(List<Key> sequence, bool ignore_case)
+    public string GetSequenceResult(KeySequence sequence, bool ignore_case)
     {
         Search flags = Search.Sequences;
         if (ignore_case)
             flags |= Search.IgnoreCase;
+
+        // First check if we have a real sequence in our tree
         SequenceTree node = GetSubtree(sequence, flags);
-        return node == null ? "" : node.m_result;
+        if (node != null && node.m_result != "")
+            return node.m_result;
+
+        // Otherwise, check for a generic Unicode sequence
+        if (Settings.UnicodeInput.Value)
+        {
+            var m = Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$");
+            if (m.Success)
+            {
+                int codepoint = Convert.ToInt32(m.Groups[0].Value.Substring(1), 16);
+                return char.ConvertFromUtf32(codepoint);
+            }
+        }
+
+        return "";
     }
 
     /// <summary>
@@ -258,7 +347,7 @@ public class SequenceTree
     public List<SequenceDescription> GetSequenceDescriptions()
     {
         List<SequenceDescription> ret = new List<SequenceDescription>();
-        BuildSequenceDescriptions(ret, new List<Key>());
+        BuildSequenceDescriptions(ret, new KeySequence());
         ret.Sort();
         return ret;
     }
@@ -274,11 +363,14 @@ public class SequenceTree
     /// <summary>
     /// If the first key of <see cref="sequences"/> matches a known child,
     /// return that child. Otherwise, return null.
-    /// If <see cref="non_terminal"/> is true, but we are a rule with no
-    /// children, we return null. This lets us check for strict prefixes
-    /// in addition to full secquences.
+    /// If <see cref="flags"/> has the <see cref="Search.Prefixes"/> flag
+    /// and we are a rule with no children, we return null. This lets us
+    /// check for strict prefixes.
+    /// If <see cref="flags"/> has the <see cref="Search.Sequences"/> flag
+    /// and we are not a rule (just a node in the tree), we do not return
+    /// the current node (but we do return children sequences).
     /// </summary>
-    private SequenceTree GetSubtree(List<Key> sequence, Search flags)
+    private SequenceTree GetSubtree(KeySequence sequence, Search flags)
     {
         if (sequence.Count == 0)
         {
@@ -289,7 +381,7 @@ public class SequenceTree
             return this;
         }
 
-        List<Key> keys = new List<Key>{ sequence[0] };
+        KeySequence keys = new KeySequence{ sequence[0] };
         if ((flags & Search.IgnoreCase) != 0 && sequence[0].IsPrintable())
         {
             Key upper = new Key(sequence[0].ToString().ToUpper());
@@ -321,7 +413,7 @@ public class SequenceTree
     /// for the GUI.
     /// </summary>
     private void BuildSequenceDescriptions(List<SequenceDescription> list,
-                                           List<Key> path)
+                                           KeySequence path)
     {
         if (m_result != null)
         {
@@ -335,7 +427,7 @@ public class SequenceTree
 
         foreach (var pair in m_children)
         {
-            var newpath = new List<Key>(path);
+            var newpath = new KeySequence(path);
             newpath.Add(pair.Key);
             pair.Value.BuildSequenceDescriptions(list, newpath);
         }

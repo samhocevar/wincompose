@@ -1,10 +1,15 @@
-*.exe
-*.suo
+# Our targets
 WinCompose-*.zip
 WinCompose-*.exe
-settings.ini
 obj/
 bin/
+# Visual Studio cruft
+*.suo
+*.csproj.user
+*.vcxproj.user
+*.opensdf
+*.sdf
+# Misc
+settings.ini
 po/*.po~
 unicode/cache
-*.csproj.user

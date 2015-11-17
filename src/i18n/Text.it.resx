@@ -202,7 +202,7 @@
     <value>Visita il sito</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Uscita</value>
+    <value>Esci</value>
   </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>di Sam Hocevar &lt;sam@hocevar.net&gt;</value>
@@ -253,13 +253,13 @@
     <value>Il Tasto Compose mantiene il suo comportamento originale</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Inserire spazi invisibili dentro l’applicazione Office</value>
+    <value>Inserisci spazi a larghezza zero in Office</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emulare CapsLock usando insieme i due bottoni Shift</value>
+    <value>Emula Bloc Maiusc premendo entrambi i tasti Maiusc</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Il Bottone Shift disabilita il CapsLock</value>
+    <value>Premere Maiusc disabilita Bloc Maiusc</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorie</value>
@@ -274,7 +274,7 @@
     <value>Opzioni…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose su {0} ({1} sequences)</value>
+    <value>WinCompose v{2} attivo su {0} ({1} sequenze)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Comportamento</value>
@@ -292,16 +292,16 @@
     <value>Inserire</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Scrivi Testo:</value>
+    <value>Prova a scrivere:</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Regolazioni</value>
   </data>
   <data name="Milliseconds" xml:space="preserve">
-    <value>500 millisecondi</value>
+    <value>(millisecondi)</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>A Proposito di</value>
+    <value>Informazioni</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Informazinoi su — WinCompose</value>

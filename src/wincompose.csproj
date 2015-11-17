@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="build.xml" />
+  <Import Project="build.config" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -37,17 +37,8 @@
   <PropertyGroup>
     <StartupObject>WinCompose.Program</StartupObject>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Installer|AnyCPU'">
-    <OutputPath>bin\Installer\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <PostBuildEvent>set CONFIG=$(Configuration)
-set VERSION=$(ApplicationVersion)
-iscc $(SolutionDir)\installer.iss</PostBuildEvent>
+  <PropertyGroup>
+    <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="sysglobl" />
@@ -68,10 +59,12 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <Compile Include="about\AboutBoxViewModel.cs" />
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
+    <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
     <Compile Include="composer\RemoteControl.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="composer\Stats.cs" />
     <Compile Include="settings\SettingsWindowViewModel.cs" />
     <Compile Include="ui_common\DelegateCommand.cs" />
     <Compile Include="unicode\Category.be.Designer.cs">
@@ -144,6 +137,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.it-CH.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.ja.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +151,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.ro.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Category.ru.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -379,6 +382,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.it-CH.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.ja.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -388,6 +396,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="i18n\Text.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.ro.resx</DependentUpon>
     </Compile>
     <Compile Include="i18n\Text.ru.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -521,6 +534,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <LastGenOutput>Category.it-CH.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.ja.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.nl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.nl.Designer.cs</LastGenOutput>
@@ -534,6 +552,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <EmbeddedResource Include="unicode\Category.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.ro.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.ru.resx">
@@ -765,6 +788,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
       <LastGenOutput>Text.it-CH.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.ja.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ja.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.nl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.nl.Designer.cs</LastGenOutput>
@@ -773,6 +801,11 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <EmbeddedResource Include="i18n\Text.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ro.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.ru.resx">
@@ -843,11 +876,23 @@ iscc $(SolutionDir)\installer.iss</PostBuildEvent>
     <Resource Include="res\key_compose_big.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="build.xml" />
+    <EmbeddedResource Include="build.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\contributors.html" />
     <Resource Include="res\copying.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_normal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rules\Emoji.txt" />
+    <Resource Include="rules\WinCompose.txt" />
+    <Resource Include="rules\Xcompose.txt" />
+    <Resource Include="rules\Xorg.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -133,10 +133,10 @@
     <value>Pravý Control</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Levé Windows</value>
+    <value>Levé tlačítko s logem Windows</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Pravé Windows</value>
+    <value>Pravé tlačítko s logem Windows</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock</value>
@@ -156,6 +156,15 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Mezerník</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="Obsolete016" xml:space="preserve">
+    <value>Gravis (obrácená čárka) `</value>
+  </data>
   <data name="Obsolete017" xml:space="preserve">
     <value>500 milisekund</value>
   </data>
@@ -169,7 +178,7 @@
     <value>3 sekundy</value>
   </data>
   <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekundy</value>
+    <value>5 sekund</value>
   </data>
   <data name="Obsolete022" xml:space="preserve">
     <value>10 sekund</value>
@@ -178,7 +187,7 @@
     <value>Žádné</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Zobrazit Sekvence…</value>
+    <value>Zobrazit sekvence…</value>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Vypnout</value>
@@ -192,8 +201,11 @@
   <data name="VisitWebsite" xml:space="preserve">
     <value>Navštívit web</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Ukončit</value>
+  </data>
   <data name="Obsolete036" xml:space="preserve">
-    <value>napsal Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+    <value>vytvořil Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvence</value>
@@ -204,13 +216,112 @@
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Filtr vyhledávání:</value>
+  </data>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Klávesa Compose:</value>
+  </data>
+  <data name="ResetDelay" xml:space="preserve">
+    <value>Doba trvání:</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>V případě nenalezení sekvence nedbát na velikost písmen</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Ignorovat znaky z neplatných sekvencí</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Zvukové upozornění při zadání neplatné sekvence</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Jazyk rozhraní:</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Zavřít</value>
+  </data>
+  <data name="Obsolete050" xml:space="preserve">
+    <value>Kopírovat znak</value>
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Popis:</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Použít</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Zachovat původní chování klávesy Compose</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Vkládat nulovou mezeru v aplikacích Office</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emulovat CapsLock stisknutím obou kláves Shift</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Klávesa Shift vypne CapsLock</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>Ve vybraných kategoriích</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Možnosti — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Možnosti…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} (klávesa: {0}; {1} sekvencí)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Obecné chování</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Sekvence — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Uživatelská makra</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>Program WinCompose je vypnutý</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Vyzkoušejte psaní:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Vychytávky</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(milisekundy)</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>O aplikaci</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>O aplikaci WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programátoři</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Překlad</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Zvláštní poděkování</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>Aby se projevily změny, WinCompose musí být restartován.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Nahlásit chybu</value>
   </data>
 </root>

@@ -23,7 +23,7 @@ cat > ${DEST} << EOF
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WinCompose $(sed -ne 's/.*<ApplicationVersion>\([^<]*\).*/\1/p' build.xml)\n"
+"Project-Id-Version: WinCompose $(sed -ne 's/.*<ApplicationVersion>\([^<]*\).*/\1/p' build.config)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -55,8 +55,8 @@ for FILE in i18n/Text.resx unicode/Category.resx; do
 done
 
 for POFILE in po/*.po; do
-     printf %s ${POFILE}
-     msgmerge -U ${POFILE} po/wincompose.pot
+    printf %s ${POFILE}
+    msgmerge -U ${POFILE} po/wincompose.pot
 done
 rm -f po/*~
 
@@ -162,12 +162,21 @@ for x in unicode/*resx i18n/*resx; do
     fi
 done
 
+if [ -d "/c/Program Files (x86)/Inno Setup 5/Languages" ]; then
+    for f in "/c/Program Files (x86)/Inno Setup 5/Languages/"*.isl*; do
+        f="$(basename "$f")"
+        if ! grep -q "$f" installer.iss; then
+            echo "WARNING: $f exists in Inno Setup but is not mentioned in installer.iss"
+        fi
+    done
+fi
+
 #
 # Build translator list
 #
 
 echo "[5/${STEPS}] Update contributor list…"
-printf '\xef\xbb\xbf' > res/.contributors.html
+printf '﻿' > res/.contributors.html
 cat >> res/.contributors.html << EOF
 <html>
 <body style="font-family: verdana, sans-serif; font-size: .7em;">
@@ -195,6 +204,6 @@ mv res/.contributors.html res/contributors.html
 #
 
 if [ -f /usr/share/X11/locale/en_US.UTF-8/Compose ]; then
-    cp /usr/share/X11/locale/en_US.UTF-8/Compose rules/Xorg.txt
+    cat -s /usr/share/X11/locale/en_US.UTF-8/Compose > rules/Xorg.txt
 fi
 
