@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-17 09:53+0000\n"
+"PO-Revision-Date: 2015-11-17 10:20+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
 "Language-Team: Dutch "
 "<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
@@ -214,7 +214,6 @@ msgstr ""
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
 msgstr "Bij ongeldige sequenties"
 
