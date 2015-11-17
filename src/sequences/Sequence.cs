@@ -56,8 +56,8 @@ public class KeyConverter : TypeConverter
 }
 
 /// <summary>
-/// The Key class describes anything that can be done on the keyboard,
-/// so either a printable string or a virtual key code.
+/// The Key class describes anything that can be hit on the keyboard,
+/// resulting in either a printable string or a virtual key code.
 /// </summary>
 [TypeConverter(typeof(KeyConverter))]
 public class Key
@@ -76,9 +76,9 @@ public class Key
     /// <summary>
     /// A list of keys for which we have a friendly name. This is used in
     /// the GUI, where the user can choose which key acts as the compose
-    /// key. It needs to be lazy-initialised, because we create Key objects
-    /// way before the application language is set, and we need the
-    /// translated version.
+    /// key. It needs to be lazy-initialised, because if we create Key objects
+    /// before the application language is set, the descriptions will not be
+    /// properly translated.
     /// </summary>
     private static Dictionary<Key, string> m_key_names = null;
 
@@ -128,12 +128,14 @@ public class Key
     {
         get
         {
+            // Lazy initialisation of m_key_names (see above)
             if (m_key_names == null)
                 m_key_names = GetKeyNames();
+
             string ret;
             if (m_key_names.TryGetValue(this, out ret))
                 return ret;
-            return m_str ?? string.Format("VK.{0}", m_vk);
+            return ToString();
         }
     }
 
@@ -147,8 +149,7 @@ public class Key
             string ret;
             if (m_key_labels.TryGetValue(m_vk, out ret))
                 return ret;
-
-            return m_str ?? string.Format("VK.{0}", m_vk);
+            return ToString();
         }
     }
 
@@ -180,6 +181,10 @@ public class Key
         return !(a == b);
     }
 
+    /// <summary>
+    /// Hash key by returning its printable representation’s hashcode or, if
+    /// unavailable, its virtual key code’s hashcode.
+    /// </summary>
     public override int GetHashCode()
     {
         return m_str != null ? m_str.GetHashCode() : ((int)m_vk).GetHashCode();
@@ -188,7 +193,7 @@ public class Key
 
 /// <summary>
 /// The KeySequence class describes a sequence of keys, which can be
-/// compared with other lists of keys.
+/// compared with other sequences of keys.
 /// </summary>
 public class KeySequence : List<Key>
 {
@@ -217,21 +222,27 @@ public class KeySequence : List<Key>
     public override string ToString()
     {
         string ret = "";
-        for (int i = 0; i < Count; ++i)
-            ret += this[i].ToString();
+        foreach (Key ch in this)
+            ret += ch.ToString();
         return ret;
     }
 
+    /// <summary>
+    /// Get a subsequence of the current sequence.
+    /// </summary>
     public new KeySequence GetRange(int start, int count)
     {
         return new KeySequence(base.GetRange(start, count));
     }
 
+    /// <summary>
+    /// Hash sequence by combining the hashcodes of all its composing keys.
+    /// </summary>
     public override int GetHashCode()
     {
         int hash = 0x2d2816fe;
-        for (int i = 0; i < Count; ++i)
-            hash = hash * 31 + this[i].GetHashCode();
+        foreach (Key ch in this)
+            hash = hash * 31 + ch.GetHashCode();
         return hash;
     }
 };
@@ -247,10 +258,14 @@ public class SequenceDescription : IComparable<SequenceDescription>
     public string Result = "";
     public int Utf32 = -1;
 
+    /// <summary>
+    /// Sequence comparison routine. Use to sort sequences alphabetically or
+    /// numerically in the GUI.
+    /// </summary>
     public int CompareTo(SequenceDescription other)
     {
-        // If any sequence leads to a single character, compare actual
-        // Unicode codepoints rather than strings
+        // If either sequence results in a single character, compare actual
+        // Unicode codepoints. Otherwise, compare sequences alphabetically.
         if (Utf32 != -1 || other.Utf32 != -1)
             return Utf32.CompareTo(other.Utf32);
         return Result.CompareTo(other.Result);
@@ -288,7 +303,7 @@ public class SequenceTree
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if we have a real sequence prefix in our tree
+        // First check if the sequence prefix exists in our tree
         if (GetSubtree(sequence, flags) != null)
             return true;
 
@@ -305,7 +320,7 @@ public class SequenceTree
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if we have a real sequence in our tree
+        // First check if the sequence exists in our tree
         if (GetSubtree(sequence, flags) != null)
             return true;
 
@@ -322,10 +337,10 @@ public class SequenceTree
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if we have a real sequence in our tree
-        SequenceTree node = GetSubtree(sequence, flags);
-        if (node != null && node.m_result != "")
-            return node.m_result;
+        // First check if the sequence exists in our tree
+        SequenceTree subtree = GetSubtree(sequence, flags);
+        if (subtree != null && subtree.m_result != "")
+            return subtree.m_result;
 
         // Otherwise, check for a generic Unicode sequence
         if (Settings.UnicodeInput.Value)
@@ -399,9 +414,9 @@ public class SequenceTree
                 continue;
 
             var subsequence = sequence.GetRange(1, sequence.Count - 1);
-            var node = m_children[k].GetSubtree(subsequence, flags);
-            if (node != null)
-                return node;
+            var subtree = m_children[k].GetSubtree(subsequence, flags);
+            if (subtree != null)
+                return subtree;
         }
 
         return null;

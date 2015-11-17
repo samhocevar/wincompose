@@ -438,9 +438,9 @@ static class Composer
                 Seq.AddInput((VirtualKeyShort)VK.LEFT);
             }
 
-            for (int i = 0; i < str.Length; i++)
+            foreach (char ch in str)
             {
-                Seq.AddInput((ScanCodeShort)str[i]);
+                Seq.AddInput((ScanCodeShort)ch);
             }
 
             if (use_office_hack)

@@ -19,7 +19,7 @@ namespace WinCompose
     public class SearchTokens
     {
         private static readonly List<char> Digits = new List<char>("0123456789");
-        private static readonly List<char> HexaDigits = new List<char>("0123456789ABCDEFabcdef");
+        private static readonly List<char> HexDigits = new List<char>("0123456789ABCDEFabcdef");
 
         private readonly string[] tokens;
         private readonly List<int> numbers = new List<int>();
@@ -40,7 +40,7 @@ namespace WinCompose
             ParseNumbers(searchText, Digits, 10, ref numbers);
 
             // base 16 numbers
-            ParseNumbers(searchText, HexaDigits, 16, ref numbers);
+            ParseNumbers(searchText, HexDigits, 16, ref numbers);
         }
 
         public bool IsEmpty { get; private set; }
