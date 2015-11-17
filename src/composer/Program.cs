@@ -20,8 +20,6 @@ using System.Reflection;
 using System.Text.RegularExpressions; // for updater
 using System.Windows.Forms.Integration;
 using System.Windows.Interop;
-using System.Xml;
-using System.Xml.XPath;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
@@ -128,8 +126,8 @@ namespace WinCompose
                               ? i18n.Text.DisabledToolTip
                               : String.Format(i18n.Text.TrayToolTip,
                                         Settings.ComposeKey.Value.FriendlyName,
-                                        Settings.GetSequenceCount(),
-                                        Program.Version);
+                                        Settings.SequenceCount,
+                                        Settings.Version);
 
             m_disable_item.Checked = Composer.IsDisabled();
         }
@@ -213,27 +211,6 @@ namespace WinCompose
             foreach (string k in data.Keys)
                 Log.Debug("Update data " + k + ": " + data[k]);
         }
-
-        public static string Version
-        {
-            get
-            {
-                if (m_version == null)
-                {
-                    XmlDocument doc = new XmlDocument();
-                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.config");
-                    doc.Load(stream);
-                    XmlNamespaceManager mgr = new XmlNamespaceManager(doc.NameTable);
-                    mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");
-
-                    m_version = doc.DocumentElement.SelectSingleNode("//ns:Project/ns:PropertyGroup/ns:ApplicationVersion", mgr).InnerText;
-                }
-
-                return m_version;
-            }
-        }
-
-        private static string m_version;
     }
 }
 
