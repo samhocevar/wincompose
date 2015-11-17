@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-17 09:38+0000\n"
+"PO-Revision-Date: 2015-11-17 09:53+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
 "Language-Team: Dutch "
 "<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
@@ -215,7 +215,7 @@ msgstr ""
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Auditief signaal bij ongeldige sequenties"
+msgstr "Bij ongeldige sequenties"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
@@ -339,9 +339,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
-"Als Caps Lock als compositietoets wordt gebruikt, is het originele gedrag "
-"niet meer beschikbaar. Deze optie laat toe Caps Lock aan te schakelen door "
-"het indrukken van de Shift-toets."
+"Als Caps Lock wordt gebruikt als compositietoets, is het originele gedrag "
+"van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock aan te "
+"schakelen door de Shift-toets in te drukken."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:327 ID:Categories
