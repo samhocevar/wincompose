@@ -521,7 +521,7 @@ namespace WinCompose
             return File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
         }
 
-        private static bool IsDebugging()
+        public static bool IsDebugging()
         {
             string exe = GetExeName();
             return File.Exists(Path.ChangeExtension(exe, ".pdb"));

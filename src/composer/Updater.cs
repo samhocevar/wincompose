@@ -26,12 +26,7 @@ namespace WinCompose
             Dictionary<string, string> data = new Dictionary<string, string>();
 
             WebClient browser = new WebClient();
-
-            string agent = string.Format("WinCompose/{0} ({1}{2})",
-                                         Settings.Version,
-                                         Environment.OSVersion,
-                                         Settings.IsInstalled() ? "" : "; Portable");
-            browser.Headers.Add("user-agent", agent);
+            browser.Headers.Add("user-agent", GetUserAgent());
             Stream s = browser.OpenRead("http://wincompose.info/status.txt");
             StreamReader sr = new StreamReader(s);
 
@@ -48,6 +43,15 @@ namespace WinCompose
 
             foreach (string k in data.Keys)
                 Log.Debug("Update data " + k + ": " + data[k]);
+        }
+
+        private static string GetUserAgent()
+        {
+            return string.Format("WinCompose/{0} ({1}{2})",
+                                 Settings.Version,
+                                 Environment.OSVersion,
+                                 Settings.IsDebugging() ? "; Development" :
+                                 Settings.IsInstalled() ? "" : "; Portable");
         }
     }
 }
