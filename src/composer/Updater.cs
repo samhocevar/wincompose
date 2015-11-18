@@ -16,33 +16,79 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace WinCompose
 {
     static class Updater
     {
-        public static void CheckForUpdates()
+        public static void Init()
         {
-            Dictionary<string, string> data = new Dictionary<string, string>();
+            m_thread = new Thread(() => { Updater.Run(); });
+            m_thread.Start();
+        }
 
-            WebClient browser = new WebClient();
-            browser.Headers.Add("user-agent", GetUserAgent());
-            Stream s = browser.OpenRead("http://wincompose.info/status.txt");
-            StreamReader sr = new StreamReader(s);
+        public static void Fini()
+        {
+            m_thread.Interrupt();
+            m_thread.Join();
+        }
 
-            for (string line = sr.ReadLine(); line != null;  line = sr.ReadLine())
+        private static void Run()
+        {
+            for (;;)
             {
-                string pattern = "([^:]*): (.*[^ ]) *";
-                var m = Regex.Match(line, pattern);
-                if (m.Groups.Count == 3)
-                    data[m.Groups[1].Captures[0].ToString()] = m.Groups[2].Captures[0].ToString();
+                try
+                {
+                    GetStatusData();
+
+                    if (HasNewerVersion())
+                    {
+                    }
+
+                    // Sleep between 30 and 90 minutes before querying again
+                    Thread.Sleep(new Random().Next(30, 90) * 60 * 1000);
+                }
+                catch (ThreadInterruptedException)
+                {
+                    return;
+                }
             }
+        }
 
-            sr.Close();
-            s.Close();
+        private static bool HasNewerVersion()
+        {
+            if (m_data.ContainsKey("Latest"))
+            {
+                ;
+            }
+            return false;
+        }
 
-            foreach (string k in data.Keys)
-                Log.Debug("Update data " + k + ": " + data[k]);
+        /// <summary>
+        /// Query the WinCompose website for update information
+        /// </summary>
+        private static void GetStatusData()
+        {
+            try
+            {
+                WebClient browser = new WebClient();
+                browser.Headers.Add("user-agent", GetUserAgent());
+                Stream s = browser.OpenRead("http://wincompose.info/status.txt");
+                StreamReader sr = new StreamReader(s);
+
+                for (string line = sr.ReadLine(); line != null;  line = sr.ReadLine())
+                {
+                    string pattern = "^([^#: ][^: ]*):  *(.*[^ ]) *$";
+                    var m = Regex.Match(line, pattern);
+                    if (m.Groups.Count == 3)
+                        m_data[m.Groups[1].Captures[0].ToString()] = m.Groups[2].Captures[0].ToString();
+                }
+
+                sr.Close();
+                s.Close();
+            }
+            catch(Exception) {}
         }
 
         private static string GetUserAgent()
@@ -53,6 +99,9 @@ namespace WinCompose
                                  Settings.IsDebugging() ? "; Development" :
                                  Settings.IsInstalled() ? "" : "; Portable");
         }
+
+        private static Dictionary<string, string> m_data = new Dictionary<string, string>();
+        private static Thread m_thread;
     }
 }
 

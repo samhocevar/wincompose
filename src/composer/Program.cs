@@ -37,6 +37,7 @@ namespace WinCompose
             Composer.Init();
             Settings.LoadSequences();
             KeyboardHook.Init();
+            Updater.Init();
 
             Settings.StartWatchConfigFile();
 
@@ -76,9 +77,6 @@ namespace WinCompose
                 Composer.Changed += ComposerStateChanged;
                 ComposerStateChanged(null, new EventArgs());
 
-                // FIXME: do this in a background thread
-                Updater.CheckForUpdates();
-
                 WinForms.Application.Run();
                 m_tray_icon.Dispose();
             }
@@ -89,6 +87,7 @@ namespace WinCompose
                 m_control.ExitEvent -= OnExitEvent;
 
                 Settings.StopWatchConfigFile();
+                Updater.Fini();
                 KeyboardHook.Fini();
                 Settings.SaveConfig();
                 Composer.Fini();
