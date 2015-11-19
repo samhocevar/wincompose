@@ -24,6 +24,7 @@ namespace WinCompose
     {
         private static WinForms.NotifyIcon m_tray_icon;
         private static WinForms.MenuItem m_disable_item;
+        private static WinForms.MenuItem m_update_menu;
         private static RemoteControl m_control;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
@@ -68,6 +69,12 @@ namespace WinCompose
                         new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
                         new WinForms.MenuItem(i18n.Text.About, AboutClicked),
                         new WinForms.MenuItem("-"),
+                        /* Keep a reference on this entry */ m_update_menu =
+                        new WinForms.MenuItem(i18n.Text.Updates, new[]
+                        {
+                            new WinForms.MenuItem("LOL"),
+                            new WinForms.MenuItem("WAT"),
+                        }),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
                         new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
                     })
@@ -77,12 +84,16 @@ namespace WinCompose
                 Composer.Changed += ComposerStateChanged;
                 ComposerStateChanged(null, new EventArgs());
 
+                Updater.Changed += UpdaterStateChanged;
+                UpdaterStateChanged(null, new EventArgs());
+
                 WinForms.Application.Run();
                 m_tray_icon.Dispose();
             }
             finally
             {
                 Composer.Changed -= ComposerStateChanged;
+                Updater.Changed -= UpdaterStateChanged;
                 m_control.DisableEvent -= OnDisableEvent;
                 m_control.ExitEvent -= OnExitEvent;
 
@@ -91,6 +102,7 @@ namespace WinCompose
                 KeyboardHook.Fini();
                 Settings.SaveConfig();
                 Composer.Fini();
+                Updater.Fini();
             }
         }
 
@@ -125,6 +137,11 @@ namespace WinCompose
                                         Settings.Version);
 
             m_disable_item.Checked = Composer.IsDisabled();
+        }
+
+        private static void UpdaterStateChanged(object sender, EventArgs e)
+        {
+            m_update_menu.Enabled = false;
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)

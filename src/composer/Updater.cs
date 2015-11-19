@@ -35,6 +35,12 @@ static class Updater
         m_thread.Join();
     }
 
+    /// <summary>
+    /// Other modules can listen to this event to be warned when upgrade information
+    /// has been retrieved.
+    /// </summary>
+    public static event EventHandler Changed = delegate {};
+
     private static void Run()
     {
         for (;;)
@@ -45,6 +51,7 @@ static class Updater
 
                 if (HasNewerVersion())
                 {
+                    Changed(null, new EventArgs());
                 }
 
                 // Sleep between 30 and 90 minutes before querying again
