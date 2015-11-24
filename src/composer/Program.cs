@@ -55,7 +55,7 @@ namespace WinCompose
                 m_tray_icon = new WinForms.NotifyIcon
                 {
                     Visible = true,
-                    Icon = Properties.Resources.IconNormal,
+                    Icon = GetTrayIcon(),
                     ContextMenu = new WinForms.ContextMenu(new[]
                     {
                         new WinForms.MenuItem("WinCompose")
@@ -114,9 +114,7 @@ namespace WinCompose
 
         private static void ComposerStateChanged(object sender, EventArgs e)
         {
-            m_tray_icon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
-                             : Composer.IsComposing() ? Properties.Resources.IconActive
-                                                      : Properties.Resources.IconNormal;
+            m_tray_icon.Icon = GetTrayIcon();
             m_tray_icon.Text = Composer.IsDisabled()
                               ? i18n.Text.DisabledToolTip
                               : String.Format(i18n.Text.TrayToolTip,
@@ -125,6 +123,17 @@ namespace WinCompose
                                         Program.Version);
 
             m_disable_item.Checked = Composer.IsDisabled();
+        }
+
+        private static System.Drawing.Icon GetTrayIcon()
+        {
+            if (Composer.IsDisabled())
+                return Properties.Resources.IconDisabled;
+
+            if (Composer.IsComposing())
+                return Properties.Resources.IconActive;
+
+            return Properties.Resources.IconNormal;
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
