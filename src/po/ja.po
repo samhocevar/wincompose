@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-05 16:51+0000\n"
+"PO-Revision-Date: 2015-12-01 17:41+0000\n"
 "Last-Translator: Hiroki Yabe <gigysurk@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/wincompose/"
-"master/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/wincompose/master/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,7 @@ msgstr "Composeキー:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Composeキーとなるキーを指定してください。"
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "遅延:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "上級者向けUnicode入力"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -208,27 +208,27 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Composeキーシーケンスが指定されていないUnicode文字にも入力を有効にする。たとえば、Compose U 1 A 3 "
+"Fというシーケンスを入力すると、U+1A3F が出力される"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "無効な入力時にビープ音を鳴らす"
+msgstr "無効な入力時"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "無効な入力時、大文字小文字のみが異なるものがある場合は、それを使用する"
+msgstr "大文字小文字のみが異なるものがある場合は、それを使用する"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
+msgstr "入力したシーケンスが存在しないが、それと大文字小文字だけが異なるものが存在する場合、自動修正する。"
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "入力した文字を捨てる"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -236,14 +236,15 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"入力したシーケンスが存在しない場合、すべての入力を破棄する。デフォルトでは、入力された文字を、Composeキーが押されなかった時のように出力する。"
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "ビープ音を鳴らす"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "入力したシーケンスが存在しない場合、システム音を鳴らす。"
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -253,7 +254,7 @@ msgstr "表示言語:"
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
-msgstr ""
+msgstr "WinComposeがインターフェースに使う言語を選んでください。デフォルトでは、システムの言語を使います。"
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -288,6 +289,8 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"これを選択すると、WinComposeはもとの挙動をできるだけ保とうとします。たとえば、AltキーをComposeキーに指定した場合でも、Alt-"
+"Tabショートカットは従来通りの動作をします。"
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -299,6 +302,8 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Microsoft Officeのアプリケーションは、特定のUnicode文字を入力したときに、文書のフォントをフォントを変えてしまうバグがあります。この"
+"機能は、Unicode文字の後に、不可視スペースを挿入して、そのバグを回避します。"
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -310,6 +315,8 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Caps LockをComposeキーに指定した場合、元の挙動は使うことできません。この機能は、両方のShiftを同時に押すことで、Caps "
+"LockをOnにすることができます。"
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -321,6 +328,8 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Caps LockをComposeキーに指定した場合、元の挙動は使用できません。この機能は、Shiftキーを押すことでCaps "
+"LockをOffにすることができます。"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:327 ID:Categories
