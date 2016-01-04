@@ -90,7 +90,7 @@ public class Key
     /// A dictionary of non-trivial keysyms and the corresponding
     /// Key object. Trivial (one-character) keysyms are not needed.
     /// </summary>
-    private static readonly Dictionary<string, Key> m_key_names
+    private static readonly Dictionary<string, Key> m_keysyms
         = new Dictionary<string, Key>
     {
         // ASCII-mapped keysyms
@@ -140,7 +140,7 @@ public class Key
     /// </summary>
     public static Key FromKeySym(string keysym)
     {
-        if (m_keysyms.ContainsKey(keysym)
+        if (m_keysyms.ContainsKey(keysym))
             return m_keysyms[keysym];
 
         if (keysym.Length == 1)

@@ -270,26 +270,26 @@ namespace WinCompose
             if (m1.Groups.Count < 4)
                 return;
 
-            var keys = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
+            var keysyms = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
 
-            if (keys.Length < 4) // We need 2 keys + 2 empty strings
+            if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
                 return;
 
             KeySequence seq = new KeySequence();
 
-            for (int i = 1; i < keys.Length; ++i)
+            for (int i = 1; i < keysyms.Length; ++i)
             {
-                if (keys[i] == String.Empty)
+                if (keysyms[i] == String.Empty)
                     continue;
 
-                Key k = Key.FromKeySym(keys[i]);
+                Key k = Key.FromKeySym(keysyms[i]);
                 if (k == null)
                 {
-                    //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keys[i]);
+                    //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keysyms[i]);
                     return; // Unknown key name! Better bail out
                 }
 
-                seq.Add(k)
+                seq.Add(k);
             }
 
             string result = m1.Groups[2].Captures[0].ToString();
