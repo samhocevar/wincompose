@@ -312,6 +312,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Block.sr.resx</DependentUpon>
     </Compile>
+    <Compile Include="sequences\Key.cs" />
     <Compile Include="sequences\Sequence.cs" />
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
