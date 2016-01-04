@@ -322,6 +322,12 @@
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
     <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key.</value>
   </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock always capitalizes letters</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”.</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
     <comment>Header for the list of Unicode character categories</comment>

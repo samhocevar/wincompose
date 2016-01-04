@@ -113,6 +113,7 @@ static class Composer
         bool has_lrshift = (NativeMethods.GetKeyState(VK.LSHIFT) &
                             NativeMethods.GetKeyState(VK.RSHIFT) & 0x80) != 0;
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
+        bool is_capslock_hack = false;
 
         // Guess what key was just pressed. If we can not find a printable
         // representation for the key, default to its virtual key code.
@@ -127,6 +128,30 @@ static class Composer
 
         string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
         string str_if_dead = KeyToUnicode(VK.SPACE);
+
+        // If Caps Lock is on, and the Caps Lock hack is enabled, we check
+        // whether this key without Caps Lock gives a non-ASCII alphabetical
+        // character. If so, we replace str_if_normal with the lowercase or
+        // uppercase variant of that character.
+        if (has_capslock && Settings.CapsLockCapitalizes.Value)
+        {
+            keystate[(int)VK.CAPITAL] = (byte)0x00;
+            string str_if_nocapslock = KeyToUnicode(vk, sc, keystate, flags);
+
+            KeyToUnicode(VK.SPACE); // Eat a potential dead key, just in case
+
+            if (str_if_nocapslock != "" && (int)str_if_nocapslock[0] > 0x7f)
+            {
+                string str_upper = str_if_nocapslock.ToUpper();
+                string str_lower = str_if_nocapslock.ToLower();
+                if (str_upper != str_lower)
+                {
+                    str_if_normal = has_shift ? str_lower : str_upper;
+                    is_capslock_hack = true;
+                }
+            }
+        }
+
         if (str_if_normal != "")
         {
             // This appears to be a normal, printable key
@@ -227,10 +252,19 @@ static class Composer
             }
         }
 
-        // If we are not currently composing a sequence, do nothing. But if
-        // this was a dead key, eat it.
+        // If we are not currently composing a sequence, do nothing unless
+        // one of our hacks forces us to send the key as a string (for
+        // instance the Caps Lock capitalisation feature).
         if (!m_composing)
         {
+            if (is_capslock_hack && is_keydown)
+            {
+                SendString(key.ToString());
+                return true;
+            }
+
+            // If this was a dead key, it will be completely ignored. But
+            // it’s okay since we stored it.
             return false;
         }
 

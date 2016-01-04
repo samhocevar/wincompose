@@ -95,20 +95,19 @@ namespace WinCompose.i18n {
                 return ResourceManager.GetString("AutodetectLanguage", resourceCulture);
             }
         }
-        public static string InvalidSequences {
-            get {
-                return ResourceManager.GetString("InvalidSequences", resourceCulture);
-            }
-        }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beep on invalid sequences.
+        ///   Looks up a localized string similar to Emit a beep.
         /// </summary>
         public static string BeepOnInvalid {
             get {
                 return ResourceManager.GetString("BeepOnInvalid", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If the entered sequence does not exist, emit a system sound..
+        /// </summary>
         public static string BeepOnInvalidToolTip {
             get {
                 return ResourceManager.GetString("BeepOnInvalidToolTip", resourceCulture);
@@ -125,16 +124,38 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fall back to case insensitive matches on invalid sequences.
+        ///   Looks up a localized string similar to Caps Lock always capitalizes letters.
+        /// </summary>
+        public static string CapsLockCapitalizes {
+            get {
+                return ResourceManager.GetString("CapsLockCapitalizes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”..
+        /// </summary>
+        public static string CapsLockCapitalizesToolTip {
+            get {
+                return ResourceManager.GetString("CapsLockCapitalizesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fall back to case insensitive matches.
+        /// </summary>
+        public static string CaseInsensitive {
+            get {
+                return ResourceManager.GetString("CaseInsensitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If the entered sequence does not exist, but there is one that only differs by case, automatically correct it..
         /// </summary>
         public static string CaseInsensitiveToolTip {
             get {
                 return ResourceManager.GetString("CaseInsensitiveToolTip", resourceCulture);
-            }
-        }
-        public static string CaseInsensitive {
-            get {
-                return ResourceManager.GetString("CaseInsensitive", resourceCulture);
             }
         }
         
@@ -159,14 +180,18 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Compose Key:.
         /// </summary>
-        public static string ComposeKeyToolTip {
-            get {
-                return ResourceManager.GetString("ComposeKeyToolTip", resourceCulture);
-            }
-        }
         public static string ComposeKey {
             get {
                 return ResourceManager.GetString("ComposeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the key that should act as the Compose key..
+        /// </summary>
+        public static string ComposeKeyToolTip {
+            get {
+                return ResourceManager.GetString("ComposeKeyToolTip", resourceCulture);
             }
         }
         
@@ -198,13 +223,8 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discard characters from invalid sequences.
+        ///   Looks up a localized string similar to Discard all typed characters.
         /// </summary>
-        public static string DiscardOnInvalidToolTip {
-            get {
-                return ResourceManager.GetString("DiscardOnInvalidToolTip", resourceCulture);
-            }
-        }
         public static string DiscardOnInvalid {
             get {
                 return ResourceManager.GetString("DiscardOnInvalid", resourceCulture);
@@ -212,16 +232,29 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emulate CapsLock using both Shift keys.
+        ///   Looks up a localized string similar to If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used..
+        /// </summary>
+        public static string DiscardOnInvalidToolTip {
+            get {
+                return ResourceManager.GetString("DiscardOnInvalidToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emulate Caps Lock using both Shift keys.
+        /// </summary>
+        public static string EmulateCapsLock {
+            get {
+                return ResourceManager.GetString("EmulateCapsLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously..
         /// </summary>
         public static string EmulateCapsLockToolTip {
             get {
                 return ResourceManager.GetString("EmulateCapsLockToolTip", resourceCulture);
-            }
-        }
-        public static string EmulateCapsLock {
-            get {
-                return ResourceManager.GetString("EmulateCapsLock", resourceCulture);
             }
         }
         
@@ -246,11 +279,6 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Insert zero-width spaces in Office apps.
         /// </summary>
-        public static string InsertZwspToolTip {
-            get {
-                return ResourceManager.GetString("InsertZwspToolTip", resourceCulture);
-            }
-        }
         public static string InsertZwsp {
             get {
                 return ResourceManager.GetString("InsertZwsp", resourceCulture);
@@ -258,16 +286,38 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug..
+        /// </summary>
+        public static string InsertZwspToolTip {
+            get {
+                return ResourceManager.GetString("InsertZwspToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On invalid sequences.
+        /// </summary>
+        public static string InvalidSequences {
+            get {
+                return ResourceManager.GetString("InvalidSequences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maintain original compose key behaviour.
+        /// </summary>
+        public static string KeepOriginalKey {
+            get {
+                return ResourceManager.GetString("KeepOriginalKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key..
         /// </summary>
         public static string KeepOriginalKeyToolTip {
             get {
                 return ResourceManager.GetString("KeepOriginalKeyToolTip", resourceCulture);
-            }
-        }
-        public static string KeepOriginalKey {
-            get {
-                return ResourceManager.GetString("KeepOriginalKey", resourceCulture);
             }
         }
         
@@ -414,6 +464,10 @@ namespace WinCompose.i18n {
                 return ResourceManager.GetString("Language", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the language that WinCompose uses for the interface. By default the operating system language is used..
+        /// </summary>
         public static string LanguageToolTip {
             get {
                 return ResourceManager.GetString("LanguageToolTip", resourceCulture);
@@ -637,16 +691,20 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shift key disables CapsLock.
+        ///   Looks up a localized string similar to Shift key disables Caps Lock.
+        /// </summary>
+        public static string ShiftDisablesCapsLock {
+            get {
+                return ResourceManager.GetString("ShiftDisablesCapsLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key..
         /// </summary>
         public static string ShiftDisablesCapsLockToolTip {
             get {
                 return ResourceManager.GetString("ShiftDisablesCapsLockToolTip", resourceCulture);
-            }
-        }
-        public static string ShiftDisablesCapsLock {
-            get {
-                return ResourceManager.GetString("ShiftDisablesCapsLock", resourceCulture);
             }
         }
         
@@ -705,13 +763,17 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unicode input (character with codepoint U+1A3F can be typed using Compose U 1 A 3 F).
+        ///   Looks up a localized string similar to Advanced Unicode input.
         /// </summary>
         public static string UnicodeInput {
             get {
                 return ResourceManager.GetString("UnicodeInput", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F.
+        /// </summary>
         public static string UnicodeInputToolTip {
             get {
                 return ResourceManager.GetString("UnicodeInputToolTip", resourceCulture);

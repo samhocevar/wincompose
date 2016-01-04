@@ -44,6 +44,7 @@ namespace WinCompose
             InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
             EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
             ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
+            CapsLockCapitalizes = new SettingsEntry<bool>(GlobalSection, "capslock_capitalizes", false);
         }
 
         public static SettingsEntry<string> Language { get; private set; }
@@ -69,6 +70,8 @@ namespace WinCompose
         public static SettingsEntry<bool> EmulateCapsLock { get; private set; }
 
         public static SettingsEntry<bool> ShiftDisablesCapsLock { get; private set; }
+
+        public static SettingsEntry<bool> CapsLockCapitalizes { get; private set; }
 
         public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
 
@@ -169,6 +172,7 @@ namespace WinCompose
             InsertZwsp.Load();
             EmulateCapsLock.Load();
             ShiftDisablesCapsLock.Load();
+            CapsLockCapitalizes.Load();
         }
 
         public static void SaveConfig()
@@ -185,6 +189,7 @@ namespace WinCompose
             InsertZwsp.Save();
             EmulateCapsLock.Save();
             ShiftDisablesCapsLock.Save();
+            CapsLockCapitalizes.Save();
         }
 
         public static void LoadSequences()
