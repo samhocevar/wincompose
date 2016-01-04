@@ -37,8 +37,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <!--<NMakeOutput>Project2.exe</NMakeOutput>-->
     <IntDir>obj\$(IntDir)</IntDir>
+    <OutDir>bin\$(IntDir)</OutDir>
     <NMakeBuildCommandLine>set CONFIG=$(Configuration)
 set VERSION=$(ApplicationVersion)
 set PATH=%PATH%;%ProgramFiles(x86)%\Inno Setup 5
