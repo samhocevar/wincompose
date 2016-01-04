@@ -272,7 +272,7 @@ static class Composer
         // going on, such as Alt+Tab or Windows+Up, so we abort composing
         // and tell the OS that the key is down.
         if (m_compose_down && (Settings.KeepOriginalKey.Value
-                                || !Settings.IsUsableKey(key)))
+                                || !key.IsUsable()))
         {
             Log.Debug("Fallback On");
             ResetSequence();
@@ -281,7 +281,7 @@ static class Composer
         }
 
         // If the key can't be used in a sequence, just ignore it.
-        if (!Settings.IsUsableKey(key))
+        if (!key.IsUsable())
         {
             return false;
         }

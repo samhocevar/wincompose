@@ -206,11 +206,6 @@ namespace WinCompose
             LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
         }
 
-        public static bool IsUsableKey(Key key)
-        {
-            return key.IsPrintable() || m_key_names.ContainsValue(key);
-        }
-
         public static SequenceTree GetSequenceList()
         {
             return m_sequences;
@@ -287,15 +282,14 @@ namespace WinCompose
                 if (keys[i] == String.Empty)
                     continue;
 
-                if (m_key_names.ContainsKey(keys[i]))
-                    seq.Add(m_key_names[keys[i]]);
-                else if (keys[i].Length == 1)
-                    seq.Add(new Key(keys[i]));
-                else
+                Key k = Key.FromKeySym(keys[i]);
+                if (k == null)
                 {
                     //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keys[i]);
                     return; // Unknown key name! Better bail out
                 }
+
+                seq.Add(k)
             }
 
             string result = m1.Groups[2].Captures[0].ToString();
@@ -370,51 +364,6 @@ namespace WinCompose
         };
 
         private static int m_delay = -1;
-
-        private static readonly Dictionary<string, Key> m_key_names
-         = new Dictionary<string, Key>()
-        {
-            // ASCII-mapped keys
-            { "space",        new Key(" ") },  // 0x20
-            { "exclam",       new Key("!") },  // 0x21
-            { "quotedbl",     new Key("\"") }, // 0x22
-            { "numbersign",   new Key("#") },  // 0x23
-            { "dollar",       new Key("$") },  // 0x24
-            { "percent",      new Key("%") },  // 0x25
-            { "ampersand",    new Key("&") },  // 0x26
-            { "apostrophe",   new Key("'") },  // 0x27
-            { "parenleft",    new Key("(") },  // 0x28
-            { "parenright",   new Key(")") },  // 0x29
-            { "asterisk",     new Key("*") },  // 0x2a
-            { "plus",         new Key("+") },  // 0x2b
-            { "comma",        new Key(",") },  // 0x2c
-            { "minus",        new Key("-") },  // 0x2d
-            { "period",       new Key(".") },  // 0x2e
-            { "slash",        new Key("/") },  // 0x2f
-            { "colon",        new Key(":") },  // 0x3a
-            { "semicolon",    new Key(";") },  // 0x3b
-            { "less",         new Key("<") },  // 0x3c
-            { "equal",        new Key("=") },  // 0x3d
-            { "greater",      new Key(">") },  // 0x3e
-            { "question",     new Key("?") },  // 0x3f
-            { "at",           new Key("@") },  // 0x40
-            { "bracketleft",  new Key("[") },  // 0x5b
-            { "backslash",    new Key("\\") }, // 0x5c
-            { "bracketright", new Key("]") },  // 0x5d
-            { "asciicircum",  new Key("^") },  // 0x5e
-            { "underscore",   new Key("_") },  // 0x5f
-            { "grave",        new Key("`") },  // 0x60
-            { "braceleft",    new Key("{") },  // 0x7b
-            { "bar",          new Key("|") },  // 0x7c
-            { "braceright",   new Key("}") },  // 0x7d
-            { "asciitilde",   new Key("~") },  // 0x7e
-
-            // Non-printing keys
-            { "Up",     new Key(VK.UP) },
-            { "Down",   new Key(VK.DOWN) },
-            { "Left",   new Key(VK.LEFT) },
-            { "Right",  new Key(VK.RIGHT) },
-        };
 
         private static Dictionary<string, string> GetSupportedLanguages()
         {

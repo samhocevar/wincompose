@@ -77,13 +77,77 @@ public class Key
     /// <summary>
     /// A dictionary of symbols that we use for some non-printable key labels.
     /// </summary>
-    private static readonly Dictionary<VK, string> m_key_labels = new Dictionary<VK, string>
+    private static readonly Dictionary<VK, string> m_key_labels
+        = new Dictionary<VK, string>
     {
         { VK.UP,    "▲" },
         { VK.DOWN,  "▼" },
         { VK.LEFT,  "◀" },
         { VK.RIGHT, "▶" },
     };
+
+    /// <summary>
+    /// A dictionary of non-trivial keysyms and the corresponding
+    /// Key object. Trivial (one-character) keysyms are not needed.
+    /// </summary>
+    private static readonly Dictionary<string, Key> m_key_names
+        = new Dictionary<string, Key>
+    {
+        // ASCII-mapped keysyms
+        { "space",        new Key(" ") },  // 0x20
+        { "exclam",       new Key("!") },  // 0x21
+        { "quotedbl",     new Key("\"") }, // 0x22
+        { "numbersign",   new Key("#") },  // 0x23
+        { "dollar",       new Key("$") },  // 0x24
+        { "percent",      new Key("%") },  // 0x25
+        { "ampersand",    new Key("&") },  // 0x26
+        { "apostrophe",   new Key("'") },  // 0x27
+        { "parenleft",    new Key("(") },  // 0x28
+        { "parenright",   new Key(")") },  // 0x29
+        { "asterisk",     new Key("*") },  // 0x2a
+        { "plus",         new Key("+") },  // 0x2b
+        { "comma",        new Key(",") },  // 0x2c
+        { "minus",        new Key("-") },  // 0x2d
+        { "period",       new Key(".") },  // 0x2e
+        { "slash",        new Key("/") },  // 0x2f
+        { "colon",        new Key(":") },  // 0x3a
+        { "semicolon",    new Key(";") },  // 0x3b
+        { "less",         new Key("<") },  // 0x3c
+        { "equal",        new Key("=") },  // 0x3d
+        { "greater",      new Key(">") },  // 0x3e
+        { "question",     new Key("?") },  // 0x3f
+        { "at",           new Key("@") },  // 0x40
+        { "bracketleft",  new Key("[") },  // 0x5b
+        { "backslash",    new Key("\\") }, // 0x5c
+        { "bracketright", new Key("]") },  // 0x5d
+        { "asciicircum",  new Key("^") },  // 0x5e
+        { "underscore",   new Key("_") },  // 0x5f
+        { "grave",        new Key("`") },  // 0x60
+        { "braceleft",    new Key("{") },  // 0x7b
+        { "bar",          new Key("|") },  // 0x7c
+        { "braceright",   new Key("}") },  // 0x7d
+        { "asciitilde",   new Key("~") },  // 0x7e
+
+        // Non-printing keys
+        { "Up",     new Key(VK.UP) },
+        { "Down",   new Key(VK.DOWN) },
+        { "Left",   new Key(VK.LEFT) },
+        { "Right",  new Key(VK.RIGHT) },
+    };
+
+    /// <summary>
+    /// A dictionary of keysyms and the corresponding Key object
+    /// </summary>
+    public static Key FromKeySym(string keysym)
+    {
+        if (m_keysyms.ContainsKey(keysym)
+            return m_keysyms[keysym];
+
+        if (keysym.Length == 1)
+            return new Key(keysym);
+
+        return null;
+    }
 
     /// <summary>
     /// A list of keys for which we have a friendly name. This is used in
@@ -131,6 +195,14 @@ public class Key
     public bool IsPrintable()
     {
         return m_str != null;
+    }
+
+    /// <summary>
+    /// Return whether a key is usable in a compose sequence
+    /// </summary>
+    public bool IsUsable()
+    {
+        return IsPrintable() || m_keysyms.ContainsValue(this);
     }
 
     /// <summary>
