@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Compositietoets:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Selecteer de toets die moet werken als compositietoets.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Vertraging:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Geavanceerde Unicode input</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Unicode input toestaan voor alle karakters, zelfs voor deze zonder gedefinieerde compositiesequentie. Bv. de volgende sequentie zal het karakter U+1A3F opleveren: Compositietoets U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Bij ongeldige sequenties</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Noodoplossing voor hoofdletterongevoelige overeenkomsten</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Als de ingetoetste sequentie niet bestaat, maar wel een die enkel qua hoofdletters verschilt, corrigeer dan automatisch.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Verwijder alle ingetoetste karakters</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Als de ingetoetste sequentie niet bestaat, verwijder alle ingetoetste karakters. Het standaard gedrag is de karakters plaatsen alsof de compositietoets niet was ingedrukt.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Produceer een auditief signaal</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Als de ingetoetste sequentie niet bestaat, produceer een auditief signaal.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Interface taal:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Selecteer de taal die WinCompose gebruikt voor de interface. Standaard wordt de taal van het besturingssysteem gebruikt.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Sluiten</value>
@@ -243,14 +276,26 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Gedrag van oorspronkelijke compositietoets behouden</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Dit vraagt WinCompose om zo goed als mogelijk het originele gedrag van de toetsen te behouden. Bv. de combinatie Alt-Tab blijft werken ook als Alt als compositietoets wordt gebruikt.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Nul-breedte spaties invoegen in Office apps</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Soms veranderen Microsoft Office toepassingen het lettertype bij het intoetsen van bepaalde Unicode karakters. Deze optie voegt een onzichtbaar karakter toe na het Unicode karakter om dat te omzeilen.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Caps Lock emuleren met beide Shift-toetsen</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Als Caps Lock wordt gebruikt als compositietoets is het originele gedrag van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock aan te schakelen door beide Shift toetsen tegelijkertijd in te drukken.</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift-toets schakelt Caps Lock uit</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Als Caps Lock wordt gebruikt als compositietoets, is het originele gedrag van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock aan te schakelen door de Shift-toets in te drukken.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorieën</value>

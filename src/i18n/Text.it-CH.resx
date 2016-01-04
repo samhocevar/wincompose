@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Tecla Compose:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Ischerta sa tecla chi at a divènnere sa Tecla Compose.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Durada ativatzione:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Insertada (input) avantzada Unicode</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Abìlita s’insertada Unicode pro totu sos caràteres, fintzas cussos chene filera compose. Pro fàghere un’esèmpiu, custa filera at a otènnere su caràtere U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Si una filera no est vàlida</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Torra a non distìnghere intre maiùscolas e minùscolas</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Si sa filera insertada no esistit, ma nde b'est una chi cambiat petzi pro sas lìteras maiùscolas o minùscolas, currege·la automaticamente.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Burra totu sos caràteres iscritos</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Si sa filera insertada no esistit, burra totu sos caràteres insertados. su cumportamentu predefinidu est de iscrìere totu sos caràteres comente chi sa tecla compose non siat istada impreada.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Faghe unu sonu</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Si sa filera insertada no esistit, faghe unu sonu de sistema.</value>
+  </data>
   <data name="Language" xml:space="preserve">
-    <value>Limba de s’interfàtzia:</value>
+    <value>Limba de s’interfache:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Ischerta sa limba chi Wincompose at a impreare pro s’interfache. S’impostatzione predefinida est sa limba de sistema.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Serra</value>
@@ -243,14 +276,26 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Mantènne su cumportamentu originale de sa tecla compose</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Custu at a nàrrere a WinCompose de chircare cantu podet de otènnere su cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s'incurtzadura Alt-Tab at a sighire a funtzionare fintzas si Alt est impreada comente tecla compose.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Inserta sos ispàtzios invisìbiles in sos aplicos Office</value>
   </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Sas aplicatziones de Microsoft Office cada tantu cambiant su font de su documentu automaticamente cando carchi caràtere Unicode benit insertadu. Custa funtzionalidade insertat unu caràtere invisìbile a pustis de su caràtere Unicode pro istransire cussu errore.</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Dispinta Bloc Maiusc impreande totas duas sas teclas Maiùscolu</value>
+    <value>Dispinta Bloc Maiusc impreende totas duas sas teclas Maiùscolu</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Si Bloc Maiusc (Caps Lock) est impreada comente tecla compose, su cumportamentu originale no est prus disponìbile. Custa funzionalidade permitit de allùere Bloc Maiusc incarchende ambas sas teclas Maiùscolu (Shift) in su matessi momentu.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Sa tecla Maiùscolu disabilitat Bloc Maiusc</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Si Bloc Maiusc (Caps Lock) est impreada comente tecla compose, su cumportamentu originale no est prus disponìbile. Custa funzionalidade permitit de istudare Bloc Maiusc incarcande sa tecla Maiùscolu (Shift).</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorias</value>

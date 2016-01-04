@@ -159,6 +159,9 @@
   <data name="KeySpace" xml:space="preserve">
     <value>Spacja</value>
   </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Akcent słaby `</value>
   </data>

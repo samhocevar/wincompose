@@ -222,8 +222,29 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Модификатор:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Изаберите који тастер ће бити Модификатор.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Задршка:</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Напредни Уникод унос</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Укључити Уникод унос за све знакове, чак и оне који немају дефинисану модификаторску комбинацију. На пример, следећа секвенца ће исписати знак U+1A3F: Модификатор U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>При неисправним комбинацијама</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Спадни на словно неосетљива поклапања</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Ако унета секвенца не постоји али постоји иста са разликом у величини слова, аутоматски исправи.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Одбаци све унете знакове</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Језик сучеља:</value>

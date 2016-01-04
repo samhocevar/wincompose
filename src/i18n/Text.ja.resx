@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Composeキー:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Composeキーとなるキーを指定してください。</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>遅延:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>上級者向けUnicode入力</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Composeキーシーケンスが指定されていないUnicode文字にも入力を有効にする。たとえば、Compose U 1 A 3 Fというシーケンスを入力すると、U+1A3F が出力される</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>無効な入力時</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>大文字小文字のみが異なるものがある場合は、それを使用する</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>入力したシーケンスが存在しないが、それと大文字小文字だけが異なるものが存在する場合、自動修正する。</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>入力した文字を捨てる</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>入力したシーケンスが存在しない場合、すべての入力を破棄する。デフォルトでは、入力された文字を、Composeキーが押されなかった時のように出力する。</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>ビープ音を鳴らす</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>入力したシーケンスが存在しない場合、システム音を鳴らす。</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>表示言語:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>WinComposeがインターフェースに使う言語を選んでください。デフォルトでは、システムの言語を使います。</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>閉じる</value>
@@ -243,14 +276,26 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>もとのComposeキーの動作を保つ</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>これを選択すると、WinComposeはもとの挙動をできるだけ保とうとします。たとえば、AltキーをComposeキーに指定した場合でも、Alt-Tabショートカットは従来通りの動作をします。</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Officeアプリ使用時ゼロ幅スペースを挿入する</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Microsoft Officeのアプリケーションは、特定のUnicode文字を入力したときに、文書のフォントをフォントを変えてしまうバグがあります。この機能は、Unicode文字の後に、不可視スペースを挿入して、そのバグを回避します。</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>両方のShiftキー押下でCaps Lockの代わりにする</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Caps LockをComposeキーに指定した場合、元の挙動は使うことできません。この機能は、両方のShiftを同時に押すことで、Caps LockをOnにすることができます。</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shiftキーを押した時にはCaps Lockを無効にする</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Caps LockをComposeキーに指定した場合、元の挙動は使用できません。この機能は、Shiftキーを押すことでCaps LockをOffにすることができます。</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>カテゴリ</value>

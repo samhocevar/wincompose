@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Kombineerimisklahv:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Vali klahv, mis peaks käituma kombineerimisklahvina.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Viivitus:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Täpsem Unicode sisend</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Luba kõigi Unicode märkide sisestamine; seda isegi siis, kui kombineerimisjada on määramata. Näiteks genereerib jada 'Kombineeri U 1 A 3 F' märgi U+1A3F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Vigaste kombinatsioonide korral</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Pöördu tagasi tõstutundetute vastavuste juurde</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Kui sisestatud jada puudub, kuid erineb ainult tähesuuruses, siis paranda see automaatselt.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Unusta kõik sisestatud märgid</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Kui sisestatud jada puudub, siis unusta kõik sisestatud märgid. Vaikimisi väljastatakse märgid nii nagu kombineerimisklahvi ei ole kasutatud.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Häälitse</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Kui sisestatud jada on tundmatu, siis tee häält.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Kasutajaliidese keel:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Vali keel, mida WinCompose kasutab liideses. Vaikmisi kasutatakse operatsioonisüsteemi keelt.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Sulge</value>
@@ -243,11 +276,26 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Säilita algne kombineerimisklahvi käitumine</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>See ütleb WinCompose'ile, et ta säilitaks nii palju kui võimalik klahvi algse käitumise. Näiteks jätkab Alt+Tab oma tööd isegi siis, kui Alt on valitud kombineerimisklahviks.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Sisesta Office programmides null-laiusega tühikud</value>
   </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Microsoft Office programmid muudavad mõnikord käigult dokumendi fonti, kui sisestatakse teatavaid Unicode märke. See parameeter lisab automaatselt Unicode märgi taha nähtamatu märgisi, et vältida vea avaldumist.</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emuleeri Caps Lock mõlema Shift klahviga</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Kui Caps Lock on valitud kombineerimisklahviks, siis blokeeritakse klahvi algne käitumine. See parameeter lubab lülitada Caps Locki sisse vajutades korraga mõlemat Shift klahvi.</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift klahv keelab Caps Locki</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Kui Caps Lock on valitud kombineerimisklahviks, siis blokeeritakse klahvi algne käitumine. See parameeter lubab lülitada Caps Locki välja vajutades Shift klahvi.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategooriad</value>

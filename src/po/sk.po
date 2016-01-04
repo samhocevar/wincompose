@@ -315,103 +315,113 @@ msgid ""
 "the Shift key."
 msgstr ""
 
+#: i18n/Text.resx:326 ID:CapsLockCapitalizes
+msgid "Caps Lock always capitalizes letters"
+msgstr ""
+
+#: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
+msgstr ""
+
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:327 ID:Categories
+#: i18n/Text.resx:333 ID:Categories
 msgid "Categories"
 msgstr ""
 
-#: i18n/Text.resx:330 ID:InSelectedCategories
+#: i18n/Text.resx:336 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "Vo zvolených kategóriách"
 
 #. The title of the Options window
-#: i18n/Text.resx:334 ID:Options
+#: i18n/Text.resx:340 ID:Options
 msgid "Options — WinCompose"
 msgstr ""
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:338 ID:ShowOptions
+#: i18n/Text.resx:344 ID:ShowOptions
 msgid "Options…"
 msgstr ""
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:342 ID:TrayToolTip
+#: i18n/Text.resx:348 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr ""
 
-#: i18n/Text.resx:345 ID:Behavior
+#: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
 msgstr "Všeobecné správanie sa"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:349 ID:WindowTitle
+#: i18n/Text.resx:355 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:352 ID:UserMacros
+#: i18n/Text.resx:358 ID:UserMacros
 msgid "User-defined macros"
 msgstr ""
 
-#: i18n/Text.resx:355 ID:DisabledToolTip
+#: i18n/Text.resx:361 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr ""
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:359 ID:KeyInsert
+#: i18n/Text.resx:365 ID:KeyInsert
 msgid "Insert"
 msgstr ""
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:363 ID:TestTyping
+#: i18n/Text.resx:369 ID:TestTyping
 msgid "Test Typing:"
 msgstr ""
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:367 ID:Tweaks
+#: i18n/Text.resx:373 ID:Tweaks
 msgid "Tweaks"
 msgstr ""
 
-#: i18n/Text.resx:370 ID:Milliseconds
+#: i18n/Text.resx:376 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr ""
 
 #. About box menu entry
-#: i18n/Text.resx:374 ID:About
+#: i18n/Text.resx:380 ID:About
 msgid "About"
 msgstr "O programe"
 
 #. Window title of the About box
-#: i18n/Text.resx:378 ID:AboutBoxTitle
+#: i18n/Text.resx:384 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr ""
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:382 ID:Programming
+#: i18n/Text.resx:388 ID:Programming
 msgid "Programming"
 msgstr ""
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:386 ID:Translators
+#: i18n/Text.resx:392 ID:Translators
 msgid "Translation"
 msgstr ""
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:390 ID:Contributors
+#: i18n/Text.resx:396 ID:Contributors
 msgid "Special Thanks"
 msgstr ""
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:394 ID:License
+#: i18n/Text.resx:400 ID:License
 msgid "License"
 msgstr ""
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:398 ID:NeedRestart
+#: i18n/Text.resx:404 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:402 ID:ReportBug
+#: i18n/Text.resx:408 ID:ReportBug
 msgid "Report a Bug"
 msgstr ""
 

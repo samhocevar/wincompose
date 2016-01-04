@@ -5,14 +5,14 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2015-12-11 11:50+0000\n"
 "Last-Translator: Slobodan Simić <slsimic@gmail.com>\n"
-"Language-Team: Serbian "
-"<https://hosted.weblate.org/projects/wincompose/master/sr/>\n"
+"Language-Team: Serbian <https://hosted.weblate.org/projects/wincompose/"
+"master/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.5-dev\n"
 "X-Project-Style: gnome\n"
 
@@ -206,8 +206,8 @@ msgid ""
 "Compose U 1 A 3 F"
 msgstr ""
 "Укључити Уникод унос за све знакове, чак и оне који немају дефинисану "
-"модификаторску комбинацију. На пример, следећа секвенца ће исписати знак "
-"U+1A3F: Модификатор U 1 A 3 F"
+"модификаторску комбинацију. На пример, следећа секвенца ће исписати знак U"
+"+1A3F: Модификатор U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
@@ -322,103 +322,113 @@ msgid ""
 "the Shift key."
 msgstr ""
 
+#: i18n/Text.resx:326 ID:CapsLockCapitalizes
+msgid "Caps Lock always capitalizes letters"
+msgstr ""
+
+#: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
+msgstr ""
+
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:327 ID:Categories
+#: i18n/Text.resx:333 ID:Categories
 msgid "Categories"
 msgstr "Категорије"
 
-#: i18n/Text.resx:330 ID:InSelectedCategories
+#: i18n/Text.resx:336 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "У изабраним категоријама"
 
 #. The title of the Options window
-#: i18n/Text.resx:334 ID:Options
+#: i18n/Text.resx:340 ID:Options
 msgid "Options — WinCompose"
 msgstr "Опције — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:338 ID:ShowOptions
+#: i18n/Text.resx:344 ID:ShowOptions
 msgid "Options…"
 msgstr "Опције…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:342 ID:TrayToolTip
+#: i18n/Text.resx:348 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} на {0} ({1} комбинација)"
 
-#: i18n/Text.resx:345 ID:Behavior
+#: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
 msgstr "Опште понашање"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:349 ID:WindowTitle
+#: i18n/Text.resx:355 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Комбинације — WinCompose"
 
-#: i18n/Text.resx:352 ID:UserMacros
+#: i18n/Text.resx:358 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Кориснички макрои"
 
-#: i18n/Text.resx:355 ID:DisabledToolTip
+#: i18n/Text.resx:361 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "WinCompose је искључен"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:359 ID:KeyInsert
+#: i18n/Text.resx:365 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:363 ID:TestTyping
+#: i18n/Text.resx:369 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Куцајте за пробу:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:367 ID:Tweaks
+#: i18n/Text.resx:373 ID:Tweaks
 msgid "Tweaks"
 msgstr "Штеловања"
 
-#: i18n/Text.resx:370 ID:Milliseconds
+#: i18n/Text.resx:376 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(милисекунди)"
 
 #. About box menu entry
-#: i18n/Text.resx:374 ID:About
+#: i18n/Text.resx:380 ID:About
 msgid "About"
 msgstr "О програму"
 
 #. Window title of the About box
-#: i18n/Text.resx:378 ID:AboutBoxTitle
+#: i18n/Text.resx:384 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "О програму"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:382 ID:Programming
+#: i18n/Text.resx:388 ID:Programming
 msgid "Programming"
 msgstr "Програмирање"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:386 ID:Translators
+#: i18n/Text.resx:392 ID:Translators
 msgid "Translation"
 msgstr "Превод"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:390 ID:Contributors
+#: i18n/Text.resx:396 ID:Contributors
 msgid "Special Thanks"
 msgstr "Захвалнице"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:394 ID:License
+#: i18n/Text.resx:400 ID:License
 msgid "License"
 msgstr "Лиценца"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:398 ID:NeedRestart
+#: i18n/Text.resx:404 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr "Да би неке измене ступиле на снагу, програм се мора поново покренути."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:402 ID:ReportBug
+#: i18n/Text.resx:408 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Пријавите грешку"
 
