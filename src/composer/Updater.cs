@@ -64,7 +64,7 @@ static class Updater
         }
     }
 
-    private static bool HasNewerVersion()
+    public static bool HasNewerVersion()
     {
         if (m_data.ContainsKey("Latest"))
         {

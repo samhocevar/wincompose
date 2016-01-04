@@ -1,4 +1,4 @@
-#define NAME "WinCompose"
+﻿#define NAME "WinCompose"
 #define VERSION GetEnv('VERSION')
 #define CONFIG GetEnv('CONFIG')
 
@@ -83,6 +83,7 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
+; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
 Name: "{group}\Uninstall"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#NAME}.exe"; IconIndex: 1
 Name: "{group}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
 

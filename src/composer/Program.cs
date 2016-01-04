@@ -13,6 +13,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms.Integration;
 using System.Windows.Interop;
@@ -55,7 +56,8 @@ namespace WinCompose
                 m_tray_icon = new WinForms.NotifyIcon
                 {
                     Visible = true,
-                    Icon = Properties.Resources.IconNormal,
+                    Icon = GetCurrentIcon(),
+                    Text = GetCurrentToolTip(),
                     ContextMenu = new WinForms.ContextMenu(new[]
                     {
                         new WinForms.MenuItem("WinCompose")
@@ -126,18 +128,61 @@ namespace WinCompose
 
         private static void ComposerStateChanged(object sender, EventArgs e)
         {
-            m_tray_icon.Icon = Composer.IsDisabled()  ? Properties.Resources.IconDisabled
-                             : Composer.IsComposing() ? Properties.Resources.IconActive
-                                                      : Properties.Resources.IconNormal;
-            m_tray_icon.Text = Composer.IsDisabled()
-                              ? i18n.Text.DisabledToolTip
-                              : String.Format(i18n.Text.TrayToolTip,
-                                        Settings.ComposeKey.Value.FriendlyName,
-                                        Settings.SequenceCount,
-                                        Settings.Version);
+            m_tray_icon.Icon = GetCurrentIcon();
+            m_tray_icon.Text = GetCurrentToolTip();
 
             m_disable_item.Checked = Composer.IsDisabled();
         }
+
+        private static string GetCurrentToolTip()
+        {
+            if (Composer.IsDisabled())
+                return i18n.Text.DisabledToolTip;
+
+            return String.Format(i18n.Text.TrayToolTip,
+                                 Settings.ComposeKey.Value.FriendlyName,
+                                 Settings.SequenceCount,
+                                 Settings.Version);
+        }
+
+        private static System.Drawing.Icon GetCurrentIcon()
+        {
+            return GetIcon((Composer.IsDisabled() ?     0x1 : 0x0) |
+                           (Composer.IsComposing() ?    0x2 : 0x0) |
+                           (Updater.HasNewerVersion() ? 0x4 : 0x0));
+        }
+
+        private static System.Drawing.Icon GetIcon(int index)
+        {
+            if (m_icon_cache == null)
+                m_icon_cache = new System.Drawing.Icon[8];
+
+            if (m_icon_cache[index] == null)
+            {
+                // XXX: if you create new bitmap images here instead of using bitmaps from
+                // resources, make sure the DPI settings match. Our PNGs are 72 DPI whereas
+                // new Bitmap objects appear to use 96 by default (even if copy-constructed).
+                // A reasonable workaround might be to use Clone().
+                using (Bitmap bitmap = Properties.Resources.KeyEmpty)
+                using (Graphics canvas = Graphics.FromImage(bitmap))
+                {
+                    // LED status: on or off
+                    canvas.DrawImage(Composer.IsComposing() ? Properties.Resources.DecalActive
+                                                            : Properties.Resources.DecalIdle, 0, 0);
+
+                    // Large red cross indicating we’re disabled
+                    if (Composer.IsDisabled())
+                        canvas.DrawImage(Properties.Resources.DecalDisabled, 0, 0);
+
+                    canvas.Save();
+                    m_icon_cache[index] = Icon.FromHandle(bitmap.GetHicon());
+                }
+            }
+
+            return m_icon_cache[index];
+        }
+
+        private static System.Drawing.Icon[] m_icon_cache;
 
         private static void UpdaterStateChanged(object sender, EventArgs e)
         {
