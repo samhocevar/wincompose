@@ -251,8 +251,10 @@ static class Composer
                     }).Start();
                 }
 
-                Changed(null, new EventArgs());
             }
+
+            // FIXME: avoid calling this as a result of autorepeat
+            Changed(null, new EventArgs());
 
             return true;
         }
