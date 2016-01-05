@@ -231,7 +231,6 @@ static class Composer
                 // FIXME: we don't want compose + compose to disable composing,
                 // since there are compose sequences that use Multi_key.
                 // FIXME: also, if a sequence was in progress, print it!
-                m_compose_down = true;
                 m_composing = !m_composing;
                 if (!m_composing)
                     m_sequence.Clear();
@@ -250,9 +249,9 @@ static class Composer
                         ResetSequence();
                     }).Start();
                 }
-
             }
 
+            m_compose_down = is_keydown;
             // FIXME: avoid calling this as a result of autorepeat
             Changed(null, new EventArgs());
 
