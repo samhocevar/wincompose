@@ -271,8 +271,10 @@ static class Composer
         // If the compose key is down, maybe there is a key combination
         // going on, such as Alt+Tab or Windows+Up, so we abort composing
         // and tell the OS that the key is down.
-        if (m_compose_down && (Settings.KeepOriginalKey.Value
-                                || !key.IsUsable()))
+        // Never do this if the key is a modifier key such as shift or alt.
+        // Never do this if the event is a key up.
+        if (m_compose_down && is_keydown && !key.IsModifier()
+             && (Settings.KeepOriginalKey.Value || !key.IsUsable()))
         {
             Log.Debug("Fallback On");
             ResetSequence();

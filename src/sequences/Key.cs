@@ -206,6 +206,28 @@ public class Key
     }
 
     /// <summary>
+    /// Return whether a key is a modifier (shift, ctrl, alt)
+    /// </summary>
+    public bool IsModifier()
+    {
+        switch (m_vk)
+        {
+            case VK.LCONTROL:
+            case VK.RCONTROL:
+            case VK.CONTROL:
+            case VK.LSHIFT:
+            case VK.RSHIFT:
+            case VK.SHIFT:
+            case VK.LMENU:
+            case VK.RMENU:
+            case VK.MENU:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    /// <summary>
     /// A friendly name that we can put in e.g. a dropdown menu
     /// </summary>
     public string FriendlyName
