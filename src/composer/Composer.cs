@@ -76,6 +76,7 @@ static class Composer
     public static void Init()
     {
         StartMonitoringKeyboardLeds();
+        AnalyzeKeyboardLayout();
         AnalyzeDeadkeys();
     }
 
@@ -111,7 +112,7 @@ static class Composer
 
     private static bool OnKeyInternal(WM ev, VK vk, SC sc, LLKHF flags)
     {
-        CheckKeyboardLayout();
+        //AnalyzeKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
@@ -201,33 +202,31 @@ static class Composer
         // print stuff, such as `.
         if (key == Settings.ComposeKey.Value)
         {
-            if (is_keyup)
+            // If we receive a keyup for the compose key while in emulation
+            // mode, we’re done. Send a KeyUp event and exit emulation mode.
+            if (is_keyup && m_emulating)
             {
-                // If we receive a keyup for the compose key, but we hadn't
-                // previously marked it as down, it means we're in emulation
-                // mode and we need to cancel it.
-                if (!m_compose_down)
-                {
-                    Log.Debug("Fallback Off");
-                    SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
+                Log.Debug("Emulation Off");
+                m_compose_down = false;
+                m_emulating = false;
 
-                    // Send an additional KeyUp for the opposite key; experience
-                    // indicates that it helps unstucking some applications such
-                    // as mintty.exe.
-                    switch (Settings.ComposeKey.Value.VirtualKey)
-                    {
-                        case VK.LMENU: SendKeyUp(VK.RMENU); break;
-                        case VK.RMENU: SendKeyUp(VK.LMENU); break;
-                        case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
-                        case VK.RSHIFT: SendKeyUp(VK.LSHIFT); break;
-                        case VK.LCONTROL: SendKeyUp(VK.RCONTROL); break;
-                        case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
-                    }
+                // If relevant, send an additional KeyUp for the opposite
+                // key; experience indicates that it helps unstuck some
+                // applications such as mintty.exe.
+                switch (Settings.ComposeKey.Value.VirtualKey)
+                {
+                    case VK.LMENU: SendKeyUp(VK.RMENU); break;
+                    case VK.RMENU: SendKeyUp(VK.LMENU); break;
+                    case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
+                    case VK.RSHIFT: SendKeyUp(VK.LSHIFT); break;
+                    case VK.LCONTROL: SendKeyUp(VK.RCONTROL); break;
+                    case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
                 }
 
-                m_compose_down = false;
+                return false;
             }
-            else if (is_keydown && !m_compose_down)
+
+            if (is_keydown && !m_compose_down)
             {
                 // FIXME: we don't want compose + compose to disable composing,
                 // since there are compose sequences that use Multi_key.
@@ -251,9 +250,9 @@ static class Composer
                         ResetSequence();
                     }).Start();
                 }
-            }
 
-            Changed(null, new EventArgs());
+                Changed(null, new EventArgs());
+            }
 
             return true;
         }
@@ -291,17 +290,22 @@ static class Composer
             return false;
         }
 
-        // If the compose key is down, maybe there is a key combination
-        // going on, such as Alt+Tab or Windows+Up, so we abort composing
-        // and tell the OS that the key is down.
+        // If the compose key is down and the user pressed a new key, maybe
+        // they want to do a key combination instead of composing, such as
+        // Alt+Tab or Windows+Up. So we abort composing and send the KeyDown
+        // event for the Compose key that we previously discarded.
+        //
+        // Never do this if the event is KeyUp.
+        // Never do this if we already started a sequence
         // Never do this if the key is a modifier key such as shift or alt.
-        // Never do this if the event is a key up.
-        if (m_compose_down && is_keydown && !key.IsModifier()
+        if (m_compose_down && is_keydown
+             && m_sequence.Count == 0 && !key.IsModifier()
              && (Settings.KeepOriginalKey.Value || !key.IsUsable()))
         {
-            Log.Debug("Fallback On");
+            Log.Debug("Emulation On");
             ResetSequence();
             SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
+            m_emulating = true;
             return false;
         }
 
@@ -537,8 +541,9 @@ static class Composer
 
         if (Settings.Disabled.Value)
         {
-            m_composing = false;
             m_compose_down = false;
+            m_composing = false;
+            m_emulating = false;
             m_sequence.Clear();
         }
 
@@ -555,8 +560,9 @@ static class Composer
 
     private static void ResetSequence()
     {
-        m_composing = false;
         m_compose_down = false;
+        m_composing = false;
+        m_emulating = false;
         m_sequence.Clear();
 
         Changed(null, new EventArgs());
@@ -654,18 +660,20 @@ static class Composer
     }
 
     // FIXME: this is useless for now
-    private static void CheckKeyboardLayout()
+    private static void AnalyzeKeyboardLayout()
     {
         // FIXME: the foreground window doesn't seem to notice keyboard
         // layout changes caused by the Win+Space combination.
         IntPtr hwnd = NativeMethods.GetForegroundWindow();
         uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
         IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
-        //Console.WriteLine("Active layout is {0:X}", (int)active_layout);
+        Log.Debug("Active window layout handle:0x{0:X} lang:0x{0:X}",
+                  (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
         tid = NativeMethods.GetCurrentThreadId();
         IntPtr my_layout = NativeMethods.GetKeyboardLayout(tid);
-        //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
+        Log.Debug("WinCompose process layout handle:0x{0:X} lang:0x{0:X}",
+                  (uint)my_layout >> 16, (uint)my_layout & 0xffff);
     }
 
     private static void StartMonitoringKeyboardLeds()
@@ -740,6 +748,12 @@ static class Composer
 
     private static bool m_compose_down = false;
     private static bool m_composing = false;
+
+    /// <summary>
+    /// Emulation mode: the compose key is held, but not for composing,
+    /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
+    /// </summary>
+    private static bool m_emulating = false;
 }
 
 }
