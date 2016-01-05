@@ -210,6 +210,19 @@ static class Composer
                 {
                     Log.Debug("Fallback Off");
                     SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
+
+                    // Send an additional KeyUp for the opposite key; experience
+                    // indicates that it helps unstucking some applications such
+                    // as mintty.exe.
+                    switch (Settings.ComposeKey.Value.VirtualKey)
+                    {
+                        case VK.LMENU: SendKeyUp(VK.RMENU); break;
+                        case VK.RMENU: SendKeyUp(VK.LMENU); break;
+                        case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
+                        case VK.RSHIFT: SendKeyUp(VK.LSHIFT); break;
+                        case VK.LCONTROL: SendKeyUp(VK.RCONTROL); break;
+                        case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
+                    }
                 }
 
                 m_compose_down = false;
