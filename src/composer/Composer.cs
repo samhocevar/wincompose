@@ -23,6 +23,11 @@ using System.Windows.Forms;
 namespace WinCompose
 {
 
+/// <summary>
+/// A convenience class that can be fed either scancodes (<see cref="SC"/>)
+/// or virtual keys (<see cref="VK"/>), then uses the Win32 API function
+/// <see cref="SendInput"/> to send all these events in one single call.
+/// </summary>
 class InputSequence
 {
     public void Send()
@@ -59,6 +64,10 @@ class InputSequence
     }
 }
 
+/// <summary>
+/// The main composer class. It gets input from the keyboard hook, and
+/// acts depending on the global configuration and current keyboard state.
+/// </summary>
 static class Composer
 {
     /// <summary>
@@ -126,6 +135,7 @@ static class Composer
         keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
+        // These two calls must be done together and in this order.
         string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
         string str_if_dead = KeyToUnicode(VK.SPACE);
 
@@ -555,6 +565,10 @@ static class Composer
         SendKeyUp(vk);
     }
 
+    /// <summary>
+    /// Attempt to enumerate all dead keys available on the current keyboard
+    /// layout and cache the results in <see cref="m_possible_dead_keys"/>.
+    /// </summary>
     private static void AnalyzeDeadkeys()
     {
         m_possible_dead_keys = new Dictionary<string, int>();
