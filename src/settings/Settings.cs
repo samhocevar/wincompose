@@ -17,6 +17,7 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Resources;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -204,6 +205,59 @@ namespace WinCompose
 
             LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose"));
             LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
+        }
+
+        /// <summary>
+        /// Find the preferred application for .txt files and launch it to
+        /// open .XCompose. If the file does not exist, try .XCompose.txt
+        /// instead. If it doesn’t exist either, create .XCompose ourselves.
+        /// </summary>
+        public static void EditCustomRuleFile()
+        {
+            // Ensure the rules file exists.
+            string user_file = Path.Combine(GetUserDir(), ".XCompose"));
+            if (!File.Exists(user_file))
+            {
+                string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt"));
+                if (File.Exists(alt_file))
+                {
+                    user_file = alt_file;
+                }
+                else
+                {
+                    using (var s = File.OpenWrite(user_file))
+                    using (var sw = new StreamWriter(s, new UTF8Encoding(true)))
+                    {
+                        sw.WriteLine("# Custom rule file for WinCompose");
+                        sw.WriteLine("#");
+                        sw.WriteLine("#");
+                        sw.WriteLine("# Sample rule. Remove leading “#” to activate.");
+                        sw.WriteLine("#<Multi_key> <h> <a> : \"ha ha ha ha\"");
+                    }
+                }
+            }
+
+            // Find the preferred application for .txt files
+            uint length = 0, ret;
+            ret = AssocQueryString(ASSOCF.NONE, ASSOCSTR.EXECUTABLE,
+                                   ".txt", null, null, ref length);
+            if (ret != 0)
+                return;
+
+            var sb = new StringBuilder((int)length);
+            ret = AssocQueryString(ASSOCF.NONE, ASSOCSTR.EXECUTABLE,
+                                   ".txt", null, sb, ref length);
+            if (ret != 0)
+                return;
+
+            // Open the rules file with that application
+            var psinfo = new ProcessStartInfo
+            {
+                FileName = sb.ToString();
+                Arguments = user_file;
+                UseShellExecute = true;
+            };
+            Process.Start(psinfo);
         }
 
         public static SequenceTree GetSequenceList()

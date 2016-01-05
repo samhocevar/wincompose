@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -110,6 +110,15 @@ static internal class NativeMethods
     [DllImport("kernel32")]
     public static extern int GetPrivateProfileString(string Section, string Key,
               string Default, StringBuilder RetVal, int Size, string FilePath);
+
+    //
+    // for Settings.cs
+    //
+
+    [DllImport("shlwapi", CharSet = CharSet.Auto, SetLastError = true)]
+    public static extern uint AssocQueryString(ASSOCF flags, ASSOCSTR str,
+              string pszAssoc, string pszExtra, [Out] StringBuilder pszOut,
+              ref uint pcchOut);
 };
 
 }
