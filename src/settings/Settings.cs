@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -215,10 +216,10 @@ namespace WinCompose
         public static void EditCustomRuleFile()
         {
             // Ensure the rules file exists.
-            string user_file = Path.Combine(GetUserDir(), ".XCompose"));
+            string user_file = Path.Combine(GetUserDir(), ".XCompose");
             if (!File.Exists(user_file))
             {
-                string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt"));
+                string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt");
                 if (File.Exists(alt_file))
                 {
                     user_file = alt_file;
@@ -239,23 +240,23 @@ namespace WinCompose
 
             // Find the preferred application for .txt files
             uint length = 0, ret;
-            ret = AssocQueryString(ASSOCF.NONE, ASSOCSTR.EXECUTABLE,
-                                   ".txt", null, null, ref length);
+            ret = NativeMethods.AssocQueryString(ASSOCF.NONE,
+                            ASSOCSTR.EXECUTABLE, ".txt", null, null, ref length);
             if (ret != 0)
                 return;
 
             var sb = new StringBuilder((int)length);
-            ret = AssocQueryString(ASSOCF.NONE, ASSOCSTR.EXECUTABLE,
-                                   ".txt", null, sb, ref length);
+            ret = NativeMethods.AssocQueryString(ASSOCF.NONE,
+                            ASSOCSTR.EXECUTABLE, ".txt", null, sb, ref length);
             if (ret != 0)
                 return;
 
             // Open the rules file with that application
             var psinfo = new ProcessStartInfo
             {
-                FileName = sb.ToString();
-                Arguments = user_file;
-                UseShellExecute = true;
+                FileName = sb.ToString(),
+                Arguments = user_file,
+                UseShellExecute = true,
             };
             Process.Start(psinfo);
         }
