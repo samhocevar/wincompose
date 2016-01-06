@@ -116,7 +116,7 @@ static internal class NativeMethods
     //
 
     [DllImport("shlwapi", CharSet = CharSet.Auto, SetLastError = true)]
-    public static extern uint AssocQueryString(ASSOCF flags, ASSOCSTR str,
+    public static extern HRESULT AssocQueryString(ASSOCF flags, ASSOCSTR str,
               string pszAssoc, string pszExtra, [Out] StringBuilder pszOut,
               ref uint pcchOut);
 };

@@ -289,6 +289,15 @@ internal enum HOOK : int
 
 internal delegate int CALLBACK(HC nCode, WM wParam, IntPtr lParam);
 
+/* Enums from winerror.h */
+internal enum HRESULT : uint
+{
+    S_FALSE = 0x0001,
+    S_OK = 0x0000,
+    E_INVALIDARG = 0x80070057,
+    E_OUTOFMEMORY = 0x8007000e,
+};
+
 /* Enums from shlwapi.h */
 internal enum ASSOCF : int
 {

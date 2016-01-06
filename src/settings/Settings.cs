@@ -213,7 +213,7 @@ namespace WinCompose
         /// open .XCompose. If the file does not exist, try .XCompose.txt
         /// instead. If it doesn’t exist either, create .XCompose ourselves.
         /// </summary>
-        public static void EditCustomRuleFile()
+        public static void EditCustomRulesFile()
         {
             // Ensure the rules file exists.
             string user_file = Path.Combine(GetUserDir(), ".XCompose");
@@ -230,25 +230,28 @@ namespace WinCompose
                     using (var sw = new StreamWriter(s, new UTF8Encoding(true)))
                     {
                         sw.WriteLine("# Custom rule file for WinCompose");
-                        sw.WriteLine("#");
-                        sw.WriteLine("#");
-                        sw.WriteLine("# Sample rule. Remove leading “#” to activate.");
-                        sw.WriteLine("#<Multi_key> <h> <a> : \"ha ha ha ha\"");
+                        sw.WriteLine("");
+                        sw.WriteLine("# This causes Compose + h + w to print “Hello World!”.");
+                        sw.WriteLine("<Multi_key> <h> <w> : \"Hello world!\"");
+                        sw.WriteLine("");
+                        sw.WriteLine("# More rule examples can be found in C:\\Program Files\\WinCompose\\res");
+                        sw.WriteLine("");
                     }
                 }
             }
 
             // Find the preferred application for .txt files
-            uint length = 0, ret;
+            HRESULT ret;
+            uint length = 0;
             ret = NativeMethods.AssocQueryString(ASSOCF.NONE,
                             ASSOCSTR.EXECUTABLE, ".txt", null, null, ref length);
-            if (ret != 0)
+            if (ret != HRESULT.S_FALSE)
                 return;
 
             var sb = new StringBuilder((int)length);
             ret = NativeMethods.AssocQueryString(ASSOCF.NONE,
                             ASSOCSTR.EXECUTABLE, ".txt", null, sb, ref length);
-            if (ret != 0)
+            if (ret != HRESULT.S_OK)
                 return;
 
             // Open the rules file with that application
