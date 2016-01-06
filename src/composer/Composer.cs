@@ -231,20 +231,20 @@ static class Composer
                 // FIXME: we don't want compose + compose to disable composing,
                 // since there are compose sequences that use Multi_key.
                 // FIXME: also, if a sequence was in progress, print it!
-                m_composing = !m_composing;
-                if (!m_composing)
+                IsComposing = !IsComposing;
+                if (!IsComposing)
                     m_sequence.Clear();
 
-                Log.Debug("{0} Composing", m_composing ? "Now" : "No Longer");
+                Log.Debug("{0} Composing", IsComposing ? "Now" : "No Longer");
 
                 // Lauch the sequence reset expiration thread
                 // FIXME: do we need to launch a new thread each time the
                 // compose key is pressed? Let's have a dormant thread instead
-                if (m_composing && Settings.ResetDelay.Value > 0)
+                if (IsComposing && Settings.ResetDelay.Value > 0)
                 {
                     new Thread(() =>
                     {
-                        while (m_composing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
+                        while (IsComposing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
                             Thread.Sleep(50);
                         ResetSequence();
                     }).Start();
@@ -252,8 +252,6 @@ static class Composer
             }
 
             m_compose_down = is_keydown;
-            // FIXME: avoid calling this as a result of autorepeat
-            Changed(null, new EventArgs());
 
             return true;
         }
@@ -278,7 +276,7 @@ static class Composer
         // If we are not currently composing a sequence, do nothing unless
         // one of our hacks forces us to send the key as a string (for
         // instance the Caps Lock capitalisation feature).
-        if (!m_composing)
+        if (!IsComposing)
         {
             if (is_capslock_hack && is_keydown)
             {
@@ -526,29 +524,12 @@ static class Composer
     public static event EventHandler Changed = delegate {};
 
     /// <summary>
-    /// Return whether a compose sequence is in progress
-    /// </summary>
-    public static bool IsComposing()
-    {
-        return m_composing;
-    }
-
-    /// <summary>
     /// Toggle the disabled state
     /// </summary>
     public static void ToggleDisabled()
     {
         Settings.Disabled.Value = !Settings.Disabled.Value;
-
-        if (Settings.Disabled.Value)
-        {
-            m_compose_down = false;
-            m_composing = false;
-            m_emulating = false;
-            m_sequence.Clear();
-        }
-
-        Changed(null, new EventArgs());
+        ResetSequence();
     }
 
     /// <summary>
@@ -562,11 +543,9 @@ static class Composer
     private static void ResetSequence()
     {
         m_compose_down = false;
-        m_composing = false;
+        IsComposing = false;
         m_emulating = false;
         m_sequence.Clear();
-
-        Changed(null, new EventArgs());
     }
 
     private static void SendKeyDown(VK vk)
@@ -710,15 +689,15 @@ static class Composer
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
         if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
+             || (IsComposing && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
             indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
+             || (IsComposing && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
             indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
+             || (IsComposing && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
         for (ushort i = 0; i < 4; ++i)
@@ -748,6 +727,22 @@ static class Composer
     private static Dictionary<string, int> m_possible_dead_keys;
 
     private static bool m_compose_down = false;
+
+    /// <summary>
+    /// Indicates whether a compose sequence is in progress
+    /// </summary>
+    public static bool IsComposing
+    {
+        get { return m_composing; }
+
+        private set
+        {
+            if (value != m_composing)
+                Changed(null, new EventArgs());
+            m_composing = value;
+        }
+    }
+
     private static bool m_composing = false;
 
     /// <summary>
