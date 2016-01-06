@@ -124,6 +124,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Caps Lock always capitalizes letters.
+        /// </summary>
+        public static string CapsLockCapitalizes {
+            get {
+                return ResourceManager.GetString("CapsLockCapitalizes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”..
+        /// </summary>
+        public static string CapsLockCapitalizesToolTip {
+            get {
+                return ResourceManager.GetString("CapsLockCapitalizesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fall back to case insensitive matches.
         /// </summary>
         public static string CaseInsensitive {

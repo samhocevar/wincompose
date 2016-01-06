@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -13,10 +13,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Resources;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -46,6 +48,7 @@ namespace WinCompose
             InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
             EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
             ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
+            CapsLockCapitalizes = new SettingsEntry<bool>(GlobalSection, "capslock_capitalizes", false);
         }
 
         public static string Version
@@ -89,6 +92,8 @@ namespace WinCompose
         public static SettingsEntry<bool> EmulateCapsLock { get; private set; }
 
         public static SettingsEntry<bool> ShiftDisablesCapsLock { get; private set; }
+
+        public static SettingsEntry<bool> CapsLockCapitalizes { get; private set; }
 
         public static int SequenceCount { get { return m_sequence_count; } }
 
@@ -191,6 +196,7 @@ namespace WinCompose
             InsertZwsp.Load();
             EmulateCapsLock.Load();
             ShiftDisablesCapsLock.Load();
+            CapsLockCapitalizes.Load();
         }
 
         public static void SaveConfig()
@@ -207,6 +213,7 @@ namespace WinCompose
             InsertZwsp.Save();
             EmulateCapsLock.Save();
             ShiftDisablesCapsLock.Save();
+            CapsLockCapitalizes.Save();
         }
 
         public static void LoadSequences()
@@ -223,9 +230,60 @@ namespace WinCompose
             LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
         }
 
-        public static bool IsUsableKey(Key key)
+        /// <summary>
+        /// Find the preferred application for .txt files and launch it to
+        /// open .XCompose. If the file does not exist, try .XCompose.txt
+        /// instead. If it doesn’t exist either, create .XCompose ourselves.
+        /// </summary>
+        public static void EditCustomRulesFile()
         {
-            return key.IsPrintable() || m_key_names.ContainsValue(key);
+            // Ensure the rules file exists.
+            string user_file = Path.Combine(GetUserDir(), ".XCompose");
+            if (!File.Exists(user_file))
+            {
+                string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt");
+                if (File.Exists(alt_file))
+                {
+                    user_file = alt_file;
+                }
+                else
+                {
+                    using (var s = File.OpenWrite(user_file))
+                    using (var sw = new StreamWriter(s, new UTF8Encoding(true)))
+                    {
+                        sw.WriteLine("# Custom rule file for WinCompose");
+                        sw.WriteLine("");
+                        sw.WriteLine("# This causes Compose + h + w to print “Hello World!”.");
+                        sw.WriteLine("<Multi_key> <h> <w> : \"Hello world!\"");
+                        sw.WriteLine("");
+                        sw.WriteLine("# More rule examples can be found in C:\\Program Files\\WinCompose\\res");
+                        sw.WriteLine("");
+                    }
+                }
+            }
+
+            // Find the preferred application for .txt files
+            HRESULT ret;
+            uint length = 0;
+            ret = NativeMethods.AssocQueryString(ASSOCF.NONE,
+                            ASSOCSTR.EXECUTABLE, ".txt", null, null, ref length);
+            if (ret != HRESULT.S_FALSE)
+                return;
+
+            var sb = new StringBuilder((int)length);
+            ret = NativeMethods.AssocQueryString(ASSOCF.NONE,
+                            ASSOCSTR.EXECUTABLE, ".txt", null, sb, ref length);
+            if (ret != HRESULT.S_OK)
+                return;
+
+            // Open the rules file with that application
+            var psinfo = new ProcessStartInfo
+            {
+                FileName = sb.ToString(),
+                Arguments = user_file,
+                UseShellExecute = true,
+            };
+            Process.Start(psinfo);
         }
 
         public static SequenceTree GetSequenceList()
@@ -287,27 +345,26 @@ namespace WinCompose
             if (m1.Groups.Count < 4)
                 return;
 
-            var keys = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
+            var keysyms = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
 
-            if (keys.Length < 4) // We need 2 keys + 2 empty strings
+            if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
                 return;
 
             KeySequence seq = new KeySequence();
 
-            for (int i = 1; i < keys.Length; ++i)
+            for (int i = 1; i < keysyms.Length; ++i)
             {
-                if (keys[i] == String.Empty)
+                if (keysyms[i] == String.Empty)
                     continue;
 
-                if (m_key_names.ContainsKey(keys[i]))
-                    seq.Add(m_key_names[keys[i]]);
-                else if (keys[i].Length == 1)
-                    seq.Add(new Key(keys[i]));
-                else
+                Key k = Key.FromKeySym(keysyms[i]);
+                if (k == null)
                 {
-                    //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keys[i]);
+                    //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keysyms[i]);
                     return; // Unknown key name! Better bail out
                 }
+
+                seq.Add(k);
             }
 
             string result = m1.Groups[2].Captures[0].ToString();
@@ -385,51 +442,6 @@ namespace WinCompose
         };
 
         private static int m_delay = -1;
-
-        private static readonly Dictionary<string, Key> m_key_names
-         = new Dictionary<string, Key>()
-        {
-            // ASCII-mapped keys
-            { "space",        new Key(" ") },  // 0x20
-            { "exclam",       new Key("!") },  // 0x21
-            { "quotedbl",     new Key("\"") }, // 0x22
-            { "numbersign",   new Key("#") },  // 0x23
-            { "dollar",       new Key("$") },  // 0x24
-            { "percent",      new Key("%") },  // 0x25
-            { "ampersand",    new Key("&") },  // 0x26
-            { "apostrophe",   new Key("'") },  // 0x27
-            { "parenleft",    new Key("(") },  // 0x28
-            { "parenright",   new Key(")") },  // 0x29
-            { "asterisk",     new Key("*") },  // 0x2a
-            { "plus",         new Key("+") },  // 0x2b
-            { "comma",        new Key(",") },  // 0x2c
-            { "minus",        new Key("-") },  // 0x2d
-            { "period",       new Key(".") },  // 0x2e
-            { "slash",        new Key("/") },  // 0x2f
-            { "colon",        new Key(":") },  // 0x3a
-            { "semicolon",    new Key(";") },  // 0x3b
-            { "less",         new Key("<") },  // 0x3c
-            { "equal",        new Key("=") },  // 0x3d
-            { "greater",      new Key(">") },  // 0x3e
-            { "question",     new Key("?") },  // 0x3f
-            { "at",           new Key("@") },  // 0x40
-            { "bracketleft",  new Key("[") },  // 0x5b
-            { "backslash",    new Key("\\") }, // 0x5c
-            { "bracketright", new Key("]") },  // 0x5d
-            { "asciicircum",  new Key("^") },  // 0x5e
-            { "underscore",   new Key("_") },  // 0x5f
-            { "grave",        new Key("`") },  // 0x60
-            { "braceleft",    new Key("{") },  // 0x7b
-            { "bar",          new Key("|") },  // 0x7c
-            { "braceright",   new Key("}") },  // 0x7d
-            { "asciitilde",   new Key("~") },  // 0x7e
-
-            // Non-printing keys
-            { "Up",     new Key(VK.UP) },
-            { "Down",   new Key(VK.DOWN) },
-            { "Left",   new Key(VK.LEFT) },
-            { "Right",  new Key(VK.RIGHT) },
-        };
 
         private static Dictionary<string, string> GetSupportedLanguages()
         {

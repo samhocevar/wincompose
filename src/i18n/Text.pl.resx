@@ -159,6 +159,9 @@
   <data name="KeySpace" xml:space="preserve">
     <value>Spacja</value>
   </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Akcent słaby `</value>
   </data>
@@ -222,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Opóźnienie:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Próbuj ignorować wielkość liter w niepoprawnych sekwencjach</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Ignoruj znaki z niepoprawnych sekwencji</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Używaj sygnału dźwiękowego dla niepoprawnych sekwencji</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Język interfejsu:</value>
   </data>
@@ -253,10 +247,10 @@
     <value>Wstawiaj spacje zerowej szerokości w aplikacjach Office</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emuluj CapsLock przy pomocy obu klawiszy Shift</value>
+    <value>Emuluj Caps Lock przy pomocy obu klawiszy Shift</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Klawisz Shift wyłącza CapsLock</value>
+    <value>Klawisz Shift wyłącza Caps Lock</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategorie</value>

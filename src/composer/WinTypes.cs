@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -288,5 +288,63 @@ internal enum HOOK : int
 };
 
 internal delegate int CALLBACK(HC nCode, WM wParam, IntPtr lParam);
+
+/* Enums from winerror.h */
+internal enum HRESULT : uint
+{
+    S_FALSE = 0x0001,
+    S_OK = 0x0000,
+    E_INVALIDARG = 0x80070057,
+    E_OUTOFMEMORY = 0x8007000e,
+};
+
+/* Enums from shlwapi.h */
+internal enum ASSOCF : int
+{
+    NONE                 = 0x00000000,
+    INIT_NOREMAPCLSID    = 0x00000001,
+    INIT_BYEXENAME       = 0x00000002,
+    OPEN_BYEXENAME       = 0x00000002,
+    INIT_DEFAULTTOSTAR   = 0x00000004,
+    INIT_DEFAULTTOFOLDER = 0x00000008,
+    NOUSERSETTINGS       = 0x00000010,
+    NOTRUNCATE           = 0x00000020,
+    VERIFY               = 0x00000040,
+    REMAPRUNDLL          = 0x00000080,
+    NOFIXUPS             = 0x00000100,
+    IGNOREBASECLASS      = 0x00000200,
+    INIT_IGNOREUNKNOWN   = 0x00000400,
+    INIT_FIXED_PROGID    = 0x00000800,
+    IS_PROTOCOL          = 0x00001000,
+    INIT_FOR_FILE        = 0x00002000,
+};
+
+internal enum ASSOCSTR : int
+{
+    COMMAND = 1,
+    EXECUTABLE,
+    FRIENDLYDOCNAME,
+    FRIENDLYAPPNAME,
+    NOOPEN,
+    SHELLNEWVALUE,
+    DDECOMMAND,
+    DDEIFEXEC,
+    DDEAPPLICATION,
+    DDETOPIC,
+    INFOTIP,
+    QUICKTIP,
+    TILEINFO,
+    CONTENTTYPE,
+    DEFAULTICON,
+    SHELLEXTENSION,
+    DROPTARGET,
+    DELEGATEEXECUTE,
+    SUPPORTED_URI_PROTOCOLS,
+    PROGID,
+    APPID,
+    APPPUBLISHER,
+    APPICONREFERENCE,
+    MAX,
+};
 
 }

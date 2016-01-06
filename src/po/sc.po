@@ -2,16 +2,16 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-08 03:46+0000\n"
+"PO-Revision-Date: 2016-01-06 04:26+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
-"Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
-"master/sc/>\n"
+"Language-Team: Sardinian "
+"<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -189,172 +189,274 @@ msgstr "Chirca filtrada:"
 msgid "Compose Key:"
 msgstr "Tecla Compose:"
 
+#: i18n/Text.resx:244 ID:ComposeKeyToolTip
+msgid "Select the key that should act as the Compose key."
+msgstr "Ischerta sa tecla chi at a divènnere sa Tecla Compose."
+
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:245 ID:ResetDelay
+#: i18n/Text.resx:248 ID:ResetDelay
 msgid "Delay:"
 msgstr "Durada ativatzione:"
 
-#: i18n/Text.resx:248 ID:UnicodeInput
-#, fuzzy
-msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
-msgstr "Insertada Unicode: Compose U 1 A 3 F pro su caràtere U+1A3F"
+#: i18n/Text.resx:251 ID:UnicodeInput
+msgid "Advanced Unicode input"
+msgstr "Insertada (input) avantzada Unicode"
 
-#: i18n/Text.resx:251 ID:CaseInsensitive
-msgid "Fall back to case insensitive matches on invalid sequences"
+#: i18n/Text.resx:254 ID:UnicodeInputToolTip
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F"
 msgstr ""
-"Gesti sas fileras non vàlidas sena distinghimentu intre maiùscolas e "
-"minùscolas"
+"Abìlita s’insertada Unicode pro totu sos caràteres, fintzas cussos chene "
+"filera compose. Pro fàghere un’esèmpiu, custa filera at a otènnere su "
+"caràtere U+1A3F: Compose U 1 A 3 F"
 
-#: i18n/Text.resx:254 ID:DiscardOnInvalid
-msgid "Discard characters from invalid sequences"
-msgstr "Irbòlica sos caràteres de sas fileras non vàlidas"
+#. This is the name of a category of settings about what happens when invalid sequences are typed
+#: i18n/Text.resx:258 ID:InvalidSequences
+msgid "On invalid sequences"
+msgstr "Si una filera no est vàlida"
 
-#: i18n/Text.resx:257 ID:BeepOnInvalid
-msgid "Beep on invalid sequences"
-msgstr "Sona si una filera no est vàlida"
+#: i18n/Text.resx:261 ID:CaseInsensitive
+msgid "Fall back to case insensitive matches"
+msgstr "Torra a non distìnghere intre maiùscolas e minùscolas"
 
-#: i18n/Text.resx:260 ID:Language
+#: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
+msgstr ""
+"Si sa filera insertada no esistit, ma nde b'est una chi cambiat petzi pro "
+"sas lìteras maiùscolas o minùscolas, currege·la automaticamente."
+
+#: i18n/Text.resx:267 ID:DiscardOnInvalid
+msgid "Discard all typed characters"
+msgstr "Burra totu sos caràteres iscritos"
+
+#: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
+msgstr ""
+"Si sa filera insertada no esistit, burra totu sos caràteres insertados. su "
+"cumportamentu predefinidu est de iscrìere totu sos caràteres comente chi sa "
+"tecla compose non siat istada impreada."
+
+#: i18n/Text.resx:273 ID:BeepOnInvalid
+msgid "Emit a beep"
+msgstr "Faghe unu sonu"
+
+#: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
+msgid "If the entered sequence does not exist, emit a system sound."
+msgstr "Si sa filera insertada no esistit, faghe unu sonu de sistema."
+
+#: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
-msgstr "Limba de s’interfàtzia:"
+msgstr "Limba de s’interfache:"
+
+#: i18n/Text.resx:282 ID:LanguageToolTip
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
+msgstr ""
+"Ischerta sa limba chi Wincompose at a impreare pro s’interfache. "
+"S’impostatzione predefinida est sa limba de sistema."
 
 #. Close the settings window
-#: i18n/Text.resx:264 ID:Close
+#: i18n/Text.resx:286 ID:Close
 msgid "Close"
 msgstr "Serra"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:268 ID:Obsolete050
+#: i18n/Text.resx:290 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Copia caràtere"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:272 ID:Obsolete051
+#: i18n/Text.resx:294 ID:Obsolete051
 msgid "Description:"
 msgstr "Descritzione:"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:276 ID:Apply
+#: i18n/Text.resx:298 ID:Apply
 msgid "Apply"
 msgstr "Àplica"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:280 ID:KeepOriginalKey
+#: i18n/Text.resx:302 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Mantènne su cumportamentu originale de sa tecla compose"
 
-#: i18n/Text.resx:283 ID:InsertZwsp
+#: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
+msgstr ""
+"Custu at a nàrrere a WinCompose de chircare cantu podet de otènnere su "
+"cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s'incurtzadura "
+"Alt-Tab at a sighire a funtzionare fintzas si Alt est impreada comente tecla "
+"compose."
+
+#: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Inserta sos ispàtzios invisìbiles in sos aplicos Office"
 
-#: i18n/Text.resx:286 ID:EmulateCapsLock
-msgid "Emulate CapsLock using both Shift keys"
-msgstr "Dispinta BlocMaiusc impreande totas duas sas teclas Maiùscolu"
+#: i18n/Text.resx:311 ID:InsertZwspToolTip
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
+msgstr ""
+"Sas aplicatziones de Microsoft Office cada tantu cambiant su font de su "
+"documentu automaticamente cando carchi caràtere Unicode benit insertadu. "
+"Custa funtzionalidade insertat unu caràtere invisìbile a pustis de su "
+"caràtere Unicode pro istransire cussu errore."
 
-#: i18n/Text.resx:289 ID:ShiftDisablesCapsLock
-msgid "Shift key disables CapsLock"
-msgstr "Sa tecla Maiùscolu disabilitat BlocMaiusc"
+#: i18n/Text.resx:314 ID:EmulateCapsLock
+msgid "Emulate Caps Lock using both Shift keys"
+msgstr "Dispinta Bloc Maiusc impreende totas duas sas teclas Maiùscolu"
+
+#: i18n/Text.resx:317 ID:EmulateCapsLockToolTip
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
+msgstr ""
+"Si Bloc Maiusc (Caps Lock) est impreada comente tecla compose, su "
+"cumportamentu originale no est prus disponìbile. Custa funzionalidade "
+"permitit de allùere Bloc Maiusc incarchende ambas sas teclas Maiùscolu "
+"(Shift) in su matessi momentu."
+
+#: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
+msgid "Shift key disables Caps Lock"
+msgstr "Sa tecla Maiùscolu disabilitat Bloc Maiusc"
+
+#: i18n/Text.resx:323 ID:ShiftDisablesCapsLockToolTip
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
+msgstr ""
+"Si Bloc Maiusc (Caps Lock) est impreada comente tecla compose, su "
+"cumportamentu originale no est prus disponìbile. Custa funzionalidade "
+"permitit de istudare Bloc Maiusc incarcande sa tecla Maiùscolu (Shift)."
+
+#: i18n/Text.resx:326 ID:CapsLockCapitalizes
+msgid "Caps Lock always capitalizes letters"
+msgstr "Bloc Maiusc iscriet semper sas lìteras maiùscolas"
+
+#: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
+msgstr ""
+"Cando su Bloc Maiusc est allutu, incarcare una lìtera atzentada, a tipu “é”, "
+"at a iscrìere semper sa lìtera maiùscola chi li currispondet, in custu casu "
+"“É”."
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:293 ID:Categories
+#: i18n/Text.resx:333 ID:Categories
 msgid "Categories"
 msgstr "Categorias"
 
-#: i18n/Text.resx:296 ID:InSelectedCategories
+#: i18n/Text.resx:336 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "In sas categorias ischertadas"
 
 #. The title of the Options window
-#: i18n/Text.resx:300 ID:Options
+#: i18n/Text.resx:340 ID:Options
 msgid "Options — WinCompose"
 msgstr "Optziones — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:304 ID:ShowOptions
+#: i18n/Text.resx:344 ID:ShowOptions
 msgid "Options…"
 msgstr "Optziones…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:308 ID:TrayToolTip
+#: i18n/Text.resx:348 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} pro {0} ({1} fileras)"
 
-#: i18n/Text.resx:311 ID:Behavior
+#: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
 msgstr "Cumportamentu/fattia generale"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:315 ID:WindowTitle
+#: i18n/Text.resx:355 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Fileras — WinCompose"
 
-#: i18n/Text.resx:318 ID:UserMacros
+#: i18n/Text.resx:358 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Macros definidas dae s’impitadore"
 
-#: i18n/Text.resx:321 ID:DisabledToolTip
+#: i18n/Text.resx:361 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "Wincompose est disabilitadu"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:325 ID:KeyInsert
+#: i18n/Text.resx:365 ID:KeyInsert
 msgid "Insert"
 msgstr "Inserta"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:329 ID:TestTyping
+#: i18n/Text.resx:369 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Iscrie testu:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:333 ID:Tweaks
+#: i18n/Text.resx:373 ID:Tweaks
 msgid "Tweaks"
 msgstr "Modìficas minores"
 
-#: i18n/Text.resx:336 ID:Milliseconds
+#: i18n/Text.resx:376 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(millisegundos)"
 
 #. About box menu entry
-#: i18n/Text.resx:340 ID:About
+#: i18n/Text.resx:380 ID:About
 msgid "About"
 msgstr "Informatziones"
 
 #. Window title of the About box
-#: i18n/Text.resx:344 ID:AboutBoxTitle
+#: i18n/Text.resx:384 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "WinCompose: informatziones"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:348 ID:Programming
+#: i18n/Text.resx:388 ID:Programming
 msgid "Programming"
 msgstr "Programatzione"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:352 ID:Translators
+#: i18n/Text.resx:392 ID:Translators
 msgid "Translation"
 msgstr "Bortadura"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:356 ID:Contributors
+#: i18n/Text.resx:396 ID:Contributors
 msgid "Special Thanks"
 msgstr "Ringratziamentos ispetziales"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:360 ID:License
+#: i18n/Text.resx:400 ID:License
 msgid "License"
 msgstr "Litzèntzia"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:364 ID:NeedRestart
+#: i18n/Text.resx:404 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 "WinCompose depet èssere torradu a allùere pro che sas sas modìficas potzant "
 "fàghere efetu."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:368 ID:ReportBug
+#: i18n/Text.resx:408 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Sinnala unu problema"
 
@@ -507,6 +609,13 @@ msgstr "Iscrobadore, paràgrafu"
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
 msgstr "Iscrobadore, Ispàtziu"
+
+#, fuzzy
+#~ msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
+#~ msgstr "Insertada Unicode: Compose U 1 A 3 F pro su caràtere U+1A3F"
+
+#~ msgid "Discard characters from invalid sequences"
+#~ msgstr "Irbòlica sos caràteres de sas fileras non vàlidas"
 
 #~ msgid "Loaded @1@ Sequences"
 #~ msgstr "@1@ fileras carrigadas"

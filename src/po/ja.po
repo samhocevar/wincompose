@@ -2,13 +2,13 @@
 # Copyright (C) 2015 THE WinCompose'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the WinCompose package.
 # Automatically generated, 2015.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-05 16:51+0000\n"
+"PO-Revision-Date: 2015-12-01 17:41+0000\n"
 "Last-Translator: Hiroki Yabe <gigysurk@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/wincompose/"
 "master/ja/>\n"
@@ -189,167 +189,262 @@ msgstr "検索フィルタ:"
 msgid "Compose Key:"
 msgstr "Composeキー:"
 
+#: i18n/Text.resx:244 ID:ComposeKeyToolTip
+msgid "Select the key that should act as the Compose key."
+msgstr "Composeキーとなるキーを指定してください。"
+
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:245 ID:ResetDelay
+#: i18n/Text.resx:248 ID:ResetDelay
 msgid "Delay:"
 msgstr "遅延:"
 
-#: i18n/Text.resx:248 ID:UnicodeInput
-msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
+#: i18n/Text.resx:251 ID:UnicodeInput
+msgid "Advanced Unicode input"
+msgstr "上級者向けUnicode入力"
+
+#: i18n/Text.resx:254 ID:UnicodeInputToolTip
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F"
 msgstr ""
+"Composeキーシーケンスが指定されていないUnicode文字にも入力を有効にする。たと"
+"えば、Compose U 1 A 3 Fというシーケンスを入力すると、U+1A3F が出力される"
 
-#: i18n/Text.resx:251 ID:CaseInsensitive
-msgid "Fall back to case insensitive matches on invalid sequences"
-msgstr "無効な入力時、大文字小文字のみが異なるものがある場合は、それを使用する"
+#. This is the name of a category of settings about what happens when invalid sequences are typed
+#: i18n/Text.resx:258 ID:InvalidSequences
+msgid "On invalid sequences"
+msgstr "無効な入力時"
 
-#: i18n/Text.resx:254 ID:DiscardOnInvalid
-msgid "Discard characters from invalid sequences"
-msgstr "無効な入力は捨てる"
+#: i18n/Text.resx:261 ID:CaseInsensitive
+msgid "Fall back to case insensitive matches"
+msgstr "大文字小文字のみが異なるものがある場合は、それを使用する"
 
-#: i18n/Text.resx:257 ID:BeepOnInvalid
-msgid "Beep on invalid sequences"
-msgstr "無効な入力時にビープ音を鳴らす"
+#: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
+msgstr ""
+"入力したシーケンスが存在しないが、それと大文字小文字だけが異なるものが存在す"
+"る場合、自動修正する。"
 
-#: i18n/Text.resx:260 ID:Language
+#: i18n/Text.resx:267 ID:DiscardOnInvalid
+msgid "Discard all typed characters"
+msgstr "入力した文字を捨てる"
+
+#: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
+msgstr ""
+"入力したシーケンスが存在しない場合、すべての入力を破棄する。デフォルトでは、"
+"入力された文字を、Composeキーが押されなかった時のように出力する。"
+
+#: i18n/Text.resx:273 ID:BeepOnInvalid
+msgid "Emit a beep"
+msgstr "ビープ音を鳴らす"
+
+#: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
+msgid "If the entered sequence does not exist, emit a system sound."
+msgstr "入力したシーケンスが存在しない場合、システム音を鳴らす。"
+
+#: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
 msgstr "表示言語:"
 
+#: i18n/Text.resx:282 ID:LanguageToolTip
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
+msgstr ""
+"WinComposeがインターフェースに使う言語を選んでください。デフォルトでは、シス"
+"テムの言語を使います。"
+
 #. Close the settings window
-#: i18n/Text.resx:264 ID:Close
+#: i18n/Text.resx:286 ID:Close
 msgid "Close"
 msgstr "閉じる"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:268 ID:Obsolete050
+#: i18n/Text.resx:290 ID:Obsolete050
 msgid "Copy Character"
 msgstr "文字をコピー"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:272 ID:Obsolete051
+#: i18n/Text.resx:294 ID:Obsolete051
 msgid "Description:"
 msgstr "説明:"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:276 ID:Apply
+#: i18n/Text.resx:298 ID:Apply
 msgid "Apply"
 msgstr "適用"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:280 ID:KeepOriginalKey
+#: i18n/Text.resx:302 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "もとのComposeキーの動作を保つ"
 
-#: i18n/Text.resx:283 ID:InsertZwsp
+#: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
+msgstr ""
+"これを選択すると、WinComposeはもとの挙動をできるだけ保とうとします。たとえ"
+"ば、AltキーをComposeキーに指定した場合でも、Alt-Tabショートカットは従来通りの"
+"動作をします。"
+
+#: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Officeアプリ使用時ゼロ幅スペースを挿入する"
 
-#: i18n/Text.resx:286 ID:EmulateCapsLock
-msgid "Emulate CapsLock using both Shift keys"
-msgstr "両方のShiftキー押下でCapsLockの代わりにする"
+#: i18n/Text.resx:311 ID:InsertZwspToolTip
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
+msgstr ""
+"Microsoft Officeのアプリケーションは、特定のUnicode文字を入力したときに、文書"
+"のフォントをフォントを変えてしまうバグがあります。この機能は、Unicode文字の後"
+"に、不可視スペースを挿入して、そのバグを回避します。"
 
-#: i18n/Text.resx:289 ID:ShiftDisablesCapsLock
-msgid "Shift key disables CapsLock"
-msgstr "Shiftキーを押した時にはCapsLockを無効にする"
+#: i18n/Text.resx:314 ID:EmulateCapsLock
+msgid "Emulate Caps Lock using both Shift keys"
+msgstr "両方のShiftキー押下でCaps Lockの代わりにする"
+
+#: i18n/Text.resx:317 ID:EmulateCapsLockToolTip
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
+msgstr ""
+"Caps LockをComposeキーに指定した場合、元の挙動は使うことできません。この機能"
+"は、両方のShiftを同時に押すことで、Caps LockをOnにすることができます。"
+
+#: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
+msgid "Shift key disables Caps Lock"
+msgstr "Shiftキーを押した時にはCaps Lockを無効にする"
+
+#: i18n/Text.resx:323 ID:ShiftDisablesCapsLockToolTip
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
+msgstr ""
+"Caps LockをComposeキーに指定した場合、元の挙動は使用できません。この機能は、"
+"Shiftキーを押すことでCaps LockをOffにすることができます。"
+
+#: i18n/Text.resx:326 ID:CapsLockCapitalizes
+msgid "Caps Lock always capitalizes letters"
+msgstr ""
+
+#: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
+msgstr ""
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:293 ID:Categories
+#: i18n/Text.resx:333 ID:Categories
 msgid "Categories"
 msgstr "カテゴリ"
 
-#: i18n/Text.resx:296 ID:InSelectedCategories
+#: i18n/Text.resx:336 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "選択されたカテゴリ内を選択"
 
 #. The title of the Options window
-#: i18n/Text.resx:300 ID:Options
+#: i18n/Text.resx:340 ID:Options
 msgid "Options — WinCompose"
 msgstr "設定 — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:304 ID:ShowOptions
+#: i18n/Text.resx:344 ID:ShowOptions
 msgid "Options…"
 msgstr "設定…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:308 ID:TrayToolTip
+#: i18n/Text.resx:348 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} on {0} ({1} 個のシーケンス)"
 
-#: i18n/Text.resx:311 ID:Behavior
+#: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
 msgstr "一般的な動作"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:315 ID:WindowTitle
+#: i18n/Text.resx:355 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "シーケンス — WinCompose"
 
-#: i18n/Text.resx:318 ID:UserMacros
+#: i18n/Text.resx:358 ID:UserMacros
 msgid "User-defined macros"
 msgstr "ユーザー定義マクロ"
 
-#: i18n/Text.resx:321 ID:DisabledToolTip
+#: i18n/Text.resx:361 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "WinComposeは無効です"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:325 ID:KeyInsert
+#: i18n/Text.resx:365 ID:KeyInsert
 msgid "Insert"
 msgstr "挿入"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:329 ID:TestTyping
+#: i18n/Text.resx:369 ID:TestTyping
 msgid "Test Typing:"
 msgstr "ためしてみる:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:333 ID:Tweaks
+#: i18n/Text.resx:373 ID:Tweaks
 msgid "Tweaks"
 msgstr "細かい設定"
 
-#: i18n/Text.resx:336 ID:Milliseconds
+#: i18n/Text.resx:376 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(ミリ秒)"
 
 #. About box menu entry
-#: i18n/Text.resx:340 ID:About
+#: i18n/Text.resx:380 ID:About
 msgid "About"
 msgstr "WinCompose について"
 
 #. Window title of the About box
-#: i18n/Text.resx:344 ID:AboutBoxTitle
+#: i18n/Text.resx:384 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "WinCompose について"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:348 ID:Programming
+#: i18n/Text.resx:388 ID:Programming
 msgid "Programming"
 msgstr "プログラミング"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:352 ID:Translators
+#: i18n/Text.resx:392 ID:Translators
 msgid "Translation"
 msgstr "翻訳"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:356 ID:Contributors
+#: i18n/Text.resx:396 ID:Contributors
 msgid "Special Thanks"
 msgstr "スペシャルサンクス"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:360 ID:License
+#: i18n/Text.resx:400 ID:License
 msgid "License"
 msgstr "ライセンス"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:364 ID:NeedRestart
+#: i18n/Text.resx:404 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr "設定によっては、WinComposeを再起動しないと反映されないものもあります。"
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:368 ID:ReportBug
+#: i18n/Text.resx:408 ID:ReportBug
 msgid "Report a Bug"
 msgstr "バグ報告"
 
@@ -502,3 +597,6 @@ msgstr "区切り、段落"
 #: unicode/Category.resx:238 ID:SpaceSeparator
 msgid "Separator, Space"
 msgstr "区切り、空白"
+
+#~ msgid "Discard characters from invalid sequences"
+#~ msgstr "無効な入力は捨てる"

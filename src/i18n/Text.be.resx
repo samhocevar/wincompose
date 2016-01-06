@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Затрымка:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Пры нядзейсных пасьлядоўнасьцях мяняць раґістар літараў</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Іґнараваць сымбалі зь няправільных пасьлядоўнасьцяў</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Сыґналізаваці пра няправільныя пасьлядоўнасьці</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Мова інтарфэйсу:</value>
   </data>
@@ -256,10 +247,10 @@
     <value>Устаўляць прагалы нулявой шырыні ў офісных праграмах</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Эмуляваць CapsLock выкарыстоўваючы абедзве клавішы Shift</value>
+    <value>Эмуляваць Caps Lock выкарыстоўваючы абедзве клавішы Shift</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Клавіша Shift выключае CapsLock</value>
+    <value>Клавіша Shift выключае Caps Lock</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Катэгорыі</value>

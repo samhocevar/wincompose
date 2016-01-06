@@ -67,7 +67,7 @@ static class KeyboardHook
             bool is_injected = (data.flags & LLKHF.INJECTED) != 0;
 
             Log.Debug("{0}: OnKey(HC.{1}, WM.{2}, [vk:0x{3:X02} sc:0x{4:X02} flags:{5}])",
-                      is_injected ? "Ignored Event" : "Event",
+                      is_injected ? "Ignored Injected Event" : "Event",
                       nCode, wParam, (int)data.vk, (int)data.sc, data.flags);
 
             if (!is_injected)

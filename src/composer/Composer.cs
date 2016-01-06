@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -23,6 +23,11 @@ using System.Windows.Forms;
 namespace WinCompose
 {
 
+/// <summary>
+/// A convenience class that can be fed either scancodes (<see cref="SC"/>)
+/// or virtual keys (<see cref="VK"/>), then uses the Win32 API function
+/// <see cref="SendInput"/> to send all these events in one single call.
+/// </summary>
 class InputSequence
 {
     public void Send()
@@ -59,6 +64,10 @@ class InputSequence
     }
 }
 
+/// <summary>
+/// The main composer class. It gets input from the keyboard hook, and
+/// acts depending on the global configuration and current keyboard state.
+/// </summary>
 static class Composer
 {
     /// <summary>
@@ -67,6 +76,7 @@ static class Composer
     public static void Init()
     {
         StartMonitoringKeyboardLeds();
+        AnalyzeKeyboardLayout();
         AnalyzeDeadkeys();
     }
 
@@ -102,10 +112,11 @@ static class Composer
 
     private static bool OnKeyInternal(WM ev, VK vk, SC sc, LLKHF flags)
     {
-        CheckKeyboardLayout();
+        //AnalyzeKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
+        bool is_capslock_hack = false;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) != 0;
         bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
@@ -114,30 +125,36 @@ static class Composer
                             NativeMethods.GetKeyState(VK.RSHIFT) & 0x80) != 0;
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
 
-        // Guess what key was just pressed. If we can not find a printable
-        // representation for the key, default to its virtual key code.
-        Key key = new Key(vk);
+        // Guess what the system would print if we weren’t interfering.
+        string result = KeyToUnicode(vk, sc, flags, has_shift,
+                                     has_altgr, has_capslock);
 
-        byte[] keystate = new byte[256];
-        NativeMethods.GetKeyboardState(keystate);
-        keystate[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-        keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
-
-        string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
-        string str_if_dead = KeyToUnicode(VK.SPACE);
-        if (str_if_normal != "")
+        // If Caps Lock is on, and the Caps Lock hack is enabled, we check
+        // whether this key without Caps Lock gives a non-ASCII alphabetical
+        // character. If so, we replace “result” with the lowercase or
+        // uppercase variant of that character.
+        if (has_capslock && Settings.CapsLockCapitalizes.Value)
         {
-            // This appears to be a normal, printable key
-            key = new Key(str_if_normal);
-        }
-        else if (str_if_dead != " ")
-        {
-            // This appears to be a dead key
-            key = new Key(str_if_dead);
+            string alt_result = KeyToUnicode(vk, sc, flags, has_shift,
+                                             has_altgr, false);
+
+            if (alt_result != "" && (int)alt_result[0] > 0x7f)
+            {
+                string str_upper = alt_result.ToUpper();
+                string str_lower = alt_result.ToLower();
+                if (str_upper != str_lower)
+                {
+                    result = has_shift ? str_lower : str_upper;
+                    is_capslock_hack = true;
+                }
+            }
         }
 
+        // Create the Key object. If a printable representation exists, use
+        // that. Otherwise, default to its virtual key code.
+        Key key = result != "" ? new Key(result) : new Key(vk);
+
+        // Update statistics
         if (is_keydown)
         {
             // Update single key statistics
@@ -166,46 +183,63 @@ static class Composer
         // print stuff, such as `.
         if (key == Settings.ComposeKey.Value)
         {
-            if (is_keyup)
+            // If we receive a keyup for the compose key while in emulation
+            // mode, we’re done. Send a KeyUp event and exit emulation mode.
+            if (is_keyup && CurrentState == State.Combination)
             {
-                // If we receive a keyup for the compose key, but we hadn't
-                // previously marked it as down, it means we're in emulation
-                // mode and we need to cancel it.
-                if (!m_compose_down)
+                Log.Debug("Combination Off");
+                CurrentState = State.Idle;
+                m_compose_down = false;
+
+                // If relevant, send an additional KeyUp for the opposite
+                // key; experience indicates that it helps unstuck some
+                // applications such as mintty.exe.
+                switch (Settings.ComposeKey.Value.VirtualKey)
                 {
-                    Log.Debug("Fallback Off");
-                    SendKeyUp(Settings.ComposeKey.Value.VirtualKey);
+                    case VK.LMENU: SendKeyUp(VK.RMENU); break;
+                    case VK.RMENU: SendKeyUp(VK.LMENU); break;
+                    case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
+                    case VK.RSHIFT: SendKeyUp(VK.LSHIFT); break;
+                    case VK.LCONTROL: SendKeyUp(VK.RCONTROL); break;
+                    case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
                 }
 
-                m_compose_down = false;
+                return false;
             }
-            else if (is_keydown && !m_compose_down)
+
+            if (is_keydown && !m_compose_down)
             {
                 // FIXME: we don't want compose + compose to disable composing,
                 // since there are compose sequences that use Multi_key.
-                // FIXME: also, if a sequence was in progress, print it!
-                m_compose_down = true;
-                m_composing = !m_composing;
-                if (!m_composing)
-                    m_sequence.Clear();
-
-                Log.Debug("{0} Composing", m_composing ? "Now" : "No Longer");
-
-                // Lauch the sequence reset expiration thread
-                // FIXME: do we need to launch a new thread each time the
-                // compose key is pressed? Let's have a dormant thread instead
-                if (m_composing && Settings.ResetDelay.Value > 0)
+                switch (CurrentState)
                 {
-                    new Thread(() =>
-                    {
-                        while (m_composing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
-                            Thread.Sleep(50);
-                        ResetSequence();
-                    }).Start();
+                    case State.Sequence:
+                        // FIXME: also, if a sequence was in progress, print it!
+                        CurrentState = State.Idle;
+                        m_sequence.Clear();
+                        break;
+                    case State.Idle:
+                        CurrentState = State.Sequence;
+                        // Lauch the sequence reset expiration thread
+                        // FIXME: do we need to launch a new thread each time the
+                        // compose key is pressed? Let's have a dormant thread instead
+                        if (Settings.ResetDelay.Value > 0)
+                        {
+                            new Thread(() =>
+                            {
+                                while (CurrentState == State.Sequence &&
+                                        DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
+                                    Thread.Sleep(50);
+                                ResetSequence();
+                            }).Start();
+                        }
+                        break;
                 }
+
+                Log.Debug("{0} Composing", IsComposing() ? "Now" : "No Longer");
             }
 
-            Changed(null, new EventArgs());
+            m_compose_down = is_keydown;
 
             return true;
         }
@@ -227,27 +261,43 @@ static class Composer
             }
         }
 
-        // If we are not currently composing a sequence, do nothing. But if
-        // this was a dead key, eat it.
-        if (!m_composing)
+        // If we are not currently composing a sequence, do nothing unless
+        // one of our hacks forces us to send the key as a string (for
+        // instance the Caps Lock capitalisation feature).
+        if (CurrentState != State.Sequence)
         {
+            if (is_capslock_hack && is_keydown)
+            {
+                SendString(key.ToString());
+                return true;
+            }
+
+            // If this was a dead key, it will be completely ignored. But
+            // it’s okay since we stored it.
             return false;
         }
 
-        // If the compose key is down, maybe there is a key combination
-        // going on, such as Alt+Tab or Windows+Up, so we abort composing
-        // and tell the OS that the key is down.
-        if (m_compose_down && (Settings.KeepOriginalKey.Value
-                                || !Settings.IsUsableKey(key)))
+        // If the compose key is down and the user pressed a new key, maybe
+        // they want to do a key combination instead of composing, such as
+        // Alt+Tab or Windows+Up. So we abort composing and send the KeyDown
+        // event for the Compose key that we previously discarded.
+        //
+        // Never do this if the event is KeyUp.
+        // Never do this if we already started a sequence
+        // Never do this if the key is a modifier key such as shift or alt.
+        if (m_compose_down && is_keydown
+             && m_sequence.Count == 0 && !key.IsModifier()
+             && (Settings.KeepOriginalKey.Value || !key.IsUsable()))
         {
-            Log.Debug("Fallback On");
+            Log.Debug("Combination On");
             ResetSequence();
             SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
+            CurrentState = State.Combination;
             return false;
         }
 
         // If the key can't be used in a sequence, just ignore it.
-        if (!Settings.IsUsableKey(key))
+        if (!key.IsUsable())
         {
             return false;
         }
@@ -331,6 +381,23 @@ static class Composer
 
         ResetSequence();
         return true;
+    }
+
+    private static string KeyToUnicode(VK vk, SC sc, LLKHF flags,
+                            bool has_shift, bool has_altgr, bool has_capslock)
+    {
+        byte[] keystate = new byte[256];
+        NativeMethods.GetKeyboardState(keystate);
+        keystate[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
+        keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
+        keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
+        keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
+
+        // These two calls must be done together and in this order.
+        string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
+        string str_if_dead = KeyToUnicode(VK.SPACE);
+
+        return str_if_dead != " " ? str_if_dead : str_if_normal;
     }
 
     private static string KeyToUnicode(VK vk)
@@ -438,9 +505,9 @@ static class Composer
                 Seq.AddInput((VirtualKeyShort)VK.LEFT);
             }
 
-            for (int i = 0; i < str.Length; i++)
+            foreach (char ch in str)
             {
-                Seq.AddInput((ScanCodeShort)str[i]);
+                Seq.AddInput((ScanCodeShort)ch);
             }
 
             if (use_office_hack)
@@ -462,28 +529,12 @@ static class Composer
     public static event EventHandler Changed = delegate {};
 
     /// <summary>
-    /// Return whether a compose sequence is in progress
-    /// </summary>
-    public static bool IsComposing()
-    {
-        return m_composing;
-    }
-
-    /// <summary>
     /// Toggle the disabled state
     /// </summary>
     public static void ToggleDisabled()
     {
         Settings.Disabled.Value = !Settings.Disabled.Value;
-
-        if (Settings.Disabled.Value)
-        {
-            m_composing = false;
-            m_compose_down = false;
-            m_sequence.Clear();
-        }
-
-        Changed(null, new EventArgs());
+        ResetSequence();
     }
 
     /// <summary>
@@ -496,11 +547,9 @@ static class Composer
 
     private static void ResetSequence()
     {
-        m_composing = false;
+        CurrentState = State.Idle;
         m_compose_down = false;
         m_sequence.Clear();
-
-        Changed(null, new EventArgs());
     }
 
     private static void SendKeyDown(VK vk)
@@ -519,6 +568,10 @@ static class Composer
         SendKeyUp(vk);
     }
 
+    /// <summary>
+    /// Attempt to enumerate all dead keys available on the current keyboard
+    /// layout and cache the results in <see cref="m_possible_dead_keys"/>.
+    /// </summary>
     private static void AnalyzeDeadkeys()
     {
         m_possible_dead_keys = new Dictionary<string, int>();
@@ -591,18 +644,20 @@ static class Composer
     }
 
     // FIXME: this is useless for now
-    private static void CheckKeyboardLayout()
+    private static void AnalyzeKeyboardLayout()
     {
         // FIXME: the foreground window doesn't seem to notice keyboard
         // layout changes caused by the Win+Space combination.
         IntPtr hwnd = NativeMethods.GetForegroundWindow();
         uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
         IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
-        //Console.WriteLine("Active layout is {0:X}", (int)active_layout);
+        Log.Debug("Active window layout handle:0x{0:X} lang:0x{0:X}",
+                  (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
         tid = NativeMethods.GetCurrentThreadId();
         IntPtr my_layout = NativeMethods.GetKeyboardLayout(tid);
-        //Console.WriteLine("WinCompose layout is {0:X}", (int)my_layout);
+        Log.Debug("WinCompose process layout handle:0x{0:X} lang:0x{0:X}",
+                  (uint)my_layout >> 16, (uint)my_layout & 0xffff);
     }
 
     private static void StartMonitoringKeyboardLeds()
@@ -638,15 +693,15 @@ static class Composer
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
         if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
+             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
             indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
+             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
             indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (m_composing && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
+             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
         for (ushort i = 0; i < 4; ++i)
@@ -676,7 +731,40 @@ static class Composer
     private static Dictionary<string, int> m_possible_dead_keys;
 
     private static bool m_compose_down = false;
-    private static bool m_composing = false;
+
+    public enum State
+    {
+        Idle,
+        Sequence,
+        /// <summary>
+        /// Combination mode: the compose key is held, but not for composing,
+        /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
+        /// </summary>
+        Combination,
+    };
+
+    public static State CurrentState
+    {
+        get { return m_state; }
+
+        private set
+        {
+            bool has_changed = (m_state != value);
+            m_state = value;
+            if (has_changed)
+                Changed(null, new EventArgs());
+        }
+    }
+
+    private static State m_state;
+
+    /// <summary>
+    /// Indicates whether a compose sequence is in progress
+    /// </summary>
+    public static bool IsComposing()
+    {
+        return CurrentState == State.Sequence;
+    }
 }
 
 }

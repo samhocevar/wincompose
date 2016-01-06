@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Ritardo:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Gestisci le sequenze errate senza distinzione fra maiuscole e minuscole</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Scarta i caratteri delle sequenze errate</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Suona se una sequenza è errata</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Lingua dell’interfaccia:</value>
   </data>

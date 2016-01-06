@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>延遲:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>無效按鍵系列時忽略大小寫</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>無效按鍵系列時丟棄其中字元</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>無效按鍵系列時發出嗶聲</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>介面語言:</value>
   </data>
@@ -256,10 +247,10 @@
     <value>查入零寬空格字元於 Office 應用程式</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>用兩個 Shift 鍵模擬 CapsLock</value>
+    <value>用兩個 Shift 鍵模擬 Caps Lock</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Shift 鍵停用 CapsLock</value>
+    <value>Shift 鍵停用 Caps Lock</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>分類</value>

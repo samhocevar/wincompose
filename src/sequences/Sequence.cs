@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -13,182 +13,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
 
-public class KeyConverter : TypeConverter
-{
-    public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
-    {
-        return sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
-    }
-
-    public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
-    {
-        var strValue = value as string;
-        if (strValue != null)
-        {
-            if (strValue.StartsWith("VK."))
-            {
-                try
-                {
-                    var enumValue = Enum.Parse(typeof(VK), strValue.Substring(3));
-                    return new Key((VK)enumValue);
-                }
-                catch
-                {
-                    // Silently catch parsing exception.
-                }
-            }
-            return new Key(strValue);
-        }
-        return base.ConvertFrom(context, culture, value);
-    }
-
-    public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
-    {
-        return destinationType == typeof(string) ? value.ToString() : base.ConvertTo(context, culture, value, destinationType);
-    }
-}
-
-/// <summary>
-/// The Key class describes anything that can be done on the keyboard,
-/// so either a printable string or a virtual key code.
-/// </summary>
-[TypeConverter(typeof(KeyConverter))]
-public class Key
-{
-    /// <summary>
-    /// A dictionary of symbols that we use for some non-printable key labels.
-    /// </summary>
-    private static readonly Dictionary<VK, string> m_key_labels = new Dictionary<VK, string>
-    {
-        { VK.UP,    "▲" },
-        { VK.DOWN,  "▼" },
-        { VK.LEFT,  "◀" },
-        { VK.RIGHT, "▶" },
-    };
-
-    /// <summary>
-    /// A list of keys for which we have a friendly name. This is used in
-    /// the GUI, where the user can choose which key acts as the compose
-    /// key. It needs to be lazy-initialised, because we create Key objects
-    /// way before the application language is set, and we need the
-    /// translated version.
-    /// </summary>
-    private static Dictionary<Key, string> m_key_names = null;
-
-    private static Dictionary<Key, string> GetKeyNames()
-    {
-        return new Dictionary<Key, string>
-        {
-            { new Key(VK.LMENU), i18n.Text.KeyLMenu },
-            { new Key(VK.RMENU), i18n.Text.KeyRMenu },
-            { new Key(VK.LCONTROL), i18n.Text.KeyLControl },
-            { new Key(VK.RCONTROL), i18n.Text.KeyRControl },
-            { new Key(VK.LWIN), i18n.Text.KeyLWin },
-            { new Key(VK.RWIN), i18n.Text.KeyRWin },
-            { new Key(VK.CAPITAL), i18n.Text.KeyCapital },
-            { new Key(VK.NUMLOCK), i18n.Text.KeyNumLock },
-            { new Key(VK.PAUSE), i18n.Text.KeyPause },
-            { new Key(VK.APPS), i18n.Text.KeyApps },
-            { new Key(VK.ESCAPE), i18n.Text.KeyEscape },
-            { new Key(VK.SCROLL), i18n.Text.KeyScroll },
-            { new Key(VK.INSERT), i18n.Text.KeyInsert },
-
-            { new Key(" "),    i18n.Text.KeySpace },
-            { new Key("\r"),   i18n.Text.KeyReturn },
-            { new Key("\x1b"), i18n.Text.KeyEscape },
-        };
-    }
-
-    private readonly VK m_vk;
-
-    private readonly string m_str;
-
-    public Key(string str) { m_str = str; }
-
-    public Key(VK vk) { m_vk = vk; }
-
-    public VK VirtualKey { get { return m_vk; } }
-
-    public bool IsPrintable()
-    {
-        return m_str != null;
-    }
-
-    /// <summary>
-    /// A friendly name that we can put in e.g. a dropdown menu
-    /// </summary>
-    public string FriendlyName
-    {
-        get
-        {
-            if (m_key_names == null)
-                m_key_names = GetKeyNames();
-            string ret;
-            if (m_key_names.TryGetValue(this, out ret))
-                return ret;
-            return m_str ?? string.Format("VK.{0}", m_vk);
-        }
-    }
-
-    /// <summary>
-    /// A label that we can print on keycap icons
-    /// </summary>
-    public string KeyLabel
-    {
-        get
-        {
-            string ret;
-            if (m_key_labels.TryGetValue(m_vk, out ret))
-                return ret;
-
-            return m_str ?? string.Format("VK.{0}", m_vk);
-        }
-    }
-
-    /// <summary>
-    /// Serialize key to a printable string we can parse back into
-    /// a <see cref="Key"/> object
-    /// </summary>
-    public override string ToString()
-    {
-        return m_str ?? string.Format("VK.{0}", m_vk);
-    }
-
-    public override bool Equals(object o)
-    {
-        return o is Key && this == (o as Key);
-    }
-
-    public static bool operator ==(Key a, Key b)
-    {
-        bool is_a_null = ReferenceEquals(a, null);
-        bool is_b_null = ReferenceEquals(b, null);
-        if (is_a_null || is_b_null)
-            return is_a_null == is_b_null;
-        return a.m_str != null ? a.m_str == b.m_str : a.m_vk == b.m_vk;
-    }
-
-    public static bool operator !=(Key a, Key b)
-    {
-        return !(a == b);
-    }
-
-    public override int GetHashCode()
-    {
-        return m_str != null ? m_str.GetHashCode() : ((int)m_vk).GetHashCode();
-    }
-};
-
 /// <summary>
 /// The KeySequence class describes a sequence of keys, which can be
-/// compared with other lists of keys.
+/// compared with other sequences of keys.
 /// </summary>
 public class KeySequence : List<Key>
 {
@@ -217,21 +49,27 @@ public class KeySequence : List<Key>
     public override string ToString()
     {
         string ret = "";
-        for (int i = 0; i < Count; ++i)
-            ret += this[i].ToString();
+        foreach (Key ch in this)
+            ret += ch.ToString();
         return ret;
     }
 
+    /// <summary>
+    /// Get a subsequence of the current sequence.
+    /// </summary>
     public new KeySequence GetRange(int start, int count)
     {
         return new KeySequence(base.GetRange(start, count));
     }
 
+    /// <summary>
+    /// Hash sequence by combining the hashcodes of all its composing keys.
+    /// </summary>
     public override int GetHashCode()
     {
         int hash = 0x2d2816fe;
-        for (int i = 0; i < Count; ++i)
-            hash = hash * 31 + this[i].GetHashCode();
+        foreach (Key ch in this)
+            hash = hash * 31 + ch.GetHashCode();
         return hash;
     }
 };
@@ -247,10 +85,14 @@ public class SequenceDescription : IComparable<SequenceDescription>
     public string Result = "";
     public int Utf32 = -1;
 
+    /// <summary>
+    /// Sequence comparison routine. Use to sort sequences alphabetically or
+    /// numerically in the GUI.
+    /// </summary>
     public int CompareTo(SequenceDescription other)
     {
-        // If any sequence leads to a single character, compare actual
-        // Unicode codepoints rather than strings
+        // If either sequence results in a single character, compare actual
+        // Unicode codepoints. Otherwise, compare sequences alphabetically.
         if (Utf32 != -1 || other.Utf32 != -1)
             return Utf32.CompareTo(other.Utf32);
         return Result.CompareTo(other.Result);
@@ -288,7 +130,7 @@ public class SequenceTree
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if we have a real sequence prefix in our tree
+        // First check if the sequence prefix exists in our tree
         if (GetSubtree(sequence, flags) != null)
             return true;
 
@@ -305,7 +147,7 @@ public class SequenceTree
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if we have a real sequence in our tree
+        // First check if the sequence exists in our tree
         if (GetSubtree(sequence, flags) != null)
             return true;
 
@@ -322,10 +164,10 @@ public class SequenceTree
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if we have a real sequence in our tree
-        SequenceTree node = GetSubtree(sequence, flags);
-        if (node != null && node.m_result != "")
-            return node.m_result;
+        // First check if the sequence exists in our tree
+        SequenceTree subtree = GetSubtree(sequence, flags);
+        if (subtree != null && subtree.m_result != "")
+            return subtree.m_result;
 
         // Otherwise, check for a generic Unicode sequence
         if (Settings.UnicodeInput.Value)
@@ -399,9 +241,9 @@ public class SequenceTree
                 continue;
 
             var subsequence = sequence.GetRange(1, sequence.Count - 1);
-            var node = m_children[k].GetSubtree(subsequence, flags);
-            if (node != null)
-                return node;
+            var subtree = m_children[k].GetSubtree(subsequence, flags);
+            if (subtree != null)
+                return subtree;
         }
 
         return null;

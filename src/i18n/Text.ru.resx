@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Задержка:</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Отступ к соответствиям без учета регистра при недействительных комбинациях</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Отклонять символы из недопустимых комбинаций</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Сигнал при недопустимых комбинациях</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Язык интерфейса:</value>
   </data>
@@ -256,10 +247,10 @@
     <value>Вставлять пустой пробел в офисных приложениях</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Эмулировать CapsLock, используя обе клавиши Shift</value>
+    <value>Эмулировать Caps Lock, используя обе клавиши Shift</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Shift отключает CapsLock</value>
+    <value>Shift отключает Caps Lock</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Категории</value>

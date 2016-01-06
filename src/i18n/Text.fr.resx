@@ -225,15 +225,6 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Délai :</value>
   </data>
-  <data name="CaseInsensitive" xml:space="preserve">
-    <value>Réessayer sans tenir compte de la casse si une séquence est invalide</value>
-  </data>
-  <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Ne pas afficher les caractères d’une séquence invalide</value>
-  </data>
-  <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Émettre un son si une séquence est invalide</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Langue de l’interface :</value>
   </data>
