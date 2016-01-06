@@ -116,6 +116,7 @@ static class Composer
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
+        bool is_capslock_hack = false;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) != 0;
         bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
@@ -123,57 +124,37 @@ static class Composer
         bool has_lrshift = (NativeMethods.GetKeyState(VK.LSHIFT) &
                             NativeMethods.GetKeyState(VK.RSHIFT) & 0x80) != 0;
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
-        bool is_capslock_hack = false;
 
-        // Guess what key was just pressed. If we can not find a printable
-        // representation for the key, default to its virtual key code.
-        Key key = new Key(vk);
-
-        byte[] keystate = new byte[256];
-        NativeMethods.GetKeyboardState(keystate);
-        keystate[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-        keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
-
-        // These two calls must be done together and in this order.
-        string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
-        string str_if_dead = KeyToUnicode(VK.SPACE);
+        // Guess what the system would print if we weren’t interfering.
+        string result = KeyToUnicode(vk, sc, flags, has_shift,
+                                     has_altgr, has_capslock);
 
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
         // whether this key without Caps Lock gives a non-ASCII alphabetical
-        // character. If so, we replace str_if_normal with the lowercase or
+        // character. If so, we replace “result” with the lowercase or
         // uppercase variant of that character.
         if (has_capslock && Settings.CapsLockCapitalizes.Value)
         {
-            keystate[(int)VK.CAPITAL] = (byte)0x00;
-            string str_if_nocapslock = KeyToUnicode(vk, sc, keystate, flags);
+            string alt_result = KeyToUnicode(vk, sc, flags, has_shift,
+                                             has_altgr, false);
 
-            KeyToUnicode(VK.SPACE); // Eat a potential dead key, just in case
-
-            if (str_if_nocapslock != "" && (int)str_if_nocapslock[0] > 0x7f)
+            if (alt_result != "" && (int)alt_result[0] > 0x7f)
             {
-                string str_upper = str_if_nocapslock.ToUpper();
-                string str_lower = str_if_nocapslock.ToLower();
+                string str_upper = alt_result.ToUpper();
+                string str_lower = alt_result.ToLower();
                 if (str_upper != str_lower)
                 {
-                    str_if_normal = has_shift ? str_lower : str_upper;
+                    result = has_shift ? str_lower : str_upper;
                     is_capslock_hack = true;
                 }
             }
         }
 
-        if (str_if_normal != "")
-        {
-            // This appears to be a normal, printable key
-            key = new Key(str_if_normal);
-        }
-        else if (str_if_dead != " ")
-        {
-            // This appears to be a dead key
-            key = new Key(str_if_dead);
-        }
+        // Create the Key object. If a printable representation exists, use
+        // that. Otherwise, default to its virtual key code.
+        Key key = result != "" ? new Key(result) : new Key(vk);
 
+        // Update statistics
         if (is_keydown)
         {
             // Update single key statistics
@@ -400,6 +381,23 @@ static class Composer
 
         ResetSequence();
         return true;
+    }
+
+    private static string KeyToUnicode(VK vk, SC sc, LLKHF flags,
+                            bool has_shift, bool has_altgr, bool has_capslock)
+    {
+        byte[] keystate = new byte[256];
+        NativeMethods.GetKeyboardState(keystate);
+        keystate[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
+        keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
+        keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
+        keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
+
+        // These two calls must be done together and in this order.
+        string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
+        string str_if_dead = KeyToUnicode(VK.SPACE);
+
+        return str_if_dead != " " ? str_if_dead : str_if_normal;
     }
 
     private static string KeyToUnicode(VK vk)
