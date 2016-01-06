@@ -62,20 +62,20 @@ namespace WinCompose
                     {
                         new WinForms.MenuItem("WinCompose")
                         {
-                            Enabled = false
+                            Enabled = false,
                         },
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
-                        /* Keep a reference on this entry */ m_disable_item =
+                        m_disable_item = /* Keep a reference on this entry */
                         new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
                         new WinForms.MenuItem(i18n.Text.About, AboutClicked),
                         new WinForms.MenuItem("-"),
-                        /* Keep a reference on this entry */ m_update_menu =
                         new WinForms.MenuItem(i18n.Text.Updates, new[]
                         {
-                            new WinForms.MenuItem("LOL"),
-                            new WinForms.MenuItem("WAT"),
+                            new WinForms.MenuItem(i18n.Text.VisitWebsite, delegate(object o, EventArgs e) { System.Diagnostics.Process.Start("http://wincompose.info/"); }),
+                            m_update_menu = /* Keep a reference on this entry */
+                            new WinForms.MenuItem(""),
                         }),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
                         new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
@@ -186,7 +186,7 @@ namespace WinCompose
 
         private static void UpdaterStateChanged(object sender, EventArgs e)
         {
-            m_update_menu.Enabled = false;
+            m_update_menu.Visible = Updater.HasNewerVersion();
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)

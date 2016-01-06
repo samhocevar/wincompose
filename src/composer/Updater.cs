@@ -66,11 +66,34 @@ static class Updater
 
     public static bool HasNewerVersion()
     {
-        if (m_data.ContainsKey("Latest"))
-        {
-            ;
-        }
+        if (!m_data.ContainsKey("Latest"))
+            return false;
+
+        var current = SplitVersionString(Settings.Version);
+        var available = SplitVersionString(m_data["Latest"]);
+        for (int i = 0; i < 4; ++i)
+            if (current[i] < available[i])
+                return true;
+
         return false;
+    }
+
+    private static List<int> SplitVersionString(string str)
+    {
+        List<int> ret = new List<int>();
+
+        foreach (var e in str.Replace("beta", ".").Split(new char[] { '.' }))
+            ret.Add(int.Parse(e));
+
+        // If fewer than 4 elements, add zeroes, except for the last one
+        // which needs to be higher than any beta version
+        while (ret.Count < 4)
+            ret.Add(ret.Count == 3 ? int.MaxValue : 0);
+
+        while (ret.Count > 4)
+            ret.RemoveAt(ret.Count - 1);
+
+        return ret;
     }
 
     /// <summary>
