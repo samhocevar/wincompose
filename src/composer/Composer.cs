@@ -204,11 +204,11 @@ static class Composer
         {
             // If we receive a keyup for the compose key while in emulation
             // mode, we’re done. Send a KeyUp event and exit emulation mode.
-            if (is_keyup && m_emulating)
+            if (is_keyup && CurrentState == State.Combination)
             {
-                Log.Debug("Emulation Off");
+                Log.Debug("Combination Off");
+                CurrentState = State.Idle;
                 m_compose_down = false;
-                m_emulating = false;
 
                 // If relevant, send an additional KeyUp for the opposite
                 // key; experience indicates that it helps unstuck some
@@ -230,25 +230,32 @@ static class Composer
             {
                 // FIXME: we don't want compose + compose to disable composing,
                 // since there are compose sequences that use Multi_key.
-                // FIXME: also, if a sequence was in progress, print it!
-                IsComposing = !IsComposing;
-                if (!IsComposing)
-                    m_sequence.Clear();
+                switch (CurrentState)
+                {
+                    case State.Sequence:
+                        // FIXME: also, if a sequence was in progress, print it!
+                        CurrentState = State.Idle;
+                        m_sequence.Clear();
+                        break;
+                    case State.Idle:
+                        CurrentState = State.Sequence;
+                        // Lauch the sequence reset expiration thread
+                        // FIXME: do we need to launch a new thread each time the
+                        // compose key is pressed? Let's have a dormant thread instead
+                        if (Settings.ResetDelay.Value > 0)
+                        {
+                            new Thread(() =>
+                            {
+                                while (CurrentState == State.Sequence &&
+                                        DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
+                                    Thread.Sleep(50);
+                                ResetSequence();
+                            }).Start();
+                        }
+                        break;
+                }
 
                 Log.Debug("{0} Composing", IsComposing ? "Now" : "No Longer");
-
-                // Lauch the sequence reset expiration thread
-                // FIXME: do we need to launch a new thread each time the
-                // compose key is pressed? Let's have a dormant thread instead
-                if (IsComposing && Settings.ResetDelay.Value > 0)
-                {
-                    new Thread(() =>
-                    {
-                        while (IsComposing && DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
-                            Thread.Sleep(50);
-                        ResetSequence();
-                    }).Start();
-                }
             }
 
             m_compose_down = is_keydown;
@@ -276,7 +283,7 @@ static class Composer
         // If we are not currently composing a sequence, do nothing unless
         // one of our hacks forces us to send the key as a string (for
         // instance the Caps Lock capitalisation feature).
-        if (!IsComposing)
+        if (CurrentState != State.Sequence)
         {
             if (is_capslock_hack && is_keydown)
             {
@@ -301,10 +308,10 @@ static class Composer
              && m_sequence.Count == 0 && !key.IsModifier()
              && (Settings.KeepOriginalKey.Value || !key.IsUsable()))
         {
-            Log.Debug("Emulation On");
+            Log.Debug("Combination On");
             ResetSequence();
             SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
-            m_emulating = true;
+            CurrentState = State.Combination;
             return false;
         }
 
@@ -542,9 +549,8 @@ static class Composer
 
     private static void ResetSequence()
     {
+        CurrentState = State.Idle;
         m_compose_down = false;
-        IsComposing = false;
-        m_emulating = false;
         m_sequence.Clear();
     }
 
@@ -728,29 +734,39 @@ static class Composer
 
     private static bool m_compose_down = false;
 
-    /// <summary>
-    /// Indicates whether a compose sequence is in progress
-    /// </summary>
-    public static bool IsComposing
+    public enum State
     {
-        get { return m_composing; }
+        Idle,
+        Sequence,
+        /// <summary>
+        /// Combination mode: the compose key is held, but not for composing,
+        /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
+        /// </summary>
+        Combination,
+    };
+
+    public static State CurrentState
+    {
+        get { return m_state; }
 
         private set
         {
-            bool has_changed = (value != m_composing);
-            m_composing = value;
+            bool has_changed = (m_state != value);
+            m_state = value;
             if (has_changed)
                 Changed(null, new EventArgs());
         }
     }
 
-    private static bool m_composing = false;
+    private static State m_state;
 
     /// <summary>
-    /// Emulation mode: the compose key is held, but not for composing,
-    /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
+    /// Indicates whether a compose sequence is in progress
     /// </summary>
-    private static bool m_emulating = false;
+    public static bool IsComposing
+    {
+        get { return CurrentState == State.Sequence; }
+    }
 }
 
 }
