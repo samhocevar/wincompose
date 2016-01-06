@@ -130,7 +130,7 @@ namespace WinCompose
             if (Composer.IsDisabled())
                 return Properties.Resources.IconDisabled;
 
-            if (Composer.IsComposing)
+            if (Composer.IsComposing())
                 return Properties.Resources.IconActive;
 
             return Properties.Resources.IconNormal;

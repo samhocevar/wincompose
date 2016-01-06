@@ -236,7 +236,7 @@ static class Composer
                         break;
                 }
 
-                Log.Debug("{0} Composing", IsComposing ? "Now" : "No Longer");
+                Log.Debug("{0} Composing", IsComposing() ? "Now" : "No Longer");
             }
 
             m_compose_down = is_keydown;
@@ -693,15 +693,15 @@ static class Composer
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
         if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (IsComposing && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
+             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
             indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (IsComposing && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
+             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
             indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (IsComposing && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
+             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
         for (ushort i = 0; i < 4; ++i)
@@ -761,9 +761,9 @@ static class Composer
     /// <summary>
     /// Indicates whether a compose sequence is in progress
     /// </summary>
-    public static bool IsComposing
+    public static bool IsComposing()
     {
-        get { return CurrentState == State.Sequence; }
+        return CurrentState == State.Sequence;
     }
 }
 
