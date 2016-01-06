@@ -737,9 +737,10 @@ static class Composer
 
         private set
         {
-            if (value != m_composing)
-                Changed(null, new EventArgs());
+            bool has_changed = (value != m_composing);
             m_composing = value;
+            if (has_changed)
+                Changed(null, new EventArgs());
         }
     }
 
