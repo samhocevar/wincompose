@@ -163,6 +163,10 @@ namespace WinCompose
 
             if (m_icon_cache[index] == null)
             {
+                bool is_disabled = (index & 0x1) != 0;
+                bool is_composing = (index & 0x2) != 0;
+                bool has_update = (index & 0x4) != 0;
+
                 // XXX: if you create new bitmap images here instead of using bitmaps from
                 // resources, make sure the DPI settings match. Our PNGs are 72 DPI whereas
                 // new Bitmap objects appear to use 96 by default (even if copy-constructed).
@@ -171,11 +175,11 @@ namespace WinCompose
                 using (Graphics canvas = Graphics.FromImage(bitmap))
                 {
                     // LED status: on or off
-                    canvas.DrawImage(Composer.IsComposing() ? Properties.Resources.DecalActive
-                                                            : Properties.Resources.DecalIdle, 0, 0);
+                    canvas.DrawImage(is_composing ? Properties.Resources.DecalActive
+                                                  : Properties.Resources.DecalIdle, 0, 0);
 
                     // Large red cross indicating we’re disabled
-                    if (Composer.IsDisabled())
+                    if (is_disabled)
                         canvas.DrawImage(Properties.Resources.DecalDisabled, 0, 0);
 
                     canvas.Save();
