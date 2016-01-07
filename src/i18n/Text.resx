@@ -379,6 +379,10 @@
     <value>About</value>
     <comment>About box menu entry</comment>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download WinCompose {0}</value>
+    <comment>Download new version menu entry. {0}: version number</comment>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>About WinCompose</value>
     <comment>Window title of the About box</comment>

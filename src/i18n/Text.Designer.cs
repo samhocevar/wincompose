@@ -70,6 +70,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download WinCompose {0}.
+        /// </summary>
+        public static string Download {
+            get {
+                return ResourceManager.GetString("Download WinCompose {0}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About WinCompose.
         /// </summary>
         public static string AboutBoxTitle {

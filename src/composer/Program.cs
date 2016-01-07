@@ -25,7 +25,8 @@ namespace WinCompose
     {
         private static WinForms.NotifyIcon m_tray_icon;
         private static WinForms.MenuItem m_disable_item;
-        private static WinForms.MenuItem m_update_menu;
+        private static WinForms.MenuItem m_download_item;
+        private static string m_download_url;
         private static RemoteControl m_control;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
@@ -74,8 +75,11 @@ namespace WinCompose
                         new WinForms.MenuItem(i18n.Text.Updates, new[]
                         {
                             new WinForms.MenuItem(i18n.Text.VisitWebsite, delegate(object o, EventArgs e) { System.Diagnostics.Process.Start("http://wincompose.info/"); }),
-                            m_update_menu = /* Keep a reference on this entry */
-                            new WinForms.MenuItem(""),
+                            m_download_item = /* Keep a reference on this entry */
+                            new WinForms.MenuItem("", DownloadClicked)
+                            {
+                                Visible = false
+                            },
                         }),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
                         new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
@@ -186,7 +190,19 @@ namespace WinCompose
 
         private static void UpdaterStateChanged(object sender, EventArgs e)
         {
-            m_update_menu.Visible = Updater.HasNewerVersion();
+            m_download_item.Visible = false;
+            if (Updater.HasNewerVersion())
+            {
+                var text = string.Format(i18n.Text.Download, Updater.Get("Latest"));
+                var url = Settings.IsInstalled() ? Updater.Get("Installer")
+                                                 : Updater.Get("Portable");
+                if (url != null)
+                {
+                    m_download_item.Visible = true;
+                    m_download_item.Text = text;
+                    m_download_url = url;
+                }
+            }
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
@@ -221,6 +237,11 @@ namespace WinCompose
         {
             var about_box = new AboutBox();
             about_box.ShowDialog();
+        }
+
+        private static void DownloadClicked(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(m_download_url);
         }
 
         private static void RestartClicked(object sender, EventArgs e)

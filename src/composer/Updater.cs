@@ -47,7 +47,7 @@ static class Updater
         {
             try
             {
-                GetStatusData();
+                UpdateStatus();
 
                 if (HasNewerVersion())
                 {
@@ -66,14 +66,13 @@ static class Updater
 
     public static bool HasNewerVersion()
     {
-        if (!m_data.ContainsKey("Latest"))
-            return false;
-
         var current = SplitVersionString(Settings.Version);
-        var available = SplitVersionString(m_data["Latest"]);
-        for (int i = 0; i < 4; ++i)
-            if (current[i] < available[i])
-                return true;
+        var available = Get("Latest");
+
+        if (available != null)
+            for (int i = 0; i < 4; ++i)
+                if (current[i] < available[i])
+                   return true;
 
         return false;
     }
@@ -96,28 +95,39 @@ static class Updater
         return ret;
     }
 
+    public static string Get(string key)
+    {
+        string ret = null;
+        m_data.TryGetValue(key, out ret);
+        return ret;
+    }
+
     /// <summary>
     /// Query the WinCompose website for update information
     /// </summary>
-    private static void GetStatusData()
+    private static void UpdateStatus()
     {
         try
         {
             WebClient browser = new WebClient();
             browser.Headers.Add("user-agent", GetUserAgent());
-            Stream s = browser.OpenRead("http://wincompose.info/status.txt");
-            StreamReader sr = new StreamReader(s);
-
-            for (string line = sr.ReadLine(); line != null;  line = sr.ReadLine())
+            using (Stream s = browser.OpenRead("http://wincompose.info/status.txt"))
+            using (StreamReader sr = new StreamReader(s))
             {
-                string pattern = "^([^#: ][^: ]*):  *(.*[^ ]) *$";
-                var m = Regex.Match(line, pattern);
-                if (m.Groups.Count == 3)
-                    m_data[m.Groups[1].Captures[0].ToString()] = m.Groups[2].Captures[0].ToString();
-            }
+                m_data.Clear();
 
-            sr.Close();
-            s.Close();
+                for (string line = sr.ReadLine(); line != null;  line = sr.ReadLine())
+                {
+                    string pattern = "^([^#: ][^: ]*):  *(.*[^ ]) *$";
+                    var m = Regex.Match(line, pattern);
+                    if (m.Groups.Count == 3)
+                    {
+                        string key = m.Groups[1].Captures[0].ToString();
+                        string val = m.Groups[2].Captures[0].ToString();
+                        m_data[key] = val;
+                    }
+                }
+            }
         }
         catch(Exception) {}
     }
