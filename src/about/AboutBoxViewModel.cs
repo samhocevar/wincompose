@@ -64,7 +64,7 @@ namespace WinCompose
 
         public string Version
         {
-            get { return Program.Version; }
+            get { return Settings.Version; }
         }
 
         private void OnSwitchDocumentCommandExecuted(object parameter)

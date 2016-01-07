@@ -181,7 +181,7 @@ static class Composer
                 m_compose_down = false;
 
                 // If relevant, send an additional KeyUp for the opposite
-                // key; experience indicates that it helps unstuck some
+                // key; experience indicates that it helps unstick some
                 // applications such as mintty.exe.
                 switch (Settings.ComposeKey.Value.VirtualKey)
                 {
@@ -532,6 +532,9 @@ static class Composer
     {
         Settings.Disabled.Value = !Settings.Disabled.Value;
         ResetSequence();
+        // FIXME: this will no longer be necessary when "Disabled"
+        // becomes a composer state of its own.
+        Changed(null, new EventArgs());
     }
 
     /// <summary>
@@ -738,6 +741,7 @@ static class Composer
         /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
         /// </summary>
         Combination,
+        // TODO: we probably want "Disabled" as another possible state
     };
 
     public static State CurrentState

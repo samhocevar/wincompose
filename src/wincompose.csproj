@@ -53,20 +53,45 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="about\AboutBox.xaml.cs">
-      <DependentUpon>AboutBox.xaml</DependentUpon>
-    </Compile>
     <Compile Include="about\AboutBoxViewModel.cs" />
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Log.cs" />
-    <Compile Include="composer\Program.cs" />
+    <Compile Include="composer\Program.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="composer\Stats.cs" />
+    <Compile Include="composer\Updater.cs" />
+    <Compile Include="composer\WinApi.cs" />
+    <Compile Include="composer\WinTypes.cs" />
+    <Compile Include="sequences\CategoryViewModel.cs" />
+    <Compile Include="sequences\Key.cs" />
+    <Compile Include="sequences\RootViewModel.cs" />
+    <Compile Include="sequences\SearchTokens.cs" />
+    <Compile Include="sequences\Sequence.cs" />
+    <Compile Include="sequences\SequenceViewModel.cs" />
+    <Compile Include="sequences\ValueConverters.cs" />
+    <Compile Include="settings\Settings.cs" />
+    <Compile Include="settings\SettingsEntry.cs" />
+    <Compile Include="settings\SettingsWindowViewModel.cs" />
+    <Compile Include="ui_common\DelegateCommand.cs" />
+    <Compile Include="ui_common\ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about\AboutBox.xaml.cs">
+      <DependentUpon>AboutBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="composer\RemoteControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="composer\Stats.cs" />
-    <Compile Include="settings\SettingsWindowViewModel.cs" />
-    <Compile Include="ui_common\DelegateCommand.cs" />
+    <Compile Include="sequences\SequenceWindow.xaml.cs">
+      <DependentUpon>SequenceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="settings\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="unicode\Category.be.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -312,12 +337,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Block.sr.resx</DependentUpon>
     </Compile>
-    <Compile Include="sequences\Key.cs" />
-    <Compile Include="sequences\Sequence.cs" />
-    <Compile Include="settings\Settings.cs" />
-    <Compile Include="settings\SettingsEntry.cs" />
-    <Compile Include="composer\WinApi.cs" />
-    <Compile Include="composer\WinTypes.cs" />
     <Compile Include="i18n\Text.be.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -438,19 +457,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.zh-CHT.resx</DependentUpon>
     </Compile>
-    <Compile Include="sequences\RootViewModel.cs" />
-    <Compile Include="sequences\SearchTokens.cs" />
-    <Compile Include="sequences\SequenceViewModel.cs" />
-    <Compile Include="settings\SettingsWindow.xaml.cs">
-      <DependentUpon>SettingsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="sequences\ValueConverters.cs" />
-    <Compile Include="ui_common\ViewModelBase.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="sequences\CategoryViewModel.cs" />
-    <Compile Include="sequences\SequenceWindow.xaml.cs">
-      <DependentUpon>SequenceWindow.xaml</DependentUpon>
+    <Compile Include="i18n\Text.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -459,11 +469,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="i18n\Text.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Text.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -865,29 +870,21 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="res\key_compose.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="res\key_empty.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="res\key_space.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="res\key_compose_big.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="app.config" />
     <EmbeddedResource Include="build.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\contributors.html" />
     <Resource Include="res\copying.html" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="res\decal_active.png" />
+    <Resource Include="res\decal_disabled.png" />
+    <Resource Include="res\decal_idle.png" />
+    <Resource Include="res\decal_update.png" />
     <Resource Include="res\icon_normal.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
+    <Resource Include="res\key_compose.png" />
+    <Resource Include="res\key_empty.png" />
+    <Resource Include="res\key_space.png" />
+    <Resource Include="res\key_compose_big.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="rules\Emoji.txt" />

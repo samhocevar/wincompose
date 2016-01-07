@@ -12,12 +12,12 @@
 //
 
 using System;
-using System.IO;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Windows.Forms.Integration;
 using System.Windows.Interop;
-using System.Xml;
-using System.Xml.XPath;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
@@ -25,7 +25,10 @@ namespace WinCompose
     static class Program
     {
         private static WinForms.NotifyIcon m_tray_icon;
+        private static WinForms.MenuItem m_help_item;
         private static WinForms.MenuItem m_disable_item;
+        private static WinForms.MenuItem m_download_item;
+        private static string m_download_url;
         private static RemoteControl m_control;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
@@ -39,6 +42,7 @@ namespace WinCompose
             Composer.Init();
             Settings.LoadSequences();
             KeyboardHook.Init();
+            Updater.Init();
 
             Settings.StartWatchConfigFile();
 
@@ -49,48 +53,65 @@ namespace WinCompose
 
                 m_control = new RemoteControl();
                 m_control.DisableEvent += OnDisableEvent;
+                m_control.DisableEvent += SysTrayUpdateCallback;
                 m_control.ExitEvent += OnExitEvent;
                 m_control.TriggerDisableEvent();
 
                 m_tray_icon = new WinForms.NotifyIcon
                 {
                     Visible = true,
-                    Icon = GetTrayIcon(),
+                    //Icon = GetCurrentIcon(),
+                    //Text = GetCurrentToolTip(),
                     ContextMenu = new WinForms.ContextMenu(new[]
                     {
-                        new WinForms.MenuItem("WinCompose")
-                        {
-                            Enabled = false
-                        },
+                        new TitleMenuItem(),
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
-                        /* Keep a reference on this entry */ m_disable_item =
-                        new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
-                        new WinForms.MenuItem(i18n.Text.About, AboutClicked),
+                        m_help_item = /* Keep a reference on this entry */
+                        new WinForms.MenuItem(i18n.Text.Help, new[]
+                        {
+                            new WinForms.MenuItem(i18n.Text.About, AboutClicked),
+                            new WinForms.MenuItem(i18n.Text.VisitWebsite, delegate(object o, EventArgs e) { System.Diagnostics.Process.Start("http://wincompose.info/"); }),
+                            m_download_item = /* Keep a reference on this entry */
+                            new WinForms.MenuItem("", DownloadClicked)
+                            {
+                                Visible = false
+                            },
+                        }),
                         new WinForms.MenuItem("-"),
+                        m_disable_item = /* Keep a reference on this entry */
+                        new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
                         new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
                         new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
                     })
                 };
                 m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
 
-                Composer.Changed += ComposerStateChanged;
-                ComposerStateChanged(null, new EventArgs());
+                Composer.Changed += SysTrayUpdateCallback;
+                Updater.Changed += SysTrayUpdateCallback;
+                SysTrayUpdateCallback(null, new EventArgs());
+
+                Updater.Changed += UpdaterStateChanged;
+                UpdaterStateChanged(null, new EventArgs());
 
                 WinForms.Application.Run();
                 m_tray_icon.Dispose();
             }
             finally
             {
-                Composer.Changed -= ComposerStateChanged;
+                Composer.Changed -= SysTrayUpdateCallback;
+                Updater.Changed -= SysTrayUpdateCallback;
+                Updater.Changed -= UpdaterStateChanged;
                 m_control.DisableEvent -= OnDisableEvent;
                 m_control.ExitEvent -= OnExitEvent;
 
                 Settings.StopWatchConfigFile();
+                Updater.Fini();
                 KeyboardHook.Fini();
                 Settings.SaveConfig();
                 Composer.Fini();
+                Updater.Fini();
             }
         }
 
@@ -112,28 +133,102 @@ namespace WinCompose
             }
         }
 
-        private static void ComposerStateChanged(object sender, EventArgs e)
+        private static void SysTrayUpdateCallback(object sender, EventArgs e)
         {
-            m_tray_icon.Icon = GetTrayIcon();
-            m_tray_icon.Text = Composer.IsDisabled()
-                              ? i18n.Text.DisabledToolTip
-                              : String.Format(i18n.Text.TrayToolTip,
-                                        Settings.ComposeKey.Value.FriendlyName,
-                                        Settings.GetSequenceCount(),
-                                        Program.Version);
+            m_tray_icon.Icon = GetCurrentIcon();
+
+            // XXX: we cannot directly set m_tray_icon.Text because it has an
+            // erroneous 64-character limitation (the underlying framework has
+            // the correct 128-char limitation). So instead we use this hack,
+            // taken from http://stackoverflow.com/a/580264/111461
+            Type t = typeof(WinForms.NotifyIcon);
+            BindingFlags hidden = BindingFlags.NonPublic | BindingFlags.Instance;
+            t.GetField("text", hidden).SetValue(m_tray_icon, GetCurrentToolTip());
+            if ((bool)t.GetField("added", hidden).GetValue(m_tray_icon))
+                t.GetMethod("UpdateIcon", hidden).Invoke(m_tray_icon, new object[] { true });
 
             m_disable_item.Checked = Composer.IsDisabled();
         }
 
-        private static System.Drawing.Icon GetTrayIcon()
+        private static string GetCurrentToolTip()
         {
-            if (Composer.IsDisabled())
-                return Properties.Resources.IconDisabled;
+            string ret = i18n.Text.DisabledToolTip;
 
-            if (Composer.IsComposing())
-                return Properties.Resources.IconActive;
+            if (!Composer.IsDisabled())
+                ret = string.Format(i18n.Text.TrayToolTip,
+                                    Settings.ComposeKey.Value.FriendlyName,
+                                    Settings.SequenceCount,
+                                    Settings.Version);
 
-            return Properties.Resources.IconNormal;
+            if (Updater.HasNewerVersion())
+                ret += "\n" + i18n.Text.UpdatesToolTip;
+
+            return ret;
+        }
+
+        private static System.Drawing.Icon GetCurrentIcon()
+        {
+            return GetIcon((Composer.IsDisabled() ?     0x1 : 0x0) |
+                           (Composer.IsComposing() ?    0x2 : 0x0) |
+                           (Updater.HasNewerVersion() ? 0x4 : 0x0));
+        }
+
+        public static System.Drawing.Icon GetIcon(int index)
+        {
+            if (m_icon_cache == null)
+                m_icon_cache = new System.Drawing.Icon[8];
+
+            if (m_icon_cache[index] == null)
+            {
+                bool is_disabled = (index & 0x1) != 0;
+                bool is_composing = (index & 0x2) != 0;
+                bool has_update = (index & 0x4) != 0;
+
+                // XXX: if you create new bitmap images here instead of using bitmaps from
+                // resources, make sure the DPI settings match. Our PNGs are 72 DPI whereas
+                // new Bitmap objects appear to use 96 by default (even if copy-constructed).
+                // A reasonable workaround might be to use Clone().
+                using (Bitmap bitmap = Properties.Resources.KeyEmpty)
+                using (Graphics canvas = Graphics.FromImage(bitmap))
+                {
+                    // LED status: on or off
+                    canvas.DrawImage(is_composing ? Properties.Resources.DecalActive
+                                                  : Properties.Resources.DecalIdle, 0, 0);
+
+                    // Large red cross indicating we’re disabled
+                    if (is_disabled)
+                        canvas.DrawImage(Properties.Resources.DecalDisabled, 0, 0);
+
+                    // Tiny yellow exclamation mark to advertise updates
+                    if (has_update)
+                        canvas.DrawImage(Properties.Resources.DecalUpdate, 0, 0);
+
+                    canvas.Save();
+                    m_icon_cache[index] = Icon.FromHandle(bitmap.GetHicon());
+                }
+            }
+
+            return m_icon_cache[index];
+        }
+
+        private static System.Drawing.Icon[] m_icon_cache;
+
+        private static void UpdaterStateChanged(object sender, EventArgs e)
+        {
+            m_download_item.Visible = false;
+            if (Updater.HasNewerVersion())
+            {
+                var text = string.Format(i18n.Text.Download,
+                                         Updater.Get("Latest") ?? "");
+                var url = Settings.IsInstalled() ? Updater.Get("Installer")
+                                                 : Updater.Get("Portable");
+                if (url != null)
+                {
+                    m_download_item.Visible = true;
+                    m_download_item.Text = text;
+                    m_download_url = url;
+                }
+            }
         }
 
         private static void ShowSequencesClicked(object sender, EventArgs e)
@@ -170,6 +265,11 @@ namespace WinCompose
             about_box.ShowDialog();
         }
 
+        private static void DownloadClicked(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(m_download_url);
+        }
+
         private static void RestartClicked(object sender, EventArgs e)
         {
             WinForms.Application.Restart();
@@ -186,27 +286,46 @@ namespace WinCompose
         {
             WinForms.Application.Exit();
         }
+    }
 
-        public static string Version
+    class TitleMenuItem : WinForms.MenuItem
+    {
+        public TitleMenuItem()
         {
-            get
-            {
-                if (m_version == null)
-                {
-                    XmlDocument doc = new XmlDocument();
-                    Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.config");
-                    doc.Load(stream);
-                    XmlNamespaceManager mgr = new XmlNamespaceManager(doc.NameTable);
-                    mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");
-
-                    m_version = doc.DocumentElement.SelectSingleNode("//ns:Project/ns:PropertyGroup/ns:ApplicationVersion", mgr).InnerText;
-                }
-
-                return m_version;
-            }
+            Text = "WinCompose";
+            m_font = new Font(SystemFonts.DefaultFont.FontFamily,
+                              SystemFonts.DefaultFont.Size * 1.1f,
+                              FontStyle.Bold);
+            OwnerDraw = true;
+            Enabled = false;
         }
 
-        private static string m_version;
+        protected override void OnMeasureItem(WinForms.MeasureItemEventArgs e)
+        {
+            var size = WinForms.TextRenderer.MeasureText(Text, m_font);
+            e.ItemWidth = size.Width;
+            e.ItemHeight = size.Height;
+        }
+
+        protected override void OnDrawItem(WinForms.DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+
+            var brush = new LinearGradientBrush(e.Bounds, Color.SkyBlue,
+                                                Color.White, 30.0f);
+            e.Graphics.FillRectangle(brush, e.Bounds);
+
+            var icon_bounds = e.Bounds;
+            icon_bounds.Width = e.Bounds.Height;
+            e.Graphics.DrawIcon(Program.GetIcon(0), icon_bounds);
+
+            var text_bounds = e.Bounds;
+            text_bounds.Width -= e.Bounds.Height;
+            text_bounds.X += e.Bounds.Height;
+            e.Graphics.DrawString(Text, m_font, Brushes.Black, text_bounds);
+        }
+
+        private Font m_font;
     }
 }
 

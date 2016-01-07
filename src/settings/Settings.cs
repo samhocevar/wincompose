@@ -22,6 +22,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Xml;
+using System.Xml.XPath;
 
 namespace WinCompose
 {
@@ -49,6 +51,24 @@ namespace WinCompose
             CapsLockCapitalizes = new SettingsEntry<bool>(GlobalSection, "capslock_capitalizes", false);
         }
 
+        public static string Version
+        {
+            get
+            {
+                if (m_version == null)
+                {
+                    var doc = new XmlDocument();
+                    doc.Load(Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.config"));
+                    var mgr = new XmlNamespaceManager(doc.NameTable);
+                    mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");
+
+                    m_version = doc.DocumentElement.SelectSingleNode("//ns:Project/ns:PropertyGroup/ns:ApplicationVersion", mgr).InnerText;
+                }
+
+                return m_version;
+            }
+        }
+
         public static SettingsEntry<string> Language { get; private set; }
 
         public static SettingsEntry<Key> ComposeKey { get; private set; }
@@ -74,6 +94,8 @@ namespace WinCompose
         public static SettingsEntry<bool> ShiftDisablesCapsLock { get; private set; }
 
         public static SettingsEntry<bool> CapsLockCapitalizes { get; private set; }
+
+        public static int SequenceCount { get { return m_sequence_count; } }
 
         public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
 
@@ -289,11 +311,6 @@ namespace WinCompose
             return m_sequences.GetSequenceDescriptions();
         }
 
-        public static int GetSequenceCount()
-        {
-            return m_sequence_count;
-        }
-
         private static string LoadEntry(string key)
         {
             const int len = 255;
@@ -380,6 +397,9 @@ namespace WinCompose
 
             return -1;
         }
+
+        // The application version
+        private static string m_version;
 
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
@@ -508,12 +528,12 @@ namespace WinCompose
             return Path.GetDirectoryName(GetExeName());
         }
 
-        private static bool IsInstalled()
+        public static bool IsInstalled()
         {
             return File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
         }
 
-        private static bool IsDebugging()
+        public static bool IsDebugging()
         {
             string exe = GetExeName();
             return File.Exists(Path.ChangeExtension(exe, ".pdb"));
