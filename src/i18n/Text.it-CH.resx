@@ -297,6 +297,12 @@
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
     <value>Si Bloc Maiusc (Caps Lock) est impreada comente tecla compose, su cumportamentu originale no est prus disponìbile. Custa funzionalidade permitit de istudare Bloc Maiusc incarcande sa tecla Maiùscolu (Shift).</value>
   </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Bloc Maiusc iscriet semper sas lìteras maiùscolas</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Cando su Bloc Maiusc est allutu, incarcare una lìtera atzentada, a tipu “é”, at a iscrìere semper sa lìtera maiùscola chi li currispondet, in custu casu “É”.</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorias</value>
   </data>

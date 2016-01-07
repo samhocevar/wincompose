@@ -297,6 +297,12 @@
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
     <value>Als Caps Lock wordt gebruikt als compositietoets, is het originele gedrag van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock aan te schakelen door de Shift-toets in te drukken.</value>
   </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock maakt van alle letters hoofdletters</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Wanneer Caps Lock aanstaat resulteert het intoetsen van een letter met een accent zoals bv \geval “É”.</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorieën</value>
   </data>

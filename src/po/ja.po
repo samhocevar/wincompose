@@ -2,7 +2,7 @@
 # Copyright (C) 2015 THE WinCompose'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the WinCompose package.
 # Automatically generated, 2015.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
@@ -413,40 +413,56 @@ msgstr "(ミリ秒)"
 msgid "About"
 msgstr "WinCompose について"
 
+#. Download new version menu entry. {0}: version number
+#: i18n/Text.resx:384 ID:Download
+#, fuzzy
+msgid "Download WinCompose {0}"
+msgstr "WinCompose について"
+
 #. Window title of the About box
-#: i18n/Text.resx:384 ID:AboutBoxTitle
+#: i18n/Text.resx:388 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "WinCompose について"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:388 ID:Programming
+#: i18n/Text.resx:392 ID:Programming
 msgid "Programming"
 msgstr "プログラミング"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:392 ID:Translators
+#: i18n/Text.resx:396 ID:Translators
 msgid "Translation"
 msgstr "翻訳"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:396 ID:Contributors
+#: i18n/Text.resx:400 ID:Contributors
 msgid "Special Thanks"
 msgstr "スペシャルサンクス"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:400 ID:License
+#: i18n/Text.resx:404 ID:License
 msgid "License"
 msgstr "ライセンス"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:404 ID:NeedRestart
+#: i18n/Text.resx:408 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr "設定によっては、WinComposeを再起動しないと反映されないものもあります。"
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:408 ID:ReportBug
+#: i18n/Text.resx:412 ID:ReportBug
 msgid "Report a Bug"
 msgstr "バグ報告"
+
+#. The context menu for about, help, and software updates
+#: i18n/Text.resx:416 ID:Help
+msgid "Help"
+msgstr ""
+
+#. Message displayed in the systray tooltip.
+#: i18n/Text.resx:420 ID:UpdatesToolTip
+msgid "Updates are available."
+msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control

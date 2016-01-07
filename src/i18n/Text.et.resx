@@ -297,6 +297,12 @@
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
     <value>Kui Caps Lock on valitud kombineerimisklahviks, siis blokeeritakse klahvi algne käitumine. See parameeter lubab lülitada Caps Locki välja vajutades Shift klahvi.</value>
   </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock muudab tähed alati suureks</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Kui Caps Lock on sees, siis diakriitikutega tähtede sisestamisel väljastatakse alati vastav suurtäht. Nt. “é” sisestamisel muudetakse see “É”-ks.</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategooriad</value>
   </data>

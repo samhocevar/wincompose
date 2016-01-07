@@ -369,39 +369,54 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: i18n/Text.resx:384 ID:AboutBoxTitle
+#: i18n/Text.resx:384 ID:Download
+#. Download new version menu entry. {0}: version number
+msgid "Download WinCompose {0}"
+msgstr ""
+
+#: i18n/Text.resx:388 ID:AboutBoxTitle
 #. Window title of the About box
 msgid "About WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:388 ID:Programming
+#: i18n/Text.resx:392 ID:Programming
 #. The section where we list all programmers.
 msgid "Programming"
 msgstr ""
 
-#: i18n/Text.resx:392 ID:Translators
+#: i18n/Text.resx:396 ID:Translators
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 msgid "Translation"
 msgstr ""
 
-#: i18n/Text.resx:396 ID:Contributors
+#: i18n/Text.resx:400 ID:Contributors
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 msgid "Special Thanks"
 msgstr ""
 
-#: i18n/Text.resx:400 ID:License
+#: i18n/Text.resx:404 ID:License
 #. US: License, UK: Licence
 msgid "License"
 msgstr ""
 
-#: i18n/Text.resx:404 ID:NeedRestart
+#: i18n/Text.resx:408 ID:NeedRestart
 #. Warning message when the user changes the language in the settings window
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 
-#: i18n/Text.resx:408 ID:ReportBug
+#: i18n/Text.resx:412 ID:ReportBug
 #. A button to report bugs (opens web browser)
 msgid "Report a Bug"
+msgstr ""
+
+#: i18n/Text.resx:416 ID:Help
+#. The context menu for about, help, and software updates
+msgid "Help"
+msgstr ""
+
+#: i18n/Text.resx:420 ID:UpdatesToolTip
+#. Message displayed in the systray tooltip.
+msgid "Updates are available."
 msgstr ""
 
 #: unicode/Category.resx:122 ID:Control
