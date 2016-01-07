@@ -66,13 +66,16 @@ static class Updater
 
     public static bool HasNewerVersion()
     {
-        var current = SplitVersionString(Settings.Version);
-        var available = Get("Latest");
+        string latest = Get("Latest");
+        if (latest == null)
+            return false;
 
-        if (available != null)
-            for (int i = 0; i < 4; ++i)
-                if (current[i] < available[i])
-                   return true;
+        var current = SplitVersionString(Settings.Version);
+        var available = SplitVersionString(latest);
+
+        for (int i = 0; i < 4; ++i)
+            if (current[i] < available[i])
+                return true;
 
         return false;
     }

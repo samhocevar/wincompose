@@ -411,8 +411,12 @@
     <value>Report a Bug</value>
     <comment>A button to report bugs (opens web browser)</comment>
   </data>
-  <data name="Updates" xml:space="preserve">
-    <value>Updates</value>
-    <comment>The context menu for software updates</comment>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+    <comment>The context menu for about, help, and software updates</comment>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Updates are available.</value>
+    <comment>Message displayed in the systray tooltip.</comment>
   </data>
 </root>

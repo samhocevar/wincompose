@@ -70,15 +70,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download WinCompose {0}.
-        /// </summary>
-        public static string Download {
-            get {
-                return ResourceManager.GetString("Download WinCompose {0}", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About WinCompose.
         /// </summary>
         public static string AboutBoxTitle {
@@ -250,6 +241,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download WinCompose {0}.
+        /// </summary>
+        public static string Download {
+            get {
+                return ResourceManager.GetString("Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emulate Caps Lock using both Shift keys.
         /// </summary>
         public static string EmulateCapsLock {
@@ -273,6 +273,15 @@ namespace WinCompose.i18n {
         public static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
             }
         }
         
@@ -790,11 +799,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Updates.
+        ///   Looks up a localized string similar to Updates are available..
         /// </summary>
-        public static string Updates {
+        public static string UpdatesToolTip {
             get {
-                return ResourceManager.GetString("Updates", resourceCulture);
+                return ResourceManager.GetString("UpdatesToolTip", resourceCulture);
             }
         }
         

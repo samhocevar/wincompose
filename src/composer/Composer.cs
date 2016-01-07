@@ -192,7 +192,7 @@ static class Composer
                 m_compose_down = false;
 
                 // If relevant, send an additional KeyUp for the opposite
-                // key; experience indicates that it helps unstuck some
+                // key; experience indicates that it helps unstick some
                 // applications such as mintty.exe.
                 switch (Settings.ComposeKey.Value.VirtualKey)
                 {
