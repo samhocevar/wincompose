@@ -199,6 +199,10 @@ namespace WinCompose
                     if (is_disabled)
                         canvas.DrawImage(Properties.Resources.DecalDisabled, 0, 0);
 
+                    // Tiny yellow exclamation mark to advertise updates
+                    if (has_update)
+                        canvas.DrawImage(Properties.Resources.DecalUpdate, 0, 0);
+
                     canvas.Save();
                     m_icon_cache[index] = Icon.FromHandle(bitmap.GetHicon());
                 }

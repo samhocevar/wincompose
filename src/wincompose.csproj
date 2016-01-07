@@ -57,7 +57,9 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Log.cs" />
-    <Compile Include="composer\Program.cs" />
+    <Compile Include="composer\Program.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="composer\Stats.cs" />
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\WinApi.cs" />
@@ -877,6 +879,7 @@
     <Resource Include="res\decal_active.png" />
     <Resource Include="res\decal_disabled.png" />
     <Resource Include="res\decal_idle.png" />
+    <Resource Include="res\decal_update.png" />
     <Resource Include="res\icon_normal.ico" />
     <Resource Include="res\key_compose.png" />
     <Resource Include="res\key_empty.png" />
