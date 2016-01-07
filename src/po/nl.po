@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-07 22:12+0000\n"
+"PO-Revision-Date: 2016-01-07 22:13+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
 "Language-Team: Dutch "
 "<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
@@ -424,7 +424,7 @@ msgstr "Over"
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:384 ID:Download
 msgid "Download WinCompose {0}"
-msgstr "Download WinCompose {0}"
+msgstr "WinCompose {0} downloaden"
 
 #. Window title of the About box
 #: i18n/Text.resx:388 ID:AboutBoxTitle
