@@ -125,9 +125,10 @@ static class Composer
                             NativeMethods.GetKeyState(VK.RSHIFT) & 0x80) != 0;
         bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
 
-        // Guess what the system would print if we weren’t interfering.
-        string result = KeyToUnicode(vk, sc, flags, has_shift,
-                                     has_altgr, has_capslock);
+        // Guess what the system would print if we weren’t interfering. If
+        // a printable representation exists, use that. Otherwise, default
+        // to its virtual key code.
+        Key key = VkToKey(vk, sc, flags, has_shift, has_altgr, has_capslock);
 
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
         // whether this key without Caps Lock gives a non-ASCII alphabetical
@@ -135,24 +136,19 @@ static class Composer
         // uppercase variant of that character.
         if (has_capslock && Settings.CapsLockCapitalizes.Value)
         {
-            string alt_result = KeyToUnicode(vk, sc, flags, has_shift,
-                                             has_altgr, false);
+            Key alt_key = VkToKey(vk, sc, flags, has_shift, has_altgr, false);
 
-            if (alt_result != "" && (int)alt_result[0] > 0x7f)
+            if (alt_key.IsPrintable() && alt_key.ToString()[0] > 0x7f)
             {
-                string str_upper = alt_result.ToUpper();
-                string str_lower = alt_result.ToLower();
+                string str_upper = alt_key.ToString().ToUpper();
+                string str_lower = alt_key.ToString().ToLower();
                 if (str_upper != str_lower)
                 {
-                    result = has_shift ? str_lower : str_upper;
+                    key = new Key(has_shift ? str_lower : str_upper);
                     is_capslock_hack = true;
                 }
             }
         }
-
-        // Create the Key object. If a printable representation exists, use
-        // that. Otherwise, default to its virtual key code.
-        Key key = result != "" ? new Key(result) : new Key(vk);
 
         // Update statistics
         if (is_keydown)
@@ -170,13 +166,6 @@ static class Composer
             // Remember when we pressed a key for the last time
             m_last_key_time = DateTime.Now;
             m_last_key = key;
-        }
-
-        // Special case: we don't consider characters such as Esc as printable
-        // otherwise they are not properly serialised in the config file.
-        if (key.IsPrintable() && key.ToString()[0] < ' ')
-        {
-            key = new Key(vk);
         }
 
         // FIXME: we don’t properly support compose keys that also normally
@@ -383,8 +372,8 @@ static class Composer
         return true;
     }
 
-    private static string KeyToUnicode(VK vk, SC sc, LLKHF flags,
-                            bool has_shift, bool has_altgr, bool has_capslock)
+    private static Key VkToKey(VK vk, SC sc, LLKHF flags, bool has_shift,
+                               bool has_altgr, bool has_capslock)
     {
         byte[] keystate = new byte[256];
         NativeMethods.GetKeyboardState(keystate);
@@ -394,18 +383,26 @@ static class Composer
         keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
 
         // These two calls must be done together and in this order.
-        string str_if_normal = KeyToUnicode(vk, sc, keystate, flags);
-        string str_if_dead = KeyToUnicode(VK.SPACE);
+        string str_if_normal = VkToUnicode(vk, sc, keystate, flags);
+        string str_if_dead = VkToUnicode(VK.SPACE);
 
-        return str_if_dead != " " ? str_if_dead : str_if_normal;
+        if (str_if_dead != " ")
+            return new Key(str_if_dead);
+
+        // Special case: we don't consider characters such as Esc as printable
+        // otherwise they are not properly serialised in the config file.
+        if (str_if_normal != "" && str_if_normal[0] >= ' ')
+            return new Key(str_if_normal);
+
+        return new Key(vk);
     }
 
-    private static string KeyToUnicode(VK vk)
+    private static string VkToUnicode(VK vk)
     {
-        return KeyToUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
+        return VkToUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
     }
 
-    private static string KeyToUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
+    private static string VkToUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
     {
         const int buflen = 4;
         byte[] buf = new byte[2 * buflen];
@@ -593,8 +590,8 @@ static class Composer
             state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
             // First the key we’re interested in, then the space key
-            KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
-            string result = KeyToUnicode(VK.SPACE);
+            VkToUnicode(vk, (SC)0, state, (LLKHF)0);
+            string result = VkToUnicode(VK.SPACE);
 
             // If the resulting string is not the space character, it means
             // that it was a dead key. Good!
@@ -603,8 +600,8 @@ static class Composer
         }
 
         // Clean up key buffer
-        KeyToUnicode(VK.SPACE);
-        KeyToUnicode(VK.SPACE);
+        VkToUnicode(VK.SPACE);
+        VkToUnicode(VK.SPACE);
     }
 
     /// <summary>
@@ -615,7 +612,7 @@ static class Composer
     private static int SaveDeadKey()
     {
         int dead_key = 0;
-        string str = KeyToUnicode(VK.SPACE);
+        string str = VkToUnicode(VK.SPACE);
         if (str != " ")
             m_possible_dead_keys.TryGetValue(str, out dead_key);
         return dead_key;
@@ -640,7 +637,7 @@ static class Composer
         state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
         state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
-        KeyToUnicode(vk, (SC)0, state, (LLKHF)0);
+        VkToUnicode(vk, (SC)0, state, (LLKHF)0);
     }
 
     // FIXME: this is useless for now
