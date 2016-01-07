@@ -76,8 +76,8 @@ static class Composer
     public static void Init()
     {
         StartMonitoringKeyboardLeds();
+        CheckKeyboardLayout();
         AnalyzeKeyboardLayout();
-        AnalyzeDeadkeys();
     }
 
     /// <summary>
@@ -112,7 +112,7 @@ static class Composer
 
     private static bool OnKeyInternal(WM ev, VK vk, SC sc, LLKHF flags)
     {
-        //AnalyzeKeyboardLayout();
+        //CheckKeyboardLayout();
 
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
@@ -572,7 +572,7 @@ static class Composer
     /// Attempt to enumerate all dead keys available on the current keyboard
     /// layout and cache the results in <see cref="m_possible_dead_keys"/>.
     /// </summary>
-    private static void AnalyzeDeadkeys()
+    private static void AnalyzeKeyboardLayout()
     {
         m_possible_dead_keys = new Dictionary<string, int>();
 
@@ -580,6 +580,7 @@ static class Composer
         // dead keys. This way, when later we want to know if a dead key is
         // currently buffered, we just call ToUnicode(VK.SPACE) and match
         // the result with what we found here.
+        string[] tmp = new string[0x400];
         byte[] state = new byte[256];
 
         for (int i = 0; i < 0x400; ++i)
@@ -593,13 +594,22 @@ static class Composer
             state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
 
             // First the key we’re interested in, then the space key
-            VkToUnicode(vk, (SC)0, state, (LLKHF)0);
-            string result = VkToUnicode(VK.SPACE);
+            string str_if_normal = VkToUnicode(vk, (SC)0, state, (LLKHF)0);
+            string str_if_dead = VkToUnicode(VK.SPACE);
+
+            // If the AltGr gives us a result, it means the layout has AltGr
+            tmp[i] = str_if_dead != " " ? str_if_dead : str_if_normal;
+            if (has_altgr && tmp[i] != "" && tmp[i] != tmp[i - 0x200])
+            {
+                Log.Debug("VK {0} is “{1}” but “{2}” with AltGr",
+                          vk.ToString(), tmp[i - 0x200], tmp[i]);
+                m_layout_has_altgr = true;
+            }
 
             // If the resulting string is not the space character, it means
             // that it was a dead key. Good!
-            if (result != " ")
-                m_possible_dead_keys[result] = i;
+            if (str_if_dead != " ")
+                m_possible_dead_keys[str_if_dead] = i;
         }
 
         // Clean up key buffer
@@ -644,7 +654,7 @@ static class Composer
     }
 
     // FIXME: this is useless for now
-    private static void AnalyzeKeyboardLayout()
+    private static void CheckKeyboardLayout()
     {
         // FIXME: the foreground window doesn't seem to notice keyboard
         // layout changes caused by the Win+Space combination.
@@ -729,6 +739,7 @@ static class Composer
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
+    private static bool m_layout_has_altgr = false;
 
     private static bool m_compose_down = false;
 
