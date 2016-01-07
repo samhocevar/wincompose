@@ -535,6 +535,9 @@ static class Composer
     {
         Settings.Disabled.Value = !Settings.Disabled.Value;
         ResetSequence();
+        // FIXME: this will no longer be necessary when "Disabled"
+        // becomes a composer state of its own.
+        Changed(null, new EventArgs());
     }
 
     /// <summary>
@@ -741,6 +744,7 @@ static class Composer
         /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
         /// </summary>
         Combination,
+        // TODO: we probably want "Disabled" as another possible state
     };
 
     public static State CurrentState
