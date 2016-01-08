@@ -189,7 +189,21 @@ cat >> res/.contributors.html << EOF
 <h3>Translation</h3>
 <ul>
 EOF
-git log po | sed -ne 's/^Author: //p' | LANG=C sort | uniq \
+git log --stat po/*.po | \
+  awk 'BEGIN { FS="[/.@ ]" }
+       /^Author:/ { n=substr($0, 9) }
+       /^ src\/po.*[.]po\>/ { lut[n][$4]=1 }
+       END { for(n in lut) {
+                 s="";
+                 for(l in lut[n]) {
+                     if(s)s=s", ";
+                     s=s l;
+                 }
+                 print n" ("s")"
+           } }' \
+  | grep -v '\(Daniele <daniele.viglietti\|Kastuś Kaszenia\)' \
+  | sed 's/\(.*Sam Hocevar.*\) (.*)/\1 (de, fr, es)/' \
+  | LANG=C sort | uniq \
   | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g' | sed 's,.*,<li>&</li>,' \
   >> res/.contributors.html
 cat >> res/.contributors.html << EOF
