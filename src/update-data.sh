@@ -201,7 +201,7 @@ git log --stat po/*.po | \
                  }
                  print n" ("s")"
            } }' \
-  | grep -v '\(Daniele <daniele.viglietti\|Kastuś Kaszenia\)' \
+  | grep -v '\(Daniele <daniele.viglietti\|Kastuś.Kaszenia\|Michael Robert Lawrence\)' \
   | sed 's/\(.*Sam Hocevar.*\) (.*)/\1 (de, fr, es)/' \
   | LANG=C sort | uniq \
   | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g' | sed 's,.*,<li>&</li>,' \
