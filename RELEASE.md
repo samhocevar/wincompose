@@ -9,6 +9,8 @@ Files to edit:
  - `src/build.config`
  - `README.md` (preemptively)
 
+Make sure to run `./update-data.sh` so that translations are up to date.
+
 2) Build installer and portable versions
 ----------------------------------------
 
