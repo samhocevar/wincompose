@@ -346,7 +346,7 @@
     <value>Over</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Download WinCompose {0}</value>
+    <value>WinCompose {0} downloaden</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Over WinCompose</value>

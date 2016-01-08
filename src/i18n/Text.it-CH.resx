@@ -345,6 +345,9 @@
   <data name="About" xml:space="preserve">
     <value>Informatziones</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Iscàrriga WinCompose {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>WinCompose: informatziones</value>
   </data>
@@ -365,5 +368,11 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Sinnala unu problema</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Agiudu</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Bi sunt agiornamentos disponìbiles.</value>
   </data>
 </root>
