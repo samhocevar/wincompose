@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-17 01:06+0000\n"
-"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
-"fr/>\n"
+"PO-Revision-Date: 2016-01-09 14:38+0000\n"
+"Last-Translator: Michel Dessaintes <dessaintes.michel@gmail.com>\n"
+"Language-Team: French "
+"<https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,7 @@ msgstr "Touche compose :"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Sélectionnez la touche qui sera la Touche compose"
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "Délai :"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Saisie Unicode avancée"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -208,27 +208,30 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Autoriser la saisie Unicode pour tous les caractères, même pour ceux sans "
+"définition de séquence de composition. Par exemple, la séquence suivante "
+"donnera le caractère U+1A3F: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Émettre un son si une séquence est invalide"
+msgstr "Lors de séquences non valides"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "Réessayer sans tenir compte de la casse si une séquence est invalide"
+msgstr "Réessayer sans tenir compte de la casse lors de séquences non valides"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Si la séquence saisie n'existe pas, mais qu'il y en a une qui diffère "
+"uniquement par la casse, la corriger automatiquement."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Ignorer tous les caractères saisis"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -239,11 +242,11 @@ msgstr ""
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Émettre un bip"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Si la séquence saisie n'existe pas, émettre un son."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -254,6 +257,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Sélectionner la langue que WinCompose utilise pour l'interface. Par défaut, "
+"la langue du système d'exploitation est utilisée."
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -280,7 +285,7 @@ msgstr "Appliquer"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:302 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "La touche compose conserve aussi son comportement original"
+msgstr "Conserver le comportement initial de la touche compose"
 
 #: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -302,7 +307,7 @@ msgstr ""
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Émuler Verr Maj par appui simultané sur les deux touches Shift"
+msgstr "Émuler Ver Maj par appui simultané sur les deux touches Maj"
 
 #: i18n/Text.resx:317 ID:EmulateCapsLockToolTip
 msgid ""
@@ -313,7 +318,7 @@ msgstr ""
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "La touche Shift désactive Verr Maj"
+msgstr "La touche Maj désactive Ver Maj"
 
 #: i18n/Text.resx:323 ID:ShiftDisablesCapsLockToolTip
 msgid ""
@@ -324,7 +329,7 @@ msgstr ""
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Ver Maj met toujours les lettres en majuscule"
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
 msgid ""
@@ -354,11 +359,11 @@ msgstr "Réglages…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:348 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2} sur {0} — {1} séquences"
+msgstr "WinCompose v{2} sur {0} ({1} séquences)"
 
 #: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
-msgstr "Comportement"
+msgstr "Comportement général"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:355 ID:WindowTitle
@@ -386,7 +391,7 @@ msgstr "Tester la frappe :"
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:373 ID:Tweaks
 msgid "Tweaks"
-msgstr "Réglages divers"
+msgstr "Astuces"
 
 #: i18n/Text.resx:376 ID:Milliseconds
 msgid "(milliseconds)"
@@ -399,9 +404,8 @@ msgstr "À propos"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:384 ID:Download
-#, fuzzy
 msgid "Download WinCompose {0}"
-msgstr "À propos de WinCompose"
+msgstr "Télécharger WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:388 ID:AboutBoxTitle
@@ -442,12 +446,12 @@ msgstr "Signaler un bug"
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:416 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Aide"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:420 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Des mises à jour sont disponibles."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
