@@ -77,7 +77,6 @@ static class Composer
     {
         StartMonitoringKeyboardLeds();
         CheckKeyboardLayout();
-        AnalyzeKeyboardLayout();
     }
 
     /// <summary>
@@ -103,6 +102,10 @@ static class Composer
             return false;
         }
 
+        // We need to check the keyboard layout before we save the dead
+        // key, otherwise we may be saving garbage.
+        CheckKeyboardLayout();
+
         int dead_key = SaveDeadKey();
         bool ret = OnKeyInternal(ev, vk, sc, flags);
         RestoreDeadKey(dead_key);
@@ -112,8 +115,6 @@ static class Composer
 
     private static bool OnKeyInternal(WM ev, VK vk, SC sc, LLKHF flags)
     {
-        //CheckKeyboardLayout();
-
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
         bool is_capslock_hack = false;
@@ -653,21 +654,31 @@ static class Composer
         VkToUnicode(vk, (SC)0, state, (LLKHF)0);
     }
 
-    // FIXME: this is useless for now
     private static void CheckKeyboardLayout()
     {
-        // FIXME: the foreground window doesn't seem to notice keyboard
-        // layout changes caused by the Win+Space combination.
+        // Detect keyboard layout changes by querying the foreground window,
+        // and apply the same layout to WinCompose itself.
         IntPtr hwnd = NativeMethods.GetForegroundWindow();
         uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
         IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
-        Log.Debug("Active window layout handle:0x{0:X} lang:0x{0:X}",
-                  (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
-        tid = NativeMethods.GetCurrentThreadId();
-        IntPtr my_layout = NativeMethods.GetKeyboardLayout(tid);
-        Log.Debug("WinCompose process layout handle:0x{0:X} lang:0x{0:X}",
-                  (uint)my_layout >> 16, (uint)my_layout & 0xffff);
+        if (active_layout != m_current_layout)
+        {
+            m_current_layout = active_layout;
+
+            Log.Debug("----------: Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+                      tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
+
+            tid = NativeMethods.GetCurrentThreadId();
+            NativeMethods.ActivateKeyboardLayout((HKL)active_layout, 0);
+            active_layout = NativeMethods.GetKeyboardLayout(tid);
+
+            Log.Debug("----------: WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+                      tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
+
+            // We need to rebuild the list of dead keys
+            AnalyzeKeyboardLayout();
+        }
     }
 
     private static void StartMonitoringKeyboardLeds()
@@ -740,6 +751,7 @@ static class Composer
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
     private static bool m_layout_has_altgr = false;
+    private static IntPtr m_current_layout = IntPtr.Zero;
 
     private static bool m_compose_down = false;
 

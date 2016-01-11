@@ -183,6 +183,12 @@ internal struct KEYBOARD_INDICATOR_PARAMETERS
     public KEYBOARD LedFlags;
 };
 
+internal enum HKL
+{
+    PREV,
+    NEXT,
+};
+
 [Flags]
 internal enum LLKHF : uint
 {
