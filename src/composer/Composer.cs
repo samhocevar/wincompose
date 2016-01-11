@@ -169,68 +169,64 @@ static class Composer
             m_last_key = key;
         }
 
+        // If we receive a keyup for the compose key while in emulation
+        // mode, we’re done. Send a KeyUp event and exit emulation mode.
+        if (is_keyup && key == Settings.ComposeKey.Value
+             && CurrentState == State.Combination)
+        {
+            Log.Debug("Combination Off");
+            CurrentState = State.Idle;
+            m_compose_down = false;
+
+            // If relevant, send an additional KeyUp for the opposite
+            // key; experience indicates that it helps unstick some
+            // applications such as mintty.exe.
+            switch (Settings.ComposeKey.Value.VirtualKey)
+            {
+                case VK.LMENU: SendKeyUp(VK.RMENU); break;
+                case VK.RMENU: SendKeyUp(VK.LMENU); break;
+                case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
+                case VK.RSHIFT: SendKeyUp(VK.LSHIFT); break;
+                case VK.LCONTROL: SendKeyUp(VK.RCONTROL); break;
+                case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
+            }
+
+            return false;
+        }
+
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
-        if (key == Settings.ComposeKey.Value)
+        if (is_keydown && key == Settings.ComposeKey.Value
+             && !m_compose_down && CurrentState == State.Idle)
         {
-            // If we receive a keyup for the compose key while in emulation
-            // mode, we’re done. Send a KeyUp event and exit emulation mode.
-            if (is_keyup && CurrentState == State.Combination)
+            Log.Debug("Now Composing");
+            CurrentState = State.Sequence;
+            m_compose_down = true;
+
+            // Lauch the sequence reset expiration thread
+            // FIXME: do we need to launch a new thread each time the
+            // compose key is pressed? Let's have a dormant thread instead
+            if (Settings.ResetDelay.Value > 0)
             {
-                Log.Debug("Combination Off");
-                CurrentState = State.Idle;
-                m_compose_down = false;
-
-                // If relevant, send an additional KeyUp for the opposite
-                // key; experience indicates that it helps unstick some
-                // applications such as mintty.exe.
-                switch (Settings.ComposeKey.Value.VirtualKey)
+                new Thread(() =>
                 {
-                    case VK.LMENU: SendKeyUp(VK.RMENU); break;
-                    case VK.RMENU: SendKeyUp(VK.LMENU); break;
-                    case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
-                    case VK.RSHIFT: SendKeyUp(VK.LSHIFT); break;
-                    case VK.LCONTROL: SendKeyUp(VK.RCONTROL); break;
-                    case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
-                }
-
-                return false;
+                    while (CurrentState == State.Sequence &&
+                            DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
+                        Thread.Sleep(50);
+                    ResetSequence();
+                }).Start();
             }
 
-            if (is_keydown && !m_compose_down)
-            {
-                // FIXME: we don't want compose + compose to disable composing,
-                // since there are compose sequences that use Multi_key.
-                switch (CurrentState)
-                {
-                    case State.Sequence:
-                        // FIXME: also, if a sequence was in progress, print it!
-                        CurrentState = State.Idle;
-                        m_sequence.Clear();
-                        break;
-                    case State.Idle:
-                        CurrentState = State.Sequence;
-                        // Lauch the sequence reset expiration thread
-                        // FIXME: do we need to launch a new thread each time the
-                        // compose key is pressed? Let's have a dormant thread instead
-                        if (Settings.ResetDelay.Value > 0)
-                        {
-                            new Thread(() =>
-                            {
-                                while (CurrentState == State.Sequence &&
-                                        DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
-                                    Thread.Sleep(50);
-                                ResetSequence();
-                            }).Start();
-                        }
-                        break;
-                }
+            return true;
+        }
 
-                Log.Debug("{0} Composing", IsComposing() ? "Now" : "No Longer");
-            }
-
-            m_compose_down = is_keydown;
-
+        // Escape cancels the current sequence
+        // FIXME: also, if a sequence was in progress, print it!
+        if (is_keydown && key.VirtualKey == VK.ESCAPE
+             && CurrentState == State.Sequence)
+        {
+            Log.Debug("No Longer Composing");
+            ResetSequence();
             return true;
         }
 
