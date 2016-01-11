@@ -80,10 +80,11 @@ public class Key
     private static readonly Dictionary<VK, string> m_key_labels
         = new Dictionary<VK, string>
     {
-        { VK.UP,    "▲" },
-        { VK.DOWN,  "▼" },
-        { VK.LEFT,  "◀" },
-        { VK.RIGHT, "▶" },
+        { VK.COMPOSE, "♦" },
+        { VK.UP,      "▲" },
+        { VK.DOWN,    "▼" },
+        { VK.LEFT,    "◀" },
+        { VK.RIGHT,   "▶" },
     };
 
     /// <summary>
@@ -129,10 +130,11 @@ public class Key
         { "asciitilde",   new Key("~") },  // 0x7e
 
         // Non-printing keys
-        { "Up",     new Key(VK.UP) },
-        { "Down",   new Key(VK.DOWN) },
-        { "Left",   new Key(VK.LEFT) },
-        { "Right",  new Key(VK.RIGHT) },
+        { "Multi_key", new Key(VK.COMPOSE) },
+        { "Up",        new Key(VK.UP) },
+        { "Down",      new Key(VK.DOWN) },
+        { "Left",      new Key(VK.LEFT) },
+        { "Right",     new Key(VK.RIGHT) },
     };
 
     /// <summary>

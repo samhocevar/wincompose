@@ -194,8 +194,7 @@ static class Composer
             return false;
         }
 
-        // FIXME: we don’t properly support compose keys that also normally
-        // print stuff, such as `.
+        // If this is the compose key and we’re idle, enter Sequence mode
         if (is_keydown && key == Settings.ComposeKey.Value
              && !m_compose_down && CurrentState == State.Idle)
         {
@@ -221,10 +220,10 @@ static class Composer
         }
 
         // Escape cancels the current sequence
-        // FIXME: also, if a sequence was in progress, print it!
         if (is_keydown && key.VirtualKey == VK.ESCAPE
              && CurrentState == State.Sequence)
         {
+            // FIXME: if a sequence was in progress, maybe print it!
             Log.Debug("No Longer Composing");
             ResetSequence();
             return true;
@@ -281,6 +280,12 @@ static class Composer
             CurrentState = State.Combination;
             return false;
         }
+
+        // If this is the compose key again, use our custom virtual key
+        // FIXME: we don’t properly support compose keys that also normally
+        // print stuff, such as `.
+        if (key == Settings.ComposeKey.Value)
+            key = new Key(VK.COMPOSE);
 
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())

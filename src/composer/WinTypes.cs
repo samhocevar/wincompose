@@ -53,10 +53,13 @@ public enum VK : int
     MBUTTON    = 0x04,
     XBUTTON1   = 0x05,
     XBUTTON2   = 0x06,
+    /* 0x07: undefined */
     BACK       = 0x08,
     TAB        = 0x09,
+    /* 0x0a … 0x0b: reserved */
     CLEAR      = 0x0c,
     RETURN     = 0x0d,
+    /* 0x0e … 0x0f: undefined */
     SHIFT      = 0x10,
     CONTROL    = 0x11,
     MENU       = 0x12,
@@ -65,10 +68,12 @@ public enum VK : int
     KANA       = 0x15,
     HANGUEL    = 0x15,
     HANGUL     = 0x15,
+    /* 0x16: undefined */
     JUNJA      = 0x17,
     FINAL      = 0x18,
     HANJA      = 0x19,
     KANJI      = 0x19,
+    /* 0x1a: undefined */
     ESCAPE     = 0x1b,
     CONVERT    = 0x1c,
     NONCONVERT = 0x1d,
@@ -95,6 +100,7 @@ public enum VK : int
     LWIN       = 0x5b,
     RWIN       = 0x5c,
     APPS       = 0x5d,
+    /* 0x5e: reserved */
     SLEEP      = 0x5f,
     /* 0x60 … 0x69: numpad 0—9 */
     MULTIPLY   = 0x6a,
@@ -104,6 +110,7 @@ public enum VK : int
     DECIMAL    = 0x6e,
     DIVIDE     = 0x6f,
     /* 0x70 … 0x87: F1—F24 */
+    /* 0x88 … 0x8f: unassigned */
     NUMLOCK    = 0x90,
     SCROLL     = 0x91,
     /* 0x92 … 0x96: OEM specific */
@@ -114,6 +121,7 @@ public enum VK : int
     LMENU      = 0xa4,
     RMENU      = 0xa5,
     /* 0xa6 … 0xb7: browser, volume, media, launch */
+    /* 0xb8 … 0xb9: reserved */
     OEM_1      = 0xba,
     OEM_PLUS   = 0xbb,
     OEM_COMMA  = 0xbc,
@@ -121,17 +129,21 @@ public enum VK : int
     OEM_PERIOD = 0xbe,
     OEM_2      = 0xbf,
     OEM_3      = 0xc0,
+    /* 0xc1 … 0xd7: reserved */
+    /* 0xd8 … 0xda: unassigned */
     OEM_4      = 0xdb,
     OEM_5      = 0xdc,
     OEM_6      = 0xdd,
     OEM_7      = 0xde,
     OEM_8      = 0xdf,
+    /* 0xe0: reserved */
     /* 0xe1: OEM specific */
     OEM_102    = 0xe2,
-    /* 0xe3, 0xe4: OEM specific */
+    /* 0xe3 … 0xe4: OEM specific */
     PROCESSKEY = 0xe5,
     /* 0xe6: OEM specific */
     PACKET     = 0xe7,
+    /* 0xe8: unassigned */
     /* 0xe9 … 0xf5: OEM specific */
     ATTN       = 0xf6,
     CRSEL      = 0xf7,
@@ -142,6 +154,9 @@ public enum VK : int
     NONAME     = 0xfc,
     PA1        = 0xfd,
     OEM_CLEAR  = 0xfe,
+
+    /* This is for internal WinCompose use only */
+    COMPOSE    = 0x100,
 };
 
 internal enum SC : uint
