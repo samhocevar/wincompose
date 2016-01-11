@@ -83,17 +83,27 @@ static class Updater
     private static List<int> SplitVersionString(string str)
     {
         List<int> ret = new List<int>();
+        int tmp;
 
+        // If we fail to parse a chunk, use 1 instead of 0 so that version
+        // 1.2.3.foo is still greater than 1.2.3.0.
         foreach (var e in str.Replace("beta", ".").Split(new char[] { '.' }))
-            ret.Add(int.Parse(e));
+            ret.Add(int.TryParse(e, out tmp) ? tmp : 1);
 
-        // If fewer than 4 elements, add zeroes, except for the last one
-        // which needs to be higher than any beta version
+        // If fewer than 4 elements, add zeroes; if more than 4, remove them
         while (ret.Count < 4)
-            ret.Add(ret.Count == 3 ? int.MaxValue : 0);
+            ret.Add(0);
 
         while (ret.Count > 4)
             ret.RemoveAt(ret.Count - 1);
+
+        // Handle beta versions in the form 1.2.3beta456 that need to be
+        // smaller than 1.2.3.0 but greater than any realistic 1.2.2.x.
+        if (str.Contains("beta"))
+        {
+            ret[2] -= 1;
+            ret[3] += 100000000;
+        }
 
         return ret;
     }
