@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-08 05:44+0000\n"
+"PO-Revision-Date: 2016-01-11 23:38+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian "
 "<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
@@ -146,7 +146,7 @@ msgstr "Disabìlita"
 
 #: i18n/Text.resx:213 ID:Restart
 msgid "Restart"
-msgstr "Torra a aviare"
+msgstr "Torra a allùere"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:216 ID:Obsolete027
