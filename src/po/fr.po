@@ -325,9 +325,10 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"Si la touche Verrouillage de Majuscule (Caps Lock) est utilisée dans une "
-"composition, le comportement d'origine deviendra inactif. Cette fonction "
-"permet d'activer Caps Lock en pressant simultanément les deux touches Shift."
+"Si la touche Verrouillage de Majuscule (Caps Lock) est utilisée comme touche "
+"compose, le comportement d'origine de Caps Lock ne sera plus disponible. "
+"Cette fonction permet d'activer Caps Lock en pressant simultanément les deux "
+"touches Shift."
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
