@@ -219,6 +219,15 @@ static class Composer
             return true;
         }
 
+        // If the compose key is down and this is the compose key again, either
+        // it’s a key up, or we’re in autorepeat mode and we need to ignore this
+        // key event.
+        if (key == Settings.ComposeKey.Value && m_compose_down)
+        {
+            m_compose_down = is_keydown;
+            return true;
+        }
+
         // Escape cancels the current sequence
         if (is_keydown && key.VirtualKey == VK.ESCAPE
              && CurrentState == State.Sequence)
