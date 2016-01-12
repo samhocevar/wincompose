@@ -176,7 +176,7 @@ static class Composer
         {
             Log.Debug("Combination Off");
             CurrentState = State.Idle;
-            m_compose_down = false;
+            m_compose_counter = 0;
 
             // If relevant, send an additional KeyUp for the opposite
             // key; experience indicates that it helps unstick some
@@ -196,11 +196,11 @@ static class Composer
 
         // If this is the compose key and we’re idle, enter Sequence mode
         if (is_keydown && key == Settings.ComposeKey.Value
-             && !m_compose_down && CurrentState == State.Idle)
+             && m_compose_counter == 0 && CurrentState == State.Idle)
         {
             Log.Debug("Now Composing");
             CurrentState = State.Sequence;
-            m_compose_down = true;
+            ++m_compose_counter;
 
             // Lauch the sequence reset expiration thread
             // FIXME: do we need to launch a new thread each time the
@@ -220,11 +220,12 @@ static class Composer
         }
 
         // If the compose key is down and this is the compose key again, either
-        // it’s a key up, or we’re in autorepeat mode and we need to ignore this
-        // key event.
-        if (key == Settings.ComposeKey.Value && m_compose_down)
+        // it’s a KeyUp event, or we’re in autorepeat mode and in both cases we
+        // need to eat this key event.
+        if (key == Settings.ComposeKey.Value && (m_compose_counter & 1) != 0)
         {
-            m_compose_down = is_keydown;
+            if (!is_keydown)
+                ++m_compose_counter;
             return true;
         }
 
@@ -268,6 +269,7 @@ static class Composer
 
             // If this was a dead key, it will be completely ignored. But
             // it’s okay since we stored it.
+            Log.Debug("Forwarding Key to System");
             return false;
         }
 
@@ -279,7 +281,7 @@ static class Composer
         // Never do this if the event is KeyUp.
         // Never do this if we already started a sequence
         // Never do this if the key is a modifier key such as shift or alt.
-        if (m_compose_down && is_keydown
+        if (m_compose_counter == 1 && is_keydown
              && m_sequence.Count == 0 && !key.IsModifier()
              && (Settings.KeepOriginalKey.Value || !key.IsUsable()))
         {
@@ -294,11 +296,15 @@ static class Composer
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
         if (key == Settings.ComposeKey.Value)
+        {
+            ++m_compose_counter;
             key = new Key(VK.COMPOSE);
+        }
 
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())
         {
+            Log.Debug("Forwarding Key to System");
             return false;
         }
 
@@ -559,7 +565,7 @@ static class Composer
     private static void ResetSequence()
     {
         CurrentState = State.Idle;
-        m_compose_down = false;
+        m_compose_counter = 0;
         m_sequence.Clear();
     }
 
@@ -763,7 +769,10 @@ static class Composer
     private static bool m_layout_has_altgr = false;
     private static IntPtr m_current_layout = IntPtr.Zero;
 
-    private static bool m_compose_down = false;
+    /// <summary>
+    /// How many times we pressed and released compose.
+    /// </summary>
+    private static int m_compose_counter = 0;
 
     public enum State
     {
