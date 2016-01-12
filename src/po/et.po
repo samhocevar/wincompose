@@ -209,8 +209,8 @@ msgid ""
 "Compose U 1 A 3 F"
 msgstr ""
 "Luba kõigi Unicode märkide sisestamine; seda isegi siis, kui "
-"kombineerimisjada on määramata. Näiteks genereerib jada 'Kombineeri U 1 A 3 "
-"F' märgi U+1A3F"
+"kombineerimisjada on määramata. Näiteks genereerib jada ’Kombineeri U 1 A 3 "
+"F’ märgi U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
@@ -295,7 +295,7 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
-"See ütleb WinCompose'ile, et ta säilitaks nii palju kui võimalik klahvi "
+"See ütleb WinCompose’ile, et ta säilitaks nii palju kui võimalik klahvi "
 "algse käitumise. Näiteks jätkab Alt+Tab oma tööd isegi siis, kui Alt on "
 "valitud kombineerimisklahviks."
 

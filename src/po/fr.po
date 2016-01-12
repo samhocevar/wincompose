@@ -239,17 +239,17 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"Si la séquence saisie n'existe pas, ignorer tous les caractères tapés. Le "
-"comportement par défaut est d'afficher les caractères comme si la touche de "
-"composition n'avait pas été utilisée."
+"Si la séquence saisie n’existe pas, ignorer tous les caractères tapés. Le "
+"comportement par défaut est d’afficher les caractères comme si la touche de "
+"composition n’avait pas été utilisée."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr "Émettre un bip"
+msgstr "Émettre un son"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "Si la séquence saisie n'existe pas, émettre un son."
+msgstr "Si la séquence saisie n’existe pas, émettre un son."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -354,7 +354,7 @@ msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
-"Quand le Verrouillage de Majuscule (Caps Lock) est activé, la saisie d'une "
+"Quand le Verrouillage de Majuscule (Caps Lock) est activé, la saisie d’une "
 "lettre accentuée telle que « é » produira toujours la majuscule "
 "correspondante, pour cet exemple « É »."
 

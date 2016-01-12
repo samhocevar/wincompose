@@ -226,7 +226,7 @@ msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
-"Si sa filera insertada no esistit, ma nde b'est una chi cambiat petzi pro "
+"Si sa filera insertada no esistit, ma nde b’est una chi cambiat petzi pro "
 "sas lìteras maiùscolas o minùscolas, currege·la automaticamente."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
@@ -297,7 +297,7 @@ msgid ""
 "used as the compose key."
 msgstr ""
 "Custu at a nàrrere a WinCompose de chircare cantu podet de otènnere su "
-"cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s'incurtzadura "
+"cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s’incurtzadura "
 "Alt-Tab at a sighire a funtzionare fintzas si Alt est impreada comente tecla "
 "compose."
 
