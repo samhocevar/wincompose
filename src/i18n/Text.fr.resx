@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Touche compose :</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Sélectionnez la touche qui sera la touche Compose.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Délai :</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Saisie Unicode avancée</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Autoriser la saisie Unicode pour tous les caractères, même pour ceux sans définition de séquence de composition. Par exemple, la séquence suivante donnera le caractère U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Lors de séquences non valides</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Réessayer sans tenir compte de la casse lors de séquences non valides</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Si la séquence saisie n’existe pas, mais qu’il y en a une qui diffère uniquement par la casse, la corriger automatiquement.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Ignorer tous les caractères saisis</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Si la séquence saisie n’existe pas, ignorer tous les caractères tapés. Le comportement par défaut est d’afficher les caractères comme si la touche de composition n’avait pas été utilisée.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Émettre un son</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Si la séquence saisie n’existe pas, émettre un son.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Langue de l’interface :</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Sélectionner la langue que WinCompose utilise pour l’interface. Par défaut, la langue du système d’exploitation est utilisée.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
@@ -241,16 +274,34 @@
     <value>Appliquer</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>La touche compose conserve aussi son comportement original</value>
+    <value>Conserver le comportement initial de la touche compose</value>
+  </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Configure WinCompose pour essayer de conserver au mieux le comportement d’origine de la touche. Par exemple, le raccourci Alt-Tab continuera de fonctionner même si Alt est défini comme touche compose.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insérer des espaces invisibles dans les applications Office</value>
   </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Les applications Microsoft Office peuvent quelquefois changer la police de caractères à la volée lorsque des caractères Unicode sont tapés. Cette fonctionnalité insère un caractère invisible après le caractère Unicode afin de pallier le problème.</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Émuler Verr Maj par appui simultané sur les deux touches Shift</value>
+    <value>Émuler Ver Maj par appui simultané sur les deux touches Maj</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Si la touche Verrouillage de Majuscule (Caps Lock) est utilisée comme touche compose, le comportement d’origine de Caps Lock ne sera plus disponible. Cette fonction permet d’activer Caps Lock en pressant simultanément les deux touches Shift.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>La touche Shift désactive Verr Maj</value>
+    <value>La touche Maj désactive Ver Maj</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Si la touche Verrouillage de Majuscule (Caps Lock) est utilisée comme touche compose, le comportement d’origine de Caps Lock ne sera plus disponible. Cette fonction permet d’activer Caps Lock en pressant simultanément les deux touches Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Ver Maj met toujours les lettres en majuscule</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Quand le Verrouillage de Majuscule (Caps Lock) est activé, la saisie d’une lettre accentuée telle que « é » produira toujours la majuscule correspondante, pour cet exemple « É ».</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Catégories</value>
@@ -265,10 +316,10 @@
     <value>Réglages…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} sur {0} — {1} séquences</value>
+    <value>WinCompose v{2} sur {0} ({1} séquences)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
-    <value>Comportement</value>
+    <value>Comportement général</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Séquences — WinCompose</value>
@@ -286,13 +337,16 @@
     <value>Tester la frappe :</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
-    <value>Réglages divers</value>
+    <value>Astuces</value>
   </data>
   <data name="Milliseconds" xml:space="preserve">
     <value>(millisecondes)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>À propos</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Télécharger WinCompose {0}</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>À propos de WinCompose</value>
@@ -314,5 +368,11 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Signaler un bug</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Des mises à jour sont disponibles.</value>
   </data>
 </root>

@@ -193,7 +193,7 @@
     <value>Disabìlita</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Torra a aviare</value>
+    <value>Torra a allùere</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
     <value>Istòria</value>
@@ -241,7 +241,7 @@
     <value>Torra a non distìnghere intre maiùscolas e minùscolas</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>Si sa filera insertada no esistit, ma nde b'est una chi cambiat petzi pro sas lìteras maiùscolas o minùscolas, currege·la automaticamente.</value>
+    <value>Si sa filera insertada no esistit, ma nde b’est una chi cambiat petzi pro sas lìteras maiùscolas o minùscolas, currege·la automaticamente.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
     <value>Burra totu sos caràteres iscritos</value>
@@ -277,7 +277,7 @@
     <value>Mantènne su cumportamentu originale de sa tecla compose</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Custu at a nàrrere a WinCompose de chircare cantu podet de otènnere su cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s'incurtzadura Alt-Tab at a sighire a funtzionare fintzas si Alt est impreada comente tecla compose.</value>
+    <value>Custu at a nàrrere a WinCompose de chircare cantu podet de otènnere su cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s’incurtzadura Alt-Tab at a sighire a funtzionare fintzas si Alt est impreada comente tecla compose.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Inserta sos ispàtzios invisìbiles in sos aplicos Office</value>

@@ -232,7 +232,7 @@
     <value>Täpsem Unicode sisend</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Luba kõigi Unicode märkide sisestamine; seda isegi siis, kui kombineerimisjada on määramata. Näiteks genereerib jada 'Kombineeri U 1 A 3 F' märgi U+1A3F</value>
+    <value>Luba kõigi Unicode märkide sisestamine; seda isegi siis, kui kombineerimisjada on määramata. Näiteks genereerib jada ’Kombineeri U 1 A 3 F’ märgi U+1A3F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Vigaste kombinatsioonide korral</value>
@@ -277,7 +277,7 @@
     <value>Säilita algne kombineerimisklahvi käitumine</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>See ütleb WinCompose'ile, et ta säilitaks nii palju kui võimalik klahvi algse käitumise. Näiteks jätkab Alt+Tab oma tööd isegi siis, kui Alt on valitud kombineerimisklahviks.</value>
+    <value>See ütleb WinCompose’ile, et ta säilitaks nii palju kui võimalik klahvi algse käitumise. Näiteks jätkab Alt+Tab oma tööd isegi siis, kui Alt on valitud kombineerimisklahviks.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Sisesta Office programmides null-laiusega tühikud</value>
