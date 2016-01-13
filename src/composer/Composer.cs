@@ -169,6 +169,13 @@ static class Composer
             m_last_key = key;
         }
 
+        // If the special Synergy window has focus, we’re actually sending
+        // keystrokes to another computer; disable WinCompose.
+        if (m_window_is_synergy)
+        {
+            return false;
+        }
+
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
         if (is_keyup && key == Settings.ComposeKey.Value
@@ -434,31 +441,20 @@ static class Composer
     private static void SendString(string str)
     {
         List<VK> modifiers = new List<VK>();
-        bool use_gtk_hack = false, use_office_hack = false;
 
-        const int len = 256;
-        StringBuilder buf = new StringBuilder(len);
-        var hwnd = NativeMethods.GetForegroundWindow();
-        if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
-        {
-            string wclass = buf.ToString();
+        /* HACK: GTK+ applications behave differently with Unicode, and some
+         * applications such as XChat for Windows rename their own top-level
+         * window, so we parse through the names we know in order to detect
+         * a GTK+ application. */
+        bool use_gtk_hack = m_window_is_gtk;
 
-            /* HACK: GTK+ applications behave differently with Unicode, and some
-             * applications such as XChat for Windows rename their own top-level
-             * window, so we parse through the names we know in order to detect
-             * a GTK+ application. */
-            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
-                use_gtk_hack = true;
-
-            /* HACK: in MS Office, some symbol insertions change the text font
-             * without returning to the original font. To avoid this, we output
-             * a space character, then go left, insert our actual symbol, then
-             * go right and backspace. */
-            /* These are the actual window class names for Outlook and Word…
-             * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
-            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
-                use_office_hack = true && Settings.InsertZwsp.Value;
-        }
+        /* HACK: in MS Office, some symbol insertions change the text font
+         * without returning to the original font. To avoid this, we output
+         * a space character, then go left, insert our actual symbol, then
+         * go right and backspace. */
+        /* These are the actual window class names for Outlook and Word…
+         * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
+        bool use_office_hack = m_window_is_office && Settings.InsertZwsp.Value;
 
         /* Clear keyboard modifiers if we need one of our custom hacks */
         if (use_gtk_hack || use_office_hack)
@@ -678,6 +674,27 @@ static class Composer
         uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
         IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
 
+        m_window_is_gtk = false;
+        m_window_is_office = false;
+        m_window_is_synergy = false;
+
+        const int len = 256;
+        StringBuilder buf = new StringBuilder(len);
+        if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
+        {
+            string wclass = buf.ToString();
+            Log.Debug("Active window: {0}", wclass);
+
+            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
+                m_window_is_gtk = true;
+
+            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
+                m_window_is_office = true;
+
+            if (wclass == "SynergyDesk")
+                m_window_is_synergy = true;
+        }
+
         if (active_layout != m_current_layout)
         {
             m_current_layout = active_layout;
@@ -768,6 +785,9 @@ static class Composer
     private static Dictionary<string, int> m_possible_dead_keys;
     private static bool m_layout_has_altgr = false;
     private static IntPtr m_current_layout = IntPtr.Zero;
+    private static bool m_window_is_gtk = false;
+    private static bool m_window_is_office = false;
+    private static bool m_window_is_synergy = false;
 
     /// <summary>
     /// How many times we pressed and released compose.
