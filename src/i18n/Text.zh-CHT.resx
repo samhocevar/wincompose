@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>前導鍵:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>選擇作為前導鍵的鍵。</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>延遲:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>進階萬國碼輸入</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>啟用所有字元的萬國碼輸入，包括未曾定義按鍵系列的字元。例如後面系列會輸出 U+1A3F 字元: 前導鍵 U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>出現無效按鍵系列時</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>取用忽略大小寫後相合的按鍵系列</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>若輸入的按鍵系列不存在，且此系列與另一系列僅有大小寫差異，自動修正之。</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>丟棄所有輸入的字元</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>若輸入的按鍵系列不存在，丟棄所有輸入的字元。預設的運作是，像未曾按過前導鍵那樣輸出字元。</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>發出嗶聲</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>若輸入的按鍵系列不存在，發出系統的嗶聲。</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>介面語言:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>選擇 WinCompose 介面的語言。預設使用作業系統的語言。</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>關閉</value>
@@ -243,14 +276,32 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>保留前導鍵的原始表現</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>這要求 WinCompose 盡最大努力維持按鍵的原始表現。例如，仍維持 Alt-Tab 快鍵，即使 Alt 被用作前導鍵。</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>查入零寬空格字元於 Office 應用程式</value>
+    <value>於 Office 應用程式插入零寬空格字元</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>微軟 Office 應用程式於輸入萬國碼(unicode)字元時，有時會自動改變文件字型。此功能於萬國碼字元後插入一不可見字元，以修正此錯誤。</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>用兩個 Shift 鍵模擬 Caps Lock</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>如果 Caps Lock 被設成前導鍵，此鍵就不會有原始表現，而是改用 Shift + Caps Lock 去啟用大寫化。</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift 鍵停用 Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>如果 Caps Lock 被設成前導鍵，此鍵就不會有原始表現，而是改用按 Shift  去關閉大寫化。</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock 鍵總是使字母大寫輸出</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>若啟用 Caps Lock，輸入像 “é” 之類的重音字母，則會輸出對應的大寫字母 “É”。</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>分類</value>
@@ -294,6 +345,9 @@
   <data name="About" xml:space="preserve">
     <value>關於</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>下載 WinCompose {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>關於 — WinCompose</value>
   </data>
@@ -314,5 +368,11 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>提報程式錯誤</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>說明</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>有更新可用。</value>
   </data>
 </root>

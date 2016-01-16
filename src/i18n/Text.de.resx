@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Compose-Taste:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Wählen Sie die Taste, die als Compose-Taste dienen soll.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Verzögerung:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Erweiterte Unicode-Eingabe</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Unicode-Eingabe für beliebige Zeichen aktivieren, selbst wenn keine Compose-Tastenfolge definiert ist. Beispielsweise ergibt die Tastenfolge „Compose U 1 A 3 F“ das Zeichen U+1A3F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Bei ungültigen Sequenzen</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Groß- und Kleinschreibung ignorieren</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Wenn die eingegebene Sequenz nicht bekannt ist, es aber eine andere gibt, die sich nur in Groß- und Kleinschreibung unterscheidet, automatisch die andere nehmen.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Alle eingegebenen Zeichen verwerfen</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Wenn die eingegebene Sequenz nicht bekannt ist, alle Zeichen verwerfen, die eingegeben wurden. Das Standardverhalten ist, die Zeichen so auszugeben, als wäre die Compose-Taste nicht gedrückt worden.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Einen Piepton abspielen</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Wenn die eingegebene Sequenz nicht bekannt ist, einen Systemklang abspielen.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Sprache der Benutzeroberfläche:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Wählen Sie die Sprache für die WinCompose-Benutzeroberfläche aus. Als Standardsprache wird die Sprache des Betriebssystems benutzt.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Schließen</value>
@@ -241,16 +274,34 @@
     <value>Übernehmen</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Originales Compose-Tasten benehmen beibehalten</value>
+    <value>Ursprüngliches Verhalten der Compose-Taste beibehalten</value>
+  </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>WinCompose versucht, das ursprüngliche Verhalten der Compose-Taste soweit wie möglich beizubehalten. Zum Beispiel funktioniert die Tastenkombination Alt+Tab immer noch, selbst wenn Alt als Compose-Taste benutzt wird.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Null-Breite Leerzeile in Office-Apps einfügen</value>
+    <value>Null-Breite-Leerzeichen in Office-Apps einfügen</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>In Microsoft-Office-Anwendungen ändert sich manchmal die Schriftart, wenn bestimmte Unicode-Zeichen eingegeben werden. Diese Einstellung fügt ein unsichtbares Zeichen nach dem Unicode-Zeichen ein, um diesen Fehler zu umgehen.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Feststelltaste aktivieren mit beiden Umschalt-Tasten</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Wenn die Feststelltaste als Compose-Taste benutzt wird, wird das ursprüngliche Verhalten dieser Taste unmöglich. Mit dieser Einstellung können Sie beide Umschalttasten drücken, um die Feststelltaste zu simulieren.</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Umschalttaste deaktiviert Feststelltaste</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Wenn die Feststelltaste als Compose-Taste benutzt wird, wird das ursprüngliche Verhalten dieser Taste unmöglich. Mit dieser Einstellung können Sie den Feststellmodus ausschalten, indem Sie die Umschalttaste drücken.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Feststelltaste erzeugt immer Großbuchstaben</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Wenn der Feststellmodus aktiv ist und Sie einen Buchstaben mit Akzent eingeben (zum Beispiel „é“), wird daraus der entsprechende Großbuchstabe (in diesem Fall „É“).</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategorien</value>
@@ -259,7 +310,7 @@
     <value>In ausgewählten Kategorien</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Optionen — WinCompose</value>
+    <value>Optionen – WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Optionen…</value>
@@ -271,19 +322,19 @@
     <value>Allgemeines Verhalten</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Sequenzen — WinCompose</value>
+    <value>Sequenzen – WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
     <value>Benutzerdefinierte Makros</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
-    <value>WinCompose ist ausgeschaltet</value>
+    <value>WinCompose ist deaktiviert</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Einfügen</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Tippen Testen:</value>
+    <value>Testfeld zum Tippen:</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Diverse Einstellungen</value>
@@ -293,6 +344,9 @@
   </data>
   <data name="About" xml:space="preserve">
     <value>Über</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>WinCompose {0} herunterladen</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Über WinCompose</value>
@@ -310,9 +364,15 @@
     <value>Lizenz</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose muss neugestartet werden damit alle veränderungen aktiv werden.</value>
+    <value>WinCompose muss neugestartet werden, damit alle Änderungen aktiv werden.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
-    <value>Melde einen Fehler</value>
+    <value>Fehler melden</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Eine neue Version ist verfügbar.</value>
   </data>
 </root>
