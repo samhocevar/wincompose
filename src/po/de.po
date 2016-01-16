@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-05-18 20:32+0200\n"
-"Last-Translator: Tom “TomRBify” Beelen <beelen.tom@gmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
-"de/>\n"
+"PO-Revision-Date: 2016-01-16 12:59+0000\n"
+"Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.3-dev\n"
+"X-Generator: Weblate 2.5-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -191,7 +191,7 @@ msgstr "Compose-Taste:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Wählen Sie die Taste aus, die als Compose-Taste funktionieren soll."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "Verzögerung:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Fortgeschrittene Unicode-Eingabe"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -208,27 +208,31 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Unicode-Eingabe für beliebige Zeichen aktivieren, selbst wenn keine Compose-"
+"Tastenfolge definiert ist. Beispielsweise ergibt die Tastenfolge Compose U 1 "
+"A 3 F das Zeichen U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Signalton bei ungültigen Sequenzen"
+msgstr "Bei ungültigen Sequenzen"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "Groß- und Kleinschreibung im Zweifel ignorieren"
+msgstr "Groß- und Kleinschreibung ignorieren"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Wenn die eingegebene Sequenz nicht bekannt ist, es aber eine andere gibt, "
+"die sich nur in Groß- und Kleinschreibung unterscheidet, automatisch die "
+"andere nehmen."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Alle eingegebenen Zeichen verwerfen"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -236,14 +240,18 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Wenn die eingegebene Sequenz nicht bekannt ist, alle Zeichen verwerfen, die "
+"eingegeben wurden. Das Standardverhalten ist, die Zeichen so auszugeben, als "
+"wäre die Compose-Taste nicht gedrückt worden."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Einen Piepton abspielen"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr ""
+"Wenn die eingegebene Sequenz nicht existiert, einen Systemklang abspielen."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -254,6 +262,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Wählen Sie die Sprache für die WinCompose-Oberfläche aus. Als "
+"Standardsprache wird die Sprache des Betriebssystems benutzt."
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -280,7 +290,7 @@ msgstr "Übernehmen"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:302 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Originales Compose-Tasten benehmen beibehalten"
+msgstr "Ursprüngliches Verhalten der Compose-Taste beibehalten"
 
 #: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -288,6 +298,9 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"WinCompose versucht, das ursprüngliche Verhalten der Compose-Taste soweit "
+"wie möglich beizubehalten. Zum Beispiel funktioniert die Tastenkombination "
+"Alt+Tab immer noch, selbst wenn Alt als Compose-Taste benutzt wird."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -299,6 +312,10 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"In Microsoft-Office-Anwendungen ändert sich manchmal die Schriftart, wenn "
+"bestimmte Unicode-Zeichen eingegeben werden. Diese Einstellung fügt ein "
+"unsichtbares Zeichen nach dem Unicode-Zeichen ein, um diesen Fehler zu "
+"umgehen."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -310,6 +327,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Wenn die Feststelltaste als Compose-Taste benutzt wird, wird das "
+"ursprüngliche Verhalten dieser Taste unmöglich. Mit dieser Einstellung "
+"können Sie beide Umschalttasten drücken, um die Feststelltaste zu simulieren."
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -321,16 +341,23 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Wenn die Feststelltaste als Compose-Taste benutzt wird, wird das "
+"ursprüngliche Verhalten dieser Taste unmöglich. Mit dieser Einstellung "
+"können Sie den Feststellmodus ausschalten, indem Sie die Umschalttaste "
+"drücken."
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Feststelltaste erzeugt immer Großbuchstaben"
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Wenn der Feststellmodus aktiv ist und Sie einen Buchstaben mit Akzent "
+"eingeben (zum Beispiel „é“), wird daraus der entsprechende Großbuchstabe (in "
+"diesem Fall „É“)."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:333 ID:Categories
@@ -399,9 +426,8 @@ msgstr "Über"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:384 ID:Download
-#, fuzzy
 msgid "Download WinCompose {0}"
-msgstr "Über WinCompose"
+msgstr "WinCompose {0} herunterladen"
 
 #. Window title of the About box
 #: i18n/Text.resx:388 ID:AboutBoxTitle
@@ -442,12 +468,12 @@ msgstr "Melde einen Fehler"
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:416 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Hilfe"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:420 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Eine neue Version ist verfügbar."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
