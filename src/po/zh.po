@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-10-02 14:12+0200\n"
+"PO-Revision-Date: 2016-01-16 04:03+0000\n"
 "Last-Translator: Wei-cheng Kung <wck317@pchome.com.tw>\n"
-"Language-Team: Chinese <https://hosted.weblate.org/projects/wincompose/"
-"master/zh/>\n"
+"Language-Team: Chinese "
+"<https://hosted.weblate.org/projects/wincompose/master/zh/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,7 @@ msgstr "前導鍵:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "選擇作為前導鍵的鍵。"
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,50 +200,48 @@ msgstr "延遲:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "進階萬國碼輸入"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
-msgstr ""
+msgstr "啟用所有字元的萬國碼輸入，包括未曾定義按鍵系列的字元。例如後面系列會輸出 U+1A3F 字元: 前導鍵 U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "無效按鍵系列時發出嗶聲"
+msgstr "出現無效按鍵系列時"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "無效按鍵系列時忽略大小寫"
+msgstr "取用忽略大小寫後相合的按鍵系列"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
+msgstr "若輸入的按鍵系列不存在，且此系列與另一系列僅有大小寫差異，自動修正之。"
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "丟棄所有輸入的字元"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr ""
+msgstr "若輸入的按鍵系列不存在，丟棄所有輸入的字元。預設的運作是，像未曾按過前導鍵那樣輸出字元。"
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "發出嗶聲"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "若輸入的按鍵系列不存在，發出系統的嗶聲。"
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -253,7 +251,7 @@ msgstr "介面語言:"
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
-msgstr ""
+msgstr "選擇 WinCompose 介面的語言。預設使用作業系統的語言。"
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -287,7 +285,7 @@ msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
-msgstr ""
+msgstr "這要求 WinCompose 盡最大努力維持按鍵的原始表現。例如，仍維持 Alt-Tab 快鍵，即使 Alt 被用作前導鍵。"
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -298,7 +296,7 @@ msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
-msgstr ""
+msgstr "微軟 Office 應用程式於輸入萬國碼(unicode)字元時，有時會自動改變文件字型。此功能於萬國碼字元後插入一不可見字元，以修正此錯誤。"
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -309,7 +307,7 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
+msgstr "如果 Caps Lock 被設成前導鍵，此鍵就不會有原始表現，而是改用 Shift + Caps Lock 去啟用大寫化。"
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -320,17 +318,17 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr ""
+msgstr "如果 Caps Lock 被設成前導鍵，此鍵就不會有原始表現，而是改用按 Shift  去關閉大寫化。"
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Caps Lock 鍵總是使字母大寫輸出"
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
+msgstr "若啟用 Caps Lock，輸入像 “é” 之類的重音字母，則會輸出對應的大寫字母 “É”。"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:333 ID:Categories
@@ -399,9 +397,8 @@ msgstr "關於"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:384 ID:Download
-#, fuzzy
 msgid "Download WinCompose {0}"
-msgstr "關於 — WinCompose"
+msgstr "下載 WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:388 ID:AboutBoxTitle
@@ -441,12 +438,12 @@ msgstr "提報程式錯誤"
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:416 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "說明"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:420 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "有更新可用。"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
