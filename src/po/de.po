@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-16 12:59+0000\n"
+"PO-Revision-Date: 2016-01-16 13:08+0000\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German "
 "<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
@@ -191,7 +191,7 @@ msgstr "Compose-Taste:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Wählen Sie die Taste aus, die als Compose-Taste funktionieren soll."
+msgstr "Wählen Sie die Taste, die als Compose-Taste dienen soll."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "Verzögerung:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr "Fortgeschrittene Unicode-Eingabe"
+msgstr "Erweiterte Unicode-Eingabe"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -209,8 +209,8 @@ msgid ""
 "Compose U 1 A 3 F"
 msgstr ""
 "Unicode-Eingabe für beliebige Zeichen aktivieren, selbst wenn keine Compose-"
-"Tastenfolge definiert ist. Beispielsweise ergibt die Tastenfolge Compose U 1 "
-"A 3 F das Zeichen U+1A3F"
+"Tastenfolge definiert ist. Beispielsweise ergibt die Tastenfolge „Compose U "
+"1 A 3 F“ das Zeichen U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
@@ -251,7 +251,7 @@ msgstr "Einen Piepton abspielen"
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr ""
-"Wenn die eingegebene Sequenz nicht existiert, einen Systemklang abspielen."
+"Wenn die eingegebene Sequenz nicht bekannt ist, einen Systemklang abspielen."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -262,7 +262,7 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
-"Wählen Sie die Sprache für die WinCompose-Oberfläche aus. Als "
+"Wählen Sie die Sprache für die WinCompose-Benutzeroberfläche aus. Als "
 "Standardsprache wird die Sprache des Betriebssystems benutzt."
 
 #. Close the settings window
@@ -304,7 +304,7 @@ msgstr ""
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "Null-Breite Leerzeile in Office-Apps einfügen"
+msgstr "Null-Breite-Leerzeichen in Office-Apps einfügen"
 
 #: i18n/Text.resx:311 ID:InsertZwspToolTip
 msgid ""
