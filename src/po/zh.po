@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-16 04:03+0000\n"
+"PO-Revision-Date: 2016-01-16 14:12+0000\n"
 "Last-Translator: Wei-cheng Kung <wck317@pchome.com.tw>\n"
 "Language-Team: Chinese "
 "<https://hosted.weblate.org/projects/wincompose/master/zh/>\n"
@@ -289,7 +289,7 @@ msgstr "這要求 WinCompose 盡最大努力維持按鍵的原始表現。例如
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "查入零寬空格字元於 Office 應用程式"
+msgstr "於 Office 應用程式插入零寬空格字元"
 
 #: i18n/Text.resx:311 ID:InsertZwspToolTip
 msgid ""
