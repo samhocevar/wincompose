@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-16 13:08+0000\n"
+"PO-Revision-Date: 2016-01-16 16:35+0000\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German "
 "<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
@@ -371,7 +371,7 @@ msgstr "In ausgewählten Kategorien"
 #. The title of the Options window
 #: i18n/Text.resx:340 ID:Options
 msgid "Options — WinCompose"
-msgstr "Optionen — WinCompose"
+msgstr "Optionen – WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:344 ID:ShowOptions
@@ -390,7 +390,7 @@ msgstr "Allgemeines Verhalten"
 #. The title of the Sequences window
 #: i18n/Text.resx:355 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr "Sequenzen — WinCompose"
+msgstr "Sequenzen – WinCompose"
 
 #: i18n/Text.resx:358 ID:UserMacros
 msgid "User-defined macros"
@@ -398,7 +398,7 @@ msgstr "Benutzerdefinierte Makros"
 
 #: i18n/Text.resx:361 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr "WinCompose ist ausgeschaltet"
+msgstr "WinCompose ist deaktiviert"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:365 ID:KeyInsert
@@ -408,7 +408,7 @@ msgstr "Einfügen"
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:369 ID:TestTyping
 msgid "Test Typing:"
-msgstr "Tippen Testen:"
+msgstr "Testfeld zum Tippen:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:373 ID:Tweaks
@@ -458,12 +458,12 @@ msgstr "Lizenz"
 #: i18n/Text.resx:408 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
-"WinCompose muss neugestartet werden damit alle veränderungen aktiv werden."
+"WinCompose muss neugestartet werden, damit alle Änderungen aktiv werden."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:412 ID:ReportBug
 msgid "Report a Bug"
-msgstr "Melde einen Fehler"
+msgstr "Fehler melden"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:416 ID:Help
