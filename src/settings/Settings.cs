@@ -256,7 +256,7 @@ namespace WinCompose
                         sw.WriteLine("# This causes Compose + h + w to print “Hello World!”.");
                         sw.WriteLine("<Multi_key> <h> <w> : \"Hello world!\"");
                         sw.WriteLine("");
-                        sw.WriteLine("# More rule examples can be found in C:\\Program Files\\WinCompose\\res");
+                        sw.WriteLine("# More rule examples can be found in " + GetExeDir() + "\\res");
                         sw.WriteLine("");
                     }
                 }
