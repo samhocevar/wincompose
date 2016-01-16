@@ -117,7 +117,10 @@ static class Composer
     {
         bool is_keydown = (ev == WM.KEYDOWN || ev == WM.SYSKEYDOWN);
         bool is_keyup = !is_keydown;
+        bool add_to_sequence = is_keydown;
         bool is_capslock_hack = false;
+        bool compose_is_altgr = m_possible_altgr_keys.Count > 0
+                       && Settings.ComposeKey.Value.VirtualKey == VK.RMENU;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) != 0;
         bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
@@ -191,7 +194,10 @@ static class Composer
             switch (Settings.ComposeKey.Value.VirtualKey)
             {
                 case VK.LMENU: SendKeyUp(VK.RMENU); break;
-                case VK.RMENU: SendKeyUp(VK.LMENU); break;
+                case VK.RMENU: SendKeyUp(VK.LMENU);
+                               if (compose_is_altgr)
+                                   SendKeyUp(VK.LCONTROL);
+                               break;
                 case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
                 case VK.RSHIFT: SendKeyUp(VK.LSHIFT); break;
                 case VK.LCONTROL: SendKeyUp(VK.RCONTROL); break;
@@ -226,13 +232,11 @@ static class Composer
             return true;
         }
 
-        // If the compose key is down and this is the compose key again, either
-        // it’s a KeyUp event, or we’re in autorepeat mode and in both cases we
-        // need to eat this key event.
-        if (key == Settings.ComposeKey.Value && (m_compose_counter & 1) != 0)
+        // If this is a compose key KeyDown event and it’s already down, or it’s
+        // a KeyUp and it’s already up, eat this event without forwarding it.
+        if (key == Settings.ComposeKey.Value
+             && is_keydown == ((m_compose_counter & 1) != 0))
         {
-            if (!is_keydown)
-                ++m_compose_counter;
             return true;
         }
 
@@ -283,20 +287,38 @@ static class Composer
         // If the compose key is down and the user pressed a new key, maybe
         // they want to do a key combination instead of composing, such as
         // Alt+Tab or Windows+Up. So we abort composing and send the KeyDown
-        // event for the Compose key that we previously discarded.
+        // event for the Compose key that we previously discarded. The same
+        // goes for characters that need AltGr when AltGr is the compose key.
         //
         // Never do this if the event is KeyUp.
         // Never do this if we already started a sequence
         // Never do this if the key is a modifier key such as shift or alt.
         if (m_compose_counter == 1 && is_keydown
-             && m_sequence.Count == 0 && !key.IsModifier()
-             && (Settings.KeepOriginalKey.Value || !key.IsUsable()))
+             && m_sequence.Count == 0 && !key.IsModifier())
         {
-            Log.Debug("Combination On");
-            ResetSequence();
-            SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
-            CurrentState = State.Combination;
-            return false;
+            bool keep_original = Settings.KeepOriginalKey.Value;
+            bool key_unusable = !key.IsUsable();
+            bool altgr_combination = compose_is_altgr &&
+                        m_possible_altgr_keys.ContainsKey(key.ToString());
+
+            if (keep_original || key_unusable || altgr_combination)
+            {
+                Log.Debug("Combination On");
+                ResetSequence();
+                if (compose_is_altgr)
+                {
+                    // It’s necessary to use KEYEVENTF_EXTENDEDKEY otherwise the system
+                    // does not understand that we’re sending AltGr.
+                    SendKeyDown(VK.LCONTROL);
+                    SendKeyDown(VK.RMENU, KEYEVENTF.EXTENDEDKEY);
+                }
+                else
+                {
+                    SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
+                }
+                CurrentState = State.Combination;
+                return false;
+            }
         }
 
         // If this is the compose key again, use our custom virtual key
@@ -306,6 +328,26 @@ static class Composer
         {
             ++m_compose_counter;
             key = new Key(VK.COMPOSE);
+
+            // If the compose key is AltGr, we only add it to the sequence
+            // if it’s a KeyUp event, otherwise we may be adding Multi_key to the
+            // sequence when the user actually wants to enter an AltGr char.
+            if (compose_is_altgr && m_compose_counter > 2)
+                add_to_sequence = is_keyup;
+        }
+
+        // If the compose key is AltGr and it’s down, check whether the current
+        // key needs translating.
+        if (compose_is_altgr && (m_compose_counter & 1) != 0)
+        {
+            string altgr_variant;
+            if (m_possible_altgr_keys.TryGetValue(key.ToString(), out altgr_variant))
+            {
+                key = new Key(altgr_variant);
+                // Do as if we already released Compose, otherwise the next KeyUp
+                // event will cause VK.COMPOSE to be added to the sequence…
+                ++m_compose_counter;
+            }
         }
 
         // If the key can't be used in a sequence, just ignore it.
@@ -317,7 +359,7 @@ static class Composer
 
         // If we reached this point, everything else ignored this key, so it
         // is a key we must add to the current sequence.
-        if (is_keydown)
+        if (add_to_sequence)
         {
             Log.Debug("Adding To Sequence: {0}", key.FriendlyName);
             return AddToSequence(key);
@@ -565,20 +607,20 @@ static class Composer
         m_sequence.Clear();
     }
 
-    private static void SendKeyDown(VK vk)
+    private static void SendKeyDown(VK vk, KEYEVENTF flags = 0)
     {
-        NativeMethods.keybd_event(vk, 0, 0, 0);
+        NativeMethods.keybd_event(vk, 0, flags, 0);
     }
 
-    private static void SendKeyUp(VK vk)
+    private static void SendKeyUp(VK vk, KEYEVENTF flags = 0)
     {
-        NativeMethods.keybd_event(vk, 0, KEYEVENTF.KEYUP, 0);
+        NativeMethods.keybd_event(vk, 0, KEYEVENTF.KEYUP | flags, 0);
     }
 
-    private static void SendKeyPress(VK vk)
+    private static void SendKeyPress(VK vk, KEYEVENTF flags = 0)
     {
-        SendKeyDown(vk);
-        SendKeyUp(vk);
+        SendKeyDown(vk, flags);
+        SendKeyUp(vk, flags);
     }
 
     /// <summary>
@@ -588,12 +630,13 @@ static class Composer
     private static void AnalyzeKeyboardLayout()
     {
         m_possible_dead_keys = new Dictionary<string, int>();
+        m_possible_altgr_keys = new Dictionary<string, string>();
 
         // Try every keyboard key followed by space to see which ones are
         // dead keys. This way, when later we want to know if a dead key is
         // currently buffered, we just call ToUnicode(VK.SPACE) and match
         // the result with what we found here.
-        string[] tmp = new string[0x400];
+        string[] no_altgr = new string[0x200];
         byte[] state = new byte[256];
 
         for (int i = 0; i < 0x400; ++i)
@@ -610,13 +653,21 @@ static class Composer
             string str_if_normal = VkToUnicode(vk, (SC)0, state, (LLKHF)0);
             string str_if_dead = VkToUnicode(VK.SPACE);
 
-            // If the AltGr gives us a result, it means the layout has AltGr
-            tmp[i] = str_if_dead != " " ? str_if_dead : str_if_normal;
-            if (has_altgr && tmp[i] != "" && tmp[i] != tmp[i - 0x200])
+            // If the AltGr gives us a result and it’s different from without
+            // AltGr, we need to remember it.
+            string str = str_if_dead != " " ? str_if_dead : str_if_normal;
+            if (has_altgr)
             {
-                Log.Debug("VK {0} is “{1}” but “{2}” with AltGr",
-                          vk.ToString(), tmp[i - 0x200], tmp[i]);
-                m_layout_has_altgr = true;
+                if (no_altgr[i - 0x200] != "" && str != "" && no_altgr[i - 0x200] != str)
+                {
+                    Log.Debug("VK {0} is “{1}” but “{2}” with AltGr",
+                              vk.ToString(), no_altgr[i - 0x200], str);
+                    m_possible_altgr_keys[no_altgr[i - 0x200]] = str;
+                }
+            }
+            else
+            {
+                no_altgr[i] = str_if_dead != " " ? str_if_dead : str_if_normal;
             }
 
             // If the resulting string is not the space character, it means
@@ -683,7 +734,6 @@ static class Composer
         if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
         {
             string wclass = buf.ToString();
-            Log.Debug("Active window: {0}", wclass);
 
             if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
                 m_window_is_gtk = true;
@@ -699,14 +749,14 @@ static class Composer
         {
             m_current_layout = active_layout;
 
-            Log.Debug("----------: Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+            Log.Debug("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
                       tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
             tid = NativeMethods.GetCurrentThreadId();
             NativeMethods.ActivateKeyboardLayout((HKL)active_layout, 0);
             active_layout = NativeMethods.GetKeyboardLayout(tid);
 
-            Log.Debug("----------: WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+            Log.Debug("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
                       tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
             // We need to rebuild the list of dead keys
@@ -783,7 +833,7 @@ static class Composer
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
-    private static bool m_layout_has_altgr = false;
+    private static Dictionary<string, string> m_possible_altgr_keys;
     private static IntPtr m_current_layout = IntPtr.Zero;
     private static bool m_window_is_gtk = false;
     private static bool m_window_is_office = false;
