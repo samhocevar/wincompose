@@ -272,6 +272,11 @@ namespace WinCompose
 
         private static void RestartClicked(object sender, EventArgs e)
         {
+            // FIXME: there might be more cleanup to do here; but it’s probably
+            // not worth it, because restarting the app is a hack and whatever
+            // reason the user may have, it’s because of a bug or a limitation
+            // in WinCompose that we need to fix.
+            m_tray_icon.Visible = false;
             WinForms.Application.Restart();
             Environment.Exit(0);
         }
