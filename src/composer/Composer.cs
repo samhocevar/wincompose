@@ -280,7 +280,7 @@ static class Composer
 
             // If this was a dead key, it will be completely ignored. But
             // it’s okay since we stored it.
-            Log.Debug("Forwarding Key to System");
+            Log.Debug("Forwarding Key to System (not composing)");
             return false;
         }
 
@@ -353,7 +353,7 @@ static class Composer
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())
         {
-            Log.Debug("Forwarding Key to System");
+            Log.Debug("Forwarding Key to System (no possible sequence uses it)");
             return false;
         }
 
@@ -402,6 +402,7 @@ static class Composer
                 string tosend = Settings.GetSequenceResult(m_sequence,
                                                            ignore_case);
                 Stats.AddSequence(m_sequence);
+                Log.Debug("Valid sequence! Sending {0}", tosend);
                 ResetSequence();
                 SendString(tosend);
                 return true;
@@ -414,6 +415,7 @@ static class Composer
                 string tosend = Settings.GetSequenceResult(old_sequence,
                                                            ignore_case);
                 Stats.AddSequence(old_sequence);
+                Log.Debug("Sending previously valid sequence {0}", tosend);
                 ResetSequence();
                 SendString(tosend);
                 return false;
