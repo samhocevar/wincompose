@@ -1621,10 +1621,10 @@
     <value>LATEINISCHER KLEINBUCHSTABE G MIT HAKEN</value>
   </data>
   <data name="U0261" xml:space="preserve">
-    <value>LATEINISCHER KLEINBUCHSTABE SCHREIBSCHRIFT G</value>
+    <value>LATEINISCHER KLEINBUCHSTABE SCHREIBSCHRIFT-G</value>
   </data>
   <data name="U0262" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES G</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE G</value>
   </data>
   <data name="U0263" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE GAMMA</value>
@@ -1639,7 +1639,7 @@
     <value>LATEINISCHER KLEINBUCHSTABE IOTA</value>
   </data>
   <data name="U026A" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES I</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE I</value>
   </data>
   <data name="U026D" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE L MIT HAKEN UNTEN</value>
@@ -1651,19 +1651,19 @@
     <value>LATEINISCHER KLEINBUCHSTABE N MIT HAKEN UNTEN</value>
   </data>
   <data name="U0274" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES N</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE N</value>
   </data>
   <data name="U0276" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES OE</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE OE</value>
   </data>
   <data name="U0278" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE PHI</value>
   </data>
   <data name="U0280" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES R *</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE R *</value>
   </data>
   <data name="U0281" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES INVERTIERTES R</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE INVERTIERTES R</value>
   </data>
   <data name="U0282" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE S MIT HAKEN</value>
@@ -1681,7 +1681,7 @@
     <value>LATEINISCHER KLEINBUCHSTABE V MIT HAKEN</value>
   </data>
   <data name="U028F" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES Y</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE Y</value>
   </data>
   <data name="U0290" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE Z MIT HAKEN UNTEN</value>
@@ -1690,16 +1690,16 @@
     <value>LATEINISCHER KLEINBUCHSTABE EZH</value>
   </data>
   <data name="U0299" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES B</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE B</value>
   </data>
   <data name="U029B" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES G MIT HAKEN</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE G MIT HAKEN</value>
   </data>
   <data name="U029C" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES H</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE H</value>
   </data>
   <data name="U029F" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES L</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE L</value>
   </data>
   <data name="U02A0" xml:space="preserve">
     <value>LATEINISCHER KLEINBUCHSTABE Q MIT HAKEN</value>
@@ -1714,19 +1714,19 @@
     <value>OGONEK</value>
   </data>
   <data name="U02DC" xml:space="preserve">
-    <value>KLEINES TILDE</value>
+    <value>KLEINE TILDE</value>
   </data>
   <data name="U0300" xml:space="preserve">
-    <value>KOMBINIERENDES ACCENT GRAVE (Varia)</value>
+    <value>KOMBINIERENDER ACCENT GRAVE (Varia)</value>
   </data>
   <data name="U0301" xml:space="preserve">
-    <value>KOMBINIERENDES ACCENT AIGU (Oxia, Tonos)</value>
+    <value>KOMBINIERENDER ACCENT AIGU (Oxia, Tonos)</value>
   </data>
   <data name="U0302" xml:space="preserve">
-    <value>KOMBINIERENDES CIRCUMFLEX-AKZENT</value>
+    <value>KOMBINIERENDER CIRCUMFLEX-AKZENT</value>
   </data>
   <data name="U0303" xml:space="preserve">
-    <value>KOMBINIERENDES TILDE</value>
+    <value>KOMBINIERENDE TILDE</value>
   </data>
   <data name="U0304" xml:space="preserve">
     <value>KOMBINIERENDES MAKRON</value>
@@ -3298,79 +3298,79 @@
     <value>RUNENBUCHSTABE X</value>
   </data>
   <data name="U1D00" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES A</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE A</value>
   </data>
   <data name="U1D04" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES C</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE C</value>
   </data>
   <data name="U1D05" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES D</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE D</value>
   </data>
   <data name="U1D07" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES E</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE E</value>
   </data>
   <data name="U1D0A" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES J</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE J</value>
   </data>
   <data name="U1D0B" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES K</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE K</value>
   </data>
   <data name="U1D0C" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES L MIT STRICH</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE L MIT STRICH</value>
   </data>
   <data name="U1D0D" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES M</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE M</value>
   </data>
   <data name="U1D0E" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES UMGEDREHTES N</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE UMGEDREHTES N</value>
   </data>
   <data name="U1D0F" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES O</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE O</value>
   </data>
   <data name="U1D10" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES OFFENES O</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE OFFENES O</value>
   </data>
   <data name="U1D18" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES P</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE P</value>
   </data>
   <data name="U1D19" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES UMGEDREHTES R</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE UMGEDREHTES R</value>
   </data>
   <data name="U1D1B" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES T</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE T</value>
   </data>
   <data name="U1D1C" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES U</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE U</value>
   </data>
   <data name="U1D20" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES V</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE V</value>
   </data>
   <data name="U1D21" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES W</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE W</value>
   </data>
   <data name="U1D22" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES Z</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE Z</value>
   </data>
   <data name="U1D23" xml:space="preserve">
-    <value>LATEINISCHER BUCHSTABE KLEINES GROSSES EZH</value>
+    <value>LATEINISCHER KLEINER GROSSBUCHSTABE EZH</value>
   </data>
   <data name="U1D25" xml:space="preserve">
     <value>LATEINISCHER BUCHSTABE AIN</value>
   </data>
   <data name="U1D26" xml:space="preserve">
-    <value>GRIECHISCHER BUCHSTABE KLEINES GROSSES GAMMA</value>
+    <value>GRIECHISCHER KLEINER GROSSBUCHSTABE GAMMA</value>
   </data>
   <data name="U1D27" xml:space="preserve">
-    <value>GRIECHISCHER BUCHSTABE KLEINES GROSSES LAMBDA</value>
+    <value>GRIECHISCHER KLEINER GROSSBUCHSTABE LAMBDA</value>
   </data>
   <data name="U1D28" xml:space="preserve">
-    <value>GRIECHISCHER BUCHSTABE KLEINES GROSSES PI</value>
+    <value>GRIECHISCHER KLEINER GROSSBUCHSTABE PI</value>
   </data>
   <data name="U1D29" xml:space="preserve">
-    <value>GRIECHISCHER BUCHSTABE KLEINES GROSSES RHO</value>
+    <value>GRIECHISCHER KLEINER GROSSBUCHSTABE RHO</value>
   </data>
   <data name="U1D2A" xml:space="preserve">
-    <value>GRIECHISCHER BUCHSTABE KLEINES GROSSES PSI</value>
+    <value>GRIECHISCHER KLEINER GROSSBUCHSTABE PSI</value>
   </data>
   <data name="U1E00" xml:space="preserve">
     <value>LATEINISCHER GROSSBUCHSTABE A MIT RING DARUNTER</value>
@@ -4048,28 +4048,28 @@
     <value>DOPPELT GESTRICHELTES GROSSES C</value>
   </data>
   <data name="U210A" xml:space="preserve">
-    <value>SCHREIBSCHRIFT KLEINES G</value>
+    <value>KLEINES SCHREIBSCHRIFT-G</value>
   </data>
   <data name="U210B" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES H</value>
+    <value>GROSSES SCHREIBSCHRIFT-H</value>
   </data>
   <data name="U210D" xml:space="preserve">
     <value>DOPPELT GESTRICHELTES GROSSES H</value>
   </data>
   <data name="U2110" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES I</value>
+    <value>GROSSES SCHREIBSCHRIFT-I</value>
   </data>
   <data name="U2112" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES L</value>
+    <value>GROSSES SCHREIBSCHRIFT-L</value>
   </data>
   <data name="U2113" xml:space="preserve">
-    <value>SCHREIBSCHRIFT KLEINES L</value>
+    <value>KLEINES SCHREIBSCHRIFT-L</value>
   </data>
   <data name="U2115" xml:space="preserve">
     <value>DOPPELT GESTRICHELTES GROSSES N</value>
   </data>
   <data name="U2118" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES P</value>
+    <value>GROSSES SCHREIBSCHRIFT-P</value>
   </data>
   <data name="U2119" xml:space="preserve">
     <value>DOPPELT GESTRICHELTES GROSSES P</value>
@@ -4078,7 +4078,7 @@
     <value>DOPPELT GESTRICHELTES GROSSES Q</value>
   </data>
   <data name="U211B" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES R</value>
+    <value>GROSSES SCHREIBSCHRIFT-R</value>
   </data>
   <data name="U211D" xml:space="preserve">
     <value>DOPPELT GESTRICHELTES GROSSES R</value>
@@ -4087,22 +4087,22 @@
     <value>DOPPELT GESTRICHELTES GROSSES Z</value>
   </data>
   <data name="U212C" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES B</value>
+    <value>GROSSES SCHREIBSCHRIFT-B</value>
   </data>
   <data name="U212F" xml:space="preserve">
-    <value>SCHREIBSCHRIFT KLEINES E</value>
+    <value>KLEINES SCHREIBSCHRIFT-E</value>
   </data>
   <data name="U2130" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES E</value>
+    <value>GROSSES SCHREIBSCHRIFT-E</value>
   </data>
   <data name="U2131" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES F</value>
+    <value>GROSSES SCHREIBSCHRIFT-F</value>
   </data>
   <data name="U2133" xml:space="preserve">
-    <value>SCHREIBSCHRIFT GROSSES M</value>
+    <value>GROSSES SCHREIBSCHRIFT-M</value>
   </data>
   <data name="U2134" xml:space="preserve">
-    <value>SCHREIBSCHRIFT KLEINES O</value>
+    <value>KLEINES SCHREIBSCHRIFT-O</value>
   </data>
   <data name="U2135" xml:space="preserve">
     <value>ALEF SYMBOL</value>
@@ -4174,37 +4174,37 @@
     <value>RÖMISCHE ZAHL FÜNFZIG</value>
   </data>
   <data name="U2170" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL EINS</value>
+    <value>KLEINE RÖMISCHE ZAHL EINS</value>
   </data>
   <data name="U2171" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL ZWEI</value>
+    <value>KLEINE RÖMISCHE ZAHL ZWEI</value>
   </data>
   <data name="U2172" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL DREI</value>
+    <value>KLEINE RÖMISCHE ZAHL DREI</value>
   </data>
   <data name="U2173" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL VIER</value>
+    <value>KLEINE RÖMISCHE ZAHL VIER</value>
   </data>
   <data name="U2174" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL FÜNF</value>
+    <value>KLEINE RÖMISCHE ZAHL FÜNF</value>
   </data>
   <data name="U2175" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL SECHS</value>
+    <value>KLEINE RÖMISCHE ZAHL SECHS</value>
   </data>
   <data name="U2176" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL SIEBEN</value>
+    <value>KLEINE RÖMISCHE ZAHL SIEBEN</value>
   </data>
   <data name="U2177" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL ACHT</value>
+    <value>KLEINE RÖMISCHE ZAHL ACHT</value>
   </data>
   <data name="U2178" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL NEUN</value>
+    <value>KLEINE RÖMISCHE ZAHL NEUN</value>
   </data>
   <data name="U217C" xml:space="preserve">
-    <value>KLEINES RÖMISCHE ZAHL FÜNFZIG</value>
+    <value>KLEINE RÖMISCHE ZAHL FÜNFZIG</value>
   </data>
   <data name="U2241" xml:space="preserve">
-    <value>NOT TILDE</value>
+    <value>NICHT TILDE</value>
   </data>
   <data name="U2310" xml:space="preserve">
     <value>UMGEDREHTES NICHT-ZEICHEN</value>
@@ -4213,7 +4213,7 @@
     <value>SENKRECHTE LINIE MIT ZENTRIERTEM PUNKT</value>
   </data>
   <data name="U23B4" xml:space="preserve">
-    <value>TOP ECKIGE KLAMMER</value>
+    <value>OBERE ECKIGE KLAMMER</value>
   </data>
   <data name="U2411" xml:space="preserve">
     <value>SYMBOL FÜR GERÄTEKONTROLLE EINS</value>
@@ -4234,31 +4234,31 @@
     <value>BLANK SYMBOL</value>
   </data>
   <data name="U2460" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER EINS</value>
+    <value>EINGEKREISTE ZIFFER EINS</value>
   </data>
   <data name="U2461" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER ZWEI</value>
+    <value>EINGEKREISTE ZIFFER ZWEI</value>
   </data>
   <data name="U2462" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER DREI</value>
+    <value>EINGEKREISTE ZIFFER DREI</value>
   </data>
   <data name="U2463" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER VIER</value>
+    <value>EINGEKREISTE ZIFFER VIER</value>
   </data>
   <data name="U2464" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER FÜNF</value>
+    <value>EINGEKREISTE ZIFFER FÜNF</value>
   </data>
   <data name="U2465" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER SECHS</value>
+    <value>EINGEKREISTE ZIFFER SECHS</value>
   </data>
   <data name="U2466" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER SIEBEN</value>
+    <value>EINGEKREISTE ZIFFER SIEBEN</value>
   </data>
   <data name="U2467" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER ACHT</value>
+    <value>EINGEKREISTE ZIFFER ACHT</value>
   </data>
   <data name="U2468" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER NEUN</value>
+    <value>EINGEKREISTE ZIFFER NEUN</value>
   </data>
   <data name="U2474" xml:space="preserve">
     <value>EINGEKLAMMERTE ZIFFER EINS</value>
@@ -4471,55 +4471,55 @@
     <value>EINGEKREISTES LATEINISCHER KLEINBUCHSTABE Z</value>
   </data>
   <data name="U24EA" xml:space="preserve">
-    <value>EINGEKREISTES ZIFFER NULL</value>
+    <value>EINGEKREISTE ZIFFER NULL</value>
   </data>
   <data name="U2627" xml:space="preserve">
     <value>CHI RHO</value>
   </data>
   <data name="U2654" xml:space="preserve">
-    <value>WHITE SCHACH KÖNIG</value>
+    <value>WEISSE SCHACHFIGUR KÖNIG</value>
   </data>
   <data name="U2655" xml:space="preserve">
-    <value>WHITE SCHACH DAME</value>
+    <value>WEISSE SCHACHFIGUR DAME</value>
   </data>
   <data name="U2656" xml:space="preserve">
-    <value>WHITE SCHACH TURM</value>
+    <value>WEISSE SCHACHFIGUR TURM</value>
   </data>
   <data name="U2657" xml:space="preserve">
-    <value>WHITE SCHACH LÄUFER</value>
+    <value>WEISSE SCHACHFIGUR LÄUFER</value>
   </data>
   <data name="U2658" xml:space="preserve">
-    <value>WHITE SCHACH SPRINGER</value>
+    <value>WEISSE SCHACHFIGUR SPRINGER</value>
   </data>
   <data name="U2659" xml:space="preserve">
-    <value>WHITE SCHACH BAUER</value>
+    <value>WEISSE SCHACHFIGUR BAUER</value>
   </data>
   <data name="U265A" xml:space="preserve">
-    <value>BLACK SCHACH KÖNIG</value>
+    <value>SCHWARZE SCHACHFIGUR KÖNIG</value>
   </data>
   <data name="U265B" xml:space="preserve">
-    <value>BLACK SCHACH DAME</value>
+    <value>SCHWARZE SCHACHFIGUR DAME</value>
   </data>
   <data name="U265C" xml:space="preserve">
-    <value>BLACK SCHACH TURM</value>
+    <value>SCHWARZE SCHACHFIGUR TURM</value>
   </data>
   <data name="U265D" xml:space="preserve">
-    <value>BLACK SCHACH LÄUFER</value>
+    <value>SCHWARZE SCHACHFIGUR LÄUFER</value>
   </data>
   <data name="U265E" xml:space="preserve">
-    <value>BLACK SCHACH SPRINGER</value>
+    <value>SCHWARZE SCHACHFIGUR SPRINGER</value>
   </data>
   <data name="U265F" xml:space="preserve">
-    <value>BLACK SCHACH BAUER</value>
+    <value>SCHWARZE SCHACHFIGUR BAUER</value>
   </data>
   <data name="U27D1" xml:space="preserve">
     <value>UND MIT PUNKT</value>
   </data>
   <data name="U27E6" xml:space="preserve">
-    <value>MATHEMATISCHES LINKE WHITE ECKIGE KLAMMER</value>
+    <value>MATHEMATISCHES LINKE WEISSE ECKIGE KLAMMER</value>
   </data>
   <data name="U27E7" xml:space="preserve">
-    <value>MATHEMATISCHES RECHTE WHITE ECKIGE KLAMMER</value>
+    <value>MATHEMATISCHES RECHTE WEISSE ECKIGE KLAMMER</value>
   </data>
   <data name="U2800" xml:space="preserve">
     <value>BRAILLEMUSTER BLANK</value>
@@ -5290,16 +5290,16 @@
     <value>BRAILLEMUSTER DOTS-12345678</value>
   </data>
   <data name="U2983" xml:space="preserve">
-    <value>LINKE WHITE GESCHWEIFTE KLAMMER</value>
+    <value>LINKE WEISSE GESCHWEIFTE KLAMMER</value>
   </data>
   <data name="U2984" xml:space="preserve">
-    <value>RECHTE WHITE GESCHWEIFTE KLAMMER</value>
+    <value>RECHTE WEISSE GESCHWEIFTE KLAMMER</value>
   </data>
   <data name="U2985" xml:space="preserve">
-    <value>LINKE WHITE RUNDE KLAMMER</value>
+    <value>LINKE WEISSE RUNDE KLAMMER</value>
   </data>
   <data name="U2986" xml:space="preserve">
-    <value>RECHTE WHITE RUNDE KLAMMER</value>
+    <value>RECHTE WEISSE RUNDE KLAMMER</value>
   </data>
   <data name="U29B8" xml:space="preserve">
     <value>EINGEKREISTES BACKSLASH</value>
@@ -5326,10 +5326,10 @@
     <value>PLUSZEICHEN DARÜBER GLEICHHEITSZEICHEN</value>
   </data>
   <data name="U301A" xml:space="preserve">
-    <value>LINKE WHITE ECKIGE KLAMMER</value>
+    <value>LINKE WEISSE ECKIGE KLAMMER</value>
   </data>
   <data name="U301B" xml:space="preserve">
-    <value>RECHTE WHITE ECKIGE KLAMMER</value>
+    <value>RECHTE WEISSE ECKIGE KLAMMER</value>
   </data>
   <data name="U30A1" xml:space="preserve">
     <value>KATAKANA BUCHSTABE KLEINES A</value>
@@ -10762,10 +10762,10 @@
     <value>VOLLBREITES TILDE</value>
   </data>
   <data name="UFF5F" xml:space="preserve">
-    <value>VOLLBREITES LINKE WHITE RUNDE KLAMMER *</value>
+    <value>VOLLBREITES LINKE WEISSE RUNDE KLAMMER *</value>
   </data>
   <data name="UFF60" xml:space="preserve">
-    <value>VOLLBREITES RECHTE WHITE RUNDE KLAMMER *</value>
+    <value>VOLLBREITES RECHTE WEISSE RUNDE KLAMMER *</value>
   </data>
   <data name="UFF66" xml:space="preserve">
     <value>HALBBREITES KATAKANA BUCHSTABE WO</value>
@@ -11320,16 +11320,16 @@
     <value>ZYPRIOTISCHE SILBE ZO</value>
   </data>
   <data name="U1D14A" xml:space="preserve">
-    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF LINKE WHITE</value>
+    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF LINKS WEISS</value>
   </data>
   <data name="U1D14B" xml:space="preserve">
-    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF LINKE BLACK</value>
+    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF LINKS SCHWARZ</value>
   </data>
   <data name="U1D14C" xml:space="preserve">
-    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF RECHTE WHITE</value>
+    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF RECHTS WEISS</value>
   </data>
   <data name="U1D14D" xml:space="preserve">
-    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF RECHTE BLACK</value>
+    <value>MUSIKALISCHES SYMBOL DREIECKIGER NOTENKOPF RECHTS SCHWARZ</value>
   </data>
   <data name="U1D15C" xml:space="preserve">
     <value>MUSIKALISCHES SYMBOL BREVE</value>
@@ -11491,127 +11491,127 @@
     <value>MATHEMATISCHES KURSIVES KLEINES Z</value>
   </data>
   <data name="U1D49C" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES A</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-A</value>
   </data>
   <data name="U1D49E" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES C</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-C</value>
   </data>
   <data name="U1D49F" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES D</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-D</value>
   </data>
   <data name="U1D4A2" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES G</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-G</value>
   </data>
   <data name="U1D4A5" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES J</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-J</value>
   </data>
   <data name="U1D4A6" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES K</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-K</value>
   </data>
   <data name="U1D4A9" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES N</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-N</value>
   </data>
   <data name="U1D4AA" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES O</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-O</value>
   </data>
   <data name="U1D4AB" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES P</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-P</value>
   </data>
   <data name="U1D4AC" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES Q</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-Q</value>
   </data>
   <data name="U1D4AE" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES S</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-S</value>
   </data>
   <data name="U1D4AF" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES T</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-T</value>
   </data>
   <data name="U1D4B0" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES U</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-U</value>
   </data>
   <data name="U1D4B1" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES V</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-V</value>
   </data>
   <data name="U1D4B2" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES W</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-W</value>
   </data>
   <data name="U1D4B3" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES X</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-X</value>
   </data>
   <data name="U1D4B4" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES Y</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-Y</value>
   </data>
   <data name="U1D4B5" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT GROSSES Z</value>
+    <value>MATHEMATISCHES GROSSES SCHREIBSCHRIFT-Z</value>
   </data>
   <data name="U1D4B6" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES A</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-A</value>
   </data>
   <data name="U1D4B7" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES B</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-B</value>
   </data>
   <data name="U1D4B8" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES C</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-C</value>
   </data>
   <data name="U1D4B9" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES D</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-D</value>
   </data>
   <data name="U1D4BB" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES F</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-F</value>
   </data>
   <data name="U1D4BD" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES H</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-H</value>
   </data>
   <data name="U1D4BE" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES I</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-I</value>
   </data>
   <data name="U1D4BF" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES J</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-J</value>
   </data>
   <data name="U1D4C0" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES K</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-K</value>
   </data>
   <data name="U1D4C1" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES L</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-L</value>
   </data>
   <data name="U1D4C2" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES M</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-M</value>
   </data>
   <data name="U1D4C3" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES N</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-N</value>
   </data>
   <data name="U1D4C5" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES P</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-P</value>
   </data>
   <data name="U1D4C6" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES Q</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-Q</value>
   </data>
   <data name="U1D4C7" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES R</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-R</value>
   </data>
   <data name="U1D4C8" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES S</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-S</value>
   </data>
   <data name="U1D4C9" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES T</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-T</value>
   </data>
   <data name="U1D4CA" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES U</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-U</value>
   </data>
   <data name="U1D4CB" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES V</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-V</value>
   </data>
   <data name="U1D4CC" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES W</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-W</value>
   </data>
   <data name="U1D4CD" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES X</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-X</value>
   </data>
   <data name="U1D4CE" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES Y</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-Y</value>
   </data>
   <data name="U1D4CF" xml:space="preserve">
-    <value>MATHEMATISCHES SCHREIBSCHRIFT KLEINES Z</value>
+    <value>MATHEMATISCHES KLEINES SCHREIBSCHRIFT-Z</value>
   </data>
   <data name="U1D504" xml:space="preserve">
     <value>MATHEMATISCHER FRAKTUR-GROSSBUCHSTABE A</value>
@@ -13360,34 +13360,34 @@
     <value>MATHEMATISCHES DOPPELT GESTRICHELTES ZIFFER NEUN</value>
   </data>
   <data name="U1D7E2" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER NULL</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER NULL</value>
   </data>
   <data name="U1D7E3" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER EINS</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER EINS</value>
   </data>
   <data name="U1D7E4" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER ZWEI</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER ZWEI</value>
   </data>
   <data name="U1D7E5" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER DREI</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER DREI</value>
   </data>
   <data name="U1D7E6" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER VIER</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER VIER</value>
   </data>
   <data name="U1D7E7" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER FÜNF</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER FÜNF</value>
   </data>
   <data name="U1D7E8" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER SECHS</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER SECHS</value>
   </data>
   <data name="U1D7E9" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER SIEBEN</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER SIEBEN</value>
   </data>
   <data name="U1D7EA" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER ACHT</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER ACHT</value>
   </data>
   <data name="U1D7EB" xml:space="preserve">
-    <value>MATHEMATISCHES SERIFENLOSES ZIFFER NEUN</value>
+    <value>MATHEMATISCHES SERIFENLOSE ZIFFER NEUN</value>
   </data>
   <data name="U1D7EC" xml:space="preserve">
     <value>MATHEMATISCHES SERIFENLOSES FETTES ZIFFER NULL</value>
