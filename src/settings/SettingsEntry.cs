@@ -49,7 +49,13 @@ namespace WinCompose
         public object Value
         {
             get { return m_value; }
-            set { m_value = value; Save(); }
+            set
+            {
+                // FIXME: we should mark the value as dirty instead of saving
+                // it immediately.
+                m_value = value;
+                ThreadPool.QueueUserWorkItem(o => { Save(); });
+            }
         }
 
         private object m_value;
