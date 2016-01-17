@@ -332,12 +332,36 @@ namespace WinCompose
             {
                 foreach (string line in File.ReadAllLines(path))
                     LoadSequenceString(line);
+                Log.Debug("Loaded rule file {0}", path);
+            }
+            catch (FileNotFoundException)
+            {
+                Log.Debug("Rule file {0} not found", path);
             }
             catch (Exception) { }
         }
 
         private static void LoadSequenceString(string line)
         {
+            // If this is an include directive, use LoadSequenceFile() again
+            var m0 = Regex.Match(line, @"^\s*include\s*""([^""]*)""");
+            if (m0.Groups.Count > 1)
+            {
+                string file = m0.Groups[1].Captures[0].ToString();
+
+                // We support %H (user directory) but not %L (locale-specific dir)
+                if (file.Contains("%L"))
+                    return;
+                file = file.Replace("%H", GetUserDir());
+
+                // Also if path is not absolute, prepend user directory
+                if (!Path.IsPathRooted(file))
+                    file = Path.Combine(GetUserDir(), file);
+
+                LoadSequenceFile(file);
+                return;
+            }
+
             // Only bother with sequences that start with <Multi_key>
             var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
             //                                             ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
