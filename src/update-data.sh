@@ -110,8 +110,9 @@ done
 #
 
 echo "[3/${STEPS}] Rebuild Unicode translation files…"
-BASE=http://translationproject.org/latest/unicode-translation/
-PO=$(wget -qO- $BASE | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
+INDEX=https://github.com/samhocevar/unicode-translation/tree/master/po
+BASE=https://raw.github.com/samhocevar/unicode-translation/master/po/
+PO=$(wget -qO- $INDEX | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
 for L in $PO; do
     printf "${L}... "
     SRC=${CACHE}/${L}.po
