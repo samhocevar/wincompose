@@ -57,9 +57,7 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Log.cs" />
-    <Compile Include="composer\Program.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="composer\Program.cs" />
     <Compile Include="composer\Stats.cs" />
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\WinApi.cs" />
@@ -176,6 +174,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.pt-BR.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Category.ro.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -417,6 +420,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.pl.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.pt-BR.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.ro.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -553,6 +561,11 @@
     <EmbeddedResource Include="unicode\Category.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.pt-BR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.pt-BR.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.resx">
@@ -807,6 +820,11 @@
     <EmbeddedResource Include="i18n\Text.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.pt-BR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.pt-BR.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.ro.resx">
