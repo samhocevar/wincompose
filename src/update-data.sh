@@ -65,18 +65,28 @@ rm -f po/*~
 # work from Weblate translators
 #
 
+po2res()
+{
+    case "$1" in
+        pt_BR) echo pt-BR ;;
+        zh_CN) echo zh-CHS ;;
+        zh) echo zh-CHT ;;
+        sc) echo it-CH ;;
+        *@*) echo "" ;;
+        *) echo $polang ;;
+    esac
+}
+
 echo "[2/${STEPS}] Rebuild resx files…"
 for POFILE in po/*.po; do
-    L=$(basename ${POFILE} .po)
-    case $L in
-        zh_CN) L=zh-CHS ;;
-        zh) L=zh-CHT ;;
-        sc) L=it-CH ;;
-        *@*) continue ;;
-    esac
+    polang=$(basename ${POFILE} .po)
+    reslang=$(po2res $polang)
+    if [ "$reslang" = "" ]; then
+        continue
+    fi
 
     for FILE in i18n/Text.resx unicode/Category.resx; do
-        DEST=${FILE%%.resx}.${L}.resx
+        DEST=${FILE%%.resx}.${reslang}.resx
         sed -e '/^  <data/,$d' < ${FILE} > ${DEST}
         cat ${POFILE} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
@@ -113,11 +123,12 @@ echo "[3/${STEPS}] Rebuild Unicode translation files…"
 INDEX=https://github.com/samhocevar/unicode-translation/tree/master/po
 BASE=https://raw.github.com/samhocevar/unicode-translation/master/po/
 PO=$(wget -qO- $INDEX | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
-for L in $PO; do
-    printf "${L}... "
-    SRC=${CACHE}/${L}.po
+for polang in $PO; do
+    printf "${polang}... "
+    reslang=$(po2res $polang)
+    SRC=${CACHE}/${polang}.po
     # Get latest translation if new
-    (cd ${CACHE} && wget -q -N ${BASE}/${L}.po)
+    (cd ${CACHE} && wget -q -N ${BASE}/${polang}.po)
 
     # Parse data and put it in the Char.*.resx and Block.*.resx files
     for FILE in Char Block; do
@@ -127,7 +138,7 @@ for L in $PO; do
             #. UNICODE BLOCK: U+0000..U+007F
             Block) CODE='/^#[.] UNICODE BLOCK: / { split($0, a, /[+.]/); c="U" a[3] "_U" a[6]; }' ;;
         esac
-        DEST=unicode/${FILE}.${L}.resx
+        DEST=unicode/${FILE}.${reslang}.resx
         sed -e '/^  <data/,$d' < unicode/${FILE}.resx > ${DEST}
         if uname | grep -qi mingw; then unix2dos; else cat; fi < ${SRC} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
@@ -154,11 +165,11 @@ echo "done."
 
 echo "[4/${STEPS}] Check consistency…"
 for x in unicode/*resx i18n/*resx; do
-    lang="$(echo $x | cut -f2 -d.)"
+    reslang="$(echo $x | cut -f2 -d.)"
     if ! grep -q '"'$(echo $x | tr / .)'"' wincompose.csproj; then
         echo "WARNING: $x not found in wincompose.csproj"
     fi
-    if grep -q '^; Name: "'$lang'";' installer.iss; then
+    if grep -q '^; Name: "'$reslang'";' installer.iss; then
         echo "WARNING: $lang is commented out in installer.iss"
     fi
 done

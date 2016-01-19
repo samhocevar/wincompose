@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutodetectLanguage" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Alt Esquerdo</value>
+  </data>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Alt Direito</value>
+  </data>
+  <data name="KeyLControl" xml:space="preserve">
+    <value>Control Esquerdo</value>
+  </data>
+  <data name="KeyRControl" xml:space="preserve">
+    <value>Control Direito</value>
+  </data>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>“Windows” Esquerdo</value>
+  </data>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>“Windows” Direito</value>
+  </data>
+  <data name="KeyCapital" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="KeyNumLock" xml:space="preserve">
+    <value>Num Lock</value>
+  </data>
+  <data name="KeyPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="KeyApps" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="KeyEscape" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="KeyScroll" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Espaço</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="Obsolete016" xml:space="preserve">
+    <value>Acento Grave `</value>
+  </data>
+  <data name="Obsolete017" xml:space="preserve">
+    <value>500 milisegundos</value>
+  </data>
+  <data name="Obsolete018" xml:space="preserve">
+    <value>1 segundo</value>
+  </data>
+  <data name="Obsolete019" xml:space="preserve">
+    <value>2 segundos</value>
+  </data>
+  <data name="Obsolete020" xml:space="preserve">
+    <value>3 segundos</value>
+  </data>
+  <data name="Obsolete021" xml:space="preserve">
+    <value>5 segundos</value>
+  </data>
+  <data name="Obsolete022" xml:space="preserve">
+    <value>10 segundos</value>
+  </data>
+  <data name="Obsolete023" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>Mostrar Sequências…</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Desativar</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="Obsolete027" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="VisitWebsite" xml:space="preserve">
+    <value>Visitar o Site</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Obsolete036" xml:space="preserve">
+    <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  </data>
+  <data name="Sequences" xml:space="preserve">
+    <value>Sequências</value>
+  </data>
+  <data name="Obsolete039" xml:space="preserve">
+    <value>Sequência</value>
+  </data>
+  <data name="Obsolete041" xml:space="preserve">
+    <value>Unicode</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Filtro de Busca:</value>
+  </data>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Tecla Compose:</value>
+  </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Selecione a tecla que deve funcionar como tecla Compose.</value>
+  </data>
+  <data name="ResetDelay" xml:space="preserve">
+    <value>Espera:</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Digitação Unicode avançada</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Permite que todos os caracteres Unicode sejam digitados, até mesmo os que não tiverem sequências de composição definidas. Por exemplo, a sequência a seguir produzirá o caractere U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Com sequências inválidas</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Reverter para comparação case insensitive</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Se a sequência digitada não existe, mas existe uma que só difere em capitalização, corrigir automaticamente.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Descartar todos os caracteres digitados</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Se a sequência digitada não existe, descartar todos os caracteres que foram digitados. O comportamento padrão é inserir os caracteres como se a tecla Compose não tivesse sido usada.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Soar um alerta</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Se a sequência digitada não existe, emitir um alerta sonoro do sistema.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma da interface:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Selecione o idioma que WinCompose deve usar em sua interface. O padrão é usar o idioma do sistema operacional.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="Obsolete050" xml:space="preserve">
+    <value>Copiar Caractere</value>
+  </data>
+  <data name="Obsolete051" xml:space="preserve">
+    <value>Descrição:</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Manter comportamento original da tecla Compose</value>
+  </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Determina que o WinCompose faça o possível para manter o comportamento original da tecla. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo que Alt seja usada como tecla Compose.</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Inserir espaços de largura zero em aplicativos do Office</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Programas do Microsoft Office às vezes mudam a fonte do documento no momento em que se digitam certos caracteres Unicode. Esta funcionalidade insere um caractere invisível depois do caractere Unicode para contornar o problema.</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Simular Caps Lock usando ambas as teclas Shift</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Se Caps Lock for usada como tecla Compose, o comportamento original da tecla se torna indisponível. Esta função permite que se ative Caps Lock pressionando ambas as teclas Shift ao mesmo tempo.</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift desativa Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Se Caps Lock for usada como tecla Compose, o comportamento original da tecla se torna indisponível. Esta função permite que se desative Caps Lock pressionando a tecla Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock sempre capitaliza letras</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Quando o Caps Lock está ativo, digitar uma letra acentuada como “é” sempre produzirá a letra maiúscula correspondente, neste caso “É”.</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorias</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>Nas categorias selecionadas</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opções — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Opções…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} em {0} ({1} sequências)</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Comportamento Geral</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Sequências — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Macros personalizadas</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose está desativado</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Teste a Digitação:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(milisegundos)</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Baixar o WinCompose {0}</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Sobre o WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programação</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Tradução</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Agradecimentos Especiais</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licença</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>O WinCompose precisa ser reiniciado para que algumas alterações entrem em efeito.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Reportar um Bug</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Há atualizações disponíveis.</value>
+  </data>
+</root>
