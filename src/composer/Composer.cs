@@ -508,6 +508,10 @@ static class Composer
                 VK.LSHIFT, VK.RSHIFT,
                 VK.LCONTROL, VK.RCONTROL,
                 VK.LMENU, VK.RMENU,
+                /* Needs to be released, too, otherwise Caps Lock + é on
+                 * a French keyboard will print garbage if Caps Lock is
+                 * not released soon enough. See note below. */
+                VK.CAPITAL,
             };
 
             foreach (VK vk in all_modifiers)
@@ -520,6 +524,12 @@ static class Composer
 
         if (use_gtk_hack)
         {
+            /* XXX: We need to disable caps lock because GTK’s Shift-Ctrl-U
+             * input mode (see below) doesn’t work when Caps Lock is on. */
+            bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
+            if (has_capslock)
+                SendKeyPress(VK.CAPITAL);
+
             foreach (var ch in str)
             {
                 if (false)
@@ -548,6 +558,9 @@ static class Composer
                         SendKeyPress((VK)key);
                 }
             }
+
+            if (has_capslock)
+                SendKeyPress(VK.CAPITAL);
         }
         else
         {
