@@ -12,12 +12,9 @@
 //
 
 using System;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Windows.Forms.Integration;
-using System.Windows.Interop;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
@@ -60,25 +57,22 @@ namespace WinCompose
                 m_tray_icon = new WinForms.NotifyIcon
                 {
                     Visible = true,
-                    //Icon = GetCurrentIcon(),
-                    //Text = GetCurrentToolTip(),
                     ContextMenu = new WinForms.ContextMenu(new[]
                     {
-                        new TitleMenuItem(),
+                        new CustomMenuItem
+                        {
+                            Enabled = false,
+                            Text = "WinCompose",
+                            Scale = 1.05f,
+                            Bold = true,
+                            Gradient = true,
+                            MenuIcon = GetIcon(0),
+                        },
                         new WinForms.MenuItem("-"),
                         new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
                         new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
                         m_help_item = /* Keep a reference on this entry */
-                        new WinForms.MenuItem(i18n.Text.Help, new[]
-                        {
-                            new WinForms.MenuItem(i18n.Text.About, AboutClicked),
-                            new WinForms.MenuItem(i18n.Text.VisitWebsite, delegate(object o, EventArgs e) { System.Diagnostics.Process.Start("http://wincompose.info/"); }),
-                            m_download_item = /* Keep a reference on this entry */
-                            new WinForms.MenuItem("", DownloadClicked)
-                            {
-                                Visible = false
-                            },
-                        }),
+                        new CustomMenuItem() { Text = i18n.Text.Help },
                         new WinForms.MenuItem("-"),
                         m_disable_item = /* Keep a reference on this entry */
                         new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
@@ -87,6 +81,17 @@ namespace WinCompose
                     })
                 };
                 m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
+
+                m_help_item.MenuItems.AddRange(new[]
+                {
+                    new WinForms.MenuItem(i18n.Text.About, AboutClicked),
+                    new WinForms.MenuItem(i18n.Text.VisitWebsite, delegate(object o, EventArgs e) { System.Diagnostics.Process.Start("http://wincompose.info/"); }),
+                    m_download_item = /* Keep a reference on this entry */
+                    new WinForms.MenuItem("", DownloadClicked)
+                    {
+                        Visible = false
+                    },
+                });
 
                 Composer.Changed += SysTrayUpdateCallback;
                 Updater.Changed += SysTrayUpdateCallback;
@@ -291,46 +296,6 @@ namespace WinCompose
         {
             WinForms.Application.Exit();
         }
-    }
-
-    class TitleMenuItem : WinForms.MenuItem
-    {
-        public TitleMenuItem()
-        {
-            Text = "WinCompose";
-            m_font = new Font(SystemFonts.DefaultFont.FontFamily,
-                              SystemFonts.DefaultFont.Size * 1.1f,
-                              FontStyle.Bold);
-            OwnerDraw = true;
-            Enabled = false;
-        }
-
-        protected override void OnMeasureItem(WinForms.MeasureItemEventArgs e)
-        {
-            var size = WinForms.TextRenderer.MeasureText(Text, m_font);
-            e.ItemWidth = size.Width;
-            e.ItemHeight = size.Height;
-        }
-
-        protected override void OnDrawItem(WinForms.DrawItemEventArgs e)
-        {
-            e.DrawBackground();
-
-            var brush = new LinearGradientBrush(e.Bounds, Color.SkyBlue,
-                                                Color.White, 30.0f);
-            e.Graphics.FillRectangle(brush, e.Bounds);
-
-            var icon_bounds = e.Bounds;
-            icon_bounds.Width = e.Bounds.Height;
-            e.Graphics.DrawIcon(Program.GetIcon(0), icon_bounds);
-
-            var text_bounds = e.Bounds;
-            text_bounds.Width -= e.Bounds.Height;
-            text_bounds.X += e.Bounds.Height;
-            e.Graphics.DrawString(Text, m_font, Brushes.Black, text_bounds);
-        }
-
-        private Font m_font;
     }
 }
 

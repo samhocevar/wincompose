@@ -72,8 +72,9 @@
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="settings\SettingsWindowViewModel.cs" />
-    <Compile Include="ui_common\DelegateCommand.cs" />
-    <Compile Include="ui_common\ViewModelBase.cs" />
+    <Compile Include="ui\CustomMenuItem.cs" />
+    <Compile Include="ui\DelegateCommand.cs" />
+    <Compile Include="ui\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="about\AboutBox.xaml.cs">
