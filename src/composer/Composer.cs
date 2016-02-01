@@ -240,9 +240,9 @@ static class Composer
             return true;
         }
 
-        // Escape cancels the current sequence
-        if (is_keydown && key.VirtualKey == VK.ESCAPE
-             && CurrentState == State.Sequence)
+        // Escape and backspace cancel the current sequence
+        if (is_keydown && CurrentState == State.Sequence
+             && (key.VirtualKey == VK.ESCAPE || key.VirtualKey == VK.BACK))
         {
             // FIXME: if a sequence was in progress, maybe print it!
             Log.Debug("No Longer Composing");
