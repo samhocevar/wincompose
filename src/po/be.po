@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-04-19 08:15+0200\n"
-"Last-Translator: Viktar Palstsiuk <vipals@gmail.com>\n"
-"Language-Team: Belarusian <https://hosted.weblate.org/projects/wincompose/"
-"master/be/>\n"
+"PO-Revision-Date: 2016-02-02 01:09+0000\n"
+"Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
+"Language-Team: Belarusian "
+"<https://hosted.weblate.org/projects/wincompose/master/be/>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.3-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.5-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -192,7 +192,7 @@ msgstr "Кампанавальная клавіша:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Выбяры клавішу, якая стане Кампанавальнай."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -201,7 +201,7 @@ msgstr "Затрымка:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Прасунуты ўвод Унікоду"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -209,27 +209,30 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Увамкнуць Унікодны ўвод для ўсех сымбаляў, нават тых, якім ня прызначана "
+"кампанавальнае пасьлядоўнасьці. Напрыклад, гэтая пасьлядоўнасьць вывядзе "
+"сымбаль U+1A3F: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Сыґналізаваці пра няправільныя пасьлядоўнасьці"
+msgstr "Пры няправільных пасьлядоўнасьцях"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "Пры нядзейсных пасьлядоўнасьцях мяняць раґістар літараў"
+msgstr "Адступаць да раґістранечутлівых супадзеньняў"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Калі ўведзеная пасьлядоўнасьць не існуе, але ёсьць та, што адрозьніваецца "
+"толькі рэґістрам, то аўтаматычна выпраўляць яе."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Скасаваць усе набраныя сымбалі"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -237,14 +240,17 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Калі ўведзеная пасьлядоўнасьць не існуе, то скасаваць усе набраныя сымбалі. "
+"Паводле замоўчаньня яны выводзяцца так, бы кампанавальная клавіша не "
+"націскалась."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Выдаваць гудок"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Калі ўведзеная пасьлядоўнасьць не існуе, то выдаць сыстэмны гук."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -255,6 +261,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Выбяры мову інтарфэйсу WinCompose. Паводле замоўчаньня выкарыстоўваецца мова "
+"аперацыйнай сыстэмы."
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -289,6 +297,9 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"Гэта наказвае WinCompose мкнуцца захаваць першасныя паводзіны клавішащ. "
+"Напрыклад, спалука Alt+Tab працавацьме па-ранейшаму нават, калі Alt "
+"выкарыстана як кампанавальная клавіша."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -300,6 +311,9 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Дадаткі Microsoft Office часам мяняюць шрыфт дакумента на ляту пад час уводу "
+"некаторых унікодавых сымбаляў. Гэтая опцыя ўстаўляе нябачны сымбаль пасьля "
+"ўнікодавага, кабы справіцца з гэнай прыкрасьцю."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -311,6 +325,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Калі Caps Lock ужываецца як кампанавальная клавіша, першапачатковыя "
+"паводзіны клавішы стаюць недаступнымі. Гэтая опцыя дазваляе ўвамкнуць Caps "
+"Lock націсканьнем абедзьвюх клавішаў Shift адначасова."
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -322,16 +339,21 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Калі Caps Lock ужываецца як кампанавальная клавіша, першапачатковыя "
+"паводзіны клавішы стаюць недаступнымі. Гэтая опцыя дазваляе вымкнуць Caps "
+"Lock націсканьнем клавішы Shift."
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Caps Lock заўсёды робіць вялікімі літары"
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Калі Caps Lock увамкнёна, набіраньне дыякрытызаванай літары, такой як «ź», "
+"заўсёды вывядзе адпаведную вялікую літару, ў гэтым выпадку «Ź»."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:333 ID:Categories
@@ -400,9 +422,8 @@ msgstr "Пра праґраму"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:384 ID:Download
-#, fuzzy
 msgid "Download WinCompose {0}"
-msgstr "Пра WinCompose"
+msgstr "Спампаваці WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:388 ID:AboutBoxTitle
@@ -443,12 +464,12 @@ msgstr "Паведаміць пра памылку"
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:416 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Дапамога"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:420 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Абнаўленьні наяўныя."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
