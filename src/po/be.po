@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-02-02 01:09+0000\n"
+"PO-Revision-Date: 2016-02-02 01:10+0000\n"
 "Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
 "Language-Team: Belarusian "
 "<https://hosted.weblate.org/projects/wincompose/master/be/>\n"
@@ -377,7 +377,7 @@ msgstr "Опцыї…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:348 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2} на {0} ({1} паслядоўнасцяў)"
+msgstr "WinCompose v{2} на {0} ({1} пасьлядоўнасьцяў)"
 
 #: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
