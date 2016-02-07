@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Кампанавальная клавіша:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Выбяры клавішу, якая стане Кампанавальнай.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Затрымка:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Прасунуты ўвод Унікоду</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Увамкнуць Унікодны ўвод для ўсех сымбаляў, нават тых, якім ня прызначана кампанавальнае пасьлядоўнасьці. Напрыклад, гэтая пасьлядоўнасьць вывядзе сымбаль U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Пры няправільных пасьлядоўнасьцях</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Адступаць да раґістранечутлівых супадзеньняў</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Калі ўведзеная пасьлядоўнасьць не існуе, але ёсьць та, што адрозьніваецца толькі рэґістрам, то аўтаматычна выпраўляць яе.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Скасаваць усе набраныя сымбалі</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Калі ўведзеная пасьлядоўнасьць не існуе, то скасаваць усе набраныя сымбалі. Паводле замоўчаньня яны выводзяцца так, бы кампанавальная клавіша не націскалась.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Выдаваць гудок</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Калі ўведзеная пасьлядоўнасьць не існуе, то выдаць сыстэмны гук.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Мова інтарфэйсу:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Выбяры мову інтарфэйсу WinCompose. Паводле замоўчаньня выкарыстоўваецца мова аперацыйнай сыстэмы.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Зачыніць</value>
@@ -243,14 +276,32 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Захаваць зыходныя паводзіны клавішы</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Гэта наказвае WinCompose мкнуцца захаваць першасныя паводзіны клавішащ. Напрыклад, спалука Alt+Tab працавацьме па-ранейшаму нават, калі Alt выкарыстана як кампанавальная клавіша.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Устаўляць прагалы нулявой шырыні ў офісных праграмах</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Дадаткі Microsoft Office часам мяняюць шрыфт дакумента на ляту пад час уводу некаторых унікодавых сымбаляў. Гэтая опцыя ўстаўляе нябачны сымбаль пасьля ўнікодавага, кабы справіцца з гэнай прыкрасьцю.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Эмуляваць Caps Lock выкарыстоўваючы абедзве клавішы Shift</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Калі Caps Lock ужываецца як кампанавальная клавіша, першапачатковыя паводзіны клавішы стаюць недаступнымі. Гэтая опцыя дазваляе ўвамкнуць Caps Lock націсканьнем абедзьвюх клавішаў Shift адначасова.</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Клавіша Shift выключае Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Калі Caps Lock ужываецца як кампанавальная клавіша, першапачатковыя паводзіны клавішы стаюць недаступнымі. Гэтая опцыя дазваляе вымкнуць Caps Lock націсканьнем клавішы Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock заўсёды робіць вялікімі літары</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Калі Caps Lock увамкнёна, набіраньне дыякрытызаванай літары, такой як «ź», заўсёды вывядзе адпаведную вялікую літару, ў гэтым выпадку «Ź».</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Катэгорыі</value>
@@ -265,7 +316,7 @@
     <value>Опцыї…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} на {0} ({1} паслядоўнасцяў)</value>
+    <value>WinCompose v{2} на {0} ({1} пасьлядоўнасьцяў)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Звычайныя паводзіны</value>
@@ -294,6 +345,9 @@
   <data name="About" xml:space="preserve">
     <value>Пра праґраму</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Спампаваці WinCompose {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Пра WinCompose</value>
   </data>
@@ -314,5 +368,11 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Паведаміць пра памылку</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Дапамога</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Абнаўленьні наяўныя.</value>
   </data>
 </root>
