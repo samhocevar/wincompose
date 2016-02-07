@@ -54,7 +54,7 @@ Source: "rules\Emoji.txt"; DestDir: "{app}\res"
 Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 
 [Languages]
-Name: "pt-BR"; MessagesFile: "compiler:Languages/BrazilianPortuguese.isl"
+Name: "pt_BR"; MessagesFile: "compiler:Languages/BrazilianPortuguese.isl"
 ; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Corsican.isl"
 Name: "cs"; MessagesFile: "compiler:Languages/Czech.isl"
