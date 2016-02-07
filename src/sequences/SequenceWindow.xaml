@@ -98,15 +98,6 @@
 
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
-            <Expander DockPanel.Dock="Right" ExpandDirection="Left" Margin="0,8">
-                <StackPanel>
-                    <Border Width="128" Height="128">
-                        <Viewbox Margin="4">
-                            <TextBlock Text="%"/>
-                        </Viewbox>
-                    </Border>
-                </StackPanel>
-            </Expander>
             <ListBox Margin="8" ItemsSource="{Binding Sequences}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VirtualizingStackPanel.VirtualizationMode="Recycling">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
@@ -117,9 +108,17 @@
                     <DataTemplate>
                         <DockPanel Margin="0,2">
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
-                                <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly">
+                                <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
                                     <!-- We need Segoe UI Symbol, but we put it at the end because it messes with combining character rendering (see #71). -->
                                     <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface, Segoe UI Symbol" />
+                                    <Viewbox.ToolTip>
+                                        <Grid Height="200" MinWidth="200">
+                                            <Viewbox>
+                                                <!-- We need Segoe UI Symbol, but we put it at the end because it messes with combining character rendering (see #71). -->
+                                                <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface, Segoe UI Symbol" />
+                                            </Viewbox>
+                                        </Grid>
+                                    </Viewbox.ToolTip>
                                 </Viewbox>
                             </Border>
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
