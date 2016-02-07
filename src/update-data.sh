@@ -72,6 +72,7 @@ po2res()
         zh_CN) echo zh-CHS ;;
         zh) echo zh-CHT ;;
         sc) echo it-CH ;;
+        eo) echo de-CH ;;
         *@*) echo "" ;;
         *) echo $polang ;;
     esac
