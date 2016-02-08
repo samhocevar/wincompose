@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Διάστημα</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Βαρεία `</value>
   </data>
@@ -216,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Πλήκτρο σύνθεσης:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Επιλέξτε το πλήκτρο που πρέπει να ενεργεί ως πλήκτρο Σύνθεσης.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Καθυστέρηση:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Προηγμένη εισαγωγή Unicode</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Ενεργοποίηση εισαγωγής Unicode για όλους τους χαρακτήρες, ακόμη και εκείνων που δεν ορίζονται σε ακολουθία σύνθεσης. Για παράδειγμα, η παρακάτω ακολουθία θα εξάγει τον χαρακτήρα U+1A3F: Σύνθεση U 1 Α 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Σε άκυρες ακολουθίες</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Επιστροφή σε λειτουργία χωρίς διάκριση πεζών-κεφαλαίων</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Εάν η εισηγμένη ακολουθία δεν υπάρχει, αλλά υπάρχει μία που διαφέρει μόνο σε κατάσταση πεζών-κεφαλαίων, να διορθώνεται αυτόματα.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Απόρριψη όλων των πληκτρολογημένων χαρακτήρων</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Εάν η εισηγμένη ακολουθία δεν υπάρχει, να απορριφθούν όλοι οι χαρακτήρες που πληκτρολογήσατε. Η προεπιλεγμένη συμπεριφορά είναι να εξάγει τους χαρακτήρες σαν να μην είχε χρησιμοποιηθεί το πλήκτρο Σύνθεσης.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Εκπομπή ηχητικού σήματος</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Εάν η εισηγμένη ακολουθία δεν υπάρχει, να ακούγεται ένας ήχος του συστήματος.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Γλώσσα περιβάλλοντος:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Επιλέξτε τη γλώσσα που θα χρησιμοποιεί το WinCompose για το περιβάλλον. Εξ ορισμού χρησιμοποιείται η γλώσσα του λειτουργικού συστήματος.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Κλείσιμο</value>
@@ -237,14 +276,32 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Διατήρηση αρχικής συμπεριφοράς πλήκτρου σύνθεσης</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Αυτό λέει στο WinCompose να κάνει μια καλύτερη προσπάθεια για να διατηρήσει την αρχική συμπεριφορά του πλήκτρου. Για παράδειγμα, η συντόμευση Alt-Tab θα εξακολουθεί να λειτουργεί ακόμη κι αν το Alt χρησιμοποιείται ως πλήκτρο σύνθεσης.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Εισαγωγή διαστημάτων χωρίς εύρος στις εφαρμογές Office</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Οι εφαρμογές του Microsoft Office μερικές φορές αλλάζουν τη γραμματοσειρά του εγγράφου, όταν εισάγονται ορισμένοι χαρακτήρες Unicode. Αυτή η λειτουργία εισάγει έναν αόρατο χαρακτήρα μετά το χαρακτήρα Unicode, για να επιλύσει το σφάλμα.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Προσομοίωση Caps Lock χρησιμοποιώντας και τα δύο πλήκτρα Shift</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Αν το Caps Lock χρησιμοποιείται ως πλήκτρο σύνθεσης, η αρχική συμπεριφορά του πλήκτρου δεν θα είναι διαθέσιμη. Αυτό το χαρακτηριστικό επιτρέπει να ενεργοποιήσετε το Caps Lock πατώντας και τα δύο πλήκτρα Shift ταυτόχρονα.</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Το πλήκτρο SHIFT να απενεργοποιεί το Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Αν το Caps Lock χρησιμοποιείται ως πλήκτρο σύνθεσης, η αρχική συμπεριφορά του πλήκτρου δεν θα είναι διαθέσιμη. Αυτό το χαρακτηριστικό επιτρέπει να απενεργοποιήσετε το Caps Lock πατώντας το πλήκτρο Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Το Caps Lock να κάνει πάντα κεφαλαία γράμματα</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Όταν το Caps Lock είναι ενεργοποιημένο, πληκτρολογώντας έναν τονισμένο χαρακτήρα όπως το «έ», θα εξάγει πάντα το αντίστοιχο κεφαλαίο γράμμα. Στην περίπτωσή μας το «Έ».</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Κατηγορίες</value>
@@ -257,6 +314,9 @@
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Επιλογές…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose  v{2} σε {0} ({1} ακολουθίες)</value>
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Γενική συμπεριφορά</value>
@@ -284,5 +344,35 @@
   </data>
   <data name="About" xml:space="preserve">
     <value>Περί</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Λήψη του WinCompose {0}</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Περί WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Προγραμματισμός</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Μετάφραση</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Ιδιαίτερες ευχαριστίες</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Άδεια χρήστη</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>Το WinCompose πρέπει να κάνει επανεκκίνηση για εφαρμογή ορισμένων αλλαγών.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Αναφορά σφάλματος</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Βοήθεια</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Υπάρχουν διαθέσιμες ενημερώσεις.</value>
   </data>
 </root>
