@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-12 20:15+0000\n"
-"Last-Translator: Karsten Reitan Sørensen <karsten.reitan@gmail.com>\n"
-"Language-Team: Danish <https://hosted.weblate.org/projects/wincompose/master/"
-"da/>\n"
+"PO-Revision-Date: 2016-02-08 17:25+0000\n"
+"Last-Translator: Kris545545 <x.kristoffer43@gmail.com>\n"
+"Language-Team: Danish "
+"<https://hosted.weblate.org/projects/wincompose/master/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -216,7 +216,6 @@ msgid "On invalid sequences"
 msgstr "Bip ved forkerte sekvenser"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
 msgstr "Ingen forskel på små og store bogstaver ved mangel på resultat"
 
