@@ -90,7 +90,7 @@ for POFILE in po/*.po; do
         DEST=${FILE%%.resx}.${reslang}.resx
         sed -e '/^  <data/,$d' < ${FILE} > ${DEST}
         cat ${POFILE} \
-          | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
+          | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/\\"/\&quot;/g' \
           | awk 'function f() {
                      if (good && id && msgstr) {
                          print "  <data name=\"" id "\" xml:space=\"preserve\">";
