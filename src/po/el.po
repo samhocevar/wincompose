@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WinCompose 0.6.99\n"
+"Project-Id-Version: WinCompose 0.7.7\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-03-10 21:29+0200\n"
-"Last-Translator: geogeo.gr\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
-"el/>\n"
+"PO-Revision-Date: 2016-02-08 09:21+0200\n"
+"Last-Translator: geogeo.gr <geogeo.gr@gmail.com>\n"
+"Language-Team: Greek "
+"<https://hosted.weblate.org/projects/wincompose/master/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,12 +85,12 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Διάστημα"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Enter"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
@@ -189,7 +189,7 @@ msgstr "Πλήκτρο σύνθεσης:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Επιλέξτε το πλήκτρο που πρέπει να ενεργεί ως πλήκτρο Σύνθεσης."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -198,7 +198,7 @@ msgstr "Καθυστέρηση:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Προηγμένη εισαγωγή Unicode"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -206,29 +206,30 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Ενεργοποίηση εισαγωγής Unicode για όλους τους χαρακτήρες, ακόμη και εκείνων "
+"που δεν ορίζονται σε ακολουθία σύνθεσης. Για παράδειγμα, η παρακάτω "
+"ακολουθία θα εξάγει τον χαρακτήρα U+1A3F: Σύνθεση U 1 Α 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Ήχος μπιπ σε μη έγκυρες ακολουθίες"
+msgstr "Σε άκυρες ακολουθίες"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr ""
-"Επιστροφή στη λειτουργία χωρίς διάκριση πεζών-κεφαλαίων, σε μη έγκυρες "
-"ακολουθίες"
+msgstr "Επιστροφή σε λειτουργία χωρίς διάκριση πεζών-κεφαλαίων"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Εάν η εισηγμένη ακολουθία δεν υπάρχει, αλλά υπάρχει μία που διαφέρει μόνο σε "
+"κατάσταση πεζών-κεφαλαίων, να διορθώνεται αυτόματα."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Απόρριψη όλων των πληκτρολογημένων χαρακτήρων"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -236,14 +237,18 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Εάν η εισηγμένη ακολουθία δεν υπάρχει, να απορριφθούν όλοι οι χαρακτήρες που "
+"πληκτρολογήσατε. Η προεπιλεγμένη συμπεριφορά είναι να εξάγει τους χαρακτήρες "
+"σαν να μην είχε χρησιμοποιηθεί το πλήκτρο Σύνθεσης."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Εκπομπή ηχητικού σήματος"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr ""
+"Εάν η εισηγμένη ακολουθία δεν υπάρχει, να ακούγεται ένας ήχος του συστήματος."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -254,6 +259,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Επιλέξτε τη γλώσσα που θα χρησιμοποιεί το WinCompose για το περιβάλλον. Εξ "
+"ορισμού χρησιμοποιείται η γλώσσα του λειτουργικού συστήματος."
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -288,6 +295,10 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"Αυτό λέει στο WinCompose να κάνει μια καλύτερη προσπάθεια για να διατηρήσει "
+"την αρχική συμπεριφορά του πλήκτρου. Για παράδειγμα, η συντόμευση Alt-Tab θα "
+"εξακολουθεί να λειτουργεί ακόμη κι αν το Alt χρησιμοποιείται ως πλήκτρο "
+"σύνθεσης."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -299,6 +310,10 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Οι εφαρμογές του Microsoft Office μερικές φορές αλλάζουν τη γραμματοσειρά "
+"του εγγράφου, όταν εισάγονται ορισμένοι χαρακτήρες Unicode. Αυτή η "
+"λειτουργία εισάγει έναν αόρατο χαρακτήρα μετά το χαρακτήρα Unicode, για να "
+"επιλύσει το σφάλμα."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -310,6 +325,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Αν το Caps Lock χρησιμοποιείται ως πλήκτρο σύνθεσης, η αρχική συμπεριφορά "
+"του πλήκτρου δεν θα είναι διαθέσιμη. Αυτό το χαρακτηριστικό επιτρέπει να "
+"ενεργοποιήσετε το Caps Lock πατώντας και τα δύο πλήκτρα Shift ταυτόχρονα."
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -321,16 +339,22 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Αν το Caps Lock χρησιμοποιείται ως πλήκτρο σύνθεσης, η αρχική συμπεριφορά "
+"του πλήκτρου δεν θα είναι διαθέσιμη. Αυτό το χαρακτηριστικό επιτρέπει να "
+"απενεργοποιήσετε το Caps Lock πατώντας το πλήκτρο Shift."
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Το Caps Lock να κάνει πάντα κεφαλαία γράμματα"
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Όταν το Caps Lock είναι ενεργοποιημένο, πληκτρολογώντας έναν τονισμένο "
+"χαρακτήρα όπως το «έ», θα εξάγει πάντα το αντίστοιχο κεφαλαίο γράμμα. Στην "
+"περίπτωσή μας το «Έ»."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:333 ID:Categories
@@ -353,9 +377,8 @@ msgstr "Επιλογές…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:348 ID:TrayToolTip
-#, fuzzy
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose σε {0} ({1} ακολουθίες)"
+msgstr "WinCompose  v{2} σε {0} ({1} ακολουθίες)"
 
 #: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
@@ -400,55 +423,54 @@ msgstr "Περί"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:384 ID:Download
-#, fuzzy
 msgid "Download WinCompose {0}"
-msgstr "Επιλογές — WinCompose"
+msgstr "Λήψη του WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:388 ID:AboutBoxTitle
-#, fuzzy
 msgid "About WinCompose"
-msgstr "Επιλογές — WinCompose"
+msgstr "Περί WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:392 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Προγραμματισμός"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:396 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Μετάφραση"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:400 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Ιδιαίτερες ευχαριστίες"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:404 ID:License
 msgid "License"
-msgstr ""
+msgstr "Άδεια χρήστη"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:408 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
+"Το WinCompose πρέπει να κάνει επανεκκίνηση για εφαρμογή ορισμένων αλλαγών."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:412 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Αναφορά σφάλματος"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:416 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Βοήθεια"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:420 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Υπάρχουν διαθέσιμες ενημερώσεις."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
