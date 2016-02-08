@@ -232,7 +232,7 @@
     <value>Speciala Unikoda enigo</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Ŝalti la Unikodan enigon por ĉiuj la signoj, inkluzive tiuj signoj kiuj ne havas difinitan makroklavon. Ekzemple, la makroklavo \signon ☺ U+263A</value>
+    <value>Ŝalti la Unikodan enigon por ĉiuj la signoj, inkluzive tiuj signoj kiuj ne havas difinitan makroklavon. Ekzemple, la makroklavo &quot;U 2 6 3 A&quot; eligus la signon ☺ U+263A</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Se nevalida makroklavo estas enigita</value>
@@ -277,13 +277,13 @@
     <value>Konservu la konduton de la kunigo-klavo</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Se ĉi-agordo estas elektita, WinCompose provos konservi la originalan konduton de la klavo. Ekzemple, la fulmoklavo \se la Alt-klavo estas la elektita kunigo-klavo.</value>
+    <value>Se ĉi-agordo estas elektita, WinCompose provos konservi la originalan konduton de la klavo. Ekzemple, la fulmoklavo &quot;Alt-Tab&quot; daŭrus funkcii eĉ se la Alt-klavo estas la elektita kunigo-klavo.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Enigu nevideblajn spacetajn signojn en la aplikaĵoj Office-aj</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>\dinamike se oni eniras certajn Unikodajn signojn. Tiu ĉi funkcio eniros signon nevideblan post la signo Unikoda kiel provizora solvo kontraŭ tiu MS Office-a cimo.</value>
+    <value>&quot;Microsoft Office&quot;-aj aplikaĵoj kelkfoje ŝanĝas la tiparon de la dokumento dinamike se oni eniras certajn Unikodajn signojn. Tiu ĉi funkcio eniros signon nevideblan post la signo Unikoda kiel provizora solvo kontraŭ tiu MS Office-a cimo.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Imitu la majusklan baskulon kiam oni sinkrone premas la du majuskligajn klavojn</value>

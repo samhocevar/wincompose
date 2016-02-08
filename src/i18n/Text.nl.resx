@@ -301,7 +301,7 @@
     <value>Caps Lock maakt van alle letters hoofdletters</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Wanneer Caps Lock aanstaat resulteert het intoetsen van een letter met een accent zoals bv \geval “É”.</value>
+    <value>Wanneer Caps Lock aanstaat resulteert het intoetsen van een letter met een accent zoals bv &quot;é&quot; altijd in de corresponderende hoofdletter, in dit geval “É”.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorieën</value>
