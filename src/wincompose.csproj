@@ -68,6 +68,7 @@
     <Compile Include="sequences\SearchTokens.cs" />
     <Compile Include="sequences\Sequence.cs" />
     <Compile Include="sequences\SequenceViewModel.cs" />
+    <Compile Include="sequences\SysTray.cs" />
     <Compile Include="sequences\ValueConverters.cs" />
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />

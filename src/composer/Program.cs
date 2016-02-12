@@ -93,6 +93,8 @@ namespace WinCompose
                     },
                 });
 
+                SysTray.Fixup();
+
                 Composer.Changed += SysTrayUpdateCallback;
                 Updater.Changed += SysTrayUpdateCallback;
                 SysTrayUpdateCallback(null, new EventArgs());
