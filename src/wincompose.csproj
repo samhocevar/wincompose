@@ -59,6 +59,7 @@
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
     <Compile Include="composer\Stats.cs" />
+    <Compile Include="composer\SysTray.cs" />
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\WinTypes.cs" />
@@ -68,7 +69,6 @@
     <Compile Include="sequences\SearchTokens.cs" />
     <Compile Include="sequences\Sequence.cs" />
     <Compile Include="sequences\SequenceViewModel.cs" />
-    <Compile Include="sequences\SysTray.cs" />
     <Compile Include="sequences\ValueConverters.cs" />
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
