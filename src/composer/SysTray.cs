@@ -10,23 +10,24 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 using Microsoft.Win32;
 
 namespace WinCompose
 {
     static class SysTray
     {
-        /// <summary>
-        /// Indicates whether explorer.exe should be forcefully restarted for
-        /// our changes to become visible.
-        /// </summary>
-        public static bool MustKillExplorer { get; private set; }
-
         private const int HEADER_SIZE = 20;
         private const int ENTRY_SIZE = 1640;
         private const int MAGIC_OFFSET = 528;
 
-        public static void Fixup()
+        /// <summary>
+        /// Check that the systray icon for the program is marked as “always show”
+        /// and restart explorer if any changes were made. The argument is a regex
+        /// used to match against the executable path.
+        /// </summary>
+        public static void AlwaysShow(string pattern)
         {
             string name = @"Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify";
             string value = "IconStreams";
@@ -66,7 +67,7 @@ namespace WinCompose
                     application_path += (char)ch;
                 }
 
-                if (application_path.ToLower().EndsWith(@"\wincompose.exe"))
+                if (Regex.Match(application_path, pattern, RegexOptions.IgnoreCase).Success)
                 {
                     Log.Debug("Enforcing SysTray visibility for {0}", application_path);
                     data[offset + MAGIC_OFFSET] = 2;
@@ -77,10 +78,19 @@ namespace WinCompose
             if (has_changed)
             {
                 subkey.SetValue(value, data);
-                MustKillExplorer = true;
-            }
+                subkey.Close();
 
-            subkey.Close();
+                bool must_restart = false;
+
+                foreach (var process in Process.GetProcessesByName("explorer"))
+                {
+                    process.Kill();
+                    must_restart = true;
+                }
+
+                if (must_restart)
+                    Process.Start("explorer.exe");
+            }
         }
     }
 }

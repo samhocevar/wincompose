@@ -93,7 +93,7 @@ namespace WinCompose
                     },
                 });
 
-                SysTray.Fixup();
+                SysTray.AlwaysShow("wincompose[.]exe");
 
                 Composer.Changed += SysTrayUpdateCallback;
                 Updater.Changed += SysTrayUpdateCallback;
