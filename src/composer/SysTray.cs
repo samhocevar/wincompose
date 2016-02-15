@@ -34,7 +34,7 @@ namespace WinCompose
             RegistryKey key = Registry.CurrentUser.OpenSubKey(key_path, true);
             byte[] data = (byte[])key.GetValue(key_name, null);
 
-            bool has_changed = false;
+            bool must_restart_explorer = false;
 
             // This key should have a 20-byte header and several 1640-byte entries
             if (data != null && data.Length % ENTRY_SIZE == HEADER_SIZE)
@@ -73,31 +73,31 @@ namespace WinCompose
                         {
                             Log.Debug("Enforcing SysTray visibility for {0}", path);
                             data[offset + MAGIC_OFFSET] = 2;
-                            has_changed = true;
+                            key.SetValue(key_name, data);
+                            must_restart_explorer = true;
                         }
                     }
                 }
-
-                // Restart Explorer the non-clean way, because otherwise it
-                // will simply overwrite our registry changes.
-                if (has_changed)
-                {
-                    key.SetValue(key_name, data);
-
-                    bool must_restart = false;
-
-                    foreach (var process in Process.GetProcessesByName("explorer"))
-                    {
-                        process.Kill();
-                        must_restart = true;
-                    }
-
-                    if (must_restart)
-                        Process.Start("explorer.exe");
-                }
             }
 
+            // Make sure to close the registry before killing explorer
             key.Close();
+
+            // Restart Explorer the non-clean way, because otherwise it
+            // will simply overwrite our registry changes.
+            if (must_restart_explorer)
+            {
+                bool must_restart = false;
+
+                foreach (var process in Process.GetProcessesByName("explorer"))
+                {
+                    process.Kill();
+                    must_restart = true;
+                }
+
+                if (must_restart)
+                    Process.Start("explorer.exe");
+            }
         }
     }
 }
