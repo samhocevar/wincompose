@@ -29,68 +29,66 @@ namespace WinCompose
         /// </summary>
         public static void AlwaysShow(string pattern)
         {
-            string name = @"Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify";
-            string value = "IconStreams";
-            RegistryKey subkey = Registry.CurrentUser.OpenSubKey(name, true);
-            byte[] data = (byte[])subkey.GetValue(value, null);
-
-            // This key should have a 20-byte header and several 1640-byte entries
-            if (data == null || data.Length % ENTRY_SIZE != HEADER_SIZE)
-            {
-                subkey.Close();
-                return;
-            }
+            string key_path = @"Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify";
+            string key_name = "IconStreams";
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(key_path, true);
+            byte[] data = (byte[])key.GetValue(key_name, null);
 
             bool has_changed = false;
 
-            for (int offset = HEADER_SIZE; offset < data.Length; offset += ENTRY_SIZE)
+            // This key should have a 20-byte header and several 1640-byte entries
+            if (data != null && data.Length % ENTRY_SIZE == HEADER_SIZE)
             {
-                // This icon is already configured to be always displayed,
-                // we can just ignore it.
-                if (data[offset + MAGIC_OFFSET] == 2)
-                    continue;
-
-                // Retrieve the executable name, which is all the data before
-                // our magic value.
-                string application_path = "";
-                for (int i = 0; i < MAGIC_OFFSET; i += 2)
+                for (int offset = HEADER_SIZE; offset < data.Length; offset += ENTRY_SIZE)
                 {
-                    int ch = data[offset + i] + 16 * data[offset + i + 1];
-                    if (ch == 0)
-                        break;
+                    // This icon is already configured to be always displayed,
+                    // we can just ignore it.
+                    if (data[offset + MAGIC_OFFSET] == 2)
+                        continue;
 
-                    if (ch >= 'a' && ch <= 'm' || ch >= 'A' && ch <= 'M')
-                        ch += 13;
-                    else if (ch >= 'n' && ch <= 'z' || ch >= 'N' && ch <= 'Z')
-                        ch -= 13;
+                    // Retrieve the executable name, which is all the data before
+                    // our magic value.
+                    string application_path = "";
+                    for (int i = 0; i < MAGIC_OFFSET; i += 2)
+                    {
+                        int ch = data[offset + i] + 16 * data[offset + i + 1];
+                        if (ch == 0)
+                            break;
 
-                    application_path += (char)ch;
+                        if (ch >= 'a' && ch <= 'm' || ch >= 'A' && ch <= 'M')
+                            ch += 13;
+                        else if (ch >= 'n' && ch <= 'z' || ch >= 'N' && ch <= 'Z')
+                            ch -= 13;
+
+                        application_path += (char)ch;
+                    }
+
+                    if (Regex.Match(application_path, pattern, RegexOptions.IgnoreCase).Success)
+                    {
+                        Log.Debug("Enforcing SysTray visibility for {0}", application_path);
+                        data[offset + MAGIC_OFFSET] = 2;
+                        has_changed = true;
+                    }
                 }
 
-                if (Regex.Match(application_path, pattern, RegexOptions.IgnoreCase).Success)
+                if (has_changed)
                 {
-                    Log.Debug("Enforcing SysTray visibility for {0}", application_path);
-                    data[offset + MAGIC_OFFSET] = 2;
-                    has_changed = true;
+                    key.SetValue(key_name, data);
+
+                    bool must_restart = false;
+
+                    foreach (var process in Process.GetProcessesByName("explorer"))
+                    {
+                        process.Kill();
+                        must_restart = true;
+                    }
+
+                    if (must_restart)
+                        Process.Start("explorer.exe");
                 }
             }
 
-            if (has_changed)
-            {
-                subkey.SetValue(value, data);
-                subkey.Close();
-
-                bool must_restart = false;
-
-                foreach (var process in Process.GetProcessesByName("explorer"))
-                {
-                    process.Kill();
-                    must_restart = true;
-                }
-
-                if (must_restart)
-                    Process.Start("explorer.exe");
-            }
+            key.Close();
         }
     }
 }
