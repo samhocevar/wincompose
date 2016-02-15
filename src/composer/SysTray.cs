@@ -46,31 +46,40 @@ namespace WinCompose
                     if (data[offset + MAGIC_OFFSET] == 2)
                         continue;
 
-                    // Retrieve the executable name, which is all the data before
-                    // our magic value.
-                    string application_path = "";
+                    // Retrieve the executable name, which is all the data
+                    // before our magic value. Apparently in recent versions
+                    // of Windows the path is obfuscated using ROT13, but it
+                    // wasn’t always the case.
+                    string application_path = "", rot13_path = "";
                     for (int i = 0; i < MAGIC_OFFSET; i += 2)
                     {
                         int ch = data[offset + i] + 16 * data[offset + i + 1];
                         if (ch == 0)
                             break;
 
+                        application_path += (char)ch;
+
                         if (ch >= 'a' && ch <= 'm' || ch >= 'A' && ch <= 'M')
                             ch += 13;
                         else if (ch >= 'n' && ch <= 'z' || ch >= 'N' && ch <= 'Z')
                             ch -= 13;
 
-                        application_path += (char)ch;
+                        rot13_path += (char)ch;
                     }
 
-                    if (Regex.Match(application_path, pattern, RegexOptions.IgnoreCase).Success)
+                    foreach (string path in new string[] { application_path, rot13_path })
                     {
-                        Log.Debug("Enforcing SysTray visibility for {0}", application_path);
-                        data[offset + MAGIC_OFFSET] = 2;
-                        has_changed = true;
+                        if (Regex.Match(path, pattern, RegexOptions.IgnoreCase).Success)
+                        {
+                            Log.Debug("Enforcing SysTray visibility for {0}", path);
+                            data[offset + MAGIC_OFFSET] = 2;
+                            has_changed = true;
+                        }
                     }
                 }
 
+                // Restart Explorer the non-clean way, because otherwise it
+                // will simply overwrite our registry changes.
                 if (has_changed)
                 {
                     key.SetValue(key_name, data);
