@@ -27,7 +27,7 @@
 <Multi_key> <ampersand> <u> <n> <a> <m> <u> <s> <e> <d>                         : "😒" U1F612 # unamused face
 # "😓" U1F613 # face with cold sweat
 <Multi_key> <ampersand> <p> <e> <n> <s> <i> <v> <e>                             : "😔" U1F614 # pensive face
-<Multi_key> <ampersand> <c> <o> <f> <o> <u> <n> <d> <e> <d>                     : "😖" U1F616 # confounded face
+<Multi_key> <ampersand> <c> <o> <n> <f> <o> <u> <n> <d> <e> <d>                 : "😖" U1F616 # confounded face
 # "😘" U1F618 # face throwing a kiss
 # "😚" U1F61A # kissing face with closed eyes
 # "😜" U1F61C # face with stuck-out tongue and winking eye
