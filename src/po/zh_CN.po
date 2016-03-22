@@ -1,286 +1,290 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-03-22 17:34+0800\n"
+"Last-Translator: YFdyh000 <yfdyh000@gmail.com>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/wincompose/master/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "自动检测"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:126 ID:KeyLMenu
 msgid "Left Alt"
-msgstr ""
+msgstr "左 Alt 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:130 ID:KeyRMenu
 msgid "Right Alt"
-msgstr ""
+msgstr "右 Alt 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:134 ID:KeyLControl
 msgid "Left Control"
-msgstr ""
+msgstr "左 Ctrl 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:138 ID:KeyRControl
 msgid "Right Control"
-msgstr ""
+msgstr "右 Ctrl 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:142 ID:KeyLWin
 msgid "Left Windows"
-msgstr ""
+msgstr "左 Windows 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:146 ID:KeyRWin
 msgid "Right Windows"
-msgstr ""
+msgstr "右 Windows 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:150 ID:KeyCapital
 msgid "Caps Lock"
-msgstr ""
+msgstr "大写锁定键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:154 ID:KeyNumLock
 msgid "Num Lock"
-msgstr ""
+msgstr "数字锁定键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:158 ID:KeyPause
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #. Also known as Application key
 #: i18n/Text.resx:162 ID:KeyApps
 msgid "Menu"
-msgstr ""
+msgstr "菜单键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:166 ID:KeyEscape
 msgid "Escape"
-msgstr ""
+msgstr "Esc 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:170 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:174 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "空格键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:178 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "回车键"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:182 ID:Obsolete016
 msgid "Grave Accent `"
-msgstr ""
+msgstr "重音符 `"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:185 ID:Obsolete017
 msgid "500 milliseconds"
-msgstr ""
+msgstr "500 毫秒"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:188 ID:Obsolete018
 msgid "1 second"
-msgstr ""
+msgstr "1 秒"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:191 ID:Obsolete019
 msgid "2 seconds"
-msgstr ""
+msgstr "2 秒"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:194 ID:Obsolete020
 msgid "3 seconds"
-msgstr ""
+msgstr "3 秒"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:197 ID:Obsolete021
 msgid "5 seconds"
-msgstr ""
+msgstr "5 秒"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:200 ID:Obsolete022
 msgid "10 seconds"
-msgstr ""
+msgstr "10 秒"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:203 ID:Obsolete023
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: i18n/Text.resx:206 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr ""
+msgstr "显示序列…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:210 ID:Disable
 msgid "Disable"
-msgstr ""
+msgstr "禁用"
 
 #: i18n/Text.resx:213 ID:Restart
 msgid "Restart"
-msgstr ""
+msgstr "重新开始"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:216 ID:Obsolete027
 msgid "History"
-msgstr ""
+msgstr "历史记录"
 
 #. A button to visit the website
 #: i18n/Text.resx:220 ID:VisitWebsite
 msgid "Visit Website"
-msgstr ""
+msgstr "访问网站"
 
 #: i18n/Text.resx:223 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "退出"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:226 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr ""
+msgstr "作者 Sam Hocevar <sam@hocevar.net>"
 
 #: i18n/Text.resx:229 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "序列"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:232 ID:Obsolete039
 msgid "Sequence"
-msgstr ""
+msgstr "序列"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:235 ID:Obsolete041
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: i18n/Text.resx:238 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "搜索过滤器："
 
 #: i18n/Text.resx:241 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "书写键："
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "选择应该作为书写键的按键。"
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
 msgid "Delay:"
-msgstr ""
+msgstr "延迟："
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "高级 Unicode 输入"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
-msgstr ""
+msgstr "启用所有字符的 Unicode 输入，包括没有定义组合键的那些。例如，下列序列将输出字符 U+1A3F：书写键 U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr ""
+msgstr "在无效序列"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "回落到不区分大小写的匹配"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
+msgstr "如果输入的序列不存在，但只是大小写不同，自动纠正。"
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "丢弃所有已输入字符"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr ""
+msgstr "如果输入的序列不存在，丢弃所有已输入的字符。默认行为是输出像是书写键没有被按下时的字符。"
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "发出一声哔响"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "如果输入的序列不存在，发出一次系统声音。"
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "界面语言："
 
 #: i18n/Text.resx:282 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
-msgstr ""
+msgstr "选择 WinCompose 界面使用的语言。默认使用操作系统的语言。"
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:290 ID:Obsolete050
 msgid "Copy Character"
-msgstr ""
+msgstr "复制字符"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:294 ID:Obsolete051
 msgid "Description:"
-msgstr ""
+msgstr "描述："
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:298 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "应用"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:302 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "保留原撰写键行为"
 
 #: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
-msgstr ""
+msgstr "这告知 WinCompose 尽量保留原有的按键功能。例如，Alt+Tab 热键将继续有效，即使 Alt 已被用作书写键。"
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "在 Office 应用中插入零宽空格"
 
 #: i18n/Text.resx:311 ID:InsertZwspToolTip
 msgid ""
@@ -288,178 +292,180 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Microsoft Office 应用程序有时会在输入特定 Unicode 字符后动态更改文档字体。此功能将在 Unicode "
+"字符后面插入一个不可见字符以避免此问题。"
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr ""
+msgstr "使用两个 Shift 键模拟大写锁定键"
 
 #: i18n/Text.resx:317 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
+msgstr "如果大写锁定键被用作书写键，该按键的原行为将变为不可用。此功能允许同时按下两个 Shift 键开启大写锁定。"
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr ""
+msgstr "Shift 键禁用了大写锁定键"
 
 #: i18n/Text.resx:323 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr ""
+msgstr "如果大写锁定键被用作书写键，该按键的原行为将变为不可用。此功能允许按下 Shift 键关闭大写锁定。"
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "大写锁定状态始终锁定为大写字母"
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
+msgstr "当大写锁定开启时，输入输入一个带重音字母如“é”将始终输出大写形式的字母，此例即“É”。"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:333 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "分类"
 
 #: i18n/Text.resx:336 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "在选中分类"
 
 #. The title of the Options window
 #: i18n/Text.resx:340 ID:Options
 msgid "Options — WinCompose"
-msgstr ""
+msgstr "选项 — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:344 ID:ShowOptions
 msgid "Options…"
-msgstr ""
+msgstr "选项…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:348 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose v{2} 在 {0} ({1} 序列)"
 
 #: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
-msgstr ""
+msgstr "常规行为"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:355 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "序列 — WinCompose"
 
 #: i18n/Text.resx:358 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "用户定义的宏"
 
 #: i18n/Text.resx:361 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr ""
+msgstr "WinCompose 已禁用"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:365 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:369 ID:TestTyping
 msgid "Test Typing:"
-msgstr ""
+msgstr "测试输入："
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:373 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "调整"
 
 #: i18n/Text.resx:376 ID:Milliseconds
 msgid "(milliseconds)"
-msgstr ""
+msgstr "(毫秒)"
 
 #. About box menu entry
 #: i18n/Text.resx:380 ID:About
 msgid "About"
-msgstr ""
+msgstr "关于"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:384 ID:Download
 msgid "Download WinCompose {0}"
-msgstr ""
+msgstr "下载 WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:388 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "关于 WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:392 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "程序"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:396 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "翻译"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:400 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "特别感谢"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:404 ID:License
 msgid "License"
-msgstr ""
+msgstr "许可协议"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:408 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "WinCompose 需要重新启动才能使一些更改生效。"
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:412 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "报告缺陷"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:416 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "帮助"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:420 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "有更新可用。"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:122 ID:Control
 msgid "Other, Control"
-msgstr "其它，控制字符"
+msgstr "其他，控制字符"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:126 ID:Format
 msgid "Other, Format"
-msgstr "其它，格式化字符"
+msgstr "其他，格式化字符"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:130 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr "其它，尚未指派"
+msgstr "其他，尚未指派"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:134 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "其它，私用空间"
+msgstr "其他，私用空间"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:138 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "其它，超大字符集"
+msgstr "其他，超大字符集"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:142 ID:LowercaseLetter
@@ -474,7 +480,7 @@ msgstr "字母，修饰符"
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:150 ID:OtherLetter
 msgid "Letter, Other"
-msgstr "字母，其它"
+msgstr "字母，其他"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:154 ID:TitlecaseLetter
@@ -514,7 +520,7 @@ msgstr "数字，字母"
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:182 ID:OtherNumber
 msgid "Number, Other"
-msgstr "数字，其它"
+msgstr "数字，其他"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:186 ID:ConnectorPunctuation
@@ -544,7 +550,7 @@ msgstr "标点符号，左引号"
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:206 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr "标点符号，其它"
+msgstr "标点符号，其他"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:210 ID:OpenPunctuation
@@ -569,7 +575,7 @@ msgstr "符号，数学"
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:226 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr "符号，其它"
+msgstr "符号，其他"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:230 ID:LineSeparator
