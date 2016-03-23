@@ -595,7 +595,7 @@
 # "💫" U1F4AB # dizzy symbol
 # "💬" U1F4AC # speech balloon
 # "💮" U1F4AE # white flower
-# "💯" U1F4AF # hundred points symbol
+<Multi_key> <Multi_key> <1> <0> <0> : "💯" U1F4AF # hundred points symbol
 # "💰" U1F4B0 # money bag
 # "💱" U1F4B1 # currency exchange
 # "💲" U1F4B2 # heavy dollar sign
