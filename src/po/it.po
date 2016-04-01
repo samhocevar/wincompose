@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-11-01 09:47+0200\n"
-"Last-Translator: Daniele Viglietti <daniele.viglietti@gmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/wincompose/"
-"master/it/>\n"
+"PO-Revision-Date: 2016-04-01 10:59+0000\n"
+"Last-Translator: Lapo Luchini <lapo@lapo.it>\n"
+"Language-Team: Italian "
+"<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.5-dev\n"
+"X-Generator: Weblate 2.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:122 ID:AutodetectLanguage
@@ -183,7 +183,7 @@ msgstr "Unicode"
 
 #: i18n/Text.resx:238 ID:Search
 msgid "Search Filter:"
-msgstr "Ricerca filtrata:"
+msgstr "Filtro di ricerca:"
 
 #: i18n/Text.resx:241 ID:ComposeKey
 msgid "Compose Key:"
@@ -191,7 +191,7 @@ msgstr "Tasto Compose:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Seleziona il tasto che agirà da tasto Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:248 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "Ritardo:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Input Unicode avanzato"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -211,9 +211,8 @@ msgstr ""
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:258 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Suona se una sequenza è errata"
+msgstr "Quando una sequenza è errata"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
 #, fuzzy
@@ -240,7 +239,7 @@ msgstr ""
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Emetti un suono"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
@@ -255,6 +254,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Seleziona la lingua utilizzata per l'interfaccia di WinCompose. Normalmente "
+"viene utilizzata la lingua del sistema operativo."
 
 #. Close the settings window
 #: i18n/Text.resx:286 ID:Close
@@ -289,6 +290,9 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"Chiede a WinCompose di fare del suo meglio per mantenere il comportamento "
+"originale del tasto. Per esempio, l’uso di Alt-Tab funzionerà correttamente "
+"anche qualora Alt venga scelto come tasto compose."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
