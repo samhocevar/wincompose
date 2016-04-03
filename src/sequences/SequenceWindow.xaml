@@ -109,13 +109,14 @@
                         <DockPanel Margin="0,2">
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
                                 <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
-                                    <!-- We need Segoe UI Symbol, but we put it at the end because it messes with combining character rendering (see #71). -->
-                                    <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface, Segoe UI Symbol" />
+                                    <!-- We need Segoe UI Symbol, but we put it at the end because it messes with combining character rendering (see #71).
+                                       - As for Symbola, it’s not a Microsoft font, but it appears to be widespread enough. -->
+                                    <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface, Segoe UI Symbol, Symbola" />
                                     <Viewbox.ToolTip>
                                         <Grid Height="200" MinWidth="200">
                                             <Viewbox>
-                                                <!-- We need Segoe UI Symbol, but we put it at the end because it messes with combining character rendering (see #71). -->
-                                                <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface, Segoe UI Symbol" />
+                                                <!-- See comment above about Segoe UI Symbol and Symbola -->
+                                                <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="Segoe UI, Lucida Sans Unicode, Lucida Grande, Open Sans, Arial, Microsoft Sans Serif, Tahoma, Courier New, Times New Roman, Global User Interface, Portable User Interface, Segoe UI Symbol, Symbola" />
                                             </Viewbox>
                                         </Grid>
                                     </Viewbox.ToolTip>
