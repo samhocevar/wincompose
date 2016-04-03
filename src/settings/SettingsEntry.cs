@@ -68,7 +68,9 @@ namespace WinCompose
         /// was successful.</returns>
         public bool Save()
         {
-            if (Settings.CreateConfigDir() && m_mutex.WaitOne(2000))
+            // XXX: use the two-argument WaitOne for .NET 3.5 backwards
+            // compatibility (only SP1 has the single-argument version)
+            if (Settings.CreateConfigDir() && m_mutex.WaitOne(2000, true))
             {
                 try
                 {
@@ -96,7 +98,9 @@ namespace WinCompose
         {
             try
             {
-                if (!m_mutex.WaitOne(2000))
+                // XXX: use the two-argument WaitOne for .NET 3.5 backwards
+                // compatibility (only SP1 has the single-argument version)
+                if (!m_mutex.WaitOne(2000, true))
                     return false;
             }
             catch (AbandonedMutexException)

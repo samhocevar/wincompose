@@ -29,53 +29,56 @@ namespace WinCompose
         /// </summary>
         public static void AlwaysShow(string pattern)
         {
+            bool must_restart_explorer = false;
             string key_path = @"Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify";
             string key_name = "IconStreams";
             RegistryKey key = Registry.CurrentUser.OpenSubKey(key_path, true);
+
+            if (key == null)
+                return;
+
             byte[] data = (byte[])key.GetValue(key_name, null);
 
-            bool must_restart_explorer = false;
-
             // This key should have a 20-byte header and several 1640-byte entries
-            if (data != null && data.Length % ENTRY_SIZE == HEADER_SIZE)
+            if (data == null || data.Length % ENTRY_SIZE != HEADER_SIZE)
+                return;
+
+            for (int offset = HEADER_SIZE; offset < data.Length; offset += ENTRY_SIZE)
             {
-                for (int offset = HEADER_SIZE; offset < data.Length; offset += ENTRY_SIZE)
+                // This icon is already configured to be always displayed,
+                // we can just ignore it.
+                if (data[offset + MAGIC_OFFSET] == 2)
+                    continue;
+
+                // Retrieve the executable name, which is all the data
+                // before our magic value. Apparently in recent versions
+                // of Windows the path is obfuscated using ROT13, but it
+                // wasn’t always the case.
+                string application_path = "", rot13_path = "";
+                for (int i = 0; i < MAGIC_OFFSET; i += 2)
                 {
-                    // This icon is already configured to be always displayed,
-                    // we can just ignore it.
-                    if (data[offset + MAGIC_OFFSET] == 2)
-                        continue;
+                    int ch = data[offset + i] + 16 * data[offset + i + 1];
+                    if (ch == 0)
+                        break;
 
-                    // Retrieve the executable name, which is all the data
-                    // before our magic value. Apparently in recent versions
-                    // of Windows the path is obfuscated using ROT13, but it
-                    // wasn’t always the case.
-                    string application_path = "", rot13_path = "";
-                    for (int i = 0; i < MAGIC_OFFSET; i += 2)
+                    application_path += (char)ch;
+
+                    if (ch >= 'a' && ch <= 'm' || ch >= 'A' && ch <= 'M')
+                        ch += 13;
+                    else if (ch >= 'n' && ch <= 'z' || ch >= 'N' && ch <= 'Z')
+                        ch -= 13;
+
+                    rot13_path += (char)ch;
+                }
+
+                foreach (string path in new string[] { application_path, rot13_path })
+                {
+                    if (Regex.Match(path, pattern, RegexOptions.IgnoreCase).Success)
                     {
-                        int ch = data[offset + i] + 16 * data[offset + i + 1];
-                        if (ch == 0)
-                            break;
-
-                        application_path += (char)ch;
-
-                        if (ch >= 'a' && ch <= 'm' || ch >= 'A' && ch <= 'M')
-                            ch += 13;
-                        else if (ch >= 'n' && ch <= 'z' || ch >= 'N' && ch <= 'Z')
-                            ch -= 13;
-
-                        rot13_path += (char)ch;
-                    }
-
-                    foreach (string path in new string[] { application_path, rot13_path })
-                    {
-                        if (Regex.Match(path, pattern, RegexOptions.IgnoreCase).Success)
-                        {
-                            Log.Debug("Enforcing SysTray visibility for {0}", path);
-                            data[offset + MAGIC_OFFSET] = 2;
-                            key.SetValue(key_name, data);
-                            must_restart_explorer = true;
-                        }
+                        Log.Debug("Enforcing SysTray visibility for {0}", path);
+                        data[offset + MAGIC_OFFSET] = 2;
+                        key.SetValue(key_name, data);
+                        must_restart_explorer = true;
                     }
                 }
             }
