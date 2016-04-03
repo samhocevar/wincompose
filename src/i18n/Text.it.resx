@@ -217,16 +217,31 @@
     <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Ricerca filtrata:</value>
+    <value>Filtro di ricerca:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
     <value>Tasto Compose:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Seleziona il tasto che agirà da tasto Compose.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Ritardo:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Input Unicode avanzato</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Quando una sequenza è errata</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Emetti un suono</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Lingua dell’interfaccia:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Seleziona la lingua utilizzata per l'interfaccia di WinCompose. Normalmente viene utilizzata la lingua del sistema operativo.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Chiudi</value>
@@ -242,6 +257,9 @@
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Il Tasto Compose mantiene il suo comportamento originale</value>
+  </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Chiede a WinCompose di fare del suo meglio per mantenere il comportamento originale del tasto. Per esempio, l’uso di Alt-Tab funzionerà correttamente anche qualora Alt venga scelto come tasto compose.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Inserisci spazi a larghezza zero in Office</value>
