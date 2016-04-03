@@ -8,6 +8,7 @@ bin/
 *.csproj.user
 *.vcxproj.user
 *.opensdf
+*.opendb
 *.sdf
 # Misc
 settings.ini

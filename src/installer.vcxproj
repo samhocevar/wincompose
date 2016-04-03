@@ -51,6 +51,12 @@ iscc $(SolutionDir)\installer.iss</NMakeBuildCommandLine>
   <ItemGroup>
     <None Include="installer.iss" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="wincompose.csproj">
+      <Project>{e00db4b7-3738-47f4-b430-b10effb36205}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
