@@ -134,31 +134,9 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
 //
 var
     state: (s_run_1, s_run_2, s_skipped);
-
-//
-// Check for outdated .NET versions and exit the installer with a
-// message if it is not the expected version.
-//
-procedure check_dot_net;
-var
-    names: tarrayofstring;
-    path, version: string;
-    ret: integer;
-begin
-    path := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\';
-    if not(reggetsubkeynames(HKLM, path, names)) or (getarraylength(names) = 0) then
-    begin
-        msgbox('WinCompose requires the .NET Framework, which does not seem to be installed.', mbInformation, MB_OK);
-        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=21', '', '', sw_show, ewnowait, ret);
-        exit_process(0);
-    end;
-    if regquerystringvalue(HKLM, path + '\v3.5', 'Version', version) and (pos('3.5.21022.08', version) = 1) then
-    begin
-        msgbox('WinCompose requires the .NET Framework 3.5 Service Pack 1, which does not seem to be installed.', mbInformation, MB_OK);
-        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22', '', '', sw_show, ewnowait, ret);
-        exit_process(0);
-    end;
-end;
+    dotnet_page: twizardpage;
+    warning, action: tnewstatictext;
+    retry: tbutton;
 
 //
 // Visit the project homepage
@@ -168,6 +146,53 @@ var
     ret: integer;
 begin
     shellexec('open', 'http://wincompose.info/', '', '', sw_show, ewnowait, ret);
+end;
+
+//
+// Download .NET Framework 3.5 SP1
+//
+procedure download_dotnet(sender: tobject);
+var
+    ret: integer;
+begin
+    { ID 22 is Service Pack 1, 21 would be the original .NET 3.5. }
+    shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22',
+              '', '', sw_show, ewnowait, ret);
+end;
+
+//
+// Refresh the current page after the user clicked on a button
+//
+procedure refresh_dotnet_page(); forward;
+procedure retry_button_clicked(sender: tobject);
+begin
+    refresh_dotnet_page();
+end;
+
+//
+// Check the .NET Framework installation state
+//
+function get_dotnet_state(): integer;
+var
+    framework_names: tarrayofstring;
+    path, version: string;
+begin
+    path := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\';
+    if not(reggetsubkeynames(HKLM, path, framework_names))
+       or (getarraylength(framework_names) = 0) then begin
+        { No such path in registry, or no frameworks found }
+        result := -1;
+    end else if regquerystringvalue(HKLM, path + '\v3.5', 'Version', version) then begin
+        { .NET 3.5 found, but check for Servica Pack 1 }
+        if pos('3.5.21022.08', version) = 1 then
+            result := -1;
+    end else begin
+        { Some other .NET versions found, but check for v4 }
+        if not(regquerystringvalue(HKLM, path + '\v4', 'Version', version))
+           and not(regquerystringvalue(HKLM, path + '\v4.0', 'Version', version))
+           and not(regquerystringvalue(HKLM, path + '\v4.5', 'Version', version)) then
+            result := -1;
+    end;
 end;
 
 //
@@ -182,6 +207,7 @@ begin
     for i := 1 to paramcount do
         if comparetext(paramstr(i), '/elevate') = 0 then state := s_run_2;
 
+
     homepage := tnewstatictext.create(wizardform);
     homepage.caption := 'http://wincompose.info/';
     homepage.cursor := crhand;
@@ -194,7 +220,30 @@ begin
                   - homepage.height - 2;
     homepage.left := scalex(20);
 
-    check_dot_net();
+
+    dotnet_page := createcustompage(wpwelcome, 'Prerequisites',
+                                    'Software required by WinCompose');
+
+    warning := tnewstatictext.create(dotnet_page);
+    warning.caption := 'WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not'
+            + #13#10 + 'seem to be installed. The following action may help solve the problem:';
+    warning.parent := dotnet_page.surface;
+
+    action := tnewstatictext.create(dotnet_page);
+    action.caption := 'Download .NET Framework 3.5 Service Pack 1';
+    action.parent := dotnet_page.surface;
+    action.cursor := crhand;
+    action.onclick := @download_dotnet;
+    action.font.style := action.font.style + [fsunderline];
+    action.font.color := clblue;
+    action.top := warning.top + warning.height + scaley(5);
+
+    retry := tbutton.create(dotnet_page);
+    retry.onclick := @retry_button_clicked;
+    retry.caption := 'Check again!';
+    retry.parent := dotnet_page.surface;
+    retry.width := retry.width + retry.width / 3;
+    retry.top := action.top + action.height + scaley(40);
 end;
 
 //
@@ -241,11 +290,43 @@ begin
 end;
 
 //
+// Refresh the .NET page
+//
+procedure refresh_dotnet_page();
+begin
+    if (get_dotnet_state() < 0) then begin
+        wizardform.nextbutton.enabled := false;
+        action.visible := true;
+        retry.visible := true;
+    end else begin
+        wizardform.nextbutton.enabled := true;
+        warning.caption := 'All prerequisites were found!';
+        action.visible := false;
+        retry.visible := false;
+    end;
+end;
+
+//
+// Optionally tweak the current page
+//
+procedure CurPageChanged(page_id: integer);
+begin
+    if (page_id = dotnet_page.id) then
+        refresh_dotnet_page();
+end;
+
+//
 // If running elevated and we haven't reached the directory selection page,
 // skip all pages, including the directory selection page.
 //
 function ShouldSkipPage(page_id: integer): boolean;
 begin
+    { If this is the .NET page, decide whether to show it or not! }
+    if (state = s_run_1) and (page_id = dotnet_page.id) then begin
+        result := (get_dotnet_state() = 0);
+        exit;
+    end;
+
     result := (state = s_run_2) and (page_id <= wpselectdir);
     if (state = s_run_2) and (page_id = wpselectdir) then
         state := s_skipped;
