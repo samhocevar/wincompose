@@ -115,7 +115,9 @@ Type: dirifempty; Name: "{app}\po"
 Type: dirifempty; Name: "{app}"
 
 [Code]
+//
 // Some Win32 API hooks
+//
 procedure exit_process(uExitCode: uint);
     external 'ExitProcess@kernel32.dll stdcall';
 
@@ -124,46 +126,82 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
                 nShowCmd: integer): thandle;
     external 'ShellExecuteW@shell32.dll stdcall';
 
+//
 // Installer state
+// s_run_1: first run
+// s_run_2: second run, with elevated privileges
+// s_skipped: second run, with all pages automatically skipped
+//
 var
     state: (s_run_1, s_run_2, s_skipped);
 
-// Exit the installer with a message if the required .NET was found
-procedure CheckDotNet;
+//
+// Check for outdated .NET versions and exit the installer with a
+// message if it is not the expected version.
+//
+procedure check_dot_net;
 var
     names: tarrayofstring;
-    key, version: string;
+    path, version: string;
     ret: integer;
 begin
-    key := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\';
-    if not(reggetsubkeynames(HKLM, key, names)) or (getarraylength(names) = 0) then
+    path := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\';
+    if not(reggetsubkeynames(HKLM, path, names)) or (getarraylength(names) = 0) then
     begin
         msgbox('WinCompose requires the .NET Framework, which does not seem to be installed.', mbInformation, MB_OK);
-        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=21', '', '', SW_SHOW, ewNoWait, ret);
+        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=21', '', '', sw_show, ewnowait, ret);
         exit_process(0);
     end;
-    if regquerystringvalue(HKLM, key + '\v3.5', 'Version', version) and (pos('3.5.21022.08', version) = 1) then
+    if regquerystringvalue(HKLM, path + '\v3.5', 'Version', version) and (pos('3.5.21022.08', version) = 1) then
     begin
         msgbox('WinCompose requires the .NET Framework 3.5 Service Pack 1, which does not seem to be installed.', mbInformation, MB_OK);
-        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22', '', '', SW_SHOW, ewNoWait, ret);
+        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22', '', '', sw_show, ewnowait, ret);
         exit_process(0);
     end;
 end;
 
+//
+// Visit the project homepage
+//
+procedure visit_homepage(sender: tobject);
+var
+    ret: integer;
+begin
+    shellexec('open', 'http://wincompose.info/', '', '', sw_show, ewnowait, ret);
+end;
+
+//
 // Initialize installer state.
+//
 procedure InitializeWizard;
 var
     i: integer;
+    homepage: tnewstatictext;
 begin
     state := s_run_1;
     for i := 1 to paramcount do
         if comparetext(paramstr(i), '/elevate') = 0 then state := s_run_2;
-    checkdotnet();
+
+    homepage := tnewstatictext.create(wizardform);
+    homepage.caption := 'http://wincompose.info/';
+    homepage.cursor := crhand;
+    homepage.onclick := @visit_homepage;
+    homepage.parent := wizardform;
+    homepage.font.style := homepage.font.style + [fsunderline];
+    homepage.font.color := clblue;
+    homepage.top := wizardform.cancelbutton.top
+                  + wizardform.cancelbutton.height
+                  - homepage.height - 2;
+    homepage.left := scalex(20);
+
+    check_dot_net();
 end;
 
+//
 // If we're in the target directory selection page, check that we
 // can actually install files in that directory. Otherwise, we hijack
 // NextButtonClick() to re-execute ourselves in admin mode.
+//
 function NextButtonClick(page_id: integer): boolean;
 var
     e1: boolean;
@@ -179,7 +217,7 @@ begin
         if e1 then exit;
 
         e2 := reexec(wizardform.handle, 'runas', expandconstant('{srcexe}'),
-                     expandconstant('/dir="{app}" /elevate'), '', SW_SHOW);
+                     expandconstant('/dir="{app}" /elevate'), '', sw_show);
         if e2 > 32 then exit_process(0);
 
         result := false;
@@ -188,8 +226,10 @@ begin
     end;
 end;
 
+//
 // Broadcast the WM_WINCOMPOSE_EXIT message for all WinCompose instances
 // to shutdown themselves.
+//
 function PrepareToInstall(var needsrestart: boolean): string;
 var
     dummy: integer;
@@ -200,8 +240,10 @@ begin
          SW_HIDE, ewwaituntilterminated, dummy);
 end;
 
+//
 // If running elevated and we haven't reached the directory selection page,
 // skip all pages, including the directory selection page.
+//
 function ShouldSkipPage(page_id: integer): boolean;
 begin
     result := (state = s_run_2) and (page_id <= wpselectdir);
