@@ -9,6 +9,7 @@ VERSION = $(shell sed -ne 's/.*<ApplicationVersion>\([^<]*\).*/\1/p' build.confi
 CONFIG = Release
 
 ISS = installer.iss
+PAS = installer.pas
 
 TXT = rules/Xorg.txt \
       rules/Xcompose.txt \
@@ -32,7 +33,7 @@ clean:
 	rm -rf obj wincompose/obj wincompose.gui/obj || true
 	rm -rf bin wincompose/bin wincompose.gui/bin || true
 
-installer: $(EXE) $(ISS)
+installer: $(EXE) $(ISS) $(PAS)
 	$(DEVENV) wincompose.sln //rebuild $(CONFIG) //project installer.vcxproj
 
 portable: $(EXE)

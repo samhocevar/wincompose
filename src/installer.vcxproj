@@ -50,6 +50,7 @@ iscc $(SolutionDir)\installer.iss</NMakeBuildCommandLine>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="installer.iss" />
+    <None Include="installer.pas" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="wincompose.csproj">
