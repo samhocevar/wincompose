@@ -128,6 +128,28 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
 var
     state: (s_run_1, s_run_2, s_skipped);
 
+// Exit the installer with a message if the required .NET was found
+procedure CheckDotNet;
+var
+    names: tarrayofstring;
+    key, version: string;
+    ret: integer;
+begin
+    key := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\';
+    if not(reggetsubkeynames(HKLM, key, names)) or (getarraylength(names) = 0) then
+    begin
+        msgbox('WinCompose requires the .NET Framework, which does not seem to be installed.', mbInformation, MB_OK);
+        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=21', '', '', SW_SHOW, ewNoWait, ret);
+        exit_process(0);
+    end;
+    if regquerystringvalue(HKLM, key + '\v3.5', 'Version', version) and (pos('3.5.21022.08', version) = 1) then
+    begin
+        msgbox('WinCompose requires the .NET Framework 3.5 Service Pack 1, which does not seem to be installed.', mbInformation, MB_OK);
+        shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22', '', '', SW_SHOW, ewNoWait, ret);
+        exit_process(0);
+    end;
+end;
+
 // Initialize installer state.
 procedure InitializeWizard;
 var
@@ -136,6 +158,7 @@ begin
     state := s_run_1;
     for i := 1 to paramcount do
         if comparetext(paramstr(i), '/elevate') = 0 then state := s_run_2;
+    checkdotnet();
 end;
 
 // If we're in the target directory selection page, check that we
