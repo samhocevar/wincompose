@@ -9,8 +9,7 @@ var
 
     { The .NET version detection page }
     dotnet_page: twizardpage;
-    warning, action: tnewstatictext;
-    retry: tbutton;
+    warning, action, hint: tnewstatictext;
 
 {
 { Some Win32 API hooks
@@ -22,6 +21,18 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
                 lpParameters: string; lpDirectory: string;
                 nShowCmd: integer): thandle;
     external 'ShellExecuteW@shell32.dll stdcall';
+
+procedure trampoline(hwnd: hwnd; milliseconds: uint);
+    external 'trampoline@files:trampoline.dll cdecl setuponly';
+
+{
+{ Translation support
+}
+function _(src: string): string;
+begin
+    result := src;
+    stringchangeex(result, '\n', #13#10, true);
+end;
 
 {
 { Visit the project homepage
@@ -46,15 +57,6 @@ begin
 end;
 
 {
-{ Refresh the current page after the user clicked on a button
-}
-procedure refresh_dotnet_page(); forward;
-procedure retry_button_clicked(sender: tobject);
-begin
-    refresh_dotnet_page();
-end;
-
-{
 { Check the .NET Framework installation state
 }
 function get_dotnet_state(): integer;
@@ -68,7 +70,7 @@ begin
         { No such path in registry, or no frameworks found }
         result := -1;
     end else if regquerystringvalue(HKLM, path + '\v3.5', 'Version', version) then begin
-        { .NET 3.5 found, but check for Service Pack 1 }
+        { .NET 3.5 found, but fail if we only find Service Pack 1 }
         if pos('3.5.21022.08', version) = 1 then
             result := -1;
     end else begin
@@ -106,29 +108,30 @@ begin
     homepage.left := scalex(20);
 
     { Create an optional page for .NET detection and installation }
-    dotnet_page := createcustompage(wpwelcome, 'Prerequisites',
-                                    'Software required by WinCompose');
+    dotnet_page := createcustompage(wpwelcome, _('Prerequisites'),
+                                    _('Software required by WinCompose'));
 
     warning := tnewstatictext.create(dotnet_page);
-    warning.caption := 'WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not'
-            + #13#10 + 'seem to be installed. The following action may help solve the problem:';
+    warning.caption := _('WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not\n'
+                       + 'seem to be currently installed. The following action may help solve the problem:');
     warning.parent := dotnet_page.surface;
 
     action := tnewstatictext.create(dotnet_page);
-    action.caption := 'Download .NET Framework 3.5 Service Pack 1';
+    action.caption := _('Download and install .NET Framework 3.5 Service Pack 1');
     action.parent := dotnet_page.surface;
     action.cursor := crhand;
     action.onclick := @download_dotnet;
     action.font.style := action.font.style + [fsunderline];
     action.font.color := clblue;
-    action.top := warning.top + warning.height + scaley(5);
+    action.left := scalex(10);
+    action.top := warning.top + warning.height + scaley(10);
 
-    retry := tbutton.create(dotnet_page);
-    retry.onclick := @retry_button_clicked;
-    retry.caption := 'Check again!';
-    retry.parent := dotnet_page.surface;
-    retry.width := retry.width + retry.width / 3;
-    retry.top := action.top + action.height + scaley(40);
+    hint := tnewstatictext.create(dotnet_page);
+    hint.caption := _('Once this is done, you may return to this screen and proceed with the\n'
+                    + 'installation.');
+    hint.parent := dotnet_page.surface;
+    hint.font.style := hint.font.style + [fsbold];
+    hint.top := action.top + action.height + scaley(20);
 end;
 
 {
@@ -155,7 +158,7 @@ begin
         if e2 > 32 then exit_process(0);
 
         result := false;
-        msgbox(format('Administrator rights are required. Code: %d', [e2]),
+        msgbox(format(_('Administrator rights are required. Error: %d'), [e2]),
                mberror, MB_OK);
     end;
 end;
@@ -177,17 +180,20 @@ end;
 {
 { Refresh the .NET page
 }
-procedure refresh_dotnet_page();
+procedure refresh_dotnet_page(sender: tobject; var key: word; shift: tshiftstate);
 begin
-    if (get_dotnet_state() < 0) then begin
-        wizardform.nextbutton.enabled := false;
-        action.visible := true;
-        retry.visible := true;
-    end else begin
-        wizardform.nextbutton.enabled := true;
-        warning.caption := 'All prerequisites were found!';
-        action.visible := false;
-        retry.visible := false;
+    if wizardform.curpageid = dotnet_page.id then
+    begin
+        if (get_dotnet_state() < 0) then begin
+            wizardform.nextbutton.enabled := false;
+            action.visible := true;
+            hint.visible := true;
+        end else begin
+            wizardform.nextbutton.enabled := true;
+            warning.caption := 'All prerequisites were found!';
+            action.visible := false;
+            hint.visible := false;
+        end;
     end;
 end;
 
@@ -196,8 +202,14 @@ end;
 }
 procedure CurPageChanged(page_id: integer);
 begin
-    if (page_id = dotnet_page.id) then
-        refresh_dotnet_page();
+    if (page_id = dotnet_page.id) then begin
+        { Trigger refresh_dotnet_page() every second }
+        wizardform.onkeyup := @refresh_dotnet_page;
+        trampoline(wizardform.handle, 1000);
+    end else begin
+        wizardform.onkeyup := nil;
+        trampoline(0, 0);
+    end;
 end;
 
 {

@@ -22,6 +22,9 @@ ShowLanguageDialog = auto
 PrivilegesRequired = lowest
 
 [Files]
+; We put this at the beginning so that it’s easier to decompress
+Source: "bin\{#CONFIG}\trampoline.dll"; DestDir: "{tmp}"; Flags: dontcopy
+
 Source: "bin\{#CONFIG}\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
