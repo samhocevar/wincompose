@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-07 22:13+0000\n"
+"PO-Revision-Date: 2016-04-08 17:31+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
-"nl/>\n"
+"Language-Team: Dutch "
+"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.5-dev\n"
+"X-Generator: Weblate 2.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -626,13 +626,12 @@ msgstr "Scheiding, spatie"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:111
 msgid "Prerequisites"
-msgstr ""
+msgstr "Vereisten"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:112
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Sequenties — WinCompose"
+msgstr "Software nodig voor WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:115
@@ -642,11 +641,15 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose heeft het .NET Framework nodig. Versie 3.5 SP1 of recenter. Dat "
+"lijkt\n"
+"momenteel niet geïnstalleerd te zijn. Het probleem kan als volgt worden "
+"opgelost:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Het .NET Framework 3.5 Service Pack 1 downloaden en installeren"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:130
@@ -654,11 +657,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Eens dit is gebeurd, kan u terugkeren naar dit scherm en verdergaan\n"
+"met de installatie."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:161
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Administratorrechten zijn vereist. Fout: %d"
 
 #, fuzzy
 #~ msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
