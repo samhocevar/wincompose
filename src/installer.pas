@@ -26,6 +26,15 @@ procedure trampoline(hwnd: hwnd);
     external 'trampoline@files:trampoline.dll cdecl setuponly';
 
 {
+{ Translation support
+}
+function _(src: string): string;
+begin
+    result := src;
+    stringchangeex(result, '\n', #13#10, true);
+end;
+
+{
 { Visit the project homepage
 }
 procedure visit_homepage(sender: tobject);
@@ -61,7 +70,7 @@ begin
         { No such path in registry, or no frameworks found }
         result := -1;
     end else if regquerystringvalue(HKLM, path + '\v3.5', 'Version', version) then begin
-        { .NET 3.5 found, but check for Service Pack 1 }
+        { .NET 3.5 found, but fail if we only find Service Pack 1 }
         if pos('3.5.21022.08', version) = 1 then
             result := -1;
     end else begin
@@ -99,16 +108,16 @@ begin
     homepage.left := scalex(20);
 
     { Create an optional page for .NET detection and installation }
-    dotnet_page := createcustompage(wpwelcome, 'Prerequisites',
-                                    'Software required by WinCompose');
+    dotnet_page := createcustompage(wpwelcome, _('Prerequisites'),
+                                    _('Software required by WinCompose'));
 
     warning := tnewstatictext.create(dotnet_page);
-    warning.caption := 'WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not'
-            + #13#10 + 'seem to be currently installed. The following action may help solve the problem:';
+    warning.caption := _('WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not\n'
+                       + 'seem to be currently installed. The following action may help solve the problem:');
     warning.parent := dotnet_page.surface;
 
     action := tnewstatictext.create(dotnet_page);
-    action.caption := 'Download and install .NET Framework 3.5 Service Pack 1';
+    action.caption := _('Download and install .NET Framework 3.5 Service Pack 1');
     action.parent := dotnet_page.surface;
     action.cursor := crhand;
     action.onclick := @download_dotnet;
@@ -118,8 +127,8 @@ begin
     action.top := warning.top + warning.height + scaley(10);
 
     hint := tnewstatictext.create(dotnet_page);
-    hint.caption := 'Once this is done, you may return to this screen and proceed with the'
-         + #13#10 + 'installation.';
+    hint.caption := _('Once this is done, you may return to this screen and proceed with the\n'
+                    + 'installation.');
     hint.parent := dotnet_page.surface;
     hint.font.style := hint.font.style + [fsbold];
     hint.top := action.top + action.height + scaley(20);
@@ -149,7 +158,7 @@ begin
         if e2 > 32 then exit_process(0);
 
         result := false;
-        msgbox(format('Administrator rights are required. Code: %d', [e2]),
+        msgbox(format(_('Administrator rights are required. Error: %d'), [e2]),
                mberror, MB_OK);
     end;
 end;
