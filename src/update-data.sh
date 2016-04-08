@@ -171,7 +171,7 @@ for x in unicode/*resx i18n/*resx; do
         echo "WARNING: $x not found in wincompose.csproj"
     fi
     if grep -q '^; Name: "'$reslang'";' installer.iss; then
-        echo "WARNING: $lang is commented out in installer.iss"
+        echo "WARNING: $reslang is commented out in installer.iss"
     fi
 done
 

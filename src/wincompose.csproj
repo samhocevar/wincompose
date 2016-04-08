@@ -152,6 +152,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.ga.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.hu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.hu.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.id.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -407,6 +412,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.id.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.hu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.hu.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.it.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -548,6 +558,11 @@
     <EmbeddedResource Include="unicode\Category.ga.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.ga.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.hu.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.hu.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.id.resx">
@@ -812,6 +827,11 @@
     <EmbeddedResource Include="i18n\Text.ga.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.ga.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.hu.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.hu.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.id.resx">
