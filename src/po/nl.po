@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2016-01-07 22:13+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch "
-"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
+"nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,83 +20,83 @@ msgstr ""
 "X-Generator: Weblate 2.5-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
-#: i18n/Text.resx:122 ID:AutodetectLanguage
+#: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "Automatische detectie"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:126 ID:KeyLMenu
+#: i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Linker Alt-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:130 ID:KeyRMenu
+#: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Rechter Alt-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:134 ID:KeyLControl
+#: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
 msgstr "Linker Ctrl-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:138 ID:KeyRControl
+#: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
 msgstr "Rechter Ctrl-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:142 ID:KeyLWin
+#: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
 msgstr "Linker Windows-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:146 ID:KeyRWin
+#: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
 msgstr "Rechter Windows-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:150 ID:KeyCapital
+#: i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
 msgstr "Caps Lock-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:154 ID:KeyNumLock
+#: i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
 msgstr "Num Lock-toets"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:158 ID:KeyPause
+#: i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
 msgstr "Pause"
 
 #. Also known as Application key
-#: i18n/Text.resx:162 ID:KeyApps
+#: i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
 msgstr "Menu"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:166 ID:KeyEscape
+#: i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
 msgstr "Escape"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:170 ID:KeyScroll
+#: i18n/Text.resx:169 ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:174 ID:KeySpace
+#: i18n/Text.resx:173 ID:KeySpace
 msgid "Space"
 msgstr "Spatie"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:178 ID:KeyReturn
+#: i18n/Text.resx:177 ID:KeyReturn
 msgid "Return"
 msgstr "Enter"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:182 ID:Obsolete016
+#: i18n/Text.resx:181 ID:Obsolete016
 msgid "Grave Accent `"
 msgstr "Accent Grave `"
 
@@ -140,7 +140,7 @@ msgid "Show Sequences…"
 msgstr "Toon sequenties…"
 
 #. Menu entry to disable WinCompose
-#: i18n/Text.resx:210 ID:Disable
+#: i18n/Text.resx:209 ID:Disable
 msgid "Disable"
 msgstr "Uitschakelen"
 
@@ -154,7 +154,7 @@ msgid "History"
 msgstr "Historiek"
 
 #. A button to visit the website
-#: i18n/Text.resx:220 ID:VisitWebsite
+#: i18n/Text.resx:219 ID:VisitWebsite
 msgid "Visit Website"
 msgstr "Website bezoeken"
 
@@ -194,7 +194,7 @@ msgid "Select the key that should act as the Compose key."
 msgstr "Selecteer de toets die moet werken als compositietoets."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:248 ID:ResetDelay
+#: i18n/Text.resx:247 ID:ResetDelay
 msgid "Delay:"
 msgstr "Vertraging:"
 
@@ -213,7 +213,7 @@ msgstr ""
 "karakter U+1A3F opleveren: Compositietoets U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
-#: i18n/Text.resx:258 ID:InvalidSequences
+#: i18n/Text.resx:257 ID:InvalidSequences
 msgid "On invalid sequences"
 msgstr "Bij ongeldige sequenties"
 
@@ -265,29 +265,29 @@ msgstr ""
 "de taal van het besturingssysteem gebruikt."
 
 #. Close the settings window
-#: i18n/Text.resx:286 ID:Close
+#: i18n/Text.resx:285 ID:Close
 msgid "Close"
 msgstr "Sluiten"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:290 ID:Obsolete050
+#: i18n/Text.resx:289 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Karakter kopiëren"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:294 ID:Obsolete051
+#: i18n/Text.resx:293 ID:Obsolete051
 msgid "Description:"
 msgstr "Beschrijving:"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:298 ID:Apply
+#: i18n/Text.resx:297 ID:Apply
 msgid "Apply"
 msgstr "Toepassen"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:302 ID:KeepOriginalKey
+#: i18n/Text.resx:301 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Gedrag van oorspronkelijke compositietoets behouden"
 
@@ -357,7 +357,7 @@ msgstr ""
 "geval “É”."
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:333 ID:Categories
+#: i18n/Text.resx:332 ID:Categories
 msgid "Categories"
 msgstr "Categorieën"
 
@@ -366,17 +366,17 @@ msgid "In selected categories"
 msgstr "In geselecteerde categorieën"
 
 #. The title of the Options window
-#: i18n/Text.resx:340 ID:Options
+#: i18n/Text.resx:339 ID:Options
 msgid "Options — WinCompose"
 msgstr "Opties — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:344 ID:ShowOptions
+#: i18n/Text.resx:343 ID:ShowOptions
 msgid "Options…"
 msgstr "Opties…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:348 ID:TrayToolTip
+#: i18n/Text.resx:347 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} op {0} ({1} sequentie(s))"
 
@@ -385,7 +385,7 @@ msgid "General Behavior"
 msgstr "Algemeen gedrag"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:355 ID:WindowTitle
+#: i18n/Text.resx:354 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Sequenties — WinCompose"
 
@@ -398,17 +398,17 @@ msgid "WinCompose is disabled"
 msgstr "WinCompose is uitgeschakeld"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:365 ID:KeyInsert
+#: i18n/Text.resx:364 ID:KeyInsert
 msgid "Insert"
 msgstr "Invoegen"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:369 ID:TestTyping
+#: i18n/Text.resx:368 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Typen uittesten:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:373 ID:Tweaks
+#: i18n/Text.resx:372 ID:Tweaks
 msgid "Tweaks"
 msgstr "Aanpassingen"
 
@@ -417,211 +417,248 @@ msgid "(milliseconds)"
 msgstr "(milliseconden)"
 
 #. About box menu entry
-#: i18n/Text.resx:380 ID:About
+#: i18n/Text.resx:379 ID:About
 msgid "About"
 msgstr "Over"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:384 ID:Download
+#: i18n/Text.resx:383 ID:Download
 msgid "Download WinCompose {0}"
 msgstr "WinCompose {0} downloaden"
 
 #. Window title of the About box
-#: i18n/Text.resx:388 ID:AboutBoxTitle
+#: i18n/Text.resx:387 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "Over WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:392 ID:Programming
+#: i18n/Text.resx:391 ID:Programming
 msgid "Programming"
 msgstr "Programmeren"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:396 ID:Translators
+#: i18n/Text.resx:395 ID:Translators
 msgid "Translation"
 msgstr "Vertaling"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:400 ID:Contributors
+#: i18n/Text.resx:399 ID:Contributors
 msgid "Special Thanks"
 msgstr "Bijzondere dank"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:404 ID:License
+#: i18n/Text.resx:403 ID:License
 msgid "License"
 msgstr "Licentie"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:408 ID:NeedRestart
+#: i18n/Text.resx:407 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 "WinCompose moet herstart worden opdat sommige wijzigingen zouden kunnen "
 "worden toegepast."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:412 ID:ReportBug
+#: i18n/Text.resx:411 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Meld een fout"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:416 ID:Help
+#: i18n/Text.resx:415 ID:Help
 msgid "Help"
 msgstr "Hulp"
 
 #. Message displayed in the systray tooltip.
-#: i18n/Text.resx:420 ID:UpdatesToolTip
+#: i18n/Text.resx:419 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr "Er zijn updates beschikbaar."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:122 ID:Control
+#: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Overig, Sturing"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:126 ID:Format
+#: unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
 msgstr "Overig, Formaat"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:130 ID:OtherNotAssigned
+#: unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
 msgstr "Overig, Niet toegewezen"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:134 ID:PrivateUse
+#: unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
 msgstr "Overig, Privaatgebruik"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:138 ID:Surrogate
+#: unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
 msgstr "Overig, Surrogaat"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:142 ID:LowercaseLetter
+#: unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
 msgstr "Letter, onderkast"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:146 ID:ModifierLetter
+#: unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
 msgstr "Letter, aanpassend"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:150 ID:OtherLetter
+#: unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
 msgstr "Letter, Overig"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:154 ID:TitlecaseLetter
+#: unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
 msgstr "Letter, klein kapitaal"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:158 ID:UppercaseLetter
+#: unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
 msgstr "Letter, bovenkast"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:162 ID:SpacingCombiningMark
+#: unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
 msgstr "Markeringsteken, combinerende spatiëring"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:166 ID:EnclosingMark
+#: unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
 msgstr "Teken, omvattend"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:170 ID:NonSpacingMark
+#: unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
 msgstr "Teken, niet-spatiëring"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:174 ID:DecimalDigitNumber
+#: unicode/Category.resx:173 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
 msgstr "Getal, decimaal cijfer"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:178 ID:LetterNumber
+#: unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
 msgstr "Getal, letter"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:182 ID:OtherNumber
+#: unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
 msgstr "Getal, overig"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:186 ID:ConnectorPunctuation
+#: unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
 msgstr "Leesteken, verbindingsstuk"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:190 ID:DashPunctuation
+#: unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
 msgstr "Leesteken, streep"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:194 ID:ClosePunctuation
+#: unicode/Category.resx:193 ID:ClosePunctuation
 msgid "Punctuation, Close"
 msgstr "Leesteken, afsluiten"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:198 ID:FinalQuotePunctuation
+#: unicode/Category.resx:197 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
 msgstr "Leesteken, aanhalingsteken sluiten"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:202 ID:InitialQuotePunctuation
+#: unicode/Category.resx:201 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
 msgstr "Leesteken, aanhalingsteken openen"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:206 ID:OtherPunctuation
+#: unicode/Category.resx:205 ID:OtherPunctuation
 msgid "Punctuation, Other"
 msgstr "Leesteken, overig"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:210 ID:OpenPunctuation
+#: unicode/Category.resx:209 ID:OpenPunctuation
 msgid "Punctuation, Open"
 msgstr "Leesteken, openen"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:214 ID:CurrencySymbol
+#: unicode/Category.resx:213 ID:CurrencySymbol
 msgid "Symbol, Currency"
 msgstr "Symbool, valuta"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:218 ID:ModifierSymbol
+#: unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
 msgstr "Symbool, aanpassend"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:222 ID:MathSymbol
+#: unicode/Category.resx:221 ID:MathSymbol
 msgid "Symbol, Math"
 msgstr "Symbool, wiskundig"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:226 ID:OtherSymbol
+#: unicode/Category.resx:225 ID:OtherSymbol
 msgid "Symbol, Other"
 msgstr "Symbool, overig"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:230 ID:LineSeparator
+#: unicode/Category.resx:229 ID:LineSeparator
 msgid "Separator, Line"
 msgstr "Scheiding, lijn"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:234 ID:ParagraphSeparator
+#: unicode/Category.resx:233 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
 msgstr "Scheiding, alinea"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:238 ID:SpaceSeparator
+#: unicode/Category.resx:237 ID:SpaceSeparator
 msgid "Separator, Space"
 msgstr "Scheiding, spatie"
+
+#. This string appears in the installer, not in WinCompose.
+#: installer.pas:111
+msgid "Prerequisites"
+msgstr ""
+
+#. This string appears in the installer, not in WinCompose.
+#: installer.pas:112
+#, fuzzy
+msgid "Software required by WinCompose"
+msgstr "Sequenties — WinCompose"
+
+#. This string appears in the installer, not in WinCompose.
+#: installer.pas:115
+msgid ""
+"WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
+"not\n"
+"seem to be currently installed. The following action may help solve the "
+"problem:"
+msgstr ""
+
+#. This string appears in the installer, not in WinCompose.
+#: installer.pas:120
+msgid "Download and install .NET Framework 3.5 Service Pack 1"
+msgstr ""
+
+#. This string appears in the installer, not in WinCompose.
+#: installer.pas:130
+msgid ""
+"Once this is done, you may return to this screen and proceed with the\n"
+"installation."
+msgstr ""
+
+#. This string appears in the installer, not in WinCompose.
+#: installer.pas:161
+msgid "Administrator rights are required. Error: %d"
+msgstr ""
 
 #, fuzzy
 #~ msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"

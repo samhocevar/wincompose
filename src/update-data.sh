@@ -41,15 +41,28 @@ for FILE in i18n/Text.resx unicode/Category.resx; do
     /-->/       { off=0 }
     /<data /    { split($0, a, "\""); id=a[2]; comment=""; obsolete=0 }
     /"Obsolete/ { obsolete=1 }
-    /<value>/   { split ($0, a, /[<>]/); value=a[3]; }
+    /<value>/   { split ($0, a, /[<>]/); value=a[3]; line=NR; }
     /<comment>/ { split ($0, a, /[<>]/); comment=a[3]; }
     /<\/data>/  { if (!off) {
-                      print "#: '${FILE}':" (NR - 1) " ID:" id;
+                      print "#: '${FILE}':" line " ID:" id;
                       if (comment) { print "#. " comment }
                       if (obsolete) { print "#. This string is obsolete but might be reused in the future" }
                       print "msgid \"" value "\"";
                       print "msgstr \"\""; print "";
                   } }' \
+  | sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
+  >> ${DEST}
+done
+for FILE in installer.pas; do
+    awk < ${FILE} '
+    /_\(/ { ok=1; value=""; line=NR; }
+          { if(ok) { split($0, a, "'"'"'"); value=value a[2]; } }
+    /\)/  { if (ok && value) {
+                print "#. This string appears in the installer, not in WinCompose."
+                print "#: '${FILE}':" line "";
+                print "msgid \"" value "\"";
+                print "msgstr \"\""; print ""; }
+            ok=0; }' \
   | sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
   >> ${DEST}
 done
