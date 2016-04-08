@@ -171,7 +171,7 @@ end;
 {
 { Refresh the .NET page
 }
-procedure refresh_dotnet_page(sender: tobject);
+procedure refresh_dotnet_page(sender: tobject; var key: word; shift: tshiftstate);
 begin
     if wizardform.curpageid = dotnet_page.id then
     begin
@@ -194,7 +194,7 @@ end;
 procedure CurPageChanged(page_id: integer);
 begin
     if (page_id = dotnet_page.id) then begin
-        wizardform.onclick := @refresh_dotnet_page;
+        wizardform.onkeyup := @refresh_dotnet_page;
         trampoline(wizardform.handle);
     end else begin
         wizardform.onclick := nil;

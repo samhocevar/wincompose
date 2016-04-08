@@ -19,8 +19,8 @@ DWORD WINAPI thread_func(void* data)
 {
     while (g_hwnd != 0)
     {
-        PostMessage(g_hwnd, WM_LBUTTONDOWN, 0, 0);
-        PostMessage(g_hwnd, WM_LBUTTONUP, 0, 0);
+        // Use 0x88 because it’s marked as “unassigned” in the MS docs.
+        PostMessage(g_hwnd, WM_KEYUP, 0x88, 0);
         Sleep(2000);
     }
 
