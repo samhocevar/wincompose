@@ -22,7 +22,7 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
                 nShowCmd: integer): thandle;
     external 'ShellExecuteW@shell32.dll stdcall';
 
-procedure trampoline(hwnd: hwnd);
+procedure trampoline(hwnd: hwnd; milliseconds: uint);
     external 'trampoline@files:trampoline.dll cdecl setuponly';
 
 {
@@ -203,10 +203,12 @@ end;
 procedure CurPageChanged(page_id: integer);
 begin
     if (page_id = dotnet_page.id) then begin
+        { Trigger refresh_dotnet_page() every second }
         wizardform.onkeyup := @refresh_dotnet_page;
-        trampoline(wizardform.handle);
+        trampoline(wizardform.handle, 1000);
     end else begin
-        wizardform.onclick := nil;
+        wizardform.onkeyup := nil;
+        trampoline(0, 0);
     end;
 end;
 
