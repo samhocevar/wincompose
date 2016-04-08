@@ -29,6 +29,7 @@ all: clean installer portable
 clean:
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project wincompose.csproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.vcxproj
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project trampoline.vcxproj
 	rm -f $(PORTABLE)
 	rm -rf obj wincompose/obj wincompose.gui/obj || true
 	rm -rf bin wincompose/bin wincompose.gui/bin || true

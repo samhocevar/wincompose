@@ -42,7 +42,7 @@
     <NMakeBuildCommandLine>set CONFIG=$(Configuration)
 set VERSION=$(ApplicationVersion)
 set PATH=%PATH%;%ProgramFiles(x86)%\Inno Setup 5
-iscc $(SolutionDir)\installer.iss</NMakeBuildCommandLine>
+iscc /V4 $(SolutionDir)\installer.iss</NMakeBuildCommandLine>
     <NMakeRebuildCommandLine>$(NMakeBuildCommandLine)</NMakeRebuildCommandLine>
     <NMakeCleanCommandLine>del WinCompose-Setup-$(ApplicationVersion).exe</NMakeCleanCommandLine>
   </PropertyGroup>

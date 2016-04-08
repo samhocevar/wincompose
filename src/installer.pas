@@ -9,8 +9,7 @@ var
 
     { The .NET version detection page }
     dotnet_page: twizardpage;
-    warning, action: tnewstatictext;
-    retry: tbutton;
+    warning, action, hint: tnewstatictext;
 
 {
 { Some Win32 API hooks
@@ -22,6 +21,9 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
                 lpParameters: string; lpDirectory: string;
                 nShowCmd: integer): thandle;
     external 'ShellExecuteW@shell32.dll stdcall';
+
+procedure trampoline(hwnd: hwnd);
+    external 'trampoline@files:trampoline.dll cdecl setuponly';
 
 {
 { Visit the project homepage
@@ -43,15 +45,6 @@ begin
     { ID 22 is Service Pack 1, 21 would be the original .NET 3.5. }
     shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22',
               '', '', sw_show, ewnowait, ret);
-end;
-
-{
-{ Refresh the current page after the user clicked on a button
-}
-procedure refresh_dotnet_page(); forward;
-procedure retry_button_clicked(sender: tobject);
-begin
-    refresh_dotnet_page();
 end;
 
 {
@@ -111,24 +104,25 @@ begin
 
     warning := tnewstatictext.create(dotnet_page);
     warning.caption := 'WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not'
-            + #13#10 + 'seem to be installed. The following action may help solve the problem:';
+            + #13#10 + 'seem to be currently installed. The following action may help solve the problem:';
     warning.parent := dotnet_page.surface;
 
     action := tnewstatictext.create(dotnet_page);
-    action.caption := 'Download .NET Framework 3.5 Service Pack 1';
+    action.caption := 'Download and install .NET Framework 3.5 Service Pack 1';
     action.parent := dotnet_page.surface;
     action.cursor := crhand;
     action.onclick := @download_dotnet;
     action.font.style := action.font.style + [fsunderline];
     action.font.color := clblue;
-    action.top := warning.top + warning.height + scaley(5);
+    action.left := scalex(10);
+    action.top := warning.top + warning.height + scaley(10);
 
-    retry := tbutton.create(dotnet_page);
-    retry.onclick := @retry_button_clicked;
-    retry.caption := 'Check again!';
-    retry.parent := dotnet_page.surface;
-    retry.width := retry.width + retry.width / 3;
-    retry.top := action.top + action.height + scaley(40);
+    hint := tnewstatictext.create(dotnet_page);
+    hint.caption := 'Once this is done, you may return to this screen and proceed with the'
+         + #13#10 + 'installation.';
+    hint.parent := dotnet_page.surface;
+    hint.font.style := hint.font.style + [fsbold];
+    hint.top := action.top + action.height + scaley(20);
 end;
 
 {
@@ -177,17 +171,20 @@ end;
 {
 { Refresh the .NET page
 }
-procedure refresh_dotnet_page();
+procedure refresh_dotnet_page(sender: tobject);
 begin
-    if (get_dotnet_state() < 0) then begin
-        wizardform.nextbutton.enabled := false;
-        action.visible := true;
-        retry.visible := true;
-    end else begin
-        wizardform.nextbutton.enabled := true;
-        warning.caption := 'All prerequisites were found!';
-        action.visible := false;
-        retry.visible := false;
+    if wizardform.curpageid = dotnet_page.id then
+    begin
+        if (get_dotnet_state() < 0) then begin
+            wizardform.nextbutton.enabled := false;
+            action.visible := true;
+            hint.visible := true;
+        end else begin
+            wizardform.nextbutton.enabled := true;
+            warning.caption := 'All prerequisites were found!';
+            action.visible := false;
+            hint.visible := false;
+        end;
     end;
 end;
 
@@ -196,8 +193,12 @@ end;
 }
 procedure CurPageChanged(page_id: integer);
 begin
-    if (page_id = dotnet_page.id) then
-        refresh_dotnet_page();
+    if (page_id = dotnet_page.id) then begin
+        wizardform.onclick := @refresh_dotnet_page;
+        trampoline(wizardform.handle);
+    end else begin
+        wizardform.onclick := nil;
+    end;
 end;
 
 {
