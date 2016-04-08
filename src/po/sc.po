@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-11 23:38+0000\n"
+"PO-Revision-Date: 2016-04-08 19:27+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
-"Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
-"master/sc/>\n"
+"Language-Team: Sardinian "
+"<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.5-dev\n"
+"X-Generator: Weblate 2.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -628,13 +628,12 @@ msgstr "Iscrobadore, Ispàtziu"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:111
 msgid "Prerequisites"
-msgstr ""
+msgstr "Pre-recuisitos"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:112
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Fileras — WinCompose"
+msgstr "Programmas netzessàrios pro WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:115
@@ -644,11 +643,14 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose tenet bisòngiu de su .NET Framework, versione 3.5 SP1 o prus noa, "
+"chi non\n"
+"paret siat installada. Pro isòlvere custu problema:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Iscàrriga e installa .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:130
@@ -656,11 +658,14 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"A pustis de l'àere fatu, as a pòdere torrare a custa ischermada e sighire "
+"cun\n"
+"s'installatzione."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:161
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Serbint sos permissos de amministradore. Errore: %d"
 
 #, fuzzy
 #~ msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
