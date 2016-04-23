@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-04-01 10:59+0000\n"
-"Last-Translator: Lapo Luchini <lapo@lapo.it>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/wincompose/"
-"master/it/>\n"
+"PO-Revision-Date: 2016-04-23 14:19+0000\n"
+"Last-Translator: Daniele Viglietti <daniele.viglietti@gmail.com>\n"
+"Language-Team: Italian "
+"<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,6 +208,9 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Abilita l'inserimento di tutti i caratteri Unicode, anche quelli senza una "
+"sequenza definita. Ad esempio, la sequenza: Compose U 1 A 3 F inserirà il "
+"carattere U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:257 ID:InvalidSequences
@@ -215,20 +218,20 @@ msgid "On invalid sequences"
 msgstr "Quando una sequenza è errata"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr ""
-"Gestisci le sequenze errate senza distinzione fra maiuscole e minuscole"
+msgstr "Non distinguere fra maiuscole e minuscole"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Se la sequenza è errata solo a causa di maiuscole o minuscole viene "
+"automaticamente corretta."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Scarta tutti i caratteri immessi"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -236,6 +239,8 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Se la sequenza non esiste scarta tutti i tasti premuti. Di default sarebbero "
+"immessi come se non si fosse premuto Compose."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -243,7 +248,7 @@ msgstr "Emetti un suono"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Se la sequenza non esiste riproduci un suono."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -304,6 +309,9 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Certi caratteri Unicode possono far cambiare il font del documento alle "
+"applicazioni Microsoft Office di colpo. Quest'opzione inserisce un carattere "
+"invisibile dopo quelli Unicode per evitare il bug."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -315,6 +323,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Se si usa Bloc Maiusc come Compose si perde la sua funzione originaria. "
+"Quest'opzione permette di attivare il Bloc Maiusc premendo "
+"contemporaneamente i due tasti Maiusc."
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -326,16 +337,21 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Se si usa Bloc Maiusc come Compose si perde la sua funzione originaria. "
+"Quest'opzione permette di disattivare il Bloc Maiusc premendo uno dei due "
+"tasti Maiusc."
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Bloc Maiusc scrive sempre in maiuscolo"
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Tutte le lettere accentate, scritte con Bloc Maiusc attivo, sono sempre "
+"maiuscole. Per esempio, scrivere una \"é\" inserirà una \"É\"."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:332 ID:Categories
@@ -404,9 +420,8 @@ msgstr "Informazioni"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:383 ID:Download
-#, fuzzy
 msgid "Download WinCompose {0}"
-msgstr "Informazinoi su — WinCompose"
+msgstr "Scarica Wincompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:387 ID:AboutBoxTitle
@@ -447,12 +462,12 @@ msgstr "Riporta un problema"
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:415 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Aiuto"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:419 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Sono disponibili aggiornamenti."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -607,13 +622,12 @@ msgstr "Separatore, spazio"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:111
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prerequisiti"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:112
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Sequenze — WinCompose"
+msgstr "Software richiesto da WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:115
@@ -623,11 +637,14 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose utilizza .NET Framework 3.5 SP1 o superiore. Al momento non\n"
+"sembra installato. Queste istruzioni potrebbero aiutare a risolvere il "
+"problema:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Scarica ed installa .NET Framework 3.5 SP1"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:130
@@ -635,11 +652,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Una volta terminato ritorna a questa schermata e prosegui con\n"
+"l'installazione."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:161
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Sono richiesti privilegi da Amministratore. Errore: %d"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Scarta i caratteri delle sequenze errate"
