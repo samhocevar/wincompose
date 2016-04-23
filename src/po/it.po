@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-04-23 14:19+0000\n"
+"PO-Revision-Date: 2016-04-23 14:44+0000\n"
 "Last-Translator: Daniele Viglietti <daniele.viglietti@gmail.com>\n"
 "Language-Team: Italian "
 "<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
@@ -32,7 +32,7 @@ msgstr "Alt Sinistro"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Alt Destro"
+msgstr "Alt Gr"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
@@ -287,7 +287,7 @@ msgstr "Applica"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:301 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Il Tasto Compose mantiene il suo comportamento originale"
+msgstr "Il tasto Compose mantiene il suo comportamento originale"
 
 #: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -296,8 +296,8 @@ msgid ""
 "used as the compose key."
 msgstr ""
 "Chiede a WinCompose di fare del suo meglio per mantenere il comportamento "
-"originale del tasto. Per esempio, l’uso di Alt-Tab funzionerà correttamente "
-"anche qualora Alt venga scelto come tasto compose."
+"originale del tasto. Per esempio, Alt-Tab funzionerà correttamente anche con "
+"Alt come tasto compose."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -388,7 +388,7 @@ msgstr "Sequenze — WinCompose"
 
 #: i18n/Text.resx:358 ID:UserMacros
 msgid "User-defined macros"
-msgstr "Macro Utilizzatore"
+msgstr "Macro personalizzate"
 
 #: i18n/Text.resx:361 ID:DisabledToolTip
 msgid "WinCompose is disabled"
@@ -397,7 +397,7 @@ msgstr "WinCompose è disabilitato"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:364 ID:KeyInsert
 msgid "Insert"
-msgstr "Inserire"
+msgstr "Ins"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:368 ID:TestTyping
@@ -451,13 +451,12 @@ msgstr "Licenza"
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:407 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
-"WinCompose ha bisogno di essere riavviato per applicare alcuni cambiamenti."
+msgstr "WinCompose deve essere riavviato per applicare i cambiamenti."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:411 ID:ReportBug
 msgid "Report a Bug"
-msgstr "Riporta un problema"
+msgstr "Segnala un problema"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:415 ID:Help
