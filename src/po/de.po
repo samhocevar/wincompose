@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-01-16 16:35+0000\n"
+"PO-Revision-Date: 2016-05-29 00:32+0000\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
-"de/>\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.5-dev\n"
+"X-Generator: Weblate 2.7-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -629,13 +629,12 @@ msgstr "Trenner, Leerzeichen"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:111
 msgid "Prerequisites"
-msgstr ""
+msgstr "Voraussetzungen"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:112
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Sequenzen – WinCompose"
+msgstr "Von WinCompose benötigte Software"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:115
@@ -645,11 +644,16 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose benötigt das .NET Framework, Version 3.5 SP1 oder neuer; das "
+"scheint\n"
+"aber nicht installiert zu sein. Die folgende Aktion hilft möglicherweise, "
+"das Problem\n"
+"zu beheben:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr ".NET Framework 3.5 SP1 herunterladen und installieren"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:130
@@ -657,11 +661,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Sobald das erledigt ist, können Sie zu diesem Bildschirm zurückkehren\n"
+"und die Installation fortsetzen."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:161
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Diese Aktion erfordert Administratorrechte. Fehler: %d"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Zeichen von ungültigen Sequenzen verwerfen"
