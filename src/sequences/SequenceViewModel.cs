@@ -61,6 +61,8 @@ namespace WinCompose
             {
                 if (compareInfo.IndexOf(Description, token, CompareOptions.IgnoreCase) != -1)
                     return true;
+                if (Sequence.ToString().Contains(token))
+                    return true;
             }
 
             foreach (var number in searchText.Numbers)
