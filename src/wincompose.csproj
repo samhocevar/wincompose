@@ -947,6 +947,7 @@
     <Resource Include="res\key_compose_big.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="rules\DefaultUserSequences.txt" />
     <Resource Include="rules\Emoji.txt" />
     <Resource Include="rules\WinCompose.txt" />
     <Resource Include="rules\Xcompose.txt" />

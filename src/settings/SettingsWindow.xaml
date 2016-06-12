@@ -101,6 +101,17 @@
          </Grid>
       </GroupBox>
 
+      <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.UserDefinedSequences}" VerticalAlignment="Top">
+          <Grid>
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <Button x:Name="EditUserDefinedSequences"  Grid.Column="0" MinWidth="80" Margin="8,4" Content="{x:Static i18n:Text.UserDefinedSequencesEdit}" Click="EditUserDefinedSequences_Click" />
+              <Button x:Name="ReloadUserDefinedSequences" Grid.Column="1" MinWidth="80" Margin="8,4" Content="{x:Static i18n:Text.UserDefinedSequencesReload}" Click="ReloadUserDefinedSequences_Click" />
+          </Grid>
+      </GroupBox>
+
       <!-- The Invalid Sequences group -->
       <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.InvalidSequences}" VerticalAlignment="Top">
           <Grid VerticalAlignment="Center">
