@@ -256,7 +256,7 @@
     <value>Wenn die eingegebene Sequenz nicht bekannt ist, einen Systemklang abspielen.</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Sprache der Benutzeroberfläche:</value>
+    <value>Sprache:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
     <value>Wählen Sie die Sprache für die WinCompose-Benutzeroberfläche aus. Als Standardsprache wird die Sprache des Betriebssystems benutzt.</value>
