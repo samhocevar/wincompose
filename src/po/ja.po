@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-06-12 14:46+0000\n"
-"Last-Translator: gigysurk <gigysurk@gmail.com>\n"
+"PO-Revision-Date: 2016-06-23 12:17+0000\n"
+"Last-Translator: Miyazawa Akira <pecorarista@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/wincompose/master/ja/>\n"
 "Language: ja\n"
@@ -637,19 +637,19 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr ".NET Framework 3.5 Service Pack 1をダウンロードし、インストールする"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:130
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
-msgstr ""
+msgstr "完了後、この画面に戻りインストールを再開することができます。"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:161
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "管理者権限が必要です。エラー: %d"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "無効な入力は捨てる"
