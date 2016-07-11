@@ -12,14 +12,10 @@
 //
 
 using System;
-using System.ComponentModel;
 using System.Windows.Input;
 
 namespace WinCompose
 {
-    /// <summary>
-    /// A minimal implementation of the <see cref="INotifyPropertyChanged"/> interface
-    /// </summary>
     public class DelegateCommand : ICommand
     {
         private readonly Action<Object> m_execute_handler;
