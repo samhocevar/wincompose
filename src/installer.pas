@@ -77,7 +77,8 @@ begin
         { Some other .NET versions found, but check for v4 }
         if not(regquerystringvalue(HKLM, path + '\v4', 'Version', version))
            and not(regquerystringvalue(HKLM, path + '\v4.0', 'Version', version))
-           and not(regquerystringvalue(HKLM, path + '\v4.5', 'Version', version)) then
+           and not(regquerystringvalue(HKLM, path + '\v4.5', 'Version', version))
+           and not(regquerystringvalue(HKLM, path + '\v4.6', 'Version', version)) then
             result := -1;
     end;
 end;
