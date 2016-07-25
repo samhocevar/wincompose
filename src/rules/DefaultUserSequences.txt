@@ -1,0 +1,39 @@
+﻿# for Emacs: -*- coding: utf-8 -*-
+#
+# User-defined key sequences for WinCompose
+# by Sam Hocevar <sam@hocevar.net>
+#
+
+# Key sequences have the following form:
+#
+# <Multi_key> <key>… : "resulting text"
+#
+# All key names must be enclosed in <angle brackets>.
+# The first key must be <Multi_key>.
+# The remaining keys can be single characters, like <a>, <B>, <7>,
+# <.>, <@>, or from the following list:
+#
+#     Up, Down, Left, Right (the arrow keys), space, exclam, quotedbl,
+#     numbersign, dollar, percent, ampersand, apostrophe, parenleft,
+#     parenright, asterisk, plus, comma, minus, period, slash, colon,
+#     semicolon, less, equal, greater, at, bracketleft, backslash,
+#     bracketright, asciicircum, underscore, grave, braceleft, bar,
+#     braceright, asciitilde.
+#
+# For more definitions, see the files in %DataDir%.
+
+<Multi_key> <h> <w> : "Hello, world!"
+
+# Konami code
+# <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "(ノಠ益ಠ)ノ彡┻━┻" # ANGRY TABLE FLIP
+
+# Russian Ruble sign
+# <Multi_key> <P> <minus>             : "₽"    U20bd # RUBLE SIGN
+# <Multi_key> <p> <minus>             : "₽"    U20bd # RUBLE SIGN
+
+# Minus sign
+# <Multi_key> <minus> <minus> <equal> : "−"    U2212 # MINUS SIGN
+
+# Various tests
+# <Multi_key> <t> <f> : "(ﾉಥ益ಥ）ﾉ﻿ ┻━┻" # Flip table like a boss.
+# <Multi_key> <h> <w> : "Hello World"

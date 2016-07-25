@@ -419,4 +419,15 @@
     <value>Updates are available.</value>
     <comment>Message displayed in the systray tooltip.</comment>
   </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>User-defined sequences</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Edit</value>
+    <comment>A button to open the file containing the user-defined sequences.</comment>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Reload</value>
+    <comment>A button to reload the user-defined sequences.</comment>
+  </data>
 </root>

@@ -808,6 +808,33 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User-defined sequences.
+        /// </summary>
+        public static string UserDefinedSequences {
+            get {
+                return ResourceManager.GetString("UserDefinedSequences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string UserDefinedSequencesEdit {
+            get {
+                return ResourceManager.GetString("UserDefinedSequencesEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reload.
+        /// </summary>
+        public static string UserDefinedSequencesReload {
+            get {
+                return ResourceManager.GetString("UserDefinedSequencesReload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User-defined macros.
         /// </summary>
         public static string UserMacros {

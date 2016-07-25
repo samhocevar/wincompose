@@ -251,17 +251,9 @@ namespace WinCompose
                 }
                 else
                 {
-                    using (var s = File.OpenWrite(user_file))
-                    using (var sw = new StreamWriter(s, new UTF8Encoding(true)))
-                    {
-                        sw.WriteLine("# Custom rule file for WinCompose");
-                        sw.WriteLine("");
-                        sw.WriteLine("# This causes Compose + h + w to print “Hello World!”.");
-                        sw.WriteLine("<Multi_key> <h> <w> : \"Hello world!\"");
-                        sw.WriteLine("");
-                        sw.WriteLine("# More rule examples can be found in " + GetExeDir() + "\\res");
-                        sw.WriteLine("");
-                    }
+                    var text = File.ReadAllText(Path.Combine(GetDataDir(), "DefaultUserSequences.txt"), Encoding.UTF8);
+                    var replacedText = text.Replace("%DataDir%", GetDataDir());
+                    File.WriteAllText(user_file, replacedText, Encoding.UTF8);
                 }
             }
 

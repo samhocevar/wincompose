@@ -53,6 +53,7 @@ Source: "bin\{#CONFIG}\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignorevers
 Source: "bin\{#CONFIG}\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
 Source: "rules\Xorg.txt"; DestDir: "{app}\res"
 Source: "rules\Xcompose.txt"; DestDir: "{app}\res"
+Source: "rules\DefaultUserSequences.txt"; DestDir: "{app}\res"
 Source: "rules\Emoji.txt"; DestDir: "{app}\res"
 Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 

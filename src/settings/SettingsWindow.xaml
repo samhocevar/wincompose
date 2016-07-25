@@ -56,7 +56,6 @@
          <Grid VerticalAlignment="Top">
              <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="Auto"/>
-                 <ColumnDefinition Width="3*"/>
                  <ColumnDefinition Width="*"/>
              </Grid.ColumnDefinitions>
              <Grid.RowDefinitions>
@@ -84,19 +83,33 @@
 
              <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"
                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-             <UniformGrid Columns="2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center">
+             <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition MaxWidth="70" />
+                     <ColumnDefinition />
+                 </Grid.ColumnDefinitions>
                  <TextBox Margin="8,4" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
                  <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
-                            Grid.ColumnSpan="2" Margin="8,4"
-                            TextAlignment="Right" VerticalAlignment="Center"/>
-             </UniformGrid>
+                            Margin="8,4" />
+             </Grid>
 
              <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-             <TextBox Grid.Row="8" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto" MaxWidth="200"
-                      Grid.ColumnSpan="3" Height="Auto" FontSize="20" FontWeight="SemiBold"
+             <TextBox Grid.Row="3" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
+                      Height="Auto" FontSize="20" FontWeight="SemiBold"
                       Foreground="#434" Background="#eee" ForceCursor="True">ÅḄ₡Đ♥…</TextBox>
          </Grid>
+      </GroupBox>
+
+      <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.UserDefinedSequences}" VerticalAlignment="Top">
+          <Grid>
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <Button x:Name="EditUserDefinedSequences"  Grid.Column="0" MinWidth="80" Margin="8,4" Content="{x:Static i18n:Text.UserDefinedSequencesEdit}" Click="EditUserDefinedSequences_Click" />
+              <Button x:Name="ReloadUserDefinedSequences" Grid.Column="1" MinWidth="80" Margin="8,4" Content="{x:Static i18n:Text.UserDefinedSequencesReload}" Click="ReloadUserDefinedSequences_Click" />
+          </Grid>
       </GroupBox>
 
       <!-- The Invalid Sequences group -->

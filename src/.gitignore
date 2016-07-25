@@ -10,6 +10,7 @@ bin/
 *.opensdf
 *.opendb
 *.sdf
+wincompose.VC.db
 # Misc
 settings.ini
 po/*.po~

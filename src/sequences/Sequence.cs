@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace WinCompose
@@ -136,7 +137,11 @@ public class SequenceTree
 
         // Otherwise, check for generic Unicode entry prefix
         if (Settings.UnicodeInput.Value)
-            return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{0,4}$").Success;
+        {
+            var sequenceString = sequence.ToString().ToLower(CultureInfo.InvariantCulture);
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
+                && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
+        }
 
         return false;
     }
@@ -153,7 +158,11 @@ public class SequenceTree
 
         // Otherwise, check for generic Unicode sequence
         if (Settings.UnicodeInput.Value)
-            return Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$").Success;
+        {
+            var sequenceString = sequence.ToString().ToLower(CultureInfo.InvariantCulture);
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
+                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
+        }
 
         return false;
     }
@@ -172,10 +181,11 @@ public class SequenceTree
         // Otherwise, check for a generic Unicode sequence
         if (Settings.UnicodeInput.Value)
         {
-            var m = Regex.Match(sequence.ToString(), @"^[uU][0-9a-fA-F]{2,5}$");
+            var sequenceString = sequence.ToString().ToLower(CultureInfo.InvariantCulture);
+            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
             if (m.Success)
             {
-                int codepoint = Convert.ToInt32(m.Groups[0].Value.Substring(1), 16);
+                int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
                 return char.ConvertFromUtf32(codepoint);
             }
         }

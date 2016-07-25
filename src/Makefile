@@ -13,6 +13,7 @@ PAS = installer.pas
 
 TXT = rules/Xorg.txt \
       rules/Xcompose.txt \
+      rules/DefaultUserSequences.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
