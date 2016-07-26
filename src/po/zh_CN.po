@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-07-26 17:21+0000\n"
+"PO-Revision-Date: 2016-07-26 17:43+0000\n"
 "Last-Translator: 巷民 <gamegamernow@gmail.com>\n"
 "Language-Team: Chinese (China) "
 "<https://hosted.weblate.org/projects/wincompose/master/zh_CN/>\n"
@@ -612,7 +612,7 @@ msgstr "先决条件"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:112
 msgid "Software required by WinCompose"
-msgstr "WinCompose要求的软件"
+msgstr "WinCompose 要求的软件"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:115
@@ -622,19 +622,19 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose需要安装3.5 SP1或更新版本的.NET Framework，现在似乎还没有被安装。接下来的操作可能可以帮助你解决这个问题："
+"WinCompose 需要安装3.5 SP1或更新版本的.NET Framework，现在似乎还没有被安装。接下来的操作可能可以帮助你解决这个问题："
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr "下载并安装.NET Framework 3.5 Service Pack 1"
+msgstr "下载并安装 .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:130
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
-msgstr "一旦完成，你将会回到这个窗口并继续进行安装。"
+msgstr "一旦完成，你可以回到这个窗口并继续进行安装。"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:161
