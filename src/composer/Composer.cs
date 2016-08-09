@@ -146,6 +146,12 @@ static class Composer
             {
                 string str_upper = alt_key.ToString().ToUpper();
                 string str_lower = alt_key.ToString().ToLower();
+
+                // Hack for German keyboards: it seems that ToUpper() does
+                // not properly change ß into ẞ.
+                if (str_lower == "ß")
+                    str_upper = "ẞ";
+
                 if (str_upper != str_lower)
                 {
                     key = new Key(has_shift ? str_lower : str_upper);
