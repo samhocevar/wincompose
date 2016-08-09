@@ -849,7 +849,9 @@ static class Composer
     private static DateTime m_last_key_time = DateTime.Now;
     private static Dictionary<string, int> m_possible_dead_keys;
     private static Dictionary<string, string> m_possible_altgr_keys;
-    private static IntPtr m_current_layout = IntPtr.Zero;
+    // Initialise with -1 to make sure the above dictionaries are
+    // properly initialised even if the layout is found to be 0x0.
+    private static IntPtr m_current_layout = new IntPtr(-1);
     private static bool m_window_is_gtk = false;
     private static bool m_window_is_office = false;
     private static bool m_window_is_synergy = false;
