@@ -394,10 +394,12 @@ namespace WinCompose
             {
                 switch (m.Value)
                 {
+                    // These sequences are converted to their known value
                     case @"\n": return "\n";
                     case @"\r": return "\r";
                     case @"\t": return "\t";
-                    default: return m.Value.Last().ToString();
+                    // For all other sequences, just strip the leading \
+                    default: return m.Value.Substring(1).ToString();
                 }
             });
 
