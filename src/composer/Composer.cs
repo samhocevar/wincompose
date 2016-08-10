@@ -291,7 +291,7 @@ static class Composer
         }
 
         // If the compose key is down and the user pressed a new key, maybe
-        // they want to do a key combination instead of composing, such as
+        // instead of composing they want to do a key combination, such as
         // Alt+Tab or Windows+Up. So we abort composing and send the KeyDown
         // event for the Compose key that we previously discarded. The same
         // goes for characters that need AltGr when AltGr is the compose key.
@@ -367,7 +367,7 @@ static class Composer
         // is a key we must add to the current sequence.
         if (add_to_sequence)
         {
-            Log.Debug("Adding To Sequence: {0}", key.FriendlyName);
+            Log.Debug("Adding to Sequence: {0}", key.FriendlyName);
             return AddToSequence(key);
         }
 
