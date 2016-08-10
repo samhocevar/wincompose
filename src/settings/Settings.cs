@@ -389,8 +389,17 @@ namespace WinCompose
             string result = m1.Groups[2].Captures[0].ToString();
             string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
 
-            // Replace \\ and \" in the string output
-            result = new Regex(@"\\(\\|"")").Replace(result, "$1");
+            // Unescape \n \\ \" and more in the string output
+            result = Regex.Replace(result, @"\\.", m =>
+            {
+                switch (m.Value)
+                {
+                    case @"\n": return "\n";
+                    case @"\r": return "\r";
+                    case @"\t": return "\t";
+                    default: return m.Value.Last().ToString();
+                }
+            });
 
             // Try to translate the description if appropriate
             int utf32 = StringToCodepoint(result);
