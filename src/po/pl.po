@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-12-18 00:10+0000\n"
-"Last-Translator: Jack Musial <jacek@musi.al>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/"
-"pl/>\n"
+"PO-Revision-Date: 2016-09-07 21:08+0000\n"
+"Last-Translator: Kxait <0kxait@gmail.com>\n"
+"Language-Team: Polish "
+"<https://hosted.weblate.org/projects/wincompose/master/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.5-dev\n"
+"X-Generator: Weblate 2.8\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -192,7 +192,7 @@ msgstr "Klawisz Compose:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Wybierz przycisk który będzie używany jako przycisk Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:247 ID:ResetDelay
@@ -201,7 +201,7 @@ msgstr "Opóźnienie:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Zaawansowane wprowadzanie tekstu Unicode"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -209,12 +209,14 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Włącz wprowadzanie tekstu Unicode dla wszystkich symboli, nawet tych bez "
+"zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol "
+"U+1A3F: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:257 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Używaj sygnału dźwiękowego dla niepoprawnych sekwencji"
+msgstr "Dla niepoprawnych sekwencji"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
 #, fuzzy
@@ -226,10 +228,12 @@ msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Jeżeli wprowadzona sekwencja nie istnieje, ale jest, która różni się "
+"wielkością liter, automatycznie ją popraw."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Odrzuć wszelkie wprowadzone symbole"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -237,14 +241,17 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Jeżeli wprowadzona sekwencja nie istnieje, odrzuć wszystkie symbole, które "
+"zostały wprowadzone. Domyślnym zachowanie wszystkie wprowadzone symbole "
+"zostaną przepuszczone tak, jak by przycisk Compose nie został użyty."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Oddaj dzwięk"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Jeżeli wprowadzona sekwencja nie istnieje, wydaj dzwięk systemowy."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -255,6 +262,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Wybierz język który WinCompose użyje dla interfejsu. Domyślnie, język "
+"systemowy jest użyty."
 
 #. Close the settings window
 #: i18n/Text.resx:285 ID:Close
