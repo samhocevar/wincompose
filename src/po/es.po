@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-05-05 06:27+0000\n"
-"Last-Translator: Kyle Mills <khonkhortisan@gmail.com>\n"
+"PO-Revision-Date: 2016-09-19 00:55+0000\n"
+"Last-Translator: Hector Rodriguez <rodriguez.hectord97@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://hosted.weblate.org/projects/wincompose/master/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"X-Generator: Weblate 2.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -200,7 +200,7 @@ msgstr "Retardo:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Ingreso de Unicode avanzado"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
@@ -225,10 +225,12 @@ msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Si la secuencia entrada no existe pero hay una que solamente difiere por ser "
+"mayúscula o minúscula, corregirla automáticamente."
 
 #: i18n/Text.resx:267 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Descartar todos los carácteres ingresos"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -236,14 +238,17 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Si la secuencia entrada no existe, descartar todos los carácteres ingresos. "
+"Por defecto, se insertan los carácteres como si la tecla de composición no "
+"se ha oprimido."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Emitir un sonido"
 
 #: i18n/Text.resx:276 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Si la secuencia entrada no existe, emitir un sonido de sistema."
 
 #: i18n/Text.resx:279 ID:Language
 msgid "Interface language:"
@@ -254,6 +259,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Selecciona el idioma para la interfaz de WinCompose. Por defecto, se utiliza "
+"el idioma del sistema operativo."
 
 #. Close the settings window
 #: i18n/Text.resx:285 ID:Close
@@ -288,6 +295,9 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"WinCompose hará su mejor esfuerzo en retener el comportamiento original del "
+"teclado. Por ejemplo, Alt-Tab todavía funcionará si Alt fuese el teclado de "
+"composición."
 
 #: i18n/Text.resx:308 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -299,6 +309,9 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Las aplicaciones de Microsoft Office a tienden a cambiar el fuente cunado "
+"ciertos carácteres de Unicode son ingresos. Está función insertará un "
+"carácter invisible después del carácter de Unicode para evitar este defecto."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -313,7 +326,7 @@ msgstr ""
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr ""
+msgstr "Desactivar Caps Lock con la tecla de mayúsculas"
 
 #: i18n/Text.resx:323 ID:ShiftDisablesCapsLockToolTip
 msgid ""
