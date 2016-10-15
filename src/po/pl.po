@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-10-15 21:50+0000\n"
+"PO-Revision-Date: 2016-10-15 21:51+0000\n"
 "Last-Translator: rnarko <marek_sp@tlen.pl>\n"
 "Language-Team: Polish "
 "<https://hosted.weblate.org/projects/wincompose/master/pl/>\n"
@@ -643,7 +643,7 @@ msgstr ""
 "WinCompose wymaga środowiska .NET Framework w wersji 3.5 SP1 lub nowszej, "
 "które\n"
 "zdaje się być nie zainstalowane. Następujące instrukcje mogę pomóc rozwiązać "
-"problem: \n"
+"problem:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
