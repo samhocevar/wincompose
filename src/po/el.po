@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.7\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-02-08 09:21+0200\n"
-"Last-Translator: geogeo.gr <geogeo.gr@gmail.com>\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
-"el/>\n"
+"PO-Revision-Date: 2016-10-28 06:24+0000\n"
+"Last-Translator: geogeo.gr <geogeo.gr@users.sourceforge.net>\n"
+"Language-Team: Greek "
+"<https://hosted.weblate.org/projects/wincompose/master/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.9-dev\n"
+"X-Generator: Weblate 2.9-dev\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -625,13 +625,12 @@ msgstr "Διαχωριστικό. Κενό"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:111
 msgid "Prerequisites"
-msgstr ""
+msgstr "Προϋποθέσεις"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:112
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Ακολουθίες — WinCompose"
+msgstr "Λογισμικό που απαιτείται από το WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:115
@@ -641,11 +640,15 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"Το WinCompose χρειάζεται το .NET Framework, έκδοση 3.5 SP1 ή νεότερη, που "
+"δεν φαίνεται\n"
+"να είναι εγκαταστημένο. Οι ακόλουθες ενέργειες μπορεί να βοηθήσουν στην "
+"επίλυση του προβλήματος:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:120
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Λήψη κι εγκατάσταση του .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:130
@@ -653,11 +656,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Μόλις γίνει αυτό, μπορείτε να επιστρέψετε σε αυτή την οθόνη \n"
+"και να προχωρήσετε με την εγκατάσταση."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:161
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Απαιτούνται δικαιώματα διαχειριστή. Σφάλμα %d"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Απόρριψη χαρακτήρων από μη έγκυρες ακολουθίες"
