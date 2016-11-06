@@ -465,10 +465,10 @@ static class Composer
 
         // Special case: we don't consider characters such as Esc as printable
         // otherwise they are not properly serialised in the config file.
-        if (str_if_normal != "" && str_if_normal[0] >= ' ')
-            return new Key(str_if_normal);
+        if (str_if_normal == "" || str_if_normal[0] < ' ')
+            return new Key(vk);
 
-        return new Key(vk);
+        return new Key(str_if_normal);
     }
 
     private static string VkToUnicode(VK vk)
