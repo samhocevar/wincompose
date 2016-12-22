@@ -38,7 +38,6 @@ namespace WinCompose
 
             Composer.Init();
             Settings.LoadSequences();
-            KeyboardHook.Init();
             Updater.Init();
 
             Settings.StartWatchConfigFile();
@@ -47,6 +46,12 @@ namespace WinCompose
             {
                 WinForms.Application.EnableVisualStyles();
                 WinForms.Application.SetCompatibleTextRenderingDefault(false);
+
+                // Must call this after SetCompatibleTextRenderingDefault()
+                // because it uses a WinForms timer which seems to open a
+                // hidden window. The reason we use a WinForms timer is so that
+                // the hook is installed from the main thread.
+                KeyboardHook.Init();
 
                 m_control = new RemoteControl();
                 m_control.DisableEvent += OnDisableEvent;

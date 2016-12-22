@@ -13,9 +13,8 @@
 
 using System;
 using System.ComponentModel;
-using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {
@@ -24,35 +23,61 @@ static class KeyboardHook
 {
     public static void Init()
     {
-        if (Environment.OSVersion.Platform == PlatformID.Win32NT
-             || Environment.OSVersion.Platform == PlatformID.Win32S
-             || Environment.OSVersion.Platform == PlatformID.Win32Windows
-             || Environment.OSVersion.Platform == PlatformID.WinCE)
+        m_active = Environment.OSVersion.Platform == PlatformID.Win32NT
+                || Environment.OSVersion.Platform == PlatformID.Win32S
+                || Environment.OSVersion.Platform == PlatformID.Win32Windows
+                || Environment.OSVersion.Platform == PlatformID.WinCE;
+
+        // Create a timer to regularly check our hook
+        m_update_timer = new WinForms.Timer();
+        m_update_timer.Tick += new EventHandler(CheckHook);
+        m_update_timer.Interval = 2000;
+        m_update_timer.Start();
+    }
+
+    public static void Fini()
+    {
+        m_update_timer.Stop();
+
+        m_active = false;
+        CheckHook(null, null);
+    }
+
+    private static void CheckHook(object obj, EventArgs args)
+    {
+        HOOK old_hook = m_hook;
+
+        // Reinstall the hook in case Windows disabled it without telling us. It’s
+        // OK to have two hooks installed for a short time, because we properly
+        // handle injected keys (i.e. we ignore them).
+        if (m_active)
         {
-            m_callback = OnKey; // Keep a reference on OnKey
             m_hook = NativeMethods.SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
                                    NativeMethods.LoadLibrary("user32.dll"), 0);
             if (m_hook == HOOK.INVALID)
                 throw new Win32Exception(Marshal.GetLastWin32Error());
         }
-    }
 
-    public static void Fini()
-    {
-        // XXX: this will crash if called from the GC Finalizer Thread because
-        // the hook needs to be removed from the same thread that installed it.
-        if (m_hook != HOOK.INVALID)
+        // XXX: this will crash if the hook is not removed from the same
+        // thread that installed it.
+        if (old_hook != HOOK.INVALID)
         {
             int ret = NativeMethods.UnhookWindowsHookEx(m_hook);
+            // Ignore errors: I don’t know whether it’s an error if Windows
+            // uninstalled the hook itself.
             if (ret == 0)
                 throw new Win32Exception(Marshal.GetLastWin32Error());
-            m_hook = HOOK.INVALID;
         }
-        m_callback = null;
     }
 
-    private static CALLBACK m_callback;
-    private static HOOK m_hook;
+    private static WinForms.Timer m_update_timer;
+    private static bool m_active = false;
+
+    // Keep an explicit reference on the CALLBACK object created because
+    // SetWindowsHookEx will not prevent it from being GCed.
+    private static CALLBACK m_callback = new CALLBACK(OnKey);
+
+    private static HOOK m_hook = HOOK.INVALID;
 
     private static int OnKey(HC nCode, WM wParam, IntPtr lParam)
     {
