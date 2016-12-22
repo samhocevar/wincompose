@@ -10,14 +10,14 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2016-10-26 09:11+0000\n"
 "Last-Translator: Dejan Stanič <dejan@infoteh.si>\n"
-"Language-Team: Slovenian "
-"<https://hosted.weblate.org/projects/wincompose/master/sl/>\n"
+"Language-Team: Slovenian <https://hosted.weblate.org/projects/wincompose/"
+"master/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 2.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
@@ -204,7 +204,10 @@ msgid "Advanced Unicode input"
 msgstr "Napreden Unicode vnos"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
-msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F"
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F"
 msgstr ""
 "Omogoči Unicode vnos za vse znake, tudi tiste brez definiranega zaporedja. "
 "Tako bo npr. zaporedje „Compose U 1 A 3 F“ tvorilo izhodni znak U+1A3F"
@@ -219,7 +222,9 @@ msgid "Fall back to case insensitive matches"
 msgstr "Ni ločevanja velikih in malih črk"
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
-msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
 msgstr ""
 "Če vneseno zaporedje ne obstaja, obstaja pa tako ki se loči samo po "
 "velikosti črk, ga samodejno uporabi."
@@ -229,7 +234,10 @@ msgid "Discard all typed characters"
 msgstr "Zavrzi vse vnešene znake"
 
 #: i18n/Text.resx:270 ID:DiscardOnInvalidToolTip
-msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
 msgstr ""
 "Če vneseno zaporedje ne obstaja, zavrzi vse vtipkane znake. Privzeti pristop "
 "je da se ohrani znake, kot da Compose tipka ne bi bila pritisnjena."
@@ -247,7 +255,9 @@ msgid "Interface language:"
 msgstr ""
 
 #: i18n/Text.resx:282 ID:LanguageToolTip
-msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
 msgstr ""
 
 #. Close the settings window
@@ -278,7 +288,10 @@ msgid "Maintain original compose key behaviour"
 msgstr ""
 
 #: i18n/Text.resx:305 ID:KeepOriginalKeyToolTip
-msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
 msgstr ""
 
 #: i18n/Text.resx:308 ID:InsertZwsp
@@ -286,7 +299,10 @@ msgid "Insert zero-width spaces in Office apps"
 msgstr ""
 
 #: i18n/Text.resx:311 ID:InsertZwspToolTip
-msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
 msgstr ""
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
@@ -294,7 +310,10 @@ msgid "Emulate Caps Lock using both Shift keys"
 msgstr ""
 
 #: i18n/Text.resx:317 ID:EmulateCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
 msgstr ""
 
 #: i18n/Text.resx:320 ID:ShiftDisablesCapsLock
@@ -302,7 +321,10 @@ msgid "Shift key disables Caps Lock"
 msgstr ""
 
 #: i18n/Text.resx:323 ID:ShiftDisablesCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
 msgstr ""
 
 #: i18n/Text.resx:326 ID:CapsLockCapitalizes
@@ -310,7 +332,9 @@ msgid "Caps Lock always capitalizes letters"
 msgstr ""
 
 #: i18n/Text.resx:329 ID:CapsLockCapitalizesToolTip
-msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
 msgstr ""
 
 #. Header for the list of Unicode character categories
@@ -426,6 +450,21 @@ msgstr ""
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:419 ID:UpdatesToolTip
 msgid "Updates are available."
+msgstr ""
+
+#: i18n/Text.resx:423 ID:UserDefinedSequences
+#, fuzzy
+msgid "User-defined sequences"
+msgstr "Ob napačnih zaporedjih"
+
+#. A button to open the file containing the user-defined sequences.
+#: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
+msgid "Edit"
+msgstr ""
+
+#. A button to reload the user-defined sequences.
+#: i18n/Text.resx:430 ID:UserDefinedSequencesReload
+msgid "Reload"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -579,31 +618,37 @@ msgid "Separator, Space"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:111
+#: installer.pas:112
 msgid "Prerequisites"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:113
 msgid "Software required by WinCompose"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:115
-msgid "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
+#: installer.pas:116
+msgid ""
+"WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
+"not\n"
+"seem to be currently installed. The following action may help solve the "
+"problem:"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:120
+#: installer.pas:121
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:130
-msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
+#: installer.pas:131
+msgid ""
+"Once this is done, you may return to this screen and proceed with the\n"
+"installation."
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:161
+#: installer.pas:162
 msgid "Administrator rights are required. Error: %d"
 msgstr ""

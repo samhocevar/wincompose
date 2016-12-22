@@ -124,7 +124,7 @@
     <value>Alt izquierda</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt izquierda</value>
+    <value>Alt derecho</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
     <value>Control izquierdo</value>
@@ -156,6 +156,12 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Bloq Despl</value>
   </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Espacio</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
   <data name="Obsolete016" xml:space="preserve">
     <value>Acento grave `</value>
   </data>
@@ -163,7 +169,7 @@
     <value>500 milisegundos</value>
   </data>
   <data name="Obsolete018" xml:space="preserve">
-    <value>1 Segundo</value>
+    <value>1 segundo</value>
   </data>
   <data name="Obsolete019" xml:space="preserve">
     <value>2 segundos</value>
@@ -195,6 +201,9 @@
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visitar sitio web</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Salir</value>
+  </data>
   <data name="Obsolete036" xml:space="preserve">
     <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
   </data>
@@ -213,11 +222,35 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Componer tecla:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Seleccione la tecla que actuará como tecla de composición.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Retardo:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Ingreso de Unicode avanzado</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Si la secuencia entrada no existe pero hay una que solamente difiere por ser mayúscula o minúscula, corregirla automáticamente.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Descartar todos los carácteres ingresos</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Si la secuencia entrada no existe, descartar todos los carácteres ingresos. Por defecto, se insertan los carácteres como si la tecla de composición no se ha oprimido.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Emitir un sonido</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Si la secuencia entrada no existe, emitir un sonido de sistema.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Idioma de la interfaz:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Selecciona el idioma para la interfaz de WinCompose. Por defecto, se utiliza el idioma del sistema operativo.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Cerrar</value>
@@ -234,8 +267,17 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Mantener funcionamiento original de la tecla de composición</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>WinCompose hará su mejor esfuerzo en retener el comportamiento original del teclado. Por ejemplo, Alt-Tab todavía funcionará si Alt fuese el teclado de composición.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insertar espacios de anchura cero en las programas de Office</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Las aplicaciones de Microsoft Office a tienden a cambiar el fuente cunado ciertos carácteres de Unicode son ingresos. Está función insertará un carácter invisible después del carácter de Unicode para evitar este defecto.</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Desactivar Caps Lock con la tecla de mayúsculas</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorías</value>

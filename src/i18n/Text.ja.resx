@@ -297,6 +297,12 @@
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
     <value>Caps LockをComposeキーに指定した場合、元の挙動は使用できません。この機能は、Shiftキーを押すことでCaps LockをOffにすることができます。</value>
   </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lockがオンの時は、常に大文字にする</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Caps Lockがオンの時、“é”のようなアクセント付き文字を打ったとき、常に対応する大文字 (この場合は “É”) を出力する。</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>カテゴリ</value>
   </data>
@@ -339,6 +345,9 @@
   <data name="About" xml:space="preserve">
     <value>WinCompose について</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>WinComposeのダウンロード {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>WinCompose について</value>
   </data>
@@ -359,5 +368,11 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>バグ報告</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>アップデートがあります。</value>
   </data>
 </root>

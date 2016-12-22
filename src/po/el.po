@@ -5,8 +5,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2016-10-28 06:24+0000\n"
 "Last-Translator: geogeo.gr <geogeo.gr@users.sourceforge.net>\n"
-"Language-Team: Greek "
-"<https://hosted.weblate.org/projects/wincompose/master/el/>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
+"el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -472,6 +472,21 @@ msgstr "Βοήθεια"
 msgid "Updates are available."
 msgstr "Υπάρχουν διαθέσιμες ενημερώσεις."
 
+#: i18n/Text.resx:423 ID:UserDefinedSequences
+#, fuzzy
+msgid "User-defined sequences"
+msgstr "Μακροεντολές καθορισμένες από το χρήστη"
+
+#. A button to open the file containing the user-defined sequences.
+#: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
+msgid "Edit"
+msgstr ""
+
+#. A button to reload the user-defined sequences.
+#: i18n/Text.resx:430 ID:UserDefinedSequencesReload
+msgid "Reload"
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
@@ -623,17 +638,17 @@ msgid "Separator, Space"
 msgstr "Διαχωριστικό. Κενό"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:111
+#: installer.pas:112
 msgid "Prerequisites"
 msgstr "Προϋποθέσεις"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:113
 msgid "Software required by WinCompose"
 msgstr "Λογισμικό που απαιτείται από το WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:115
+#: installer.pas:116
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -646,12 +661,12 @@ msgstr ""
 "επίλυση του προβλήματος:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:120
+#: installer.pas:121
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Λήψη κι εγκατάσταση του .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:130
+#: installer.pas:131
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -660,7 +675,7 @@ msgstr ""
 "και να προχωρήσετε με την εγκατάσταση."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:161
+#: installer.pas:162
 msgid "Administrator rights are required. Error: %d"
 msgstr "Απαιτούνται δικαιώματα διαχειριστή. Σφάλμα %d"
 

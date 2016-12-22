@@ -207,6 +207,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.sk.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.sl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.sl.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.sq.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -462,6 +467,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.sk.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.sl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.sl.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.sq.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -618,6 +628,11 @@
     <EmbeddedResource Include="unicode\Category.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.sk.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.sl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.sl.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.sq.resx">
@@ -882,6 +897,11 @@
     <EmbeddedResource Include="i18n\Text.sk.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.sk.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.sl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.sl.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.sq.resx">

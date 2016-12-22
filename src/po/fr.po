@@ -474,6 +474,21 @@ msgstr "Aide"
 msgid "Updates are available."
 msgstr "Des mises à jour sont disponibles."
 
+#: i18n/Text.resx:423 ID:UserDefinedSequences
+#, fuzzy
+msgid "User-defined sequences"
+msgstr "Macros utilisateur"
+
+#. A button to open the file containing the user-defined sequences.
+#: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
+msgid "Edit"
+msgstr ""
+
+#. A button to reload the user-defined sequences.
+#: i18n/Text.resx:430 ID:UserDefinedSequencesReload
+msgid "Reload"
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
@@ -625,34 +640,35 @@ msgid "Separator, Space"
 msgstr "Séparateur, espace"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:111
+#: installer.pas:112
 msgid "Prerequisites"
 msgstr "Prérequis"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:113
 msgid "Software required by WinCompose"
 msgstr "Logiciels nécessaires à WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:115
+#: installer.pas:116
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose nécessite le framework .NET, version 3.5 SP1 ou plus récente, qui\n"
+"WinCompose nécessite le framework .NET, version 3.5 SP1 ou plus récente, "
+"qui\n"
 "ne semble pas être installé actuellement. La procédure ci-dessous devrait\n"
 "permettre de résoudre le problème :"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:120
+#: installer.pas:121
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Télécharger et installer .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:130
+#: installer.pas:131
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -661,7 +677,7 @@ msgstr ""
 "l’installation."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:161
+#: installer.pas:162
 msgid "Administrator rights are required. Error: %d"
 msgstr "Les droits d’administrateur sont nécessaires. Erreur: %d"
 

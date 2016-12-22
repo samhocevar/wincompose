@@ -256,7 +256,7 @@
     <value>Wenn die eingegebene Sequenz nicht bekannt ist, einen Systemklang abspielen.</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Sprache:</value>
+    <value>Sprache der Benutzeroberfläche:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
     <value>Wählen Sie die Sprache für die WinCompose-Benutzeroberfläche aus. Als Standardsprache wird die Sprache des Betriebssystems benutzt.</value>
@@ -374,14 +374,5 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Eine neue Version ist verfügbar.</value>
-  </data>
-  <data name="UserDefinedSequences" xml:space="preserve">
-    <value>Benutzerdefinierte Sequenzen</value>
-  </data>
-  <data name="UserDefinedSequencesEdit" xml:space="preserve">
-    <value>Bearbeiten</value>
-  </data>
-  <data name="UserDefinedSequencesReload" xml:space="preserve">
-    <value>Neu laden</value>
   </data>
 </root>

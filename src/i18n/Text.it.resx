@@ -124,7 +124,7 @@
     <value>Alt Sinistro</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt Destro</value>
+    <value>Alt Gr</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
     <value>Ctrl Sinistro</value>
@@ -231,11 +231,29 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Input Unicode avanzato</value>
   </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Abilita l'inserimento di tutti i caratteri Unicode, anche quelli senza una sequenza definita. Ad esempio, la sequenza: Compose U 1 A 3 F inserirà il carattere U+1A3F</value>
+  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Quando una sequenza è errata</value>
   </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Non distinguere fra maiuscole e minuscole</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Se la sequenza è errata solo a causa di maiuscole o minuscole viene automaticamente corretta.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Scarta tutti i caratteri immessi</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Se la sequenza non esiste scarta tutti i tasti premuti. Di default sarebbero immessi come se non si fosse premuto Compose.</value>
+  </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Emetti un suono</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Se la sequenza non esiste riproduci un suono.</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Lingua dell’interfaccia:</value>
@@ -256,19 +274,34 @@
     <value>Applica</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Il Tasto Compose mantiene il suo comportamento originale</value>
+    <value>Il tasto Compose mantiene il suo comportamento originale</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Chiede a WinCompose di fare del suo meglio per mantenere il comportamento originale del tasto. Per esempio, l’uso di Alt-Tab funzionerà correttamente anche qualora Alt venga scelto come tasto compose.</value>
+    <value>Chiede a WinCompose di fare del suo meglio per mantenere il comportamento originale del tasto. Per esempio, Alt-Tab funzionerà correttamente anche con Alt come tasto compose.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Inserisci spazi a larghezza zero in Office</value>
   </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Certi caratteri Unicode possono far cambiare il font del documento alle applicazioni Microsoft Office di colpo. Quest'opzione inserisce un carattere invisibile dopo quelli Unicode per evitare il bug.</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emula Bloc Maiusc premendo entrambi i tasti Maiusc</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Se si usa Bloc Maiusc come Compose si perde la sua funzione originaria. Quest'opzione permette di attivare il Bloc Maiusc premendo contemporaneamente i due tasti Maiusc.</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Premere Maiusc disabilita Bloc Maiusc</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Se si usa Bloc Maiusc come Compose si perde la sua funzione originaria. Quest'opzione permette di disattivare il Bloc Maiusc premendo uno dei due tasti Maiusc.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Bloc Maiusc scrive sempre in maiuscolo</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Tutte le lettere accentate, scritte con Bloc Maiusc attivo, sono sempre maiuscole. Per esempio, scrivere una &quot;é&quot; inserirà una &quot;É&quot;.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorie</value>
@@ -292,13 +325,13 @@
     <value>Sequenze — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Macro Utilizzatore</value>
+    <value>Macro personalizzate</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose è disabilitato</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
-    <value>Inserire</value>
+    <value>Ins</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
     <value>Prova a scrivere:</value>
@@ -311,6 +344,9 @@
   </data>
   <data name="About" xml:space="preserve">
     <value>Informazioni</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Scarica Wincompose {0}</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Informazinoi su — WinCompose</value>
@@ -328,9 +364,15 @@
     <value>Licenza</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose ha bisogno di essere riavviato per applicare alcuni cambiamenti.</value>
+    <value>WinCompose deve essere riavviato per applicare i cambiamenti.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
-    <value>Riporta un problema</value>
+    <value>Segnala un problema</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Aiuto</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Sono disponibili aggiornamenti.</value>
   </data>
 </root>

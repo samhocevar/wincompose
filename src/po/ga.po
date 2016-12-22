@@ -447,6 +447,20 @@ msgstr ""
 msgid "Updates are available."
 msgstr ""
 
+#: i18n/Text.resx:423 ID:UserDefinedSequences
+msgid "User-defined sequences"
+msgstr ""
+
+#. A button to open the file containing the user-defined sequences.
+#: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
+msgid "Edit"
+msgstr ""
+
+#. A button to reload the user-defined sequences.
+#: i18n/Text.resx:430 ID:UserDefinedSequencesReload
+msgid "Reload"
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
@@ -598,17 +612,17 @@ msgid "Separator, Space"
 msgstr "Deighilteoir, Spás"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:111
+#: installer.pas:112
 msgid "Prerequisites"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:113
 msgid "Software required by WinCompose"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:115
+#: installer.pas:116
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -617,18 +631,18 @@ msgid ""
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:120
+#: installer.pas:121
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:130
+#: installer.pas:131
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:161
+#: installer.pas:162
 msgid "Administrator rights are required. Error: %d"
 msgstr ""

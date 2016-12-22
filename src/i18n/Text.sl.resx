@@ -117,73 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutodetectLanguage" xml:space="preserve">
+    <value>Samodejno</value>
+  </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Alt bagian kiri</value>
+    <value>leva Alt tipka</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt bagian kanan</value>
+    <value>desna Alt tipka</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Control bagian kiri</value>
+    <value>leva Ctrl tipka</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Control bagian kanan</value>
+    <value>desna Ctrl tipka</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Windows bagian kiri</value>
+    <value>leva Windows tipka</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Windows bagian kanan</value>
+    <value>desna Windows tipka</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
-    <value>Caps Lock</value>
+    <value>tipka Caps Lock</value>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
-    <value>Num Lock</value>
+    <value>tipka Num Lock</value>
   </data>
   <data name="KeyPause" xml:space="preserve">
-    <value>Jeda</value>
+    <value>tipka Pause</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>Menu</value>
+    <value>Aplikacijska tipka</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+    <value>Escape tipka</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
-    <value>Scroll Lock</value>
+    <value>tipka Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Preslednica</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>tipka Enter</value>
   </data>
   <data name="Obsolete017" xml:space="preserve">
-    <value>500 milidetik</value>
+    <value>500 milisekund</value>
   </data>
   <data name="Obsolete018" xml:space="preserve">
-    <value>1 detik</value>
+    <value>1 sekunda</value>
   </data>
   <data name="Obsolete019" xml:space="preserve">
-    <value>2 detik</value>
+    <value>2 sekundi</value>
   </data>
   <data name="Obsolete020" xml:space="preserve">
-    <value>3 detik</value>
+    <value>3 sekunde</value>
   </data>
   <data name="Obsolete021" xml:space="preserve">
-    <value>5 detik</value>
+    <value>5 sekund</value>
   </data>
   <data name="Obsolete022" xml:space="preserve">
-    <value>10 detik</value>
+    <value>10 sekund</value>
   </data>
   <data name="Obsolete023" xml:space="preserve">
-    <value>Kosong</value>
+    <value>Brez</value>
+  </data>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>Prikaži zaporedja…</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Non-aktifkan</value>
+    <value>Izklopi</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Restart</value>
+    <value>Ponovno zaženi</value>
+  </data>
+  <data name="Obsolete027" xml:space="preserve">
+    <value>Zgodovina</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Mengunjungi situs web</value>
+    <value>Obišči spletno stran</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>milidetik</value>
+  <data name="Exit" xml:space="preserve">
+    <value>Izhod</value>
+  </data>
+  <data name="Obsolete036" xml:space="preserve">
+    <value>Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  </data>
+  <data name="Sequences" xml:space="preserve">
+    <value>Zaporedja</value>
+  </data>
+  <data name="Obsolete039" xml:space="preserve">
+    <value>Zaporedje</value>
+  </data>
+  <data name="Obsolete041" xml:space="preserve">
+    <value>Unicode</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Iskalni filter:</value>
+  </data>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Compose tipka:</value>
+  </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Izberite tipko, ki bo uporabljena kot Compose tipka.</value>
+  </data>
+  <data name="ResetDelay" xml:space="preserve">
+    <value>Zamik:</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Napreden Unicode vnos</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Omogoči Unicode vnos za vse znake, tudi tiste brez definiranega zaporedja. Tako bo npr. zaporedje „Compose U 1 A 3 F“ tvorilo izhodni znak U+1A3F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Ob napačnih zaporedjih</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Ni ločevanja velikih in malih črk</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Če vneseno zaporedje ne obstaja, obstaja pa tako ki se loči samo po velikosti črk, ga samodejno uporabi.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Zavrzi vse vnešene znake</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Če vneseno zaporedje ne obstaja, zavrzi vse vtipkane znake. Privzeti pristop je da se ohrani znake, kot da Compose tipka ne bi bila pritisnjena.</value>
   </data>
 </root>

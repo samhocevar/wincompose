@@ -222,11 +222,44 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Модификатор:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Выберите клавишу, которая будет использоваться в качестве клавиши Compose.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Задержка:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Расширенный ввод символов Unicode</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Включить ввод Unicode для всех символов, даже для не имеющих ассоциированных с ними последовательностей Compose. Например, следующая комбинация клавиш создаст символ U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Сигнал при недопустимых комбинациях</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Откат к соответствиям, не учитывающим регистр символов, при недействительных комбинациях</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Если введённая последовательность не существует, но есть похожая, отличающаяся только в регистре символов, автоматически использовать последнюю.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Забыть все набранные символы</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Если введённая последовательность не существует, забыть все введённые символы. Поведение по умолчанию - напечатать символы так, как будто они были набраны без использования Compose.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Издать звуковой сигнал</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Если введённая последовательность не существует, издать звуковой сигнал.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Язык интерфейса:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Выберите язык, используемый интерфейсом WinCompose. По умолчанию используется язык операционной системы.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Закрыть</value>
@@ -243,14 +276,32 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Сохранить оригинальное поведение клавиши Compose</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Стараться сохранить оригинальное поведение клавиш. Например, нажатие Alt-Tab будет работать как и раньше, даже если Alt назначен в качестве клавиши compose.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Вставлять пустой пробел в офисных приложениях</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Приложения Microsoft Office иногда изменяют шрифт документа, если были введены определённые символы Unicode. Эта настройка посзволяет вставлять невидимый пробел перед такими символами, чтобы обойти это поведение.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Эмулировать Caps Lock, используя обе клавиши Shift</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Если клавиша Caps Lock используется в качестве compose, её оригинальное поведение недоступно. Эта настройка позволяет повторять функциональность Cap Lock с помощью нажатия двух клавиш Shift одновременно.</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift отключает Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Если клавиша Caps Lock используется в качестве compose, её оригинальное поведение недоступно. Эта настройка позволяет выключать Cap Lock с помощью нажатия клавиши Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Нажатый Caps Lock всегда генерирует заглавные буквы</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Когда включён режим Caps Lock, ввод акцентированных символов, таких как  “é”, всегда будет приводить к выводу соответствующих заглавных букв, в данном случае “É”.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Категории</value>
@@ -291,6 +342,9 @@
   <data name="About" xml:space="preserve">
     <value>О программе</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Скачать WinCompose {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>О программе</value>
   </data>
@@ -311,5 +365,11 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Сообщить об ошибке</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Доступны обновления.</value>
   </data>
 </root>

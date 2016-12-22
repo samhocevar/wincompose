@@ -345,6 +345,9 @@
   <data name="About" xml:space="preserve">
     <value>Programmist</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Laadi alla WinCompose {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Programmist WinCompose</value>
   </data>
@@ -365,5 +368,11 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Teata veast</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Abi</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Saadaval on programmi uuendus.</value>
   </data>
 </root>

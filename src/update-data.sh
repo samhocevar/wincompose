@@ -44,9 +44,9 @@ for FILE in i18n/Text.resx unicode/Category.resx; do
     /<value>/   { split ($0, a, /[<>]/); value=a[3]; line=NR; }
     /<comment>/ { split ($0, a, /[<>]/); comment=a[3]; }
     /<\/data>/  { if (!off) {
-                      print "#: '${FILE}':" line " ID:" id;
                       if (comment) { print "#. " comment }
                       if (obsolete) { print "#. This string is obsolete but might be reused in the future" }
+                      print "#: '${FILE}':" line " ID:" id;
                       print "msgid \"" value "\"";
                       print "msgstr \"\""; print "";
                   } }' \
@@ -86,7 +86,7 @@ po2res()
         zh) echo zh-CHT ;;
         sc) echo it-CH ;;
         eo) echo de-CH ;;
-        *@*) echo "" ;;
+        *@*) echo "" ;; # ignore these languages
         *) echo $polang ;;
     esac
 }
