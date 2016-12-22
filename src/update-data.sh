@@ -178,10 +178,13 @@ echo "done."
 #
 
 echo "[4/${STEPS}] Check consistency…"
-for x in unicode/*resx i18n/*resx; do
+for x in unicode/*.*.resx i18n/*.*.resx; do
     reslang="$(echo $x | cut -f2 -d.)"
     if ! grep -q '"'$(echo $x | tr / .)'"' wincompose.csproj; then
         echo "WARNING: $x not found in wincompose.csproj"
+    fi
+    if ! grep -q '^Source: "bin.*[\\]'$reslang'[\\][*][.]dll";' installer.iss; then
+        echo "WARNING: $reslang DLL not found in installer.iss"
     fi
     if grep -q '^; Name: "'$reslang'";' installer.iss; then
         echo "WARNING: $reslang is commented out in installer.iss"
