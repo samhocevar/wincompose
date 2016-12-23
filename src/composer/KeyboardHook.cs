@@ -55,7 +55,10 @@ static class KeyboardHook
             m_hook = NativeMethods.SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
                                    NativeMethods.LoadLibrary("user32.dll"), 0);
             if (m_hook == HOOK.INVALID)
-                throw new Win32Exception(Marshal.GetLastWin32Error());
+            {
+                Log.Debug("Unable to install hook: {0}",
+                          new Win32Exception(Marshal.GetLastWin32Error()));
+            }
         }
         else
         {
