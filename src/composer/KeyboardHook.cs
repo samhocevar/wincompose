@@ -57,16 +57,23 @@ static class KeyboardHook
             if (m_hook == HOOK.INVALID)
                 throw new Win32Exception(Marshal.GetLastWin32Error());
         }
+        else
+        {
+            m_hook = HOOK.INVALID;
+        }
 
         // XXX: this will crash if the hook is not removed from the same
         // thread that installed it.
         if (old_hook != HOOK.INVALID)
         {
-            int ret = NativeMethods.UnhookWindowsHookEx(m_hook);
+            int ret = NativeMethods.UnhookWindowsHookEx(old_hook);
             // Ignore errors: I don’t know whether it’s an error if Windows
             // uninstalled the hook itself.
             if (ret == 0)
-                throw new Win32Exception(Marshal.GetLastWin32Error());
+            {
+                Log.Debug("Unable to uninstall hook: {0}",
+                          new Win32Exception(Marshal.GetLastWin32Error()));
+            }
         }
     }
 
