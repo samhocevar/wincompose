@@ -48,8 +48,8 @@ static class KeyboardHook
         HOOK old_hook = m_hook;
 
         // Reinstall the hook in case Windows disabled it without telling us. It’s
-        // OK to have two hooks installed for a short time, because we properly
-        // handle injected keys (i.e. we ignore them).
+        // OK to have two hooks installed for a short time, because we check for
+        // recursive calls to ourselves in OnKey().
         if (m_active)
         {
             m_hook = NativeMethods.SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
@@ -65,13 +65,12 @@ static class KeyboardHook
             m_hook = HOOK.INVALID;
         }
 
-        // XXX: this will crash if the hook is not removed from the same
-        // thread that installed it.
         if (old_hook != HOOK.INVALID)
         {
+            // XXX: this will crash if the hook is not removed from the same
+            // thread that installed it.
             int ret = NativeMethods.UnhookWindowsHookEx(old_hook);
-            // Ignore errors: I don’t know whether it’s an error if Windows
-            // uninstalled the hook itself.
+
             if (ret == 0)
             {
                 Log.Debug("Unable to uninstall hook: {0}",
@@ -89,12 +88,15 @@ static class KeyboardHook
 
     private static HOOK m_hook = HOOK.INVALID;
 
+    // Check whether OnKey is called twice for the same event
+    private static int m_recursive = 0;
+
     private static int OnKey(HC nCode, WM wParam, IntPtr lParam)
     {
         bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
                         || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
 
-        if (nCode == HC.ACTION && is_key)
+        if (nCode == HC.ACTION && is_key && m_recursive == 0)
         {
             // Retrieve key event data from native structure
             var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
@@ -119,7 +121,11 @@ static class KeyboardHook
             Log.Debug("Ignored Event: OnKey({0}, {1})", nCode, wParam);
         }
 
-        return NativeMethods.CallNextHookEx(m_hook, nCode, wParam, lParam);
+        ++m_recursive;
+        int ret = NativeMethods.CallNextHookEx(m_hook, nCode, wParam, lParam);
+        --m_recursive;
+
+        return ret;
     }
 }
 
