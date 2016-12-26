@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-05-01 23:23+0200\n"
-"Last-Translator: Cosmo Console <cosmoconsole@gmail.com>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/wincompose/"
-"master/fi/>\n"
+"PO-Revision-Date: 2016-12-26 10:39+0000\n"
+"Last-Translator: Lari Oesch <lari@oesch.me>\n"
+"Language-Team: Finnish "
+"<https://hosted.weblate.org/projects/wincompose/master/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.3-dev\n"
+"X-Generator: Weblate 2.11-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -211,14 +211,12 @@ msgstr ""
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:257 ID:InvalidSequences
-#, fuzzy
 msgid "On invalid sequences"
-msgstr "Piippaa, jos merkkisarja on vääränlainen"
+msgstr "Virheellisissä sarjoissa"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "Jätä huomiotta kirjainkoko, jos merkkisarja on vääränlainen"
+msgstr ""
 
 #: i18n/Text.resx:264 ID:CaseInsensitiveToolTip
 msgid ""
@@ -399,9 +397,8 @@ msgstr "Tietoja"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:383 ID:Download
-#, fuzzy
 msgid "Download WinCompose {0}"
-msgstr "Tietoja WinComposesta"
+msgstr "Lataa WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:387 ID:AboutBoxTitle
@@ -450,7 +447,6 @@ msgid "Updates are available."
 msgstr ""
 
 #: i18n/Text.resx:423 ID:UserDefinedSequences
-#, fuzzy
 msgid "User-defined sequences"
 msgstr "Käyttäjän makrot"
 
@@ -621,9 +617,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:113
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Merkkisarjat — WinCompose"
+msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:116
