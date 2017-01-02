@@ -1,23 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE’S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
-"POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-02-06 18:00+0000\n"
-"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
-"fr/>\n"
+"Project-Id-Version: French (WinCompose)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-02 20:43+0200\n"
+"PO-Revision-Date: 2017-01-02 20:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: French "
+"<https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.5-dev\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -191,7 +186,7 @@ msgstr "Touche compose :"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Sélectionnez la touche qui sera la touche Compose."
+msgstr "Sélectionner la touche qui sera la touche Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:247 ID:ResetDelay
@@ -477,17 +472,17 @@ msgstr "Des mises à jour sont disponibles."
 #: i18n/Text.resx:423 ID:UserDefinedSequences
 #, fuzzy
 msgid "User-defined sequences"
-msgstr "Macros utilisateur"
+msgstr "Séquences défini par l’utilisateur"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Éditer"
 
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:430 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Recharger"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -679,7 +674,7 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:162
 msgid "Administrator rights are required. Error: %d"
-msgstr "Les droits d’administrateur sont nécessaires. Erreur: %d"
+msgstr "Les droits d’administrateur sont nécessaires. Erreur : %d"
 
 #~ msgid "Unicode input: Compose U 1 A 3 F outputs character U+1A3F"
 #~ msgstr "Saisie Unicode : Compose U 1 A 3 F insère le caractère U+1A3F"
