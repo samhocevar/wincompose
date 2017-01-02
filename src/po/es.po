@@ -8,21 +8,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-09-19 00:55+0000\n"
-"Last-Translator: Hector Rodriguez <rodriguez.hectord97@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/wincompose/"
-"master/es/>\n"
+"PO-Revision-Date: 2017-01-02 03:36+0000\n"
+"Last-Translator: Kevin López Brante <kevin@kddlb.cl>\n"
+"Language-Team: Spanish "
+"<https://hosted.weblate.org/projects/wincompose/master/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.9-dev\n"
+"X-Generator: Weblate 2.11-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Autodetectar"
+msgstr "Detectar automáticamente"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
@@ -32,17 +32,17 @@ msgstr "Alt izquierda"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Alt derecho"
+msgstr "Alt derecha"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Control izquierdo"
+msgstr "Control izquierda"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr "Control derecho"
+msgstr "Control derecha"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
@@ -57,7 +57,7 @@ msgstr "Windows derecha"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr "Block mayús"
+msgstr "Bloq Mayús"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:153 ID:KeyNumLock
@@ -137,7 +137,7 @@ msgstr "Ninguno"
 
 #: i18n/Text.resx:206 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "Mostrar las Secuencias…"
+msgstr "Mostrar secuencias…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:209 ID:Disable
@@ -151,7 +151,7 @@ msgstr "Reiniciar"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:216 ID:Obsolete027
 msgid "History"
-msgstr "Historia"
+msgstr "Historial"
 
 #. A button to visit the website
 #: i18n/Text.resx:219 ID:VisitWebsite
@@ -187,11 +187,11 @@ msgstr "Filtro de búsqueda:"
 
 #: i18n/Text.resx:241 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Componer tecla:"
+msgstr "Tecla Compose:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Seleccione la tecla que actuará como tecla de composición."
+msgstr "Selecciona la tecla que actuará como Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:247 ID:ResetDelay
