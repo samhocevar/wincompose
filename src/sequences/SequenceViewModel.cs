@@ -56,6 +56,9 @@ namespace WinCompose
             if (searchText.IsEmpty)
                 return true;
 
+            if (searchText.ExactSearchString == Result)
+                return true;
+
             var compareInfo = Thread.CurrentThread.CurrentCulture.CompareInfo;
             foreach (var token in searchText.Tokens)
             {

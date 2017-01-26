@@ -26,6 +26,8 @@ namespace WinCompose
 
         public SearchTokens(string searchText)
         {
+            ExactSearchString = searchText;
+
             if (string.IsNullOrEmpty(searchText))
             {
                 IsEmpty = true;
@@ -44,6 +46,8 @@ namespace WinCompose
         }
 
         public bool IsEmpty { get; private set; }
+
+        public string ExactSearchString { get; private set; }
 
         public IEnumerable<string> Tokens { get { return tokens; } }
 
