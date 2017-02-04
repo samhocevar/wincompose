@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-02-04 23:56+0000\n"
+"PO-Revision-Date: 2017-02-04 23:57+0000\n"
 "Last-Translator: Viktar Vauchkevich <victorenator@gmail.com>\n"
 "Language-Team: Belarusian "
 "<https://hosted.weblate.org/projects/wincompose/master/be/>\n"
@@ -643,7 +643,7 @@ msgstr "Патрабаванні"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:113
 msgid "Software required by WinCompose"
-msgstr "Неабхлдныя залежнасці"
+msgstr "Неабходныя залежнасці"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:116
