@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-09-07 17:03+0200\n"
+"PO-Revision-Date: 2017-03-27 18:58+0000\n"
 "Last-Translator: Gjelbrim Haskaj <ghaskaj@aol.com>\n"
-"Language-Team: Albanian <https://hosted.weblate.org/projects/wincompose/"
-"master/sq/>\n"
+"Language-Team: Albanian "
+"<https://hosted.weblate.org/projects/wincompose/master/sq/>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4-dev\n"
+"X-Generator: Weblate 2.13-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -207,7 +207,7 @@ msgstr ""
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:257 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr ""
+msgstr "Në sekuenca invalide"
 
 #: i18n/Text.resx:261 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
@@ -612,7 +612,7 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:113
 msgid "Software required by WinCompose"
-msgstr ""
+msgstr "Softver-i nevojitet nga WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:116
@@ -638,4 +638,4 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:162
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Nevoiten drejta administratore. Gabimi: %d"
