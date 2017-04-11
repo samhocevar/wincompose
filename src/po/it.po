@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-04-11 15:27+0000\n"
-"Last-Translator: Edoardo Rosa <edoardo.rosa90@gmail.com>\n"
+"PO-Revision-Date: 2017-06-01 09:01+0000\n"
+"Last-Translator: manmatteo <m.manighetti@gmail.com>\n"
 "Language-Team: Italian "
 "<https://hosted.weblate.org/projects/wincompose/master/it/>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.15-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -469,9 +469,8 @@ msgid "Updates are available."
 msgstr "Sono disponibili aggiornamenti."
 
 #: i18n/Text.resx:423 ID:UserDefinedSequences
-#, fuzzy
 msgid "User-defined sequences"
-msgstr "Macro personalizzate"
+msgstr "Sequenze personalizzate"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
