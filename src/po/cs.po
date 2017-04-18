@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-07-22 17:11+0200\n"
-"Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
-"cs/>\n"
+"PO-Revision-Date: 2017-04-18 18:21+0000\n"
+"Last-Translator: Jan Tojnar <jtojnar@gmail.com>\n"
+"Language-Team: Czech "
+"<https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.4-dev\n"
+"X-Generator: Weblate 2.14-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -191,7 +191,7 @@ msgstr "Klávesa Compose:"
 
 #: i18n/Text.resx:244 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Zvolte klávesu, která by měla fungovat jako klávesa Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:247 ID:ResetDelay
@@ -200,7 +200,7 @@ msgstr "Doba trvání:"
 
 #: i18n/Text.resx:251 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Pokročilé zadávání Unicode"
 
 #: i18n/Text.resx:254 ID:UnicodeInputToolTip
 msgid ""
