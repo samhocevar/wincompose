@@ -756,7 +756,8 @@ static class Composer
         {
             string wclass = buf.ToString();
 
-            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel")
+            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
+                 || wclass == "hexchatWindowToplevel")
                 m_window_is_gtk = true;
 
             if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
