@@ -96,7 +96,13 @@ static class KeyboardHook
         bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
                         || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
 
-        if (nCode == HC.ACTION && is_key && m_recursive == 0)
+        if (m_recursive != 0)
+        {
+            // Do nothing. We can only get here if a key is pressed during
+            // the very short time where we have two hooks installed, i.e.
+            // practically never, but it’s better to handle this properly.
+        }
+        else if (nCode == HC.ACTION && is_key)
         {
             // Retrieve key event data from native structure
             var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
@@ -121,6 +127,8 @@ static class KeyboardHook
             Log.Debug("Ignored Event: OnKey({0}, {1})", nCode, wParam);
         }
 
+        // Call next hook but guard against re-doing our own work in case we
+        // were installed twice.
         ++m_recursive;
         int ret = NativeMethods.CallNextHookEx(m_hook, nCode, wParam, lParam);
         --m_recursive;
