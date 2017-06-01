@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-02-04 23:57+0000\n"
+"PO-Revision-Date: 2017-06-01 06:10+0000\n"
 "Last-Translator: Viktar Vauchkevich <victorenator@gmail.com>\n"
 "Language-Team: Belarusian "
 "<https://hosted.weblate.org/projects/wincompose/master/be/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.11\n"
+"X-Generator: Weblate 2.15-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -241,8 +241,7 @@ msgid ""
 "key had not been used."
 msgstr ""
 "Калі ўведзеная пасьлядоўнасьць не існуе, то скасаваць усе набраныя сымбалі. "
-"Паводле замоўчаньня яны выводзяцца так, бы кампанавальная клавіша не "
-"націскалась."
+"Агадана яны выводзяцца так, бы кампанавальная клавіша не націскалась."
 
 #: i18n/Text.resx:273 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -261,8 +260,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
-"Выбяры мову інтарфэйсу WinCompose. Паводле замоўчаньня выкарыстоўваецца мова "
-"аперацыйнай сыстэмы."
+"Выбяры мову інтарфэйсу WinCompose. Агадана выкарыстоўваецца мова аперацыйнай "
+"сыстэмы."
 
 #. Close the settings window
 #: i18n/Text.resx:285 ID:Close
@@ -297,7 +296,7 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
-"Гэта наказвае WinCompose мкнуцца захаваць першасныя паводзіны клавішащ. "
+"Гэта наказвае WinCompose мкнуцца захаваць першасныя паводзіны клавішаў. "
 "Напрыклад, спалука Alt+Tab працавацьме па-ранейшаму нават, калі Alt "
 "выкарыстана як кампанавальная клавіша."
 
