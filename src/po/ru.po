@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-12-19 10:31+0000\n"
-"Last-Translator: Grigory Rechistov <ggg_mail@inbox.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
-"master/ru/>\n"
+"PO-Revision-Date: 2017-06-08 10:26+0000\n"
+"Last-Translator: Anton Shestakov <av6@dwimlabs.net>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/wincompose/master/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.10\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.15-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -104,7 +104,7 @@ msgstr "Тильда `"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:185 ID:Obsolete017
 msgid "500 milliseconds"
-msgstr "500 милисекунд"
+msgstr "500 миллисекунд"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:188 ID:Obsolete018
@@ -317,7 +317,7 @@ msgid ""
 "character after the Unicode character to work around the bug."
 msgstr ""
 "Приложения Microsoft Office иногда изменяют шрифт документа, если были "
-"введены определённые символы Unicode. Эта настройка посзволяет вставлять "
+"введены определённые символы Unicode. Эта настройка позволяет вставлять "
 "невидимый пробел перед такими символами, чтобы обойти это поведение."
 
 #: i18n/Text.resx:314 ID:EmulateCapsLock
@@ -382,9 +382,8 @@ msgstr "Опции…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:347 ID:TrayToolTip
-#, fuzzy
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "Модификатор:"
+msgstr "WinCompose v{2} на {0} ({1} комбинаций)"
 
 #: i18n/Text.resx:351 ID:Behavior
 msgid "General Behavior"
@@ -406,7 +405,7 @@ msgstr "WinCompose отключен"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:364 ID:KeyInsert
 msgid "Insert"
-msgstr "Вставить"
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:368 ID:TestTyping
