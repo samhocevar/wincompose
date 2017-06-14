@@ -172,7 +172,7 @@
               </CheckBox>
 
               <CheckBox Grid.Row="1" Grid.Column="0"
-                      Margin="8,4" VerticalAlignment="Center" IsEnabled="False"
+                      Margin="8,4" VerticalAlignment="Center"
                       IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"
                       ToolTipService.ToolTip="{x:Static i18n:Text.KeepOriginalKeyToolTip}">
                   <TextBlock Text="{x:Static i18n:Text.KeepOriginalKey}" TextWrapping="Wrap"/>
