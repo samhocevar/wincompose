@@ -17,6 +17,7 @@ using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -179,8 +180,9 @@ static class Composer
         }
 
         // If the special Synergy window has focus, we’re actually sending
-        // keystrokes to another computer; disable WinCompose.
-        if (m_window_is_synergy)
+        // keystrokes to another computer; disable WinCompose. Same if it is
+        // a Cygwin X window.
+        if (m_window_is_other_desktop)
         {
             return false;
         }
@@ -748,7 +750,7 @@ static class Composer
 
         m_window_is_gtk = false;
         m_window_is_office = false;
-        m_window_is_synergy = false;
+        m_window_is_other_desktop = false;
 
         const int len = 256;
         StringBuilder buf = new StringBuilder(len);
@@ -763,8 +765,8 @@ static class Composer
             if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
                 m_window_is_office = true;
 
-            if (wclass == "SynergyDesk")
-                m_window_is_synergy = true;
+            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x*)$").Success)
+                m_window_is_other_desktop = true;
         }
 
         if (active_layout != m_current_layout)
@@ -861,7 +863,7 @@ static class Composer
     private static IntPtr m_current_layout = new IntPtr(-1);
     private static bool m_window_is_gtk = false;
     private static bool m_window_is_office = false;
-    private static bool m_window_is_synergy = false;
+    private static bool m_window_is_other_desktop = false;
 
     /// <summary>
     /// How many times we pressed and released compose.
