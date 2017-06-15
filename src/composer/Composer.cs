@@ -765,7 +765,7 @@ static class Composer
             if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
                 m_window_is_office = true;
 
-            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x*)$").Success)
+            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
                 m_window_is_other_desktop = true;
         }
 
