@@ -7,6 +7,10 @@ var
     { s_skipped: second run, with all pages automatically skipped }
     state: (s_run_1, s_run_2, s_skipped);
 
+    { The privilege check page. We need a custom page because any other page
+    { may be skipped by InnoSetup without ShouldSkipPage() being called. }
+    privcheck_page: twizardpage;
+
     { The .NET version detection page }
     dotnet_page: twizardpage;
     warning, action, hint: tnewstatictext;
@@ -51,7 +55,7 @@ procedure download_dotnet(sender: tobject);
 var
     ret: integer;
 begin
-    { ID 22 is Service Pack 1, 21 would be the original .NET 3.5. }
+    { ID 22 is Service Pack 1, ID 21 would be the original .NET 3.5. }
     shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22',
               '', '', sw_show, ewnowait, ret);
 end;
@@ -108,6 +112,9 @@ begin
                   - homepage.height - 2;
     homepage.left := scalex(20);
 
+    { Create an optional page for privilege check }
+    privcheck_page := createcustompage(wpselectdir, '', '');
+
     { Create an optional page for .NET detection and installation }
     dotnet_page := createcustompage(wpwelcome, _('Prerequisites'),
                                     _('Software required by WinCompose'));
@@ -133,35 +140,6 @@ begin
     hint.parent := dotnet_page.surface;
     hint.font.style := hint.font.style + [fsbold];
     hint.top := action.top + action.height + scaley(20);
-end;
-
-{
-{ If we're in the target directory selection page, check that we
-{ can actually install files in that directory. Otherwise, we hijack
-{ NextButtonClick() to re-execute ourselves in admin mode.
-}
-function NextButtonClick(page_id: integer): boolean;
-var
-    e1: boolean;
-    e2: thandle;
-begin
-    result := true;
-    if (state = s_run_1) and (page_id = wpselectdir) then
-    begin
-        createdir(expandconstant('{app}'));
-        e1 := savestringtofile(expandconstant('{app}/.stamp'), '', false);
-        deletefile(expandconstant('{app}/.stamp'));
-        deltree(expandconstant('{app}'), true, false, false);
-        if e1 then exit;
-
-        e2 := reexec(wizardform.handle, 'runas', expandconstant('{srcexe}'),
-                     expandconstant('/dir="{app}" /elevate'), '', sw_show);
-        if e2 > 32 then exit_process(0);
-
-        result := false;
-        msgbox(format(_('Administrator rights are required. Error: %d'), [e2]),
-               mberror, MB_OK);
-    end;
 end;
 
 {
@@ -214,19 +192,52 @@ begin
 end;
 
 {
-{ If running elevated and we haven't reached the directory selection page,
-{ skip all pages, including the directory selection page.
+{ If we're in the target directory selection page, check that we
+{ can actually install files in that directory. Otherwise, we
+{ re-execute ourselves in admin mode.
+{
+{ If running elevated and we haven't reached the privilege check page,
+{ skip all pages, including the privilege check page.
 }
 function ShouldSkipPage(page_id: integer): boolean;
+var
+    e1: boolean;
+    e2: thandle;
 begin
-    { If this is the .NET page, decide whether to show it or not! }
-    if (state = s_run_1) and (page_id = dotnet_page.id) then begin
-        result := (get_dotnet_state() = 0);
+    { If this is the .NET page, only show it on run 1 and if the
+    { prerequisites are not yet installed. }
+    if page_id = dotnet_page.id then begin
+        result := (state <> s_run_1) or (get_dotnet_state() = 0);
         exit;
     end;
 
-    result := (state = s_run_2) and (page_id <= wpselectdir);
-    if (state = s_run_2) and (page_id = wpselectdir) then
-        state := s_skipped;
+    { If this is the privilege check page, maybe restart in elevated
+    { mode. In any case, always skip this page. }
+    if page_id = privcheck_page.id then begin
+        if state = s_run_1 then begin
+            createdir(expandconstant('{app}'));
+            e1 := savestringtofile(expandconstant('{app}/.stamp'), '', false);
+            deletefile(expandconstant('{app}/.stamp'));
+            deltree(expandconstant('{app}'), true, false, false);
+            if not e1 then begin
+                log('No write access to ' + expandconstant('{app}') + ', restarting.');
+                e2 := reexec(wizardform.handle, 'runas', expandconstant('{srcexe}'),
+                             expandconstant('/dir="{app}" /elevate'), '', sw_show);
+
+                if e2 <= 32 then
+                    msgbox(format(_('Administrator rights are required. Error: %d'), [e2]),
+                           mberror, MB_OK);
+                exit_process(0);
+            end;
+        end else if state = s_run_2 then begin
+            state := s_skipped;
+        end;
+        result := true;
+        exit;
+    end;
+
+    { If this is our second run, skip everything until wpselectdir }
+    if state = s_run_2 then
+        result := (page_id <= wpselectdir);
 end;
 
