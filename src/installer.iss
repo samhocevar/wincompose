@@ -101,6 +101,8 @@ Name: "{group}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
 Filename: "{app}\{#NAME}.exe"; Flags: nowait
 
 [InstallDelete]
+; We used to be installed in c:\Program Files (x86)
+Type: filesandordirs; Name: "{pf32}\{#NAME}"
 ; Legacy stuff that we need to remove
 Type: files; Name: "{app}\res\resources.dll"
 Type: files; Name: "{app}\res\wc.ico"
@@ -108,6 +110,7 @@ Type: files; Name: "{app}\res\wca.ico"
 Type: files; Name: "{app}\res\wcd.ico"
 Type: files; Name: "{app}\res\Compose.txt"
 Type: files; Name: "{app}\res\Keys.txt"
+Type: dirifempty; Name: "{app}\res"
 Type: files; Name: "{app}\locale\default.ini"
 Type: files; Name: "{app}\locale\fr.ini"
 Type: dirifempty; Name: "{app}\locale"
