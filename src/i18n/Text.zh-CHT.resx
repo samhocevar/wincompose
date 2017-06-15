@@ -375,4 +375,10 @@
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>有更新可用。</value>
   </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>重新載入</value>
+  </data>
 </root>

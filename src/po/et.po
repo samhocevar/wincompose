@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2016-12-26 10:25+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
-"Language-Team: Estonian "
-"<https://hosted.weblate.org/projects/wincompose/master/et/>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/wincompose/"
+"master/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -634,17 +634,17 @@ msgid "Separator, Space"
 msgstr "Eraldaja, Tühik"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:119
 msgid "Prerequisites"
 msgstr "Nõutavad komponendid"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:113
+#: installer.pas:120
 msgid "Software required by WinCompose"
 msgstr "Tarkvara, mida WinCompose vajab"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:116
+#: installer.pas:123
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -655,12 +655,12 @@ msgstr ""
 "hetkel paigaldatud. Järgmine tegevus võib aidata probleemi lahendada:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:121
+#: installer.pas:128
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Laadi alla ja paigalda .NET Framework 3.5 SP1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:131
+#: installer.pas:138
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -669,7 +669,7 @@ msgstr ""
 "jätkata paigaldust."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:162
+#: installer.pas:228
 msgid "Administrator rights are required. Error: %d"
 msgstr "Vajalikud on administraatori õigused. Viga: %d"
 

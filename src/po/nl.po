@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2016-12-22 14:16+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch "
-"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
+"nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -638,17 +638,17 @@ msgid "Separator, Space"
 msgstr "Scheiding, spatie"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:119
 msgid "Prerequisites"
 msgstr "Vereisten"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:113
+#: installer.pas:120
 msgid "Software required by WinCompose"
 msgstr "Software nodig voor WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:116
+#: installer.pas:123
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -661,12 +661,12 @@ msgstr ""
 "opgelost:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:121
+#: installer.pas:128
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Het .NET Framework 3.5 Service Pack 1 downloaden en installeren"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:131
+#: installer.pas:138
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -675,7 +675,7 @@ msgstr ""
 "met de installatie."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:162
+#: installer.pas:228
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administratorrechten zijn vereist. Fout: %d"
 

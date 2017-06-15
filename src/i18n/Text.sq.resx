@@ -225,6 +225,9 @@
   <data name="ResetDelay" xml:space="preserve">
     <value>Vonesa:</value>
   </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Në sekuenca invalide</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Gjuha e ndërfaqes:</value>
   </data>

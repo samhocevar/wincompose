@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2016-12-31 09:25+0000\n"
 "Last-Translator: Wei-cheng Kung <wck317@pchome.com.tw>\n"
-"Language-Team: Chinese "
-"<https://hosted.weblate.org/projects/wincompose/master/zh/>\n"
+"Language-Team: Chinese <https://hosted.weblate.org/projects/wincompose/"
+"master/zh/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -624,17 +624,17 @@ msgid "Separator, Space"
 msgstr "分隔符號，空格"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:119
 msgid "Prerequisites"
 msgstr "預設條件"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:113
+#: installer.pas:120
 msgid "Software required by WinCompose"
 msgstr "WinCompose 預設的軟體"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:116
+#: installer.pas:123
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -645,19 +645,19 @@ msgstr ""
 "後面做法可能解決此問題："
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:121
+#: installer.pas:128
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "下載與安裝 .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:131
+#: installer.pas:138
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr "一旦完成，可返回此螢幕，然後繼續安裝。"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:162
+#: installer.pas:228
 msgid "Administrator rights are required. Error: %d"
 msgstr "需要管理員權限。出現錯誤：%d"
 

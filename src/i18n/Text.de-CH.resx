@@ -375,4 +375,13 @@
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Ĝisdatigoj estas haveblaj.</value>
   </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Makroklavoj difinitaj de la uzanto</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Redakti</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Reŝargi</value>
+  </data>
 </root>

@@ -166,7 +166,7 @@
     <value>Тильда `</value>
   </data>
   <data name="Obsolete017" xml:space="preserve">
-    <value>500 милисекунд</value>
+    <value>500 миллисекунд</value>
   </data>
   <data name="Obsolete018" xml:space="preserve">
     <value>1 секунда</value>
@@ -283,7 +283,7 @@
     <value>Вставлять пустой пробел в офисных приложениях</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Приложения Microsoft Office иногда изменяют шрифт документа, если были введены определённые символы Unicode. Эта настройка посзволяет вставлять невидимый пробел перед такими символами, чтобы обойти это поведение.</value>
+    <value>Приложения Microsoft Office иногда изменяют шрифт документа, если были введены определённые символы Unicode. Эта настройка позволяет вставлять невидимый пробел перед такими символами, чтобы обойти это поведение.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Эмулировать Caps Lock, используя обе клавиши Shift</value>
@@ -315,6 +315,9 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Опции…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} на {0} ({1} комбинаций)</value>
+  </data>
   <data name="Behavior" xml:space="preserve">
     <value>Основное поведение</value>
   </data>
@@ -328,7 +331,7 @@
     <value>WinCompose отключен</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
-    <value>Вставить</value>
+    <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
     <value>Протестируйте ввод:</value>

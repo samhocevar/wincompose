@@ -222,8 +222,14 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Klávesa Compose:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Zvolte klávesu, která by měla fungovat jako klávesa Compose.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Doba trvání:</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Pokročilé zadávání Unicode</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Jazyk rozhraní:</value>

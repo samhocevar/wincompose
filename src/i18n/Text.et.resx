@@ -375,4 +375,13 @@
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Saadaval on programmi uuendus.</value>
   </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Kasutaja loodud kombinatsioonid</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Muuda</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Laadi uuesti</value>
+  </data>
 </root>

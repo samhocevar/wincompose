@@ -223,7 +223,7 @@
     <value>Touche compose :</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Sélectionnez la touche qui sera la touche Compose.</value>
+    <value>Sélectionner la touche qui sera la touche Compose.</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Délai :</value>
@@ -374,5 +374,14 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Des mises à jour sont disponibles.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Séquences définies par l’utilisateur</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Recharger</value>
   </data>
 </root>

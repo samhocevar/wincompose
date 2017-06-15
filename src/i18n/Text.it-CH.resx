@@ -375,4 +375,13 @@
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Bi sunt agiornamentos disponìbiles.</value>
   </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Fileras definidas dae s’impitadore</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Acontza</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Torra a carrigare</value>
+  </data>
 </root>

@@ -375,4 +375,13 @@
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Sono disponibili aggiornamenti.</value>
   </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Sequenze personalizzate</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Ricarica</value>
+  </data>
 </root>

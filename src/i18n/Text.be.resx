@@ -247,7 +247,7 @@
     <value>Скасаваць усе набраныя сымбалі</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Калі ўведзеная пасьлядоўнасьць не існуе, то скасаваць усе набраныя сымбалі. Паводле замоўчаньня яны выводзяцца так, бы кампанавальная клавіша не націскалась.</value>
+    <value>Калі ўведзеная пасьлядоўнасьць не існуе, то скасаваць усе набраныя сымбалі. Агадана яны выводзяцца так, бы кампанавальная клавіша не націскалась.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Выдаваць гудок</value>
@@ -259,7 +259,7 @@
     <value>Мова інтарфэйсу:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Выбяры мову інтарфэйсу WinCompose. Паводле замоўчаньня выкарыстоўваецца мова аперацыйнай сыстэмы.</value>
+    <value>Выбяры мову інтарфэйсу WinCompose. Агадана выкарыстоўваецца мова аперацыйнай сыстэмы.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Зачыніць</value>
@@ -277,7 +277,7 @@
     <value>Захаваць зыходныя паводзіны клавішы</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Гэта наказвае WinCompose мкнуцца захаваць першасныя паводзіны клавішащ. Напрыклад, спалука Alt+Tab працавацьме па-ранейшаму нават, калі Alt выкарыстана як кампанавальная клавіша.</value>
+    <value>Гэта наказвае WinCompose мкнуцца захаваць першасныя паводзіны клавішаў. Напрыклад, спалука Alt+Tab працавацьме па-ранейшаму нават, калі Alt выкарыстана як кампанавальная клавіша.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Устаўляць прагалы нулявой шырыні ў офісных праграмах</value>
@@ -374,5 +374,14 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Абнаўленьні наяўныя.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Паслядоўнасці карыстальніка</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Правіць</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Перачытаць</value>
   </data>
 </root>

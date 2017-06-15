@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Autodetectar</value>
+    <value>Detectar automáticamente</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Alt izquierda</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt derecho</value>
+    <value>Alt derecha</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Control izquierdo</value>
+    <value>Control izquierda</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Control derecho</value>
+    <value>Control derecha</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
     <value>Windows izquierda</value>
@@ -139,7 +139,7 @@
     <value>Windows derecha</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
-    <value>Block mayús</value>
+    <value>Bloq Mayús</value>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
     <value>Bloq Num</value>
@@ -187,7 +187,7 @@
     <value>Ninguno</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Mostrar las Secuencias…</value>
+    <value>Mostrar secuencias…</value>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Desactivar</value>
@@ -196,7 +196,7 @@
     <value>Reiniciar</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>Historia</value>
+    <value>Historial</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visitar sitio web</value>
@@ -220,10 +220,10 @@
     <value>Filtro de búsqueda:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Componer tecla:</value>
+    <value>Tecla Compose:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Seleccione la tecla que actuará como tecla de composición.</value>
+    <value>Selecciona la tecla que actuará como Compose.</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Retardo:</value>
@@ -231,20 +231,29 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Ingreso de Unicode avanzado</value>
   </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Activar ingreso de Unicode para todos los carácteres, incluso aquellos que no tengansecuencia de composición definida. Por ejemplo, esta secuencia producirá el carácter U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Al ingresar secuencias inválidas</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Revertir a comparación de secuencias sin diferenciar entre mayúsculas y minúsculas</value>
+  </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>Si la secuencia entrada no existe pero hay una que solamente difiere por ser mayúscula o minúscula, corregirla automáticamente.</value>
+    <value>Si la secuencia ingresa no existe, pero hay una que difiere en las mayúsculas o minúsculas, corregirla automáticamente.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Descartar todos los carácteres ingresos</value>
+    <value>Descartar todos los carácteres ingresados</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Si la secuencia entrada no existe, descartar todos los carácteres ingresos. Por defecto, se insertan los carácteres como si la tecla de composición no se ha oprimido.</value>
+    <value>Si la secuencia ingresada no existe, descartar todos los caracteres. El comportamiento por defecto es mostrar los caracteres como si no se hubiese usado la tecla Compose.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Emitir un sonido</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>Si la secuencia entrada no existe, emitir un sonido de sistema.</value>
+    <value>Si la secuencia ingresada no existe, emitir un sonido del sistema.</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Idioma de la interfaz:</value>
@@ -256,7 +265,7 @@
     <value>Cerrar</value>
   </data>
   <data name="Obsolete050" xml:space="preserve">
-    <value>Carácter de Copia</value>
+    <value>Copiar carácter</value>
   </data>
   <data name="Obsolete051" xml:space="preserve">
     <value>Descripción:</value>
@@ -265,19 +274,34 @@
     <value>Aplicar</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Mantener funcionamiento original de la tecla de composición</value>
+    <value>Mantener funcionamiento original de la tecla Compose</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>WinCompose hará su mejor esfuerzo en retener el comportamiento original del teclado. Por ejemplo, Alt-Tab todavía funcionará si Alt fuese el teclado de composición.</value>
+    <value>WinCompose hará su mejor esfuerzo en retener el comportamiento original del teclado. Por ejemplo, Alt-Tab todavía funcionará, incluso si Alt fuese la tecla Compose.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insertar espacios de anchura cero en las programas de Office</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Las aplicaciones de Microsoft Office a tienden a cambiar el fuente cunado ciertos carácteres de Unicode son ingresos. Está función insertará un carácter invisible después del carácter de Unicode para evitar este defecto.</value>
+    <value>Las aplicaciones de Microsoft Office tienden a cambiar la fuente del documento cuando ciertos caracteres de Unicode son ingresados. Está función insertará un carácter invisible después del carácter de Unicode para evitar este defecto.</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emular Bloq Mayús usando ambas teclas Mayús</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Si se usa Bloq Mayús como tecla Compose, el comportamiento original de la tecla no estará disponible. Esta función permite activar Bloq Mayús pulsando ambas teclas Mayús al mismo tiempo.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Desactivar Caps Lock con la tecla de mayúsculas</value>
+    <value>Desactivar Bloq Mayús con la tecla Mayús</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Si se usa Bloq Mayús como tecla Compose, el comportamiento original de la tecla no estará disponible. Esta función permite desactivar Bloq Mayús pulsando la tecla Mayús.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Bloq Mayús siempre escribirá letras en mayúscula</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Cuando Bloq Mayús está activado, el escribir una letra acentuada como &quot;é&quot; siempre mostrará la letra mayúscula correspondiente, en este caso &quot;É&quot;.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorías</value>
@@ -291,11 +315,17 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Opciones…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} en {0} ({1} secuencias)</value>
+  </data>
   <data name="Behavior" xml:space="preserve">
     <value>Comportamiento general</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Secuencias — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Macros personalizadas</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Acerca de</value>

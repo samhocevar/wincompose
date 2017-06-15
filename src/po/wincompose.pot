@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WinCompose 0.7.7beta20160207\n"
+"Project-Id-Version: WinCompose 0.7.7beta20170511\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -584,32 +584,32 @@ msgid "Separator, Space"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:112
+#: installer.pas:119
 msgid "Prerequisites"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:113
+#: installer.pas:120
 msgid "Software required by WinCompose"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:116
+#: installer.pas:123
 msgid "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:121
+#: installer.pas:128
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:131
+#: installer.pas:138
 msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:162
+#: installer.pas:228
 msgid "Administrator rights are required. Error: %d"
 msgstr ""
 

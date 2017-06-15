@@ -375,4 +375,13 @@
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Eine neue Version ist verfügbar.</value>
   </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Benutzerdefinierte Makros</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>bearbeiten</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Neu laden</value>
+  </data>
 </root>
