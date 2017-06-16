@@ -115,7 +115,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to General Behavior.
+        ///   Looks up a localized string similar to Behavior.
         /// </summary>
         public static string Behavior {
             get {
@@ -273,6 +273,15 @@ namespace WinCompose.i18n {
         public static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string General {
+            get {
+                return ResourceManager.GetString("General", resourceCulture);
             }
         }
         
