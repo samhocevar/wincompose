@@ -26,16 +26,16 @@
                     </LinearGradientBrush>
                 </MenuItem.Background>
             </MenuItem>
-            <MenuItem Header="Show Sequences…"/>
-            <MenuItem Header="Options…"/>
-            <MenuItem Header="Help">
-                <MenuItem Header="About"/>
-                <MenuItem Header="Visit Website"/>
+            <MenuItem Header="{x:Static i18n:Text.ShowSequences}"/>
+            <MenuItem Header="{x:Static i18n:Text.ShowOptions}"/>
+            <MenuItem Header="{x:Static i18n:Text.Help}">
+                <MenuItem Header="{x:Static i18n:Text.About}"/>
+                <MenuItem Header="{x:Static i18n:Text.VisitWebsite}"/>
             </MenuItem>
             <Separator/>
-            <MenuItem Header="Disable"/>
-            <MenuItem Header="Restart"/>
-            <MenuItem Header="Exit"/>
+            <MenuItem Header="{x:Static i18n:Text.Disable}"/>
+            <MenuItem Header="{x:Static i18n:Text.Restart}"/>
+            <MenuItem Header="{x:Static i18n:Text.Exit}"/>
         </ContextMenu>
     </UserControl.ContextMenu>
 </UserControl>
