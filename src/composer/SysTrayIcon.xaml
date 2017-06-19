@@ -5,10 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:i18n="clr-namespace:WinCompose.i18n"
              xmlns:wc="clr-namespace:WinCompose">
+
+    <UserControl.Resources>
+        <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
+    </UserControl.Resources>
+
     <UserControl.ContextMenu>
         <ContextMenu>
-            <MenuItem Header="WinCompose"/>
-            <Separator/>
+            <MenuItem Height="28" IsEnabled="False">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource ComposeKeyImage}" Width="16" Height="16"/>
+                </MenuItem.Icon>
+                <MenuItem.Header>
+                    <TextBlock FontWeight="Bold" FontSize="15" Text="WinCompose"/>
+                </MenuItem.Header>
+                <MenuItem.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="LightCyan" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </MenuItem.Background>
+            </MenuItem>
             <MenuItem Header="Show Sequences…"/>
             <MenuItem Header="Options…"/>
             <MenuItem Header="Help">
