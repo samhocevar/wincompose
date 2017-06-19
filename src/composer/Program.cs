@@ -27,6 +27,7 @@ namespace WinCompose
         private static WinForms.MenuItem m_download_item;
         private static string m_download_url;
         private static RemoteControl m_control;
+        private static SysTrayIcon m_systray_icon;
         private static SequenceWindow m_sequencewindow;
         private static SettingsWindow m_optionswindow;
 
@@ -85,6 +86,7 @@ namespace WinCompose
                         new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
                     })
                 };
+                m_tray_icon.Click += NotifyiconClicked;
                 m_tray_icon.DoubleClick += NotifyiconDoubleclicked;
 
                 m_help_item.MenuItems.AddRange(new[]
@@ -124,6 +126,20 @@ namespace WinCompose
                 Settings.SaveConfig();
                 Composer.Fini();
                 Updater.Fini();
+            }
+        }
+
+        private static void NotifyiconClicked(object sender, EventArgs e)
+        {
+            if (m_systray_icon == null)
+            {
+                m_systray_icon = new SysTrayIcon();
+            }
+
+            if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Left)
+            {
+                //m_systray_icon.ContextMenu.StaysOpen = true;
+                m_systray_icon.ContextMenu.IsOpen = true;
             }
         }
 
