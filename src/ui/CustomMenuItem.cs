@@ -48,7 +48,7 @@ namespace WinCompose
             {
                 var icon_bounds = e.Bounds;
                 icon_bounds.Width = e.Bounds.Height;
-                e.Graphics.DrawIcon(Program.GetIcon(0), icon_bounds);
+                e.Graphics.DrawIcon(SysTrayIcon.GetIcon(0), icon_bounds);
             }
 
             var text_bounds = e.Bounds;
