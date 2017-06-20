@@ -11,20 +11,20 @@
     </UserControl.Resources>
 
     <UserControl.ContextMenu>
-        <ContextMenu>
-            <MenuItem Height="28" IsEnabled="False">
-                <MenuItem.Icon>
-                    <Image Source="{StaticResource ComposeKeyImage}" Width="16" Height="16"/>
-                </MenuItem.Icon>
-                <MenuItem.Header>
-                    <TextBlock FontWeight="Bold" FontSize="15" Text="WinCompose"/>
-                </MenuItem.Header>
+        <ContextMenu Padding="0,0,0,1">
+            <MenuItem Height="26" IsEnabled="False" Padding="0,0,0,2">
                 <MenuItem.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="LightCyan" Offset="0"/>
                         <GradientStop Color="White" Offset="1"/>
                     </LinearGradientBrush>
                 </MenuItem.Background>
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource ComposeKeyImage}" Width="16" Height="16"/>
+                </MenuItem.Icon>
+                <MenuItem.Header>
+                    <TextBlock FontWeight="Bold" FontSize="14" Text="WinCompose"/>
+                </MenuItem.Header>
             </MenuItem>
             <MenuItem Header="{x:Static i18n:Text.ShowSequences}"/>
             <MenuItem Header="{x:Static i18n:Text.ShowOptions}"/>
@@ -38,4 +38,5 @@
             <MenuItem Header="{x:Static i18n:Text.Exit}"/>
         </ContextMenu>
     </UserControl.ContextMenu>
+
 </UserControl>
