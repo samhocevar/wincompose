@@ -58,7 +58,8 @@ namespace WinCompose
             m_icon.Click += NotifyiconClicked;
             m_icon.DoubleClick += NotifyiconDoubleclicked;
 
-            SysTray.AlwaysShow("wincompose[.]exe");
+            // XXX: disabled for now, as this feature is a bit controversial
+            //SysTray.AlwaysShow("wincompose[.]exe");
 
             Composer.Changed += SysTrayUpdateCallback;
             Updater.Changed += SysTrayUpdateCallback;
