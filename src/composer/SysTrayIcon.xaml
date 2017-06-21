@@ -40,8 +40,12 @@
                     <TextBlock FontWeight="Bold" FontSize="14" Text="WinCompose"/>
                 </MenuItem.Header>
             </MenuItem>
-            <MenuItem Header="{x:Static i18n:Text.ShowSequences}" Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.ShowSequences}"/>
+            <MenuItem Command="{Binding MenuItemCommand}"
+                      CommandParameter="{x:Static wc:MenuCommand.ShowSequences}">
+                <MenuItem.Header>
+                    <TextBlock FontWeight="Bold" Text="{x:Static i18n:Text.ShowSequences}"/>
+                </MenuItem.Header>
+            </MenuItem>
             <MenuItem Header="{x:Static i18n:Text.ShowOptions}" Command="{Binding MenuItemCommand}"
                       CommandParameter="{x:Static wc:MenuCommand.ShowOptions}"/>
             <MenuItem Header="{x:Static i18n:Text.Help}">
@@ -50,9 +54,13 @@
                 <MenuItem Header="{x:Static i18n:Text.VisitWebsite}" Command="{Binding MenuItemCommand}"
                           CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
             </MenuItem>
-            <MenuItem Header="{Binding DownloadHeader}" Command="{Binding MenuItemCommand}"
+            <MenuItem Command="{Binding MenuItemCommand}"
                       Visibility="{Binding Path=HasNewerVersion, Mode=OneWay, Converter={StaticResource booleanToVisibilityConverter}}"
-                      CommandParameter="{x:Static wc:MenuCommand.Download}"/>
+                      CommandParameter="{x:Static wc:MenuCommand.Download}">
+                <MenuItem.Header>
+                    <TextBlock FontWeight="Bold" Text="{Binding DownloadHeader}"/>
+                </MenuItem.Header>
+            </MenuItem>
             <Separator/>
             <MenuItem Header="{x:Static i18n:Text.Disable}" Command="{Binding MenuItemCommand}"
                       IsCheckable="True" IsChecked="{Binding Path=IsDisabled, Mode=OneWay}"
