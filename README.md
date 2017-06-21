@@ -13,12 +13,12 @@ very intuitive key combinations. For instance, **ö** is obtained using
 Sam wrote WinCompose because none of the alternatives (FreeCompose,
 CKFW, AllChars or Unichars) were found to be satisfying.
 
-Download latest: [WinCompose 0.7.6](https://github.com/samhocevar/wincompose/releases/download/v0.7.6/WinCompose-Setup-0.7.6.exe) (January 18, 2016)
+Download latest: [WinCompose 0.7.7](https://github.com/samhocevar/wincompose/releases/download/v0.7.7/WinCompose-Setup-0.7.7.exe) (June 21, 2017)
 -----------------------------------
 
-Installable version: [WinCompose 0.7.6 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.7.6/WinCompose-Setup-0.7.6.exe).
+Installable version: [WinCompose 0.7.7 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.7.7/WinCompose-Setup-0.7.7.exe).
 
-Portable version: [WinCompose 0.7.6 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.7.6/WinCompose-NoInstall-0.7.6.zip).
+Portable version: [WinCompose 0.7.7 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.7.7/WinCompose-NoInstall-0.7.7.zip).
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
