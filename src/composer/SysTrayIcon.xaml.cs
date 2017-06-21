@@ -11,21 +11,41 @@
 //
 
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Controls;
+using System.Windows.Input;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {
     /// <summary>
+    /// All possible commands that the systray menu can execute
+    /// </summary>
+    public enum MenuCommand
+    {
+        ShowSequences,
+        ShowOptions,
+        About,
+        VisitWebsite,
+        Download,
+        Disable,
+        Restart,
+        Exit,
+    }
+
+    /// <summary>
     /// Interaction logic for SysTrayIcon.xaml
     /// </summary>
-    public partial class SysTrayIcon : UserControl, IDisposable
+    public partial class SysTrayIcon : UserControl, INotifyPropertyChanged, IDisposable
     {
         public SysTrayIcon()
         {
             InitializeComponent();
+
+            // Set the data context for the menu, not for our empty shell class
+            ContextMenu.DataContext = this;
 
             m_control = new RemoteControl();
             m_control.DisableEvent += OnDisableEvent;
@@ -33,45 +53,10 @@ namespace WinCompose
             m_control.ExitEvent += OnExitEvent;
             m_control.TriggerDisableEvent();
 
-            m_icon = new WinForms.NotifyIcon
-            {
-                Visible = true,
-                ContextMenu = new WinForms.ContextMenu(new[]
-                {
-                    new CustomMenuItem
-                    {
-                        Enabled = false,
-                        Text = "WinCompose",
-                        Scale = 1.05f,
-                        Bold = true,
-                        Gradient = true,
-                        MenuIcon = GetIcon(0),
-                    },
-                    new WinForms.MenuItem("-"),
-                    new WinForms.MenuItem(i18n.Text.ShowSequences, ShowSequencesClicked),
-                    new WinForms.MenuItem(i18n.Text.ShowOptions, ShowOptionsClicked),
-                    m_help_item = /* Keep a reference on this entry */
-                    new CustomMenuItem() { Text = i18n.Text.Help },
-                    new WinForms.MenuItem("-"),
-                    m_disable_item = /* Keep a reference on this entry */
-                    new WinForms.MenuItem(i18n.Text.Disable, DisableClicked),
-                    new WinForms.MenuItem(i18n.Text.Restart, RestartClicked),
-                    new WinForms.MenuItem(i18n.Text.Exit, OnExitEvent),
-                })
-            };
+            m_icon = new WinForms.NotifyIcon();
+            m_icon.Visible = true;
             m_icon.Click += NotifyiconClicked;
             m_icon.DoubleClick += NotifyiconDoubleclicked;
-
-            m_help_item.MenuItems.AddRange(new[]
-            {
-                new WinForms.MenuItem(i18n.Text.About, AboutClicked),
-                new WinForms.MenuItem(i18n.Text.VisitWebsite, delegate(object o, EventArgs e) { System.Diagnostics.Process.Start("http://wincompose.info/"); }),
-                m_download_item = /* Keep a reference on this entry */
-                new WinForms.MenuItem("", DownloadClicked)
-                {
-                    Visible = false
-                },
-            });
 
             SysTray.AlwaysShow("wincompose[.]exe");
 
@@ -85,22 +70,90 @@ namespace WinCompose
 
         public void Dispose()
         {
-            m_icon.Dispose();
-
             Composer.Changed -= SysTrayUpdateCallback;
             Updater.Changed -= SysTrayUpdateCallback;
             Updater.Changed -= UpdaterStateChanged;
+
+            m_icon.Visible = false;
+            m_icon.Dispose();
 
             m_control.DisableEvent -= OnDisableEvent;
             m_control.ExitEvent -= OnExitEvent;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public ICommand MenuItemCommand
+        {
+            get { return m_menu_item_command ?? (m_menu_item_command = new DelegateCommand(OnMenuItemClicked)); }
+        }
+
+        private DelegateCommand m_menu_item_command;
+
+        private void OnMenuItemClicked(object parameter)
+        {
+            switch (parameter as MenuCommand?)
+            {
+                case MenuCommand.ShowSequences:
+                    if (m_sequencewindow == null)
+                    {
+                        m_sequencewindow = new SequenceWindow();
+                        WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
+                    }
+                    m_sequencewindow.Show();
+                    break;
+
+                case MenuCommand.ShowOptions:
+                    if (m_optionswindow == null)
+                    {
+                        m_optionswindow = new SettingsWindow();
+                        WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_optionswindow);
+                    }
+                    m_optionswindow.Show();
+                    break;
+
+                case MenuCommand.About:
+                    var about_box = new AboutBox();
+                    about_box.ShowDialog();
+                    break;
+
+                case MenuCommand.Download:
+                    var url = Settings.IsInstalled() ? Updater.Get("Installer")
+                                                     : Updater.Get("Portable");
+                    System.Diagnostics.Process.Start(url);
+                    break;
+
+                case MenuCommand.VisitWebsite:
+                    System.Diagnostics.Process.Start("http://wincompose.info/");
+                    break;
+
+                case MenuCommand.Disable:
+                    if (Composer.IsDisabled())
+                        m_control.TriggerDisableEvent();
+                    Composer.ToggleDisabled();
+                    SysTrayUpdateCallback(null, new EventArgs());
+                    break;
+
+                case MenuCommand.Restart:
+                    // FIXME: there might be more cleanup to do here; but it’s probably
+                    // not worth it, because restarting the app is a hack and whatever
+                    // reason the user may have, it’s because of a bug or a limitation
+                    // in WinCompose that we need to fix.
+                    m_icon.Visible = false;
+                    WinForms.Application.Restart();
+                    Environment.Exit(0);
+                    break;
+
+                case MenuCommand.Exit:
+                    WinForms.Application.Exit();
+                    break;
+            }
+        }
+
         private RemoteControl m_control;
         private WinForms.NotifyIcon m_icon;
-        private WinForms.MenuItem m_help_item;
-        private WinForms.MenuItem m_disable_item;
-        private WinForms.MenuItem m_download_item;
-        private string m_download_url;
+        private SequenceWindow m_sequencewindow;
+        private SettingsWindow m_optionswindow;
 
         private System.Drawing.Icon GetCurrentIcon()
         {
@@ -140,7 +193,7 @@ namespace WinCompose
                         canvas.DrawImage(Properties.Resources.DecalUpdate, 0, 0);
 
                     canvas.Save();
-                    m_icon_cache[index] = Icon.FromHandle(bitmap.GetHicon());
+                    m_icon_cache[index] = System.Drawing.Icon.FromHandle(bitmap.GetHicon());
                 }
             }
 
@@ -163,7 +216,7 @@ namespace WinCompose
             if ((bool)t.GetField("added", hidden).GetValue(m_icon))
                 t.GetMethod("UpdateIcon", hidden).Invoke(m_icon, new object[] { true });
 
-            m_disable_item.Checked = Composer.IsDisabled();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
         }
 
         private static string GetCurrentToolTip()
@@ -184,111 +237,53 @@ namespace WinCompose
 
         private void NotifyiconClicked(object sender, EventArgs e)
         {
-            if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Left)
+            if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Right)
             {
-                //m_systray_icon.ContextMenu.StaysOpen = true;
-                ContextMenu.IsOpen = true;
+                ContextMenu.IsOpen = !ContextMenu.IsOpen;
             }
         }
 
         private void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
-            if (m_sequencewindow == null)
+            if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Left)
             {
-                m_sequencewindow = new SequenceWindow();
-                WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
+                if (m_sequencewindow == null)
+                {
+                    m_sequencewindow = new SequenceWindow();
+                    WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
+                }
+
+                if (m_sequencewindow.IsVisible)
+                {
+                    m_sequencewindow.Hide();
+                }
+                else
+                {
+                    m_sequencewindow.Show();
+                }
             }
-
-            if (m_sequencewindow.IsVisible)
-            {
-                m_sequencewindow.Hide();
-            }
-            else
-            {
-                m_sequencewindow.Show();
-            }
         }
 
-        private void ShowSequencesClicked(object sender, EventArgs e)
-        {
-            if (m_sequencewindow == null)
-            {
-                m_sequencewindow = new SequenceWindow();
-                WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
-            }
-            m_sequencewindow.Show();
-        }
-
-        private void ShowOptionsClicked(object sender, EventArgs e)
-        {
-            if (m_optionswindow == null)
-            {
-                m_optionswindow = new SettingsWindow();
-                WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_optionswindow);
-            }
-            m_optionswindow.Show();
-        }
-
-        private void DisableClicked(object sender, EventArgs e)
-        {
-            if (Composer.IsDisabled())
-                m_control.TriggerDisableEvent();
-
-            Composer.ToggleDisabled();
-        }
-
-        private void AboutClicked(object sender, EventArgs e)
-        {
-            var about_box = new AboutBox();
-            about_box.ShowDialog();
-        }
-
-        private void DownloadClicked(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(m_download_url);
-        }
-
-        private void RestartClicked(object sender, EventArgs e)
-        {
-            // FIXME: there might be more cleanup to do here; but it’s probably
-            // not worth it, because restarting the app is a hack and whatever
-            // reason the user may have, it’s because of a bug or a limitation
-            // in WinCompose that we need to fix.
-            m_icon.Visible = false;
-            WinForms.Application.Restart();
-            Environment.Exit(0);
-        }
+        public bool IsDisabled { get { return Composer.IsDisabled(); } }
+        public bool HasNewerVersion { get { return Updater.HasNewerVersion(); } }
+        public string DownloadHeader { get { return string.Format(i18n.Text.Download, Updater.Get("Latest") ?? ""); } }
 
         private void UpdaterStateChanged(object sender, EventArgs e)
         {
-            m_download_item.Visible = false;
-            if (Updater.HasNewerVersion())
-            {
-                var text = string.Format(i18n.Text.Download,
-                                         Updater.Get("Latest") ?? "");
-                var url = Settings.IsInstalled() ? Updater.Get("Installer")
-                                                 : Updater.Get("Portable");
-                if (url != null)
-                {
-                    m_download_item.Visible = true;
-                    m_download_item.Text = text;
-                    m_download_url = url;
-                }
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasNewerVersion"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DownloadHeader"));
         }
 
         private void OnDisableEvent(object sender, EventArgs e)
         {
             if (!Composer.IsDisabled())
                 Composer.ToggleDisabled();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
         }
 
         private void OnExitEvent(object sender, EventArgs e)
         {
             WinForms.Application.Exit();
         }
-
-        private SequenceWindow m_sequencewindow;
-        private SettingsWindow m_optionswindow;
     }
 }

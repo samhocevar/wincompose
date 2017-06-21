@@ -1,4 +1,17 @@
-﻿<UserControl x:Class="WinCompose.SysTrayIcon"
+﻿<!--
+  WinCompose — a compose key for Windows — http://wincompose.info/
+
+  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+              2014—2015 Benjamin Litzelmann
+
+  This program is free software. It comes without any warranty, to
+  the extent permitted by applicable law. You can redistribute it
+  and/or modify it under the terms of the Do What the Fuck You Want
+  to Public License, Version 2, as published by the WTFPL Task Force.
+  See http://www.wtfpl.net/ for more details.
+-->
+
+<UserControl x:Class="WinCompose.SysTrayIcon"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -7,6 +20,7 @@
              xmlns:wc="clr-namespace:WinCompose">
 
     <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
     </UserControl.Resources>
 
@@ -26,16 +40,27 @@
                     <TextBlock FontWeight="Bold" FontSize="14" Text="WinCompose"/>
                 </MenuItem.Header>
             </MenuItem>
-            <MenuItem Header="{x:Static i18n:Text.ShowSequences}"/>
-            <MenuItem Header="{x:Static i18n:Text.ShowOptions}"/>
+            <MenuItem Header="{x:Static i18n:Text.ShowSequences}" Command="{Binding MenuItemCommand}"
+                      CommandParameter="{x:Static wc:MenuCommand.ShowSequences}"/>
+            <MenuItem Header="{x:Static i18n:Text.ShowOptions}" Command="{Binding MenuItemCommand}"
+                      CommandParameter="{x:Static wc:MenuCommand.ShowOptions}"/>
             <MenuItem Header="{x:Static i18n:Text.Help}">
-                <MenuItem Header="{x:Static i18n:Text.About}"/>
-                <MenuItem Header="{x:Static i18n:Text.VisitWebsite}"/>
+                <MenuItem Header="{x:Static i18n:Text.About}" Command="{Binding MenuItemCommand}"
+                          CommandParameter="{x:Static wc:MenuCommand.About}"/>
+                <MenuItem Header="{x:Static i18n:Text.VisitWebsite}" Command="{Binding MenuItemCommand}"
+                          CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
             </MenuItem>
+            <MenuItem Header="{Binding DownloadHeader}" Command="{Binding MenuItemCommand}"
+                      Visibility="{Binding Path=HasNewerVersion, Mode=OneWay, Converter={StaticResource booleanToVisibilityConverter}}"
+                      CommandParameter="{x:Static wc:MenuCommand.Download}"/>
             <Separator/>
-            <MenuItem Header="{x:Static i18n:Text.Disable}"/>
-            <MenuItem Header="{x:Static i18n:Text.Restart}"/>
-            <MenuItem Header="{x:Static i18n:Text.Exit}"/>
+            <MenuItem Header="{x:Static i18n:Text.Disable}" Command="{Binding MenuItemCommand}"
+                      IsCheckable="True" IsChecked="{Binding Path=IsDisabled, Mode=OneWay}"
+                      CommandParameter="{x:Static wc:MenuCommand.Disable}"/>
+            <MenuItem Header="{x:Static i18n:Text.Restart}" Command="{Binding MenuItemCommand}"
+                      CommandParameter="{x:Static wc:MenuCommand.Restart}"/>
+            <MenuItem Header="{x:Static i18n:Text.Exit}" Command="{Binding MenuItemCommand}"
+                      CommandParameter="{x:Static wc:MenuCommand.Exit}"/>
         </ContextMenu>
     </UserControl.ContextMenu>
 

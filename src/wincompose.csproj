@@ -73,7 +73,6 @@
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="settings\SettingsWindowViewModel.cs" />
-    <Compile Include="ui\CustomMenuItem.cs" />
     <Compile Include="ui\DelegateCommand.cs" />
     <Compile Include="ui\ViewModelBase.cs" />
   </ItemGroup>
