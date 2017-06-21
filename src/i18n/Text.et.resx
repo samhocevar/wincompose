@@ -318,9 +318,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} masinas {0} ({1} kombinatsiooni)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Üldine käitumine</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Kombinatsioonid — WinCompose</value>
   </data>

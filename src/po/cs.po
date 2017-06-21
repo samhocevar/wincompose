@@ -356,110 +356,117 @@ msgstr "Možnosti…"
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} (klávesa: {0}; {1} sekvencí)"
 
-#: i18n/Text.resx:351 ID:Behavior
-msgid "General Behavior"
+#. The “general” tab of the options window
+#: i18n/Text.resx:351 ID:General
+#, fuzzy
+msgid "General"
+msgstr "Obecné chování"
+
+#: i18n/Text.resx:355 ID:Behavior
+#, fuzzy
+msgid "Behavior"
 msgstr "Obecné chování"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:354 ID:WindowTitle
+#: i18n/Text.resx:358 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Sekvence — WinCompose"
 
-#: i18n/Text.resx:358 ID:UserMacros
+#: i18n/Text.resx:362 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Uživatelská makra"
 
-#: i18n/Text.resx:361 ID:DisabledToolTip
+#: i18n/Text.resx:365 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "Program WinCompose je vypnutý"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:364 ID:KeyInsert
+#: i18n/Text.resx:368 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:368 ID:TestTyping
+#: i18n/Text.resx:372 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Vyzkoušejte psaní:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:372 ID:Tweaks
+#: i18n/Text.resx:376 ID:Tweaks
 msgid "Tweaks"
 msgstr "Vychytávky"
 
-#: i18n/Text.resx:376 ID:Milliseconds
+#: i18n/Text.resx:380 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(milisekundy)"
 
 #. About box menu entry
-#: i18n/Text.resx:379 ID:About
+#: i18n/Text.resx:383 ID:About
 msgid "About"
 msgstr "O aplikaci"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:383 ID:Download
+#: i18n/Text.resx:387 ID:Download
 #, fuzzy
 msgid "Download WinCompose {0}"
 msgstr "O aplikaci WinCompose"
 
 #. Window title of the About box
-#: i18n/Text.resx:387 ID:AboutBoxTitle
+#: i18n/Text.resx:391 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "O aplikaci WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:391 ID:Programming
+#: i18n/Text.resx:395 ID:Programming
 msgid "Programming"
 msgstr "Programátoři"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:395 ID:Translators
+#: i18n/Text.resx:399 ID:Translators
 msgid "Translation"
 msgstr "Překlad"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:399 ID:Contributors
+#: i18n/Text.resx:403 ID:Contributors
 msgid "Special Thanks"
 msgstr "Zvláštní poděkování"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:403 ID:License
+#: i18n/Text.resx:407 ID:License
 msgid "License"
 msgstr "Licence"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:407 ID:NeedRestart
+#: i18n/Text.resx:411 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr "Aby se projevily změny, WinCompose musí být restartován."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:411 ID:ReportBug
+#: i18n/Text.resx:415 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Nahlásit chybu"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:415 ID:Help
+#: i18n/Text.resx:419 ID:Help
 msgid "Help"
 msgstr ""
 
 #. Message displayed in the systray tooltip.
-#: i18n/Text.resx:419 ID:UpdatesToolTip
+#: i18n/Text.resx:423 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr ""
 
-#: i18n/Text.resx:423 ID:UserDefinedSequences
+#: i18n/Text.resx:427 ID:UserDefinedSequences
 #, fuzzy
 msgid "User-defined sequences"
 msgstr "Uživatelská makra"
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
+#: i18n/Text.resx:430 ID:UserDefinedSequencesEdit
 msgid "Edit"
 msgstr ""
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:430 ID:UserDefinedSequencesReload
+#: i18n/Text.resx:434 ID:UserDefinedSequencesReload
 msgid "Reload"
 msgstr ""
 

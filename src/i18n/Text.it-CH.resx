@@ -318,9 +318,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} pro {0} ({1} fileras)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Cumportamentu/fattia generale</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Fileras — WinCompose</value>
   </data>

@@ -270,9 +270,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2}, näppäin {0} ({1} merkkisarjaa)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Yleinen Käytös</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Merkkisarjat — WinCompose</value>
   </data>

@@ -267,9 +267,6 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Indstillinger…</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Generel opførsel</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekvenser — WinCompose</value>
   </data>

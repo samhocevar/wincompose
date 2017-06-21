@@ -207,9 +207,6 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>Vo zvolených kategóriách</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Všeobecné správanie sa</value>
-  </data>
   <data name="About" xml:space="preserve">
     <value>O programe</value>
   </data>

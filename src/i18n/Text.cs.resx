@@ -273,9 +273,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} (klávesa: {0}; {1} sekvencí)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Obecné chování</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekvence — WinCompose</value>
   </data>

@@ -318,9 +318,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} on {0} ({1} 個のシーケンス)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>一般的な動作</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>シーケンス — WinCompose</value>
   </data>

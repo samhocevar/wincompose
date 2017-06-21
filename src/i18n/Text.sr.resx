@@ -288,9 +288,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} на {0} ({1} комбинација)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Опште понашање</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Комбинације — WinCompose</value>
   </data>

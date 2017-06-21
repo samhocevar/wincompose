@@ -354,110 +354,116 @@ msgstr ""
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr ""
 
-#: i18n/Text.resx:351 ID:Behavior
+#. The “general” tab of the options window
+#: i18n/Text.resx:351 ID:General
 #, fuzzy
-msgid "General Behavior"
+msgid "General"
+msgstr "Poncaíocht Ghinearálta"
+
+#: i18n/Text.resx:355 ID:Behavior
+#, fuzzy
+msgid "Behavior"
 msgstr "Poncaíocht Ghinearálta"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:354 ID:WindowTitle
+#: i18n/Text.resx:358 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#: i18n/Text.resx:358 ID:UserMacros
+#: i18n/Text.resx:362 ID:UserMacros
 msgid "User-defined macros"
 msgstr ""
 
-#: i18n/Text.resx:361 ID:DisabledToolTip
+#: i18n/Text.resx:365 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr ""
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:364 ID:KeyInsert
+#: i18n/Text.resx:368 ID:KeyInsert
 msgid "Insert"
 msgstr ""
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:368 ID:TestTyping
+#: i18n/Text.resx:372 ID:TestTyping
 msgid "Test Typing:"
 msgstr ""
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:372 ID:Tweaks
+#: i18n/Text.resx:376 ID:Tweaks
 msgid "Tweaks"
 msgstr ""
 
-#: i18n/Text.resx:376 ID:Milliseconds
+#: i18n/Text.resx:380 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr ""
 
 #. About box menu entry
-#: i18n/Text.resx:379 ID:About
+#: i18n/Text.resx:383 ID:About
 #, fuzzy
 msgid "About"
 msgstr "_Maidir Leis Seo"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:383 ID:Download
+#: i18n/Text.resx:387 ID:Download
 msgid "Download WinCompose {0}"
 msgstr ""
 
 #. Window title of the About box
-#: i18n/Text.resx:387 ID:AboutBoxTitle
+#: i18n/Text.resx:391 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr ""
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:391 ID:Programming
+#: i18n/Text.resx:395 ID:Programming
 msgid "Programming"
 msgstr ""
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:395 ID:Translators
+#: i18n/Text.resx:399 ID:Translators
 msgid "Translation"
 msgstr ""
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:399 ID:Contributors
+#: i18n/Text.resx:403 ID:Contributors
 msgid "Special Thanks"
 msgstr ""
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:403 ID:License
+#: i18n/Text.resx:407 ID:License
 msgid "License"
 msgstr ""
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:407 ID:NeedRestart
+#: i18n/Text.resx:411 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:411 ID:ReportBug
+#: i18n/Text.resx:415 ID:ReportBug
 msgid "Report a Bug"
 msgstr ""
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:415 ID:Help
+#: i18n/Text.resx:419 ID:Help
 msgid "Help"
 msgstr ""
 
 #. Message displayed in the systray tooltip.
-#: i18n/Text.resx:419 ID:UpdatesToolTip
+#: i18n/Text.resx:423 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr ""
 
-#: i18n/Text.resx:423 ID:UserDefinedSequences
+#: i18n/Text.resx:427 ID:UserDefinedSequences
 msgid "User-defined sequences"
 msgstr ""
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:426 ID:UserDefinedSequencesEdit
+#: i18n/Text.resx:430 ID:UserDefinedSequencesEdit
 msgid "Edit"
 msgstr ""
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:430 ID:UserDefinedSequencesReload
+#: i18n/Text.resx:434 ID:UserDefinedSequencesReload
 msgid "Reload"
 msgstr ""
 

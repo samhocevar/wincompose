@@ -318,9 +318,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose  v{2} σε {0} ({1} ακολουθίες)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Γενική συμπεριφορά</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Ακολουθίες — WinCompose</value>
   </data>

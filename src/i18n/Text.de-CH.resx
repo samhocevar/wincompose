@@ -318,9 +318,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} en {0} ({1} makroklavo(j))</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Konduto ĝenerala</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Makroklavoj - WinCompose</value>
   </data>

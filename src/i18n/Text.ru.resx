@@ -318,9 +318,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} на {0} ({1} комбинаций)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Основное поведение</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Последовательности — WinCompose</value>
   </data>

@@ -267,9 +267,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} on {0} ({1} sekvenser)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Allmänt beteende</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekvenser — WinCompose</value>
   </data>

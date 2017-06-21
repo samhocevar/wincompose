@@ -318,9 +318,6 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} attivo su {0} ({1} sequenze)</value>
   </data>
-  <data name="Behavior" xml:space="preserve">
-    <value>Comportamento</value>
-  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequenze — WinCompose</value>
   </data>
