@@ -73,7 +73,6 @@
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="settings\SettingsWindowViewModel.cs" />
-    <Compile Include="ui\CustomMenuItem.cs" />
     <Compile Include="ui\DelegateCommand.cs" />
     <Compile Include="ui\ViewModelBase.cs" />
   </ItemGroup>
@@ -83,6 +82,9 @@
     </Compile>
     <Compile Include="composer\RemoteControl.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="composer\SysTrayIcon.xaml.cs">
+      <DependentUpon>SysTrayIcon.xaml</DependentUpon>
     </Compile>
     <Compile Include="sequences\SequenceWindow.xaml.cs">
       <DependentUpon>SequenceWindow.xaml</DependentUpon>
@@ -937,6 +939,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="about\AboutBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="composer\SysTrayIcon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
