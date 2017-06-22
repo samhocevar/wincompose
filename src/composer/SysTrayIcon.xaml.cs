@@ -238,10 +238,8 @@ namespace WinCompose
 
         private void NotifyiconClicked(object sender, EventArgs e)
         {
-            if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Right)
-            {
-                ContextMenu.IsOpen = !ContextMenu.IsOpen;
-            }
+            bool is_right_button = (e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Right;
+            ContextMenu.IsOpen = is_right_button && !ContextMenu.IsOpen;
         }
 
         private void NotifyiconDoubleclicked(object sender, EventArgs e)
