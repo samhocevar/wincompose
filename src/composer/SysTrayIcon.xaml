@@ -26,6 +26,18 @@
 
     <UserControl.ContextMenu>
         <ContextMenu Padding="0,0,0,1">
+
+            <ContextMenu.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <!-- Enforce Aero style for this specific context menu. -->
+                        <ResourceDictionary Source="/PresentationFramework.Aero, Version=3.0.0.0,
+                                            Culture=neutral, PublicKeyToken=31bf3856ad364e35,
+                                            ProcessorArchitecture=MSIL;component/themes/Aero.NormalColor.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </ContextMenu.Resources>
+
             <MenuItem Height="26" IsEnabled="False" Padding="0,0,0,2">
                 <MenuItem.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -37,23 +49,28 @@
                     <Image Source="{StaticResource ComposeKeyImage}" Width="16" Height="16"/>
                 </MenuItem.Icon>
                 <MenuItem.Header>
-                    <TextBlock FontWeight="Bold" FontSize="14" Text="WinCompose"/>
+                    <TextBlock Foreground="Black" FontWeight="Bold" FontSize="14"
+                               Text="WinCompose" VerticalAlignment="Center"/>
                 </MenuItem.Header>
             </MenuItem>
+
             <MenuItem Command="{Binding MenuItemCommand}"
                       CommandParameter="{x:Static wc:MenuCommand.ShowSequences}">
                 <MenuItem.Header>
                     <TextBlock FontWeight="Bold" Text="{x:Static i18n:Text.ShowSequences}"/>
                 </MenuItem.Header>
             </MenuItem>
+
             <MenuItem Header="{x:Static i18n:Text.ShowOptions}" Command="{Binding MenuItemCommand}"
                       CommandParameter="{x:Static wc:MenuCommand.ShowOptions}"/>
+
             <MenuItem Header="{x:Static i18n:Text.Help}">
                 <MenuItem Header="{x:Static i18n:Text.About}" Command="{Binding MenuItemCommand}"
                           CommandParameter="{x:Static wc:MenuCommand.About}"/>
                 <MenuItem Header="{x:Static i18n:Text.VisitWebsite}" Command="{Binding MenuItemCommand}"
                           CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
             </MenuItem>
+
             <MenuItem Command="{Binding MenuItemCommand}"
                       Visibility="{Binding Path=HasNewerVersion, Mode=OneWay, Converter={StaticResource booleanToVisibilityConverter}}"
                       CommandParameter="{x:Static wc:MenuCommand.Download}">
@@ -61,14 +78,19 @@
                     <TextBlock FontWeight="Bold" Text="{Binding DownloadHeader}"/>
                 </MenuItem.Header>
             </MenuItem>
+
             <Separator/>
+
             <MenuItem Header="{x:Static i18n:Text.Disable}" Command="{Binding MenuItemCommand}"
                       IsCheckable="True" IsChecked="{Binding Path=IsDisabled, Mode=OneWay}"
                       CommandParameter="{x:Static wc:MenuCommand.Disable}"/>
+
             <MenuItem Header="{x:Static i18n:Text.Restart}" Command="{Binding MenuItemCommand}"
                       CommandParameter="{x:Static wc:MenuCommand.Restart}"/>
+
             <MenuItem Header="{x:Static i18n:Text.Exit}" Command="{Binding MenuItemCommand}"
                       CommandParameter="{x:Static wc:MenuCommand.Exit}"/>
+
         </ContextMenu>
     </UserControl.ContextMenu>
 
