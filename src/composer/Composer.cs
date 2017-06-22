@@ -288,7 +288,8 @@ static class Composer
 
             // If this was a dead key, it will be completely ignored. But
             // it’s okay since we stored it.
-            Log.Debug("Forwarding Key to System (not composing)");
+            Log.Debug("Forwarding Key {0} to System (not composing)",
+                      key.FriendlyName);
             return false;
         }
 
@@ -361,7 +362,8 @@ static class Composer
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())
         {
-            Log.Debug("Forwarding Key to System (no possible sequence uses it)");
+            Log.Debug("Forwarding Key {0} to System (no possible sequence uses it)",
+                      key.FriendlyName);
             return false;
         }
 
