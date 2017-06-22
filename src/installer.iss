@@ -12,6 +12,7 @@ ArchitecturesInstallIn64BitMode = x64
 DefaultDirName = {pf}\{#NAME}
 DefaultGroupName = {#NAME}
 SetupIconFile = "res\icon_normal.ico"
+UninstallDisplayIcon = "{app}\{#NAME}.exe"
 Compression = lzma2
 SolidCompression = yes
 OutputDir = .
