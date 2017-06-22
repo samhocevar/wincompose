@@ -367,6 +367,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Conversion.
+        /// </summary>
+        public static string KeyConvert {
+            get {
+                return ResourceManager.GetString("KeyConvert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Escape.
         /// </summary>
         public static string KeyEscape {
@@ -408,6 +417,15 @@ namespace WinCompose.i18n {
         public static string KeyLWin {
             get {
                 return ResourceManager.GetString("KeyLWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non-conversion.
+        /// </summary>
+        public static string KeyNonConvert {
+            get {
+                return ResourceManager.GetString("KeyNonConvert", resourceCulture);
             }
         }
         

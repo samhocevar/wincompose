@@ -175,6 +175,8 @@ public class Key
             { new Key(VK.PAUSE), i18n.Text.KeyPause },
             { new Key(VK.APPS), i18n.Text.KeyApps },
             { new Key(VK.ESCAPE), i18n.Text.KeyEscape },
+            { new Key(VK.CONVERT), i18n.Text.KeyConvert },
+            { new Key(VK.NONCONVERT), i18n.Text.KeyNonConvert },
             { new Key(VK.SCROLL), i18n.Text.KeyScroll },
             { new Key(VK.INSERT), i18n.Text.KeyInsert },
 

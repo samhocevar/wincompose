@@ -165,6 +165,14 @@
     <value>Escape</value>
     <comment>The name of the key on the keyboard</comment>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Conversion</value>
+    <comment>The name of the 変換 key on a Japanese keyboard</comment>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Non-conversion</value>
+    <comment>The name of the 無変換 key on a Japanese keyboard</comment>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
     <comment>The name of the key on the keyboard</comment>
