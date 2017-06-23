@@ -13,65 +13,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
 
 namespace WinCompose
 {
 
 /// <summary>
-/// The KeyConverter class allows to convert a string or a string-like
-/// object to a Key object and back.
-/// </summary>
-public class KeyConverter : TypeConverter
-{
-    public override bool CanConvertFrom(ITypeDescriptorContext context,
-                                        Type src_type)
-    {
-        if (src_type != typeof(string))
-            return base.CanConvertFrom(context, src_type);
-
-        return true;
-    }
-
-    public override object ConvertFrom(ITypeDescriptorContext context,
-                                       CultureInfo culture, object val)
-    {
-        var str_val = val as string;
-        if (str_val == null)
-            return base.ConvertFrom(context, culture, val);
-
-        if (str_val.StartsWith("VK."))
-        {
-            try
-            {
-                var enum_val = Enum.Parse(typeof(VK), str_val.Substring(3));
-                return new Key((VK)enum_val);
-            }
-            catch
-            {
-                // Silently catch parsing exception.
-            }
-        }
-        return new Key(str_val);
-    }
-
-    public override object ConvertTo(ITypeDescriptorContext context,
-                                     CultureInfo culture, object val,
-                                     Type dst_type)
-    {
-        if (dst_type != typeof(string))
-            return base.ConvertTo(context, culture, val, dst_type);
-
-        return val.ToString();
-    }
-}
-
-/// <summary>
 /// The Key class describes anything that can be hit on the keyboard,
 /// resulting in either a printable string or a virtual key code.
 /// </summary>
-[TypeConverter(typeof(KeyConverter))]
 public class Key
 {
     /// <summary>

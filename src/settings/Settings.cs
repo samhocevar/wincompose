@@ -37,7 +37,7 @@ namespace WinCompose
         static Settings()
         {
             Language = new SettingsEntry<string>(GlobalSection, "language", "");
-            ComposeKey = new SettingsEntry<Key>(GlobalSection, "compose_key", m_default_compose_key);
+            ComposeKeys = new SettingsEntry<KeySequence>(GlobalSection, "compose_key", new KeySequence());
             ResetDelay = new SettingsEntry<int>(GlobalSection, "reset_delay", -1);
             Disabled = new SettingsEntry<bool>(GlobalSection, "disabled", false);
             UnicodeInput = new SettingsEntry<bool>(GlobalSection, "unicode_input", true);
@@ -71,7 +71,7 @@ namespace WinCompose
 
         public static SettingsEntry<string> Language { get; private set; }
 
-        public static SettingsEntry<Key> ComposeKey { get; private set; }
+        public static SettingsEntry<KeySequence> ComposeKeys { get; private set; }
 
         public static SettingsEntry<int> ResetDelay { get; private set; }
 
@@ -137,13 +137,24 @@ namespace WinCompose
             LoadConfig();
         }
 
+        private static void ValidateComposeKeys()
+        {
+            // Validate the list of compose keys, ensuring there are only valid keys
+            // and there are no duplicates.
+            KeySequence compose_keys = new KeySequence();
+            foreach (Key k in ComposeKeys.Value)
+                if (m_valid_compose_keys.Contains(k) && !compose_keys.Contains(k))
+                    compose_keys.Add(k);
+            if (compose_keys.Count == 0)
+                compose_keys.Add(m_default_compose_key);
+            ComposeKeys.Value = compose_keys;
+        }
+
         public static void LoadConfig()
         {
-            // The key used as the compose key
-            ComposeKey.Load();
-
-            if (!m_valid_compose_keys.Contains(ComposeKey.Value))
-                ComposeKey.Value = m_default_compose_key;
+            // The keys used as the compose keys
+            ComposeKeys.Load();
+            ValidateComposeKeys();
 
             // The timeout delay
             ResetDelay.Load();
@@ -206,7 +217,7 @@ namespace WinCompose
         {
             SaveEntry("reset_delay", m_delay.ToString());
             Language.Save();
-            ComposeKey.Save();
+            ComposeKeys.Save();
             Disabled.Save();
             UnicodeInput.Save();
             CaseInsensitive.Save();

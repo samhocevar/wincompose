@@ -226,7 +226,7 @@ namespace WinCompose
 
             if (!Composer.IsDisabled())
                 ret = string.Format(i18n.Text.TrayToolTip,
-                                    Settings.ComposeKey.Value.FriendlyName,
+                                    Settings.ComposeKeys.Value.FriendlyName,
                                     Settings.SequenceCount,
                                     Settings.Version);
 

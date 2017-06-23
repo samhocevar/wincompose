@@ -95,7 +95,7 @@
                                    ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
                         <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                   ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
-                                  SelectedItem="{Binding Value, Source={x:Static wc:Settings.ComposeKey}}"
+                                  SelectedItem="{Binding ComposeKey0}"
                                   SelectedValuePath="" DisplayMemberPath="FriendlyName"/>
 
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"

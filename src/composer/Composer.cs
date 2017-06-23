@@ -120,8 +120,6 @@ static class Composer
         bool is_keyup = !is_keydown;
         bool add_to_sequence = is_keydown;
         bool is_capslock_hack = false;
-        bool compose_is_altgr = m_possible_altgr_keys.Count > 0
-                       && Settings.ComposeKey.Value.VirtualKey == VK.RMENU;
 
         bool has_shift = (NativeMethods.GetKeyState(VK.SHIFT) & 0x80) != 0;
         bool has_altgr = (NativeMethods.GetKeyState(VK.LCONTROL) &
@@ -189,21 +187,26 @@ static class Composer
 
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
-        if (is_keyup && key == Settings.ComposeKey.Value
-             && CurrentState == State.Combination)
+        if (is_keyup && CurrentState == State.Combination
+             && key == m_current_compose_key)
         {
             Log.Debug("Combination Off");
+            bool compose_key_was_altgr = m_compose_key_is_altgr;
             CurrentState = State.Idle;
+            m_current_compose_key = new Key(VK.NONE);
+            m_compose_key_is_altgr = false;
             m_compose_counter = 0;
 
             // If relevant, send an additional KeyUp for the opposite
             // key; experience indicates that it helps unstick some
             // applications such as mintty.exe.
-            switch (Settings.ComposeKey.Value.VirtualKey)
+            switch (m_current_compose_key.VirtualKey)
             {
                 case VK.LMENU: SendKeyUp(VK.RMENU); break;
                 case VK.RMENU: SendKeyUp(VK.LMENU);
-                               if (compose_is_altgr)
+                               // If keyup is RMENU and we have AltGr on this
+                               // keyboard layout, send LCONTROL up too.
+                               if (compose_key_was_altgr)
                                    SendKeyUp(VK.LCONTROL);
                                break;
                 case VK.LSHIFT: SendKeyUp(VK.RSHIFT); break;
@@ -216,11 +219,14 @@ static class Composer
         }
 
         // If this is the compose key and we’re idle, enter Sequence mode
-        if (is_keydown && key == Settings.ComposeKey.Value
+        if (is_keydown && Settings.ComposeKeys.Value.Contains(key)
              && m_compose_counter == 0 && CurrentState == State.Idle)
         {
             Log.Debug("Now Composing");
             CurrentState = State.Sequence;
+            m_current_compose_key = key;
+            m_compose_key_is_altgr = key.VirtualKey == VK.RMENU &&
+                                     m_possible_altgr_keys.Count > 0;
             ++m_compose_counter;
 
             // Lauch the sequence reset expiration thread
@@ -242,7 +248,7 @@ static class Composer
 
         // If this is a compose key KeyDown event and it’s already down, or it’s
         // a KeyUp and it’s already up, eat this event without forwarding it.
-        if (key == Settings.ComposeKey.Value
+        if (key == m_current_compose_key
              && is_keydown == ((m_compose_counter & 1) != 0))
         {
             return true;
@@ -293,6 +299,10 @@ static class Composer
             return false;
         }
 
+        //
+        // From this point we know we are composing
+        //
+
         // If the compose key is down and the user pressed a new key, maybe
         // instead of composing they want to do a key combination, such as
         // Alt+Tab or Windows+Up. So we abort composing and send the KeyDown
@@ -307,14 +317,15 @@ static class Composer
         {
             bool keep_original = Settings.KeepOriginalKey.Value;
             bool key_unusable = !key.IsUsable();
-            bool altgr_combination = compose_is_altgr &&
+            bool altgr_combination = m_compose_key_is_altgr &&
                         m_possible_altgr_keys.ContainsKey(key.ToString());
 
             if (keep_original || key_unusable || altgr_combination)
             {
                 Log.Debug("Combination On");
+                bool compose_key_was_altgr = m_compose_key_is_altgr;
                 ResetSequence();
-                if (compose_is_altgr)
+                if (compose_key_was_altgr)
                 {
                     // It’s necessary to use KEYEVENTF_EXTENDEDKEY otherwise the system
                     // does not understand that we’re sending AltGr.
@@ -323,7 +334,7 @@ static class Composer
                 }
                 else
                 {
-                    SendKeyDown(Settings.ComposeKey.Value.VirtualKey);
+                    SendKeyDown(m_current_compose_key.VirtualKey);
                 }
                 CurrentState = State.Combination;
                 return false;
@@ -333,21 +344,21 @@ static class Composer
         // If this is the compose key again, use our custom virtual key
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
-        if (key == Settings.ComposeKey.Value)
+        if (key == m_current_compose_key)
         {
             ++m_compose_counter;
             key = new Key(VK.COMPOSE);
 
-            // If the compose key is AltGr, we only add it to the sequence
-            // if it’s a KeyUp event, otherwise we may be adding Multi_key to the
-            // sequence when the user actually wants to enter an AltGr char.
-            if (compose_is_altgr && m_compose_counter > 2)
+            // If the compose key is AltGr, we only add it to the sequence when
+            // it’s a KeyUp event, otherwise we may be adding Multi_key to the
+            // sequence while the user actually wants to enter an AltGr char.
+            if (m_compose_key_is_altgr && m_compose_counter > 2)
                 add_to_sequence = is_keyup;
         }
 
         // If the compose key is AltGr and it’s down, check whether the current
         // key needs translating.
-        if (compose_is_altgr && (m_compose_counter & 1) != 0)
+        if (m_compose_key_is_altgr && (m_compose_counter & 1) != 0)
         {
             string altgr_variant;
             if (m_possible_altgr_keys.TryGetValue(key.ToString(), out altgr_variant))
@@ -628,6 +639,8 @@ static class Composer
     private static void ResetSequence()
     {
         CurrentState = State.Idle;
+        m_current_compose_key = new Key(VK.NONE);
+        m_compose_key_is_altgr = false;
         m_compose_counter = 0;
         m_sequence.Clear();
     }
@@ -823,15 +836,15 @@ static class Composer
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
         if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.CAPITAL))
+             || (IsComposing() && m_current_compose_key.VirtualKey == VK.CAPITAL))
             indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.NUMLOCK))
+             || (IsComposing() && m_current_compose_key.VirtualKey == VK.NUMLOCK))
             indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (IsComposing() && Settings.ComposeKey.Value.VirtualKey == VK.SCROLL))
+             || (IsComposing() && m_current_compose_key.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
         for (ushort i = 0; i < 4; ++i)
@@ -871,6 +884,16 @@ static class Composer
     /// How many times we pressed and released compose.
     /// </summary>
     private static int m_compose_counter = 0;
+
+    /// <summary>
+    /// The compose key being used; only valid in state “Combination” for now.
+    /// </summary>
+    private static Key m_current_compose_key = new Key(VK.NONE);
+
+    /// <summary>
+    /// Whether the current compose key is AltGr
+    /// </summary>
+    private static bool m_compose_key_is_altgr = false;
 
     public enum State
     {

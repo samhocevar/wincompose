@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -20,9 +21,62 @@ namespace WinCompose
 {
 
 /// <summary>
+/// The KeySequenceConverter class allows to convert a string or a string-like
+/// object to a Key object and back.
+/// </summary>
+public class KeySequenceConverter : TypeConverter
+{
+    public override bool CanConvertFrom(ITypeDescriptorContext context,
+                                        Type src_type)
+    {
+        if (src_type != typeof(string))
+            return base.CanConvertFrom(context, src_type);
+
+        return true;
+    }
+
+    public override object ConvertFrom(ITypeDescriptorContext context,
+                                       CultureInfo culture, object val)
+    {
+        var list_str = val as string;
+        if (list_str == null)
+            return base.ConvertFrom(context, culture, val);
+
+        KeySequence ret = new KeySequence();
+        foreach (string str in Array.ConvertAll(list_str.Split(','), x => x.Trim()))
+        {
+            Key k = new Key(str);
+            if (str.StartsWith("VK."))
+            {
+                try
+                {
+                    var enum_val = Enum.Parse(typeof(VK), str.Substring(3));
+                    k = new Key((VK)enum_val);
+                }
+                catch { } // Silently catch parsing exception.
+            }
+            ret.Add(k);
+        }
+
+        return ret;
+    }
+
+    public override object ConvertTo(ITypeDescriptorContext context,
+                                     CultureInfo culture, object val,
+                                     Type dst_type)
+    {
+        if (dst_type != typeof(string))
+            return base.ConvertTo(context, culture, val, dst_type);
+
+        return (val as KeySequence).ToString();
+    }
+}
+
+/// <summary>
 /// The KeySequence class describes a sequence of keys, which can be
 /// compared with other sequences of keys.
 /// </summary>
+[TypeConverter(typeof(KeySequenceConverter))]
 public class KeySequence : List<Key>
 {
     public KeySequence() : base(new List<Key>()) {}
@@ -49,10 +103,12 @@ public class KeySequence : List<Key>
     /// </summary>
     public override string ToString()
     {
-        string ret = "";
-        foreach (Key ch in this)
-            ret += ch.ToString();
-        return ret;
+        return string.Join(", ", Array.ConvertAll(ToArray(), x => x.ToString()));
+    }
+
+    public string FriendlyName
+    {
+        get { return string.Join(", ", Array.ConvertAll(ToArray(), x => x.FriendlyName)); }
     }
 
     /// <summary>

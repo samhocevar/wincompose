@@ -45,6 +45,12 @@ namespace WinCompose
             set { SetValue(ref m_selected_language, value, "SelectedLanguage"); }
         }
 
+        public Key ComposeKey0
+        {
+            get { return Settings.ComposeKeys.Value[0]; }
+            set { Settings.ComposeKeys.Value[0] = value; }
+        }
+
         public string CloseButtonText
         {
             get { return m_close_button_text; }
