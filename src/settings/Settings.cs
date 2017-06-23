@@ -143,7 +143,7 @@ namespace WinCompose
             // and there are no duplicates.
             KeySequence compose_keys = new KeySequence();
             foreach (Key k in ComposeKeys.Value)
-                if (m_valid_compose_keys.Contains(k) && !compose_keys.Contains(k))
+                if ((m_valid_compose_keys.Contains(k) || m_hidden_valid_compose_keys.Contains(k)) && !compose_keys.Contains(k))
                     compose_keys.Add(k);
             if (compose_keys.Count == 0)
                 compose_keys.Add(m_default_compose_key);
@@ -465,6 +465,34 @@ namespace WinCompose
            new Key(VK.INSERT),
            new Key(VK.SCROLL),
            new Key("`"),
+        };
+
+        private static readonly KeySequence m_hidden_valid_compose_keys = new KeySequence
+        {
+           new Key(VK.F1),
+           new Key(VK.F2),
+           new Key(VK.F3),
+           new Key(VK.F4),
+           new Key(VK.F5),
+           new Key(VK.F6),
+           new Key(VK.F7),
+           new Key(VK.F8),
+           new Key(VK.F9),
+           new Key(VK.F10),
+           new Key(VK.F11),
+           new Key(VK.F12),
+           new Key(VK.F13),
+           new Key(VK.F14),
+           new Key(VK.F15),
+           new Key(VK.F16),
+           new Key(VK.F17),
+           new Key(VK.F18),
+           new Key(VK.F19),
+           new Key(VK.F20),
+           new Key(VK.F21),
+           new Key(VK.F22),
+           new Key(VK.F23),
+           new Key(VK.F24),
         };
 
         private static readonly Key m_default_compose_key = new Key(VK.RMENU);
