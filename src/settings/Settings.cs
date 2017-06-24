@@ -49,6 +49,7 @@ namespace WinCompose
             EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
             ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
             CapsLockCapitalizes = new SettingsEntry<bool>(GlobalSection, "capslock_capitalizes", false);
+            AllowInjected = new SettingsEntry<bool>(GlobalSection, "allow_injected", false);
         }
 
         public static string Version
@@ -94,6 +95,8 @@ namespace WinCompose
         public static SettingsEntry<bool> ShiftDisablesCapsLock { get; private set; }
 
         public static SettingsEntry<bool> CapsLockCapitalizes { get; private set; }
+
+        public static SettingsEntry<bool> AllowInjected { get; private set; }
 
         public static int SequenceCount { get { return m_sequence_count; } }
 
@@ -211,6 +214,7 @@ namespace WinCompose
             EmulateCapsLock.Load();
             ShiftDisablesCapsLock.Load();
             CapsLockCapitalizes.Load();
+            AllowInjected.Load();
         }
 
         public static void SaveConfig()
@@ -228,6 +232,7 @@ namespace WinCompose
             EmulateCapsLock.Save();
             ShiftDisablesCapsLock.Save();
             CapsLockCapitalizes.Save();
+            AllowInjected.Save();
         }
 
         public static void LoadSequences()
