@@ -110,30 +110,43 @@ public class Key
     /// </summary>
     private static Dictionary<Key, string> m_key_names = null;
 
-    private static Dictionary<Key, string> GetKeyNames()
+    private static Dictionary<Key, string> KeyNames
     {
-        return new Dictionary<Key, string>
+        get
         {
-            { new Key(VK.LMENU), i18n.Text.KeyLMenu },
-            { new Key(VK.RMENU), i18n.Text.KeyRMenu },
-            { new Key(VK.LCONTROL), i18n.Text.KeyLControl },
-            { new Key(VK.RCONTROL), i18n.Text.KeyRControl },
-            { new Key(VK.LWIN), i18n.Text.KeyLWin },
-            { new Key(VK.RWIN), i18n.Text.KeyRWin },
-            { new Key(VK.CAPITAL), i18n.Text.KeyCapital },
-            { new Key(VK.NUMLOCK), i18n.Text.KeyNumLock },
-            { new Key(VK.PAUSE), i18n.Text.KeyPause },
-            { new Key(VK.APPS), i18n.Text.KeyApps },
-            { new Key(VK.ESCAPE), i18n.Text.KeyEscape },
-            { new Key(VK.CONVERT), i18n.Text.KeyConvert },
-            { new Key(VK.NONCONVERT), i18n.Text.KeyNonConvert },
-            { new Key(VK.SCROLL), i18n.Text.KeyScroll },
-            { new Key(VK.INSERT), i18n.Text.KeyInsert },
+            // Lazy initialisation of m_key_names (see above)
+            if (m_key_names == null)
+            {
+                m_key_names = new Dictionary<Key, string>
+                {
+                    { new Key(VK.LMENU),      i18n.Text.KeyLMenu },
+                    { new Key(VK.RMENU),      i18n.Text.KeyRMenu },
+                    { new Key(VK.LCONTROL),   i18n.Text.KeyLControl },
+                    { new Key(VK.RCONTROL),   i18n.Text.KeyRControl },
+                    { new Key(VK.LWIN),       i18n.Text.KeyLWin },
+                    { new Key(VK.RWIN),       i18n.Text.KeyRWin },
+                    { new Key(VK.CAPITAL),    i18n.Text.KeyCapital },
+                    { new Key(VK.NUMLOCK),    i18n.Text.KeyNumLock },
+                    { new Key(VK.PAUSE),      i18n.Text.KeyPause },
+                    { new Key(VK.APPS),       i18n.Text.KeyApps },
+                    { new Key(VK.ESCAPE),     i18n.Text.KeyEscape },
+                    { new Key(VK.CONVERT),    i18n.Text.KeyConvert },
+                    { new Key(VK.NONCONVERT), i18n.Text.KeyNonConvert },
+                    { new Key(VK.SCROLL),     i18n.Text.KeyScroll },
+                    { new Key(VK.INSERT),     i18n.Text.KeyInsert },
 
-            { new Key(" "),    i18n.Text.KeySpace },
-            { new Key("\r"),   i18n.Text.KeyReturn },
-            { new Key("\x1b"), i18n.Text.KeyEscape },
-        };
+                    { new Key(" "),    i18n.Text.KeySpace },
+                    { new Key("\r"),   i18n.Text.KeyReturn },
+                    { new Key("\x1b"), i18n.Text.KeyEscape },
+                };
+
+                /* Append F1—F24 */
+                for (VK vk = VK.F1; vk <= VK.F24; ++vk)
+                    m_key_names.Add(new Key(vk), vk.ToString());
+            }
+
+            return m_key_names;
+        }
     }
 
     private readonly VK m_vk;
@@ -188,12 +201,8 @@ public class Key
     {
         get
         {
-            // Lazy initialisation of m_key_names (see above)
-            if (m_key_names == null)
-                m_key_names = GetKeyNames();
-
             string ret;
-            if (m_key_names.TryGetValue(this, out ret))
+            if (KeyNames.TryGetValue(this, out ret))
                 return ret;
             return ToString();
         }

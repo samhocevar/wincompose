@@ -146,8 +146,13 @@ namespace WinCompose
             // and there are no duplicates.
             KeySequence compose_keys = new KeySequence();
             foreach (Key k in ComposeKeys.Value)
-                if (m_valid_compose_keys.Contains(k) && !compose_keys.Contains(k))
+            {
+                bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
+                                 || m_valid_compose_keys.Contains(k);
+                if (is_valid && !compose_keys.Contains(k))
                     compose_keys.Add(k);
+            }
+
             if (compose_keys.Count == 0)
                 compose_keys.Add(m_default_compose_key);
             ComposeKeys.Value = compose_keys;
