@@ -381,4 +381,10 @@
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Neu laden</value>
   </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Beachte injizierte Tasten</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Beachte Tasten gesendet von anderer Software wie AutoHotkey oder Synergy</value>
+  </data>
 </root>

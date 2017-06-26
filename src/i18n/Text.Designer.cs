@@ -79,6 +79,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allow Injected Keys.
+        /// </summary>
+        public static string AllowInjected {
+            get {
+                return ResourceManager.GetString("AllowInjected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do not ignore keys sent by other software like AutoHotkey or Synergy.
+        /// </summary>
+        public static string AllowInjectedToolTip {
+            get {
+                return ResourceManager.GetString("AllowInjectedToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {

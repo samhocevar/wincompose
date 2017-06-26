@@ -196,6 +196,12 @@
                         ToolTipService.ToolTip="{x:Static i18n:Text.CapsLockCapitalizesToolTip}">
                     <TextBlock Text="{x:Static i18n:Text.CapsLockCapitalizes}" TextWrapping="Wrap"/>
                 </CheckBox>
+
+                <CheckBox Margin="8,4" VerticalAlignment="Center"
+                        IsChecked="{Binding Value, Source={x:Static wc:Settings.AllowInjected}}"
+                        ToolTipService.ToolTip="{x:Static i18n:Text.AllowInjectedToolTip}">
+                    <TextBlock Text="{x:Static i18n:Text.AllowInjected}" TextWrapping="Wrap"/>
+                </CheckBox>
             </StackPanel>
         </TabItem>
 

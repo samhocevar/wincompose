@@ -442,4 +442,10 @@
     <value>Reload</value>
     <comment>A button to reload the user-defined sequences.</comment>
   </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Allow Injected Keys</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Do not ignore keys sent by other software like AutoHotkey or Synergy</value>
+  </data>
 </root>
