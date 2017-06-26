@@ -65,26 +65,43 @@ end;
 }
 function get_dotnet_state(): integer;
 var
-    framework_names: tarrayofstring;
-    path, version: string;
+    reg_dirs, framework_names: tarrayofstring;
+    reg_path, version: string;
+    i: integer;
 begin
-    path := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\';
-    if not(reggetsubkeynames(HKLM, path, framework_names))
-       or (getarraylength(framework_names) = 0) then begin
-        { No such path in registry, or no frameworks found }
-        result := -1;
-    end else if regquerystringvalue(HKLM, path + '\v3.5', 'Version', version) then begin
-        { .NET 3.5 found, but fail if we only find Service Pack 1 }
-        if pos('3.5.21022.08', version) = 1 then
-            result := -1;
-    end else begin
-        { Some other .NET versions found, but check for v4 }
-        if not(regquerystringvalue(HKLM, path + '\v4', 'Version', version))
-           and not(regquerystringvalue(HKLM, path + '\v4.0', 'Version', version))
-           and not(regquerystringvalue(HKLM, path + '\v4.5', 'Version', version))
-           and not(regquerystringvalue(HKLM, path + '\v4.6', 'Version', version)) then
-            result := -1;
-    end;
+    reg_path := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\';
+    { Apparently we need to look for subkeys in “Client” and “Full”, too:
+    { https://github.com/samhocevar/wincompose/issues/180 }
+    setarraylength(reg_dirs, 8)
+    reg_dirs[0] := 'v4';
+    reg_dirs[1] := 'v4.0';
+    reg_dirs[2] := 'v4.5';
+    reg_dirs[3] := 'v4.6';
+    reg_dirs[4] := 'v4\Client';
+    reg_dirs[5] := 'v4\Full';
+    reg_dirs[6] := 'v4.0\Client';
+    reg_dirs[7] := 'v4.0\Full';
+
+    result := -1
+
+    { No such path in registry, or no frameworks found }
+    if not(reggetsubkeynames(HKLM, reg_path, framework_names))
+       or (getarraylength(framework_names) = 0) then
+        exit;
+
+    { .NET 3.5 found, but only valid if not Service Pack 1 }
+    if regquerystringvalue(HKLM, reg_path + 'v3.5', 'Version', version) then
+        if pos('3.5.21022.08', version) <> 1 then begin
+            log('Found .NET v3.5 version ' + version)
+            result := 0;
+        end;
+
+    { Some other .NET versions found; check for v4. }
+    for i := 0 to length(reg_dirs) - 1 do
+        if regquerystringvalue(HKLM, reg_path + reg_dirs[i], 'Version', version) then begin
+            log('Found .NET ' + reg_dirs[i] + ' version ' + version)
+            result := 0;
+        end;
 end;
 
 {
