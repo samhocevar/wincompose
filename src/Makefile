@@ -26,6 +26,14 @@ DEVENV = "$(VS140COMNTOOLS)\\..\\..\\Common7\\IDE\\devenv.com"
 MSGMERGE = msgmerge
 
 all: clean installer portable
+	@echo
+	@echo Latest: $(VERSION)
+	@echo Installer: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-Setup-$(VERSION).exe
+	@echo InstallerSHA256: $(shell sha256sum WinCompose-Setup-$(VERSION).exe)
+	@echo InstallerMD5: $(shell md5sum WinCompose-Setup-$(VERSION).exe)
+	@echo Portable: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-NoInstall-$(VERSION).zip
+	@echo PortableSHA256: $(shell sha256sum $(PORTABLE))
+	@echo PortableMD5: $(shell md5sum $(PORTABLE))
 
 clean:
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project wincompose.csproj
