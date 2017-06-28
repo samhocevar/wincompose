@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-06-28 12:40+0000\n"
+"PO-Revision-Date: 2017-06-28 12:43+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
 "Language-Team: Dutch "
 "<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
@@ -495,7 +495,7 @@ msgstr "Gebruikerssequenties"
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr "Editeer"
+msgstr "Aanpassen"
 
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:442 ID:UserDefinedSequencesReload
@@ -504,7 +504,7 @@ msgstr "Herladen"
 
 #: i18n/Text.resx:446 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr "Geïnjecteerde toetsen toelaten"
+msgstr "Geïnjecteerde toetscombinaties toelaten"
 
 #: i18n/Text.resx:449 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
