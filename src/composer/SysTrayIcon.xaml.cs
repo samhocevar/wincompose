@@ -71,15 +71,30 @@ namespace WinCompose
 
         public void Dispose()
         {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
             Composer.Changed -= SysTrayUpdateCallback;
             Updater.Changed -= SysTrayUpdateCallback;
             Updater.Changed -= UpdaterStateChanged;
 
-            m_icon.Visible = false;
-            m_icon.Dispose();
+            if (m_icon != null)
+            {
+                m_icon.Visible = false;
+                m_icon.Dispose();
+                m_icon = null;
+            }
 
-            m_control.DisableEvent -= OnDisableEvent;
-            m_control.ExitEvent -= OnExitEvent;
+            if (m_control != null)
+            {
+                m_control.DisableEvent -= OnDisableEvent;
+                m_control.ExitEvent -= OnExitEvent;
+                m_control.Dispose();
+                m_control = null;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

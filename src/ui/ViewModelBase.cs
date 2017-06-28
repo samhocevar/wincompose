@@ -28,16 +28,14 @@ namespace WinCompose
             if (!Equals(field, value))
             {
                 field = value;
-                if (callback != null)
-                    callback(value);
+                callback?.Invoke(value);
                 OnPropertyChanged(propertyName);
             }
         }
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
