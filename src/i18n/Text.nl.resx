@@ -318,6 +318,12 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} op {0} ({1} sequentie(s))</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>Algemeen</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Gedrag</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequenties — WinCompose</value>
   </data>
