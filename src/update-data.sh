@@ -146,6 +146,10 @@ for polang in $PO; do
 
     # Parse data and put it in the Char.*.resx and Block.*.resx files
     for FILE in Char Block; do
+        # This combination seemingly has problems
+        if [ "${polang} ${FILE}" = "de Char" ]; then
+            continue
+        fi
         case ${FILE} in
             #. CHARACTER NAME for U+007B
             Char) CODE='/^#[.] CHARACTER NAME for / { split($0, a, "+"); c="U" a[2]; }' ;;
