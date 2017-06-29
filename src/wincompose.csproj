@@ -54,7 +54,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="about\AboutBoxViewModel.cs" />
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\Log.cs" />
@@ -64,34 +63,35 @@
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\WinTypes.cs" />
-    <Compile Include="sequences\CategoryViewModel.cs" />
     <Compile Include="sequences\Key.cs" />
-    <Compile Include="sequences\RootViewModel.cs" />
     <Compile Include="sequences\SearchTokens.cs" />
     <Compile Include="sequences\Sequence.cs" />
-    <Compile Include="sequences\SequenceViewModel.cs" />
     <Compile Include="sequences\ValueConverters.cs" />
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
-    <Compile Include="settings\SettingsWindowViewModel.cs" />
+    <Compile Include="ui\AboutBoxViewModel.cs" />
+    <Compile Include="ui\CategoryViewModel.cs" />
     <Compile Include="ui\Constants.cs" />
     <Compile Include="ui\DelegateCommand.cs" />
+    <Compile Include="ui\RootViewModel.cs" />
+    <Compile Include="ui\SequenceViewModel.cs" />
+    <Compile Include="ui\SettingsWindowViewModel.cs" />
     <Compile Include="ui\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="about\AboutBox.xaml.cs">
+    <Compile Include="ui\AboutBox.xaml.cs">
       <DependentUpon>AboutBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="composer\RemoteControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="composer\SysTrayIcon.xaml.cs">
+    <Compile Include="ui\SysTrayIcon.xaml.cs">
       <DependentUpon>SysTrayIcon.xaml</DependentUpon>
     </Compile>
-    <Compile Include="sequences\SequenceWindow.xaml.cs">
+    <Compile Include="ui\SequenceWindow.xaml.cs">
       <DependentUpon>SequenceWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="settings\SettingsWindow.xaml.cs">
+    <Compile Include="ui\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -940,19 +940,19 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="about\AboutBox.xaml">
+    <Page Include="ui\AboutBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="composer\SysTrayIcon.xaml">
+    <Page Include="ui\SysTrayIcon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="sequences\SequenceWindow.xaml">
+    <Page Include="ui\SequenceWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="settings\SettingsWindow.xaml">
+    <Page Include="ui\SettingsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
