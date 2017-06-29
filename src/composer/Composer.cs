@@ -185,6 +185,9 @@ static class Composer
             return false;
         }
 
+        // Warn listeners that a key may be handled by us
+        KeyEvent(null, new EventArgs());
+
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
         if (is_keyup && CurrentState == State.Combination
@@ -614,7 +617,8 @@ static class Composer
         }
     }
 
-    public static event EventHandler Changed = delegate {};
+    public static event EventHandler ChangedEvent = delegate {};
+    public static event EventHandler KeyEvent = delegate {};
 
     /// <summary>
     /// Toggle the disabled state
@@ -625,7 +629,7 @@ static class Composer
         ResetSequence();
         // FIXME: this will no longer be necessary when "Disabled"
         // becomes a composer state of its own.
-        Changed(null, new EventArgs());
+        ChangedEvent(null, new EventArgs());
     }
 
     /// <summary>
@@ -812,7 +816,7 @@ static class Composer
             NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, kbd_name, kbd_class);
         }
 
-        Changed += UpdateKeyboardLeds;
+        ChangedEvent += UpdateKeyboardLeds;
     }
 
     private static void StopMonitoringKeyboardLeds()
@@ -822,7 +826,7 @@ static class Composer
             string kbd_name = "dos_kbd" + i.ToString();
             NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, kbd_name, null);
         }
-        Changed -= UpdateKeyboardLeds;
+        ChangedEvent -= UpdateKeyboardLeds;
     }
 
     public static void UpdateKeyboardLeds(object sender, EventArgs e)
@@ -916,7 +920,7 @@ static class Composer
             bool has_changed = (m_state != value);
             m_state = value;
             if (has_changed)
-                Changed(null, new EventArgs());
+                ChangedEvent(null, new EventArgs());
         }
     }
 

@@ -313,6 +313,32 @@ internal struct HARDWAREINPUT
     internal short wParamL, wParamH;
 }
 
+[StructLayout(LayoutKind.Sequential)]
+internal struct POINT
+{
+    internal int x, y;
+}
+
+[StructLayout(LayoutKind.Sequential)]
+internal struct RECT
+{
+    internal int left, top, right, bottom;
+}
+
+[StructLayout(LayoutKind.Sequential)]
+internal struct GUITHREADINFO
+{
+    internal uint cbSize;
+    internal uint flags;
+    internal IntPtr hwndActive;
+    internal IntPtr hwndFocus;
+    internal IntPtr hwndCapture;
+    internal IntPtr hwndMenuOwner;
+    internal IntPtr hwndMoveSize;
+    internal IntPtr hwndCaret;
+    internal RECT rcCaret;
+}
+
 /* Low-level keyboard input event.
  *   http://msdn.microsoft.com/en-us/library/windows/desktop/ms644967%28v=vs.85%29.aspx
  */

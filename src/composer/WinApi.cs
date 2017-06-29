@@ -51,6 +51,10 @@ static internal class NativeMethods
     public static extern int GetClassName(IntPtr hWnd, StringBuilder text, int count);
     [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
     public static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern bool GetGUIThreadInfo(uint idThread, ref GUITHREADINFO lpgui);
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern bool ClientToScreen(IntPtr hWnd, out POINT position);
 
     [DllImport("kernel32")]
     public static extern uint GetCurrentThreadId();

@@ -44,6 +44,7 @@ namespace WinCompose
         {
             InitializeComponent();
 
+(new Popup()).Show();
             // Set the data context for the menu, not for our empty shell class
             ContextMenu.DataContext = this;
 
@@ -61,7 +62,7 @@ namespace WinCompose
             // XXX: disabled for now, as this feature is a bit controversial
             //SysTray.AlwaysShow("wincompose[.]exe");
 
-            Composer.Changed += SysTrayUpdateCallback;
+            Composer.ChangedEvent += SysTrayUpdateCallback;
             Updater.Changed += SysTrayUpdateCallback;
             SysTrayUpdateCallback(null, new EventArgs());
 
@@ -77,7 +78,7 @@ namespace WinCompose
 
         protected virtual void Dispose(bool disposing)
         {
-            Composer.Changed -= SysTrayUpdateCallback;
+            Composer.ChangedEvent -= SysTrayUpdateCallback;
             Updater.Changed -= SysTrayUpdateCallback;
             Updater.Changed -= UpdaterStateChanged;
 
