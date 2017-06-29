@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Esc</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Cunversione</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Non-cunversione</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Bloc Scorr</value>
   </data>
@@ -386,5 +392,11 @@
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Torra a carrigare</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Permiti teclas importadas</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>No ignores sas teclas importadas dae àteros programmas comente a AutoHotkey o Synergy</value>
   </data>
 </root>
