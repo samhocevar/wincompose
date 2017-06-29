@@ -82,6 +82,9 @@
     <Compile Include="ui\AboutBox.xaml.cs">
       <DependentUpon>AboutBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ui\DebugWindow.xaml.cs">
+      <DependentUpon>DebugWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="composer\RemoteControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -941,6 +944,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="ui\AboutBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ui\DebugWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

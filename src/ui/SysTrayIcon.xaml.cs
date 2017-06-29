@@ -44,6 +44,7 @@ namespace WinCompose
         {
             InitializeComponent();
 
+            (new DebugWindow()).Show();
             // Set the data context for the menu, not for our empty shell class
             ContextMenu.DataContext = this;
 
