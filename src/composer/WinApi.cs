@@ -67,6 +67,15 @@ static internal class NativeMethods
     [DllImport("imm32", CharSet = CharSet.Auto)]
     public static extern IntPtr ImmGetDefaultIMEWnd(HandleRef hwnd);
 
+    [DllImport("kernel32")]
+    public static extern IntPtr CreateToolhelp32Snapshot(TH32CS dwFlags, uint th32ProcessID);
+    [DllImport("kernel32")]
+    public static extern bool Thread32First(IntPtr hSnapshot, out THREADENTRY32 lpte);
+    [DllImport("kernel32")]
+    public static extern bool Thread32Next(IntPtr hSnapshot, out THREADENTRY32 lpte);
+    [DllImport("kernel32", SetLastError = true)]
+    public static extern bool CloseHandle(IntPtr hObject);
+
     [DllImport("user32")]
     public static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
     [DllImport("user32")]

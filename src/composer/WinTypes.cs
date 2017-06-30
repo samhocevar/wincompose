@@ -417,4 +417,28 @@ internal enum ASSOCSTR : int
     MAX,
 };
 
+[Flags]
+internal enum TH32CS : uint
+{
+    SNAPHEAPLIST = 0x00000001,
+    SNAPPROCESS  = 0x00000002,
+    SNAPTHREAD   = 0x00000004,
+    SNAPMODULE   = 0x00000008,
+    SNAPMODULE32 = 0x00000010,
+    INHERIT      = 0x80000000,
+    SNAPALL      = SNAPHEAPLIST | SNAPMODULE | SNAPPROCESS | SNAPTHREAD,
+};
+
+[StructLayout(LayoutKind.Sequential)]
+internal struct THREADENTRY32
+{
+    internal uint dwSize;
+    internal uint cntUsage;
+    internal uint th32ThreadID;
+    internal uint th32OwnerProcessID;
+    internal uint tpBasePri;
+    internal uint tpDeltaPri;
+    internal uint dwFlags;
+}
+
 }
