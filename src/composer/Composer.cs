@@ -111,6 +111,9 @@ static class Composer
         bool ret = OnKeyInternal(ev, vk, sc, flags);
         RestoreDeadKey(dead_key);
 
+        // Warn listeners that a key was just handled by us
+        KeyEvent(null, new EventArgs());
+
         return ret;
     }
 
@@ -184,9 +187,6 @@ static class Composer
         {
             return false;
         }
-
-        // Warn listeners that a key may be handled by us
-        KeyEvent(null, new EventArgs());
 
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.

@@ -11,6 +11,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -32,23 +33,72 @@ namespace WinCompose
 
         public void OnKey(object sender, EventArgs e)
         {
+            if (!Composer.IsComposing())
+            {
+                Hide();
+                return;
+            }
+
+            List<uint> tid_list = new List<uint>();
+
+#if false
+            // This code tries to list all possible threads in case one of
+            // them has an hwndCaret, but it doesn’t really improve things
+            // with Visual Studio or Qt applications.
             IntPtr win = NativeMethods.GetForegroundWindow();
-            //uint tpid;
-            //NativeMethods.GetWindowThreadProcessId(win, out tpid);
+            uint pid;
+            NativeMethods.GetWindowThreadProcessId(win, out pid);
+            IntPtr th32s = NativeMethods.CreateToolhelp32Snapshot(TH32CS.SNAPTHREAD, pid);
+            if (th32s != IntPtr.Zero)
+            {
+                THREADENTRY32 te = new THREADENTRY32();
+                te.dwSize = (uint)Marshal.SizeOf(te);
+                if (NativeMethods.Thread32First(th32s, out te))
+                {
+                    do
+                    {
+                        if (te.th32OwnerProcessID == pid)
+                        {
+                            tid_list.Add(te.th32ThreadID);
+                        }
+                        te.dwSize = (uint)Marshal.SizeOf(te);
+                    }
+                    while (NativeMethods.Thread32Next(th32s, out te));
+                }
+                NativeMethods.CloseHandle(th32s);
+            }
+#else
+            tid_list.Add(0);
+#endif
+
             GUITHREADINFO guiti = new GUITHREADINFO();
             guiti.cbSize = (uint)Marshal.SizeOf(guiti);
-            //NativeMethods.GetGUIThreadInfo(tpid, ref guiti);
-            NativeMethods.GetGUIThreadInfo(0, ref guiti);
-            POINT point = new POINT();
-            NativeMethods.ClientToScreen(guiti.hwndCaret, out point);
-            int x = guiti.rcCaret.left + point.x;
-            int y = guiti.rcCaret.top + point.y;
-            int w = guiti.rcCaret.right - guiti.rcCaret.left;
-            int h = guiti.rcCaret.bottom - guiti.rcCaret.top;
 
-            PopupText.Text = string.Format("{0}: ({1}, {2}) {3}x{4}", win, x, y, w, h);
-            Left = x + 5;
-            Top = y + h + 15;
+            foreach (var tid in tid_list)
+            {
+                NativeMethods.GetGUIThreadInfo(tid, ref guiti);
+                if (guiti.hwndCaret != IntPtr.Zero)
+                    break;
+            }
+
+            if (guiti.hwndCaret != IntPtr.Zero)
+            {
+                POINT point = new POINT();
+                NativeMethods.ClientToScreen(guiti.hwndCaret, out point);
+                int x = guiti.rcCaret.left + point.x;
+                int y = guiti.rcCaret.top + point.y;
+                int w = guiti.rcCaret.right - guiti.rcCaret.left;
+                int h = guiti.rcCaret.bottom - guiti.rcCaret.top;
+
+                PopupText.Text = string.Format("({0}, {1}) {2}x{3}", x, y, w, h);
+                Left = x - 5;
+                Top = y + h + 5;
+                Show();
+            }
+            else
+            {
+                Hide();
+            }
         }
     }
 }

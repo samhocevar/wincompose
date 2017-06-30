@@ -24,9 +24,9 @@
         Icon="/WinCompose;component/res/key_compose.png"
         ShowInTaskbar="False"
         Topmost="True"
-        Background="Beige"
-        BorderBrush="Brown"
-        BorderThickness="2"
+        Background="LightGray"
+        BorderBrush="DarkGray"
+        BorderThickness="1"
         Width="120" Height="40">
     <x:Code>
         <![CDATA[
