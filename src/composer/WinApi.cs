@@ -58,8 +58,9 @@ static internal class NativeMethods
     public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
     [DllImport("user32")]
     public static extern IntPtr GetKeyboardLayout(uint idThread);
+    // Use IntPtr instead of HKL because we can’t have an IntPtr-based enum
     [DllImport("user32", SetLastError = true)]
-    public static extern HKL ActivateKeyboardLayout(HKL hkl, uint Flags);
+    public static extern IntPtr ActivateKeyboardLayout(IntPtr hkl, uint Flags);
     [DllImport("imm32", CharSet = CharSet.Auto)]
     public static extern IntPtr ImmGetDefaultIMEWnd(HandleRef hwnd);
 
