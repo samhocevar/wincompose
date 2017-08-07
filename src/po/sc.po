@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-07-03 15:18+0000\n"
+"PO-Revision-Date: 2017-08-07 15:41+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian "
 "<https://hosted.weblate.org/projects/wincompose/master/sc/>\n"
@@ -298,7 +298,7 @@ msgstr "Àplica"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:309 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Mantènne su cumportamentu originale de sa tecla compose"
+msgstr "Mantene su cumportamentu originale de sa tecla compose"
 
 #: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
 msgid ""
