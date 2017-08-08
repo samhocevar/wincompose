@@ -791,8 +791,10 @@ static class Composer
             Log.Debug("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
                       tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
+            if (active_layout != (IntPtr)0)
+                NativeMethods.ActivateKeyboardLayout(active_layout, 0);
+
             tid = NativeMethods.GetCurrentThreadId();
-            NativeMethods.ActivateKeyboardLayout((HKL)active_layout, 0);
             active_layout = NativeMethods.GetKeyboardLayout(tid);
 
             Log.Debug("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
