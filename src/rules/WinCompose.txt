@@ -15,6 +15,9 @@
 # Minus sign
 <Multi_key> <minus> <minus> <equal> : "−"    U2212 # MINUS SIGN
 
+# Narrow no-break space, needed for some Latin languages like French
+<Multi_key> <space> <space> <n> : " "    U202f # NARROW NO-BREAK SPACE
+
 # Various tests
 <Multi_key> <t> <f> : "(ﾉಥ益ಥ）ﾉ彡┻━┻"  # Table flip like a boss
 <Multi_key> <l> <f> : "( ͡° ͜ʖ ͡°)"        # Lenny face
