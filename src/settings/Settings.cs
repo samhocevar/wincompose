@@ -176,10 +176,11 @@ namespace WinCompose
             // The reason is that apparently we cannot define a custom
             // CultureInfo without registering it, and we cannot register it
             // without administrator privileges.
-            // Same with "de-CH" which we use for Esperanto… this is
-            // ridiculous, Microsoft.
+            // Same with "de-CH" which we use for Esperanto, and "be-BY" which
+            // we use for Latin Belarus… this is ridiculous, Microsoft.
             if (Thread.CurrentThread.CurrentUICulture.Name == "it-CH"
-                 || Thread.CurrentThread.CurrentUICulture.Name == "de-CH")
+                 || Thread.CurrentThread.CurrentUICulture.Name == "de-CH"
+                 || Thread.CurrentThread.CurrentUICulture.Name == "be-BY")
             {
                 try
                 {
@@ -517,12 +518,14 @@ namespace WinCompose
                 {
                     if (rm.GetResourceSet(ci, true, false) != null)
                     {
-                        // HACK: second part of our hack to support Sardinian
-                        // and Esperanto.
+                        // HACK: second part of our hack to support Sardinian,
+                        // Esperanto and Latin Belarusian.
                         if (name == "it-CH")
                             native_name = "Sardu";
                         if (name == "de-CH")
                             native_name = "Esperanto";
+                        if (name == "be-BY")
+                            native_name = "Belarusian (latin)";
 
                         ret.Add(name, native_name);
                     }

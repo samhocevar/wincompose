@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Control" xml:space="preserve">
+    <value>Inšaje, kiroŭnyja znaki</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Inšaje, znaki farmatavannia</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Inšaje, nie pryznačana</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Inšaje, dlia asabistaha vykarystannia</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Inšaje, surahat</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Litara, nižni rehistr</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Litara, madyfikatar</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Litara, inšaje</value>
+  </data>
+  <data name="TitlecaseLetter" xml:space="preserve">
+    <value>Litara, zahalovak</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Litara, vierchni rehistr</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Značok, spalučaĺny, patrabuje dadatkovaha miesca ŭ radku</value>
+  </data>
+  <data name="EnclosingMark" xml:space="preserve">
+    <value>Značok, jaki ŭpisvaje papiaredni znak</value>
+  </data>
+  <data name="NonSpacingMark" xml:space="preserve">
+    <value>Značok, nie patrabuje dadatkovaha miesca ŭ radku</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Ličba, Dziesiatkovaja sistema zličennia</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Ličba, litara</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Ličba, inšaje</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Punktuacyja, jakaja spalučaje častki slova</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Punktuacyja, zlučki i praciažniki</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Punktuacyja, zakryvaĺny znak</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Punktuacyja, zakryvaĺny znak dvukossia</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Punktuacyja, pačatkovy znak dvukossia</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Punktuacyja, inšaje</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Punktuacyja, adkryvaĺny znak</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Simval, valiuta</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Simval, madyfikatar</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Simval, matematyka</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Simval, inšaje</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Padzialiaĺnik, padziel radkoŭ</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Padzialiaĺnik, padziel abzacaŭ</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Padzialiaĺnik, prabiely</value>
+  </data>
+</root>

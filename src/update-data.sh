@@ -100,6 +100,7 @@ po2res()
         zh) echo zh-CHT ;;
         sc) echo it-CH ;;
         eo) echo de-CH ;;
+        be@latin) echo be-BY ;;
         *@*) echo "" ;; # ignore these languages
         *) echo $polang ;;
     esac
