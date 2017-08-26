@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-08-26 11:36+0000\n"
+"PO-Revision-Date: 2017-08-27 13:44+0000\n"
 "Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
 "Language-Team: Czech "
 "<https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
@@ -325,7 +325,7 @@ msgstr ""
 
 #: i18n/Text.resx:322 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Emulovat Caps Lock stisknutím obou kláves Shift"
+msgstr "Emulovat CapsLock stisknutím obou kláves Shift"
 
 #: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
 msgid ""
@@ -339,7 +339,7 @@ msgstr ""
 
 #: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "Klávesa Shift vypne Caps Lock"
+msgstr "Klávesa Shift vypne CapsLock"
 
 #: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
 msgid ""
