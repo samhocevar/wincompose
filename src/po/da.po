@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-02-08 17:25+0000\n"
-"Last-Translator: Kris545545 <x.kristoffer43@gmail.com>\n"
-"Language-Team: Danish <https://hosted.weblate.org/projects/wincompose/master/"
-"da/>\n"
+"PO-Revision-Date: 2017-08-27 13:44+0000\n"
+"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"Language-Team: Danish "
+"<https://hosted.weblate.org/projects/wincompose/master/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.5-dev\n"
+"X-Generator: Weblate 2.17-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -362,9 +362,8 @@ msgstr "Indstillinger…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:355 ID:TrayToolTip
-#, fuzzy
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose på {0} ({1} sekvenser)"
+msgstr "WinCompose v{2} på {0} ({1} sekvenser)"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:359 ID:General
