@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-08-27 01:33+0000\n"
+"PO-Revision-Date: 2017-08-28 04:44+0000\n"
 "Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
 "Language-Team: Belarusian (latin) "
 "<https://hosted.weblate.org/projects/wincompose/master/be_Latn/>\n"
@@ -23,37 +23,37 @@ msgstr ""
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Aŭtawyjaŭlieńnie"
+msgstr "Aŭtavyznačeńnie"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr "Liewy Alt"
+msgstr "Lievy Aĺt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Prawy Alt"
+msgstr "Pravy Aĺt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Liewy Kontrol"
+msgstr "Lievy Kontrol"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr "Prawy Kontrol"
+msgstr "Pravy Kontrol"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Liewy Windoŭs"
+msgstr "Lievy Windoŭs"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Prawy Windoŭs"
+msgstr "Pravy Windoŭs"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
@@ -109,7 +109,7 @@ msgstr "Return"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:189 ID:Obsolete016
 msgid "Grave Accent `"
-msgstr "Grawis `"
+msgstr "Gravis `"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:193 ID:Obsolete017
@@ -167,11 +167,11 @@ msgstr "Historyja"
 #. A button to visit the website
 #: i18n/Text.resx:227 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Nawiedać websajt"
+msgstr "Naviedać websajt"
 
 #: i18n/Text.resx:231 ID:Exit
 msgid "Exit"
-msgstr "Vyjsci"
+msgstr "Vyjści"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:234 ID:Obsolete036
@@ -198,7 +198,7 @@ msgstr "Fiĺtar pošuku:"
 
 #: i18n/Text.resx:249 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Kampanawaĺnaja klawiša:"
+msgstr "Kampanavaĺnaja klaviša:"
 
 #: i18n/Text.resx:252 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
@@ -219,8 +219,8 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
-"Uvamknuć Unikodny ŭvod dlia ŭsiech symbaliaŭ, navat tych, jakim nia "
-"pryznačana kampanavaĺnaje paśliadoŭnaści. Napryklad, hetaja paśliadoŭnaść "
+"Uvamknuć Unikodny ŭvod dlia ŭsich symbaliaŭ, navat tych, jakim nie "
+"pryznačana kampanavaĺnaje paśliadoŭnaści. Naprykład, hetaja paśliadoŭnaść "
 "vyviadzie symbaĺ U+1A3F: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
@@ -237,8 +237,8 @@ msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
-"Kali ŭviedzienaja paśliadoŭnaść nie isnuje, alie jość ta, što adroźnivajecca "
-"toĺki reґistram, to aŭtamatyčna vypraŭliać jaje."
+"Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, alie jość ta, što adroźnivajecca "
+"toĺki registram, to aŭtamatyčna vypraŭliać jaje."
 
 #: i18n/Text.resx:275 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -250,9 +250,9 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"Kali ŭviedzienaja paśliadoŭnaść nie isnuje, to skasavać usie nabranyja "
+"Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, to skasavać usie nabranyja "
 "symbali. Pavodlie zamoŭčańnia jany vyvodziacca tak, by kampanavaĺnaja "
-"klaviša nie naciskalaś."
+"klaviša nie naciskałaś."
 
 #: i18n/Text.resx:281 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -260,19 +260,19 @@ msgstr "Vydavać hudok"
 
 #: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "Kali ŭviedzienaja paśliadoŭnaść nie isnuje, to vydać systemny huk."
+msgstr "Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, to vydać systemny huk."
 
 #: i18n/Text.resx:287 ID:Language
 msgid "Interface language:"
-msgstr "Mowa intarfejsu:"
+msgstr "Mova intarfejsu:"
 
 #: i18n/Text.resx:290 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
-"Vybiary movu intarfejsu WinCompose. Ahadana vykarystoŭvajecca mova "
-"apieracyjnaj systemy."
+"Vybiary movu intarfejsu WinCompose. Pavodlie zmoŭčańnia vykarystoŭvajecca "
+"mova apieracyjnaj systemy."
 
 #. Close the settings window
 #: i18n/Text.resx:293 ID:Close
@@ -283,7 +283,7 @@ msgstr "Začynić"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:297 ID:Obsolete050
 msgid "Copy Character"
-msgstr "Kapijawaci symbal"
+msgstr "Kapijavaci symbaĺ"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
@@ -307,13 +307,13 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
-"Heta nakazvaje WinCompose mknucca zachavać pieršasnyja pavodziny klavišaŭ. "
-"Napryklad, spaluka Alt+Tab pracavaćmie pa-raniejšamu navat, kali Alt "
+"Heta nakazvaje WinCompose imknucca zachavać pieršasnyja pavodziny klavišaŭ. "
+"Naprykład, spałuka Alt+Tab pracavaćmie pa-raniejšamu navat, kali Alt "
 "vykarystana jak kampanavaĺnaja klaviša."
 
 #: i18n/Text.resx:316 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "Ustaŭliać prahaly nuliavoj šyryni ŭ ofisnych prahramach"
+msgstr "Ustaŭliać prahały nuliavoj šyryni ŭ ofisnych prahramach"
 
 #: i18n/Text.resx:319 ID:InsertZwspToolTip
 msgid ""
@@ -321,13 +321,13 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
-"Dadatki Microsoft Office časam mianiajuć šryft dakumienta na liatu pad čas "
+"Dadatki «Microsoft Office» časam mianiajuć šryft dakumienta na liatu pad čas "
 "uvodu niekatorych unikodavych symbaliaŭ. Hetaja opcyja ŭstaŭliaje niabačny "
 "symbaĺ paślia ŭnikodavaha, kaby spravicca z henaj prykraściu."
 
 #: i18n/Text.resx:322 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Emuliavać Caps Lock vykarystoŭvajučy abiedzvie klavišy Shift"
+msgstr "Emuliavać «Caps Lock» vykarystoŭvajučy abiedźvie klavišy «Shift»"
 
 #: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
 msgid ""
@@ -335,13 +335,13 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"Kali Caps Lock užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja "
-"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje ŭvamknuć "
-"Caps Lock naciskańniem abiedźviuch klavišaŭ Shift adnačasova."
+"Kali «Caps Lock» užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja "
+"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje ŭvamknuć «"
+"Caps Lock» naciskańniem abiedźviuch klavišaŭ «Shift» adnačasova."
 
 #: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "Klaviša Shift vykliučaje Caps Lock"
+msgstr "Klaviša «Shift» vymykaje «Caps Lock»"
 
 #: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
 msgid ""
@@ -349,26 +349,26 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
-"Kali Caps Lock užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja "
-"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje vymknuć "
-"Caps Lock naciskańniem klavišy Shift."
+"Kali «Caps Lock» užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja "
+"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje vymknuć «"
+"Caps Lock» naciskańniem klavišy «Shift»."
 
 #: i18n/Text.resx:334 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr "Caps Lock zaŭsiody robić vialikimi litary"
+msgstr "«Caps Lock» zaŭsiody robić vialikimi litary"
 
 #: i18n/Text.resx:337 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
-"Kali Caps Lock uvamkniona, nabirańnie dyjakrytyzavanaj litary, takoj jak "
+"Kali «Caps Lock» uvamkniona, nabirańnie dyjakrytyzavanaj litary, takoj jak "
 "«ź», zaŭsiody vyviadzie adpaviednuju vialikuju litaru, ŭ hetym vypadku «Ź»."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:340 ID:Categories
 msgid "Categories"
-msgstr "Katehoryi"
+msgstr "Katehoryji"
 
 #: i18n/Text.resx:344 ID:InSelectedCategories
 msgid "In selected categories"
@@ -377,7 +377,7 @@ msgstr "U abranych katehoryjach"
 #. The title of the Options window
 #: i18n/Text.resx:347 ID:Options
 msgid "Options — WinCompose"
-msgstr "Opcyji — WinCompose"
+msgstr "Opcyji — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:351 ID:ShowOptions
@@ -401,7 +401,7 @@ msgstr "Pavodziny"
 #. The title of the Sequences window
 #: i18n/Text.resx:366 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr "Pasliadoŭnasci — WinCompose"
+msgstr "Pasliadoŭnasci — WinCompose"
 
 #: i18n/Text.resx:370 ID:UserMacros
 msgid "User-defined macros"
@@ -424,7 +424,7 @@ msgstr "Praviercie nabor:"
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:384 ID:Tweaks
 msgid "Tweaks"
-msgstr "Paliapšenni"
+msgstr "Paliapšeńni"
 
 #: i18n/Text.resx:388 ID:Milliseconds
 msgid "(milliseconds)"
@@ -448,12 +448,12 @@ msgstr "Pra WinCompose"
 #. The section where we list all programmers.
 #: i18n/Text.resx:403 ID:Programming
 msgid "Programming"
-msgstr "Prahramavannie"
+msgstr "Prahramavańnie"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:407 ID:Translators
 msgid "Translation"
-msgstr "Pieraklad"
+msgstr "Pierakład"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:411 ID:Contributors
@@ -469,12 +469,12 @@ msgstr "Licenzija"
 #: i18n/Text.resx:419 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
-"WinCompose nieabchodna pierazapuscić, kab niekatoryja zmieny ŭstupili ŭ silu."
+"WinCompose nieabchodna pierazapuścić, kab niekatoryja źmieny nabyli mocy."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:423 ID:ReportBug
 msgid "Report a Bug"
-msgstr "Paviedamić pra pamylku"
+msgstr "Paviedamić pra pamyłku"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:427 ID:Help
@@ -488,7 +488,7 @@ msgstr "Abnaŭlieńni najaŭnyja."
 
 #: i18n/Text.resx:435 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Pasliadoŭnasci karystaĺnika"
+msgstr "Pasliadoŭnaści karystaĺnika"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
@@ -518,32 +518,32 @@ msgstr "«Print Screen»"
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr "Inšaje, kiroŭnyja znaki"
+msgstr "Jinšaje, kiroŭnyja znaki"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr "Inšaje, znaki farmatavannia"
+msgstr "Jinšaje, znaki farmatavańnia"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr "Inšaje, nie pryznačana"
+msgstr "Jinšaje, nie pryznačana"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "Inšaje, dlia asabistaha vykarystannia"
+msgstr "Jinšaje, dlia asabistaha vykarystańnia"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Inšaje, surahat"
+msgstr "Jinšaje, surahat"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr "Litara, nižni rehistr"
+msgstr "Litara, małaja"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:145 ID:ModifierLetter
@@ -553,22 +553,22 @@ msgstr "Litara, madyfikatar"
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
-msgstr "Litara, inšaje"
+msgstr "Litara, jinšaja"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Litara, zahalovak"
+msgstr "Litara, zahałovak"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr "Litara, vierchni rehistr"
+msgstr "Litara, vialikaja"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Značok, spalučaĺny, patrabuje dadatkovaha miesca ŭ radku"
+msgstr "Značok, spałučaĺny, patrabuje dadatkovaha miesca ŭ radku"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:165 ID:EnclosingMark
@@ -578,12 +578,12 @@ msgstr "Značok, jaki ŭpisvaje papiaredni znak"
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Značok, nie patrabuje dadatkovaha miesca ŭ radku"
+msgstr "Značok, nie patrabuje dadatkovaha miesca ŭ radku"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:173 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr "Ličba, Dziesiatkovaja sistema zličennia"
+msgstr "Ličba, dziesiatkovaja sistema vyličeńnia"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:177 ID:LetterNumber
@@ -593,17 +593,17 @@ msgstr "Ličba, litara"
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
-msgstr "Ličba, inšaje"
+msgstr "Ličba, jinšaje"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr "Punktuacyja, jakaja spalučaje častki slova"
+msgstr "Punktuacyja, jakaja spałučaje častki słova"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr "Punktuacyja, zlučki i praciažniki"
+msgstr "Punktuacyja, złučki dy praciažniki"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:193 ID:ClosePunctuation
@@ -613,17 +613,17 @@ msgstr "Punktuacyja, zakryvaĺny znak"
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:197 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr "Punktuacyja, zakryvaĺny znak dvukossia"
+msgstr "Punktuacyja, zakryvaĺny znak dvukośsia"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:201 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr "Punktuacyja, pačatkovy znak dvukossia"
+msgstr "Punktuacyja, pačatkovy znak dvukośsia"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:205 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr "Punktuacyja, inšaje"
+msgstr "Punktuacyja, jinšaje"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:209 ID:OpenPunctuation
@@ -633,47 +633,47 @@ msgstr "Punktuacyja, adkryvaĺny znak"
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:213 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr "Simval, valiuta"
+msgstr "Symbaĺ, valiuta"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr "Simval, madyfikatar"
+msgstr "Symbaĺ, madyfikatar"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:221 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr "Simval, matematyka"
+msgstr "Symbaĺ, matematyčny"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:225 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr "Simval, inšaje"
+msgstr "Symbaĺ, jinšaje"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:229 ID:LineSeparator
 msgid "Separator, Line"
-msgstr "Padzialiaĺnik, padziel radkoŭ"
+msgstr "Padzialiaĺnik, padzieł radkoŭ"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:233 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr "Padzialiaĺnik, padziel abzacaŭ"
+msgstr "Padzialiaĺnik, padzieł abzacaŭ"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:237 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr "Padzialiaĺnik, prabiely"
+msgstr "Padzialiaĺnik, prahały"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:136
 msgid "Prerequisites"
-msgstr "Patrabavanni"
+msgstr "Patrabavańni"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:137
 msgid "Software required by WinCompose"
-msgstr "Nieabchodnyja zaliežnasci"
+msgstr "Nieabchodnyja zaliežnaści"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:140
@@ -683,8 +683,8 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose vykarystoŭvaje .NET Framework viersii 3.5 SP1 ci naviej, jakaja\n"
-"nie ŭstanoŭliena. Nastupnaja instrukcyja moža dapamahčy vam:"
+"WinCompose vykarystoŭvaje .NET Framework viersiji 3.5 SP1 ci naviej, jakaja\n"
+"nie ŭstaliavana. Nastupnaja instrukcyja moža dapamahčy vam:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:145
@@ -701,7 +701,7 @@ msgstr "Paslia hetaha vy zmožacie viarnucca da praciahu ŭstalioŭki."
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
-msgstr "Nieabchodny pravy administratara. Pamylka: %d"
+msgstr "Nieabchodnyja pravy administratara. Pamyłka: %d"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Ignarawać symbali ź niaprawiĺnych paśliadoŭnaściaŭ"
