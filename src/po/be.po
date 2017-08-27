@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-08-27 01:37+0000\n"
+"PO-Revision-Date: 2017-08-28 04:44+0000\n"
 "Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
 "Language-Team: Belarusian "
 "<https://hosted.weblate.org/projects/wincompose/master/be/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Аўтавыяўленьне"
+msgstr "Аўтавызначэньне"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
