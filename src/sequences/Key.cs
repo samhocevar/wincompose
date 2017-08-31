@@ -475,7 +475,7 @@ public class Key
                     { new Key(VK.NONCONVERT), i18n.Text.KeyNonConvert },
                     { new Key(VK.SCROLL),     i18n.Text.KeyScroll },
                     { new Key(VK.INSERT),     i18n.Text.KeyInsert },
-                    { new Key(VK.PRINT),      i18n.Text.KeyPrint},
+                    { new Key(VK.PRINT),      i18n.Text.KeyPrint },
 
                     { new Key(" "),    i18n.Text.KeySpace },
                     { new Key("\r"),   i18n.Text.KeyReturn },
