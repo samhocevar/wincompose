@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-08-27 13:48+0000\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"PO-Revision-Date: 2017-09-01 22:48+0000\n"
+"Last-Translator: Fuxik Nah <fuxik12345@gmail.com>\n"
 "Language-Team: Slovak "
 "<https://hosted.weblate.org/projects/wincompose/master/sk/>\n"
 "Language: sk\n"
@@ -41,13 +41,11 @@ msgstr "Pravý Control"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
-#, fuzzy
 msgid "Left Windows"
 msgstr "Ľavý kláves s logom Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
-#, fuzzy
 msgid "Right Windows"
 msgstr "Pravý kláves s logom Windows"
 
@@ -210,7 +208,6 @@ msgid "Advanced Unicode input"
 msgstr "Zadávanie kódov Unicode"
 
 #: i18n/Text.resx:262 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
@@ -226,12 +223,10 @@ msgid "On invalid sequences"
 msgstr "Pri zadaní neplatnej sekvencie"
 
 #: i18n/Text.resx:269 ID:CaseInsensitive
-#, fuzzy
 msgid "Fall back to case insensitive matches"
-msgstr "Ako záložná možnosť ignorovať velikosť písmen"
+msgstr "Ako záložná možnosť ignorovať veľkosť písmen"
 
 #: i18n/Text.resx:272 ID:CaseInsensitiveToolTip
-#, fuzzy
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
@@ -244,7 +239,6 @@ msgid "Discard all typed characters"
 msgstr "Zrušiť všetky zadané znaky"
 
 #: i18n/Text.resx:278 ID:DiscardOnInvalidToolTip
-#, fuzzy
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
@@ -259,7 +253,6 @@ msgid "Emit a beep"
 msgstr "Vytvoriť pípnutie"
 
 #: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
-#, fuzzy
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr "Ak zadaná sekvencie neexistuje, urobiť systémový zvuk."
 
@@ -268,7 +261,6 @@ msgid "Interface language:"
 msgstr "Jazyk rozhrania:"
 
 #: i18n/Text.resx:290 ID:LanguageToolTip
-#, fuzzy
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
@@ -304,22 +296,19 @@ msgid "Maintain original compose key behaviour"
 msgstr "Zachovať pôvodné správanie klávesa Compose"
 
 #: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
-#, fuzzy
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
-"WinCompose sa pokúsi zachovať pôvodnú funkciu klávesa. Napríklad klávesová "
+"WinCompose sa pokúsi zachovať pôvodnú funkciu klávesy. Napríklad klávesová "
 "skratka Alt-Tab bude stále fungovať, hoci Alt sa používa ako kláves Compose."
 
 #: i18n/Text.resx:316 ID:InsertZwsp
-#, fuzzy
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Vkladať nulovú medzeru v aplikáciách Office"
 
 #: i18n/Text.resx:319 ID:InsertZwspToolTip
-#, fuzzy
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
@@ -331,10 +320,9 @@ msgstr ""
 
 #: i18n/Text.resx:322 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Emulujte Caps Lock stlačením obidvoch klávesov Shift"
+msgstr "Caps Lock napodobíte stlačením obidvoch klávesov Shift"
 
 #: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
-#, fuzzy
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
@@ -349,7 +337,6 @@ msgid "Shift key disables Caps Lock"
 msgstr "Kláves Shift vypne Caps Lock"
 
 #: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
-#, fuzzy
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
@@ -360,7 +347,6 @@ msgstr ""
 "stlačení klávesu Shift."
 
 #: i18n/Text.resx:334 ID:CapsLockCapitalizes
-#, fuzzy
 msgid "Caps Lock always capitalizes letters"
 msgstr "Pri CapsLock vždy písať veľké písmená"
 
