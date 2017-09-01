@@ -64,6 +64,7 @@
     <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\WinTypes.cs" />
     <Compile Include="sequences\Key.cs" />
+    <Compile Include="sequences\KeySyms.cs" />
     <Compile Include="sequences\SearchTokens.cs" />
     <Compile Include="sequences\Sequence.cs" />
     <Compile Include="sequences\ValueConverters.cs" />
