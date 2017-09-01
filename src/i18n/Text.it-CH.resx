@@ -280,7 +280,7 @@
     <value>Àplica</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Mantènne su cumportamentu originale de sa tecla compose</value>
+    <value>Mantene su cumportamentu originale de sa tecla compose</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
     <value>Custu at a nàrrere a WinCompose de chircare cantu podet de otènnere su cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s’incurtzadura Alt-Tab at a sighire a funtzionare fintzas si Alt est impreada comente tecla compose.</value>
@@ -398,5 +398,8 @@
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>No ignores sas teclas importadas dae àteros programmas comente a AutoHotkey o Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Stamp</value>
   </data>
 </root>

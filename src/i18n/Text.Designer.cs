@@ -466,6 +466,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prt Scrn.
+        /// </summary>
+        public static string KeyPrint {
+            get {
+                return ResourceManager.GetString("KeyPrint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Control.
         /// </summary>
         public static string KeyRControl {

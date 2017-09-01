@@ -109,6 +109,7 @@ namespace WinCompose
             if (CreateConfigDir())
             {
                 m_watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
+                m_watcher.NotifyFilter = NotifyFilters.LastWrite;
                 m_watcher.Changed += ConfigFileChanged;
                 m_watcher.EnableRaisingEvents = true;
             }

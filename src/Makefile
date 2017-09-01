@@ -22,7 +22,9 @@ LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
-DEVENV = "$(VS140COMNTOOLS)\\..\\..\\Common7\\IDE\\devenv.com"
+# XXX: this is necessary until vswhere.exe actually works
+VS150COMNTOOLS = C:\\Program\ Files\ \(x86\)\\Microsoft\ Visual\ Studio\\2017\\Community\\Common7\\Tools
+DEVENV = $(VS150COMNTOOLS)\\..\\..\\Common7\\IDE\\devenv.com
 MSGMERGE = msgmerge
 
 all: clean installer portable

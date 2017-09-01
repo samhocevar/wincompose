@@ -267,6 +267,9 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Indstillinger…</value>
   </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} på {0} ({1} sekvenser)</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekvenser — WinCompose</value>
   </data>
