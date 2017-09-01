@@ -130,7 +130,7 @@
     <value>Ostané, súkromné použitie</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>Osatné, náhradné</value>
+    <value>Osatné, „surrogates“</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
     <value>Písmeno, malé</value>
@@ -142,19 +142,19 @@
     <value>Písmeno, ostatné</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>Písmeno, titulkové</value>
+    <value>Písmeno, titulné (prvé veľké)</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
     <value>Písmeno, veľké</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>Značka, spájanie medzery</value>
+    <value>Značka, široké kombinujúci znaky</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
     <value>Značka, uzatváracia</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>Značka, Bez medzier</value>
+    <value>Značka, nulovej šírky</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
     <value>Číslo, desiatková číslica</value>
@@ -166,7 +166,7 @@
     <value>Číslo, ostatné</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Interpunkcia, spojka</value>
+    <value>Interpunkcia, spojujúci</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
     <value>Interpunkcia, pomlčka</value>

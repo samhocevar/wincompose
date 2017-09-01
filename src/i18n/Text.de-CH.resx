@@ -316,7 +316,7 @@
     <value>Agordoj…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} en {0} ({1} makroklavo(j))</value>
+    <value>WinCompose v{2} en {0} ({1} makroklavoj)</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Makroklavoj - WinCompose</value>
