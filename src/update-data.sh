@@ -17,24 +17,7 @@ if [ -f /usr/share/X11/locale/en_US.UTF-8/Compose ]; then
 fi
 
 if [ -f /usr/include/X11/keysymdef.h ]; then
-    cat > sequences/KeySyms.cs << EOF
-/* This file is generated automatically by $0 */
-using System.Collections.Generic;
-namespace WinCompose
-{
-public partial class Key
-{
-    private static readonly Dictionary<string, Key> m_keysyms
-        = new Dictionary<string, Key>
-    {
-$(cat /usr/include/X11/keysymdef.h \
-     | sort -k5 \
-     | sed -ne 's/^#define XK_\([^ ]*\).* U+\([^ ]*\).*/        { "\1",☺new Key("\\u\2") },/p' \
-     | column -t -s ☺ | sed 's/"\(["\\]"\)/"\\\1/')
-    };
-}
-}
-EOF
+    cat -s /usr/include/X11/keysymdef.h > res/keysymdef.h
 fi
 
 #
