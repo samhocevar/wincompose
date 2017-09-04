@@ -132,6 +132,12 @@
   <data name="KeyRControl" xml:space="preserve">
     <value>Pravý Control</value>
   </data>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>Ľavý kláves s logom Windows</value>
+  </data>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>Pravý kláves s logom Windows</value>
+  </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock</value>
   </data>
@@ -231,17 +237,35 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Zadávanie kódov Unicode</value>
   </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Umožniť zadanie kódu Unicode pre všetky znaky, dokonca aj tie, ktoré nemajú definovanú sekvenciu. Napríklad znak U + 1A3F by bolo možné napísať nasledujúcej sekvencií: Compose U 1 A 3 F</value>
+  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Pri zadaní neplatnej sekvencie</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Ako záložná možnosť ignorovať veľkosť písmen</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Ak zadaná sekvencia neexistuje, ale existuje iná líšiaca sa veľkosťou písmen, automaticky opraviť.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
     <value>Zrušiť všetky zadané znaky</value>
   </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Ak zadaná sekvencie neexistuje, zrušiť všetky zadané znaky. Predvoleným správaním je zobrazenie zadaných znakov, ako keby sa vôbec nepoužilo tlačidlo Compose.</value>
+  </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Vytvoriť pípnutie</value>
   </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Ak zadaná sekvencie neexistuje, urobiť systémový zvuk.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Jazyk rozhrania:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Vyberte jazyk pre používateľské rozhranie WinCompose. V predvolenom nastavení sa použije systémový jazyk.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Zavrieť</value>
@@ -258,11 +282,29 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Zachovať pôvodné správanie klávesa Compose</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>WinCompose sa pokúsi zachovať pôvodnú funkciu klávesy. Napríklad klávesová skratka Alt-Tab bude stále fungovať, hoci Alt sa používa ako kláves Compose.</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Vkladať nulovú medzeru v aplikáciách Office</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Aplikácie Microsoft Office niekedy automaticky zmení písmo dokumentu pri zadávaní určitých znakov Unicode. Táto funkcia vloží za problémové znaky neviditeľný znak, ktorý zabráni tomuto správaniu.</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emulujte Caps Lock stlačením obidvoch klávesov Shift</value>
+    <value>Caps Lock napodobíte stlačením obidvoch klávesov Shift</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Ak je Caps Lock používaný ako kláves Compose, pôvodná funkcia klávesu prestane byť dostupná. Táto funkcia umožňuje zapnúť Caps Lock súčasným stlačením oboch kláves Shift.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Kláves Shift vypne Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Ak je CapsLock používaný ako kláves Compose, pôvodná funkcia klávesu prestane byť dostupná. Táto funkcia automaticky deaktivuje CapsLock po stlačení klávesu Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Pri CapsLock vždy písať veľké písmená</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
     <value>Ak je funkcia CapsLock zapnutá, písanie sekvencie pre písmeno, napríklad &quot;æ&quot;, vždy vytlačí príslušný variant veľkého písmena, v tomto prípade &quot;Æ&quot;.</value>
