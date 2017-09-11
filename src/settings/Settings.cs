@@ -359,13 +359,19 @@ namespace WinCompose
             catch (Exception) { }
         }
 
+        private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
+        private static Regex m_r1 = new Regex(@"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
+            //                                                    ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
+            //                                                     keys               result                 desc
+        private static Regex m_r2 = new Regex(@"[\s<>]+");
+
         private static void LoadSequenceString(string line)
         {
             // If this is an include directive, use LoadSequenceFile() again
-            var m0 = Regex.Match(line, @"^\s*include\s*""([^""]*)""");
-            if (m0.Groups.Count > 1)
+            Match m0 = m_r0.Match(line);
+            if (m0.Success)
             {
-                string file = m0.Groups[1].Captures[0].ToString();
+                string file = m0.Groups[1].Captures[0].Value;
 
                 // We support %H (user directory) but not %L (locale-specific dir)
                 if (file.Contains("%L"))
@@ -381,13 +387,11 @@ namespace WinCompose
             }
 
             // Only bother with sequences that start with <Multi_key>
-            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
-            //                                             ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
-            //                                              keys               result                 desc
-            if (m1.Groups.Count < 4)
+            var m1 = m_r1.Match(line);
+            if (!m1.Success)
                 return;
 
-            var keysyms = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
+            var keysyms = m_r2.Split(m1.Groups[1].Captures[0].Value);
 
             if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
                 return;
@@ -409,8 +413,8 @@ namespace WinCompose
                 seq.Add(k);
             }
 
-            string result = m1.Groups[2].Captures[0].ToString();
-            string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
+            string result = m1.Groups[2].Captures[0].Value;
+            string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
 
             // Unescape \n \\ \" and more in the string output
             result = Regex.Replace(result, @"\\.", m =>
