@@ -73,6 +73,7 @@
     <Compile Include="ui\CategoryViewModel.cs" />
     <Compile Include="ui\Constants.cs" />
     <Compile Include="ui\DelegateCommand.cs" />
+    <Compile Include="ui\EmojiRichTextBox.cs" />
     <Compile Include="ui\RootViewModel.cs" />
     <Compile Include="ui\SequenceViewModel.cs" />
     <Compile Include="ui\SettingsWindowViewModel.cs" />
@@ -989,6 +990,9 @@
     <Resource Include="res\decal_disabled.png" />
     <Resource Include="res\decal_idle.png" />
     <Resource Include="res\decal_update.png" />
+    <Resource Include="res\emoji_test_1.png" />
+    <Resource Include="res\emoji_test_2.png" />
+    <Resource Include="res\emoji_test_3.png" />
     <Resource Include="res\icon_normal.ico" />
     <Resource Include="res\key_compose.png" />
     <Resource Include="res\key_empty.png" />

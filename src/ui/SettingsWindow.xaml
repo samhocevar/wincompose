@@ -112,10 +112,11 @@
 
                         <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
                                    Margin="8,8,8,4" TextAlignment="Right" VerticalAlignment="Top"/>
-                        <TextBox Grid.Row="3" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
-                                 Height="Auto" FontSize="20" MinLines="3" MaxLines="3" AcceptsReturn="True"
-                                 FontWeight="SemiBold" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"
-                                 Foreground="#545" Background="#fff" ForceCursor="True" Text="ÅḄ₡Đ♥…&#13;&#13;"/>
+                        <!-- FIXME: Text="ÅḄ₡Đ♥…&#13;&#13;" -->
+                        <wc:EmojiRichTextBox Grid.Row="3" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
+                                             Height="90" MaxHeight="90" FontSize="20" AcceptsReturn="True"
+                                             FontWeight="SemiBold" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"
+                                             Foreground="#545" Background="#fff" ForceCursor="True"/>
                     </Grid>
                 </GroupBox>
 
