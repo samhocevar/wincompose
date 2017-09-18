@@ -11,10 +11,13 @@
 //
 
 using System;
+using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace WinCompose
 {
@@ -43,50 +46,95 @@ namespace WinCompose
             SetValue(Block.LineHeightProperty, 1.0);
         }
 
-        private int zob = 0;
+        protected override void OnSelectionChanged(RoutedEventArgs e)
+        {
+            base.OnSelectionChanged(e);
+#if FALSE
+            string clip = "";
+            var tp = Selection.Start;
+            while (tp != null && tp.CompareTo(Selection.End) < 0)
+            {
+                //Console.WriteLine(tp.CompareTo(Selection.End));
+                var tp2 = tp.GetNextInsertionPosition(LogicalDirection.Forward);
+                if (tp2 == null)
+                    break;
+                clip += new TextRange(tp, tp2).Text;
+                tp = tp2;
+            }
+            //Console.WriteLine(clip);
+#endif
+        }
 
         protected override void OnTextChanged(TextChangedEventArgs e)
         {
-            if (zob++ <= 0)
-                FixEmojis();
+            DispatcherTimer timer = new DispatcherTimer(DispatcherPriority.Send);
+            timer.Interval = TimeSpan.FromMilliseconds(1);
+            timer.Tick += new EventHandler(delegate { timer.Stop(); FixEmojis(); });
+            timer.Start();
 
             base.OnTextChanged(e);
-            --zob;
         }
+
+        private Dictionary<string, string> m_emojis = new Dictionary<string, string>()
+        {
+            { "☺", "emoji_test_1.png" },
+            { "⸚", "emoji_test_2.png" },
+            { "☹", "emoji_test_3.png" },
+        };
+
+        private bool m_pending_change = false;
 
         private void FixEmojis()
         {
-            var tp = Document.ContentStart;
-            while (tp.GetNextInsertionPosition(LogicalDirection.Forward) != null)
-            {
-                var tp2 = tp.GetNextInsertionPosition(LogicalDirection.Forward);
-                var word = new TextRange(tp, tp2);
-                if (word.Text == "☺")
-                    ReplaceWithImage(word, "emoji_test_1.png");
-                else if (word.Text == "⸚")
-                    ReplaceWithImage(word, "emoji_test_2.png");
-                else if (word.Text == "☹")
-                    ReplaceWithImage(word, "emoji_test_3.png");
-
-                tp = tp2;
-            }
-        }
-
-       public void ReplaceWithImage(TextRange range, string name)
-        {
-            if (!(range.Start.Parent is Run) || range.Start.Paragraph == null)
+            if (m_pending_change)
                 return;
 
+            m_pending_change = true;
+
+            TextPointer cur = Document.ContentStart;
+            while (cur.CompareTo(Document.ContentEnd) < 0)
+            {
+                TextPointer next = cur.GetNextInsertionPosition(LogicalDirection.Forward);
+                if (next == null)
+                    break;
+
+                var word = new TextRange(cur, next);
+                string image;
+                if (m_emojis.TryGetValue(word.Text, out image))
+                    cur = ReplaceWithImage(word, image);
+                else
+                    cur = next;
+            }
+
+            m_pending_change = false;
+        }
+
+       public TextPointer ReplaceWithImage(TextRange range, string name)
+        {
             var parent = range.Start.Parent as Run;
-            var before = new Run(new TextRange(parent.ContentStart, range.Start).Text);
-            var after = new Run(new TextRange(range.End, parent.ContentEnd).Text);
 
-            range.Start.Paragraph.Inlines.Remove(parent);
-            range.Start.Paragraph.Inlines.Add(before);
-            range.Start.Paragraph.Inlines.Add(new EmojiImage(name, FontSize));
-            range.Start.Paragraph.Inlines.Add(after);
+            if (parent == null || range.Start.Paragraph == null)
+                return range.End;
 
-            CaretPosition = after.ContentEnd;
+            var before = new TextRange(parent.ContentStart, range.Start).Text;
+            var after = new TextRange(range.End, parent.ContentEnd).Text;
+            var inlines = range.Start.Paragraph.Inlines;
+
+            if (!string.IsNullOrEmpty(before))
+                inlines.Add(new Run(before));
+
+            //inlines.Add(new Run(range.Text));
+            //inlines.LastInline.IsEnabled = false;
+
+            inlines.Add(new EmojiImage(name, FontSize));
+            inlines.LastInline.BaselineAlignment = BaselineAlignment.Center;
+
+            if (!string.IsNullOrEmpty(after))
+                inlines.Add(new Run(after));
+
+            inlines.Remove(parent);
+
+            return inlines.LastInline.ContentEnd;
         }
     }
 }

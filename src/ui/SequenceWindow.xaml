@@ -122,16 +122,43 @@
                         <DockPanel Margin="0,2">
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
                                 <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
-                                    <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
+                                    <!-- The small character box -->
+                                    <wc:EmojiRichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
+                                                         VerticalAlignment="Center" Height="32" Width="Auto" MinWidth="32"
+                                                         FontSize="22" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
+                                        <RichTextBox.Document>
+                                            <FlowDocument>
+                                                <FlowDocument.Blocks>
+                                                    <Paragraph TextAlignment="Center">
+                                                        <Paragraph.Inlines>
+                                                            <Run Text="{Binding Result, Mode=OneWay}" Foreground="Black"/>
+                                                        </Paragraph.Inlines>
+                                                    </Paragraph>
+                                                </FlowDocument.Blocks>
+                                            </FlowDocument>
+                                        </RichTextBox.Document>
+                                    </wc:EmojiRichTextBox>
+                                    <!-- The large tooltip -->
                                     <Viewbox.ToolTip>
-                                        <Grid Height="200" MinWidth="200">
-                                            <Viewbox>
-                                                <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
-                                            </Viewbox>
-                                        </Grid>
+                                        <wc:EmojiRichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
+                                                             VerticalAlignment="Center" Height="200" Width="Auto" MinWidth="200"
+                                                             FontSize="150" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
+                                            <RichTextBox.Document>
+                                                <FlowDocument>
+                                                    <FlowDocument.Blocks>
+                                                        <Paragraph TextAlignment="Center">
+                                                            <Paragraph.Inlines>
+                                                                <Run Text="{Binding Result, Mode=OneWay}" Foreground="Black"/>
+                                                            </Paragraph.Inlines>
+                                                        </Paragraph>
+                                                    </FlowDocument.Blocks>
+                                                </FlowDocument>
+                                            </RichTextBox.Document>
+                                        </wc:EmojiRichTextBox>
                                     </Viewbox.ToolTip>
                                 </Viewbox>
                             </Border>
+                            <!-- The sequence, printed as key icons -->
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
                                 <Border Width="32" Height="32">
                                     <Border.Background>
