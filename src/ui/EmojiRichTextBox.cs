@@ -21,16 +21,8 @@ using System.Windows.Threading;
 
 namespace WinCompose
 {
-    public class EmojiImage : Image
+    public class FilteredImage : Image
     {
-        public EmojiImage(string name, double font_size)
-        {
-            Source = new BitmapImage(new Uri("pack://application:,,,/res/" + name));
-            Stretch = Stretch.Uniform;
-            Width = Height = font_size * 1.25;
-            //Margin = new System.Windows.Thickness(0, font_size * 0.5, 0, 0);
-        }
-
         // Override scaling algorithm for better quality
         protected override void OnRender(DrawingContext dc)
         {
@@ -39,30 +31,59 @@ namespace WinCompose
         }
     }
 
+    // Inheriting from Span makes it easy to parse the tree for copy-paste
+    public class Emoji : Span
+    {
+        public Emoji(string name, string alt, double font_size)
+        {
+            FilteredImage image = new FilteredImage();
+            image.Source = new BitmapImage(new Uri("pack://application:,,,/res/" + name));
+            image.Stretch = Stretch.Uniform;
+            image.Width = image.Height = font_size * 1.25;
+            Inlines.Add(image);
+
+            Text = alt;
+        }
+
+        // Need an empty constructor for serialisation (undo/redo)
+        public Emoji() {}
+
+        public readonly string Text;
+    }
+
     public class EmojiRichTextBox : RichTextBox
     {
         public EmojiRichTextBox()
         {
             SetValue(Block.LineHeightProperty, 1.0);
+            DataObject.AddCopyingHandler(this, new DataObjectCopyingEventHandler(OnCopy));
         }
 
-        protected override void OnSelectionChanged(RoutedEventArgs e)
+        protected void OnCopy(object o, DataObjectCopyingEventArgs e)
         {
-            base.OnSelectionChanged(e);
-#if FALSE
-            string clip = "";
-            var tp = Selection.Start;
-            while (tp != null && tp.CompareTo(Selection.End) < 0)
+            string clipboard = "";
+
+            for (TextPointer p = Selection.Start, next = null;
+                 p != null && p.CompareTo(Selection.End) < 0;
+                 p = next)
             {
-                //Console.WriteLine(tp.CompareTo(Selection.End));
-                var tp2 = tp.GetNextInsertionPosition(LogicalDirection.Forward);
-                if (tp2 == null)
+                next = p.GetNextInsertionPosition(LogicalDirection.Forward);
+                if (next == null)
                     break;
-                clip += new TextRange(tp, tp2).Text;
-                tp = tp2;
+
+                //var word = new TextRange(p, next);
+                //Console.WriteLine("Word '{0}' Inline {1}", word.Text, word.Start.Parent is Emoji ? "Emoji" : "not Emoji");
+                //Console.WriteLine(" ... p {0}", p.Parent is Emoji ? "Emoji" : p.Parent.GetType().ToString());
+
+                var t = new TextRange(p, next);
+                clipboard += t.Start.Parent is Emoji ? (t.Start.Parent as Emoji).Text
+                                                     : t.Text;
             }
-            //Console.WriteLine(clip);
-#endif
+
+            //e.DataObject.SetData(DataFormats.Text, clipboard);
+            Clipboard.SetText(clipboard);
+            e.Handled = true;
+            e.CancelCommand();
         }
 
         protected override void OnTextChanged(TextChangedEventArgs e)
@@ -89,6 +110,10 @@ namespace WinCompose
             if (m_pending_change)
                 return;
 
+            // This will prevent our operation from polluting the undo buffer, but it
+            // will create an infinite undo stack... need to fix this.
+            BeginChange();
+
             m_pending_change = true;
 
             TextPointer cur = Document.ContentStart;
@@ -99,17 +124,19 @@ namespace WinCompose
                     break;
 
                 var word = new TextRange(cur, next);
-                string image;
-                if (m_emojis.TryGetValue(word.Text, out image))
-                    cur = ReplaceWithImage(word, image);
-                else
-                    cur = next;
+                string filename;
+                if (m_emojis.TryGetValue(word.Text, out filename))
+                    next = ReplaceWithImage(word, filename);
+
+                cur = next;
             }
+
+            EndChange();
 
             m_pending_change = false;
         }
 
-       public TextPointer ReplaceWithImage(TextRange range, string name)
+        public TextPointer ReplaceWithImage(TextRange range, string name)
         {
             var parent = range.Start.Parent as Run;
 
@@ -120,21 +147,22 @@ namespace WinCompose
             var after = new TextRange(range.End, parent.ContentEnd).Text;
             var inlines = range.Start.Paragraph.Inlines;
 
-            if (!string.IsNullOrEmpty(before))
-                inlines.Add(new Run(before));
+            /* Insert new inlines in reverse order after the parent */
+            if (!string.IsNullOrEmpty(after))
+                inlines.InsertAfter(parent, new Run(after));
+
+            inlines.InsertAfter(parent, new Emoji(name, range.Text, FontSize));
+            inlines.LastInline.BaselineAlignment = BaselineAlignment.Center;
 
             //inlines.Add(new Run(range.Text));
             //inlines.LastInline.IsEnabled = false;
 
-            inlines.Add(new EmojiImage(name, FontSize));
-            inlines.LastInline.BaselineAlignment = BaselineAlignment.Center;
+            if (!string.IsNullOrEmpty(before))
+                inlines.InsertAfter(parent, new Run(before));
 
-            if (!string.IsNullOrEmpty(after))
-                inlines.Add(new Run(after));
-
+            TextPointer ret = parent.ContentStart;
             inlines.Remove(parent);
-
-            return inlines.LastInline.ContentEnd;
+            return ret;
         }
     }
 }
