@@ -15,15 +15,18 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace WinCompose
 {
+    /// <summary>
+    /// A simple Image class with a better quality scaling algorithm.
+    /// </summary>
     public class FilteredImage : Image
     {
-        // Override scaling algorithm for better quality
         protected override void OnRender(DrawingContext dc)
         {
             VisualBitmapScalingMode = BitmapScalingMode.HighQuality;
@@ -34,21 +37,46 @@ namespace WinCompose
     // Inheriting from Span makes it easy to parse the tree for copy-paste
     public class Emoji : Span
     {
-        public Emoji(string name, string alt, double font_size)
-        {
-            FilteredImage image = new FilteredImage();
-            image.Source = new BitmapImage(new Uri("pack://application:,,,/res/" + name));
-            image.Stretch = Stretch.Uniform;
-            image.Width = image.Height = font_size * 1.25;
-            Inlines.Add(image);
-
-            Text = alt;
-        }
-
         // Need an empty constructor for serialisation (undo/redo)
         public Emoji() {}
 
-        public readonly string Text;
+        public Emoji(string name, string alt)
+        {
+            BaselineAlignment = BaselineAlignment.Center;
+            Text = alt;
+        }
+
+        public static Emoji MakeFromString(string text)
+        {
+            string filename;
+            return m_emojis.TryGetValue(text, out filename) ? new Emoji(filename, text) : null;
+        }
+
+        // Do not serialize our child element, as it is only for rendering
+        protected new bool ShouldSerializeInlines(XamlDesignerSerializationManager m) => false;
+
+        public string Text
+        {
+            get => m_text;
+            set
+            {
+                m_text = value;
+                FilteredImage image = new FilteredImage();
+                image.Source = new BitmapImage(new Uri("pack://application:,,,/res/" + m_emojis[value]));
+                image.Stretch = Stretch.Uniform;
+                image.Width = image.Height = FontSize * 1.5;
+                Inlines.Add(image);
+            }
+        }
+
+        private string m_text;
+
+        private static Dictionary<string, string> m_emojis = new Dictionary<string, string>()
+        {
+            { "☺", "emoji_test_1.png" },
+            { "⸚", "emoji_test_2.png" },
+            { "☹", "emoji_test_3.png" },
+        };
     }
 
     public class EmojiRichTextBox : RichTextBox
@@ -80,7 +108,6 @@ namespace WinCompose
                                                      : t.Text;
             }
 
-            //e.DataObject.SetData(DataFormats.Text, clipboard);
             Clipboard.SetText(clipboard);
             e.Handled = true;
             e.CancelCommand();
@@ -94,14 +121,10 @@ namespace WinCompose
             timer.Start();
 
             base.OnTextChanged(e);
-        }
 
-        private Dictionary<string, string> m_emojis = new Dictionary<string, string>()
-        {
-            { "☺", "emoji_test_1.png" },
-            { "⸚", "emoji_test_2.png" },
-            { "☹", "emoji_test_3.png" },
-        };
+            // FIXME: debug
+            //Console.WriteLine(XamlWriter.Save(Document));
+        }
 
         private bool m_pending_change = false;
 
@@ -110,8 +133,8 @@ namespace WinCompose
             if (m_pending_change)
                 return;
 
-            // This will prevent our operation from polluting the undo buffer, but it
-            // will create an infinite undo stack... need to fix this.
+            /* This will prevent our operation from polluting the undo buffer, but it
+             * will create an infinite undo stack... need to fix this. */
             BeginChange();
 
             m_pending_change = true;
@@ -123,10 +146,10 @@ namespace WinCompose
                 if (next == null)
                     break;
 
-                var word = new TextRange(cur, next);
-                string filename;
-                if (m_emojis.TryGetValue(word.Text, out filename))
-                    next = ReplaceWithImage(word, filename);
+                TextRange word = new TextRange(cur, next);
+                Emoji emoji = Emoji.MakeFromString(word.Text);
+                if (emoji != null)
+                    next = Replace(word, emoji);
 
                 cur = next;
             }
@@ -136,32 +159,27 @@ namespace WinCompose
             m_pending_change = false;
         }
 
-        public TextPointer ReplaceWithImage(TextRange range, string name)
+        public TextPointer Replace(TextRange range, Emoji emoji)
         {
-            var parent = range.Start.Parent as Run;
-
-            if (parent == null || range.Start.Paragraph == null)
+            var run = range.Start.Parent as Run;
+            if (run == null)
                 return range.End;
 
-            var before = new TextRange(parent.ContentStart, range.Start).Text;
-            var after = new TextRange(range.End, parent.ContentEnd).Text;
-            var inlines = range.Start.Paragraph.Inlines;
+            var before = new TextRange(run.ContentStart, range.Start).Text;
+            var after = new TextRange(range.End, run.ContentEnd).Text;
+            var inlines = run.SiblingInlines;
 
-            /* Insert new inlines in reverse order after the parent */
+            /* Insert new inlines in reverse order after the run */
             if (!string.IsNullOrEmpty(after))
-                inlines.InsertAfter(parent, new Run(after));
+                inlines.InsertAfter(run, new Run(after));
 
-            inlines.InsertAfter(parent, new Emoji(name, range.Text, FontSize));
-            inlines.LastInline.BaselineAlignment = BaselineAlignment.Center;
-
-            //inlines.Add(new Run(range.Text));
-            //inlines.LastInline.IsEnabled = false;
+            inlines.InsertAfter(run, emoji);
 
             if (!string.IsNullOrEmpty(before))
-                inlines.InsertAfter(parent, new Run(before));
+                inlines.InsertAfter(run, new Run(before));
 
-            TextPointer ret = parent.ContentStart;
-            inlines.Remove(parent);
+            TextPointer ret = emoji.ContentEnd; // FIXME
+            inlines.Remove(run);
             return ret;
         }
     }
