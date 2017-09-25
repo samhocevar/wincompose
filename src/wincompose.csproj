@@ -71,6 +71,7 @@
     <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="ui\AboutBoxViewModel.cs" />
     <Compile Include="ui\CategoryViewModel.cs" />
+    <Compile Include="ui\ColorTypeface.cs" />
     <Compile Include="ui\Constants.cs" />
     <Compile Include="ui\DelegateCommand.cs" />
     <Compile Include="ui\EmojiRichTextBox.cs" />
