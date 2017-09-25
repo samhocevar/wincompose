@@ -17,7 +17,7 @@ TXT = rules/Xorg.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
-EXE = bin/$(CONFIG)/WinCompose.exe
+EXE = bin/$(CONFIG)/wincompose.exe
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
@@ -59,7 +59,7 @@ portable: $(EXE)
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
-bin/$(CONFIG)/WinCompose.exe:
+bin/$(CONFIG)/wincompose.exe:
 	@mkdir -p bin/$(CONFIG)
 	@rm -f $@
 	$(DEVENV) wincompose.sln //build $(CONFIG) //project wincompose.csproj
