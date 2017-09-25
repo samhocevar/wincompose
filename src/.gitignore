@@ -4,6 +4,7 @@ WinCompose-*.exe
 obj/
 bin/
 # Visual Studio cruft
+.vs
 *.suo
 *.csproj.user
 *.vcxproj.user
