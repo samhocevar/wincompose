@@ -25,32 +25,11 @@ namespace WinCompose
         {
             if (TryGetGlyphTypeface(out m_gtf))
             {
+                Widths = new WidthList(m_gtf);
                 using (var s = m_gtf.GetFontStream())
                 {
                     ReadFontStream(s);
                 }
-            }
-        }
-
-        public void RenderGlyph(DrawingContext dc, int codepoint, double size, Point pos)
-        {
-            ushort gid = m_gtf.CharacterToGlyphMap[codepoint];
-            int start = m_layer_indices[gid], stop = start + m_layer_counts[gid];
-
-            Random rand = new Random();
-
-            for (int i = start; i < stop; ++i)
-            {
-                GlyphRun r = new GlyphRun(m_gtf, 0, false, size, // pt size
-                                          new ushort[] { m_glyph_layers[i] },
-                                          pos, // position
-                                          new double[] { 0 }, // advance
-                                          null, null, null, // FIXME: check what this is?
-                                          null, null, null);
-                int palette = 0; // FIXME: support multiple palettes?
-                Brush b = new SolidColorBrush(m_colors[m_palettes[palette] + m_glyph_palettes[i]]);
-
-                dc.DrawGlyphRun(b, r);
             }
         }
 
@@ -61,6 +40,39 @@ namespace WinCompose
             ushort glyph;
             return m_gtf.CharacterToGlyphMap.TryGetValue(codepoint, out glyph)
                     && m_layer_indices.ContainsKey(glyph);
+        }
+
+        public struct WidthList
+        {
+            public WidthList(GlyphTypeface gtf) { m_gtf = gtf; }
+            public double this[int codepoint] => m_gtf.AdvanceWidths[m_gtf.CharacterToGlyphMap[codepoint]];
+            private GlyphTypeface m_gtf;
+        }
+
+        public readonly WidthList Widths;
+        public double Height { get => m_gtf.Height; }
+        public double Baseline { get => m_gtf.Baseline; }
+
+        public void RenderGlyph(DrawingContext dc, int codepoint, double size)
+        {
+            ushort gid = m_gtf.CharacterToGlyphMap[codepoint];
+            int start = m_layer_indices[gid], stop = start + m_layer_counts[gid];
+            int palette = 0; // FIXME: support multiple palettes?
+            Point pos = new Point(0, size * Baseline);
+
+            for (int i = start; i < stop; ++i)
+            {
+                // We do not need to provide advances since we only render
+                // one glyph.
+                GlyphRun r = new GlyphRun(m_gtf, 0, false, size,
+                                          new ushort[] { m_glyph_layers[i] },
+                                          pos, new double[] { 0 },
+                                          null, null, null, // FIXME: check what this is?
+                                          null, null, null);
+                Brush b = new SolidColorBrush(m_colors[m_palettes[palette] + m_glyph_palettes[i]]);
+
+                dc.DrawGlyphRun(b, r);
+            }
         }
 
         /// <summary>
@@ -117,6 +129,7 @@ namespace WinCompose
             if (colr_offset != -1 && cpal_offset != -1)
             {
                 // Read the COLR table
+                // https://www.microsoft.com/typography/otspec/colr.htm
                 b.BaseStream.Seek(colr_offset, SeekOrigin.Begin);
                 ushort version = b.ReadUInt16();
                 int glyph_count = b.ReadUInt16();
@@ -142,6 +155,7 @@ namespace WinCompose
                 }
 
                 // Read the CPAL table
+                // https://www.microsoft.com/typography/otspec/cpal.htm
                 b.BaseStream.Seek(cpal_offset, SeekOrigin.Begin);
                 ushort palette_version = b.ReadUInt16();
                 int entry_count = b.ReadUInt16();
@@ -165,7 +179,7 @@ namespace WinCompose
             }
         }
 
-        private GlyphTypeface m_gtf;
+        protected GlyphTypeface m_gtf;
 
         private Dictionary<ushort, ushort> m_layer_indices = new Dictionary<ushort, ushort>();
         private Dictionary<ushort, ushort> m_layer_counts = new Dictionary<ushort, ushort>();

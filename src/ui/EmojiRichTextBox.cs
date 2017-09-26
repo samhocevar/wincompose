@@ -28,12 +28,23 @@ namespace WinCompose
             m_codepoint = codepoint;
         }
 
+        protected override void OnVisualParentChanged(DependencyObject oldParent)
+        {
+            base.OnVisualParentChanged(oldParent);
+            m_fontsize = ((Parent as InlineUIContainer).Parent as Emoji).FontSize;
+            Width = m_fontsize * m_font.Widths[m_codepoint];
+            Height = m_fontsize * m_font.Height;
+        }
+
         protected override void OnRender(DrawingContext dc)
         {
-            m_font.RenderGlyph(dc, m_codepoint, Width, new Point(-5, 10));
+            // Debug the bounding box
+            //dc.DrawRectangle(Brushes.Bisque, new Pen(Brushes.LightCoral, 1.0), new Rect(0, 0, Width, Height));
+            m_font.RenderGlyph(dc, m_codepoint, m_fontsize);
         }
 
         private ColorTypeface m_font;
+        private double m_fontsize;
         private int m_codepoint;
     }
 
@@ -73,10 +84,8 @@ namespace WinCompose
             set
             {
                 m_text = value;
-
-                ColorGlyph g = new ColorGlyph(m_font, StringToCodepoint(m_text));
-                g.Width = g.Height = FontSize * 1.5;
-                Inlines.Add(g);
+                int codepoint = StringToCodepoint(m_text);
+                Inlines.Add(new ColorGlyph(m_font, codepoint));
             }
         }
 
