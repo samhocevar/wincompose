@@ -162,7 +162,14 @@ namespace WinCompose
                 TextRange word = new TextRange(cur, next);
                 Emoji emoji = Emoji.MakeFromString(word.Text);
                 if (emoji != null)
+                {
+                    // Test this so as to preserve caret position
+                    bool caret_was_next = (0 == next.CompareTo(CaretPosition));
+
                     next = Replace(word, emoji);
+                    if (caret_was_next)
+                        CaretPosition = next;
+                }
 
                 cur = next;
             }
