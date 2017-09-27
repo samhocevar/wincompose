@@ -42,6 +42,9 @@
     <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Emoji.Wpf, Version=0.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Emoji.Wpf.0.0.1-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="sysglobl" />
     <Reference Include="System" />
@@ -72,10 +75,8 @@
     <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="ui\AboutBoxViewModel.cs" />
     <Compile Include="ui\CategoryViewModel.cs" />
-    <Compile Include="ui\ColorTypeface.cs" />
     <Compile Include="ui\Constants.cs" />
     <Compile Include="ui\DelegateCommand.cs" />
-    <Compile Include="ui\EmojiRichTextBox.cs" />
     <Compile Include="ui\RootViewModel.cs" />
     <Compile Include="ui\SequenceViewModel.cs" />
     <Compile Include="ui\SettingsWindowViewModel.cs" />
@@ -956,6 +957,7 @@
       <LastGenOutput>Text.zh-CHT.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

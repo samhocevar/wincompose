@@ -18,6 +18,7 @@ TXT = rules/Xorg.txt \
       rules/WinCompose.txt
 
 EXE = bin/$(CONFIG)/wincompose.exe
+DLL = bin/$(CONFIG)/Emoji.Wpf.dll
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
@@ -54,7 +55,7 @@ portable: $(EXE)
 	mkdir -p $(PORTABLE:.zip=)/rules
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
 	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/WinCompose.resources.dll $(PORTABLE:.zip=)/$${L}/; done
-	cp $(EXE) $(PORTABLE:.zip=)
+	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)

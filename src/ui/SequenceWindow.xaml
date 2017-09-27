@@ -18,6 +18,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
+        xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
         Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="600"
         Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
@@ -114,7 +115,7 @@
             <ListBox Margin="8" ItemsSource="{Binding Sequences}"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      VirtualizingStackPanel.VirtualizationMode="Standard">
-                <!-- ^^ This is still set to "Standard" because the EmojiRichTextBox doesn't recycle well -->
+                <!-- ^^ This is still set to "Standard" because the Emoji RichTextBox doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -126,9 +127,9 @@
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
                                 <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
                                     <!-- The small character box -->
-                                    <wc:EmojiRichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
-                                                         VerticalAlignment="Center" Height="32" Width="Auto" MinWidth="32"
-                                                         FontSize="22" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
+                                    <emoji:RichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
+                                                       VerticalAlignment="Center" Height="32" Width="Auto" MinWidth="32"
+                                                       FontSize="22" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
                                         <RichTextBox.Document>
                                             <FlowDocument>
                                                 <FlowDocument.Blocks>
@@ -140,12 +141,12 @@
                                                 </FlowDocument.Blocks>
                                             </FlowDocument>
                                         </RichTextBox.Document>
-                                    </wc:EmojiRichTextBox>
+                                    </emoji:RichTextBox>
                                     <!-- The large tooltip -->
                                     <Viewbox.ToolTip>
-                                        <wc:EmojiRichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
-                                                             VerticalAlignment="Center" Height="200" Width="Auto" MinWidth="200"
-                                                             FontSize="150" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
+                                        <emoji:RichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
+                                                           VerticalAlignment="Center" Height="200" Width="Auto" MinWidth="200"
+                                                           FontSize="150" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
                                             <RichTextBox.Document>
                                                 <FlowDocument>
                                                     <FlowDocument.Blocks>
@@ -157,7 +158,7 @@
                                                     </FlowDocument.Blocks>
                                                 </FlowDocument>
                                             </RichTextBox.Document>
-                                        </wc:EmojiRichTextBox>
+                                        </emoji:RichTextBox>
                                     </Viewbox.ToolTip>
                                 </Viewbox>
                             </Border>
