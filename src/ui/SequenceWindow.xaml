@@ -115,7 +115,7 @@
             <ListBox Margin="8" ItemsSource="{Binding Sequences}"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      VirtualizingStackPanel.VirtualizationMode="Standard">
-                <!-- ^^ This is still set to "Standard" because the Emoji RichTextBox doesn't recycle well -->
+                <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -126,39 +126,12 @@
                         <DockPanel Margin="0,2">
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
                                 <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
-                                    <!-- The small character box -->
-                                    <emoji:RichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
-                                                       VerticalAlignment="Center" Height="32" Width="Auto" MinWidth="32"
-                                                       FontSize="22" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
-                                        <RichTextBox.Document>
-                                            <FlowDocument>
-                                                <FlowDocument.Blocks>
-                                                    <Paragraph TextAlignment="Center">
-                                                        <Paragraph.Inlines>
-                                                            <Run Text="{Binding Result, Mode=OneWay}" Foreground="Black"/>
-                                                        </Paragraph.Inlines>
-                                                    </Paragraph>
-                                                </FlowDocument.Blocks>
-                                            </FlowDocument>
-                                        </RichTextBox.Document>
-                                    </emoji:RichTextBox>
-                                    <!-- The large tooltip -->
+                                    <!-- The small character box followed by the large toolkit -->
+                                    <emoji:Image Text="{Binding Result}" Width="32" Height="32" Background="Transparent"
+                                                 FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                                     <Viewbox.ToolTip>
-                                        <emoji:RichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0"
-                                                           VerticalAlignment="Center" Height="200" Width="Auto" MinWidth="200"
-                                                           FontSize="150" FontFamily="{x:Static wc:Constants.PreferredFontFamily}">
-                                            <RichTextBox.Document>
-                                                <FlowDocument>
-                                                    <FlowDocument.Blocks>
-                                                        <Paragraph TextAlignment="Center">
-                                                            <Paragraph.Inlines>
-                                                                <Run Text="{Binding Result, Mode=OneWay}" Foreground="Black"/>
-                                                            </Paragraph.Inlines>
-                                                        </Paragraph>
-                                                    </FlowDocument.Blocks>
-                                                </FlowDocument>
-                                            </RichTextBox.Document>
-                                        </emoji:RichTextBox>
+                                        <emoji:Image Text="{Binding Result}" Width="200" Height="200"
+                                                     FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                                     </Viewbox.ToolTip>
                                 </Viewbox>
                             </Border>
