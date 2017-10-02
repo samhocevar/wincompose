@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>ESC</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Teisendusega</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Teisenduseta</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>SCROLL LOCK</value>
   </data>
@@ -318,6 +324,12 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} masinas {0} ({1} kombinatsiooni)</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>Üldine</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Käitumine</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Kombinatsioonid — WinCompose</value>
   </data>
@@ -380,5 +392,14 @@
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Laadi uuesti</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Luba süstikklahvid</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Kasuta teiste programmide nagu AutoHotkey või Synergy klahvivajutusi</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Print Scrn</value>
   </data>
 </root>

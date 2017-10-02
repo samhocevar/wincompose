@@ -67,7 +67,7 @@ Source: "rules\Emoji.txt"; DestDir: "{app}\res"
 Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 
 [Languages]
-; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.isl"
+; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.islu"
 Name: "pt_BR"; MessagesFile: "compiler:Languages/BrazilianPortuguese.isl"
 ; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Corsican.isl"
