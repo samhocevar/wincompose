@@ -1,4 +1,5 @@
 ﻿#define NAME "WinCompose"
+#define EXE "wincompose.exe"
 #define VERSION GetEnv('VERSION')
 #define CONFIG GetEnv('CONFIG')
 
@@ -12,7 +13,7 @@ ArchitecturesInstallIn64BitMode = x64
 DefaultDirName = {pf}\{#NAME}
 DefaultGroupName = {#NAME}
 SetupIconFile = "res\icon_normal.ico"
-UninstallDisplayIcon = "{app}\{#NAME}.exe"
+UninstallDisplayIcon = "{app}\{#EXE}"
 Compression = lzma2
 SolidCompression = yes
 OutputDir = .
@@ -26,7 +27,8 @@ PrivilegesRequired = lowest
 ; We put this at the beginning so that it’s easier to decompress
 Source: "bin\{#CONFIG}\trampoline.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
-Source: "bin\{#CONFIG}\{#NAME}.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
@@ -65,7 +67,7 @@ Source: "rules\Emoji.txt"; DestDir: "{app}\res"
 Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 
 [Languages]
-; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.isl"
+; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.islu"
 Name: "pt_BR"; MessagesFile: "compiler:Languages/BrazilianPortuguese.isl"
 ; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Corsican.isl"
@@ -95,13 +97,13 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
 
 [Icons]
-Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
+Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
 ; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
-Name: "{group}\Uninstall"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#NAME}.exe"; IconIndex: 1
-Name: "{group}\{#NAME}"; Filename: "{app}\{#NAME}.exe"; WorkingDir: "{app}"
+Name: "{group}\Uninstall"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#EXE}"; IconIndex: 1
+Name: "{group}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
 
 [Run]
-Filename: "{app}\{#NAME}.exe"; Flags: nowait
+Filename: "{app}\{#EXE}"; Flags: nowait
 
 [InstallDelete]
 ; We used to be installed in c:\Program Files (x86)
@@ -121,7 +123,7 @@ Type: files; Name: "{app}\po\*.po"
 Type: dirifempty; Name: "{app}\po"
 
 [UninstallRun]
-Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#NAME}.exe"; Flags: runhidden
+Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#EXE}"; Flags: runhidden
 
 [UninstallDelete]
 Type: dirifempty; Name: "{app}\rules"

@@ -18,6 +18,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
+        xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
         Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="600"
         Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
@@ -111,7 +112,10 @@
 
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
-            <ListBox Margin="8" ItemsSource="{Binding Sequences}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VirtualizingStackPanel.VirtualizationMode="Recycling">
+            <ListBox Margin="8" ItemsSource="{Binding Sequences}"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     VirtualizingStackPanel.VirtualizationMode="Standard">
+                <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -122,16 +126,16 @@
                         <DockPanel Margin="0,2">
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
                                 <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
-                                    <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
+                                    <!-- The small character box followed by the large toolkit -->
+                                    <emoji:Image Text="{Binding Result}" Width="32" Height="32" Background="Transparent"
+                                                 FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                                     <Viewbox.ToolTip>
-                                        <Grid Height="200" MinWidth="200">
-                                            <Viewbox>
-                                                <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
-                                            </Viewbox>
-                                        </Grid>
+                                        <emoji:Image Text="{Binding Result}" Width="200" Height="200"
+                                                     FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                                     </Viewbox.ToolTip>
                                 </Viewbox>
                             </Border>
+                            <!-- The sequence, printed as key icons -->
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
                                 <Border Width="32" Height="32">
                                     <Border.Background>
