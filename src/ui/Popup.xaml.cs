@@ -33,12 +33,22 @@ namespace WinCompose
 
         public void OnKey(object sender, EventArgs e)
         {
-            if (!Composer.IsComposing())
+            Rect caret;
+            if (!Composer.IsComposing() || (caret = GetCaretInfo()).IsEmpty)
             {
                 Hide();
                 return;
             }
 
+            PopupText.Text = string.Format("({0}, {1}) {2}x{3}",
+                    caret.Left, caret.Top, caret.Width, caret.Height);
+            Left = caret.Left - 5;
+            Top = caret.Bottom + 5;
+            Show();
+        }
+
+        private static Rect GetCaretInfo()
+        {
             List<uint> tid_list = new List<uint>();
 
 #if false
@@ -81,24 +91,16 @@ namespace WinCompose
                     break;
             }
 
-            if (guiti.hwndCaret != IntPtr.Zero)
-            {
-                POINT point = new POINT();
-                NativeMethods.ClientToScreen(guiti.hwndCaret, out point);
-                int x = guiti.rcCaret.left + point.x;
-                int y = guiti.rcCaret.top + point.y;
-                int w = guiti.rcCaret.right - guiti.rcCaret.left;
-                int h = guiti.rcCaret.bottom - guiti.rcCaret.top;
+            if (guiti.hwndCaret == IntPtr.Zero)
+                return new Rect();
 
-                PopupText.Text = string.Format("({0}, {1}) {2}x{3}", x, y, w, h);
-                Left = x - 5;
-                Top = y + h + 5;
-                Show();
-            }
-            else
-            {
-                Hide();
-            }
+            POINT point = new POINT();
+            NativeMethods.ClientToScreen(guiti.hwndCaret, out point);
+
+            return new Rect(guiti.rcCaret.left + point.x,
+                            guiti.rcCaret.top + point.y,
+                            guiti.rcCaret.right - guiti.rcCaret.left,
+                            guiti.rcCaret.bottom - guiti.rcCaret.top);
         }
     }
 }
