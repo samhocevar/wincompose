@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-06-02 21:58+0200\n"
-"Last-Translator: Martin Lacina <martin@whistler.sk>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/wincompose/master/"
-"sk/>\n"
+"PO-Revision-Date: 2017-09-01 22:48+0000\n"
+"Last-Translator: Fuxik Nah <fuxik12345@gmail.com>\n"
+"Language-Team: Slovak "
+"<https://hosted.weblate.org/projects/wincompose/master/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.3-dev\n"
+"X-Generator: Weblate 2.17-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -42,12 +42,12 @@ msgstr "Pravý Control"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Ľavé Windows"
+msgstr "Ľavý kláves s logom Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Pravé Windows"
+msgstr "Pravý kláves s logom Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
@@ -77,12 +77,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Konvertovať (japonská klávesnica)"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Nekonvertovať (japonská klávesnica)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -97,13 +97,13 @@ msgstr "Medzera"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Enter"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:189 ID:Obsolete016
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Tupý prízvuk `"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:193 ID:Obsolete017
@@ -161,25 +161,25 @@ msgstr "História"
 #. A button to visit the website
 #: i18n/Text.resx:227 ID:VisitWebsite
 msgid "Visit Website"
-msgstr ""
+msgstr "Navštívte stránky"
 
 #: i18n/Text.resx:231 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Ukončiť"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:234 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr ""
+msgstr "vytvoril Sam Hocevar <sam@hocevar.net>"
 
 #: i18n/Text.resx:237 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "Sekvencie"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:240 ID:Obsolete039
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvencia"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:243 ID:Obsolete041
@@ -192,20 +192,20 @@ msgstr "Vyhľadávací filter:"
 
 #: i18n/Text.resx:249 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "Kláves Compose:"
 
 #: i18n/Text.resx:252 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Zvoľte kláves, ktorý by mal fungovať ako kláves Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:255 ID:ResetDelay
 msgid "Delay:"
-msgstr ""
+msgstr "Doba trvania:"
 
 #: i18n/Text.resx:259 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Zadávanie kódov Unicode"
 
 #: i18n/Text.resx:262 ID:UnicodeInputToolTip
 msgid ""
@@ -213,25 +213,30 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Umožniť zadanie kódu Unicode pre všetky znaky, dokonca aj tie, ktoré nemajú "
+"definovanú sekvenciu. Napríklad znak U + 1A3F by bolo možné napísať "
+"nasledujúcej sekvencií: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:265 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr ""
+msgstr "Pri zadaní neplatnej sekvencie"
 
 #: i18n/Text.resx:269 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "Ako záložná možnosť ignorovať veľkosť písmen"
 
 #: i18n/Text.resx:272 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Ak zadaná sekvencia neexistuje, ale existuje iná líšiaca sa veľkosťou "
+"písmen, automaticky opraviť."
 
 #: i18n/Text.resx:275 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Zrušiť všetky zadané znaky"
 
 #: i18n/Text.resx:278 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -239,24 +244,29 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Ak zadaná sekvencie neexistuje, zrušiť všetky zadané znaky. Predvoleným "
+"správaním je zobrazenie zadaných znakov, ako keby sa vôbec nepoužilo "
+"tlačidlo Compose."
 
 #: i18n/Text.resx:281 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Vytvoriť pípnutie"
 
 #: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Ak zadaná sekvencie neexistuje, urobiť systémový zvuk."
 
 #: i18n/Text.resx:287 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "Jazyk rozhrania:"
 
 #: i18n/Text.resx:290 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Vyberte jazyk pre používateľské rozhranie WinCompose. V predvolenom "
+"nastavení sa použije systémový jazyk."
 
 #. Close the settings window
 #: i18n/Text.resx:293 ID:Close
@@ -273,17 +283,17 @@ msgstr "Kopírovať znak"
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:301 ID:Obsolete051
 msgid "Description:"
-msgstr ""
+msgstr "Popis:"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:305 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Použiť"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:309 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Zachovať pôvodné správanie klávesa Compose"
 
 #: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -291,10 +301,12 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"WinCompose sa pokúsi zachovať pôvodnú funkciu klávesy. Napríklad klávesová "
+"skratka Alt-Tab bude stále fungovať, hoci Alt sa používa ako kláves Compose."
 
 #: i18n/Text.resx:316 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Vkladať nulovú medzeru v aplikáciách Office"
 
 #: i18n/Text.resx:319 ID:InsertZwspToolTip
 msgid ""
@@ -302,10 +314,13 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Aplikácie Microsoft Office niekedy automaticky zmení písmo dokumentu pri "
+"zadávaní určitých znakov Unicode. Táto funkcia vloží za problémové znaky "
+"neviditeľný znak, ktorý zabráni tomuto správaniu."
 
 #: i18n/Text.resx:322 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr ""
+msgstr "Caps Lock napodobíte stlačením obidvoch klávesov Shift"
 
 #: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
 msgid ""
@@ -313,10 +328,13 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Ak je Caps Lock používaný ako kláves Compose, pôvodná funkcia klávesu "
+"prestane byť dostupná. Táto funkcia umožňuje zapnúť Caps Lock súčasným "
+"stlačením oboch kláves Shift."
 
 #: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr ""
+msgstr "Kláves Shift vypne Caps Lock"
 
 #: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
 msgid ""
@@ -324,21 +342,26 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Ak je CapsLock používaný ako kláves Compose, pôvodná funkcia klávesu "
+"prestane byť dostupná. Táto funkcia automaticky deaktivuje CapsLock po "
+"stlačení klávesu Shift."
 
 #: i18n/Text.resx:334 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Pri CapsLock vždy písať veľké písmená"
 
 #: i18n/Text.resx:337 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Ak je funkcia CapsLock zapnutá, písanie sekvencie pre písmeno, napríklad \""
+"æ\", vždy vytlačí príslušný variant veľkého písmena, v tomto prípade \"Æ\"."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:340 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Kategórie"
 
 #: i18n/Text.resx:344 ID:InSelectedCategories
 msgid "In selected categories"
@@ -347,60 +370,59 @@ msgstr "Vo zvolených kategóriách"
 #. The title of the Options window
 #: i18n/Text.resx:347 ID:Options
 msgid "Options — WinCompose"
-msgstr ""
+msgstr "Voľby — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:351 ID:ShowOptions
 msgid "Options…"
-msgstr ""
+msgstr "Voľby…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:355 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose v{2} (kláves: {0}; {1} sekvencií)"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:359 ID:General
-#, fuzzy
 msgid "General"
-msgstr "Všeobecné správanie sa"
+msgstr "Všeobecné"
 
 #: i18n/Text.resx:363 ID:Behavior
-#, fuzzy
 msgid "Behavior"
-msgstr "Všeobecné správanie sa"
+msgstr "Správanie"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:366 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Sekvencie — WinCompose"
 
 #: i18n/Text.resx:370 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Používateľom definované makrá"
 
 #: i18n/Text.resx:373 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr ""
+msgstr "WinCompose je zakázaný"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:376 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:380 ID:TestTyping
+#, fuzzy
 msgid "Test Typing:"
-msgstr ""
+msgstr "Vyskúšajte písanie:"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:384 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Vychytávky"
 
 #: i18n/Text.resx:388 ID:Milliseconds
 msgid "(milliseconds)"
-msgstr ""
+msgstr "(milisekundy)"
 
 #. About box menu entry
 #: i18n/Text.resx:391 ID:About
@@ -410,74 +432,81 @@ msgstr "O programe"
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:395 ID:Download
 msgid "Download WinCompose {0}"
-msgstr ""
+msgstr "Stiahnuť WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:399 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "O WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:403 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programátori"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:407 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Preklad"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:411 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Špeciálne poďakovanie"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:415 ID:License
 msgid "License"
-msgstr ""
+msgstr "Licencia"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:419 ID:NeedRestart
+#, fuzzy
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "Aby sa prejavili zmeny, WinCompose musí byť reštartovaný."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:423 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Nahlásiť chybu"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:427 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Nápoveda"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:431 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Aktualizácie sú k dispozícii."
 
 #: i18n/Text.resx:435 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr ""
+msgstr "Používateľom definované sekvencie"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Úpravy"
 
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:442 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Znova načítať"
 
 #: i18n/Text.resx:446 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Povoliť podstrčené klávesy"
 
 #: i18n/Text.resx:449 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
+"Neignorovať klávesy poslané iným softvérom, ako je AutoHotkey alebo Synergy"
+
+#. The name of the “Print Screen” key on the keyboard
+#: i18n/Text.resx:452 ID:KeyPrint
+msgid "Prt Scrn"
+msgstr "Print Screen"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -502,7 +531,7 @@ msgstr "Ostané, súkromné použitie"
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Osatné, náhradné"
+msgstr "Osatné, „surrogates“"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:141 ID:LowercaseLetter
@@ -522,7 +551,7 @@ msgstr "Písmeno, ostatné"
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Písmeno, titulkové"
+msgstr "Písmeno, titulné (prvé veľké)"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:157 ID:UppercaseLetter
@@ -532,7 +561,7 @@ msgstr "Písmeno, veľké"
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Značka, spájanie medzery"
+msgstr "Značka, široké kombinujúci znaky"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:165 ID:EnclosingMark
@@ -542,7 +571,7 @@ msgstr "Značka, uzatváracia"
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Značka, Bez medzier"
+msgstr "Značka, nulovej šírky"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:173 ID:DecimalDigitNumber
@@ -562,7 +591,7 @@ msgstr "Číslo, ostatné"
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr "Interpunkcia, spojka"
+msgstr "Interpunkcia, spojujúci"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:189 ID:DashPunctuation
@@ -632,12 +661,12 @@ msgstr "Oddeľovač, medzera"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:136
 msgid "Prerequisites"
-msgstr ""
+msgstr "Predpoklady"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:137
 msgid "Software required by WinCompose"
-msgstr ""
+msgstr "Softvér potrebný na spustenie WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:140
@@ -647,11 +676,14 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose vyžaduje .NET Framework, verzia 3.5 SP1 alebo novšia, ktorá "
+"nebola\n"
+"v systéme rozpoznaná. Nasledujúca akcia môže pomôcť vyriešiť tento problém:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:145
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Stiahnite a nainštalujte .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:155
@@ -659,8 +691,10 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Po vykonaní tejto akcie sa môžete vrátiť na túto obrazovku a pokračovať\n"
+"v inštalácii."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Požadované práva administrátora. Chyba: %d"

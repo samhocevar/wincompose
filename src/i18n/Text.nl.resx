@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Conversie</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Niet-conversie</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -382,9 +388,15 @@
     <value>Gebruikerssequenties</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
-    <value>Editeer</value>
+    <value>Aanpassen</value>
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Herladen</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Geïnjecteerde toetscombinaties toelaten</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Toetscombinaties gegenereerd door andere software zoals AutoHotKey of Synergy niet negeren</value>
   </data>
 </root>

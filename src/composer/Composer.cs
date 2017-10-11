@@ -506,6 +506,17 @@ static class Composer
         return "";
     }
 
+    /// <summary>
+    /// Check whether a string contains any Unicode surrogate characters.
+    /// </summary>
+    private static bool HasSurrogates(string str)
+    {
+        foreach (char ch in str)
+            if (ch >= 0xd800 && ch < 0xe000)
+                return true;
+        return false;
+    }
+
     private static void SendString(string str)
     {
         List<VK> modifiers = new List<VK>();
@@ -515,6 +526,11 @@ static class Composer
          * window, so we parse through the names we know in order to detect
          * a GTK+ application. */
         bool use_gtk_hack = m_window_is_gtk;
+
+        /* HACK: Notepad++ is unable to output high plane Unicode characters,
+         * so we rely on clipboard hacking when the composed string contains
+         * such characters. */
+        bool use_clipboard_hack = m_window_is_notepadpp && HasSurrogates(str);
 
         /* HACK: in MS Office, some symbol insertions change the text font
          * without returning to the original font. To avoid this, we output
@@ -585,6 +601,34 @@ static class Composer
 
             if (has_capslock)
                 SendKeyPress(VK.CAPITAL);
+        }
+        else if (use_clipboard_hack)
+        {
+            // We do not use Clipboard.GetDataObject because I have been
+            // unable to restore the clipboard properly. This is reasonable
+            // and has been tested with several clipboard content types.
+            var backup_text = Clipboard.GetText();
+            var backup_image = Clipboard.GetImage();
+            var backup_audio = Clipboard.GetAudioStream();
+            var backup_files = Clipboard.GetFileDropList();
+
+            // Use Shift+Insert instead of Ctrl-V because Ctrl-V will misbehave
+            // if a Shift key is held down. Using Shift+Insert even works if the
+            // compose key is Insert.
+            Clipboard.SetText(str);
+            SendKeyDown(VK.SHIFT);
+            SendKeyPress(VK.INSERT);
+            SendKeyUp(VK.SHIFT);
+            Clipboard.Clear();
+
+            if (!string.IsNullOrEmpty(backup_text))
+                Clipboard.SetText(backup_text);
+            if (backup_image != null)
+                Clipboard.SetImage(backup_image);
+            if (backup_audio != null)
+                Clipboard.SetAudio(backup_audio);
+            if (backup_files != null && backup_files.Count > 0)
+                Clipboard.SetFileDropList(backup_files);
         }
         else
         {
@@ -768,6 +812,7 @@ static class Composer
         IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
 
         m_window_is_gtk = false;
+        m_window_is_notepadpp = false;
         m_window_is_office = false;
         m_window_is_other_desktop = false;
 
@@ -780,6 +825,9 @@ static class Composer
             if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
                  || wclass == "hexchatWindowToplevel")
                 m_window_is_gtk = true;
+
+            if (wclass == "Notepad++")
+                m_window_is_notepadpp = true;
 
             if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
                 m_window_is_office = true;
@@ -795,8 +843,10 @@ static class Composer
             Log.Debug("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
                       tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
+            if (active_layout != (IntPtr)0)
+                NativeMethods.ActivateKeyboardLayout(active_layout, 0);
+
             tid = NativeMethods.GetCurrentThreadId();
-            NativeMethods.ActivateKeyboardLayout((HKL)active_layout, 0);
             active_layout = NativeMethods.GetKeyboardLayout(tid);
 
             Log.Debug("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
@@ -881,6 +931,7 @@ static class Composer
     // properly initialised even if the layout is found to be 0x0.
     private static IntPtr m_current_layout = new IntPtr(-1);
     private static bool m_window_is_gtk = false;
+    private static bool m_window_is_notepadpp = false;
     private static bool m_window_is_office = false;
     private static bool m_window_is_other_desktop = false;
 

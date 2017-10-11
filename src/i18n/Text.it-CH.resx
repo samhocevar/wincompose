@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Esc</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Cunversione</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Non-cunversione</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Bloc Scorr</value>
   </data>
@@ -274,7 +280,7 @@
     <value>Àplica</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Mantènne su cumportamentu originale de sa tecla compose</value>
+    <value>Mantene su cumportamentu originale de sa tecla compose</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
     <value>Custu at a nàrrere a WinCompose de chircare cantu podet de otènnere su cumportamentu originale de sa tecla. Pro fàghere un’esèmpiu, s’incurtzadura Alt-Tab at a sighire a funtzionare fintzas si Alt est impreada comente tecla compose.</value>
@@ -386,5 +392,14 @@
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Torra a carrigare</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Permiti teclas importadas</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>No ignores sas teclas importadas dae àteros programmas comente a AutoHotkey o Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Stamp</value>
   </data>
 </root>

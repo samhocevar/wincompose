@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -14,6 +14,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
@@ -22,7 +25,7 @@ namespace WinCompose
 /// The Key class describes anything that can be hit on the keyboard,
 /// resulting in either a printable string or a virtual key code.
 /// </summary>
-public class Key
+public partial class Key
 {
     /// <summary>
     /// A dictionary of symbols that we use for some non-printable key labels.
@@ -38,54 +41,45 @@ public class Key
     };
 
     /// <summary>
-    /// A dictionary of non-trivial keysyms and the corresponding
-    /// Key object. Trivial (one-character) keysyms are not needed.
+    /// A dictionary of non-printable keysyms and the corresponding virtual
+    /// key (VK) value.
     /// </summary>
-    private static readonly Dictionary<string, Key> m_keysyms
-        = new Dictionary<string, Key>
+    private static readonly Dictionary<string, VK> m_extra_keysyms
+        = new Dictionary<string, VK>
     {
-        // ASCII-mapped keysyms
-        { "space",        new Key(" ") },  // 0x20
-        { "exclam",       new Key("!") },  // 0x21
-        { "quotedbl",     new Key("\"") }, // 0x22
-        { "numbersign",   new Key("#") },  // 0x23
-        { "dollar",       new Key("$") },  // 0x24
-        { "percent",      new Key("%") },  // 0x25
-        { "ampersand",    new Key("&") },  // 0x26
-        { "apostrophe",   new Key("'") },  // 0x27
-        { "parenleft",    new Key("(") },  // 0x28
-        { "parenright",   new Key(")") },  // 0x29
-        { "asterisk",     new Key("*") },  // 0x2a
-        { "plus",         new Key("+") },  // 0x2b
-        { "comma",        new Key(",") },  // 0x2c
-        { "minus",        new Key("-") },  // 0x2d
-        { "period",       new Key(".") },  // 0x2e
-        { "slash",        new Key("/") },  // 0x2f
-        { "colon",        new Key(":") },  // 0x3a
-        { "semicolon",    new Key(";") },  // 0x3b
-        { "less",         new Key("<") },  // 0x3c
-        { "equal",        new Key("=") },  // 0x3d
-        { "greater",      new Key(">") },  // 0x3e
-        { "question",     new Key("?") },  // 0x3f
-        { "at",           new Key("@") },  // 0x40
-        { "bracketleft",  new Key("[") },  // 0x5b
-        { "backslash",    new Key("\\") }, // 0x5c
-        { "bracketright", new Key("]") },  // 0x5d
-        { "asciicircum",  new Key("^") },  // 0x5e
-        { "underscore",   new Key("_") },  // 0x5f
-        { "grave",        new Key("`") },  // 0x60
-        { "braceleft",    new Key("{") },  // 0x7b
-        { "bar",          new Key("|") },  // 0x7c
-        { "braceright",   new Key("}") },  // 0x7d
-        { "asciitilde",   new Key("~") },  // 0x7e
-
-        // Non-printing keys
-        { "Multi_key", new Key(VK.COMPOSE) },
-        { "Up",        new Key(VK.UP) },
-        { "Down",      new Key(VK.DOWN) },
-        { "Left",      new Key(VK.LEFT) },
-        { "Right",     new Key(VK.RIGHT) },
+        { "Multi_key", VK.COMPOSE },
+        { "Up",        VK.UP },
+        { "Down",      VK.DOWN },
+        { "Left",      VK.LEFT },
+        { "Right",     VK.RIGHT },
     };
+
+    /// <summary>
+    /// A dictionary of printable keysyms and the corresponding string. This list
+    /// is directly read from a header from the Xorg project.
+    /// </summary>
+    private static readonly Dictionary<string, string> m_keysyms
+        = ReadXorgKeySyms();
+
+    private static Dictionary<string, string> ReadXorgKeySyms()
+    {
+        Dictionary<string, string> ret = new Dictionary<string, string>();
+        using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.res.keysymdef.h"))
+        using (StreamReader reader = new StreamReader(s))
+        {
+            Regex r = new Regex(@"^#define XK_([^ ]*).* U\+([A-Za-z0-9]+)");
+            for (string l = reader.ReadLine(); l != null; l = reader.ReadLine())
+            {
+                Match m = r.Match(l);
+                if (m.Success)
+                {
+                    int codepoint = int.Parse(m.Groups[2].Value, NumberStyles.HexNumber);
+                    ret[m.Groups[1].Value] = Convert.ToChar(codepoint).ToString();
+                }
+            }
+        }
+        return ret;
+    }
 
     /// <summary>
     /// A dictionary of keysyms and the corresponding Key object
@@ -93,7 +87,10 @@ public class Key
     public static Key FromKeySym(string keysym)
     {
         if (m_keysyms.ContainsKey(keysym))
-            return m_keysyms[keysym];
+            return new Key(m_keysyms[keysym]);
+
+        if (m_extra_keysyms.ContainsKey(keysym))
+            return new Key(m_extra_keysyms[keysym]);
 
         if (keysym.Length == 1)
             return new Key(keysym);
@@ -134,6 +131,7 @@ public class Key
                     { new Key(VK.NONCONVERT), i18n.Text.KeyNonConvert },
                     { new Key(VK.SCROLL),     i18n.Text.KeyScroll },
                     { new Key(VK.INSERT),     i18n.Text.KeyInsert },
+                    { new Key(VK.PRINT),      i18n.Text.KeyPrint },
 
                     { new Key(" "),    i18n.Text.KeySpace },
                     { new Key("\r"),   i18n.Text.KeyReturn },
@@ -169,7 +167,7 @@ public class Key
     /// </summary>
     public bool IsUsable()
     {
-        return IsPrintable() || m_keysyms.ContainsValue(this);
+        return IsPrintable() || m_extra_keysyms.ContainsValue(m_vk);
     }
 
     /// <summary>

@@ -109,6 +109,7 @@ namespace WinCompose
             if (CreateConfigDir())
             {
                 m_watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
+                m_watcher.NotifyFilter = NotifyFilters.LastWrite;
                 m_watcher.Changed += ConfigFileChanged;
                 m_watcher.EnableRaisingEvents = true;
             }
@@ -175,10 +176,11 @@ namespace WinCompose
             // The reason is that apparently we cannot define a custom
             // CultureInfo without registering it, and we cannot register it
             // without administrator privileges.
-            // Same with "de-CH" which we use for Esperanto… this is
-            // ridiculous, Microsoft.
+            // Same with "de-CH" which we use for Esperanto, and "be-BY" which
+            // we use for Latin Belarus… this is ridiculous, Microsoft.
             if (Thread.CurrentThread.CurrentUICulture.Name == "it-CH"
-                 || Thread.CurrentThread.CurrentUICulture.Name == "de-CH")
+                 || Thread.CurrentThread.CurrentUICulture.Name == "de-CH"
+                 || Thread.CurrentThread.CurrentUICulture.Name == "be-BY")
             {
                 try
                 {
@@ -357,13 +359,19 @@ namespace WinCompose
             catch (Exception) { }
         }
 
+        private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
+        private static Regex m_r1 = new Regex(@"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
+            //                                                    ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
+            //                                                     keys               result                 desc
+        private static Regex m_r2 = new Regex(@"[\s<>]+");
+
         private static void LoadSequenceString(string line)
         {
             // If this is an include directive, use LoadSequenceFile() again
-            var m0 = Regex.Match(line, @"^\s*include\s*""([^""]*)""");
-            if (m0.Groups.Count > 1)
+            Match m0 = m_r0.Match(line);
+            if (m0.Success)
             {
-                string file = m0.Groups[1].Captures[0].ToString();
+                string file = m0.Groups[1].Captures[0].Value;
 
                 // We support %H (user directory) but not %L (locale-specific dir)
                 if (file.Contains("%L"))
@@ -379,13 +387,11 @@ namespace WinCompose
             }
 
             // Only bother with sequences that start with <Multi_key>
-            var m1 = Regex.Match(line, @"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
-            //                                             ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
-            //                                              keys               result                 desc
-            if (m1.Groups.Count < 4)
+            var m1 = m_r1.Match(line);
+            if (!m1.Success)
                 return;
 
-            var keysyms = Regex.Split(m1.Groups[1].Captures[0].ToString(), @"[\s<>]+");
+            var keysyms = m_r2.Split(m1.Groups[1].Captures[0].Value);
 
             if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
                 return;
@@ -407,8 +413,8 @@ namespace WinCompose
                 seq.Add(k);
             }
 
-            string result = m1.Groups[2].Captures[0].ToString();
-            string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].ToString() : "";
+            string result = m1.Groups[2].Captures[0].Value;
+            string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
 
             // Unescape \n \\ \" and more in the string output
             result = Regex.Replace(result, @"\\.", m =>
@@ -473,6 +479,7 @@ namespace WinCompose
            new Key(VK.CONVERT),
            new Key(VK.NONCONVERT),
            new Key(VK.INSERT),
+           new Key(VK.PRINT),
            new Key(VK.SCROLL),
            new Key("`"),
         };
@@ -515,12 +522,14 @@ namespace WinCompose
                 {
                     if (rm.GetResourceSet(ci, true, false) != null)
                     {
-                        // HACK: second part of our hack to support Sardinian
-                        // and Esperanto.
+                        // HACK: second part of our hack to support Sardinian,
+                        // Esperanto and Latin Belarusian.
                         if (name == "it-CH")
                             native_name = "Sardu";
                         if (name == "de-CH")
                             native_name = "Esperanto";
+                        if (name == "be-BY")
+                            native_name = "Belarusian (latin)";
 
                         ret.Add(name, native_name);
                     }

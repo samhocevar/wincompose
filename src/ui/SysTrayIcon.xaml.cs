@@ -118,6 +118,7 @@ namespace WinCompose
                         WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
                     }
                     m_sequencewindow.Show();
+                    m_sequencewindow.Activate();
                     break;
 
                 case MenuCommand.ShowOptions:
@@ -127,6 +128,7 @@ namespace WinCompose
                         WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_optionswindow);
                     }
                     m_optionswindow.Show();
+                    m_optionswindow.Activate();
                     break;
 
                 case MenuCommand.About:
@@ -275,6 +277,7 @@ namespace WinCompose
                 else
                 {
                     m_sequencewindow.Show();
+                    m_sequencewindow.Activate();
                 }
             }
         }

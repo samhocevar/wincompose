@@ -221,10 +221,11 @@ internal struct KEYBOARD_INDICATOR_PARAMETERS
     public KEYBOARD LedFlags;
 };
 
-internal enum HKL
+// This can’t be an enum because of IntPtr
+public static class HKL
 {
-    PREV,
-    NEXT,
+    public static IntPtr PREV = (IntPtr)0;
+    public static IntPtr NEXT = (IntPtr)1;
 };
 
 [Flags]

@@ -118,93 +118,93 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Control" xml:space="preserve">
-    <value>Ostatné, riadiace</value>
+    <value>Jinšaje, kiroŭnyja znaki</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>Ostatné, formát</value>
+    <value>Jinšaje, znaki farmatavańnia</value>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
-    <value>Ostatné, nepriradené</value>
+    <value>Jinšaje, nie pryznačana</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>Ostané, súkromné použitie</value>
+    <value>Jinšaje, dlia asabistaha vykarystańnia</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>Osatné, „surrogates“</value>
+    <value>Jinšaje, surahat</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
-    <value>Písmeno, malé</value>
+    <value>Litara, małaja</value>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
-    <value>Písmeno, modifikátor</value>
+    <value>Litara, madyfikatar</value>
   </data>
   <data name="OtherLetter" xml:space="preserve">
-    <value>Písmeno, ostatné</value>
+    <value>Litara, jinšaja</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>Písmeno, titulné (prvé veľké)</value>
+    <value>Litara, zahałovak</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
-    <value>Písmeno, veľké</value>
+    <value>Litara, vialikaja</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>Značka, široké kombinujúci znaky</value>
+    <value>Značok, spałučaĺny, patrabuje dadatkovaha miesca ŭ radku</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>Značka, uzatváracia</value>
+    <value>Značok, jaki ŭpisvaje papiaredni znak</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>Značka, nulovej šírky</value>
+    <value>Značok, nie patrabuje dadatkovaha miesca ŭ radku</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
-    <value>Číslo, desiatková číslica</value>
+    <value>Ličba, dziesiatkovaja sistema vyličeńnia</value>
   </data>
   <data name="LetterNumber" xml:space="preserve">
-    <value>Číslo, písmeno</value>
+    <value>Ličba, litara</value>
   </data>
   <data name="OtherNumber" xml:space="preserve">
-    <value>Číslo, ostatné</value>
+    <value>Ličba, jinšaje</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Interpunkcia, spojujúci</value>
+    <value>Punktuacyja, jakaja spałučaje častki słova</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>Interpunkcia, pomlčka</value>
+    <value>Punktuacyja, złučki dy praciažniki</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
-    <value>Interpunkcia, uzatváranie</value>
+    <value>Punktuacyja, zakryvaĺny znak</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>Interpunkcia, koncová úvodzovka</value>
+    <value>Punktuacyja, zakryvaĺny znak dvukośsia</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>Interpunkcia, začiatočná úvodzovka</value>
+    <value>Punktuacyja, pačatkovy znak dvukośsia</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
-    <value>Interpunkcia, ostatné</value>
+    <value>Punktuacyja, jinšaje</value>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
-    <value>Interpunkcia, otváranie</value>
+    <value>Punktuacyja, adkryvaĺny znak</value>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
-    <value>Symbol, mena</value>
+    <value>Symbaĺ, valiuta</value>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
-    <value>Symbol, modifikátor</value>
+    <value>Symbaĺ, madyfikatar</value>
   </data>
   <data name="MathSymbol" xml:space="preserve">
-    <value>Symbol, matematika</value>
+    <value>Symbaĺ, matematyčny</value>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
-    <value>Symbol, ostatné</value>
+    <value>Symbaĺ, jinšaje</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>Oddeľovač, riadok</value>
+    <value>Padzialiaĺnik, padzieł radkoŭ</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
-    <value>Oddeľovač, odstavec</value>
+    <value>Padzialiaĺnik, padzieł abzacaŭ</value>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
-    <value>Oddeľovač, medzera</value>
+    <value>Padzialiaĺnik, prahały</value>
   </data>
 </root>

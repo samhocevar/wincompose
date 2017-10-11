@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Esc</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Conversão</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Não-conversão</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -318,6 +324,12 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} em {0} ({1} sequências)</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>Geral</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Comportamento</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequências — WinCompose</value>
   </data>
@@ -371,5 +383,23 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Há atualizações disponíveis.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Sequências personalizadas</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Recarregar</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Permitir Teclas Simuladas</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Não ignorar teclas enviadas por outros programas tais como AutoHotKey e Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Prt Scrn</value>
   </data>
 </root>

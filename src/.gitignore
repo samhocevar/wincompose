@@ -4,13 +4,15 @@ WinCompose-*.exe
 obj/
 bin/
 # Visual Studio cruft
+.vs
 *.suo
 *.csproj.user
 *.vcxproj.user
 *.opensdf
 *.opendb
 *.sdf
-wincompose.VC.db
+*.VC.db
+packages
 # Misc
 settings.ini
 po/*.po~

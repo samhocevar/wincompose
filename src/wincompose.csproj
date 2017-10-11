@@ -10,6 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinCompose</RootNamespace>
     <AssemblyName>WinCompose</AssemblyName>
+    <TargetName>wincompose</TargetName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -41,6 +42,9 @@
     <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Emoji.Wpf, Version=0.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Emoji.Wpf.0.0.5-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="sysglobl" />
     <Reference Include="System" />
@@ -103,6 +107,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.be.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.be-BY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.be-BY.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Category.cs.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -369,6 +378,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.be.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.be-BY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.be-BY.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -525,6 +539,11 @@
     <EmbeddedResource Include="unicode\Category.be.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.be.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.be-BY.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.be-BY.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.cs.resx">
@@ -801,6 +820,11 @@
       <LastGenOutput>Text.be.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.be-BY.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.be-BY.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.cs.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.cs.Designer.cs</LastGenOutput>
@@ -936,6 +960,7 @@
       <LastGenOutput>Text.zh-CHT.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -967,6 +992,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <EmbeddedResource Include="build.config" />
+    <EmbeddedResource Include="res\keysymdef.h" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\contributors.html" />
