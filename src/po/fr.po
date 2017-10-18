@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-01-03 00:26+0000\n"
-"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
-"fr/>\n"
+"PO-Revision-Date: 2017-10-19 10:32+0000\n"
+"Last-Translator: Alban Dericbourg <a.dericbourg+github@gmail.com>\n"
+"Language-Team: French "
+"<https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.11-dev\n"
+"X-Generator: Weblate 2.17\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -76,13 +76,15 @@ msgstr "Échap"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
+#, fuzzy
 msgid "Conversion"
-msgstr ""
+msgstr "Conversion"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
+#, fuzzy
 msgid "Non-conversion"
-msgstr ""
+msgstr "Sans conversion"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -501,17 +503,21 @@ msgid "Reload"
 msgstr "Recharger"
 
 #: i18n/Text.resx:446 ID:AllowInjected
+#, fuzzy
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Autoriser l'émulation de frappe"
 
 #: i18n/Text.resx:449 ID:AllowInjectedToolTip
+#, fuzzy
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
+"Ne pas ignorer les frappes envoyées par d'autres logiciels comme AutoHotkey "
+"ou Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:452 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "Impr. écran"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
