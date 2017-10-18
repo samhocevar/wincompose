@@ -76,12 +76,33 @@
 
     <Grid Margin="8">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0">
-            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Categories}" Margin="8"/>
+            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Categories}" Margin="8,4"/>
+            <StackPanel DockPanel.Dock="Top" Margin="8,0">
+                <RadioButton Margin="4" GroupName="Category" Selector.IsSelected="True">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Unicode characters"/>
+                        <TextBlock Text="—" Margin="4,0,4,0"/>
+                        <TextBlock Text="ŵ Ǿ à Ꝏ Σ ⍾ ꟿ"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Margin="4" GroupName="Category">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Emoji"/>
+                        <TextBlock Text="—" Margin="4,0,4,0"/>
+                        <emoji:Image Text="☺" Height="18"/>
+                        <emoji:Image Text="♥" Height="18"/>
+                        <emoji:Image Text="🐨" Height="18"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Margin="4" GroupName="Category">
+                    <TextBlock Text="User macros"/>
+                </RadioButton>
+            </StackPanel>
             <StackPanel DockPanel.Dock="Bottom" Margin="8">
                 <ContentPresenter ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
                 <CheckBox Margin="0,4,0,0" Content="{x:Static i18n:Text.InSelectedCategories}" IsChecked="{Binding SearchInSelection}"/>
@@ -89,8 +110,8 @@
             <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                        <Setter Property="Padding" Value="4,8"/>
-                        <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance wc:CategoryViewModel}"/>
+                        <Setter Property="Padding" Value="4"/>
+                        <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
                 </ListBox.ItemContainerStyle>
@@ -98,11 +119,14 @@
                     <DataTemplate DataType="wc:CategoryViewModel">
                         <StackPanel>
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <!-- TODO: make this a tooltip instead? -->
+                            <!--
+                            <StackPanel Orientation="Horizontal" HorizonalAlignment="Right">
                                 <TextBlock Text="{Binding RangeStart, StringFormat=U+\{0:X4\}}" Style="{StaticResource SmallTextBlock}"/>
                                 <TextBlock Text="…" Style="{StaticResource SmallTextBlock}"/>
                                 <TextBlock Text="{Binding RangeEnd, StringFormat=U+\{0:X4\}}" Style="{StaticResource SmallTextBlock}"/>
                             </StackPanel>
+                            -->
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
