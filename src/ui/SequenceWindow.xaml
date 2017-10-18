@@ -1,4 +1,4 @@
-﻿<!--
+<!--
    - WinCompose — a compose key for Windows — http://wincompose.info/
    -
    - Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
@@ -45,7 +45,7 @@
         <!-- This DataTemplate contains a TextBox and a "clear text" button that can be used for the Search text input -->
         <DataTemplate x:Key="SearchText">
             <Grid>
-                <TextBox x:Name="SearchBox" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="SearchBox" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="4"/>
                 <DockPanel>
                     <Button DockPanel.Dock="Right" Click="ClearSearchClicked" Margin="4,0">
                         <Button.Template>
@@ -81,28 +81,36 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0">
-            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Categories}" Margin="8,4"/>
-            <StackPanel DockPanel.Dock="Top" Margin="8,0">
-                <RadioButton Margin="4" GroupName="Category" Selector.IsSelected="True">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Unicode characters"/>
-                        <TextBlock Text="—" Margin="4,0,4,0"/>
-                        <TextBlock Text="ŵ Ǿ à Ꝏ Σ ⍾ ꟿ"/>
-                    </StackPanel>
-                </RadioButton>
-                <RadioButton Margin="4" GroupName="Category">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Emoji"/>
-                        <TextBlock Text="—" Margin="4,0,4,0"/>
-                        <emoji:Image Text="☺" Height="18"/>
-                        <emoji:Image Text="♥" Height="18"/>
-                        <emoji:Image Text="🐨" Height="18"/>
-                    </StackPanel>
-                </RadioButton>
-                <RadioButton Margin="4" GroupName="Category">
-                    <TextBlock Text="User macros"/>
-                </RadioButton>
-            </StackPanel>
+            <GroupBox Header="{x:Static i18n:Text.Categories}" DockPanel.Dock="Top" VerticalAlignment="Top" Padding="0,4">
+                <StackPanel VerticalAlignment="Center">
+                    <RadioButton Margin="4" GroupName="Category"
+                                 IsChecked="{Binding Path=ActiveCategoryArray[0], Mode=TwoWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static i18n:Text.UnicodeCharacters}"/>
+                            <TextBlock Text="—" Margin="4,0,4,0"/>
+                            <TextBlock Text="ŵ Ǿ à Ꝏ Σ ⍾ ꟿ"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Margin="4" GroupName="Category"
+                                 IsChecked="{Binding Path=ActiveCategoryArray[1], Mode=TwoWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static i18n:Text.Emoji}"/>
+                            <TextBlock Text="—" Margin="4,0,4,0"/>
+                            <emoji:Image Text="☺" Height="18"/>
+                            <emoji:Image Text="♥" Height="18"/>
+                            <emoji:Image Text="🐨" Height="18"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Margin="4" GroupName="Category"
+                                 IsChecked="{Binding Path=ActiveCategoryArray[2], Mode=TwoWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static i18n:Text.UserMacros}"/>
+                            <TextBlock Text="—" Margin="4,0,4,0"/>
+                            <TextBlock Text="( ͡° ͜ʖ ͡°)"/>
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+            </GroupBox>
             <StackPanel DockPanel.Dock="Bottom" Margin="8">
                 <ContentPresenter ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
                 <CheckBox Margin="0,4,0,0" Content="{x:Static i18n:Text.InSelectedCategories}" IsChecked="{Binding SearchInSelection}"/>
