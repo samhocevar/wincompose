@@ -204,9 +204,6 @@
   <data name="Exit" xml:space="preserve">
     <value>結束</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>開發者：Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>按鍵系列</value>
   </data>
@@ -266,9 +263,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>複製字元</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>描述:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>套用</value>

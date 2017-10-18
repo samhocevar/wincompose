@@ -210,9 +210,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Выйсці</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>напісаў Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Пасьлядоўнасьці</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Капіяваці сымбаль</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Апісаньне:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Ужыць</value>

@@ -204,9 +204,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Luk</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>af Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvenser</value>
   </data>
@@ -236,9 +233,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Kopier tegn</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Beskrivelse:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Anvend</value>

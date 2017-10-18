@@ -210,9 +210,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Ukončit</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>vytvořil Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvence</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Kopírovat znak</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Popis:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Použít</value>

@@ -1,4 +1,4 @@
-//
+﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
 //  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>

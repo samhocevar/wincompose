@@ -10,14 +10,14 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2017-08-28 04:44+0000\n"
 "Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
-"Language-Team: Belarusian (latin) "
-"<https://hosted.weblate.org/projects/wincompose/master/be_Latn/>\n"
+"Language-Team: Belarusian (latin) <https://hosted.weblate.org/projects/"
+"wincompose/master/be_Latn/>\n"
 "Language: be@latin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.17-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
@@ -173,66 +173,67 @@ msgstr "Naviedać websajt"
 msgid "Exit"
 msgstr "Vyjści"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:234 ID:Obsolete036
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "napisaŭ Sam Hocevar <sam@hocevar.net>"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:234 ID:UnicodeCharacters
+#, fuzzy
+msgid "Unicode characters"
+msgstr "Skasavać usie nabranyja symbali"
 
-#: i18n/Text.resx:237 ID:Sequences
+#: i18n/Text.resx:238 ID:Sequences
 msgid "Sequences"
 msgstr "Paśliadoŭnaści"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:240 ID:Obsolete039
+#: i18n/Text.resx:241 ID:Obsolete039
 msgid "Sequence"
 msgstr "Kambinacyja"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:243 ID:Obsolete041
+#: i18n/Text.resx:244 ID:Obsolete041
 msgid "Unicode"
 msgstr "Unikod"
 
-#: i18n/Text.resx:246 ID:Search
+#: i18n/Text.resx:247 ID:Search
 msgid "Search Filter:"
 msgstr "Fiĺtar pošuku:"
 
-#: i18n/Text.resx:249 ID:ComposeKey
+#: i18n/Text.resx:250 ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Kampanavaĺnaja klaviša:"
 
-#: i18n/Text.resx:252 ID:ComposeKeyToolTip
+#: i18n/Text.resx:253 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
 msgstr "Vybiary klavišu, jakaja stanie Kampanavaĺnaj."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:255 ID:ResetDelay
+#: i18n/Text.resx:256 ID:ResetDelay
 msgid "Delay:"
 msgstr "Zatrymka:"
 
-#: i18n/Text.resx:259 ID:UnicodeInput
+#: i18n/Text.resx:260 ID:UnicodeInput
 msgid "Advanced Unicode input"
 msgstr "Prasunuty ŭvod Unikodu"
 
-#: i18n/Text.resx:262 ID:UnicodeInputToolTip
+#: i18n/Text.resx:263 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
-"Uvamknuć Unikodny ŭvod dlia ŭsich symbaliaŭ, navat tych, jakim nie "
-"pryznačana kampanavaĺnaje paśliadoŭnaści. Naprykład, hetaja paśliadoŭnaść "
-"vyviadzie symbaĺ U+1A3F: Compose U 1 A 3 F"
+"Uvamknuć Unikodny ŭvod dlia ŭsich symbaliaŭ, navat tych, jakim "
+"nie pryznačana kampanavaĺnaje paśliadoŭnaści. Naprykład, hetaja "
+"paśliadoŭnaść vyviadzie symbaĺ U+1A3F: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
-#: i18n/Text.resx:265 ID:InvalidSequences
+#: i18n/Text.resx:266 ID:InvalidSequences
 msgid "On invalid sequences"
 msgstr "Pry niapraviĺnych paśliadoŭnaściach"
 
-#: i18n/Text.resx:269 ID:CaseInsensitive
+#: i18n/Text.resx:270 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
 msgstr "Adstupać da ragistraniečutlivych supadzieńniaŭ"
 
-#: i18n/Text.resx:272 ID:CaseInsensitiveToolTip
+#: i18n/Text.resx:273 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
@@ -240,11 +241,11 @@ msgstr ""
 "Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, alie jość ta, što adroźnivajecca "
 "toĺki registram, to aŭtamatyčna vypraŭliać jaje."
 
-#: i18n/Text.resx:275 ID:DiscardOnInvalid
+#: i18n/Text.resx:276 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
 msgstr "Skasavać usie nabranyja symbali"
 
-#: i18n/Text.resx:278 ID:DiscardOnInvalidToolTip
+#: i18n/Text.resx:279 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
@@ -254,19 +255,19 @@ msgstr ""
 "symbali. Pavodlie zamoŭčańnia jany vyvodziacca tak, by kampanavaĺnaja "
 "klaviša nie naciskałaś."
 
-#: i18n/Text.resx:281 ID:BeepOnInvalid
+#: i18n/Text.resx:282 ID:BeepOnInvalid
 msgid "Emit a beep"
 msgstr "Vydavać hudok"
 
-#: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
+#: i18n/Text.resx:285 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr "Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, to vydać systemny huk."
 
-#: i18n/Text.resx:287 ID:Language
+#: i18n/Text.resx:288 ID:Language
 msgid "Interface language:"
 msgstr "Mova intarfejsu:"
 
-#: i18n/Text.resx:290 ID:LanguageToolTip
+#: i18n/Text.resx:291 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
@@ -275,33 +276,32 @@ msgstr ""
 "mova apieracyjnaj systemy."
 
 #. Close the settings window
-#: i18n/Text.resx:293 ID:Close
+#: i18n/Text.resx:294 ID:Close
 msgid "Close"
 msgstr "Začynić"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:297 ID:Obsolete050
+#: i18n/Text.resx:298 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Kapijavaci symbaĺ"
 
-#. Description of a Unicode character or group of characters
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:301 ID:Obsolete051
-msgid "Description:"
-msgstr "Apisańnie:"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:302 ID:Emoji
+msgid "Emoji"
+msgstr ""
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:305 ID:Apply
+#: i18n/Text.resx:306 ID:Apply
 msgid "Apply"
 msgstr "Užyć"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:309 ID:KeepOriginalKey
+#: i18n/Text.resx:310 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Zachavać zychodnyja pavodziny klavišy"
 
-#: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
+#: i18n/Text.resx:314 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
@@ -311,11 +311,11 @@ msgstr ""
 "Naprykład, spałuka Alt+Tab pracavaćmie pa-raniejšamu navat, kali Alt "
 "vykarystana jak kampanavaĺnaja klaviša."
 
-#: i18n/Text.resx:316 ID:InsertZwsp
+#: i18n/Text.resx:317 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Ustaŭliać prahały nuliavoj šyryni ŭ ofisnych prahramach"
 
-#: i18n/Text.resx:319 ID:InsertZwspToolTip
+#: i18n/Text.resx:320 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
@@ -325,39 +325,39 @@ msgstr ""
 "uvodu niekatorych unikodavych symbaliaŭ. Hetaja opcyja ŭstaŭliaje niabačny "
 "symbaĺ paślia ŭnikodavaha, kaby spravicca z henaj prykraściu."
 
-#: i18n/Text.resx:322 ID:EmulateCapsLock
+#: i18n/Text.resx:323 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Emuliavać «Caps Lock» vykarystoŭvajučy abiedźvie klavišy «Shift»"
 
-#: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
+#: i18n/Text.resx:326 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
 "Kali «Caps Lock» užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja "
-"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje ŭvamknuć «"
-"Caps Lock» naciskańniem abiedźviuch klavišaŭ «Shift» adnačasova."
+"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje ŭvamknuć "
+"«Caps Lock» naciskańniem abiedźviuch klavišaŭ «Shift» adnačasova."
 
-#: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:329 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
 msgstr "Klaviša «Shift» vymykaje «Caps Lock»"
 
-#: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
+#: i18n/Text.resx:332 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
 "Kali «Caps Lock» užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja "
-"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje vymknuć «"
-"Caps Lock» naciskańniem klavišy «Shift»."
+"pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje vymknuć "
+"«Caps Lock» naciskańniem klavišy «Shift»."
 
-#: i18n/Text.resx:334 ID:CapsLockCapitalizes
+#: i18n/Text.resx:335 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
 msgstr "«Caps Lock» zaŭsiody robić vialikimi litary"
 
-#: i18n/Text.resx:337 ID:CapsLockCapitalizesToolTip
+#: i18n/Text.resx:338 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
@@ -366,152 +366,153 @@ msgstr ""
 "«ź», zaŭsiody vyviadzie adpaviednuju vialikuju litaru, ŭ hetym vypadku «Ź»."
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:340 ID:Categories
+#: i18n/Text.resx:341 ID:Categories
 msgid "Categories"
 msgstr "Katehoryji"
 
-#: i18n/Text.resx:344 ID:InSelectedCategories
+#: i18n/Text.resx:345 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "U abranych katehoryjach"
 
 #. The title of the Options window
-#: i18n/Text.resx:347 ID:Options
+#: i18n/Text.resx:348 ID:Options
 msgid "Options — WinCompose"
 msgstr "Opcyji — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:351 ID:ShowOptions
+#: i18n/Text.resx:352 ID:ShowOptions
 msgid "Options…"
 msgstr "Opcyji…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:355 ID:TrayToolTip
+#: i18n/Text.resx:356 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} na {0} ({1} paśliadoŭnaściaŭ)"
 
 #. The “general” tab of the options window
-#: i18n/Text.resx:359 ID:General
+#: i18n/Text.resx:360 ID:General
 msgid "General"
 msgstr "Asnoŭnyja"
 
-#: i18n/Text.resx:363 ID:Behavior
+#: i18n/Text.resx:364 ID:Behavior
 msgid "Behavior"
 msgstr "Pavodziny"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:366 ID:WindowTitle
+#: i18n/Text.resx:367 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Pasliadoŭnasci — WinCompose"
 
-#: i18n/Text.resx:370 ID:UserMacros
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:371 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Makrasy karystaĺnika"
 
-#: i18n/Text.resx:373 ID:DisabledToolTip
+#: i18n/Text.resx:375 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "WinCompose adkliučany"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:376 ID:KeyInsert
+#: i18n/Text.resx:378 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:380 ID:TestTyping
+#: i18n/Text.resx:382 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Praviercie nabor:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:384 ID:Tweaks
+#: i18n/Text.resx:386 ID:Tweaks
 msgid "Tweaks"
 msgstr "Paliapšeńni"
 
-#: i18n/Text.resx:388 ID:Milliseconds
+#: i18n/Text.resx:390 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(ms)"
 
 #. About box menu entry
-#: i18n/Text.resx:391 ID:About
+#: i18n/Text.resx:393 ID:About
 msgid "About"
 msgstr "Pra pragramu"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:395 ID:Download
+#: i18n/Text.resx:397 ID:Download
 msgid "Download WinCompose {0}"
 msgstr "Spampavaci WinCompose {0}"
 
 #. Window title of the About box
-#: i18n/Text.resx:399 ID:AboutBoxTitle
+#: i18n/Text.resx:401 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "Pra WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:403 ID:Programming
+#: i18n/Text.resx:405 ID:Programming
 msgid "Programming"
 msgstr "Prahramavańnie"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:407 ID:Translators
+#: i18n/Text.resx:409 ID:Translators
 msgid "Translation"
 msgstr "Pierakład"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:411 ID:Contributors
+#: i18n/Text.resx:413 ID:Contributors
 msgid "Special Thanks"
 msgstr "Padziaki"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:415 ID:License
+#: i18n/Text.resx:417 ID:License
 msgid "License"
 msgstr "Licenzija"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:419 ID:NeedRestart
+#: i18n/Text.resx:421 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 "WinCompose nieabchodna pierazapuścić, kab niekatoryja źmieny nabyli mocy."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:423 ID:ReportBug
+#: i18n/Text.resx:425 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Paviedamić pra pamyłku"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:427 ID:Help
+#: i18n/Text.resx:429 ID:Help
 msgid "Help"
 msgstr "Dapamoha"
 
 #. Message displayed in the systray tooltip.
-#: i18n/Text.resx:431 ID:UpdatesToolTip
+#: i18n/Text.resx:433 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr "Abnaŭlieńni najaŭnyja."
 
-#: i18n/Text.resx:435 ID:UserDefinedSequences
+#: i18n/Text.resx:437 ID:UserDefinedSequences
 msgid "User-defined sequences"
 msgstr "Pasliadoŭnaści karystaĺnika"
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
+#: i18n/Text.resx:440 ID:UserDefinedSequencesEdit
 msgid "Edit"
 msgstr "Pravić"
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:442 ID:UserDefinedSequencesReload
+#: i18n/Text.resx:444 ID:UserDefinedSequencesReload
 msgid "Reload"
 msgstr "Pieračytać"
 
-#: i18n/Text.resx:446 ID:AllowInjected
+#: i18n/Text.resx:448 ID:AllowInjected
 msgid "Allow Injected Keys"
 msgstr "Dazvolić upravadžanyja klavišy"
 
-#: i18n/Text.resx:449 ID:AllowInjectedToolTip
+#: i18n/Text.resx:451 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
 "Nie ignaravać klavišy dasłanyja jinšymi pragramami, jak «AutoHotkey» ci "
 "«Synergy»"
 
 #. The name of the “Print Screen” key on the keyboard
-#: i18n/Text.resx:452 ID:KeyPrint
+#: i18n/Text.resx:454 ID:KeyPrint
 msgid "Prt Scrn"
 msgstr "«Print Screen»"
 
@@ -702,6 +703,12 @@ msgstr "Paslia hetaha vy zmožacie viarnucca da praciahu ŭstalioŭki."
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
 msgstr "Nieabchodnyja pravy administratara. Pamyłka: %d"
+
+#~ msgid "by Sam Hocevar <sam@hocevar.net>"
+#~ msgstr "napisaŭ Sam Hocevar <sam@hocevar.net>"
+
+#~ msgid "Description:"
+#~ msgstr "Apisańnie:"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Ignarawać symbali ź niaprawiĺnych paśliadoŭnaściaŭ"

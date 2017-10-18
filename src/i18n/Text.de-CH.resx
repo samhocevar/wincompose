@@ -204,9 +204,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Eliri</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Makroklavoj</value>
   </data>
@@ -266,9 +263,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Kopii signon</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Priskribo:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apliki</value>

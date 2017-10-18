@@ -210,9 +210,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Esci</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>di Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenze</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Copia carattere</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Descrizione:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Applica</value>

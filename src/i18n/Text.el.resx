@@ -204,9 +204,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Έξοδος</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>από τον Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Ακολουθίες</value>
   </data>
@@ -266,9 +263,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Αντιγραφή χαρακτήρα</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Περιγραφή:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Εφαρμογή</value>

@@ -210,9 +210,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Välju</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>autorilt Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Kombinatsioonid</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Copeeri sümbol</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Kirjeldus:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Rakenda</value>
