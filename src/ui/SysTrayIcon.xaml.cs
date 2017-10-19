@@ -44,7 +44,6 @@ namespace WinCompose
         {
             InitializeComponent();
 
-            (new DebugWindow()).Show();
             // Set the data context for the menu, not for our empty shell class
             ContextMenu.DataContext = this;
 
@@ -58,6 +57,10 @@ namespace WinCompose
             m_icon.Visible = true;
             m_icon.Click += NotifyiconClicked;
             m_icon.DoubleClick += NotifyiconDoubleclicked;
+
+            // Temporary
+            m_debugwindow = new DebugWindow();
+            m_debugwindow.Show();
 
             // XXX: disabled for now, as this feature is a bit controversial
             //SysTray.AlwaysShow("wincompose[.]exe");
@@ -171,6 +174,7 @@ namespace WinCompose
         private WinForms.NotifyIcon m_icon;
         private SequenceWindow m_sequencewindow;
         private SettingsWindow m_optionswindow;
+        private DebugWindow m_debugwindow;
 
         private System.Drawing.Icon GetCurrentIcon()
         {
@@ -279,9 +283,9 @@ namespace WinCompose
             }
         }
 
-        public bool IsDisabled { get { return Composer.IsDisabled(); } }
-        public bool HasNewerVersion { get { return Updater.HasNewerVersion(); } }
-        public string DownloadHeader { get { return string.Format(i18n.Text.Download, Updater.Get("Latest") ?? ""); } }
+        public bool IsDisabled => Composer.IsDisabled();
+        public bool HasNewerVersion => Updater.HasNewerVersion();
+        public string DownloadHeader => string.Format(i18n.Text.Download, Updater.Get("Latest") ?? "");
 
         private void UpdaterStateChanged(object sender, EventArgs e)
         {

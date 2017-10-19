@@ -10,7 +10,9 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System.Collections.Specialized;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace WinCompose
 {
@@ -23,7 +25,19 @@ namespace WinCompose
         {
             ShowInTaskbar = false;
             InitializeComponent();
-            //DataContext = new DebugWindowViewModel();
+
+            Log.Entries.CollectionChanged += OnEntriesChanged;
+            DataContext = Log.Entries;
+        }
+
+        ~DebugWindow()
+        {
+            Log.Entries.CollectionChanged -= OnEntriesChanged;
+        }
+
+        private void OnEntriesChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            // FIXME: find scrollviewer and call ScrollToEnd() on it
         }
     }
 }

@@ -12,19 +12,45 @@
 //
 
 using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace WinCompose
 {
 
-static class Log
+public class PropertyChangedBase : INotifyPropertyChanged
 {
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+
+public class LogEntry : PropertyChangedBase
+{
+    public DateTime DateTime { get; set; }
+    public string Message { get; set; }
+}
+
+public static class Log
+{
+    private static ObservableCollection<LogEntry> m_logs = new ObservableCollection<LogEntry>();
+    public static ObservableCollection<LogEntry> Entries => m_logs;
+
     public static void Debug(string format, params object[] args)
     {
+        DateTime date = DateTime.Now;
+        string msg = string.Format(format, args);
+
+        while (m_logs.Count > 100)
+            m_logs.RemoveAt(0);
+        m_logs.Add(new LogEntry() { DateTime = date, Message = msg });
+
 #if DEBUG
-        string msg = string.Format("{0:yyyy/MM/dd HH:mm:ss.fff} {1}",
-                                   DateTime.Now, string.Format(format, args));
-        System.Diagnostics.Debug.WriteLine(msg);
+        string msgf = string.Format("{0:yyyy/MM/dd HH:mm:ss.fff} {1}", date, msg);
+        System.Diagnostics.Debug.WriteLine(msgf);
 #endif
     }
 }
