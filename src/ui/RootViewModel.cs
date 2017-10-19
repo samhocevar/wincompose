@@ -1,4 +1,4 @@
-//
+﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
 //  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
@@ -23,9 +23,9 @@ namespace WinCompose
 {
     public class RootViewModel : ViewModelBase
     {
-        private string searchText;
-        private SearchTokens searchTokens = new SearchTokens(null);
-        private bool searchInSelection;
+        private string m_search_text;
+        private SearchTokens m_search_tokens = new SearchTokens(null);
+        private bool m_search_in_selection;
 
         public RootViewModel()
         {
@@ -53,6 +53,8 @@ namespace WinCompose
                 sortedCategories.Add(category.RangeEnd, category);
             }
 
+            // FIXME: make this a utility function AddSequence() that also
+            // creates and sorts categories on the fly.
             var sequences = new List<SequenceViewModel>();
             foreach (var desc in Settings.GetSequenceDescriptions())
             {
@@ -69,10 +71,9 @@ namespace WinCompose
 
             var nonEmptyCategories = new List<CategoryViewModel>();
             foreach (var category in categories)
-            {
                 if (!category.IsEmpty)
                     nonEmptyCategories.Add(category);
-            }
+
             Categories = nonEmptyCategories;
 
             Sequences = sequences;
@@ -83,37 +84,41 @@ namespace WinCompose
 
         public static RootViewModel Instance { get; private set; }
 
+        private bool[] m_active_category_array = new bool[] { true, false, false };
+        public bool[] ActiveCategoryArray => m_active_category_array;
+        public int ActiveCategory => Array.IndexOf(ActiveCategoryArray, true);
+
         public IEnumerable<CategoryViewModel> Categories { get; private set; }
 
         public IEnumerable<SequenceViewModel> Sequences { get; private set; }
 
-        public string SearchText { get { return searchText; } set { SetValue(ref searchText, value, "SearchText", RefreshSearch); } }
+        public string SearchText { get { return m_search_text; } set { SetValue(ref m_search_text, value, "SearchText", RefreshSearch); } }
 
-        public bool SearchInSelection { get { return searchInSelection; } set { SetValue(ref searchInSelection, value, "SearchInSelection", x => RefreshFilters()); } }
+        public bool SearchInSelection { get { return m_search_in_selection; } set { SetValue(ref m_search_in_selection, value, "SearchInSelection", x => RefreshFilters()); } }
 
         public void RefreshFilters()
         {
-            var collectionView = CollectionViewSource.GetDefaultView(Sequences);
-            collectionView.Filter = FilterFunc;
-            collectionView.Refresh();
+            var collection_view = CollectionViewSource.GetDefaultView(Sequences);
+            collection_view.Filter = FilterFunc;
+            collection_view.Refresh();
         }
 
         private void RefreshSearch(string text)
         {
-            searchTokens = new SearchTokens(text);
+            m_search_tokens = new SearchTokens(text);
             RefreshFilters();
         }
 
         private bool FilterFunc(object obj)
         {
             var sequence = (SequenceViewModel)obj;
-            if (searchTokens.IsEmpty)
+            if (m_search_tokens.IsEmpty)
                 return sequence.Category.IsSelected;
 
             if (SearchInSelection)
-                return sequence.Category.IsSelected && sequence.Match(searchTokens);
+                return sequence.Category.IsSelected && sequence.Match(m_search_tokens);
 
-            return sequence.Match(searchTokens);
+            return sequence.Match(m_search_tokens);
         }
     }
 }

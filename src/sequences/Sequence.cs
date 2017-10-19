@@ -194,7 +194,7 @@ public class SequenceTree
         // Otherwise, check for generic Unicode entry prefix
         if (Settings.UnicodeInput.Value)
         {
-            var sequenceString = sequence.ToString().ToLower(CultureInfo.InvariantCulture);
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
             return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
                 && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
         }
@@ -215,7 +215,7 @@ public class SequenceTree
         // Otherwise, check for generic Unicode sequence
         if (Settings.UnicodeInput.Value)
         {
-            var sequenceString = sequence.ToString().ToLower(CultureInfo.InvariantCulture);
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
             return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
                     && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
         }
@@ -237,7 +237,7 @@ public class SequenceTree
         // Otherwise, check for a generic Unicode sequence
         if (Settings.UnicodeInput.Value)
         {
-            var sequenceString = sequence.ToString().ToLower(CultureInfo.InvariantCulture);
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
             var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
             if (m.Success)
             {

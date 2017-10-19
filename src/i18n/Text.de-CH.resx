@@ -204,9 +204,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Eliri</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Makroklavoj</value>
   </data>
@@ -267,9 +264,6 @@
   <data name="Obsolete050" xml:space="preserve">
     <value>Kopii signon</value>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Priskribo:</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Apliki</value>
   </data>
@@ -316,7 +310,7 @@
     <value>Agordoj…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} en {0} ({1} makroklavo(j))</value>
+    <value>WinCompose v{2} en {0} ({1} makroklavoj)</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Makroklavoj - WinCompose</value>

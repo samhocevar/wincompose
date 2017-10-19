@@ -18,6 +18,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i18n="clr-namespace:WinCompose.i18n"
         xmlns:wc="clr-namespace:WinCompose"
+        xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
         Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="600"
         Icon="/WinCompose;component/res/key_compose.png" Closing="CloseWindowClicked">
@@ -44,7 +45,7 @@
         <!-- This DataTemplate contains a TextBox and a "clear text" button that can be used for the Search text input -->
         <DataTemplate x:Key="SearchText">
             <Grid>
-                <TextBox x:Name="SearchBox" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="SearchBox" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="4"/>
                 <DockPanel>
                     <Button DockPanel.Dock="Right" Click="ClearSearchClicked" Margin="4,0">
                         <Button.Template>
@@ -54,7 +55,8 @@
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
-                        <Path Width="12" Height="12" Stretch="Fill" Fill="#FF000000" Data="F1 M 26.9166,22.1667L 37.9999,33.25L 49.0832,22.1668L 53.8332,26.9168L 42.7499,38L 53.8332,49.0834L 49.0833,53.8334L 37.9999,42.75L 26.9166,53.8334L 22.1666,49.0833L 33.25,38L 22.1667,26.9167L 26.9166,22.1667 Z "/>
+                        <TextBlock FontSize="10" VerticalAlignment="Center" Text="✖"
+                                   FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                     </Button>
                     <TextBlock x:Name="Watermark" Text="{x:Static i18n:Text.Search}" VerticalAlignment="Center"
         				Margin="8,0" FontStyle="Italic" Foreground="DarkGray" Visibility="Collapsed" IsHitTestVisible="False"/>
@@ -74,12 +76,41 @@
 
     <Grid Margin="8">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0">
-            <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Categories}" Margin="8"/>
+            <GroupBox Header="{x:Static i18n:Text.Categories}" DockPanel.Dock="Top" VerticalAlignment="Top" Padding="0,4">
+                <StackPanel VerticalAlignment="Center">
+                    <RadioButton Margin="4" GroupName="Category"
+                                 IsChecked="{Binding Path=ActiveCategoryArray[0], Mode=TwoWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static i18n:Text.UnicodeCharacters}"/>
+                            <TextBlock Text="—" Margin="4,0,4,0"/>
+                            <TextBlock Text="ŵ Ǿ à Ꝏ Σ ⍾ ꟿ"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Margin="4" GroupName="Category"
+                                 IsChecked="{Binding Path=ActiveCategoryArray[1], Mode=TwoWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static i18n:Text.Emoji}"/>
+                            <TextBlock Text="—" Margin="4,0,4,0"/>
+                            <emoji:Image Text="☺" Height="18"/>
+                            <emoji:Image Text="♥" Height="18"/>
+                            <emoji:Image Text="🐨" Height="18"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Margin="4" GroupName="Category"
+                                 IsChecked="{Binding Path=ActiveCategoryArray[2], Mode=TwoWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static i18n:Text.UserMacros}"/>
+                            <TextBlock Text="—" Margin="4,0,4,0"/>
+                            <TextBlock Text="( ͡° ͜ʖ ͡°)"/>
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+            </GroupBox>
             <StackPanel DockPanel.Dock="Bottom" Margin="8">
                 <ContentPresenter ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
                 <CheckBox Margin="0,4,0,0" Content="{x:Static i18n:Text.InSelectedCategories}" IsChecked="{Binding SearchInSelection}"/>
@@ -87,8 +118,8 @@
             <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                        <Setter Property="Padding" Value="4,8"/>
-                        <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance wc:CategoryViewModel}"/>
+                        <Setter Property="Padding" Value="4"/>
+                        <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
                 </ListBox.ItemContainerStyle>
@@ -96,11 +127,14 @@
                     <DataTemplate DataType="wc:CategoryViewModel">
                         <StackPanel>
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <!-- TODO: make this a tooltip instead? -->
+                            <!--
+                            <StackPanel Orientation="Horizontal" HorizonalAlignment="Right">
                                 <TextBlock Text="{Binding RangeStart, StringFormat=U+\{0:X4\}}" Style="{StaticResource SmallTextBlock}"/>
                                 <TextBlock Text="…" Style="{StaticResource SmallTextBlock}"/>
                                 <TextBlock Text="{Binding RangeEnd, StringFormat=U+\{0:X4\}}" Style="{StaticResource SmallTextBlock}"/>
                             </StackPanel>
+                            -->
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -111,7 +145,10 @@
 
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
-            <ListBox Margin="8" ItemsSource="{Binding Sequences}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VirtualizingStackPanel.VirtualizationMode="Recycling">
+            <ListBox Margin="8" ItemsSource="{Binding Sequences}"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     VirtualizingStackPanel.VirtualizationMode="Standard">
+                <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -122,16 +159,16 @@
                         <DockPanel Margin="0,2">
                             <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
                                 <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
-                                    <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
+                                    <!-- The small character box followed by the large toolkit -->
+                                    <emoji:Image Text="{Binding Result}" Width="32" Height="32" Background="Transparent"
+                                                 FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                                     <Viewbox.ToolTip>
-                                        <Grid Height="200" MinWidth="200">
-                                            <Viewbox>
-                                                <TextBlock Text="{Binding Result}" Foreground="Black" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
-                                            </Viewbox>
-                                        </Grid>
+                                        <emoji:Image Text="{Binding Result}" Width="200" Height="200"
+                                                     FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                                     </Viewbox.ToolTip>
                                 </Viewbox>
                             </Border>
+                            <!-- The sequence, printed as key icons -->
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
                                 <Border Width="32" Height="32">
                                     <Border.Background>

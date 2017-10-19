@@ -230,8 +230,9 @@
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>by Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode characters</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros)</comment>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequences</value>
@@ -297,9 +298,9 @@
     <value>Copy Character</value>
     <comment>Copy character to the clipboard</comment>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Description:</value>
-    <comment>Description of a Unicode character or group of characters</comment>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros)</comment>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
@@ -368,6 +369,7 @@
   </data>
   <data name="UserMacros" xml:space="preserve">
     <value>User-defined macros</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros)</comment>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose is disabled</value>
@@ -447,5 +449,9 @@
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>Do not ignore keys sent by other software like AutoHotkey or Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Prt Scrn</value>
+    <comment>The name of the “Print Screen” key on the keyboard</comment>
   </data>
 </root>

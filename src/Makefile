@@ -17,12 +17,15 @@ TXT = rules/Xorg.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
-EXE = bin/$(CONFIG)/WinCompose.exe
+EXE = bin/$(CONFIG)/wincompose.exe
+DLL = bin/$(CONFIG)/Emoji.Wpf.dll
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
-DEVENV = "$(VS140COMNTOOLS)\\..\\..\\Common7\\IDE\\devenv.com"
+# XXX: this is necessary until vswhere.exe actually works
+VS150COMNTOOLS = C:\\Program\ Files\ \(x86\)\\Microsoft\ Visual\ Studio\\2017\\Community\\Common7\\Tools
+DEVENV = $(VS150COMNTOOLS)\\..\\..\\Common7\\IDE\\devenv.com
 MSGMERGE = msgmerge
 
 all: clean installer portable
@@ -52,12 +55,12 @@ portable: $(EXE)
 	mkdir -p $(PORTABLE:.zip=)/rules
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
 	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/WinCompose.resources.dll $(PORTABLE:.zip=)/$${L}/; done
-	cp $(EXE) $(PORTABLE:.zip=)
+	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
-bin/$(CONFIG)/WinCompose.exe:
+bin/$(CONFIG)/wincompose.exe:
 	@mkdir -p bin/$(CONFIG)
 	@rm -f $@
 	$(DEVENV) wincompose.sln //build $(CONFIG) //project wincompose.csproj

@@ -118,207 +118,282 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Detectar automáticamente</value>
+    <value>Aŭtavyznačeńnie</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Alt izquierda</value>
+    <value>Lievy Aĺt</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt derecha</value>
+    <value>Pravy Aĺt</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Control izquierda</value>
+    <value>Lievy Kontrol</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Control derecha</value>
+    <value>Pravy Kontrol</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Windows izquierda</value>
+    <value>Lievy Windoŭs</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Windows derecha</value>
+    <value>Pravy Windoŭs</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
-    <value>Bloq Mayús</value>
+    <value>«Caps Lock»</value>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
-    <value>Bloq Num</value>
+    <value>«Num Lock»</value>
   </data>
   <data name="KeyPause" xml:space="preserve">
-    <value>Pausa</value>
+    <value>Paŭse</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>Menú</value>
+    <value>Meniu</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+    <value>«Escape»</value>
+  </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Kanviertavać</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Nie kanviertavać</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
-    <value>Bloq Despl</value>
+    <value>«Scroll Lock»</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>Espacio</value>
+    <value>Prahal</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
-    <value>Entrar</value>
+    <value>Return</value>
   </data>
   <data name="Obsolete016" xml:space="preserve">
-    <value>Acento grave `</value>
+    <value>Gravis `</value>
   </data>
   <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisegundos</value>
+    <value>½ siakundy</value>
   </data>
   <data name="Obsolete018" xml:space="preserve">
-    <value>1 segundo</value>
+    <value>1 siakunda</value>
   </data>
   <data name="Obsolete019" xml:space="preserve">
-    <value>2 segundos</value>
+    <value>2 siakundy</value>
   </data>
   <data name="Obsolete020" xml:space="preserve">
-    <value>3 segundos</value>
+    <value>3 siakundy</value>
   </data>
   <data name="Obsolete021" xml:space="preserve">
-    <value>5 segundos</value>
+    <value>5 siakundaŭ</value>
   </data>
   <data name="Obsolete022" xml:space="preserve">
-    <value>10 segundos</value>
+    <value>10 siakund</value>
   </data>
   <data name="Obsolete023" xml:space="preserve">
-    <value>Ninguno</value>
+    <value>Niama</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Mostrar secuencias…</value>
+    <value>Pakazać paśliadoŭnaści…</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Desactivar</value>
+    <value>Wymknuć</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Reiniciar</value>
+    <value>Pierazapusk</value>
   </data>
   <data name="Obsolete027" xml:space="preserve">
-    <value>Historial</value>
+    <value>Historyja</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Visitar sitio web</value>
+    <value>Naviedać websajt</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Salir</value>
+    <value>Vyjści</value>
   </data>
   <data name="Sequences" xml:space="preserve">
-    <value>Secuencias</value>
+    <value>Paśliadoŭnaści</value>
   </data>
   <data name="Obsolete039" xml:space="preserve">
-    <value>Secuencia</value>
+    <value>Kambinacyja</value>
   </data>
   <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
+    <value>Unikod</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Filtro de búsqueda:</value>
+    <value>Fiĺtar pošuku:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Tecla Compose:</value>
+    <value>Kampanavaĺnaja klaviša:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Selecciona la tecla que actuará como Compose.</value>
+    <value>Vybiary klavišu, jakaja stanie Kampanavaĺnaj.</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
-    <value>Retardo:</value>
+    <value>Zatrymka:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
-    <value>Ingreso de Unicode avanzado</value>
+    <value>Prasunuty ŭvod Unikodu</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Activar ingreso de Unicode para todos los carácteres, incluso aquellos que no tengansecuencia de composición definida. Por ejemplo, esta secuencia producirá el carácter U+1A3F: Compose U 1 A 3 F</value>
+    <value>Uvamknuć Unikodny ŭvod dlia ŭsich symbaliaŭ, navat tych, jakim nie pryznačana kampanavaĺnaje paśliadoŭnaści. Naprykład, hetaja paśliadoŭnaść vyviadzie symbaĺ U+1A3F: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>Al ingresar secuencias inválidas</value>
+    <value>Pry niapraviĺnych paśliadoŭnaściach</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>Revertir a comparación de secuencias sin diferenciar entre mayúsculas y minúsculas</value>
+    <value>Adstupać da ragistraniečutlivych supadzieńniaŭ</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>Si la secuencia ingresa no existe, pero hay una que difiere en las mayúsculas o minúsculas, corregirla automáticamente.</value>
+    <value>Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, alie jość ta, što adroźnivajecca toĺki registram, to aŭtamatyčna vypraŭliać jaje.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Descartar todos los carácteres ingresados</value>
+    <value>Skasavać usie nabranyja symbali</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Si la secuencia ingresada no existe, descartar todos los caracteres. El comportamiento por defecto es mostrar los caracteres como si no se hubiese usado la tecla Compose.</value>
+    <value>Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, to skasavać usie nabranyja symbali. Pavodlie zamoŭčańnia jany vyvodziacca tak, by kampanavaĺnaja klaviša nie naciskałaś.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Emitir un sonido</value>
+    <value>Vydavać hudok</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>Si la secuencia ingresada no existe, emitir un sonido del sistema.</value>
+    <value>Kali ŭviedzienaja paśliadoŭnaść nia jsnuje, to vydać systemny huk.</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Idioma de la interfaz:</value>
+    <value>Mova intarfejsu:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Selecciona el idioma para la interfaz de WinCompose. Por defecto, se utiliza el idioma del sistema operativo.</value>
+    <value>Vybiary movu intarfejsu WinCompose. Pavodlie zmoŭčańnia vykarystoŭvajecca mova apieracyjnaj systemy.</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Cerrar</value>
+    <value>Začynić</value>
   </data>
   <data name="Obsolete050" xml:space="preserve">
-    <value>Copiar carácter</value>
+    <value>Kapijavaci symbaĺ</value>
   </data>
   <data name="Apply" xml:space="preserve">
-    <value>Aplicar</value>
+    <value>Užyć</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Mantener funcionamiento original de la tecla Compose</value>
+    <value>Zachavać zychodnyja pavodziny klavišy</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>WinCompose hará su mejor esfuerzo en retener el comportamiento original del teclado. Por ejemplo, Alt-Tab todavía funcionará, incluso si Alt fuese la tecla Compose.</value>
+    <value>Heta nakazvaje WinCompose imknucca zachavać pieršasnyja pavodziny klavišaŭ. Naprykład, spałuka Alt+Tab pracavaćmie pa-raniejšamu navat, kali Alt vykarystana jak kampanavaĺnaja klaviša.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Insertar espacios de anchura cero en las programas de Office</value>
+    <value>Ustaŭliać prahały nuliavoj šyryni ŭ ofisnych prahramach</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Las aplicaciones de Microsoft Office tienden a cambiar la fuente del documento cuando ciertos caracteres de Unicode son ingresados. Está función insertará un carácter invisible después del carácter de Unicode para evitar este defecto.</value>
+    <value>Dadatki «Microsoft Office» časam mianiajuć šryft dakumienta na liatu pad čas uvodu niekatorych unikodavych symbaliaŭ. Hetaja opcyja ŭstaŭliaje niabačny symbaĺ paślia ŭnikodavaha, kaby spravicca z henaj prykraściu.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emular Bloq Mayús usando ambas teclas Mayús</value>
+    <value>Emuliavać «Caps Lock» vykarystoŭvajučy abiedźvie klavišy «Shift»</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Si se usa Bloq Mayús como tecla Compose, el comportamiento original de la tecla no estará disponible. Esta función permite activar Bloq Mayús pulsando ambas teclas Mayús al mismo tiempo.</value>
+    <value>Kali «Caps Lock» užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje ŭvamknuć «Caps Lock» naciskańniem abiedźviuch klavišaŭ «Shift» adnačasova.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Desactivar Bloq Mayús con la tecla Mayús</value>
+    <value>Klaviša «Shift» vymykaje «Caps Lock»</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Si se usa Bloq Mayús como tecla Compose, el comportamiento original de la tecla no estará disponible. Esta función permite desactivar Bloq Mayús pulsando la tecla Mayús.</value>
+    <value>Kali «Caps Lock» užyvajecca jak kampanavaĺnaja klaviša, pieršapačatkovyja pavodziny klavišy stajuć niedastupnymi. Hetaja opcyja dazvaliaje vymknuć «Caps Lock» naciskańniem klavišy «Shift».</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
-    <value>Bloq Mayús siempre escribirá letras en mayúscula</value>
+    <value>«Caps Lock» zaŭsiody robić vialikimi litary</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Cuando Bloq Mayús está activado, el escribir una letra acentuada como &quot;é&quot; siempre mostrará la letra mayúscula correspondiente, en este caso &quot;É&quot;.</value>
+    <value>Kali «Caps Lock» uvamkniona, nabirańnie dyjakrytyzavanaj litary, takoj jak «ź», zaŭsiody vyviadzie adpaviednuju vialikuju litaru, ŭ hetym vypadku «Ź».</value>
   </data>
   <data name="Categories" xml:space="preserve">
-    <value>Categorías</value>
+    <value>Katehoryji</value>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
-    <value>En las categorías seleccionadas</value>
+    <value>U abranych katehoryjach</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Opciones — WinCompose</value>
+    <value>Opcyji — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
-    <value>Opciones…</value>
+    <value>Opcyji…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} en {0} ({1} secuencias)</value>
+    <value>WinCompose v{2} na {0} ({1} paśliadoŭnaściaŭ)</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Asnoŭnyja</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Pavodziny</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Secuencias — WinCompose</value>
+    <value>Pasliadoŭnasci — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Macros personalizadas</value>
+    <value>Makrasy karystaĺnika</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose adkliučany</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Praviercie nabor:</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Paliapšeńni</value>
+  </data>
+  <data name="Milliseconds" xml:space="preserve">
+    <value>(ms)</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>Acerca de</value>
+    <value>Pra pragramu</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Spampavaci WinCompose {0}</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Pra WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Prahramavańnie</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Pierakład</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Padziaki</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Licenzija</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose nieabchodna pierazapuścić, kab niekatoryja źmieny nabyli mocy.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Paviedamić pra pamyłku</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Dapamoha</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Abnaŭlieńni najaŭnyja.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Pasliadoŭnaści karystaĺnika</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Pravić</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Pieračytać</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Dazvolić upravadžanyja klavišy</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Nie ignaravać klavišy dasłanyja jinšymi pragramami, jak «AutoHotkey» ci «Synergy»</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>«Print Screen»</value>
   </data>
 </root>

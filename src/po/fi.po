@@ -172,47 +172,48 @@ msgstr "Käy verkkosivuilla"
 msgid "Exit"
 msgstr "Poistu"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:234 ID:Obsolete036
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "tekijä: Sam Hocevar <sam@hocevar.net>"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:234 ID:UnicodeCharacters
+#, fuzzy
+msgid "Unicode characters"
+msgstr "Kopioi merkki"
 
-#: i18n/Text.resx:237 ID:Sequences
+#: i18n/Text.resx:238 ID:Sequences
 msgid "Sequences"
 msgstr "Merkkisarjat"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:240 ID:Obsolete039
+#: i18n/Text.resx:241 ID:Obsolete039
 msgid "Sequence"
 msgstr "Merkkisarja"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:243 ID:Obsolete041
+#: i18n/Text.resx:244 ID:Obsolete041
 msgid "Unicode"
 msgstr "Unicode"
 
-#: i18n/Text.resx:246 ID:Search
+#: i18n/Text.resx:247 ID:Search
 msgid "Search Filter:"
 msgstr "Hakusuodatin:"
 
-#: i18n/Text.resx:249 ID:ComposeKey
+#: i18n/Text.resx:250 ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Compose-näppäin:"
 
-#: i18n/Text.resx:252 ID:ComposeKeyToolTip
+#: i18n/Text.resx:253 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
 msgstr ""
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:255 ID:ResetDelay
+#: i18n/Text.resx:256 ID:ResetDelay
 msgid "Delay:"
 msgstr "Viive:"
 
-#: i18n/Text.resx:259 ID:UnicodeInput
+#: i18n/Text.resx:260 ID:UnicodeInput
 msgid "Advanced Unicode input"
 msgstr ""
 
-#: i18n/Text.resx:262 ID:UnicodeInputToolTip
+#: i18n/Text.resx:263 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
@@ -220,269 +221,274 @@ msgid ""
 msgstr ""
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
-#: i18n/Text.resx:265 ID:InvalidSequences
+#: i18n/Text.resx:266 ID:InvalidSequences
 msgid "On invalid sequences"
 msgstr "Virheellisissä sarjoissa"
 
-#: i18n/Text.resx:269 ID:CaseInsensitive
+#: i18n/Text.resx:270 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
 msgstr ""
 
-#: i18n/Text.resx:272 ID:CaseInsensitiveToolTip
+#: i18n/Text.resx:273 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
 
-#: i18n/Text.resx:275 ID:DiscardOnInvalid
+#: i18n/Text.resx:276 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
 msgstr ""
 
-#: i18n/Text.resx:278 ID:DiscardOnInvalidToolTip
+#: i18n/Text.resx:279 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
 
-#: i18n/Text.resx:281 ID:BeepOnInvalid
+#: i18n/Text.resx:282 ID:BeepOnInvalid
 msgid "Emit a beep"
 msgstr ""
 
-#: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
+#: i18n/Text.resx:285 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr ""
 
-#: i18n/Text.resx:287 ID:Language
+#: i18n/Text.resx:288 ID:Language
 msgid "Interface language:"
 msgstr "Käyttöliittymän kieli:"
 
-#: i18n/Text.resx:290 ID:LanguageToolTip
+#: i18n/Text.resx:291 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
 
 #. Close the settings window
-#: i18n/Text.resx:293 ID:Close
+#: i18n/Text.resx:294 ID:Close
 msgid "Close"
 msgstr "Sulje"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:297 ID:Obsolete050
+#: i18n/Text.resx:298 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Kopioi merkki"
 
-#. Description of a Unicode character or group of characters
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:301 ID:Obsolete051
-msgid "Description:"
-msgstr "Kuvaus:"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:302 ID:Emoji
+msgid "Emoji"
+msgstr ""
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:305 ID:Apply
+#: i18n/Text.resx:306 ID:Apply
 msgid "Apply"
 msgstr "Käytä"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:309 ID:KeepOriginalKey
+#: i18n/Text.resx:310 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Säilytä Compose-näppäimen käyttäytyminen"
 
-#: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
+#: i18n/Text.resx:314 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
 
-#: i18n/Text.resx:316 ID:InsertZwsp
+#: i18n/Text.resx:317 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Lisää olemattoman levyisiä välilyöntejä Office-ohjelmiin"
 
-#: i18n/Text.resx:319 ID:InsertZwspToolTip
+#: i18n/Text.resx:320 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
 
-#: i18n/Text.resx:322 ID:EmulateCapsLock
+#: i18n/Text.resx:323 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Jäljittele Caps Lockkia kummallakin Shift-näppäimellä"
 
-#: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
+#: i18n/Text.resx:326 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
 
-#: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:329 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
 msgstr "Shift-näppäin kytkee Caps Lockin pois"
 
-#: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
+#: i18n/Text.resx:332 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
 
-#: i18n/Text.resx:334 ID:CapsLockCapitalizes
+#: i18n/Text.resx:335 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
 msgstr ""
 
-#: i18n/Text.resx:337 ID:CapsLockCapitalizesToolTip
+#: i18n/Text.resx:338 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:340 ID:Categories
+#: i18n/Text.resx:341 ID:Categories
 msgid "Categories"
 msgstr "Luokat"
 
-#: i18n/Text.resx:344 ID:InSelectedCategories
+#: i18n/Text.resx:345 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "Valituissa luokissa"
 
 #. The title of the Options window
-#: i18n/Text.resx:347 ID:Options
+#: i18n/Text.resx:348 ID:Options
 msgid "Options — WinCompose"
 msgstr "Asetukset — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:351 ID:ShowOptions
+#: i18n/Text.resx:352 ID:ShowOptions
 msgid "Options…"
 msgstr "Asetukset…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:355 ID:TrayToolTip
+#: i18n/Text.resx:356 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2}, näppäin {0} ({1} merkkisarjaa)"
 
 #. The “general” tab of the options window
-#: i18n/Text.resx:359 ID:General
+#: i18n/Text.resx:360 ID:General
 #, fuzzy
 msgid "General"
 msgstr "Yleinen Käytös"
 
-#: i18n/Text.resx:363 ID:Behavior
+#: i18n/Text.resx:364 ID:Behavior
 #, fuzzy
 msgid "Behavior"
 msgstr "Yleinen Käytös"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:366 ID:WindowTitle
+#: i18n/Text.resx:367 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Merkkisarjat — WinCompose"
 
-#: i18n/Text.resx:370 ID:UserMacros
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:371 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Käyttäjän makrot"
 
-#: i18n/Text.resx:373 ID:DisabledToolTip
+#: i18n/Text.resx:375 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "Compose-näppäin on pois käytöstä"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:376 ID:KeyInsert
+#: i18n/Text.resx:378 ID:KeyInsert
 msgid "Insert"
 msgstr "Syötä"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:380 ID:TestTyping
+#: i18n/Text.resx:382 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Kokeile:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:384 ID:Tweaks
+#: i18n/Text.resx:386 ID:Tweaks
 msgid "Tweaks"
 msgstr "Parannukset"
 
-#: i18n/Text.resx:388 ID:Milliseconds
+#: i18n/Text.resx:390 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(millisekunneissa)"
 
 #. About box menu entry
-#: i18n/Text.resx:391 ID:About
+#: i18n/Text.resx:393 ID:About
 msgid "About"
 msgstr "Tietoja"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:395 ID:Download
+#: i18n/Text.resx:397 ID:Download
 msgid "Download WinCompose {0}"
 msgstr "Lataa WinCompose {0}"
 
 #. Window title of the About box
-#: i18n/Text.resx:399 ID:AboutBoxTitle
+#: i18n/Text.resx:401 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "Tietoja WinComposesta"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:403 ID:Programming
+#: i18n/Text.resx:405 ID:Programming
 msgid "Programming"
 msgstr "Ohjelmointi"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:407 ID:Translators
+#: i18n/Text.resx:409 ID:Translators
 msgid "Translation"
 msgstr "Käännös"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:411 ID:Contributors
+#: i18n/Text.resx:413 ID:Contributors
 msgid "Special Thanks"
 msgstr "Erikoiskiitokset"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:415 ID:License
+#: i18n/Text.resx:417 ID:License
 msgid "License"
 msgstr "Lisenssi"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:419 ID:NeedRestart
+#: i18n/Text.resx:421 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr ""
 "WinCompose joudutaan käynnistämään uudelleen muutosten toimeenpanemiseksi."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:423 ID:ReportBug
+#: i18n/Text.resx:425 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Ilmoita viasta"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:427 ID:Help
+#: i18n/Text.resx:429 ID:Help
 msgid "Help"
 msgstr ""
 
 #. Message displayed in the systray tooltip.
-#: i18n/Text.resx:431 ID:UpdatesToolTip
+#: i18n/Text.resx:433 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr ""
 
-#: i18n/Text.resx:435 ID:UserDefinedSequences
+#: i18n/Text.resx:437 ID:UserDefinedSequences
 msgid "User-defined sequences"
 msgstr "Käyttäjän makrot"
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
+#: i18n/Text.resx:440 ID:UserDefinedSequencesEdit
 msgid "Edit"
 msgstr ""
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:442 ID:UserDefinedSequencesReload
+#: i18n/Text.resx:444 ID:UserDefinedSequencesReload
 msgid "Reload"
 msgstr ""
 
-#: i18n/Text.resx:446 ID:AllowInjected
+#: i18n/Text.resx:448 ID:AllowInjected
 msgid "Allow Injected Keys"
 msgstr ""
 
-#: i18n/Text.resx:449 ID:AllowInjectedToolTip
+#: i18n/Text.resx:451 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
+msgstr ""
+
+#. The name of the “Print Screen” key on the keyboard
+#: i18n/Text.resx:454 ID:KeyPrint
+msgid "Prt Scrn"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -670,6 +676,12 @@ msgstr ""
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
 msgstr ""
+
+#~ msgid "by Sam Hocevar <sam@hocevar.net>"
+#~ msgstr "tekijä: Sam Hocevar <sam@hocevar.net>"
+
+#~ msgid "Description:"
+#~ msgstr "Kuvaus:"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Hylkää merkkejä vääränlaisista merkkisarjoista"

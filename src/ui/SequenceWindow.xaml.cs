@@ -15,7 +15,6 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {

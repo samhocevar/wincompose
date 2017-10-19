@@ -172,47 +172,48 @@ msgstr "拜訪網站"
 msgid "Exit"
 msgstr "結束"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:234 ID:Obsolete036
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "開發者：Sam Hocevar <sam@hocevar.net>"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:234 ID:UnicodeCharacters
+#, fuzzy
+msgid "Unicode characters"
+msgstr "丟棄所有輸入的字元"
 
-#: i18n/Text.resx:237 ID:Sequences
+#: i18n/Text.resx:238 ID:Sequences
 msgid "Sequences"
 msgstr "按鍵系列"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:240 ID:Obsolete039
+#: i18n/Text.resx:241 ID:Obsolete039
 msgid "Sequence"
 msgstr "按鍵系列"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:243 ID:Obsolete041
+#: i18n/Text.resx:244 ID:Obsolete041
 msgid "Unicode"
 msgstr "萬國碼(Unicode)"
 
-#: i18n/Text.resx:246 ID:Search
+#: i18n/Text.resx:247 ID:Search
 msgid "Search Filter:"
 msgstr "搜尋篩選器:"
 
-#: i18n/Text.resx:249 ID:ComposeKey
+#: i18n/Text.resx:250 ID:ComposeKey
 msgid "Compose Key:"
 msgstr "前導鍵:"
 
-#: i18n/Text.resx:252 ID:ComposeKeyToolTip
+#: i18n/Text.resx:253 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
 msgstr "選擇作為前導鍵的鍵。"
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:255 ID:ResetDelay
+#: i18n/Text.resx:256 ID:ResetDelay
 msgid "Delay:"
 msgstr "延遲:"
 
-#: i18n/Text.resx:259 ID:UnicodeInput
+#: i18n/Text.resx:260 ID:UnicodeInput
 msgid "Advanced Unicode input"
 msgstr "進階萬國碼輸入"
 
-#: i18n/Text.resx:262 ID:UnicodeInputToolTip
+#: i18n/Text.resx:263 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
@@ -222,25 +223,25 @@ msgstr ""
 "+1A3F 字元: 前導鍵 U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
-#: i18n/Text.resx:265 ID:InvalidSequences
+#: i18n/Text.resx:266 ID:InvalidSequences
 msgid "On invalid sequences"
 msgstr "出現無效按鍵系列時"
 
-#: i18n/Text.resx:269 ID:CaseInsensitive
+#: i18n/Text.resx:270 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
 msgstr "取用忽略大小寫後相合的按鍵系列"
 
-#: i18n/Text.resx:272 ID:CaseInsensitiveToolTip
+#: i18n/Text.resx:273 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr "若輸入的按鍵系列不存在，且此系列與另一系列僅有大小寫差異，自動修正之。"
 
-#: i18n/Text.resx:275 ID:DiscardOnInvalid
+#: i18n/Text.resx:276 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
 msgstr "丟棄所有輸入的字元"
 
-#: i18n/Text.resx:278 ID:DiscardOnInvalidToolTip
+#: i18n/Text.resx:279 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
@@ -249,52 +250,51 @@ msgstr ""
 "若輸入的按鍵系列不存在，丟棄所有輸入的字元。預設的運作是，像未曾按過前導鍵那"
 "樣輸出字元。"
 
-#: i18n/Text.resx:281 ID:BeepOnInvalid
+#: i18n/Text.resx:282 ID:BeepOnInvalid
 msgid "Emit a beep"
 msgstr "發出嗶聲"
 
-#: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
+#: i18n/Text.resx:285 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr "若輸入的按鍵系列不存在，發出系統的嗶聲。"
 
-#: i18n/Text.resx:287 ID:Language
+#: i18n/Text.resx:288 ID:Language
 msgid "Interface language:"
 msgstr "介面語言:"
 
-#: i18n/Text.resx:290 ID:LanguageToolTip
+#: i18n/Text.resx:291 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr "選擇 WinCompose 介面的語言。預設使用作業系統的語言。"
 
 #. Close the settings window
-#: i18n/Text.resx:293 ID:Close
+#: i18n/Text.resx:294 ID:Close
 msgid "Close"
 msgstr "關閉"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:297 ID:Obsolete050
+#: i18n/Text.resx:298 ID:Obsolete050
 msgid "Copy Character"
 msgstr "複製字元"
 
-#. Description of a Unicode character or group of characters
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:301 ID:Obsolete051
-msgid "Description:"
-msgstr "描述:"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:302 ID:Emoji
+msgid "Emoji"
+msgstr ""
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:305 ID:Apply
+#: i18n/Text.resx:306 ID:Apply
 msgid "Apply"
 msgstr "套用"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:309 ID:KeepOriginalKey
+#: i18n/Text.resx:310 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "保留前導鍵的原始表現"
 
-#: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
+#: i18n/Text.resx:314 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
@@ -303,11 +303,11 @@ msgstr ""
 "這要求 WinCompose 盡最大努力維持按鍵的原始表現。例如，仍維持 Alt-Tab 快鍵，即"
 "使 Alt 被用作前導鍵。"
 
-#: i18n/Text.resx:316 ID:InsertZwsp
+#: i18n/Text.resx:317 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "於 Office 應用程式插入零寬空格字元"
 
-#: i18n/Text.resx:319 ID:InsertZwspToolTip
+#: i18n/Text.resx:320 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
@@ -316,11 +316,11 @@ msgstr ""
 "微軟 Office 應用程式於輸入萬國碼(unicode)字元時，有時會自動改變文件字型。此功"
 "能於萬國碼字元後插入一不可見字元，以修正此錯誤。"
 
-#: i18n/Text.resx:322 ID:EmulateCapsLock
+#: i18n/Text.resx:323 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
 msgstr "用兩個 Shift 鍵模擬 Caps Lock"
 
-#: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
+#: i18n/Text.resx:326 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
@@ -329,11 +329,11 @@ msgstr ""
 "如果 Caps Lock 被設成前導鍵，此鍵就不會有原始表現，而是改用 Shift + Caps "
 "Lock 去啟用大寫化。"
 
-#: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:329 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
 msgstr "Shift 鍵停用 Caps Lock"
 
-#: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
+#: i18n/Text.resx:332 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
@@ -342,11 +342,11 @@ msgstr ""
 "如果 Caps Lock 被設成前導鍵，此鍵就不會有原始表現，而是改用按 Shift  去關閉大"
 "寫化。"
 
-#: i18n/Text.resx:334 ID:CapsLockCapitalizes
+#: i18n/Text.resx:335 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
 msgstr "Caps Lock 鍵總是使字母大寫輸出"
 
-#: i18n/Text.resx:337 ID:CapsLockCapitalizesToolTip
+#: i18n/Text.resx:338 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
@@ -354,148 +354,154 @@ msgstr ""
 "若啟用 Caps Lock，輸入像 “é” 之類的重音字母，則會輸出對應的大寫字母 “É”。"
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:340 ID:Categories
+#: i18n/Text.resx:341 ID:Categories
 msgid "Categories"
 msgstr "分類"
 
-#: i18n/Text.resx:344 ID:InSelectedCategories
+#: i18n/Text.resx:345 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "於所選的分類"
 
 #. The title of the Options window
-#: i18n/Text.resx:347 ID:Options
+#: i18n/Text.resx:348 ID:Options
 msgid "Options — WinCompose"
 msgstr "選項 — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:351 ID:ShowOptions
+#: i18n/Text.resx:352 ID:ShowOptions
 msgid "Options…"
 msgstr "選項…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:355 ID:TrayToolTip
+#: i18n/Text.resx:356 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} 於 {0} ({1} 按鍵系列)"
 
 #. The “general” tab of the options window
-#: i18n/Text.resx:359 ID:General
+#: i18n/Text.resx:360 ID:General
 #, fuzzy
 msgid "General"
 msgstr "一般表現"
 
-#: i18n/Text.resx:363 ID:Behavior
+#: i18n/Text.resx:364 ID:Behavior
 #, fuzzy
 msgid "Behavior"
 msgstr "一般表現"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:366 ID:WindowTitle
+#: i18n/Text.resx:367 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "按鍵系列 — WinCompose"
 
-#: i18n/Text.resx:370 ID:UserMacros
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:371 ID:UserMacros
 msgid "User-defined macros"
 msgstr "使用者定義的巨集"
 
-#: i18n/Text.resx:373 ID:DisabledToolTip
+#: i18n/Text.resx:375 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "WinCompose 已停用"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:376 ID:KeyInsert
+#: i18n/Text.resx:378 ID:KeyInsert
 msgid "Insert"
 msgstr "插入"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:380 ID:TestTyping
+#: i18n/Text.resx:382 ID:TestTyping
 msgid "Test Typing:"
 msgstr "測試輸入:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:384 ID:Tweaks
+#: i18n/Text.resx:386 ID:Tweaks
 msgid "Tweaks"
 msgstr "調控"
 
-#: i18n/Text.resx:388 ID:Milliseconds
+#: i18n/Text.resx:390 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(毫秒)"
 
 #. About box menu entry
-#: i18n/Text.resx:391 ID:About
+#: i18n/Text.resx:393 ID:About
 msgid "About"
 msgstr "關於"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:395 ID:Download
+#: i18n/Text.resx:397 ID:Download
 msgid "Download WinCompose {0}"
 msgstr "下載 WinCompose {0}"
 
 #. Window title of the About box
-#: i18n/Text.resx:399 ID:AboutBoxTitle
+#: i18n/Text.resx:401 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "關於 — WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:403 ID:Programming
+#: i18n/Text.resx:405 ID:Programming
 msgid "Programming"
 msgstr "程式設計"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:407 ID:Translators
+#: i18n/Text.resx:409 ID:Translators
 msgid "Translation"
 msgstr "翻譯"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:411 ID:Contributors
+#: i18n/Text.resx:413 ID:Contributors
 msgid "Special Thanks"
 msgstr "特別感謝"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:415 ID:License
+#: i18n/Text.resx:417 ID:License
 msgid "License"
 msgstr "證書"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:419 ID:NeedRestart
+#: i18n/Text.resx:421 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr "WinCompose 得重新啟動，以使變更生效。"
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:423 ID:ReportBug
+#: i18n/Text.resx:425 ID:ReportBug
 msgid "Report a Bug"
 msgstr "提報程式錯誤"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:427 ID:Help
+#: i18n/Text.resx:429 ID:Help
 msgid "Help"
 msgstr "說明"
 
 #. Message displayed in the systray tooltip.
-#: i18n/Text.resx:431 ID:UpdatesToolTip
+#: i18n/Text.resx:433 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr "有更新可用。"
 
-#: i18n/Text.resx:435 ID:UserDefinedSequences
+#: i18n/Text.resx:437 ID:UserDefinedSequences
 #, fuzzy
 msgid "User-defined sequences"
 msgstr "使用者定義的巨集"
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
+#: i18n/Text.resx:440 ID:UserDefinedSequencesEdit
 msgid "Edit"
 msgstr "編輯"
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:442 ID:UserDefinedSequencesReload
+#: i18n/Text.resx:444 ID:UserDefinedSequencesReload
 msgid "Reload"
 msgstr "重新載入"
 
-#: i18n/Text.resx:446 ID:AllowInjected
+#: i18n/Text.resx:448 ID:AllowInjected
 msgid "Allow Injected Keys"
 msgstr ""
 
-#: i18n/Text.resx:449 ID:AllowInjectedToolTip
+#: i18n/Text.resx:451 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
+msgstr ""
+
+#. The name of the “Print Screen” key on the keyboard
+#: i18n/Text.resx:454 ID:KeyPrint
+msgid "Prt Scrn"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -685,6 +691,12 @@ msgstr "一旦完成，可返回此螢幕，然後繼續安裝。"
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
 msgstr "需要管理員權限。出現錯誤：%d"
+
+#~ msgid "by Sam Hocevar <sam@hocevar.net>"
+#~ msgstr "開發者：Sam Hocevar <sam@hocevar.net>"
+
+#~ msgid "Description:"
+#~ msgstr "描述:"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "無效按鍵系列時丟棄其中字元"

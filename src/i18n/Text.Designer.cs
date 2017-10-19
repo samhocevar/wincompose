@@ -19,7 +19,7 @@ namespace WinCompose.i18n {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Text {
@@ -268,6 +268,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Emoji.
+        /// </summary>
+        public static string Emoji {
+            get {
+                return ResourceManager.GetString("Emoji", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emulate Caps Lock using both Shift keys.
         /// </summary>
         public static string EmulateCapsLock {
@@ -466,6 +475,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prt Scrn.
+        /// </summary>
+        public static string KeyPrint {
+            get {
+                return ResourceManager.GetString("KeyPrint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Control.
         /// </summary>
         public static string KeyRControl {
@@ -646,15 +664,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to by Sam Hocevar &lt;sam@hocevar.net&gt;.
-        /// </summary>
-        public static string Obsolete036 {
-            get {
-                return ResourceManager.GetString("Obsolete036", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Sequence.
         /// </summary>
         public static string Obsolete039 {
@@ -678,15 +687,6 @@ namespace WinCompose.i18n {
         public static string Obsolete050 {
             get {
                 return ResourceManager.GetString("Obsolete050", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Description:.
-        /// </summary>
-        public static string Obsolete051 {
-            get {
-                return ResourceManager.GetString("Obsolete051", resourceCulture);
             }
         }
         
@@ -822,6 +822,15 @@ namespace WinCompose.i18n {
         public static string Tweaks {
             get {
                 return ResourceManager.GetString("Tweaks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unicode characters.
+        /// </summary>
+        public static string UnicodeCharacters {
+            get {
+                return ResourceManager.GetString("UnicodeCharacters", resourceCulture);
             }
         }
         

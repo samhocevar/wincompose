@@ -204,9 +204,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Poistu</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>tekijä: Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Merkkisarjat</value>
   </data>
@@ -236,9 +233,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Kopioi merkki</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Kuvaus:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Käytä</value>

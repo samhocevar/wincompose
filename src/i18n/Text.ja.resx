@@ -204,9 +204,6 @@
   <data name="Exit" xml:space="preserve">
     <value>終了</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>作者: Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>シーケンス</value>
   </data>
@@ -266,9 +263,6 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>文字をコピー</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>説明:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>適用</value>

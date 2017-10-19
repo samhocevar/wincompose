@@ -201,9 +201,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Izhod</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Zaporedja</value>
   </data>

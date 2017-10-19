@@ -139,10 +139,10 @@
     <value>Pravé tlačítko s logem Windows</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
-    <value>Caps Lock</value>
+    <value>CapsLock</value>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
-    <value>Num Lock</value>
+    <value>NumLock</value>
   </data>
   <data name="KeyPause" xml:space="preserve">
     <value>Pause</value>
@@ -153,8 +153,14 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Konvertovat (japonská klávesnice)</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Nekonvertovat (japonská klávesnice)</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
-    <value>Scroll Lock</value>
+    <value>ScrollLock</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
     <value>Mezerník</value>
@@ -204,9 +210,6 @@
   <data name="Exit" xml:space="preserve">
     <value>Ukončit</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>vytvořil Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvence</value>
   </data>
@@ -229,10 +232,37 @@
     <value>Doba trvání:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
-    <value>Pokročilé zadávání Unicode</value>
+    <value>Zadávání kódů Unicode</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Umožnit zadání kódu Unicode pro všechny znaky, dokonce i ty, které nemají definovanou sekvenci. Například znak U+1A3F by bylo možné napsat následující sekvencí: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Při zadání neplatné sekvence</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Jako záložní možnost ignorovat velikost písmen</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Pokud zadaná sekvence neexistuje, ale existuje jiná lišící se velikostí písmen, automaticky opravit.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Zrušit všechny zadané znaky</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Pokud zadaná sekvence neexistuje, zrušit všechny zadané znaky. Výchozí chování je vypsat zadané znaky, jako by klávesa Compose vůbec nebyla použita.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Vydat zvukový signál</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Pokud zadaná sekvence neexistuje, vydat systémový zvuk pro neplatnou klávesu.</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Jazyk rozhraní:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Vyberte jazyk pro uživatelské rozhraní programu WinCompose. Ve výchozím nastavení bude použit jazyk systému.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Zavřít</value>
@@ -240,23 +270,38 @@
   <data name="Obsolete050" xml:space="preserve">
     <value>Kopírovat znak</value>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Popis:</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Použít</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Zachovat původní chování klávesy Compose</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>WinCompose se pokusí zachovat původní funkci klávesy. Například zkratka Alt-Tab bude stále funkovat, přestože je Alt používán jako klávesa Compose.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Vkládat nulovou mezeru v aplikacích Office</value>
   </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Aplikace Microsoft Office někdy automaticky mění font dokumentu při zadání určitých znaků Unicode. Tato funkce za problémové znaky vloží neviditelný znak, který tomuto chování zabrání.</value>
+  </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emulovat Caps Lock stisknutím obou kláves Shift</value>
+    <value>Emulovat CapsLock stisknutím obou kláves Shift</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Pokud je CapsLock používaný jako klávesa Compose, původní funkce klávesy přestane být dostupná. Tato funkce umožňuje zapnout CapsLock zmáčknutím obou kláves Shift zároveň.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Klávesa Shift vypne Caps Lock</value>
+    <value>Klávesa Shift vypne CapsLock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Pokud je CapsLock používaný jako klávesa Compose, původní funkce klávesy přestane být dostupná. Tato funkce automaticky vypne CapsLock při stisknutí klávesy Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Při CapsLocku vždy psát velká písmena</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Pokud je CapsLock zapnutý, napsání sekvence pro písmeno, např. „æ“, vždy vypíše odpovídající variantu velkého písmena, v tomto případě „Æ“.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategorie</value>
@@ -272,6 +317,12 @@
   </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} (klávesa: {0}; {1} sekvencí)</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Obecné</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Chování</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekvence — WinCompose</value>
@@ -297,6 +348,9 @@
   <data name="About" xml:space="preserve">
     <value>O aplikaci</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Stáhnout WinCompose {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>O aplikaci WinCompose</value>
   </data>
@@ -317,5 +371,29 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Nahlásit chybu</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Nápověda</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>K dispozici jsou nové aktualizace.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Uživatelem definované sekvence</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Upravit</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Znovu načíst</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Povolit podstrčené klávesy</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Neignorovat klávesy poslané jiným softwarem, jako je AutoHotkey nebo Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>PrintScreen</value>
   </data>
 </root>

@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-04-18 18:21+0000\n"
-"Last-Translator: Jan Tojnar <jtojnar@gmail.com>\n"
+"PO-Revision-Date: 2017-08-27 13:44+0000\n"
+"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
 "cs/>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.14-dev\n"
+"X-Generator: Weblate 2.17-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -57,12 +57,12 @@ msgstr "Pravé tlačítko s logem Windows"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr "Caps Lock"
+msgstr "CapsLock"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr "Num Lock"
+msgstr "NumLock"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:157 ID:KeyPause
@@ -82,17 +82,17 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Konvertovat (japonská klávesnice)"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Nekonvertovat (japonská klávesnice)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr "Scroll Lock"
+msgstr "ScrollLock"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:181 ID:KeySpace
@@ -172,321 +172,345 @@ msgstr "Navštívit web"
 msgid "Exit"
 msgstr "Ukončit"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:234 ID:Obsolete036
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "vytvořil Sam Hocevar <sam@hocevar.net>"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:234 ID:UnicodeCharacters
+#, fuzzy
+msgid "Unicode characters"
+msgstr "Zrušit všechny zadané znaky"
 
-#: i18n/Text.resx:237 ID:Sequences
+#: i18n/Text.resx:238 ID:Sequences
 msgid "Sequences"
 msgstr "Sekvence"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:240 ID:Obsolete039
+#: i18n/Text.resx:241 ID:Obsolete039
 msgid "Sequence"
 msgstr "Sekvence"
 
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:243 ID:Obsolete041
+#: i18n/Text.resx:244 ID:Obsolete041
 msgid "Unicode"
 msgstr "Unicode"
 
-#: i18n/Text.resx:246 ID:Search
+#: i18n/Text.resx:247 ID:Search
 msgid "Search Filter:"
 msgstr "Filtr vyhledávání:"
 
-#: i18n/Text.resx:249 ID:ComposeKey
+#: i18n/Text.resx:250 ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Klávesa Compose:"
 
-#: i18n/Text.resx:252 ID:ComposeKeyToolTip
+#: i18n/Text.resx:253 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
 msgstr "Zvolte klávesu, která by měla fungovat jako klávesa Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:255 ID:ResetDelay
+#: i18n/Text.resx:256 ID:ResetDelay
 msgid "Delay:"
 msgstr "Doba trvání:"
 
-#: i18n/Text.resx:259 ID:UnicodeInput
+#: i18n/Text.resx:260 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr "Pokročilé zadávání Unicode"
+msgstr "Zadávání kódů Unicode"
 
-#: i18n/Text.resx:262 ID:UnicodeInputToolTip
+#: i18n/Text.resx:263 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Umožnit zadání kódu Unicode pro všechny znaky, dokonce i ty, které nemají "
+"definovanou sekvenci. Například znak U+1A3F by bylo možné napsat následující "
+"sekvencí: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
-#: i18n/Text.resx:265 ID:InvalidSequences
-#, fuzzy
+#: i18n/Text.resx:266 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Zvukové upozornění při zadání neplatné sekvence"
+msgstr "Při zadání neplatné sekvence"
 
-#: i18n/Text.resx:269 ID:CaseInsensitive
-#, fuzzy
+#: i18n/Text.resx:270 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "V případě nenalezení sekvence nedbát na velikost písmen"
+msgstr "Jako záložní možnost ignorovat velikost písmen"
 
-#: i18n/Text.resx:272 ID:CaseInsensitiveToolTip
+#: i18n/Text.resx:273 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Pokud zadaná sekvence neexistuje, ale existuje jiná lišící se velikostí "
+"písmen, automaticky opravit."
 
-#: i18n/Text.resx:275 ID:DiscardOnInvalid
+#: i18n/Text.resx:276 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Zrušit všechny zadané znaky"
 
-#: i18n/Text.resx:278 ID:DiscardOnInvalidToolTip
+#: i18n/Text.resx:279 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Pokud zadaná sekvence neexistuje, zrušit všechny zadané znaky. Výchozí "
+"chování je vypsat zadané znaky, jako by klávesa Compose vůbec nebyla použita."
 
-#: i18n/Text.resx:281 ID:BeepOnInvalid
+#: i18n/Text.resx:282 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Vydat zvukový signál"
 
-#: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
+#: i18n/Text.resx:285 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr ""
+"Pokud zadaná sekvence neexistuje, vydat systémový zvuk pro neplatnou klávesu."
 
-#: i18n/Text.resx:287 ID:Language
+#: i18n/Text.resx:288 ID:Language
 msgid "Interface language:"
 msgstr "Jazyk rozhraní:"
 
-#: i18n/Text.resx:290 ID:LanguageToolTip
+#: i18n/Text.resx:291 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Vyberte jazyk pro uživatelské rozhraní programu WinCompose. Ve výchozím "
+"nastavení bude použit jazyk systému."
 
 #. Close the settings window
-#: i18n/Text.resx:293 ID:Close
+#: i18n/Text.resx:294 ID:Close
 msgid "Close"
 msgstr "Zavřít"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:297 ID:Obsolete050
+#: i18n/Text.resx:298 ID:Obsolete050
 msgid "Copy Character"
 msgstr "Kopírovat znak"
 
-#. Description of a Unicode character or group of characters
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:301 ID:Obsolete051
-msgid "Description:"
-msgstr "Popis:"
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:302 ID:Emoji
+msgid "Emoji"
+msgstr ""
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:305 ID:Apply
+#: i18n/Text.resx:306 ID:Apply
 msgid "Apply"
 msgstr "Použít"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:309 ID:KeepOriginalKey
+#: i18n/Text.resx:310 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Zachovat původní chování klávesy Compose"
 
-#: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
+#: i18n/Text.resx:314 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"WinCompose se pokusí zachovat původní funkci klávesy. Například zkratka Alt-"
+"Tab bude stále funkovat, přestože je Alt používán jako klávesa Compose."
 
-#: i18n/Text.resx:316 ID:InsertZwsp
+#: i18n/Text.resx:317 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Vkládat nulovou mezeru v aplikacích Office"
 
-#: i18n/Text.resx:319 ID:InsertZwspToolTip
+#: i18n/Text.resx:320 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Aplikace Microsoft Office někdy automaticky mění font dokumentu při zadání "
+"určitých znaků Unicode. Tato funkce za problémové znaky vloží neviditelný "
+"znak, který tomuto chování zabrání."
 
-#: i18n/Text.resx:322 ID:EmulateCapsLock
+#: i18n/Text.resx:323 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Emulovat Caps Lock stisknutím obou kláves Shift"
+msgstr "Emulovat CapsLock stisknutím obou kláves Shift"
 
-#: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
+#: i18n/Text.resx:326 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Pokud je CapsLock používaný jako klávesa Compose, původní funkce klávesy "
+"přestane být dostupná. Tato funkce umožňuje zapnout CapsLock zmáčknutím obou "
+"kláves Shift zároveň."
 
-#: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:329 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "Klávesa Shift vypne Caps Lock"
+msgstr "Klávesa Shift vypne CapsLock"
 
-#: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
+#: i18n/Text.resx:332 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Pokud je CapsLock používaný jako klávesa Compose, původní funkce klávesy "
+"přestane být dostupná. Tato funkce automaticky vypne CapsLock při stisknutí "
+"klávesy Shift."
 
-#: i18n/Text.resx:334 ID:CapsLockCapitalizes
+#: i18n/Text.resx:335 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Při CapsLocku vždy psát velká písmena"
 
-#: i18n/Text.resx:337 ID:CapsLockCapitalizesToolTip
+#: i18n/Text.resx:338 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Pokud je CapsLock zapnutý, napsání sekvence pro písmeno, např. „æ“, vždy "
+"vypíše odpovídající variantu velkého písmena, v tomto případě „Æ“."
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:340 ID:Categories
+#: i18n/Text.resx:341 ID:Categories
 msgid "Categories"
 msgstr "Kategorie"
 
-#: i18n/Text.resx:344 ID:InSelectedCategories
+#: i18n/Text.resx:345 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "Ve vybraných kategoriích"
 
 #. The title of the Options window
-#: i18n/Text.resx:347 ID:Options
+#: i18n/Text.resx:348 ID:Options
 msgid "Options — WinCompose"
 msgstr "Možnosti — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:351 ID:ShowOptions
+#: i18n/Text.resx:352 ID:ShowOptions
 msgid "Options…"
 msgstr "Možnosti…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:355 ID:TrayToolTip
+#: i18n/Text.resx:356 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} (klávesa: {0}; {1} sekvencí)"
 
 #. The “general” tab of the options window
-#: i18n/Text.resx:359 ID:General
-#, fuzzy
+#: i18n/Text.resx:360 ID:General
 msgid "General"
-msgstr "Obecné chování"
+msgstr "Obecné"
 
-#: i18n/Text.resx:363 ID:Behavior
-#, fuzzy
+#: i18n/Text.resx:364 ID:Behavior
 msgid "Behavior"
-msgstr "Obecné chování"
+msgstr "Chování"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:366 ID:WindowTitle
+#: i18n/Text.resx:367 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Sekvence — WinCompose"
 
-#: i18n/Text.resx:370 ID:UserMacros
+#. Name of the category (Unicode characters, Emoji, User macros)
+#: i18n/Text.resx:371 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Uživatelská makra"
 
-#: i18n/Text.resx:373 ID:DisabledToolTip
+#: i18n/Text.resx:375 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "Program WinCompose je vypnutý"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:376 ID:KeyInsert
+#: i18n/Text.resx:378 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:380 ID:TestTyping
+#: i18n/Text.resx:382 ID:TestTyping
 msgid "Test Typing:"
 msgstr "Vyzkoušejte psaní:"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:384 ID:Tweaks
+#: i18n/Text.resx:386 ID:Tweaks
 msgid "Tweaks"
 msgstr "Vychytávky"
 
-#: i18n/Text.resx:388 ID:Milliseconds
+#: i18n/Text.resx:390 ID:Milliseconds
 msgid "(milliseconds)"
 msgstr "(milisekundy)"
 
 #. About box menu entry
-#: i18n/Text.resx:391 ID:About
+#: i18n/Text.resx:393 ID:About
 msgid "About"
 msgstr "O aplikaci"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:395 ID:Download
-#, fuzzy
+#: i18n/Text.resx:397 ID:Download
 msgid "Download WinCompose {0}"
-msgstr "O aplikaci WinCompose"
+msgstr "Stáhnout WinCompose {0}"
 
 #. Window title of the About box
-#: i18n/Text.resx:399 ID:AboutBoxTitle
+#: i18n/Text.resx:401 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "O aplikaci WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:403 ID:Programming
+#: i18n/Text.resx:405 ID:Programming
 msgid "Programming"
 msgstr "Programátoři"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:407 ID:Translators
+#: i18n/Text.resx:409 ID:Translators
 msgid "Translation"
 msgstr "Překlad"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:411 ID:Contributors
+#: i18n/Text.resx:413 ID:Contributors
 msgid "Special Thanks"
 msgstr "Zvláštní poděkování"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:415 ID:License
+#: i18n/Text.resx:417 ID:License
 msgid "License"
 msgstr "Licence"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:419 ID:NeedRestart
+#: i18n/Text.resx:421 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr "Aby se projevily změny, WinCompose musí být restartován."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:423 ID:ReportBug
+#: i18n/Text.resx:425 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Nahlásit chybu"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:427 ID:Help
+#: i18n/Text.resx:429 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #. Message displayed in the systray tooltip.
-#: i18n/Text.resx:431 ID:UpdatesToolTip
+#: i18n/Text.resx:433 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "K dispozici jsou nové aktualizace."
 
-#: i18n/Text.resx:435 ID:UserDefinedSequences
-#, fuzzy
+#: i18n/Text.resx:437 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Uživatelská makra"
+msgstr "Uživatelem definované sekvence"
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
+#: i18n/Text.resx:440 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:442 ID:UserDefinedSequencesReload
+#: i18n/Text.resx:444 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Znovu načíst"
 
-#: i18n/Text.resx:446 ID:AllowInjected
+#: i18n/Text.resx:448 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Povolit podstrčené klávesy"
 
-#: i18n/Text.resx:449 ID:AllowInjectedToolTip
+#: i18n/Text.resx:451 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
+"Neignorovat klávesy poslané jiným softwarem, jako je AutoHotkey nebo Synergy"
+
+#. The name of the “Print Screen” key on the keyboard
+#: i18n/Text.resx:454 ID:KeyPrint
+msgid "Prt Scrn"
+msgstr "PrintScreen"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -641,13 +665,12 @@ msgstr "Oddělovač, mezera"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:136
 msgid "Prerequisites"
-msgstr ""
+msgstr "Předpoklady"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:137
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Sekvence — WinCompose"
+msgstr "Software vyžadovaný pro běh WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:140
@@ -657,11 +680,13 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose vyžaduje .NET Framework, verzi 3.5 SP1 či pozdější, který nebyl\n"
+"v systému detekován. Následující akce by mohla pomoci vyřešit tento problém:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:145
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Stáhnout a nainstalovat .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:155
@@ -669,11 +694,19 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Jakmile akci provedete, můžete se vrátit k této obrazovce a pokračovat\n"
+"v instalaci."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Administrátorská práva vyžadována. Chyba: %d"
+
+#~ msgid "by Sam Hocevar <sam@hocevar.net>"
+#~ msgstr "vytvořil Sam Hocevar <sam@hocevar.net>"
+
+#~ msgid "Description:"
+#~ msgstr "Popis:"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Ignorovat znaky z neplatných sekvencí"
