@@ -223,6 +223,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Debug Window.
+        /// </summary>
+        public static string DebugWindow {
+            get {
+                return ResourceManager.GetString("DebugWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable.
         /// </summary>
         public static string Disable {
@@ -633,15 +642,6 @@ namespace WinCompose.i18n {
         public static string Obsolete021 {
             get {
                 return ResourceManager.GetString("Obsolete021", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 10 seconds.
-        /// </summary>
-        public static string Obsolete022 {
-            get {
-                return ResourceManager.GetString("Obsolete022", resourceCulture);
             }
         }
         

@@ -204,8 +204,9 @@
   <data name="Obsolete021" xml:space="preserve">
     <value>5 seconds</value>
   </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 seconds</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Debug Window</value>
+    <comment>Menu entry to show the debug window</comment>
   </data>
   <data name="Obsolete023" xml:space="preserve">
     <value>None</value>

@@ -18,11 +18,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wc="clr-namespace:WinCompose"
         Title="Debug Window"
-        WindowStyle="None"
+        WindowStyle="ToolWindow"
         WindowStartupLocation="Manual"
         ResizeMode="CanResize"
         MouseLeftButtonDown="OnLeftButtonDown"
         Deactivated="OnDeactivated"
+        Closing="OnClosing"
         Icon="/WinCompose;component/res/key_compose.png"
         ShowInTaskbar="False"
         Topmost="True"
@@ -34,30 +35,11 @@
         <![CDATA[
             private void OnLeftButtonDown(object sender, MouseButtonEventArgs e) { DragMove(); }
             private void OnDeactivated(object sender, EventArgs e) { (sender as Window).Topmost = true; }
+            private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e) { Hide(); e.Cancel = true; }
         ]]>
     </x:Code>
 
     <Window.Resources>
-        <Style TargetType="ItemsControl" x:Key="LogViewerStyle">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <ScrollViewer Name="m_scrollviewer" CanContentScroll="True">
-                            <ItemsPresenter/>
-                        </ScrollViewer>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <Setter Property="ItemsPanel">
-                <Setter.Value>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel IsItemsHost="True"/>
-                    </ItemsPanelTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
         <DataTemplate DataType="{x:Type wc:LogEntry}">
             <Grid IsSharedSizeScope="True">
                 <Grid.ColumnDefinitions>
@@ -65,7 +47,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding DateTime, StringFormat='{}{0:yyyy/MM/dd HH:mm:ss.fff}'}" Grid.Column="0"
-                       Foreground="Black" FontWeight="Bold" Margin="5,0,5,0"/>
+                       Foreground="DarkGray" FontWeight="Bold" Margin="5,0,5,0"/>
                 <TextBlock Text="{Binding Message}" Grid.Column="1"
                        Foreground="Black" TextWrapping="NoWrap"/>
             </Grid>
@@ -73,7 +55,7 @@
     </Window.Resources>
 
     <DockPanel Name="m_dockpanel">
-        <ItemsControl ItemsSource="{Binding}" Style="{StaticResource LogViewerStyle}">
+        <ItemsControl ItemsSource="{Binding}">
             <ItemsControl.Template>
                 <ControlTemplate>
                     <ScrollViewer Name="m_scrollviewer" CanContentScroll="True" Focusable="False">
