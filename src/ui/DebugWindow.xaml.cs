@@ -26,8 +26,8 @@ namespace WinCompose
             ShowInTaskbar = false;
             InitializeComponent();
 
-            Log.Entries.CollectionChanged += OnEntriesChanged;
             DataContext = Log.Entries;
+            Log.Entries.CollectionChanged += OnEntriesChanged;
         }
 
         ~DebugWindow()
@@ -35,9 +35,26 @@ namespace WinCompose
             Log.Entries.CollectionChanged -= OnEntriesChanged;
         }
 
+        ScrollViewer m_scrollviewer;
+
         private void OnEntriesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            // FIXME: find scrollviewer and call ScrollToEnd() on it
+            if (m_scrollviewer == null)
+            {
+                // Find the ScrollViewer below our DockPanel
+                foreach (var child in m_dockpanel.Children)
+                {
+                    ItemsControl c = child as ItemsControl;
+                    if (c != null)
+                    {
+                        object o = c.Template.FindName("m_scrollviewer", c);
+                        if (o is ScrollViewer)
+                            m_scrollviewer = o as ScrollViewer;
+                    }
+                }
+            }
+
+            m_scrollviewer?.ScrollToEnd();
         }
     }
 }

@@ -13,13 +13,17 @@
 
 using System;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 
 namespace WinCompose
 {
 
-public class PropertyChangedBase : INotifyPropertyChanged
+public class LogEntry : INotifyPropertyChanged
 {
+    public DateTime DateTime { get; set; }
+    public string Message { get; set; }
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     protected virtual void OnPropertyChanged(string propertyName)
@@ -28,25 +32,38 @@ public class PropertyChangedBase : INotifyPropertyChanged
     }
 }
 
-public class LogEntry : PropertyChangedBase
+public class LogList : ObservableCollection<LogEntry>
 {
-    public DateTime DateTime { get; set; }
-    public string Message { get; set; }
+    // Override the CollectionChanged event so that we can track listeners.
+    // FIXME: would a Log.MessageReceived event be more elegant?
+    public override event NotifyCollectionChangedEventHandler CollectionChanged
+    {
+        add { ListenerCount += value?.GetInvocationList().Length ?? 0; base.CollectionChanged += value; }
+        remove { ListenerCount -= value?.GetInvocationList().Length ?? 0; base.CollectionChanged -= value; }
+    }
+
+    public int ListenerCount { get; private set; }
 }
 
 public static class Log
 {
-    private static ObservableCollection<LogEntry> m_logs = new ObservableCollection<LogEntry>();
-    public static ObservableCollection<LogEntry> Entries => m_logs;
+    private static LogList m_entries = new LogList();
+    public static LogList Entries => m_entries;
 
     public static void Debug(string format, params object[] args)
     {
+#if !DEBUG
+        // In release mode, we don’t do anything unless we have listeners
+        if (m_entries.ListenerCount == 0)
+            return;
+#endif
+
         DateTime date = DateTime.Now;
         string msg = string.Format(format, args);
 
-        while (m_logs.Count > 100)
-            m_logs.RemoveAt(0);
-        m_logs.Add(new LogEntry() { DateTime = date, Message = msg });
+        while (m_entries.Count > 512)
+            m_entries.RemoveAt(0);
+        Entries.Add(new LogEntry() { DateTime = date, Message = msg });
 
 #if DEBUG
         string msgf = string.Format("{0:yyyy/MM/dd HH:mm:ss.fff} {1}", date, msg);
