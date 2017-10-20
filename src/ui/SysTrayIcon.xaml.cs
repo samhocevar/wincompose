@@ -28,6 +28,7 @@ namespace WinCompose
         ShowSequences,
         ShowOptions,
         About,
+        DebugWindow,
         VisitWebsite,
         Download,
         Disable,
@@ -57,6 +58,7 @@ namespace WinCompose
             m_icon.Visible = true;
             m_icon.Click += NotifyiconClicked;
             m_icon.DoubleClick += NotifyiconDoubleclicked;
+
 
             // XXX: disabled for now, as this feature is a bit controversial
             //SysTray.AlwaysShow("wincompose[.]exe");
@@ -130,6 +132,13 @@ namespace WinCompose
                     m_optionswindow.Activate();
                     break;
 
+                case MenuCommand.DebugWindow:
+                    if (m_debugwindow == null)
+                        m_debugwindow = new DebugWindow();
+                    m_debugwindow.Show();
+                    m_debugwindow.Activate();
+                    break;
+
                 case MenuCommand.About:
                     var about_box = new AboutBox();
                     about_box.ShowDialog();
@@ -172,6 +181,7 @@ namespace WinCompose
         private WinForms.NotifyIcon m_icon;
         private SequenceWindow m_sequencewindow;
         private SettingsWindow m_optionswindow;
+        private DebugWindow m_debugwindow;
 
         private System.Drawing.Icon GetCurrentIcon()
         {

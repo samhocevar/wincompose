@@ -17,11 +17,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:i18n="clr-namespace:WinCompose.i18n"
-             xmlns:wc="clr-namespace:WinCompose">
+             xmlns:wc="clr-namespace:WinCompose"
+             xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf">
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
+        <emoji:Image Width="20" Text="⚙" x:Key="OptionsEmoji"/>
+        <emoji:Image Width="20" Text="ℹ" x:Key="AboutEmoji"/>
+        <emoji:Image Width="20" Text="🔎" x:Key="DebugEmoji"/>
+        <emoji:Image Width="20" Text="🌐" x:Key="WebsiteEmoji"/>
+        <emoji:Image Width="20" Text="♻" x:Key="RestartEmoji"/>
+        <emoji:Image Width="20" Text="🚪" x:Key="ExitEmoji"/>
     </UserControl.Resources>
 
     <UserControl.ContextMenu>
@@ -62,13 +69,16 @@
             </MenuItem>
 
             <MenuItem Header="{x:Static i18n:Text.ShowOptions}" Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.ShowOptions}"/>
+                      Icon="{StaticResource OptionsEmoji}" CommandParameter="{x:Static wc:MenuCommand.ShowOptions}"/>
 
             <MenuItem Header="{x:Static i18n:Text.Help}">
                 <MenuItem Header="{x:Static i18n:Text.About}" Command="{Binding MenuItemCommand}"
-                          CommandParameter="{x:Static wc:MenuCommand.About}"/>
+                          Icon="{StaticResource AboutEmoji}" CommandParameter="{x:Static wc:MenuCommand.About}"/>
                 <MenuItem Header="{x:Static i18n:Text.VisitWebsite}" Command="{Binding MenuItemCommand}"
-                          CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
+                          Icon="{StaticResource WebsiteEmoji}" CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
+                <Separator/>
+                <MenuItem Header="{x:Static i18n:Text.DebugWindow}" Command="{Binding MenuItemCommand}"
+                          Icon="{StaticResource DebugEmoji}" CommandParameter="{x:Static wc:MenuCommand.DebugWindow}"/>
             </MenuItem>
 
             <MenuItem Command="{Binding MenuItemCommand}"
@@ -86,10 +96,10 @@
                       CommandParameter="{x:Static wc:MenuCommand.Disable}"/>
 
             <MenuItem Header="{x:Static i18n:Text.Restart}" Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.Restart}"/>
+                      Icon="{StaticResource RestartEmoji}" CommandParameter="{x:Static wc:MenuCommand.Restart}"/>
 
             <MenuItem Header="{x:Static i18n:Text.Exit}" Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.Exit}"/>
+                      Icon="{StaticResource ExitEmoji}" CommandParameter="{x:Static wc:MenuCommand.Exit}"/>
 
         </ContextMenu>
     </UserControl.ContextMenu>
