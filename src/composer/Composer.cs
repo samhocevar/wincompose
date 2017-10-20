@@ -675,10 +675,7 @@ static class Composer
     /// <summary>
     /// Return whether WinCompose has been disabled
     /// </summary>
-    public static bool IsDisabled()
-    {
-        return Settings.Disabled.Value;
-    }
+    public static bool IsDisabled() => Settings.Disabled.Value;
 
     private static void ResetSequence()
     {

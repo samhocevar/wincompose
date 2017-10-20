@@ -281,9 +281,9 @@ namespace WinCompose
             }
         }
 
-        public bool IsDisabled { get { return Composer.IsDisabled(); } }
-        public bool HasNewerVersion { get { return Updater.HasNewerVersion(); } }
-        public string DownloadHeader { get { return string.Format(i18n.Text.Download, Updater.Get("Latest") ?? ""); } }
+        public bool IsDisabled => Composer.IsDisabled();
+        public bool HasNewerVersion => Updater.HasNewerVersion();
+        public string DownloadHeader => string.Format(i18n.Text.Download, Updater.Get("Latest") ?? "");
 
         private void UpdaterStateChanged(object sender, EventArgs e)
         {
