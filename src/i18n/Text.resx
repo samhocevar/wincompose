@@ -191,18 +191,23 @@
   </data>
   <data name="Obsolete017" xml:space="preserve">
     <value>500 milliseconds</value>
+    <comment></comment>
   </data>
   <data name="Obsolete018" xml:space="preserve">
     <value>1 second</value>
+    <comment></comment>
   </data>
   <data name="Obsolete019" xml:space="preserve">
     <value>2 seconds</value>
+    <comment></comment>
   </data>
   <data name="Obsolete020" xml:space="preserve">
     <value>3 seconds</value>
+    <comment></comment>
   </data>
   <data name="Obsolete021" xml:space="preserve">
     <value>5 seconds</value>
+    <comment></comment>
   </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Debug Window</value>
@@ -210,9 +215,11 @@
   </data>
   <data name="Obsolete023" xml:space="preserve">
     <value>None</value>
+    <comment></comment>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Show Sequences…</value>
+    <comment></comment>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Disable</value>
@@ -220,9 +227,11 @@
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Restart</value>
+    <comment></comment>
   </data>
   <data name="Obsolete027" xml:space="preserve">
     <value>History</value>
+    <comment></comment>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visit Website</value>
@@ -230,6 +239,7 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
+    <comment></comment>
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
     <value>Unicode characters</value>
@@ -237,21 +247,27 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequences</value>
+    <comment></comment>
   </data>
   <data name="Obsolete039" xml:space="preserve">
     <value>Sequence</value>
+    <comment></comment>
   </data>
   <data name="Obsolete041" xml:space="preserve">
     <value>Unicode</value>
+    <comment></comment>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search Filter:</value>
+    <comment></comment>
   </data>
   <data name="ComposeKey" xml:space="preserve">
     <value>Compose Key:</value>
+    <comment></comment>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Select the key that should act as the Compose key.</value>
+    <comment></comment>
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Delay:</value>
@@ -259,9 +275,11 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Advanced Unicode input</value>
+    <comment></comment>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
     <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F</value>
+    <comment></comment>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>On invalid sequences</value>
@@ -269,27 +287,35 @@
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>Fall back to case insensitive matches</value>
+    <comment></comment>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
     <value>If the entered sequence does not exist, but there is one that only differs by case, automatically correct it.</value>
+    <comment></comment>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
     <value>Discard all typed characters</value>
+    <comment></comment>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
     <value>If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used.</value>
+    <comment></comment>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Emit a beep</value>
+    <comment></comment>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
     <value>If the entered sequence does not exist, emit a system sound.</value>
+    <comment></comment>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Interface language:</value>
+    <comment></comment>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
     <value>Select the language that WinCompose uses for the interface. By default the operating system language is used.</value>
+    <comment></comment>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
@@ -313,30 +339,39 @@
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
     <value>This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key.</value>
+    <comment></comment>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insert zero-width spaces in Office apps</value>
+    <comment></comment>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
     <value>Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug.</value>
+    <comment></comment>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emulate Caps Lock using both Shift keys</value>
+    <comment></comment>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
     <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously.</value>
+    <comment></comment>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift key disables Caps Lock</value>
+    <comment></comment>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
     <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key.</value>
+    <comment></comment>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
     <value>Caps Lock always capitalizes letters</value>
+    <comment></comment>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
     <value>When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”.</value>
+    <comment></comment>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
@@ -344,6 +379,7 @@
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In selected categories</value>
+    <comment></comment>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options — WinCompose</value>
@@ -363,6 +399,7 @@
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Behavior</value>
+    <comment></comment>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequences — WinCompose</value>
@@ -374,6 +411,7 @@
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose is disabled</value>
+    <comment></comment>
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Insert</value>
@@ -389,6 +427,7 @@
   </data>
   <data name="Milliseconds" xml:space="preserve">
     <value>(milliseconds)</value>
+    <comment></comment>
   </data>
   <data name="About" xml:space="preserve">
     <value>About</value>
@@ -436,6 +475,7 @@
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
     <value>User-defined sequences</value>
+    <comment></comment>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
     <value>Edit</value>
@@ -447,9 +487,11 @@
   </data>
   <data name="AllowInjected" xml:space="preserve">
     <value>Allow Injected Keys</value>
+    <comment></comment>
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>Do not ignore keys sent by other software like AutoHotkey or Synergy</value>
+    <comment></comment>
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Prt Scrn</value>
