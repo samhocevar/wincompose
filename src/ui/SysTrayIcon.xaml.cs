@@ -47,6 +47,11 @@ namespace WinCompose
 
             // Set the data context for the menu, not for our empty shell class
             ContextMenu.DataContext = this;
+        }
+
+        public override void EndInit()
+        {
+            base.EndInit();
 
             m_control = new RemoteControl();
             m_control.DisableEvent += OnDisableEvent;
@@ -58,7 +63,6 @@ namespace WinCompose
             m_icon.Visible = true;
             m_icon.Click += NotifyiconClicked;
             m_icon.DoubleClick += NotifyiconDoubleclicked;
-
 
             // XXX: disabled for now, as this feature is a bit controversial
             //SysTray.AlwaysShow("wincompose[.]exe");
