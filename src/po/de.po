@@ -8,21 +8,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-06-27 11:45+0000\n"
-"Last-Translator: Roman Leo <roman.leo@gmx.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
-"de/>\n"
+"PO-Revision-Date: 2017-11-03 18:46+0000\n"
+"Last-Translator: Andreas Kleinert <Andy.Kleinert@gmail.com>\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.15-dev\n"
+"X-Generator: Weblate 2.18-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "automatische Erkennung"
+msgstr "Automatische Erkennung"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
@@ -77,12 +77,12 @@ msgstr "Menü"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr "Escape"
+msgstr "ESC-Taste"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Umwandlung"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
@@ -147,7 +147,7 @@ msgstr "Keine"
 
 #: i18n/Text.resx:214 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "Sequenzen anzeigen…"
+msgstr "Sequenzen anzeigen …"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:217 ID:Disable
@@ -218,9 +218,9 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
-"Unicode-Eingabe für beliebige Zeichen aktivieren, selbst wenn keine Compose-"
-"Tastenfolge definiert ist. Beispielsweise ergibt die Tastenfolge „Compose U "
-"1 A 3 F“ das Zeichen U+1A3F"
+"Aktivieren Sie die Unicode-Eingabe für alle Zeichen, auch wenn keine Compose-"
+"Tastenfolge definiert ist. Beispielsweise wird die folgende Sequenz das "
+"Zeichen U+1A3F ausgeben: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:265 ID:InvalidSequences
@@ -516,7 +516,7 @@ msgstr ""
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:452 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "Druck"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -687,11 +687,10 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose benötigt das .NET Framework, Version 3.5 SP1 oder neuer; das "
-"scheint\n"
-"aber nicht installiert zu sein. Die folgende Aktion hilft möglicherweise, "
-"das Problem\n"
-"zu beheben:"
+"WinCompose benötigt das .NET Framework, Version 3.5 SP1 oder höher, welches "
+"zur Zeit\n"
+"nicht installiert zu sein scheint. Die folgende Aktion kann helfen, das "
+"Problem zu lösen:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:145
@@ -704,13 +703,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
-"Sobald das erledigt ist, können Sie zu diesem Bildschirm zurückkehren\n"
+"Sobald das abgeschlossen ist, können Sie zu diesem Dialog zurückkehren\n"
 "und die Installation fortsetzen."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
-msgstr "Diese Aktion erfordert Administratorrechte. Fehler: %d"
+msgstr "Administratorrechte erforderlich. Fehler: %d"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Zeichen von ungültigen Sequenzen verwerfen"
