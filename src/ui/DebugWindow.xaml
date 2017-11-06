@@ -48,7 +48,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding DateTime, StringFormat='{}{0:yyyy/MM/dd HH:mm:ss.fff}'}" Grid.Column="0"
                        Foreground="DarkGray" FontWeight="Bold" Margin="5,0,5,0"/>
-                <TextBlock Text="{Binding Message}" Grid.Column="1"
+                <TextBlock Text="{Binding Message}" Grid.Column="1" FontFamily="{x:Static wc:Constants.FixedFontFamily}"
                        Foreground="Black" TextWrapping="NoWrap"/>
             </Grid>
         </DataTemplate>

@@ -16,15 +16,13 @@ namespace WinCompose
 {
     public static class Constants
     {
-        public static FontFamily PreferredFontFamily
-        {
-            get { return new FontFamily(string.Join(", ", PreferredFonts)); }
-        }
+        public static FontFamily PreferredFontFamily => new FontFamily(PreferredString);
+        public static FontFamily FixedFontFamily => new FontFamily(FixedString);
 
         // We need Segoe UI Symbol, but we put it at the end because it messes
         // with combining character rendering (see #71). As for Symbola, it’s
         // not a Microsoft font, but it appears to be widespread enough.
-        private static string[] PreferredFonts = new string[]
+        private static readonly string[] PreferredFonts =
         {
             "Segoe UI",
             "Lucida Sans Unicode",
@@ -40,5 +38,8 @@ namespace WinCompose
             "Segoe UI Symbol",
             "Symbola",
         };
+
+        private static readonly string PreferredString = string.Join(", ", PreferredFonts);
+        private static readonly string FixedString = "Consolas, " + PreferredString;
     }
 }
