@@ -187,20 +187,22 @@ static class Composer
 
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
-        if (is_keyup && CurrentState == State.Combination
+        if (is_keyup && CurrentState == State.KeyCombination
              && key == m_current_compose_key)
         {
-            Log.Debug("Combination Off");
             bool compose_key_was_altgr = m_compose_key_is_altgr;
+            Key old_compose_key = m_current_compose_key;
             CurrentState = State.Idle;
             m_current_compose_key = new Key(VK.NONE);
             m_compose_key_is_altgr = false;
             m_compose_counter = 0;
 
+            Log.Debug("KeyCombination ended (state: {0})", m_state);
+
             // If relevant, send an additional KeyUp for the opposite
             // key; experience indicates that it helps unstick some
             // applications such as mintty.exe.
-            switch (m_current_compose_key.VirtualKey)
+            switch (old_compose_key.VirtualKey)
             {
                 case VK.LMENU: SendKeyUp(VK.RMENU); break;
                 case VK.RMENU: SendKeyUp(VK.LMENU);
@@ -222,12 +224,14 @@ static class Composer
         if (is_keydown && Settings.ComposeKeys.Value.Contains(key)
              && m_compose_counter == 0 && CurrentState == State.Idle)
         {
-            Log.Debug("Now Composing");
             CurrentState = State.Sequence;
             m_current_compose_key = key;
             m_compose_key_is_altgr = key.VirtualKey == VK.RMENU &&
                                      m_possible_altgr_keys.Count > 0;
             ++m_compose_counter;
+
+            Log.Debug("Now composing (state: {0}) (altgr: {1}",
+                      m_state, m_compose_key_is_altgr);
 
             // Lauch the sequence reset expiration thread
             // FIXME: do we need to launch a new thread each time the
@@ -259,8 +263,8 @@ static class Composer
              && (key.VirtualKey == VK.ESCAPE || key.VirtualKey == VK.BACK))
         {
             // FIXME: if a sequence was in progress, maybe print it!
-            Log.Debug("No Longer Composing");
             ResetSequence();
+            Log.Debug("No longer composing (state: {0})", m_state);
             return true;
         }
 
@@ -294,8 +298,8 @@ static class Composer
 
             // If this was a dead key, it will be completely ignored. But
             // it’s okay since we stored it.
-            Log.Debug("Forwarding Key {0} to System (not composing)",
-                      key.FriendlyName);
+            Log.Debug("Forwarding “{0}” Key{1} to system (state: {2})",
+                      key.FriendlyName, is_keydown ? "Down" : "Up", m_state);
             return false;
         }
 
@@ -322,7 +326,6 @@ static class Composer
 
             if (keep_original || key_unusable || altgr_combination)
             {
-                Log.Debug("Combination On");
                 bool compose_key_was_altgr = m_compose_key_is_altgr;
                 ResetSequence();
                 if (compose_key_was_altgr)
@@ -336,7 +339,8 @@ static class Composer
                 {
                     SendKeyDown(m_current_compose_key.VirtualKey);
                 }
-                CurrentState = State.Combination;
+                CurrentState = State.KeyCombination;
+                Log.Debug("KeyCombination started (state: {0})", m_state);
                 return false;
             }
         }
@@ -373,8 +377,8 @@ static class Composer
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())
         {
-            Log.Debug("Forwarding Key {0} to System (no possible sequence uses it)",
-                      key.FriendlyName);
+            Log.Debug("Forwarding unusable “{0}” Key{1} to system (state: {2})",
+                      key.FriendlyName, is_keydown ? "Down" : "Up", m_state);
             return false;
         }
 
@@ -382,7 +386,7 @@ static class Composer
         // is a key we must add to the current sequence.
         if (add_to_sequence)
         {
-            Log.Debug("Adding to Sequence: {0}", key.FriendlyName);
+            Log.Debug("Adding to sequence: {0}", key.FriendlyName);
             return AddToSequence(key);
         }
 
@@ -675,13 +679,11 @@ static class Composer
     /// <summary>
     /// Return whether WinCompose has been disabled
     /// </summary>
-    public static bool IsDisabled() => Settings.Disabled.Value;
+    public static bool IsDisabled => Settings.Disabled.Value;
 
     private static void ResetSequence()
     {
         CurrentState = State.Idle;
-        m_current_compose_key = new Key(VK.NONE);
-        m_compose_key_is_altgr = false;
         m_compose_counter = 0;
         m_sequence.Clear();
     }
@@ -883,15 +885,15 @@ static class Composer
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
         if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (IsComposing() && m_current_compose_key.VirtualKey == VK.CAPITAL))
+             || (IsComposing&& m_current_compose_key.VirtualKey == VK.CAPITAL))
             indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (IsComposing() && m_current_compose_key.VirtualKey == VK.NUMLOCK))
+             || (IsComposing&& m_current_compose_key.VirtualKey == VK.NUMLOCK))
             indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (IsComposing() && m_current_compose_key.VirtualKey == VK.SCROLL))
+             || (IsComposing&& m_current_compose_key.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
         for (ushort i = 0; i < 4; ++i)
@@ -934,7 +936,7 @@ static class Composer
     private static int m_compose_counter = 0;
 
     /// <summary>
-    /// The compose key being used; only valid in state “Combination” for now.
+    /// The compose key being used; only valid in state “KeyCombination” for now.
     /// </summary>
     private static Key m_current_compose_key = new Key(VK.NONE);
 
@@ -948,16 +950,16 @@ static class Composer
         Idle,
         Sequence,
         /// <summary>
-        /// Combination mode: the compose key is held, but not for composing,
+        /// KeyCombination mode: the compose key is held, but not for composing,
         /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
         /// </summary>
-        Combination,
+        KeyCombination,
         // TODO: we probably want "Disabled" as another possible state
     };
 
     public static State CurrentState
     {
-        get { return m_state; }
+        get => m_state;
 
         private set
         {
@@ -973,10 +975,7 @@ static class Composer
     /// <summary>
     /// Indicates whether a compose sequence is in progress
     /// </summary>
-    public static bool IsComposing()
-    {
-        return CurrentState == State.Sequence;
-    }
+    public static bool IsComposing => CurrentState == State.Sequence;
 }
 
 }

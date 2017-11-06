@@ -49,7 +49,7 @@ static class Updater
             {
                 UpdateStatus();
 
-                if (HasNewerVersion())
+                if (HasNewerVersion)
                 {
                     Changed(null, new EventArgs());
                 }
@@ -64,20 +64,23 @@ static class Updater
         }
     }
 
-    public static bool HasNewerVersion()
+    public static bool HasNewerVersion
     {
-        string latest = Get("Latest");
-        if (latest == null)
+        get
+        {
+            string latest = Get("Latest");
+            if (latest == null)
+                return false;
+
+            var current = SplitVersionString(Settings.Version);
+            var available = SplitVersionString(latest);
+
+            for (int i = 0; i < 4; ++i)
+                if (current[i] < available[i])
+                    return true;
+
             return false;
-
-        var current = SplitVersionString(Settings.Version);
-        var available = SplitVersionString(latest);
-
-        for (int i = 0; i < 4; ++i)
-            if (current[i] < available[i])
-                return true;
-
-        return false;
+        }
     }
 
     private static List<int> SplitVersionString(string str)

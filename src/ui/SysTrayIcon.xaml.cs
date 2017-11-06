@@ -159,7 +159,7 @@ namespace WinCompose
                     break;
 
                 case MenuCommand.Disable:
-                    if (Composer.IsDisabled())
+                    if (Composer.IsDisabled)
                         m_control.TriggerDisableEvent();
                     Composer.ToggleDisabled();
                     SysTrayUpdateCallback(null, new EventArgs());
@@ -189,9 +189,9 @@ namespace WinCompose
 
         private System.Drawing.Icon GetCurrentIcon()
         {
-            return GetIcon((Composer.IsDisabled() ?     0x1 : 0x0) |
-                           (Composer.IsComposing() ?    0x2 : 0x0) |
-                           (Updater.HasNewerVersion() ? 0x4 : 0x0));
+            return GetIcon((Composer.IsDisabled?     0x1 : 0x0) |
+                           (Composer.IsComposing?    0x2 : 0x0) |
+                           (Updater.HasNewerVersion? 0x4 : 0x0));
         }
 
         public static System.Drawing.Icon GetIcon(int index)
@@ -255,13 +255,13 @@ namespace WinCompose
         {
             string ret = i18n.Text.DisabledToolTip;
 
-            if (!Composer.IsDisabled())
+            if (!Composer.IsDisabled)
                 ret = string.Format(i18n.Text.TrayToolTip,
                                     Settings.ComposeKeys.Value.FriendlyName,
                                     Settings.SequenceCount,
                                     Settings.Version);
 
-            if (Updater.HasNewerVersion())
+            if (Updater.HasNewerVersion)
                 ret += "\n" + i18n.Text.UpdatesToolTip;
 
             return ret;
@@ -295,8 +295,8 @@ namespace WinCompose
             }
         }
 
-        public bool IsDisabled => Composer.IsDisabled();
-        public bool HasNewerVersion => Updater.HasNewerVersion();
+        public bool IsDisabled => Composer.IsDisabled;
+        public bool HasNewerVersion => Updater.HasNewerVersion;
         public string DownloadHeader => string.Format(i18n.Text.Download, Updater.Get("Latest") ?? "");
 
         private void UpdaterStateChanged(object sender, EventArgs e)
@@ -307,7 +307,7 @@ namespace WinCompose
 
         private void OnDisableEvent(object sender, EventArgs e)
         {
-            if (!Composer.IsDisabled())
+            if (!Composer.IsDisabled)
                 Composer.ToggleDisabled();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
         }
