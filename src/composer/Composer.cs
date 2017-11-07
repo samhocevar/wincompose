@@ -16,8 +16,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -77,7 +75,7 @@ static class Composer
     public static void Init()
     {
         StartMonitoringKeyboardLeds();
-        CheckKeyboardLayout();
+        KeyboardLayout.CheckForChanges();
     }
 
     /// <summary>
@@ -105,11 +103,11 @@ static class Composer
 
         // We need to check the keyboard layout before we save the dead
         // key, otherwise we may be saving garbage.
-        CheckKeyboardLayout();
+        KeyboardLayout.CheckForChanges();
 
-        int dead_key = SaveDeadKey();
+        KeyboardLayout.SaveDeadKey();
         bool ret = OnKeyInternal(ev, vk, sc, flags);
-        RestoreDeadKey(dead_key);
+        KeyboardLayout.RestoreDeadKey();
 
         return ret;
     }
@@ -131,7 +129,7 @@ static class Composer
         // Guess what the system would print if we weren’t interfering. If
         // a printable representation exists, use that. Otherwise, default
         // to its virtual key code.
-        Key key = VkToKey(vk, sc, flags, has_shift, has_altgr, has_capslock);
+        Key key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, has_capslock);
 
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
         // whether this key without Caps Lock gives a non-ASCII alphabetical
@@ -139,7 +137,7 @@ static class Composer
         // uppercase variant of that character.
         if (has_capslock && Settings.CapsLockCapitalizes.Value)
         {
-            Key alt_key = VkToKey(vk, sc, flags, has_shift, has_altgr, false);
+            Key alt_key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, false);
 
             if (alt_key.IsPrintable() && alt_key.ToString()[0] > 0x7f)
             {
@@ -180,7 +178,7 @@ static class Composer
         // If the special Synergy window has focus, we’re actually sending
         // keystrokes to another computer; disable WinCompose. Same if it is
         // a Cygwin X window.
-        if (m_window_is_other_desktop)
+        if (KeyboardLayout.Window.IsOtherDesktop)
         {
             return false;
         }
@@ -227,7 +225,7 @@ static class Composer
             CurrentState = State.Sequence;
             m_current_compose_key = key;
             m_compose_key_is_altgr = key.VirtualKey == VK.RMENU &&
-                                     m_possible_altgr_keys.Count > 0;
+                                     KeyboardLayout.HasAltGr;
             ++m_compose_counter;
 
             Log.Debug("Now composing (state: {0}) (altgr: {1}",
@@ -322,7 +320,7 @@ static class Composer
             bool keep_original = Settings.KeepOriginalKey.Value;
             bool key_unusable = !key.IsUsable();
             bool altgr_combination = m_compose_key_is_altgr &&
-                        m_possible_altgr_keys.ContainsKey(key.ToString());
+                            KeyboardLayout.KeyToAltGrVariant(key) != null;
 
             if (keep_original || key_unusable || altgr_combination)
             {
@@ -364,10 +362,10 @@ static class Composer
         // key needs translating.
         if (m_compose_key_is_altgr && (m_compose_counter & 1) != 0)
         {
-            string altgr_variant;
-            if (m_possible_altgr_keys.TryGetValue(key.ToString(), out altgr_variant))
+            Key altgr_variant = KeyboardLayout.KeyToAltGrVariant(key);
+            if (altgr_variant != null)
             {
-                key = new Key(altgr_variant);
+                key = altgr_variant;
                 // Do as if we already released Compose, otherwise the next KeyUp
                 // event will cause VK.COMPOSE to be added to the sequence…
                 ++m_compose_counter;
@@ -465,48 +463,6 @@ static class Composer
         return true;
     }
 
-    private static Key VkToKey(VK vk, SC sc, LLKHF flags, bool has_shift,
-                               bool has_altgr, bool has_capslock)
-    {
-        byte[] keystate = new byte[256];
-        NativeMethods.GetKeyboardState(keystate);
-        keystate[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-        keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
-
-        // These two calls must be done together and in this order.
-        string str_if_normal = VkToUnicode(vk, sc, keystate, flags);
-        string str_if_dead = VkToUnicode(VK.SPACE);
-
-        if (str_if_dead != " ")
-            return new Key(str_if_dead);
-
-        // Special case: we don't consider characters such as Esc as printable
-        // otherwise they are not properly serialised in the config file.
-        if (str_if_normal == "" || str_if_normal[0] < ' ')
-            return new Key(vk);
-
-        return new Key(str_if_normal);
-    }
-
-    private static string VkToUnicode(VK vk)
-    {
-        return VkToUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
-    }
-
-    private static string VkToUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
-    {
-        const int buflen = 4;
-        byte[] buf = new byte[2 * buflen];
-        int ret = NativeMethods.ToUnicode(vk, sc, keystate, buf, buflen, flags);
-        if (ret > 0 && ret < buflen)
-        {
-            return Encoding.Unicode.GetString(buf, 0, ret * 2);
-        }
-        return "";
-    }
-
     /// <summary>
     /// Check whether a string contains any Unicode surrogate characters.
     /// </summary>
@@ -526,12 +482,13 @@ static class Composer
          * applications such as XChat for Windows rename their own top-level
          * window, so we parse through the names we know in order to detect
          * a GTK+ application. */
-        bool use_gtk_hack = m_window_is_gtk;
+        bool use_gtk_hack = KeyboardLayout.Window.IsGtk;
 
         /* HACK: Notepad++ is unable to output high plane Unicode characters,
          * so we rely on clipboard hacking when the composed string contains
          * such characters. */
-        bool use_clipboard_hack = m_window_is_notepadpp && HasSurrogates(str);
+        bool use_clipboard_hack = KeyboardLayout.Window.IsNotepadPlusPlus
+                                   && HasSurrogates(str);
 
         /* HACK: in MS Office, some symbol insertions change the text font
          * without returning to the original font. To avoid this, we output
@@ -539,12 +496,13 @@ static class Composer
          * go right and backspace. */
         /* These are the actual window class names for Outlook and Word…
          * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
-        bool use_office_hack = m_window_is_office && Settings.InsertZwsp.Value;
+        bool use_office_hack = KeyboardLayout.Window.IsOffice
+                                && Settings.InsertZwsp.Value;
 
         /* Clear keyboard modifiers if we need one of our custom hacks */
         if (use_gtk_hack || use_office_hack)
         {
-            VK[] all_modifiers = new VK[]
+            VK[] all_modifiers =
             {
                 VK.LSHIFT, VK.RSHIFT,
                 VK.LCONTROL, VK.RCONTROL,
@@ -704,154 +662,6 @@ static class Composer
         SendKeyUp(vk, flags);
     }
 
-    /// <summary>
-    /// Attempt to enumerate all dead keys available on the current keyboard
-    /// layout and cache the results in <see cref="m_possible_dead_keys"/>.
-    /// </summary>
-    private static void AnalyzeKeyboardLayout()
-    {
-        m_possible_dead_keys = new Dictionary<string, int>();
-        m_possible_altgr_keys = new Dictionary<string, string>();
-
-        // Try every keyboard key followed by space to see which ones are
-        // dead keys. This way, when later we want to know if a dead key is
-        // currently buffered, we just call ToUnicode(VK.SPACE) and match
-        // the result with what we found here.
-        string[] no_altgr = new string[0x200];
-        byte[] state = new byte[256];
-
-        for (int i = 0; i < 0x400; ++i)
-        {
-            VK vk = (VK)(i & 0xff);
-            bool has_shift = (i & 0x100) != 0;
-            bool has_altgr = (i & 0x200) != 0;
-
-            state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-            state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-            state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-
-            // First the key we’re interested in, then the space key
-            string str_if_normal = VkToUnicode(vk, (SC)0, state, (LLKHF)0);
-            string str_if_dead = VkToUnicode(VK.SPACE);
-
-            // If the AltGr gives us a result and it’s different from without
-            // AltGr, we need to remember it.
-            string str = str_if_dead != " " ? str_if_dead : str_if_normal;
-            if (has_altgr)
-            {
-                if (no_altgr[i - 0x200] != "" && str != "" && no_altgr[i - 0x200] != str)
-                {
-                    Log.Debug("VK {0} is “{1}” but “{2}” with AltGr",
-                              vk.ToString(), no_altgr[i - 0x200], str);
-                    m_possible_altgr_keys[no_altgr[i - 0x200]] = str;
-                }
-            }
-            else
-            {
-                no_altgr[i] = str_if_dead != " " ? str_if_dead : str_if_normal;
-            }
-
-            // If the resulting string is not the space character, it means
-            // that it was a dead key. Good!
-            if (str_if_dead != " ")
-                m_possible_dead_keys[str_if_dead] = i;
-        }
-
-        // Clean up key buffer
-        VkToUnicode(VK.SPACE);
-        VkToUnicode(VK.SPACE);
-    }
-
-    /// <summary>
-    /// Save the dead key if there is one, since we'll be calling ToUnicode
-    /// later on. This effectively removes any dead key from the ToUnicode
-    /// internal buffer.
-    /// </summary>
-    private static int SaveDeadKey()
-    {
-        int dead_key = 0;
-        string str = VkToUnicode(VK.SPACE);
-        if (str != " ")
-            m_possible_dead_keys.TryGetValue(str, out dead_key);
-        return dead_key;
-    }
-
-    /// <summary>
-    /// Restore a previously saved dead key. This should restore the ToUnicode
-    /// internal buffer.
-    /// </summary>
-    private static void RestoreDeadKey(int dead_key)
-    {
-        if (dead_key == 0)
-            return;
-
-        byte[] state = new byte[256];
-
-        VK vk = (VK)(dead_key & 0xff);
-        bool has_shift = (dead_key & 0x100) != 0;
-        bool has_altgr = (dead_key & 0x200) != 0;
-
-        state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-        state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-        state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-
-        VkToUnicode(vk, (SC)0, state, (LLKHF)0);
-    }
-
-    private static void CheckKeyboardLayout()
-    {
-        // Detect keyboard layout changes by querying the foreground window,
-        // and apply the same layout to WinCompose itself.
-        IntPtr hwnd = NativeMethods.GetForegroundWindow();
-        uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
-        IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
-
-        m_window_is_gtk = false;
-        m_window_is_notepadpp = false;
-        m_window_is_office = false;
-        m_window_is_other_desktop = false;
-
-        const int len = 256;
-        StringBuilder buf = new StringBuilder(len);
-        if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
-        {
-            string wclass = buf.ToString();
-
-            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
-                 || wclass == "hexchatWindowToplevel")
-                m_window_is_gtk = true;
-
-            if (wclass == "Notepad++")
-                m_window_is_notepadpp = true;
-
-            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
-                m_window_is_office = true;
-
-            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
-                m_window_is_other_desktop = true;
-        }
-
-        if (active_layout != m_current_layout)
-        {
-            m_current_layout = active_layout;
-
-            Log.Debug("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                      tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
-
-            if (active_layout != (IntPtr)0)
-                NativeMethods.ActivateKeyboardLayout(active_layout, 0);
-
-            tid = NativeMethods.GetCurrentThreadId();
-            active_layout = NativeMethods.GetKeyboardLayout(tid);
-
-            Log.Debug("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                      tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
-
-            // We need to rebuild the list of dead keys
-            AnalyzeKeyboardLayout();
-        }
-    }
-
     private static void StartMonitoringKeyboardLeds()
     {
         for (ushort i = 0; i < 4; ++i)
@@ -920,15 +730,6 @@ static class Composer
 
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
-    private static Dictionary<string, int> m_possible_dead_keys;
-    private static Dictionary<string, string> m_possible_altgr_keys;
-    // Initialise with -1 to make sure the above dictionaries are
-    // properly initialised even if the layout is found to be 0x0.
-    private static IntPtr m_current_layout = new IntPtr(-1);
-    private static bool m_window_is_gtk = false;
-    private static bool m_window_is_notepadpp = false;
-    private static bool m_window_is_office = false;
-    private static bool m_window_is_other_desktop = false;
 
     /// <summary>
     /// How many times we pressed and released compose.
