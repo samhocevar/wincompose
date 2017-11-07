@@ -18,7 +18,8 @@ TXT = rules/Xorg.txt \
       rules/WinCompose.txt
 
 EXE = bin/$(CONFIG)/wincompose.exe
-DLL = bin/$(CONFIG)/Emoji.Wpf.dll
+DLL = bin/$(CONFIG)/Emoji.Wpf.dll \
+      bin/$(CONFIG)/Typography.OpenFont.dll
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
