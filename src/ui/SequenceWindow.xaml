@@ -45,7 +45,8 @@
         <!-- This DataTemplate contains a TextBox and a "clear text" button that can be used for the Search text input -->
         <DataTemplate x:Key="SearchText">
             <Grid>
-                <TextBox x:Name="SearchBox" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="4"/>
+                <TextBox x:Name="SearchBox" Padding="4" Width="200"
+                         Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <DockPanel>
                     <Button DockPanel.Dock="Right" Click="ClearSearchClicked" Margin="4,0">
                         <Button.Template>
@@ -109,12 +110,14 @@
                             <TextBlock Text="( ͡° ͜ʖ ͡°)"/>
                         </StackPanel>
                     </RadioButton>
+                    <RadioButton Margin="4" GroupName="Category"
+                                 IsChecked="{Binding Path=ActiveCategoryArray[3], Mode=TwoWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <ContentPresenter ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
+                        </StackPanel>
+                    </RadioButton>
                 </StackPanel>
             </GroupBox>
-            <StackPanel DockPanel.Dock="Bottom" Margin="8">
-                <ContentPresenter ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
-                <CheckBox Margin="0,4,0,0" Content="{x:Static i18n:Text.InSelectedCategories}" IsChecked="{Binding SearchInSelection}"/>
-            </StackPanel>
             <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
@@ -197,8 +200,8 @@
                                             <DataTemplate.Triggers>
                                                 <!-- Change the key image and size when the value matches the space key -->
                                                 <DataTrigger Binding="{Binding}" Value="{x:Static wc:SequenceViewModel.SpaceKey}">
-                                                    <Setter TargetName="KeyImage" Property="Width" Value="64"/>                                                   
-                                                    <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->                                                   
+                                                    <Setter TargetName="KeyImage" Property="Width" Value="64"/>
+                                                    <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->
                                                     <Setter TargetName="KeyImage" Property="Background">
                                                         <Setter.Value>
                                                             <ImageBrush ImageSource="{StaticResource SpaceKeyImage}"/>

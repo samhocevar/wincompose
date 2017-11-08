@@ -25,7 +25,6 @@ namespace WinCompose
     {
         private string m_search_text;
         private SearchTokens m_search_tokens = new SearchTokens(null);
-        private bool m_search_in_selection;
 
         public RootViewModel()
         {
@@ -84,7 +83,7 @@ namespace WinCompose
 
         public static RootViewModel Instance { get; private set; }
 
-        private bool[] m_active_category_array = new bool[] { true, false, false };
+        private bool[] m_active_category_array = { true, false, false, false };
         public bool[] ActiveCategoryArray => m_active_category_array;
         public int ActiveCategory => Array.IndexOf(ActiveCategoryArray, true);
 
@@ -92,9 +91,7 @@ namespace WinCompose
 
         public IEnumerable<SequenceViewModel> Sequences { get; private set; }
 
-        public string SearchText { get { return m_search_text; } set { SetValue(ref m_search_text, value, "SearchText", RefreshSearch); } }
-
-        public bool SearchInSelection { get { return m_search_in_selection; } set { SetValue(ref m_search_in_selection, value, "SearchInSelection", x => RefreshFilters()); } }
+        public string SearchText { get => m_search_text; set => SetValue(ref m_search_text, value, "SearchText", RefreshSearch); }
 
         public void RefreshFilters()
         {
@@ -114,9 +111,6 @@ namespace WinCompose
             var sequence = (SequenceViewModel)obj;
             if (m_search_tokens.IsEmpty)
                 return sequence.Category.IsSelected;
-
-            if (SearchInSelection)
-                return sequence.Category.IsSelected && sequence.Match(m_search_tokens);
 
             return sequence.Match(m_search_tokens);
         }

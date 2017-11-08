@@ -23,7 +23,7 @@ namespace WinCompose
     /// </summary>
     public partial class SequenceWindow : INotifyPropertyChanged
     {
-        private RootViewModel ViewModel { get { return (RootViewModel)DataContext; } }
+        private RootViewModel ViewModel => (RootViewModel)DataContext;
 
         public SequenceWindow()
         {
