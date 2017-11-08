@@ -183,6 +183,15 @@ static class Composer
             return false;
         }
 
+        // Sanity check in case the configuration changed between two
+        // key events.
+        if (m_current_compose_key.VirtualKey != VK.NONE
+             && !Settings.ComposeKeys.Value.Contains(m_current_compose_key))
+        {
+            CurrentState = State.Idle;
+            m_current_compose_key = new Key(VK.NONE);
+        }
+
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
         if (is_keyup && CurrentState == State.KeyCombination
@@ -228,7 +237,7 @@ static class Composer
                                      KeyboardLayout.HasAltGr;
             ++m_compose_counter;
 
-            Log.Debug("Now composing (state: {0}) (altgr: {1}",
+            Log.Debug("Now composing (state: {0}) (altgr: {1})",
                       m_state, m_compose_key_is_altgr);
 
             // Lauch the sequence reset expiration thread
@@ -296,8 +305,8 @@ static class Composer
 
             // If this was a dead key, it will be completely ignored. But
             // it’s okay since we stored it.
-            Log.Debug("Forwarding “{0}” Key{1} to system (state: {2})",
-                      key.FriendlyName, is_keydown ? "Down" : "Up", m_state);
+            Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
+                      is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
             return false;
         }
 
@@ -375,8 +384,8 @@ static class Composer
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())
         {
-            Log.Debug("Forwarding unusable “{0}” Key{1} to system (state: {2})",
-                      key.FriendlyName, is_keydown ? "Down" : "Up", m_state);
+            Log.Debug("Forwarding unusable {0} “{1}” to system (state: {2})",
+                      is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
             return false;
         }
 

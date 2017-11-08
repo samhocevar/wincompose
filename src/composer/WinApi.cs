@@ -14,7 +14,6 @@
 using System;
 using System.IO;
 using System.Text;
-using System.Threading;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
 
