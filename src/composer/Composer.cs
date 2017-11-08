@@ -493,10 +493,10 @@ static class Composer
          * a GTK+ application. */
         bool use_gtk_hack = KeyboardLayout.Window.IsGtk;
 
-        /* HACK: Notepad++ is unable to output high plane Unicode characters,
-         * so we rely on clipboard hacking when the composed string contains
-         * such characters. */
-        bool use_clipboard_hack = KeyboardLayout.Window.IsNotepadPlusPlus
+        /* HACK: Notepad++ and LibreOffice are unable to output high plane
+         * Unicode characters, so we rely on clipboard hacking when the
+         * composed string contains such characters. */
+        bool use_clipboard_hack = KeyboardLayout.Window.IsNPPOrLO
                                    && HasSurrogates(str);
 
         /* HACK: in MS Office, some symbol insertions change the text font

@@ -122,7 +122,7 @@ public static class KeyboardLayout
         IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
 
         Window.IsGtk = false;
-        Window.IsNotepadPlusPlus = false;
+        Window.IsNPPOrLO = false;
         Window.IsOffice = false;
         Window.IsOtherDesktop = false;
 
@@ -136,8 +136,9 @@ public static class KeyboardLayout
                  || wclass == "hexchatWindowToplevel")
                 Window.IsGtk = true;
 
-            if (wclass == "Notepad++")
-                Window.IsNotepadPlusPlus = true;
+            /* Notepad++ or LibreOffice */
+            if (wclass == "Notepad++" || wclass == "SALFRAME")
+                Window.IsNPPOrLO = true;
 
             if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
                 Window.IsOffice = true;
@@ -227,7 +228,7 @@ public static class KeyboardLayout
     public struct WindowProperties
     {
         public bool IsGtk { get; set; }
-        public bool IsNotepadPlusPlus { get; set; }
+        public bool IsNPPOrLO { get; set; }
         public bool IsOffice { get; set; }
         public bool IsOtherDesktop { get; set; }
     }
