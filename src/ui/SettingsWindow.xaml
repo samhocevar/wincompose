@@ -55,7 +55,7 @@
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="OnCloseCommandExecuted"/>
     </Window.CommandBindings>
-    
+
     <Window.InputBindings>
         <KeyBinding Key="Escape" Command="ApplicationCommands.Close"/>
         <!-- TODO: bind this to something -->
