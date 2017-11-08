@@ -23,7 +23,7 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
-        <emoji:Image Width="20" Text="🛠️" x:Key="OptionsEmoji"/>
+        <emoji:Image Width="20" Text="🛠" x:Key="OptionsEmoji"/>
         <emoji:Image Width="20" Text="ℹ" x:Key="AboutEmoji"/>
         <emoji:Image Width="20" Text="🔎" x:Key="DebugEmoji"/>
         <emoji:Image Width="20" Text="🌐" x:Key="WebsiteEmoji"/>
