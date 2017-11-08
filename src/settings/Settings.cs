@@ -161,6 +161,10 @@ namespace WinCompose
 
         public static void LoadConfig()
         {
+            // FIXME: this is illegal if not in the STA thread
+            //Log.Debug("Reloading configuration file {0}", GetConfigFile());
+            Console.WriteLine("Reloading configuration file {0}", GetConfigFile());
+
             // The keys used as the compose keys
             ComposeKeys.Load();
             ValidateComposeKeys();
@@ -226,6 +230,10 @@ namespace WinCompose
 
         public static void SaveConfig()
         {
+            // FIXME: this is illegal if not in the STA thread
+            //Log.Debug("Saving configuration file {0}", GetConfigFile());
+            Console.WriteLine("Saving configuration file {0}", GetConfigFile());
+
             SaveEntry("reset_delay", m_delay.ToString());
             Language.Save();
             ComposeKeys.Save();

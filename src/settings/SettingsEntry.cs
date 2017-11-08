@@ -36,25 +36,28 @@ namespace WinCompose
         /// <summary>
         /// Gets the section of this settings entry.
         /// </summary>
-        public string Section { get; private set; }
+        public string Section { get; }
 
         /// <summary>
         /// Gets the key identifying this settings entry.
         /// </summary>
-        public string Key { get; private set; }
+        public string Key { get; }
 
         /// <summary>
         /// Gets the value of this settings entry.
         /// </summary>
         public object Value
         {
-            get { return m_value; }
+            get => m_value;
             set
             {
-                // FIXME: we should mark the value as dirty instead of saving
-                // it immediately.
-                m_value = value;
-                ThreadPool.QueueUserWorkItem(o => { Save(); });
+                if (m_value == null || !m_value.Equals(value))
+                {
+                    m_value = value;
+                    // FIXME: we should mark the value as dirty instead
+                    // of saving it immediately.
+                    ThreadPool.QueueUserWorkItem(o => { Save(); });
+                }
             }
         }
 
@@ -73,8 +76,13 @@ namespace WinCompose
                 try
                 {
                     var string_value = Serialize(Value);
-                    var result = NativeMethods.WritePrivateProfileString(Section, Key, string_value, Settings.GetConfigFile());
-                    return result == 0;
+                    // FIXME: this is illegal if not in the STA thread
+                    //Log.Debug($"Saving {Section}.{Key} = {string_value}");
+                    Console.WriteLine($"Saving option: {Section}.{Key} = {string_value}");
+
+                    var ret = NativeMethods.WritePrivateProfileString(Section, Key,
+                                                string_value, Settings.GetConfigFile());
+                    return ret == 0;
                 }
                 finally
                 {
@@ -162,8 +170,8 @@ namespace WinCompose
         /// </summary>
         public new T Value
         {
-            get { return (T)base.Value; }
-            set { base.Value = value; }
+            get => (T)base.Value;
+            set => base.Value = value;
         }
 
         /// <inheritdoc/>
@@ -171,7 +179,7 @@ namespace WinCompose
         {
             // The default implementation of Serialize just uses the
             // ToString method
-            return value == null ? string.Empty : value.ToString();
+            return value?.ToString() ?? string.Empty;
         }
 
         /// <inheritdoc/>
