@@ -23,6 +23,7 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
+        <emoji:Image Width="20" Text="💬" x:Key="SequencesEmoji"/>
         <emoji:Image Width="20" Text="🛠" x:Key="OptionsEmoji"/>
         <emoji:Image Width="20" Text="ℹ" x:Key="AboutEmoji"/>
         <emoji:Image Width="20" Text="🔎" x:Key="DebugEmoji"/>
@@ -62,7 +63,7 @@
             </MenuItem>
 
             <MenuItem Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.ShowSequences}">
+                      Icon="{StaticResource SequencesEmoji}" CommandParameter="{x:Static wc:MenuCommand.ShowSequences}">
                 <MenuItem.Header>
                     <TextBlock FontWeight="Bold" Text="{x:Static i18n:Text.ShowSequences}"/>
                 </MenuItem.Header>
