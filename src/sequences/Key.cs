@@ -64,7 +64,7 @@ public partial class Key
     private static Dictionary<string, string> ReadXorgKeySyms()
     {
         Dictionary<string, string> ret = new Dictionary<string, string>();
-        using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.res.keysymdef.h"))
+        using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("3rdparty.keysymdef.h"))
         using (StreamReader reader = new StreamReader(s))
         {
             Regex r = new Regex(@"^#define XK_([^ ]*).* U\+([A-Za-z0-9]+)");

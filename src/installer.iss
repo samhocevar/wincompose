@@ -61,8 +61,6 @@ Source: "bin\{#CONFIG}\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
-Source: "rules\Xorg.txt"; DestDir: "{app}\res"
-Source: "rules\Xcompose.txt"; DestDir: "{app}\res"
 Source: "rules\DefaultUserSequences.txt"; DestDir: "{app}\res"
 Source: "rules\Emoji.txt"; DestDir: "{app}\res"
 Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
@@ -110,6 +108,9 @@ Filename: "{app}\{#EXE}"; Flags: nowait
 ; We used to be installed in c:\Program Files (x86)
 Type: filesandordirs; Name: "{pf32}\{#NAME}"
 ; Legacy stuff that we need to remove
+Type: files; Name: "{app}\rules\Xorg.txt"
+Type: files; Name: "{app}\rules\Xcompose.txt"
+Type: dirifempty; Name: "{app}\rules"
 Type: files; Name: "{app}\res\resources.dll"
 Type: files; Name: "{app}\res\wc.ico"
 Type: files; Name: "{app}\res\wca.ico"

@@ -2,30 +2,14 @@
 
 set -e
 
-STEPS=6
-CACHE=unicode/cache
-mkdir -p ${CACHE}
-
-#
-# Copy and transform system files
-#
-
-echo "[1/${STEPS}] Copy system files…"
-
-if [ -f /usr/share/X11/locale/en_US.UTF-8/Compose ]; then
-    cat -s /usr/share/X11/locale/en_US.UTF-8/Compose > rules/Xorg.txt
-fi
-
-if [ -f /usr/include/X11/keysymdef.h ]; then
-    cat -s /usr/include/X11/keysymdef.h > res/keysymdef.h
-fi
+STEPS=5
 
 #
 # Rebuild po/wincompose.pot from our master translation file Text.resx
 # then update all .po files
 #
 
-echo "[2/${STEPS}] Rebuild potfiles…"
+echo "[1/${STEPS}] Rebuild potfiles…"
 DEST=po/wincompose.pot
 # Update POT-Creation-Date with: date +'%Y-%m-%d %R%z'
 cat > ${DEST} << EOF
@@ -106,7 +90,7 @@ po2res()
     esac
 }
 
-echo "[3/${STEPS}] Rebuild resx files…"
+echo "[2/${STEPS}] Rebuild resx files…"
 for POFILE in po/*.po; do
     polang=$(basename ${POFILE} .po)
     reslang=$(po2res $polang)
@@ -148,16 +132,11 @@ done
 # and create .resx translation files for our project
 #
 
-echo "[4/${STEPS}] Rebuild Unicode translation files…"
-INDEX=https://github.com/samhocevar/unicode-translation/tree/master/po
-BASE=https://raw.github.com/samhocevar/unicode-translation/master/po/
-PO=$(wget -qO- $INDEX | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
-for polang in $PO; do
-    printf "${polang}... "
+echo "[3/${STEPS}] Rebuild Unicode translation files…"
+for POFILE in 3rdparty/unicode-translation/po/*.po; do
+    polang=$(basename ${POFILE} .po)
     reslang=$(po2res $polang)
-    SRC=${CACHE}/${polang}.po
-    # Get latest translation if new
-    (cd ${CACHE} && wget -q -N ${BASE}/${polang}.po)
+    printf "${polang}... "
 
     # Parse data and put it in the Char.*.resx and Block.*.resx files
     for FILE in Char Block; do
@@ -173,7 +152,7 @@ for polang in $PO; do
         esac
         DEST=unicode/${FILE}.${reslang}.resx
         sed -e '/^  <data/,$d' < unicode/${FILE}.resx > ${DEST}
-        if uname | grep -qi mingw; then unix2dos; else cat; fi < ${SRC} \
+        if uname | grep -qi mingw; then unix2dos; else cat; fi < ${POFILE} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk 'function f() {
                      if (c && msgstr) {
@@ -196,7 +175,7 @@ echo "done."
 # Check some wincompose.csproj consistency
 #
 
-echo "[5/${STEPS}] Check consistency…"
+echo "[4/${STEPS}] Check consistency…"
 for x in unicode/*.*.resx i18n/*.*.resx; do
     reslang="$(echo $x | cut -f2 -d.)"
     if ! grep -q '"'$(echo $x | tr / .)'"' wincompose.csproj; then
@@ -223,7 +202,7 @@ fi
 # Build translator list
 #
 
-echo "[6/${STEPS}] Update contributor list…"
+echo "[5/${STEPS}] Update contributor list…"
 printf '﻿' > res/.contributors.html
 cat >> res/.contributors.html << EOF
 <html>

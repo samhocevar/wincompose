@@ -993,7 +993,15 @@
   <ItemGroup>
     <None Include="app.config" />
     <EmbeddedResource Include="build.config" />
-    <EmbeddedResource Include="res\keysymdef.h" />
+    <EmbeddedResource Include="3rdparty\x11proto\keysymdef.h">
+        <LogicalName>3rdparty.keysymdef.h</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre">
+        <LogicalName>3rdparty.xorg.rules</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3rdparty\xcompose\dotXCompose">
+        <LogicalName>3rdparty.xcompose.rules</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\contributors.html" />
@@ -1012,8 +1020,6 @@
     <Resource Include="rules\DefaultUserSequences.txt" />
     <Resource Include="rules\Emoji.txt" />
     <Resource Include="rules\WinCompose.txt" />
-    <Resource Include="rules\Xcompose.txt" />
-    <Resource Include="rules\Xorg.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

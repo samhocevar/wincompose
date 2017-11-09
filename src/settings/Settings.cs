@@ -255,8 +255,9 @@ namespace WinCompose
             m_sequences = new SequenceTree();
             m_sequence_count = 0;
 
-            LoadSequenceFile(Path.Combine(GetDataDir(), "Xorg.txt"));
-            LoadSequenceFile(Path.Combine(GetDataDir(), "XCompose.txt"));
+            LoadSequenceResource("3rdparty.xorg.rules");
+            LoadSequenceResource("3rdparty.xcompose.rules");
+
             LoadSequenceFile(Path.Combine(GetDataDir(), "Emoji.txt"));
             LoadSequenceFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
 
@@ -356,9 +357,11 @@ namespace WinCompose
         {
             try
             {
-                foreach (string line in File.ReadAllLines(path))
-                    LoadSequenceString(line);
-                Log.Debug("Loaded rule file {0}", path);
+                using (StreamReader s = new StreamReader(path))
+                {
+                    Log.Debug("Loaded rule file {0}", path);
+                    LoadSequenceStream(s);
+                }
             }
             catch (FileNotFoundException)
             {
@@ -367,13 +370,36 @@ namespace WinCompose
             catch (Exception) { }
         }
 
+        private static void LoadSequenceResource(string resource)
+        {
+            using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource))
+            using (StreamReader sr = new StreamReader(s))
+            {
+                Log.Debug("Loaded rule resource {0}", resource);
+                LoadSequenceStream(sr);
+            }
+        }
+
+        private static void LoadSequenceStream(StreamReader s)
+        {
+            Regex match_comment = new Regex(@"/\*([^*]|\*[^/])*\*/");
+
+            /* Read file and remove all C comments */
+            string buffer = s.ReadToEnd();
+            buffer = match_comment.Replace(buffer, "");
+
+            /* Parse all lines */
+            foreach (string line in buffer.Split('\r', '\n'))
+                ParseRule(line);
+        }
+
         private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
         private static Regex m_r1 = new Regex(@"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
             //                                                    ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
             //                                                     keys               result                 desc
         private static Regex m_r2 = new Regex(@"[\s<>]+");
 
-        private static void LoadSequenceString(string line)
+        private static void ParseRule(string line)
         {
             // If this is an include directive, use LoadSequenceFile() again
             Match m0 = m_r0.Match(line);
@@ -442,9 +468,9 @@ namespace WinCompose
             int utf32 = StringToCodepoint(result);
             if (utf32 >= 0)
             {
-                string key = String.Format("U{0:X04}", utf32);
+                string key = string.Format("U{0:X04}", utf32);
                 string alt_desc = unicode.Char.ResourceManager.GetString(key);
-                if (alt_desc != null && alt_desc.Length > 0)
+                if (!string.IsNullOrEmpty(alt_desc))
                     description = alt_desc;
             }
 
@@ -458,7 +484,7 @@ namespace WinCompose
                 return (int)s[0];
 
             if (s.Length == 2 && s[0] >= 0xd800 && s[0] <= 0xdbff)
-                return Char.ConvertToUtf32(s[0], s[1]);
+                return char.ConvertToUtf32(s[0], s[1]);
 
             return -1;
         }

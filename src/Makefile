@@ -11,9 +11,7 @@ CONFIG = Release
 ISS = installer.iss
 PAS = installer.pas
 
-TXT = rules/Xorg.txt \
-      rules/Xcompose.txt \
-      rules/DefaultUserSequences.txt \
+TXT = rules/DefaultUserSequences.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
