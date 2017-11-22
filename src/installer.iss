@@ -30,6 +30,7 @@ Source: "bin\{#CONFIG}\trampoline.dll"; DestDir: "{tmp}"; Flags: dontcopy
 Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
