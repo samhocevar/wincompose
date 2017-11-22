@@ -8,73 +8,76 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-11-23 04:47+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian (old code) "
+"<https://hosted.weblate.org/projects/wincompose/master/no/>\n"
 "Language: no\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "Automatisk oppdaging"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr ""
+msgstr "Venstre Alt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr ""
+msgstr "Høyre Alt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr ""
+msgstr "Venstre Ctrl"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr ""
+msgstr "Høyre Ctrl"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr ""
+msgstr "Venstre Super"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr ""
+msgstr "Høyre Super"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr ""
+msgstr "Caps Lock"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #. Also known as Application key
 #: i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr ""
+msgstr "Meny"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr ""
+msgstr "Esc"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
@@ -89,108 +92,108 @@ msgstr ""
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Mellomrom"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Enter"
 
 #. The name of the key on the keyboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:189 ID:Obsolete016
 msgid "Grave Accent `"
-msgstr ""
+msgstr "Accent grave `"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:193 ID:Obsolete017
 msgid "500 milliseconds"
-msgstr ""
+msgstr "500 millisekunder"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:196 ID:Obsolete018
 msgid "1 second"
-msgstr ""
+msgstr "Ett sekund"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:199 ID:Obsolete019
 msgid "2 seconds"
-msgstr ""
+msgstr "To sekunder"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:202 ID:Obsolete020
 msgid "3 seconds"
-msgstr ""
+msgstr "Tre sekunder"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:205 ID:Obsolete021
 msgid "5 seconds"
-msgstr ""
+msgstr "Fem sekunder"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:208 ID:Obsolete022
 msgid "10 seconds"
-msgstr ""
+msgstr "Ti sekunder"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:211 ID:Obsolete023
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: i18n/Text.resx:214 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr ""
+msgstr "Vis sekvenser…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:217 ID:Disable
 msgid "Disable"
-msgstr ""
+msgstr "Skru av"
 
 #: i18n/Text.resx:221 ID:Restart
 msgid "Restart"
-msgstr ""
+msgstr "Start på nytt"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:224 ID:Obsolete027
 msgid "History"
-msgstr ""
+msgstr "Historikk"
 
 #. A button to visit the website
 #: i18n/Text.resx:227 ID:VisitWebsite
 msgid "Visit Website"
-msgstr ""
+msgstr "Besøk nettsiden"
 
 #: i18n/Text.resx:231 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Lukk"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:234 ID:Obsolete036
 msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr ""
+msgstr "av Sam Hocevar <sam@hocevar.net>"
 
 #: i18n/Text.resx:237 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "Sekvenser"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:240 ID:Obsolete039
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvens"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:243 ID:Obsolete041
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: i18n/Text.resx:246 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "Søkefilter:"
 
 #: i18n/Text.resx:249 ID:ComposeKey
 msgid "Compose Key:"
@@ -203,11 +206,11 @@ msgstr ""
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:255 ID:ResetDelay
 msgid "Delay:"
-msgstr ""
+msgstr "Forsinkelse"
 
 #: i18n/Text.resx:259 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Avansert Unicode-inndata"
 
 #: i18n/Text.resx:262 ID:UnicodeInputToolTip
 msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F"
@@ -244,7 +247,7 @@ msgstr ""
 
 #: i18n/Text.resx:287 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "Grensesnittspråk:"
 
 #: i18n/Text.resx:290 ID:LanguageToolTip
 msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
@@ -253,24 +256,24 @@ msgstr ""
 #. Close the settings window
 #: i18n/Text.resx:293 ID:Close
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 #. Copy character to the clipboard
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:297 ID:Obsolete050
 msgid "Copy Character"
-msgstr ""
+msgstr "Kopier tegn"
 
 #. Description of a Unicode character or group of characters
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:301 ID:Obsolete051
 msgid "Description:"
-msgstr ""
+msgstr "Beskrivelse:"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:305 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Legg til"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:309 ID:KeepOriginalKey
@@ -316,11 +319,11 @@ msgstr ""
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:340 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #: i18n/Text.resx:344 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "I valgte kategorier"
 
 #. The title of the Options window
 #: i18n/Text.resx:347 ID:Options
@@ -330,7 +333,7 @@ msgstr ""
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:351 ID:ShowOptions
 msgid "Options…"
-msgstr ""
+msgstr "Alternativ…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:355 ID:TrayToolTip
@@ -340,11 +343,11 @@ msgstr ""
 #. The “general” tab of the options window
 #: i18n/Text.resx:359 ID:General
 msgid "General"
-msgstr ""
+msgstr "Hovedinnstillinger"
 
 #: i18n/Text.resx:363 ID:Behavior
 msgid "Behavior"
-msgstr ""
+msgstr "Oppførsel"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:366 ID:WindowTitle
@@ -362,7 +365,7 @@ msgstr ""
 #. The name of the key on the keyboard
 #: i18n/Text.resx:376 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:380 ID:TestTyping
@@ -376,12 +379,12 @@ msgstr ""
 
 #: i18n/Text.resx:388 ID:Milliseconds
 msgid "(milliseconds)"
-msgstr ""
+msgstr "(millisekunder)"
 
 #. About box menu entry
 #: i18n/Text.resx:391 ID:About
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:395 ID:Download
@@ -396,22 +399,22 @@ msgstr ""
 #. The section where we list all programmers.
 #: i18n/Text.resx:403 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programmering av"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:407 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Oversettelse ved"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:411 ID:Contributors
 msgid "Special Thanks"
-msgstr ""
+msgstr "Spesiell takk til"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:415 ID:License
 msgid "License"
-msgstr ""
+msgstr "Lisens"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:419 ID:NeedRestart
@@ -421,12 +424,12 @@ msgstr ""
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:423 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Rapporter en feil"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:427 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Hjelp"
 
 #. Message displayed in the systray tooltip.
 #: i18n/Text.resx:431 ID:UpdatesToolTip
@@ -440,12 +443,12 @@ msgstr ""
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:442 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Last inn igjen"
 
 #: i18n/Text.resx:446 ID:AllowInjected
 msgid "Allow Injected Keys"
@@ -638,4 +641,4 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Administrasjonsrettigheter kreves. Feil: %d"
