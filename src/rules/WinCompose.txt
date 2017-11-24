@@ -6,11 +6,11 @@
 #
 
 # Konami code
-<Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "(ノಠ益ಠ)ノ彡┻━┻" # ANGRY TABLE FLIP
+<Multi_key> <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "ᕙ༼ຈل͜ຈ༽ᕗ" # Mighty Donger
 
 # Russian Ruble sign
-<Multi_key> <P> <minus>             : "₽"    U20bd # RUBLE SIGN
-<Multi_key> <p> <minus>             : "₽"    U20bd # RUBLE SIGN
+<Multi_key> <P> <minus> : "₽"    U20bd # RUBLE SIGN
+<Multi_key> <p> <minus> : "₽"    U20bd # RUBLE SIGN
 
 # Minus sign
 <Multi_key> <minus> <minus> <equal> : "−"    U2212 # MINUS SIGN

@@ -25,15 +25,17 @@
 <Multi_key> <h> <w> : "Hello, world!"
 
 # Konami code
-# <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "(ノಠ益ಠ)ノ彡┻━┻" # ANGRY TABLE FLIP
+# <Multi_key> <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "ᕙ༼ຈل͜ຈ༽ᕗ" # Mighty Donger
 
 # Russian Ruble sign
-# <Multi_key> <P> <minus>             : "₽"    U20bd # RUBLE SIGN
-# <Multi_key> <p> <minus>             : "₽"    U20bd # RUBLE SIGN
+# <Multi_key> <P> <minus> : "₽"    U20bd # RUBLE SIGN
+# <Multi_key> <p> <minus> : "₽"    U20bd # RUBLE SIGN
 
 # Minus sign
 # <Multi_key> <minus> <minus> <equal> : "−"    U2212 # MINUS SIGN
 
 # Various tests
-# <Multi_key> <t> <f> : "(ﾉಥ益ಥ）ﾉ﻿ ┻━┻" # Flip table like a boss.
-# <Multi_key> <h> <w> : "Hello World"
+# <Multi_key> <t> <f> : "(ﾉಥ益ಥ）ﾉ彡┻━┻"  # Table flip like a boss
+# <Multi_key> <l> <f> : "( ͡° ͜ʖ ͡°)"        # Lenny face
+# <Multi_key> <s> <f> : "¯\\_(ツ)_/¯"     # Shrug face
+
