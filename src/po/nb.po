@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-12-07 09:51+0000\n"
+"PO-Revision-Date: 2017-12-08 10:48+0000\n"
 "Last-Translator: Sigve Indregard <sigve@indregard.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://hosted.weblate.org/projects/wincompose/master/nb/>\n"
@@ -37,7 +37,7 @@ msgstr "Alt Gr (høyre)"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Control (venstre)"
+msgstr "Ctrl (venstre)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
