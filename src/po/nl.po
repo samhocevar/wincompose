@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-06-28 12:43+0000\n"
+"PO-Revision-Date: 2018-01-12 21:35+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
-"nl/>\n"
+"Language-Team: Dutch "
+"<https://hosted.weblate.org/projects/wincompose/master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.15-dev\n"
+"X-Generator: Weblate 2.19-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -137,9 +137,8 @@ msgstr "5 seconden"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:213 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Linker Windows-toets"
+msgstr "Debugvenster"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:217 ID:Obsolete023
@@ -175,9 +174,8 @@ msgstr "Afsluiten"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Verwijder alle ingetoetste karakters"
+msgstr "Unicode karakters"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -290,7 +288,7 @@ msgstr "Karakter kopiëren"
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Emoticons"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
@@ -517,7 +515,7 @@ msgstr ""
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "Print Screen"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
