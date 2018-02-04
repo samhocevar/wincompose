@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-06-23 12:17+0000\n"
-"Last-Translator: Miyazawa Akira <pecorarista@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/wincompose/"
-"master/ja/>\n"
+"PO-Revision-Date: 2018-02-05 13:37+0000\n"
+"Last-Translator: Hisikawa Mizuki <foomin10@gmail.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/wincompose/master/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"X-Generator: Weblate 2.19-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -47,12 +47,12 @@ msgstr "右Control"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr "左Windowsキー"
+msgstr "左Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr "右Windowsキー"
+msgstr "右Windows"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
@@ -72,12 +72,12 @@ msgstr "Pause"
 #. Also known as Application key
 #: i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr "アプリケーションキー"
+msgstr "アプリケーション"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr "Esc"
+msgstr "Escape"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
@@ -387,9 +387,8 @@ msgstr "WinCompose v{2} on {0} ({1} 個のシーケンス)"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:397 ID:General
-#, fuzzy
 msgid "General"
-msgstr "一般的な動作"
+msgstr "一般"
 
 #: i18n/Text.resx:401 ID:Behavior
 #, fuzzy
@@ -413,7 +412,7 @@ msgstr "WinComposeは無効です"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
-msgstr "挿入"
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
@@ -485,9 +484,8 @@ msgid "Updates are available."
 msgstr "アップデートがあります。"
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
-#, fuzzy
 msgid "User-defined sequences"
-msgstr "ユーザー定義マクロ"
+msgstr "ユーザー定義シーケンス"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
