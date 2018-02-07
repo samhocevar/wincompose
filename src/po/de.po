@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2018-02-07 20:23+0000\n"
+"PO-Revision-Date: 2018-02-08 20:36+0000\n"
 "Last-Translator: Andreas Kleinert <Andy.Kleinert@gmail.com>\n"
 "Language-Team: German "
 "<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Automatische Erkennung"
+msgstr "Automatisch erkennen"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
@@ -82,12 +82,12 @@ msgstr "ESC-Taste"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr "Umwandlung"
+msgstr "Umwandeln"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr "Keine Konvertierung"
+msgstr "Nicht umwandeln"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -687,9 +687,9 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose benötigt das .NET Framework, Version 3.5 SP1 oder höher, welches "
-"zur Zeit\n"
-"nicht installiert zu sein scheint. Die folgende Aktion kann helfen, das "
+"WinCompose benötigt das.NET Framework, Version 3.5 SP1 oder höher, das "
+"derzeit\n"
+"nicht installiert zu sein scheint. Die folgenden Schritte können helfen, das "
 "Problem zu lösen:"
 
 #. This string appears in the installer, not in WinCompose.
