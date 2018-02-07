@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-11-03 18:46+0000\n"
+"PO-Revision-Date: 2018-02-07 20:23+0000\n"
 "Last-Translator: Andreas Kleinert <Andy.Kleinert@gmail.com>\n"
 "Language-Team: German "
 "<https://hosted.weblate.org/projects/wincompose/master/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18-dev\n"
+"X-Generator: Weblate 2.19-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -87,7 +87,7 @@ msgstr "Umwandlung"
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Keine Konvertierung"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -137,9 +137,8 @@ msgstr "5 Sekunden"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:213 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "linke Windows-Taste"
+msgstr "Debugfenster"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:217 ID:Obsolete023
@@ -175,9 +174,8 @@ msgstr "Beenden"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Alle eingegebenen Zeichen verwerfen"
+msgstr "Unicode-Zeichen"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -291,7 +289,7 @@ msgstr "Zeichen kopieren"
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Bildschriftzeichen"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
