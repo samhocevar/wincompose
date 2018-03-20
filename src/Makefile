@@ -56,6 +56,7 @@ portable: $(EXE)
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
 	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/WinCompose.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
+	cp $(EXE).config $(DLL) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
