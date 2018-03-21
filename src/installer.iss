@@ -50,7 +50,9 @@ Source: "bin\{#CONFIG}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\it-CH\*.dll"; DestDir: "{app}\it-CH"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\ja\*.dll"; DestDir: "{app}\ja"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\nb\*.dll"; DestDir: "{app}\nb"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\no\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\ro\*.dll"; DestDir: "{app}\ro"; Flags: ignoreversion
@@ -85,7 +87,7 @@ Name: "hu"; MessagesFile: "compiler:Languages/Hungarian.isl"
 Name: "it"; MessagesFile: "compiler:Languages/Italian.isl"
 Name: "ja"; MessagesFile: "compiler:Languages/Japanese.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Nepali.islu"
-; Name: "no"; MessagesFile: "compiler:Languages/Norwegian.isl"
+Name: "no"; MessagesFile: "compiler:Languages/Norwegian.isl"
 Name: "pl"; MessagesFile: "compiler:Languages/Polish.isl"
 ; Name: "pt"; MessagesFile: "compiler:Languages/Portuguese.isl"
 Name: "ru"; MessagesFile: "compiler:Languages/Russian.isl"
