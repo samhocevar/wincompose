@@ -186,6 +186,9 @@
   <data name="Obsolete021" xml:space="preserve">
     <value>5 s</value>
   </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Ventana de debug</value>
+  </data>
   <data name="Obsolete023" xml:space="preserve">
     <value>Infinita</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Essi</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Caràteres Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Fileras</value>
@@ -266,6 +272,9 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Copia caràtere</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Àplica</value>

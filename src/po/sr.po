@@ -495,6 +495,12 @@ msgstr ""
 msgid "Prt Scrn"
 msgstr ""
 
+#. String to show instead of the key name when no compose key is configured
+#: i18n/Text.resx:501 ID:KeyDisabled
+#, fuzzy
+msgid "Disabled"
+msgstr "Искључи"
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"

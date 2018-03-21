@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Échap</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Conversion</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Non conversion</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Arrêt défil</value>
   </data>
@@ -309,6 +315,12 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} sur {0} ({1} séquences)</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>Général</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Comportement</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Séquences — WinCompose</value>
   </data>
@@ -371,5 +383,14 @@
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Recharger</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Autoriser l'émulation de frappe</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Ne pas ignorer les frappes envoyées par d'autres logiciels comme AutoHotkey ou Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Impr. écran</value>
   </data>
 </root>

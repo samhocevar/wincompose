@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Konvertering</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Icke-konvertering</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -214,13 +220,46 @@
     <value>Sökfilter:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Hopfogningstangent:</value>
+    <value>Compose-tangent:</value>
+  </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Välj tangenten som ska fungera som Compose-tangent.</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Fördröjning:</value>
   </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Avancerad Unicode-inmatning</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Aktivera Unicode-inmatning för alla tecken, även de som saknar definierad compose-sekvens. Till exempel kommer följande sekvens att mata ut tecknet U+1A3F: Compose U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>För ogiltiga sekvenser</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Fall tillbaka på icke-skiftlägeskänsliga träffar</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Om den angivna sekvensen inte existerar, men det finns en som bara skiljer sig på skiftläge, korrigera det automatiskt.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Förkasta alla inmatade tecken</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Om den angivna sekvensen inte existerar, förkasta alla tecken som matats in. Standardbeteendet är att mata ut tecknen som om Compose-tangenten inte hade använts.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Skicka ut ett pip</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Om den inmatade sekvensen inte existerar, skicka ut ett systemljud.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Gränssnittsspråk:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Välj språket som WinCompose använder i gränssnittett. Som standard används operativsystemets språk.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Stäng</value>
@@ -234,14 +273,32 @@
   <data name="KeepOriginalKey" xml:space="preserve">
     <value>Upprätthåll ursprunglig komponent-tangentbeteende</value>
   </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Detta säger till WinCompose att göra en ansträngning att behålla originaltangentens beteende. Till exempel skulle genvägen Alt-Tab fortfarande fungera även om Alt används som Compose-tangent.</value>
+  </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Infoga 0-punkts mellanslag i Office-program</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Microsoft Office-program ändrar ibland dokumenttypsnittet automatiskt när vissa Unicode-tecken matas in. Denna funktion matar in ett osynligt tecken efter Unicode-tecknet för att kringgå detta fel.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emulera Caps Lock med båda Shift-tangenterna</value>
   </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig slå på Caps Lock genom att trycka på båda Skift-tangenterna samtidigt.</value>
+  </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Skift-tangenten slår av Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Om Caps Lock används som Compose-knapp kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock genom att trycka på Skift-tangenten.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock gör alltid om bokstäver till versaler</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>När Caps Lock är på, kommer inmatning av en bokstav med accenter så som ”é” kommer alltid att mata ut motsvarande versal bokstav, i detta fall ”É”.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategorier</value>
@@ -257,6 +314,12 @@
   </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} on {0} ({1} sekvenser)</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Allmänt</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Beteende</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sekvenser — WinCompose</value>
@@ -282,6 +345,9 @@
   <data name="About" xml:space="preserve">
     <value>Om</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Hämta WinCompose {0}</value>
+  </data>
   <data name="AboutBoxTitle" xml:space="preserve">
     <value>Om WinCompose</value>
   </data>
@@ -302,5 +368,29 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Rapportera en bugg</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hjälp</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Uppdateringar är tillgängliga.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Användardefinierade sekvenser</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Redigera</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Läs om</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Tillåt inskjutna tangenter</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Hoppa inte över tangent som skickas av andra programvaror så som AutoHotKey eller Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Prt Scrn</value>
   </data>
 </root>
