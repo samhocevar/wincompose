@@ -161,9 +161,7 @@ namespace WinCompose
 
         public static void LoadConfig()
         {
-            // FIXME: this is illegal if not in the STA thread
-            //Log.Debug("Reloading configuration file {0}", GetConfigFile());
-            Console.WriteLine("Reloading configuration file {0}", GetConfigFile());
+            Log.Debug($"Reloading configuration file {GetConfigFile()}");
 
             // The keys used as the compose keys
             ComposeKeys.Load();
@@ -230,9 +228,7 @@ namespace WinCompose
 
         public static void SaveConfig()
         {
-            // FIXME: this is illegal if not in the STA thread
-            //Log.Debug("Saving configuration file {0}", GetConfigFile());
-            Console.WriteLine("Saving configuration file {0}", GetConfigFile());
+            Log.Debug($"Saving configuration file {GetConfigFile()}");
 
             SaveEntry("reset_delay", m_delay.ToString());
             Language.Save();
@@ -440,7 +436,7 @@ namespace WinCompose
                 Key k = Key.FromKeySym(keysyms[i]);
                 if (k == null)
                 {
-                    //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keysyms[i]);
+                    Log.Debug($"Unknown key name <{keysyms[i]}>, ignoring sequence");
                     return; // Unknown key name! Better bail out
                 }
 

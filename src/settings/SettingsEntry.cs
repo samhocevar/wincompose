@@ -76,9 +76,7 @@ namespace WinCompose
                 try
                 {
                     var string_value = Serialize(Value);
-                    // FIXME: this is illegal if not in the STA thread
-                    //Log.Debug($"Saving {Section}.{Key} = {string_value}");
-                    Console.WriteLine($"Saving option: {Section}.{Key} = {string_value}");
+                    Log.Debug($"Saving {Section}.{Key} = {string_value}");
 
                     var ret = NativeMethods.WritePrivateProfileString(Section, Key,
                                                 string_value, Settings.GetConfigFile());
