@@ -115,6 +115,7 @@
                         <emoji:RichTextBox Grid.Row="3" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
                                            Height="90" MaxHeight="90" FontSize="20" AcceptsReturn="True"
                                            FontWeight="SemiBold" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"
+                                           SnapsToDevicePixels="True"
                                            Foreground="#545" Background="#fff" ForceCursor="True">
                              <FlowDocument><Paragraph>ÅḄ₡Đ🐹🏠♥…&#13;&#13;</Paragraph></FlowDocument>
                         </emoji:RichTextBox>
