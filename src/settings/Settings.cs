@@ -483,7 +483,7 @@ namespace WinCompose
             if (s.Length == 1)
                 return (int)s[0];
 
-            if (s.Length == 2 && s[0] >= 0xd800 && s[0] <= 0xdbff)
+            if (s.Length == 2 && char.IsHighSurrogate(s, 0) && char.IsLowSurrogate(s, 1))
                 return char.ConvertToUtf32(s[0], s[1]);
 
             return -1;

@@ -478,7 +478,7 @@ static class Composer
     private static bool HasSurrogates(string str)
     {
         foreach (char ch in str)
-            if (ch >= 0xd800 && ch < 0xe000)
+            if (char.IsSurrogate(ch))
                 return true;
         return false;
     }
