@@ -96,7 +96,7 @@ static class Composer
         m_last_key_time = DateTime.Now;
 
         // Do nothing if we are disabled; NOTE: this disables stats, too
-        if (Settings.Disabled)
+        if (Settings.Disabled.Value)
         {
             return false;
         }
@@ -135,7 +135,7 @@ static class Composer
         // whether this key without Caps Lock gives a non-ASCII alphabetical
         // character. If so, we replace “result” with the lowercase or
         // uppercase variant of that character.
-        if (has_capslock && Settings.CapsLockCapitalizes)
+        if (has_capslock && Settings.CapsLockCapitalizes.Value)
         {
             Key alt_key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, false);
 
@@ -186,7 +186,7 @@ static class Composer
         // Sanity check in case the configuration changed between two
         // key events.
         if (m_current_compose_key.VirtualKey != VK.NONE
-             && !Settings.ComposeKeys.Get().Contains(m_current_compose_key))
+             && !Settings.ComposeKeys.Value.Contains(m_current_compose_key))
         {
             CurrentState = State.Idle;
             m_current_compose_key = new Key(VK.NONE);
@@ -228,7 +228,7 @@ static class Composer
         }
 
         // If this is the compose key and we’re idle, enter Sequence mode
-        if (is_keydown && Settings.ComposeKeys.Get().Contains(key)
+        if (is_keydown && Settings.ComposeKeys.Value.Contains(key)
              && m_compose_counter == 0 && CurrentState == State.Idle)
         {
             CurrentState = State.Sequence;
@@ -243,12 +243,12 @@ static class Composer
             // Lauch the sequence reset expiration thread
             // FIXME: do we need to launch a new thread each time the
             // compose key is pressed? Let's have a dormant thread instead
-            if (Settings.ResetDelay > 0)
+            if (Settings.ResetDelay.Value > 0)
             {
                 new Thread(() =>
                 {
                     while (CurrentState == State.Sequence &&
-                            DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay))
+                            DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
                         Thread.Sleep(50);
                     ResetSequence();
                 }).Start();
@@ -279,13 +279,13 @@ static class Composer
         // disable capslock using only one shift key.
         if (key.VirtualKey == VK.LSHIFT || key.VirtualKey == VK.RSHIFT)
         {
-            if (is_keyup && has_lrshift && Settings.EmulateCapsLock)
+            if (is_keyup && has_lrshift && Settings.EmulateCapsLock.Value)
             {
                 SendKeyPress(VK.CAPITAL);
                 return false;
             }
 
-            if (is_keydown && has_capslock && Settings.ShiftDisablesCapsLock)
+            if (is_keydown && has_capslock && Settings.ShiftDisablesCapsLock.Value)
             {
                 SendKeyPress(VK.CAPITAL);
                 return false;
@@ -326,7 +326,7 @@ static class Composer
         if (m_compose_counter == 1 && is_keydown
              && m_sequence.Count == 0 && !key.IsModifier())
         {
-            bool keep_original = Settings.KeepOriginalKey;
+            bool keep_original = Settings.KeepOriginalKey.Value;
             bool key_unusable = !key.IsUsable();
             bool altgr_combination = m_compose_key_is_altgr &&
                             KeyboardLayout.KeyToAltGrVariant(key) != null;
@@ -420,7 +420,7 @@ static class Composer
         //  4. (optionally) try again 1. 2. and 3. ignoring case.
         //  5. none of the characters make sense, output all of them as if
         //     the user didn't press Compose.
-        foreach (bool ignore_case in Settings.CaseInsensitive ?
+        foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
                               new bool[]{ false, true } : new bool[]{ false })
         {
             if (Settings.IsValidPrefix(m_sequence, ignore_case))
@@ -455,7 +455,7 @@ static class Composer
         }
 
         // Unknown characters for sequence, print them if necessary
-        if (!Settings.DiscardOnInvalid)
+        if (!Settings.DiscardOnInvalid.Value)
         {
             foreach (Key k in m_sequence)
             {
@@ -465,7 +465,7 @@ static class Composer
             }
         }
 
-        if (Settings.BeepOnInvalid)
+        if (Settings.BeepOnInvalid.Value)
             SystemSounds.Beep.Play();
 
         ResetSequence();
@@ -506,7 +506,7 @@ static class Composer
         /* These are the actual window class names for Outlook and Word…
          * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
         bool use_office_hack = KeyboardLayout.Window.IsOffice
-                                && Settings.InsertZwsp;
+                                && Settings.InsertZwsp.Value;
 
         /* Clear keyboard modifiers if we need one of our custom hacks */
         if (use_gtk_hack || use_office_hack)
@@ -636,7 +636,7 @@ static class Composer
     /// </summary>
     public static void ToggleDisabled()
     {
-        Settings.Disabled.Set(!Settings.Disabled);
+        Settings.Disabled.Value = !Settings.Disabled.Value;
         ResetSequence();
         // FIXME: this will no longer be necessary when "Disabled"
         // becomes a composer state of its own.
@@ -646,7 +646,7 @@ static class Composer
     /// <summary>
     /// Return whether WinCompose has been disabled
     /// </summary>
-    public static bool IsDisabled => Settings.Disabled;
+    public static bool IsDisabled => Settings.Disabled.Value;
 
     private static void ResetSequence()
     {

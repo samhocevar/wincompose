@@ -29,27 +29,35 @@ namespace WinCompose
 {
     public static class Settings
     {
-        private const string GlobalSection = "global";
         private const string ConfigFileName = "settings.ini";
         private static FileSystemWatcher m_watcher;
         private static Timer m_reload_timer;
 
+        private static readonly Mutex m_mutex = new Mutex(false,
+                          "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}");
+
+        private class EntryLocation : Attribute
+        {
+            public EntryLocation(string section, string key)
+            {
+                Section = section;
+                Key = key;
+            }
+
+            public readonly string Section, Key;
+        }
+
         static Settings()
         {
-            Language = new SettingsEntry<string>(GlobalSection, "language", "");
-            ComposeKeys = new SettingsEntry<KeySequence>(GlobalSection, "compose_key", new KeySequence());
-            ResetDelay = new SettingsEntry<int>(GlobalSection, "reset_delay", -1);
-            Disabled = new SettingsEntry<bool>(GlobalSection, "disabled", false);
-            UnicodeInput = new SettingsEntry<bool>(GlobalSection, "unicode_input", true);
-            CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
-            DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
-            BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
-            KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
-            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
-            EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
-            ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
-            CapsLockCapitalizes = new SettingsEntry<bool>(GlobalSection, "capslock_capitalizes", false);
-            AllowInjected = new SettingsEntry<bool>(GlobalSection, "allow_injected", false);
+            // Add a save handler to our EntryLocation attributes
+            foreach (var v in typeof(Settings).GetProperties())
+            {
+                foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
+                {
+                    var entry = v.GetValue(null, null) as SettingsEntry;
+                    entry.ValueChanged += () => ThreadPool.QueueUserWorkItem(_ => SaveEntry(entry.ToString(), attr.Section, attr.Key));
+                }
+            }
         }
 
         public static string Version
@@ -70,33 +78,34 @@ namespace WinCompose
             }
         }
 
-        public static SettingsEntry<string> Language { get; private set; }
-
-        public static SettingsEntry<KeySequence> ComposeKeys { get; private set; }
-
-        public static SettingsEntry<int> ResetDelay { get; private set; }
-
-        public static SettingsEntry<bool> Disabled { get; private set; }
-
-        public static SettingsEntry<bool> UnicodeInput { get; private set; }
-
-        public static SettingsEntry<bool> CaseInsensitive { get; private set; }
-
-        public static SettingsEntry<bool> DiscardOnInvalid { get; private set; }
-
-        public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
-
-        public static SettingsEntry<bool> KeepOriginalKey { get; private set; }
-
-        public static SettingsEntry<bool> InsertZwsp { get; private set; }
-
-        public static SettingsEntry<bool> EmulateCapsLock { get; private set; }
-
-        public static SettingsEntry<bool> ShiftDisablesCapsLock { get; private set; }
-
-        public static SettingsEntry<bool> CapsLockCapitalizes { get; private set; }
-
-        public static SettingsEntry<bool> AllowInjected { get; private set; }
+        [EntryLocation("global", "language")]
+        public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
+        [EntryLocation("global", "compose_key")]
+        public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
+        [EntryLocation("global", "reset_delay")]
+        public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
+        [EntryLocation("global", "disabled")]
+        public static SettingsEntry<bool> Disabled { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "unicode_input")]
+        public static SettingsEntry<bool> UnicodeInput { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("global", "case_insensitive")]
+        public static SettingsEntry<bool> CaseInsensitive { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "discard_on_invalid")]
+        public static SettingsEntry<bool> DiscardOnInvalid { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "beep_on_invalid")]
+        public static SettingsEntry<bool> BeepOnInvalid { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "keep_original_key")]
+        public static SettingsEntry<bool> KeepOriginalKey { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "insert_zwsp")]
+        public static SettingsEntry<bool> InsertZwsp { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "emulate_capslock")]
+        public static SettingsEntry<bool> EmulateCapsLock { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "shift_disables_capslock")]
+        public static SettingsEntry<bool> ShiftDisablesCapsLock { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "capslock_capitalizes")]
+        public static SettingsEntry<bool> CapsLockCapitalizes { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "allow_injected")]
+        public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
 
         public static int SequenceCount { get { return m_sequence_count; } }
 
@@ -130,6 +139,7 @@ namespace WinCompose
             {
                 // This event is triggered multiple times.
                 // Let's defer its handling to reload the config only once.
+                Log.Debug("Configuration file changed, scheduling reload.");
                 m_reload_timer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
             }
         }
@@ -146,7 +156,7 @@ namespace WinCompose
             // Validate the list of compose keys, ensuring there are only valid keys
             // and there are no duplicates.
             KeySequence compose_keys = new KeySequence();
-            foreach (Key k in ComposeKeys.Get())
+            foreach (Key k in ComposeKeys.Value ?? compose_keys)
             {
                 bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
                                  || m_valid_compose_keys.Contains(k);
@@ -156,22 +166,23 @@ namespace WinCompose
 
             if (compose_keys.Count == 0)
                 compose_keys.Add(m_default_compose_key);
-            ComposeKeys.Set(compose_keys);
+            ComposeKeys.Value = compose_keys;
         }
 
         public static void LoadConfig()
         {
             Log.Debug($"Reloading configuration file {GetConfigFile()}");
 
-            // The keys used as the compose keys
-            ComposeKeys.Load();
+            foreach (var v in typeof(Settings).GetProperties())
+            {
+                foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
+                {
+                    var entry = v.GetValue(null, null) as SettingsEntry;
+                    LoadEntry(entry, attr.Section, attr.Key);
+                }
+            }
+
             ValidateComposeKeys();
-
-            // The timeout delay
-            ResetDelay.Load();
-
-            // Activate the desired interface language
-            Language.Load();
 
             // HACK: if the user uses the "it-CH" locale, replace it with "it"
             // because we use "it-CH" as a special value to mean Sardinian.
@@ -192,58 +203,41 @@ namespace WinCompose
                 catch (Exception) { }
             }
 
-            if (Language != "")
+            if (Language.Value != "")
             {
-                if (m_valid_languages.ContainsKey(Language))
+                if (m_valid_languages.ContainsKey(Language.Value))
                 {
                     try
                     {
-                        var ci = CultureInfo.GetCultureInfo(Language);
+                        var ci = CultureInfo.GetCultureInfo(Language.Value);
                         Thread.CurrentThread.CurrentUICulture = ci;
                     }
                     catch (Exception) { }
                 }
                 else
                 {
-                    Language.Set("");
+                    Language.Value = "";
                 }
             }
 
             // Catch-22: we can only add this string when the UI language is known
             m_valid_languages[""] = i18n.Text.AutodetectLanguage;
-
-            // Various options
-            Disabled.Load();
-            UnicodeInput.Load();
-            CaseInsensitive.Load();
-            DiscardOnInvalid.Load();
-            BeepOnInvalid.Load();
-            KeepOriginalKey.Load();
-            InsertZwsp.Load();
-            EmulateCapsLock.Load();
-            ShiftDisablesCapsLock.Load();
-            CapsLockCapitalizes.Load();
-            AllowInjected.Load();
         }
 
         public static void SaveConfig()
         {
             Log.Debug($"Saving configuration file {GetConfigFile()}");
 
-            SaveEntry("reset_delay", m_delay.ToString());
-            Language.Save();
-            ComposeKeys.Save();
-            Disabled.Save();
-            UnicodeInput.Save();
-            CaseInsensitive.Save();
-            DiscardOnInvalid.Save();
-            BeepOnInvalid.Save();
-            KeepOriginalKey.Save();
-            InsertZwsp.Save();
-            EmulateCapsLock.Save();
-            ShiftDisablesCapsLock.Save();
-            CapsLockCapitalizes.Save();
-            AllowInjected.Save();
+            foreach (var v in typeof(Settings).GetProperties())
+            {
+                foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
+                {
+                    var entry = v.GetValue(null, null) as SettingsEntry;
+                    SaveEntry(entry.ToString(), attr.Section, attr.Key);
+                }
+            }
+
+            SaveEntry(m_delay.ToString(), "global", "reset_delay");
         }
 
         public static void LoadSequences()
@@ -334,19 +328,63 @@ namespace WinCompose
             return m_sequences.GetSequenceDescriptions();
         }
 
-        private static string LoadEntry(string key)
+        private static void LoadEntry(SettingsEntry entry, string section, string key)
         {
-            const int len = 255;
-            var tmp = new StringBuilder(len);
-            NativeMethods.GetPrivateProfileString("global", key, "",
-                                                  tmp, len, GetConfigFile());
-            return tmp.ToString();
+            try
+            {
+                if (!m_mutex.WaitOne(2000))
+                    return;
+            }
+            catch (AbandonedMutexException)
+            {
+                /* Ignore; this might be a previous instance that crashed */
+            }
+
+            try
+            {
+                const int len = 255;
+                var tmp = new StringBuilder(len);
+                var result = NativeMethods.GetPrivateProfileString(section, key, "",
+                                                                   tmp, len, GetConfigFile());
+                if (result == 0)
+                    return;
+                entry.LoadString(tmp.ToString());
+            }
+            finally
+            {
+                // Ensure the mutex is always released even if an
+                // exception is thrown
+                m_mutex.ReleaseMutex();
+            }
         }
 
-        private static void SaveEntry(string key, string val)
+        private static void SaveEntry(string value, string section, string key)
         {
-            NativeMethods.WritePrivateProfileString("global", key, val,
-                                                    GetConfigFile());
+            if (CreateConfigDir())
+            {
+                try
+                {
+                    if (!m_mutex.WaitOne(2000))
+                        return;
+                }
+                catch (AbandonedMutexException)
+                {
+                    /* Ignore; this might be a previous instance that crashed */
+                }
+
+                try
+                {
+                    Log.Debug($"Saving {section}.{key} = {value}");
+                    NativeMethods.WritePrivateProfileString(section, key, value,
+                                                            GetConfigFile());
+                }
+                finally
+                {
+                    // Ensure the mutex is always released even if an
+                    // exception is thrown
+                    m_mutex.ReleaseMutex();
+                }
+            }
         }
 
         private static void LoadSequenceFile(string path)

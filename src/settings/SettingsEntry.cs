@@ -23,132 +23,35 @@ namespace WinCompose
     /// </summary>
     public abstract class SettingsEntry
     {
-        private static readonly Mutex m_mutex = new Mutex(false,
-                          "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}");
-
-        protected SettingsEntry(string section, string key, object defaultValue)
+        protected SettingsEntry(object defaultValue)
         {
-            Section = section;
-            Key = key;
             m_value = defaultValue;
         }
 
-        /// <summary>
-        /// Gets the section of this settings entry.
-        /// </summary>
-        public string Section { get; }
+        public delegate void Action(); // This type was only added in .NET 3.5
+        public event Action ValueChanged;
 
         /// <summary>
-        /// Gets the key identifying this settings entry.
-        /// </summary>
-        public string Key { get; }
-
-        /// <summary>
-        /// Gets the value of this settings entry.
-        /// </summary>
-        public object InternalValue
-        {
-            get => m_value;
-            set
-            {
-                if (m_value == null || !m_value.Equals(value))
-                {
-                    m_value = value;
-                    // FIXME: we should mark the value as dirty instead
-                    // of saving it immediately.
-                    ThreadPool.QueueUserWorkItem(o => { Save(); });
-                }
-            }
-        }
-
-        private object m_value;
-
-        /// <summary>
-        /// Saves this settings entry into the settings file. This operation
-        /// is thread-safe and process-safe.
-        /// </summary>
-        /// <returns>A <see cref="bool"/> indicating whether the operation
-        /// was successful.</returns>
-        public bool Save()
-        {
-            if (Settings.CreateConfigDir() && m_mutex.WaitOne(2000))
-            {
-                try
-                {
-                    var string_value = Serialize(m_value);
-                    Log.Debug($"Saving {Section}.{Key} = {string_value}");
-
-                    var ret = NativeMethods.WritePrivateProfileString(Section, Key,
-                                                string_value, Settings.GetConfigFile());
-                    return ret == 0;
-                }
-                finally
-                {
-                    // Ensure the mutex is always released even if an
-                    // exception is thrown
-                    m_mutex.ReleaseMutex();
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Loads this settings entry from the settings file. This operation
-        /// is thread-safe and process-safe.
-        /// </summary>
-        /// <returns>A <see cref="bool"/> indicating whether the operation
-        /// was successful.</returns>
-        public bool Load()
-        {
-            try
-            {
-                if (!m_mutex.WaitOne(2000))
-                    return false;
-            }
-            catch (AbandonedMutexException)
-            {
-                /* Ignore; this might be a previous instance that crashed */
-            }
-
-            try
-            {
-                const int len = 255;
-                var stringBuilder = new StringBuilder(len);
-                var result = NativeMethods.GetPrivateProfileString(Section, Key, "", stringBuilder, len, Settings.GetConfigFile());
-                if (result == 0)
-                    return false;
-
-                var strVal = stringBuilder.ToString();
-                m_value = Deserialize(strVal);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            finally
-            {
-                // Ensure the mutex is always released even if an
-                // exception is thrown
-                m_mutex.ReleaseMutex();
-            }
-        }
-
-        /// <summary>
-        /// Serializes the given value into a <see cref="string"/>. This
+        /// Serializes the current value into a <see cref="string"/>. This
         /// method should not throw any unhandled exception.
         /// </summary>
-        /// <param name="value">The value to serialize.</param>
         /// <returns>A string representing the given value.</returns>
-        protected abstract string Serialize(object value);
+        public override string ToString()
+        {
+            // The default implementation just uses the ToString method
+            return m_value?.ToString() ?? string.Empty;
+        }
 
         /// <summary>
         /// Deserializes the given string into an object of the type of this
         /// entry. This method should not throw any unhandled exception.
         /// </summary>
         /// <param name="str">The string to deserialize.</param>
-        /// <returns>An instance of the type of this entry.</returns>
-        protected abstract object Deserialize(string str);
+        public abstract void LoadString(string str);
+
+        protected void OnValueChanged() => ValueChanged?.Invoke();
+
+        protected object m_value;
     }
 
     /// <summary>
@@ -158,50 +61,40 @@ namespace WinCompose
     /// <typeparam name="T">The type of data this entry contains.</typeparam>
     public class SettingsEntry<T> : SettingsEntry
     {
-        public SettingsEntry(string section, string key, T defaultValue)
-            : base(section, key, defaultValue)
+        public SettingsEntry(T defaultValue)
+            : base(defaultValue)
         {
         }
 
         /// <summary>
-        /// Sets the value of this settings entry.
+        /// Gets or sets the value of this settings entry.
         /// </summary>
-        public void Set(T v) => InternalValue = v;
-
-        /// <summary>
-        /// Gets the value of this settings entry.
-        /// </summary>
-        public T Get() => (T)InternalValue;
-
-        /// <summary>
-        /// Gets the value of this settings entry.
-        /// </summary>
-        public static implicit operator T(SettingsEntry<T> v) => v.Get();
-
-        /// <inheritdoc/>
-        protected override string Serialize(object value)
+        public T Value
         {
-            // The default implementation of Serialize just uses the
-            // ToString method
-            return value?.ToString() ?? string.Empty;
+            get => (T)m_value;
+            set
+            {
+                if (m_value == null || !m_value.Equals(value))
+                {
+                    m_value = value;
+                    OnValueChanged();
+                }
+            }
         }
 
         /// <inheritdoc/>
-        protected override object Deserialize(string str)
+        public override void LoadString(string str)
         {
             try
             {
-                var converter = System.ComponentModel.TypeDescriptor.GetConverter(typeof(T));
-                if (converter.CanConvertFrom(typeof(string)))
-                    return converter.ConvertFrom(str);
-
-                // The default implementation of Deserialize uses the
-                // Convert class.
-                return (T)Convert.ChangeType(str, typeof(T));
+                var cv = System.ComponentModel.TypeDescriptor.GetConverter(typeof(T));
+                // Fall back to the Convert class if there is no converter.
+                m_value = cv.CanConvertFrom(typeof(string))
+                        ? (T)cv.ConvertFrom(str)
+                        : (T)Convert.ChangeType(str, typeof(T));
             }
             catch (Exception)
             {
-                return null;
             }
         }
     }
