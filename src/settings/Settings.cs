@@ -146,7 +146,7 @@ namespace WinCompose
             // Validate the list of compose keys, ensuring there are only valid keys
             // and there are no duplicates.
             KeySequence compose_keys = new KeySequence();
-            foreach (Key k in ComposeKeys.Value)
+            foreach (Key k in ComposeKeys.Get())
             {
                 bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
                                  || m_valid_compose_keys.Contains(k);
@@ -156,7 +156,7 @@ namespace WinCompose
 
             if (compose_keys.Count == 0)
                 compose_keys.Add(m_default_compose_key);
-            ComposeKeys.Value = compose_keys;
+            ComposeKeys.Set(compose_keys);
         }
 
         public static void LoadConfig()
@@ -192,20 +192,20 @@ namespace WinCompose
                 catch (Exception) { }
             }
 
-            if (Language.Value != "")
+            if (Language != "")
             {
-                if (m_valid_languages.ContainsKey(Language.Value))
+                if (m_valid_languages.ContainsKey(Language))
                 {
                     try
                     {
-                        var ci = CultureInfo.GetCultureInfo(Language.Value);
+                        var ci = CultureInfo.GetCultureInfo(Language);
                         Thread.CurrentThread.CurrentUICulture = ci;
                     }
                     catch (Exception) { }
                 }
                 else
                 {
-                    Language.Value = "";
+                    Language.Set("");
                 }
             }
 

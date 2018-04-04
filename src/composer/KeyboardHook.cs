@@ -108,7 +108,7 @@ static class KeyboardHook
             var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
                                                       typeof(KBDLLHOOKSTRUCT));
             bool is_injected = (data.flags & LLKHF.INJECTED) != 0;
-            bool ignore = is_injected && !Settings.AllowInjected.Value;
+            bool ignore = is_injected && !Settings.AllowInjected;
 
             Log.Debug("{0}{1}: OnKey(HC.{2}, WM.{3}, [vk:0x{4:X02} ({7}) sc:0x{5:X02} flags:{6}])",
                       ignore ? "Ignored " : "", is_injected ? "Injected Event" : "Event",

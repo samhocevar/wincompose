@@ -26,7 +26,7 @@ namespace WinCompose
         public SettingsWindowViewModel()
         {
             m_close_command = new DelegateCommand(OnCloseCommandExecuted);
-            m_selected_language = Settings.Language.Value;
+            m_selected_language = Settings.Language;
             m_close_button_text = Text.Close;
             m_warn_message_visibility = Visibility.Collapsed;
         }
@@ -45,12 +45,12 @@ namespace WinCompose
 
         public Key ComposeKey0
         {
-            get => Settings.ComposeKeys.Value[0];
+            get => Settings.ComposeKeys.Get()[0];
             set
             {
                 // Make sure the value is saved when the user changes it
-                var keys = new KeySequence(Settings.ComposeKeys.Value) { [0] = value };
-                Settings.ComposeKeys.Value = keys;
+                var keys = new KeySequence(Settings.ComposeKeys) { [0] = value };
+                Settings.ComposeKeys.Set(keys);
             }
         }
 
@@ -72,7 +72,7 @@ namespace WinCompose
 
             if (propertyName == "SelectedLanguage")
             {
-                Settings.Language.Value = SelectedLanguage;
+                Settings.Language.Set(SelectedLanguage);
                 WarnMessageVisibility   = Visibility.Visible;
                 CloseButtonText         = Text.Restart;
                 CloseButtonCommand      = new DelegateCommand(OnRestartCommandExecuted);

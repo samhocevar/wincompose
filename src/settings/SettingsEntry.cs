@@ -46,7 +46,7 @@ namespace WinCompose
         /// <summary>
         /// Gets the value of this settings entry.
         /// </summary>
-        public object Value
+        public object InternalValue
         {
             get => m_value;
             set
@@ -75,7 +75,7 @@ namespace WinCompose
             {
                 try
                 {
-                    var string_value = Serialize(Value);
+                    var string_value = Serialize(m_value);
                     Log.Debug($"Saving {Section}.{Key} = {string_value}");
 
                     var ret = NativeMethods.WritePrivateProfileString(Section, Key,
@@ -164,13 +164,19 @@ namespace WinCompose
         }
 
         /// <summary>
-        /// Gets or sets the value of this settings entry.
+        /// Sets the value of this settings entry.
         /// </summary>
-        public new T Value
-        {
-            get => (T)base.Value;
-            set => base.Value = value;
-        }
+        public void Set(T v) => InternalValue = v;
+
+        /// <summary>
+        /// Gets the value of this settings entry.
+        /// </summary>
+        public T Get() => (T)InternalValue;
+
+        /// <summary>
+        /// Gets the value of this settings entry.
+        /// </summary>
+        public static implicit operator T(SettingsEntry<T> v) => v.Get();
 
         /// <inheritdoc/>
         protected override string Serialize(object value)
