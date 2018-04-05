@@ -39,7 +39,7 @@ static class Updater
     /// Other modules can listen to this event to be warned when upgrade information
     /// has been retrieved.
     /// </summary>
-    public static event EventHandler Changed = delegate {};
+    public static event Action Changed;
 
     private static void Run()
     {
@@ -51,7 +51,7 @@ static class Updater
 
                 if (HasNewerVersion)
                 {
-                    Changed(null, new EventArgs());
+                    Changed?.Invoke();
                 }
 
                 // Sleep between 30 and 90 minutes before querying again

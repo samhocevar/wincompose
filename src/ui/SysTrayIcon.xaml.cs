@@ -69,10 +69,10 @@ namespace WinCompose
 
             Composer.Changed += SysTrayUpdateCallback;
             Updater.Changed += SysTrayUpdateCallback;
-            SysTrayUpdateCallback(null, new EventArgs());
+            SysTrayUpdateCallback();
 
             Updater.Changed += UpdaterStateChanged;
-            UpdaterStateChanged(null, new EventArgs());
+            UpdaterStateChanged();
         }
 
         public void Dispose()
@@ -162,7 +162,7 @@ namespace WinCompose
                     if (Composer.IsDisabled)
                         m_control.TriggerDisableEvent();
                     Composer.ToggleDisabled();
-                    SysTrayUpdateCallback(null, new EventArgs());
+                    SysTrayUpdateCallback();
                     break;
 
                 case MenuCommand.Restart:
@@ -234,7 +234,7 @@ namespace WinCompose
 
         private static System.Drawing.Icon[] m_icon_cache;
 
-        private void SysTrayUpdateCallback(object sender, EventArgs e)
+        private void SysTrayUpdateCallback()
         {
             m_icon.Icon = GetCurrentIcon();
 
@@ -299,20 +299,20 @@ namespace WinCompose
         public bool HasNewerVersion => Updater.HasNewerVersion;
         public string DownloadHeader => string.Format(i18n.Text.Download, Updater.Get("Latest") ?? "");
 
-        private void UpdaterStateChanged(object sender, EventArgs e)
+        private void UpdaterStateChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasNewerVersion"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DownloadHeader"));
         }
 
-        private void OnDisableEvent(object sender, EventArgs e)
+        private void OnDisableEvent()
         {
             if (!Composer.IsDisabled)
                 Composer.ToggleDisabled();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
         }
 
-        private void OnExitEvent(object sender, EventArgs e)
+        private void OnExitEvent()
         {
             WinForms.Application.Exit();
         }

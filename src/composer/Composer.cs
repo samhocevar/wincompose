@@ -629,7 +629,7 @@ static class Composer
         }
     }
 
-    public static event EventHandler Changed = delegate {};
+    public static event Action Changed;
 
     /// <summary>
     /// Toggle the disabled state
@@ -640,7 +640,7 @@ static class Composer
         ResetSequence();
         // FIXME: this will no longer be necessary when "Disabled"
         // becomes a composer state of its own.
-        Changed(null, new EventArgs());
+        Changed?.Invoke();
     }
 
     /// <summary>
@@ -693,7 +693,7 @@ static class Composer
         Changed -= UpdateKeyboardLeds;
     }
 
-    public static void UpdateKeyboardLeds(object sender, EventArgs e)
+    public static void UpdateKeyboardLeds()
     {
         var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
         int buffer_size = (int)Marshal.SizeOf(indicators);
@@ -776,7 +776,7 @@ static class Composer
             bool has_changed = (m_state != value);
             m_state = value;
             if (has_changed)
-                Changed(null, new EventArgs());
+                Changed?.Invoke();
         }
     }
 

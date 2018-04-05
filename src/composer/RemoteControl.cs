@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -32,13 +32,13 @@ namespace WinCompose
             if (m.Msg == WM_WINCOMPOSE_DISABLE)
             {
                 if (Process.GetCurrentProcess().Id != (int)m.WParam)
-                    DisableEvent(null, new EventArgs());
+                    DisableEvent?.Invoke();
                 return;
             }
             else if (m.Msg == WM_WINCOMPOSE_EXIT)
             {
                 if (Process.GetCurrentProcess().Id != (int)m.WParam)
-                    ExitEvent(null, new EventArgs());
+                    ExitEvent?.Invoke();
                 return;
             }
 
@@ -55,8 +55,8 @@ namespace WinCompose
                                       Process.GetCurrentProcess().Id, 0);
         }
 
-        public event EventHandler DisableEvent = delegate {};
-        public event EventHandler ExitEvent = delegate {};
+        public event Action DisableEvent;
+        public event Action ExitEvent;
 
         /// <summary>
         /// A custom message ID used to kill other WinCompose instances

@@ -28,7 +28,6 @@ namespace WinCompose
             m_value = defaultValue;
         }
 
-        public delegate void Action(); // This type was only added in .NET 3.5
         public event Action ValueChanged;
 
         /// <summary>
