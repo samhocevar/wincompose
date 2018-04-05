@@ -11,33 +11,40 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System.ComponentModel;
+
 namespace WinCompose
 {
     public class CategoryViewModel : ViewModelBase
     {
-        private bool isSelected;
-        private bool isEmpty = true;
-
-        public CategoryViewModel(string name, int start, int end)
+        public CategoryViewModel(RootViewModel root, string name, int start, int end)
         {
+            m_root = root;
             Name = name;
             RangeStart = start;
             RangeEnd = end;
+            PropertyChanged += PropertyChangedCallback;
+        }
+
+        ~CategoryViewModel()
+        {
+            PropertyChanged -= PropertyChangedCallback;
         }
 
         public string Name { get; private set; }
-
         public int RangeStart { get; private set; }
-
         public int RangeEnd { get; private set; }
+        public bool IsSelected { get { return m_is_selected; } set { SetValue(ref m_is_selected, value, nameof(IsSelected)); } }
+        public bool IsEmpty { get { return m_is_empty; } set { SetValue(ref m_is_empty, value, nameof(IsEmpty)); } }
 
-        public bool IsSelected { get { return isSelected; } set { SetValue(ref isSelected, value, "IsSelected", RefreshFilter); } }
+        private bool m_is_selected;
+        private bool m_is_empty = true;
+        private RootViewModel m_root;
 
-        public bool IsEmpty { get { return isEmpty; } set { SetValue(ref isEmpty, value, "IsEmpty"); } }
-
-        private static void RefreshFilter(bool obj)
+        private void PropertyChangedCallback(object sender, PropertyChangedEventArgs e)
         {
-            RootViewModel.Instance.RefreshFilters();
+            if (e.PropertyName == nameof(IsSelected))
+                m_root.RefreshFilters();
         }
     }
 }

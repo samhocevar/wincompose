@@ -248,7 +248,7 @@ namespace WinCompose
             if ((bool)t.GetField("added", hidden).GetValue(m_icon))
                 t.GetMethod("UpdateIcon", hidden).Invoke(m_icon, new object[] { true });
 
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
         }
 
         private static string GetCurrentToolTip()
@@ -301,15 +301,15 @@ namespace WinCompose
 
         private void UpdaterStateChanged()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasNewerVersion"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DownloadHeader"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasNewerVersion)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DownloadHeader)));
         }
 
         private void OnDisableEvent()
         {
             if (!Composer.IsDisabled)
                 Composer.ToggleDisabled();
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
         }
 
         private void OnExitEvent()

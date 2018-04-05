@@ -54,7 +54,7 @@ namespace WinCompose
         public string ActiveDocumentTitle
         {
             get { return m_active_document_title; }
-            set { SetValue(ref m_active_document_title, value, "ActiveDocumentTitle");  }
+            set { SetValue(ref m_active_document_title, value, nameof(ActiveDocumentTitle));  }
         }
 
         public Stream ActiveDocument
@@ -74,13 +74,13 @@ namespace WinCompose
             {
                 ActiveDocumentTitle = Text.Contributors;
                 m_active_document_uri = m_contributors_document_uri;
-                OnPropertyChanged("ActiveDocument");
+                OnPropertyChanged(nameof(ActiveDocument));
             }
             else if (document_name == "licence")
             {
                 ActiveDocumentTitle = Text.License;
                 m_active_document_uri = m_licence_document_uri;
-                OnPropertyChanged("ActiveDocument");
+                OnPropertyChanged(nameof(ActiveDocument));
             }
         }
 

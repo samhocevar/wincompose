@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -28,6 +29,8 @@ namespace WinCompose
 
         public RootViewModel()
         {
+            PropertyChanged += PropertyChangedCallback;
+
             var categories = new List<CategoryViewModel>();
             const BindingFlags flags = BindingFlags.Static | BindingFlags.Public;
             Regex r = new Regex(@"^U([a-fA-F0-9]*)_U([a-fA-F0-9]*)$");
@@ -39,10 +42,10 @@ namespace WinCompose
                     var name = (string)property.GetValue(null, null);
                     var start = Convert.ToInt32(m.Groups[1].Value, 16);
                     var end = Convert.ToInt32(m.Groups[2].Value, 16);
-                    categories.Add(new CategoryViewModel(name, start, end));
+                    categories.Add(new CategoryViewModel(this, name, start, end));
                 }
             }
-            categories.Add(new CategoryViewModel(i18n.Text.UserMacros, -1, -1));
+            categories.Add(new CategoryViewModel(this, i18n.Text.UserMacros, -1, -1));
 
             categories.Sort((x, y) => string.Compare(x.Name, y.Name, Thread.CurrentThread.CurrentCulture, CompareOptions.StringSort));
 
@@ -76,12 +79,26 @@ namespace WinCompose
             Categories = nonEmptyCategories;
 
             Sequences = sequences;
-            Instance = this;
+            //Instance = this;
 
-            RefreshFilters();
+            SearchText = "";
         }
 
-        public static RootViewModel Instance { get; private set; }
+        ~RootViewModel()
+        {
+            PropertyChanged -= PropertyChangedCallback;
+        }
+
+        private void PropertyChangedCallback(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(SearchText))
+            {
+                m_search_tokens = new SearchTokens(SearchText);
+                RefreshFilters();
+            }
+        }
+
+        //public static RootViewModel Instance { get; private set; }
 
         private bool[] m_active_category_array = { true, false, false, false };
         public bool[] ActiveCategoryArray => m_active_category_array;
@@ -91,19 +108,17 @@ namespace WinCompose
 
         public IEnumerable<SequenceViewModel> Sequences { get; private set; }
 
-        public string SearchText { get => m_search_text; set => SetValue(ref m_search_text, value, "SearchText", RefreshSearch); }
+        public string SearchText
+        {
+            get => m_search_text;
+            set => SetValue(ref m_search_text, value, nameof(SearchText));
+        }
 
         public void RefreshFilters()
         {
             var collection_view = CollectionViewSource.GetDefaultView(Sequences);
             collection_view.Filter = FilterFunc;
             collection_view.Refresh();
-        }
-
-        private void RefreshSearch(string text)
-        {
-            m_search_tokens = new SearchTokens(text);
-            RefreshFilters();
         }
 
         private bool FilterFunc(object obj)

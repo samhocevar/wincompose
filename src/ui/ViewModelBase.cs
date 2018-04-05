@@ -23,12 +23,11 @@ namespace WinCompose
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void SetValue<T>(ref T field, T value, string propertyName, Action<T> callback = null)
+        protected virtual void SetValue<T>(ref T field, T value, string propertyName)
         {
             if (!Equals(field, value))
             {
                 field = value;
-                callback?.Invoke(value);
                 OnPropertyChanged(propertyName);
             }
         }

@@ -34,13 +34,13 @@ namespace WinCompose
         public DelegateCommand CloseButtonCommand
         {
             get => m_close_command;
-            private set => SetValue(ref m_close_command, value, "CloseButtonCommand");
+            private set => SetValue(ref m_close_command, value, nameof(CloseButtonCommand));
         }
 
         public string SelectedLanguage
         {
             get => m_selected_language;
-            set => SetValue(ref m_selected_language, value, "SelectedLanguage");
+            set => SetValue(ref m_selected_language, value, nameof(SelectedLanguage));
         }
 
         public Key ComposeKey0
@@ -57,20 +57,20 @@ namespace WinCompose
         public string CloseButtonText
         {
             get => m_close_button_text;
-            private set => SetValue(ref m_close_button_text, value, "CloseButtonText");
+            private set => SetValue(ref m_close_button_text, value, nameof(CloseButtonText));
         }
 
         public Visibility WarnMessageVisibility
         {
             get => m_warn_message_visibility;
-            set => SetValue(ref m_warn_message_visibility, value, "WarnMessageVisibility");
+            set => SetValue(ref m_warn_message_visibility, value, nameof(WarnMessageVisibility));
         }
 
         protected override void OnPropertyChanged(string propertyName)
         {
             base.OnPropertyChanged(propertyName);
 
-            if (propertyName == "SelectedLanguage")
+            if (propertyName == nameof(SelectedLanguage))
             {
                 Settings.Language.Value = SelectedLanguage;
                 WarnMessageVisibility   = Visibility.Visible;
