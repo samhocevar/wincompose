@@ -13,18 +13,170 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
 
 /// <summary>
-/// The SequenceTree class contains a tree of all valid sequences, where
+/// The SequenceTree class contains a tree of all valid sequences.
+/// </summary>
+public class SequenceTree : SequenceNode
+{
+    public void LoadFile(string path)
+    {
+        try
+        {
+            using (StreamReader s = new StreamReader(path))
+            {
+                Log.Debug("Loaded rule file {0}", path);
+                m_loaded_files.Add(path);
+                LoadStream(s);
+            }
+        }
+        catch (FileNotFoundException)
+        {
+            Log.Debug("Rule file {0} not found", path);
+        }
+        catch (Exception) { }
+    }
+
+    public void LoadResource(string resource)
+    {
+        using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource))
+        using (StreamReader sr = new StreamReader(s))
+        {
+            Log.Debug("Loaded rule resource {0}", resource);
+            LoadStream(sr);
+        }
+    }
+
+    public int Count { get; private set; }
+
+    private void LoadStream(StreamReader s)
+    {
+        Regex match_comment = new Regex(@"/\*([^*]|\*[^/])*\*/");
+
+        /* Read file and remove all C comments */
+        string buffer = s.ReadToEnd();
+        buffer = match_comment.Replace(buffer, "");
+
+        /* Parse all lines */
+        foreach (string line in buffer.Split('\r', '\n'))
+            ParseRule(line);
+    }
+
+    private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
+    private static Regex m_r1 = new Regex(@"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
+        //                                                    ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
+        //                                                     keys               result                 desc
+    private static Regex m_r2 = new Regex(@"[\s<>]+");
+
+    private void ParseRule(string line)
+    {
+        // If this is an include directive, use LoadFile() again
+        Match m0 = m_r0.Match(line);
+        if (m0.Success)
+        {
+            string file = m0.Groups[1].Captures[0].Value;
+
+            // We support %H (user directory) but not %L (locale-specific dir)
+            if (file.Contains("%L"))
+                return;
+            file = file.Replace("%H", Settings.GetUserDir());
+
+            // Also if path is not absolute, prepend user directory
+            if (!Path.IsPathRooted(file))
+                file = Path.Combine(Settings.GetUserDir(), file);
+
+            // Prevent against include recursion
+            if (!m_loaded_files.Contains(file))
+                LoadFile(file);
+
+            return;
+        }
+
+        // Only bother with sequences that start with <Multi_key>
+        var m1 = m_r1.Match(line);
+        if (!m1.Success)
+            return;
+
+        var keysyms = m_r2.Split(m1.Groups[1].Captures[0].Value);
+
+        if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
+            return;
+
+        KeySequence seq = new KeySequence();
+
+        for (int i = 1; i < keysyms.Length; ++i)
+        {
+            if (keysyms[i] == String.Empty)
+                continue;
+
+            Key k = Key.FromKeySym(keysyms[i]);
+            if (k == null)
+            {
+                Log.Debug($"Unknown key name <{keysyms[i]}>, ignoring sequence");
+                return; // Unknown key name! Better bail out
+            }
+
+            seq.Add(k);
+        }
+
+        string result = m1.Groups[2].Captures[0].Value;
+        string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
+
+        // Unescape \n \\ \" and more in the string output
+        result = Regex.Replace(result, @"\\.", m =>
+        {
+            switch (m.Value)
+            {
+                // These sequences are converted to their known value
+                case @"\n": return "\n";
+                case @"\r": return "\r";
+                case @"\t": return "\t";
+                // For all other sequences, just strip the leading \
+                default: return m.Value.Substring(1).ToString();
+            }
+        });
+
+        // Try to translate the description if appropriate
+        int utf32 = StringToCodepoint(result);
+        if (utf32 >= 0)
+        {
+            string key = $"U{utf32:X04}";
+            string alt_desc = unicode.Char.ResourceManager.GetString(key);
+            if (!string.IsNullOrEmpty(alt_desc))
+                description = alt_desc;
+        }
+
+        Add(seq, result, utf32, description);
+        ++Count;
+    }
+
+    private int StringToCodepoint(string s)
+    {
+        if (s.Length == 1)
+            return (int)s[0];
+
+        if (s.Length == 2 && char.IsHighSurrogate(s, 0) && char.IsLowSurrogate(s, 1))
+            return char.ConvertToUtf32(s[0], s[1]);
+
+        return -1;
+    }
+
+    private IList<string> m_loaded_files = new List<string>();
+}
+
+/// <summary>
+/// The SequenceNode class contains a subtree of all valid sequences, where
 /// each child is indexed by the sequence key.
 /// Some functions such as <see cref="IsValidPrefix"/> also work to query
 /// the special Unicode entry mode.
 /// </summary>
-public class SequenceTree
+public class SequenceNode
 {
     public void Add(KeySequence sequence, string result, int utf32, string desc)
     {
@@ -37,7 +189,7 @@ public class SequenceTree
         }
 
         if (!m_children.ContainsKey(sequence[0]))
-            m_children.Add(sequence[0], new SequenceTree());
+            m_children.Add(sequence[0], new SequenceNode());
 
         var subsequence = sequence.GetRange(1, sequence.Count - 1);
         m_children[sequence[0]].Add(subsequence, result, utf32, desc);
@@ -92,7 +244,7 @@ public class SequenceTree
             flags |= Search.IgnoreCase;
 
         // First check if the sequence exists in our tree
-        SequenceTree subtree = GetSubtree(sequence, flags);
+        SequenceNode subtree = GetSubtree(sequence, flags);
         if (subtree != null && subtree.m_result != "")
             return subtree.m_result;
 
@@ -140,7 +292,7 @@ public class SequenceTree
     /// and we are not a rule (just a node in the tree), we do not return
     /// the current node (but we do return children sequences).
     /// </summary>
-    private SequenceTree GetSubtree(KeySequence sequence, Search flags)
+    private SequenceNode GetSubtree(KeySequence sequence, Search flags)
     {
         if (sequence.Count == 0)
         {
@@ -203,8 +355,8 @@ public class SequenceTree
         }
     }
 
-    private Dictionary<Key, SequenceTree> m_children
-        = new Dictionary<Key, SequenceTree>();
+    private IDictionary<Key, SequenceNode> m_children
+        = new Dictionary<Key, SequenceNode>();
     private string m_result;
     private string m_description;
     private int m_utf32;

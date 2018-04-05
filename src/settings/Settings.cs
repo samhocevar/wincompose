@@ -18,12 +18,9 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
-using System.Xml.XPath;
 
 namespace WinCompose
 {
@@ -60,6 +57,7 @@ namespace WinCompose
             }
         }
 
+        // The application version
         public static string Version
         {
             get
@@ -77,6 +75,7 @@ namespace WinCompose
                 return m_version;
             }
         }
+        private static string m_version;
 
         [EntryLocation("global", "language")]
         public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
@@ -107,11 +106,8 @@ namespace WinCompose
         [EntryLocation("global", "allow_injected")]
         public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
 
-        public static int SequenceCount { get { return m_sequence_count; } }
-
-        public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
-
-        public static Dictionary<string, string> ValidLanguages { get { return m_valid_languages; } }
+        public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
+        public static Dictionary<string, string> ValidLanguages => m_valid_languages;
 
         public static void StartWatchConfigFile()
         {
@@ -243,16 +239,15 @@ namespace WinCompose
         public static void LoadSequences()
         {
             m_sequences = new SequenceTree();
-            m_sequence_count = 0;
 
-            LoadSequenceResource("3rdparty.xorg.rules");
-            LoadSequenceResource("3rdparty.xcompose.rules");
+            m_sequences.LoadResource("3rdparty.xorg.rules");
+            m_sequences.LoadResource("3rdparty.xcompose.rules");
 
-            LoadSequenceFile(Path.Combine(GetDataDir(), "Emoji.txt"));
-            LoadSequenceFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
+            m_sequences.LoadFile(Path.Combine(GetDataDir(), "Emoji.txt"));
+            m_sequences.LoadFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
 
-            LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose"));
-            LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
+            m_sequences.LoadFile(Path.Combine(GetUserDir(), ".XCompose"));
+            m_sequences.LoadFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
         }
 
         /// <summary>
@@ -303,30 +298,13 @@ namespace WinCompose
             Process.Start(psinfo);
         }
 
-        public static SequenceTree GetSequenceList()
-        {
-            return m_sequences;
-        }
+        public static int SequenceCount => m_sequences.Count;
 
-        public static bool IsValidPrefix(KeySequence sequence, bool ignore_case)
-        {
-            return m_sequences.IsValidPrefix(sequence, ignore_case);
-        }
-
-        public static bool IsValidSequence(KeySequence sequence, bool ignore_case)
-        {
-            return m_sequences.IsValidSequence(sequence, ignore_case);
-        }
-
-        public static string GetSequenceResult(KeySequence sequence, bool ignore_case)
-        {
-            return m_sequences.GetSequenceResult(sequence, ignore_case);
-        }
-
-        public static List<SequenceDescription> GetSequenceDescriptions()
-        {
-            return m_sequences.GetSequenceDescriptions();
-        }
+        public static SequenceTree GetSequenceList() => m_sequences;
+        public static bool IsValidPrefix(KeySequence sequence, bool ignore_case) => m_sequences.IsValidPrefix(sequence, ignore_case);
+        public static bool IsValidSequence(KeySequence sequence, bool ignore_case) => m_sequences.IsValidSequence(sequence, ignore_case);
+        public static string GetSequenceResult(KeySequence sequence, bool ignore_case) => m_sequences.GetSequenceResult(sequence, ignore_case);
+        public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
         private static void LoadEntry(SettingsEntry entry, string section, string key)
         {
@@ -387,148 +365,8 @@ namespace WinCompose
             }
         }
 
-        private static void LoadSequenceFile(string path)
-        {
-            try
-            {
-                using (StreamReader s = new StreamReader(path))
-                {
-                    Log.Debug("Loaded rule file {0}", path);
-                    LoadSequenceStream(s);
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                Log.Debug("Rule file {0} not found", path);
-            }
-            catch (Exception) { }
-        }
-
-        private static void LoadSequenceResource(string resource)
-        {
-            using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource))
-            using (StreamReader sr = new StreamReader(s))
-            {
-                Log.Debug("Loaded rule resource {0}", resource);
-                LoadSequenceStream(sr);
-            }
-        }
-
-        private static void LoadSequenceStream(StreamReader s)
-        {
-            Regex match_comment = new Regex(@"/\*([^*]|\*[^/])*\*/");
-
-            /* Read file and remove all C comments */
-            string buffer = s.ReadToEnd();
-            buffer = match_comment.Replace(buffer, "");
-
-            /* Parse all lines */
-            foreach (string line in buffer.Split('\r', '\n'))
-                ParseRule(line);
-        }
-
-        private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
-        private static Regex m_r1 = new Regex(@"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
-            //                                                    ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
-            //                                                     keys               result                 desc
-        private static Regex m_r2 = new Regex(@"[\s<>]+");
-
-        private static void ParseRule(string line)
-        {
-            // If this is an include directive, use LoadSequenceFile() again
-            Match m0 = m_r0.Match(line);
-            if (m0.Success)
-            {
-                string file = m0.Groups[1].Captures[0].Value;
-
-                // We support %H (user directory) but not %L (locale-specific dir)
-                if (file.Contains("%L"))
-                    return;
-                file = file.Replace("%H", GetUserDir());
-
-                // Also if path is not absolute, prepend user directory
-                if (!Path.IsPathRooted(file))
-                    file = Path.Combine(GetUserDir(), file);
-
-                LoadSequenceFile(file);
-                return;
-            }
-
-            // Only bother with sequences that start with <Multi_key>
-            var m1 = m_r1.Match(line);
-            if (!m1.Success)
-                return;
-
-            var keysyms = m_r2.Split(m1.Groups[1].Captures[0].Value);
-
-            if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
-                return;
-
-            KeySequence seq = new KeySequence();
-
-            for (int i = 1; i < keysyms.Length; ++i)
-            {
-                if (keysyms[i] == String.Empty)
-                    continue;
-
-                Key k = Key.FromKeySym(keysyms[i]);
-                if (k == null)
-                {
-                    Log.Debug($"Unknown key name <{keysyms[i]}>, ignoring sequence");
-                    return; // Unknown key name! Better bail out
-                }
-
-                seq.Add(k);
-            }
-
-            string result = m1.Groups[2].Captures[0].Value;
-            string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
-
-            // Unescape \n \\ \" and more in the string output
-            result = Regex.Replace(result, @"\\.", m =>
-            {
-                switch (m.Value)
-                {
-                    // These sequences are converted to their known value
-                    case @"\n": return "\n";
-                    case @"\r": return "\r";
-                    case @"\t": return "\t";
-                    // For all other sequences, just strip the leading \
-                    default: return m.Value.Substring(1).ToString();
-                }
-            });
-
-            // Try to translate the description if appropriate
-            int utf32 = StringToCodepoint(result);
-            if (utf32 >= 0)
-            {
-                string key = $"U{utf32:X04}";
-                string alt_desc = unicode.Char.ResourceManager.GetString(key);
-                if (!string.IsNullOrEmpty(alt_desc))
-                    description = alt_desc;
-            }
-
-            m_sequences.Add(seq, result, utf32, description);
-            ++m_sequence_count;
-        }
-
-        private static int StringToCodepoint(string s)
-        {
-            if (s.Length == 1)
-                return (int)s[0];
-
-            if (s.Length == 2 && char.IsHighSurrogate(s, 0) && char.IsLowSurrogate(s, 1))
-                return char.ConvertToUtf32(s[0], s[1]);
-
-            return -1;
-        }
-
-        // The application version
-        private static string m_version;
-
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
-        private static int m_sequence_count = 0;
 
         // FIXME: couldn't we accept any compose key?
         private static readonly KeySequence m_valid_compose_keys = new KeySequence
@@ -645,7 +483,7 @@ namespace WinCompose
                  : Path.Combine(GetExeDir(), "rules");
         }
 
-        private static string GetUserDir()
+        public static string GetUserDir()
         {
             return Environment.ExpandEnvironmentVariables("%USERPROFILE%");
         }
