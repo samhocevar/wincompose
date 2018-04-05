@@ -15,23 +15,15 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.ComponentModel;
 using System.Windows.Threading;
 
 namespace WinCompose
 {
 
-public class LogEntry : INotifyPropertyChanged
+public class LogEntry
 {
     public DateTime DateTime { get; set; }
     public string Message { get; set; }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected virtual void OnPropertyChanged(string propertyName)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
 }
 
 public class LogList : ObservableCollection<LogEntry>
@@ -57,11 +49,7 @@ public class LogList : ObservableCollection<LogEntry>
     }
 
     public Dispatcher PreferredDispatcher = Dispatcher.CurrentDispatcher;
-
     public int ListenerCount { get; set; }
-
-    private Dictionary<NotifyCollectionChangedEventHandler, NotifyCollectionChangedEventHandler> m_listeners
-        = new Dictionary<NotifyCollectionChangedEventHandler, NotifyCollectionChangedEventHandler>();
 }
 
 public static class Log
@@ -72,7 +60,7 @@ public static class Log
 #if DEBUG
     static Log()
     {
-        Entries.CollectionChanged += ConsoleDebug;
+        m_entries.CollectionChanged += ConsoleDebug;
     }
 
     private static void ConsoleDebug(object sender, NotifyCollectionChangedEventArgs e)
@@ -95,16 +83,17 @@ public static class Log
         {
             DateTime date = DateTime.Now;
             var msg = string.Format(format, args);
-            var entry = new LogEntry() { DateTime = date, Message = msg };
-            m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, AddLine, entry);
+            m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, date, msg);
         }
     }
 
-    private static Action<LogEntry> AddLine = delegate (LogEntry entry)
+    private delegate void DebugDelegate(DateTime date, string msg);
+    private static DebugDelegate DebugSTA = (date, msg) =>
     {
+        var entry = new LogEntry() { DateTime = date, Message = msg };
         while (m_entries.Count > 1024)
             m_entries.RemoveAt(0);
-        Entries.Add(entry);
+        m_entries.Add(entry);
     };
 }
 
