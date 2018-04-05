@@ -43,27 +43,22 @@ public class LogList : ObservableCollection<LogEntry>
     {
         add
         {
-            if (!m_listeners.ContainsKey(value))
-            {
-                var dispatcher = Dispatcher.CurrentDispatcher;
-                var handler = new NotifyCollectionChangedEventHandler((o, e) => dispatcher.Invoke(value, o, e));
-                m_listeners[value] = handler;
-                base.CollectionChanged += handler;
-            }
+            if (Dispatcher.CurrentDispatcher.Thread.GetApartmentState() == System.Threading.ApartmentState.STA)
+                PreferredDispatcher = Dispatcher.CurrentDispatcher;
+            ListenerCount += value?.GetInvocationList().Length ?? 0;
+            base.CollectionChanged += value;
         }
 
         remove
         {
-            NotifyCollectionChangedEventHandler handler;
-            if (m_listeners.TryGetValue(value, out handler))
-            {
-                base.CollectionChanged -= handler;
-                m_listeners.Remove(value);
-            }
+            base.CollectionChanged -= value;
+            ListenerCount -= value?.GetInvocationList().Length ?? 0;
         }
     }
 
-    public int ListenerCount => m_listeners.Count;
+    public Dispatcher PreferredDispatcher = Dispatcher.CurrentDispatcher;
+
+    public int ListenerCount { get; set; }
 
     private Dictionary<NotifyCollectionChangedEventHandler, NotifyCollectionChangedEventHandler> m_listeners
         = new Dictionary<NotifyCollectionChangedEventHandler, NotifyCollectionChangedEventHandler>();
@@ -99,13 +94,18 @@ public static class Log
         if (m_entries.ListenerCount > 0)
         {
             DateTime date = DateTime.Now;
-            string msg = string.Format(format, args);
-
-            while (m_entries.Count > 1024)
-                m_entries.RemoveAt(0);
-            Entries.Add(new LogEntry() { DateTime = date, Message = msg });
+            var msg = string.Format(format, args);
+            var entry = new LogEntry() { DateTime = date, Message = msg };
+            m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, AddLine, entry);
         }
     }
+
+    private static Action<LogEntry> AddLine = delegate (LogEntry entry)
+    {
+        while (m_entries.Count > 1024)
+            m_entries.RemoveAt(0);
+        Entries.Add(entry);
+    };
 }
 
 }
