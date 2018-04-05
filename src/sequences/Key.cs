@@ -226,7 +226,7 @@ public partial class Key
     /// </summary>
     public override string ToString()
     {
-        return m_str ?? string.Format("VK.{0}", m_vk);
+        return m_str ?? $"VK.{m_vk}";
     }
 
     public override bool Equals(object o)

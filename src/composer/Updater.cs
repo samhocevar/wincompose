@@ -25,7 +25,7 @@ static class Updater
 {
     public static void Init()
     {
-        m_thread = new Thread(() => { Updater.Run(); });
+        m_thread = new Thread(Run);
         m_thread.Start();
     }
 
@@ -150,11 +150,9 @@ static class Updater
 
     private static string GetUserAgent()
     {
-        return string.Format("WinCompose/{0} ({1}{2})",
-                             Settings.Version,
-                             Environment.OSVersion,
-                             Settings.IsDebugging() ? "; Development" :
-                             Settings.IsInstalled() ? "" : "; Portable");
+        var flavour = Settings.IsDebugging() ? "; Development" :
+                      Settings.IsInstalled() ? "" : "; Portable";
+        return $"WinCompose/{Settings.Version} ({Environment.OSVersion}{flavour})";
     }
 
     private static Dictionary<string, string> m_data = new Dictionary<string, string>();

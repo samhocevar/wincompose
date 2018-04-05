@@ -562,7 +562,7 @@ static class Composer
                     SendKeyUp(VK.LSHIFT);
                     SendKeyUp(VK.LCONTROL);
 
-                    foreach (var key in String.Format("{0:X04} ", (short)ch))
+                    foreach (var key in $"{(short)ch:X04} ")
                         SendKeyPress((VK)key);
                 }
             }

@@ -502,7 +502,7 @@ namespace WinCompose
             int utf32 = StringToCodepoint(result);
             if (utf32 >= 0)
             {
-                string key = string.Format("U{0:X04}", utf32);
+                string key = $"U{utf32:X04}";
                 string alt_desc = unicode.Char.ResourceManager.GetString(key);
                 if (!string.IsNullOrEmpty(alt_desc))
                     description = alt_desc;
