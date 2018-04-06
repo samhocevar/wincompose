@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -371,6 +372,7 @@ namespace WinCompose
         // FIXME: couldn't we accept any compose key?
         private static readonly KeySequence m_valid_compose_keys = new KeySequence
         {
+           new Key(VK.DISABLED),
            new Key(VK.LMENU),
            new Key(VK.RMENU),
            new Key(VK.LCONTROL),

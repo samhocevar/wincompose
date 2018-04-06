@@ -80,6 +80,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
@@ -95,12 +96,27 @@
                                    ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
                         <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                   ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
-                                  SelectedItem="{Binding ComposeKey0}"
-                                  SelectedValuePath="" DisplayMemberPath="FriendlyName"/>
+                                  SelectedItem="{Binding ComposeKey0}" SelectedValuePath="">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                        </ComboBox>
 
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"
+                        <ComboBox Grid.Row="2" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
+                                  ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
+                                  SelectedItem="{Binding ComposeKey1}" SelectedValuePath="">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"
                                    Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-                        <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+                        <Grid Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition MaxWidth="70" />
                                 <ColumnDefinition />
@@ -110,9 +126,9 @@
                                        Margin="8,4" />
                         </Grid>
 
-                        <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
                                    Margin="8,8,8,4" TextAlignment="Right" VerticalAlignment="Top"/>
-                        <emoji:RichTextBox Grid.Row="3" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
+                        <emoji:RichTextBox Grid.Row="4" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
                                            Height="90" MaxHeight="90" FontSize="20" AcceptsReturn="True"
                                            FontWeight="SemiBold" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"
                                            SnapsToDevicePixels="True"

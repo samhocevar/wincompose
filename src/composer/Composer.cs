@@ -139,7 +139,7 @@ static class Composer
         {
             Key alt_key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, false);
 
-            if (alt_key.IsPrintable() && alt_key.ToString()[0] > 0x7f)
+            if (alt_key.IsPrintable && alt_key.ToString()[0] > 0x7f)
             {
                 string str_upper = alt_key.ToString().ToUpper();
                 string str_lower = alt_key.ToString().ToLower();
@@ -460,7 +460,7 @@ static class Composer
             foreach (Key k in m_sequence)
             {
                 // FIXME: what if the key is e.g. left arrow?
-                if (k.IsPrintable())
+                if (k.IsPrintable)
                     SendString(k.ToString());
             }
         }

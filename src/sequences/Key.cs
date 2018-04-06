@@ -116,6 +116,7 @@ public partial class Key
             {
                 m_key_names = new Dictionary<Key, string>
                 {
+                    { new Key(VK.DISABLED),   i18n.Text.KeyDisabled },
                     { new Key(VK.LMENU),      i18n.Text.KeyLMenu },
                     { new Key(VK.RMENU),      i18n.Text.KeyRMenu },
                     { new Key(VK.LCONTROL),   i18n.Text.KeyLControl },
@@ -148,26 +149,21 @@ public partial class Key
     }
 
     private readonly VK m_vk;
-
     private readonly string m_str;
 
     public Key(string str) { m_str = str; }
 
     public Key(VK vk) { m_vk = vk; }
 
-    public VK VirtualKey { get { return m_vk; } }
-
-    public bool IsPrintable()
-    {
-        return m_str != null;
-    }
+    public VK VirtualKey => m_vk;
+    public bool IsPrintable => m_str != null;
 
     /// <summary>
     /// Return whether a key is usable in a compose sequence
     /// </summary>
     public bool IsUsable()
     {
-        return IsPrintable() || m_extra_keysyms.ContainsValue(m_vk);
+        return IsPrintable || m_extra_keysyms.ContainsValue(m_vk);
     }
 
     /// <summary>
@@ -205,6 +201,11 @@ public partial class Key
             return ToString();
         }
     }
+
+    /// <summary>
+    /// This should be part of a Key viewmodel class
+    /// </summary>
+    public double Opacity => m_vk == VK.DISABLED ? 0.5 : 1.0;
 
     /// <summary>
     /// A label that we can print on keycap icons

@@ -43,15 +43,22 @@ namespace WinCompose
             set => SetValue(ref m_selected_language, value, nameof(SelectedLanguage));
         }
 
-        public Key ComposeKey0
+        public Key ComposeKey0 { get => GetComposeKey(0); set => SetComposeKey(0, value); }
+        public Key ComposeKey1 { get => GetComposeKey(1); set => SetComposeKey(1, value); }
+
+        private Key GetComposeKey(int index)
         {
-            get => Settings.ComposeKeys.Value[0];
-            set
-            {
-                // Make sure the value is saved when the user changes it
-                var keys = new KeySequence(Settings.ComposeKeys.Value) { [0] = value };
-                Settings.ComposeKeys.Value = keys;
-            }
+            return Settings.ComposeKeys.Value.Count > index ? Settings.ComposeKeys.Value[index] : null;
+        }
+
+        private void SetComposeKey(int index, Key key)
+        {
+            // Rebuild a complete list to force saving configuration file
+            var newlist = new KeySequence(Settings.ComposeKeys.Value);
+            while (newlist.Count <= index)
+                newlist.Add(null);
+            newlist[index] = key;
+            Settings.ComposeKeys.Value = newlist;
         }
 
         public string CloseButtonText

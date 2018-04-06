@@ -304,7 +304,7 @@ public class SequenceNode
         }
 
         KeySequence keys = new KeySequence{ sequence[0] };
-        if ((flags & Search.IgnoreCase) != 0 && sequence[0].IsPrintable())
+        if ((flags & Search.IgnoreCase) != 0 && sequence[0].IsPrintable)
         {
             Key upper = new Key(sequence[0].ToString().ToUpper());
             if (upper != sequence[0])

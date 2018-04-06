@@ -497,4 +497,8 @@
     <value>Prt Scrn</value>
     <comment>The name of the “Print Screen” key on the keyboard</comment>
   </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>String to show instead of the key name when no compose key is configured</comment>
+  </data>
 </root>

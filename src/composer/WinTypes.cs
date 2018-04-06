@@ -180,6 +180,7 @@ public enum VK : int
 
     /* This is for internal WinCompose use only */
     COMPOSE    = 0x100,
+    DISABLED   = 0x101,
 };
 
 internal enum SC : uint
