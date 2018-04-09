@@ -29,6 +29,7 @@ Source: "bin\{#CONFIG}\trampoline.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
 Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -111,6 +112,38 @@ Filename: "{app}\{#EXE}"; Flags: nowait
 [InstallDelete]
 ; We used to be installed in c:\Program Files (x86)
 Type: filesandordirs; Name: "{pf32}\{#NAME}"
+; We moved translations into a separate language.dll project
+Type: files; Name: "{app}\am\wincompose.resources.dll"
+Type: files; Name: "{app}\be\wincompose.resources.dll"
+Type: files; Name: "{app}\be-BY\wincompose.resources.dll"
+Type: files; Name: "{app}\cs\wincompose.resources.dll"
+Type: files; Name: "{app}\da\wincompose.resources.dll"
+Type: files; Name: "{app}\de\wincompose.resources.dll"
+Type: files; Name: "{app}\de-CH\wincompose.resources.dll"
+Type: files; Name: "{app}\el\wincompose.resources.dll"
+Type: files; Name: "{app}\es\wincompose.resources.dll"
+Type: files; Name: "{app}\et\wincompose.resources.dll"
+Type: files; Name: "{app}\fi\wincompose.resources.dll"
+Type: files; Name: "{app}\fr\wincompose.resources.dll"
+Type: files; Name: "{app}\ga\wincompose.resources.dll"
+Type: files; Name: "{app}\hu\wincompose.resources.dll"
+Type: files; Name: "{app}\id\wincompose.resources.dll"
+Type: files; Name: "{app}\it\wincompose.resources.dll"
+Type: files; Name: "{app}\it-CH\wincompose.resources.dll"
+Type: files; Name: "{app}\ja\wincompose.resources.dll"
+Type: files; Name: "{app}\nl\wincompose.resources.dll"
+Type: files; Name: "{app}\pl\wincompose.resources.dll"
+Type: files; Name: "{app}\pt-BR\wincompose.resources.dll"
+Type: files; Name: "{app}\ro\wincompose.resources.dll"
+Type: files; Name: "{app}\ru\wincompose.resources.dll"
+Type: files; Name: "{app}\rw\wincompose.resources.dll"
+Type: files; Name: "{app}\sk\wincompose.resources.dll"
+Type: files; Name: "{app}\sl\wincompose.resources.dll"
+Type: files; Name: "{app}\sq\wincompose.resources.dll"
+Type: files; Name: "{app}\sr\wincompose.resources.dll"
+Type: files; Name: "{app}\sv\wincompose.resources.dll"
+Type: files; Name: "{app}\zh-CHS\wincompose.resources.dll"
+Type: files; Name: "{app}\zh-CHT\wincompose.resources.dll"
 ; Legacy stuff that we need to remove
 Type: files; Name: "{app}\rules\Xorg.txt"
 Type: files; Name: "{app}\rules\Xcompose.txt"

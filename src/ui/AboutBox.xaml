@@ -14,7 +14,7 @@
 <Window x:Class="WinCompose.AboutBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:i18n="clr-namespace:WinCompose.i18n"
+        xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
         xmlns:wincompose="clr-namespace:WinCompose"
         Title="{x:Static i18n:Text.AboutBoxTitle}"
         WindowStyle="ToolWindow"

@@ -16,8 +16,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:i18n="clr-namespace:WinCompose.i18n"
              xmlns:wc="clr-namespace:WinCompose"
+             xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
              xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf">
 
     <UserControl.Resources>

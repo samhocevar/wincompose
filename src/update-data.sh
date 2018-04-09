@@ -172,14 +172,14 @@ done
 echo "done."
 
 #
-# Check some wincompose.csproj consistency
+# Check some language.csproj consistency
 #
 
 echo "[4/${STEPS}] Check consistency…"
 for x in unicode/*.*.resx i18n/*.*.resx; do
     reslang="$(echo $x | cut -f2 -d.)"
-    if ! grep -q '"'$(echo $x | tr / .)'"' wincompose.csproj; then
-        echo "WARNING: $x not found in wincompose.csproj"
+    if ! grep -q '"'$(echo $x | tr / .)'"' language.csproj; then
+        echo "WARNING: $x not found in language.csproj"
     fi
     if ! grep -q '^Source: "bin.*[\\]'$reslang'[\\][*][.]dll";' installer.iss; then
         echo "WARNING: $reslang DLL not found in installer.iss"
