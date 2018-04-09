@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -14,7 +14,7 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using WinForms = System.Windows.Forms;
+using System.Windows.Threading;
 
 namespace WinCompose
 {
@@ -23,34 +23,35 @@ static class KeyboardHook
 {
     public static void Init()
     {
-        m_active = Environment.OSVersion.Platform == PlatformID.Win32NT
-                || Environment.OSVersion.Platform == PlatformID.Win32S
-                || Environment.OSVersion.Platform == PlatformID.Win32Windows
-                || Environment.OSVersion.Platform == PlatformID.WinCE;
+        if (Environment.OSVersion.Platform == PlatformID.Win32NT
+             || Environment.OSVersion.Platform == PlatformID.Win32S
+             || Environment.OSVersion.Platform == PlatformID.Win32Windows
+             || Environment.OSVersion.Platform == PlatformID.WinCE)
+        {
+            CheckHook(must_reinstall: true);
 
-        // Create a timer to regularly check our hook
-        m_update_timer = new WinForms.Timer();
-        m_update_timer.Tick += new EventHandler(CheckHook);
-        m_update_timer.Interval = 2000;
-        m_update_timer.Start();
+            // Create a timer to regularly check our hook
+            m_check_timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(5) };
+            m_check_timer.Tick += (o, e) => CheckHook(must_reinstall: true);
+            m_check_timer.Start();
+        }
     }
 
     public static void Fini()
     {
-        m_update_timer.Stop();
-
-        m_active = false;
-        CheckHook(null, null);
+        m_check_timer?.Stop();
+        m_check_timer = null;
+        CheckHook(must_reinstall: false);
     }
 
-    private static void CheckHook(object obj, EventArgs args)
+    private static void CheckHook(bool must_reinstall)
     {
         HOOK old_hook = m_hook;
 
         // Reinstall the hook in case Windows disabled it without telling us. It’s
         // OK to have two hooks installed for a short time, because we check for
         // recursive calls to ourselves in OnKey().
-        if (m_active)
+        if (must_reinstall)
         {
             m_hook = NativeMethods.SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
                                    NativeMethods.LoadLibrary("user32.dll"), 0);
@@ -79,8 +80,7 @@ static class KeyboardHook
         }
     }
 
-    private static WinForms.Timer m_update_timer;
-    private static bool m_active = false;
+    private static DispatcherTimer m_check_timer;
 
     // Keep an explicit reference on the CALLBACK object created because
     // SetWindowsHookEx will not prevent it from being GCed.

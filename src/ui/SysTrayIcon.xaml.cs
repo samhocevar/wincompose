@@ -57,6 +57,8 @@ namespace WinCompose
             Application.RemoteControl.ExitEvent += OnExitEvent;
             Application.RemoteControl.BroadcastDisableEvent();
 
+            WinForms.Application.EnableVisualStyles();
+            WinForms.Application.SetCompatibleTextRenderingDefault(false);
             m_icon = new WinForms.NotifyIcon();
             m_icon.Visible = true;
             m_icon.Click += NotifyiconClicked;
