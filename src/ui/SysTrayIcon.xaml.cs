@@ -55,9 +55,8 @@ namespace WinCompose
 
             m_control = new RemoteControl();
             m_control.DisableEvent += OnDisableEvent;
-            m_control.DisableEvent += SysTrayUpdateCallback;
             m_control.ExitEvent += OnExitEvent;
-            m_control.TriggerDisableEvent();
+            m_control.BroadcastDisableEvent();
 
             m_icon = new WinForms.NotifyIcon();
             m_icon.Visible = true;
@@ -160,9 +159,8 @@ namespace WinCompose
 
                 case MenuCommand.Disable:
                     if (Composer.IsDisabled)
-                        m_control.TriggerDisableEvent();
+                        m_control.BroadcastDisableEvent();
                     Composer.ToggleDisabled();
-                    SysTrayUpdateCallback();
                     break;
 
                 case MenuCommand.Restart:
@@ -309,7 +307,7 @@ namespace WinCompose
         {
             if (!Composer.IsDisabled)
                 Composer.ToggleDisabled();
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
+            SysTrayUpdateCallback();
         }
 
         private void OnExitEvent()

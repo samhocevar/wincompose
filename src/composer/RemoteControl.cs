@@ -49,7 +49,7 @@ namespace WinCompose
         /// Send a message to all other processes to ask them to disable any
         /// WinCompose hooks they may have installed.
         /// </summary>
-        public void TriggerDisableEvent()
+        public void BroadcastDisableEvent()
         {
             NativeMethods.PostMessage((IntPtr)0xffff, WM_WINCOMPOSE_DISABLE,
                                       Process.GetCurrentProcess().Id, 0);
