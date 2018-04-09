@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -228,6 +228,11 @@ public static class HKL
     public static IntPtr PREV = (IntPtr)0;
     public static IntPtr NEXT = (IntPtr)1;
 };
+
+public static class HWND
+{
+    public static IntPtr BROADCAST = (IntPtr)0xffff;
+}
 
 [Flags]
 internal enum LLKHF : uint

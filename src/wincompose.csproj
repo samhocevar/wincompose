@@ -63,10 +63,14 @@
     <Compile Include="composer\KeyboardLayout.cs" />
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
+    <Compile Include="composer\RemoteControl.cs"/>
     <Compile Include="composer\Stats.cs" />
     <Compile Include="composer\SysTray.cs" />
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\WinApi.cs" />
+    <Compile Include="composer\Application.xaml.cs">
+      <DependentUpon>Application.xaml</DependentUpon>
+    </Compile>
     <Compile Include="composer\WinTypes.cs" />
     <Compile Include="sequences\Key.cs" />
     <Compile Include="sequences\SearchTokens.cs" />
@@ -90,9 +94,6 @@
     </Compile>
     <Compile Include="ui\DebugWindow.xaml.cs">
       <DependentUpon>DebugWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="composer\RemoteControl.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ui\SysTrayIcon.xaml.cs">
       <DependentUpon>SysTrayIcon.xaml</DependentUpon>
@@ -1010,6 +1011,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="composer\Application.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ui\AboutBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1035,13 +1040,13 @@
     <None Include="app.config" />
     <EmbeddedResource Include="build.config" />
     <EmbeddedResource Include="3rdparty\x11proto\keysymdef.h">
-        <LogicalName>3rdparty.keysymdef.h</LogicalName>
+      <LogicalName>3rdparty.keysymdef.h</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre">
-        <LogicalName>3rdparty.xorg.rules</LogicalName>
+      <LogicalName>3rdparty.xorg.rules</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="3rdparty\xcompose\dotXCompose">
-        <LogicalName>3rdparty.xcompose.rules</LogicalName>
+      <LogicalName>3rdparty.xcompose.rules</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

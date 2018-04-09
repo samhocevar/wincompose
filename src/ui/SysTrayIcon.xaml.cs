@@ -53,10 +53,9 @@ namespace WinCompose
         {
             base.EndInit();
 
-            m_control = new RemoteControl();
-            m_control.DisableEvent += OnDisableEvent;
-            m_control.ExitEvent += OnExitEvent;
-            m_control.BroadcastDisableEvent();
+            Application.RemoteControl.DisableEvent += OnDisableEvent;
+            Application.RemoteControl.ExitEvent += OnExitEvent;
+            Application.RemoteControl.BroadcastDisableEvent();
 
             m_icon = new WinForms.NotifyIcon();
             m_icon.Visible = true;
@@ -86,19 +85,14 @@ namespace WinCompose
             Updater.Changed -= SysTrayUpdateCallback;
             Updater.Changed -= UpdaterStateChanged;
 
+            Application.RemoteControl.DisableEvent -= OnDisableEvent;
+            Application.RemoteControl.ExitEvent -= OnExitEvent;
+
             if (m_icon != null)
             {
                 m_icon.Visible = false;
                 m_icon.Dispose();
                 m_icon = null;
-            }
-
-            if (m_control != null)
-            {
-                m_control.DisableEvent -= OnDisableEvent;
-                m_control.ExitEvent -= OnExitEvent;
-                m_control.Dispose();
-                m_control = null;
             }
         }
 
@@ -159,7 +153,7 @@ namespace WinCompose
 
                 case MenuCommand.Disable:
                     if (Composer.IsDisabled)
-                        m_control.BroadcastDisableEvent();
+                        Application.RemoteControl.BroadcastDisableEvent();
                     Composer.ToggleDisabled();
                     break;
 
@@ -169,17 +163,17 @@ namespace WinCompose
                     // reason the user may have, it’s because of a bug or a limitation
                     // in WinCompose that we need to fix.
                     m_icon.Visible = false;
+                    Application.Current.Shutdown();
                     WinForms.Application.Restart();
                     Environment.Exit(0);
                     break;
 
                 case MenuCommand.Exit:
-                    WinForms.Application.Exit();
+                    Application.Current.Shutdown();
                     break;
             }
         }
 
-        private RemoteControl m_control;
         private WinForms.NotifyIcon m_icon;
         private SequenceWindow m_sequencewindow;
         private SettingsWindow m_optionswindow;
@@ -312,7 +306,7 @@ namespace WinCompose
 
         private void OnExitEvent()
         {
-            WinForms.Application.Exit();
+            Application.Current.Shutdown();
         }
     }
 }

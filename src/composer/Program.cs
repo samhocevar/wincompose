@@ -32,6 +32,8 @@ namespace WinCompose
 
             Settings.StartWatchConfigFile();
 
+            var app = new Application();
+
             try
             {
                 WinForms.Application.EnableVisualStyles();
@@ -43,10 +45,10 @@ namespace WinCompose
                 // the hook is installed from the main thread.
                 KeyboardHook.Init();
 
-                using (SysTrayIcon icon = new SysTrayIcon())
-                {
-                    WinForms.Application.Run();
-                }
+                var icon = new SysTrayIcon();
+                app.Exit += (o, e) => icon.Dispose();
+
+                app.Run();
             }
             finally
             {

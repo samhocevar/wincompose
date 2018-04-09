@@ -14,35 +14,46 @@
 using System;
 using System.Diagnostics;
 using System.Security.Permissions;
-using WinForms = System.Windows.Forms;
+using System.Windows;
+using System.Windows.Interop;
 
 namespace WinCompose
 {
-    public class RemoteControl : WinForms.Form
+    public class RemoteControl : Window
     {
         public RemoteControl()
         {
-            // Forcing access to the window handle will let us receive messages
-            var unused = this.Handle;
+            // Cannot set ShowInTaskbar = false, or WndProc will not be handled
+            // correctly (maybe because we use HWND_BROADCAST).
+            ShowActivated = false;
+            Width = Height = 0;
+            WindowState = WindowState.Minimized;
+            WindowStyle = WindowStyle.None;
+
+            SourceInitialized += (o, e) =>
+                (PresentationSource.FromVisual(this) as HwndSource).AddHook(WndProc);
+
+            Show();
+            Hide();
         }
 
         [PermissionSet(SecurityAction.Demand, Name="FullTrust")]
-        protected override void WndProc(ref WinForms.Message m)
+        protected IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            if (m.Msg == WM_WINCOMPOSE_DISABLE)
+            if (msg == WM_WINCOMPOSE_DISABLE)
             {
-                if (Process.GetCurrentProcess().Id != (int)m.WParam)
+                if (Process.GetCurrentProcess().Id != (int)wParam)
                     DisableEvent?.Invoke();
-                return;
+                handled = true;
             }
-            else if (m.Msg == WM_WINCOMPOSE_EXIT)
+            else if (msg == WM_WINCOMPOSE_EXIT)
             {
-                if (Process.GetCurrentProcess().Id != (int)m.WParam)
+                if (Process.GetCurrentProcess().Id != (int)wParam)
                     ExitEvent?.Invoke();
-                return;
+                handled = true;
             }
 
-            base.WndProc(ref m);
+            return IntPtr.Zero;
         }
 
         /// <summary>
@@ -51,7 +62,7 @@ namespace WinCompose
         /// </summary>
         public void BroadcastDisableEvent()
         {
-            NativeMethods.PostMessage((IntPtr)0xffff, WM_WINCOMPOSE_DISABLE,
+            NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE_DISABLE,
                                       Process.GetCurrentProcess().Id, 0);
         }
 
@@ -69,6 +80,8 @@ namespace WinCompose
         /// </summary>
         private static readonly uint WM_WINCOMPOSE_DISABLE
             = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
+
+        private static readonly IntPtr HWND_BROADCAST = (IntPtr)0xffff;
     }
 }
 
