@@ -17,7 +17,7 @@ using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Windows.Forms;
+using System.Windows;
 
 namespace WinCompose
 {
@@ -240,19 +240,9 @@ static class Composer
             Log.Debug("Now composing (state: {0}) (altgr: {1})",
                       m_state, m_compose_key_is_altgr);
 
-            // Lauch the sequence reset expiration thread
-            // FIXME: do we need to launch a new thread each time the
-            // compose key is pressed? Let's have a dormant thread instead
+            // Lauch the sequence reset expiration timer
             if (Settings.ResetDelay.Value > 0)
-            {
-                new Thread(() =>
-                {
-                    while (CurrentState == State.Sequence &&
-                            DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
-                        Thread.Sleep(50);
-                    ResetSequence();
-                }).Start();
-            }
+                m_timeout.Change(TimeSpan.FromMilliseconds(Settings.ResetDelay.Value), NEVER);
 
             return true;
         }
@@ -398,6 +388,31 @@ static class Composer
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Cancel the current sequence when the reset delay is expired.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private static void TimeoutExpired(object state)
+    {
+        if (CurrentState == State.Sequence)
+        {
+            // If a key was pressed since the timer was launched, we delay
+            // the timeout value and check again later.
+            var expected_timeout = m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value);
+            var remaining_time = expected_timeout.Subtract(DateTime.Now);
+            if (remaining_time.TotalMilliseconds > 10)
+            {
+                m_timeout.Change(remaining_time, NEVER);
+                return;
+            }
+
+            ResetSequence();
+        }
+
+        m_timeout.Change(NEVER, NEVER);
     }
 
     /// <summary>
@@ -740,6 +755,10 @@ static class Composer
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
 
+    private static Timer m_timeout = new Timer(TimeoutExpired);
+
+    private static readonly TimeSpan NEVER = TimeSpan.FromMilliseconds(-1);
+
     /// <summary>
     /// How many times we pressed and released compose.
     /// </summary>
@@ -774,6 +793,8 @@ static class Composer
         private set
         {
             bool has_changed = (m_state != value);
+            if (has_changed && m_state == State.Sequence)
+                m_timeout.Change(NEVER, NEVER);
             m_state = value;
             if (has_changed)
                 Changed?.Invoke();
