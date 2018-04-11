@@ -122,14 +122,16 @@
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="Padding" Value="4"/>
+                        <Setter Property="Visibility" Value="{Binding Visibility}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
                 </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate DataType="wc:CategoryViewModel">
-                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                            <emoji:Image Text="{Binding Icon}" Height="18" Margin="4,0,0,0"/>
                             <!-- TODO: make this a tooltip instead? -->
                             <!--
                             <StackPanel Orientation="Horizontal" HorizonalAlignment="Right">

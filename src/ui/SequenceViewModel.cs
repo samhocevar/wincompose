@@ -11,8 +11,6 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 
@@ -22,17 +20,16 @@ namespace WinCompose
     {
         public static Key SpaceKey = new Key(" ");
 
-        public SequenceViewModel(CategoryViewModel category, SequenceDescription desc)
+        public SequenceViewModel(SequenceDescription desc)
         {
-            Category = category;
-            Category.IsEmpty = false;
             Result = desc.Result;
             Description = desc.Description;
             Sequence = desc.Sequence;
             Utf32 = desc.Utf32;
         }
 
-        public CategoryViewModel Category { get; private set; }
+        public CategoryViewModel Category { get; set; }
+        public CategoryViewModel EmojiCategory { get; set; }
 
         /// <summary>
         /// Return the sequence result in an UTF-16 string

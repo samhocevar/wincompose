@@ -70,6 +70,7 @@
       <DependentUpon>Application.xaml</DependentUpon>
     </Compile>
     <Compile Include="composer\WinTypes.cs" />
+    <Compile Include="sequences\Category.cs" />
     <Compile Include="sequences\Key.cs" />
     <Compile Include="sequences\SearchTokens.cs" />
     <Compile Include="sequences\Sequence.cs" />
@@ -166,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="3rdparty\xcompose\dotXCompose">
       <LogicalName>3rdparty.xcompose.rules</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3rdparty\unicode-emoji\emoji-test.txt">
+      <LogicalName>3rdparty.emoji-test.txt</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
