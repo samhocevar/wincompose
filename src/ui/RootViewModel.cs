@@ -103,8 +103,6 @@ namespace WinCompose
             {
                 ActiveCategoryArray[(int)ActiveCategory] = false;
                 ActiveCategoryArray[3] = true;
-
-                m_search_tokens = new SearchTokens(SearchText);
                 RefreshSequenceFilters();
             }
             else if (e.PropertyName == nameof(ActiveCategoryArray))
@@ -141,7 +139,7 @@ namespace WinCompose
         }
 
         private string m_search_text = "";
-        private SearchTokens m_search_tokens = new SearchTokens(null);
+        private SearchTokens m_search_tokens;
 
         public void RefreshCategoryFilters()
         {
@@ -164,6 +162,7 @@ namespace WinCompose
         public void RefreshSequenceFilters()
         {
             var sequence_view = CollectionViewSource.GetDefaultView(Sequences);
+            m_search_tokens = new SearchTokens(SearchText);
             sequence_view.Filter = FilterSequences;
             sequence_view.Refresh();
         }

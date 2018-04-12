@@ -18,42 +18,31 @@ namespace WinCompose
 {
     public class SearchTokens
     {
-        private static readonly List<char> Digits = new List<char>("0123456789");
-        private static readonly List<char> HexDigits = new List<char>("0123456789ABCDEFabcdef");
+        private static readonly IList<char> Digits = new List<char>("0123456789");
+        private static readonly IList<char> HexDigits = new List<char>("0123456789ABCDEFabcdef");
 
-        private readonly string[] tokens;
-        private readonly List<int> numbers = new List<int>();
+        private readonly string[] m_tokens;
+        private readonly IList<int> m_numbers = new List<int>();
 
         public SearchTokens(string searchText)
         {
             ExactSearchString = searchText;
 
-            if (string.IsNullOrEmpty(searchText))
-            {
-                IsEmpty = true;
-                tokens = new string[0];
-                return;
-
-            }
             // string tokens
-            tokens = searchText.Split(" \t\r\n".ToCharArray());
+            m_tokens = searchText.Split(" \t\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
-            // base 10 numbers
-            ParseNumbers(searchText, Digits, 10, ref numbers);
-
-            // base 16 numbers
-            ParseNumbers(searchText, HexDigits, 16, ref numbers);
+            // base 10 numbers and base 16 numbers
+            ParseNumbers(searchText, Digits, 10, ref m_numbers);
+            ParseNumbers(searchText, HexDigits, 16, ref m_numbers);
         }
 
-        public bool IsEmpty { get; private set; }
+        public bool IsEmpty => m_tokens.Length == 0;
 
         public string ExactSearchString { get; private set; }
+        public IEnumerable<string> Tokens => m_tokens;
+        public IEnumerable<int> Numbers => m_numbers;
 
-        public IEnumerable<string> Tokens { get { return tokens; } }
-
-        public IEnumerable<int> Numbers { get { return numbers; } }
-
-        private static void ParseNumbers(string text, ICollection<char> digits, int numberBase, ref List<int> resultList)
+        private static void ParseNumbers(string text, ICollection<char> digits, int numberBase, ref IList<int> resultList)
         {
             int numberStart = int.MinValue;
             for (int i = 0; i < text.Length; ++i)
