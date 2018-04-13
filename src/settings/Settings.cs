@@ -151,18 +151,19 @@ namespace WinCompose
         private static void ValidateComposeKeys()
         {
             // Validate the list of compose keys, ensuring there are only valid keys
-            // and there are no duplicates.
+            // and there are no duplicates. Also remove VK.DISABLED from the list
+            // unless there are no valid keys at all.
             KeySequence compose_keys = new KeySequence();
             foreach (Key k in ComposeKeys.Value ?? compose_keys)
             {
                 bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
                                  || m_valid_compose_keys.Contains(k);
-                if (is_valid && !compose_keys.Contains(k))
+                if (is_valid && k.VirtualKey != VK.DISABLED && !compose_keys.Contains(k))
                     compose_keys.Add(k);
             }
 
             if (compose_keys.Count == 0)
-                compose_keys.Add(m_default_compose_key);
+                compose_keys.Add(new Key(VK.DISABLED));
             ComposeKeys.Value = compose_keys;
         }
 

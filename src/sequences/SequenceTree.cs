@@ -156,7 +156,7 @@ public class SequenceTree : SequenceNode
                 description = alt_desc;
         }
 
-        Add(seq, result, utf32, description);
+        InsertSequence(seq, result, utf32, description);
         ++Count;
     }
 
@@ -183,7 +183,7 @@ public class SequenceTree : SequenceNode
 /// </summary>
 public class SequenceNode
 {
-    public void Add(KeySequence sequence, string result, int utf32, string desc)
+    public void InsertSequence(KeySequence sequence, string result, int utf32, string desc)
     {
         if (sequence.Count == 0)
         {
@@ -197,7 +197,7 @@ public class SequenceNode
             m_children.Add(sequence[0], new SequenceNode());
 
         var subsequence = sequence.GetRange(1, sequence.Count - 1);
-        m_children[sequence[0]].Add(subsequence, result, utf32, desc);
+        m_children[sequence[0]].InsertSequence(subsequence, result, utf32, desc);
     }
 
     public bool IsValidPrefix(KeySequence sequence, bool ignore_case)
