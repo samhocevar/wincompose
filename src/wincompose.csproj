@@ -159,7 +159,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <EmbeddedResource Include="build.config" />
-    <EmbeddedResource Include="3rdparty\x11proto\keysymdef.h">
+    <EmbeddedResource Include="3rdparty\xorgproto\include\X11\keysymdef.h">
       <LogicalName>3rdparty.keysymdef.h</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre">

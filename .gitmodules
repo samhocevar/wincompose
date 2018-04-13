@@ -7,9 +7,9 @@
 [submodule "src/3rdparty/unicode-translation"]
 	path = src/3rdparty/unicode-translation
 	url = ../unicode-translation.git
-[submodule "src/3rdparty/x11proto"]
-	path = src/3rdparty/x11proto
-	url = https://anongit.freedesktop.org/git/xorg/proto/x11proto.git
 [submodule "src/3rdparty/xcompose"]
 	path = src/3rdparty/xcompose
 	url = ../fork-xcompose.git
+[submodule "src/3rdparty/xorgproto"]
+	path = src/3rdparty/xorgproto
+	url = git://anongit.freedesktop.org/git/xorg/proto/xorgproto
