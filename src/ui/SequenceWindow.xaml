@@ -60,7 +60,7 @@
                                    FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                     </Button>
                     <TextBlock x:Name="Watermark" Text="{x:Static i18n:Text.Search}" VerticalAlignment="Center"
-        				Margin="8,0" FontStyle="Italic" Foreground="DarkGray" Visibility="Collapsed" IsHitTestVisible="False"/>
+                               Margin="8,0" FontStyle="Italic" Foreground="DarkGray" Visibility="Collapsed" IsHitTestVisible="False"/>
                 </DockPanel>
             </Grid>
             <DataTemplate.Triggers>
@@ -162,9 +162,12 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <DockPanel Margin="0,2">
-                            <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="2,0" SnapsToDevicePixels="True">
-                                <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly" ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
-                                    <!-- The small character box followed by the large toolkit -->
+
+                            <!-- The small character box and its large tooltip -->
+                            <Border BorderThickness="1" BorderBrush="DarkGray" CornerRadius="4"
+                                    Background="White" Margin="2,0,4,0" SnapsToDevicePixels="True">
+                                <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly"
+                                         ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
                                     <emoji:Image Text="{Binding Result}" Width="32" Height="32" Background="Transparent"
                                                  FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                                     <Viewbox.ToolTip>
@@ -173,6 +176,7 @@
                                     </Viewbox.ToolTip>
                                 </Viewbox>
                             </Border>
+
                             <!-- The sequence, printed as key icons -->
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
                                 <Border Width="32" Height="32">
@@ -216,8 +220,13 @@
                                 </ItemsControl>
                             </StackPanel>
                             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
-                                <TextBlock Text="{Binding Utf32, Mode=OneTime, StringFormat=U+\{0:X4\}}"/>
-                                <TextBlock Text="{Binding UnicodeCategory, Converter={wc:UnicodeCategoryConverter}, Mode=OneTime}" HorizontalAlignment="Right" Margin="10,0"/>
+                                <StackPanel.RenderTransform>
+                                    <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+                                </StackPanel.RenderTransform>
+                                <TextBlock Text="{Binding Utf32, Mode=OneTime, StringFormat=U+\{0:X4\}}"
+                                           Foreground="DarkMagenta"/>
+                                <TextBlock Text="{Binding UnicodeCategory, Converter={wc:UnicodeCategoryConverter}, Mode=OneTime}"
+                                           Foreground="DarkCyan" FontStyle="Italic" HorizontalAlignment="Right" Margin="10,0"/>
                             </StackPanel>
                             <TextBlock Text="{Binding Description, Mode=OneTime}" TextTrimming="WordEllipsis"/>
                         </DockPanel>
