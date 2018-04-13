@@ -10,15 +10,17 @@ very intuitive key combinations. For instance, **ö** is obtained using
 <kbd>o</kbd> + <kbd>"</kbd>, and **♥** is obtained using <kbd>&lt;</kbd>
 \+ <kbd>3</kbd>.
 
+WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
+
 Sam wrote WinCompose because none of the alternatives (FreeCompose,
 CKFW, AllChars or Unichars) were found to be satisfying.
 
-Download latest: [WinCompose 0.7.7](https://github.com/samhocevar/wincompose/releases/download/v0.7.7/WinCompose-Setup-0.7.7.exe) (June 21, 2017)
+Download latest: [WinCompose 0.8.0](https://github.com/samhocevar/wincompose/releases/download/v0.8.0/WinCompose-Setup-0.8.0.exe) (April 13, 2018)
 -----------------------------------
 
-Installable version: [WinCompose 0.7.7 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.7.7/WinCompose-Setup-0.7.7.exe).
+Installable version: [WinCompose 0.8.0 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.8.0/WinCompose-Setup-0.8.0.exe).
 
-Portable version: [WinCompose 0.7.7 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.7.7/WinCompose-NoInstall-0.7.7.zip).
+Portable version: [WinCompose 0.8.0 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.8.0/WinCompose-NoInstall-0.8.0.zip).
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
@@ -54,6 +56,13 @@ Compose rules are supposed to be intuitive. Here are some examples:
  - <kbd>⎄ Compose</kbd> <kbd>(</kbd> <kbd>7</kbd> <kbd>)</kbd> → **⑦**
  - <kbd>⎄ Compose</kbd> <kbd>C</kbd> <kbd>C</kbd> <kbd>C</kbd> <kbd>P</kbd> → **☭**
  - <kbd>⎄ Compose</kbd> <kbd>&lt;</kbd> <kbd>3</kbd> → **♥**
+
+Emoji sequences typically start with two  <kbd>⎄ Compose</kbd> hits:
+
+ - <kbd>⎄ Compose</kbd> <kbd>⎄ Compose</kbd> <kbd>a</kbd> <kbd>n</kbd> <kbd>g</kbd> <kbd>r</kbd> <kbd>y</kbd> → 😠
+ - <kbd>⎄ Compose</kbd> <kbd>⎄ Compose</kbd> <kbd>g</kbd> <kbd>r</kbd> <kbd>i</kbd> <kbd>n</kbd> <kbd>n</kbd> <kbd>i</kbd> <kbd>n</kbd> <kbd>g</kbd> → 😁
+ - <kbd>⎄ Compose</kbd> <kbd>⎄ Compose</kbd> <kbd>s</kbd> <kbd>u</kbd> <kbd>s</kbd> <kbd>h</kbd> <kbd>i</kbd> → 🍣
+ - <kbd>⎄ Compose</kbd> <kbd>⎄ Compose</kbd> <kbd>s</kbd> <kbd>n</kbd> <kbd>a</kbd> <kbd>k</kbd> <kbd>e</kbd> → 🐍
 
 The full list of rules can be found by clicking on the WinCompose system tray
 icon or using the “Show Sequences…” menu entry:
