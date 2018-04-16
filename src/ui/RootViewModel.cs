@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -13,106 +13,176 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Reflection;
-using System.Text.RegularExpressions;
-using System.Threading;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Data;
 
 namespace WinCompose
 {
     public class RootViewModel : ViewModelBase
     {
-        private string m_search_text;
-        private SearchTokens m_search_tokens = new SearchTokens(null);
-
         public RootViewModel()
         {
-            var categories = new List<CategoryViewModel>();
-            const BindingFlags flags = BindingFlags.Static | BindingFlags.Public;
-            Regex r = new Regex(@"^U([a-fA-F0-9]*)_U([a-fA-F0-9]*)$");
-            foreach (var property in typeof(unicode.Block).GetProperties(flags))
-            {
-                Match m = r.Match(property.Name);
-                if (m.Success)
-                {
-                    var name = (string)property.GetValue(null, null);
-                    var start = Convert.ToInt32(m.Groups[1].Value, 16);
-                    var end = Convert.ToInt32(m.Groups[2].Value, 16);
-                    categories.Add(new CategoryViewModel(name, start, end));
-                }
-            }
-            categories.Add(new CategoryViewModel(i18n.Text.UserMacros, -1, -1));
+            PropertyChanged += PropertyChangedCallback;
 
-            categories.Sort((x, y) => string.Compare(x.Name, y.Name, Thread.CurrentThread.CurrentCulture, CompareOptions.StringSort));
+            ActiveCategoryArray = new ObservableCollection<bool>(new List<bool>() { true, false, false, false });
+            ActiveCategoryArray.CollectionChanged += (o, e)
+                => PropertyChangedCallback(o, new PropertyChangedEventArgs(nameof(ActiveCategoryArray)));
 
-            var sortedCategories = new SortedList<int, CategoryViewModel>();
-            foreach (var category in categories)
-            {
-                sortedCategories.Add(category.RangeEnd, category);
-            }
+            InitializeComponents();
+        }
 
-            // FIXME: make this a utility function AddSequence() that also
-            // creates and sorts categories on the fly.
-            var sequences = new List<SequenceViewModel>();
+        private void InitializeComponents()
+        {
+            var category_lut = new Dictionary<Category, CategoryViewModel>();
+
+            // Fill category list
+            foreach (var category in CodepointCategory.AllCategories)
+                m_categories.Add(category_lut[category] = new CategoryViewModel(this, category));
+
+            foreach (var category in EmojiCategory.AllCategories)
+                m_categories.Add(category_lut[category] = new CategoryViewModel(this, category));
+
+            var macro_viewmodel = new CategoryViewModel(this, new MacroCategory("User Macros"));
+            m_categories.Add(macro_viewmodel);
+
+            // Compute a list of sorted codepoint categories for faster lookups
+            var sorted_categories = new SortedList<int, CategoryViewModel>();
+            foreach (var category in m_categories)
+                if (category.RangeEnd > 0)
+                    sorted_categories.Add(category.RangeEnd, category);
+
+            // Fill sequence list and assign them a category
             foreach (var desc in Settings.GetSequenceDescriptions())
             {
-                // TODO: optimize me
-                foreach (var category in sortedCategories)
+                CategoryViewModel main_viewmodel = null, emoji_viewmodel = null;
+
+                var emoji_category = EmojiCategory.FromEmojiString(desc.Result);
+                if (emoji_category != null)
                 {
-                    if (category.Key >= desc.Utf32)
-                    {
-                        sequences.Add(new SequenceViewModel(category.Value, desc));
-                        break;
-                    }
+                    category_lut.TryGetValue(emoji_category, out emoji_viewmodel);
+                    emoji_viewmodel.IsEmpty = false;
                 }
+
+                // TODO: optimize me
+                if (desc.Utf32 != -1)
+                {
+                    foreach (var kv in sorted_categories)
+                        if (kv.Key >= desc.Utf32)
+                        {
+                            main_viewmodel = kv.Value;
+                            main_viewmodel.IsEmpty = false;
+                            break;
+                        }
+                }
+                else if (emoji_category == null)
+                {
+                    macro_viewmodel.IsEmpty = false;
+                    main_viewmodel = macro_viewmodel;
+                }
+
+                m_sequences.Add(new SequenceViewModel(desc)
+                {
+                    Category = main_viewmodel,
+                    EmojiCategory = emoji_viewmodel,
+                });
             }
 
-            var nonEmptyCategories = new List<CategoryViewModel>();
-            foreach (var category in categories)
-                if (!category.IsEmpty)
-                    nonEmptyCategories.Add(category);
-
-            Categories = nonEmptyCategories;
-
-            Sequences = sequences;
-            Instance = this;
-
-            RefreshFilters();
+            RefreshCategoryFilters();
+            RefreshSequenceFilters();
         }
 
-        public static RootViewModel Instance { get; private set; }
-
-        private bool[] m_active_category_array = { true, false, false, false };
-        public bool[] ActiveCategoryArray => m_active_category_array;
-        public int ActiveCategory => Array.IndexOf(ActiveCategoryArray, true);
-
-        public IEnumerable<CategoryViewModel> Categories { get; private set; }
-
-        public IEnumerable<SequenceViewModel> Sequences { get; private set; }
-
-        public string SearchText { get => m_search_text; set => SetValue(ref m_search_text, value, "SearchText", RefreshSearch); }
-
-        public void RefreshFilters()
+        ~RootViewModel()
         {
-            var collection_view = CollectionViewSource.GetDefaultView(Sequences);
-            collection_view.Filter = FilterFunc;
-            collection_view.Refresh();
+            PropertyChanged -= PropertyChangedCallback;
         }
 
-        private void RefreshSearch(string text)
+        private void PropertyChangedCallback(object sender, PropertyChangedEventArgs e)
         {
-            m_search_tokens = new SearchTokens(text);
-            RefreshFilters();
+            if (e.PropertyName == nameof(SearchText))
+            {
+                ActiveCategoryArray[(int)ActiveCategory] = false;
+                ActiveCategoryArray[3] = true;
+                RefreshSequenceFilters();
+            }
+            else if (e.PropertyName == nameof(ActiveCategoryArray))
+            {
+                ActiveCategory = (CategoryFilter)ActiveCategoryArray.IndexOf(true);
+                RefreshCategoryFilters();
+            }
         }
 
-        private bool FilterFunc(object obj)
-        {
-            var sequence = (SequenceViewModel)obj;
-            if (m_search_tokens.IsEmpty)
-                return sequence.Category.IsSelected;
+        /// <summary>
+        /// This pattern handles a 4-state radio button array
+        /// </summary>
+        public ObservableCollection<bool> ActiveCategoryArray { get; set; }
+        public CategoryFilter ActiveCategory { get; set; } = 0;
 
-            return sequence.Match(m_search_tokens);
+        public enum CategoryFilter : int
+        {
+            Unicode = 0,
+            Emoji = 1,
+            Macros = 2,
+            Search = 3,
+        };
+
+        public IEnumerable<CategoryViewModel> Categories => m_categories;
+        public IEnumerable<SequenceViewModel> Sequences => m_sequences;
+
+        private IList<CategoryViewModel> m_categories = new ObservableCollection<CategoryViewModel>();
+        private IList<SequenceViewModel> m_sequences = new ObservableCollection<SequenceViewModel>();
+
+        public string SearchText
+        {
+            get => m_search_text;
+            set => SetValue(ref m_search_text, value, nameof(SearchText));
+        }
+
+        private string m_search_text = "";
+        private SearchTokens m_search_tokens;
+
+        public void RefreshCategoryFilters()
+        {
+            var category_view = CollectionViewSource.GetDefaultView(Categories);
+            category_view.Filter = (o) =>
+            {
+                var category = o as CategoryViewModel;
+                switch (ActiveCategory)
+                {
+                    case CategoryFilter.Unicode: return category.IsUnicode;
+                    case CategoryFilter.Emoji: return category.IsEmoji;
+                    case CategoryFilter.Macros: return category.IsMacro;
+                    case CategoryFilter.Search: return false;
+                }
+                return false;
+            };
+            category_view.Refresh();
+        }
+
+        public void RefreshSequenceFilters()
+        {
+            var sequence_view = CollectionViewSource.GetDefaultView(Sequences);
+            m_search_tokens = new SearchTokens(SearchText);
+            sequence_view.Filter = FilterSequences;
+            sequence_view.Refresh();
+        }
+
+        private bool FilterSequences(object obj)
+        {
+            var sequence = obj as SequenceViewModel;
+            switch (ActiveCategory)
+            {
+                case CategoryFilter.Unicode:
+                    return !(sequence.Category?.IsMacro ?? false) && (sequence.Category?.IsSelected ?? false);
+                case CategoryFilter.Emoji:
+                    return sequence.EmojiCategory?.IsSelected ?? false;
+                case CategoryFilter.Macros:
+                    return (sequence.Category?.IsMacro ?? false) && (sequence.Category?.IsSelected ?? false);
+                case CategoryFilter.Search:
+                    return sequence.Match(m_search_tokens);
+                default:
+                    return false;
+            }
         }
     }
 }

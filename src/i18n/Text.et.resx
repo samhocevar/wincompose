@@ -186,6 +186,9 @@
   <data name="Obsolete021" xml:space="preserve">
     <value>5 sekundit</value>
   </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Silumisaken</value>
+  </data>
   <data name="Obsolete023" xml:space="preserve">
     <value>Puudub</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Välju</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode märgid</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Kombinatsioonid</value>
@@ -266,6 +272,9 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Copeeri sümbol</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Rakenda</value>

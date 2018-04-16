@@ -133,10 +133,10 @@
     <value>右Control</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>左Windowsキー</value>
+    <value>左Windows</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>右Windowsキー</value>
+    <value>右Windows</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock</value>
@@ -148,10 +148,10 @@
     <value>Pause</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>アプリケーションキー</value>
+    <value>アプリケーション</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Esc</value>
+    <value>Escape</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
@@ -309,6 +309,9 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} on {0} ({1} 個のシーケンス)</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>一般</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>シーケンス — WinCompose</value>
   </data>
@@ -319,7 +322,7 @@
     <value>WinComposeは無効です</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
-    <value>挿入</value>
+    <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
     <value>ためしてみる:</value>
@@ -362,5 +365,8 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>アップデートがあります。</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>ユーザー定義シーケンス</value>
   </data>
 </root>

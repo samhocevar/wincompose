@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -12,10 +12,11 @@
 //
 
 using System;
-using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {
+    public delegate void Action(); // This type was only added in .NET 3.5
+
     static class Program
     {
         [STAThread]
@@ -26,25 +27,17 @@ namespace WinCompose
 
             Composer.Init();
             Settings.LoadSequences();
+            KeyboardHook.Init();
             Updater.Init();
 
             Settings.StartWatchConfigFile();
 
             try
             {
-                WinForms.Application.EnableVisualStyles();
-                WinForms.Application.SetCompatibleTextRenderingDefault(false);
-
-                // Must call this after SetCompatibleTextRenderingDefault()
-                // because it uses a WinForms timer which seems to open a
-                // hidden window. The reason we use a WinForms timer is so that
-                // the hook is installed from the main thread.
-                KeyboardHook.Init();
-
-                using (SysTrayIcon icon = new SysTrayIcon())
-                {
-                    WinForms.Application.Run();
-                }
+                var app = new Application();
+                var icon = new SysTrayIcon();
+                app.Exit += (o, e) => icon.Dispose();
+                app.Run();
             }
             finally
             {

@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -11,8 +11,6 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 
@@ -22,17 +20,16 @@ namespace WinCompose
     {
         public static Key SpaceKey = new Key(" ");
 
-        public SequenceViewModel(CategoryViewModel category, SequenceDescription desc)
+        public SequenceViewModel(SequenceDescription desc)
         {
-            Category = category;
-            Category.IsEmpty = false;
             Result = desc.Result;
             Description = desc.Description;
             Sequence = desc.Sequence;
             Utf32 = desc.Utf32;
         }
 
-        public CategoryViewModel Category { get; private set; }
+        public CategoryViewModel Category { get; set; }
+        public CategoryViewModel EmojiCategory { get; set; }
 
         /// <summary>
         /// Return the sequence result in an UTF-16 string

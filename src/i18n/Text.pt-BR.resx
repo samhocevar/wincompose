@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Automático</value>
+    <value>Detecção automática</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Alt Esquerdo</value>
@@ -186,6 +186,9 @@
   <data name="Obsolete021" xml:space="preserve">
     <value>5 segundos</value>
   </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Janela de Debug</value>
+  </data>
   <data name="Obsolete023" xml:space="preserve">
     <value>Nenhum</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Sair</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Caracteres Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequências</value>
@@ -267,6 +273,9 @@
   <data name="Obsolete050" xml:space="preserve">
     <value>Copiar Caractere</value>
   </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
   <data name="Apply" xml:space="preserve">
     <value>Aplicar</value>
   </data>
@@ -274,7 +283,7 @@
     <value>Manter comportamento original da tecla Compose</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Determina que o WinCompose faça o possível para manter o comportamento original da tecla. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo que Alt seja usada como tecla Compose.</value>
+    <value>Determina que o WinCompose faça o possível para manter o comportamento original das teclas. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo que Alt seja usada como tecla Compose.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Inserir espaços de largura zero em aplicativos do Office</value>
@@ -391,6 +400,6 @@
     <value>Não ignorar teclas enviadas por outros programas tais como AutoHotKey e Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Prt Scrn</value>
+    <value>PrtScrn</value>
   </data>
 </root>

@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -25,7 +25,7 @@ static class Updater
 {
     public static void Init()
     {
-        m_thread = new Thread(() => { Updater.Run(); });
+        m_thread = new Thread(Run);
         m_thread.Start();
     }
 
@@ -39,7 +39,7 @@ static class Updater
     /// Other modules can listen to this event to be warned when upgrade information
     /// has been retrieved.
     /// </summary>
-    public static event EventHandler Changed = delegate {};
+    public static event Action Changed;
 
     private static void Run()
     {
@@ -51,7 +51,7 @@ static class Updater
 
                 if (HasNewerVersion)
                 {
-                    Changed(null, new EventArgs());
+                    Changed?.Invoke();
                 }
 
                 // Sleep between 30 and 90 minutes before querying again
@@ -150,11 +150,9 @@ static class Updater
 
     private static string GetUserAgent()
     {
-        return string.Format("WinCompose/{0} ({1}{2})",
-                             Settings.Version,
-                             Environment.OSVersion,
-                             Settings.IsDebugging() ? "; Development" :
-                             Settings.IsInstalled() ? "" : "; Portable");
+        var flavour = Settings.IsDebugging() ? "; Development" :
+                      Settings.IsInstalled() ? "" : "; Portable";
+        return $"WinCompose/{Settings.Version} ({Environment.OSVersion}{flavour})";
     }
 
     private static Dictionary<string, string> m_data = new Dictionary<string, string>();

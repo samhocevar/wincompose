@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -53,12 +53,12 @@ namespace WinCompose
         {
             base.EndInit();
 
-            m_control = new RemoteControl();
-            m_control.DisableEvent += OnDisableEvent;
-            m_control.DisableEvent += SysTrayUpdateCallback;
-            m_control.ExitEvent += OnExitEvent;
-            m_control.TriggerDisableEvent();
+            Application.RemoteControl.DisableEvent += OnDisableEvent;
+            Application.RemoteControl.ExitEvent += OnExitEvent;
+            Application.RemoteControl.BroadcastDisableEvent();
 
+            WinForms.Application.EnableVisualStyles();
+            WinForms.Application.SetCompatibleTextRenderingDefault(false);
             m_icon = new WinForms.NotifyIcon();
             m_icon.Visible = true;
             m_icon.Click += NotifyiconClicked;
@@ -69,10 +69,10 @@ namespace WinCompose
 
             Composer.Changed += SysTrayUpdateCallback;
             Updater.Changed += SysTrayUpdateCallback;
-            SysTrayUpdateCallback(null, new EventArgs());
+            SysTrayUpdateCallback();
 
             Updater.Changed += UpdaterStateChanged;
-            UpdaterStateChanged(null, new EventArgs());
+            UpdaterStateChanged();
         }
 
         public void Dispose()
@@ -87,19 +87,14 @@ namespace WinCompose
             Updater.Changed -= SysTrayUpdateCallback;
             Updater.Changed -= UpdaterStateChanged;
 
+            Application.RemoteControl.DisableEvent -= OnDisableEvent;
+            Application.RemoteControl.ExitEvent -= OnExitEvent;
+
             if (m_icon != null)
             {
                 m_icon.Visible = false;
                 m_icon.Dispose();
                 m_icon = null;
-            }
-
-            if (m_control != null)
-            {
-                m_control.DisableEvent -= OnDisableEvent;
-                m_control.ExitEvent -= OnExitEvent;
-                m_control.Dispose();
-                m_control = null;
             }
         }
 
@@ -160,9 +155,8 @@ namespace WinCompose
 
                 case MenuCommand.Disable:
                     if (Composer.IsDisabled)
-                        m_control.TriggerDisableEvent();
+                        Application.RemoteControl.BroadcastDisableEvent();
                     Composer.ToggleDisabled();
-                    SysTrayUpdateCallback(null, new EventArgs());
                     break;
 
                 case MenuCommand.Restart:
@@ -171,17 +165,17 @@ namespace WinCompose
                     // reason the user may have, it’s because of a bug or a limitation
                     // in WinCompose that we need to fix.
                     m_icon.Visible = false;
+                    Application.Current.Shutdown();
                     WinForms.Application.Restart();
                     Environment.Exit(0);
                     break;
 
                 case MenuCommand.Exit:
-                    WinForms.Application.Exit();
+                    Application.Current.Shutdown();
                     break;
             }
         }
 
-        private RemoteControl m_control;
         private WinForms.NotifyIcon m_icon;
         private SequenceWindow m_sequencewindow;
         private SettingsWindow m_optionswindow;
@@ -234,7 +228,7 @@ namespace WinCompose
 
         private static System.Drawing.Icon[] m_icon_cache;
 
-        private void SysTrayUpdateCallback(object sender, EventArgs e)
+        private void SysTrayUpdateCallback()
         {
             m_icon.Icon = GetCurrentIcon();
 
@@ -248,7 +242,7 @@ namespace WinCompose
             if ((bool)t.GetField("added", hidden).GetValue(m_icon))
                 t.GetMethod("UpdateIcon", hidden).Invoke(m_icon, new object[] { true });
 
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
         }
 
         private static string GetCurrentToolTip()
@@ -299,22 +293,22 @@ namespace WinCompose
         public bool HasNewerVersion => Updater.HasNewerVersion;
         public string DownloadHeader => string.Format(i18n.Text.Download, Updater.Get("Latest") ?? "");
 
-        private void UpdaterStateChanged(object sender, EventArgs e)
+        private void UpdaterStateChanged()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasNewerVersion"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DownloadHeader"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasNewerVersion)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DownloadHeader)));
         }
 
-        private void OnDisableEvent(object sender, EventArgs e)
+        private void OnDisableEvent()
         {
             if (!Composer.IsDisabled)
                 Composer.ToggleDisabled();
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
+            SysTrayUpdateCallback();
         }
 
-        private void OnExitEvent(object sender, EventArgs e)
+        private void OnExitEvent()
         {
-            WinForms.Application.Exit();
+            Application.Current.Shutdown();
         }
     }
 }

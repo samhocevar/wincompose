@@ -16,7 +16,8 @@ TXT = rules/DefaultUserSequences.txt \
       rules/WinCompose.txt
 
 EXE = bin/$(CONFIG)/wincompose.exe
-DLL = bin/$(CONFIG)/Emoji.Wpf.dll \
+DLL = bin/$(CONFIG)/language.dll \
+      bin/$(CONFIG)/Emoji.Wpf.dll \
       bin/$(CONFIG)/Typography.OpenFont.dll \
       bin/$(CONFIG)/Typography.GlyphLayout.dll
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
@@ -39,23 +40,24 @@ all: clean installer portable
 	@echo PortableMD5: $(shell md5sum $(PORTABLE))
 
 clean:
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project language.csproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project wincompose.csproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.vcxproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project trampoline.vcxproj
 	rm -f $(PORTABLE)
-	rm -rf obj wincompose/obj wincompose.gui/obj || true
-	rm -rf bin wincompose/bin wincompose.gui/bin || true
+	rm -rf obj bin || true
 
 installer: $(EXE) $(ISS) $(PAS)
-	$(DEVENV) wincompose.sln //rebuild $(CONFIG) //project installer.vcxproj
+	$(DEVENV) wincompose.sln //build $(CONFIG) //project installer.vcxproj
 
 portable: $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
 	mkdir -p $(PORTABLE:.zip=)/rules
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
-	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/WinCompose.resources.dll $(PORTABLE:.zip=)/$${L}/; done
+	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
+	cp $(EXE).config $(DLL) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
@@ -63,5 +65,6 @@ portable: $(EXE)
 bin/$(CONFIG)/wincompose.exe:
 	@mkdir -p bin/$(CONFIG)
 	@rm -f $@
+	$(DEVENV) wincompose.sln //build $(CONFIG) //project language.csproj
 	$(DEVENV) wincompose.sln //build $(CONFIG) //project wincompose.csproj
 

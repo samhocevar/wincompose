@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -17,7 +17,7 @@ using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Windows.Forms;
+using System.Windows;
 
 namespace WinCompose
 {
@@ -139,7 +139,7 @@ static class Composer
         {
             Key alt_key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, false);
 
-            if (alt_key.IsPrintable() && alt_key.ToString()[0] > 0x7f)
+            if (alt_key.IsPrintable && alt_key.ToString()[0] > 0x7f)
             {
                 string str_upper = alt_key.ToString().ToUpper();
                 string str_lower = alt_key.ToString().ToLower();
@@ -240,19 +240,9 @@ static class Composer
             Log.Debug("Now composing (state: {0}) (altgr: {1})",
                       m_state, m_compose_key_is_altgr);
 
-            // Lauch the sequence reset expiration thread
-            // FIXME: do we need to launch a new thread each time the
-            // compose key is pressed? Let's have a dormant thread instead
+            // Lauch the sequence reset expiration timer
             if (Settings.ResetDelay.Value > 0)
-            {
-                new Thread(() =>
-                {
-                    while (CurrentState == State.Sequence &&
-                            DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
-                        Thread.Sleep(50);
-                    ResetSequence();
-                }).Start();
-            }
+                m_timeout.Change(TimeSpan.FromMilliseconds(Settings.ResetDelay.Value), NEVER);
 
             return true;
         }
@@ -401,6 +391,31 @@ static class Composer
     }
 
     /// <summary>
+    /// Cancel the current sequence when the reset delay is expired.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private static void TimeoutExpired(object state)
+    {
+        if (CurrentState == State.Sequence)
+        {
+            // If a key was pressed since the timer was launched, we delay
+            // the timeout value and check again later.
+            var expected_timeout = m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value);
+            var remaining_time = expected_timeout.Subtract(DateTime.Now);
+            if (remaining_time.TotalMilliseconds > 10)
+            {
+                m_timeout.Change(remaining_time, NEVER);
+                return;
+            }
+
+            ResetSequence();
+        }
+
+        m_timeout.Change(NEVER, NEVER);
+    }
+
+    /// <summary>
     /// Add a key to the sequence currently being built. If necessary, output
     /// the finished sequence or trigger actions for invalid sequences.
     /// </summary>
@@ -460,7 +475,7 @@ static class Composer
             foreach (Key k in m_sequence)
             {
                 // FIXME: what if the key is e.g. left arrow?
-                if (k.IsPrintable())
+                if (k.IsPrintable)
                     SendString(k.ToString());
             }
         }
@@ -478,7 +493,7 @@ static class Composer
     private static bool HasSurrogates(string str)
     {
         foreach (char ch in str)
-            if (ch >= 0xd800 && ch < 0xe000)
+            if (char.IsSurrogate(ch))
                 return true;
         return false;
     }
@@ -562,7 +577,7 @@ static class Composer
                     SendKeyUp(VK.LSHIFT);
                     SendKeyUp(VK.LCONTROL);
 
-                    foreach (var key in String.Format("{0:X04} ", (short)ch))
+                    foreach (var key in $"{(short)ch:X04} ")
                         SendKeyPress((VK)key);
                 }
             }
@@ -629,7 +644,7 @@ static class Composer
         }
     }
 
-    public static event EventHandler Changed = delegate {};
+    public static event Action Changed;
 
     /// <summary>
     /// Toggle the disabled state
@@ -640,7 +655,7 @@ static class Composer
         ResetSequence();
         // FIXME: this will no longer be necessary when "Disabled"
         // becomes a composer state of its own.
-        Changed(null, new EventArgs());
+        Changed?.Invoke();
     }
 
     /// <summary>
@@ -693,7 +708,7 @@ static class Composer
         Changed -= UpdateKeyboardLeds;
     }
 
-    public static void UpdateKeyboardLeds(object sender, EventArgs e)
+    public static void UpdateKeyboardLeds()
     {
         var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
         int buffer_size = (int)Marshal.SizeOf(indicators);
@@ -740,6 +755,10 @@ static class Composer
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
 
+    private static Timer m_timeout = new Timer(TimeoutExpired);
+
+    private static readonly TimeSpan NEVER = TimeSpan.FromMilliseconds(-1);
+
     /// <summary>
     /// How many times we pressed and released compose.
     /// </summary>
@@ -774,9 +793,11 @@ static class Composer
         private set
         {
             bool has_changed = (m_state != value);
+            if (has_changed && m_state == State.Sequence)
+                m_timeout.Change(NEVER, NEVER);
             m_state = value;
             if (has_changed)
-                Changed(null, new EventArgs());
+                Changed?.Invoke();
         }
     }
 

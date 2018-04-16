@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -14,49 +14,60 @@
 using System;
 using System.Diagnostics;
 using System.Security.Permissions;
-using WinForms = System.Windows.Forms;
+using System.Windows;
+using System.Windows.Interop;
 
 namespace WinCompose
 {
-    public class RemoteControl : WinForms.Form
+    public class RemoteControl : Window
     {
         public RemoteControl()
         {
-            // Forcing access to the window handle will let us receive messages
-            var unused = this.Handle;
+            // Cannot set ShowInTaskbar = false, or WndProc will not be handled
+            // correctly (maybe because we use HWND_BROADCAST).
+            ShowActivated = false;
+            Width = Height = 0;
+            WindowState = WindowState.Minimized;
+            WindowStyle = WindowStyle.None;
+
+            SourceInitialized += (o, e) =>
+                (PresentationSource.FromVisual(this) as HwndSource).AddHook(WndProc);
+
+            Show();
+            Hide();
         }
 
         [PermissionSet(SecurityAction.Demand, Name="FullTrust")]
-        protected override void WndProc(ref WinForms.Message m)
+        protected IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            if (m.Msg == WM_WINCOMPOSE_DISABLE)
+            if (msg == WM_WINCOMPOSE_DISABLE)
             {
-                if (Process.GetCurrentProcess().Id != (int)m.WParam)
-                    DisableEvent(null, new EventArgs());
-                return;
+                if (Process.GetCurrentProcess().Id != (int)wParam)
+                    DisableEvent?.Invoke();
+                handled = true;
             }
-            else if (m.Msg == WM_WINCOMPOSE_EXIT)
+            else if (msg == WM_WINCOMPOSE_EXIT)
             {
-                if (Process.GetCurrentProcess().Id != (int)m.WParam)
-                    ExitEvent(null, new EventArgs());
-                return;
+                if (Process.GetCurrentProcess().Id != (int)wParam)
+                    ExitEvent?.Invoke();
+                handled = true;
             }
 
-            base.WndProc(ref m);
+            return IntPtr.Zero;
         }
 
         /// <summary>
         /// Send a message to all other processes to ask them to disable any
         /// WinCompose hooks they may have installed.
         /// </summary>
-        public void TriggerDisableEvent()
+        public void BroadcastDisableEvent()
         {
-            NativeMethods.PostMessage((IntPtr)0xffff, WM_WINCOMPOSE_DISABLE,
+            NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE_DISABLE,
                                       Process.GetCurrentProcess().Id, 0);
         }
 
-        public event EventHandler DisableEvent = delegate {};
-        public event EventHandler ExitEvent = delegate {};
+        public event Action DisableEvent;
+        public event Action ExitEvent;
 
         /// <summary>
         /// A custom message ID used to kill other WinCompose instances
@@ -69,6 +80,8 @@ namespace WinCompose
         /// </summary>
         private static readonly uint WM_WINCOMPOSE_DISABLE
             = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
+
+        private static readonly IntPtr HWND_BROADCAST = (IntPtr)0xffff;
     }
 }
 

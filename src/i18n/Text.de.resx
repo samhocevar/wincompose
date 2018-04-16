@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>automatische Erkennung</value>
+    <value>Automatisch erkennen</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>linke Alt-Taste</value>
@@ -151,7 +151,13 @@
     <value>Menü</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+    <value>ESC-Taste</value>
+  </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Umwandeln</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Nicht umwandeln</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Rollen</value>
@@ -180,11 +186,14 @@
   <data name="Obsolete021" xml:space="preserve">
     <value>5 Sekunden</value>
   </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Debugfenster</value>
+  </data>
   <data name="Obsolete023" xml:space="preserve">
     <value>Keine</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Sequenzen anzeigen…</value>
+    <value>Sequenzen anzeigen …</value>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Deaktivieren</value>
@@ -200,6 +209,9 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Beenden</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode-Zeichen</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenzen</value>
@@ -226,7 +238,7 @@
     <value>Erweiterte Unicode-Eingabe</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Unicode-Eingabe für beliebige Zeichen aktivieren, selbst wenn keine Compose-Tastenfolge definiert ist. Beispielsweise ergibt die Tastenfolge „Compose U 1 A 3 F“ das Zeichen U+1A3F</value>
+    <value>Aktivieren Sie die Unicode-Eingabe für alle Zeichen, auch wenn keine Compose-Tastenfolge definiert ist. Beispielsweise wird die folgende Sequenz das Zeichen U+1A3F ausgeben: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Bei ungültigen Sequenzen</value>
@@ -260,6 +272,9 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Zeichen kopieren</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Bildschriftzeichen</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Übernehmen</value>
@@ -383,5 +398,8 @@
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>Beachte Tasten gesendet von anderer Software wie AutoHotkey oder Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Druck</value>
   </data>
 </root>

@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -23,12 +23,11 @@ namespace WinCompose
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void SetValue<T>(ref T field, T value, string propertyName, Action<T> callback = null)
+        protected virtual void SetValue<T>(ref T field, T value, string propertyName)
         {
             if (!Equals(field, value))
             {
                 field = value;
-                callback?.Invoke(value);
                 OnPropertyChanged(propertyName);
             }
         }

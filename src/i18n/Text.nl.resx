@@ -186,6 +186,9 @@
   <data name="Obsolete021" xml:space="preserve">
     <value>5 seconden</value>
   </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Debugvenster</value>
+  </data>
   <data name="Obsolete023" xml:space="preserve">
     <value>Geen</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Afsluiten</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode karakters</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenties</value>
@@ -266,6 +272,9 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Karakter kopiëren</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoticons</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Toepassen</value>
@@ -389,5 +398,8 @@
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>Toetscombinaties gegenereerd door andere software zoals AutoHotKey of Synergy niet negeren</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Print Screen</value>
   </data>
 </root>
