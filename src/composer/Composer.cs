@@ -719,15 +719,15 @@ static class Composer
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
         if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (IsComposing&& m_current_compose_key.VirtualKey == VK.CAPITAL))
+             || (IsComposing && m_current_compose_key.VirtualKey == VK.CAPITAL))
             indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (IsComposing&& m_current_compose_key.VirtualKey == VK.NUMLOCK))
+             || (IsComposing && m_current_compose_key.VirtualKey == VK.NUMLOCK))
             indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (IsComposing&& m_current_compose_key.VirtualKey == VK.SCROLL))
+             || (IsComposing && m_current_compose_key.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
         for (ushort i = 0; i < 4; ++i)
