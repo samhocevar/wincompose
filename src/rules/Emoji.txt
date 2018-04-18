@@ -13,27 +13,28 @@
 
 # Emoticons (1F601 — 1F64F)
 <Multi_key> <Multi_key> <g> <r> <i> <n> <n> <i> <n> <g>                         : "😁" U1F601 # grinning face with smiling eyes
-# "😂" U1F602 # face with tears of joy
-# "😃" U1F603 # smiling face with open mouth
-# "😄" U1F604 # smiling face with open mouth and smiling eyes
-# "😅" U1F605 # smiling face with open mouth and cold sweat
-# "😆" U1F606 # smiling face with open mouth and tightly-closed eyes
+<Multi_key> <Multi_key> <j> <o> <y>                                             : "😂" U1F602 # face with tears of joy
+<Multi_key> <Multi_key> <s> <m> <i> <l> <e> <o> <p> <e> <n>                     : "😃" U1F603 # smiling face with open mouth
+<Multi_key> <Multi_key> <s> <m> <i> <l> <e> <y>                                 : "😄" U1F604 # smiling face with open mouth and smiling eyes
+<Multi_key> <Multi_key> <s> <m> <i> <l> <e> <s> <w> <e> <a> <t>                 : "😅" U1F605 # smiling face with open mouth and cold sweat
+<Multi_key> <Multi_key> <s> <a> <t> <i> <s> <f> <i> <e> <d>                     : "😆" U1F606 # smiling face with open mouth and tightly-closed eyes
 <Multi_key> <Multi_key> <w> <i> <n> <k> <i> <n> <g>                             : "😉" U1F609 # winking face
-# "😊" U1F60A # smiling face with smiling eyes
+<Multi_key> <Multi_key> <b> <l> <u> <s> <h>                                     : "😊" U1F60A # smiling face with smiling eyes
 # "😋" U1F60B # face savouring delicious food
 <Multi_key> <Multi_key> <r> <e> <l> <i> <e> <v> <e> <d>                         : "😌" U1F60C # relieved face
-# "😍" U1F60D # smiling face with heart-shaped eyes
+<Multi_key> <Multi_key> <h> <e> <a> <r> <t> <e> <y> <e> <s>                     : "😍" U1F60D # smiling face with heart-shaped eyes
 <Multi_key> <Multi_key> <s> <m> <i> <r> <k> <i> <n> <g>                         : "😏" U1F60F # smirking face
 <Multi_key> <Multi_key> <u> <n> <a> <m> <u> <s> <e> <d>                         : "😒" U1F612 # unamused face
-# "😓" U1F613 # face with cold sweat
+<Multi_key> <Multi_key> <f> <a> <c> <e> <s> <w> <e> <a> <t>                     : "😓" U1F613 # face with cold sweat
 <Multi_key> <Multi_key> <p> <e> <n> <s> <i> <v> <e>                             : "😔" U1F614 # pensive face
 <Multi_key> <Multi_key> <c> <o> <n> <f> <o> <u> <n> <d> <e> <d>                 : "😖" U1F616 # confounded face
-# "😘" U1F618 # face throwing a kiss
+<Multi_key> <Multi_key> <f> <a> <c> <e> <k> <i> <s> <s>                         : "😘" U1F618 # face throwing a kiss
 # "😚" U1F61A # kissing face with closed eyes
 # "😜" U1F61C # face with stuck-out tongue and winking eye
 # "😝" U1F61D # face with stuck-out tongue and tightly-closed eyes
-<Multi_key> <Multi_key> <d> <i> <s> <a> <p> <p> <o> <i> <n> <t>                 : "😞" U1F61E # disappointed face
+<Multi_key> <Multi_key> <d> <i> <s> <a> <p> <p> <o> <i> <n> <t> <e> <d>         : "😞" U1F61E # disappointed face
 <Multi_key> <Multi_key> <a> <n> <g> <r> <y>                                     : "😠" U1F620 # angry face
+<Multi_key> <Multi_key> <greater> <colon> <(>                                   : "😠" U1F620 # angry face
 <Multi_key> <Multi_key> <p> <o> <u> <t> <i> <n> <g>                             : "😡" U1F621 # pouting face
 <Multi_key> <Multi_key> <c> <r> <y> <i> <n> <g>                                 : "😢" U1F622 # crying face
 <Multi_key> <Multi_key> <p> <e> <r> <s> <e> <v> <e> <r> <i> <n> <g>             : "😣" U1F623 # persevering face
@@ -42,14 +43,14 @@
 <Multi_key> <Multi_key> <f> <e> <a> <r> <f> <u> <l>                             : "😨" U1F628 # fearful face
 <Multi_key> <Multi_key> <w> <e> <a> <r> <y>                                     : "😩" U1F629 # weary face
 <Multi_key> <Multi_key> <s> <l> <e> <e> <p> <y>                                 : "😪" U1F62A # sleepy face
-# "😫" U1F62B # tired face
-# "😭" U1F62D # loudly crying face
-# "😰" U1F630 # face with open mouth and cold sweat
-# "😱" U1F631 # face screaming in fear
-# "😲" U1F632 # astonished face
-# "😳" U1F633 # flushed face
 # "😵" U1F635 # dizzy face
-# "😷" U1F637 # face with medical mask
+<Multi_key> <Multi_key> <t> <i> <r> <e> <d> <f> <a> <c> <e>                     : "😫" U1F62B # tired face
+<Multi_key> <Multi_key> <s> <o> <b>                                             : "😭" U1F62D # loudly crying face
+<Multi_key> <Multi_key> <c> <o> <l> <d> <s> <w> <e> <a> <t>                     : "😰" U1F630 # face with open mouth and cold sweat
+<Multi_key> <Multi_key> <s> <c> <r> <e> <a> <m>                                 : "😱" U1F631 # face screaming in fear
+<Multi_key> <Multi_key> <a> <s> <t> <o> <n> <i> <s> <h> <e> <d>                 : "😲" U1F632 # astonished face
+<Multi_key> <Multi_key> <f> <l> <u> <s> <h> <e> <d>                             : "😳" U1F633 # flushed face
+<Multi_key> <Multi_key> <m> <a> <s> <k>                                         : "😷" U1F637 # face with medical mask
 # "😸" U1F638 # grinning cat face with smiling eyes
 # "😹" U1F639 # cat face with tears of joy
 # "😺" U1F63A # smiling cat face with open mouth
@@ -744,7 +745,7 @@
 # "😕" U1F615 # confused face
 # "😗" U1F617 # kissing face
 # "😙" U1F619 # kissing face with smiling eyes
-# "😛" U1F61B # face with stuck-out tongue
+<Multi_key> <Multi_key> <s> <t> <u> <c> <k> <o> <u> <t> <t> <o> <n> <g> <u> <e> : "😛" U1F61B # face with stuck-out tongue
 # "😟" U1F61F # worried face
 # "😦" U1F626 # frowning face with open mouth
 # "😧" U1F627 # anguished face
@@ -752,7 +753,7 @@
 # "😮" U1F62E # face with open mouth
 # "😯" U1F62F # hushed face
 # "😴" U1F634 # sleeping face
-# "😶" U1F636 # face without mouth
+<Multi_key> <Multi_key> <n> <o> <m> <o> <u> <t> <h>                             : "😶" U1F636 # face without mouth
 
 # Additional transport and map symbols (1F681 — 1F6C5)
 <Multi_key> <Multi_key> <h> <e> <l> <i> <c> <o> <p> <t> <e> <r>                 : "🚁" U1F681 # helicopter
