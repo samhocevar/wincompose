@@ -38,6 +38,10 @@ public partial class Key
         { VK.DOWN,    "▼" },
         { VK.LEFT,    "◀" },
         { VK.RIGHT,   "▶" },
+        { VK.HOME,    "Home" },
+        { VK.END,     "End" },
+        { VK.BACK,    "⌫" },
+        { VK.DELETE,  "␡" },
     };
 
     /// <summary>
@@ -52,6 +56,10 @@ public partial class Key
         { "Down",      VK.DOWN },
         { "Left",      VK.LEFT },
         { "Right",     VK.RIGHT },
+        { "Home",      VK.HOME },
+        { "End",       VK.END },
+        { "BackSpace", VK.BACK },
+        { "Delete",    VK.DELETE },
     };
 
     /// <summary>
@@ -74,7 +82,7 @@ public partial class Key
                 if (m.Success)
                 {
                     int codepoint = int.Parse(m.Groups[2].Value, NumberStyles.HexNumber);
-                    ret[m.Groups[1].Value] = Convert.ToChar(codepoint).ToString();
+                    ret[m.Groups[1].Value] = char.ConvertFromUtf32(codepoint);
                 }
             }
         }
@@ -91,6 +99,10 @@ public partial class Key
 
         if (m_extra_keysyms.ContainsKey(keysym))
             return new Key(m_extra_keysyms[keysym]);
+
+        if (keysym.Length > 1 && keysym[0] == 'U' &&
+            int.TryParse(keysym.Substring(1), NumberStyles.HexNumber, null, out var codepoint))
+            return new Key(char.ConvertFromUtf32(codepoint));
 
         if (keysym.Length == 1)
             return new Key(keysym);

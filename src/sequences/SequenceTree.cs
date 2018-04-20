@@ -69,9 +69,9 @@ public class SequenceTree : SequenceNode
     }
 
     private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
-    private static Regex m_r1 = new Regex(@"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
-        //                                                    ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
-        //                                                     keys               result                 desc
+    private static Regex m_r1 = new Regex(@"^\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
+        //                                      ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
+        //                                       keys               result                 desc
     private static Regex m_r2 = new Regex(@"[\s<>]+");
 
     private void ParseRule(string line)
@@ -98,23 +98,15 @@ public class SequenceTree : SequenceNode
             return;
         }
 
-        // Only bother with sequences that start with <Multi_key>
         var m1 = m_r1.Match(line);
         if (!m1.Success)
             return;
 
+        KeySequence seq = new KeySequence();
         var keysyms = m_r2.Split(m1.Groups[1].Captures[0].Value);
 
-        if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
-            return;
-
-        KeySequence seq = new KeySequence();
-
-        for (int i = 1; i < keysyms.Length; ++i)
+        for (int i = 1; i < keysyms.Length - 1; ++i)
         {
-            if (keysyms[i] == String.Empty)
-                continue;
-
             Key k = Key.FromKeySym(keysyms[i]);
             if (k == null)
             {
@@ -129,6 +121,10 @@ public class SequenceTree : SequenceNode
             seq.Add(k);
         }
 
+        // Only bother with sequences of length >= 3 that start with <Multi_key>
+        if (seq.Count < 3 || seq[0].VirtualKey != VK.COMPOSE)
+            return;
+
         string result = m1.Groups[2].Captures[0].Value;
         string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
 
@@ -142,7 +138,7 @@ public class SequenceTree : SequenceNode
                 case @"\r": return "\r";
                 case @"\t": return "\t";
                 // For all other sequences, just strip the leading \
-                default: return m.Value.Substring(1).ToString();
+                default: return m.Value.Substring(1);
             }
         });
 
@@ -155,6 +151,10 @@ public class SequenceTree : SequenceNode
             if (!string.IsNullOrEmpty(alt_desc))
                 description = alt_desc;
         }
+
+        // HACK: remove the first key (Multi_key) for now, because the
+        // rest of the code cannot handle it.
+        seq.RemoveAt(0);
 
         InsertSequence(seq, result, utf32, description);
         ++Count;
