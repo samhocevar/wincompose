@@ -80,31 +80,33 @@ namespace WinCompose
 
         [EntryLocation("global", "language")]
         public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
-        [EntryLocation("global", "compose_key")]
-        public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
-        [EntryLocation("global", "reset_delay")]
-        public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
         [EntryLocation("global", "disabled")]
         public static SettingsEntry<bool> Disabled { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "unicode_input")]
+
+        [EntryLocation("composing", "compose_key")]
+        public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
+        [EntryLocation("composing", "reset_delay")]
+        public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
+        [EntryLocation("composing", "unicode_input")]
         public static SettingsEntry<bool> UnicodeInput { get; } = new SettingsEntry<bool>(true);
-        [EntryLocation("global", "case_insensitive")]
+        [EntryLocation("composing", "case_insensitive")]
         public static SettingsEntry<bool> CaseInsensitive { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "discard_on_invalid")]
+        [EntryLocation("composing", "discard_on_invalid")]
         public static SettingsEntry<bool> DiscardOnInvalid { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "beep_on_invalid")]
+        [EntryLocation("composing", "beep_on_invalid")]
         public static SettingsEntry<bool> BeepOnInvalid { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "keep_original_key")]
+        [EntryLocation("composing", "keep_original_key")]
         public static SettingsEntry<bool> KeepOriginalKey { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "insert_zwsp")]
+
+        [EntryLocation("tweaks", "insert_zwsp")]
         public static SettingsEntry<bool> InsertZwsp { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "emulate_capslock")]
+        [EntryLocation("tweaks", "emulate_capslock")]
         public static SettingsEntry<bool> EmulateCapsLock { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "shift_disables_capslock")]
+        [EntryLocation("tweaks", "shift_disables_capslock")]
         public static SettingsEntry<bool> ShiftDisablesCapsLock { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "capslock_capitalizes")]
+        [EntryLocation("tweaks", "capslock_capitalizes")]
         public static SettingsEntry<bool> CapsLockCapitalizes { get; } = new SettingsEntry<bool>(false);
-        [EntryLocation("global", "allow_injected")]
+        [EntryLocation("tweaks", "allow_injected")]
         public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
 
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
@@ -323,12 +325,33 @@ namespace WinCompose
             try
             {
                 const int len = 255;
+                var migrated = false;
                 var tmp = new StringBuilder(len);
                 var result = NativeMethods.GetPrivateProfileString(section, key, "",
                                                                    tmp, len, GetConfigFile());
                 if (result == 0)
-                    return;
+                {
+                    // Compatibility code for keys that moved from the "global"
+                    // to the "composing" or "tweaks" section.
+                    if (section != "global")
+                    {
+                        result = NativeMethods.GetPrivateProfileString("global", key, "",
+                                                                       tmp, len, GetConfigFile());
+                        if (result == 0)
+                            return;
+                        migrated = true;
+                    }
+                }
+
                 entry.LoadString(tmp.ToString());
+
+                if (migrated)
+                {
+                    NativeMethods.WritePrivateProfileString("global", key, null,
+                                                            GetConfigFile());
+                    NativeMethods.WritePrivateProfileString(section, key, entry.ToString(),
+                                                            GetConfigFile());
+                }
             }
             finally
             {
