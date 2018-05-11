@@ -81,6 +81,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
@@ -126,16 +127,23 @@
                                        Margin="8,4" />
                         </Grid>
 
-                        <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static i18n:Text.TestTyping}"
-                                   Margin="8,8,8,4" TextAlignment="Right" VerticalAlignment="Top"/>
-                        <emoji:RichTextBox Grid.Row="4" Grid.Column="1" DockPanel.Dock="Top" Margin="8" Width="Auto"
-                                           Height="90" MaxHeight="90" FontSize="20" AcceptsReturn="True"
-                                           FontWeight="SemiBold" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"
-                                           SnapsToDevicePixels="True"
-                                           Foreground="#545" Background="#fff" ForceCursor="True">
-                             <FlowDocument><Paragraph>ÅḄ₡Đ🐹🏠♥…&#13;&#13;</Paragraph></FlowDocument>
-                        </emoji:RichTextBox>
+                        <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Margin="8,4" VerticalAlignment="Center"
+                                  IsChecked="{Binding Value, Source={x:Static wc:Settings.CheckUpdates}}"
+                                  ToolTipService.ToolTip="{x:Static i18n:Text.CheckUpdatesToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.CheckUpdates}" TextWrapping="Wrap"/>
+                        </CheckBox>
                     </Grid>
+                </GroupBox>
+
+                <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.TestTyping}" VerticalAlignment="Top">
+                    <emoji:RichTextBox Margin="8" Width="Auto" Height="90" MaxHeight="90"
+                                       FontSize="20" AcceptsReturn="True"
+                                       FontWeight="SemiBold" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"
+                                       SnapsToDevicePixels="True"
+                                       Foreground="#545" Background="#fff" ForceCursor="True">
+                         <FlowDocument><Paragraph>ÅḄ₡Đ🐹🏠♥…&#13;&#13;</Paragraph></FlowDocument>
+                    </emoji:RichTextBox>
                 </GroupBox>
 
                 <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.UserDefinedSequences}" VerticalAlignment="Top">

@@ -82,6 +82,8 @@ namespace WinCompose
         public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
         [EntryLocation("global", "disabled")]
         public static SettingsEntry<bool> Disabled { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "check_updates")]
+        public static SettingsEntry<bool> CheckUpdates { get; } = new SettingsEntry<bool>(true);
 
         [EntryLocation("composing", "compose_key")]
         public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());

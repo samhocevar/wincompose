@@ -501,4 +501,12 @@
     <value>Disabled</value>
     <comment>String to show instead of the key name when no compose key is configured</comment>
   </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automatically check for updates</value>
+    <comment></comment>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically.</value>
+    <comment></comment>
+  </data>
 </root>

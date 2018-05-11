@@ -187,6 +187,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check for Updates.
+        /// </summary>
+        public static string CheckUpdates {
+            get {
+                return ResourceManager.GetString("CheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically..
+        /// </summary>
+        public static string CheckUpdatesToolTip {
+            get {
+                return ResourceManager.GetString("CheckUpdatesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {

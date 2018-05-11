@@ -47,7 +47,8 @@ static class Updater
         {
             try
             {
-                UpdateStatus();
+                if (Settings.CheckUpdates.Value)
+                    UpdateStatus();
 
                 if (HasNewerVersion)
                 {
