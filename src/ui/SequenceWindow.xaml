@@ -97,9 +97,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{x:Static i18n:Text.Emoji}"/>
                             <TextBlock Text="—" Margin="4,0,4,0"/>
-                            <emoji:Image Text="☺" Height="18"/>
-                            <emoji:Image Text="♥" Height="18"/>
-                            <emoji:Image Text="🐨" Height="18"/>
+                            <emoji:TextBlock Text="☺♥🐨"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Margin="4" GroupName="Category"
@@ -131,7 +129,7 @@
                     <DataTemplate DataType="wc:CategoryViewModel">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                            <emoji:Image Text="{Binding Icon}" Height="18" Margin="4,0,0,0"/>
+                            <emoji:TextBlock Text="{Binding Icon}" Margin="4,0,0,0"/>
                             <!-- TODO: make this a tooltip instead? -->
                             <!--
                             <StackPanel Orientation="Horizontal" HorizonalAlignment="Right">
@@ -152,7 +150,7 @@
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
             <ListBox Margin="8" ItemsSource="{Binding Sequences}"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     VirtualizingStackPanel.VirtualizationMode="Standard">
+                     VirtualizingStackPanel.VirtualizationMode="Recycling">
                 <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
@@ -166,15 +164,17 @@
                             <!-- The small character box and its large tooltip -->
                             <Border BorderThickness="1" BorderBrush="DarkGray" CornerRadius="4"
                                     Background="White" Margin="2,0,4,0" SnapsToDevicePixels="True">
-                                <Viewbox Width="32" Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly"
+                                <Viewbox Height="32" DockPanel.Dock="Left" StretchDirection="UpOnly"
                                          ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="0">
-                                    <emoji:Image Text="{Binding Result}" Width="32" Height="32" Background="Transparent"
-                                                 FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
-                                    <Viewbox.ToolTip>
-                                        <emoji:Image Text="{Binding Result}" Width="200" Height="200"
+                                    <emoji:TextBlock Text="{Binding Result}" Background="Transparent"
+                                                     Height="32" Margin="4,0,4,0" FontSize="24"
                                                      FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
-                                    </Viewbox.ToolTip>
                                 </Viewbox>
+                                <Border.ToolTip>
+                                    <emoji:TextBlock Text="{Binding Result}"
+                                                     Height="200" Margin="20,0,20,0" FontSize="150"
+                                                     FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
+                                </Border.ToolTip>
                             </Border>
 
                             <!-- The sequence, printed as key icons -->
