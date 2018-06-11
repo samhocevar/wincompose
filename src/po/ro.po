@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.2beta20150326\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2015-06-09 14:09+0200\n"
-"Last-Translator: Laurentiu Dobrota <rauldobrota@gmail.com>\n"
+"PO-Revision-Date: 2018-06-11 11:30+0000\n"
+"Last-Translator: Chronium <onlivechronium@gmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/wincompose/"
 "master/ro/>\n"
 "Language: ro\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 2.4-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -138,9 +138,8 @@ msgstr "5 secunde"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:213 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Windows stânga"
+msgstr "Fereastră Depanare"
 
 #. This string is obsolete but might be reused in the future
 #: i18n/Text.resx:217 ID:Obsolete023
@@ -177,7 +176,7 @@ msgstr "Ieşire"
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr ""
+msgstr "Caractere Unicode"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -203,7 +202,7 @@ msgstr "Cheie Compose:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Selectați tasta corespunzătoare pentru Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetDelay
@@ -212,7 +211,7 @@ msgstr "Întârziere:"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Intrare Unicode Avansată"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid ""
@@ -220,6 +219,9 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F"
 msgstr ""
+"Activați intrarea Unicode pentru toate caracterele, chiar și cele care nu au "
+"o secvență de compoziție definită. Spre exemplu, următoarea secvență va "
+"produce caracterul U+1A3F: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
