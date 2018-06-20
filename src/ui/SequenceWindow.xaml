@@ -199,7 +199,8 @@
                                                         <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
                                                     </Border.Background>
                                                     <Viewbox Margin="4">
-                                                        <TextBlock Text="{Binding KeyLabel}" Foreground="#310" FontFamily="Consolas" FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding KeyLabel}" Foreground="#310"
+                                                                   FontFamily="Consolas, Segoe UI Symbol, Arial" FontWeight="Bold" />
                                                     </Viewbox>
                                                 </Border>
                                             </StackPanel>
