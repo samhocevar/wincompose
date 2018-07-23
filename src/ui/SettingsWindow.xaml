@@ -84,17 +84,19 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static i18n:Text.Language}"
-                                   Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
-                                   ToolTipService.ToolTip="{x:Static i18n:Text.LanguageToolTip}"/>
+                        <emoji:TextBlock Grid.Row="0" Grid.Column="0"
+                                         Text="{Binding StringFormat='🌐 {0}', Source={x:Static i18n:Text.Language}, Path=.}"
+                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
+                                         ToolTipService.ToolTip="{x:Static i18n:Text.LanguageToolTip}"/>
                         <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                   ItemsSource="{x:Static wc:Settings.ValidLanguages}"
                                   SelectedValue="{Binding SelectedLanguage}"
                                   SelectedValuePath="Key" DisplayMemberPath="Value"/>
 
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static i18n:Text.ComposeKey}"
-                                   Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
-                                   ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
+                        <emoji:TextBlock Grid.Row="1" Grid.Column="0"
+                                         Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.ComposeKey}, Path=.}"
+                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
+                                         ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
                         <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                   ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
                                   SelectedItem="{Binding ComposeKey0}" SelectedValuePath="">
@@ -115,8 +117,9 @@
                                 </ComboBox.ItemTemplate>
                         </ComboBox>
 
-                        <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static i18n:Text.ResetDelay}"
-                                   Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+                        <emoji:TextBlock Grid.Row="3" Grid.Column="0"
+                                         Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
+                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
                         <Grid Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition MaxWidth="70" />
@@ -164,19 +167,22 @@
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.CaseInsensitiveToolTip}">
-                            <TextBlock Text="{x:Static i18n:Text.CaseInsensitive}" TextWrapping="Wrap"/>
+                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} 🔡', Source={x:Static i18n:Text.CaseInsensitive}, Path=.}"
+                                             TextWrapping="Wrap"/>
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.DiscardOnInvalidToolTip}">
-                            <TextBlock Text="{x:Static i18n:Text.DiscardOnInvalid}" TextWrapping="Wrap"/>
+                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} 🚫', Source={x:Static i18n:Text.DiscardOnInvalid}, Path=.}"
+                                             TextWrapping="Wrap"/>
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.BeepOnInvalidToolTip}">
-                            <TextBlock Text="{x:Static i18n:Text.BeepOnInvalid}" TextWrapping="Wrap"/>
+                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} 🎵', Source={x:Static i18n:Text.BeepOnInvalid}, Path=.}"
+                                             TextWrapping="Wrap"/>
                         </CheckBox>
 
                     </StackPanel>
