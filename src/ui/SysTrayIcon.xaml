@@ -23,13 +23,13 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
-        <emoji:TextBlock Text="💬" x:Key="SequencesEmoji"/>
-        <emoji:TextBlock Text="🛠" x:Key="OptionsEmoji"/>
-        <emoji:TextBlock Text="ℹ" x:Key="AboutEmoji"/>
-        <emoji:TextBlock Text="🔎" x:Key="DebugEmoji"/>
-        <emoji:TextBlock Text="🌐" x:Key="WebsiteEmoji"/>
-        <emoji:TextBlock Text="♻" x:Key="RestartEmoji"/>
-        <emoji:TextBlock Text="🚪" x:Key="ExitEmoji"/>
+        <emoji:TextBlock Text="💬" x:Key="SequencesEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🛠" x:Key="OptionsEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="ℹ" x:Key="AboutEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🔎" x:Key="DebugEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🌐" x:Key="WebsiteEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="♻" x:Key="RestartEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🚪" x:Key="ExitEmoji" FontSize="16" HorizontalAlignment="Center"/>
     </UserControl.Resources>
 
     <UserControl.ContextMenu>
