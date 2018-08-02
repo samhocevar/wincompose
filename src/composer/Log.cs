@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Threading;
 using System.Windows.Threading;
 
 namespace WinCompose
@@ -83,7 +84,10 @@ public static class Log
         {
             DateTime date = DateTime.Now;
             var msg = string.Format(format, args);
-            m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, date, msg);
+            ThreadPool.QueueUserWorkItem(x =>
+            {
+                m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, date, msg);
+            });
         }
     }
 
