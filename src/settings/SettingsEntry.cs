@@ -12,8 +12,6 @@
 //
 
 using System;
-using System.Text;
-using System.Threading;
 
 namespace WinCompose
 {
@@ -97,5 +95,4 @@ namespace WinCompose
             }
         }
     }
-
 }

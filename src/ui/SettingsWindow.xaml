@@ -68,7 +68,8 @@
 
         <!-- The Settings group -->
         <TabItem Header="{x:Static i18n:Text.General}">
-            <DockPanel Margin="8" Name="MasterPanel">
+            <DockPanel Margin="8">
+            <!--<DockPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">-->
                 <GroupBox Header="{x:Static i18n:Text.Behavior}" DockPanel.Dock="Top" VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
@@ -76,10 +77,6 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
@@ -93,44 +90,7 @@
                                   SelectedValue="{Binding SelectedLanguage}"
                                   SelectedValuePath="Key" DisplayMemberPath="Value"/>
 
-                        <emoji:TextBlock Grid.Row="1" Grid.Column="0"
-                                         Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.ComposeKey}, Path=.}"
-                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
-                                         ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
-                        <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
-                                  ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
-                                  SelectedItem="{Binding ComposeKey0}" SelectedValuePath="">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                        </ComboBox>
-
-                        <ComboBox Grid.Row="2" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
-                                  ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
-                                  SelectedItem="{Binding ComposeKey1}" SelectedValuePath="">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                        </ComboBox>
-
-                        <emoji:TextBlock Grid.Row="3" Grid.Column="0"
-                                         Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
-                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-                        <Grid Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition MaxWidth="70" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <TextBox Margin="8,4" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
-                                       Margin="8,4" />
-                        </Grid>
-
-                        <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                        <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                   Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.CheckUpdates}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.CheckUpdatesToolTip}">
@@ -149,19 +109,119 @@
                     </emoji:RichTextBox>
                 </GroupBox>
 
-                <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.UserDefinedSequences}" VerticalAlignment="Top">
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="EditUserDefinedSequences" MinWidth="80" Margin="8,4"
-                                Content="{x:Static i18n:Text.UserDefinedSequencesEdit}"
-                                Click="EditUserDefinedSequences_Click" />
-                        <Button x:Name="ReloadUserDefinedSequences" MinWidth="80" Margin="8,4"
-                                Content="{x:Static i18n:Text.UserDefinedSequencesReload}"
-                                Click="ReloadUserDefinedSequences_Click" />
+            </DockPanel>
+        </TabItem>
+
+        <!-- The Composing tab -->
+        <TabItem Header="{x:Static i18n:Text.Composing}">
+            <DockPanel Margin="8" Name="MasterPanel">
+
+                <GroupBox Header="{x:Static i18n:Text.Behavior}"
+                          DockPanel.Dock="Top" VerticalAlignment="Top">
+                    <Grid VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <emoji:TextBlock Grid.Row="0" Grid.Column="0"
+                                         Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.ComposeKey}, Path=.}"
+                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
+                                         ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
+                                  ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
+                                  SelectedItem="{Binding ComposeKey0}" SelectedValuePath="">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
+                                  ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
+                                  SelectedItem="{Binding ComposeKey1}" SelectedValuePath="">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <emoji:TextBlock Grid.Row="2" Grid.Column="0"
+                                         Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
+                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+                        <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MaxWidth="70" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Margin="8,4" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
+                                       Margin="8,4" />
+                        </Grid>
+
+                        <CheckBox Grid.Row="3" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.KeepOriginalKeyToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.KeepOriginalKey}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.UnicodeInputToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.UnicodeInput}" TextWrapping="Wrap"/>
+                        </CheckBox>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="{x:Static i18n:Text.Sequences}"
+                          DockPanel.Dock="Top" VerticalAlignment="Top">
+                    <StackPanel Orientation="Vertical">
+                        <CheckBox Grid.Row="4" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.UseXorgRules}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.UseXorgRulesToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.UseXorgRules}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Grid.Row="5" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.UseXComposeRules}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.UseXComposeRulesToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.UseXComposeRules}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Grid.Row="6" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.UseEmojiRules}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.UseEmojiRulesToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.UseEmojiRules}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static i18n:Text.UserDefinedSequences}"
+                                       Margin="8,4" VerticalAlignment="Center"/>
+                            <Button x:Name="EditUserDefinedSequences" MinWidth="80" Margin="8,4"
+                                    Content="{x:Static i18n:Text.UserDefinedSequencesEdit}"
+                                    Click="EditUserDefinedSequences_Click" />
+                            <Button x:Name="ReloadUserDefinedSequences" MinWidth="80" Margin="8,4"
+                                    Content="{x:Static i18n:Text.UserDefinedSequencesReload}"
+                                    Click="ReloadUserDefinedSequences_Click" />
+                        </StackPanel>
                     </StackPanel>
                 </GroupBox>
 
                 <!-- The Invalid Sequences group -->
-                <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.InvalidSequences}" VerticalAlignment="Top">
+                <GroupBox Header="{x:Static i18n:Text.InvalidSequences}"
+                          DockPanel.Dock="Top" VerticalAlignment="Top">
                     <StackPanel VerticalAlignment="Center">
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
@@ -187,25 +247,12 @@
 
                     </StackPanel>
                 </GroupBox>
-
             </DockPanel>
         </TabItem>
 
         <!-- The Tweaks tab -->
         <TabItem Header="{x:Static i18n:Text.Tweaks}">
             <StackPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">
-
-                <CheckBox Margin="8,4" VerticalAlignment="Center"
-                          IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}"
-                          ToolTipService.ToolTip="{x:Static i18n:Text.UnicodeInputToolTip}">
-                    <TextBlock Text="{x:Static i18n:Text.UnicodeInput}" TextWrapping="Wrap"/>
-                </CheckBox>
-
-                <CheckBox Margin="8,4" VerticalAlignment="Center"
-                        IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"
-                        ToolTipService.ToolTip="{x:Static i18n:Text.KeepOriginalKeyToolTip}">
-                    <TextBlock Text="{x:Static i18n:Text.KeepOriginalKey}" TextWrapping="Wrap"/>
-                </CheckBox>
 
                 <CheckBox Margin="8,4" VerticalAlignment="Center"
                         IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"

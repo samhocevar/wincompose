@@ -56,6 +56,11 @@ namespace WinCompose
                     entry.ValueChanged += () => ThreadPool.QueueUserWorkItem(_ => SaveEntry(entry.ToString(), attr.Section, attr.Key));
                 }
             }
+
+            // Reload all sequences when these values change
+            UseXorgRules.ValueChanged += () => LoadSequences();
+            UseXComposeRules.ValueChanged += () => LoadSequences();
+            UseEmojiRules.ValueChanged += () => LoadSequences();
         }
 
         // The application version
@@ -89,6 +94,12 @@ namespace WinCompose
         public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
         [EntryLocation("composing", "reset_delay")]
         public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
+        [EntryLocation("composing", "use_xorg_rules")]
+        public static SettingsEntry<bool> UseXorgRules { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("composing", "use_xcompose_rules")]
+        public static SettingsEntry<bool> UseXComposeRules { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("composing", "use_emoji_rules")]
+        public static SettingsEntry<bool> UseEmojiRules { get; } = new SettingsEntry<bool>(true);
         [EntryLocation("composing", "unicode_input")]
         public static SettingsEntry<bool> UnicodeInput { get; } = new SettingsEntry<bool>(true);
         [EntryLocation("composing", "case_insensitive")]
@@ -246,10 +257,12 @@ namespace WinCompose
         {
             m_sequences.Clear();
 
-            m_sequences.LoadResource("3rdparty.xorg.rules");
-            m_sequences.LoadResource("3rdparty.xcompose.rules");
-
-            m_sequences.LoadFile(Path.Combine(GetDataDir(), "Emoji.txt"));
+            if (UseXorgRules.Value)
+                m_sequences.LoadResource("3rdparty.xorg.rules");
+            if (UseXComposeRules.Value)
+                m_sequences.LoadResource("3rdparty.xcompose.rules");
+            if (UseEmojiRules.Value)
+                m_sequences.LoadFile(Path.Combine(GetDataDir(), "Emoji.txt"));
             m_sequences.LoadFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
 
             m_sequences.LoadFile(Path.Combine(GetUserDir(), ".XCompose"));

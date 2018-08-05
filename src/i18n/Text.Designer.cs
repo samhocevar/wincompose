@@ -232,6 +232,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Composing.
+        /// </summary>
+        public static string Composing {
+            get {
+                return ResourceManager.GetString("Composing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Special Thanks.
         /// </summary>
         public static string Contributors {
@@ -628,69 +637,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grave Accent `.
-        /// </summary>
-        public static string Obsolete016 {
-            get {
-                return ResourceManager.GetString("Obsolete016", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 500 milliseconds.
-        /// </summary>
-        public static string Obsolete017 {
-            get {
-                return ResourceManager.GetString("Obsolete017", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1 second.
-        /// </summary>
-        public static string Obsolete018 {
-            get {
-                return ResourceManager.GetString("Obsolete018", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 2 seconds.
-        /// </summary>
-        public static string Obsolete019 {
-            get {
-                return ResourceManager.GetString("Obsolete019", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 3 seconds.
-        /// </summary>
-        public static string Obsolete020 {
-            get {
-                return ResourceManager.GetString("Obsolete020", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 5 seconds.
-        /// </summary>
-        public static string Obsolete021 {
-            get {
-                return ResourceManager.GetString("Obsolete021", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to None.
-        /// </summary>
-        public static string Obsolete023 {
-            get {
-                return ResourceManager.GetString("Obsolete023", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Sequence.
         /// </summary>
         public static string Obsolete039 {
@@ -889,6 +835,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use WinCompose emoji sequences.
+        /// </summary>
+        public static string UseEmojiRules {
+            get {
+                return ResourceManager.GetString("UseEmojiRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the compose sequences for Emoji provided by the WinCompose author and contributors..
+        /// </summary>
+        public static string UseEmojiRulesToolTip {
+            get {
+                return ResourceManager.GetString("UseEmojiRulesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User-defined sequences.
         /// </summary>
         public static string UserDefinedSequences {
@@ -921,6 +885,42 @@ namespace WinCompose.i18n {
         public static string UserMacros {
             get {
                 return ResourceManager.GetString("UserMacros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use sequences from the XCompose project.
+        /// </summary>
+        public static string UseXComposeRules {
+            get {
+                return ResourceManager.GetString("UseXComposeRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones..
+        /// </summary>
+        public static string UseXComposeRulesToolTip {
+            get {
+                return ResourceManager.GetString("UseXComposeRulesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use sequences from the Xorg project.
+        /// </summary>
+        public static string UseXorgRules {
+            get {
+                return ResourceManager.GetString("UseXorgRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system..
+        /// </summary>
+        public static string UseXorgRulesToolTip {
+            get {
+                return ResourceManager.GetString("UseXorgRulesToolTip", resourceCulture);
             }
         }
         
