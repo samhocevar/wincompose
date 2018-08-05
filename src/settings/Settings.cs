@@ -239,7 +239,7 @@ namespace WinCompose
                 }
             }
 
-            SaveEntry(m_delay.ToString(), "global", "reset_delay");
+            SaveEntry(m_delay.ToString(), "composing", "reset_delay");
         }
 
         public static void LoadSequences()
@@ -382,6 +382,10 @@ namespace WinCompose
                     Log.Debug($"Saving {section}.{key} = {value}");
                     NativeMethods.WritePrivateProfileString(section, key, value,
                                                             GetConfigFile());
+                    // Ensure old keys are removed from the global section
+                    if (section != "global")
+                        NativeMethods.WritePrivateProfileString("global", key, null,
+                                                                GetConfigFile());
                 }
                 finally
                 {
