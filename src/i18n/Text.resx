@@ -229,9 +229,9 @@
     <value>Restart</value>
     <comment></comment>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>History</value>
-    <comment></comment>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Donation Page</value>
+    <comment>A button to visit the donation page (http://wincompose.info/donate/)</comment>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visit Website</value>

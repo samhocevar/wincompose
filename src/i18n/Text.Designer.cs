@@ -187,7 +187,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Check for Updates.
+        ///   Looks up a localized string similar to Automatically check for updates.
         /// </summary>
         public static string CheckUpdates {
             get {
@@ -282,6 +282,15 @@ namespace WinCompose.i18n {
         public static string DiscardOnInvalidToolTip {
             get {
                 return ResourceManager.GetString("DiscardOnInvalidToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donation Page.
+        /// </summary>
+        public static string DonationPage {
+            get {
+                return ResourceManager.GetString("DonationPage", resourceCulture);
             }
         }
         
@@ -678,15 +687,6 @@ namespace WinCompose.i18n {
         public static string Obsolete023 {
             get {
                 return ResourceManager.GetString("Obsolete023", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to History.
-        /// </summary>
-        public static string Obsolete027 {
-            get {
-                return ResourceManager.GetString("Obsolete027", resourceCulture);
             }
         }
         

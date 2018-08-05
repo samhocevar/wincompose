@@ -30,6 +30,7 @@ namespace WinCompose
         About,
         DebugWindow,
         VisitWebsite,
+        DonationPage,
         Download,
         Disable,
         Restart,
@@ -151,6 +152,10 @@ namespace WinCompose
 
                 case MenuCommand.VisitWebsite:
                     System.Diagnostics.Process.Start("http://wincompose.info/");
+                    break;
+
+                case MenuCommand.DonationPage:
+                    System.Diagnostics.Process.Start("http://wincompose.info/donate/");
                     break;
 
                 case MenuCommand.Disable:

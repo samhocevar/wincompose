@@ -26,6 +26,7 @@
         <emoji:TextBlock Text="💬" x:Key="SequencesEmoji" FontSize="16"/>
         <emoji:TextBlock Text="🛠" x:Key="OptionsEmoji" FontSize="16"/>
         <emoji:TextBlock Text="ℹ" x:Key="AboutEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="💸" x:Key="DonateEmoji" FontSize="16"/>
         <emoji:TextBlock Text="🔎" x:Key="DebugEmoji" FontSize="16"/>
         <emoji:TextBlock Text="🌐" x:Key="WebsiteEmoji" FontSize="16"/>
         <emoji:TextBlock Text="♻" x:Key="RestartEmoji" FontSize="16"/>
@@ -77,6 +78,8 @@
                           Icon="{StaticResource AboutEmoji}" CommandParameter="{x:Static wc:MenuCommand.About}"/>
                 <MenuItem Header="{x:Static i18n:Text.VisitWebsite}" Command="{Binding MenuItemCommand}"
                           Icon="{StaticResource WebsiteEmoji}" CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
+                <MenuItem Header="{x:Static i18n:Text.DonationPage}" Command="{Binding MenuItemCommand}"
+                          Icon="{StaticResource DonateEmoji}" CommandParameter="{x:Static wc:MenuCommand.DonationPage}"/>
                 <Separator/>
                 <MenuItem Header="{x:Static i18n:Text.DebugWindow}" Command="{Binding MenuItemCommand}"
                           Icon="{StaticResource DebugEmoji}" CommandParameter="{x:Static wc:MenuCommand.DebugWindow}"/>
