@@ -113,21 +113,13 @@ namespace WinCompose
             switch (parameter as MenuCommand?)
             {
                 case MenuCommand.ShowSequences:
-                    if (m_sequencewindow == null)
-                    {
-                        m_sequencewindow = new SequenceWindow();
-                        WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
-                    }
+                    m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
                     m_sequencewindow.Show();
                     m_sequencewindow.Activate();
                     break;
 
                 case MenuCommand.ShowOptions:
-                    if (m_optionswindow == null)
-                    {
-                        m_optionswindow = new SettingsWindow();
-                        WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_optionswindow);
-                    }
+                    m_optionswindow = m_optionswindow ?? new SettingsWindow();
                     m_optionswindow.Show();
                     m_optionswindow.Activate();
                     break;
@@ -277,11 +269,7 @@ namespace WinCompose
         {
             if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Left)
             {
-                if (m_sequencewindow == null)
-                {
-                    m_sequencewindow = new SequenceWindow();
-                    WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
-                }
+                m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
 
                 if (m_sequencewindow.IsVisible)
                 {

@@ -11,7 +11,8 @@
    - See http://www.wtfpl.net/ for more details.
   -->
 
-<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<wc:BaseWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -24,8 +25,7 @@
         WindowStyle="ToolWindow"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        SizeToContent="Height"
-        Closing="CloseWindowClicked">
+        SizeToContent="Height">
 
     <Window.Resources>
 
@@ -249,4 +249,4 @@
               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
 
     </StackPanel>
-</Window>
+</wc:BaseWindow>

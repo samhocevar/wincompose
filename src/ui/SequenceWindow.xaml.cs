@@ -47,11 +47,5 @@ namespace WinCompose
         {
             ViewModel.SearchText = "";
         }
-
-        private void CloseWindowClicked(object sender, CancelEventArgs e)
-        {
-            Hide();
-            e.Cancel = true;
-        }
     }
 }

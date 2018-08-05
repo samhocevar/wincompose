@@ -10,8 +10,9 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
-using System.ComponentModel;
 using System.Windows;
+
+using WinForms = System.Windows.Forms;
 
 namespace WinCompose
 {
@@ -23,13 +24,10 @@ namespace WinCompose
 
         public BaseWindow()
         {
-            Closing += CloseWindowClicked;
-        }
-
-        private void CloseWindowClicked(object sender, CancelEventArgs e)
-        {
-            Hide();
-            e.Cancel = true;
+            Closing += (o, e) => { Hide(); e.Cancel = true; };
+            // Ensure we get keyboard focus even if opened from WinForms
+            // code (e.g. the systray).
+            WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(this);
         }
     }
 }

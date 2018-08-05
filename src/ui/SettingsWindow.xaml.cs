@@ -28,12 +28,6 @@ namespace WinCompose
             InitializeComponent();
         }
 
-        private void CloseWindowClicked(object sender, CancelEventArgs e)
-        {
-            Hide();
-            e.Cancel = true;
-        }
-
         private void OnCloseCommandExecuted(object Sender, ExecutedRoutedEventArgs e)
         {
             Hide();

@@ -11,12 +11,12 @@
    - See http://www.wtfpl.net/ for more details.
   -->
 
-<wincompose:BaseWindow
+<wc:BaseWindow
         x:Class="WinCompose.AboutBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
-        xmlns:wincompose="clr-namespace:WinCompose"
+        xmlns:wc="clr-namespace:WinCompose"
         Title="{x:Static i18n:Text.AboutBoxTitle}"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
@@ -35,7 +35,7 @@
             <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="18" Content="{Binding Version}"/>
         </DockPanel>
         <GroupBox Margin="8" Header="{Binding ActiveDocumentTitle}">
-            <WebBrowser Margin="10" wincompose:AboutBox.WebContent="{Binding ActiveDocument}" />
+            <WebBrowser Margin="10" wc:AboutBox.WebContent="{Binding ActiveDocument}" />
         </GroupBox>
     </DockPanel>
-</wincompose:BaseWindow>
+</wc:BaseWindow>
