@@ -4,7 +4,6 @@
 # This is really text
 *.cs text
 *.po text
-*.resx text
 
 # This is Windows-specific
 *.sln text eol=crlf
