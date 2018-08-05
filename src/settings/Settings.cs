@@ -244,7 +244,7 @@ namespace WinCompose
 
         public static void LoadSequences()
         {
-            m_sequences = new SequenceTree();
+            m_sequences.Clear();
 
             m_sequences.LoadResource("3rdparty.xorg.rules");
             m_sequences.LoadResource("3rdparty.xcompose.rules");

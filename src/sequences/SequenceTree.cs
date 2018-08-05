@@ -53,6 +53,14 @@ public class SequenceTree : SequenceNode
         }
     }
 
+    public void Clear()
+    {
+        m_children.Clear();
+        m_loaded_files.Clear();
+        m_invalid_keys.Clear();
+        Count = 0;
+    }
+
     public int Count { get; private set; }
 
     private void LoadStream(StreamReader s)
@@ -360,7 +368,7 @@ public class SequenceNode
         }
     }
 
-    private IDictionary<Key, SequenceNode> m_children
+    protected IDictionary<Key, SequenceNode> m_children
         = new Dictionary<Key, SequenceNode>();
     private string m_result;
     private string m_description;
