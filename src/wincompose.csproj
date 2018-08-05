@@ -79,6 +79,7 @@
     <Compile Include="settings\Settings.cs" />
     <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="ui\AboutBoxViewModel.cs" />
+    <Compile Include="ui\BaseWindow.cs" />
     <Compile Include="ui\CategoryViewModel.cs" />
     <Compile Include="ui\Constants.cs" />
     <Compile Include="ui\DelegateCommand.cs" />

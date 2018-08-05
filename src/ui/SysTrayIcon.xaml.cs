@@ -133,15 +133,15 @@ namespace WinCompose
                     break;
 
                 case MenuCommand.DebugWindow:
-                    if (m_debugwindow == null)
-                        m_debugwindow = new DebugWindow();
+                    m_debugwindow = m_debugwindow ?? new DebugWindow();
                     m_debugwindow.Show();
                     m_debugwindow.Activate();
                     break;
 
                 case MenuCommand.About:
-                    var about_box = new AboutBox();
-                    about_box.ShowDialog();
+                    m_about_box = m_about_box ?? new AboutBox();
+                    m_about_box.Show();
+                    m_about_box.Activate();
                     break;
 
                 case MenuCommand.Download:
@@ -185,6 +185,7 @@ namespace WinCompose
         private SequenceWindow m_sequencewindow;
         private SettingsWindow m_optionswindow;
         private DebugWindow m_debugwindow;
+        private AboutBox m_about_box;
 
         private System.Drawing.Icon GetCurrentIcon()
         {

@@ -11,24 +11,16 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WinCompose
 {
     /// <summary>
     /// Interaction logic for AboutBox.xaml
     /// </summary>
-    public partial class AboutBox : Window
+    public partial class AboutBox : BaseWindow
     {
         public static readonly DependencyProperty WebContentProperty;
 
