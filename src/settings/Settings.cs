@@ -283,13 +283,14 @@ namespace WinCompose
             if (!File.Exists(user_file))
             {
                 string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt");
+                string default_file = Path.Combine(GetDataDir(), "DefaultUserSequences.txt");
                 if (File.Exists(alt_file))
                 {
                     user_file = alt_file;
                 }
-                else
+                else if (File.Exists(default_file))
                 {
-                    var text = File.ReadAllText(Path.Combine(GetDataDir(), "DefaultUserSequences.txt"), Encoding.UTF8);
+                    var text = File.ReadAllText(default_file);
                     var replacedText = text.Replace("%DataDir%", GetDataDir());
                     File.WriteAllText(user_file, replacedText, Encoding.UTF8);
                 }
