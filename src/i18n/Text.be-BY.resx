@@ -168,26 +168,8 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Return</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Gravis `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>½ siakundy</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 siakunda</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 siakundy</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 siakundy</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 siakundaŭ</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Niama</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Akno adladki</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Pakazać paśliadoŭnaści…</value>
@@ -198,23 +180,17 @@
   <data name="Restart" xml:space="preserve">
     <value>Pierazapusk</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historyja</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Naviedać websajt</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Vyjści</value>
   </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Symbali Junikodu</value>
+  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Paśliadoŭnaści</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Kambinacyja</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unikod</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Fiĺtar pošuku:</value>
@@ -266,6 +242,9 @@
   </data>
   <data name="Obsolete050" xml:space="preserve">
     <value>Kapijavaci symbaĺ</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emodžy</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Užyć</value>
@@ -392,5 +371,8 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>«Print Screen»</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Vymknutaja</value>
   </data>
 </root>

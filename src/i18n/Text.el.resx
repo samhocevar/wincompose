@@ -162,27 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Βαρεία `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>0,5 δευτερόλεπτο</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 δευτερόλεπτο</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 δευτερόλεπτα</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 δευτερόλεπτα</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 δευτερόλεπτα</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Καμία</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Εμφάνιση ακολουθιών…</value>
   </data>
@@ -192,9 +171,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Επανεκκίνηση</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Ιστορικό</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Επίσκεψη ιστοσελίδας</value>
   </data>
@@ -203,12 +179,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Ακολουθίες</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Ακολουθία</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Φίλτρο αναζήτησης:</value>

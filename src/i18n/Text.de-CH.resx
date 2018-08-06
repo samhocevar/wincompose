@@ -162,27 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enenklavo</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Malsupren-supersigna klavo `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisekundoj</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekundo</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekundoj</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekundoj</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekundoj</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Neniu</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Montri makroklavojn…</value>
   </data>
@@ -192,9 +171,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Reŝargi</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historio</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Nian retpaĝon viziti</value>
   </data>
@@ -203,12 +179,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Makroklavoj</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Makroklavo</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unikodo</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Serĉa filtrilo:</value>

@@ -168,29 +168,8 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Imbiu (Return)</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Atzentu grave</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 ms</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 s</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 s</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 s</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 s</value>
-  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Ventana de debug</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Infinita</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Ammustra Fileras…</value>
@@ -200,9 +179,6 @@
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Torra a allùere</value>
-  </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Istòria</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Bìsita su giassu/situ</value>
@@ -215,12 +191,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Fileras</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Filera</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Chirca filtrada:</value>
@@ -401,5 +371,8 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Stamp</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Disabilitadu</value>
   </data>
 </root>

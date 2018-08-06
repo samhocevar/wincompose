@@ -162,27 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Ентер</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Обрнути апостроф `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 милисекунди</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 секунда</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 секунде</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 секунде</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 секунди</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>без</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Прикажи комбинације…</value>
   </data>
@@ -192,9 +171,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Поново покрени</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Историјат</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Посети веб сајт</value>
   </data>
@@ -203,12 +179,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Комбинације</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Комбинација</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Уникод</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Филтер претраге:</value>

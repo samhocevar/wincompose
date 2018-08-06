@@ -162,27 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Újsor</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Ekezet `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 ezredmásodperc</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 másodperc</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 másodperc</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 másodperc</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 másodperc</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Egyik sem</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Szekvenciák mutatása…</value>
   </data>
@@ -192,9 +171,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Újraindítás</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Történet</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Honlap meglátogatása</value>
   </data>
@@ -203,12 +179,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Szekvenciák</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Szekvencia</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Keresési szűrő:</value>

@@ -153,24 +153,6 @@
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milidetik</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 detik</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 detik</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 detik</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 detik</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Kosong</value>
-  </data>
   <data name="Disable" xml:space="preserve">
     <value>Non-aktifkan</value>
   </data>

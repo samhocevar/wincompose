@@ -100,47 +100,47 @@ msgstr ""
 msgid "Return"
 msgstr ""
 
-#. The name of the key on the keyboard
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:189 ID:Obsolete016
-msgid "Grave Accent `"
+#. The "Composing" section in the settings window
+#: i18n/Text.resx:189 ID:Composing
+msgid "Composing"
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:193 ID:Obsolete017
-msgid "500 milliseconds"
+#: i18n/Text.resx:193 ID:UseXorgRules
+msgid "Use sequences from the Xorg project"
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:197 ID:Obsolete018
-msgid "1 second"
+#: i18n/Text.resx:197 ID:UseXorgRulesToolTip
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:201 ID:Obsolete019
-msgid "2 seconds"
+#: i18n/Text.resx:201 ID:UseXComposeRules
+msgid "Use sequences from the XCompose project"
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:205 ID:Obsolete020
-msgid "3 seconds"
+#: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
+msgid ""
+"Use the 1,000 compose sequences from the XCompose opensource project "
+"(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
+"with the Xorg ones."
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:209 ID:Obsolete021
-msgid "5 seconds"
+#: i18n/Text.resx:209 ID:UseEmojiRules
+msgid "Use WinCompose emoji sequences"
+msgstr ""
+
+#: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
+msgid ""
+"Use the compose sequences for Emoji provided by the WinCompose author and "
+"contributors."
 msgstr ""
 
 #. Menu entry to show the debug window
-#: i18n/Text.resx:213 ID:DebugWindow
+#: i18n/Text.resx:217 ID:DebugWindow
 #, fuzzy
 msgid "Debug Window"
 msgstr "_Dún an Fhuinneog"
-
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:217 ID:Obsolete023
-msgid "None"
-msgstr ""
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -155,9 +155,9 @@ msgstr ""
 msgid "Restart"
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:233 ID:Obsolete027
-msgid "History"
+#. A button to visit the donation page (http://wincompose.info/donate/)
+#: i18n/Text.resx:233 ID:DonationPage
+msgid "Donation Page"
 msgstr ""
 
 #. A button to visit the website
@@ -179,16 +179,15 @@ msgstr "A_n Chéad Charachtar Eile"
 msgid "Sequences"
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:253 ID:Obsolete039
-msgid "Sequence"
+#: i18n/Text.resx:253 ID:SwapOnInvalid
+msgid "Try to swap the two keys"
 msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:257 ID:Obsolete041
-#, fuzzy
-msgid "Unicode"
-msgstr "Bloc Unicode"
+#: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
+msgid ""
+"Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
+"not a valid sequence, try Compose A E instead."
+msgstr ""
 
 #: i18n/Text.resx:261 ID:Search
 #, fuzzy
@@ -497,6 +496,16 @@ msgstr ""
 msgid "Disabled"
 msgstr ""
 
+#: i18n/Text.resx:505 ID:CheckUpdates
+msgid "Automatically check for updates"
+msgstr ""
+
+#: i18n/Text.resx:509 ID:CheckUpdatesToolTip
+msgid ""
+"If enabled, WinCompose will connect to the Internet at regular intervals to "
+"check for new versions. Updates are not installed automatically."
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
@@ -682,3 +691,7 @@ msgstr ""
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Unicode"
+#~ msgstr "Bloc Unicode"

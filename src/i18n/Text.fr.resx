@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Détecter automatiquement</value>
-  </data>
-  <data name="KeyLMenu" xml:space="preserve">
-    <value>Alt gauche</value>
-  </data>
-  <data name="KeyRMenu" xml:space="preserve">
-    <value>Alt droit</value>
-  </data>
   <data name="KeyLControl" xml:space="preserve">
     <value>Ctrl gauche</value>
   </data>
@@ -168,26 +159,8 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Entrée</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Accent grave `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 millisecondes</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 seconde</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 secondes</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 secondes</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 secondes</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Aucun</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Fenêtre de débogage</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Afficher les séquences…</value>
@@ -198,9 +171,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Réinitialiser</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historique</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Site web</value>
   </data>
@@ -209,12 +179,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Séquences</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Séquence</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Filtre de recherche :</value>

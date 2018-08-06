@@ -168,27 +168,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Tupý prízvuk `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisekúnd</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekunda</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekundy</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekundy</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekúnd</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Žiadne</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Zobraziť sekvencie…</value>
   </data>
@@ -198,9 +177,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Reštartovať</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>História</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Navštívte stránky</value>
   </data>
@@ -209,12 +185,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvencie</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sekvencia</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Vyhľadávací filter:</value>

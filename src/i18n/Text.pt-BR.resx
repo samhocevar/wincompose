@@ -168,29 +168,8 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Acento Grave `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisegundos</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 segundo</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 segundos</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 segundos</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 segundos</value>
-  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Janela de Debug</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Nenhum</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Mostrar Sequências…</value>
@@ -200,9 +179,6 @@
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Reiniciar</value>
-  </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Histórico</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visitar o Site</value>
@@ -215,12 +191,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequências</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sequência</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Filtro de Busca:</value>

@@ -162,27 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Return</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>重音符 `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 毫秒</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 秒</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 秒</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 秒</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 秒</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>無</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>顯示按鍵系列…</value>
   </data>
@@ -192,9 +171,6 @@
   <data name="Restart" xml:space="preserve">
     <value>重新啟動</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>歷史</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>拜訪網站</value>
   </data>
@@ -203,12 +179,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>按鍵系列</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>按鍵系列</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>萬國碼(Unicode)</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>搜尋篩選器:</value>

@@ -162,27 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Askelpalautin</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Gravis-tarkenäppäin (`)</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 millisekuntia</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekunti</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekuntia</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekuntia</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekuntia</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Ei mitään</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Näytä merkkisarjat…</value>
   </data>
@@ -192,9 +171,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Käynnistä uudelleen</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historia</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Käy verkkosivuilla</value>
   </data>
@@ -203,12 +179,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Merkkisarjat</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Merkkisarja</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Hakusuodatin:</value>

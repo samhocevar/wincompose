@@ -168,27 +168,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Grav accent `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 millisekunder</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekund</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekunder</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekunder</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekunder</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Ingen</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Visa sekvenser…</value>
   </data>
@@ -198,9 +177,6 @@
   <data name="Restart" xml:space="preserve">
     <value>Starta om</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historik</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Besök hemsidan</value>
   </data>
@@ -209,12 +185,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvenser</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sekvens</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Sökfilter:</value>

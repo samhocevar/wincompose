@@ -2,7 +2,7 @@
 # Copyright (C) 2016 THE WinCompose'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the WinCompose package.
 # Automatically generated, 2016.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.6\n"
@@ -104,47 +104,48 @@ msgstr "Spacostango"
 msgid "Return"
 msgstr "Enenklavo"
 
-#. The name of the key on the keyboard
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:189 ID:Obsolete016
-msgid "Grave Accent `"
-msgstr "Malsupren-supersigna klavo `"
+#. The "Composing" section in the settings window
+#: i18n/Text.resx:189 ID:Composing
+msgid "Composing"
+msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:193 ID:Obsolete017
-msgid "500 milliseconds"
-msgstr "500 milisekundoj"
+#: i18n/Text.resx:193 ID:UseXorgRules
+msgid "Use sequences from the Xorg project"
+msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:197 ID:Obsolete018
-msgid "1 second"
-msgstr "1 sekundo"
+#: i18n/Text.resx:197 ID:UseXorgRulesToolTip
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
+msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:201 ID:Obsolete019
-msgid "2 seconds"
-msgstr "2 sekundoj"
+#: i18n/Text.resx:201 ID:UseXComposeRules
+msgid "Use sequences from the XCompose project"
+msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:205 ID:Obsolete020
-msgid "3 seconds"
-msgstr "3 sekundoj"
+#: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
+msgid ""
+"Use the 1,000 compose sequences from the XCompose opensource project "
+"(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
+"with the Xorg ones."
+msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:209 ID:Obsolete021
-msgid "5 seconds"
-msgstr "5 sekundoj"
+#: i18n/Text.resx:209 ID:UseEmojiRules
+#, fuzzy
+msgid "Use WinCompose emoji sequences"
+msgstr "WinCompose v{2} en {0} ({1} makroklavoj)"
+
+#: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
+msgid ""
+"Use the compose sequences for Emoji provided by the WinCompose author and "
+"contributors."
+msgstr ""
 
 #. Menu entry to show the debug window
-#: i18n/Text.resx:213 ID:DebugWindow
+#: i18n/Text.resx:217 ID:DebugWindow
 #, fuzzy
 msgid "Debug Window"
 msgstr "Vindozo-klavo maldekstra"
-
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:217 ID:Obsolete023
-msgid "None"
-msgstr "Neniu"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -159,10 +160,10 @@ msgstr "Malŝalti"
 msgid "Restart"
 msgstr "Reŝargi"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:233 ID:Obsolete027
-msgid "History"
-msgstr "Historio"
+#. A button to visit the donation page (http://wincompose.info/donate/)
+#: i18n/Text.resx:233 ID:DonationPage
+msgid "Donation Page"
+msgstr ""
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
@@ -183,15 +184,15 @@ msgstr "Forviŝu ĉiujn la signojn tajpitajn"
 msgid "Sequences"
 msgstr "Makroklavoj"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:253 ID:Obsolete039
-msgid "Sequence"
-msgstr "Makroklavo"
+#: i18n/Text.resx:253 ID:SwapOnInvalid
+msgid "Try to swap the two keys"
+msgstr ""
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:257 ID:Obsolete041
-msgid "Unicode"
-msgstr "Unikodo"
+#: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
+msgid ""
+"Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
+"not a valid sequence, try Compose A E instead."
+msgstr ""
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -524,6 +525,16 @@ msgstr ""
 msgid "Disabled"
 msgstr "Malŝalti"
 
+#: i18n/Text.resx:505 ID:CheckUpdates
+msgid "Automatically check for updates"
+msgstr ""
+
+#: i18n/Text.resx:509 ID:CheckUpdatesToolTip
+msgid ""
+"If enabled, WinCompose will connect to the Internet at regular intervals to "
+"check for new versions. Updates are not installed automatically."
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
@@ -714,6 +725,36 @@ msgstr ""
 #: installer.pas:245
 msgid "Administrator rights are required. Error: %d"
 msgstr "Rajtoj de administranto nepras. Eraro: %d"
+
+#~ msgid "Grave Accent `"
+#~ msgstr "Malsupren-supersigna klavo `"
+
+#~ msgid "500 milliseconds"
+#~ msgstr "500 milisekundoj"
+
+#~ msgid "1 second"
+#~ msgstr "1 sekundo"
+
+#~ msgid "2 seconds"
+#~ msgstr "2 sekundoj"
+
+#~ msgid "3 seconds"
+#~ msgstr "3 sekundoj"
+
+#~ msgid "5 seconds"
+#~ msgstr "5 sekundoj"
+
+#~ msgid "None"
+#~ msgstr "Neniu"
+
+#~ msgid "History"
+#~ msgstr "Historio"
+
+#~ msgid "Sequence"
+#~ msgstr "Makroklavo"
+
+#~ msgid "Unicode"
+#~ msgstr "Unikodo"
 
 #~ msgid "10 seconds"
 #~ msgstr "10 sekundoj"

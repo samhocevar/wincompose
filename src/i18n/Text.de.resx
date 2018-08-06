@@ -168,29 +168,8 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Eingabe</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Gravis `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 Millisekunden</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 Sekunde</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 Sekunden</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 Sekunden</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 Sekunden</value>
-  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Debugfenster</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Keine</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Sequenzen anzeigen …</value>
@@ -200,9 +179,6 @@
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Neustart</value>
-  </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Verlauf</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website besuchen</value>
@@ -215,12 +191,6 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenzen</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sequenz</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Suchfilter:</value>
@@ -401,5 +371,8 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Druck</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>deaktiviert</value>
   </data>
 </root>
