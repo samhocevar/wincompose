@@ -129,8 +129,8 @@ public class SequenceTree : SequenceNode
             seq.Add(k);
         }
 
-        // Only bother with sequences of length >= 3 that start with <Multi_key>
-        if (seq.Count < 3 || seq[0].VirtualKey != VK.COMPOSE)
+        // Only bother with sequences of length >= 2 that start with <Multi_key>
+        if (seq.Count < 2 || seq[0].VirtualKey != VK.COMPOSE)
             return;
 
         string result = m1.Groups[2].Captures[0].Value;
