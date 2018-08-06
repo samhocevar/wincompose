@@ -24,6 +24,8 @@ Portable version: [WinCompose 0.8.0 (portable)](https://github.com/samhocevar/wi
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
+**Note: the software is not digitally signed.** You can help with this by [donating to the project](http://wincompose.info/donate/).
+
 Quick start
 -----------
 
