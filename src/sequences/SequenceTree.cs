@@ -77,9 +77,9 @@ public class SequenceTree : SequenceNode
     }
 
     private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
-    private static Regex m_r1 = new Regex(@"^\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
-        //                                      ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
-        //                                       keys               result                 desc
+    private static Regex m_r1 = new Regex(@"^\s*(<[^:]*>)\s*:\s*((""[^""]|\\"")*""|[A-Za-z0-9_]*)[^#]*#?\s*(.*)");
+        //                                      ^^^^^^^^^        ^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^           ^^^^
+        //                                       keys                result 1         result 2             desc
     private static Regex m_r2 = new Regex(@"[\s<>]+");
 
     private void ParseRule(string line)
@@ -134,21 +134,34 @@ public class SequenceTree : SequenceNode
             return;
 
         string result = m1.Groups[2].Captures[0].Value;
-        string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
-
-        // Unescape \n \\ \" and more in the string output
-        result = Regex.Replace(result, @"\\.", m =>
+        if (result[0] == '"')
         {
-            switch (m.Value)
+            result = result.Trim('"');
+            // Unescape \n \\ \" and more in the string output
+            result = Regex.Replace(result, @"\\.", m =>
             {
-                // These sequences are converted to their known value
-                case @"\n": return "\n";
-                case @"\r": return "\r";
-                case @"\t": return "\t";
-                // For all other sequences, just strip the leading \
-                default: return m.Value.Substring(1);
+                switch (m.Value)
+                {
+                    // These sequences are converted to their known value
+                    case @"\n": return "\n";
+                    case @"\r": return "\r";
+                    case @"\t": return "\t";
+                    // For all other sequences, just strip the leading \
+                    default: return m.Value.Substring(1);
+                }
+            });
+        }
+        else
+        {
+            var result_key = Key.FromKeySym(result);
+            if (result_key == null)
+            {
+                Log.Debug($"Unknown key name {result}, ignoring sequence");
+                return;
             }
-        });
+            result = result_key.ToString();
+        }
+        string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
 
         // Try to translate the description if appropriate
         int utf32 = StringToCodepoint(result);
