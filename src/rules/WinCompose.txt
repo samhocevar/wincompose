@@ -15,6 +15,10 @@
 # Minus sign
 <Multi_key> <minus> <minus> <equal> : "−"    U2212 # MINUS SIGN
 
+# Dozenal digits (https://en.wikipedia.org/wiki/Duodecimal#Transdecimal_symbols)
+<Multi_key> <d> <2> : "↊"    U218A # TURNED DIGIT TWO
+<Multi_key> <d> <3> : "↋"    U218B # TURNED DIGIT THREE
+
 # Various tests
 <Multi_key> <t> <f> : "(ﾉಥ益ಥ）ﾉ彡┻━┻"  # Table flip like a boss
 <Multi_key> <l> <f> : "( ͡° ͜ʖ ͡°)"        # Lenny face
