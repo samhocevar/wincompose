@@ -467,6 +467,21 @@ static class Composer
                 SendString(tosend);
                 return false;
             }
+
+            if (m_sequence.Count == 2 && Settings.SwapOnInvalid.Value)
+            {
+                var other_sequence = new KeySequence() { m_sequence[1], m_sequence[0] };
+                if (Settings.IsValidSequence(other_sequence, ignore_case))
+                {
+                    string tosend = Settings.GetSequenceResult(other_sequence,
+                                                               ignore_case);
+                    Stats.AddSequence(other_sequence);
+                    Log.Debug("Found swapped sequence! Sending {0}", tosend);
+                    ResetSequence();
+                    SendString(tosend);
+                    return true;
+                }
+            }
         }
 
         // Unknown characters for sequence, print them if necessary

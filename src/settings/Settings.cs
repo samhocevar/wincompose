@@ -106,6 +106,8 @@ namespace WinCompose
         public static SettingsEntry<bool> CaseInsensitive { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("composing", "discard_on_invalid")]
         public static SettingsEntry<bool> DiscardOnInvalid { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("composing", "swap_on_invalid")]
+        public static SettingsEntry<bool> SwapOnInvalid { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("composing", "beep_on_invalid")]
         public static SettingsEntry<bool> BeepOnInvalid { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("composing", "keep_original_key")]

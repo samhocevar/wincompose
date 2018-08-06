@@ -249,12 +249,12 @@
     <value>Sequences</value>
     <comment></comment>
   </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sequence</value>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Try to swap the two keys</value>
     <comment></comment>
   </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead.</value>
     <comment></comment>
   </data>
   <data name="Search" xml:space="preserve">

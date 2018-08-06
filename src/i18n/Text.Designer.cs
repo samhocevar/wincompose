@@ -637,24 +637,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sequence.
-        /// </summary>
-        public static string Obsolete039 {
-            get {
-                return ResourceManager.GetString("Obsolete039", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unicode.
-        /// </summary>
-        public static string Obsolete041 {
-            get {
-                return ResourceManager.GetString("Obsolete041", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Copy Character.
         /// </summary>
         public static string Obsolete050 {
@@ -759,6 +741,24 @@ namespace WinCompose.i18n {
         public static string ShowSequences {
             get {
                 return ResourceManager.GetString("ShowSequences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try to swap the two keys.
+        /// </summary>
+        public static string SwapOnInvalid {
+            get {
+                return ResourceManager.GetString("SwapOnInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead..
+        /// </summary>
+        public static string SwapOnInvalidToolTip {
+            get {
+                return ResourceManager.GetString("SwapOnInvalidToolTip", resourceCulture);
             }
         }
         

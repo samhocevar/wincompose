@@ -232,6 +232,13 @@
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
+                                  IsChecked="{Binding Value, Source={x:Static wc:Settings.SwapOnInvalid}}"
+                                  ToolTipService.ToolTip="{x:Static i18n:Text.SwapOnInvalidToolTip}">
+                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} ↔️', Source={x:Static i18n:Text.SwapOnInvalid}, Path=.}"
+                                             TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.DiscardOnInvalidToolTip}">
                             <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} 🚫', Source={x:Static i18n:Text.DiscardOnInvalid}, Path=.}"
