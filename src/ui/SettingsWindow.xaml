@@ -70,7 +70,8 @@
         <TabItem Header="{x:Static i18n:Text.General}">
             <DockPanel Margin="8">
             <!--<DockPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">-->
-                <GroupBox Header="{x:Static i18n:Text.Behavior}" DockPanel.Dock="Top" VerticalAlignment="Top">
+                <GroupBox Header="{Binding StringFormat='🎛 {0}', Source={x:Static i18n:Text.Behavior}, Path=.}"
+                          DockPanel.Dock="Top" VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
@@ -99,7 +100,8 @@
                     </Grid>
                 </GroupBox>
 
-                <GroupBox DockPanel.Dock="Top" Header="{x:Static i18n:Text.TestTyping}" VerticalAlignment="Top">
+                <GroupBox Header="{Binding StringFormat='🆎 {0}', Source={x:Static i18n:Text.TestTyping}, Path=.}"
+                          DockPanel.Dock="Top" VerticalAlignment="Top">
                     <emoji:RichTextBox Margin="8" Width="Auto" Height="90" MaxHeight="90"
                                        FontSize="20" AcceptsReturn="True"
                                        FontWeight="SemiBold" FontFamily="{x:Static wc:Constants.PreferredFontFamily}"
@@ -116,7 +118,7 @@
         <TabItem Header="{x:Static i18n:Text.Composing}">
             <DockPanel Margin="8" Name="MasterPanel">
 
-                <GroupBox Header="{x:Static i18n:Text.Behavior}"
+                <GroupBox Header="{Binding StringFormat='⚙️ {0}', Source={x:Static i18n:Text.Behavior}, Path=.}"
                           DockPanel.Dock="Top" VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
@@ -185,7 +187,7 @@
                     </Grid>
                 </GroupBox>
 
-                <GroupBox Header="{x:Static i18n:Text.Sequences}"
+                <GroupBox Header="{Binding StringFormat='💬 {0}', Source={x:Static i18n:Text.Sequences}, Path=.}"
                           DockPanel.Dock="Top" VerticalAlignment="Top">
                     <StackPanel Orientation="Vertical">
                         <CheckBox Grid.Row="4" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
@@ -220,7 +222,7 @@
                 </GroupBox>
 
                 <!-- The Invalid Sequences group -->
-                <GroupBox Header="{x:Static i18n:Text.InvalidSequences}"
+                <GroupBox Header="{Binding StringFormat='❌ {0}', Source={x:Static i18n:Text.InvalidSequences}, Path=.}"
                           DockPanel.Dock="Top" VerticalAlignment="Top">
                     <StackPanel VerticalAlignment="Center">
 
