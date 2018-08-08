@@ -418,7 +418,7 @@
     <comment>The name of the key on the keyboard</comment>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Test Typing:</value>
+    <value>Test Typing</value>
     <comment>The "Test Typing" section in the settings window</comment>
   </data>
   <data name="Tweaks" xml:space="preserve">

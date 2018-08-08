@@ -763,7 +763,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Test Typing:.
+        ///   Looks up a localized string similar to Test Typing.
         /// </summary>
         public static string TestTyping {
             get {

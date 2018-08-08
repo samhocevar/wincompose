@@ -411,8 +411,8 @@ msgstr "插入"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
-msgstr "測試輸入:"
+msgid "Test Typing"
+msgstr "測試輸入"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks

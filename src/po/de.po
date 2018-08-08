@@ -423,8 +423,8 @@ msgstr "Einfügen"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
-msgstr "Testfeld zum Tippen:"
+msgid "Test Typing"
+msgstr "Testfeld zum Tippen"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks

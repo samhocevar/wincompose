@@ -420,8 +420,8 @@ msgstr "Infoga"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
-msgstr "Testinmatning:"
+msgid "Test Typing"
+msgstr "Testinmatning"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks

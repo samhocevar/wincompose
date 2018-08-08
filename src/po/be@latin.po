@@ -419,8 +419,8 @@ msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
-msgstr "Praviercie nabor:"
+msgid "Test Typing"
+msgstr "Praviercie nabor"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks

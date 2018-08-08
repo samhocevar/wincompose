@@ -399,8 +399,8 @@ msgstr "Indsæt"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
-msgstr "Testskrivning:"
+msgid "Test Typing"
+msgstr "Testskrivning"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks

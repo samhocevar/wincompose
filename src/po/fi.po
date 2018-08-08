@@ -398,8 +398,8 @@ msgstr "Syötä"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
-msgstr "Kokeile:"
+msgid "Test Typing"
+msgstr "Kokeile"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks
