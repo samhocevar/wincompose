@@ -70,7 +70,7 @@
         <TabItem Header="{x:Static i18n:Text.General}">
             <DockPanel Margin="8">
             <!--<DockPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">-->
-                <GroupBox DockPanel.Dock="Top" VerticalAlignment="Top">
+                <GroupBox DockPanel.Dock="Top" Padding="0,4,0,0">
                     <GroupBox.Header>
                         <emoji:TextBlock Text="{Binding StringFormat='🎛 {0}', Source={x:Static i18n:Text.Behavior}, Path=.}"/>
                     </GroupBox.Header>
@@ -102,7 +102,7 @@
                     </Grid>
                 </GroupBox>
 
-                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0">
+                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
                     <GroupBox.Header>
                         <emoji:TextBlock Text="{Binding StringFormat='🆎 {0}', Source={x:Static i18n:Text.TestTyping}, Path=.}"/>
                     </GroupBox.Header>
@@ -122,7 +122,7 @@
         <TabItem Header="{x:Static i18n:Text.Composing}">
             <DockPanel Margin="8" Name="MasterPanel">
 
-                <GroupBox DockPanel.Dock="Top" VerticalAlignment="Top">
+                <GroupBox DockPanel.Dock="Top" Padding="0,4,0,0">
                     <GroupBox.Header>
                         <emoji:TextBlock Text="{Binding StringFormat='⚙️ {0}', Source={x:Static i18n:Text.Behavior}, Path=.}"/>
                     </GroupBox.Header>
@@ -193,7 +193,7 @@
                     </Grid>
                 </GroupBox>
 
-                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0">
+                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
                     <GroupBox.Header>
                         <emoji:TextBlock Text="{Binding StringFormat='💬 {0}', Source={x:Static i18n:Text.Sequences}, Path=.}"/>
                     </GroupBox.Header>
@@ -230,7 +230,7 @@
                 </GroupBox>
 
                 <!-- The Invalid Sequences group -->
-                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0">
+                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
                     <GroupBox.Header>
                         <emoji:TextBlock Text="{Binding StringFormat='❌ {0}', Source={x:Static i18n:Text.InvalidSequences}, Path=.}"/>
                     </GroupBox.Header>
