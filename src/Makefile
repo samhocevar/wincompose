@@ -25,10 +25,10 @@ LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
 VSWHERE = "${ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
-DEVENV = "$(shell $(VSWHERE) | sed -ne 's/^productPath: //p; s/devenv.exe/devenv.com/' | head -n 1)"
+DEVENV = "$(shell $(VSWHERE) | sed -ne 's/^productPath: //p' | sed 's/devenv.exe/devenv.com/' | head -n 1)"
 MSGMERGE = msgmerge
 
-all: clean installer portable
+all: installer portable
 	@echo
 	@echo Latest: $(VERSION)
 	@echo Installer: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-Setup-$(VERSION).exe
