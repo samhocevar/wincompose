@@ -77,7 +77,7 @@ public class SequenceTree : SequenceNode
     }
 
     private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
-    private static Regex m_r1 = new Regex(@"^\s*(<[^:]*>)\s*:\s*((""[^""]|\\"")*""|[A-Za-z0-9_]*)[^#]*#?\s*(.*)");
+    private static Regex m_r1 = new Regex(@"^\s*(<[^:]*>)\s*:\s*(""([^""]|\\"")*""|[A-Za-z0-9_]*)[^#]*#?\s*(.*)");
         //                                      ^^^^^^^^^        ^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^           ^^^^
         //                                       keys                result 1         result 2             desc
     private static Regex m_r2 = new Regex(@"[\s<>]+");
