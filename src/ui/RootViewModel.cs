@@ -113,6 +113,20 @@ namespace WinCompose
         }
 
         /// <summary>
+        /// A category viewmodel should call this when it gets selected
+        /// </summary>
+        /// <param name="selected_category"></param>
+        public void OnCategorySelected(CategoryViewModel selected_category)
+        {
+            // Deselect any previously selected category
+            foreach (var category in m_categories)
+                if (category != selected_category)
+                    category.IsSelected = false;
+
+            RefreshSequenceFilters();
+        }
+
+        /// <summary>
         /// This pattern handles a 4-state radio button array
         /// </summary>
         public ObservableCollection<bool> ActiveCategoryArray { get; set; }
@@ -141,7 +155,7 @@ namespace WinCompose
         private string m_search_text = "";
         private SearchTokens m_search_tokens;
 
-        public void RefreshCategoryFilters()
+        private void RefreshCategoryFilters()
         {
             var category_view = CollectionViewSource.GetDefaultView(Categories);
             category_view.Filter = (o) =>
@@ -159,7 +173,7 @@ namespace WinCompose
             category_view.Refresh();
         }
 
-        public void RefreshSequenceFilters()
+        private void RefreshSequenceFilters()
         {
             var sequence_view = CollectionViewSource.GetDefaultView(Sequences);
             m_search_tokens = new SearchTokens(SearchText);

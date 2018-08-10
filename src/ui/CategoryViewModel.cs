@@ -51,8 +51,8 @@ namespace WinCompose
 
         private void PropertyChangedCallback(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(IsSelected))
-                m_root.RefreshSequenceFilters();
+            if (e.PropertyName == nameof(IsSelected) && IsSelected)
+                m_root.OnCategorySelected(this);
         }
     }
 }
