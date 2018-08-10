@@ -15,12 +15,12 @@ WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 Sam wrote WinCompose because none of the alternatives (FreeCompose,
 CKFW, AllChars or Unichars) were found to be satisfying.
 
-Download latest: [WinCompose 0.8.0](https://github.com/samhocevar/wincompose/releases/download/v0.8.0/WinCompose-Setup-0.8.0.exe) (April 13, 2018)
+Download latest: [WinCompose 0.8.1](https://github.com/samhocevar/wincompose/releases/download/v0.8.1/WinCompose-Setup-0.8.1.exe) (August 9, 2018)
 -----------------------------------
 
-Installable version: [WinCompose 0.8.0 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.8.0/WinCompose-Setup-0.8.0.exe).
+Installable version: [WinCompose 0.8.1 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.8.1/WinCompose-Setup-0.8.1.exe).
 
-Portable version: [WinCompose 0.8.0 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.8.0/WinCompose-NoInstall-0.8.0.zip).
+Portable version: [WinCompose 0.8.1 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.8.1/WinCompose-NoInstall-0.8.1.zip).
 
 Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
