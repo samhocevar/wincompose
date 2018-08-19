@@ -509,4 +509,12 @@
     <value>If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically.</value>
     <comment></comment>
   </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Try to keep SysTray icon always visible</value>
+    <comment></comment>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>By default, the icon will disappear from the system tray after a short while. This option attempts to keep it always visible.</value>
+    <comment></comment>
+  </data>
 </root>

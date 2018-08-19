@@ -271,38 +271,46 @@
 
         <!-- The Tweaks tab -->
         <TabItem Header="{x:Static i18n:Text.Tweaks}">
-            <StackPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">
+            <DockPanel>
+                <StackPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">
 
-                <CheckBox Margin="8,4" VerticalAlignment="Center"
-                        IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"
-                        ToolTipService.ToolTip="{x:Static i18n:Text.InsertZwspToolTip}">
-                    <TextBlock Text="{x:Static i18n:Text.InsertZwsp}" TextWrapping="Wrap"/>
-                </CheckBox>
+                    <CheckBox Margin="8,4" VerticalAlignment="Center"
+                            IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"
+                            ToolTipService.ToolTip="{x:Static i18n:Text.InsertZwspToolTip}">
+                        <TextBlock Text="{x:Static i18n:Text.InsertZwsp}" TextWrapping="Wrap"/>
+                    </CheckBox>
 
-                <CheckBox Margin="8,4" VerticalAlignment="Center"
-                        IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}"
-                        ToolTipService.ToolTip="{x:Static i18n:Text.EmulateCapsLockToolTip}">
-                    <TextBlock Text="{x:Static i18n:Text.EmulateCapsLock}" TextWrapping="Wrap"/>
-                </CheckBox>
+                    <CheckBox Margin="8,4" VerticalAlignment="Center"
+                            IsChecked="{Binding Value, Source={x:Static wc:Settings.EmulateCapsLock}}"
+                            ToolTipService.ToolTip="{x:Static i18n:Text.EmulateCapsLockToolTip}">
+                        <TextBlock Text="{x:Static i18n:Text.EmulateCapsLock}" TextWrapping="Wrap"/>
+                    </CheckBox>
 
-                <CheckBox Margin="8,4" VerticalAlignment="Center"
-                        IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"
-                        ToolTipService.ToolTip="{x:Static i18n:Text.ShiftDisablesCapsLockToolTip}">
-                    <TextBlock Text="{x:Static i18n:Text.ShiftDisablesCapsLock}" TextWrapping="Wrap"/>
-                </CheckBox>
+                    <CheckBox Margin="8,4" VerticalAlignment="Center"
+                            IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"
+                            ToolTipService.ToolTip="{x:Static i18n:Text.ShiftDisablesCapsLockToolTip}">
+                        <TextBlock Text="{x:Static i18n:Text.ShiftDisablesCapsLock}" TextWrapping="Wrap"/>
+                    </CheckBox>
 
-                <CheckBox Margin="8,4" VerticalAlignment="Center"
-                        IsChecked="{Binding Value, Source={x:Static wc:Settings.CapsLockCapitalizes}}"
-                        ToolTipService.ToolTip="{x:Static i18n:Text.CapsLockCapitalizesToolTip}">
-                    <TextBlock Text="{x:Static i18n:Text.CapsLockCapitalizes}" TextWrapping="Wrap"/>
-                </CheckBox>
+                    <CheckBox Margin="8,4" VerticalAlignment="Center"
+                            IsChecked="{Binding Value, Source={x:Static wc:Settings.CapsLockCapitalizes}}"
+                            ToolTipService.ToolTip="{x:Static i18n:Text.CapsLockCapitalizesToolTip}">
+                        <TextBlock Text="{x:Static i18n:Text.CapsLockCapitalizes}" TextWrapping="Wrap"/>
+                    </CheckBox>
 
-                <CheckBox Margin="8,4" VerticalAlignment="Center"
-                        IsChecked="{Binding Value, Source={x:Static wc:Settings.AllowInjected}}"
-                        ToolTipService.ToolTip="{x:Static i18n:Text.AllowInjectedToolTip}">
-                    <TextBlock Text="{x:Static i18n:Text.AllowInjected}" TextWrapping="Wrap"/>
-                </CheckBox>
-            </StackPanel>
+                    <CheckBox Margin="8,4" VerticalAlignment="Center"
+                            IsChecked="{Binding Value, Source={x:Static wc:Settings.AllowInjected}}"
+                            ToolTipService.ToolTip="{x:Static i18n:Text.AllowInjectedToolTip}">
+                        <TextBlock Text="{x:Static i18n:Text.AllowInjected}" TextWrapping="Wrap"/>
+                    </CheckBox>
+
+                    <CheckBox Margin="8,4" VerticalAlignment="Center"
+                            IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepIconVisible}}"
+                            ToolTipService.ToolTip="{x:Static i18n:Text.KeepIconVisibleToolTip}">
+                        <TextBlock Text="{x:Static i18n:Text.KeepIconVisible}" TextWrapping="Wrap"/>
+                    </CheckBox>
+                </StackPanel>
+            </DockPanel>
         </TabItem>
 
       </TabControl>

@@ -123,6 +123,8 @@ namespace WinCompose
         public static SettingsEntry<bool> CapsLockCapitalizes { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("tweaks", "allow_injected")]
         public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "keep_icon_visible")]
+        public static SettingsEntry<bool> KeepIconVisible { get; } = new SettingsEntry<bool>(false);
 
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;
