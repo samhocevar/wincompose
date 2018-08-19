@@ -430,8 +430,10 @@ static class Composer
         //  2. if m_sequence + key is a valid prefix, it means the user
         //     could type other characters to build a longer sequence,
         //     so just append key to m_sequence.
-        //  3. (optionally) try again 1. 2. and 3. ignoring case.
-        //  4. none of the characters make sense, output all of them as if
+        //  3. if m_sequence + key is a valid generic prefix, continue as well.
+        //  4. if m_sequence + key is a valid sequence, send it.
+        //  5. (optionally) try again 1. and 2. ignoring case.
+        //  6. none of the characters make sense, output all of them as if
         //     the user didn't press Compose.
         foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
                               new bool[]{ false, true } : new bool[]{ false })
@@ -451,6 +453,22 @@ static class Composer
             {
                 // Still a valid prefix, continue building sequence
                 return true;
+            }
+
+            if (!ignore_case)
+            {
+                if (Settings.IsValidGenericPrefix(m_sequence))
+                    return true;
+
+                if (Settings.IsValidGenericSequence(m_sequence))
+                {
+                    string tosend = Settings.GetGenericSequenceResult(m_sequence);
+                    Stats.AddSequence(m_sequence);
+                    Log.Debug("Valid generic sequence! Sending {0}", tosend);
+                    ResetSequence();
+                    SendString(tosend);
+                    return true;
+                }
             }
 
             // Try to swap characters if the corresponding option is set

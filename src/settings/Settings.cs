@@ -20,6 +20,7 @@ using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
 
@@ -333,9 +334,41 @@ namespace WinCompose
         public static int SequenceCount => m_sequences.Count;
 
         public static SequenceTree GetSequenceList() => m_sequences;
+
         public static bool IsValidPrefix(KeySequence sequence, bool ignore_case) => m_sequences.IsValidPrefix(sequence, ignore_case);
         public static bool IsValidSequence(KeySequence sequence, bool ignore_case) => m_sequences.IsValidSequence(sequence, ignore_case);
         public static string GetSequenceResult(KeySequence sequence, bool ignore_case) => m_sequences.GetSequenceResult(sequence, ignore_case);
+
+        public static bool IsValidGenericPrefix(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return false;
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
+                    && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
+        }
+
+        public static bool IsValidGenericSequence(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return false;
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
+                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
+        }
+
+        public static string GetGenericSequenceResult(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return "";
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
+            if (!m.Success)
+                return "";
+            int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
+            return char.ConvertFromUtf32(codepoint);
+        }
+
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
         private static void LoadEntry(SettingsEntry entry, string section, string key)

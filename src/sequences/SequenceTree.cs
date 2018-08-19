@@ -12,7 +12,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -227,19 +226,8 @@ public class SequenceNode
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if the sequence prefix exists in our tree
-        if (GetSubtree(sequence, flags) != null)
-            return true;
-
-        // Otherwise, check for generic Unicode entry prefix
-        if (Settings.UnicodeInput.Value)
-        {
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
-                && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
-        }
-
-        return false;
+        // Check if the sequence prefix exists in our tree
+        return GetSubtree(sequence, flags) != null;
     }
 
     public bool IsValidSequence(KeySequence sequence, bool ignore_case)
@@ -248,19 +236,8 @@ public class SequenceNode
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if the sequence exists in our tree
-        if (GetSubtree(sequence, flags) != null)
-            return true;
-
-        // Otherwise, check for generic Unicode sequence
-        if (Settings.UnicodeInput.Value)
-        {
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
-                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
-        }
-
-        return false;
+        // Check if the sequence exists in our tree
+        return GetSubtree(sequence, flags) != null;
     }
 
     public string GetSequenceResult(KeySequence sequence, bool ignore_case)
@@ -269,22 +246,10 @@ public class SequenceNode
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if the sequence exists in our tree
+        // Check if the sequence exists in our tree
         SequenceNode subtree = GetSubtree(sequence, flags);
         if (subtree != null && subtree.m_result != "")
             return subtree.m_result;
-
-        // Otherwise, check for a generic Unicode sequence
-        if (Settings.UnicodeInput.Value)
-        {
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
-            if (m.Success)
-            {
-                int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
-                return char.ConvertFromUtf32(codepoint);
-            }
-        }
 
         return "";
     }
