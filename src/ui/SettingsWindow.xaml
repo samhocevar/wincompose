@@ -82,6 +82,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <emoji:TextBlock Grid.Row="0" Grid.Column="0"
@@ -98,6 +99,13 @@
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.CheckUpdates}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.CheckUpdatesToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.CheckUpdates}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Margin="8,4" VerticalAlignment="Center"
+                                  IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepIconVisible}}"
+                                  ToolTipService.ToolTip="{x:Static i18n:Text.KeepIconVisibleToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.KeepIconVisible}" TextWrapping="Wrap"/>
                         </CheckBox>
                     </Grid>
                 </GroupBox>
@@ -272,7 +280,7 @@
         <!-- The Tweaks tab -->
         <TabItem Header="{x:Static i18n:Text.Tweaks}">
             <DockPanel>
-                <StackPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">
+                <StackPanel Margin="8">
 
                     <CheckBox Margin="8,4" VerticalAlignment="Center"
                             IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"
@@ -302,12 +310,6 @@
                             IsChecked="{Binding Value, Source={x:Static wc:Settings.AllowInjected}}"
                             ToolTipService.ToolTip="{x:Static i18n:Text.AllowInjectedToolTip}">
                         <TextBlock Text="{x:Static i18n:Text.AllowInjected}" TextWrapping="Wrap"/>
-                    </CheckBox>
-
-                    <CheckBox Margin="8,4" VerticalAlignment="Center"
-                            IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepIconVisible}}"
-                            ToolTipService.ToolTip="{x:Static i18n:Text.KeepIconVisibleToolTip}">
-                        <TextBlock Text="{x:Static i18n:Text.KeepIconVisible}" TextWrapping="Wrap"/>
                     </CheckBox>
                 </StackPanel>
             </DockPanel>
