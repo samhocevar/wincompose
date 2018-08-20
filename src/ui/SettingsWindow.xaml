@@ -137,7 +137,8 @@
                     <Grid VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -154,25 +155,15 @@
                                          Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.ComposeKey}, Path=.}"
                                          Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
                                          ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
-                        <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
-                                  ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
-                                  SelectedItem="{Binding ComposeKey0}" SelectedValuePath="">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                        </ComboBox>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
+                                   Text="{Binding ComposeKey0.FriendlyName}" FontWeight="Bold"/>
+                        <Button Grid.Row="0" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
+                                Content="Change…" Command="{Binding EditButtonCommand}" CommandParameter="0"/>
 
-                        <ComboBox Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
-                                  ItemsSource="{x:Static wc:Settings.ValidComposeKeys}"
-                                  SelectedItem="{Binding ComposeKey1}" SelectedValuePath="">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding FriendlyName}" Opacity="{Binding Opacity}"/>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                        </ComboBox>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
+                                   Text="{Binding ComposeKey1}" FontWeight="Bold"/>
+                        <Button Grid.Row="1" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
+                                Content="Change…" Command="{Binding EditButtonCommand}" CommandParameter="1"/>
 
                         <emoji:TextBlock Grid.Row="2" Grid.Column="0"
                                          Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
@@ -187,13 +178,13 @@
                                        Margin="8,4" />
                         </Grid>
 
-                        <CheckBox Grid.Row="3" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                        <CheckBox Grid.Row="3" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.KeepOriginalKeyToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.KeepOriginalKey}" TextWrapping="Wrap"/>
                         </CheckBox>
 
-                        <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                        <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.UnicodeInputToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.UnicodeInput}" TextWrapping="Wrap"/>

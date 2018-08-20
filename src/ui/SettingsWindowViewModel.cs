@@ -19,6 +19,8 @@ namespace WinCompose
     public class SettingsWindowViewModel : ViewModelBase
     {
         private DelegateCommand m_close_command;
+        private DelegateCommand m_edit_command;
+        private KeySelector m_key_selector;
         private string m_selected_language;
         private string m_close_button_text;
         private Visibility m_warn_message_visibility;
@@ -26,6 +28,7 @@ namespace WinCompose
         public SettingsWindowViewModel()
         {
             m_close_command = new DelegateCommand(OnCloseCommandExecuted);
+            m_edit_command = new DelegateCommand(OnEditCommandExecuted);
             m_selected_language = Settings.Language.Value;
             m_close_button_text = Text.Close;
             m_warn_message_visibility = Visibility.Collapsed;
@@ -35,6 +38,12 @@ namespace WinCompose
         {
             get => m_close_command;
             private set => SetValue(ref m_close_command, value, nameof(CloseButtonCommand));
+        }
+
+        public DelegateCommand EditButtonCommand
+        {
+            get => m_edit_command;
+            private set => SetValue(ref m_edit_command, value, nameof(EditButtonCommand));
         }
 
         public string SelectedLanguage
@@ -86,9 +95,15 @@ namespace WinCompose
             }
         }
 
-        private static void OnCloseCommandExecuted(object parameter)
+        private void OnCloseCommandExecuted(object parameter)
         {
             ((Window)parameter).Hide();
+        }
+
+        private void OnEditCommandExecuted(object parameter)
+        {
+            m_key_selector = m_key_selector ?? new KeySelector();
+            m_key_selector.ShowDialog();
         }
 
         private static void OnRestartCommandExecuted(object parameter)
