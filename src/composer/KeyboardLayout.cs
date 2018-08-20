@@ -121,30 +121,36 @@ public static class KeyboardLayout
         uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
         IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
 
-        Window.IsGtk = false;
-        Window.IsNPPOrLO = false;
-        Window.IsOffice = false;
-        Window.IsOtherDesktop = false;
-
-        const int len = 256;
-        StringBuilder buf = new StringBuilder(len);
-        if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
+        if (hwnd != m_current_hwnd)
         {
-            string wclass = buf.ToString();
+            Window.IsGtk = false;
+            Window.IsNPPOrLO = false;
+            Window.IsOffice = false;
+            Window.IsOtherDesktop = false;
 
-            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
-                 || wclass == "hexchatWindowToplevel")
-                Window.IsGtk = true;
+            const int len = 256;
+            StringBuilder buf = new StringBuilder(len);
+            if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
+            {
+                string wclass = buf.ToString();
+                Log.Debug($"Window {hwnd} ({wclass}) got focus");
 
-            /* Notepad++ or LibreOffice */
-            if (wclass == "Notepad++" || wclass == "SALFRAME")
-                Window.IsNPPOrLO = true;
+                if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
+                    || wclass == "hexchatWindowToplevel")
+                    Window.IsGtk = true;
 
-            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
-                Window.IsOffice = true;
+                /* Notepad++ or LibreOffice */
+                if (wclass == "Notepad++" || wclass == "SALFRAME")
+                    Window.IsNPPOrLO = true;
 
-            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
-                Window.IsOtherDesktop = true;
+                if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
+                    Window.IsOffice = true;
+
+                if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
+                    Window.IsOtherDesktop = true;
+            }
+
+            m_current_hwnd = hwnd;
         }
 
         if (active_layout != m_current_layout)
@@ -246,6 +252,9 @@ public static class KeyboardLayout
     // Initialise with -1 to make sure the above dictionaries are
     // properly initialised even if the layout is found to be 0x0.
     private static IntPtr m_current_layout = new IntPtr(-1);
+
+    // Keep track of the window that has focus
+    private static IntPtr m_current_hwnd;
 }
 
 }
