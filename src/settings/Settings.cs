@@ -476,7 +476,7 @@ namespace WinCompose
            new Key(VK.CONVERT),
            new Key(VK.NONCONVERT),
            new Key(VK.INSERT),
-           new Key(VK.PRINT),
+           new Key(VK.SNAPSHOT),
            new Key(VK.SCROLL),
            new Key("`"),
         };
