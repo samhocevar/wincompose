@@ -496,8 +496,6 @@ namespace WinCompose
             { -1,    "None" },
         };
 
-        private static int m_delay = -1;
-
         private static Dictionary<string, string> GetSupportedLanguages()
         {
             Dictionary<string, string> ret = new Dictionary<string, string>()
