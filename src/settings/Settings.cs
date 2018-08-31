@@ -262,8 +262,6 @@ namespace WinCompose
                     SaveEntry(entry.ToString(), attr.Section, attr.Key);
                 }
             }
-
-            SaveEntry(m_delay.ToString(), "composing", "reset_delay");
         }
 
         public static void LoadSequences()
