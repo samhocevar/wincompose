@@ -460,13 +460,14 @@ static class Composer
                 if (Settings.IsValidGenericPrefix(m_sequence))
                     return true;
 
-                if (Settings.IsValidGenericSequence(m_sequence))
+                if (Settings.IsValidGenericSequence(old_sequence))
                 {
-                    string tosend = Settings.GetGenericSequenceResult(m_sequence);
-                    Stats.AddSequence(m_sequence);
+                    string tosend = Settings.GetGenericSequenceResult(old_sequence);
+                    Stats.AddSequence(old_sequence);
                     Log.Debug("Valid generic sequence! Sending {0}", tosend);
                     ResetSequence();
                     SendString(tosend);
+                    SendString(key.ToString());
                     return true;
                 }
             }
