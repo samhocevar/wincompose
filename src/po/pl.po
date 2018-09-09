@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2018-09-09 08:45+0000\n"
-"Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
+"Last-Translator: Piotr Rogulski <piter.rogulski@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/"
 "pl/>\n"
 "Language: pl\n"
@@ -488,9 +488,8 @@ msgid "Updates are available."
 msgstr "Dostępne są aktualizacje."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
-#, fuzzy
 msgid "User-defined sequences"
-msgstr "Makra użytkownika"
+msgstr "Sekwencje zdefiniowane przez użytkownika"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
@@ -500,7 +499,7 @@ msgstr "Edytuj"
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr "Załaduj ponownie"
+msgstr "Przeładuj"
 
 #: i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
