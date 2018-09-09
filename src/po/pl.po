@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2018-09-09 08:47+0000\n"
-"Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
+"Last-Translator: Piotr Rogulski <piter.rogulski@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/"
 "pl/>\n"
 "Language: pl\n"
@@ -508,8 +508,8 @@ msgstr "Zezwól na wtryskiwane klawisze"
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
-"Nie ignoruj klawiszy przesłanych przez inne oprogramowanie, jak AutoHotkey, "
-"albo Synergy"
+"Nie ignoruj klawiszy wysłanych przez inne oprogramowanie, takie jak "
+"AutoHotkey czy Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
