@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2018-09-09 08:46+0000\n"
-"Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
+"Last-Translator: Dawid Borys <dawidborys98@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/"
 "pl/>\n"
 "Language: pl\n"
@@ -503,7 +503,7 @@ msgstr "Załaduj ponownie"
 
 #: i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Zezwól ??? Klawisze/om/y"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
