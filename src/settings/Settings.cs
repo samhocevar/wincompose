@@ -262,8 +262,6 @@ namespace WinCompose
                     SaveEntry(entry.ToString(), attr.Section, attr.Key);
                 }
             }
-
-            SaveEntry(m_delay.ToString(), "composing", "reset_delay");
         }
 
         public static void LoadSequences()
@@ -497,8 +495,6 @@ namespace WinCompose
             { 10000, "10 seconds" },
             { -1,    "None" },
         };
-
-        private static int m_delay = -1;
 
         private static Dictionary<string, string> GetSupportedLanguages()
         {
