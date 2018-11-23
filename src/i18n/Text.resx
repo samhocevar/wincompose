@@ -525,4 +525,8 @@
     <value>Please press a key to use as your compose key.</value>
     <comment></comment>
   </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Add to favorites</value>
+    <comment>Add sequence to the list of favorites.</comment>
+  </data>
 </root>

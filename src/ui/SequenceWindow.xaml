@@ -77,6 +77,8 @@
         <ContextMenu x:Key="ContextMenu">
             <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}"
                       Click="CopyToClipboardClicked"/>
+            <MenuItem Header="{x:Static i18n:Text.AddToFavorites}"
+                      Click="AddToFavoritesClicked"/>
         </ContextMenu>
     </Window.Resources>
 

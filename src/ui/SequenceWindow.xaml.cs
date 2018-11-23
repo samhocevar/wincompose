@@ -48,5 +48,10 @@ namespace WinCompose
         {
             Clipboard.SetText((ListBox.SelectedItem as SequenceViewModel)?.Result);
         }
+
+        private void AddToFavoritesClicked(object sender, RoutedEventArgs e)
+        {
+            // FIXME: implement this!
+        }
     }
 }
