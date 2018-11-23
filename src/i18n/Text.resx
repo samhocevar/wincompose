@@ -522,7 +522,7 @@
     <comment>The user can click on this button to change the current compose key.</comment>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
-    <value>Change…</value>
-    <comment>The user can click on this button to change the current compose key.</comment>
+    <value>Please press a key to use as your compose key.</value>
+    <comment></comment>
   </data>
 </root>

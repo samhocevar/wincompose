@@ -10,6 +10,8 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System.Runtime.InteropServices;
+
 namespace WinCompose
 {
     /// <summary>
@@ -26,10 +28,19 @@ namespace WinCompose
 
         public Key Key { get; private set; }
 
+        public static string CancelButtonText
+        {
+            get => Marshal.PtrToStringAuto(NativeMethods.MB_GetString(DialogBoxCommandID.IDCANCEL));
+        }
+
         private void KeyCaptured(Key k)
         {
-            Key = k;
-            Close();
+            // Only accept non-printing keys for now, except Escape.
+            if (k.VirtualKey != VK.ESCAPE && !k.IsPrintable)
+            {
+                Key = k;
+                Close();
+            }
         }
 
         private void CancelClicked(object sender, System.Windows.RoutedEventArgs e)

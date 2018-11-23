@@ -23,13 +23,14 @@
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.8"/>
     </Window.Background>
-    <Border BorderBrush="Black" BorderThickness="2" Padding="10" Background="White"
+    <Border BorderBrush="Black" BorderThickness="2" Padding="16" Background="White"
             VerticalAlignment="Center" HorizontalAlignment="Center">
         <StackPanel Orientation="Vertical">
-            <TextBlock DockPanel.Dock="Top" Text="Press any keys"/>
-            <TextBlock DockPanel.Dock="Top" Text="Press any keys"/>
+            <TextBlock Margin="16" Text="{x:Static i18n:Text.CaptureComposeKey}"/>
             <DockPanel LastChildFill="True">
-                <Button DockPanel.Dock="Right" Margin="10" Content="Cancel" Click="CancelClicked"/>
+                <Button DockPanel.Dock="Right" Padding="16,4" Click="CancelClicked"
+                        Content="{x:Static wc:KeySelector.CancelButtonText}"/>
+                <StackPanel/>
             </DockPanel>
         </StackPanel>
     </Border>

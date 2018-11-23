@@ -103,6 +103,13 @@ static internal class NativeMethods
     public static extern int UnhookWindowsHookEx(HOOK hhk);
 
     //
+    // for KeySelector.xaml.cs
+    //
+
+    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
+    public static extern IntPtr MB_GetString(DialogBoxCommandID strId);
+
+    //
     // for Settings.cs and SettingsEntry.cs
     //
 
