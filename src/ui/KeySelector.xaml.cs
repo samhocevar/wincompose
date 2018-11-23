@@ -20,6 +20,22 @@ namespace WinCompose
         public KeySelector()
         {
             InitializeComponent();
+            IsVisibleChanged += (o, e) => { if ((bool)e.NewValue) Composer.Captured += KeyCaptured; };
+            Closing += (o, e) => Composer.Captured -= KeyCaptured;
+        }
+
+        public Key Key { get; private set; }
+
+        private void KeyCaptured(Key k)
+        {
+            Key = k;
+            Close();
+        }
+
+        private void CancelClicked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Key = null;
+            Close();
         }
     }
 }

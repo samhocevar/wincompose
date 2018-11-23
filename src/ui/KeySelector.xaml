@@ -29,7 +29,7 @@
             <TextBlock DockPanel.Dock="Top" Text="Press any keys"/>
             <TextBlock DockPanel.Dock="Top" Text="Press any keys"/>
             <DockPanel LastChildFill="True">
-                <Button DockPanel.Dock="Right" Margin="10" Content="Cancel"/>
+                <Button DockPanel.Dock="Right" Margin="10" Content="Cancel" Click="CancelClicked"/>
             </DockPanel>
         </StackPanel>
     </Border>
