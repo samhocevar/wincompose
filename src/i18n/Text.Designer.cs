@@ -160,7 +160,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change….
+        ///   Looks up a localized string similar to Please press a key to use as your compose key..
         /// </summary>
         public static string CaptureComposeKey {
             get {
@@ -264,6 +264,15 @@ namespace WinCompose.i18n {
         public static string Contributors {
             get {
                 return ResourceManager.GetString("Contributors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy to clipboard.
+        /// </summary>
+        public static string CopyToClipboard {
+            get {
+                return ResourceManager.GetString("CopyToClipboard", resourceCulture);
             }
         }
         
@@ -669,15 +678,6 @@ namespace WinCompose.i18n {
         public static string NeedRestart {
             get {
                 return ResourceManager.GetString("NeedRestart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Copy Character.
-        /// </summary>
-        public static string Obsolete050 {
-            get {
-                return ResourceManager.GetString("Obsolete050", resourceCulture);
             }
         }
         

@@ -321,9 +321,9 @@
     <value>Close</value>
     <comment>Close the settings window</comment>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Copy Character</value>
-    <comment>Copy character to the clipboard</comment>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copy to clipboard</value>
+    <comment>Copy character or symbol to the clipboard</comment>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
