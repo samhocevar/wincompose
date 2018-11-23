@@ -34,13 +34,15 @@ namespace WinCompose
         }
 
         private void EditUserDefinedSequences_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.EditCustomRulesFile();
-        }
+            => Settings.EditCustomRulesFile();
 
         private void ReloadUserDefinedSequences_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.LoadSequences();
-        }
+            => Settings.LoadSequences();
+
+        private void EditKey0_Click(object sender, RoutedEventArgs e)
+        { }
+
+        private void EditKey1_Click(object sender, RoutedEventArgs e)
+        { }
     }
 }
