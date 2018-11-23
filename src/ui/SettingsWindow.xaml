@@ -156,14 +156,16 @@
                                          Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
                                          ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
                         <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
-                                   Text="{Binding ComposeKey0.FriendlyName}" FontWeight="Bold"/>
+                                   DataContext="{Binding ComposeKey0}" Text="{Binding FriendlyName}" FontWeight="Bold"/>
                         <Button Grid.Row="0" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
-                                Content="Change…" Command="{Binding EditButtonCommand}" CommandParameter="0"/>
+                                Content="{x:Static i18n:Text.ChangeComposeKey}"
+                                Command="{Binding EditButtonCommand}" CommandParameter="0"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
-                                   Text="{Binding ComposeKey1}" FontWeight="Bold"/>
+                                   DataContext="{Binding ComposeKey1}" Text="{Binding FriendlyName}" FontWeight="Bold"/>
                         <Button Grid.Row="1" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
-                                Content="Change…" Command="{Binding EditButtonCommand}" CommandParameter="1"/>
+                                Content="{x:Static i18n:Text.ChangeComposeKey}"
+                                Command="{Binding EditButtonCommand}" CommandParameter="1"/>
 
                         <emoji:TextBlock Grid.Row="2" Grid.Column="0"
                                          Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"

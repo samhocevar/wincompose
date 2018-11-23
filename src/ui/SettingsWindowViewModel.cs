@@ -62,6 +62,9 @@ namespace WinCompose
 
         private void SetComposeKey(int index, Key key)
         {
+            if (index < 0)
+                return;
+
             // Rebuild a complete list to force saving configuration file
             var newlist = new KeySequence(Settings.ComposeKeys.Value);
             while (newlist.Count <= index)
@@ -104,6 +107,12 @@ namespace WinCompose
         {
             m_key_selector = m_key_selector ?? new KeySelector();
             m_key_selector.ShowDialog();
+            if (m_key_selector.Key != null
+                 && int.TryParse(parameter as string ?? "", out var key_index))
+            {
+                SetComposeKey(key_index, m_key_selector.Key);
+                OnPropertyChanged("ComposeKey" + (parameter as string));
+            }
         }
 
         private static void OnRestartCommandExecuted(object parameter)

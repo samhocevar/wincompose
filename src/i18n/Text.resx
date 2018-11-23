@@ -517,4 +517,12 @@
     <value>By default, the icon will disappear from the system tray after a short while. This option attempts to keep it always visible.</value>
     <comment></comment>
   </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Change…</value>
+    <comment>The user can click on this button to change the current compose key.</comment>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Change…</value>
+    <comment>The user can click on this button to change the current compose key.</comment>
+  </data>
 </root>

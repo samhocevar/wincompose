@@ -160,6 +160,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change….
+        /// </summary>
+        public static string CaptureComposeKey {
+            get {
+                return ResourceManager.GetString("CaptureComposeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fall back to case insensitive matches.
         /// </summary>
         public static string CaseInsensitive {
@@ -183,6 +192,15 @@ namespace WinCompose.i18n {
         public static string Categories {
             get {
                 return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change….
+        /// </summary>
+        public static string ChangeComposeKey {
+            get {
+                return ResourceManager.GetString("ChangeComposeKey", resourceCulture);
             }
         }
         
