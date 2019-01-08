@@ -435,17 +435,14 @@ static class Composer
         // We try the following, in this order:
         //  1. if m_sequence + key is a valid sequence, we don't go further,
         //     we append key to m_sequence and output the result.
-        //  2. if m_sequence + key is a valid prefix, it means the user
-        //     could type other characters to build a longer sequence,
-        //     so just append key to m_sequence.
-        //  3. if m_sequence + key is a valid generic prefix, continue as well.
-        //  4. if m_sequence + key is a valid sequence, send it.
-        //  5. (optionally) try again 1. and 2. ignoring case.
-        //  6. none of the characters make sense, output all of them as if
+        //  2. if m_sequence + key is a valid unicode sequence, send it.
+        //  3. (optionally) try again 1. and 2. ignoring case.
+        //  4. none of the characters make sense, output all of them as if
         //     the user didn't press Compose.
-        foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
+        foreach (bool ignore_case in Settings.CaseInsensitive.Value ? // 3. try ignore case
                               new bool[]{ false, true } : new bool[]{ false })
         {
+            // 1. m_sequence is valid
             if (Settings.IsValidSequence(m_sequence, ignore_case))
             {
                 string tosend = Settings.GetSequenceResult(m_sequence,
@@ -465,17 +462,28 @@ static class Composer
 
             if (!ignore_case)
             {
-                if (Settings.IsValidGenericPrefix(m_sequence))
+                // unicode handling
+                if (old_sequence.Count <= 1 && old_sequence[0].KeyLabel == "u")
                     return true;
 
-                if (Settings.IsValidGenericSequence(m_sequence))
+                if (Settings.IsValidUnicodeSequence(old_sequence))
                 {
-                    string tosend = Settings.GetGenericSequenceResult(m_sequence);
-                    Stats.AddSequence(m_sequence);
-                    Log.Debug("Valid generic sequence! Sending {0}", tosend);
-                    ResetSequence();
-                    SendString(tosend);
-                    return true;
+                    char lastKey = key.KeyLabel[0];
+
+                    // if last key is return or space, we convert hex to unicode and output
+                    if (key.VirtualKey == VK.RETURN || lastKey == ' ')
+                    {
+                        string tosend = Settings.GetUnicodeSequenceResult(old_sequence);
+                        Stats.AddSequence(m_sequence);
+                        Log.Debug("Valid generic sequence! Sending {0}", tosend);
+                        ResetSequence();
+                        SendString(tosend);
+                        return true;
+                    }
+
+                    // if last key is hex/valid, expect more input
+                    if (Char.IsDigit(lastKey) || (lastKey >= 'a' && lastKey <= 'f'))
+                        return true;
                 }
             }
 
@@ -496,7 +504,7 @@ static class Composer
             }
         }
 
-        // Unknown characters for sequence, print them if necessary
+        // 4. Unknown characters for sequence, print them if necessary
         if (!Settings.DiscardOnInvalid.Value)
         {
             foreach (Key k in m_sequence)
