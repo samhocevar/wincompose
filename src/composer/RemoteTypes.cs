@@ -38,6 +38,12 @@ namespace WinCompose
         /// </summary>
         public static readonly uint SETTINGS
             = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_SETTINGS");
+
+        /// <summary>
+        /// A custom message ID used to open the WinCompose sequences window
+        /// </summary>
+        public static readonly uint SEQUENCES
+            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_SEQUENCES");
     }
 }
 

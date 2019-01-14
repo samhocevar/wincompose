@@ -57,6 +57,7 @@ namespace WinCompose
             Application.RemoteControl.DisableEvent += OnDisableEvent;
             Application.RemoteControl.ExitEvent += OnExitEvent;
             Application.RemoteControl.SettingsEvent += OnSettingsEvent;
+            Application.RemoteControl.SequencesEvent += OnSequencesEvent;
             Application.RemoteControl.BroadcastDisableEvent();
 
             WinForms.Application.EnableVisualStyles();
@@ -93,6 +94,7 @@ namespace WinCompose
             Application.RemoteControl.DisableEvent -= OnDisableEvent;
             Application.RemoteControl.ExitEvent -= OnExitEvent;
             Application.RemoteControl.SettingsEvent -= OnSettingsEvent;
+            Application.RemoteControl.SequencesEvent -= OnSequencesEvent;
 
             if (m_icon != null)
             {
@@ -311,6 +313,11 @@ namespace WinCompose
         private void OnSettingsEvent()
         {
             OnMenuItemClicked(MenuCommand.ShowOptions);
+        }
+
+        private void OnSequencesEvent()
+        {
+            OnMenuItemClicked(MenuCommand.ShowSequences);
         }
     }
 }

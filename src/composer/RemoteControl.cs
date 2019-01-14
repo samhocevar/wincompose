@@ -57,6 +57,11 @@ namespace WinCompose
                 SettingsEvent?.Invoke();
                 handled = true;
             }
+            else if (msg == WM_WINCOMPOSE.SEQUENCES)
+            {
+                SequencesEvent?.Invoke();
+                handled = true;
+            }
 
             return IntPtr.Zero;
         }
@@ -74,6 +79,7 @@ namespace WinCompose
         public event Action DisableEvent;
         public event Action ExitEvent;
         public event Action SettingsEvent;
+        public event Action SequencesEvent;
     }
 }
 
