@@ -40,16 +40,21 @@ namespace WinCompose
         [PermissionSet(SecurityAction.Demand, Name="FullTrust")]
         protected IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            if (msg == WM_WINCOMPOSE_DISABLE)
+            if (msg == WM_WINCOMPOSE.DISABLE)
             {
                 if (Process.GetCurrentProcess().Id != (int)wParam)
                     DisableEvent?.Invoke();
                 handled = true;
             }
-            else if (msg == WM_WINCOMPOSE_EXIT)
+            else if (msg == WM_WINCOMPOSE.EXIT)
             {
                 if (Process.GetCurrentProcess().Id != (int)wParam)
                     ExitEvent?.Invoke();
+                handled = true;
+            }
+            else if (msg == WM_WINCOMPOSE.SETTINGS)
+            {
+                SettingsEvent?.Invoke();
                 handled = true;
             }
 
@@ -62,26 +67,13 @@ namespace WinCompose
         /// </summary>
         public void BroadcastDisableEvent()
         {
-            NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE_DISABLE,
+            NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.DISABLE,
                                       Process.GetCurrentProcess().Id, 0);
         }
 
         public event Action DisableEvent;
         public event Action ExitEvent;
-
-        /// <summary>
-        /// A custom message ID used to kill other WinCompose instances
-        /// </summary>
-        private static readonly uint WM_WINCOMPOSE_EXIT
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_EXIT");
-
-        /// <summary>
-        /// A custom message ID used to disable other WinCompose instances
-        /// </summary>
-        private static readonly uint WM_WINCOMPOSE_DISABLE
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
-
-        private static readonly IntPtr HWND_BROADCAST = (IntPtr)0xffff;
+        public event Action SettingsEvent;
     }
 }
 

@@ -56,6 +56,7 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent += OnDisableEvent;
             Application.RemoteControl.ExitEvent += OnExitEvent;
+            Application.RemoteControl.SettingsEvent += OnSettingsEvent;
             Application.RemoteControl.BroadcastDisableEvent();
 
             WinForms.Application.EnableVisualStyles();
@@ -91,6 +92,7 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent -= OnDisableEvent;
             Application.RemoteControl.ExitEvent -= OnExitEvent;
+            Application.RemoteControl.SettingsEvent -= OnSettingsEvent;
 
             if (m_icon != null)
             {
@@ -304,6 +306,11 @@ namespace WinCompose
         private void OnExitEvent()
         {
             Application.Current.Shutdown();
+        }
+
+        private void OnSettingsEvent()
+        {
+            OnMenuItemClicked(MenuCommand.ShowOptions);
         }
     }
 }

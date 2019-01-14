@@ -62,13 +62,14 @@
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
     <Compile Include="composer\RemoteControl.cs" />
+    <Compile Include="composer\RemoteTypes.cs" />
     <Compile Include="composer\Stats.cs" />
     <Compile Include="composer\SysTray.cs" />
     <Compile Include="composer\Updater.cs" />
-    <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\Application.xaml.cs">
       <DependentUpon>Application.xaml</DependentUpon>
     </Compile>
+    <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\WinTypes.cs" />
     <Compile Include="sequences\Category.cs" />
     <Compile Include="sequences\Key.cs" />
