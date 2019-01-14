@@ -1,5 +1,7 @@
 ﻿#define NAME "WinCompose"
 #define EXE "wincompose.exe"
+#define SEQUENCES_EXE "wincompose-sequences.exe"
+#define SETTINGS_EXE "wincompose-settings.exe"
 #define VERSION GetEnv('VERSION')
 #define CONFIG GetEnv('CONFIG')
 
@@ -29,6 +31,8 @@ Source: "bin\{#CONFIG}\trampoline.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
 Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\{#SEQUENCES_EXE}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\{#SETTINGS_EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -105,6 +109,8 @@ Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
 ; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
 Name: "{group}\Uninstall"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#EXE}"; IconIndex: 1
 Name: "{group}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
+Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#SEQUENCES_EXE}"; WorkingDir: "{app}"
+Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#SETTINGS_EXE}"; WorkingDir: "{app}"
 
 [Run]
 Filename: "{app}\{#EXE}"; Flags: nowait

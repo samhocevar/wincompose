@@ -15,7 +15,10 @@ TXT = rules/DefaultUserSequences.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
-EXE = bin/$(CONFIG)/wincompose.exe
+MAIN_EXE = bin/$(CONFIG)/wincompose.exe
+EXE = $(MAIN_EXE) \
+      bin/$(CONFIG)/wincompose-sequences.exe \
+      bin/$(CONFIG)/wincompose-settings.exe
 DLL = bin/$(CONFIG)/language.dll \
       bin/$(CONFIG)/Emoji.Wpf.dll \
       bin/$(CONFIG)/Typography.OpenFont.dll \
@@ -39,8 +42,8 @@ all: installer portable
 	@echo PortableMD5: $(shell md5sum $(PORTABLE))
 
 clean:
+	$(foreach x, $(EXE), $(DEVENV) wincompose.sln //clean $(CONFIG) //project $(basename $(notdir $x)).csproj;)
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project language.csproj
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project wincompose.csproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.vcxproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project trampoline.vcxproj
 	rm -f $(PORTABLE)
@@ -56,14 +59,16 @@ portable: $(EXE)
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
 	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
-	cp $(EXE).config $(DLL) $(PORTABLE:.zip=)
+	cp $(MAIN_EXE).config $(DLL) $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
-bin/$(CONFIG)/wincompose.exe:
+# Sometimes Visual Studio does not rebuild this dependency
+$(MAIN_EXE): bin/$(CONFIG)/language.dll
+
+%.exe %.dll:
 	@mkdir -p bin/$(CONFIG)
 	@rm -f $@
-	$(DEVENV) wincompose.sln //build $(CONFIG) //project language.csproj
-	$(DEVENV) wincompose.sln //build $(CONFIG) //project wincompose.csproj
+	$(DEVENV) wincompose.sln //build $(CONFIG) //project $(basename $(notdir $@)).csproj
 
