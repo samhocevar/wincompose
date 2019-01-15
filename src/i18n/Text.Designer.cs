@@ -313,6 +313,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disable the system tray icon.
+        /// </summary>
+        public static string DisableIcon {
+            get {
+                return ResourceManager.GetString("DisableIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If enabled, WinCompose will stop displaying an icon in the system tray. The only way to interact with WinCompose will be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu..
+        /// </summary>
+        public static string DisableIconToolTip {
+            get {
+                return ResourceManager.GetString("DisableIconToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discard all typed characters.
         /// </summary>
         public static string DiscardOnInvalid {

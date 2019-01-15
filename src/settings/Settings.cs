@@ -126,6 +126,8 @@ namespace WinCompose
         public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("tweaks", "keep_icon_visible")]
         public static SettingsEntry<bool> KeepIconVisible { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "disable_icon")]
+        public static SettingsEntry<bool> DisableIcon { get; } = new SettingsEntry<bool>(false);
 
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;

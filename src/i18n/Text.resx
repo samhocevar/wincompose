@@ -529,4 +529,12 @@
     <value>Add to favorites</value>
     <comment>Add sequence to the list of favorites.</comment>
   </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Disable the system tray icon</value>
+    <comment></comment>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>If enabled, WinCompose will no longer display an icon in the system tray. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu.</value>
+    <comment></comment>
+  </data>
 </root>
