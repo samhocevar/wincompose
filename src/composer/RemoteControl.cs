@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -32,6 +32,15 @@ namespace WinCompose
 
             SourceInitialized += (o, e) =>
                 (PresentationSource.FromVisual(this) as HwndSource).AddHook(WndProc);
+
+            // Allow these messages to reach us even from a process with a
+            // lower integrity level. This may happen when WinCompose was
+            // launched at high level (e.g. through the installer) but
+            // wincompose-settings.exe is launched at medium level (through
+            // the start menu). The security risk seems very low since all
+            // we do is open an existing window.
+            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.SEQUENCES, MSGFLT.ADD);
+            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.SETTINGS, MSGFLT.ADD);
 
             Show();
             Hide();

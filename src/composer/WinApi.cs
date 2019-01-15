@@ -103,6 +103,13 @@ static internal class NativeMethods
     public static extern int UnhookWindowsHookEx(HOOK hhk);
 
     //
+    // for RemoteControl.cs
+    //
+
+    [DllImport("user32", SetLastError = true)]
+    public static extern bool ChangeWindowMessageFilter(uint msg, MSGFLT flags);
+
+    //
     // for KeySelector.xaml.cs
     //
 
