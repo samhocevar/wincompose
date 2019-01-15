@@ -171,6 +171,7 @@ begin
     sleep(1000);
     exec('>', 'cmd.exe /c taskkill /f /im {#NAME}.exe', '',
          SW_HIDE, ewwaituntilterminated, dummy);
+    result := '';
 end;
 
 {
