@@ -107,7 +107,7 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 [Icons]
 Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
 ; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
-Name: "{group}\Uninstall"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#EXE}"; IconIndex: 1
+Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#EXE}"; IconIndex: 1
 Name: "{group}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
 Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#SEQUENCES_EXE}"; WorkingDir: "{app}"
 Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#SETTINGS_EXE}"; WorkingDir: "{app}"
@@ -118,6 +118,8 @@ Filename: "{app}\{#EXE}"; Flags: nowait
 [InstallDelete]
 ; We used to be installed in c:\Program Files (x86)
 Type: filesandordirs; Name: "{pf32}\{#NAME}"
+; We used to call our uninstaller shortcut “Uninstall”
+Type: files; Name: "{group}\Uninstall.lnk"
 ; We moved translations into a separate language.dll project
 Type: files; Name: "{app}\am\wincompose.resources.dll"
 Type: files; Name: "{app}\be\wincompose.resources.dll"
@@ -150,6 +152,10 @@ Type: files; Name: "{app}\sr\wincompose.resources.dll"
 Type: files; Name: "{app}\sv\wincompose.resources.dll"
 Type: files; Name: "{app}\zh-CHS\wincompose.resources.dll"
 Type: files; Name: "{app}\zh-CHT\wincompose.resources.dll"
+; For some reason this was present on my computer, with a .suo file in
+; it (dated from Sep 2017). I don’t know whether any real users are
+; affected, but let’s err on the side of caution.
+Type: filesandordirs; Name: "{app}\.vs"
 ; Legacy stuff that we need to remove
 Type: files; Name: "{app}\rules\Xcompose.txt"
 Type: files; Name: "{app}\rules\Xorg.txt"
