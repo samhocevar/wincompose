@@ -1,4 +1,5 @@
 ﻿#define NAME "WinCompose"
+#define AUTHOR "Sam Hocevar"
 #define EXE "wincompose.exe"
 #define SEQUENCES_EXE "wincompose-sequences.exe"
 #define SETTINGS_EXE "wincompose-settings.exe"
@@ -8,7 +9,7 @@
 [Setup]
 AppName = {#NAME}
 AppVersion = {#VERSION}
-AppPublisher = Sam Hocevar
+AppPublisher = {#AUTHOR}
 AppPublisherURL = http://sam.hocevar.net/
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 ArchitecturesInstallIn64BitMode = x64
@@ -113,7 +114,15 @@ Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#SEQUENCES_EXE}"; WorkingDi
 Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#SETTINGS_EXE}"; WorkingDir: "{app}"
 
 [Run]
-Filename: "{app}\{#EXE}"; Flags: nowait
+; After installation is finished, add an event-triggered scheduled task, then
+; try to re-add the same task with elevated privileges, and finally run the
+; task. This should allow to run it from the startup menu without triggering
+; the UAC window. Running with high privileges is necessary to inject keyboard
+; events into other high level processes, such as cmd.exe run as Administrator.
+#define CREATETASK "/f /create /sc onlogon /ru """"Users"""""
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /ru ""Users"" /tr ""\""{app}\{#EXE}\"" /fromtask"""; Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; BeforeInstall: fix_scheduled_task; Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; Flags: runhidden
 
 [InstallDelete]
 ; We used to be installed in c:\Program Files (x86)
@@ -177,6 +186,8 @@ Type: dirifempty; Name: "{app}\po"
 
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#EXE}"; Flags: runhidden
+; Use "nowait" because /f does not exist on XP / 2003
+Filename: "{sys}\schtasks"; Parameters: "/delete /f /tn ""{#NAME}"""; Flags: runhidden nowait
 
 [UninstallDelete]
 Type: dirifempty; Name: "{app}\rules"

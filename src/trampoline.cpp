@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -10,12 +10,21 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <windows.h>
 
 //
-// This utility DLL simply spawns a background thread and sends a KEYUP
-// message to a given window at a regular interval. We use it in our
-// installer because InnoSetup does not support background tasks or timers.
+// This utility DLL provides native functions for the installer that
+// bypass some InnoSetup limitations:
+//
+//  - trampoline() spawns a background thread and sends a KEYUP message
+//    to a given window at a regular interval. InnoSetup does not support
+//    background tasks or timers.
+//
+//  - fix_file() modifies a scheduled task file to bypass the default
+//    values stored by schtasks.exe. InnoSetup could do this but its
+//    LoadStringsFromFile function has issues with UTF-16le (it reads
+//    the file as ANSI then converts it to Unicode).
 //
 
 HWND g_hwnd = 0;
@@ -44,5 +53,60 @@ void __cdecl trampoline(HWND hwnd, unsigned int milliseconds)
         g_thread = 0;
     else if (g_thread == 0)
         g_thread = CreateThread(nullptr, 0, thread_func, nullptr, 0, nullptr);
+}
+
+void fix_tag(wchar_t *buf, wchar_t const *tag, wchar_t const *value)
+{
+    wchar_t opening[128] = { 0 }, closing[128] = { 0 };
+    wcscat(opening, L"<"); wcscat(opening, tag); wcscat(opening, L">");
+    wcscat(closing, L"</"); wcscat(closing, tag); wcscat(closing, L">");
+
+    wchar_t *t1 = wcsstr(buf, opening);
+    wchar_t *t2 = t1 ? wcsstr(t1, closing) : nullptr;
+    if (t1 && t2)
+    {
+        memmove(t1 + wcslen(opening) + wcslen(value), t2, (wcslen(t2) + 1) * sizeof(wchar_t));
+        memcpy(t1 + wcslen(opening), value, wcslen(value) * sizeof(wchar_t));
+    }
+}
+
+extern "C" __declspec(dllexport)
+void __cdecl fix_file(wchar_t const *path, wchar_t const *author)
+{
+    // Disable the System32 → System redirection for 32-bit processes
+    PVOID old_value = nullptr;
+    BOOL (WINAPI *disable_redir)(PVOID *)
+        = (decltype(disable_redir))GetProcAddress(GetModuleHandleW(L"kernel32.dll"),
+                                                  "Wow64DisableWow64FsRedirection");
+    if (disable_redir)
+        disable_redir(&old_value);
+
+    // Read file into buffer
+    static wchar_t buf[16384];
+    auto fd = CreateFileW(path, GENERIC_READ, 0, nullptr, OPEN_EXISTING,
+                          FILE_ATTRIBUTE_NORMAL, nullptr);
+    if (fd == INVALID_HANDLE_VALUE)
+        return;
+    DWORD bytes;
+    ReadFile(fd, buf, sizeof(buf), &bytes, nullptr);
+    CloseHandle(fd);
+
+    // Fix file
+    fix_tag(buf, L"Author", author);
+    fix_tag(buf, L"RunLevel", L"HighestAvailable");
+
+    fd = CreateFileW(path, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS,
+                     FILE_ATTRIBUTE_NORMAL, nullptr);
+    if (fd == INVALID_HANDLE_VALUE)
+        return;
+    WriteFile(fd, buf, (wcslen(buf) + 1) * sizeof(wchar_t), &bytes, nullptr);
+    CloseHandle(fd);
+
+    // Restore the System32 → System redirection
+    BOOL (WINAPI *revert_redir)(PVOID)
+        = (decltype(revert_redir))GetProcAddress(GetModuleHandleW(L"kernel32.dll"),
+                                                 "Wow64RevertWow64FsRedirection");
+    if (revert_redir)
+        revert_redir(old_value);
 }
 

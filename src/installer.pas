@@ -29,6 +29,20 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
 procedure trampoline(hwnd: hwnd; milliseconds: uint);
     external 'trampoline@files:trampoline.dll cdecl setuponly';
 
+procedure fix_file(path: string; author: string);
+    external 'fix_file@files:trampoline.dll cdecl setuponly';
+
+{
+{ Helper function to patch our scheduled task
+}
+procedure fix_scheduled_task();
+var
+    filename: string;
+begin
+    filename := expandconstant('{sys}\Tasks\WinCompose');
+    fix_file(filename, expandconstant('{#AUTHOR}'));
+end;
+
 {
 { Translation support
 }
