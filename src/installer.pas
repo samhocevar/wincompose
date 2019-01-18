@@ -26,21 +26,45 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
                 nShowCmd: integer): thandle;
     external 'ShellExecuteW@shell32.dll stdcall';
 
+{
+{ Some hooks into our helper DLL
+}
 procedure trampoline(hwnd: hwnd; milliseconds: uint);
     external 'trampoline@files:trampoline.dll cdecl setuponly';
 
-procedure fix_file(path: string; author: string);
+procedure fix_file(path: string);
     external 'fix_file@files:trampoline.dll cdecl setuponly';
+
+{
+{ Helper function to set elevation bit in a shortcut
+}
+procedure set_elevation_bit(path: string);
+var
+    buf: string;
+    s: tstream;
+begin
+    path := expandconstant(path);
+    {log('setting elevation bit for ' + path);}
+    s := tfilestream.create(path, fmopenreadwrite);
+    try
+        s.seek(21, sofrombeginning);
+        setlength(buf, 1);
+        s.readbuffer(buf, 1);
+        buf[1] := chr(ord(buf[1]) or $20);
+        s.seek(-1, sofromcurrent);
+        s.writebuffer(buf, 1);
+    finally
+        s.free;
+    end;
+end;
 
 {
 { Helper function to patch our scheduled task
 }
-procedure fix_scheduled_task();
-var
-    filename: string;
+procedure fix_scheduled_task(path: string);
 begin
-    filename := expandconstant('{sys}\Tasks\WinCompose');
-    fix_file(filename, expandconstant('{#AUTHOR}'));
+    path := expandconstant(path);
+    fix_file(path);
 end;
 
 {

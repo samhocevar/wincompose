@@ -106,22 +106,24 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
 
 [Icons]
-Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
 ; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
-Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#EXE}"; IconIndex: 1
-Name: "{group}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
+Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}"; \
+    IconFilename: "{app}\{#EXE}"; IconIndex: 1
+Name: "{group}\{#NAME}"; Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; \
+    IconFilename: "{app}\{#EXE}"; AfterInstall: set_elevation_bit('{group}\{#NAME}.lnk')
 Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#SEQUENCES_EXE}"; WorkingDir: "{app}"
 Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#SETTINGS_EXE}"; WorkingDir: "{app}"
 
 [Run]
 ; After installation is finished, add an event-triggered scheduled task, then
-; try to re-add the same task with elevated privileges, and finally run the
-; task. This should allow to run it from the startup menu without triggering
+; try to re-add the same task with elevated privileges and various tweaks that
+; schtasks.exe does not support.
+; This should allow to run WinCompose from the startup menu without triggering
 ; the UAC window. Running with high privileges is necessary to inject keyboard
 ; events into other high level processes, such as cmd.exe run as Administrator.
-#define CREATETASK "/f /create /sc onlogon /ru """"Users"""""
-Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /ru ""Users"" /tr ""\""{app}\{#EXE}\"" /fromtask"""; Flags: runhidden
-Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; BeforeInstall: fix_scheduled_task; Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /tr ""\""{app}\{#EXE}\"" /fromtask"""; Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; BeforeInstall: fix_scheduled_task('{sys}\Tasks\{#NAME}'); Flags: runhidden
+; Launch the task just after installation
 Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; Flags: runhidden
 
 [InstallDelete]
@@ -129,6 +131,8 @@ Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; Flags: runhidden
 Type: filesandordirs; Name: "{pf32}\{#NAME}"
 ; We used to call our uninstaller shortcut “Uninstall”
 Type: files; Name: "{group}\Uninstall.lnk"
+; We used to add ourselves to user startup
+Type: files; Name: "{userstartup}\{#NAME}.lnk"
 ; We moved translations into a separate language.dll project
 Type: files; Name: "{app}\am\wincompose.resources.dll"
 Type: files; Name: "{app}\be\wincompose.resources.dll"
