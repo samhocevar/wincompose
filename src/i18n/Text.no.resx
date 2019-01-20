@@ -195,9 +195,6 @@
   <data name="Close" xml:space="preserve">
     <value>Lukk</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Kopier tegn</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Legg til</value>
   </data>

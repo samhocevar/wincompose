@@ -228,9 +228,6 @@
   <data name="Close" xml:space="preserve">
     <value>Κλείσιμο</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Αντιγραφή χαρακτήρα</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Εφαρμογή</value>
   </data>

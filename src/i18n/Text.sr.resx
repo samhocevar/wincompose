@@ -216,9 +216,6 @@
   <data name="Close" xml:space="preserve">
     <value>Затвори</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Копирај знак</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Примени</value>
   </data>
