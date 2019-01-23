@@ -5,6 +5,23 @@
 # by Sam Hocevar <sam@hocevar.net>
 #
 
+# Squared characters
+<Multi_key> <Multi_key> <bracketleft> <A> <bracketright>                        : "🅰" U1F170 # negative squared latin capital letter a
+<Multi_key> <Multi_key> <bracketleft> <B> <bracketright>                        : "🅱" U1F171 # negative squared latin capital letter b
+<Multi_key> <Multi_key> <bracketleft> <O> <bracketright>                        : "🅾" U1F17E # negative squared latin capital letter o
+<Multi_key> <Multi_key> <bracketleft> <P> <bracketright>                        : "🅿" U1F17F # negative squared latin capital letter p
+<Multi_key> <Multi_key> <bracketleft> <a> <b> <bracketright>                    : "🆎" U1F18E # negative squared ab
+<Multi_key> <Multi_key> <bracketleft> <c> <l> <bracketright>                    : "🆑" U1F191 # squared cl
+<Multi_key> <Multi_key> <bracketleft> <c> <o> <o> <l> <bracketright>            : "🆒" U1F192 # squared cool
+<Multi_key> <Multi_key> <bracketleft> <f> <r> <e> <e> <bracketright>            : "🆓" U1F193 # squared free
+<Multi_key> <Multi_key> <bracketleft> <i> <d> <bracketright>                    : "🆔" U1F194 # squared id
+<Multi_key> <Multi_key> <bracketleft> <n> <e> <w> <bracketright>                : "🆕" U1F195 # squared new
+<Multi_key> <Multi_key> <bracketleft> <n> <g> <bracketright>                    : "🆖" U1F196 # squared ng
+<Multi_key> <Multi_key> <bracketleft> <o> <k> <bracketright>                    : "🆗" U1F197 # squared ok
+<Multi_key> <Multi_key> <bracketleft> <s> <o> <s> <bracketright>                : "🆘" U1F198 # squared sos
+<Multi_key> <Multi_key> <bracketleft> <u> <p> <!> <bracketright>                : "🆙" U1F199 # squared up with exclamation mark
+<Multi_key> <Multi_key> <bracketleft> <v> <s> <bracketright>                    : "🆚" U1F19A # squared vs
+
 # Konami code
 <Multi_key> <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "ᕙ༼ຈل͜ຈ༽ᕗ" # Mighty Donger
 
