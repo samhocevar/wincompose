@@ -481,7 +481,7 @@ msgstr "Rapportera en bugg"
 msgid "Help"
 msgstr "Hjälp"
 
-#. Message displayed in the systray tooltip.
+#. Message displayed in the notification area tooltip.
 #: i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr "Uppdateringar är tillgängliga."
@@ -532,13 +532,13 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
-msgid "Try to keep SysTray icon always visible"
+msgid "Try to keep notification area icon always visible"
 msgstr ""
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
-"By default, the icon will disappear from the system tray after a short "
-"while. This option attempts to keep it always visible."
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
 msgstr ""
 
 #. The user can click on this button to change the current compose key.
@@ -556,13 +556,13 @@ msgid "Add to favorites"
 msgstr ""
 
 #: i18n/Text.resx:533 ID:DisableIcon
-msgid "Disable the system tray icon"
+msgid "Disable notification area icon"
 msgstr ""
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
-"If enabled, WinCompose will no longer display an icon in the system tray. "
-"The only way to open the WinCompose interface will then be through the "
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
 
