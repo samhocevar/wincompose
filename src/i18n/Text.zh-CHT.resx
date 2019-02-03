@@ -228,9 +228,6 @@
   <data name="Close" xml:space="preserve">
     <value>關閉</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>複製字元</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>套用</value>
   </data>

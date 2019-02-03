@@ -240,9 +240,6 @@
   <data name="Close" xml:space="preserve">
     <value>Sulge</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Copeeri sümbol</value>
-  </data>
   <data name="Emoji" xml:space="preserve">
     <value>emoji</value>
   </data>

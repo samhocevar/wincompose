@@ -228,9 +228,6 @@
   <data name="Close" xml:space="preserve">
     <value>Fermi</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Kopii signon</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Apliki</value>
   </data>

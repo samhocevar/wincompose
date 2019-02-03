@@ -231,9 +231,6 @@
   <data name="Close" xml:space="preserve">
     <value>Zamknij</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Skopiuj znak</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Zastosuj</value>
   </data>

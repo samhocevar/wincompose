@@ -416,4 +416,11 @@ internal enum ASSOCSTR : int
     MAX,
 };
 
+[Flags]
+internal enum MSGFLT : uint
+{
+    ADD = 1,
+    REMOVE = 2,
+};
+
 }

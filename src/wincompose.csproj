@@ -11,39 +11,35 @@
     <RootNamespace>WinCompose</RootNamespace>
     <AssemblyName>WinCompose</AssemblyName>
     <TargetName>wincompose</TargetName>
+    <StartupObject>WinCompose.Program</StartupObject>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>WinCompose.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emoji.Wpf, Version=0.0.0.16, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Emoji.Wpf.0.0.16-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
+    <Reference Include="Emoji.Wpf, Version=0.0.0.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Emoji.Wpf.0.0.17-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
@@ -62,13 +58,14 @@
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
     <Compile Include="composer\RemoteControl.cs" />
+    <Compile Include="composer\RemoteTypes.cs" />
     <Compile Include="composer\Stats.cs" />
     <Compile Include="composer\SysTray.cs" />
     <Compile Include="composer\Updater.cs" />
-    <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\Application.xaml.cs">
       <DependentUpon>Application.xaml</DependentUpon>
     </Compile>
+    <Compile Include="composer\WinApi.cs" />
     <Compile Include="composer\WinTypes.cs" />
     <Compile Include="sequences\Category.cs" />
     <Compile Include="sequences\Key.cs" />

@@ -83,6 +83,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <emoji:TextBlock Grid.Row="0" Grid.Column="0"
@@ -106,6 +107,13 @@
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepIconVisible}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.KeepIconVisibleToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.KeepIconVisible}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Margin="8,4" VerticalAlignment="Center"
+                                  IsChecked="{Binding Value, Source={x:Static wc:Settings.DisableIcon}}"
+                                  ToolTipService.ToolTip="{x:Static i18n:Text.DisableIconToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.DisableIcon}" TextWrapping="Wrap"/>
                         </CheckBox>
                     </Grid>
                 </GroupBox>
