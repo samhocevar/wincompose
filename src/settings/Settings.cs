@@ -339,20 +339,30 @@ namespace WinCompose
         public static bool IsValidSequence(KeySequence sequence, bool ignore_case) => m_sequences.IsValidSequence(sequence, ignore_case);
         public static string GetSequenceResult(KeySequence sequence, bool ignore_case) => m_sequences.GetSequenceResult(sequence, ignore_case);
 
-        public static bool IsValidUnicodeSequence(KeySequence sequence)
+        public static bool IsValidGenericPrefix(KeySequence sequence)
         {
             if (!UnicodeInput.Value)
                 return false;
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{1,5}$").Success;
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
+                    && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
         }
 
-        public static string GetUnicodeSequenceResult(KeySequence sequence)
+        public static bool IsValidGenericSequence(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return false;
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
+                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
+        }
+
+        public static string GetGenericSequenceResult(KeySequence sequence)
         {
             if (!UnicodeInput.Value)
                 return "";
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{1,5})$");
+            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
             if (!m.Success)
                 return "";
             int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);

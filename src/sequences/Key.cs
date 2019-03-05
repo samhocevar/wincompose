@@ -62,7 +62,6 @@ public partial class Key
         { "BackSpace", VK.BACK },
         { "Delete",    VK.DELETE },
         { "Tab",       VK.TAB },
-        { "Return",    VK.RETURN },
     };
 
     /// <summary>
