@@ -42,6 +42,7 @@ internal enum WM : int
     KEYUP      = 0x101,
     SYSKEYDOWN = 0x104,
     SYSKEYUP   = 0x105,
+    MOUSEMOVE  = 0x200,
 };
 
 public enum VK : int
@@ -234,6 +235,12 @@ public static class HWND
     public static IntPtr BROADCAST = (IntPtr)0xffff;
 }
 
+[StructLayout(LayoutKind.Sequential)]
+public struct RECT
+{
+    public int Left, Top, Right, Bottom;
+};
+
 /// <summary>
 /// Represents possible dialogbox command id values by the MB_GetString function.
 /// </summary>
@@ -414,6 +421,13 @@ internal enum ASSOCSTR : int
     APPPUBLISHER,
     APPICONREFERENCE,
     MAX,
+};
+
+[Flags]
+internal enum MSGFLT : uint
+{
+    ADD = 1,
+    REMOVE = 2,
 };
 
 }

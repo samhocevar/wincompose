@@ -103,6 +103,13 @@ static internal class NativeMethods
     public static extern int UnhookWindowsHookEx(HOOK hhk);
 
     //
+    // for RemoteControl.cs
+    //
+
+    [DllImport("user32", SetLastError = true)]
+    public static extern bool ChangeWindowMessageFilter(uint msg, MSGFLT flags);
+
+    //
     // for KeySelector.xaml.cs
     //
 
@@ -128,6 +135,16 @@ static internal class NativeMethods
     public static extern HRESULT AssocQueryString(ASSOCF flags, ASSOCSTR str,
               string pszAssoc, string pszExtra, [Out] StringBuilder pszOut,
               ref uint pcchOut);
+
+    //
+    // for SysTrayIcon.xaml.cs
+    //
+
+    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
+    public static extern IntPtr FindWindowEx(IntPtr parentHandle,
+        IntPtr childAfter, string className, string windowTitle);
+    [DllImport("user32")]
+    public static extern bool GetClientRect(IntPtr hWnd, out RECT lpRect);
 };
 
 }

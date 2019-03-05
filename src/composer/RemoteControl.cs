@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -33,6 +33,15 @@ namespace WinCompose
             SourceInitialized += (o, e) =>
                 (PresentationSource.FromVisual(this) as HwndSource).AddHook(WndProc);
 
+            // Allow these messages to reach us even from a process with a
+            // lower integrity level. This may happen when WinCompose was
+            // launched at high level (e.g. through the installer) but
+            // wincompose-settings.exe is launched at medium level (through
+            // the start menu). The security risk seems very low since all
+            // we do is open an existing window.
+            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.SEQUENCES, MSGFLT.ADD);
+            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.SETTINGS, MSGFLT.ADD);
+
             Show();
             Hide();
         }
@@ -40,16 +49,26 @@ namespace WinCompose
         [PermissionSet(SecurityAction.Demand, Name="FullTrust")]
         protected IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            if (msg == WM_WINCOMPOSE_DISABLE)
+            if (msg == WM_WINCOMPOSE.DISABLE)
             {
                 if (Process.GetCurrentProcess().Id != (int)wParam)
                     DisableEvent?.Invoke();
                 handled = true;
             }
-            else if (msg == WM_WINCOMPOSE_EXIT)
+            else if (msg == WM_WINCOMPOSE.EXIT)
             {
                 if (Process.GetCurrentProcess().Id != (int)wParam)
                     ExitEvent?.Invoke();
+                handled = true;
+            }
+            else if (msg == WM_WINCOMPOSE.SETTINGS)
+            {
+                SettingsEvent?.Invoke();
+                handled = true;
+            }
+            else if (msg == WM_WINCOMPOSE.SEQUENCES)
+            {
+                SequencesEvent?.Invoke();
                 handled = true;
             }
 
@@ -62,26 +81,14 @@ namespace WinCompose
         /// </summary>
         public void BroadcastDisableEvent()
         {
-            NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE_DISABLE,
+            NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.DISABLE,
                                       Process.GetCurrentProcess().Id, 0);
         }
 
         public event Action DisableEvent;
         public event Action ExitEvent;
-
-        /// <summary>
-        /// A custom message ID used to kill other WinCompose instances
-        /// </summary>
-        private static readonly uint WM_WINCOMPOSE_EXIT
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_EXIT");
-
-        /// <summary>
-        /// A custom message ID used to disable other WinCompose instances
-        /// </summary>
-        private static readonly uint WM_WINCOMPOSE_DISABLE
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
-
-        private static readonly IntPtr HWND_BROADCAST = (IntPtr)0xffff;
+        public event Action SettingsEvent;
+        public event Action SequencesEvent;
     }
 }
 
