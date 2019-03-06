@@ -178,6 +178,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please press a key to use as your unicode compose key..
+        /// </summary>
+        public static string CaptureUnicodePrefixKey {
+            get {
+                return ResourceManager.GetString("CaptureUnicodePrefixKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fall back to case insensitive matches.
         /// </summary>
         public static string CaseInsensitive {
@@ -210,6 +219,15 @@ namespace WinCompose.i18n {
         public static string ChangeComposeKey {
             get {
                 return ResourceManager.GetString("ChangeComposeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change….
+        /// </summary>
+        public static string ChangeUnicodePrefixKey {
+            get {
+                return ResourceManager.GetString("ChangeUnicodePrefixKey", resourceCulture);
             }
         }
         
@@ -255,6 +273,24 @@ namespace WinCompose.i18n {
         public static string ComposeKeyToolTip {
             get {
                 return ResourceManager.GetString("ComposeKeyToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+         ///   Looks up a localized string similar to unicode prefix key:.
+        /// </summary>
+        public static string UnicodePrefixKey {
+            get {
+                return ResourceManager.GetString("UnicodePrefixKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the key that should act as the Unicode compose key..
+        /// </summary>
+        public static string UnicodePrefixKeyToolTip {
+            get {
+                return ResourceManager.GetString("UnicodePrefixKeyToolTip", resourceCulture);
             }
         }
         

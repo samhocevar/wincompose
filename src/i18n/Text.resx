@@ -271,7 +271,15 @@
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Delay:</value>
-    <comment>The compose key deactivates itself after a certain configurable delay</comment>
+    <comment>The compose key/unicode prefix deactivates itself after a certain configurable delay</comment>
+  </data>
+  <data name="UnicodePrefixKey" xml:space="preserve">
+    <value>Unicode Key:</value>
+    <comment></comment>
+  </data>
+  <data name="UnicodePrefixKeyToolTip" xml:space="preserve">
+    <value>Select the key that should act as the unicode prefix key.</value>
+    <comment></comment>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Advanced Unicode input</value>
@@ -523,6 +531,14 @@
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
     <value>Please press a key to use as your compose key.</value>
+    <comment></comment>
+  </data>
+  <data name="ChangeUnicodePrefixKey" xml:space="preserve">
+    <value>Change…</value>
+    <comment>The user can click on this button to change the current unicode prefix key.</comment>
+  </data>
+  <data name="CaptureUnicodePrefixKey" xml:space="preserve">
+    <value>Please press a key to use as your unicode prefix key.</value>
     <comment></comment>
   </data>
   <data name="AddToFavorites" xml:space="preserve">

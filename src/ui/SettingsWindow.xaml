@@ -159,42 +159,62 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
+                        <!-- Compose key -->
                         <emoji:TextBlock Grid.Row="0" Grid.Column="0"
                                          Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.ComposeKey}, Path=.}"
-                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
+                                         Margin="8,4" TextAlignment="Left" VerticalAlignment="Center"
                                          ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
                         <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                    DataContext="{Binding ComposeKey0}" Text="{Binding FriendlyName}" FontWeight="Bold"/>
                         <Button Grid.Row="0" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
                                 Content="{x:Static i18n:Text.ChangeComposeKey}"
-                                Command="{Binding EditButtonCommand}" CommandParameter="0"/>
+                                Command="{Binding EditComposeKeyButtonCommand}" CommandParameter="0"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                    DataContext="{Binding ComposeKey1}" Text="{Binding FriendlyName}" FontWeight="Bold"/>
                         <Button Grid.Row="1" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
                                 Content="{x:Static i18n:Text.ChangeComposeKey}"
-                                Command="{Binding EditButtonCommand}" CommandParameter="1"/>
+                                Command="{Binding EditComposeKeyButtonCommand}" CommandParameter="1"/>
 
+                        <!-- Unicode prefix key -->
                         <emoji:TextBlock Grid.Row="2" Grid.Column="0"
+                                         Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.UnicodePrefixKey}, Path=.}"
+                                         Margin="8,4" TextAlignment="Left" VerticalAlignment="Center"
+                                         ToolTipService.ToolTip="{x:Static i18n:Text.UnicodePrefixKeyToolTip}"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
+                                   DataContext="{Binding UnicodePrefixKey0}" Text="{Binding FriendlyName}" FontWeight="Bold"/>
+                        <Button Grid.Row="2" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
+                                Content="{x:Static i18n:Text.ChangeUnicodePrefixKey}"
+                                Command="{Binding EditUnicodePrefixKeyButtonCommand}" CommandParameter="0"/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
+                                   DataContext="{Binding UnicodePrefixKey1}" Text="{Binding FriendlyName}" FontWeight="Bold"/>
+                        <Button Grid.Row="3" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
+                                Content="{x:Static i18n:Text.ChangeUnicodePrefixKey}"
+                                Command="{Binding EditUnicodePrefixKeyButtonCommand}" CommandParameter="1"/>
+
+                        <!-- Delay -->
+                        <emoji:TextBlock Grid.Row="4" Grid.Column="0"
                                          Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
-                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-                        <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+                                         Margin="8,4" TextAlignment="Left" VerticalAlignment="Center"/>
+                        <Grid Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition MaxWidth="70" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <TextBox Margin="8,4" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
-                                       Margin="8,4" />
+                            <TextBlock Grid.Row="4" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
+                                     Margin="8,4" />
                         </Grid>
 
-                        <CheckBox Grid.Row="3" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
+                        <!-- Options -->
+                        <CheckBox Grid.Row="5" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.KeepOriginalKeyToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.KeepOriginalKey}" TextWrapping="Wrap"/>
                         </CheckBox>
 
-                        <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
+                        <CheckBox Grid.Row="9" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.UnicodeInputToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.UnicodeInput}" TextWrapping="Wrap"/>
@@ -207,19 +227,19 @@
                         <emoji:TextBlock Text="{Binding StringFormat='💬 {0}', Source={x:Static i18n:Text.Sequences}, Path=.}"/>
                     </GroupBox.Header>
                     <StackPanel Orientation="Vertical">
-                        <CheckBox Grid.Row="4" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                        <CheckBox Grid.Row="6" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.UseXorgRules}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.UseXorgRulesToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.UseXorgRules}" TextWrapping="Wrap"/>
                         </CheckBox>
 
-                        <CheckBox Grid.Row="5" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                        <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.UseXComposeRules}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.UseXComposeRulesToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.UseXComposeRules}" TextWrapping="Wrap"/>
                         </CheckBox>
 
-                        <CheckBox Grid.Row="6" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
+                        <CheckBox Grid.Row="8" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.UseEmojiRules}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.UseEmojiRulesToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.UseEmojiRules}" TextWrapping="Wrap"/>

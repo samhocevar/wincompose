@@ -196,8 +196,12 @@ static class Composer
         if (m_current_compose_key.VirtualKey != VK.NONE
              && !Settings.ComposeKeys.Value.Contains(m_current_compose_key))
         {
-            CurrentState = State.Idle;
-            m_current_compose_key = new Key(VK.NONE);
+            ResetSequence();
+        }
+        if (m_current_unicode_prefix_key.VirtualKey != VK.NONE
+             && !Settings.UnicodePrefixKeys.Value.Contains(m_current_unicode_prefix_key))
+        {
+            ResetSequence();
         }
 
         // If we receive a keyup for the compose key while in emulation
@@ -289,11 +293,23 @@ static class Composer
                 return false;
             }
         }
+        
+        // start to enter unicode hex keys
+        if (is_keydown && Settings.UnicodePrefixKeys.Value.Contains(key)
+             && CurrentState == State.Idle)
+        {
+            CurrentState = State.Unicode;
+            
+            // Lauch the sequence reset expiration timer
+            if (Settings.ResetDelay.Value > 0)
+                m_timeout.Change(TimeSpan.FromMilliseconds(Settings.ResetDelay.Value), NEVER);
+            return true;
+        }
 
         // If we are not currently composing a sequence, do nothing unless
         // one of our hacks forces us to send the key as a string (for
         // instance the Caps Lock capitalisation feature).
-        if (CurrentState != State.Sequence)
+        if (CurrentState != State.Sequence && CurrentState != State.Unicode)
         {
             if (is_capslock_hack && is_keydown)
             {
@@ -387,6 +403,32 @@ static class Composer
             return false;
         }
 
+        // hex unicode input
+        if (CurrentState == State.Unicode)
+        {
+            if (is_keyup)
+            {
+                return true;
+            }
+            char c = key.KeyLabel[0];
+            if (c == ' ' || key.VirtualKey == VK.RETURN)
+            {
+                // to hex and send
+                SendString(Settings.GetUnicodeSequenceResult(m_unicode_sequence));
+                ResetSequence();
+                return true;
+            }
+            bool is_hex = Char.IsDigit(c) || (c >= 'a' && c <= 'f');
+            if (!is_hex)
+            {
+                SendKeySequence(m_unicode_sequence);
+                ResetSequence();
+                return false;
+            }
+            m_unicode_sequence.Add(key);
+            return true;
+        }
+
         // If we reached this point, everything else ignored this key, so it
         // is a key we must add to the current sequence.
         if (add_to_sequence)
@@ -405,7 +447,7 @@ static class Composer
     /// <param name="e"></param>
     private static void TimeoutExpired(object state)
     {
-        if (CurrentState == State.Sequence)
+        if (CurrentState == State.Sequence || CurrentState == State.Unicode)
         {
             // If a key was pressed since the timer was launched, we delay
             // the timeout value and check again later.
@@ -499,12 +541,7 @@ static class Composer
         // Unknown characters for sequence, print them if necessary
         if (!Settings.DiscardOnInvalid.Value)
         {
-            foreach (Key k in m_sequence)
-            {
-                // FIXME: what if the key is e.g. left arrow?
-                if (k.IsPrintable)
-                    SendString(k.ToString());
-            }
+            SendKeySequence(m_sequence);
         }
 
         if (Settings.BeepOnInvalid.Value)
@@ -523,6 +560,20 @@ static class Composer
             if (char.IsSurrogate(ch))
                 return true;
         return false;
+    }
+
+    /// <summary>
+    /// send sequence, each single key
+    /// </summary>
+    /// <param name="sequence">keys to send</param>
+    private static void SendKeySequence(KeySequence sequence)
+    {
+        foreach (Key k in sequence)
+        {
+            // FIXME: what if the key is e.g. left arrow?
+            if (k.IsPrintable)
+                SendString(k.ToString());
+        }
     }
 
     private static void SendString(string str)
@@ -701,6 +752,9 @@ static class Composer
         CurrentState = State.Idle;
         m_compose_counter = 0;
         m_sequence.Clear();
+        m_unicode_sequence.Clear();
+        m_current_compose_key = new Key(VK.NONE);
+        m_current_unicode_prefix_key = new Key(VK.NONE);
     }
 
     private static void SendKeyDown(VK vk, KEYEVENTF flags = 0)
@@ -784,6 +838,7 @@ static class Composer
     /// The sequence being currently typed
     /// </summary>
     private static KeySequence m_sequence = new KeySequence();
+    private static KeySequence m_unicode_sequence = new KeySequence();
 
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
@@ -803,6 +858,11 @@ static class Composer
     private static Key m_current_compose_key = new Key(VK.NONE);
 
     /// <summary>
+    /// The unicode prefix key being used; only valid in state "KeyCombination" for now.
+    /// </summary>
+    private static Key m_current_unicode_prefix_key = new Key(VK.NONE);
+
+    /// <summary>
     /// Whether the current compose key is AltGr
     /// </summary>
     private static bool m_compose_key_is_altgr = false;
@@ -816,6 +876,10 @@ static class Composer
         /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
         /// </summary>
         KeyCombination,
+        /// <summary>
+        /// New general unicode input method
+        /// </summary>
+        Unicode,
         // TODO: we probably want "Disabled" as another possible state
     };
 

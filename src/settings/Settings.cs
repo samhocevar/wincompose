@@ -93,6 +93,8 @@ namespace WinCompose
 
         [EntryLocation("composing", "compose_key")]
         public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
+        [EntryLocation("composing", "unicode_prefix_key")]
+        public static SettingsEntry<KeySequence> UnicodePrefixKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
         [EntryLocation("composing", "reset_delay")]
         public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
         [EntryLocation("composing", "use_xorg_rules")]
@@ -197,6 +199,32 @@ namespace WinCompose
             ComposeKeys.Value = compose_keys;
         }
 
+        private static void ValidateUnicodePrefixKeys()
+        {
+            KeySequence unicode_prefix_keys = new KeySequence();
+            if (UnicodePrefixKeys.Value?.Count == 0)
+            {
+                // The default compose key for the first time WinCompose is launched
+                unicode_prefix_keys.Add(m_default_unicode_prefix_key);
+            }
+            else
+            {
+                // Validate the list of compose keys, ensuring there are only valid keys
+                // and there are no duplicates. Also remove VK.DISABLED from the list
+                // but re-add it if there are no valid keys at all.
+                foreach (Key k in UnicodePrefixKeys.Value)
+                {
+                    bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
+                                     || m_valid_unicode_prefix_keys.Contains(k);
+                    if (is_valid && k.VirtualKey != VK.DISABLED && !unicode_prefix_keys.Contains(k))
+                        unicode_prefix_keys.Add(k);
+                }
+
+                if (unicode_prefix_keys.Count == 0)
+                    unicode_prefix_keys.Add(new Key(VK.DISABLED));
+            }
+        }
+
         public static void LoadConfig()
         {
             Log.Debug($"Reloading configuration file {GetConfigFile()}");
@@ -211,6 +239,8 @@ namespace WinCompose
             }
 
             ValidateComposeKeys();
+
+            ValidateUnicodePrefixKeys();
 
             // HACK: if the user uses the "it-CH" locale, replace it with "it"
             // because we use "it-CH" as a special value to mean Sardinian.
@@ -369,6 +399,18 @@ namespace WinCompose
             return char.ConvertFromUtf32(codepoint);
         }
 
+        public static string GetUnicodeSequenceResult(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return "";
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            var m = Regex.Match(sequenceString, @"^([0-9a-f]{1,5})$");
+            if (!m.Success)
+                return "";
+            int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
+            return char.ConvertFromUtf32(codepoint);
+        }
+
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
         private static void LoadEntry(SettingsEntry entry, string section, string key)
@@ -481,7 +523,30 @@ namespace WinCompose
            new Key("`"),
         };
 
+        private static readonly KeySequence m_valid_unicode_prefix_keys = new KeySequence
+        {
+           new Key(VK.DISABLED),
+           new Key(VK.LMENU),
+           new Key(VK.RMENU),
+           new Key(VK.LCONTROL),
+           new Key(VK.RCONTROL),
+           new Key(VK.LWIN),
+           new Key(VK.RWIN),
+           new Key(VK.CAPITAL),
+           new Key(VK.NUMLOCK),
+           new Key(VK.PAUSE),
+           new Key(VK.APPS),
+           new Key(VK.ESCAPE),
+           new Key(VK.CONVERT),
+           new Key(VK.NONCONVERT),
+           new Key(VK.INSERT),
+           new Key(VK.SNAPSHOT),
+           new Key(VK.SCROLL),
+           new Key("`"),
+        };
+
         private static readonly Key m_default_compose_key = new Key(VK.RMENU);
+        private static readonly Key m_default_unicode_prefix_key = new Key(VK.LMENU);
 
         private static readonly
         Dictionary<string, string> m_valid_languages = GetSupportedLanguages();
