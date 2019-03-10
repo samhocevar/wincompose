@@ -42,9 +42,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="composer\RemoteTypes.cs" />
-    <Compile Include="composer\WinApi.cs" />
-    <Compile Include="composer\WinTypes.cs" />
+    <Compile Include="interop\RemoteTypes.cs" />
+    <Compile Include="interop\WinApi.cs" />
+    <Compile Include="interop\WinTypes.cs" />
     <Compile Include="sequences\Program.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

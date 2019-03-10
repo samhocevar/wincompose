@@ -57,16 +57,16 @@
     <Compile Include="composer\KeyboardLayout.cs" />
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
-    <Compile Include="composer\RemoteControl.cs" />
-    <Compile Include="composer\RemoteTypes.cs" />
     <Compile Include="composer\Stats.cs" />
     <Compile Include="composer\SysTray.cs" />
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\Application.xaml.cs">
       <DependentUpon>Application.xaml</DependentUpon>
     </Compile>
-    <Compile Include="composer\WinApi.cs" />
-    <Compile Include="composer\WinTypes.cs" />
+    <Compile Include="interop\RemoteControl.cs" />
+    <Compile Include="interop\RemoteTypes.cs" />
+    <Compile Include="interop\WinApi.cs" />
+    <Compile Include="interop\WinTypes.cs" />
     <Compile Include="sequences\Category.cs" />
     <Compile Include="sequences\Key.cs" />
     <Compile Include="sequences\SearchTokens.cs" />
