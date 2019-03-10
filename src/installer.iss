@@ -32,7 +32,7 @@ PrivilegesRequired = lowest
 
 [Files]
 ; We put this at the beginning so that it’s easier to decompress
-Source: "bin\{#CONFIG}\trampoline.dll"; DestDir: "{tmp}"; Flags: dontcopy
+Source: "bin\{#CONFIG}\installer-helper.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
 Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion

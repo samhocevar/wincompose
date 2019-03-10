@@ -17,7 +17,7 @@
 // This utility DLL provides native functions for the installer that
 // bypass some InnoSetup limitations:
 //
-//  - trampoline() spawns a background thread and sends a KEYUP message
+//  - keepalive() spawns a background thread and sends a KEYUP message
 //    to a given window at a regular interval. InnoSetup does not support
 //    background tasks or timers.
 //
@@ -44,7 +44,7 @@ static DWORD WINAPI thread_func(void* data)
 }
 
 extern "C" __declspec(dllexport)
-void __cdecl trampoline(HWND hwnd, unsigned int milliseconds)
+void __cdecl keepalive(HWND hwnd, unsigned int milliseconds)
 {
     g_hwnd = hwnd;
     g_milliseconds = milliseconds;

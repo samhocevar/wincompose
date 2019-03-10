@@ -45,7 +45,7 @@ clean:
 	$(foreach x, $(EXE), $(DEVENV) wincompose.sln //clean $(CONFIG) //project $(basename $(notdir $x)).csproj;)
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project language.csproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.csproj
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project trampoline.vcxproj
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer-helper.vcxproj
 	rm -f $(PORTABLE)
 	rm -rf obj bin || true
 
