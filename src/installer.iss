@@ -3,8 +3,12 @@
 #define EXE "wincompose.exe"
 #define SEQUENCES_EXE "wincompose-sequences.exe"
 #define SETTINGS_EXE "wincompose-settings.exe"
-#define VERSION GetEnv('VERSION')
-#define CONFIG GetEnv('CONFIG')
+#ifndef VERSION
+#   define VERSION GetEnv('VERSION')
+#endif
+#ifndef CONFIG
+#   define CONFIG GetEnv('CONFIG')
+#endif
 
 [Setup]
 AppName = {#NAME}

@@ -44,13 +44,13 @@ all: installer portable
 clean:
 	$(foreach x, $(EXE), $(DEVENV) wincompose.sln //clean $(CONFIG) //project $(basename $(notdir $x)).csproj;)
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project language.csproj
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.vcxproj
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.csproj
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project trampoline.vcxproj
 	rm -f $(PORTABLE)
 	rm -rf obj bin || true
 
 installer: $(EXE) $(ISS) $(PAS)
-	$(DEVENV) wincompose.sln //build $(CONFIG) //project installer.vcxproj
+	$(DEVENV) wincompose.sln //build $(CONFIG) //project installer.csproj
 
 portable: $(EXE)
 	rm -f $(PORTABLE)
