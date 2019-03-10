@@ -15,10 +15,7 @@ TXT = rules/DefaultUserSequences.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
-MAIN_EXE = bin/$(CONFIG)/wincompose.exe
-EXE = $(MAIN_EXE) \
-      bin/$(CONFIG)/wincompose-sequences.exe \
-      bin/$(CONFIG)/wincompose-settings.exe
+EXE = bin/$(CONFIG)/wincompose.exe
 DLL = bin/$(CONFIG)/language.dll \
       bin/$(CONFIG)/Emoji.Wpf.dll \
       bin/$(CONFIG)/Typography.OpenFont.dll \
@@ -59,13 +56,13 @@ portable: $(EXE)
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
 	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
-	cp $(MAIN_EXE).config $(DLL) $(PORTABLE:.zip=)
+	cp $(EXE).config $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
 # Sometimes Visual Studio does not rebuild this dependency
-$(MAIN_EXE): bin/$(CONFIG)/language.dll
+$(EXE): bin/$(CONFIG)/language.dll
 
 %.exe %.dll:
 	@mkdir -p bin/$(CONFIG)

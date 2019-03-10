@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -20,8 +20,21 @@ namespace WinCompose
     static class Program
     {
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            foreach (var arg in args)
+            {
+                switch (arg)
+                {
+                    case "-sequences":
+                        NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.SEQUENCES, 0, 0);
+                        return;
+                    case "-settings":
+                        NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.SETTINGS, 0, 0);
+                        return;
+                }
+            }
+
             // Do this before Composer.Init() because of the Disabled setting
             Settings.LoadConfig();
 

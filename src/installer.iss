@@ -1,8 +1,6 @@
 ﻿#define NAME "WinCompose"
 #define AUTHOR "Sam Hocevar"
 #define EXE "wincompose.exe"
-#define SEQUENCES_EXE "wincompose-sequences.exe"
-#define SETTINGS_EXE "wincompose-settings.exe"
 #ifndef VERSION
 #   define VERSION GetEnv('VERSION')
 #endif
@@ -36,8 +34,6 @@ Source: "bin\{#CONFIG}\installer-helper.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
 Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\{#SEQUENCES_EXE}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\{#SETTINGS_EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -113,10 +109,12 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
 Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}"; \
     IconFilename: "{app}\{#EXE}"; IconIndex: 1
+; Set the elevation bit on wincompose.exe.lnk because it launches an elevated task
 Name: "{group}\{#NAME}"; Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; \
     IconFilename: "{app}\{#EXE}"; AfterInstall: set_elevation_bit('{group}\{#NAME}.lnk')
-Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#SEQUENCES_EXE}"; WorkingDir: "{app}"
-Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#SETTINGS_EXE}"; WorkingDir: "{app}"
+; We provide these shortcuts in case the notification area icon is disabled
+Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#EXE}"; Parameters: "-sequences"
+Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#EXE}"; Parameters: "-settings"
 
 [Run]
 ; After installation is finished, add an event-triggered scheduled task, then
@@ -126,7 +124,8 @@ Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#SETTINGS_EXE}"; WorkingDir:
 ; the UAC window. Running with high privileges is necessary to inject keyboard
 ; events into other high level processes, such as cmd.exe run as Administrator.
 Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /tr ""\""{app}\{#EXE}\"" /fromtask"""; Flags: runhidden
-Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; BeforeInstall: fix_scheduled_task('{sys}\Tasks\{#NAME}'); Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; \
+    BeforeInstall: fix_scheduled_task('{sys}\Tasks\{#NAME}'); Flags: runhidden
 ; Launch the task just after installation
 Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; Flags: runhidden
 
@@ -191,6 +190,9 @@ Type: files; Name: "{app}\locale\fr.ini"
 Type: dirifempty; Name: "{app}\locale"
 Type: files; Name: "{app}\po\*.po"
 Type: dirifempty; Name: "{app}\po"
+; Those were just tests and only a few beta releases had them
+Type: files; Name: "{app}\{#NAME}-sequences.exe"
+Type: files; Name: "{app}\{#NAME}-settings.exe"
 
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#EXE}"; Flags: runhidden
