@@ -19,7 +19,7 @@ namespace WinCompose.i18n {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Text {
@@ -313,7 +313,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable the system tray icon.
+        ///   Looks up a localized string similar to Disable notification area icon.
         /// </summary>
         public static string DisableIcon {
             get {
@@ -322,7 +322,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If enabled, WinCompose will stop displaying an icon in the system tray. The only way to interact with WinCompose will be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu..
+        ///   Looks up a localized string similar to If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu..
         /// </summary>
         public static string DisableIconToolTip {
             get {
@@ -457,7 +457,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Try to keep SysTray icon always visible.
+        ///   Looks up a localized string similar to Try to keep notification area icon always visible.
         /// </summary>
         public static string KeepIconVisible {
             get {
@@ -466,7 +466,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to By default, the icon will disappear from the system tray after a short while. This option attempts to keep it always visible..
+        ///   Looks up a localized string similar to By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible..
         /// </summary>
         public static string KeepIconVisibleToolTip {
             get {
@@ -529,11 +529,29 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to End.
+        /// </summary>
+        public static string KeyEnd {
+            get {
+                return ResourceManager.GetString("KeyEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Escape.
         /// </summary>
         public static string KeyEscape {
             get {
                 return ResourceManager.GetString("KeyEscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string KeyHome {
+            get {
+                return ResourceManager.GetString("KeyHome", resourceCulture);
             }
         }
         
@@ -660,6 +678,15 @@ namespace WinCompose.i18n {
         public static string KeySpace {
             get {
                 return ResourceManager.GetString("KeySpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tab.
+        /// </summary>
+        public static string KeyTab {
+            get {
+                return ResourceManager.GetString("KeyTab", resourceCulture);
             }
         }
         

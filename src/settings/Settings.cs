@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -478,6 +478,9 @@ namespace WinCompose
            new Key(VK.INSERT),
            new Key(VK.SNAPSHOT),
            new Key(VK.SCROLL),
+           new Key(VK.TAB),
+           new Key(VK.HOME),
+           new Key(VK.END),
            new Key("`"),
         };
 

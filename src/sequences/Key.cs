@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -147,9 +147,16 @@ public partial class Key
                     { new Key(VK.SCROLL),     i18n.Text.KeyScroll },
                     { new Key(VK.INSERT),     i18n.Text.KeyInsert },
                     { new Key(VK.SNAPSHOT),   i18n.Text.KeyPrint },
+                    { new Key(VK.TAB),        i18n.Text.KeyTab },
+                    { new Key(VK.HOME),       i18n.Text.KeyHome },
+                    { new Key(VK.END),        i18n.Text.KeyEnd },
 
                     { new Key(" "),    i18n.Text.KeySpace },
                     { new Key("\r"),   i18n.Text.KeyReturn },
+
+                    // This should not be necessary because we build these
+                    // key objects using their VirtualKey.
+                    { new Key("\t"),   i18n.Text.KeyTab },
                     { new Key("\x1b"), i18n.Text.KeyEscape },
                 };
 

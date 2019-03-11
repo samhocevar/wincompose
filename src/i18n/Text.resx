@@ -415,7 +415,7 @@
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Insert</value>
-    <comment>The name of the key on the keyboard</comment>
+    <comment>The name of the "Insert" key on the keyboard</comment>
   </data>
   <data name="TestTyping" xml:space="preserve">
     <value>Test Typing</value>
@@ -536,5 +536,17 @@
   <data name="DisableIconToolTip" xml:space="preserve">
     <value>If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu.</value>
     <comment></comment>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+    <comment>The name of the “Home” key on the keyboard</comment>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+    <comment>The name of the “End” key on the keyboard</comment>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+    <comment>The name of the “Tab” key on the keyboard</comment>
   </data>
 </root>
