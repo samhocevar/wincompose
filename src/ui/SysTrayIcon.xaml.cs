@@ -57,8 +57,7 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent += OnDisableEvent;
             Application.RemoteControl.ExitEvent += OnExitEvent;
-            Application.RemoteControl.SettingsEvent += OnSettingsEvent;
-            Application.RemoteControl.SequencesEvent += OnSequencesEvent;
+            Application.RemoteControl.OpenEvent += OnOpenEvent;
             Application.RemoteControl.BroadcastDisableEvent();
 
             WinForms.Application.EnableVisualStyles();
@@ -100,8 +99,7 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent -= OnDisableEvent;
             Application.RemoteControl.ExitEvent -= OnExitEvent;
-            Application.RemoteControl.SettingsEvent -= OnSettingsEvent;
-            Application.RemoteControl.SequencesEvent -= OnSequencesEvent;
+            Application.RemoteControl.OpenEvent -= OnOpenEvent;
 
             m_cleanup_timer?.Stop();
             m_cleanup_timer = null;
@@ -118,14 +116,14 @@ namespace WinCompose
 
         public ICommand MenuItemCommand
         {
-            get { return m_menu_item_command ?? (m_menu_item_command = new DelegateCommand(OnMenuItemClicked)); }
+            get { return m_menu_item_command ?? (m_menu_item_command = new DelegateCommand(OnCommand)); }
         }
 
         private DelegateCommand m_menu_item_command;
 
-        private void OnMenuItemClicked(object parameter)
+        private void OnCommand(object o)
         {
-            switch (parameter as MenuCommand?)
+            switch (o as MenuCommand?)
             {
                 case MenuCommand.ShowSequences:
                     m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
@@ -344,19 +342,8 @@ namespace WinCompose
             SysTrayUpdateCallback();
         }
 
-        private void OnExitEvent()
-        {
-            Application.Current.Shutdown();
-        }
+        private void OnExitEvent() => Application.Current.Shutdown();
 
-        private void OnSettingsEvent()
-        {
-            OnMenuItemClicked(MenuCommand.ShowOptions);
-        }
-
-        private void OnSequencesEvent()
-        {
-            OnMenuItemClicked(MenuCommand.ShowSequences);
-        }
+        private void OnOpenEvent(MenuCommand cmd) => OnCommand(cmd);
     }
 }

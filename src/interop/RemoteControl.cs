@@ -38,8 +38,7 @@ namespace WinCompose
             // wincompose-settings.exe is launched at medium level (through
             // the start menu). The security risk seems very low since all
             // we do is open an existing window.
-            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.SEQUENCES, MSGFLT.ADD);
-            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.SETTINGS, MSGFLT.ADD);
+            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.OPEN, MSGFLT.ADD);
 
             Show();
             Hide();
@@ -60,14 +59,9 @@ namespace WinCompose
                     ExitEvent?.Invoke();
                 handled = true;
             }
-            else if (msg == WM_WINCOMPOSE.SETTINGS)
+            else if (msg == WM_WINCOMPOSE.OPEN)
             {
-                SettingsEvent?.Invoke();
-                handled = true;
-            }
-            else if (msg == WM_WINCOMPOSE.SEQUENCES)
-            {
-                SequencesEvent?.Invoke();
+                OpenEvent?.Invoke((MenuCommand)wParam);
                 handled = true;
             }
 
@@ -86,8 +80,7 @@ namespace WinCompose
 
         public event Action DisableEvent;
         public event Action ExitEvent;
-        public event Action SettingsEvent;
-        public event Action SequencesEvent;
+        public event Action<MenuCommand> OpenEvent;
     }
 }
 

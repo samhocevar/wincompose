@@ -12,6 +12,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 namespace WinCompose
 {
@@ -22,16 +23,19 @@ namespace WinCompose
         [STAThread]
         static void Main(string[] args)
         {
+            // Some commandline flags just trigger a message broadcast
+            var command_flags = new Dictionary<string, MenuCommand>()
+            {
+                {  "-sequences", MenuCommand.ShowSequences },
+                {  "-settings",  MenuCommand.ShowOptions },
+            };
+
             foreach (var arg in args)
             {
-                switch (arg)
+                if (command_flags.TryGetValue(arg, out var cmd))
                 {
-                    case "-sequences":
-                        NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.SEQUENCES, 0, 0);
-                        return;
-                    case "-settings":
-                        NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.SETTINGS, 0, 0);
-                        return;
+                    NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.OPEN, (int)cmd, 0);
+                    return;
                 }
             }
 

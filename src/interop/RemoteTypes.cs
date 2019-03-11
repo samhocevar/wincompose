@@ -33,16 +33,10 @@ namespace WinCompose
             = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
 
         /// <summary>
-        /// A custom message ID used to open the WinCompose settings window
+        /// A custom message ID used to open various WinCompose windows
         /// </summary>
-        public static readonly uint SETTINGS
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_SETTINGS");
-
-        /// <summary>
-        /// A custom message ID used to open the WinCompose sequences window
-        /// </summary>
-        public static readonly uint SEQUENCES
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_SEQUENCES");
+        public static readonly uint OPEN
+            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_OPEN");
     }
 }
 
