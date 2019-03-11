@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -42,29 +42,30 @@ namespace WinCompose
 
         public KeySequence Sequence => m_desc.Sequence;
 
-        public bool Match(SearchTokens searchText)
+        public bool Match(SearchQuery query)
         {
-            if (searchText.IsEmpty)
+            if (query.IsEmpty)
                 return true;
 
-            if (searchText.ExactSearchString == Result)
+            if (query.ExactSearchString == Result)
                 return true;
 
-            var compareInfo = Thread.CurrentThread.CurrentCulture.CompareInfo;
-            foreach (var token in searchText.Tokens)
+            var compare_info = Thread.CurrentThread.CurrentCulture.CompareInfo;
+
+            // Ensure this sequence matches all the tokens (implicit AND)
+            foreach (var token in query.Tokens)
             {
-                if (compareInfo.IndexOf(Description, token, CompareOptions.IgnoreCase) != -1)
-                    return true;
-                if (Sequence.ToString().Contains(token))
-                    return true;
+                if (token.Num == Utf32 || token.HexNum == Utf32)
+                    continue;
+                if (compare_info.IndexOf(Description, token.Text, CompareOptions.IgnoreCase) != -1)
+                    continue;
+                if (Sequence.ToString().Contains(token.Text))
+                    continue;
+
+                return false;
             }
 
-            foreach (var number in searchText.Numbers)
-            {
-                if (Utf32 == number)
-                    return true;
-            }
-            return false;
+            return true;
         }
 
         private SequenceDescription m_desc;
