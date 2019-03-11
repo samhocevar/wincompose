@@ -58,6 +58,8 @@ portable: $(EXE)
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
 	cp $(EXE).config $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
+	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -settings",0' > $(PORTABLE:.zip=)/wincompose-settings.vbs
+	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -sequences",0' > $(PORTABLE:.zip=)/wincompose-sequences.vbs
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
