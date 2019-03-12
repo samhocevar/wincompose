@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wincompose", "wincompose.csproj", "{E00DB4B7-3738-47F4-B430-B10EFFB36205}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B} = {C037D608-57FD-4ACD-AAC1-BFAD1767B11B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "installer", "installer.csproj", "{55AF5191-E02C-4445-A578-D209A40C0AC7}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -17,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wincompose-tests", "..\tests\wincompose-tests.csproj", "{7EF72322-8A15-49B1-9E92-777B16B84BD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "language", "language.csproj", "{BBA0B950-2B67-4660-BAD0-C359E99A733F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inserticons", "3rdparty\inserticons\inserticons.csproj", "{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +92,18 @@ Global
 		{BBA0B950-2B67-4660-BAD0-C359E99A733F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BBA0B950-2B67-4660-BAD0-C359E99A733F}.Release|Win32.ActiveCfg = Release|Any CPU
 		{BBA0B950-2B67-4660-BAD0-C359E99A733F}.Release|Win32.Build.0 = Release|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Debug|Win32.Build.0 = Debug|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Release|Win32.ActiveCfg = Release|Any CPU
+		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,3 +13,6 @@
 [submodule "src/3rdparty/xorgproto"]
 	path = src/3rdparty/xorgproto
 	url = git://anongit.freedesktop.org/git/xorg/proto/xorgproto
+[submodule "src/3rdparty/inserticons"]
+	path = src/3rdparty/inserticons
+	url = ../../einaregilsson/InsertIcons
