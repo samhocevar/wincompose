@@ -175,18 +175,13 @@
                                 Content="{x:Static i18n:Text.ChangeComposeKey}"
                                 Command="{Binding EditButtonCommand}" CommandParameter="1"/>
 
-                        <emoji:TextBlock Grid.Row="2" Grid.Column="0"
-                                         Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
-                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
-                        <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition MaxWidth="70" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <TextBox Margin="8,4" Text="{Binding Value, Source={x:Static wc:Settings.ResetDelay}}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Static i18n:Text.Milliseconds}"
-                                       Margin="8,4" />
-                        </Grid>
+                        <StackPanel Margin="4,8" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                            <emoji:TextBlock Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
+                                             Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+                            <Slider Width="150" Value="{Binding DelayTicks}" VerticalAlignment="Center"
+                                    Minimum="0" Maximum="12" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <TextBlock Margin="8,4" Text="{Binding DelayText}"/>
+                        </StackPanel>
 
                         <CheckBox Grid.Row="3" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepOriginalKey}}"

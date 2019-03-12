@@ -489,18 +489,6 @@ namespace WinCompose
         private static readonly
         Dictionary<string, string> m_valid_languages = GetSupportedLanguages();
 
-        private static readonly Dictionary<int, string> m_valid_delays
-         = new Dictionary<int, string>()
-        {
-            { 500,   "500 milliseconds" },
-            { 1000,  "1 second" },
-            { 2000,  "2 seconds" },
-            { 3000,  "3 seconds" },
-            { 5000,  "5 seconds" },
-            { 10000, "10 seconds" },
-            { -1,    "None" },
-        };
-
         private static Dictionary<string, string> GetSupportedLanguages()
         {
             Dictionary<string, string> ret = new Dictionary<string, string>()

@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -11,7 +11,9 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System;
 using System.Windows;
+
 using WinCompose.i18n;
 
 namespace WinCompose
@@ -71,6 +73,31 @@ namespace WinCompose
                 newlist.Add(null);
             newlist[index] = key;
             Settings.ComposeKeys.Value = newlist;
+        }
+
+        public double DelayTicks
+        {
+            get => Settings.ResetDelay.Value == -1 ? 0 : Math.Log(Settings.ResetDelay.Value / 200.0, 1.6);
+            set
+            {
+                Settings.ResetDelay.Value = value == 0 ? -1 : (int)Math.Round(200 * Math.Pow(1.6, value));
+                OnPropertyChanged(nameof(DelayText));
+            }
+        }
+
+        public string DelayText
+        {
+            get
+            {
+                if (Settings.ResetDelay.Value < 0)
+                    return i18n.Text.DelayDisabled;
+
+                // Perform some aesthetic rounding on the displayed value
+                double display_value = Settings.ResetDelay.Value / 1000.0;
+                double round = Math.Pow(10, Math.Floor(Math.Log(display_value / 2, 10)));
+                display_value = Math.Round(display_value / round) * round;
+                return string.Format(i18n.Text.DelaySeconds, display_value);
+            }
         }
 
         public string CloseButtonText

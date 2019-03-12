@@ -425,9 +425,9 @@
     <value>Tweaks</value>
     <comment>The "Tweaks" section in the settings window</comment>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milliseconds)</value>
-    <comment></comment>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} seconds</value>
+    <comment>Format string to display the current reset delay</comment>
   </data>
   <data name="About" xml:space="preserve">
     <value>About</value>
@@ -548,5 +548,9 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
     <comment>The name of the “Tab” key on the keyboard</comment>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>Text to show when the reset delay feature is disabled</comment>
   </data>
 </root>

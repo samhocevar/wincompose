@@ -295,6 +295,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disabled.
+        /// </summary>
+        public static string DelayDisabled {
+            get {
+                return ResourceManager.GetString("DelayDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} seconds.
+        /// </summary>
+        public static string DelaySeconds {
+            get {
+                return ResourceManager.GetString("DelaySeconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable.
         /// </summary>
         public static string Disable {
@@ -714,15 +732,6 @@ namespace WinCompose.i18n {
         public static string License {
             get {
                 return ResourceManager.GetString("License", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (milliseconds).
-        /// </summary>
-        public static string Milliseconds {
-            get {
-                return ResourceManager.GetString("Milliseconds", resourceCulture);
             }
         }
         

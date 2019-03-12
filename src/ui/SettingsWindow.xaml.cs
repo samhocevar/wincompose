@@ -38,11 +38,5 @@ namespace WinCompose
 
         private void ReloadUserDefinedSequences_Click(object sender, RoutedEventArgs e)
             => Settings.LoadSequences();
-
-        private void EditKey0_Click(object sender, RoutedEventArgs e)
-        { }
-
-        private void EditKey1_Click(object sender, RoutedEventArgs e)
-        { }
     }
 }
