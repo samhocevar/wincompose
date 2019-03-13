@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-02-19 14:18+0000\n"
-"Last-Translator: Armand Delessert <armand.delessert@gmail.com>\n"
+"PO-Revision-Date: 2019-03-14 13:11+0000\n"
+"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
 "fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.5-dev\n"
+"X-Generator: Weblate 3.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -102,21 +102,23 @@ msgstr "Entrée"
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Composition"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Utiliser les séquences du projet Xorg"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Utiliser les 3000 séquences de composition du projet XOrg (http://www.x.org)"
+". Ce sont les séquences les plus couramment présentes sur un système Linux."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Utiliser les séquences du projet XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -124,17 +126,21 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"Utiliser les 1000 séquences de composition du projet opensource XCompose "
+"(https://github.com/kragen/xcompose). Il est possible que certaines de ces "
+"séquences interfèrent avec celles du projet Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose sur {0} ({1} séquences)"
+msgstr "Utiliser les séquences d’emoji de WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
+"Utiliser les séquences de composition pour les Emoji fournies par l’auteur "
+"et les contributeurs de WinCompose."
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -157,7 +163,7 @@ msgstr "Réinitialiser"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Page de dons"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
@@ -179,13 +185,15 @@ msgstr "Séquences"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Tenter en inversant les touches"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
+"Tente d’inverser les touches d’une séquence de deux touches. Par exemple, si "
+"Compose E A n’est pas une séquence valide, essayer Compose A E à la place."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -209,7 +217,6 @@ msgid "Advanced Unicode input"
 msgstr "Saisie Unicode avancée"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
@@ -217,7 +224,7 @@ msgid ""
 msgstr ""
 "Autoriser la saisie Unicode pour tous les caractères, même pour ceux sans "
 "définition de séquence de composition. Par exemple, la séquence suivante "
-"donnera le caractère U+1A3F: Compose U 1 A 3 F"
+"donnera le caractère U+1A3F : Compose U 1 A 3 F Entrée"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -278,7 +285,7 @@ msgstr "Fermer"
 #. Copy character or symbol to the clipboard
 #: i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Copier dans le presse-papier"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:329 ID:Emoji
@@ -427,9 +434,8 @@ msgstr "Astuces"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 secondes"
+msgstr "{0} secondes"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -544,20 +550,20 @@ msgstr ""
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Modifier…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Veuillez appuyer sur la touche qui sera votre touche Compose."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Ajouter aux favoris"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Désactiver l’icône de la zone de notification"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -574,17 +580,17 @@ msgstr ""
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "Fin"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset delay feature is disabled
 #: i18n/Text.resx:553 ID:DelayDisabled
 msgid "No delay"
-msgstr ""
+msgstr "Aucun"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
