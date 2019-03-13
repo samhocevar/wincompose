@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -20,13 +20,7 @@ namespace WinCompose
     {
         public static Key SpaceKey = new Key(" ");
 
-        public SequenceViewModel(SequenceDescription desc)
-        {
-            Result = desc.Result;
-            Description = desc.Description;
-            Sequence = desc.Sequence;
-            Utf32 = desc.Utf32;
-        }
+        public SequenceViewModel(SequenceDescription desc) => m_desc = desc;
 
         public CategoryViewModel Category { get; set; }
         public CategoryViewModel EmojiCategory { get; set; }
@@ -34,19 +28,19 @@ namespace WinCompose
         /// <summary>
         /// Return the sequence result in an UTF-16 string
         /// </summary>
-        public string Result { get; private set; }
+        public string Result => m_desc.Result;
 
         /// <summary>
         /// Return the sequence Unicode codepoint. If the sequence contains
         /// zero, two or more characters, return -1.
         /// </summary>
-        public int Utf32 { get; private set; }
+        public int Utf32 => m_desc.Utf32;
 
-        public int UnicodeCategory { get { return Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
+        public int UnicodeCategory => Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0);
 
-        public string Description { get; private set; }
+        public string Description => m_desc.Description;
 
-        public KeySequence Sequence { get; set; }
+        public KeySequence Sequence => m_desc.Sequence;
 
         public bool Match(SearchTokens searchText)
         {
@@ -72,5 +66,7 @@ namespace WinCompose
             }
             return false;
         }
+
+        private SequenceDescription m_desc;
     }
 }

@@ -20,6 +20,7 @@ using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
 
@@ -123,6 +124,8 @@ namespace WinCompose
         public static SettingsEntry<bool> CapsLockCapitalizes { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("tweaks", "allow_injected")]
         public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "keep_icon_visible")]
+        public static SettingsEntry<bool> KeepIconVisible { get; } = new SettingsEntry<bool>(false);
 
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;
@@ -167,20 +170,28 @@ namespace WinCompose
 
         private static void ValidateComposeKeys()
         {
-            // Validate the list of compose keys, ensuring there are only valid keys
-            // and there are no duplicates. Also remove VK.DISABLED from the list
-            // unless there are no valid keys at all.
             KeySequence compose_keys = new KeySequence();
-            foreach (Key k in ComposeKeys.Value ?? compose_keys)
+            if (ComposeKeys.Value?.Count == 0)
             {
-                bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
-                                 || m_valid_compose_keys.Contains(k);
-                if (is_valid && k.VirtualKey != VK.DISABLED && !compose_keys.Contains(k))
-                    compose_keys.Add(k);
+                // The default compose key for the first time WinCompose is launched
+                compose_keys.Add(m_default_compose_key);
             }
+            else
+            {
+                // Validate the list of compose keys, ensuring there are only valid keys
+                // and there are no duplicates. Also remove VK.DISABLED from the list
+                // but re-add it if there are no valid keys at all.
+                foreach (Key k in ComposeKeys.Value)
+                {
+                    bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
+                                     || m_valid_compose_keys.Contains(k);
+                    if (is_valid && k.VirtualKey != VK.DISABLED && !compose_keys.Contains(k))
+                        compose_keys.Add(k);
+                }
 
-            if (compose_keys.Count == 0)
-                compose_keys.Add(new Key(VK.DISABLED));
+                if (compose_keys.Count == 0)
+                    compose_keys.Add(new Key(VK.DISABLED));
+            }
             ComposeKeys.Value = compose_keys;
         }
 
@@ -283,13 +294,14 @@ namespace WinCompose
             if (!File.Exists(user_file))
             {
                 string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt");
+                string default_file = Path.Combine(GetDataDir(), "DefaultUserSequences.txt");
                 if (File.Exists(alt_file))
                 {
                     user_file = alt_file;
                 }
-                else
+                else if (File.Exists(default_file))
                 {
-                    var text = File.ReadAllText(Path.Combine(GetDataDir(), "DefaultUserSequences.txt"), Encoding.UTF8);
+                    var text = File.ReadAllText(default_file);
                     var replacedText = text.Replace("%DataDir%", GetDataDir());
                     File.WriteAllText(user_file, replacedText, Encoding.UTF8);
                 }
@@ -322,9 +334,41 @@ namespace WinCompose
         public static int SequenceCount => m_sequences.Count;
 
         public static SequenceTree GetSequenceList() => m_sequences;
+
         public static bool IsValidPrefix(KeySequence sequence, bool ignore_case) => m_sequences.IsValidPrefix(sequence, ignore_case);
         public static bool IsValidSequence(KeySequence sequence, bool ignore_case) => m_sequences.IsValidSequence(sequence, ignore_case);
         public static string GetSequenceResult(KeySequence sequence, bool ignore_case) => m_sequences.GetSequenceResult(sequence, ignore_case);
+
+        public static bool IsValidGenericPrefix(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return false;
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
+                    && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
+        }
+
+        public static bool IsValidGenericSequence(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return false;
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
+                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
+        }
+
+        public static string GetGenericSequenceResult(KeySequence sequence)
+        {
+            if (!UnicodeInput.Value)
+                return "";
+            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
+            if (!m.Success)
+                return "";
+            int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
+            return char.ConvertFromUtf32(codepoint);
+        }
+
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
         private static void LoadEntry(SettingsEntry entry, string section, string key)

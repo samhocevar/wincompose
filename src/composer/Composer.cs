@@ -425,25 +425,19 @@ static class Composer
         m_sequence.Add(key);
 
         // We try the following, in this order:
-        //  1. if m_sequence + key is a valid prefix, it means the user
+        //  1. if m_sequence + key is a valid sequence, we don't go further,
+        //     we append key to m_sequence and output the result.
+        //  2. if m_sequence + key is a valid prefix, it means the user
         //     could type other characters to build a longer sequence,
         //     so just append key to m_sequence.
-        //  2. if m_sequence + key is a valid sequence, we can't go further,
-        //     we append key to m_sequence and output the result.
-        //  3. if m_sequence is a valid sequence, the user didn't type a
-        //     valid key, so output the m_sequence result _and_ process key.
-        //  4. (optionally) try again 1. 2. and 3. ignoring case.
-        //  5. none of the characters make sense, output all of them as if
+        //  3. if m_sequence + key is a valid generic prefix, continue as well.
+        //  4. if m_sequence + key is a valid sequence, send it.
+        //  5. (optionally) try again 1. and 2. ignoring case.
+        //  6. none of the characters make sense, output all of them as if
         //     the user didn't press Compose.
         foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
                               new bool[]{ false, true } : new bool[]{ false })
         {
-            if (Settings.IsValidPrefix(m_sequence, ignore_case))
-            {
-                // Still a valid prefix, continue building sequence
-                return true;
-            }
-
             if (Settings.IsValidSequence(m_sequence, ignore_case))
             {
                 string tosend = Settings.GetSequenceResult(m_sequence,
@@ -455,19 +449,29 @@ static class Composer
                 return true;
             }
 
-            // Some code duplication with the above block, but this way
-            // what we are doing is more clear.
-            if (Settings.IsValidSequence(old_sequence, ignore_case))
+            if (Settings.IsValidPrefix(m_sequence, ignore_case))
             {
-                string tosend = Settings.GetSequenceResult(old_sequence,
-                                                           ignore_case);
-                Stats.AddSequence(old_sequence);
-                Log.Debug("Sending previously valid sequence {0}", tosend);
-                ResetSequence();
-                SendString(tosend);
-                return false;
+                // Still a valid prefix, continue building sequence
+                return true;
             }
 
+            if (!ignore_case)
+            {
+                if (Settings.IsValidGenericPrefix(m_sequence))
+                    return true;
+
+                if (Settings.IsValidGenericSequence(m_sequence))
+                {
+                    string tosend = Settings.GetGenericSequenceResult(m_sequence);
+                    Stats.AddSequence(m_sequence);
+                    Log.Debug("Valid generic sequence! Sending {0}", tosend);
+                    ResetSequence();
+                    SendString(tosend);
+                    return true;
+                }
+            }
+
+            // Try to swap characters if the corresponding option is set
             if (m_sequence.Count == 2 && Settings.SwapOnInvalid.Value)
             {
                 var other_sequence = new KeySequence() { m_sequence[1], m_sequence[0] };

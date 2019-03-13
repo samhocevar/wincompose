@@ -95,6 +95,9 @@
     <Compile Include="ui\DebugWindow.xaml.cs">
       <DependentUpon>DebugWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ui\KeySelector.xaml.cs">
+      <DependentUpon>KeySelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ui\SysTrayIcon.xaml.cs">
       <DependentUpon>SysTrayIcon.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ui\DebugWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ui\KeySelector.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -417,8 +417,8 @@ msgstr "Inser"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
-msgstr "Tester la frappe :"
+msgid "Test Typing"
+msgstr "Tester la frappe"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks
@@ -527,6 +527,16 @@ msgstr ""
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
+msgstr ""
+
+#: i18n/Text.resx:513 ID:KeepIconVisible
+msgid "Try to keep SysTray icon always visible"
+msgstr ""
+
+#: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
+msgid ""
+"By default, the icon will disappear from the system tray after a short "
+"while. This option attempts to keep it always visible."
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)

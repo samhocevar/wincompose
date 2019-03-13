@@ -42,6 +42,7 @@ public partial class Key
         { VK.END,     "End" },
         { VK.BACK,    "⌫" },
         { VK.DELETE,  "␡" },
+        { VK.TAB,     "↹" },
     };
 
     /// <summary>
@@ -60,6 +61,7 @@ public partial class Key
         { "End",       VK.END },
         { "BackSpace", VK.BACK },
         { "Delete",    VK.DELETE },
+        { "Tab",       VK.TAB },
     };
 
     /// <summary>

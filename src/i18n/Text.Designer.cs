@@ -403,6 +403,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Try to keep SysTray icon always visible.
+        /// </summary>
+        public static string KeepIconVisible {
+            get {
+                return ResourceManager.GetString("KeepIconVisible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By default, the icon will disappear from the system tray after a short while. This option attempts to keep it always visible..
+        /// </summary>
+        public static string KeepIconVisibleToolTip {
+            get {
+                return ResourceManager.GetString("KeepIconVisibleToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maintain original compose key behaviour.
         /// </summary>
         public static string KeepOriginalKey {
@@ -763,7 +781,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Test Typing:.
+        ///   Looks up a localized string similar to Test Typing.
         /// </summary>
         public static string TestTyping {
             get {

@@ -35,12 +35,8 @@ namespace WinCompose
 
         protected virtual void OnPropertyChanged(params string[] propertyNames)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                foreach (var propertyName in propertyNames)
-                    handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            foreach (var propertyName in propertyNames)
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void ClearSearchClicked(object sender, RoutedEventArgs e)

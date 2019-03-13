@@ -12,7 +12,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -77,9 +76,9 @@ public class SequenceTree : SequenceNode
     }
 
     private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
-    private static Regex m_r1 = new Regex(@"^\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
-        //                                      ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
-        //                                       keys               result                 desc
+    private static Regex m_r1 = new Regex(@"^\s*(<[^:]*>)\s*:\s*(""([^""]|\\"")*""|[A-Za-z0-9_]*)[^#]*#?\s*(.*)");
+        //                                      ^^^^^^^^^        ^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^           ^^^^
+        //                                       keys                result 1         result 2             desc
     private static Regex m_r2 = new Regex(@"[\s<>]+");
 
     private void ParseRule(string line)
@@ -129,26 +128,39 @@ public class SequenceTree : SequenceNode
             seq.Add(k);
         }
 
-        // Only bother with sequences of length >= 3 that start with <Multi_key>
-        if (seq.Count < 3 || seq[0].VirtualKey != VK.COMPOSE)
+        // Only bother with sequences of length >= 2 that start with <Multi_key>
+        if (seq.Count < 2 || seq[0].VirtualKey != VK.COMPOSE)
             return;
 
         string result = m1.Groups[2].Captures[0].Value;
-        string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
-
-        // Unescape \n \\ \" and more in the string output
-        result = Regex.Replace(result, @"\\.", m =>
+        if (result[0] == '"')
         {
-            switch (m.Value)
+            result = result.Trim('"');
+            // Unescape \n \\ \" and more in the string output
+            result = Regex.Replace(result, @"\\.", m =>
             {
-                // These sequences are converted to their known value
-                case @"\n": return "\n";
-                case @"\r": return "\r";
-                case @"\t": return "\t";
-                // For all other sequences, just strip the leading \
-                default: return m.Value.Substring(1);
+                switch (m.Value)
+                {
+                    // These sequences are converted to their known value
+                    case @"\n": return "\n";
+                    case @"\r": return "\r";
+                    case @"\t": return "\t";
+                    // For all other sequences, just strip the leading \
+                    default: return m.Value.Substring(1);
+                }
+            });
+        }
+        else
+        {
+            var result_key = Key.FromKeySym(result);
+            if (result_key == null)
+            {
+                Log.Debug($"Unknown key name {result}, ignoring sequence");
+                return;
             }
-        });
+            result = result_key.ToString();
+        }
+        string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
 
         // Try to translate the description if appropriate
         int utf32 = StringToCodepoint(result);
@@ -214,19 +226,8 @@ public class SequenceNode
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if the sequence prefix exists in our tree
-        if (GetSubtree(sequence, flags) != null)
-            return true;
-
-        // Otherwise, check for generic Unicode entry prefix
-        if (Settings.UnicodeInput.Value)
-        {
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
-                && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
-        }
-
-        return false;
+        // Check if the sequence prefix exists in our tree
+        return GetSubtree(sequence, flags) != null;
     }
 
     public bool IsValidSequence(KeySequence sequence, bool ignore_case)
@@ -235,19 +236,8 @@ public class SequenceNode
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if the sequence exists in our tree
-        if (GetSubtree(sequence, flags) != null)
-            return true;
-
-        // Otherwise, check for generic Unicode sequence
-        if (Settings.UnicodeInput.Value)
-        {
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
-                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
-        }
-
-        return false;
+        // Check if the sequence exists in our tree
+        return GetSubtree(sequence, flags) != null;
     }
 
     public string GetSequenceResult(KeySequence sequence, bool ignore_case)
@@ -256,22 +246,10 @@ public class SequenceNode
         if (ignore_case)
             flags |= Search.IgnoreCase;
 
-        // First check if the sequence exists in our tree
+        // Check if the sequence exists in our tree
         SequenceNode subtree = GetSubtree(sequence, flags);
         if (subtree != null && subtree.m_result != "")
             return subtree.m_result;
-
-        // Otherwise, check for a generic Unicode sequence
-        if (Settings.UnicodeInput.Value)
-        {
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
-            if (m.Success)
-            {
-                int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
-                return char.ConvertFromUtf32(codepoint);
-            }
-        }
 
         return "";
     }
