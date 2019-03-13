@@ -550,7 +550,7 @@
     <comment>The name of the “Tab” key on the keyboard</comment>
   </data>
   <data name="DelayDisabled" xml:space="preserve">
-    <value>Disabled</value>
-    <comment>Text to show when the reset delay feature is disabled</comment>
+    <value>No delay</value>
+    <comment>Text to show instead of a value in seconds when the reset delay feature is disabled</comment>
   </data>
 </root>

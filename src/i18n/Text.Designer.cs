@@ -19,7 +19,7 @@ namespace WinCompose.i18n {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Text {
@@ -295,7 +295,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disabled.
+        ///   Looks up a localized string similar to No delay.
         /// </summary>
         public static string DelayDisabled {
             get {
@@ -916,7 +916,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F.
+        ///   Looks up a localized string similar to Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter.
         /// </summary>
         public static string UnicodeInputToolTip {
             get {
