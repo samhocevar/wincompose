@@ -126,7 +126,8 @@
                     </RadioButton>
                 </StackPanel>
             </GroupBox>
-            <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
+            <ListBox Margin="8" ItemsSource="{Binding Categories}" SelectionMode="Extended"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="Padding" Value="4"/>
@@ -159,11 +160,20 @@
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
             <ListBox Margin="8" ItemsSource="{Binding Sequences}" Name="ListBox"
+                     AlternationCount="2"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      VirtualizingStackPanel.VirtualizationMode="Recycling">
                 <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <Style.Triggers>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                <Setter Property="Background" Value="#0cf39611"></Setter>
+                            </Trigger>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                <Setter Property="Background" Value="#08000000"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                         <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
                     </Style>
