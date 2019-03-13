@@ -31,7 +31,7 @@ namespace WinCompose
                 Num = num;
 
             // Interpret token as hexadecimal number or Unicode codepoint, if applicable
-            if (token.StartsWith("u+") || token.StartsWith("U+"))
+            if (token.ToLower().StartsWith("u+") || token.ToLower().StartsWith("0x"))
                 token = token.Substring(2);
             if (int.TryParse(token, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var hexnum)
                  && hexnum != Num)
