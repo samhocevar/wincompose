@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-08-27 13:44+0000\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"PO-Revision-Date: 2018-08-29 18:14+0000\n"
+"Last-Translator: Alexander Emil Haarlev Schmidt "
+"<Alexander.Emil.Haarlev.Schmidt@gmail.com>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/wincompose/master/"
 "da/>\n"
 "Language: da\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -82,12 +83,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Conversion"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Non-conversion"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
