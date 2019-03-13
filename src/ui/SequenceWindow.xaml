@@ -33,6 +33,9 @@
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
         <BitmapImage x:Key="SpaceKeyImage" UriSource="../res/key_space.png"/>
 
+        <emoji:TextBlock Text="📋" x:Key="CopyEmoji" FontSize="12"/>
+        <emoji:TextBlock Text="⭐" x:Key="FavoriteEmoji" FontSize="12"/>
+
         <!-- This style can be applied to a TextBlock to display text with a smaller size -->
         <Style x:Key="SmallTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
             <Setter Property="LayoutTransform">
@@ -73,6 +76,13 @@
                 </MultiTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
+
+        <ContextMenu x:Key="ContextMenu">
+            <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}" Icon="{StaticResource CopyEmoji}"
+                      Click="CopyToClipboardClicked"/>
+            <MenuItem Header="{x:Static i18n:Text.AddToFavorites}" Icon="{StaticResource FavoriteEmoji}"
+                      Click="AddToFavoritesClicked"/>
+        </ContextMenu>
     </Window.Resources>
 
     <Grid Margin="8">
@@ -148,13 +158,14 @@
 
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
-            <ListBox Margin="8" ItemsSource="{Binding Sequences}"
+            <ListBox Margin="8" ItemsSource="{Binding Sequences}" Name="ListBox"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      VirtualizingStackPanel.VirtualizationMode="Recycling">
                 <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
                     </Style>
                 </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>

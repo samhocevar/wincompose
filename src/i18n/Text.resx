@@ -321,9 +321,9 @@
     <value>Close</value>
     <comment>Close the settings window</comment>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Copy Character</value>
-    <comment>Copy character to the clipboard</comment>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copy to clipboard</value>
+    <comment>Copy character or symbol to the clipboard</comment>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
@@ -515,6 +515,26 @@
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
     <value>By default, the icon will disappear from the system tray after a short while. This option attempts to keep it always visible.</value>
+    <comment></comment>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Change…</value>
+    <comment>The user can click on this button to change the current compose key.</comment>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Please press a key to use as your compose key.</value>
+    <comment></comment>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Add to favorites</value>
+    <comment>Add sequence to the list of favorites.</comment>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Disable the system tray icon</value>
+    <comment></comment>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>If enabled, WinCompose will no longer display an icon in the system tray. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu.</value>
     <comment></comment>
   </data>
 </root>

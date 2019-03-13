@@ -234,6 +234,24 @@ public static class HWND
     public static IntPtr BROADCAST = (IntPtr)0xffff;
 }
 
+/// <summary>
+/// Represents possible dialogbox command id values by the MB_GetString function.
+/// </summary>
+internal enum DialogBoxCommandID : int
+{
+    IDOK       = 0,
+    IDCANCEL   = 1,
+    IDABORT    = 2,
+    IDRETRY    = 3,
+    IDIGNORE   = 4,
+    IDYES      = 5,
+    IDNO       = 6,
+    IDCLOSE    = 7,
+    IDHELP     = 8,
+    IDTRYAGAIN = 9,
+    IDCONTINUE = 10,
+}
+
 [Flags]
 internal enum LLKHF : uint
 {
@@ -396,6 +414,13 @@ internal enum ASSOCSTR : int
     APPPUBLISHER,
     APPICONREFERENCE,
     MAX,
+};
+
+[Flags]
+internal enum MSGFLT : uint
+{
+    ADD = 1,
+    REMOVE = 2,
 };
 
 }

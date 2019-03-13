@@ -157,6 +157,14 @@ static class Composer
             }
         }
 
+        // If we are being used to capture a key, send the resulting key
+        if (Captured != null)
+        {
+            if (!is_keydown)
+                Captured.Invoke(key);
+            return true;
+        }
+
         // Update statistics
         if (is_keydown)
         {
@@ -664,6 +672,12 @@ static class Composer
     }
 
     public static event Action Changed;
+
+    /// <summary>
+    /// Allows other parts of the program to capture a key.
+    /// TODO: make this work with key combinations, too!
+    /// </summary>
+    public static event Action<Key> Captured;
 
     /// <summary>
     /// Toggle the disabled state

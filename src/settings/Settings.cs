@@ -126,6 +126,8 @@ namespace WinCompose
         public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("tweaks", "keep_icon_visible")]
         public static SettingsEntry<bool> KeepIconVisible { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "disable_icon")]
+        public static SettingsEntry<bool> DisableIcon { get; } = new SettingsEntry<bool>(false);
 
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;
@@ -262,8 +264,6 @@ namespace WinCompose
                     SaveEntry(entry.ToString(), attr.Section, attr.Key);
                 }
             }
-
-            SaveEntry(m_delay.ToString(), "composing", "reset_delay");
         }
 
         public static void LoadSequences()
@@ -476,7 +476,7 @@ namespace WinCompose
            new Key(VK.CONVERT),
            new Key(VK.NONCONVERT),
            new Key(VK.INSERT),
-           new Key(VK.PRINT),
+           new Key(VK.SNAPSHOT),
            new Key(VK.SCROLL),
            new Key("`"),
         };
@@ -497,8 +497,6 @@ namespace WinCompose
             { 10000, "10 seconds" },
             { -1,    "None" },
         };
-
-        private static int m_delay = -1;
 
         private static Dictionary<string, string> GetSupportedLanguages()
         {

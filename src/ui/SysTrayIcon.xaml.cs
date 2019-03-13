@@ -56,12 +56,13 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent += OnDisableEvent;
             Application.RemoteControl.ExitEvent += OnExitEvent;
+            Application.RemoteControl.SettingsEvent += OnSettingsEvent;
+            Application.RemoteControl.SequencesEvent += OnSequencesEvent;
             Application.RemoteControl.BroadcastDisableEvent();
 
             WinForms.Application.EnableVisualStyles();
             WinForms.Application.SetCompatibleTextRenderingDefault(false);
             m_icon = new WinForms.NotifyIcon();
-            m_icon.Visible = true;
             m_icon.Click += NotifyiconClicked;
             m_icon.DoubleClick += NotifyiconDoubleclicked;
 
@@ -69,6 +70,7 @@ namespace WinCompose
             if (Settings.KeepIconVisible.Value)
                 SysTray.AlwaysShow("wincompose[.]exe");
 
+            Settings.DisableIcon.ValueChanged += SysTrayUpdateCallback;
             Composer.Changed += SysTrayUpdateCallback;
             Updater.Changed += SysTrayUpdateCallback;
             SysTrayUpdateCallback();
@@ -91,6 +93,8 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent -= OnDisableEvent;
             Application.RemoteControl.ExitEvent -= OnExitEvent;
+            Application.RemoteControl.SettingsEvent -= OnSettingsEvent;
+            Application.RemoteControl.SequencesEvent -= OnSequencesEvent;
 
             if (m_icon != null)
             {
@@ -229,6 +233,7 @@ namespace WinCompose
 
         private void SysTrayUpdateCallback()
         {
+            m_icon.Visible = !Settings.DisableIcon.Value;
             m_icon.Icon = GetCurrentIcon();
 
             // XXX: we cannot directly set m_icon.Text because it has an
@@ -304,6 +309,16 @@ namespace WinCompose
         private void OnExitEvent()
         {
             Application.Current.Shutdown();
+        }
+
+        private void OnSettingsEvent()
+        {
+            OnMenuItemClicked(MenuCommand.ShowOptions);
+        }
+
+        private void OnSequencesEvent()
+        {
+            OnMenuItemClicked(MenuCommand.ShowSequences);
         }
     }
 }

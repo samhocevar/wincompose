@@ -79,6 +79,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add to favorites.
+        /// </summary>
+        public static string AddToFavorites {
+            get {
+                return ResourceManager.GetString("AddToFavorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow Injected Keys.
         /// </summary>
         public static string AllowInjected {
@@ -160,6 +169,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please press a key to use as your compose key..
+        /// </summary>
+        public static string CaptureComposeKey {
+            get {
+                return ResourceManager.GetString("CaptureComposeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fall back to case insensitive matches.
         /// </summary>
         public static string CaseInsensitive {
@@ -183,6 +201,15 @@ namespace WinCompose.i18n {
         public static string Categories {
             get {
                 return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change….
+        /// </summary>
+        public static string ChangeComposeKey {
+            get {
+                return ResourceManager.GetString("ChangeComposeKey", resourceCulture);
             }
         }
         
@@ -250,6 +277,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy to clipboard.
+        /// </summary>
+        public static string CopyToClipboard {
+            get {
+                return ResourceManager.GetString("CopyToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Debug Window.
         /// </summary>
         public static string DebugWindow {
@@ -273,6 +309,24 @@ namespace WinCompose.i18n {
         public static string DisabledToolTip {
             get {
                 return ResourceManager.GetString("DisabledToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable the system tray icon.
+        /// </summary>
+        public static string DisableIcon {
+            get {
+                return ResourceManager.GetString("DisableIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If enabled, WinCompose will stop displaying an icon in the system tray. The only way to interact with WinCompose will be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu..
+        /// </summary>
+        public static string DisableIconToolTip {
+            get {
+                return ResourceManager.GetString("DisableIconToolTip", resourceCulture);
             }
         }
         
@@ -651,15 +705,6 @@ namespace WinCompose.i18n {
         public static string NeedRestart {
             get {
                 return ResourceManager.GetString("NeedRestart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Copy Character.
-        /// </summary>
-        public static string Obsolete050 {
-            get {
-                return ResourceManager.GetString("Obsolete050", resourceCulture);
             }
         }
         

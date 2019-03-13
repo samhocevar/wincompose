@@ -16,11 +16,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
         xmlns:wc="clr-namespace:WinCompose"
-        WindowStyle="None"
-        WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ShowInTaskbar="False" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Topmost="True" WindowState="Maximized" ResizeMode="NoResize"
         Icon="/WinCompose;component/res/key_compose.png">
-    <DockPanel LastChildFill="True">
-        <TextBlock Text="Press any keys"/>
-    </DockPanel>
+    <Window.Background>
+        <SolidColorBrush Color="Black" Opacity="0.8"/>
+    </Window.Background>
+    <Border BorderBrush="Black" BorderThickness="2" Padding="16" Background="White"
+            VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Margin="16" Text="{x:Static i18n:Text.CaptureComposeKey}"/>
+            <DockPanel LastChildFill="True">
+                <Button DockPanel.Dock="Right" Padding="16,4" Click="CancelClicked"
+                        Content="{x:Static wc:KeySelector.CancelButtonText}"/>
+                <StackPanel/>
+            </DockPanel>
+        </StackPanel>
+    </Border>
 </wc:BaseWindow>

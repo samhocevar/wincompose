@@ -1,12 +1,15 @@
 ﻿#define NAME "WinCompose"
+#define AUTHOR "Sam Hocevar"
 #define EXE "wincompose.exe"
+#define SEQUENCES_EXE "wincompose-sequences.exe"
+#define SETTINGS_EXE "wincompose-settings.exe"
 #define VERSION GetEnv('VERSION')
 #define CONFIG GetEnv('CONFIG')
 
 [Setup]
 AppName = {#NAME}
 AppVersion = {#VERSION}
-AppPublisher = Sam Hocevar
+AppPublisher = {#AUTHOR}
 AppPublisherURL = http://sam.hocevar.net/
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 ArchitecturesInstallIn64BitMode = x64
@@ -29,6 +32,8 @@ Source: "bin\{#CONFIG}\trampoline.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
 Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\{#SEQUENCES_EXE}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\{#SETTINGS_EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -101,17 +106,33 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
 
 [Icons]
-Name: "{userstartup}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
 ; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
-Name: "{group}\Uninstall"; Filename: "{uninstallexe}"; IconFilename: "{app}\{#EXE}"; IconIndex: 1
-Name: "{group}\{#NAME}"; Filename: "{app}\{#EXE}"; WorkingDir: "{app}"
+Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}"; \
+    IconFilename: "{app}\{#EXE}"; IconIndex: 1
+Name: "{group}\{#NAME}"; Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; \
+    IconFilename: "{app}\{#EXE}"; AfterInstall: set_elevation_bit('{group}\{#NAME}.lnk')
+Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#SEQUENCES_EXE}"; WorkingDir: "{app}"
+Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#SETTINGS_EXE}"; WorkingDir: "{app}"
 
 [Run]
-Filename: "{app}\{#EXE}"; Flags: nowait
+; After installation is finished, add an event-triggered scheduled task, then
+; try to re-add the same task with elevated privileges and various tweaks that
+; schtasks.exe does not support.
+; This should allow to run WinCompose from the startup menu without triggering
+; the UAC window. Running with high privileges is necessary to inject keyboard
+; events into other high level processes, such as cmd.exe run as Administrator.
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /tr ""\""{app}\{#EXE}\"" /fromtask"""; Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; BeforeInstall: fix_scheduled_task('{sys}\Tasks\{#NAME}'); Flags: runhidden
+; Launch the task just after installation
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; Flags: runhidden
 
 [InstallDelete]
 ; We used to be installed in c:\Program Files (x86)
 Type: filesandordirs; Name: "{pf32}\{#NAME}"
+; We used to call our uninstaller shortcut “Uninstall”
+Type: files; Name: "{group}\Uninstall.lnk"
+; We used to add ourselves to user startup
+Type: files; Name: "{userstartup}\{#NAME}.lnk"
 ; We moved translations into a separate language.dll project
 Type: files; Name: "{app}\am\wincompose.resources.dll"
 Type: files; Name: "{app}\be\wincompose.resources.dll"
@@ -144,6 +165,10 @@ Type: files; Name: "{app}\sr\wincompose.resources.dll"
 Type: files; Name: "{app}\sv\wincompose.resources.dll"
 Type: files; Name: "{app}\zh-CHS\wincompose.resources.dll"
 Type: files; Name: "{app}\zh-CHT\wincompose.resources.dll"
+; For some reason this was present on my computer, with a .suo file in
+; it (dated from Sep 2017). I don’t know whether any real users are
+; affected, but let’s err on the side of caution.
+Type: filesandordirs; Name: "{app}\.vs"
 ; Legacy stuff that we need to remove
 Type: files; Name: "{app}\rules\Xcompose.txt"
 Type: files; Name: "{app}\rules\Xorg.txt"
@@ -165,6 +190,8 @@ Type: dirifempty; Name: "{app}\po"
 
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#EXE}"; Flags: runhidden
+; Use "nowait" because /f does not exist on XP / 2003
+Filename: "{sys}\schtasks"; Parameters: "/delete /f /tn ""{#NAME}"""; Flags: runhidden nowait
 
 [UninstallDelete]
 Type: dirifempty; Name: "{app}\rules"
