@@ -222,8 +222,8 @@ msgid ""
 "Compose U 1 A 3 F Enter"
 msgstr ""
 "Skru på Unicode-inndata for alle tegn, selv dem uten definert "
-"sammensettingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet "
-"U+1A3F: Sammensettingstast U 1 A 3 F"
+"sammensettingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet U"
+"+1A3F: Sammensettingstast U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -420,7 +420,8 @@ msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
-msgid "Test Typing:"
+#, fuzzy
+msgid "Test Typing"
 msgstr "Testskriving:"
 
 #. The "Tweaks" section in the settings window
@@ -747,7 +748,7 @@ msgid "Separator, Space"
 msgstr "Inndeler, mellomrom"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:136
+#: installer.pas:174
 #, fuzzy
 msgid "Prerequisites"
 msgstr "Forutsetninger"
@@ -769,7 +770,7 @@ msgstr ""
 "ser ut til å være installert. Følgende handling kan løse problemet:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:145
+#: installer.pas:183
 #, fuzzy
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Last ned og installer .NET-rammeverket 3.5 Service Pack 1"

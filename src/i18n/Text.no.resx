@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Esc</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Konvertering</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Ikke-konvertering</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -183,20 +189,80 @@
   <data name="Search" xml:space="preserve">
     <value>Søkefilter:</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Forsinkelse</value>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Sammensettingsstast:</value>
+  </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Velg knappen å bruke som sammensettingstast.</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Avansert Unicode-inndata</value>
   </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Skru på Unicode-inndata for alle tegn, selv dem uten definert sammensettingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet U+1A3F: Sammensettingstast U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Ved ugyldige sekvenser</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Fall tilbake til versalinsensitive treff</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Hvis innskrevet sekvens ikke fines, mendet er mer en én som kun skiller seg i versalbruk, korriger den automatisk.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Forkast alle skrevne tegn</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Hvis innskrevet sekvens ikke finnes, forkast alle innskrevne tegn. Forvalgt oppførsel er å skrive ut alle tegnene som om sammensettingstasten ikke hadde blitt brukt.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Utbasuner pip</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Hvis innskrevet sekvens ikke finnes, utbasuner systemlyd.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Grensesnittspråk:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Velg språket brukt i WinCompose-grensesnittet. Som forvalg brukes systemspråk.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Lukk</value>
   </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
   <data name="Apply" xml:space="preserve">
     <value>Legg til</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Behold opprinnelig oppførsel for sammensettingstast</value>
+  </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Gir WinCompose beskjed om å prøve å beholde den opprinelige tastens oppførsel. For eksempel, vil Alt+Tab-snarveien fungere selv om Alt brukes som sammensettingstast.</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Kontorprogrammer endrer noen ganger dokumentskriften på direkten når noen av Unicode-tegnene skrives inn. Denne funksjonen setter inn et usynlig tegn etter Unicode-tegnet for å unngå problemet.</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emuler Caps Lock ved bruk av begge Shift-tastene</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Hvis Caps Lock brukes som sammensettingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Denne funksjonen tillater å skru på Caps Lock ved å trykke begge Shift-tastene samtidig.</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift-tasten skrur av Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Hvis Caps Lock brukes som sammensettingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Funksjonen tillater å skru av Caps Lock ved å trykke på Shift-tasten.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock gjør alltid om bokstaver til store versaler</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Når Caps Lock er på, vil innskriving av bokstav med akksent, som &quot;é&quot; alltid resultere i motsvarende bokstav i stor versal, i dette fall &quot;É&quot;.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Kategorier</value>
@@ -204,8 +270,14 @@
   <data name="InSelectedCategories" xml:space="preserve">
     <value>I valgte kategorier</value>
   </data>
+  <data name="Options" xml:space="preserve">
+    <value>Innstillinger — WinCompose</value>
+  </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Alternativ…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} på {0} ({1} sekvenser)</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Hovedinnstillinger</value>
@@ -213,11 +285,29 @@
   <data name="Behavior" xml:space="preserve">
     <value>Oppførsel</value>
   </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Sekvenser — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Brukerdefinerte makroer</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose er avskrudd</value>
+  </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Insert</value>
   </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Justeringer</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Last ned WinCompose {0}</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Om WinCompose</value>
   </data>
   <data name="Programming" xml:space="preserve">
     <value>Programmering av</value>
@@ -231,16 +321,25 @@
   <data name="License" xml:space="preserve">
     <value>Lisens</value>
   </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose må startes på ny før endringer kan tre i effekt.</value>
+  </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Rapporter en feil</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hjelp</value>
   </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Brukerdefinerte sekvenser</value>
+  </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
     <value>Rediger</value>
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Last inn igjen</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Prt Scrn</value>
   </data>
 </root>

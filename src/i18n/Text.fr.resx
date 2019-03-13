@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutodetectLanguage" xml:space="preserve">
+    <value>Détecter automatiquement</value>
+  </data>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Alt gauche</value>
+  </data>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Alt droit</value>
+  </data>
   <data name="KeyLControl" xml:space="preserve">
     <value>Ctrl gauche</value>
   </data>
@@ -177,6 +186,9 @@
   <data name="Exit" xml:space="preserve">
     <value>Quitter</value>
   </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Caractères Unicode</value>
+  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Séquences</value>
   </data>
@@ -224,6 +236,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Appliquer</value>
@@ -347,5 +362,8 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Impr. écran</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Désactivé</value>
   </data>
 </root>

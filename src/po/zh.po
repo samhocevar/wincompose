@@ -142,7 +142,7 @@ msgid ""
 msgstr ""
 
 #. Menu entry to show the debug window
-#: i18n/Text.resx:213 ID:DebugWindow
+#: i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
 msgstr "Debug 窗口"
 

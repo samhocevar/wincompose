@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Format" xml:space="preserve">
+    <value>Andre, Format</value>
+  </data>
+  <data name="OtherNotAssigned" xml:space="preserve">
+    <value>Andre, ikke tildelt</value>
+  </data>
+  <data name="PrivateUse" xml:space="preserve">
+    <value>Annet, privat bruk</value>
+  </data>
+  <data name="Surrogate" xml:space="preserve">
+    <value>Annet, surrogat</value>
+  </data>
+  <data name="LowercaseLetter" xml:space="preserve">
+    <value>Bokstav, liten</value>
+  </data>
+  <data name="ModifierLetter" xml:space="preserve">
+    <value>Bokstav, modifikator</value>
+  </data>
+  <data name="OtherLetter" xml:space="preserve">
+    <value>Bokstav, annet</value>
+  </data>
+  <data name="UppercaseLetter" xml:space="preserve">
+    <value>Bokstav, stor</value>
+  </data>
+  <data name="SpacingCombiningMark" xml:space="preserve">
+    <value>Merke, mellomromskombinasjon</value>
+  </data>
+  <data name="DecimalDigitNumber" xml:space="preserve">
+    <value>Tall, desimalsiffer</value>
+  </data>
+  <data name="LetterNumber" xml:space="preserve">
+    <value>Tall, bokstav</value>
+  </data>
+  <data name="OtherNumber" xml:space="preserve">
+    <value>Tall, annet</value>
+  </data>
+  <data name="ConnectorPunctuation" xml:space="preserve">
+    <value>Skilletegn, bindestrek</value>
+  </data>
+  <data name="DashPunctuation" xml:space="preserve">
+    <value>Tegnsetting, strek</value>
+  </data>
+  <data name="ClosePunctuation" xml:space="preserve">
+    <value>Tegnsetting, lukking</value>
+  </data>
+  <data name="FinalQuotePunctuation" xml:space="preserve">
+    <value>Tegnsetting, sluttsitat</value>
+  </data>
+  <data name="InitialQuotePunctuation" xml:space="preserve">
+    <value>Tegnsetting, sitatåpning</value>
+  </data>
+  <data name="OtherPunctuation" xml:space="preserve">
+    <value>Tegnsetting, annet</value>
+  </data>
+  <data name="OpenPunctuation" xml:space="preserve">
+    <value>Tegnsetting, åpning</value>
+  </data>
+  <data name="CurrencySymbol" xml:space="preserve">
+    <value>Symbol. valuta</value>
+  </data>
+  <data name="ModifierSymbol" xml:space="preserve">
+    <value>Symbol, modifikator</value>
+  </data>
+  <data name="MathSymbol" xml:space="preserve">
+    <value>Symbol, matematikk</value>
+  </data>
+  <data name="OtherSymbol" xml:space="preserve">
+    <value>Symbol, annet</value>
+  </data>
+  <data name="LineSeparator" xml:space="preserve">
+    <value>Inndeler, linje</value>
+  </data>
+  <data name="ParagraphSeparator" xml:space="preserve">
+    <value>Inndeler, paragraf</value>
+  </data>
+  <data name="SpaceSeparator" xml:space="preserve">
+    <value>Inndeler, mellomrom</value>
+  </data>
 </root>

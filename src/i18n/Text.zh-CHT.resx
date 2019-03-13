@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>自動偵測</value>
+    <value>自动检测</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>左 Alt</value>
@@ -148,19 +148,28 @@
     <value>Pause</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>功能表鍵</value>
+    <value>菜单键</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
+  </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>日语键盘变换键</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>日语键盘无变换键</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>空間鍵</value>
+    <value>空格键</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Return</value>
+  </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Debug 窗口</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>顯示按鍵系列…</value>
@@ -169,13 +178,16 @@
     <value>停用</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>重新啟動</value>
+    <value>重新启动</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>拜訪網站</value>
+    <value>访问官网</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>結束</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode 字符</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>按鍵系列</value>
