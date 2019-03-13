@@ -11,39 +11,35 @@
     <RootNamespace>WinCompose</RootNamespace>
     <AssemblyName>WinCompose</AssemblyName>
     <TargetName>wincompose</TargetName>
+    <StartupObject>WinCompose.Program</StartupObject>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>WinCompose.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emoji.Wpf, Version=0.0.0.16, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Emoji.Wpf.0.0.16-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
+    <Reference Include="Emoji.Wpf, Version=0.0.0.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Emoji.Wpf.0.0.17-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
@@ -61,16 +57,16 @@
     <Compile Include="composer\KeyboardLayout.cs" />
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
-    <Compile Include="composer\RemoteControl.cs" />
-    <Compile Include="composer\RemoteTypes.cs" />
     <Compile Include="composer\Stats.cs" />
     <Compile Include="composer\SysTray.cs" />
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\Application.xaml.cs">
       <DependentUpon>Application.xaml</DependentUpon>
     </Compile>
-    <Compile Include="composer\WinApi.cs" />
-    <Compile Include="composer\WinTypes.cs" />
+    <Compile Include="interop\RemoteControl.cs" />
+    <Compile Include="interop\RemoteTypes.cs" />
+    <Compile Include="interop\WinApi.cs" />
+    <Compile Include="interop\WinTypes.cs" />
     <Compile Include="sequences\Category.cs" />
     <Compile Include="sequences\Key.cs" />
     <Compile Include="sequences\SearchTokens.cs" />
@@ -189,6 +185,8 @@
     <Resource Include="res\decal_idle.png" />
     <Resource Include="res\decal_update.png" />
     <Resource Include="res\icon_normal.ico" />
+    <Resource Include="res\icon_sequences.ico" />
+    <Resource Include="res\icon_settings.ico" />
     <Resource Include="res\key_compose.png" />
     <Resource Include="res\key_empty.png" />
     <Resource Include="res\key_space.png" />
@@ -210,7 +208,8 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Exec Command="3rdparty\inserticons\bin\$(Configuration)\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
+  </Target>
 </Project>

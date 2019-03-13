@@ -278,7 +278,7 @@
     <comment></comment>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F</value>
+    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter</value>
     <comment></comment>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
@@ -415,7 +415,7 @@
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Insert</value>
-    <comment>The name of the key on the keyboard</comment>
+    <comment>The name of the "Insert" key on the keyboard</comment>
   </data>
   <data name="TestTyping" xml:space="preserve">
     <value>Test Typing</value>
@@ -425,9 +425,9 @@
     <value>Tweaks</value>
     <comment>The "Tweaks" section in the settings window</comment>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milliseconds)</value>
-    <comment></comment>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} seconds</value>
+    <comment>Format string to display the current reset delay</comment>
   </data>
   <data name="About" xml:space="preserve">
     <value>About</value>
@@ -471,7 +471,7 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Updates are available.</value>
-    <comment>Message displayed in the systray tooltip.</comment>
+    <comment>Message displayed in the notification area tooltip.</comment>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
     <value>User-defined sequences</value>
@@ -510,11 +510,11 @@
     <comment></comment>
   </data>
   <data name="KeepIconVisible" xml:space="preserve">
-    <value>Try to keep SysTray icon always visible</value>
+    <value>Try to keep notification area icon always visible</value>
     <comment></comment>
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
-    <value>By default, the icon will disappear from the system tray after a short while. This option attempts to keep it always visible.</value>
+    <value>By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible.</value>
     <comment></comment>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
@@ -530,11 +530,27 @@
     <comment>Add sequence to the list of favorites.</comment>
   </data>
   <data name="DisableIcon" xml:space="preserve">
-    <value>Disable the system tray icon</value>
+    <value>Disable notification area icon</value>
     <comment></comment>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>If enabled, WinCompose will no longer display an icon in the system tray. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu.</value>
+    <value>If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu.</value>
     <comment></comment>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+    <comment>The name of the “Home” key on the keyboard</comment>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+    <comment>The name of the “End” key on the keyboard</comment>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+    <comment>The name of the “Tab” key on the keyboard</comment>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>No delay</value>
+    <comment>Text to show instead of a value in seconds when the reset delay feature is disabled</comment>
   </data>
 </root>

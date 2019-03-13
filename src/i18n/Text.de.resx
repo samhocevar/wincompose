@@ -207,9 +207,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Erweiterte Unicode-Eingabe</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Aktivieren Sie die Unicode-Eingabe für alle Zeichen, auch wenn keine Compose-Tastenfolge definiert ist. Beispielsweise wird die folgende Sequenz das Zeichen U+1A3F ausgeben: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Bei ungültigen Sequenzen</value>
   </data>
@@ -314,9 +311,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Diverse Einstellungen</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(Millisekunden)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Über</value>

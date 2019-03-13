@@ -216,9 +216,6 @@
   <data name="KeyInsert" xml:space="preserve">
     <value>Insert</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisekunder)</value>
-  </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
   </data>

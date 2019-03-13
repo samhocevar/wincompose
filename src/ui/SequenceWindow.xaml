@@ -21,11 +21,15 @@
         xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
         Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="600"
-        Icon="/WinCompose;component/res/key_compose.png">
+        Icon="/WinCompose;component/res/icon_sequences.ico">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="OnCloseCommandExecuted"/>
+    </Window.CommandBindings>
 
     <Window.InputBindings>
-        <!-- TODO: bind this to something -->
-        <!--<KeyBinding Key="Escape" Command=""/>-->
+        <KeyBinding Key="Escape" Command="ApplicationCommands.Close"/>
     </Window.InputBindings>
 
     <Window.Resources>
@@ -46,7 +50,7 @@
         </Style>
 
         <!-- This DataTemplate contains a TextBox and a "clear text" button that can be used for the Search text input -->
-        <DataTemplate x:Key="SearchText">
+        <DataTemplate x:Key="SearchTextTemplate">
             <Grid>
                 <TextBox x:Name="SearchBox" Padding="4" Width="200"
                          Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -66,6 +70,7 @@
                                Margin="8,0" FontStyle="Italic" Foreground="DarkGray" Visibility="Collapsed" IsHitTestVisible="False"/>
                 </DockPanel>
             </Grid>
+            <!-- If search box is empty and unfocused, show the watermark -->
             <DataTemplate.Triggers>
                 <MultiTrigger>
                     <MultiTrigger.Conditions>
@@ -121,12 +126,14 @@
                     <RadioButton Margin="4" GroupName="Category"
                                  IsChecked="{Binding Path=ActiveCategoryArray[3], Mode=TwoWay}">
                         <StackPanel Orientation="Horizontal">
-                            <ContentPresenter ContentTemplate="{StaticResource SearchText}" Content="{Binding}"/>
+                            <ContentPresenter x:Name="SearchWidget" Content="{Binding}"
+                                              ContentTemplate="{StaticResource SearchTextTemplate}"/>
                         </StackPanel>
                     </RadioButton>
                 </StackPanel>
             </GroupBox>
-            <ListBox Margin="8" ItemsSource="{Binding Categories}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
+            <ListBox Margin="8" ItemsSource="{Binding Categories}" SelectionMode="Extended"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Setter Property="Padding" Value="4"/>
@@ -159,11 +166,20 @@
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
             <ListBox Margin="8" ItemsSource="{Binding Sequences}" Name="ListBox"
+                     AlternationCount="2"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      VirtualizingStackPanel.VirtualizationMode="Recycling">
                 <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <Style.Triggers>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                <Setter Property="Background" Value="#0cf39611"></Setter>
+                            </Trigger>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                <Setter Property="Background" Value="#08000000"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                         <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
                     </Style>

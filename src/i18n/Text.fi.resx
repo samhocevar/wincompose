@@ -246,9 +246,6 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Parannukset</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisekunneissa)</value>
-  </data>
   <data name="About" xml:space="preserve">
     <value>Tietoja</value>
   </data>

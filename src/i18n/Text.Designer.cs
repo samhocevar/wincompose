@@ -295,6 +295,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No delay.
+        /// </summary>
+        public static string DelayDisabled {
+            get {
+                return ResourceManager.GetString("DelayDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} seconds.
+        /// </summary>
+        public static string DelaySeconds {
+            get {
+                return ResourceManager.GetString("DelaySeconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable.
         /// </summary>
         public static string Disable {
@@ -313,7 +331,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable the system tray icon.
+        ///   Looks up a localized string similar to Disable notification area icon.
         /// </summary>
         public static string DisableIcon {
             get {
@@ -322,7 +340,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If enabled, WinCompose will stop displaying an icon in the system tray. The only way to interact with WinCompose will be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu..
+        ///   Looks up a localized string similar to If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu..
         /// </summary>
         public static string DisableIconToolTip {
             get {
@@ -457,7 +475,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Try to keep SysTray icon always visible.
+        ///   Looks up a localized string similar to Try to keep notification area icon always visible.
         /// </summary>
         public static string KeepIconVisible {
             get {
@@ -466,7 +484,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to By default, the icon will disappear from the system tray after a short while. This option attempts to keep it always visible..
+        ///   Looks up a localized string similar to By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible..
         /// </summary>
         public static string KeepIconVisibleToolTip {
             get {
@@ -529,11 +547,29 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to End.
+        /// </summary>
+        public static string KeyEnd {
+            get {
+                return ResourceManager.GetString("KeyEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Escape.
         /// </summary>
         public static string KeyEscape {
             get {
                 return ResourceManager.GetString("KeyEscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string KeyHome {
+            get {
+                return ResourceManager.GetString("KeyHome", resourceCulture);
             }
         }
         
@@ -664,6 +700,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tab.
+        /// </summary>
+        public static string KeyTab {
+            get {
+                return ResourceManager.GetString("KeyTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Interface language:.
         /// </summary>
         public static string Language {
@@ -687,15 +732,6 @@ namespace WinCompose.i18n {
         public static string License {
             get {
                 return ResourceManager.GetString("License", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (milliseconds).
-        /// </summary>
-        public static string Milliseconds {
-            get {
-                return ResourceManager.GetString("Milliseconds", resourceCulture);
             }
         }
         
@@ -880,7 +916,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F.
+        ///   Looks up a localized string similar to Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter.
         /// </summary>
         public static string UnicodeInputToolTip {
             get {

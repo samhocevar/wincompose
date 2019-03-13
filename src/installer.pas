@@ -29,11 +29,11 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
 {
 { Some hooks into our helper DLL
 }
-procedure trampoline(hwnd: hwnd; milliseconds: uint);
-    external 'trampoline@files:trampoline.dll cdecl setuponly';
+procedure keepalive(hwnd: hwnd; milliseconds: uint);
+    external 'keepalive@files:installer-helper.dll cdecl setuponly';
 
 procedure fix_file(path: string);
-    external 'fix_file@files:trampoline.dll cdecl setuponly';
+    external 'fix_file@files:installer-helper.dll cdecl setuponly';
 
 {
 { Helper function to set elevation bit in a shortcut
@@ -240,10 +240,10 @@ begin
     if (page_id = dotnet_page.id) then begin
         { Trigger refresh_dotnet_page() every second }
         wizardform.onkeyup := @refresh_dotnet_page;
-        trampoline(wizardform.handle, 1000);
+        keepalive(wizardform.handle, 1000);
     end else begin
         wizardform.onkeyup := nil;
-        trampoline(0, 0);
+        keepalive(0, 0);
     end;
 end;
 

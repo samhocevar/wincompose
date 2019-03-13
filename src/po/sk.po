@@ -211,10 +211,11 @@ msgid "Advanced Unicode input"
 msgstr "Zadávanie kódov Unicode"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
+#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
-"Compose U 1 A 3 F"
+"Compose U 1 A 3 F Enter"
 msgstr ""
 "Umožniť zadanie kódu Unicode pre všetky znaky, dokonca aj tie, ktoré nemajú "
 "definovanú sekvenciu. Napríklad znak U + 1A3F by bolo možné napísať "
@@ -406,7 +407,7 @@ msgstr "Používateľom definované makrá"
 msgid "WinCompose is disabled"
 msgstr "WinCompose je zakázaný"
 
-#. The name of the key on the keyboard
+#. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
@@ -422,9 +423,11 @@ msgstr "Vyskúšajte písanie"
 msgid "Tweaks"
 msgstr "Vychytávky"
 
-#: i18n/Text.resx:429 ID:Milliseconds
-msgid "(milliseconds)"
-msgstr "(milisekundy)"
+#. Format string to display the current reset delay
+#: i18n/Text.resx:429 ID:DelaySeconds
+#, fuzzy
+msgid "{0} seconds"
+msgstr "10 sekúnd"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -477,7 +480,7 @@ msgstr "Nahlásiť chybu"
 msgid "Help"
 msgstr "Nápoveda"
 
-#. Message displayed in the systray tooltip.
+#. Message displayed in the notification area tooltip.
 #: i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr "Aktualizácie sú k dispozícii."
@@ -527,13 +530,13 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
-msgid "Try to keep SysTray icon always visible"
+msgid "Try to keep notification area icon always visible"
 msgstr ""
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
-"By default, the icon will disappear from the system tray after a short "
-"while. This option attempts to keep it always visible."
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
 msgstr ""
 
 #. The user can click on this button to change the current compose key.
@@ -551,14 +554,34 @@ msgid "Add to favorites"
 msgstr ""
 
 #: i18n/Text.resx:533 ID:DisableIcon
-msgid "Disable the system tray icon"
+msgid "Disable notification area icon"
 msgstr ""
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
-"If enabled, WinCompose will no longer display an icon in the system tray. "
-"The only way to open the WinCompose interface will then be through the "
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgstr ""
+
+#. The name of the “Home” key on the keyboard
+#: i18n/Text.resx:541 ID:KeyHome
+msgid "Home"
+msgstr ""
+
+#. The name of the “End” key on the keyboard
+#: i18n/Text.resx:545 ID:KeyEnd
+msgid "End"
+msgstr ""
+
+#. The name of the “Tab” key on the keyboard
+#: i18n/Text.resx:549 ID:KeyTab
+msgid "Tab"
+msgstr ""
+
+#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#: i18n/Text.resx:553 ID:DelayDisabled
+msgid "No delay"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -752,6 +775,9 @@ msgstr ""
 msgid "Administrator rights are required. Error: %d"
 msgstr "Požadované práva administrátora. Chyba: %d"
 
+#~ msgid "(milliseconds)"
+#~ msgstr "(milisekundy)"
+
 #~ msgid "Copy Character"
 #~ msgstr "Kopírovať znak"
 
@@ -784,9 +810,6 @@ msgstr "Požadované práva administrátora. Chyba: %d"
 
 #~ msgid "Unicode"
 #~ msgstr "Unicode"
-
-#~ msgid "10 seconds"
-#~ msgstr "10 sekúnd"
 
 #~ msgid "by Sam Hocevar <sam@hocevar.net>"
 #~ msgstr "vytvoril Sam Hocevar <sam@hocevar.net>"

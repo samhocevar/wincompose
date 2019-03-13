@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -344,8 +344,7 @@ namespace WinCompose
             if (!UnicodeInput.Value)
                 return false;
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
-                    && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
+            return Regex.Match(sequenceString, @"^u[0-9a-f]+$").Success;
         }
 
         public static bool IsValidGenericSequence(KeySequence sequence)
@@ -353,8 +352,7 @@ namespace WinCompose
             if (!UnicodeInput.Value)
                 return false;
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
-                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
+            return Regex.Match(sequenceString, @"^u[0-9a-f]+vk[.]return$").Success;
         }
 
         public static string GetGenericSequenceResult(KeySequence sequence)
@@ -362,10 +360,14 @@ namespace WinCompose
             if (!UnicodeInput.Value)
                 return "";
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
+            var m = Regex.Match(sequenceString, @"^u([0-9a-f]+)vk[.]return$");
             if (!m.Success)
                 return "";
             int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
+            if (codepoint < 0 || codepoint > 0x10ffff)
+                return "";
+            if (codepoint >= 0xd800 && codepoint < 0xe000)
+                return "";
             return char.ConvertFromUtf32(codepoint);
         }
 
@@ -478,6 +480,9 @@ namespace WinCompose
            new Key(VK.INSERT),
            new Key(VK.SNAPSHOT),
            new Key(VK.SCROLL),
+           new Key(VK.TAB),
+           new Key(VK.HOME),
+           new Key(VK.END),
            new Key("`"),
         };
 
@@ -485,18 +490,6 @@ namespace WinCompose
 
         private static readonly
         Dictionary<string, string> m_valid_languages = GetSupportedLanguages();
-
-        private static readonly Dictionary<int, string> m_valid_delays
-         = new Dictionary<int, string>()
-        {
-            { 500,   "500 milliseconds" },
-            { 1000,  "1 second" },
-            { 2000,  "2 seconds" },
-            { 3000,  "3 seconds" },
-            { 5000,  "5 seconds" },
-            { 10000, "10 seconds" },
-            { -1,    "None" },
-        };
 
         private static Dictionary<string, string> GetSupportedLanguages()
         {

@@ -1,8 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
-//              2014—2015 Benjamin Litzelmann
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -135,6 +134,16 @@ static internal class NativeMethods
     public static extern HRESULT AssocQueryString(ASSOCF flags, ASSOCSTR str,
               string pszAssoc, string pszExtra, [Out] StringBuilder pszOut,
               ref uint pcchOut);
+
+    //
+    // for SysTrayIcon.xaml.cs
+    //
+
+    [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
+    public static extern IntPtr FindWindowEx(IntPtr parentHandle,
+        IntPtr childAfter, string className, string windowTitle);
+    [DllImport("user32")]
+    public static extern bool GetClientRect(IntPtr hWnd, out RECT lpRect);
 };
 
 }

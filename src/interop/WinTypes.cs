@@ -1,8 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
-//              2014—2015 Benjamin Litzelmann
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -42,6 +41,7 @@ internal enum WM : int
     KEYUP      = 0x101,
     SYSKEYDOWN = 0x104,
     SYSKEYUP   = 0x105,
+    MOUSEMOVE  = 0x200,
 };
 
 public enum VK : int
@@ -233,6 +233,12 @@ public static class HWND
 {
     public static IntPtr BROADCAST = (IntPtr)0xffff;
 }
+
+[StructLayout(LayoutKind.Sequential)]
+public struct RECT
+{
+    public int Left, Top, Right, Bottom;
+};
 
 /// <summary>
 /// Represents possible dialogbox command id values by the MB_GetString function.

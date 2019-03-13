@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>高级 Unicode 输入</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>启用所有字符的 Unicode 输入，包括没有定义组合键的那些。例如，下列序列将输出字符 U+1A3F：书写键 U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>在无效序列</value>
   </data>
@@ -293,9 +290,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>调整</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(毫秒)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>关于</value>

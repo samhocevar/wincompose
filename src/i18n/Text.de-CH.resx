@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Speciala Unikoda enigo</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Ŝalti la Unikodan enigon por ĉiuj la signoj, inkluzive tiuj signoj kiuj ne havas difinitan makroklavon. Ekzemple, la makroklavo &quot;U 2 6 3 A&quot; eligus la signon ☺ U+263A</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Se nevalida makroklavo estas enigita</value>
   </data>
@@ -293,9 +290,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Optimumigoj</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milisekondoj)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Pri WinCompose</value>

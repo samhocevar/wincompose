@@ -15,10 +15,7 @@ TXT = rules/DefaultUserSequences.txt \
       rules/Emoji.txt \
       rules/WinCompose.txt
 
-MAIN_EXE = bin/$(CONFIG)/wincompose.exe
-EXE = $(MAIN_EXE) \
-      bin/$(CONFIG)/wincompose-sequences.exe \
-      bin/$(CONFIG)/wincompose-settings.exe
+EXE = bin/$(CONFIG)/wincompose.exe
 DLL = bin/$(CONFIG)/language.dll \
       bin/$(CONFIG)/Emoji.Wpf.dll \
       bin/$(CONFIG)/Typography.OpenFont.dll \
@@ -44,13 +41,13 @@ all: installer portable
 clean:
 	$(foreach x, $(EXE), $(DEVENV) wincompose.sln //clean $(CONFIG) //project $(basename $(notdir $x)).csproj;)
 	$(DEVENV) wincompose.sln //clean $(CONFIG) //project language.csproj
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.vcxproj
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project trampoline.vcxproj
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.csproj
+	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer-helper.vcxproj
 	rm -f $(PORTABLE)
 	rm -rf obj bin || true
 
 installer: $(EXE) $(ISS) $(PAS)
-	$(DEVENV) wincompose.sln //build $(CONFIG) //project installer.vcxproj
+	$(DEVENV) wincompose.sln //build $(CONFIG) //project installer.csproj
 
 portable: $(EXE)
 	rm -f $(PORTABLE)
@@ -59,13 +56,15 @@ portable: $(EXE)
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
 	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
-	cp $(MAIN_EXE).config $(DLL) $(PORTABLE:.zip=)
+	cp $(EXE).config $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
+	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -settings",0' > $(PORTABLE:.zip=)/wincompose-settings.vbs
+	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -sequences",0' > $(PORTABLE:.zip=)/wincompose-sequences.vbs
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
 
 # Sometimes Visual Studio does not rebuild this dependency
-$(MAIN_EXE): bin/$(CONFIG)/language.dll
+$(EXE): bin/$(CONFIG)/language.dll
 
 %.exe %.dll:
 	@mkdir -p bin/$(CONFIG)

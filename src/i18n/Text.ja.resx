@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>上級者向けUnicode入力</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Composeキーシーケンスが指定されていないUnicode文字にも入力を有効にする。たとえば、Compose U 1 A 3 Fというシーケンスを入力すると、U+1A3F が出力される</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>無効な入力時</value>
   </data>
@@ -296,9 +293,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>細かい設定</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(ミリ秒)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>WinCompose について</value>

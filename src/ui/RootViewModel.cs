@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -153,7 +153,7 @@ namespace WinCompose
         }
 
         private string m_search_text = "";
-        private SearchTokens m_search_tokens;
+        private SearchQuery m_search_query;
 
         private void RefreshCategoryFilters()
         {
@@ -176,7 +176,7 @@ namespace WinCompose
         private void RefreshSequenceFilters()
         {
             var sequence_view = CollectionViewSource.GetDefaultView(Sequences);
-            m_search_tokens = new SearchTokens(SearchText);
+            m_search_query = new SearchQuery(SearchText);
             sequence_view.Filter = FilterSequences;
             sequence_view.Refresh();
         }
@@ -193,7 +193,7 @@ namespace WinCompose
                 case CategoryFilter.Macros:
                     return (sequence.Category?.IsMacro ?? false) && (sequence.Category?.IsSelected ?? false);
                 case CategoryFilter.Search:
-                    return sequence.Match(m_search_tokens);
+                    return sequence.Match(m_search_query);
                 default:
                     return false;
             }

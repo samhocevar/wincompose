@@ -16,6 +16,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 using WinForms = System.Windows.Forms;
 
 namespace WinCompose
@@ -56,8 +57,7 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent += OnDisableEvent;
             Application.RemoteControl.ExitEvent += OnExitEvent;
-            Application.RemoteControl.SettingsEvent += OnSettingsEvent;
-            Application.RemoteControl.SequencesEvent += OnSequencesEvent;
+            Application.RemoteControl.OpenEvent += OnOpenEvent;
             Application.RemoteControl.BroadcastDisableEvent();
 
             WinForms.Application.EnableVisualStyles();
@@ -69,6 +69,12 @@ namespace WinCompose
             // Opt-in only, as this feature is a bit controversial
             if (Settings.KeepIconVisible.Value)
                 SysTray.AlwaysShow("wincompose[.]exe");
+
+            // This one is a bit safer
+            m_cleanup_timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
+            m_cleanup_timer.Tick += (o, e) => CleanupNotificationArea();
+            m_cleanup_timer.Start();
+            CleanupNotificationArea();
 
             Settings.DisableIcon.ValueChanged += SysTrayUpdateCallback;
             Composer.Changed += SysTrayUpdateCallback;
@@ -93,8 +99,10 @@ namespace WinCompose
 
             Application.RemoteControl.DisableEvent -= OnDisableEvent;
             Application.RemoteControl.ExitEvent -= OnExitEvent;
-            Application.RemoteControl.SettingsEvent -= OnSettingsEvent;
-            Application.RemoteControl.SequencesEvent -= OnSequencesEvent;
+            Application.RemoteControl.OpenEvent -= OnOpenEvent;
+
+            m_cleanup_timer?.Stop();
+            m_cleanup_timer = null;
 
             if (m_icon != null)
             {
@@ -108,14 +116,14 @@ namespace WinCompose
 
         public ICommand MenuItemCommand
         {
-            get { return m_menu_item_command ?? (m_menu_item_command = new DelegateCommand(OnMenuItemClicked)); }
+            get { return m_menu_item_command ?? (m_menu_item_command = new DelegateCommand(OnCommand)); }
         }
 
         private DelegateCommand m_menu_item_command;
 
-        private void OnMenuItemClicked(object parameter)
+        private void OnCommand(object o)
         {
-            switch (parameter as MenuCommand?)
+            switch (o as MenuCommand?)
             {
                 case MenuCommand.ShowSequences:
                     m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
@@ -175,6 +183,34 @@ namespace WinCompose
                 case MenuCommand.Exit:
                     Application.Current.Shutdown();
                     break;
+            }
+        }
+
+        private DispatcherTimer m_cleanup_timer;
+
+        private void CleanupNotificationArea()
+        {
+            // Parse the window hierarchy to find the notification area and
+            // send mouse move events to get rid of zombie icons.
+            string[] classes = { "Shell_TrayWnd", "TrayNotifyWnd", "SysPager" };
+            string[] names = { "User Promoted Notification Area", "Notification Area" };
+
+            IntPtr window = IntPtr.Zero;
+            foreach (var win_class in classes)
+                window = NativeMethods.FindWindowEx(window, IntPtr.Zero, win_class, "");
+
+            foreach (var win_name in names)
+            {
+                var area = NativeMethods.FindWindowEx(window, IntPtr.Zero,
+                                                  "ToolbarWindow32", win_name);
+                if (area == IntPtr.Zero)
+                    continue;
+
+                RECT rect;
+                NativeMethods.GetClientRect(area, out rect);
+                for (int y = rect.Top + 4; y < rect.Bottom; y += 8)
+                    for (int x = rect.Left + 4; x < rect.Right; x += 8)
+                        NativeMethods.PostMessage(area, (uint)WM.MOUSEMOVE, 0, (y << 16) | x);
             }
         }
 
@@ -306,19 +342,8 @@ namespace WinCompose
             SysTrayUpdateCallback();
         }
 
-        private void OnExitEvent()
-        {
-            Application.Current.Shutdown();
-        }
+        private void OnExitEvent() => Application.Current.Shutdown();
 
-        private void OnSettingsEvent()
-        {
-            OnMenuItemClicked(MenuCommand.ShowOptions);
-        }
-
-        private void OnSequencesEvent()
-        {
-            OnMenuItemClicked(MenuCommand.ShowSequences);
-        }
+        private void OnOpenEvent(MenuCommand cmd) => OnCommand(cmd);
     }
 }

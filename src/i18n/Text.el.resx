@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Προηγμένη εισαγωγή Unicode</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Ενεργοποίηση εισαγωγής Unicode για όλους τους χαρακτήρες, ακόμη και εκείνων που δεν ορίζονται σε ακολουθία σύνθεσης. Για παράδειγμα, η παρακάτω ακολουθία θα εξάγει τον χαρακτήρα U+1A3F: Σύνθεση U 1 Α 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Σε άκυρες ακολουθίες</value>
   </data>
@@ -293,9 +290,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Λεπτομερείς ρυθμίσεις</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(χιλιοστά δευτερ.)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Περί</value>

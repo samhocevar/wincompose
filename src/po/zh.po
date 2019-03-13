@@ -214,10 +214,11 @@ msgid "Advanced Unicode input"
 msgstr "進階萬國碼輸入"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
+#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
-"Compose U 1 A 3 F"
+"Compose U 1 A 3 F Enter"
 msgstr ""
 "啟用所有字元的萬國碼輸入，包括未曾定義按鍵系列的字元。例如後面系列會輸出 U"
 "+1A3F 字元: 前導鍵 U 1 A 3 F"
@@ -401,7 +402,7 @@ msgstr "使用者定義的巨集"
 msgid "WinCompose is disabled"
 msgstr "WinCompose 已停用"
 
-#. The name of the key on the keyboard
+#. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
 msgstr "插入"
@@ -416,9 +417,11 @@ msgstr "測試輸入"
 msgid "Tweaks"
 msgstr "調控"
 
-#: i18n/Text.resx:429 ID:Milliseconds
-msgid "(milliseconds)"
-msgstr "(毫秒)"
+#. Format string to display the current reset delay
+#: i18n/Text.resx:429 ID:DelaySeconds
+#, fuzzy
+msgid "{0} seconds"
+msgstr "10 秒"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -470,7 +473,7 @@ msgstr "提報程式錯誤"
 msgid "Help"
 msgstr "說明"
 
-#. Message displayed in the systray tooltip.
+#. Message displayed in the notification area tooltip.
 #: i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr "有更新可用。"
@@ -520,13 +523,13 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
-msgid "Try to keep SysTray icon always visible"
+msgid "Try to keep notification area icon always visible"
 msgstr ""
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
-"By default, the icon will disappear from the system tray after a short "
-"while. This option attempts to keep it always visible."
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
 msgstr ""
 
 #. The user can click on this button to change the current compose key.
@@ -544,14 +547,34 @@ msgid "Add to favorites"
 msgstr ""
 
 #: i18n/Text.resx:533 ID:DisableIcon
-msgid "Disable the system tray icon"
+msgid "Disable notification area icon"
 msgstr ""
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
-"If enabled, WinCompose will no longer display an icon in the system tray. "
-"The only way to open the WinCompose interface will then be through the "
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgstr ""
+
+#. The name of the “Home” key on the keyboard
+#: i18n/Text.resx:541 ID:KeyHome
+msgid "Home"
+msgstr ""
+
+#. The name of the “End” key on the keyboard
+#: i18n/Text.resx:545 ID:KeyEnd
+msgid "End"
+msgstr ""
+
+#. The name of the “Tab” key on the keyboard
+#: i18n/Text.resx:549 ID:KeyTab
+msgid "Tab"
+msgstr ""
+
+#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#: i18n/Text.resx:553 ID:DelayDisabled
+msgid "No delay"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -742,6 +765,9 @@ msgstr "一旦完成，可返回此螢幕，然後繼續安裝。"
 msgid "Administrator rights are required. Error: %d"
 msgstr "需要管理員權限。出現錯誤：%d"
 
+#~ msgid "(milliseconds)"
+#~ msgstr "(毫秒)"
+
 #~ msgid "Copy Character"
 #~ msgstr "複製字元"
 
@@ -774,9 +800,6 @@ msgstr "需要管理員權限。出現錯誤：%d"
 
 #~ msgid "Unicode"
 #~ msgstr "萬國碼(Unicode)"
-
-#~ msgid "10 seconds"
-#~ msgstr "10 秒"
 
 #~ msgid "by Sam Hocevar <sam@hocevar.net>"
 #~ msgstr "開發者：Sam Hocevar <sam@hocevar.net>"

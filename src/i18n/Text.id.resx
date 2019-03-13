@@ -162,7 +162,4 @@
   <data name="VisitWebsite" xml:space="preserve">
     <value>Mengunjungi situs web</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>milidetik</value>
-  </data>
 </root>

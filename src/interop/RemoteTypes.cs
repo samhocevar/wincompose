@@ -1,8 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
-//              2014—2015 Benjamin Litzelmann
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -34,16 +33,10 @@ namespace WinCompose
             = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
 
         /// <summary>
-        /// A custom message ID used to open the WinCompose settings window
+        /// A custom message ID used to open various WinCompose windows
         /// </summary>
-        public static readonly uint SETTINGS
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_SETTINGS");
-
-        /// <summary>
-        /// A custom message ID used to open the WinCompose sequences window
-        /// </summary>
-        public static readonly uint SEQUENCES
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_SEQUENCES");
+        public static readonly uint OPEN
+            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_OPEN");
     }
 }
 

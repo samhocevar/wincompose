@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Napreden Unicode vnos</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Omogoči Unicode vnos za vse znake, tudi tiste brez definiranega zaporedja. Tako bo npr. zaporedje „Compose U 1 A 3 F“ tvorilo izhodni znak U+1A3F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Ob napačnih zaporedjih</value>
   </data>

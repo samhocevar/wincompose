@@ -207,9 +207,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Input Unicode avanzato</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Abilita l'inserimento di tutti i caratteri Unicode, anche quelli senza una sequenza definita. Ad esempio, la sequenza: Compose U 1 A 3 F inserirà il carattere U+1A3F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Quando una sequenza è errata</value>
   </data>
@@ -314,9 +311,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Regolazioni</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisecondi)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Informazioni</value>
