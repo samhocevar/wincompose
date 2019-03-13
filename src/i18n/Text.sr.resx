@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Напредни Уникод унос</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Укључити Уникод унос за све знакове, чак и оне који немају дефинисану модификаторску комбинацију. На пример, следећа секвенца ће исписати знак U+1A3F: Модификатор U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>При неисправним комбинацијама</value>
   </data>
@@ -263,9 +260,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Штеловања</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(милисекунди)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>О програму</value>

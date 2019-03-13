@@ -198,9 +198,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Zaawansowane wprowadzanie tekstu Unicode</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Włącz wprowadzanie tekstu Unicode dla wszystkich symboli, nawet tych bez zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol U+1A3F: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Dla niepoprawnych sekwencji</value>
   </data>
@@ -296,9 +293,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Poprawki</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milisekundy)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>O programie</value>

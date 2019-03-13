@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Ingreso de Unicode avanzado</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Activar ingreso de Unicode para todos los carácteres, incluso aquellos que no tengansecuencia de composición definida. Por ejemplo, esta secuencia producirá el carácter U+1A3F: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Al ingresar secuencias inválidas</value>
   </data>

@@ -201,7 +201,4 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Intrare Unicode Avansată</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Activați intrarea Unicode pentru toate caracterele, chiar și cele care nu au o secvență de compoziție definită. Spre exemplu, următoarea secvență va produce caracterul U+1A3F: Compose U 1 A 3 F</value>
-  </data>
 </root>

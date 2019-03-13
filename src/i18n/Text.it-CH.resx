@@ -207,9 +207,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Insertada (input) avantzada Unicode</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Abìlita s’insertada Unicode pro totu sos caràteres, fintzas cussos chene filera compose. Pro fàghere un’esèmpiu, custa filera at a otènnere su caràtere U+1A3F: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Si una filera no est vàlida</value>
   </data>
@@ -314,9 +311,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Modìficas minores</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisegundos)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Informatziones</value>

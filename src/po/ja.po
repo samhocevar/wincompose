@@ -216,10 +216,11 @@ msgid "Advanced Unicode input"
 msgstr "上級者向けUnicode入力"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
+#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
-"Compose U 1 A 3 F"
+"Compose U 1 A 3 F Enter"
 msgstr ""
 "Composeキーシーケンスが指定されていないUnicode文字にも入力を有効にする。たと"
 "えば、Compose U 1 A 3 Fというシーケンスを入力すると、U+1A3F が出力される"
@@ -409,7 +410,7 @@ msgstr "ユーザー定義マクロ"
 msgid "WinCompose is disabled"
 msgstr "WinComposeは無効です"
 
-#. The name of the key on the keyboard
+#. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
@@ -424,9 +425,11 @@ msgstr "ためしてみる"
 msgid "Tweaks"
 msgstr "細かい設定"
 
-#: i18n/Text.resx:429 ID:Milliseconds
-msgid "(milliseconds)"
-msgstr "(ミリ秒)"
+#. Format string to display the current reset delay
+#: i18n/Text.resx:429 ID:DelaySeconds
+#, fuzzy
+msgid "{0} seconds"
+msgstr "10秒"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -559,6 +562,26 @@ msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgstr ""
+
+#. The name of the “Home” key on the keyboard
+#: i18n/Text.resx:541 ID:KeyHome
+msgid "Home"
+msgstr ""
+
+#. The name of the “End” key on the keyboard
+#: i18n/Text.resx:545 ID:KeyEnd
+msgid "End"
+msgstr ""
+
+#. The name of the “Tab” key on the keyboard
+#: i18n/Text.resx:549 ID:KeyTab
+msgid "Tab"
+msgstr ""
+
+#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#: i18n/Text.resx:553 ID:DelayDisabled
+msgid "No delay"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -750,6 +773,9 @@ msgstr "完了後、この画面に戻りインストールを再開すること
 msgid "Administrator rights are required. Error: %d"
 msgstr "管理者権限が必要です。エラー: %d"
 
+#~ msgid "(milliseconds)"
+#~ msgstr "(ミリ秒)"
+
 #~ msgid "Copy Character"
 #~ msgstr "文字をコピー"
 
@@ -782,9 +808,6 @@ msgstr "管理者権限が必要です。エラー: %d"
 
 #~ msgid "Unicode"
 #~ msgstr "Unicode"
-
-#~ msgid "10 seconds"
-#~ msgstr "10秒"
 
 #~ msgid "by Sam Hocevar <sam@hocevar.net>"
 #~ msgstr "作者: Sam Hocevar <sam@hocevar.net>"

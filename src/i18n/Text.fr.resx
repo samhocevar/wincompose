@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Saisie Unicode avancée</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Autoriser la saisie Unicode pour tous les caractères, même pour ceux sans définition de séquence de composition. Par exemple, la séquence suivante donnera le caractère U+1A3F: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Lors de séquences non valides</value>
   </data>
@@ -299,9 +296,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Astuces</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisecondes)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>À propos</value>

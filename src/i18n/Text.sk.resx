@@ -201,9 +201,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Zadávanie kódov Unicode</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Umožniť zadanie kódu Unicode pre všetky znaky, dokonca aj tie, ktoré nemajú definovanú sekvenciu. Napríklad znak U + 1A3F by bolo možné napísať nasledujúcej sekvencií: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Pri zadaní neplatnej sekvencie</value>
   </data>
@@ -302,9 +299,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Vychytávky</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milisekundy)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>O programe</value>

@@ -207,9 +207,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Digitação Unicode avançada</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Permite que todos os caracteres Unicode sejam digitados, até mesmo os que não tiverem sequências de composição definidas. Por exemplo, a sequência a seguir produzirá o caractere U+1A3F: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Com sequências inválidas</value>
   </data>
@@ -314,9 +311,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Ajustes</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milisegundos)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Sobre</value>

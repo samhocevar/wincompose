@@ -195,9 +195,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>進階萬國碼輸入</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>啟用所有字元的萬國碼輸入，包括未曾定義按鍵系列的字元。例如後面系列會輸出 U+1A3F 字元: 前導鍵 U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>出現無效按鍵系列時</value>
   </data>
@@ -293,9 +290,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>調控</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(毫秒)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>關於</value>

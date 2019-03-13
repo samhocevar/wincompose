@@ -219,7 +219,7 @@ msgstr ""
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
-"Compose U 1 A 3 F"
+"Compose U 1 A 3 F Enter"
 msgstr ""
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
@@ -391,7 +391,7 @@ msgstr "Brugerdefinerede makroer"
 msgid "WinCompose is disabled"
 msgstr "WinCompose er slået fra"
 
-#. The name of the key on the keyboard
+#. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
 msgstr "Indsæt"
@@ -406,9 +406,11 @@ msgstr "Testskrivning"
 msgid "Tweaks"
 msgstr "Justeringer"
 
-#: i18n/Text.resx:429 ID:Milliseconds
-msgid "(milliseconds)"
-msgstr "(millisekunder)"
+#. Format string to display the current reset delay
+#: i18n/Text.resx:429 ID:DelaySeconds
+#, fuzzy
+msgid "{0} seconds"
+msgstr "10 sekunder"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -543,6 +545,26 @@ msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgstr ""
+
+#. The name of the “Home” key on the keyboard
+#: i18n/Text.resx:541 ID:KeyHome
+msgid "Home"
+msgstr ""
+
+#. The name of the “End” key on the keyboard
+#: i18n/Text.resx:545 ID:KeyEnd
+msgid "End"
+msgstr ""
+
+#. The name of the “Tab” key on the keyboard
+#: i18n/Text.resx:549 ID:KeyTab
+msgid "Tab"
+msgstr ""
+
+#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#: i18n/Text.resx:553 ID:DelayDisabled
+msgid "No delay"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -732,6 +754,9 @@ msgstr ""
 msgid "Administrator rights are required. Error: %d"
 msgstr ""
 
+#~ msgid "(milliseconds)"
+#~ msgstr "(millisekunder)"
+
 #~ msgid "Copy Character"
 #~ msgstr "Kopier tegn"
 
@@ -764,9 +789,6 @@ msgstr ""
 
 #~ msgid "Unicode"
 #~ msgstr "Unicode"
-
-#~ msgid "10 seconds"
-#~ msgstr "10 sekunder"
 
 #~ msgid "by Sam Hocevar <sam@hocevar.net>"
 #~ msgstr "af Sam Hocevar <sam@hocevar.net>"

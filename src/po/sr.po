@@ -213,10 +213,11 @@ msgid "Advanced Unicode input"
 msgstr "Напредни Уникод унос"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
+#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
-"Compose U 1 A 3 F"
+"Compose U 1 A 3 F Enter"
 msgstr ""
 "Укључити Уникод унос за све знакове, чак и оне који немају дефинисану "
 "модификаторску комбинацију. На пример, следећа секвенца ће исписати знак U"
@@ -392,7 +393,7 @@ msgstr "Кориснички макрои"
 msgid "WinCompose is disabled"
 msgstr "WinCompose је искључен"
 
-#. The name of the key on the keyboard
+#. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
 msgstr "Insert"
@@ -407,9 +408,11 @@ msgstr "Куцајте за пробу"
 msgid "Tweaks"
 msgstr "Штеловања"
 
-#: i18n/Text.resx:429 ID:Milliseconds
-msgid "(milliseconds)"
-msgstr "(милисекунди)"
+#. Format string to display the current reset delay
+#: i18n/Text.resx:429 ID:DelaySeconds
+#, fuzzy
+msgid "{0} seconds"
+msgstr "10 секунди"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -544,6 +547,26 @@ msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgstr ""
+
+#. The name of the “Home” key on the keyboard
+#: i18n/Text.resx:541 ID:KeyHome
+msgid "Home"
+msgstr ""
+
+#. The name of the “End” key on the keyboard
+#: i18n/Text.resx:545 ID:KeyEnd
+msgid "End"
+msgstr ""
+
+#. The name of the “Tab” key on the keyboard
+#: i18n/Text.resx:549 ID:KeyTab
+msgid "Tab"
+msgstr ""
+
+#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#: i18n/Text.resx:553 ID:DelayDisabled
+msgid "No delay"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -733,6 +756,9 @@ msgstr ""
 msgid "Administrator rights are required. Error: %d"
 msgstr ""
 
+#~ msgid "(milliseconds)"
+#~ msgstr "(милисекунди)"
+
 #~ msgid "Copy Character"
 #~ msgstr "Копирај знак"
 
@@ -765,9 +791,6 @@ msgstr ""
 
 #~ msgid "Unicode"
 #~ msgstr "Уникод"
-
-#~ msgid "10 seconds"
-#~ msgstr "10 секунди"
 
 #~ msgid "by Sam Hocevar <sam@hocevar.net>"
 #~ msgstr "Сам Хочевар (Sam Hocevar) <sam@hocevar.net>"

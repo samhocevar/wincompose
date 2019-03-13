@@ -246,9 +246,6 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Justeringer</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisekunder)</value>
-  </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
   </data>

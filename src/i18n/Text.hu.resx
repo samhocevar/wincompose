@@ -207,9 +207,6 @@
   <data name="ShowOptions" xml:space="preserve">
     <value>Lehetőségek…</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(ezredmásodperc)</value>
-  </data>
   <data name="About" xml:space="preserve">
     <value>Névjegy</value>
   </data>

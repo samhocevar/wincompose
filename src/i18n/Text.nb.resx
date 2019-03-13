@@ -207,9 +207,6 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Avansert unicode-inntasting</value>
   </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Aktiver unicodeinntasting av alle tegn, selv de som ikke har noen definert komponeringssekvens. For eksempel vil følgende sekvens taste inn tegnet U+1A3F: Compose U 1 A 3 F</value>
-  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Ved ugyldige sekvenser</value>
   </data>
@@ -314,9 +311,6 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Finjusteringer</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisekunder)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
