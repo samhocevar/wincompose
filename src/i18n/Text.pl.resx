@@ -306,6 +306,9 @@
   <data name="KeyInsert" xml:space="preserve">
     <value>Wstaw</value>
   </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Pisanie testowe</value>
+  </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Poprawki</value>
   </data>

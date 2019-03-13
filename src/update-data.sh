@@ -80,8 +80,8 @@ po2res()
 {
     case "$1" in
         pt_BR) echo pt-BR ;;
-        zh_CN) echo zh-CHS ;;
-        zh) echo zh-CHT ;;
+        zh) echo zh-CHS ;;
+        zh_Hant) echo zh-CHT ;;
         sc) echo it-CH ;;
         eo) echo de-CH ;;
         be@latin) echo be-BY ;;
