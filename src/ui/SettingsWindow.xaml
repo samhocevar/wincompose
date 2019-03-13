@@ -58,8 +58,6 @@
 
     <Window.InputBindings>
         <KeyBinding Key="Escape" Command="ApplicationCommands.Close"/>
-        <!-- TODO: bind this to something -->
-        <!--<KeyBinding Key="Escape" Command=""/>-->
     </Window.InputBindings>
 
     <StackPanel Orientation="Vertical">

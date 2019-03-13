@@ -15,6 +15,8 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace WinCompose
 {
@@ -23,15 +25,25 @@ namespace WinCompose
     /// </summary>
     public partial class SequenceWindow : INotifyPropertyChanged
     {
-        private RootViewModel ViewModel => (RootViewModel)DataContext;
-
         public SequenceWindow()
         {
             InitializeComponent();
             DataContext = new RootViewModel();
+            Activated += (o, e) => SearchBox.Focus();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private RootViewModel m_view_model => (RootViewModel)DataContext;
+
+        private TextBox SearchBox
+        {
+            get
+            {
+                var grid = VisualTreeHelper.GetChild(SearchWidget, 0) as Grid;
+                return VisualTreeHelper.GetChild(grid, 0) as TextBox;
+            }
+        }
 
         protected virtual void OnPropertyChanged(params string[] propertyNames)
         {
@@ -39,9 +51,19 @@ namespace WinCompose
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private void OnCloseCommandExecuted(object Sender, ExecutedRoutedEventArgs e)
+        {
+            // If the search box is focused and non-empty, clear it; otherwise,
+            // actually close the window.
+            if (SearchBox.IsFocused && !string.IsNullOrEmpty(m_view_model.SearchText))
+                m_view_model.SearchText = "";
+            else
+                Hide();
+        }
+
         private void ClearSearchClicked(object sender, RoutedEventArgs e)
         {
-            ViewModel.SearchText = "";
+            m_view_model.SearchText = "";
         }
 
         private void CopyToClipboardClicked(object sender, RoutedEventArgs e)
