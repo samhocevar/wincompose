@@ -106,15 +106,13 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
 
 [Icons]
-; FIXME: IconIndex: 1 should work, but we don’t have a way (yet?) to put several icons in our .exe
-Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}"; \
-    IconFilename: "{app}\{#EXE}"; IconIndex: 1
+Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}";
 ; Set the elevation bit on wincompose.exe.lnk because it launches an elevated task
 Name: "{group}\{#NAME}"; Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; \
     IconFilename: "{app}\{#EXE}"; AfterInstall: set_elevation_bit('{group}\{#NAME}.lnk')
 ; We provide these shortcuts in case the notification area icon is disabled
-Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#EXE}"; Parameters: "-sequences"
-Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#EXE}"; Parameters: "-settings"
+Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#EXE}"; IconIndex: 1; Parameters: "-sequences"
+Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#EXE}"; IconIndex: 2; Parameters: "-settings"
 
 [Run]
 ; After installation is finished, add an event-triggered scheduled task, then

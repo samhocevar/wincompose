@@ -21,7 +21,7 @@
         xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         mc:Ignorable="d" x:Class="WinCompose.SequenceWindow"
         Title="{x:Static i18n:Text.WindowTitle}" Width="1024" Height="600"
-        Icon="/WinCompose;component/res/key_compose.png">
+        Icon="/WinCompose;component/res/icon_sequences.ico">
 
     <Window.InputBindings>
         <!-- TODO: bind this to something -->

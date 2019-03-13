@@ -21,7 +21,7 @@
         xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
         Title="{x:Static i18n:Text.Options}" Width="400" Height="500"
-        Icon="/WinCompose;component/res/key_compose.png"
+        Icon="/WinCompose;component/res/icon_settings.ico"
         WindowStyle="ToolWindow"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
