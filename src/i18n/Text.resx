@@ -278,7 +278,7 @@
     <comment></comment>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F</value>
+    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter</value>
     <comment></comment>
   </data>
   <data name="InvalidSequences" xml:space="preserve">

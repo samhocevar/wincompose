@@ -344,8 +344,7 @@ namespace WinCompose
             if (!UnicodeInput.Value)
                 return false;
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{0,4}$").Success
-                    && !Regex.Match(sequenceString, @"^u[03-9a-d]...$").Success;
+            return Regex.Match(sequenceString, @"^u[0-9a-f]+$").Success;
         }
 
         public static bool IsValidGenericSequence(KeySequence sequence)
@@ -353,8 +352,7 @@ namespace WinCompose
             if (!UnicodeInput.Value)
                 return false;
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]{2,5}$").Success
-                    && !Regex.Match(sequenceString, @"^ud[89a-f]..$").Success;
+            return Regex.Match(sequenceString, @"^u[0-9a-f]+vk[.]return$").Success;
         }
 
         public static string GetGenericSequenceResult(KeySequence sequence)
@@ -362,10 +360,14 @@ namespace WinCompose
             if (!UnicodeInput.Value)
                 return "";
             var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            var m = Regex.Match(sequenceString, @"^u([0-9a-f]{2,5})$");
+            var m = Regex.Match(sequenceString, @"^u([0-9a-f]+)vk[.]return$");
             if (!m.Success)
                 return "";
             int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
+            if (codepoint < 0 || codepoint > 0x10ffff)
+                return "";
+            if (codepoint >= 0xd800 && codepoint < 0xe000)
+                return "";
             return char.ConvertFromUtf32(codepoint);
         }
 
