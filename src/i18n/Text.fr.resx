@@ -168,6 +168,27 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Entrée</value>
   </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Composition</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Utiliser les séquences du projet Xorg</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Utiliser les 3000 séquences de composition du projet XOrg (http://www.x.org). Ce sont les séquences les plus couramment présentes sur un système Linux.</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Utiliser les séquences du projet XCompose</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Utiliser les 1000 séquences de composition du projet opensource XCompose (https://github.com/kragen/xcompose). Il est possible que certaines de ces séquences interfèrent avec celles du projet Xorg.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Utiliser les séquences d’emoji de WinCompose</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Utiliser les séquences de composition pour les Emoji fournies par l’auteur et les contributeurs de WinCompose.</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Fenêtre de débogage</value>
   </data>
@@ -180,6 +201,9 @@
   <data name="Restart" xml:space="preserve">
     <value>Réinitialiser</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Page de dons</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Site web</value>
   </data>
@@ -191,6 +215,12 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Séquences</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Tenter en inversant les touches</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Tente d’inverser les touches d’une séquence de deux touches. Par exemple, si Compose E A n’est pas une séquence valide, essayer Compose A E à la place.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Filtre de recherche :</value>
@@ -206,6 +236,9 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Saisie Unicode avancée</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Autoriser la saisie Unicode pour tous les caractères, même pour ceux sans définition de séquence de composition. Par exemple, la séquence suivante donnera le caractère U+1A3F : Compose U 1 A 3 F Entrée</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Lors de séquences non valides</value>
@@ -236,6 +269,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copier dans le presse-papier</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
@@ -312,6 +348,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Astuces</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} secondes</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>À propos</value>
   </data>
@@ -365,5 +404,26 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Désactivé</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Modifier…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Veuillez appuyer sur la touche qui sera votre touche Compose.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Ajouter aux favoris</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Désactiver l’icône de la zone de notification</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Aucun</value>
   </data>
 </root>

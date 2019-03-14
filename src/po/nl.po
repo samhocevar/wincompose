@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -131,9 +131,9 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"Gebruik de 1000 sequenties vanhet XCompose opensource project "
-"(https://github.com/kragen/xcompose). Deze sequenties kunnen soms "
-"conflicteren met die van Xorg."
+"Gebruik de 1000 sequenties vanhet XCompose opensource project (https://"
+"github.com/kragen/xcompose). Deze sequenties kunnen soms conflicteren met "
+"die van Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"

@@ -168,6 +168,12 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Imbiu (Return)</value>
   </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Cumpositzione</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Imprea fileras de su progetu Xorg</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Ventana de debug</value>
   </data>

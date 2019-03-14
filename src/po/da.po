@@ -2,15 +2,15 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2018-08-29 18:14+0000\n"
-"Last-Translator: Alexander Emil Haarlev Schmidt "
-"<Alexander.Emil.Haarlev.Schmidt@gmail.com>\n"
+"Last-Translator: Alexander Emil Haarlev Schmidt <Alexander.Emil.Haarlev."
+"Schmidt@gmail.com>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/wincompose/master/"
 "da/>\n"
 "Language: da\n"

@@ -113,8 +113,9 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Utiliser les 3000 séquences de composition du projet XOrg (http://www.x.org)"
-". Ce sont les séquences les plus couramment présentes sur un système Linux."
+"Utiliser les 3000 séquences de composition du projet XOrg (http://www.x."
+"org). Ce sont les séquences les plus couramment présentes sur un système "
+"Linux."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"

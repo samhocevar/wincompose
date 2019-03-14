@@ -168,6 +168,27 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Samenstellen</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Gebruik sequenties van het Xorg project</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Gebruik de 3000 sequenties van het Xorg project (http://www.x.org/). Het zijn de sequenties die men op een standaard Linux systeem kan vinden.</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Gebruik sequenties van het XCompose project</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Gebruik de 1000 sequenties vanhet XCompose opensource project (https://github.com/kragen/xcompose). Deze sequenties kunnen soms conflicteren met die van Xorg.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Gebruik WinCompose emoji sequenties</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Gebruik de sequenties voor Emoji voorzien door de WinCompose auteur en medewerkers.</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Debugvenster</value>
   </data>
@@ -180,6 +201,9 @@
   <data name="Restart" xml:space="preserve">
     <value>Herstarten</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Een knop om de donatiepagina te bezoeken (http://wincompose.info/donate/)</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website bezoeken</value>
   </data>
@@ -191,6 +215,12 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenties</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Probeer de twee toetsen te wisselen</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Probeer de toetsen van de twee-toetsen sequentie te wisselen. Bv. als Compositietoets E A geen geldige sequentie is, probeer Compositietoets A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Zoek filter:</value>
@@ -206,6 +236,9 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Geavanceerde Unicode input</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Unicode input toestaan voor alle karakters, zelfs voor deze zonder gedefinieerde compositiesequentie. Bv. de volgende sequentie zal het karakter U+1A3F opleveren: Compositietoets U 1 A 3 F Enter</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Bij ongeldige sequenties</value>
@@ -236,6 +269,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Sluiten</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopieer naar het klembord</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoticons</value>
@@ -312,6 +348,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Aanpassingen</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} seconden</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Over</value>
   </data>
@@ -365,5 +404,44 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Uitgeschakeld</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automatisch controleren op updates</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Indien ingeschakeld, zal WinCompose regelmatig via het internet controleren of er nieuwe versies beschikbaar zijn. Die worden niet automatisch geïnstalleerd.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Probeer het icoon altijd zichtbaar te houden in de systeembalk</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Standaard zal Windows het icoon na een tijdhe uit de systeem balk verwijderen. Deze optie probeert het icoon altijd zichtbaar te houden.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Aanpassen…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Druk aub een toets in die mag worden gebruikt als compositietoets.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Toevoegen aan favorieten</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Systeembalk icoon uitschakelen</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Indien aangeschakeld zal het WinCompose icoon niet meer in de systeembalk verschijnen. De enige manier om WinCompose dan te openen is via &quot;WinCompose Settings&quot; en &quot;WinCompose sequenties&quot; in het opstart menu.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Beginpagina</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Einde</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Geen vertraging</value>
   </data>
 </root>
