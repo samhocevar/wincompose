@@ -251,7 +251,7 @@
                                 <StackPanel.RenderTransform>
                                     <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
                                 </StackPanel.RenderTransform>
-                                <TextBlock Text="{Binding Utf32, Mode=OneTime, StringFormat=U+\{0:X4\}}"
+                                <TextBlock Text="{Binding CodePoint, Mode=OneTime}"
                                            Foreground="DarkMagenta"/>
                                 <TextBlock Text="{Binding UnicodeCategory, Converter={wc:UnicodeCategoryConverter}, Mode=OneTime}"
                                            Foreground="DarkCyan" FontStyle="Italic" HorizontalAlignment="Right" Margin="10,0"/>

@@ -34,9 +34,9 @@ namespace WinCompose
         /// Return the sequence Unicode codepoint. If the sequence contains
         /// zero, two or more characters, return -1.
         /// </summary>
-        public int Utf32 => m_desc.Utf32;
+        public string CodePoint => (m_desc.Utf32 == -1) ? "" : $"U+{(m_desc.Utf32):X04}";
 
-        public int UnicodeCategory => Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0);
+        public int UnicodeCategory => m_desc.Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0);
 
         public string Description => m_desc.Description;
 
@@ -55,7 +55,7 @@ namespace WinCompose
             // Ensure this sequence matches all the tokens (implicit AND)
             foreach (var token in query.Tokens)
             {
-                if (token.Num == Utf32 || token.HexNum == Utf32)
+                if (token.Num == m_desc.Utf32 || token.HexNum == m_desc.Utf32)
                     continue;
                 if (compare_info.IndexOf(Description, token.Text, CompareOptions.IgnoreCase) != -1)
                     continue;
