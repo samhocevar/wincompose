@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2018-04-20 22:52+0000\n"
+"PO-Revision-Date: 2019-03-14 13:11+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
 "master/sc/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0-dev\n"
+"X-Generator: Weblate 3.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -107,11 +107,11 @@ msgstr "Imbiu (Return)"
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Cumpositzione"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Imprea fileras de su progetu Xorg"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
