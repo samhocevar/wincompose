@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-03-14 13:11+0000\n"
+"PO-Revision-Date: 2019-03-15 16:04+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
 "master/sc/>\n"
@@ -118,10 +118,13 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Imprea sas 3'000 fileras de cumpositzione de su progetu Xorg (http://www.x."
+"org/). Custas sunt sas fileras agatadas prus a s'ispissu in unu sistema "
+"Linux istandard."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Imprea sas fileras de su progetu XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -129,11 +132,13 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"Imprea sas 1'000 fileras de cumpositzione de su progetu a mitza aberta "
+"XCompose (https://github.com/kragen/xcompose). Custas fileras diant carchi "
+"borta pòdere èssere in cunflitu cun cussas de Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "Tecla Compose:"
+msgstr "Imprea sas fileras de emojis de WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
