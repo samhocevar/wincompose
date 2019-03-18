@@ -36,19 +36,18 @@ static internal class NativeMethods
     public static extern int ToUnicode(VK wVirtKey, SC wScanCode,
                                        byte[] lpKeyState, byte[] pwszBuff,
                                        int cchBuff, LLKHF flags);
+    // Use IntPtr instead of HKL because we can’t have an IntPtr-based enum
+    [DllImport("user32", CharSet = CharSet.Auto)]
+    public static extern int ToUnicodeEx(VK wVirtKey, SC wScanCode,
+                                         byte[] lpKeyState, byte[] pwszBuff,
+                                         int cchBuff, LLKHF flags,
+                                         IntPtr dwhkl);
     [DllImport("user32", CharSet = CharSet.Auto)]
     public static extern int GetKeyboardState(byte[] lpKeyState);
     [DllImport("user32", CharSet = CharSet.Auto)]
     public static extern void SetKeyboardState(byte[] lpKeyState);
     [DllImport("user32", CharSet = CharSet.Auto)]
     public static extern short GetKeyState(VK nVirtKey);
-
-    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-    public static extern IntPtr GetForegroundWindow();
-    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-    public static extern int GetClassName(IntPtr hWnd, StringBuilder text, int count);
-    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-    public static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 
     [DllImport("kernel32")]
     public static extern uint GetCurrentThreadId();
@@ -100,6 +99,20 @@ static internal class NativeMethods
                                                 IntPtr hMod, int dwThreadId);
     [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
     public static extern int UnhookWindowsHookEx(HOOK hhk);
+
+    //
+    // for KeyboardLayout.cs
+    //
+
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern IntPtr GetForegroundWindow();
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern int GetClassName(IntPtr hWnd, StringBuilder text, int count);
+    [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+
+    public static uint MAKELANG(LANG p, SUBLANG s) => ((uint)s << 10) | (uint)p;
+
 
     //
     // for RemoteControl.cs

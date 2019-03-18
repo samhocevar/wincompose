@@ -223,7 +223,8 @@ public static class KeyboardLayout
     {
         const int buflen = 4;
         byte[] buf = new byte[2 * buflen];
-        int ret = NativeMethods.ToUnicode(vk, sc, keystate, buf, buflen, flags);
+        int ret = NativeMethods.ToUnicodeEx(vk, sc, keystate, buf, buflen,
+                                            flags, TransformedHkl);
         if (ret > 0 && ret < buflen)
         {
             return Encoding.Unicode.GetString(buf, 0, ret * 2);
@@ -248,6 +249,29 @@ public static class KeyboardLayout
 
     private static Dictionary<string, int> m_possible_dead_keys;
     private static Dictionary<string, string> m_possible_altgr_keys;
+
+    /// <summary>
+    /// Return an input locale identifier suitable for ToUnicodeEx(). This is
+    /// necessary because some IMEs interfer with ToUnicodeEx, e.g. Japanese,
+    /// so we pretend we use an English US keyboard.
+    /// I could check that Korean (Microsoft IME) and Chinese Simplified
+    /// (Microsoft Pinyin) are not affected.
+    /// </summary>
+    private static IntPtr TransformedHkl
+    {
+        get
+        {
+            // High bytes are the device ID, low bytes are the language ID
+            var current_device_id = (ulong)m_current_layout >> 16;
+            var japanese_lang_id = NativeMethods.MAKELANG(LANG.JAPANESE, SUBLANG.JAPANESE_JAPAN);
+            if (current_device_id == japanese_lang_id)
+            {
+                var english_lang_id = NativeMethods.MAKELANG(LANG.ENGLISH, SUBLANG.DEFAULT);
+                return (IntPtr)((english_lang_id << 16) | english_lang_id);
+            }
+            return m_current_layout;
+        }
+    }
 
     // Initialise with -1 to make sure the above dictionaries are
     // properly initialised even if the layout is found to be 0x0.

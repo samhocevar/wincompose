@@ -39,6 +39,7 @@ internal enum WM : int
     INPUTLANGCHANGEREQUEST = 0x50,
     KEYDOWN    = 0x100,
     KEYUP      = 0x101,
+    CHAR       = 0x102,
     SYSKEYDOWN = 0x104,
     SYSKEYUP   = 0x105,
     MOUSEMOVE  = 0x200,
@@ -186,6 +187,19 @@ public enum VK : int
 internal enum SC : uint
 {
     // Not needed
+};
+
+internal enum LANG : uint
+{
+    ENGLISH  = 0x09,
+    JAPANESE = 0x11,
+};
+
+internal enum SUBLANG : uint
+{
+    NEUTRAL        = 0x00,
+    DEFAULT        = 0x01,
+    JAPANESE_JAPAN = 0x01,
 };
 
 [Flags]
