@@ -553,4 +553,16 @@
     <value>No delay</value>
     <comment>Text to show instead of a value in seconds when the reset delay feature is disabled</comment>
   </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+    <comment>The “Advanced” section in the settings.</comment>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Window class ignore regex:</value>
+    <comment>A user-provided regular expression to ignore certain windows.</comment>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose will be completely disabled when the current window class matches this regular expression.</value>
+    <comment></comment>
+  </data>
 </root>

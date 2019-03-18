@@ -129,6 +129,9 @@ namespace WinCompose
         [EntryLocation("tweaks", "disable_icon")]
         public static SettingsEntry<bool> DisableIcon { get; } = new SettingsEntry<bool>(false);
 
+        [EntryLocation("advanced", "ignore_regex")]
+        public static SettingsEntry<string> IgnoreRegex { get; } = new SettingsEntry<string>("");
+
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;
 
