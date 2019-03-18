@@ -558,11 +558,11 @@
     <comment>The “Advanced” section in the settings.</comment>
   </data>
   <data name="IgnoreRegex" xml:space="preserve">
-    <value>Window class ignore regex:</value>
-    <comment>A user-provided regular expression to ignore certain windows.</comment>
+    <value>Ignore windows matching this regex:</value>
+    <comment>“regex” is shorthand for “regular expression”.</comment>
   </data>
   <data name="IgnoreRegexToolTip" xml:space="preserve">
-    <value>WinCompose will be completely disabled when the current window class matches this regular expression.</value>
+    <value>WinCompose will be completely disabled when the current window class or window name matches this regular expression.</value>
     <comment></comment>
   </data>
 </root>

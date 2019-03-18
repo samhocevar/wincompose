@@ -62,6 +62,9 @@ namespace WinCompose
             UseXorgRules.ValueChanged += () => LoadSequences();
             UseXComposeRules.ValueChanged += () => LoadSequences();
             UseEmojiRules.ValueChanged += () => LoadSequences();
+
+            // Refresh the window properties when this value changes
+            IgnoreRegex.ValueChanged += () => KeyboardLayout.Window.Refresh();
         }
 
         // The application version

@@ -448,7 +448,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Window class ignore regex:.
+        ///   Looks up a localized string similar to Ignore windows matching this regex:.
         /// </summary>
         public static string IgnoreRegex {
             get {
@@ -457,7 +457,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WinCompose will be completely disabled when the current window class matches this regular expression..
+        ///   Looks up a localized string similar to WinCompose will be completely disabled when the current window class or window name matches this regular expression..
         /// </summary>
         public static string IgnoreRegexToolTip {
             get {

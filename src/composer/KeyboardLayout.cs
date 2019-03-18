@@ -115,44 +115,12 @@ public static class KeyboardLayout
 
     public static void CheckForChanges()
     {
-        // Detect keyboard layout changes by querying the foreground window,
-        // and apply the same layout to WinCompose itself.
-        IntPtr hwnd = NativeMethods.GetForegroundWindow();
-        uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
-        IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
+        // Detect keyboard layout changes by querying the foreground window
+        // for its layout, and apply the same layout to WinCompose itself.
+        Window.Hwnd = NativeMethods.GetForegroundWindow();
 
-        if (hwnd != m_current_hwnd)
-        {
-            Window.IsGtk = false;
-            Window.IsNPPOrLO = false;
-            Window.IsOffice = false;
-            Window.IsOtherDesktop = false;
-
-            const int len = 256;
-            StringBuilder buf = new StringBuilder(len);
-            if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
-            {
-                string wclass = buf.ToString();
-                Log.Debug($"Window {hwnd} ({wclass}) got focus");
-
-                if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
-                    || wclass == "hexchatWindowToplevel")
-                    Window.IsGtk = true;
-
-                /* Notepad++ or LibreOffice */
-                if (wclass == "Notepad++" || wclass == "SALFRAME")
-                    Window.IsNPPOrLO = true;
-
-                if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
-                    Window.IsOffice = true;
-
-                if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
-                    Window.IsOtherDesktop = true;
-            }
-
-            m_current_hwnd = hwnd;
-        }
-
+        var tid = NativeMethods.GetWindowThreadProcessId(Window.Hwnd, out var pid);
+        var active_layout = NativeMethods.GetKeyboardLayout(tid);
         if (active_layout != m_current_layout)
         {
             m_current_layout = active_layout;
@@ -234,10 +202,66 @@ public static class KeyboardLayout
 
     public struct WindowProperties
     {
-        public bool IsGtk { get; set; }
-        public bool IsNPPOrLO { get; set; }
-        public bool IsOffice { get; set; }
-        public bool IsOtherDesktop { get; set; }
+        public void Refresh()
+        {
+            IsGtk = false;
+            IsNPPOrLO = false;
+            IsOffice = false;
+            IsOtherDesktop = false;
+
+            const int len = 256;
+            string wclass = "?", wname = "?";
+            StringBuilder buf = new StringBuilder(len);
+            if (NativeMethods.GetClassName(Hwnd, buf, len) > 0)
+                wclass = buf.ToString();
+            buf = new StringBuilder(len);
+            if (NativeMethods.GetWindowText(Hwnd, buf, len) > 0)
+                wname = buf.ToString();
+
+            Log.Debug($"Window {Hwnd} (class: {wclass}) (name: {wname}) got focus");
+
+            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
+                || wclass == "hexchatWindowToplevel")
+                IsGtk = true;
+
+            /* Notepad++ or LibreOffice */
+            if (wclass == "Notepad++" || wclass == "SALFRAME")
+                IsNPPOrLO = true;
+
+            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
+                IsOffice = true;
+
+            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
+                IsOtherDesktop = true;
+
+            try
+            {
+                var regex = new Regex($"^{Settings.IgnoreRegex}$");
+                if (regex.Match(wclass).Success || regex.Match(wname).Success)
+                    IsOtherDesktop = true;
+            }
+            catch {}
+        }
+
+        // Keep track of the window that has focus
+        public IntPtr Hwnd
+        {
+            get => m_hwnd;
+            set
+            {
+                if (value == m_hwnd)
+                    return;
+                m_hwnd = value;
+                Refresh();
+            }
+        }
+
+        public bool IsGtk { get; private set; }
+        public bool IsNPPOrLO { get; private set; }
+        public bool IsOffice { get; private set; }
+        public bool IsOtherDesktop { get; private set; }
+
+        private IntPtr m_hwnd;
     }
 
     public static WindowProperties Window;
@@ -276,9 +300,6 @@ public static class KeyboardLayout
     // Initialise with -1 to make sure the above dictionaries are
     // properly initialised even if the layout is found to be 0x0.
     private static IntPtr m_current_layout = new IntPtr(-1);
-
-    // Keep track of the window that has focus
-    private static IntPtr m_current_hwnd;
 }
 
 }
