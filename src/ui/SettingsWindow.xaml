@@ -1,7 +1,7 @@
 ﻿<!--
    - WinCompose — a compose key for Windows — http://wincompose.info/
    -
-   - Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+   - Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
    -             2014—2015 Benjamin Litzelmann
    -
    - This program is free software. It comes without any warranty, to
@@ -21,7 +21,7 @@
         xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         mc:Ignorable="d" x:Class="WinCompose.SettingsWindow"
         Title="{x:Static i18n:Text.Options}" Width="400" Height="500"
-        Icon="/WinCompose;component/res/icon_settings.ico"
+        Icon="/WinCompose;component/res/icon_settings.png"
         WindowStyle="ToolWindow"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"

@@ -184,9 +184,8 @@
     <Resource Include="res\decal_disabled.png" />
     <Resource Include="res\decal_idle.png" />
     <Resource Include="res\decal_update.png" />
-    <Resource Include="res\icon_normal.ico" />
-    <Resource Include="res\icon_sequences.ico" />
-    <Resource Include="res\icon_settings.ico" />
+    <Resource Include="res\icon_sequences.png" />
+    <Resource Include="res\icon_settings.png" />
     <Resource Include="res\key_compose.png" />
     <Resource Include="res\key_empty.png" />
     <Resource Include="res\key_space.png" />
