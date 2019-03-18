@@ -38,7 +38,9 @@ namespace WinCompose
             // wincompose-settings.exe is launched at medium level (through
             // the start menu). The security risk seems very low since all
             // we do is open an existing window.
-            NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.OPEN, MSGFLT.ADD);
+            // Note: this function does not exist on Windows XP
+            if (NativeMethods.EXISTS("user32", "ChangeWindowMessageFilter"))
+                NativeMethods.ChangeWindowMessageFilter(WM_WINCOMPOSE.OPEN, MSGFLT.ADD);
 
             Show();
             Hide();

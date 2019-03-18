@@ -21,6 +21,13 @@ namespace WinCompose
 
 static internal class NativeMethods
 {
+    public static bool EXISTS(string dll_name, string proc_name)
+    {
+        var dll = NativeMethods.LoadLibrary(dll_name);
+        var proc = NativeMethods.GetProcAddress(dll, proc_name);
+        return proc != UIntPtr.Zero;
+    }
+
     //
     // for Composer.cs
     //
@@ -87,16 +94,18 @@ static internal class NativeMethods
     //
 
     /* Imports from kernel32.dll */
-    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    [DllImport("kernel32", CharSet=CharSet.Ansi, SetLastError=true)]
     public static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)]string lpFileName);
+    [DllImport("kernel32", CharSet=CharSet.Ansi, SetLastError=true, ExactSpelling=true)]
+    public static extern UIntPtr GetProcAddress(IntPtr hModule, string procName);
 
     /* Imports from user32.dll */
     [DllImport("user32", CharSet = CharSet.Auto)]
     public static extern int CallNextHookEx(HOOK hhk, HC nCode, WM wParam,
-                                             IntPtr lParam);
+                                            IntPtr lParam);
     [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
     public static extern HOOK SetWindowsHookEx(WH idHook, CALLBACK lpfn,
-                                                IntPtr hMod, int dwThreadId);
+                                               IntPtr hMod, int dwThreadId);
     [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
     public static extern int UnhookWindowsHookEx(HOOK hhk);
 
@@ -112,7 +121,6 @@ static internal class NativeMethods
     public static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 
     public static uint MAKELANG(LANG p, SUBLANG s) => ((uint)s << 10) | (uint)p;
-
 
     //
     // for RemoteControl.cs

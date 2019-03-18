@@ -120,6 +120,8 @@ Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#EXE}"; IconIndex: 2; Parame
 ; This should allow to run WinCompose from the startup menu without triggering
 ; the UAC window. Running with high privileges is necessary to inject keyboard
 ; events into other high level processes, such as cmd.exe run as Administrator.
+; FIXME: On Windows XP, tasks are in {win}\Tasks instead of {sys}\Tasks and
+; their format is .job (binary) instead of .xml!
 Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /tr ""\""{app}\{#EXE}\"" /fromtask"""; Flags: runhidden
 Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; \
     BeforeInstall: fix_scheduled_task('{sys}\Tasks\{#NAME}'); Flags: runhidden
