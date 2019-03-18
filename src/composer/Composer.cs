@@ -499,11 +499,15 @@ static class Composer
         // Unknown characters for sequence, print them if necessary
         if (!Settings.DiscardOnInvalid.Value)
         {
+            string tosend = "";
             foreach (Key k in m_sequence)
+                if (k.IsPrintable) // FIXME: what if the key is e.g. left arrow?
+                    tosend += k;
+
+            if (!string.IsNullOrEmpty(tosend))
             {
-                // FIXME: what if the key is e.g. left arrow?
-                if (k.IsPrintable)
-                    SendString(k.ToString());
+                Log.Debug("Invalid sequence! Sending {0}", tosend);
+                SendString(tosend);
             }
         }
 
