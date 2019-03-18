@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:wc="clr-namespace:WinCompose"
+             DispatcherUnhandledException="OnUnhandledException"
              mc:Ignorable="d">
     <Application.MainWindow>
         <wc:RemoteControl x:Name="RC"/>

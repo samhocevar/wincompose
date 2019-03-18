@@ -10,6 +10,8 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System.Windows.Threading;
+
 namespace WinCompose
 {
     /// <summary>
@@ -20,6 +22,11 @@ namespace WinCompose
         public Application()
         {
             InitializeComponent();
+        }
+
+        protected void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            System.Windows.MessageBox.Show(e.Exception.ToString(), "Error");
         }
 
         public static RemoteControl RemoteControl => (Current as Application).RC;
