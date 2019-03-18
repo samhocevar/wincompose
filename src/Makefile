@@ -28,7 +28,7 @@ VSWHERE = "${ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
 DEVENV = "$(shell $(VSWHERE) | sed -ne 's/^productPath: //p' | sed 's/devenv.exe/devenv.com/' | head -n 1)"
 MSGMERGE = msgmerge
 
-all: installer portable
+all: check installer portable
 	@echo
 	@echo Latest: $(VERSION)
 	@echo Installer: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-Setup-$(VERSION).exe
@@ -37,6 +37,9 @@ all: installer portable
 	@echo Portable: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-NoInstall-$(VERSION).zip
 	@echo PortableSHA256: $(shell sha256sum $(PORTABLE))
 	@echo PortableMD5: $(shell md5sum $(PORTABLE))
+
+check:
+	./check-data.sh
 
 clean:
 	$(foreach x, $(EXE), $(DEVENV) wincompose.sln //clean $(CONFIG) //project $(basename $(notdir $x)).csproj;)
