@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -10,6 +10,7 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System;
 using System.Windows.Threading;
 
 namespace WinCompose
@@ -21,13 +22,21 @@ namespace WinCompose
     {
         public Application()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                OnFatalError(ex);
+            }
         }
 
-        protected void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
-        {
-            System.Windows.MessageBox.Show(e.Exception.ToString(), "Error");
-        }
+        private void OnFatalError(Exception ex)
+            => System.Windows.MessageBox.Show(ex.ToString(), "Fatal Error");
+
+        private void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+            => OnFatalError(e.Exception);
 
         public static RemoteControl RemoteControl => (Current as Application).RC;
     }
