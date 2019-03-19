@@ -236,8 +236,8 @@ static class Composer
         }
 
         // If this is the compose key and we’re idle, enter Sequence mode
-        if (is_keydown && Settings.ComposeKeys.Value.Contains(key)
-             && m_compose_counter == 0 && CurrentState == State.Idle)
+        if (m_compose_counter == 0 && CurrentState == State.Idle
+             && is_keydown && Settings.ComposeKeys.Value.Contains(key))
         {
             CurrentState = State.Sequence;
             m_current_compose_key = key;
@@ -312,6 +312,23 @@ static class Composer
         // From this point we know we are composing
         //
 
+        // If this is the compose key again, replace its value with our custom
+        // virtual key.
+        // FIXME: we don’t properly support compose keys that also normally
+        // print stuff, such as `.
+        if (key == m_current_compose_key
+             || (Settings.AlwaysCompose.Value && Settings.ComposeKeys.Value.Contains(key)))
+        {
+            ++m_compose_counter;
+            key = new Key(VK.COMPOSE);
+
+            // If the compose key is AltGr, we only add it to the sequence when
+            // it’s a KeyUp event, otherwise we may be adding Multi_key to the
+            // sequence while the user actually wants to enter an AltGr char.
+            if (m_compose_key_is_altgr && m_compose_counter > 2)
+                add_to_sequence = is_keyup;
+        }
+
         // If the compose key is down and the user pressed a new key, maybe
         // instead of composing they want to do a key combination, such as
         // Alt+Tab or Windows+Up. So we abort composing and send the KeyDown
@@ -350,22 +367,6 @@ static class Composer
             }
         }
 
-        // If this is the compose key again, use our custom virtual key
-        // FIXME: we don’t properly support compose keys that also normally
-        // print stuff, such as `.
-        if (key == m_current_compose_key
-             || (Settings.AlwaysCompose.Value && Settings.ComposeKeys.Value.Contains(key)))
-        {
-            ++m_compose_counter;
-            key = new Key(VK.COMPOSE);
-
-            // If the compose key is AltGr, we only add it to the sequence when
-            // it’s a KeyUp event, otherwise we may be adding Multi_key to the
-            // sequence while the user actually wants to enter an AltGr char.
-            if (m_compose_key_is_altgr && m_compose_counter > 2)
-                add_to_sequence = is_keyup;
-        }
-
         // If the compose key is AltGr and it’s down, check whether the current
         // key needs translating.
         if (m_compose_key_is_altgr && (m_compose_counter & 1) != 0)
@@ -402,8 +403,7 @@ static class Composer
     /// <summary>
     /// Cancel the current sequence when the reset delay is expired.
     /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+    /// <param name="state"></param>
     private static void TimeoutExpired(object state)
     {
         if (CurrentState == State.Sequence)
