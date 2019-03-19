@@ -115,6 +115,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alternate compose key is always Compose.
+        /// </summary>
+        public static string AlwaysCompose {
+            get {
+                return ResourceManager.GetString("AlwaysCompose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role..
+        /// </summary>
+        public static string AlwaysComposeToolTip {
+            get {
+                return ResourceManager.GetString("AlwaysComposeToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {

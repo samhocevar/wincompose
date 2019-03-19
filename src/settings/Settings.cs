@@ -116,6 +116,8 @@ namespace WinCompose
         public static SettingsEntry<bool> BeepOnInvalid { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("composing", "keep_original_key")]
         public static SettingsEntry<bool> KeepOriginalKey { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("composing", "always_compose")]
+        public static SettingsEntry<bool> AlwaysCompose { get; } = new SettingsEntry<bool>(false);
 
         [EntryLocation("tweaks", "insert_zwsp")]
         public static SettingsEntry<bool> InsertZwsp { get; } = new SettingsEntry<bool>(false);

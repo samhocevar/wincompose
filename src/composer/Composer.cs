@@ -353,7 +353,8 @@ static class Composer
         // If this is the compose key again, use our custom virtual key
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
-        if (key == m_current_compose_key)
+        if (key == m_current_compose_key
+             || (Settings.AlwaysCompose.Value && Settings.ComposeKeys.Value.Contains(key)))
         {
             ++m_compose_counter;
             key = new Key(VK.COMPOSE);

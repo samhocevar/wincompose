@@ -153,8 +153,6 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <emoji:TextBlock Grid.Row="0" Grid.Column="0"
@@ -187,7 +185,13 @@
                             <TextBlock Text="{x:Static i18n:Text.KeepOriginalKey}" TextWrapping="Wrap"/>
                         </CheckBox>
 
-                        <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
+                        <CheckBox Grid.Row="4" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.AlwaysCompose}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.AlwaysComposeToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.AlwaysCompose}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Grid.Row="5" Grid.ColumnSpan="3" Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.UnicodeInput}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.UnicodeInputToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.UnicodeInput}" TextWrapping="Wrap"/>

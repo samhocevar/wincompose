@@ -565,4 +565,12 @@
     <value>WinCompose will be completely disabled when the current window class or window name matches this regular expression.</value>
     <comment></comment>
   </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternate compose key is always Compose</value>
+    <comment></comment>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role.</value>
+    <comment></comment>
+  </data>
 </root>
