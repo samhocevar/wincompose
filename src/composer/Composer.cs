@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -393,7 +393,7 @@ static class Composer
         // is a key we must add to the current sequence.
         if (add_to_sequence)
         {
-            Log.Debug("Adding to sequence: {0}", key.FriendlyName);
+            Log.Debug("Adding to sequence: “{0}”", key.FriendlyName);
             return AddToSequence(key);
         }
 
@@ -452,7 +452,7 @@ static class Composer
                 string tosend = Settings.GetSequenceResult(m_sequence,
                                                            ignore_case);
                 Stats.AddSequence(m_sequence);
-                Log.Debug("Valid sequence! Sending {0}", tosend);
+                Log.Debug("Valid sequence! Sending “{0}”", tosend);
                 ResetSequence();
                 SendString(tosend);
                 return true;
@@ -473,7 +473,7 @@ static class Composer
                 {
                     string tosend = Settings.GetGenericSequenceResult(m_sequence);
                     Stats.AddSequence(m_sequence);
-                    Log.Debug("Valid generic sequence! Sending {0}", tosend);
+                    Log.Debug("Valid generic sequence! Sending “{0}”", tosend);
                     ResetSequence();
                     SendString(tosend);
                     return true;
@@ -489,7 +489,7 @@ static class Composer
                     string tosend = Settings.GetSequenceResult(other_sequence,
                                                                ignore_case);
                     Stats.AddSequence(other_sequence);
-                    Log.Debug("Found swapped sequence! Sending {0}", tosend);
+                    Log.Debug("Found swapped sequence! Sending “{0}”", tosend);
                     ResetSequence();
                     SendString(tosend);
                     return true;
@@ -507,7 +507,7 @@ static class Composer
 
             if (!string.IsNullOrEmpty(tosend))
             {
-                Log.Debug("Invalid sequence! Sending {0}", tosend);
+                Log.Debug("Invalid sequence! Sending “{0}”", tosend);
                 SendString(tosend);
             }
         }
