@@ -204,11 +204,6 @@ public static class KeyboardLayout
     {
         public void Refresh()
         {
-            IsGtk = false;
-            IsNPPOrLO = false;
-            IsOffice = false;
-            IsOtherDesktop = false;
-
             const int len = 256;
             string wclass = "?", wname = "?";
             StringBuilder buf = new StringBuilder(len);
@@ -220,28 +215,29 @@ public static class KeyboardLayout
 
             Log.Debug($"Window {Hwnd} (class: {wclass}) (name: {wname}) got focus");
 
-            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
-                || wclass == "hexchatWindowToplevel")
-                IsGtk = true;
-
-            /* Notepad++ or LibreOffice */
-            if (wclass == "Notepad++" || wclass == "SALFRAME")
-                IsNPPOrLO = true;
-
-            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
-                IsOffice = true;
-
-            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
-                IsOtherDesktop = true;
+            IsGtk = m_match_gtk.Match(wclass).Success;
+            IsNPPOrLO = m_match_npp.Match(wclass).Success;
+            IsOffice = m_match_office.Match(wclass).Success;
+            IsOtherDesktop = m_match_desktop.Match(wclass).Success;
 
             try
             {
                 var regex = new Regex($"^({Settings.IgnoreRegex})$");
-                if (regex.Match(wclass).Success || regex.Match(wname).Success)
-                    IsOtherDesktop = true;
+                IsOtherDesktop = IsOtherDesktop || regex.Match(wclass).Success
+                                                || regex.Match(wname).Success;
             }
             catch {}
         }
+
+        // Match window class for standard GTK applications, with additional
+        // case for XChat and HexChat.
+        private static Regex m_match_gtk = new Regex("^(gdk|xchat|hexchat)WindowToplevel$");
+        // Match Notepad++ or LibreOffice
+        private static Regex m_match_npp = new Regex("^(Notepad[+][+]|SALFRAME)$");
+        // Match Office applications (Word, Outlook…)
+        private static Regex m_match_office = new Regex("^(rctrl_renwnd32|OpusApp)$");
+        // Match windows where we should be inactive (Synergy, Xorg on cygwin…)
+        private static Regex m_match_desktop = new Regex("^(SynergyDesk|cygwin/x.*)$");
 
         // Keep track of the window that has focus
         public IntPtr Hwnd
