@@ -379,7 +379,7 @@ namespace WinCompose
             return char.ConvertFromUtf32(codepoint);
         }
 
-        private static Regex m_match_gen_prefix = new Regex(@"^u[0-9a-f]+$");
+        private static Regex m_match_gen_prefix = new Regex(@"^u[0-9a-f]*$");
         private static Regex m_match_gen_seq = new Regex(@"^u([0-9a-f]+)( |vk[.]return)$");
 
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
