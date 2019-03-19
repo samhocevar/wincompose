@@ -351,24 +351,24 @@ namespace WinCompose
         {
             if (!UnicodeInput.Value)
                 return false;
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]+$").Success;
+            var seq_string = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            return m_match_gen_prefix.Match(seq_string).Success;
         }
 
         public static bool IsValidGenericSequence(KeySequence sequence)
         {
             if (!UnicodeInput.Value)
                 return false;
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            return Regex.Match(sequenceString, @"^u[0-9a-f]+vk[.]return$").Success;
+            var seq_string = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            return m_match_gen_seq.Match(seq_string).Success;
         }
 
         public static string GetGenericSequenceResult(KeySequence sequence)
         {
             if (!UnicodeInput.Value)
                 return "";
-            var sequenceString = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
-            var m = Regex.Match(sequenceString, @"^u([0-9a-f]+)vk[.]return$");
+            var seq_string = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            var m = m_match_gen_seq.Match(seq_string);
             if (!m.Success)
                 return "";
             int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
@@ -378,6 +378,9 @@ namespace WinCompose
                 return "";
             return char.ConvertFromUtf32(codepoint);
         }
+
+        private static Regex m_match_gen_prefix = new Regex(@"^u[0-9a-f]+$");
+        private static Regex m_match_gen_seq = new Regex(@"^u([0-9a-f]+)( |vk[.]return)$");
 
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
