@@ -236,7 +236,7 @@ public static class KeyboardLayout
 
             try
             {
-                var regex = new Regex($"^{Settings.IgnoreRegex}$");
+                var regex = new Regex($"^({Settings.IgnoreRegex})$");
                 if (regex.Match(wclass).Success || regex.Match(wname).Success)
                     IsOtherDesktop = true;
             }
