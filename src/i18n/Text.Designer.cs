@@ -142,6 +142,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Authors.
+        /// </summary>
+        public static string Authors {
+            get {
+                return ResourceManager.GetString("Authors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Autodetect.
         /// </summary>
         public static string AutodetectLanguage {
@@ -291,15 +300,6 @@ namespace WinCompose.i18n {
         public static string Composing {
             get {
                 return ResourceManager.GetString("Composing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Special Thanks.
-        /// </summary>
-        public static string Contributors {
-            get {
-                return ResourceManager.GetString("Contributors", resourceCulture);
             }
         }
         
@@ -885,6 +885,15 @@ namespace WinCompose.i18n {
         public static string ShowSequences {
             get {
                 return ResourceManager.GetString("ShowSequences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Thanks.
+        /// </summary>
+        public static string SpecialThanks {
+            get {
+                return ResourceManager.GetString("SpecialThanks", resourceCulture);
             }
         }
         

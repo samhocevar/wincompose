@@ -14,6 +14,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace WinCompose
 {
@@ -26,7 +27,8 @@ namespace WinCompose
 
         static AboutBox()
         {
-            WebContentProperty = DependencyProperty.RegisterAttached("WebContent", typeof(Stream), typeof(AboutBox), new PropertyMetadata(OnWebContentPropertyChanged));
+            WebContentProperty = DependencyProperty.RegisterAttached("WebContent",
+                typeof(Stream), typeof(AboutBox), new PropertyMetadata(OnWebContentPropertyChanged));
         }
 
         public AboutBox()
@@ -35,8 +37,16 @@ namespace WinCompose
             InitializeComponent();
         }
 
-        public static Stream GetWebContent(WebBrowser web_browser) { return web_browser.GetValue(WebContentProperty) as Stream; }
-        public static void SetWebContent(WebBrowser web_browser, Stream value) { web_browser.SetValue(WebContentProperty, value); }
+        private void OnCloseCommandExecuted(object Sender, ExecutedRoutedEventArgs e)
+        {
+            Hide();
+        }
+
+        public static Stream GetWebContent(WebBrowser web_browser)
+            => web_browser.GetValue(WebContentProperty) as Stream;
+
+        public static void SetWebContent(WebBrowser web_browser, Stream value)
+            => web_browser.SetValue(WebContentProperty, value);
 
         private static void OnWebContentPropertyChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {

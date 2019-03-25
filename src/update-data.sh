@@ -235,6 +235,22 @@ git log --stat po/*.po | \
   >> res/.contributors.html
 cat >> res/.contributors.html << EOF
 </ul>
+<h3>Donations</h3>
+<ul>
+<li>Matt Proud</li>
+<li>Pascal Heitz</li>
+<li>Jacob Dreesen</li>
+<li>Anonymous</li>
+<li>Fabio Ferreira Cachapa</li>
+<li>Tim Weber</li>
+<li>Andreu Cabré Chacón</li>
+<li>Anonymous</li>
+<li>Marc Dirix</li>
+<li>Jeffrey Miller</li>
+<li>Anonymous</li>
+<li>Jason Baietto</li>
+<li>Stephen Friedrich</li>
+</ul>
 </body>
 </html>
 EOF
