@@ -309,9 +309,6 @@
   <data name="Translators" xml:space="preserve">
     <value>翻訳</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>スペシャルサンクス</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>ライセンス</value>
   </data>
@@ -329,5 +326,8 @@
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
     <value>ユーザー定義シーケンス</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>スペシャルサンクス</value>
   </data>
 </root>

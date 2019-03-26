@@ -327,9 +327,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Tradução</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Agradecimentos Especiais</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Licença</value>
   </data>
@@ -362,5 +359,8 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>PrtScrn</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Agradecimentos Especiais</value>
   </data>
 </root>

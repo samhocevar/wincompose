@@ -174,6 +174,21 @@
   <data name="UseXorgRules" xml:space="preserve">
     <value>Imprea fileras de su progetu Xorg</value>
   </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Imprea sas 3'000 fileras de cumpositzione de su progetu Xorg (http://www.x.org/). Custas sunt sas fileras agatadas prus a s'ispissu in unu sistema Linux istandard.</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Imprea sas fileras de su progetu XCompose</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Imprea sas 1'000 fileras de cumpositzione de su progetu a mitza aberta XCompose (https://github.com/kragen/xcompose). Custas fileras diant carchi borta pòdere èssere in cunflitu cun cussas de Xorg.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Imprea sas fileras de emojis de WinCompose</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Imprea sas fileras de cumpositzione pro sas Emoji frunidas dae s'autore e dae sos contribuidores de WinCompose.</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Ventana de debug</value>
   </data>
@@ -186,6 +201,9 @@
   <data name="Restart" xml:space="preserve">
     <value>Torra a allùere</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Pàgina de sas donatziones</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Bìsita su giassu/situ</value>
   </data>
@@ -197,6 +215,12 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Fileras</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Proa a cuncambiare sas duas teclas</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Proa a cuncambiare sas teclas de una filera de duas teclas. Pro fàghere un'esèmpiu, si Compose E A no est una filera vàlida, proa imbetzes Compose A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Chirca filtrada:</value>
@@ -212,6 +236,9 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Insertada (input) avantzada Unicode</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Abìlita s’insertada Unicode pro totu sos caràteres, fintzas cussos chene filera compose. Pro fàghere un’esèmpiu, custa filera at a otènnere su caràtere U+1A3F: Compose U 1 A 3 F Imbiu</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Si una filera no est vàlida</value>
@@ -242,6 +269,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Serra</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Còpia in punta de billete</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
@@ -318,6 +348,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Modìficas minores</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} segundos</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Informatziones</value>
   </data>
@@ -332,9 +365,6 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Bortadura</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Ringratziamentos ispetziales</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Litzèntzia</value>
@@ -371,5 +401,47 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Disabilitadu</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Chirca agiornamentos automaticamente</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Si custu est abilitadu, WinCompose s'at a connètere a ìnternet a intervallos regulares pro chircare versiones noas. Sos agiornamentos non benint installados automaticamente.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Proa a mantènnere semper visìbile s'icona in s'àrea de notìfica</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Sighende sas impostatziones predefinidas, Windows at a bogare s'icona dae s'àrea de notìfica a pustis de unu pagu de tempus. Custa optzione chircat de la mantènnere semper visìbile.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Modìfica…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Pro praghere incarca sa tecla de impreare comente tecla Compose.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Annanghe a sos preferidos</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Disabìlita s'icona de s'àrea de notìfica</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Si custu est abilitadu, WinCompose no at prus a ammustrare un'icona in s'àrea de notìfica. S'ùnica manera de abèrrere s'interfache de WinCompose at tando a èssere cussa de impreare sos elementos &quot;Impostatziones de WinCompose&quot; e &quot;Fileras de WinCompose&quot; in su menù de incumintzu.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Pàgina printzipale</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Fine</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Perunu ritardu</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Ringratziamentos ispetziales</value>
   </data>
 </root>

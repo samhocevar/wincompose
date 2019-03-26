@@ -306,9 +306,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Μετάφραση</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Ιδιαίτερες ευχαριστίες</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Άδεια χρήστη</value>
   </data>
@@ -323,5 +320,8 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Υπάρχουν διαθέσιμες ενημερώσεις.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Ιδιαίτερες ευχαριστίες</value>
   </data>
 </root>

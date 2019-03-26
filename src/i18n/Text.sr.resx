@@ -273,9 +273,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Превод</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Захвалнице</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Лиценца</value>
   </data>
@@ -284,5 +281,8 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Пријавите грешку</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Захвалнице</value>
   </data>
 </root>

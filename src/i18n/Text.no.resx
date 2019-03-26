@@ -315,9 +315,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Oversettelse ved</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Spesiell takk til</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Lisens</value>
   </data>
@@ -341,5 +338,8 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Prt Scrn</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Spesiell takk til</value>
   </data>
 </root>

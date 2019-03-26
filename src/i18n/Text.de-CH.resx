@@ -306,9 +306,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Tradukado</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Rekonoj</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Permesilo</value>
   </data>
@@ -332,5 +329,8 @@
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Reŝargi</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Rekonoj</value>
   </data>
 </root>

@@ -216,9 +216,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Fordítás</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Külön köszönet</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Licensz</value>
   </data>
@@ -227,5 +224,8 @@
   </data>
   <data name="Help" xml:space="preserve">
     <value>Segítség</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Külön köszönet</value>
   </data>
 </root>

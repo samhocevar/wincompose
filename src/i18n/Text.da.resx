@@ -264,13 +264,13 @@
   <data name="Translators" xml:space="preserve">
     <value>Oversættelse</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Særlig tak</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Licens</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose kræver genstart for at nogle ændringer træder i kraft.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Særlig tak</value>
   </data>
 </root>

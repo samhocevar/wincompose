@@ -168,6 +168,27 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Eingabe</value>
   </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Compose</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Sequenzen aus dem Xorg-Projekt verwenden</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Die 3000 Compose-Sequenzen aus dem Xorg-Projekt (http://www.x.org/) verwenden. Es handelt sich um die Sequenzen, die häufig auf einem Standard-Linux-System zu finden sind.</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Sequenzen aus dem XCompose-Projekt verwenden</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Die 1000 Compose-Sequenzen aus dem XCompose-Projekt (https://github.com/kragen/xcompose) verwenden. Einige dieser Sequenzen sind nicht mit denen von Xorg vereinbar.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>WinCompose-Emoji-Sequenzen verwenden</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Compose-Sequenzen für Emojis verwenden, die vom WinCompose-Autor und Mitwirkenden bereitgestellt wurden.</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Debugfenster</value>
   </data>
@@ -180,6 +201,9 @@
   <data name="Restart" xml:space="preserve">
     <value>Neustart</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Spendenseite</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website besuchen</value>
   </data>
@@ -191,6 +215,12 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenzen</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Einen Tausch der beiden Tasten versuchen</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Bei Zwei-Tasten-Sequenzen versuchen, die beiden Tasten zu vertauschen. Falls zum Beispiel Compose E A keine gültige Sequenz ist, stattdessen Compose A E versuchen.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Suchfilter:</value>
@@ -206,6 +236,9 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Erweiterte Unicode-Eingabe</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Die Unicode-Eingabe für alle Zeichen aktivieren, auch wenn keine Compose-Tastenfolge definiert ist. Beispielsweise gibt die folgende Sequenz das Zeichen U+1A3F aus: Compose U 1 A 3 F Enter</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Bei ungültigen Sequenzen</value>
@@ -236,6 +269,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Schließen</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>In die Zwischenablage kopieren</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Bildschriftzeichen</value>
@@ -312,6 +348,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Diverse Einstellungen</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} Sekunden</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Über</value>
   </data>
@@ -326,9 +365,6 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Übersetzung</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Besonderer Dank</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Lizenz</value>
@@ -365,5 +401,29 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>deaktiviert</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automatisch nach Updates suchen</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Falls aktiviert, wird WinCompose sich in regelmäßigen Abständen mit dem Internet verbinden und nach neuen Versionen suchen. Aktualisierungen werden nicht automatisch installiert.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Zu Favoriten hinzufügen</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Pos1</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Ende</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Besonderer Dank</value>
   </data>
 </root>

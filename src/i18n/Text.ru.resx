@@ -321,9 +321,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Перевод</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Благодарности</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Лицензия</value>
   </data>
@@ -356,5 +353,8 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Клавиша не выбрана</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Благодарности</value>
   </data>
 </root>

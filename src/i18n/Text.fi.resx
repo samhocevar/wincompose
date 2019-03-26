@@ -261,9 +261,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Käännös</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Erikoiskiitokset</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Lisenssi</value>
   </data>
@@ -275,5 +272,8 @@
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
     <value>Käyttäjän makrot</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Erikoiskiitokset</value>
   </data>
 </root>

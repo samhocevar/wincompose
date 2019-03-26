@@ -118,93 +118,93 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Control" xml:space="preserve">
-    <value>其他，控制字元</value>
+    <value>其他，控制字符</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>其他，格式字元</value>
+    <value>其他，格式字符</value>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
-    <value>其他，未分類</value>
+    <value>其他，未分类</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>其他，私人專用</value>
+    <value>其他，专用</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>其他，代理區</value>
+    <value>其他，代理项</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
-    <value>字母，小寫</value>
+    <value>字母，小写</value>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
-    <value>字母，修飾字</value>
+    <value>字母，修饰符</value>
   </data>
   <data name="OtherLetter" xml:space="preserve">
     <value>字母，其他</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>字母，標題樣式</value>
+    <value>字母，词首字母大写</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
-    <value>字母，大寫</value>
+    <value>字母，大写</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>符號，有間的組合</value>
+    <value>符号，间隔组合</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>符號，閉合</value>
+    <value>符号，封闭</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>附綴，不佔空間</value>
+    <value>符号，不占位</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
-    <value>數，十進數字</value>
+    <value>数字，十进制数字</value>
   </data>
   <data name="LetterNumber" xml:space="preserve">
-    <value>數，字母</value>
+    <value>数字，字母</value>
   </data>
   <data name="OtherNumber" xml:space="preserve">
-    <value>數，其他</value>
+    <value>数字，其他</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>標點符號，連接符</value>
+    <value>标点，连接符</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>標點符號，破折號</value>
+    <value>标点，短划线</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
-    <value>標點符號，結束</value>
+    <value>标点，结束</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>標點符號，後引號</value>
+    <value>标点，后引号</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>標點符號，前引號</value>
+    <value>标点，前引号</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
-    <value>標點符號，其他</value>
+    <value>标点，其他</value>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
-    <value>標點符號，起始</value>
+    <value>标点，开始</value>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
-    <value>符號，貨幣</value>
+    <value>符号，货币</value>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
-    <value>符號，聲調修飾符</value>
+    <value>符号，修饰符</value>
   </data>
   <data name="MathSymbol" xml:space="preserve">
-    <value>符號，數學</value>
+    <value>符号，数学</value>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
-    <value>符號，其他</value>
+    <value>符号，其他</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>分隔符號，行</value>
+    <value>分隔符，行</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
-    <value>分隔符號，段落</value>
+    <value>分隔符，段落</value>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
-    <value>分隔符號，空格</value>
+    <value>分隔符，空格</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -117,7 +117,9 @@ msgstr "使用来自 Xorg 项目的组合键序列"
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr "使用来自 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些组合键序列常见于标准的 Linux 系统中。"
+msgstr ""
+"使用来自 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些组合键序列常"
+"见于标准的 Linux 系统中。"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -129,8 +131,8 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"使用来自开源项目 XCompose (https://github.com/kragen/xcompose) 中的一千多个组合键序列。这些序列可能会与 "
-"Xorg 中的序列冲突。"
+"使用来自开源项目 XCompose (https://github.com/kragen/xcompose) 中的一千多个组"
+"合键序列。这些序列可能会与 Xorg 中的序列冲突。"
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -191,7 +193,9 @@ msgstr "自动尝试将两个按键交换"
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr "在输入两个按键的序列时，自动尝试交换这两个按键。例如，如果“组合键 E A”不是有效的序列，则自动尝试“组合键 A E”。"
+msgstr ""
+"在输入两个按键的序列时，自动尝试交换这两个按键。例如，如果“组合键 E A”不是有"
+"效的序列，则自动尝试“组合键 A E”。"
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -220,8 +224,8 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"启用所有字符的 Unicode 输入，即使它们未在组合键序列表中定义。比如：“组合键 U 1 A 3 F 回车键”这个序列会输出 Unicode 字符 "
-"U+1A3F"
+"启用所有字符的 Unicode 输入，即使它们未在组合键序列表中定义。比如：“组合键 U "
+"1 A 3 F 回车键”这个序列会输出 Unicode 字符 U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -236,7 +240,9 @@ msgstr "尝试忽略按键的大小写的匹配"
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr "如果输入的序列没有组合键序列的定义，但是存在一个仅有大小写区别的定义，则自动使用这个序列。"
+msgstr ""
+"如果输入的序列没有组合键序列的定义，但是存在一个仅有大小写区别的定义，则自动"
+"使用这个序列。"
 
 #: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -247,7 +253,9 @@ msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr "如果输入的序列没有组合键序列的定义，丢弃所有已经输入的字符。默认的行为是像没有使用组合键一样，直接输出所有已经输入的字符。"
+msgstr ""
+"如果输入的序列没有组合键序列的定义，丢弃所有已经输入的字符。默认的行为是像没"
+"有使用组合键一样，直接输出所有已经输入的字符。"
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -298,7 +306,8 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
-"这个选项要求 WinCompose 最大程度保证用作“组合键”的按键的原始功能。例如：即使指定 Alt 键为组合键，“Alt+Tab”的功能仍然可用。"
+"这个选项要求 WinCompose 最大程度保证用作“组合键”的按键的原始功能。例如：即使"
+"指定 Alt 键为组合键，“Alt+Tab”的功能仍然可用。"
 
 #: i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -310,8 +319,8 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
-"微软 Office 应用程序有时会在输入特定的 Unicode 字符后，动态地更改文档字体。这个选项在输入 Unicode "
-"字符后，插入一个不可见的空格，以避免这种问题出现。"
+"微软 Office 应用程序有时会在输入特定的 Unicode 字符后，动态地更改文档字体。这"
+"个选项在输入 Unicode 字符后，插入一个不可见的空格，以避免这种问题出现。"
 
 #: i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -323,7 +332,8 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"如果将大写锁定键 (Caps Lock 键) 设置为“组合键”，其原有功能将不可用。这个选项允许同时按下左右两个 Shift 键来打开大写锁定功能。"
+"如果将大写锁定键 (Caps Lock 键) 设置为“组合键”，其原有功能将不可用。这个选项"
+"允许同时按下左右两个 Shift 键来打开大写锁定功能。"
 
 #: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -334,7 +344,9 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr "如果大写锁定键 (Caps Lock 键) 被设置为“组合键”，其原有功能将不可用。这个选项允许按下 Shift 键来关闭大写锁定功能。"
+msgstr ""
+"如果大写锁定键 (Caps Lock 键) 被设置为“组合键”，其原有功能将不可用。这个选项"
+"允许按下 Shift 键来关闭大写锁定功能。"
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
@@ -344,7 +356,9 @@ msgstr "大写锁定状态始终锁定为大写字母"
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr "如果启用大写锁定功能，输入比如“é”这样的重音字母时，会输出对应的大写字母比如“É”。"
+msgstr ""
+"如果启用大写锁定功能，输入比如“é”这样的重音字母时，会输出对应的大写字母比"
+"如“É”。"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
@@ -438,10 +452,10 @@ msgstr "程序设计"
 msgid "Translation"
 msgstr "翻译人员"
 
-#. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:453 ID:Contributors
-msgid "Special Thanks"
-msgstr "特别鸣谢"
+#. The tab item to see all the program authors.
+#: i18n/Text.resx:453 ID:Authors
+msgid "Authors"
+msgstr ""
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
@@ -488,7 +502,8 @@ msgstr "允许注入的按键"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr "这个选项允许 WinCompose 接受比如 AutoHotKey 或者 Synergy 这类程序发送的按键"
+msgstr ""
+"这个选项允许 WinCompose 接受比如 AutoHotKey 或者 Synergy 这类程序发送的按键"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
@@ -508,7 +523,9 @@ msgstr "自动检查更新"
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
-msgstr "如果勾选这个选项，WinCompose 将定期连接互联网来检查新版本。新版本不会自动安装。"
+msgstr ""
+"如果勾选这个选项，WinCompose 将定期连接互联网来检查新版本。新版本不会自动安"
+"装。"
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
@@ -518,7 +535,9 @@ msgstr "尝试保持在系统通知栏可见"
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr "一般情况下，Windows 会在一段时间后隐藏通知区（系统托盘区）的图标。这个选项会尝试让 WinCompose 的图标一直可见。"
+msgstr ""
+"一般情况下，Windows 会在一段时间后隐藏通知区（系统托盘区）的图标。这个选项会"
+"尝试让 WinCompose 的图标一直可见。"
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
@@ -544,8 +563,9 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
-"如果勾选这个选项，WinCompose 将不会在通知区（系统托盘区）显示图标。将只能通过开始菜单的“WinCompose 设置”和“WinCompose "
-"组合键序列”来打开 WinCompose 的界面。"
+"如果勾选这个选项，WinCompose 将不会在通知区（系统托盘区）显示图标。将只能通过"
+"开始菜单的“WinCompose 设置”和“WinCompose 组合键序列”来打开 WinCompose 的界"
+"面。"
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -566,6 +586,38 @@ msgstr "Tab 键"
 #: i18n/Text.resx:553 ID:DelayDisabled
 msgid "No delay"
 msgstr "无延迟"
+
+#. The “Advanced” section in the settings.
+#: i18n/Text.resx:557 ID:Advanced
+msgid "Advanced"
+msgstr ""
+
+#. “regex” is shorthand for “regular expression”.
+#: i18n/Text.resx:561 ID:IgnoreRegex
+msgid "Ignore windows matching this regex:"
+msgstr ""
+
+#: i18n/Text.resx:565 ID:IgnoreRegexToolTip
+msgid ""
+"WinCompose will be completely disabled when the current window class or "
+"window name matches this regular expression."
+msgstr ""
+
+#: i18n/Text.resx:569 ID:AlwaysCompose
+msgid "Alternate compose key is always Compose"
+msgstr ""
+
+#: i18n/Text.resx:573 ID:AlwaysComposeToolTip
+msgid ""
+"If enabled, all compose keys will be treated as Compose in a sequence. By "
+"default, only the first pressed key will act as Compose, and alternate "
+"compose keys will keep their original role."
+msgstr ""
+
+#. The section for random contributors who aren’t programmers or translators. Might be empty.
+#: i18n/Text.resx:577 ID:SpecialThanks
+msgid "Special Thanks"
+msgstr "特别鸣谢"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -735,7 +787,8 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose 需要 .NET Framework, 3.5 SP1 或更高版本，而本计算机似乎并未安装它。要解决这个问题，请参考下列操作："
+"WinCompose 需要 .NET Framework, 3.5 SP1 或更高版本，而本计算机似乎并未安装"
+"它。要解决这个问题，请参考下列操作："
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:183
