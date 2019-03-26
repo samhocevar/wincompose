@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2018-08-10 06:32+0000\n"
-"Last-Translator: Damir Fakhrutdinov <ainu.sky@gmail.com>\n"
+"PO-Revision-Date: 2019-03-27 18:04+0000\n"
+"Last-Translator: Dmitry Trubin <dtruebin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
 "master/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.2-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -132,15 +132,16 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose v{2} на {0} ({1} комбинаций)"
+msgstr "Использовать комбинации WinCompose для emoji"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
+"Использовать комбинации для Emoji, предоставленные автором WinCompose и "
+"сообществом."
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -163,7 +164,7 @@ msgstr "Перезапуск"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Пожертвовать"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
@@ -216,15 +217,14 @@ msgid "Advanced Unicode input"
 msgstr "Расширенный ввод символов Unicode"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"Включить ввод Unicode для всех символов, даже для не имеющих ассоциированных "
-"с ними последовательностей Compose. Например, следующая комбинация клавиш "
-"создаст символ U+1A3F: Compose U 1 A 3 F"
+"Использовать коды Unicode для ввода любых символов, даже для не имеющих "
+"связанных с ними последовательностей Compose. Например, следующая комбинация "
+"клавиш введет символ U+1A3F: Compose U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -289,7 +289,7 @@ msgstr "Закрыть"
 #. Copy character or symbol to the clipboard
 #: i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Скопировать в буфер обмена"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:329 ID:Emoji
@@ -435,9 +435,8 @@ msgstr "Твики"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 секунд"
+msgstr "{0} секунд"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -509,9 +508,8 @@ msgid "Reload"
 msgstr "Перезагрузить"
 
 #: i18n/Text.resx:489 ID:AllowInjected
-#, fuzzy
 msgid "Allow Injected Keys"
-msgstr "Разрешить вводные ключи"
+msgstr "Обрабатывать комбинации от других программ"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
@@ -531,41 +529,45 @@ msgstr "Клавиша не выбрана"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Автоматически проверять наличие обновлений"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
+"Если опция включена, WinCompose будет регулярно подключаться к Интернету для "
+"проверки наличия новых версий. Обновления не устанавливаются автоматически."
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "По возможности оставлять видимым значок в области уведомлений"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
+"По умолчанию, Windows будет скрывать значок из области уведомлений через "
+"некоторое время. Этот параметр попытается оставить значок видимым."
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Изменить…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Нажмите клавишу, чтобы выбрать ее в качестве клавиши Compose."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Добавить в избранное"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Отключить значок в области уведомлений"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -573,26 +575,30 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"Если этот параметр включен, WinCompose больше не будет отображать значок в "
+"области уведомлений. В таком случае единственный способ открыть интерфейс "
+"WinCompose — через пункты «WinCompose Settings» и «WinCompose Sequences» в "
+"меню «Пуск»."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset delay feature is disabled
 #: i18n/Text.resx:553 ID:DelayDisabled
 msgid "No delay"
-msgstr ""
+msgstr "Без задержки"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
