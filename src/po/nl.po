@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-03-14 13:11+0000\n"
+"PO-Revision-Date: 2019-03-29 13:04+0000\n"
 "Last-Translator: Geert Delmeiren <weblate.gd@xoxy.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
 "nl/>\n"
@@ -199,7 +199,8 @@ msgid ""
 "not a valid sequence, try Compose A E instead."
 msgstr ""
 "Probeer de toetsen van de twee-toetsen sequentie te wisselen. Bv. als "
-"Compositietoets E A geen geldige sequentie is, probeer Compositietoets A E."
+"compositiesequentie E A geen geldige sequentie is, probeer "
+"compositiesequentie A E."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -261,7 +262,7 @@ msgid ""
 msgstr ""
 "Als de ingetoetste sequentie niet bestaat, verwijder alle ingetoetste "
 "karakters. Het standaard gedrag is de karakters plaatsen alsof de "
-"compositietoets niet was ingedrukt."
+"compositietoets niet werd ingedrukt."
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -469,7 +470,7 @@ msgstr "Vertaling"
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Auteurs"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
@@ -608,22 +609,24 @@ msgstr "Geen vertraging"
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Uitgebreid"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Negeer windows die overeenkomen met deze regex:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"WinCompose zal volledig uitgeschakeld worden wanneer de huidige window "
+"klasse of window naam overeenkomt met deze reguliere expressie."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Alternatieve compositietoets is altijd Compose"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -631,6 +634,10 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Indien ingeschakeld zullen alle toetsen een voor een als compositietoets "
+"worden behandeld. Standaard wordt enkel de eerste ingedrukte toets als "
+"compositietoets geïnterpreteerd en alle andere behouden hun oorspronkelijk "
+"gedrag."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
