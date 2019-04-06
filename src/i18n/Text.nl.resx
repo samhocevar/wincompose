@@ -220,7 +220,7 @@
     <value>Probeer de twee toetsen te wisselen</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Probeer de toetsen van de twee-toetsen sequentie te wisselen. Bv. als Compositietoets E A geen geldige sequentie is, probeer Compositietoets A E.</value>
+    <value>Probeer de toetsen van de twee-toetsen sequentie te wisselen. Bv. als compositiesequentie E A geen geldige sequentie is, probeer compositiesequentie A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Zoek filter:</value>
@@ -253,7 +253,7 @@
     <value>Verwijder alle ingetoetste karakters</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Als de ingetoetste sequentie niet bestaat, verwijder alle ingetoetste karakters. Het standaard gedrag is de karakters plaatsen alsof de compositietoets niet was ingedrukt.</value>
+    <value>Als de ingetoetste sequentie niet bestaat, verwijder alle ingetoetste karakters. Het standaard gedrag is de karakters plaatsen alsof de compositietoets niet werd ingedrukt.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Produceer een auditief signaal</value>
@@ -366,6 +366,9 @@
   <data name="Translators" xml:space="preserve">
     <value>Vertaling</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Auteurs</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Licentie</value>
   </data>
@@ -440,6 +443,21 @@
   </data>
   <data name="DelayDisabled" xml:space="preserve">
     <value>Geen vertraging</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Uitgebreid</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Negeer windows die overeenkomen met deze regex:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose zal volledig uitgeschakeld worden wanneer de huidige window klasse of window naam overeenkomt met deze reguliere expressie.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternatieve compositietoets is altijd Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Indien ingeschakeld zullen alle toetsen een voor een als compositietoets worden behandeld. Standaard wordt enkel de eerste ingedrukte toets als compositietoets geïnterpreteerd en alle andere behouden hun oorspronkelijk gedrag.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Bijzondere dank</value>

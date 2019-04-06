@@ -162,6 +162,12 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Ввод</value>
   </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Использовать комбинации WinCompose для emoji</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Использовать комбинации для Emoji, предоставленные автором WinCompose и сообществом.</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Окно отладки</value>
   </data>
@@ -173,6 +179,9 @@
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Перезапуск</value>
+  </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Пожертвовать</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Посетить веб-сайт</value>
@@ -200,6 +209,9 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Расширенный ввод символов Unicode</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Использовать коды Unicode для ввода любых символов, даже для не имеющих связанных с ними последовательностей Compose. Например, следующая комбинация клавиш введет символ U+1A3F: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Сигнал при недопустимых комбинациях</value>
@@ -230,6 +242,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Закрыть</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Скопировать в буфер обмена</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Эмоджи</value>
@@ -306,6 +321,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Твики</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} секунд</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>О программе</value>
   </data>
@@ -345,6 +363,9 @@
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Перезагрузить</value>
   </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Обрабатывать комбинации от других программ</value>
+  </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>Не игнорировать нажатия клавиш, отправленные сторонними программами, типа AutoHotkey или Synergy</value>
   </data>
@@ -353,6 +374,45 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Клавиша не выбрана</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Автоматически проверять наличие обновлений</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Если опция включена, WinCompose будет регулярно подключаться к Интернету для проверки наличия новых версий. Обновления не устанавливаются автоматически.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>По возможности оставлять видимым значок в области уведомлений</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>По умолчанию, Windows будет скрывать значок из области уведомлений через некоторое время. Этот параметр попытается оставить значок видимым.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Изменить…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Нажмите клавишу, чтобы выбрать ее в качестве клавиши Compose.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Добавить в избранное</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Отключить значок в области уведомлений</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Если этот параметр включен, WinCompose больше не будет отображать значок в области уведомлений. В таком случае единственный способ открыть интерфейс WinCompose — через пункты «WinCompose Settings» и «WinCompose Sequences» в меню «Пуск».</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Без задержки</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Благодарности</value>

@@ -366,6 +366,9 @@
   <data name="Translators" xml:space="preserve">
     <value>Bortadura</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Autores</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Litzèntzia</value>
   </data>
@@ -440,6 +443,9 @@
   </data>
   <data name="DelayDisabled" xml:space="preserve">
     <value>Perunu ritardu</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avantzadas</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Ringratziamentos ispetziales</value>
