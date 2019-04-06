@@ -38,8 +38,8 @@
     <ApplicationIcon>res\icon_normal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emoji.Wpf, Version=0.0.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Emoji.Wpf.0.0.17-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
+    <Reference Include="Emoji.Wpf, Version=0.0.0.18, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Emoji.Wpf.0.0.18-experimental\lib\net30\Emoji.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
