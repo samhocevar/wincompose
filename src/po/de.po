@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-03-22 10:04+0000\n"
-"Last-Translator: Thomas Henlich <thomas@henlich.de>\n"
+"PO-Revision-Date: 2019-04-08 12:05+0000\n"
+"Last-Translator: Nicolas Jeker <n.jeker@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
 "de/>\n"
 "Language: de\n"
@@ -473,7 +473,7 @@ msgstr "Übersetzung"
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Entwickler"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
@@ -549,22 +549,24 @@ msgstr ""
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Versuche das Symbol im Infobereich immer sichtbar zu halten"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
+"Standardmässig entfernt Windows nach einer kurzen Zeit das Symbol aus dem "
+"Infobereich. Diese Option versucht, dass es trotzdem sichtbar bleibt."
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Ändern…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Drücke nun die Taste, die du als deine Compose-Taste benutzen willst."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
@@ -573,7 +575,7 @@ msgstr "Zu Favoriten hinzufügen"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Deaktiviere das Symbol im Infobereich"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -581,6 +583,9 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"Falls aktiviert, wird WinCompose kein Symbol mehr im Infobereich anzeigen. "
+"Die einzige Möglichkeit, die WinCompose Oberfläche zu öffnen, ist über die "
+"Startmenüeinträge „WinCompose Einstellungen“ und „WinCompose Sequenzen“."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -605,22 +610,25 @@ msgstr "Aus"
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Erweitert"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
 msgstr ""
+"Fenster, die diesem regulären Ausdruck (regex) entsprechen, werden ignoriert:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"WinCompose wird komplett deaktiviert wenn die Klasse oder der Name des "
+"momentanen Fensters diesem regulären Ausdruck (regex) entspricht."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Alternative Compose-Taste ist immer Compose"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -628,6 +636,10 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Falls aktiviert, werden in einer Compose-Sequenz alle Compose-Tasten als "
+"solche angesehen. Andernfalls wird nur die erste Taste als Compose-Taste "
+"angesehen und die nachfolgenden alternativen Compose-Tasten behalten ihre "
+"ursprüngliche Funktion."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
