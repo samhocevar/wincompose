@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-03-29 13:04+0000\n"
+"PO-Revision-Date: 2019-04-12 22:05+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
 "master/sc/>\n"
@@ -618,17 +618,19 @@ msgstr "Avantzadas"
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Ignora sas ventanas chi currispondent a custa espressione regulare:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"WinCompose at a èssere disabilitadu de su totu cando sa classe o su nùmene "
+"atuale de sa ventana at a currispòndere a custa espressione regulare."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Una tecla compose alternativa est semper Compose"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -636,6 +638,10 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Si est abilitadu, totu sas teclas compose in una filera ant a èssere "
+"tratadas comente Compose. In sas impostatziones predefinidas petzi sa prima "
+"tecla incarcada at a funtzionare comente Compose, e sas teclas compose "
+"alternativas ant a mantènnere su ruolu originale issoro."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
