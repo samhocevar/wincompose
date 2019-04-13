@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-04-11 16:05+0000\n"
-"Last-Translator: Otiel <web@otiel.fr>\n"
+"PO-Revision-Date: 2019-04-14 15:06+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
 "fr/>\n"
 "Language: fr\n"
@@ -622,7 +622,7 @@ msgstr ""
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "La touche de composition alternative est toujours Composer"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -630,6 +630,10 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Si cette option est activée, toutes les touches de composition seront "
+"traitées comme Composer dans une séquence. Par défaut, seule la première "
+"touche appuyée jouera le rôle de Composer, et les touches de composition "
+"alternatives conserveront leur rôle original."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
