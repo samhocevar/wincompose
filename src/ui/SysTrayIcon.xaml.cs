@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -12,12 +12,12 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
-using System.Reflection;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using WinForms = System.Windows.Forms;
+
+using Hardcodet.Wpf.TaskbarNotification;
 
 namespace WinCompose
 {
@@ -41,14 +41,11 @@ namespace WinCompose
     /// <summary>
     /// Interaction logic for SysTrayIcon.xaml
     /// </summary>
-    public partial class SysTrayIcon : UserControl, INotifyPropertyChanged, IDisposable
+    public partial class SysTrayIcon : TaskbarIcon, INotifyPropertyChanged, IDisposable
     {
         public SysTrayIcon()
         {
             InitializeComponent();
-
-            // Set the data context for the menu, not for our empty shell class
-            ContextMenu.DataContext = this;
         }
 
         public override void EndInit()
@@ -60,11 +57,7 @@ namespace WinCompose
             Application.RemoteControl.OpenEvent += OnOpenEvent;
             Application.RemoteControl.BroadcastDisableEvent();
 
-            WinForms.Application.EnableVisualStyles();
-            WinForms.Application.SetCompatibleTextRenderingDefault(false);
-            m_icon = new WinForms.NotifyIcon();
-            m_icon.Click += NotifyiconClicked;
-            m_icon.DoubleClick += NotifyiconDoubleclicked;
+            TrayMouseDoubleClick += NotifyiconDoubleclicked;
 
             // Opt-in only, as this feature is a bit controversial
             if (Settings.KeepIconVisible.Value)
@@ -85,10 +78,11 @@ namespace WinCompose
             UpdaterStateChanged();
         }
 
-        public void Dispose()
+        public new void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+            base.Dispose();
         }
 
         protected virtual void Dispose(bool disposing)
@@ -101,15 +95,10 @@ namespace WinCompose
             Application.RemoteControl.ExitEvent -= OnExitEvent;
             Application.RemoteControl.OpenEvent -= OnOpenEvent;
 
+            Visibility = System.Windows.Visibility.Collapsed;
+
             m_cleanup_timer?.Stop();
             m_cleanup_timer = null;
-
-            if (m_icon != null)
-            {
-                m_icon.Visible = false;
-                m_icon.Dispose();
-                m_icon = null;
-            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -152,15 +141,15 @@ namespace WinCompose
                 case MenuCommand.Download:
                     var url = Settings.IsInstalled() ? Updater.Get("Installer")
                                                      : Updater.Get("Portable");
-                    System.Diagnostics.Process.Start(url);
+                    Process.Start(url);
                     break;
 
                 case MenuCommand.VisitWebsite:
-                    System.Diagnostics.Process.Start("http://wincompose.info/");
+                    Process.Start("http://wincompose.info/");
                     break;
 
                 case MenuCommand.DonationPage:
-                    System.Diagnostics.Process.Start("http://wincompose.info/donate/");
+                    Process.Start("http://wincompose.info/donate/");
                     break;
 
                 case MenuCommand.Disable:
@@ -174,9 +163,8 @@ namespace WinCompose
                     // not worth it, because restarting the app is a hack and whatever
                     // reason the user may have, it’s because of a bug or a limitation
                     // in WinCompose that we need to fix.
-                    m_icon.Visible = false;
-                    Application.Current.Shutdown();
-                    WinForms.Application.Restart();
+                    Visibility = System.Windows.Visibility.Collapsed;
+                    Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
                     Environment.Exit(0);
                     break;
 
@@ -214,7 +202,6 @@ namespace WinCompose
             }
         }
 
-        private WinForms.NotifyIcon m_icon;
         private SequenceWindow m_sequencewindow;
         private SettingsWindow m_optionswindow;
         private DebugWindow m_debugwindow;
@@ -269,18 +256,9 @@ namespace WinCompose
 
         private void SysTrayUpdateCallback()
         {
-            m_icon.Visible = !Settings.DisableIcon.Value;
-            m_icon.Icon = GetCurrentIcon();
-
-            // XXX: we cannot directly set m_icon.Text because it has an
-            // erroneous 64-character limitation (the underlying framework has
-            // the correct 128-char limitation). So instead we use this hack,
-            // taken from http://stackoverflow.com/a/580264/111461
-            Type t = typeof(WinForms.NotifyIcon);
-            BindingFlags hidden = BindingFlags.NonPublic | BindingFlags.Instance;
-            t.GetField("text", hidden).SetValue(m_icon, GetCurrentToolTip());
-            if ((bool)t.GetField("added", hidden).GetValue(m_icon))
-                t.GetMethod("UpdateIcon", hidden).Invoke(m_icon, new object[] { true });
+            Visibility = Settings.DisableIcon.Value ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
+            Icon = GetCurrentIcon();
+            ToolTipText = GetCurrentToolTip();
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
         }
@@ -301,27 +279,18 @@ namespace WinCompose
             return ret;
         }
 
-        private void NotifyiconClicked(object sender, EventArgs e)
-        {
-            bool is_right_button = (e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Right;
-            ContextMenu.IsOpen = is_right_button && !ContextMenu.IsOpen;
-        }
-
         private void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
-            if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Left)
-            {
-                m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
+            m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
 
-                if (m_sequencewindow.IsVisible)
-                {
-                    m_sequencewindow.Hide();
-                }
-                else
-                {
-                    m_sequencewindow.Show();
-                    m_sequencewindow.Activate();
-                }
+            if (m_sequencewindow.IsVisible)
+            {
+                m_sequencewindow.Hide();
+            }
+            else
+            {
+                m_sequencewindow.Show();
+                m_sequencewindow.Activate();
             }
         }
 

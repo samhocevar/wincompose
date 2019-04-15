@@ -12,6 +12,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Windows;
 
 using WinCompose.i18n;
@@ -143,7 +144,8 @@ namespace WinCompose
 
         private static void OnRestartCommandExecuted(object parameter)
         {
-            System.Windows.Forms.Application.Restart();
+            Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
+            Environment.Exit(0);
         }
     }
 }
