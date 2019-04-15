@@ -16,3 +16,6 @@
 [submodule "src/3rdparty/inserticons"]
 	path = src/3rdparty/inserticons
 	url = ../../einaregilsson/InsertIcons
+[submodule "src/3rdparty/wpf-notify-icon"]
+	path = src/3rdparty/wpf-notify-icon
+	url = ../fork-wpf-notify-icon.git

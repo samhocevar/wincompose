@@ -197,6 +197,10 @@
     <Resource Include="rules\WinCompose.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="3rdparty\wpf-notify-icon\wpf-notifyicon\NotifyIconWpf\NotifyIconWpf.csproj">
+      <Project>{7ac63864-7638-41c4-969c-d3197ef2bed9}</Project>
+      <Name>NotifyIconWpf</Name>
+    </ProjectReference>
     <ProjectReference Include="language.csproj">
       <Project>{bba0b950-2b67-4660-bad0-c359e99a733f}</Project>
       <Name>language</Name>
