@@ -165,7 +165,7 @@ namespace WinCompose
                     // in WinCompose that we need to fix.
                     Visibility = System.Windows.Visibility.Collapsed;
                     Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
-                    Environment.Exit(0);
+                    Application.Current.Shutdown();
                     break;
 
                 case MenuCommand.Exit:

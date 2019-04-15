@@ -144,8 +144,9 @@ namespace WinCompose
 
         private static void OnRestartCommandExecuted(object parameter)
         {
+            // FIXME: this could be refactored into SysTrayIcon.xaml.cs
             Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
-            Environment.Exit(0);
+            Application.Current.Shutdown();
         }
     }
 }
