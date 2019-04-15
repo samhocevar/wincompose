@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2018-07-23 14:44+0000\n"
+"PO-Revision-Date: 2019-04-16 19:06+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/wincompose/"
 "master/et/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 3.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -111,7 +111,7 @@ msgstr ""
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Kasuta projekti Xorg järjestusi"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
@@ -131,9 +131,8 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose’i kombinatsioonid"
+msgstr "Kasuta WinCompose’i emoji järjestusi"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
@@ -214,7 +213,6 @@ msgid "Advanced Unicode input"
 msgstr "Täpsem Unicode sisend"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
@@ -428,9 +426,8 @@ msgstr "Kohandused"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 sekundit"
+msgstr "{0} sekundit"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
