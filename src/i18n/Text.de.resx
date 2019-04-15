@@ -366,6 +366,9 @@
   <data name="Translators" xml:space="preserve">
     <value>Übersetzung</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Entwickler</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Lizenz</value>
   </data>
@@ -408,8 +411,26 @@
   <data name="CheckUpdatesToolTip" xml:space="preserve">
     <value>Falls aktiviert, wird WinCompose sich in regelmäßigen Abständen mit dem Internet verbinden und nach neuen Versionen suchen. Aktualisierungen werden nicht automatisch installiert.</value>
   </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Versuche das Symbol im Infobereich immer sichtbar zu halten</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Standardmässig entfernt Windows nach einer kurzen Zeit das Symbol aus dem Infobereich. Diese Option versucht, dass es trotzdem sichtbar bleibt.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Ändern…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Drücke nun die Taste, die du als deine Compose-Taste benutzen willst.</value>
+  </data>
   <data name="AddToFavorites" xml:space="preserve">
     <value>Zu Favoriten hinzufügen</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Deaktiviere das Symbol im Infobereich</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Falls aktiviert, wird WinCompose kein Symbol mehr im Infobereich anzeigen. Die einzige Möglichkeit, die WinCompose Oberfläche zu öffnen, ist über die Startmenüeinträge „WinCompose Einstellungen“ und „WinCompose Sequenzen“.</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
     <value>Pos1</value>
@@ -422,6 +443,21 @@
   </data>
   <data name="DelayDisabled" xml:space="preserve">
     <value>Aus</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Fenster, die diesem regulären Ausdruck (regex) entsprechen, werden ignoriert:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose wird komplett deaktiviert wenn die Klasse oder der Name des momentanen Fensters diesem regulären Ausdruck (regex) entspricht.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternative Compose-Taste ist immer Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Falls aktiviert, werden in einer Compose-Sequenz alle Compose-Tasten als solche angesehen. Andernfalls wird nur die erste Taste als Compose-Taste angesehen und die nachfolgenden alternativen Compose-Tasten behalten ihre ursprüngliche Funktion.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Besonderer Dank</value>

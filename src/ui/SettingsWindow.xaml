@@ -245,28 +245,28 @@
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.CaseInsensitive}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.CaseInsensitiveToolTip}">
-                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} 🔡', Source={x:Static i18n:Text.CaseInsensitive}, Path=.}"
+                            <emoji:TextBlock Text="{Binding StringFormat='{}{0} 🔡', Source={x:Static i18n:Text.CaseInsensitive}, Path=.}"
                                              TextWrapping="Wrap"/>
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.SwapOnInvalid}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.SwapOnInvalidToolTip}">
-                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} ↔️', Source={x:Static i18n:Text.SwapOnInvalid}, Path=.}"
+                            <emoji:TextBlock Text="{Binding StringFormat='{}{0} ↔️', Source={x:Static i18n:Text.SwapOnInvalid}, Path=.}"
                                              TextWrapping="Wrap"/>
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.DiscardOnInvalid}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.DiscardOnInvalidToolTip}">
-                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} 🚫', Source={x:Static i18n:Text.DiscardOnInvalid}, Path=.}"
+                            <emoji:TextBlock Text="{Binding StringFormat='{}{0} 🚫', Source={x:Static i18n:Text.DiscardOnInvalid}, Path=.}"
                                              TextWrapping="Wrap"/>
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.BeepOnInvalid}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.BeepOnInvalidToolTip}">
-                            <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0} 🎵', Source={x:Static i18n:Text.BeepOnInvalid}, Path=.}"
+                            <emoji:TextBlock Text="{Binding StringFormat='{}{0} 🎵', Source={x:Static i18n:Text.BeepOnInvalid}, Path=.}"
                                              TextWrapping="Wrap"/>
                         </CheckBox>
 
@@ -318,7 +318,7 @@
                     </GroupBox.Header>
                     <StackPanel VerticalAlignment="Center">
 
-                        <emoji:TextBlock Text="{Binding StringFormat='&#x200b;{0}', Source={x:Static i18n:Text.IgnoreRegex}, Path=.}"
+                        <emoji:TextBlock Text="{Binding StringFormat='{}{0}', Source={x:Static i18n:Text.IgnoreRegex}, Path=.}"
                                          ToolTipService.ToolTip="{x:Static i18n:Text.IgnoreRegexToolTip}"
                                          TextWrapping="Wrap" Margin="8,4,8,0"/>
                         <TextBox Margin="8,4" VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
