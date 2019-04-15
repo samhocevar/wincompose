@@ -226,10 +226,10 @@
     <value>Filtre de recherche :</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Touche compose :</value>
+    <value>Touche de composition :</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Sélectionner la touche qui sera la touche Compose.</value>
+    <value>Sélectionner la touche qui sera la touche de composition.</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Délai :</value>
@@ -366,6 +366,9 @@
   <data name="Translators" xml:space="preserve">
     <value>Traduction</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Auteurs</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Licence</value>
   </data>
@@ -402,6 +405,18 @@
   <data name="KeyDisabled" xml:space="preserve">
     <value>Désactivé</value>
   </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Vérifier les mises à jour automatiquement</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Quand cette option est cochée, WinCompose se connecte régulièrement à Internet afin de vérifier si une nouvelle version est disponible. Les mises à jour ne sont pas installées automatiquement.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Garder l'icône de la zone de notification toujours visible</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Par défaut, Windows supprimera l'icône de la zone de notification après un court instant. Cette option tente de la rendre toujours visible.</value>
+  </data>
   <data name="ChangeComposeKey" xml:space="preserve">
     <value>Modifier…</value>
   </data>
@@ -414,6 +429,12 @@
   <data name="DisableIcon" xml:space="preserve">
     <value>Désactiver l’icône de la zone de notification</value>
   </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors de lancer “WinCompose Settings” ou “WinCompose Sequences” depuis le menu Démarrer.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Début</value>
+  </data>
   <data name="KeyEnd" xml:space="preserve">
     <value>Fin</value>
   </data>
@@ -422,6 +443,21 @@
   </data>
   <data name="DelayDisabled" xml:space="preserve">
     <value>Aucun</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avancé</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignorer les fenêtres correspondantes à la regex :</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose sera complètement inactif quand la classe ou le nom de la fenêtre actuelle correspond à cette expression régulière.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>La touche de composition alternative est toujours Composer</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Si cette option est activée, toutes les touches de composition seront traitées comme Composer dans une séquence. Par défaut, seule la première touche appuyée jouera le rôle de Composer, et les touches de composition alternatives conserveront leur rôle original.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Remerciements</value>

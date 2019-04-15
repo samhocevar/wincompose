@@ -447,6 +447,18 @@
   <data name="Advanced" xml:space="preserve">
     <value>Avantzadas</value>
   </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignora sas ventanas chi currispondent a custa espressione regulare:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose at a èssere disabilitadu de su totu cando sa classe o su nùmene atuale de sa ventana at a currispòndere a custa espressione regulare.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Una tecla compose alternativa est semper Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Si est abilitadu, totu sas teclas compose in una filera ant a èssere tratadas comente Compose. In sas impostatziones predefinidas petzi sa prima tecla incarcada at a funtzionare comente Compose, e sas teclas compose alternativas ant a mantènnere su ruolu originale issoro.</value>
+  </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Ringratziamentos ispetziales</value>
   </data>
