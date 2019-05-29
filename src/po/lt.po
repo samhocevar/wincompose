@@ -8,73 +8,78 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20190405\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-05-29 05:27+0000\n"
+"Last-Translator: Mindaugas Smolinskas <gsmoffln@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/wincompose/"
+"master/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
+"19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 3.7-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "Atspėti"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr ""
+msgstr "Kairysis Alt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr ""
+msgstr "Dešinysis Alt (AltGr, Lyg3)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr ""
+msgstr "Kairysis Ctrl (Vald.)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr ""
+msgstr "Dešinysis Ctrl (Vald.)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr ""
+msgstr "Kairysis Windows klavišas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr ""
+msgstr "Dešinysis Windows klavišas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr ""
+msgstr "⇪Caps Lock (Didž.)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock (Skaitm.)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr ""
+msgstr "Pause/Break"
 
 #. Also known as Application key
 #: i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr ""
+msgstr "Meniu klavišas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr ""
+msgstr "Escape (Gr.)"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
@@ -89,430 +94,477 @@ msgstr ""
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock (Slinkt.)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Tarpo klavišas"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Enter↵ (Return, Įvesti)"
 
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Sudėtiniai rašmenys"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Naudoti Xorg projekto aprašus"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Xorg projektas aprašo 3000 sudėtinių rašmenų, paprastai naudojamų Linux "
+"sistemoje (žr. http://www.x.org/)."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Naudoti XCompose projekto aprašus"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
 msgstr ""
+"XCompose atvirojo kodo projektas aprašo 1000 papildomų matematinių, "
+"ligvistinių, inžinerinių, muzikinių žymenų, graikiškų rašmenų, šypsniukų ir "
+"kt. simbolių. Dėmesio: kai kurios sekos sutampa su Xorg projekto sekomis ("
+"žr. https://github.com/kragen/xcompose/)."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr ""
+msgstr "Naudoti WinCompose Emoji sekas"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
 msgstr ""
+"WinCompose autoriaus ir pagalbininkų aprašyti Emoji (spalvoti šypsniukai ir "
+"ženkliukai)."
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
-msgstr ""
+msgstr "Tyriklio langas"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr ""
+msgstr "Rodyti sekas…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr ""
+msgstr "Išjungti"
 
 #: i18n/Text.resx:229 ID:Restart
 msgid "Restart"
-msgstr ""
+msgstr "Paleisti iš naujo"
 
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Paaukoti"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr ""
+msgstr "Atverti tinklalapį"
 
 #: i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Baigti"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr ""
+msgstr "Unicode simboliai"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "Sekos"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Bandyti sukeisti gretimus klavišus"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
 msgstr ""
+"Jei dviejų klavišų seka neturi aprašo, pritaikyti atvirkščią. Pavyzdžiui, "
+"jei nėra aprašo „Compose E A“, bandyti „Compose A E“."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "Paieškos filtras:"
 
 #: i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "Sekų rinkimo klavišas:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Pasirinkite, kuriuo klavišu pradėsite sudėtines sekas (Compose)."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetDelay
 msgid "Delay:"
-msgstr ""
+msgstr "Laukti:"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Rinkti Unicode simbolių kodus"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter"
 msgstr ""
+"Įvesti bet kokį Unicode simbolį, surenkant jo šešioliktainį numerį – net jei "
+"tokiam simboliui neaprašyta seka. Pavyzdžiui, simbolį, kurio kodas yra U+"
+"1A3F, galima įvesti renkant: Compose U 1 A 3 Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr ""
+msgstr "Surinkus neaprašytą seką"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "Bandyti sekas nežiūrint į raidžių registrą"
 
 #: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
 msgstr ""
+"Jei tiksliai tokia seka neaprašyta, bet yra tokia, kuri skiriasi tik "
+"didžiųjų/mažųjų raidžių registru, ją pritaikyti."
 
 #: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Atmesti surinktą seką"
 
 #: i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
 msgstr ""
+"Jei nepavyksta pritaikyti sekos, pamiršti paspaustus klavišus. Priešingu "
+"atveju būtų įvesti visi surinkti simboliai, tarsi sekos rinkimo režimas "
+"nebūtų įjungtas."
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Pyptelėti"
 
 #: i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Jei nepavyksta pritaikyti sekos, sugroti sisteminį signalą."
 
 #: i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "Programos užrašų kalba:"
 
 #: i18n/Text.resx:317 ID:LanguageToolTip
 msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
 msgstr ""
+"Kuria kalba rodomi WinCompose programos langų ir mygtukų antraštės bei "
+"pranešimai. Įprastai parenkama sistemos kalba."
 
 #. Close the settings window
 #: i18n/Text.resx:321 ID:Close
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #. Copy character or symbol to the clipboard
 #: i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopijuoti į parankinę"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Emoji (šypsniukai)"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Taikyti"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Išlaikyti įprastą klavišo Compose veikseną"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
 msgstr ""
+"WinCompose programa bandys nesugadinti ar atkurti įprastą Compose mygtuko "
+"veikseną. Pavyzdžiui, Alt+Tab toliau bus galima naudoti perjungti programas, "
+"net jei Alt bus nustatytas kaip sekos įvedimo (Compose) klavišas."
 
 #: i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Pridėti nematomų simbolių Microsoft Office programose"
 
 #: i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
 msgstr ""
+"Microsoft Office paketo programos, įvedant simbolius, kurių neturi aktyvus "
+"teksto šriftas, automatiškai parenka kitą šriftą tolesniam tekstui. "
+"WinCompose įterps nematomą simbolį, kad Office programa paliktų šriftą "
+"nepakeistą."
 
 #: i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr ""
+msgstr "Imituoti ⇪Caps Lock (Didž.) paspaudus abu ⇪⇧Shift (Lyg2) klavišus"
 
 #: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
 msgstr ""
+"Nustačius ⇪Caps Lock (didžiųjų raidžių režimo klavišą, Didž.) kaip sekos "
+"pradžios klavišą, jo nebegalima naudoti kaip įprasta. WinCompose gali į"
+"jungti/išjungti didžiųjų raidžių režimą, spustelėjus abu ⇧Shift (Lyg2) "
+"klavišus vienu metu."
 
 #: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr ""
+msgstr "Nuspaudus ⇧Shift (Lyg2), išjungti ⇪Caps Lock (Didž.)"
 
 #: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
 msgstr ""
+"Nustačius ⇪Caps Lock (Didž., didžiųjų raidžių režimo klavišą) kaip sekos "
+"pradžios klavišą, jo nebegalima naudoti kaip įprasta. WinCompose gali "
+"išjungti didžiųjų raidžių režimą, spustelėjus bet kurį ⇧Shift (Lyg2) klavišą."
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Įjungus ⇪Caps Lock (Didž.), visuomet įvesti didžiąsias raides"
 
 #: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Kuomet įjungtas didžiųjų raidžių režimas (⇪Caps Lock, Didž.), įvedamos "
+"raidės su diakritikais bus automatiškai pakeistos didžiosiomis. Pavyzdžiui, "
+"įvedant seką „Compose . e“  („ė“), bus sugeneruota didžioji raidė „Ė“."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Rūšys"
 
 #: i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "Parinktose rūšyse"
 
 #. The title of the Options window
 #: i18n/Text.resx:385 ID:Options
 msgid "Options — WinCompose"
-msgstr ""
+msgstr "Nuostatos — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
-msgstr ""
+msgstr "Nuostatos…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose v. {2}. Susieta su {0} (sekų: {1})"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:397 ID:General
 msgid "General"
-msgstr ""
+msgstr "Bendrosios"
 
 #: i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
-msgstr ""
+msgstr "Elgsena"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Sekos — WinCompose"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Papildomi trumpiniai"
 
 #: i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr ""
+msgstr "WinCompose dabar išjungtas"
 
 #. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Įterpti (Insert)"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr ""
+msgstr "Įvesties bandymų sritis"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Smulkmenos"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
 msgid "{0} seconds"
-msgstr ""
+msgstr "{0} sek."
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
 msgid "About"
-msgstr ""
+msgstr "Apie WinCompose"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
-msgstr ""
+msgstr "Parsisiųsti WinCompose {0} versiją"
 
 #. Window title of the About box
 #: i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "Apie WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:445 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Programuotojams"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:449 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Vertėjams"
 
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Autoriai"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
 msgid "License"
-msgstr ""
+msgstr "Licencija"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "Pakeitimai įsigalios, paleidus WinCompose iš naujo."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:465 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Užregistruoti klaidą"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:469 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Pagalba"
 
 #. Message displayed in the notification area tooltip.
 #: i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Išleista nauja versija."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr ""
+msgstr "Papildomos sekos"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Keisti"
 
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Užkrauti iš naujo"
 
 #: i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Perimti imituotą įvestį"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
+"Jei greta WinCompose veikia ir kitos programos, kurios imituoja veiksmus "
+"klaviatūra (kaip AutoHotkey ar Synergy), į jas taip pat reaguoti"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "Print Screen (Spausd.)"
 
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr ""
+msgstr "Neparinkta"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Automatiškai tikrinti, ar yra atnaujinimų"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid "If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically."
 msgstr ""
+"Periodiškai prisijungti prie interneto ir tikrinti, ar yra išleista nauja "
+"WinCompose versija. Atnaujinimai nebus diegiami neatsiklausus."
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Jei įmanoma, ženkliuką pranešimų srityje visuomet laikyti matomą"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid "By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible."
 msgstr ""
+"Įprastai Windows paslepia nesikeičiančius programų ženkliukus pranešimų "
+"srityje. WinCompose stengsis išlaikyti savo ženkliuką matomą."
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Parinkti…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Spustelkite klavišą, kuriuo norite pradėti rinkti sekas (Compose)."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Pridėti prie išrinktųjų"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Išjungti pranešimų srities ženkliuką"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid "If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"WinCompose neberodys savo ženkliuko užduočių juostos pranešimų srityje. "
+"Vienintelis būdas pasiekti WinCompose nustatymų ir informacijos langus "
+"tuomet liks tik naudojant Windows programų meniu, punktus „WinCompose "
+"Settings“ ir „WinCompose Sequences“."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "⇤Home (Pradžia)"
 
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "⇥End (Pabaiga)"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "↹ Tab"
 
 #. Text to show instead of a value in seconds when the reset delay feature is disabled
 #: i18n/Text.resx:553 ID:DelayDisabled
 msgid "No delay"
-msgstr ""
+msgstr "neribota"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -522,201 +574,210 @@ msgstr ""
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Vengti langų, atitinkančių RegEx filtrą:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid "WinCompose will be completely disabled when the current window class or window name matches this regular expression."
 msgstr ""
+"WinCompose bus pristabdytas, kol aktyvus langas, kurio antraštė arba klasės "
+"pavadinimas tinka nurodytai reguliariajai išraiškai."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Kitas Compose klavišas sekoje taip pat veikia kaip Compose"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid "If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role."
 msgstr ""
+"Jei įjungta, visi Compose klavišai sekoje bus interpretuojami kaip Compose, "
+"o ne pagal jų įprastą veikseną. Priešingu atveju, tik tas klavišas, kuriuo "
+"seka buvo pradėta, sekoje toliau veikia kaip Compose, o visi kiti klavišai "
+"veikia kaip numatyta."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
-msgstr ""
+msgstr "Padėka"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr ""
+msgstr "Kiti, valdymo kodai (Cc)"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr ""
+msgstr "Kiti, išdėstymas (Cf)"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr ""
+msgstr "Kiti, nepaskirti (Cn)"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr ""
+msgstr "Kiti, vidiniam naudojimui (Co)"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr ""
+msgstr "Kiti, nepilnieji kodai (Cs)"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr ""
+msgstr "Raidės, mažosios (Ll)"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr ""
+msgstr "Raidės, registrai (Lm)"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
-msgstr ""
+msgstr "Raidės, kitos (Lo)"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr ""
+msgstr "Raidės, titulinės (Lt)"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr ""
+msgstr "Raidės, didžiosios (Lu)"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr ""
+msgstr "Žymos, kombinuotų sričių (Mc)"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr ""
+msgstr "Žymos, gaubiančiosios (Me)"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr ""
+msgstr "Žymos, neplečiančiosios (Mn)"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:173 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr ""
+msgstr "Skaičiai, dešimtainiai skaitmenys (Nd)"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
-msgstr ""
+msgstr "Skaičiai, raidiniai (Nl)"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
-msgstr ""
+msgstr "Skaičiai, kiti (No)"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr ""
+msgstr "Skyryba, jungikliai (Pc)"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr ""
+msgstr "Skyryba, brūkšniai (Pd)"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:193 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr ""
+msgstr "Skyryba, uždarantieji skirtukai (Pe)"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:197 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr ""
+msgstr "Skyryba, pabaigos kabutės (Pf)"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:201 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr ""
+msgstr "Skyryba, pradžios kabutės (Pi)"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:205 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr ""
+msgstr "Skyryba, kiti (Po)"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:209 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr ""
+msgstr "Skyryba, atidarantieji skirtukai (Po)"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:213 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr ""
+msgstr "Simboliai, valiutos (Sc)"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr ""
+msgstr "Simboliai, modifikatoriai (Sk)"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:221 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr ""
+msgstr "Simboliai, matematiniai (Sm)"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:225 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr ""
+msgstr "Simboliai, kiti (So)"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:229 ID:LineSeparator
 msgid "Separator, Line"
-msgstr ""
+msgstr "Skyrikliai, eilučių (Zl)"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:233 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr ""
+msgstr "Skyrikliai, pastraipų (Zp)"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:237 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr ""
+msgstr "Skyrikliai, tarpai (Zs)"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:174
 msgid "Prerequisites"
-msgstr ""
+msgstr "Reikalavimai sistemai"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:175
 msgid "Software required by WinCompose"
-msgstr ""
+msgstr "Programinė įranga, reikalinga WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:178
 msgid "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
 msgstr ""
+"Norint paleisti WinCompose, reikia įdiegti .NET Framework, 3.5 SP1 arba "
+"naujesnę laidą.\n"
+"Prašome atlikti čia aprašytus veiksmus:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:183
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Atsisiųsti ir įdiegti .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:193
 msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
-msgstr ""
+msgstr "Po to galėsite grįžti ir baigti diegti WinCompose."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Reikia administratoriaus teisių. Klaida: %d"
