@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.7\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-10-28 06:24+0000\n"
-"Last-Translator: geogeo.gr <geogeo.gr@users.sourceforge.net>\n"
+"PO-Revision-Date: 2019-07-05 17:00+0000\n"
+"Last-Translator: THANOS SIOURDAKIS <siourdakisthanos@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
 "el/>\n"
 "Language: el\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.9-dev\n"
+"X-Generator: Weblate 3.8-dev\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -80,12 +80,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Μετατροπή"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Μη μετατροπή"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -105,7 +105,7 @@ msgstr "Enter"
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Σύνθεση"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
@@ -129,9 +129,8 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose  v{2} σε {0} ({1} ακολουθίες)"
+msgstr "Χρήση των WinCompose emoji ακολουθιών"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
@@ -141,9 +140,8 @@ msgstr ""
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Αριστερό Windows"
+msgstr "Παράθυρο εντοπισμού σφαλμάτων"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -174,9 +172,8 @@ msgstr "Έξοδος"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Απόρριψη όλων των πληκτρολογημένων χαρακτήρων"
+msgstr "Χαρακτήρες Unicode"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -214,7 +211,6 @@ msgid "Advanced Unicode input"
 msgstr "Προηγμένη εισαγωγή Unicode"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
@@ -222,7 +218,7 @@ msgid ""
 msgstr ""
 "Ενεργοποίηση εισαγωγής Unicode για όλους τους χαρακτήρες, ακόμη και εκείνων "
 "που δεν ορίζονται σε ακολουθία σύνθεσης. Για παράδειγμα, η παρακάτω "
-"ακολουθία θα εξάγει τον χαρακτήρα U+1A3F: Σύνθεση U 1 Α 3 F"
+"ακολουθία θα εξάγει τον χαρακτήρα U+1A3F: Compose U 1 Α 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -394,14 +390,12 @@ msgstr "WinCompose  v{2} σε {0} ({1} ακολουθίες)"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:397 ID:General
-#, fuzzy
 msgid "General"
-msgstr "Γενική συμπεριφορά"
+msgstr "Γενικά"
 
 #: i18n/Text.resx:401 ID:Behavior
-#, fuzzy
 msgid "Behavior"
-msgstr "Γενική συμπεριφορά"
+msgstr "Συμπεριφορά"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:405 ID:WindowTitle
@@ -434,9 +428,8 @@ msgstr "Λεπτομερείς ρυθμίσεις"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 δευτερόλεπτα"
+msgstr "{0} δευτερόλεπτα"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -495,9 +488,8 @@ msgid "Updates are available."
 msgstr "Υπάρχουν διαθέσιμες ενημερώσεις."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
-#, fuzzy
 msgid "User-defined sequences"
-msgstr "Μακροεντολές καθορισμένες από το χρήστη"
+msgstr "Ακολουθίες που ορίζονται από το χρήστη"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
@@ -524,9 +516,8 @@ msgstr ""
 
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
-#, fuzzy
 msgid "Disabled"
-msgstr "Απενεργοποίηση"
+msgstr "Απενεργοποιημένο"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
