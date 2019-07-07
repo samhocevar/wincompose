@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2018-10-16 07:33+0000\n"
+"PO-Revision-Date: 2019-07-08 16:00+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "wincompose/master/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.2.1\n"
+"X-Generator: Weblate 3.8-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -106,22 +106,26 @@ msgstr "Enter"
 
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
+#, fuzzy
 msgid "Composing"
-msgstr ""
+msgstr "Sammenfatting"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Bruk sekvenser fra Xorg-prosjektet"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
+#, fuzzy
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Bruk de 3000 sammenfattingssekvensene fra Xorg-prosjektet (https://www.x.org/"
+"). Dette er sekvensene som oftest er å finne på et vanlig Linux-system."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Bruk sekvenser fra XCompose-prosjektet"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -129,16 +133,21 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"Bruk de 1000 sammenfattingssekvensene fra XCompose opensource-prosjektet "
+"(https://github.com/kragen/xcompose). Sekvensene kan noen ganger komme i "
+"konflikt med dem fra Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr ""
+msgstr "Bruk WinCompose-emojisekvenser"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
+"Bruk sammenfattingssekvensene for emojier tilbudt av WinCompose-utvikleren "
+"og bidragsyterne."
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -162,7 +171,7 @@ msgstr "Start på nytt"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Donasjonsside"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
@@ -185,13 +194,16 @@ msgstr "Sekvenser"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Prøv å bytte de to tastene"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
+"Prøv å bytte tastene i en to-tasters sekvens. For eksempel. Hvis "
+"sammenfattingstast E A ikke er en gyldig sekvens, prøv sammenfattingstast A "
+"E istedenfor."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -199,11 +211,11 @@ msgstr "Søkefilter:"
 
 #: i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Sammensettingsstast:"
+msgstr "Sammenfattingstast:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Velg knappen å bruke som sammensettingstast."
+msgstr "Velg knappen å bruke som sammenfattingstast."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetDelay
@@ -222,8 +234,8 @@ msgid ""
 "Compose U 1 A 3 F Enter"
 msgstr ""
 "Skru på Unicode-inndata for alle tegn, selv dem uten definert "
-"sammensettingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet U"
-"+1A3F: Sammensettingstast U 1 A 3 F"
+"sammenfattingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet "
+"U+1A3F: Sammenfattingstast U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -253,7 +265,7 @@ msgid ""
 "key had not been used."
 msgstr ""
 "Hvis innskrevet sekvens ikke finnes, forkast alle innskrevne tegn. Forvalgt "
-"oppførsel er å skrive ut alle tegnene som om sammensettingstasten ikke hadde "
+"oppførsel er å skrive ut alle tegnene som om sammenfattingstasten ikke hadde "
 "blitt brukt."
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
@@ -284,7 +296,7 @@ msgstr "Lukk"
 #. Copy character or symbol to the clipboard
 #: i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopier til utklippstavle"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:329 ID:Emoji
@@ -299,7 +311,7 @@ msgstr "Legg til"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Behold opprinnelig oppførsel for sammensettingstast"
+msgstr "Behold opprinnelig oppførsel for sammenfattingstast"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -307,9 +319,9 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
-"Gir WinCompose beskjed om å prøve å beholde den opprinelige tastens "
+"Gir WinCompose beskjed om å prøve å beholde den opprinnelige tastens "
 "oppførsel. For eksempel, vil Alt+Tab-snarveien fungere selv om Alt brukes "
-"som sammensettingstast."
+"som sammenfattingstast."
 
 #: i18n/Text.resx:345 ID:InsertZwsp
 #, fuzzy
@@ -336,7 +348,7 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"Hvis Caps Lock brukes som sammensettingstast, vil opprinnelig oppførsel for "
+"Hvis Caps Lock brukes som sammenfattingstast, vil opprinnelig oppførsel for "
 "tasten bli utilgjengelig. Denne funksjonen tillater å skru på Caps Lock ved "
 "å trykke begge Shift-tastene samtidig."
 
@@ -350,7 +362,7 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
-"Hvis Caps Lock brukes som sammensettingstast, vil opprinnelig oppførsel for "
+"Hvis Caps Lock brukes som sammenfattingstast, vil opprinnelig oppførsel for "
 "tasten bli utilgjengelig. Funksjonen tillater å skru av Caps Lock ved å "
 "trykke på Shift-tasten."
 
@@ -463,7 +475,7 @@ msgstr "Oversettelse ved"
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Utviklere"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
@@ -529,42 +541,49 @@ msgid "Disabled"
 msgstr "Skru av"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
+#, fuzzy
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Se etter oppdateringer automatisk"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
+#, fuzzy
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
+"Lar WinCompose koble til Internett ved regelmessige intervaller for å se "
+"etter nye versjoner. Oppgraderinger installeres ikke automatisk."
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Prøv å alltid holde varslingsområdet synlig"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
+"Windows vil fjerne ikonet fra varslingsområdet etter en kort stund som "
+"forvalg. Dette valget prøver å alltid holde det synlig."
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Endre…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
+#, fuzzy
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Trykk en tast for å bruke som sammenfattingstast."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Legg til i favoritter"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Skru av ikonet i varslingsområdet"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -572,46 +591,52 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"Fjerner visning av WinCompose-ikon i varslingsområdet. Den eneste måten å "
+"åpne WinCompose-grensesnittet vil være gjennom \"WinCompose-innstillinger\" "
+"og \"WinCompose-sekvenser\"-oppføringer i oppstartsmenyen."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tabulator"
 
 #. Text to show instead of a value in seconds when the reset delay feature is disabled
 #: i18n/Text.resx:553 ID:DelayDisabled
 msgid "No delay"
-msgstr ""
+msgstr "Ingen forsinkelse"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Avansert"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Se bort fra vinduer som samsvarer med dette regulære uttrykket:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"WinCompose vil bli helt skrudd av når nåværende vindusklasse eller "
+"vindusnavn samsvarer med dette regulære uttrykket."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
+#, fuzzy
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Alternativ sammenfattingstast er alltid Compose"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -619,6 +644,9 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Behandler alle sammenfattingstaster som Compose i en sekvens. Kun første "
+"tast som trykkes vil fungere som Compose som forvalg, og alternative "
+"sammenfattingstaster vil alltid beholde deres opprinnelige rolle."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
