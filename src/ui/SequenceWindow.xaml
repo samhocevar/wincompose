@@ -34,7 +34,6 @@
 
     <Window.Resources>
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
-        <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
         <BitmapImage x:Key="SpaceKeyImage" UriSource="../res/key_space.png"/>
 
         <emoji:TextBlock Text="📋" x:Key="CopyEmoji" FontSize="12"/>
@@ -208,8 +207,12 @@
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
                                 <Border Width="32" Height="32">
                                     <Border.Background>
-                                        <ImageBrush ImageSource="{StaticResource ComposeKeyImage}"/>
+                                        <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
                                     </Border.Background>
+                                    <Viewbox Margin="4">
+                                        <TextBlock Text="♦" Foreground="#310"
+                                                   FontFamily="Consolas, Segoe UI Symbol, Arial" FontWeight="Bold" />
+                                    </Viewbox>
                                 </Border>
                                 <ItemsControl ItemsSource="{Binding Sequence}">
                                     <ItemsControl.ItemsPanel>
