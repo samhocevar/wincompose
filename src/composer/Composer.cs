@@ -131,6 +131,30 @@ static class Composer
         // to its virtual key code.
         Key key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, has_capslock);
 
+        // Special handling of Left Control on keyboards with AltGr
+        if (KeyboardLayout.HasAltGr && key.VirtualKey == VK.LCONTROL)
+        {
+            // If this is a key down event with LLKHF_ALTDOWN but no Alt key
+            // is down, it is actually AltGr.
+            if (is_keydown && (flags & LLKHF.ALTDOWN) != 0
+                 && ((NativeMethods.GetKeyState(VK.LMENU) |
+                      NativeMethods.GetKeyState(VK.RMENU)) & 0x80) == 0)
+            {
+                m_control_key_was_altgr = true;
+                return true;
+            }
+
+            // If this is a key up event bug Left Control is not down, it is
+            // actually AltGr.
+            if (is_keyup && m_control_key_was_altgr)
+            {
+                m_control_key_was_altgr = false;
+                return true;
+            }
+
+            m_control_key_was_altgr = false;
+        }
+
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
         // whether this key without Caps Lock gives a non-ASCII alphabetical
         // character. If so, we replace “result” with the lowercase or
@@ -157,10 +181,10 @@ static class Composer
             }
         }
 
-        // If we are being used to capture a key, send the resulting key
+        // If we are being used to capture a key, send the resulting key.
         if (Captured != null)
         {
-            if (!is_keydown)
+            if (is_keyup)
                 Captured.Invoke(key);
             return true;
         }
@@ -806,6 +830,11 @@ static class Composer
     /// The compose key being used; only valid in state “KeyCombination” for now.
     /// </summary>
     private static Key m_current_compose_key = new Key(VK.NONE);
+
+    /// <summary>
+    /// Whether the last control keypress was AltGr
+    /// </summary>
+    private static bool m_control_key_was_altgr = false;
 
     /// <summary>
     /// Whether the current compose key is AltGr
