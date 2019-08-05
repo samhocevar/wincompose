@@ -114,7 +114,7 @@ public class SequenceTree : SequenceNode
 
         for (int i = 1; i < keysyms.Length - 1; ++i)
         {
-            Key k = Key.FromKeySym(keysyms[i]);
+            Key k = Key.FromKeySymOrChar(keysyms[i]);
             if (k == null)
             {
                 if (!m_invalid_keys.ContainsKey(keysyms[i]))
@@ -152,7 +152,7 @@ public class SequenceTree : SequenceNode
         }
         else
         {
-            var result_key = Key.FromKeySym(result);
+            var result_key = Key.FromKeySymOrChar(result);
             if (result_key == null)
             {
                 Log.Debug($"Unknown key name {result}, ignoring sequence");

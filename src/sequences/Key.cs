@@ -93,9 +93,12 @@ public partial class Key
     }
 
     /// <summary>
-    /// A dictionary of keysyms and the corresponding Key object
+    /// Convert a string to a key, using the following methods:
+    ///  - a dictionary of keysyms
+    ///  - the "U+XXXX" Unicode hex notation
+    ///  - the string contents if it is of length 1
     /// </summary>
-    public static Key FromKeySym(string keysym)
+    public static Key FromKeySymOrChar(string keysym)
     {
         if (m_keysyms.ContainsKey(keysym))
             return new Key(m_keysyms[keysym]);
