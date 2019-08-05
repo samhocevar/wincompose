@@ -283,8 +283,10 @@ namespace WinCompose
             if (UseXComposeRules.Value)
                 m_sequences.LoadResource("3rdparty.xcompose.rules");
             if (UseEmojiRules.Value)
+            {
                 m_sequences.LoadFile(Path.Combine(GetDataDir(), "Emoji.txt"));
-            m_sequences.LoadFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
+                m_sequences.LoadFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
+            }
 
             m_sequences.LoadFile(Path.Combine(GetUserDir(), ".XCompose"));
             m_sequences.LoadFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
