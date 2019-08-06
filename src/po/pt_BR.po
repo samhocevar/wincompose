@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.6beta20160111\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-05-02 15:49+0000\n"
-"Last-Translator: Rui Mendes <xz9@protonmail.com>\n"
+"PO-Revision-Date: 2019-08-06 15:22+0000\n"
+"Last-Translator: Tulio <tuliomumic@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "wincompose/master/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7-dev\n"
+"X-Generator: Weblate 3.8-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -161,12 +161,12 @@ msgstr "Reiniciar"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr "Página de doações"
+msgstr "Página de Doações"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Visitar o Site"
+msgstr "Visitar o Website"
 
 #: i18n/Text.resx:241 ID:Exit
 msgid "Exit"
@@ -190,6 +190,9 @@ msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
+"Tentar trocar as duas teclas de uma sequência de duas teclas. Por exemplo, "
+"se Compose E A não é uma sequência válida, uma tentativa será realizada para "
+"Compose A E."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -531,16 +534,20 @@ msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
+"Se ativado, WinCompose irá conectar à internet em intervalos regulares para "
+"buscar por novas versões. As atualizações não são instaladas automaticamente."
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Tentar manter o ícone na área de notificação sempre visível"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
+"Por padrão, Windows irá remover o ícone da área de notificações após um "
+"curto período. Esta opção tenta manter ele sempre visível."
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
@@ -549,7 +556,7 @@ msgstr "Alterar…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr "Pressione uma tecla para usar como tecla de compor."
+msgstr "Pressione uma tecla para usar como tecla Compose."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
@@ -558,7 +565,7 @@ msgstr "Adicionar aos favoritos"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Desativar o ícone da área de notificações"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
