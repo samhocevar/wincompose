@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-04-16 19:06+0000\n"
-"Last-Translator: Wojciech Kwolek <wojciech.j.kwolek@gmail.com>\n"
+"PO-Revision-Date: 2019-09-01 18:23+0000\n"
+"Last-Translator: Krzysztof Wolicki <1kwolicki@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/"
 "pl/>\n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.6-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -209,7 +209,7 @@ msgstr "Klawisz Compose:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Wybierz przycisk który będzie używany jako przycisk Compose."
+msgstr "Wybierz klawisz, który będzie używany jako klawisz Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetDelay
@@ -221,15 +221,14 @@ msgid "Advanced Unicode input"
 msgstr "Zaawansowane wprowadzanie tekstu Unicode"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
 "Włącz wprowadzanie tekstu Unicode dla wszystkich symboli, nawet tych bez "
-"zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol U"
-"+1A3F: Compose U 1 A 3 F"
+"zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol "
+"U+1A3F: Compose U 1 A 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -259,8 +258,8 @@ msgid ""
 "key had not been used."
 msgstr ""
 "Jeżeli wprowadzona sekwencja nie istnieje, odrzuć wszystkie symbole, które "
-"zostały wprowadzone. Domyślnym zachowanie wszystkie wprowadzone symbole "
-"zostaną przepuszczone tak, jak by przycisk Compose nie został użyty."
+"zostały wprowadzone. Domyślnie wszystkie wprowadzone symbole zostaną "
+"przepuszczone, tak jakby klawisz Compose nie został użyty."
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -436,9 +435,8 @@ msgstr "Poprawki"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 sekund"
+msgstr "{0} sekund"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -561,7 +559,7 @@ msgstr ""
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Dodaj do ulubionych"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
