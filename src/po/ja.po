@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2018-02-05 13:37+0000\n"
-"Last-Translator: Hisikawa Mizuki <foomin10@gmail.com>\n"
+"PO-Revision-Date: 2019-09-14 16:42+0000\n"
+"Last-Translator: Miyazawa Akira <pecorarista@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/wincompose/"
 "master/ja/>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.19-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -82,12 +82,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "変換"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "無変換"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -107,21 +107,23 @@ msgstr "Enter"
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "合成規則"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Xorgプロジェクトのシーケンスを使う"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Xorgプロジェクト(http://www.x.org/"
+")が提供する3,000個の合成シーケンスを使います。これらは標準的なLinuxシステムで最も使われているものです。"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "XComposeプロジェクトのシーケンスを使う"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -129,23 +131,23 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"XComposeオープンソースプロジェクト(https://github.com/kragen/"
+"xcompose)が提供する1,000個の合成シーケンスを使います。これらのシーケンスはXorgのものと整合性がない場合があります。"
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose v{2} on {0} ({1} 個のシーケンス)"
+msgstr "WinComposeの絵文字シーケンスを使う"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr ""
+msgstr "WinComposeの開発者と貢献者によって提供される絵文字用の合成シーケンスを使います。"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "左Windowsキー"
+msgstr "デバッグウィンドウ"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -163,7 +165,7 @@ msgstr "再起動"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "寄付"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
@@ -176,9 +178,8 @@ msgstr "終了"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "入力した文字を捨てる"
+msgstr "Unicode文字"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -186,13 +187,13 @@ msgstr "シーケンス"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "キーの順序交換を試す"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr ""
+msgstr "シーケンス中の2つのキーの順序交換を試します。例えばCompose E Aが無効な入力であるとき、代わりにCompose A Eを試します。"
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -216,19 +217,18 @@ msgid "Advanced Unicode input"
 msgstr "上級者向けUnicode入力"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"Composeキーシーケンスが指定されていないUnicode文字にも入力を有効にする。たと"
-"えば、Compose U 1 A 3 Fというシーケンスを入力すると、U+1A3F が出力される"
+"合成シーケンスが指定されていないUnicode文字も入力できるようにします。例えばU+1A3Fを出力するためにはCompose U 1 A 3 "
+"Fというシーケンスを入力します"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "無効な入力時"
+msgstr "無効なシーケンスが入力されたとき"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
@@ -238,9 +238,7 @@ msgstr "大文字小文字のみが異なるものがある場合は、それを
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
-"入力したシーケンスが存在しないが、それと大文字小文字だけが異なるものが存在す"
-"る場合、自動修正する。"
+msgstr "入力されたシーケンスそのものは存在しないものの、大文字小文字だけが異なるものは存在する場合、自動的に修正を行います。"
 
 #: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -252,8 +250,7 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"入力したシーケンスが存在しない場合、すべての入力を破棄する。デフォルトでは、"
-"入力された文字を、Composeキーが押されなかった時のように出力する。"
+"入力したシーケンスが存在しない場合、すべての入力を破棄します。デフォルトでは、入力された文字をComposeキーが押されなかったときのように出力します。"
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -261,7 +258,7 @@ msgstr "ビープ音を鳴らす"
 
 #: i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "入力したシーケンスが存在しない場合、システム音を鳴らす。"
+msgstr "入力したシーケンスが存在しない場合、システム音を鳴らします。"
 
 #: i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -283,12 +280,12 @@ msgstr "閉じる"
 #. Copy character or symbol to the clipboard
 #: i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "クリップボードにコピー"
 
 #. Name of the category (Unicode characters, Emoji, User macros)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "絵文字"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
@@ -352,15 +349,13 @@ msgstr ""
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr "Caps Lockがオンの時は、常に大文字にする"
+msgstr "Caps Lockが有効な場合は常に大文字にする"
 
 #: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
-"Caps Lockがオンの時、“é”のようなアクセント付き文字を打ったとき、常に対応する"
-"大文字 (この場合は “É”) を出力する。"
+msgstr "Caps Lockが有効な場合、“é”のようなアクセント付き文字を打つと、常に対応する大文字（この場合は “É”）が出力されます。"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
@@ -392,9 +387,8 @@ msgid "General"
 msgstr "一般"
 
 #: i18n/Text.resx:401 ID:Behavior
-#, fuzzy
 msgid "Behavior"
-msgstr "一般的な動作"
+msgstr "挙動"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:405 ID:WindowTitle
@@ -418,23 +412,22 @@ msgstr "Insert"
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr "ためしてみる"
+msgstr "試す"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
-msgstr "細かい設定"
+msgstr "詳細設定"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10秒"
+msgstr "{0}秒"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
 msgid "About"
-msgstr "WinCompose について"
+msgstr "WinComposeについて"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:437 ID:Download
@@ -444,7 +437,7 @@ msgstr "WinComposeのダウンロード {0}"
 #. Window title of the About box
 #: i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr "WinCompose について"
+msgstr "WinComposeについて"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:445 ID:Programming
@@ -459,7 +452,7 @@ msgstr "翻訳"
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "開発者"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
@@ -469,7 +462,7 @@ msgstr "ライセンス"
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr "設定によっては、WinComposeを再起動しないと反映されないものもあります。"
+msgstr "設定項目によっては、WinComposeを再起動しないと反映されません。"
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:465 ID:ReportBug
@@ -493,69 +486,70 @@ msgstr "ユーザー定義シーケンス"
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "編集"
 
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "再読み込み"
 
 #: i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "キーの挿入を許可する"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr ""
+msgstr "AutoHotkeyやSynergyなどのソフトウェアを通じて入力されたキーを無視しないようにします"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "PrtScrn"
 
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
-#, fuzzy
 msgid "Disabled"
-msgstr "無効にする"
+msgstr "未指定"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "アップデートがないか自動的に確認する"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
+"有効な場合、WinComposeは定期的にインターネットに接続し、新しいバージョンがないか確認します。アップデートが自動でインストールされることはありませ"
+"ん。"
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "通知領域のアイコンを常に表示する"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr ""
+msgstr "Windowsは通知領域のアイコンを一定時間が経つと自動的に消去します。この設定項目が有効な場合、常にアイコンが表示されるようになります。"
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "変更…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Composeキーとして使うキーを入力してください。"
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "お気に入りに追加する"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "通知領域のアイコンを無効にする"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -563,46 +557,48 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"有効な場合、WinComposeは通知領域のアイコンを表示しません。このときWinComposeのインターフェースを開くにためにはスタートアップメニューか"
+"ら“WinCompose Settings”か“WinCompose Sequences”を選択する必要があります。"
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset delay feature is disabled
 #: i18n/Text.resx:553 ID:DelayDisabled
 msgid "No delay"
-msgstr ""
+msgstr "遅延なし"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "上級者向け"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "正規表現に合致するウィンドウを無視する:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
-msgstr ""
+msgstr "現在開かれているウィンドウのクラスまたは名前がこの正規表現に合致する場合、WinComposeが完全に無効になります。"
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Composeキーの代替を常にComposeとして扱う"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -610,6 +606,8 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"有効な場合、Composeキーに割り当てられているキーがすべてシーケンス中でComposeとして扱われます。デフォルトでは最初に押下されたキーのみがCom"
+"poseキーとして扱われ、代替として設定されたキーは元の役割を保ちます。"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
