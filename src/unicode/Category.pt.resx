@@ -118,93 +118,93 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Control" xml:space="preserve">
-    <value>Andra, kontroll</value>
+    <value>Outro, control</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>Andra, format</value>
+    <value>Outro, formato</value>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
-    <value>Andra, inte tilldelade</value>
+    <value>Outro, não atribuído</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>Andra, privat användning</value>
+    <value>Outro, uso privado</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>Andra, surrogat</value>
+    <value>Outro, substituto</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
-    <value>Bokstav, gemen</value>
+    <value>Letra, minúscula</value>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
-    <value>Bokstav, modifierare</value>
+    <value>Letra, modificador</value>
   </data>
   <data name="OtherLetter" xml:space="preserve">
-    <value>Bokstav, andra</value>
+    <value>Letra, outra</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>Bokstav, titeltyp</value>
+    <value>Letra, iniciais maiúsculas</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
-    <value>Bokstav, versal</value>
+    <value>Letra, maiúscula</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>Märke, utrymmeskombinerande</value>
+    <value>Marca, combinação de espaçamento</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>Märke, omslutande</value>
+    <value>Marca, contenção</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>Märke, icke-blanksteg</value>
+    <value>Marca, sem espaçamento</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
-    <value>Tal, decimal siffra</value>
+    <value>Número, dígito decimal</value>
   </data>
   <data name="LetterNumber" xml:space="preserve">
-    <value>Tal, bokstav</value>
+    <value>Número, letra</value>
   </data>
   <data name="OtherNumber" xml:space="preserve">
-    <value>Tal, andra</value>
+    <value>Número, outro</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Skiljetecken, sammanfogare</value>
+    <value>Pontuação, conector</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>Skiljetecken, streck</value>
+    <value>Pontuação, traço</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
-    <value>Skiljetecken, stäng</value>
+    <value>Pontuação, fechar</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>Skiljetecken, slutcitat</value>
+    <value>Pontuação, aspa final</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>Skiljetecken, påbörjan av citat</value>
+    <value>Pontuação, aspa inicial</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
-    <value>Skiljetecken, andra</value>
+    <value>Pontuação, outro</value>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
-    <value>Skiljetecken, öppna</value>
+    <value>Pontuação, abrir</value>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
-    <value>Symbol, valuta</value>
+    <value>Símbolo, moeda</value>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
-    <value>Symbol, modifierare</value>
+    <value>Símbolo, modificador</value>
   </data>
   <data name="MathSymbol" xml:space="preserve">
-    <value>Symbol, matematik</value>
+    <value>Símbolo, matemática</value>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
-    <value>Symbol, andra</value>
+    <value>Símbolo, outro</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>Avskiljare, rad</value>
+    <value>Separador, linha</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
-    <value>Avskiljare, stycke</value>
+    <value>Separador, parágrafo</value>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
-    <value>Avskiljare, blanksteg</value>
+    <value>Separador, espaço</value>
   </data>
 </root>

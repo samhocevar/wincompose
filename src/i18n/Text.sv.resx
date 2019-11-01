@@ -168,6 +168,30 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Komposering</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Använd sekvenser från Xorg-projektet</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Använder de 3 000 komponeringssekvenserna från Xorg-projektet (httt://www.x.org/). Dessa är de sekvenser som vanligtvis hittas på vanliga Linux-system.</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Användarsekvenser från XCompose-projektet</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Använder de 1 000 komponeringssekvenserna från opensource XCompose-projektet (htttps://githug.com/kragen/xcompose). Dessa sekvenser kan ibland hamna i konflikt med de från Xorg-projektet.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Använder WinCompose-sekvenser för Emoijer</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Använd komposeringssekvenser för Emojier som tillhandahålls av WinComposes skapare och medarbetare.</value>
+  </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Felsökningsfönster</value>
+  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Visa sekvenser…</value>
   </data>
@@ -177,14 +201,26 @@
   <data name="Restart" xml:space="preserve">
     <value>Starta om</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Doneringssida</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Besök hemsidan</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Stäng</value>
   </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode-tecken</value>
+  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvenser</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Försök byta plats på de två tangenterna</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Försök byta plats på tangenterna i en sekvens med två tangenter. Exempelvis om Compose E A är en ogiltig sekvens prova Compose A E istället.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Sökfilter:</value>
@@ -201,6 +237,9 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>Avancerad Unicode-inmatning</value>
   </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Aktivera Unicode-inmatning för alla tecken, även de som saknar definierad komponeringssekvens. Till exempel kommer följande sekvens att mata ut tecknet U+1A3F: Compose U 1 A 3 F Enter</value>
+  </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>För ogiltiga sekvenser</value>
   </data>
@@ -208,7 +247,7 @@
     <value>Fall tillbaka på icke-skiftlägeskänsliga träffar</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>Om den angivna sekvensen inte existerar, men det finns en som bara skiljer sig på skiftläge, korrigera det automatiskt.</value>
+    <value>Om den angivna sekvensen inte existerar, men det finns en som bara skiljer sig gällande skiftläge, korrigera det automatiskt.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
     <value>Förkasta alla inmatade tecken</value>
@@ -226,22 +265,28 @@
     <value>Gränssnittsspråk:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Välj språket som WinCompose använder i gränssnittett. Som standard används operativsystemets språk.</value>
+    <value>Välj språket som WinCompose använder i gränssnittet. Som standard används operativsystemets språk.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Stäng</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopiera till urklipp</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Verkställ</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Upprätthåll ursprunglig komponent-tangentbeteende</value>
+    <value>Upprätthåll ursprunglig beteende för Compose-tangenten</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
     <value>Detta säger till WinCompose att göra en ansträngning att behålla originaltangentens beteende. Till exempel skulle genvägen Alt-Tab fortfarande fungera även om Alt används som Compose-tangent.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Infoga 0-punkts mellanslag i Office-program</value>
+    <value>Infoga nollpunktsmellanslag i Office-program</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
     <value>Microsoft Office-program ändrar ibland dokumenttypsnittet automatiskt när vissa Unicode-tecken matas in. Denna funktion matar in ett osynligt tecken efter Unicode-tecknet för att kringgå detta fel.</value>
@@ -256,7 +301,7 @@
     <value>Skift-tangenten slår av Caps Lock</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Om Caps Lock används som Compose-knapp kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock genom att trycka på Skift-tangenten.</value>
+    <value>Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock genom att trycka på Skift-tangenten.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
     <value>Caps Lock gör alltid om bokstäver till versaler</value>
@@ -268,7 +313,7 @@
     <value>Kategorier</value>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
-    <value>I utvalda kategorier</value>
+    <value>I valda kategorier</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Alternativ — WinCompose</value>
@@ -277,7 +322,7 @@
     <value>Alternativ…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} on {0} ({1} sekvenser)</value>
+    <value>WinCompose v{2} på {0} ({1} sekvenser)</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Allmänt</value>
@@ -289,10 +334,10 @@
     <value>Sekvenser — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Användardefinierade macros</value>
+    <value>Användardefinierade makron</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
-    <value>WinCompose är inaktiverad</value>
+    <value>WinCompose är inaktiverat</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Infoga</value>
@@ -302,6 +347,9 @@
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Justeringar</value>
+  </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} sekunder</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
@@ -318,11 +366,14 @@
   <data name="Translators" xml:space="preserve">
     <value>Översättning</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Skapare</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Licens</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose behöver startas om för att ändringarna skall gälla.</value>
+    <value>WinCompose behöver startas om för att några av ändringarna ska börja gälla.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Rapportera en bugg</value>
@@ -349,7 +400,64 @@
     <value>Hoppa inte över tangent som skickas av andra programvaror så som AutoHotKey eller Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Prt Scrn</value>
+    <value>Print Screen</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Inaktivera</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automatiskt sök efter uppdateringar</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Om markerat kommer WinCompose regelbundet försöka ansluta till Internet för att finna nya versioner. Uppdateringar installeras inte automatiskt.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Försök att alltid hålla ikonen i notifieringsområdet synlig</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Som standard kommer Windows försöka ta bort ikonen från notifieringsområdet efter ett kort tag. Detta alternativ försöker hålla det synligt hela tiden.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Förändra…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Var vänlig att tryck på en tangent för att använda denna som din Compose-tangent.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Lägg till i favoriter</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Stäng av ikonen för notifieringsområdet</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Om markerat kommer WinCompose inte längre visa en ikon i notiferingsområdet. Det enda sättet att öppna gränssnittet för WinCompose blir genom att öppna ”WinCompose Settings” och ”Wincompose Sequences” i Startmenyn.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Avstängd</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avancerat</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignorera fönster som matchar detta regelbundna uttryck:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose kommer stängas av helt när nuvarande fönsterklass eller fönsternamn matchar detta regelbundna uttryck.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternativ Compose-tangent är alltid Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Om markerat kommer alla Compose-tangenter behandlas som Compose i en sekvens. Som standard kommer endast den tangent som trycks på först att agera som Compose medan alternativa Compose-tangenter behåller sina ursprungliga roller.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Speciella tack</value>

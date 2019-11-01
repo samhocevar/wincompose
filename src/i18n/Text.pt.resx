@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Wykryj automatycznie</value>
+    <value>Detetar automaticamente</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Lewy Alt</value>
+    <value>Alt esquerda</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Prawy Alt</value>
+    <value>Alt direita</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Lewy Control</value>
+    <value>Control esquerdo</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Prawy Control</value>
+    <value>Control direito</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Lewy Windows</value>
+    <value>Windows esquerdo</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Prawy Windows</value>
+    <value>Windows direito</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
-    <value>Caps Lock</value>
+    <value>Bloqueio maiúsculas</value>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
     <value>Num Lock</value>
@@ -151,252 +151,315 @@
     <value>Menu</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+    <value>Esc</value>
   </data>
   <data name="KeyConvert" xml:space="preserve">
-    <value>Konwersja</value>
+    <value>Conversão</value>
   </data>
   <data name="KeyNonConvert" xml:space="preserve">
-    <value>Brak konwersji</value>
+    <value>Não-conversão</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>Spacja</value>
+    <value>Espaço</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
   <data name="Composing" xml:space="preserve">
-    <value>Komponowanie</value>
+    <value>Composição</value>
   </data>
   <data name="UseXorgRules" xml:space="preserve">
-    <value>Użyj sekwencji z projektu Xorg</value>
+    <value>Usar sequências do projeto Xorg</value>
   </data>
   <data name="UseXorgRulesToolTip" xml:space="preserve">
-    <value>Użyj ponad 3000 sekwencji komponowania z projektu Xorg (http://www.x.org/). To sekwencje, które występują najczęściej na systemach Linuksowych.</value>
+    <value>Usar as 3000 sequências de composição do projeto Xorg (http://www.x.org/). Estas são as sequências mais comuns encontradas num sistema Linux.</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
-    <value>Użyj sekwencji z projektu XCompose</value>
+    <value>Usar sequências do projeto XCompose</value>
   </data>
   <data name="UseXComposeRulesToolTip" xml:space="preserve">
-    <value>Użyj ponad 1000 sekwencji komponowania z otwarto-źródłowego projektu XCompose (https://github.com/kragen/xcompose). Te sekwencje czasami zawierają konflikty z sekwencjami projektu Xorg.</value>
+    <value>Usar as 1000 sequências de composição do projeto XCompose (https://github.com/kragen/xcompose). Por vezes estas sequências podem entrar em conflito com as sequências do Xorg.</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
-    <value>Użyj sekwencji emoji z WinCompose</value>
+    <value>Usar as sequências emoji do WinCompose</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Usar as sequências de composição para Emoji fornecidas pelo autor do WinCompose e os seus colaboradores.</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
-    <value>Okno Debugowania</value>
+    <value>Janela de depuração de erros</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Pokaż sekwencje…</value>
+    <value>Mostrar sequências…</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Wyłącz</value>
+    <value>Desativar</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Uruchom ponownie</value>
+    <value>Reiniciar</value>
+  </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Página de donativos</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Odwiedź stronę</value>
+    <value>Visitar o site na Internet</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Zakończ</value>
+    <value>Sair</value>
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
-    <value>Znaki Unicode</value>
+    <value>Caracteres Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
-    <value>Sekwencje</value>
+    <value>Sequências</value>
   </data>
   <data name="SwapOnInvalid" xml:space="preserve">
-    <value>Spróbuj zamienić kolejność klawiszy</value>
+    <value>Tentar trocar as duas teclas</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Spróbuj zamienić kolejność klawiszy. Na przykład, jeżeli Compose E A nie jest prawidłową sekwencją, spróbuj Compose A E.</value>
+    <value>Tentar trocar as teclas de uma sequência de 2 teclas. Por exemplo, Se a Composição E A não foi uma sequência válida, tentar em vez disso a Composição A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Filtr wyszukiwania:</value>
+    <value>Filtro de procura:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Klawisz Compose:</value>
+    <value>Tecla de composição:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Wybierz klawisz, który będzie używany jako klawisz Compose.</value>
+    <value>Selecione a tecla que deve atuar como a  tecla de Composição.</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
-    <value>Opóźnienie:</value>
+    <value>Atraso:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
-    <value>Zaawansowane wprowadzanie tekstu Unicode</value>
+    <value>Introdução Unicode avançada</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Włącz wprowadzanie tekstu Unicode dla wszystkich symboli, nawet tych bez zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol U+1A3F: Compose U 1 A 3 F Enter</value>
+    <value>Ativar a entrada Unicode para todos os caracteres, mesmo aqueles sem sequência de composição definida. Por exemplo, a seguinte composição irá originar o caractere U+1A3F: Compor U 1 A 3 F Enter</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>Niepoprawne sekwencje</value>
+    <value>Nas sequências inválidas</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>Ewentualnie dopasuj ignorując wielkość liter</value>
+    <value>Reverter para correspondências não sensíveis a maiúsculas e minúsculas</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>Jeżeli wprowadzona sekwencja nie istnieje, ale jest, która różni się wielkością liter, automatycznie ją popraw.</value>
+    <value>Se a sequência introduzida não existir, mas existir uma que só difere na capitalização, corrigir automaticamente.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Odrzuć wszelkie wprowadzone symbole</value>
+    <value>Descartar todos os caracteres introduzidos</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Jeżeli wprowadzona sekwencja nie istnieje, odrzuć wszystkie symbole, które zostały wprowadzone. Domyślnie wszystkie wprowadzone symbole zostaną przepuszczone, tak jakby klawisz Compose nie został użyty.</value>
+    <value>Se a sequência introduzida não existe, descartar todos os caracteres que foram introduzidos. O comportamento padrão é inserir os caracteres como se a tecla Compor não tivesse sido usada.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Wydaj sygnał dźwiękowy</value>
+    <value>Soar um som</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>Jeżeli wprowadzona sekwencja nie istnieje, wydaj dzwięk systemowy.</value>
+    <value>Se a sequência introduzida não existe, emitir um alerta sonoro do sistema.</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Język interfejsu:</value>
+    <value>Idioma da interface:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Wybierz język, którego WinCompose używa dla interfejsu. Domyślnie używany jest język systemu operacyjnego.</value>
+    <value>Selecione o idioma que WinCompose deve usar na sua interface. O padrão é usar o idioma do sistema operativo.</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Zamknij</value>
+    <value>Fechar</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copiar para a área de transferência</value>
   </data>
   <data name="Emoji" xml:space="preserve">
-    <value>Emoji - nazwa kategorii (znaki Unicode, emotikony, makra użytkownika)</value>
+    <value>Emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
-    <value>Zastosuj</value>
+    <value>Aplicar</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Zachowaj oryginalne zachowanie klawisza compose</value>
+    <value>Manter comportamento original da tecla Compor</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Instruuje WinCompose aby starał się jak najbardziej zachować oryginalną funkcjonalność klawisza. Na przykład: skrót Alt-Tab będzie wciąż funkcjonować nawet gdy Alt będzie ustawiony jako klawisz Compose.</value>
+    <value>O WinCompose faz o melhor possível para manter o comportamento original das teclas. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo que a tecla Alt seja usada como tecla Compor.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Wstaw spacje o zerowej szerokości w aplikacjach pakietu Office</value>
+    <value>Inserir espaços de largura zero em aplicações do Office</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Aplikacje Microsoft Office czasami zmieniają czcionkę dokumentu w locie podczas wprowadzania niektórych znaków Unicode. Ta funkcja wstawia niewidoczny znak po znaku Unicode, aby obejść błąd.</value>
+    <value>Os programas do Microsoft Office às vezes mudam a fonte do documento no momento em que se digitam certos caracteres Unicode. Esta funcionalidade insere um caractere invisível depois do caractere Unicode para contornar o problema.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emuluj Caps Lock za pomocą obu klawiszy Shift</value>
+    <value>Simular Caps Lock usando ambas as teclas Shift</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Jeśli Caps Lock jest używany jako klawisz compose, oryginalne zachowanie klucza staje się niedostępne. Ta funkcja pozwala włączyć Caps Lock, naciskając jednocześnie oba klawisze Shift.</value>
+    <value>Se a tecla Caps Lock (bloqueio de maiúsculas) for usada como tecla Compor, o comportamento original da tecla torna-se indisponível. Esta função permite que se ative a tecla Caps Lock pressionando ambas as teclas Shift ao mesmo tempo.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Klawisz Shift wyłącza Caps Lock</value>
+    <value>Shift desativa Caps Lock</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Gdy Caps Lock jest ustawiony jako klawisz Compose, jego oryginalne działanie jest niedostępne. Ta opcja pozwala wyłączyć Caps Lock naciskając krótko klawisz Shift.</value>
+    <value>Se a tecla Caps Lock (bloquear maiúsculas) for usada como tecla Compor, o comportamento original da tecla torna-se indisponível. Esta função permite que se desative a tecla Caps Lock pressionando a tecla Shift.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
-    <value>Caps Lock zawsze używa wielkich liter</value>
+    <value>Caps Lock capitaliza sempre as letras</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Gdy funkcja Caps Lock jest włączona, wpisanie litery z akcentem, takiej jak &quot;é&quot;, zawsze spowoduje wyświetlenie odpowiedniej litery pisanej dużą literą, w tym przypadku &quot;É&quot;.</value>
+    <value>Quando a tecla Caps Lock está ativa, digitar uma letra acentuada, como “é”, produzirá sempre a letra maiúscula correspondente, neste caso “É”.</value>
   </data>
   <data name="Categories" xml:space="preserve">
-    <value>Kategorie</value>
+    <value>Categorias</value>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
-    <value>W wybranych kategoriach</value>
+    <value>Nas categorias selecionadas</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Opcje — WinCompose</value>
+    <value>Opções — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
-    <value>Opcje…</value>
+    <value>Opções…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v {2} w {0} (sekwencje {1})</value>
+    <value>WinCompose v{2} em {0} ({1} sequências)</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>Ogólne</value>
+    <value>Geral</value>
   </data>
   <data name="Behavior" xml:space="preserve">
-    <value>Zachowanie</value>
+    <value>Comportamento</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Sekwencje — WinCompose</value>
+    <value>Sequências — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Makra użytkownika</value>
+    <value>Macros personalizadas</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
-    <value>WinCompose jest wyłączony</value>
+    <value>O WinCompose está desativado</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
-    <value>Wstaw</value>
+    <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Pisanie testowe</value>
+    <value>Testar escrita</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
-    <value>Poprawki</value>
+    <value>Ajustes</value>
   </data>
   <data name="DelaySeconds" xml:space="preserve">
-    <value>{0} sekund</value>
+    <value>{0} segundos</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>O programie</value>
+    <value>Sobre</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Pobierz WinCompose {0}</value>
+    <value>Descarregar o WinCompose {0}</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
-    <value>O WinCompose</value>
+    <value>Sobre o WinCompose</value>
   </data>
   <data name="Programming" xml:space="preserve">
-    <value>Programowanie</value>
+    <value>Programação</value>
   </data>
   <data name="Translators" xml:space="preserve">
-    <value>Tłumaczenie</value>
+    <value>Tradução</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Autores</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Licencja</value>
+    <value>Licença</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>Wprowadzenie zmian wymaga restartu WinCompose.</value>
+    <value>O WinCompose tem de ser reiniciado para que algumas alterações surtam efeito.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
-    <value>Zgłoś błąd</value>
+    <value>Reportar um erro</value>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>Pomoc</value>
+    <value>Ajuda</value>
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
-    <value>Dostępne są aktualizacje.</value>
+    <value>Há atualizações disponíveis.</value>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
-    <value>Sekwencje zdefiniowane przez użytkownika</value>
+    <value>Sequências definidas pelo utilizador</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
-    <value>Edytuj</value>
+    <value>Editar</value>
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
-    <value>Załaduj ponownie</value>
+    <value>Atualizar</value>
   </data>
   <data name="AllowInjected" xml:space="preserve">
-    <value>Zezwól na wtryskiwane klawisze</value>
+    <value>Permitir teclas simuladas</value>
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
-    <value>Nie ignoruj kluczy wysłanych przez inne oprogramowanie, takie jak AutoHotkey lub Synergy</value>
+    <value>Não ignorar teclas enviadas por outros programas tais como AutoHotKey e Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Print Screen</value>
+    <value>Prt Scrn</value>
   </data>
   <data name="KeyDisabled" xml:space="preserve">
-    <value>Wyłączone</value>
+    <value>Desativado</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Verificar atualizações automaticamente</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Se ativado, o WinCompose irá conectar à Internet em intervalos regulares para verificar se existem novas versões. As atualizações não são instaladas automaticamente.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Tentar manter o ícone da área de notificação sempre visível</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Por padrão, o Windows remove o ícone da área de notificação após algum tempo. Esta opção tenta mantê-lo sempre visível.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Alterar…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Pressione uma tecla para usar como tecla de compor.</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
-    <value>Dodaj do ulubionych</value>
+    <value>Adicionar aos favoritos</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Desativar ícone da área de notificação</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Se ativado, o WinCompose não irá mostrar mais um ícone na área de notificação. A única forma de abrir a interface do WinCompose será através das “Configurações do WinCompose” e “Sequências do WinCompose” (ou “WinCompose Settings” e “WinCompose Sequences”) no menu de iniciar.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Sem atraso</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avançado</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignorar janelas que coincidam com esta expressão regular:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>O WinCompose será completamente desativado quando a classe da janela atual ou o nome da janela corresponder a esta expressão regular.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>A tecla alternativa de compor é sempre a Compor</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Se ativado, todas as teclas de compor serão tratadas como Compor numa sequência. Por padrão, apenas a primeira tecla pressionada irá atuar como Compor, e as teclas de compor alternativas manterão a sua função original.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
-    <value>Specjalne podziękowania</value>
+    <value>Agradecimentos especiais</value>
   </data>
 </root>

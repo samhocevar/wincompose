@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>変換</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>無変換</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -161,6 +167,30 @@
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
+  </data>
+  <data name="Composing" xml:space="preserve">
+    <value>合成規則</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Xorgプロジェクトのシーケンスを使う</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Xorgプロジェクト(http://www.x.org/)が提供する3,000個の合成シーケンスを使います。これらは標準的なLinuxシステムで最も使われているものです。</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>XComposeプロジェクトのシーケンスを使う</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>XComposeオープンソースプロジェクト(https://github.com/kragen/xcompose)が提供する1,000個の合成シーケンスを使います。これらのシーケンスはXorgのものと整合性がない場合があります。</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>WinComposeの絵文字シーケンスを使う</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>WinComposeの開発者と貢献者によって提供される絵文字用の合成シーケンスを使います。</value>
+  </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>デバッグウィンドウ</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>シーケンスを表示…</value>
@@ -171,14 +201,26 @@
   <data name="Restart" xml:space="preserve">
     <value>再起動</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>寄付</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>ウェブサイトを表示</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>終了</value>
   </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode文字</value>
+  </data>
   <data name="Sequences" xml:space="preserve">
     <value>シーケンス</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>キーの順序交換を試す</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>シーケンス中の2つのキーの順序交換を試します。例えばCompose E Aが無効な入力であるとき、代わりにCompose A Eを試します。</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>検索フィルタ:</value>
@@ -195,26 +237,29 @@
   <data name="UnicodeInput" xml:space="preserve">
     <value>上級者向けUnicode入力</value>
   </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>合成シーケンスが指定されていないUnicode文字も入力できるようにします。例えばU+1A3Fを出力するためにはCompose U 1 A 3 Fというシーケンスを入力します</value>
+  </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>無効な入力時</value>
+    <value>無効なシーケンスが入力されたとき</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>大文字小文字のみが異なるものがある場合は、それを使用する</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>入力したシーケンスが存在しないが、それと大文字小文字だけが異なるものが存在する場合、自動修正する。</value>
+    <value>入力されたシーケンスそのものは存在しないものの、大文字小文字だけが異なるものは存在する場合、自動的に修正を行います。</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
     <value>入力した文字を捨てる</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>入力したシーケンスが存在しない場合、すべての入力を破棄する。デフォルトでは、入力された文字を、Composeキーが押されなかった時のように出力する。</value>
+    <value>入力したシーケンスが存在しない場合、すべての入力を破棄します。デフォルトでは、入力された文字をComposeキーが押されなかったときのように出力します。</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>ビープ音を鳴らす</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>入力したシーケンスが存在しない場合、システム音を鳴らす。</value>
+    <value>入力したシーケンスが存在しない場合、システム音を鳴らします。</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>表示言語:</value>
@@ -224,6 +269,12 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>閉じる</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>クリップボードにコピー</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>絵文字</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>適用</value>
@@ -253,10 +304,10 @@
     <value>Caps LockをComposeキーに指定した場合、元の挙動は使用できません。この機能は、Shiftキーを押すことでCaps LockをOffにすることができます。</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
-    <value>Caps Lockがオンの時は、常に大文字にする</value>
+    <value>Caps Lockが有効な場合は常に大文字にする</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Caps Lockがオンの時、“é”のようなアクセント付き文字を打ったとき、常に対応する大文字 (この場合は “É”) を出力する。</value>
+    <value>Caps Lockが有効な場合、“é”のようなアクセント付き文字を打つと、常に対応する大文字（この場合は “É”）が出力されます。</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>カテゴリ</value>
@@ -276,6 +327,9 @@
   <data name="General" xml:space="preserve">
     <value>一般</value>
   </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>挙動</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>シーケンス — WinCompose</value>
   </data>
@@ -289,19 +343,22 @@
     <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>ためしてみる</value>
+    <value>試す</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
-    <value>細かい設定</value>
+    <value>詳細設定</value>
+  </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0}秒</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>WinCompose について</value>
+    <value>WinComposeについて</value>
   </data>
   <data name="Download" xml:space="preserve">
     <value>WinComposeのダウンロード {0}</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
-    <value>WinCompose について</value>
+    <value>WinComposeについて</value>
   </data>
   <data name="Programming" xml:space="preserve">
     <value>プログラミング</value>
@@ -309,11 +366,14 @@
   <data name="Translators" xml:space="preserve">
     <value>翻訳</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>開発者</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>ライセンス</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>設定によっては、WinComposeを再起動しないと反映されないものもあります。</value>
+    <value>設定項目によっては、WinComposeを再起動しないと反映されません。</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>バグ報告</value>
@@ -326,6 +386,78 @@
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
     <value>ユーザー定義シーケンス</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>再読み込み</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>キーの挿入を許可する</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>AutoHotkeyやSynergyなどのソフトウェアを通じて入力されたキーを無視しないようにします</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>PrtScrn</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>未指定</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>アップデートがないか自動的に確認する</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>有効な場合、WinComposeは定期的にインターネットに接続し、新しいバージョンがないか確認します。アップデートが自動でインストールされることはありません。</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>通知領域のアイコンを常に表示する</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Windowsは通知領域のアイコンを一定時間が経つと自動的に消去します。この設定項目が有効な場合、常にアイコンが表示されるようになります。</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>変更…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Composeキーとして使うキーを入力してください。</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>お気に入りに追加する</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>通知領域のアイコンを無効にする</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>有効な場合、WinComposeは通知領域のアイコンを表示しません。このときWinComposeのインターフェースを開くにためにはスタートアップメニューから“WinCompose Settings”か“WinCompose Sequences”を選択する必要があります。</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>遅延なし</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>上級者向け</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>正規表現に合致するウィンドウを無視する:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>現在開かれているウィンドウのクラスまたは名前がこの正規表現に合致する場合、WinComposeが完全に無効になります。</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Composeキーの代替を常にComposeとして扱う</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>有効な場合、Composeキーに割り当てられているキーがすべてシーケンス中でComposeとして扱われます。デフォルトでは最初に押下されたキーのみがComposeキーとして扱われ、代替として設定されたキーは元の役割を保ちます。</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>スペシャルサンクス</value>

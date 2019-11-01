@@ -168,6 +168,21 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Bruk sekvenser fra Xorg-prosjektet</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Bruk sekvenser fra XCompose-prosjektet</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Bruk de 1000 sammenfattingssekvensene fra XCompose opensource-prosjektet (https://github.com/kragen/xcompose). Sekvensene kan noen ganger komme i konflikt med dem fra Xorg.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Bruk WinCompose-emojisekvenser</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Bruk sammenfattingssekvensene for emojier tilbudt av WinCompose-utvikleren og bidragsyterne.</value>
+  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Vis sekvenser…</value>
   </data>
@@ -176,6 +191,9 @@
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Start på nytt</value>
+  </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Donasjonsside</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Besøk nettsiden</value>
@@ -186,20 +204,26 @@
   <data name="Sequences" xml:space="preserve">
     <value>Sekvenser</value>
   </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Prøv å bytte de to tastene</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Prøv å bytte tastene i en to-tasters sekvens. For eksempel. Hvis sammenfattingstast E A ikke er en gyldig sekvens, prøv sammenfattingstast A E istedenfor.</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Søkefilter:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Sammensettingsstast:</value>
+    <value>Sammenfattingstast:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Velg knappen å bruke som sammensettingstast.</value>
+    <value>Velg knappen å bruke som sammenfattingstast.</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Avansert Unicode-inndata</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Skru på Unicode-inndata for alle tegn, selv dem uten definert sammensettingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet U+1A3F: Sammensettingstast U 1 A 3 F</value>
+    <value>Skru på Unicode-inndata for alle tegn, selv dem uten definert sammenfattingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet U+1A3F: Sammenfattingstast U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Ved ugyldige sekvenser</value>
@@ -214,7 +238,7 @@
     <value>Forkast alle skrevne tegn</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Hvis innskrevet sekvens ikke finnes, forkast alle innskrevne tegn. Forvalgt oppførsel er å skrive ut alle tegnene som om sammensettingstasten ikke hadde blitt brukt.</value>
+    <value>Hvis innskrevet sekvens ikke finnes, forkast alle innskrevne tegn. Forvalgt oppførsel er å skrive ut alle tegnene som om sammenfattingstasten ikke hadde blitt brukt.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Utbasuner pip</value>
@@ -231,6 +255,9 @@
   <data name="Close" xml:space="preserve">
     <value>Lukk</value>
   </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopier til utklippstavle</value>
+  </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
   </data>
@@ -238,10 +265,10 @@
     <value>Legg til</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Behold opprinnelig oppførsel for sammensettingstast</value>
+    <value>Behold opprinnelig oppførsel for sammenfattingstast</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Gir WinCompose beskjed om å prøve å beholde den opprinelige tastens oppførsel. For eksempel, vil Alt+Tab-snarveien fungere selv om Alt brukes som sammensettingstast.</value>
+    <value>Gir WinCompose beskjed om å prøve å beholde den opprinnelige tastens oppførsel. For eksempel, vil Alt+Tab-snarveien fungere selv om Alt brukes som sammenfattingstast.</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
     <value>Kontorprogrammer endrer noen ganger dokumentskriften på direkten når noen av Unicode-tegnene skrives inn. Denne funksjonen setter inn et usynlig tegn etter Unicode-tegnet for å unngå problemet.</value>
@@ -250,13 +277,13 @@
     <value>Emuler Caps Lock ved bruk av begge Shift-tastene</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Hvis Caps Lock brukes som sammensettingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Denne funksjonen tillater å skru på Caps Lock ved å trykke begge Shift-tastene samtidig.</value>
+    <value>Hvis Caps Lock brukes som sammenfattingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Denne funksjonen tillater å skru på Caps Lock ved å trykke begge Shift-tastene samtidig.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift-tasten skrur av Caps Lock</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Hvis Caps Lock brukes som sammensettingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Funksjonen tillater å skru av Caps Lock ved å trykke på Shift-tasten.</value>
+    <value>Hvis Caps Lock brukes som sammenfattingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Funksjonen tillater å skru av Caps Lock ved å trykke på Shift-tasten.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
     <value>Caps Lock gjør alltid om bokstaver til store versaler</value>
@@ -315,6 +342,9 @@
   <data name="Translators" xml:space="preserve">
     <value>Oversettelse ved</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Utviklere</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Lisens</value>
   </data>
@@ -338,6 +368,48 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Prt Scrn</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Prøv å alltid holde varslingsområdet synlig</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Windows vil fjerne ikonet fra varslingsområdet etter en kort stund som forvalg. Dette valget prøver å alltid holde det synlig.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Endre…</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Legg til i favoritter</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Skru av ikonet i varslingsområdet</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Fjerner visning av WinCompose-ikon i varslingsområdet. Den eneste måten å åpne WinCompose-grensesnittet vil være gjennom &quot;WinCompose-innstillinger&quot; og &quot;WinCompose-sekvenser&quot;-oppføringer i oppstartsmenyen.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Hjem</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tabulator</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Ingen forsinkelse</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avansert</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Se bort fra vinduer som samsvarer med dette regulære uttrykket:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose vil bli helt skrudd av når nåværende vindusklasse eller vindusnavn samsvarer med dette regulære uttrykket.</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Behandler alle sammenfattingstaster som Compose i en sekvens. Kun første tast som trykkes vil fungere som Compose som forvalg, og alternative sammenfattingstaster vil alltid beholde deres opprinnelige rolle.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Spesiell takk til</value>

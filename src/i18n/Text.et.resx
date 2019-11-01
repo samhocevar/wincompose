@@ -168,6 +168,21 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Sisesta</value>
   </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Kasuta projekti Xorg järjestusi</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Kasuta projekti XCompose järjendeid</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Kasuta tuhandet järjendit avatud lähtekoodiga projektist XCompose (https://github.com/kragen/xcompose). Mõnikord võivad need järjendid olla konfliktis Xorgi omadega.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Kasuta WinCompose’i emoji järjestusi</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Kasuta emotikonide sisestamiseks WinCompose autori ja kaastöötajate loodud kombineerimisjärjendeid.</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Silumisaken</value>
   </data>
@@ -180,6 +195,9 @@
   <data name="Restart" xml:space="preserve">
     <value>Taaskäivita</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Annetuste leht</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Veebileht</value>
   </data>
@@ -191,6 +209,12 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Kombinatsioonid</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Proovi vahetada kahte klahvi</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Proovi vahetada klahve kaheklahvilistes järjendites. Näide: kui Compose E A ei ole kehtiv järjend, siis proovi selle asemel Compose A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Otsingufilter:</value>
@@ -206,6 +230,9 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Täpsem Unicode sisend</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Luba kõigi Unicode märkide sisestamine; seda isegi siis, kui kombineerimisjada on määramata. Näiteks genereerib jada ’Kombineeri U 1 A 3 F’ märgi U+1A3F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Vigaste kombinatsioonide korral</value>
@@ -236,6 +263,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Sulge</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopeeri lõikepuhvrisse</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>emoji</value>
@@ -312,6 +342,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Kohandused</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} sekundit</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Programmist</value>
   </data>
@@ -326,6 +359,9 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Tõlge</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Autorid</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Litsents</value>
@@ -362,6 +398,30 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>keelatud</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Kontrolli värskendusi automaatselt</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Kui on lubatud, siis ühendub WinCompose perioodiliselt Internetiga, et kontrollida uute versioonide olemasolu. Värkendusi ei paigaldata automaatselt.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Proovi hoida tevituste ala ikoon alati nähtaval</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Vaikimisi eemaldab Windows teavituste ala ikooni mõne aja möödudes. See säte proovib hoida ikooni alati nähtaval.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Muuda…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Vajuta klahvi, mida kasutada kombineerimisklahvina.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Lisa lemmikutesse</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Keela teavitusteala ikoon</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Eriline tänu</value>

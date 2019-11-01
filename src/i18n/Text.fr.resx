@@ -253,7 +253,7 @@
     <value>Ignorer tous les caractères saisis</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Si la séquence saisie n’existe pas, ignorer tous ses caractères. Le comportement par défaut est d’afficher les caractères comme si la touche de composition n’avait pas été utilisée.</value>
+    <value>Si la séquence utilisée n'existe pas, ignorer tous les caractères saisis. Le comportement par défaut est d'afficher les caractères comme si la touche de composition n'avait pas été utilisée.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Émettre un son</value>
@@ -283,7 +283,7 @@
     <value>Conserver le comportement initial de la touche compose</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Configure WinCompose pour essayer de conserver au mieux le comportement d’origine de la touche. Par exemple, le raccourci Alt-Tab continuera de fonctionner même si Alt est défini comme touche compose.</value>
+    <value>Configure WinCompose pour essayer de conserver au mieux le comportement d'origine de la touche. Par exemple, le raccourci Alt-Tab continuera de fonctionner même si Alt est défini comme touche de composition.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insérer des espaces invisibles dans les applications Office</value>
@@ -316,10 +316,10 @@
     <value>Dans les catégories sélectionnées</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Réglages — WinCompose</value>
+    <value>Paramètres — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
-    <value>Réglages…</value>
+    <value>Options…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} sur {0} ({1} séquences)</value>
@@ -406,7 +406,7 @@
     <value>Désactivé</value>
   </data>
   <data name="CheckUpdates" xml:space="preserve">
-    <value>Vérifier les mises à jour automatiquement</value>
+    <value>Vérifier automatiquement les mises à jour</value>
   </data>
   <data name="CheckUpdatesToolTip" xml:space="preserve">
     <value>Quand cette option est cochée, WinCompose se connecte régulièrement à Internet afin de vérifier si une nouvelle version est disponible. Les mises à jour ne sont pas installées automatiquement.</value>
@@ -454,7 +454,7 @@
     <value>WinCompose sera complètement inactif quand la classe ou le nom de la fenêtre actuelle correspond à cette expression régulière.</value>
   </data>
   <data name="AlwaysCompose" xml:space="preserve">
-    <value>La touche de composition alternative est toujours Composer</value>
+    <value>La touche de composition alternative est toujours Compose</value>
   </data>
   <data name="AlwaysComposeToolTip" xml:space="preserve">
     <value>Si cette option est activée, toutes les touches de composition seront traitées comme Composer dans une séquence. Par défaut, seule la première touche appuyée jouera le rôle de Composer, et les touches de composition alternatives conserveront leur rôle original.</value>

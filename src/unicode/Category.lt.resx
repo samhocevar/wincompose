@@ -118,93 +118,93 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Control" xml:space="preserve">
-    <value>Andra, kontroll</value>
+    <value>Kiti, valdymo kodai (Cc)</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>Andra, format</value>
+    <value>Kiti, išdėstymas (Cf)</value>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
-    <value>Andra, inte tilldelade</value>
+    <value>Kiti, nepaskirti (Cn)</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>Andra, privat användning</value>
+    <value>Kiti, vidiniam naudojimui (Co)</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>Andra, surrogat</value>
+    <value>Kiti, nepilnieji kodai (Cs)</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
-    <value>Bokstav, gemen</value>
+    <value>Raidės, mažosios (Ll)</value>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
-    <value>Bokstav, modifierare</value>
+    <value>Raidės, registrai (Lm)</value>
   </data>
   <data name="OtherLetter" xml:space="preserve">
-    <value>Bokstav, andra</value>
+    <value>Raidės, kitos (Lo)</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>Bokstav, titeltyp</value>
+    <value>Raidės, titulinės (Lt)</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
-    <value>Bokstav, versal</value>
+    <value>Raidės, didžiosios (Lu)</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>Märke, utrymmeskombinerande</value>
+    <value>Žymos, kombinuotų sričių (Mc)</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>Märke, omslutande</value>
+    <value>Žymos, gaubiančiosios (Me)</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>Märke, icke-blanksteg</value>
+    <value>Žymos, neplečiančiosios (Mn)</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
-    <value>Tal, decimal siffra</value>
+    <value>Skaičiai, dešimtainiai skaitmenys (Nd)</value>
   </data>
   <data name="LetterNumber" xml:space="preserve">
-    <value>Tal, bokstav</value>
+    <value>Skaičiai, raidiniai (Nl)</value>
   </data>
   <data name="OtherNumber" xml:space="preserve">
-    <value>Tal, andra</value>
+    <value>Skaičiai, kiti (No)</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Skiljetecken, sammanfogare</value>
+    <value>Skyryba, jungikliai (Pc)</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>Skiljetecken, streck</value>
+    <value>Skyryba, brūkšniai (Pd)</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
-    <value>Skiljetecken, stäng</value>
+    <value>Skyryba, uždarantieji skirtukai (Pe)</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>Skiljetecken, slutcitat</value>
+    <value>Skyryba, pabaigos kabutės (Pf)</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>Skiljetecken, påbörjan av citat</value>
+    <value>Skyryba, pradžios kabutės (Pi)</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
-    <value>Skiljetecken, andra</value>
+    <value>Skyryba, kiti (Po)</value>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
-    <value>Skiljetecken, öppna</value>
+    <value>Skyryba, atidarantieji skirtukai (Po)</value>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
-    <value>Symbol, valuta</value>
+    <value>Simboliai, valiutos (Sc)</value>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
-    <value>Symbol, modifierare</value>
+    <value>Simboliai, modifikatoriai (Sk)</value>
   </data>
   <data name="MathSymbol" xml:space="preserve">
-    <value>Symbol, matematik</value>
+    <value>Simboliai, matematiniai (Sm)</value>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
-    <value>Symbol, andra</value>
+    <value>Simboliai, kiti (So)</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>Avskiljare, rad</value>
+    <value>Skyrikliai, eilučių (Zl)</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
-    <value>Avskiljare, stycke</value>
+    <value>Skyrikliai, pastraipų (Zp)</value>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
-    <value>Avskiljare, blanksteg</value>
+    <value>Skyrikliai, tarpai (Zs)</value>
   </data>
 </root>

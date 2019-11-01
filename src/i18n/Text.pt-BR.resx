@@ -168,6 +168,15 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Usar sequências do projeto Xorg</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Usar sequências do projeto XCompose</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Usar as sequências emoji do WinCompose</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Janela de Debug</value>
   </data>
@@ -180,8 +189,11 @@
   <data name="Restart" xml:space="preserve">
     <value>Reiniciar</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Página de Doações</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Visitar o Site</value>
+    <value>Visitar o Website</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Sair</value>
@@ -191,6 +203,12 @@
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequências</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Tentar trocar as duas teclas</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Tentar trocar as duas teclas de uma sequência de duas teclas. Por exemplo, se Compose E A não é uma sequência válida, uma tentativa será realizada para Compose A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Filtro de Busca:</value>
@@ -236,6 +254,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fechar</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copiar para a área de transferência</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
@@ -312,6 +333,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Ajustes</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} segundos</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Sobre</value>
   </data>
@@ -326,6 +350,9 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Tradução</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Autores</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Licença</value>
@@ -359,6 +386,39 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>PrtScrn</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Desabilitado</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Verificar atualizações automaticamente</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Se ativado, WinCompose irá conectar à internet em intervalos regulares para buscar por novas versões. As atualizações não são instaladas automaticamente.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Tentar manter o ícone na área de notificação sempre visível</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Por padrão, Windows irá remover o ícone da área de notificações após um curto período. Esta opção tenta manter ele sempre visível.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Alterar…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Pressione uma tecla para usar como tecla Compose.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Adicionar aos favoritos</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Desativar o ícone da área de notificações</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Sem atraso</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avançado</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Agradecimentos Especiais</value>
