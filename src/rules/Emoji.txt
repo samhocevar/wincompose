@@ -1932,7 +1932,7 @@
 <Multi_key> <Multi_key> <t> <o> <m> <a> <t> <o> : "🍅" U1F345 # tomato
 <Multi_key> <Multi_key> <c> <o> <c> <o> <n> <u> <t> : "🥥" U1F965 # coconut
 <Multi_key> <Multi_key> <a> <v> <o> <c> <a> <d> <o> : "🥑" U1F951 # avocado
-# "🍆" U1F346 # eggplant
+<Multi_key> <Multi_key> <a> <u> <b> <e> <r> <g> <i> <n> <e> : "🍆" U1F346 # eggplant
 <Multi_key> <Multi_key> <p> <o> <t> <a> <t> <o> : "🥔" U1F954 # potato
 <Multi_key> <Multi_key> <c> <a> <r> <r> <o> <t> : "🥕" U1F955 # carrot
 # "🌽" U1F33D # ear of corn
@@ -1966,7 +1966,7 @@
 <Multi_key> <Multi_key> <b> <u> <r> <r> <i> <t> <o> : "🌯" U1F32F # burrito
 <Multi_key> <Multi_key> <s> <t> <u> <f> <f> <e> <d> < > <f> <l> <a> <t> <b> <r> <e> <a> <d> : "🥙" U1F959 # stuffed flatbread
 <Multi_key> <Multi_key> <f> <a> <l> <a> <f> <e> <l> : "🧆" U1F9C6 # falafel
-# "🥚" U1F95A # egg
+<Multi_key> <Multi_key> <e> <g> <g> : "🥚" U1F95A # egg
 <Multi_key> <Multi_key> <c> <o> <o> <k> <i> <n> <g> : "🍳" U1F373 # cooking
 <Multi_key> <Multi_key> <s> <h> <a> <l> <l> <o> <w> < > <p> <a> <n> < > <o> <f> < > <f> <o> <o> <d> : "🥘" U1F958 # shallow pan of food
 <Multi_key> <Multi_key> <p> <o> <t> < > <o> <f> < > <f> <o> <o> <d> : "🍲" U1F372 # pot of food
