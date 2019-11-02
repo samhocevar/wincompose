@@ -148,6 +148,7 @@ namespace WinCompose
                 m_watcher.NotifyFilter = NotifyFilters.LastWrite;
                 m_watcher.Changed += ConfigFileChanged;
                 m_watcher.EnableRaisingEvents = true;
+                m_reload_timer = new Timer(o => LoadConfig());
             }
         }
 
@@ -157,25 +158,17 @@ namespace WinCompose
             {
                 m_watcher.Dispose();
                 m_watcher = null;
+                m_reload_timer.Dispose();
+                m_reload_timer = null;
             }
         }
 
         private static void ConfigFileChanged(object sender, FileSystemEventArgs e)
         {
-            if (m_reload_timer == null)
-            {
-                // This event is triggered multiple times.
-                // Let's defer its handling to reload the config only once.
-                Log.Debug("Configuration file changed, scheduling reload.");
-                m_reload_timer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
-            }
-        }
-
-        private static void ReloadConfig(object state)
-        {
-            m_reload_timer.Dispose();
-            m_reload_timer = null;
-            LoadConfig();
+            // This event is triggered multiple times.
+            // Let's defer its handling to reload the config only once.
+            Log.Debug("Configuration file changed, scheduling reload.");
+            m_reload_timer.Change(300, Timeout.Infinite);
         }
 
         private static void ValidateComposeKeys()
