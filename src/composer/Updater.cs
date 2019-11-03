@@ -151,8 +151,8 @@ static class Updater
 
     private static string GetUserAgent()
     {
-        var flavour = Settings.IsDebugging() ? "; Development" :
-                      Settings.IsInstalled() ? "" : "; Portable";
+        var flavour = Utils.IsDebugging ? "; Development" :
+                      Utils.IsInstalled ? "" : "; Portable";
         return $"WinCompose/{Settings.Version} ({Environment.OSVersion}{flavour})";
     }
 

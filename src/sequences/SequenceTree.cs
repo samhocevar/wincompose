@@ -94,11 +94,11 @@ public class SequenceTree : SequenceNode
             // We support %H (user directory) but not %L (locale-specific dir)
             if (file.Contains("%L"))
                 return;
-            file = file.Replace("%H", Settings.GetUserDir());
+            file = file.Replace("%H", Utils.UserDir);
 
             // Also if path is not absolute, prepend user directory
             if (!Path.IsPathRooted(file))
-                file = Path.Combine(Settings.GetUserDir(), file);
+                file = Path.Combine(Utils.UserDir, file);
 
             // Prevent against include recursion
             if (!m_loaded_files.Contains(file))

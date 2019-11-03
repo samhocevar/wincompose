@@ -62,6 +62,7 @@
     <Compile Include="interop\RemoteTypes.cs" />
     <Compile Include="interop\WinApi.cs" />
     <Compile Include="interop\WinTypes.cs" />
+    <Compile Include="misc\Utils.cs" />
     <Compile Include="sequences\Category.cs" />
     <Compile Include="sequences\Key.cs" />
     <Compile Include="sequences\SearchTokens.cs" />

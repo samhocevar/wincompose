@@ -139,8 +139,8 @@ namespace WinCompose
                     break;
 
                 case MenuCommand.Download:
-                    var url = Settings.IsInstalled() ? Updater.Get("Installer")
-                                                     : Updater.Get("Portable");
+                    var url = Utils.IsInstalled ? Updater.Get("Installer")
+                                                : Updater.Get("Portable");
                     Process.Start(url);
                     break;
 

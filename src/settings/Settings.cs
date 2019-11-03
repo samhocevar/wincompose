@@ -13,7 +13,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -28,7 +27,6 @@ namespace WinCompose
 {
     public static class Settings
     {
-        private const string ConfigFileName = "settings.ini";
         private static FileSystemWatcher m_watcher;
         private static Timer m_reload_timer;
 
@@ -144,7 +142,7 @@ namespace WinCompose
         {
             if (CreateConfigDir())
             {
-                m_watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
+                m_watcher = new FileSystemWatcher(Utils.ConfigDir, Utils.ConfigFileName);
                 m_watcher.NotifyFilter = NotifyFilters.LastWrite;
                 m_watcher.Changed += ConfigFileChanged;
                 m_watcher.EnableRaisingEvents = true;
@@ -200,7 +198,7 @@ namespace WinCompose
 
         public static void LoadConfig()
         {
-            Log.Debug($"Reloading configuration file {GetConfigFile()}");
+            Log.Debug($"Reloading configuration file {Utils.ConfigFile}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {
@@ -255,7 +253,7 @@ namespace WinCompose
 
         public static void SaveConfig()
         {
-            Log.Debug($"Saving configuration file {GetConfigFile()}");
+            Log.Debug($"Saving configuration file {Utils.ConfigFile}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {
@@ -277,12 +275,12 @@ namespace WinCompose
                 m_sequences.LoadResource("3rdparty.xcompose.rules");
             if (UseEmojiRules.Value)
             {
-                m_sequences.LoadFile(Path.Combine(GetDataDir(), "Emoji.txt"));
-                m_sequences.LoadFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
+                m_sequences.LoadFile(Path.Combine(Utils.DataDir, "Emoji.txt"));
+                m_sequences.LoadFile(Path.Combine(Utils.DataDir, "WinCompose.txt"));
             }
 
-            m_sequences.LoadFile(Path.Combine(GetUserDir(), ".XCompose"));
-            m_sequences.LoadFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
+            m_sequences.LoadFile(Path.Combine(Utils.UserDir, ".XCompose"));
+            m_sequences.LoadFile(Path.Combine(Utils.UserDir, ".XCompose.txt"));
         }
 
         /// <summary>
@@ -293,11 +291,11 @@ namespace WinCompose
         public static void EditCustomRulesFile()
         {
             // Ensure the rules file exists.
-            string user_file = Path.Combine(GetUserDir(), ".XCompose");
+            string user_file = Path.Combine(Utils.UserDir, ".XCompose");
             if (!File.Exists(user_file))
             {
-                string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt");
-                string default_file = Path.Combine(GetDataDir(), "DefaultUserSequences.txt");
+                string alt_file = Path.Combine(Utils.UserDir, ".XCompose.txt");
+                string default_file = Path.Combine(Utils.DataDir, "DefaultUserSequences.txt");
                 if (File.Exists(alt_file))
                 {
                     user_file = alt_file;
@@ -305,7 +303,7 @@ namespace WinCompose
                 else if (File.Exists(default_file))
                 {
                     var text = File.ReadAllText(default_file);
-                    var replacedText = text.Replace("%DataDir%", GetDataDir());
+                    var replacedText = text.Replace("%DataDir%", Utils.DataDir);
                     File.WriteAllText(user_file, replacedText, Encoding.UTF8);
                 }
             }
@@ -338,9 +336,12 @@ namespace WinCompose
 
         public static SequenceTree GetSequenceList() => m_sequences;
 
-        public static bool IsValidPrefix(KeySequence sequence, bool ignore_case) => m_sequences.IsValidPrefix(sequence, ignore_case);
-        public static bool IsValidSequence(KeySequence sequence, bool ignore_case) => m_sequences.IsValidSequence(sequence, ignore_case);
-        public static string GetSequenceResult(KeySequence sequence, bool ignore_case) => m_sequences.GetSequenceResult(sequence, ignore_case);
+        public static bool IsValidPrefix(KeySequence sequence, bool ignore_case)
+            => m_sequences.IsValidPrefix(sequence, ignore_case);
+        public static bool IsValidSequence(KeySequence sequence, bool ignore_case)
+            => m_sequences.IsValidSequence(sequence, ignore_case);
+        public static string GetSequenceResult(KeySequence sequence, bool ignore_case)
+            => m_sequences.GetSequenceResult(sequence, ignore_case);
 
         public static bool IsValidGenericPrefix(KeySequence sequence)
         {
@@ -397,7 +398,7 @@ namespace WinCompose
                 var migrated = false;
                 var tmp = new StringBuilder(len);
                 var result = NativeMethods.GetPrivateProfileString(section, key, "",
-                                                                   tmp, len, GetConfigFile());
+                                                                   tmp, len, Utils.ConfigFile);
                 if (result == 0)
                 {
                     // Compatibility code for keys that moved from the "global"
@@ -405,7 +406,7 @@ namespace WinCompose
                     if (section != "global")
                     {
                         result = NativeMethods.GetPrivateProfileString("global", key, "",
-                                                                       tmp, len, GetConfigFile());
+                                                                       tmp, len, Utils.ConfigFile);
                         if (result == 0)
                             return;
                         migrated = true;
@@ -417,9 +418,9 @@ namespace WinCompose
                 if (migrated)
                 {
                     NativeMethods.WritePrivateProfileString("global", key, null,
-                                                            GetConfigFile());
+                                                            Utils.ConfigFile);
                     NativeMethods.WritePrivateProfileString(section, key, entry.ToString(),
-                                                            GetConfigFile());
+                                                            Utils.ConfigFile);
                 }
             }
             finally
@@ -448,11 +449,11 @@ namespace WinCompose
                 {
                     Log.Debug($"Saving {section}.{key} = {value}");
                     NativeMethods.WritePrivateProfileString(section, key, value,
-                                                            GetConfigFile());
+                                                            Utils.ConfigFile);
                     // Ensure old keys are removed from the global section
                     if (section != "global")
                         NativeMethods.WritePrivateProfileString("global", key, null,
-                                                                GetConfigFile());
+                                                                Utils.ConfigFile);
                 }
                 finally
                 {
@@ -534,14 +535,9 @@ namespace WinCompose
             return ret;
         }
 
-        public static string GetConfigFile()
-        {
-            return Path.Combine(GetConfigDir(), ConfigFileName);
-        }
-
         public static bool CreateConfigDir()
         {
-            string config_dir = GetConfigDir();
+            string config_dir = Utils.ConfigDir;
             if (!Directory.Exists(config_dir))
             {
                 try
@@ -554,48 +550,6 @@ namespace WinCompose
                 }
             }
             return true;
-        }
-
-        private static string GetConfigDir()
-        {
-            var appdata = Environment.SpecialFolder.ApplicationData;
-            var appdatadir = Path.Combine(Environment.GetFolderPath(appdata),
-                                          "WinCompose");
-            return IsInstalled() ? appdatadir : GetExeDir();
-        }
-
-        private static string GetDataDir()
-        {
-            return IsInstalled() ? Path.Combine(GetExeDir(), "res")
-                 : IsDebugging() ? Path.Combine(GetExeDir(), "../../rules")
-                 : Path.Combine(GetExeDir(), "rules");
-        }
-
-        public static string GetUserDir()
-        {
-            return Environment.ExpandEnvironmentVariables("%USERPROFILE%");
-        }
-
-        private static string GetExeName()
-        {
-            var codebase = Assembly.GetExecutingAssembly().GetName().CodeBase;
-            return Uri.UnescapeDataString(new UriBuilder(codebase).Path);
-        }
-
-        private static string GetExeDir()
-        {
-            return Path.GetDirectoryName(GetExeName());
-        }
-
-        public static bool IsInstalled()
-        {
-            return File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
-        }
-
-        public static bool IsDebugging()
-        {
-            string exe = GetExeName();
-            return File.Exists(Path.ChangeExtension(exe, ".pdb"));
         }
     }
 }
