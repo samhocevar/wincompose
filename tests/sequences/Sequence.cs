@@ -100,7 +100,7 @@ namespace WinCompose
         {
             var keySequence = new KeySequence();
             foreach (var ch in keys)
-                keySequence.Add(Key.FromKeySym(Convert.ToString(ch)));
+                keySequence.Add(Key.FromKeySymOrChar(Convert.ToString(ch)));
             return keySequence;
         }
     }
