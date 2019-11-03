@@ -43,19 +43,7 @@ public class KeySequenceConverter : TypeConverter
 
         KeySequence ret = new KeySequence();
         foreach (string str in Array.ConvertAll(list_str.Split(','), x => x.Trim()))
-        {
-            Key k = new Key(str);
-            if (str.StartsWith("VK."))
-            {
-                try
-                {
-                    var enum_val = Enum.Parse(typeof(VK), str.Substring(3));
-                    k = new Key((VK)enum_val);
-                }
-                catch { } // Silently catch parsing exception.
-            }
-            ret.Add(k);
-        }
+            ret.Add(Key.FromString(str));
 
         return ret;
     }

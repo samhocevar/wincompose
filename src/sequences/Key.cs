@@ -28,21 +28,25 @@ namespace WinCompose
 public partial class Key
 {
     /// <summary>
-    /// A dictionary of symbols that we use for some non-printable key labels.
+    /// A dictionary of symbols that we use for some key labels when
+    /// ToString() won’t do a good job.
     /// </summary>
-    private static readonly Dictionary<VK, string> m_key_labels
-        = new Dictionary<VK, string>
+    private static readonly Dictionary<Key, string> m_key_labels
+        = new Dictionary<Key, string>
     {
-        { VK.COMPOSE, "♦" },
-        { VK.UP,      "▲" },
-        { VK.DOWN,    "▼" },
-        { VK.LEFT,    "◀" },
-        { VK.RIGHT,   "▶" },
-        { VK.HOME,    "Home" },
-        { VK.END,     "End" },
-        { VK.BACK,    "⌫" },
-        { VK.DELETE,  "␡" },
-        { VK.TAB,     "↹" },
+        { new Key(VK.COMPOSE), "♦" },
+        { new Key(VK.UP),      "▲" },
+        { new Key(VK.DOWN),    "▼" },
+        { new Key(VK.LEFT),    "◀" },
+        { new Key(VK.RIGHT),   "▶" },
+        { new Key(VK.HOME),    "Home" },
+        { new Key(VK.END),     "End" },
+        { new Key(VK.BACK),    "⌫" },
+        { new Key(VK.DELETE),  "␡" },
+        { new Key(VK.TAB),     "↹" },
+        // These two are serialized in a special way
+        { new Key(" "),        " " },
+        { new Key(","),        "," },
     };
 
     /// <summary>
@@ -240,10 +244,31 @@ public partial class Key
         get
         {
             string ret;
-            if (m_key_labels.TryGetValue(m_vk, out ret))
+            if (m_key_labels.TryGetValue(this, out ret))
                 return ret;
             return ToString();
         }
+    }
+
+    public static Key FromString(string str)
+    {
+        // We serialize Space as VK.SPACE so that it can be embedded in .ini
+        // files without ambiguities (e.g. foo=VK.SPACE can be parsed), but
+        // we want the Key object to be Key(" "). Same for VK.OEM_COMMA.
+        if (str.StartsWith("VK."))
+        {
+            try
+            {
+                var vk = (VK)Enum.Parse(typeof(VK), str.Substring(3));
+                if (vk == VK.SPACE)
+                    return new Key(" ");
+                if (vk == VK.OEM_COMMA)
+                    return new Key(",");
+                return new Key(vk);
+            }
+            catch { } // Silently catch parsing exception.
+        }
+        return new Key(str);
     }
 
     /// <summary>
@@ -252,6 +277,10 @@ public partial class Key
     /// </summary>
     public override string ToString()
     {
+        if (m_str == " ")
+            return "VK.SPACE";
+        if (m_str == ",")
+            return "VK.OEM_COMMA";
         return m_str ?? $"VK.{m_vk}";
     }
 
