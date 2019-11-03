@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -41,11 +41,7 @@ public class KeySequenceConverter : TypeConverter
         if (list_str == null)
             return base.ConvertFrom(context, culture, val);
 
-        KeySequence ret = new KeySequence();
-        foreach (string str in Array.ConvertAll(list_str.Split(','), x => x.Trim()))
-            ret.Add(Key.FromString(str));
-
-        return ret;
+        return KeySequence.FromString(list_str);
     }
 
     public override object ConvertTo(ITypeDescriptorContext context,
@@ -90,12 +86,28 @@ public class KeySequence : List<Key>
     /// </summary>
     public override string ToString()
     {
-        return string.Join(", ", Array.ConvertAll(ToArray(), x => x.ToString()));
+        return string.Join(",", Array.ConvertAll(ToArray(), x => x.ToString()));
     }
 
+    /// <summary>
+    /// Convert sequence to a reader-friendly string.
+    /// </summary>
     public string FriendlyName
     {
         get { return string.Join(", ", Array.ConvertAll(ToArray(), x => x.FriendlyName)); }
+    }
+
+    /// <summary>
+    /// Construct a key sequence from a serialized string.
+    /// </summary>
+    public static KeySequence FromString(string str)
+    {
+        KeySequence ret = new KeySequence();
+        // Be sure to call Trim() because older WinCompose versions would add a
+        // space after the comma.
+        foreach (string s in Array.ConvertAll(str.Split(','), x => x.Trim()))
+            ret.Add(Key.FromString(s));
+        return ret;
     }
 
     /// <summary>
