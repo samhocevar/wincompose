@@ -27,12 +27,6 @@ namespace WinCompose
 {
     public static class Settings
     {
-        private static FileSystemWatcher m_watcher;
-        private static Timer m_reload_timer;
-
-        private static readonly Mutex m_mutex = new Mutex(false,
-                          "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}");
-
         private class EntryLocation : Attribute
         {
             public EntryLocation(string section, string key)
@@ -46,13 +40,15 @@ namespace WinCompose
 
         static Settings()
         {
+            m_ini_file = new IniFile(Path.Combine(Utils.AppDataDir, "settings.ini"));
+
             // Add a save handler to our EntryLocation attributes
             foreach (var v in typeof(Settings).GetProperties())
             {
                 foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
                 {
                     var entry = v.GetValue(null, null) as SettingsEntry;
-                    entry.ValueChanged += () => ThreadPool.QueueUserWorkItem(_ => SaveEntry(entry.ToString(), attr.Section, attr.Key));
+                    entry.ValueChanged += () => ThreadPool.QueueUserWorkItem(_ => m_ini_file.SaveEntry(entry.ToString(), attr.Section, attr.Key));
                 }
             }
 
@@ -140,34 +136,16 @@ namespace WinCompose
 
         public static void StartWatchConfigFile()
         {
-            if (CreateConfigDir())
-            {
-                m_watcher = new FileSystemWatcher(Utils.ConfigDir, Utils.ConfigFileName);
-                m_watcher.NotifyFilter = NotifyFilters.LastWrite;
-                m_watcher.Changed += ConfigFileChanged;
-                m_watcher.EnableRaisingEvents = true;
-                m_reload_timer = new Timer(o => LoadConfig());
-            }
+            m_ini_file.OnFileChanged += LoadConfig;
         }
 
         public static void StopWatchConfigFile()
         {
-            if (m_watcher != null)
-            {
-                m_watcher.Dispose();
-                m_watcher = null;
-                m_reload_timer.Dispose();
-                m_reload_timer = null;
-            }
+            m_ini_file.OnFileChanged -= LoadConfig;
+            m_ini_file.Dispose();
         }
 
-        private static void ConfigFileChanged(object sender, FileSystemEventArgs e)
-        {
-            // This event is triggered multiple times.
-            // Let's defer its handling to reload the config only once.
-            Log.Debug("Configuration file changed, scheduling reload.");
-            m_reload_timer.Change(300, Timeout.Infinite);
-        }
+        private static IniFile m_ini_file;
 
         private static void ValidateComposeKeys()
         {
@@ -198,14 +176,14 @@ namespace WinCompose
 
         public static void LoadConfig()
         {
-            Log.Debug($"Reloading configuration file {Utils.ConfigFile}");
+            Log.Debug($"Reloading configuration file {m_ini_file.FullPath}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {
                 foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
                 {
                     var entry = v.GetValue(null, null) as SettingsEntry;
-                    LoadEntry(entry, attr.Section, attr.Key);
+                    m_ini_file.LoadEntry(entry, attr.Section, attr.Key);
                 }
             }
 
@@ -253,14 +231,14 @@ namespace WinCompose
 
         public static void SaveConfig()
         {
-            Log.Debug($"Saving configuration file {Utils.ConfigFile}");
+            Log.Debug($"Saving configuration file {m_ini_file.FullPath}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {
                 foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
                 {
                     var entry = v.GetValue(null, null) as SettingsEntry;
-                    SaveEntry(entry.ToString(), attr.Section, attr.Key);
+                    m_ini_file.SaveEntry(entry.ToString(), attr.Section, attr.Key);
                 }
             }
         }
@@ -380,90 +358,6 @@ namespace WinCompose
 
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
-        private static void LoadEntry(SettingsEntry entry, string section, string key)
-        {
-            try
-            {
-                if (!m_mutex.WaitOne(2000))
-                    return;
-            }
-            catch (AbandonedMutexException)
-            {
-                /* Ignore; this might be a previous instance that crashed */
-            }
-
-            try
-            {
-                const int len = 255;
-                var migrated = false;
-                var tmp = new StringBuilder(len);
-                var result = NativeMethods.GetPrivateProfileString(section, key, "",
-                                                                   tmp, len, Utils.ConfigFile);
-                if (result == 0)
-                {
-                    // Compatibility code for keys that moved from the "global"
-                    // to the "composing" or "tweaks" section.
-                    if (section != "global")
-                    {
-                        result = NativeMethods.GetPrivateProfileString("global", key, "",
-                                                                       tmp, len, Utils.ConfigFile);
-                        if (result == 0)
-                            return;
-                        migrated = true;
-                    }
-                }
-
-                entry.LoadString(tmp.ToString());
-
-                if (migrated)
-                {
-                    NativeMethods.WritePrivateProfileString("global", key, null,
-                                                            Utils.ConfigFile);
-                    NativeMethods.WritePrivateProfileString(section, key, entry.ToString(),
-                                                            Utils.ConfigFile);
-                }
-            }
-            finally
-            {
-                // Ensure the mutex is always released even if an
-                // exception is thrown
-                m_mutex.ReleaseMutex();
-            }
-        }
-
-        private static void SaveEntry(string value, string section, string key)
-        {
-            if (CreateConfigDir())
-            {
-                try
-                {
-                    if (!m_mutex.WaitOne(2000))
-                        return;
-                }
-                catch (AbandonedMutexException)
-                {
-                    /* Ignore; this might be a previous instance that crashed */
-                }
-
-                try
-                {
-                    Log.Debug($"Saving {section}.{key} = {value}");
-                    NativeMethods.WritePrivateProfileString(section, key, value,
-                                                            Utils.ConfigFile);
-                    // Ensure old keys are removed from the global section
-                    if (section != "global")
-                        NativeMethods.WritePrivateProfileString("global", key, null,
-                                                                Utils.ConfigFile);
-                }
-                finally
-                {
-                    // Ensure the mutex is always released even if an
-                    // exception is thrown
-                    m_mutex.ReleaseMutex();
-                }
-            }
-        }
-
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
 
@@ -533,23 +427,6 @@ namespace WinCompose
             }
 
             return ret;
-        }
-
-        public static bool CreateConfigDir()
-        {
-            string config_dir = Utils.ConfigDir;
-            if (!Directory.Exists(config_dir))
-            {
-                try
-                {
-                    Directory.CreateDirectory(config_dir);
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }

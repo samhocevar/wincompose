@@ -16,14 +16,22 @@ using System.Reflection;
 
 namespace WinCompose
 {
-    class Utils
+    static class Utils
     {
-        public const string ConfigFileName = "settings.ini";
+        public static bool EnsureDirectory(string directory)
+        {
+            try
+            {
+                Directory.CreateDirectory(directory);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
-        public static string ConfigFile
-            => Path.Combine(ConfigDir, ConfigFileName);
-
-        public static string ConfigDir
+        public static string AppDataDir
         {
             get
             {
