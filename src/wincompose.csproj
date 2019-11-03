@@ -65,6 +65,7 @@
     <Compile Include="misc\IniFile.cs" />
     <Compile Include="misc\Utils.cs" />
     <Compile Include="misc\WatchedFile.cs" />
+    <Compile Include="misc\XmlFile.cs" />
     <Compile Include="sequences\Category.cs" />
     <Compile Include="sequences\Key.cs" />
     <Compile Include="sequences\SearchTokens.cs" />

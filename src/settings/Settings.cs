@@ -358,13 +358,8 @@ namespace WinCompose
 
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
-        public static Metadata Metadata => m_metadata;
-
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
-
-        // User data associated with sequences
-        private static Metadata m_metadata = new Metadata();
 
         // FIXME: couldn't we accept any compose key?
         private static readonly KeySequence m_valid_compose_keys = new KeySequence

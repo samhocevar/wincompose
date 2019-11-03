@@ -44,6 +44,7 @@ namespace WinCompose
 
             Composer.Init();
             Settings.LoadSequences();
+            Metadata.LoadDB();
             KeyboardHook.Init();
             Updater.Init();
 
@@ -62,6 +63,7 @@ namespace WinCompose
                 Updater.Fini();
                 KeyboardHook.Fini();
                 Settings.SaveConfig();
+                Metadata.SaveDB();
                 Composer.Fini();
                 Updater.Fini();
             }

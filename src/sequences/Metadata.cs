@@ -80,34 +80,28 @@ namespace WinCompose
         #endregion
     }
 
-    public class Metadata
+    public static class Metadata
     {
-        public Metadata()
-        {
-        }
-
-        public void AddFavorite(KeySequence sequence, string result)
+        public static void AddFavorite(KeySequence sequence, string result)
         {
             m_dict.GetOrAdd(sequence, result).Favorite = true;
+            SaveDB();
         }
 
-        private void Load()
+        public static void LoadDB()
         {
-            var xs = new XmlSerializer(typeof(MetadataDB));
-            using (TextReader tr = new StreamReader(FileName))
-                m_dict = xs.Deserialize(tr) as MetadataDB;
+            m_dict = m_xml.Load<MetadataDB>();
         }
 
-        private void Save()
+        public static void SaveDB()
         {
-            var xs = new XmlSerializer(typeof(MetadataDB));
-            using (TextWriter tw = new StreamWriter(FileName))
-                xs.Serialize(tw, m_dict);
+            m_xml.Save(m_dict);
         }
 
-        private string FileName = Path.Combine(Utils.AppDataDir, "userdata.xml");
+        private static XmlFile m_xml
+            = new XmlFile(Path.Combine(Utils.AppDataDir, "metadata.xml"));
 
-        private MetadataDB m_dict = new MetadataDB();
+        private static MetadataDB m_dict = new MetadataDB();
     }
 }
 
