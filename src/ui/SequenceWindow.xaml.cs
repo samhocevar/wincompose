@@ -73,7 +73,7 @@ namespace WinCompose
 
         private void AddToFavoritesClicked(object sender, RoutedEventArgs e)
         {
-            // FIXME: implement this!
+            (ListBox.SelectedItem as SequenceViewModel)?.AddToFavorites();
         }
     }
 }

@@ -42,6 +42,9 @@ namespace WinCompose
 
         public KeySequence Sequence => m_desc.Sequence;
 
+        public void AddToFavorites()
+            => Settings.Metadata.AddFavorite(Sequence, Result);
+
         public bool Match(SearchQuery query)
         {
             if (query.IsEmpty)
