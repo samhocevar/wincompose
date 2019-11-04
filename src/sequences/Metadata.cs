@@ -38,6 +38,13 @@ namespace WinCompose
 
     public class MetadataDB : Dictionary<SequenceIdentifier, Data>, IXmlSerializable
     {
+        public Data TryGet(KeySequence sequence, string result)
+        {
+            var key = new SequenceIdentifier(sequence, result);
+            TryGetValue(key, out var ret);
+            return ret;
+        }
+
         public Data GetOrAdd(KeySequence sequence, string result)
         {
             var key = new SequenceIdentifier(sequence, result);
@@ -82,11 +89,14 @@ namespace WinCompose
 
     public static class Metadata
     {
-        public static void AddFavorite(KeySequence sequence, string result)
+        public static void ToggleFavorite(KeySequence sequence, string result)
         {
             m_dict.GetOrAdd(sequence, result).Favorite = true;
             SaveDB();
         }
+
+        public static bool IsFavorite(KeySequence sequence, string result)
+            => (bool)m_dict.TryGet(sequence, result)?.Favorite;
 
         public static void LoadDB()
         {

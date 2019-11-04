@@ -71,9 +71,9 @@ namespace WinCompose
             Clipboard.SetText((ListBox.SelectedItem as SequenceViewModel)?.Result);
         }
 
-        private void AddToFavoritesClicked(object sender, RoutedEventArgs e)
+        private void ToggleFavoriteClicked(object sender, RoutedEventArgs e)
         {
-            (ListBox.SelectedItem as SequenceViewModel)?.AddToFavorites();
+            (ListBox.SelectedItem as SequenceViewModel)?.ToggleFavorite();
         }
     }
 }

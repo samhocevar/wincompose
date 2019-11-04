@@ -577,4 +577,8 @@
     <value>Special Thanks</value>
     <comment>The section for random contributors who aren’t programmers or translators. Might be empty.</comment>
   </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Remove from favorites</value>
+    <comment>Remove sequence from the list of favorites.</comment>
+  </data>
 </root>

@@ -808,6 +808,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove from favorites.
+        /// </summary>
+        public static string RemoveFromFavorites {
+            get {
+                return ResourceManager.GetString("RemoveFromFavorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report a Bug.
         /// </summary>
         public static string ReportBug {
