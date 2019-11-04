@@ -13,10 +13,11 @@
 
 using System.Globalization;
 using System.Threading;
+using System.Windows;
 
 namespace WinCompose
 {
-    public class SequenceViewModel
+    public class SequenceViewModel : ViewModelBase
     {
         public static Key SpaceKey = new Key(" ");
 
@@ -40,13 +41,23 @@ namespace WinCompose
 
         public string Description => m_desc.Description;
 
+        public string RichDescription => (IsFavorite ? "♥ " : "") + m_desc.Description;
+
         public KeySequence Sequence => m_desc.Sequence;
 
-        public void ToggleFavorite()
-            => Metadata.ToggleFavorite(Sequence, Result);
+        public Visibility AddToFavoritesVisibility
+            => IsFavorite ? Visibility.Collapsed : Visibility.Visible;
 
-        public bool IsFavorite()
-            => Metadata.IsFavorite(Sequence, Result);
+        public Visibility RemoveFromFavoritesVisibility
+            => IsFavorite ? Visibility.Visible : Visibility.Collapsed;
+
+        public void ToggleFavorite()
+        {
+            Metadata.ToggleFavorite(Sequence, Result);
+            OnPropertyChanged(nameof(RichDescription));
+            OnPropertyChanged(nameof(AddToFavoritesVisibility));
+            OnPropertyChanged(nameof(RemoveFromFavoritesVisibility));
+        }
 
         public bool Match(SearchQuery query)
         {
@@ -73,6 +84,8 @@ namespace WinCompose
 
             return true;
         }
+
+        private bool IsFavorite => Metadata.IsFavorite(Sequence, Result);
 
         private SequenceDescription m_desc;
     }

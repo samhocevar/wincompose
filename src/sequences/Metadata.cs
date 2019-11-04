@@ -91,12 +91,13 @@ namespace WinCompose
     {
         public static void ToggleFavorite(KeySequence sequence, string result)
         {
-            m_dict.GetOrAdd(sequence, result).Favorite = true;
+            var data = m_dict.GetOrAdd(sequence, result);
+            data.Favorite = !data.Favorite;
             SaveDB();
         }
 
         public static bool IsFavorite(KeySequence sequence, string result)
-            => (bool)m_dict.TryGet(sequence, result)?.Favorite;
+            => m_dict.TryGet(sequence, result)?.Favorite ?? false;
 
         public static void LoadDB()
         {

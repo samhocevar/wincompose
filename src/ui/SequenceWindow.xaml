@@ -87,9 +87,9 @@
             <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}" Icon="{StaticResource CopyEmoji}"
                       Click="CopyToClipboardClicked"/>
             <MenuItem Header="{x:Static i18n:Text.AddToFavorites}" Icon="{StaticResource FavoriteEmoji}"
-                      Click="ToggleFavoriteClicked"/>
+                      Click="ToggleFavoriteClicked" Visibility="{Binding AddToFavoritesVisibility}"/>
             <MenuItem Header="{x:Static i18n:Text.RemoveFromFavorites}" Icon="{StaticResource UnfavoriteEmoji}"
-                      Click="ToggleFavoriteClicked"/>
+                      Click="ToggleFavoriteClicked" Visibility="{Binding RemoveFromFavoritesVisibility}"/>
         </ContextMenu>
     </Window.Resources>
 
@@ -263,7 +263,7 @@
                                 <TextBlock Text="{Binding UnicodeCategory, Converter={wc:UnicodeCategoryConverter}, Mode=OneTime}"
                                            Foreground="DarkCyan" FontStyle="Italic" HorizontalAlignment="Right" Margin="10,0"/>
                             </StackPanel>
-                            <TextBlock Text="{Binding Description, Mode=OneTime}" TextTrimming="WordEllipsis"/>
+                            <emoji:TextBlock Text="{Binding RichDescription, Mode=OneWay}" TextTrimming="WordEllipsis"/>
                         </DockPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
