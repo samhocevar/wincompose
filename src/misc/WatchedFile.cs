@@ -33,7 +33,8 @@ namespace WinCompose
                     // This event is triggered multiple times. We defer its
                     // handling so that it is not called more than once every
                     // 500 milliseconds.
-                    m_reload_timer.Change(500, Timeout.Infinite);
+                    if (OnFileChanged?.GetInvocationList().Length > 0)
+                        m_reload_timer.Change(500, Timeout.Infinite);
                 };
                 m_watcher.EnableRaisingEvents = true;
                 m_reload_timer = new Timer(o =>
