@@ -37,6 +37,14 @@ namespace WinCompose
         }
     }
 
+    public class FavoriteCategory : Category
+    {
+        public FavoriteCategory(string name)
+        {
+            Name = name;
+        }
+    }
+
     public class EmojiCategory : Category
     {
         public static readonly IEnumerable<EmojiCategory> AllCategories = GetAllCategories();

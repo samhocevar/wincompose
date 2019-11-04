@@ -243,7 +243,7 @@
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
     <value>Unicode characters</value>
-    <comment>Name of the category (Unicode characters, Emoji, User macros)</comment>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequences</value>
@@ -327,7 +327,7 @@
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
-    <comment>Name of the category (Unicode characters, Emoji, User macros)</comment>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
@@ -407,7 +407,7 @@
   </data>
   <data name="UserMacros" xml:space="preserve">
     <value>User-defined macros</value>
-    <comment>Name of the category (Unicode characters, Emoji, User macros)</comment>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose is disabled</value>
@@ -580,5 +580,9 @@
   <data name="RemoveFromFavorites" xml:space="preserve">
     <value>Remove from favorites</value>
     <comment>Remove sequence from the list of favorites.</comment>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favorites</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
 </root>

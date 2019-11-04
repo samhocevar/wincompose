@@ -40,6 +40,7 @@ namespace WinCompose
         public bool IsUnicode => RangeEnd > 0;
         public bool IsEmoji => m_category is EmojiCategory;
         public bool IsMacro => m_category is MacroCategory;
+        public bool IsFavorite => m_category is FavoriteCategory;
 
         public bool IsSelected { get { return m_is_selected; } set { SetValue(ref m_is_selected, value, nameof(IsSelected)); } }
         public bool IsEmpty { get { return m_is_empty; } set { SetValue(ref m_is_empty, value, nameof(IsEmpty)); } }

@@ -25,7 +25,7 @@ namespace WinCompose
         {
             PropertyChanged += PropertyChangedCallback;
 
-            ActiveCategoryArray = new ObservableCollection<bool>(new List<bool>() { true, false, false, false });
+            ActiveCategoryArray = new ObservableCollection<bool>(new List<bool>() { true, false, false, false, false });
             ActiveCategoryArray.CollectionChanged += (o, e)
                 => PropertyChangedCallback(o, new PropertyChangedEventArgs(nameof(ActiveCategoryArray)));
 
@@ -45,6 +45,10 @@ namespace WinCompose
 
             var macro_viewmodel = new CategoryViewModel(this, new MacroCategory("User Macros"));
             m_categories.Add(macro_viewmodel);
+
+            var favorites_viewmodel = new CategoryViewModel(this, new FavoriteCategory("Favorites"));
+            favorites_viewmodel.IsEmpty = false; // FIXME: this is a bit of a hack
+            m_categories.Add(favorites_viewmodel);
 
             // Compute a list of sorted codepoint categories for faster lookups
             var sorted_categories = new SortedList<int, CategoryViewModel>();
@@ -102,7 +106,7 @@ namespace WinCompose
             if (e.PropertyName == nameof(SearchText))
             {
                 ActiveCategoryArray[(int)ActiveCategory] = false;
-                ActiveCategoryArray[3] = true;
+                ActiveCategoryArray[4] = true;
                 RefreshSequenceFilters();
             }
             else if (e.PropertyName == nameof(ActiveCategoryArray))
@@ -137,7 +141,8 @@ namespace WinCompose
             Unicode = 0,
             Emoji = 1,
             Macros = 2,
-            Search = 3,
+            Favorites = 3,
+            Search = 4,
         };
 
         public IEnumerable<CategoryViewModel> Categories => m_categories;
@@ -166,6 +171,7 @@ namespace WinCompose
                     case CategoryFilter.Unicode: return category.IsUnicode;
                     case CategoryFilter.Emoji: return category.IsEmoji;
                     case CategoryFilter.Macros: return category.IsMacro;
+                    case CategoryFilter.Favorites: return category.IsFavorite;
                     case CategoryFilter.Search: return false;
                 }
                 return false;
@@ -192,6 +198,8 @@ namespace WinCompose
                     return sequence.EmojiCategory?.IsSelected ?? false;
                 case CategoryFilter.Macros:
                     return (sequence.Category?.IsMacro ?? false) && (sequence.Category?.IsSelected ?? false);
+                case CategoryFilter.Favorites:
+                    return Metadata.IsFavorite(sequence.Sequence, sequence.Result);
                 case CategoryFilter.Search:
                     return sequence.Match(m_search_query);
                 default:
