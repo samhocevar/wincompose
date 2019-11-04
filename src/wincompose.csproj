@@ -53,7 +53,6 @@
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
     <Compile Include="composer\Stats.cs" />
-    <Compile Include="composer\SysTray.cs" />
     <Compile Include="composer\Updater.cs" />
     <Compile Include="composer\Application.xaml.cs">
       <DependentUpon>Application.xaml</DependentUpon>
@@ -63,6 +62,7 @@
     <Compile Include="interop\WinApi.cs" />
     <Compile Include="interop\WinTypes.cs" />
     <Compile Include="misc\IniFile.cs" />
+    <Compile Include="misc\SysTray.cs" />
     <Compile Include="misc\Utils.cs" />
     <Compile Include="misc\WatchedFile.cs" />
     <Compile Include="misc\XmlFile.cs" />
