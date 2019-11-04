@@ -148,10 +148,10 @@ static class Composer
 
             // Eat the key if our compose key is altgr
             if (is_altgr && m_compose_key_is_altgr)
-                return true;
+                goto exit_discard_key;
 
             // Otherwise ignore the key
-            goto exit_ignore_key;
+            goto exit_forward_key;
         }
 
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
@@ -210,9 +210,7 @@ static class Composer
         // keystrokes to another computer; disable WinCompose. Same if it is
         // a Cygwin X window.
         if (KeyboardLayout.Window.IsOtherDesktop)
-        {
-            return false;
-        }
+            goto exit_forward_key;
 
         // Sanity check in case the configuration changed between two
         // key events.
@@ -255,7 +253,7 @@ static class Composer
                 case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
             }
 
-            return false;
+            goto exit_forward_key;
         }
 
         // If this is the compose key and we’re idle, enter Sequence mode
@@ -303,13 +301,13 @@ static class Composer
             if (is_keyup && has_lrshift && Settings.EmulateCapsLock.Value)
             {
                 SendKeyPress(VK.CAPITAL);
-                return false;
+                goto exit_forward_key;
             }
 
             if (is_keydown && has_capslock && Settings.ShiftDisablesCapsLock.Value)
             {
                 SendKeyPress(VK.CAPITAL);
-                return false;
+                goto exit_forward_key;
             }
         }
 
@@ -326,9 +324,7 @@ static class Composer
 
             // If this was a dead key, it will be completely ignored. But
             // it’s okay since we stored it.
-            Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
-                      is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
-            return false;
+            goto exit_forward_key;
         }
 
         //
@@ -386,7 +382,7 @@ static class Composer
                 }
                 CurrentState = State.KeyCombination;
                 Log.Debug("KeyCombination started (state: {0})", m_state);
-                return false;
+                goto exit_forward_key;
             }
         }
 
@@ -406,11 +402,7 @@ static class Composer
 
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())
-        {
-            Log.Debug("Forwarding unusable {0} “{1}” to system (state: {2})",
-                      is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
-            return false;
-        }
+            goto exit_forward_key;
 
         // If we reached this point, everything else ignored this key, so it
         // is a key we must add to the current sequence.
@@ -420,8 +412,10 @@ static class Composer
             return AddToSequence(key);
         }
 
+exit_discard_key:
         return true;
-exit_ignore_key:
+
+exit_forward_key:
         Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
                   is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
         return false;
