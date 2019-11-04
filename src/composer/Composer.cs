@@ -134,25 +134,24 @@ static class Composer
         // Special handling of Left Control on keyboards with AltGr
         if (KeyboardLayout.HasAltGr && key.VirtualKey == VK.LCONTROL)
         {
+            bool is_altgr = false;
             // If this is a key down event with LLKHF_ALTDOWN but no Alt key
             // is down, it is actually AltGr.
-            if (is_keydown && (flags & LLKHF.ALTDOWN) != 0
-                 && ((NativeMethods.GetKeyState(VK.LMENU) |
-                      NativeMethods.GetKeyState(VK.RMENU)) & 0x80) == 0)
-            {
-                m_control_key_was_altgr = true;
-                return true;
-            }
-
-            // If this is a key up event bug Left Control is not down, it is
+            is_altgr |= is_keydown && (flags & LLKHF.ALTDOWN) != 0
+                         && ((NativeMethods.GetKeyState(VK.LMENU) |
+                              NativeMethods.GetKeyState(VK.RMENU)) & 0x80) == 0;
+            // If this is a key up event but Left Control is not down, it is
             // actually AltGr.
-            if (is_keyup && m_control_key_was_altgr)
-            {
-                m_control_key_was_altgr = false;
-                return true;
-            }
+            is_altgr |= is_keyup && m_control_down_was_altgr;
 
-            m_control_key_was_altgr = false;
+            m_control_down_was_altgr = is_keydown && is_altgr;
+
+            // Eat the key if our compose key is altgr
+            if (is_altgr && m_compose_key_is_altgr)
+                return true;
+
+            // Otherwise ignore the key
+            goto exit_ignore_key;
         }
 
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
@@ -422,6 +421,10 @@ static class Composer
         }
 
         return true;
+exit_ignore_key:
+        Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
+                  is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
+        return false;
     }
 
     /// <summary>
@@ -834,7 +837,7 @@ static class Composer
     /// <summary>
     /// Whether the last control keypress was AltGr
     /// </summary>
-    private static bool m_control_key_was_altgr = false;
+    private static bool m_control_down_was_altgr = false;
 
     /// <summary>
     /// Whether the current compose key is AltGr
