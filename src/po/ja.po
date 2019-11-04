@@ -118,8 +118,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Xorgプロジェクト(http://www.x.org/"
-")が提供する3,000個の合成シーケンスを使います。これらは標準的なLinuxシステムで最も使われているものです。"
+"Xorgプロジェクト(http://www.x.org/)が提供する3,000個の合成シーケンスを使いま"
+"す。これらは標準的なLinuxシステムで最も使われているものです。"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -131,8 +131,9 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"XComposeオープンソースプロジェクト(https://github.com/kragen/"
-"xcompose)が提供する1,000個の合成シーケンスを使います。これらのシーケンスはXorgのものと整合性がない場合があります。"
+"XComposeオープンソースプロジェクト(https://github.com/kragen/xcompose)が提供"
+"する1,000個の合成シーケンスを使います。これらのシーケンスはXorgのものと整合性"
+"がない場合があります。"
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -142,7 +143,9 @@ msgstr "WinComposeの絵文字シーケンスを使う"
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr "WinComposeの開発者と貢献者によって提供される絵文字用の合成シーケンスを使います。"
+msgstr ""
+"WinComposeの開発者と貢献者によって提供される絵文字用の合成シーケンスを使いま"
+"す。"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -193,7 +196,9 @@ msgstr "キーの順序交換を試す"
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr "シーケンス中の2つのキーの順序交換を試します。例えばCompose E Aが無効な入力であるとき、代わりにCompose A Eを試します。"
+msgstr ""
+"シーケンス中の2つのキーの順序交換を試します。例えばCompose E Aが無効な入力で"
+"あるとき、代わりにCompose A Eを試します。"
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -222,8 +227,8 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"合成シーケンスが指定されていないUnicode文字も入力できるようにします。例えばU+1A3Fを出力するためにはCompose U 1 A 3 "
-"Fというシーケンスを入力します"
+"合成シーケンスが指定されていないUnicode文字も入力できるようにします。例えばU"
+"+1A3Fを出力するためにはCompose U 1 A 3 Fというシーケンスを入力します"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -238,7 +243,9 @@ msgstr "大文字小文字のみが異なるものがある場合は、それを
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr "入力されたシーケンスそのものは存在しないものの、大文字小文字だけが異なるものは存在する場合、自動的に修正を行います。"
+msgstr ""
+"入力されたシーケンスそのものは存在しないものの、大文字小文字だけが異なるもの"
+"は存在する場合、自動的に修正を行います。"
 
 #: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -250,7 +257,8 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"入力したシーケンスが存在しない場合、すべての入力を破棄します。デフォルトでは、入力された文字をComposeキーが押されなかったときのように出力します。"
+"入力したシーケンスが存在しない場合、すべての入力を破棄します。デフォルトで"
+"は、入力された文字をComposeキーが押されなかったときのように出力します。"
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -355,7 +363,9 @@ msgstr "Caps Lockが有効な場合は常に大文字にする"
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr "Caps Lockが有効な場合、“é”のようなアクセント付き文字を打つと、常に対応する大文字（この場合は “É”）が出力されます。"
+msgstr ""
+"Caps Lockが有効な場合、“é”のようなアクセント付き文字を打つと、常に対応する大"
+"文字（この場合は “É”）が出力されます。"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
@@ -499,7 +509,9 @@ msgstr "キーの挿入を許可する"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr "AutoHotkeyやSynergyなどのソフトウェアを通じて入力されたキーを無視しないようにします"
+msgstr ""
+"AutoHotkeyやSynergyなどのソフトウェアを通じて入力されたキーを無視しないように"
+"します"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
@@ -520,8 +532,8 @@ msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
-"有効な場合、WinComposeは定期的にインターネットに接続し、新しいバージョンがないか確認します。アップデートが自動でインストールされることはありませ"
-"ん。"
+"有効な場合、WinComposeは定期的にインターネットに接続し、新しいバージョンがな"
+"いか確認します。アップデートが自動でインストールされることはありません。"
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
@@ -531,7 +543,9 @@ msgstr "通知領域のアイコンを常に表示する"
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr "Windowsは通知領域のアイコンを一定時間が経つと自動的に消去します。この設定項目が有効な場合、常にアイコンが表示されるようになります。"
+msgstr ""
+"Windowsは通知領域のアイコンを一定時間が経つと自動的に消去します。この設定項目"
+"が有効な場合、常にアイコンが表示されるようになります。"
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
@@ -557,8 +571,9 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
-"有効な場合、WinComposeは通知領域のアイコンを表示しません。このときWinComposeのインターフェースを開くにためにはスタートアップメニューか"
-"ら“WinCompose Settings”か“WinCompose Sequences”を選択する必要があります。"
+"有効な場合、WinComposeは通知領域のアイコンを表示しません。このときWinCompose"
+"のインターフェースを開くにためにはスタートアップメニューから“WinCompose "
+"Settings”か“WinCompose Sequences”を選択する必要があります。"
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -594,7 +609,9 @@ msgstr "正規表現に合致するウィンドウを無視する:"
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
-msgstr "現在開かれているウィンドウのクラスまたは名前がこの正規表現に合致する場合、WinComposeが完全に無効になります。"
+msgstr ""
+"現在開かれているウィンドウのクラスまたは名前がこの正規表現に合致する場合、"
+"WinComposeが完全に無効になります。"
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
@@ -606,13 +623,20 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
-"有効な場合、Composeキーに割り当てられているキーがすべてシーケンス中でComposeとして扱われます。デフォルトでは最初に押下されたキーのみがCom"
-"poseキーとして扱われ、代替として設定されたキーは元の役割を保ちます。"
+"有効な場合、Composeキーに割り当てられているキーがすべてシーケンス中でCompose"
+"として扱われます。デフォルトでは最初に押下されたキーのみがComposeキーとして扱"
+"われ、代替として設定されたキーは元の役割を保ちます。"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
 msgstr "スペシャルサンクス"
+
+#. Remove sequence from the list of favorites.
+#: i18n/Text.resx:581 ID:RemoveFromFavorites
+#, fuzzy
+msgid "Remove from favorites"
+msgstr "お気に入りに追加する"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control

@@ -118,8 +118,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Usa las 3000 secuencias de composición del proyecto Xorg (http://www.x.org/)"
-". Estas son las secuencias más comunes en un sistema Linux."
+"Usa las 3000 secuencias de composición del proyecto Xorg (http://www.x."
+"org/). Estas son las secuencias más comunes en un sistema Linux."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -227,8 +227,8 @@ msgid ""
 "Compose U 1 A 3 F Enter"
 msgstr ""
 "Activar el ingreso de cualesquier caracteres Unicode, incluidos aquellos que "
-"carecen de secuencia de composición. Por ejemplo, la secuencia Componer + 1 "
-"A 3 F + Intro insertará el carácter U+1A3F."
+"carecen de secuencia de composición. Por ejemplo, la secuencia "
+"Componer + 1 A 3 F + Intro insertará el carácter U+1A3F."
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -578,8 +578,8 @@ msgid ""
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
 "Si se activa, WinCompose ya no mostrará un icono en el área de notificación. "
-"La única manera de abrir la interfaz de WinCompose será mediante «"
-"Configuración de WinCompose» y «Secuencias de WinCompose» en el menú de "
+"La única manera de abrir la interfaz de WinCompose será mediante "
+"«Configuración de WinCompose» y «Secuencias de WinCompose» en el menú de "
 "arranque."
 
 #. The name of the “Home” key on the keyboard
@@ -639,6 +639,12 @@ msgstr ""
 #: i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
 msgstr "Agradecimientos especiales"
+
+#. Remove sequence from the list of favorites.
+#: i18n/Text.resx:581 ID:RemoveFromFavorites
+#, fuzzy
+msgid "Remove from favorites"
+msgstr "Añadir a favoritos"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control

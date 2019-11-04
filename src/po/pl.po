@@ -227,8 +227,8 @@ msgid ""
 "Compose U 1 A 3 F Enter"
 msgstr ""
 "Włącz wprowadzanie tekstu Unicode dla wszystkich symboli, nawet tych bez "
-"zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol "
-"U+1A3F: Compose U 1 A 3 F Enter"
+"zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol U"
+"+1A3F: Compose U 1 A 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -623,6 +623,12 @@ msgstr ""
 #: i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
 msgstr "Specjalne podziękowania"
+
+#. Remove sequence from the list of favorites.
+#: i18n/Text.resx:581 ID:RemoveFromFavorites
+#, fuzzy
+msgid "Remove from favorites"
+msgstr "Dodaj do ulubionych"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control

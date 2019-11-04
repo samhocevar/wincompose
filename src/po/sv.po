@@ -579,8 +579,8 @@ msgid ""
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
 "Om markerat kommer WinCompose inte längre visa en ikon i notiferingsområdet. "
-"Det enda sättet att öppna gränssnittet för WinCompose blir genom att öppna ”"
-"WinCompose Settings” och ”Wincompose Sequences” i Startmenyn."
+"Det enda sättet att öppna gränssnittet för WinCompose blir genom att öppna "
+"”WinCompose Settings” och ”Wincompose Sequences” i Startmenyn."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -639,6 +639,12 @@ msgstr ""
 #: i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
 msgstr "Speciella tack"
+
+#. Remove sequence from the list of favorites.
+#: i18n/Text.resx:581 ID:RemoveFromFavorites
+#, fuzzy
+msgid "Remove from favorites"
+msgstr "Lägg till i favoriter"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control

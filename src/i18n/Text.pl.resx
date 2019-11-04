@@ -198,6 +198,9 @@
   <data name="Restart" xml:space="preserve">
     <value>Uruchom ponownie</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Strona darowizny</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Odwiedź stronę</value>
   </data>
@@ -263,6 +266,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Zamknij</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopiuj do schowka</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji - nazwa kategorii (znaki Unicode, emotikony, makra użytkownika)</value>
@@ -357,6 +363,9 @@
   <data name="Translators" xml:space="preserve">
     <value>Tłumaczenie</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Autorzy</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>Licencja</value>
   </data>
@@ -392,6 +401,9 @@
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Wyłączone</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automatycznie sprawdzaj dostępność aktualizacji</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
     <value>Dodaj do ulubionych</value>

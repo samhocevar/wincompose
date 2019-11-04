@@ -581,8 +581,8 @@ msgid ""
 msgstr ""
 "Εάν είναι ενεργοποιημένο, το WinCompose δεν θα εμφανίζει πλέον ένα εικονίδιο "
 "στην περιοχή ειδοποιήσεων. Ο μόνος τρόπος για να ανοίξετε τη διεπαφή του "
-"WinCompose θα είναι μέσω των καταχωρήσεων «Ρυθμίσεις WinCompose» και «"
-"Ακολουθίες WinCompose» στο μενού εκκίνησης."
+"WinCompose θα είναι μέσω των καταχωρήσεων «Ρυθμίσεις WinCompose» και "
+"«Ακολουθίες WinCompose» στο μενού εκκίνησης."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -641,6 +641,12 @@ msgstr ""
 #: i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
 msgstr "Ιδιαίτερες ευχαριστίες"
+
+#. Remove sequence from the list of favorites.
+#: i18n/Text.resx:581 ID:RemoveFromFavorites
+#, fuzzy
+msgid "Remove from favorites"
+msgstr "Προσθήκη στα αγαπημένα"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
