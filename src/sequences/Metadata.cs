@@ -34,6 +34,8 @@ namespace WinCompose
     public class Data
     {
         public bool Favorite;
+
+        public int UsageCount;
     }
 
     public class MetadataDB : Dictionary<SequenceIdentifier, Data>, IXmlSerializable
@@ -62,6 +64,7 @@ namespace WinCompose
                 writer.WriteAttributeString("Sequence", kv.Key.Sequence.ToString());
                 writer.WriteAttributeString("Result", kv.Key.Result.ToString());
                 writer.WriteAttributeString("Favorite", kv.Value.Favorite.ToString());
+                writer.WriteAttributeString("UsageCount", kv.Value.UsageCount.ToString());
                 writer.WriteEndElement();
             }
         }
@@ -79,7 +82,8 @@ namespace WinCompose
                 if (sequence == null || result == null)
                     continue;
                 var data = GetOrAdd(cv.ConvertFromString(sequence) as KeySequence, result);
-                data.Favorite = bool.Parse(reader.GetAttribute("Favorite") ?? "false");
+                bool.TryParse(reader.GetAttribute("Favorite") ?? "false", out data.Favorite);
+                int.TryParse(reader.GetAttribute("UsageCount") ?? "0", out data.UsageCount);
             }
         }
 
@@ -89,6 +93,12 @@ namespace WinCompose
 
     public static class Metadata
     {
+        public static void IncrementUsage(KeySequence sequence, string result)
+        {
+            var data = m_dict.GetOrAdd(sequence, result);
+            ++data.UsageCount;
+        }
+
         public static void ToggleFavorite(KeySequence sequence, string result)
         {
             var data = m_dict.GetOrAdd(sequence, result);
