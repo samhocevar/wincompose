@@ -472,10 +472,10 @@ exit_forward_key:
             {
                 string tosend = Settings.GetSequenceResult(m_sequence,
                                                            ignore_case);
-                Stats.AddSequence(m_sequence);
-                Log.Debug("Valid sequence! Sending “{0}”", tosend);
-                ResetSequence();
                 SendString(tosend);
+                Log.Debug("Valid sequence! Sent “{0}”", tosend);
+                Stats.AddSequence(m_sequence);
+                ResetSequence();
                 return true;
             }
 
@@ -493,10 +493,10 @@ exit_forward_key:
                 if (Settings.IsValidGenericSequence(m_sequence))
                 {
                     string tosend = Settings.GetGenericSequenceResult(m_sequence);
-                    Stats.AddSequence(m_sequence);
-                    Log.Debug("Valid generic sequence! Sending “{0}”", tosend);
-                    ResetSequence();
                     SendString(tosend);
+                    Log.Debug("Valid generic sequence! Sent “{0}”", tosend);
+                    Stats.AddSequence(m_sequence);
+                    ResetSequence();
                     return true;
                 }
             }
@@ -509,10 +509,10 @@ exit_forward_key:
                 {
                     string tosend = Settings.GetSequenceResult(other_sequence,
                                                                ignore_case);
-                    Stats.AddSequence(other_sequence);
-                    Log.Debug("Found swapped sequence! Sending “{0}”", tosend);
-                    ResetSequence();
                     SendString(tosend);
+                    Log.Debug("Found swapped sequence! Sent “{0}”", tosend);
+                    Stats.AddSequence(other_sequence);
+                    ResetSequence();
                     return true;
                 }
             }
@@ -528,8 +528,8 @@ exit_forward_key:
 
             if (!string.IsNullOrEmpty(tosend))
             {
-                Log.Debug("Invalid sequence! Sending “{0}”", tosend);
                 SendString(tosend);
+                Log.Debug("Invalid sequence! Sent “{0}”", tosend);
             }
         }
 
