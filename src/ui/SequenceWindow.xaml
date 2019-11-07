@@ -102,6 +102,7 @@
         <DockPanel Grid.Column="0">
             <GroupBox Header="{x:Static i18n:Text.Categories}" DockPanel.Dock="Top" VerticalAlignment="Top" Padding="0,4">
                 <StackPanel VerticalAlignment="Center">
+
                     <RadioButton Margin="4" GroupName="Category"
                                  IsChecked="{Binding Path=ActiveCategoryArray[0], Mode=TwoWay}">
                         <StackPanel Orientation="Horizontal">
@@ -137,19 +138,21 @@
                                               ContentTemplate="{StaticResource SearchTextTemplate}"/>
                         </StackPanel>
                     </RadioButton>
+
                 </StackPanel>
             </GroupBox>
-            <ListBox Margin="8" ItemsSource="{Binding Categories}" SelectionMode="Extended"
-                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+
+            <TreeView Margin="8" ItemsSource="{Binding Categories}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource {x:Type TreeViewItem}}">
                         <Setter Property="Padding" Value="4"/>
                         <Setter Property="Visibility" Value="{Binding Visibility}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
-                </ListBox.ItemContainerStyle>
-                <ListBox.ItemTemplate>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
                     <DataTemplate DataType="wc:CategoryViewModel">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
@@ -164,8 +167,8 @@
                             -->
                         </StackPanel>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </TreeView.ItemTemplate>
+            </TreeView>
         </DockPanel>
 
         <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent"/>
