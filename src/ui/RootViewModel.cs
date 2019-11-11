@@ -11,7 +11,6 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -24,11 +23,6 @@ namespace WinCompose
         public RootViewModel()
         {
             PropertyChanged += PropertyChangedCallback;
-
-            ActiveCategoryArray = new ObservableCollection<bool>(new List<bool>() { true, false, false, false, false });
-            ActiveCategoryArray.CollectionChanged += (o, e)
-                => PropertyChangedCallback(o, new PropertyChangedEventArgs(nameof(ActiveCategoryArray)));
-
             InitializeComponents();
         }
 
@@ -36,23 +30,26 @@ namespace WinCompose
         {
             var category_lut = new Dictionary<Category, CategoryViewModel>();
 
-            // Fill category list
-            foreach (var category in CodepointCategory.AllCategories)
-                m_categories.Add(category_lut[category] = new CategoryViewModel(this, category));
+            // Fill the category tree
+            m_favorites = new CategoryViewModel(this, new TopCategory(i18n.Text.Favorites + " ⭐"));
+            m_categories.Add(m_favorites);
 
-            foreach (var category in EmojiCategory.AllCategories)
-                m_categories.Add(category_lut[category] = new CategoryViewModel(this, category));
+            var all_unicode_vm = new CategoryViewModel(this, new TopCategory(i18n.Text.UnicodeCharacters + " — ŵ Ǿ à Ꝏ Σ ⍾ ꟿ"));
+            foreach (var c in CodepointCategory.AllCategories)
+                all_unicode_vm.Children.Add(category_lut[c] = new CategoryViewModel(this, c));
+            m_categories.Add(all_unicode_vm);
 
-            var macro_viewmodel = new CategoryViewModel(this, new MacroCategory("User Macros"));
-            m_categories.Add(macro_viewmodel);
+            var all_emoji_vm = new CategoryViewModel(this, new TopCategory(i18n.Text.Emoji + " ☺🍄🐨"));
+            foreach (var c in EmojiCategory.AllCategories)
+                all_emoji_vm.Children.Add(category_lut[c] = new CategoryViewModel(this, c));
+            m_categories.Add(all_emoji_vm);
 
-            var favorites_viewmodel = new CategoryViewModel(this, new FavoriteCategory("Favorites"));
-            favorites_viewmodel.IsEmpty = false; // FIXME: this is a bit of a hack
-            m_categories.Add(favorites_viewmodel);
+            m_macros = new CategoryViewModel(this, new TopCategory(i18n.Text.UserMacros + " ( ͡° ͜ʖ ͡°)"));
+            m_categories.Add(m_macros);
 
             // Compute a list of sorted codepoint categories for faster lookups
             var sorted_categories = new SortedList<int, CategoryViewModel>();
-            foreach (var category in m_categories)
+            foreach (var category in all_unicode_vm.Children)
                 if (category.RangeEnd > 0)
                     sorted_categories.Add(category.RangeEnd, category);
 
@@ -79,20 +76,14 @@ namespace WinCompose
                             break;
                         }
                 }
-                else if (emoji_category == null)
-                {
-                    macro_viewmodel.IsEmpty = false;
-                    main_viewmodel = macro_viewmodel;
-                }
 
                 m_sequences.Add(new SequenceViewModel(desc)
                 {
-                    Category = main_viewmodel,
-                    EmojiCategory = emoji_viewmodel,
+                    UnicodeCategoryVM = main_viewmodel,
+                    EmojiCategoryVM = emoji_viewmodel,
                 });
             }
 
-            RefreshCategoryFilters();
             RefreshSequenceFilters();
         }
 
@@ -101,18 +92,15 @@ namespace WinCompose
             PropertyChanged -= PropertyChangedCallback;
         }
 
+        private CategoryViewModel m_favorites;
+        private CategoryViewModel m_macros;
+
         private void PropertyChangedCallback(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(SearchText))
             {
-                ActiveCategoryArray[(int)ActiveCategory] = false;
-                ActiveCategoryArray[4] = true;
+                m_search_query = new SearchQuery(SearchText);
                 RefreshSequenceFilters();
-            }
-            else if (e.PropertyName == nameof(ActiveCategoryArray))
-            {
-                ActiveCategory = (CategoryFilter)ActiveCategoryArray.IndexOf(true);
-                RefreshCategoryFilters();
             }
         }
 
@@ -122,28 +110,12 @@ namespace WinCompose
         /// <param name="selected_category"></param>
         public void OnCategorySelected(CategoryViewModel selected_category)
         {
-            // Deselect any previously selected category
-            foreach (var category in m_categories)
-                if (category != selected_category)
-                    category.IsSelected = false;
-
-            RefreshSequenceFilters();
+            if (selected_category.Children.Count == 0)
+            {
+                m_search_query = null;
+                RefreshSequenceFilters();
+            }
         }
-
-        /// <summary>
-        /// This pattern handles a 4-state radio button array
-        /// </summary>
-        public ObservableCollection<bool> ActiveCategoryArray { get; set; }
-        public CategoryFilter ActiveCategory { get; set; } = 0;
-
-        public enum CategoryFilter : int
-        {
-            Unicode = 0,
-            Emoji = 1,
-            Macros = 2,
-            Favorites = 3,
-            Search = 4,
-        };
 
         public IEnumerable<CategoryViewModel> Categories => m_categories;
         public IEnumerable<SequenceViewModel> Sequences => m_sequences;
@@ -160,29 +132,9 @@ namespace WinCompose
         private string m_search_text = "";
         private SearchQuery m_search_query;
 
-        private void RefreshCategoryFilters()
-        {
-            var category_view = CollectionViewSource.GetDefaultView(Categories);
-            category_view.Filter = (o) =>
-            {
-                var category = o as CategoryViewModel;
-                switch (ActiveCategory)
-                {
-                    case CategoryFilter.Unicode: return category.IsUnicode;
-                    case CategoryFilter.Emoji: return category.IsEmoji;
-                    case CategoryFilter.Macros: return category.IsMacro;
-                    case CategoryFilter.Favorites: return category.IsFavorite;
-                    case CategoryFilter.Search: return false;
-                }
-                return false;
-            };
-            category_view.Refresh();
-        }
-
         private void RefreshSequenceFilters()
         {
             var sequence_view = CollectionViewSource.GetDefaultView(Sequences);
-            m_search_query = new SearchQuery(SearchText);
             sequence_view.Filter = FilterSequences;
             sequence_view.Refresh();
         }
@@ -190,21 +142,12 @@ namespace WinCompose
         private bool FilterSequences(object obj)
         {
             var sequence = obj as SequenceViewModel;
-            switch (ActiveCategory)
-            {
-                case CategoryFilter.Unicode:
-                    return !(sequence.Category?.IsMacro ?? false) && (sequence.Category?.IsSelected ?? false);
-                case CategoryFilter.Emoji:
-                    return sequence.EmojiCategory?.IsSelected ?? false;
-                case CategoryFilter.Macros:
-                    return (sequence.Category?.IsMacro ?? false) && (sequence.Category?.IsSelected ?? false);
-                case CategoryFilter.Favorites:
-                    return Metadata.IsFavorite(sequence.Sequence, sequence.Result);
-                case CategoryFilter.Search:
-                    return sequence.Match(m_search_query);
-                default:
-                    return false;
-            }
+            if (m_search_query != null)
+                return sequence.Match(m_search_query);
+            return (sequence.UnicodeCategoryVM?.IsSelected ?? false)
+                || (sequence.EmojiCategoryVM?.IsSelected ?? false)
+                || (m_favorites.IsSelected && sequence.IsFavorite)
+                || (m_macros.IsSelected && sequence.IsMacro);
         }
     }
 }

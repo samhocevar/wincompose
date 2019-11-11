@@ -23,8 +23,8 @@ namespace WinCompose
 
         public SequenceViewModel(SequenceDescription desc) => m_desc = desc;
 
-        public CategoryViewModel Category { get; set; }
-        public CategoryViewModel EmojiCategory { get; set; }
+        public CategoryViewModel UnicodeCategoryVM { get; set; }
+        public CategoryViewModel EmojiCategoryVM { get; set; }
 
         /// <summary>
         /// Return the sequence result in an UTF-16 string
@@ -41,7 +41,7 @@ namespace WinCompose
 
         public string Description => m_desc.Description;
 
-        public string RichDescription => (IsFavorite ? "♥ " : "") + m_desc.Description;
+        public string RichDescription => (IsFavorite ? "⭐ " : "") + m_desc.Description;
 
         public KeySequence Sequence => m_desc.Sequence;
 
@@ -85,7 +85,9 @@ namespace WinCompose
             return true;
         }
 
-        private bool IsFavorite => Metadata.IsFavorite(Sequence, Result);
+        public bool IsMacro => UnicodeCategoryVM == null && EmojiCategoryVM == null;
+
+        public bool IsFavorite => Metadata.IsFavorite(Sequence, Result);
 
         private SequenceDescription m_desc;
     }

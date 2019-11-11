@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -29,17 +29,9 @@ namespace WinCompose
         public int RangeEnd { get; protected set; } = -1;
     }
 
-    public class MacroCategory : Category
+    public class TopCategory : Category
     {
-        public MacroCategory(string name)
-        {
-            Name = name;
-        }
-    }
-
-    public class FavoriteCategory : Category
-    {
-        public FavoriteCategory(string name)
+        public TopCategory(string name)
         {
             Name = name;
         }

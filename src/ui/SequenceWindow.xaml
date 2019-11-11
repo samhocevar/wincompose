@@ -53,7 +53,7 @@
         <!-- This DataTemplate contains a TextBox and a "clear text" button that can be used for the Search text input -->
         <DataTemplate x:Key="SearchTextTemplate">
             <Grid>
-                <TextBox x:Name="SearchBox" Padding="4" Width="200"
+                <TextBox x:Name="SearchBox" Padding="4" Width="240"
                          Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <DockPanel>
                     <Button DockPanel.Dock="Right" Click="ClearSearchClicked" Margin="4,0">
@@ -99,50 +99,14 @@
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
+
         <DockPanel Grid.Column="0">
-            <GroupBox Header="{x:Static i18n:Text.Categories}" DockPanel.Dock="Top" VerticalAlignment="Top" Padding="0,4">
-                <StackPanel VerticalAlignment="Center">
+            <StackPanel Margin="4" Orientation="Horizontal" DockPanel.Dock="Top" VerticalAlignment="Top">
+                <ContentPresenter x:Name="SearchWidget" Content="{Binding}"
+                                  ContentTemplate="{StaticResource SearchTextTemplate}"/>
+            </StackPanel>
 
-                    <RadioButton Margin="4" GroupName="Category"
-                                 IsChecked="{Binding Path=ActiveCategoryArray[0], Mode=TwoWay}">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{x:Static i18n:Text.UnicodeCharacters}"/>
-                            <TextBlock Text="—" Margin="4,0,4,0"/>
-                            <TextBlock Text="ŵ Ǿ à Ꝏ Σ ⍾ ꟿ"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <RadioButton Margin="4" GroupName="Category"
-                                 IsChecked="{Binding Path=ActiveCategoryArray[1], Mode=TwoWay}">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{x:Static i18n:Text.Emoji}"/>
-                            <TextBlock Text="—" Margin="4,0,4,0"/>
-                            <emoji:TextBlock Text="☺♥🐨"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <RadioButton Margin="4" GroupName="Category"
-                                 IsChecked="{Binding Path=ActiveCategoryArray[2], Mode=TwoWay}">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{x:Static i18n:Text.UserMacros}"/>
-                            <TextBlock Text="—" Margin="4,0,4,0"/>
-                            <TextBlock Text="( ͡° ͜ʖ ͡°)"/>
-                        </StackPanel>
-                    </RadioButton>
-                    <RadioButton Margin="4" GroupName="Category"
-                                 IsChecked="{Binding Path=ActiveCategoryArray[3], Mode=TwoWay}">
-                        <TextBlock Text="{x:Static i18n:Text.Favorites}"/>
-                    </RadioButton>
-                    <RadioButton Margin="4" GroupName="Category"
-                                 IsChecked="{Binding Path=ActiveCategoryArray[4], Mode=TwoWay}">
-                        <StackPanel Orientation="Horizontal">
-                            <ContentPresenter x:Name="SearchWidget" Content="{Binding}"
-                                              ContentTemplate="{StaticResource SearchTextTemplate}"/>
-                        </StackPanel>
-                    </RadioButton>
-
-                </StackPanel>
-            </GroupBox>
-
-            <TreeView Margin="8" ItemsSource="{Binding Categories}"
+            <TreeView Margin="4" ItemsSource="{Binding Categories}"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <TreeView.ItemContainerStyle>
                     <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource {x:Type TreeViewItem}}">
@@ -153,10 +117,10 @@
                     </Style>
                 </TreeView.ItemContainerStyle>
                 <TreeView.ItemTemplate>
-                    <DataTemplate DataType="wc:CategoryViewModel">
+                    <HierarchicalDataTemplate DataType="{x:Type wc:CategoryViewModel}" ItemsSource="{Binding Children}">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
-                            <emoji:TextBlock Text="{Binding Icon}" Margin="4,0,0,0"/>
+                            <emoji:TextBlock Text="{Binding RichName}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                            <!--<emoji:TextBlock Text="{Binding Icon}" Margin="4,0,0,0"/>-->
                             <!-- TODO: make this a tooltip instead? -->
                             <!--
                             <StackPanel Orientation="Horizontal" HorizonalAlignment="Right">
@@ -166,16 +130,17 @@
                             </StackPanel>
                             -->
                         </StackPanel>
-                    </DataTemplate>
+                    </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
         </DockPanel>
 
-        <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent"/>
+        <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" Background="Transparent"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
-            <ListBox Margin="8" ItemsSource="{Binding Sequences}" Name="ListBox"
+            <ListBox Margin="4" ItemsSource="{Binding Sequences}" Name="ListBox"
                      AlternationCount="2"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      VirtualizingStackPanel.VirtualizationMode="Recycling">
