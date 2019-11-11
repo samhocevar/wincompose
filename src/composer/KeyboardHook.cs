@@ -20,14 +20,14 @@ using System.Windows.Threading;
 namespace WinCompose
 {
 
-class KeyboardHook
+static class KeyboardHook
 {
     public static void Init()
     {
-        m_thread = new Thread(KeyboardThread);
-        m_thread.IsBackground = true;
-        m_thread.SetApartmentState(ApartmentState.STA);
-        m_thread.Start();
+        var thread = new Thread(KeyboardThread);
+        thread.IsBackground = true;
+        thread.SetApartmentState(ApartmentState.STA);
+        thread.Start();
     }
 
     public static void Fini()
@@ -91,8 +91,6 @@ class KeyboardHook
             }
         }
     }
-
-    private static Thread m_thread;
 
     private static DispatcherTimer m_check_timer;
 
