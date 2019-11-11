@@ -182,7 +182,7 @@ msgstr "Besøk nettsiden"
 msgid "Exit"
 msgstr "Lukk"
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
 #, fuzzy
 msgid "Unicode characters"
@@ -298,7 +298,7 @@ msgstr "Lukk"
 msgid "Copy to clipboard"
 msgstr "Kopier til utklippstavle"
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
 msgstr "Emoji"
@@ -416,7 +416,7 @@ msgstr "Oppførsel"
 msgid "Sequences — WinCompose"
 msgstr "Sekvenser — WinCompose"
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Brukerdefinerte makroer"
@@ -657,6 +657,12 @@ msgstr "Spesiell takk til"
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
 #, fuzzy
 msgid "Remove from favorites"
+msgstr "Legg til i favoritter"
+
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
+#: i18n/Text.resx:585 ID:Favorites
+#, fuzzy
+msgid "Favorites"
 msgstr "Legg til i favoritter"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)

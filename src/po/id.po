@@ -173,7 +173,7 @@ msgstr "Mengunjungi situs web"
 msgid "Exit"
 msgstr ""
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
 msgstr ""
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Copy to clipboard"
 msgstr ""
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
 msgstr ""
@@ -377,7 +377,7 @@ msgstr ""
 msgid "Sequences — WinCompose"
 msgstr ""
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
 msgstr ""
@@ -595,6 +595,11 @@ msgstr ""
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
 msgid "Remove from favorites"
+msgstr ""
+
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
+#: i18n/Text.resx:585 ID:Favorites
+msgid "Favorites"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)

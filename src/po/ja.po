@@ -179,7 +179,7 @@ msgstr "ウェブサイトを表示"
 msgid "Exit"
 msgstr "終了"
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
 msgstr "Unicode文字"
@@ -290,7 +290,7 @@ msgstr "閉じる"
 msgid "Copy to clipboard"
 msgstr "クリップボードにコピー"
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
 msgstr "絵文字"
@@ -405,7 +405,7 @@ msgstr "挙動"
 msgid "Sequences — WinCompose"
 msgstr "シーケンス — WinCompose"
 
-#. Name of the category (Unicode characters, Emoji, User macros)
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
 msgstr "ユーザー定義マクロ"
@@ -636,6 +636,12 @@ msgstr "スペシャルサンクス"
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
 #, fuzzy
 msgid "Remove from favorites"
+msgstr "お気に入りに追加する"
+
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
+#: i18n/Text.resx:585 ID:Favorites
+#, fuzzy
+msgid "Favorites"
 msgstr "お気に入りに追加する"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)

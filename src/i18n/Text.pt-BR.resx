@@ -168,14 +168,26 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Compondo</value>
+  </data>
   <data name="UseXorgRules" xml:space="preserve">
     <value>Usar sequências do projeto Xorg</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Usar as 3,000 sequências de composição do projeto Xorg(http://www.x.org/). Essas são as sequências mais encontradas no sistema Linux.</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
     <value>Usar sequências do projeto XCompose</value>
   </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Usar as 1,000 sequências de composição do projeto de código aberto XCompose(https://github.com/kragen/xcompose). Essas sequências podem eventualmente conflitar com as do Xorg.</value>
+  </data>
   <data name="UseEmojiRules" xml:space="preserve">
     <value>Usar as sequências emoji do WinCompose</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Usar as sequências de composição para Emoji fornecida pelos autores e contribuidores do WinCompose.</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Janela de Debug</value>
@@ -224,6 +236,9 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Digitação Unicode avançada</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Permite que todos os caracteres Unicode sejam digitados, até mesmo os que não tiverem sequências de composição definidas. Por exemplo, a sequência a seguir produzirá o caractere U+1A3F: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Com sequências inválidas</value>
@@ -414,11 +429,29 @@
   <data name="DisableIcon" xml:space="preserve">
     <value>Desativar o ícone da área de notificações</value>
   </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Se habilitado, WinCompose não mostrará um ícone na área de notificação. A única forma de abrir a interface do WinCompose será através dos itens &quot;Configurações do WinCompose&quot; e &quot;Sequências do WinCompose&quot; no menu de inicialização.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
   <data name="DelayDisabled" xml:space="preserve">
     <value>Sem atraso</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avançado</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignore janelas que correspondem a seguinte regex:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose será desabilitado completamente quando a classe ou nome da janela atual corresponda a seguinte expressão regular.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Agradecimentos Especiais</value>
