@@ -1,6 +1,6 @@
 
 # Requirements:
-#  - Inno Setup 5 (download and install)
+#  - Inno Setup 6 (download and install)
 #  - zip/unzip (mingw-get install msys-zip msys-unzip)
 #  - Visual Studio (ensure devenv.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)

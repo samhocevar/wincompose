@@ -189,8 +189,8 @@ for x in unicode/*.*.resx i18n/*.*.resx; do
     fi
 done
 
-if [ -d "/c/Program Files (x86)/Inno Setup 5/Languages" ]; then
-    for f in "/c/Program Files (x86)/Inno Setup 5/Languages/"*.isl*; do
+if [ -d "/c/Program Files (x86)/Inno Setup 6/Languages" ]; then
+    for f in "/c/Program Files (x86)/Inno Setup 6/Languages/"*.isl*; do
         f="$(basename "$f")"
         if ! grep -q "$f" installer.iss; then
             echo "WARNING: $f exists in Inno Setup but is not mentioned in installer.iss"

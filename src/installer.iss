@@ -15,7 +15,7 @@ AppPublisher = {#AUTHOR}
 AppPublisherURL = http://sam.hocevar.net/
 OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 ArchitecturesInstallIn64BitMode = x64
-DefaultDirName = {pf}\{#NAME}
+DefaultDirName = {commonpf}\{#NAME}
 DefaultGroupName = {#NAME}
 SetupIconFile = "res\icon_normal.ico"
 UninstallDisplayIcon = "{app}\{#EXE}"
@@ -89,9 +89,8 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "fi"; MessagesFile: "compiler:Languages/Finnish.isl"
 Name: "fr"; MessagesFile: "compiler:Languages/French.isl"
 Name: "de"; MessagesFile: "compiler:Languages/German.isl"
-Name: "el"; MessagesFile: "compiler:Languages/Greek.isl"
 ; Name: "he"; MessagesFile: "compiler:Languages/Hebrew.isl"
-Name: "hu"; MessagesFile: "compiler:Languages/Hungarian.isl"
+; Name: "is"; MessagesFile: "compiler:Languages/Icelandic.isl"
 Name: "it"; MessagesFile: "compiler:Languages/Italian.isl"
 Name: "ja"; MessagesFile: "compiler:Languages/Japanese.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Nepali.islu"
@@ -102,10 +101,15 @@ Name: "ru"; MessagesFile: "compiler:Languages/Russian.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/ScottishGaelic.isl"
 ; Name: "Cy-sr-SP"; MessagesFile: "compiler:Languages/SerbianCyrillic.isl"
 ; Name: "Lt-sr-SP"; MessagesFile: "compiler:Languages/SerbianLatin.isl"
+Name: "sk"; MessagesFile: "compiler:Languages/Slovak.isl"
 Name: "sl"; MessagesFile: "compiler:Languages/Slovenian.isl"
 Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; Name: "tr"; MessagesFile: "compiler:Languages/Turkish.isl"
 ; Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
+
+; FIXME: these languages used to be in Inno Setup 5 but are no longer here
+; el / Greek.isl
+; hu / Hungarian.isl
 
 [Icons]
 Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}";
@@ -133,7 +137,7 @@ Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; Flags: runhidden
 
 [InstallDelete]
 ; We used to be installed in c:\Program Files (x86)
-Type: filesandordirs; Name: "{pf32}\{#NAME}"
+Type: filesandordirs; Name: "{commonpf32}\{#NAME}"
 ; We used to call our uninstaller shortcut “Uninstall”
 Type: files; Name: "{group}\Uninstall.lnk"
 ; We used to add ourselves to user startup
