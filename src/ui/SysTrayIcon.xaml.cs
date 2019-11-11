@@ -256,11 +256,16 @@ namespace WinCompose
 
         private void SysTrayUpdateCallback()
         {
-            Visibility = Settings.DisableIcon.Value ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
-            Icon = GetCurrentIcon();
-            ToolTipText = GetCurrentToolTip();
+            // Ensure we run this on our dispatcher thread because we could
+            // be called by the keyboard thread.
+            Dispatcher.Invoke(new Action(() =>
+            {
+                Visibility = Settings.DisableIcon.Value ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
+                Icon = GetCurrentIcon();
+                ToolTipText = GetCurrentToolTip();
 
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
+            }));
         }
 
         private static string GetCurrentToolTip()

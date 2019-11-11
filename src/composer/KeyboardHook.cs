@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -14,14 +14,31 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Threading;
 
 namespace WinCompose
 {
 
-static class KeyboardHook
+class KeyboardHook
 {
     public static void Init()
+    {
+        m_thread = new Thread(KeyboardThread);
+        m_thread.IsBackground = true;
+        m_thread.SetApartmentState(ApartmentState.STA);
+        m_thread.Start();
+    }
+
+    public static void Fini()
+    {
+        m_check_timer?.Stop();
+        m_check_timer = null;
+        CheckHook(must_reinstall: false);
+        Dispatcher.CurrentDispatcher.InvokeShutdown();
+    }
+
+    private static void KeyboardThread()
     {
         if (Environment.OSVersion.Platform == PlatformID.Win32NT
              || Environment.OSVersion.Platform == PlatformID.Win32S
@@ -35,13 +52,8 @@ static class KeyboardHook
             m_check_timer.Tick += (o, e) => CheckHook(must_reinstall: true);
             m_check_timer.Start();
         }
-    }
 
-    public static void Fini()
-    {
-        m_check_timer?.Stop();
-        m_check_timer = null;
-        CheckHook(must_reinstall: false);
+        Dispatcher.Run();
     }
 
     private static void CheckHook(bool must_reinstall)
@@ -79,6 +91,8 @@ static class KeyboardHook
             }
         }
     }
+
+    private static Thread m_thread;
 
     private static DispatcherTimer m_check_timer;
 
