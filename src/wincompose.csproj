@@ -61,6 +61,7 @@
     <Compile Include="interop\RemoteTypes.cs" />
     <Compile Include="interop\WinApi.cs" />
     <Compile Include="interop\WinTypes.cs" />
+    <Compile Include="misc\AtomicFlag.cs" />
     <Compile Include="misc\IniFile.cs" />
     <Compile Include="misc\SysTray.cs" />
     <Compile Include="misc\Utils.cs" />

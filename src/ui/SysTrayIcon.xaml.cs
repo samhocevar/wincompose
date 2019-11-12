@@ -15,6 +15,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 using Hardcodet.Wpf.TaskbarNotification;
@@ -69,13 +70,15 @@ namespace WinCompose
             m_cleanup_timer.Start();
             CleanupNotificationArea();
 
-            Settings.DisableIcon.ValueChanged += SysTrayUpdateCallback;
-            Composer.Changed += SysTrayUpdateCallback;
-            Updater.Changed += SysTrayUpdateCallback;
-            SysTrayUpdateCallback();
+            Settings.DisableIcon.ValueChanged += MarkIconDirty;
+            Composer.Changed += MarkIconDirty;
+            Updater.Changed += MarkIconDirty;
+            MarkIconDirty();
 
             Updater.Changed += UpdaterStateChanged;
             UpdaterStateChanged();
+
+            CompositionTarget.Rendering += UpdateNotificationIcon;
         }
 
         public new void Dispose()
@@ -87,8 +90,10 @@ namespace WinCompose
 
         protected virtual void Dispose(bool disposing)
         {
-            Composer.Changed -= SysTrayUpdateCallback;
-            Updater.Changed -= SysTrayUpdateCallback;
+            CompositionTarget.Rendering -= UpdateNotificationIcon;
+
+            Composer.Changed -= MarkIconDirty;
+            Updater.Changed -= MarkIconDirty;
             Updater.Changed -= UpdaterStateChanged;
 
             Application.RemoteControl.DisableEvent -= OnDisableEvent;
@@ -254,18 +259,20 @@ namespace WinCompose
 
         private static System.Drawing.Icon[] m_icon_cache;
 
-        private void SysTrayUpdateCallback()
+        private AtomicFlag m_dirty;
+
+        private void MarkIconDirty() => m_dirty.Set();
+
+        private void UpdateNotificationIcon(object o, EventArgs e)
         {
-            // Ensure we run this on our dispatcher thread because we could
-            // be called by the keyboard thread.
-            Dispatcher.Invoke(new Action(() =>
+            if (m_dirty.Get())
             {
                 Visibility = Settings.DisableIcon.Value ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
                 Icon = GetCurrentIcon();
                 ToolTipText = GetCurrentToolTip();
 
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
-            }));
+            }
         }
 
         private static string GetCurrentToolTip()
@@ -313,7 +320,7 @@ namespace WinCompose
         {
             if (!Composer.IsDisabled)
                 Composer.ToggleDisabled();
-            SysTrayUpdateCallback();
+            MarkIconDirty();
         }
 
         private void OnExitEvent() => Application.Current.Shutdown();
