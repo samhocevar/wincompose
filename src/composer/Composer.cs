@@ -657,7 +657,7 @@ exit_forward_key:
             SendKeyUp(VK.SHIFT);
             Clipboard.Clear();
 
-            if (!string.IsNullOrEmpty(backup_text))
+            if (backup_text != null)
                 Clipboard.SetText(backup_text);
             if (backup_image != null)
                 Clipboard.SetImage(backup_image);
@@ -668,25 +668,25 @@ exit_forward_key:
         }
         else
         {
-            InputSequence Seq = new InputSequence();
+            InputSequence seq = new InputSequence();
 
             if (use_office_hack)
             {
-                Seq.AddInput((ScanCodeShort)'\u200b');
-                Seq.AddInput((VirtualKeyShort)VK.LEFT);
+                seq.AddInput((ScanCodeShort)'\u200b');
+                seq.AddInput((VirtualKeyShort)VK.LEFT);
             }
 
             foreach (char ch in str)
             {
-                Seq.AddInput((ScanCodeShort)ch);
+                seq.AddInput((ScanCodeShort)ch);
             }
 
             if (use_office_hack)
             {
-                Seq.AddInput((VirtualKeyShort)VK.RIGHT);
+                seq.AddInput((VirtualKeyShort)VK.RIGHT);
             }
 
-            Seq.Send();
+            seq.Send();
         }
 
         /* Restore keyboard modifiers if we needed one of our custom hacks */
