@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-12 09:04+0000\n"
+"PO-Revision-Date: 2019-11-14 07:51+0000\n"
 "Last-Translator: Otiel <web@otiel.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
 "fr/>\n"
@@ -647,9 +647,8 @@ msgstr "Supprimer des favoris"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Ajouter aux favoris"
+msgstr "Favoris"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
