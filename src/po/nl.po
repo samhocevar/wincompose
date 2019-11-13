@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-10 14:04+0000\n"
+"PO-Revision-Date: 2019-11-14 07:51+0000\n"
 "Last-Translator: Geert Delmeiren <weblate@zy.33mail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
 "nl/>\n"
@@ -651,9 +651,8 @@ msgstr "Verwijderen uit favorieten"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Toevoegen aan favorieten"
+msgstr "Categorienaam (Unicode karakters, Emoji, Macro's, Favorieten)"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
