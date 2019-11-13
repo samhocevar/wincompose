@@ -100,7 +100,16 @@ static class KeyboardHook
 
     private static HOOK m_hook = HOOK.INVALID;
 
-    // Check whether OnKey is called twice for the same event
+    /// <summary>
+    /// Check whether OnKey is called twice for the same event. This may
+    /// happen when two hooks are installed.
+    /// </summary>
+    private static int m_duplicate = 0;
+
+    /// <summary>
+    /// Check whether OnKey is called from itself. This may happen when
+    /// configured to accept injected keys and outputing a very long sequence.
+    /// </summary>
     private static int m_recursive = 0;
 
     private static int OnKey(HC nCode, WM wParam, IntPtr lParam)
@@ -108,7 +117,7 @@ static class KeyboardHook
         bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
                         || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
 
-        if (m_recursive != 0)
+        if (m_duplicate != 0)
         {
             // Do nothing. We can only get here if a key is pressed during
             // the very short time where we have two hooks installed, i.e.
@@ -120,19 +129,20 @@ static class KeyboardHook
             var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
                                                       typeof(KBDLLHOOKSTRUCT));
             bool is_injected = (data.flags & LLKHF.INJECTED) != 0;
-            bool ignore = is_injected && !Settings.AllowInjected.Value;
+            bool accept = !is_injected || (Settings.AllowInjected.Value && m_recursive == 0);
 
             Log.Debug("{0}{1}: OnKey(HC.{2}, WM.{3}, [vk:0x{4:X02} ({7}) sc:0x{5:X02} flags:{6}])",
-                      ignore ? "Ignored " : "", is_injected ? "Injected Event" : "Event",
+                      accept ? "" : "Ignored ", is_injected ? "Injected Event" : "Event",
                       nCode, wParam, (int)data.vk, (int)data.sc, data.flags, new Key(data.vk));
 
-            if (!ignore)
+            if (accept)
             {
-                if (Composer.OnKey(wParam, data.vk, data.sc, data.flags))
-                {
-                    // Do not process further: that key was for us.
-                    return -1;
-                }
+                ++m_recursive;
+                bool processed = Composer.OnKey(wParam, data.vk, data.sc, data.flags);
+                --m_recursive;
+
+                if (processed)
+                    return -1; // Do not process further: that key was for us.
             }
         }
         else
@@ -142,9 +152,9 @@ static class KeyboardHook
 
         // Call next hook but guard against re-doing our own work in case we
         // were installed twice.
-        ++m_recursive;
+        ++m_duplicate;
         int ret = NativeMethods.CallNextHookEx(m_hook, nCode, wParam, lParam);
-        --m_recursive;
+        --m_duplicate;
 
         return ret;
     }
