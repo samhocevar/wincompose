@@ -84,6 +84,7 @@
     <Compile Include="ui\RootViewModel.cs" />
     <Compile Include="ui\SequenceViewModel.cs" />
     <Compile Include="ui\SettingsWindowViewModel.cs" />
+    <Compile Include="ui\TreeView.cs" />
     <Compile Include="ui\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>

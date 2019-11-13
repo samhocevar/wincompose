@@ -106,17 +106,17 @@
                                   ContentTemplate="{StaticResource SearchTextTemplate}"/>
             </StackPanel>
 
-            <TreeView Margin="4" ItemsSource="{Binding Categories}"
+            <wc:TreeView Margin="4" ItemsSource="{Binding Categories}"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                <TreeView.ItemContainerStyle>
+                <wc:TreeView.ItemContainerStyle>
                     <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource {x:Type TreeViewItem}}">
                         <Setter Property="Padding" Value="4"/>
                         <Setter Property="Visibility" Value="{Binding Visibility}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="IsSelected" Value="{Binding IsSelected}" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, wc:CategoryViewModel}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
-                </TreeView.ItemContainerStyle>
-                <TreeView.ItemTemplate>
+                </wc:TreeView.ItemContainerStyle>
+                <wc:TreeView.ItemTemplate>
                     <HierarchicalDataTemplate DataType="{x:Type wc:CategoryViewModel}" ItemsSource="{Binding Children}">
                         <StackPanel Orientation="Horizontal">
                             <emoji:TextBlock Text="{Binding RichName}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
@@ -131,8 +131,8 @@
                             -->
                         </StackPanel>
                     </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
+                </wc:TreeView.ItemTemplate>
+            </wc:TreeView>
         </DockPanel>
 
         <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" Background="Transparent"
