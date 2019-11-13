@@ -462,4 +462,7 @@
   <data name="SpecialThanks" xml:space="preserve">
     <value>Remerciements</value>
   </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Supprimer des favoris</value>
+  </data>
 </root>
