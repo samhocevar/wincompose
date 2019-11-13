@@ -12,12 +12,12 @@ very intuitive key combinations. For instance, **ö** is obtained using
 
 WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 
-Download latest: [WinCompose 0.9.0](https://github.com/samhocevar/wincompose/releases/download/v0.9.0/WinCompose-Setup-0.9.0.exe) (March 14, 2019)
+Download latest: [WinCompose 0.9.1](https://github.com/samhocevar/wincompose/releases/download/v0.9.1/WinCompose-Setup-0.9.1.exe) (November 14, 2019)
 -----------------------------------
 
- * Installable version: [WinCompose 0.9.0 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.0/WinCompose-Setup-0.9.0.exe).
+ * Installable version: [WinCompose 0.9.1 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.1/WinCompose-Setup-0.9.1.exe).
 
- * Portable version: [WinCompose 0.9.0 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.0/WinCompose-NoInstall-0.9.0.zip).
+ * Portable version: [WinCompose 0.9.1 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.1/WinCompose-NoInstall-0.9.1.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
@@ -93,10 +93,11 @@ WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>q</kb
 immediately type **q** because there is currently no rule starting with <kbd>q</kbd>.
 
 As of now, WinCompose is almost fully translated to Belarusian, Chinese,
-Danish, Dutch, Estonian, Finnish, French, German, Greek, Italian, Polish,
-Russian, Spanish and Swedish. It is partially translated to Czech, Indonesian,
-Irish, Sardinian, Serbian and Slovak. You can help us translate it to more
-languages using the Weblate project:
+Czech, Dutch, Estonian, French, German, Greek, Italian, Japanese, Lithuanian,
+Norwegian, Polish, Portuguese, Brazilian Portuguese, Russian, Sardinian,
+Spanish, and Swedish. It is partially translated to Danish, Esperanto, Finnish,
+Hungarian, Indonesian, Irish, Romanian, Serbian, Slovak, and Slovenian. You
+can help us translate it to more languages using the Weblate project:
 
 <a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
 
