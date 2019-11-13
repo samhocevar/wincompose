@@ -39,7 +39,9 @@ namespace WinCompose
             if (k.VirtualKey != VK.ESCAPE && !k.IsPrintable)
             {
                 Key = k;
-                Close();
+                // Close window from the right thread. Performance is not a
+                // concern because we hijacked the whole screen.
+                Dispatcher.Invoke(new Action(Close));
             }
         }
 
