@@ -162,10 +162,10 @@ static class Composer
         {
             Key alt_key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, false);
 
-            if (alt_key.IsPrintable && alt_key.ToString()[0] > 0x7f)
+            if (alt_key.IsPrintable && alt_key.PrintableResult[0] > 0x7f)
             {
-                string str_upper = alt_key.ToString().ToUpper();
-                string str_lower = alt_key.ToString().ToLower();
+                string str_upper = alt_key.PrintableResult.ToUpper();
+                string str_lower = alt_key.PrintableResult.ToLower();
 
                 // Hack for German keyboards: it seems that ToUpper() does
                 // not properly change ß into ẞ.
@@ -318,7 +318,7 @@ static class Composer
         {
             if (is_capslock_hack && is_keydown)
             {
-                SendString(key.ToString());
+                SendString(key.PrintableResult);
                 return true;
             }
 

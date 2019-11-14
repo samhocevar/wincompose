@@ -44,9 +44,6 @@ public partial class Key
         { new Key(VK.BACK),    "⌫" },
         { new Key(VK.DELETE),  "␡" },
         { new Key(VK.TAB),     "↹" },
-        // These two are serialized in a special way
-        { new Key(" "),        " " },
-        { new Key(","),        "," },
     };
 
     /// <summary>
@@ -185,7 +182,16 @@ public partial class Key
     public Key(VK vk) { m_vk = vk; }
 
     public VK VirtualKey => m_vk;
+
+    /// <summary>
+    /// Return whether a key is printable
+    /// </summary>
     public bool IsPrintable => m_str != null;
+
+    /// <summary>
+    /// Return the printable result of a key
+    /// </summary>
+    public string PrintableResult => m_str ?? "";
 
     /// <summary>
     /// Return whether a key is usable in a compose sequence
@@ -246,6 +252,8 @@ public partial class Key
             string ret;
             if (m_key_labels.TryGetValue(this, out ret))
                 return ret;
+            if (IsPrintable)
+                return PrintableResult;
             return ToString();
         }
     }

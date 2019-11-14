@@ -160,7 +160,7 @@ public class SequenceTree : SequenceNode
                 Log.Debug($"Unknown key name {result}, ignoring sequence");
                 return;
             }
-            result = result_key.ToString();
+            result = result_key.PrintableResult;
         }
         string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
 
@@ -299,11 +299,11 @@ public class SequenceNode
         KeySequence keys = new KeySequence{ sequence[0] };
         if ((flags & Search.IgnoreCase) != 0 && sequence[0].IsPrintable)
         {
-            Key upper = new Key(sequence[0].ToString().ToUpper());
+            Key upper = new Key(sequence[0].PrintableResult.ToUpper());
             if (upper != sequence[0])
                 keys.Add(upper);
 
-            Key lower = new Key(sequence[0].ToString().ToLower());
+            Key lower = new Key(sequence[0].PrintableResult.ToLower());
             if (lower != sequence[0])
                 keys.Add(lower);
         }

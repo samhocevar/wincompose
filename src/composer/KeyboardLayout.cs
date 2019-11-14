@@ -152,7 +152,7 @@ public static class KeyboardLayout
     /// </summary>
     public static Key KeyToAltGrVariant(Key key)
     {
-        if (m_possible_altgr_keys.TryGetValue(key.ToString(), out var result))
+        if (m_possible_altgr_keys.TryGetValue(key.PrintableResult, out var result))
             return new Key(result);
         return null;
     }
