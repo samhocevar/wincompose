@@ -144,14 +144,17 @@ static class Composer
             // actually AltGr.
             is_altgr |= is_keyup && m_control_down_was_altgr;
 
-            m_control_down_was_altgr = is_keydown && is_altgr;
+            if (is_altgr)
+            {
+                m_control_down_was_altgr = is_keydown;
 
-            // Eat the key if one of our compose keys is AltGr
-            if (is_altgr && Settings.ComposeKeys.Value.Contains(new Key(VK.RMENU)))
-                goto exit_discard_key;
+                // Eat the key if one of our compose keys is AltGr
+                if (Settings.ComposeKeys.Value.Contains(new Key(VK.RMENU)))
+                    goto exit_discard_key;
 
-            // Otherwise ignore the key
-            goto exit_forward_key;
+                // Otherwise ignore the keypress, it’s not for us
+                goto exit_forward_key;
+            }
         }
 
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
