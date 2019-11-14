@@ -146,8 +146,8 @@ static class Composer
 
             m_control_down_was_altgr = is_keydown && is_altgr;
 
-            // Eat the key if our compose key is altgr
-            if (is_altgr && m_compose_key_is_altgr)
+            // Eat the key if one of our compose keys is AltGr
+            if (is_altgr && Settings.ComposeKeys.Value.Contains(new Key(VK.RMENU)))
                 goto exit_discard_key;
 
             // Otherwise ignore the key
