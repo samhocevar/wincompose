@@ -524,7 +524,7 @@ exit_forward_key:
             string tosend = "";
             foreach (Key k in m_sequence)
                 if (k.IsPrintable) // FIXME: what if the key is e.g. left arrow?
-                    tosend += k;
+                    tosend += k.PrintableResult;
 
             if (!string.IsNullOrEmpty(tosend))
             {
@@ -730,14 +730,10 @@ exit_forward_key:
     }
 
     private static void SendKeyDown(VK vk, KEYEVENTF flags = 0)
-    {
-        NativeMethods.keybd_event(vk, 0, flags, 0);
-    }
+        => NativeMethods.keybd_event(vk, 0, flags, 0);
 
     private static void SendKeyUp(VK vk, KEYEVENTF flags = 0)
-    {
-        NativeMethods.keybd_event(vk, 0, KEYEVENTF.KEYUP | flags, 0);
-    }
+        => NativeMethods.keybd_event(vk, 0, KEYEVENTF.KEYUP | flags, 0);
 
     private static void SendKeyPress(VK vk, KEYEVENTF flags = 0)
     {
