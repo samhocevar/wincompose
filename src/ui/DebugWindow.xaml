@@ -33,7 +33,7 @@
 
     <x:Code>
         <![CDATA[
-            private void OnLeftButtonDown(object sender, MouseButtonEventArgs e) { DragMove(); }
+            private void OnLeftButtonDown(object sender, MouseButtonEventArgs e) { if (e.ChangedButton == MouseButton.Left) DragMove(); }
             private void OnDeactivated(object sender, EventArgs e) { (sender as Window).Topmost = true; }
             private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e) { Hide(); e.Cancel = true; }
         ]]>
