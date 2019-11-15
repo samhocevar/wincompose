@@ -149,6 +149,7 @@ void __cdecl fix_file(wchar_t const *path)
 
     // Fix some additional task settings
     fix_tag(buf, L"RunLevel", L"HighestAvailable");
+    fix_tag(buf, L"MultipleInstancesPolicy", L"Parallel");
     fix_tag(buf, L"DisallowStartIfOnBatteries", L"false");
     fix_tag(buf, L"StopIfGoingOnBatteries", L"false");
     fix_tag(buf, L"StopOnIdleEnd", L"false");
