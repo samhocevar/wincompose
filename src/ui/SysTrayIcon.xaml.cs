@@ -100,7 +100,7 @@ namespace WinCompose
             Application.RemoteControl.ExitEvent -= OnExitEvent;
             Application.RemoteControl.OpenEvent -= OnOpenEvent;
 
-            Visibility = System.Windows.Visibility.Collapsed;
+            Visibility = Visibility.Collapsed;
 
             m_cleanup_timer?.Stop();
             m_cleanup_timer = null;
@@ -168,7 +168,7 @@ namespace WinCompose
                     // not worth it, because restarting the app is a hack and whatever
                     // reason the user may have, it’s because of a bug or a limitation
                     // in WinCompose that we need to fix.
-                    Visibility = System.Windows.Visibility.Collapsed;
+                    Visibility = Visibility.Collapsed;
                     Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
                     Application.Current.Shutdown();
                     break;
@@ -267,7 +267,7 @@ namespace WinCompose
         {
             if (m_dirty.Get())
             {
-                Visibility = Settings.DisableIcon.Value ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
+                Visibility = Settings.DisableIcon.Value ? Visibility.Collapsed : Visibility.Visible;
                 Icon = GetCurrentIcon();
                 ToolTipText = GetCurrentToolTip();
 
