@@ -93,9 +93,13 @@ public class KeySequence : List<Key>
     /// Convert sequence to a reader-friendly string.
     /// </summary>
     public string FriendlyName
-    {
-        get { return string.Join(", ", Array.ConvertAll(ToArray(), x => x.FriendlyName)); }
-    }
+        => string.Join(", ", Array.ConvertAll(ToArray(), x => x.FriendlyName));
+
+    /// <summary>
+    /// Convert sequence to a printable string. Non-printable characters are omitted
+    /// </summary>
+    public string PrintableResult
+        => string.Join("", Array.ConvertAll(ToArray(), x => x.PrintableResult));
 
     /// <summary>
     /// Construct a key sequence from a serialized string.

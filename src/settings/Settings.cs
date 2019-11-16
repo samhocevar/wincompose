@@ -325,7 +325,7 @@ namespace WinCompose
         {
             if (!UnicodeInput.Value)
                 return false;
-            var seq_string = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
             return m_match_gen_prefix.Match(seq_string).Success;
         }
 
@@ -333,7 +333,7 @@ namespace WinCompose
         {
             if (!UnicodeInput.Value)
                 return false;
-            var seq_string = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
             return m_match_gen_seq.Match(seq_string).Success;
         }
 
@@ -341,7 +341,7 @@ namespace WinCompose
         {
             if (!UnicodeInput.Value)
                 return "";
-            var seq_string = sequence.ToString().Replace(", ", "").ToLower(CultureInfo.InvariantCulture);
+            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
             var m = m_match_gen_seq.Match(seq_string);
             if (!m.Success)
                 return "";
