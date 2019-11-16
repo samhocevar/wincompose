@@ -53,8 +53,6 @@ namespace WinCompose
             try
             {
                 var app = new Application();
-                var icon = new SysTrayIcon();
-                app.Exit += (o, e) => icon.Dispose();
                 app.Run();
             }
             finally

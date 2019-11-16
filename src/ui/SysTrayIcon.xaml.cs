@@ -14,6 +14,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
@@ -47,12 +48,11 @@ namespace WinCompose
         public SysTrayIcon()
         {
             InitializeComponent();
+            Loaded += OnLoaded;
         }
 
-        public override void EndInit()
+        private void OnLoaded(object sender, RoutedEventArgs args)
         {
-            base.EndInit();
-
             Application.RemoteControl.DisableEvent += OnDisableEvent;
             Application.RemoteControl.ExitEvent += OnExitEvent;
             Application.RemoteControl.OpenEvent += OnOpenEvent;

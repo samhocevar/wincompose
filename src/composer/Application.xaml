@@ -7,6 +7,8 @@
              DispatcherUnhandledException="OnUnhandledException"
              mc:Ignorable="d">
     <Application.MainWindow>
-        <wc:RemoteControl x:Name="RC"/>
+        <wc:RemoteControl x:Name="RC">
+            <wc:SysTrayIcon/>
+        </wc:RemoteControl>
     </Application.MainWindow>
 </Application>
