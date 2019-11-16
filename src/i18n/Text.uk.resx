@@ -118,354 +118,354 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Autodetektera</value>
+    <value>Самовизначu</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Vänster Alt</value>
+    <value>Ліве Инше</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Höger Alt</value>
+    <value>Праве Инше</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Vänster Ctrl</value>
+    <value>Ліва Контроля</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Höger Ctrl</value>
+    <value>Права Контроля</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Vänster Win</value>
+    <value>Ліві Вікна</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Höger Win</value>
+    <value>Праві Вікна</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
-    <value>Caps Lock</value>
+    <value>Заголовні</value>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
-    <value>Num Lock</value>
+    <value>Числова</value>
   </data>
   <data name="KeyPause" xml:space="preserve">
-    <value>Pause</value>
+    <value>Відгал</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>Meny</value>
+    <value>Перелік</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+    <value>Вихід</value>
   </data>
   <data name="KeyConvert" xml:space="preserve">
-    <value>Konvertering</value>
+    <value>Виміна</value>
   </data>
   <data name="KeyNonConvert" xml:space="preserve">
-    <value>Icke-konvertering</value>
+    <value>Безвиміна</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
-    <value>Scroll Lock</value>
+    <value>Прокрутна</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>Mellanslag</value>
+    <value>Пробіл</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
-    <value>Enter</value>
+    <value>Зворот</value>
   </data>
   <data name="Composing" xml:space="preserve">
-    <value>Komposering</value>
+    <value>Складова</value>
   </data>
   <data name="UseXorgRules" xml:space="preserve">
-    <value>Använd sekvenser från Xorg-projektet</value>
+    <value>Вжий ряди з проєкту Xorg</value>
   </data>
   <data name="UseXorgRulesToolTip" xml:space="preserve">
-    <value>Använder de 3 000 komponeringssekvenserna från Xorg-projektet (httt://www.x.org/). Dessa är de sekvenser som vanligtvis hittas på vanliga Linux-system.</value>
+    <value>Вжий 3000 рядів складових з проєкту Xorg (http://www.x.org/). Вони зазвичай уставні в Лінуксі.</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
-    <value>Användarsekvenser från XCompose-projektet</value>
+    <value>Вжий ряди з проєкту XCompose</value>
   </data>
   <data name="UseXComposeRulesToolTip" xml:space="preserve">
-    <value>Använder de 1 000 komponeringssekvenserna från opensource XCompose-projektet (htttps://githug.com/kragen/xcompose). Dessa sekvenser kan ibland hamna i konflikt med de från Xorg-projektet.</value>
+    <value>Вжий 1000 рядів складових з відкритого вихідника проєкта XCompose (https://github.com/kragen/xcompose). Ці ряди можуть подеколи мати сутичку з Xorg.</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
-    <value>Använder WinCompose-sekvenser för Emoijer</value>
+    <value>Вжий ряди емоджей від WinCompose</value>
   </data>
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
-    <value>Använd komposeringssekvenser för Emojier som tillhandahålls av WinComposes skapare och medarbetare.</value>
+    <value>Вжити ряди складові для емоджей від авторів і внесників WinComposeʼа.</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
-    <value>Felsökningsfönster</value>
+    <value>Вікно відвади</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Visa sekvenser…</value>
+    <value>Покажи ряди…</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Inaktivera</value>
+    <value>Вимкни</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Starta om</value>
+    <value>Перепочни</value>
   </data>
   <data name="DonationPage" xml:space="preserve">
-    <value>Doneringssida</value>
+    <value>Сторінка пожертв</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Besök hemsidan</value>
+    <value>Відвідай вебсторінку</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Stäng</value>
+    <value>Вийди</value>
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
-    <value>Unicode-tecken</value>
+    <value>Знаки єднопису</value>
   </data>
   <data name="Sequences" xml:space="preserve">
-    <value>Sekvenser</value>
+    <value>Ряди</value>
   </data>
   <data name="SwapOnInvalid" xml:space="preserve">
-    <value>Försök byta plats på de två tangenterna</value>
+    <value>Пробуй міняти дві клавіші</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Försök byta plats på tangenterna i en sekvens med två tangenter. Exempelvis om Compose E A är en ogiltig sekvens prova Compose A E istället.</value>
+    <value>Minjaj dvi klavici. Napryklad, jakctco Skladova E A nedijsnyj rjad, todi sprobuvty Skladova A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Sökfilter:</value>
+    <value>Цідило пошуку:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Compose-tangent:</value>
+    <value>Клавіша Складова:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Välj tangenten som ska fungera som Compose-tangent.</value>
+    <value>Вибери клавішу за Складову.</value>
   </data>
   <data name="ResetDelay" xml:space="preserve">
-    <value>Fördröjning:</value>
+    <value>Затрим:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
-    <value>Avancerad Unicode-inmatning</value>
+    <value>Додаткові єднописні вставки</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Aktivera Unicode-inmatning för alla tecken, även de som saknar definierad komponeringssekvens. Till exempel kommer följande sekvens att mata ut tecknet U+1A3F: Compose U 1 A 3 F Enter</value>
+    <value>Вмикни єднописну вставку для всіх знків, навіть без визначень ряду складового. Вистав знак U+1A3F, коли настикати: Складова U 1 A 3 F Ввід</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>För ogiltiga sekvenser</value>
+    <value>При недійсних рядів</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>Fall tillbaka på icke-skiftlägeskänsliga träffar</value>
+    <value>Нехтуй розмір букв</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>Om den angivna sekvensen inte existerar, men det finns en som bara skiljer sig gällande skiftläge, korrigera det automatiskt.</value>
+    <value>Якщо введеного ряду нема, але є з иншим розміром букв — самовиправляй.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Förkasta alla inmatade tecken</value>
+    <value>Скасуй всі здруковані знаки</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Om den angivna sekvensen inte existerar, förkasta alla tecken som matats in. Standardbeteendet är att mata ut tecknen som om Compose-tangenten inte hade använts.</value>
+    <value>Скасуй всі здруковані знаки, якщо введеного ряда нема. Инакше викладаю здруковані знаки, гейби і не тиснув Складову.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Skicka ut ett pip</value>
+    <value>Видай гудок</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>Om den inmatade sekvensen inte existerar, skicka ut ett systemljud.</value>
+    <value>Видай уладного гудка, якщо нема введеного ряда.</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Gränssnittsspråk:</value>
+    <value>Мова обопіля:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Välj språket som WinCompose använder i gränssnittet. Som standard används operativsystemets språk.</value>
+    <value>Вибери мову обопіля до WinCompose. За уставну ся бере мова твойого уладу.</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Stäng</value>
+    <value>Закрий</value>
   </data>
   <data name="CopyToClipboard" xml:space="preserve">
-    <value>Kopiera till urklipp</value>
+    <value>Відбий до клавіятури</value>
   </data>
   <data name="Emoji" xml:space="preserve">
-    <value>Emoji</value>
+    <value>Зобраголиця</value>
   </data>
   <data name="Apply" xml:space="preserve">
-    <value>Verkställ</value>
+    <value>Застосуй</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Upprätthåll ursprunglig beteende för Compose-tangenten</value>
+    <value>Збережи уставну поведінку Складової</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Detta säger till WinCompose att göra en ansträngning att behålla originaltangentens beteende. Till exempel skulle genvägen Alt-Tab fortfarande fungera även om Alt används som Compose-tangent.</value>
+    <value>Збережи першоповедінку клавіші! Виконуй, до прикладу, Инше-Виступ, навіть коли Инше є як Складова.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Infoga nollpunktsmellanslag i Office-program</value>
+    <value>Вноси пустого пробіла в застосунках Office</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Microsoft Office-program ändrar ibland dokumenttypsnittet automatiskt när vissa Unicode-tecken matas in. Denna funktion matar in ett osynligt tecken efter Unicode-tecknet för att kringgå detta fel.</value>
+    <value>Застосунки Microsoft Office подеколи на льоту змінюють черенка після введеня певних знаків єднопису. Вставляй невидимого знаку після знаку єднописа, аби уникати такого.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Emulera Caps Lock med båda Shift-tangenterna</value>
+    <value>Вдай Заголовних при настиску двох Пересувних</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig slå på Caps Lock genom att trycka på båda Skift-tangenterna samtidigt.</value>
+    <value>Якщо Заголовні за Складової, то уставна поведінка клавіші недоступна. Верти Заголовну натиском двома Пересувними.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Skift-tangenten slår av Caps Lock</value>
+    <value>Вимкни Заголовні Пересувною</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock genom att trycka på Skift-tangenten.</value>
+    <value>Якщо Заголовні за Складової, то уставна поведінка недоступна. Вимкни Заголовних натиском Пересувної.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
-    <value>Caps Lock gör alltid om bokstäver till versaler</value>
+    <value>Заголовна завше заголовнює букви</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>När Caps Lock är på, kommer inmatning av en bokstav med accenter så som ”é” kommer alltid att mata ut motsvarande versal bokstav, i detta fall ”É”.</value>
+    <value>При дійсної Заголовної завше заголовнюй і складені букви при друці, як-от з „é” в „É”.</value>
   </data>
   <data name="Categories" xml:space="preserve">
-    <value>Kategorier</value>
+    <value>Вибірки</value>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
-    <value>I valda kategorier</value>
+    <value>Ві вибраній вибірці</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Alternativ — WinCompose</value>
+    <value>Лашти — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
-    <value>Alternativ…</value>
+    <value>Лашти…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} på {0} ({1} sekvenser)</value>
+    <value>WinCompose в{2} на {0} ({1} рядів)</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>Allmänt</value>
+    <value>Загал</value>
   </data>
   <data name="Behavior" xml:space="preserve">
-    <value>Beteende</value>
+    <value>Поведінка</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Sekvenser — WinCompose</value>
+    <value>Ряди — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Användardefinierade makron</value>
+    <value>Довжини корця</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
-    <value>WinCompose är inaktiverat</value>
+    <value>WinCompose вимкнений</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
-    <value>Infoga</value>
+    <value>Внести</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Testinmatning</value>
+    <value>Випроба друку</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
-    <value>Justeringar</value>
+    <value>Підправки</value>
   </data>
   <data name="DelaySeconds" xml:space="preserve">
-    <value>{0} sekunder</value>
+    <value>{0} мить/і/ей</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>Om</value>
+    <value>Про</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Hämta WinCompose {0}</value>
+    <value>Вивантаж WinCompose {0}</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
-    <value>Om WinCompose</value>
+    <value>Про WinCompose</value>
   </data>
   <data name="Programming" xml:space="preserve">
-    <value>Programmering</value>
+    <value>Проґрама</value>
   </data>
   <data name="Translators" xml:space="preserve">
-    <value>Översättning</value>
+    <value>Переклад</value>
   </data>
   <data name="Authors" xml:space="preserve">
-    <value>Skapare</value>
+    <value>Автори</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Licens</value>
+    <value>Дозвіл</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose behöver startas om för att några av ändringarna ska börja gälla.</value>
+    <value>Зміни потребують WinCompose перепочати.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
-    <value>Rapportera en bugg</value>
+    <value>Повідом про ваду</value>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>Hjälp</value>
+    <value>Поміч</value>
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
-    <value>Uppdateringar är tillgängliga.</value>
+    <value>Доступні онови.</value>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
-    <value>Användardefinierade sekvenser</value>
+    <value>Ряди корця</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
-    <value>Redigera</value>
+    <value>Зміни</value>
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
-    <value>Läs om</value>
+    <value>Перевантаж</value>
   </data>
   <data name="AllowInjected" xml:space="preserve">
-    <value>Tillåt inskjutna tangenter</value>
+    <value>Дозволь чужорідні дії клавіш</value>
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
-    <value>Hoppa inte över tangent som skickas av andra programvaror så som AutoHotKey eller Synergy</value>
+    <value>Не нехтуй задіяні клавіші від виробів виду AutoHotkey чи Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Print Screen</value>
+    <value>Зняти Заставницю</value>
   </data>
   <data name="KeyDisabled" xml:space="preserve">
-    <value>Inaktivera</value>
+    <value>Вимкнено</value>
   </data>
   <data name="CheckUpdates" xml:space="preserve">
-    <value>Automatiskt sök efter uppdateringar</value>
+    <value>Самоперевіряй на онови</value>
   </data>
   <data name="CheckUpdatesToolTip" xml:space="preserve">
-    <value>Om markerat kommer WinCompose regelbundet försöka ansluta till Internet för att finna nya versioner. Uppdateringar installeras inte automatiskt.</value>
+    <value>Як вмикнене, WinComposeʼо, перевіряй мережею на нові відміни! Онови ся не самоставлять.</value>
   </data>
   <data name="KeepIconVisible" xml:space="preserve">
-    <value>Försök att alltid hålla ikonen i notifieringsområdet synlig</value>
+    <value>Тримай іконку видимою в області звісток</value>
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
-    <value>Som standard kommer Windows försöka ta bort ikonen från notifieringsområdet efter ett kort tag. Detta alternativ försöker hålla det synligt hela tiden.</value>
+    <value>Уставно Вікна уставно видаляють з області звісток іконку за короткий проміжок часу. Най іконка ся видніє завше.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
-    <value>Förändra…</value>
+    <value>Зміни…</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
-    <value>Var vänlig att tryck på en tangent för att använda denna som din Compose-tangent.</value>
+    <value>Тицьни ту клавішу, котра буде за Складову.</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
-    <value>Lägg till i favoriter</value>
+    <value>Додай до обраних</value>
   </data>
   <data name="DisableIcon" xml:space="preserve">
-    <value>Stäng av ikonen för notifieringsområdet</value>
+    <value>Вимкни іконку з области звісток</value>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>Om markerat kommer WinCompose inte längre visa en ikon i notiferingsområdet. Det enda sättet att öppna gränssnittet för WinCompose blir genom att öppna ”WinCompose Settings” och ”Wincompose Sequences” i Startmenyn.</value>
+    <value>Як вмикнене, то, WinComposeʼо, не показуй вже іконку в области звісток. Йму відкривати пообпіля WinComposeʼа через „WinCompose Settings” and „WinCompose Sequences” в Пусці.</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
-    <value>Home</value>
+    <value>Початок</value>
   </data>
   <data name="KeyEnd" xml:space="preserve">
-    <value>End</value>
+    <value>Кінець</value>
   </data>
   <data name="KeyTab" xml:space="preserve">
-    <value>Tab</value>
+    <value>Виступ</value>
   </data>
   <data name="DelayDisabled" xml:space="preserve">
-    <value>Avstängd</value>
+    <value>Без затриму</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Avancerat</value>
+    <value>Поглиблене</value>
   </data>
   <data name="IgnoreRegex" xml:space="preserve">
-    <value>Ignorera fönster som matchar detta regelbundna uttryck:</value>
+    <value>Нехтувати вікна за сталим виразом:</value>
   </data>
   <data name="IgnoreRegexToolTip" xml:space="preserve">
-    <value>WinCompose kommer stängas av helt när nuvarande fönsterklass eller fönsternamn matchar detta regelbundna uttryck.</value>
+    <value>Вимкни ся, як вікно з класом чи імʼєм ся збіже з сталим виразом.</value>
   </data>
   <data name="AlwaysCompose" xml:space="preserve">
-    <value>Alternativ Compose-tangent är alltid Compose</value>
+    <value>Іншеможлива Складова завше є Складовою</value>
   </data>
   <data name="AlwaysComposeToolTip" xml:space="preserve">
-    <value>Om markerat kommer alla Compose-tangenter behandlas som Compose i en sekvens. Som standard kommer endast den tangent som trycks på först att agera som Compose medan alternativa Compose-tangenter behåller sina ursprungliga roller.</value>
+    <value>Як вмикнене, то в ряду буде ся вватати за Складову. А уставно лише перша є Складовою, а іншеможливі Складові мати ймуть першовласну дію.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
-    <value>Speciella tack</value>
+    <value>Особливі подяки</value>
   </data>
   <data name="RemoveFromFavorites" xml:space="preserve">
-    <value>Ta bort från favoriter</value>
+    <value>Видалити з обраного</value>
   </data>
   <data name="Favorites" xml:space="preserve">
-    <value>Favoriter</value>
+    <value>Обрані</value>
   </data>
 </root>

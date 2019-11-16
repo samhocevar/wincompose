@@ -465,4 +465,7 @@
   <data name="RemoveFromFavorites" xml:space="preserve">
     <value>Boga dae sos preferidos</value>
   </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Preferidos</value>
+  </data>
 </root>

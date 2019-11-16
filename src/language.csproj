@@ -192,6 +192,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.sv.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.uk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.uk.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.zh-CHS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -472,6 +477,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.sv.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.uk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.uk.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.zh-CHS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -640,6 +650,11 @@
     <EmbeddedResource Include="unicode\Category.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.sv.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.uk.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.zh-CHS.resx">
@@ -924,6 +939,11 @@
     <EmbeddedResource Include="i18n\Text.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.sv.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.uk.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.zh-CHS.resx">

@@ -465,4 +465,7 @@
   <data name="RemoveFromFavorites" xml:space="preserve">
     <value>Supprimer des favoris</value>
   </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favoris</value>
+  </data>
 </root>

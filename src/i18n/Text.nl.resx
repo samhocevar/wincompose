@@ -465,4 +465,7 @@
   <data name="RemoveFromFavorites" xml:space="preserve">
     <value>Verwijderen uit favorieten</value>
   </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Categorienaam (Unicode karakters, Emoji, Macro's, Favorieten)</value>
+  </data>
 </root>

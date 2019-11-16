@@ -105,7 +105,7 @@ Name: "sk"; MessagesFile: "compiler:Languages/Slovak.isl"
 Name: "sl"; MessagesFile: "compiler:Languages/Slovenian.isl"
 Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; Name: "tr"; MessagesFile: "compiler:Languages/Turkish.isl"
-; Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
+Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
 
 ; FIXME: these languages used to be in Inno Setup 5 but are no longer here
 ; el / Greek.isl
