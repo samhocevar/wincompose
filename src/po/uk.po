@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20191111\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-14 12:41+0000\n"
+"PO-Revision-Date: 2019-11-16 09:04+0000\n"
 "Last-Translator: pt <toplinden@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/wincompose/"
 "master/uk/>\n"
@@ -23,27 +23,27 @@ msgstr ""
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Самовизначи"
+msgstr "Самовизначu"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr "Лівий Альт"
+msgstr "Ліве Инше"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Правий Альт"
+msgstr "Праве Инше"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Лівий Контроль"
+msgstr "Ліва Контроля"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr "Правий Контроль"
+msgstr "Права Контроля"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
@@ -112,28 +112,28 @@ msgstr "Складова"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr "Вжити ряди з проєкту Xorg"
+msgstr "Вжий ряди з проєкту Xorg"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Вжити 3000 рядів складових з проєкту Xorg (http://www.x.org/). Вони зазвичай "
+"Вжий 3000 рядів складових з проєкту Xorg (http://www.x.org/). Вони зазвичай "
 "уставні в Лінуксі."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr "Вжити ряди з проєкту XCompose"
+msgstr "Вжий ряди з проєкту XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
 msgstr ""
-"Вжити 1000 рядів складових з відкритого вихідника проєкта XCompose "
+"Вжий 1000 рядів складових з відкритого вихідника проєкта XCompose "
 "(https://github.com/kragen/xcompose). Ці ряди можуть подеколи мати сутичку з "
 "Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "Вжити ряди емоджей від WinCompose"
+msgstr "Вжий ряди емоджей від WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
@@ -151,7 +151,7 @@ msgstr "Покажи ряди…"
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr "Спини"
+msgstr "Вимкни"
 
 #: i18n/Text.resx:229 ID:Restart
 msgid "Restart"
@@ -160,7 +160,7 @@ msgstr "Перепочни"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr "Сторінка пожертви"
+msgstr "Сторінка пожертв"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
@@ -187,8 +187,8 @@ msgstr "Пробуй міняти дві клавіші"
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
 msgstr ""
-"Пробуй міняти два клавіші. Наприклад, якщо Складова Е А недійсний ряд, тоді "
-"спробувти Складова А Е."
+"Minjaj dvi klavici. Napryklad, jakctco Skladova E A nedijsnyj rjad, todi "
+"sprobuvty Skladova A E."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -246,7 +246,7 @@ msgstr "Видай гудок"
 
 #: i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "Видай уладного гудна, коли нема введеного ряда."
+msgstr "Видай уладного гудка, якщо нема введеного ряда."
 
 #: i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -255,7 +255,7 @@ msgstr "Мова обопіля:"
 #: i18n/Text.resx:317 ID:LanguageToolTip
 msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
 msgstr ""
-"Вибери мову обопіля до WinCompose. За уставну ся бере мова вашого уладу."
+"Вибери мову обопіля до WinCompose. За уставну ся бере мова твойого уладу."
 
 #. Close the settings window
 #: i18n/Text.resx:321 ID:Close
@@ -270,7 +270,7 @@ msgstr "Відбий до клавіятури"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "Емоджі"
+msgstr "Зобраголиця"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
@@ -285,8 +285,8 @@ msgstr "Збережи уставну поведінку Складової"
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
 msgstr ""
-"Збережи , WinComposeʼо, першоповедінку клавіші! Працюй, до прикладу, Альт-"
-"Виступ, навіть коли Альт є як Складова."
+"Збережи першоповедінку клавіші! Виконуй, до прикладу, Инше-Виступ, навіть "
+"коли Инше є як Складова."
 
 #: i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -311,12 +311,12 @@ msgstr ""
 
 #: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "Спини Заголовні Пересувною"
+msgstr "Вимкни Заголовні Пересувною"
 
 #: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
 msgstr ""
-"Якщо Заголовні за Складової, то уставна поведінка недоступна. Вивертай "
+"Якщо Заголовні за Складової, то уставна поведінка недоступна. Вимкни "
 "Заголовних натиском Пересувної."
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
@@ -336,7 +336,7 @@ msgstr "Вибірки"
 
 #: i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr "Ві вибраної вибірці"
+msgstr "Ві вибраній вибірці"
 
 #. The title of the Options window
 #: i18n/Text.resx:385 ID:Options
@@ -374,7 +374,7 @@ msgstr "Довжини корця"
 
 #: i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr "WinCompose спинений"
+msgstr "WinCompose вимкнений"
 
 #. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
@@ -467,11 +467,11 @@ msgstr "Перевантаж"
 
 #: i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr "Дозволь чужорідні клавіші"
+msgstr "Дозволь чужорідні дії клавіш"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr "Не нехтуй задіяні клавіші від виробів штибу AutoHotkey чи Synergy"
+msgstr "Не нехтуй задіяні клавіші від виробів виду AutoHotkey чи Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
@@ -481,7 +481,7 @@ msgstr "Зняти Заставницю"
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr "Спинений"
+msgstr "Вимкнено"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
@@ -510,7 +510,7 @@ msgstr "Зміни…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr "Клацни ту клавішу, котра буде за Складову."
+msgstr "Тицьни ту клавішу, котра буде за Складову."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
@@ -519,12 +519,12 @@ msgstr "Додай до обраних"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr "Прибери іконку з області звісток"
+msgstr "Вимкни іконку з области звісток"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid "If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
-"Як вмикнене, то, WinComposeʼо, не показуй вже іконку в області звісток. Йму "
+"Як вмикнене, то, WinComposeʼо, не показуй вже іконку в области звісток. Йму "
 "відкривати пообпіля WinComposeʼа через „WinCompose Settings” and „WinCompose "
 "Sequences” в Пусці."
 
@@ -556,12 +556,11 @@ msgstr "Поглиблене"
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr "Нехтувати вікна за сталим вираом:"
+msgstr "Нехтувати вікна за сталим виразом:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid "WinCompose will be completely disabled when the current window class or window name matches this regular expression."
-msgstr ""
-"Спини ся, WinComposeʼо, як вікно з класом чи імʼєм ся збіже з сталим виразом."
+msgstr "Вимкни ся, як вікно з класом чи імʼєм ся збіже з сталим виразом."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
@@ -763,7 +762,7 @@ msgstr "Вивантаж і встанови .NET Framework 3.5 Service Pack 1"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:193
 msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
-msgstr "Як зробиш, гайда далі встановлювати."
+msgstr "Як зробиш, гайда сюди знов і далі встановлювати."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:284
