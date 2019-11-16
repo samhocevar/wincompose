@@ -237,6 +237,15 @@ cat >> res/.contributors.html << EOF
 </ul>
 <h3>Donations</h3>
 <ul>
+<li>Aaron Mayzes</li>
+<li>André Rauscher</li>
+<li>Casper Clausen</li>
+<li>Anonyme</li>
+<li>Ben Babcock</li>
+<li>Francois Conil</li>
+<li>Edward Palmer</li>
+<li>Bryan Mills</li>
+<li>Grigory Rechistov</li>
 <li>Matt Proud</li>
 <li>Pascal Heitz</li>
 <li>Jacob Dreesen</li>
