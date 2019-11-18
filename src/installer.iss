@@ -78,6 +78,11 @@ Source: "rules\Emoji.txt"; DestDir: "{app}\res"
 Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 
 [Languages]
+; Put English first, because Inno Setup will apparently fall back to the first
+; language specified in this section when the current Windows UI language is
+; not supported.
+Name: "en"; MessagesFile: "compiler:Default.isl"
+
 ; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.islu"
 Name: "pt_BR"; MessagesFile: "compiler:Languages/BrazilianPortuguese.isl"
 ; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
@@ -85,7 +90,6 @@ Name: "pt_BR"; MessagesFile: "compiler:Languages/BrazilianPortuguese.isl"
 Name: "cs"; MessagesFile: "compiler:Languages/Czech.isl"
 Name: "da"; MessagesFile: "compiler:Languages/Danish.isl"
 Name: "nl"; MessagesFile: "compiler:Languages/Dutch.isl"
-Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "fi"; MessagesFile: "compiler:Languages/Finnish.isl"
 Name: "fr"; MessagesFile: "compiler:Languages/French.isl"
 Name: "de"; MessagesFile: "compiler:Languages/German.isl"
