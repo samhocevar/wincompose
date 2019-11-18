@@ -19,3 +19,6 @@
 [submodule "src/3rdparty/wpf-notify-icon"]
 	path = src/3rdparty/wpf-notify-icon
 	url = ../fork-wpf-notify-icon.git
+[submodule "src/3rdparty/innosetup"]
+	path = src/3rdparty/innosetup
+	url = ../../jrsoftware/issrc.git
