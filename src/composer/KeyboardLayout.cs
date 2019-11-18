@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -26,13 +26,33 @@ public static class KeyboardLayout
     /// </summary>
     private static void AnalyzeLayout()
     {
-        m_possible_dead_keys = new Dictionary<string, int>();
-        m_possible_altgr_keys = new Dictionary<string, string>();
+        // Compute an input locale identifier suitable for ToUnicodeEx(). This is
+        // necessary because some IMEs interfer with ToUnicodeEx, e.g. Japanese,
+        // so instead we pretend we use an English US keyboard.
+        // I could check that Korean (Microsoft IME) and Chinese Simplified
+        // (Microsoft Pinyin) are not affected.
+
+        // High bytes are the device ID, low bytes are the language ID
+        var current_device_id = (ulong)m_current_layout >> 16;
+        var japanese_lang_id = NativeMethods.MAKELANG(LANG.JAPANESE, SUBLANG.JAPANESE_JAPAN);
+        if (current_device_id == japanese_lang_id)
+        {
+            var english_lang_id = NativeMethods.MAKELANG(LANG.ENGLISH, SUBLANG.DEFAULT);
+            m_transformed_hkl = (IntPtr)((english_lang_id << 16) | english_lang_id);
+        }
+
+        // Check that the transformed HKL actually works; otherwise, revert.
+        if (VkToUnicode(VK.SPACE) != " ")
+            m_transformed_hkl = m_current_layout;
 
         // Try every keyboard key followed by space to see which ones are
         // dead keys. This way, when later we want to know if a dead key is
-        // currently buffered, we just call ToUnicode(VK.SPACE) and match
-        // the result with what we found here.
+        // currently buffered, we just call VkToUnicode(VK.SPACE) and match
+        // the result with what we found here. This code also precomputes
+        // characters obtained with AltGr.
+        m_possible_dead_keys = new Dictionary<string, int>();
+        m_possible_altgr_keys = new Dictionary<string, string>();
+
         string[] no_altgr = new string[0x200];
         byte[] state = new byte[256];
 
@@ -81,8 +101,8 @@ public static class KeyboardLayout
     }
 
     /// <summary>
-    /// Save the dead key if there is one, since we'll be calling ToUnicode
-    /// later on. This effectively removes any dead key from the ToUnicode
+    /// Save the dead key if there is one, since we'll be calling ToUnicodeEx
+    /// later on. This effectively removes any dead key from the ToUnicodeEx
     /// internal buffer.
     /// </summary>
     public static void SaveDeadKey()
@@ -94,8 +114,8 @@ public static class KeyboardLayout
     }
 
     /// <summary>
-    /// Restore the previously saved dead key. This should restore the ToUnicode
-    /// internal buffer.
+    /// Restore the previously saved dead key. This should restore the
+    /// ToUnicodeEx internal buffer.
     /// </summary>
     public static void RestoreDeadKey()
     {
@@ -195,7 +215,7 @@ public static class KeyboardLayout
         const int buflen = 4;
         byte[] buf = new byte[2 * buflen];
         int ret = NativeMethods.ToUnicodeEx(vk, sc, keystate, buf, buflen,
-                                            flags, TransformedHkl);
+                                            flags, m_transformed_hkl);
         if (ret > 0 && ret < buflen)
         {
             return Encoding.Unicode.GetString(buf, 0, ret * 2);
@@ -273,32 +293,14 @@ public static class KeyboardLayout
     private static Dictionary<string, int> m_possible_dead_keys;
     private static Dictionary<string, string> m_possible_altgr_keys;
 
-    /// <summary>
-    /// Return an input locale identifier suitable for ToUnicodeEx(). This is
-    /// necessary because some IMEs interfer with ToUnicodeEx, e.g. Japanese,
-    /// so we pretend we use an English US keyboard.
-    /// I could check that Korean (Microsoft IME) and Chinese Simplified
-    /// (Microsoft Pinyin) are not affected.
-    /// </summary>
-    private static IntPtr TransformedHkl
-    {
-        get
-        {
-            // High bytes are the device ID, low bytes are the language ID
-            var current_device_id = (ulong)m_current_layout >> 16;
-            var japanese_lang_id = NativeMethods.MAKELANG(LANG.JAPANESE, SUBLANG.JAPANESE_JAPAN);
-            if (current_device_id == japanese_lang_id)
-            {
-                var english_lang_id = NativeMethods.MAKELANG(LANG.ENGLISH, SUBLANG.DEFAULT);
-                return (IntPtr)((english_lang_id << 16) | english_lang_id);
-            }
-            return m_current_layout;
-        }
-    }
-
     // Initialise with -1 to make sure the above dictionaries are
     // properly initialised even if the layout is found to be 0x0.
     private static IntPtr m_current_layout = new IntPtr(-1);
+
+    /// <summary>
+    /// Alternate layout to use with ToUnicodeEx
+    /// </summary>
+    private static IntPtr m_transformed_hkl;
 }
 
 }
