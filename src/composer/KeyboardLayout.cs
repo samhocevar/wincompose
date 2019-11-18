@@ -50,9 +50,11 @@ public static class KeyboardLayout
             string str_if_normal = VkToUnicode(vk, (SC)0, state, (LLKHF)0);
             string str_if_dead = VkToUnicode(VK.SPACE);
 
+            bool has_dead = str_if_dead != "" && str_if_dead != " ";
+
             // If the AltGr gives us a result and it’s different from without
             // AltGr, we need to remember it.
-            string str = str_if_dead != " " ? str_if_dead : str_if_normal;
+            string str = has_dead ? str_if_dead : str_if_normal;
             if (has_altgr)
             {
                 if (no_altgr[i - 0x200] != "" && str != "" && no_altgr[i - 0x200] != str)
@@ -64,12 +66,12 @@ public static class KeyboardLayout
             }
             else
             {
-                no_altgr[i] = str_if_dead != " " ? str_if_dead : str_if_normal;
+                no_altgr[i] = str;
             }
 
             // If the resulting string is not the space character, it means
             // that it was a dead key. Good!
-            if (str_if_dead != " ")
+            if (has_dead)
                 m_possible_dead_keys[str_if_dead] = i;
         }
 
@@ -171,7 +173,8 @@ public static class KeyboardLayout
         string str_if_normal = VkToUnicode(vk, sc, keystate, flags);
         string str_if_dead = VkToUnicode(VK.SPACE);
 
-        if (str_if_dead != " ")
+        // This indicates that vk was a dead key
+        if (str_if_dead != "" && str_if_dead != " ")
             return new Key(str_if_dead);
 
         // Special case: we don't consider characters such as Esc as printable
