@@ -198,6 +198,15 @@ if [ -d "/c/Program Files (x86)/Inno Setup 6/Languages" ]; then
     done
 fi
 
+for po in po/*.po; do
+    l="$(sed -ne 's/Language-Team: *//p' $po | tr -d '"' | cut -f1 -d' ')"
+    if [ -f "3rdparty/innosetup/Files/Languages/Unofficial/$l.isl" ]; then
+        if ! grep -q "$l[.]isl" installer.iss; then
+            echo "WARNING: $po exists and $l.isl exists in Unofficial Inno Setup but they are not mentioned in installer.iss"
+        fi
+    fi
+done
+
 #
 # Build translator list
 #
