@@ -1,0 +1,11 @@
+# Everything is text unless it isn’t
+* text=auto
+
+# This is really text
+*.cs text
+*.po text
+
+# This is Windows-specific
+*.sln text eol=crlf
+*.resx text eol=crlf
+

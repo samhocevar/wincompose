@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -11,63 +11,113 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System;
+using System.Diagnostics;
 using System.Windows;
-using System.ComponentModel;
-using System.Windows.Input;
+
 using WinCompose.i18n;
 
 namespace WinCompose
 {
-    public partial class SettingsWindowViewModel : ViewModelBase
+    public class SettingsWindowViewModel : ViewModelBase
     {
-        private DelegateCommand    m_close_command;
-        private string             m_selected_language;
-        private string             m_close_button_text;
-        private Visibility         m_warn_message_visibility;
+        private DelegateCommand m_close_command;
+        private DelegateCommand m_edit_command;
+        private KeySelector m_key_selector;
+        private string m_selected_language;
+        private string m_close_button_text;
+        private Visibility m_warn_message_visibility;
 
         public SettingsWindowViewModel()
         {
-            m_close_command             = new DelegateCommand(OnCloseCommandExecuted);
-            m_selected_language         = Settings.Language.Value;
-            m_close_button_text         = Text.Close;
-            m_warn_message_visibility   = Visibility.Collapsed;
+            m_close_command = new DelegateCommand(OnCloseCommandExecuted);
+            m_edit_command = new DelegateCommand(OnEditCommandExecuted);
+            m_selected_language = Settings.Language.Value;
+            m_close_button_text = Text.Close;
+            m_warn_message_visibility = Visibility.Collapsed;
         }
 
         public DelegateCommand CloseButtonCommand
         {
-            get { return m_close_command; }
-            private set { SetValue(ref m_close_command, value, "CloseButtonCommand"); }
+            get => m_close_command;
+            private set => SetValue(ref m_close_command, value, nameof(CloseButtonCommand));
+        }
+
+        public DelegateCommand EditButtonCommand
+        {
+            get => m_edit_command;
+            private set => SetValue(ref m_edit_command, value, nameof(EditButtonCommand));
         }
 
         public string SelectedLanguage
         {
-            get { return m_selected_language; }
-            set { SetValue(ref m_selected_language, value, "SelectedLanguage"); }
+            get => m_selected_language;
+            set => SetValue(ref m_selected_language, value, nameof(SelectedLanguage));
         }
 
-        public Key ComposeKey0
+        public Key ComposeKey0 { get => GetComposeKey(0); set => SetComposeKey(0, value); }
+        public Key ComposeKey1 { get => GetComposeKey(1); set => SetComposeKey(1, value); }
+
+        private Key GetComposeKey(int index)
         {
-            get { return Settings.ComposeKeys.Value[0]; }
-            set { Settings.ComposeKeys.Value[0] = value; }
+            return Settings.ComposeKeys.Value.Count > index ? Settings.ComposeKeys.Value[index] : null;
+        }
+
+        private void SetComposeKey(int index, Key key)
+        {
+            if (index < 0)
+                return;
+
+            // Rebuild a complete list to force saving configuration file
+            var newlist = new KeySequence(Settings.ComposeKeys.Value);
+            while (newlist.Count <= index)
+                newlist.Add(null);
+            newlist[index] = key;
+            Settings.ComposeKeys.Value = newlist;
+        }
+
+        public double DelayTicks
+        {
+            get => Settings.ResetDelay.Value == -1 ? 0 : Math.Log(Settings.ResetDelay.Value / 200.0, 1.6);
+            set
+            {
+                Settings.ResetDelay.Value = value == 0 ? -1 : (int)Math.Round(200 * Math.Pow(1.6, value));
+                OnPropertyChanged(nameof(DelayText));
+            }
+        }
+
+        public string DelayText
+        {
+            get
+            {
+                if (Settings.ResetDelay.Value < 0)
+                    return i18n.Text.DelayDisabled;
+
+                // Perform some aesthetic rounding on the displayed value
+                double display_value = Settings.ResetDelay.Value / 1000.0;
+                double round = Math.Pow(10, Math.Floor(Math.Log(display_value / 2, 10)));
+                display_value = Math.Round(display_value / round) * round;
+                return string.Format(i18n.Text.DelaySeconds, display_value);
+            }
         }
 
         public string CloseButtonText
         {
-            get { return m_close_button_text; }
-            private set { SetValue(ref m_close_button_text, value, "CloseButtonText"); }
+            get => m_close_button_text;
+            private set => SetValue(ref m_close_button_text, value, nameof(CloseButtonText));
         }
 
         public Visibility WarnMessageVisibility
         {
-            get { return m_warn_message_visibility; }
-            set { SetValue(ref m_warn_message_visibility, value, "WarnMessageVisibility"); }
+            get => m_warn_message_visibility;
+            set => SetValue(ref m_warn_message_visibility, value, nameof(WarnMessageVisibility));
         }
 
         protected override void OnPropertyChanged(string propertyName)
         {
             base.OnPropertyChanged(propertyName);
 
-            if(propertyName == "SelectedLanguage")
+            if (propertyName == nameof(SelectedLanguage))
             {
                 Settings.Language.Value = SelectedLanguage;
                 WarnMessageVisibility   = Visibility.Visible;
@@ -81,9 +131,22 @@ namespace WinCompose
             ((Window)parameter).Hide();
         }
 
-        private void OnRestartCommandExecuted(object parameter)
+        private void OnEditCommandExecuted(object parameter)
         {
-            System.Windows.Forms.Application.Restart();
+            if (int.TryParse(parameter as string ?? "", out var key_index))
+            {
+                m_key_selector = m_key_selector ?? new KeySelector();
+                m_key_selector.ShowDialog();
+                SetComposeKey(key_index, m_key_selector.Key ?? new Key(VK.DISABLED));
+                OnPropertyChanged("ComposeKey" + (parameter as string));
+            }
+        }
+
+        private static void OnRestartCommandExecuted(object parameter)
+        {
+            // FIXME: this could be refactored into SysTrayIcon.xaml.cs
+            Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
     }
 }

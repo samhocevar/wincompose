@@ -168,30 +168,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Tupý prízvuk `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisekúnd</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekunda</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekundy</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekundy</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekúnd</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 sekúnd</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Žiadne</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Zobraziť sekvencie…</value>
   </data>
@@ -201,26 +177,14 @@
   <data name="Restart" xml:space="preserve">
     <value>Reštartovať</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>História</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Navštívte stránky</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Ukončiť</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>vytvoril Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvencie</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sekvencia</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Vyhľadávací filter:</value>
@@ -236,9 +200,6 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Zadávanie kódov Unicode</value>
-  </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Umožniť zadanie kódu Unicode pre všetky znaky, dokonca aj tie, ktoré nemajú definovanú sekvenciu. Napríklad znak U + 1A3F by bolo možné napísať nasledujúcej sekvencií: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Pri zadaní neplatnej sekvencie</value>
@@ -269,12 +230,6 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Zavrieť</value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Kopírovať znak</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Popis:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Použiť</value>
@@ -345,9 +300,6 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Vychytávky</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milisekundy)</value>
-  </data>
   <data name="About" xml:space="preserve">
     <value>O programe</value>
   </data>
@@ -362,9 +314,6 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Preklad</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Špeciálne poďakovanie</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Licencia</value>
@@ -395,5 +344,8 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Print Screen</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Špeciálne poďakovanie</value>
   </data>
 </root>

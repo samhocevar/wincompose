@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Conversion</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Non-conversion</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -161,30 +167,6 @@
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
-  </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Accent grave</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 millisekunder</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekund</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekunder</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekunder</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekunder</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 sekunder</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Intet</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Vis sekvenser…</value>
@@ -195,26 +177,14 @@
   <data name="Restart" xml:space="preserve">
     <value>Genstart</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historik</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Besøg webside</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Luk</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>af Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvenser</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sekvens</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Søgefilter:</value>
@@ -233,12 +203,6 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Luk</value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Kopier tegn</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Beskrivelse:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Anvend</value>
@@ -283,13 +247,10 @@
     <value>Indsæt</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Testskrivning:</value>
+    <value>Testskrivning</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Justeringer</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisekunder)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
@@ -303,13 +264,13 @@
   <data name="Translators" xml:space="preserve">
     <value>Oversættelse</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Særlig tak</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Licens</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
     <value>WinCompose kræver genstart for at nogle ændringer træder i kraft.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Særlig tak</value>
   </data>
 </root>

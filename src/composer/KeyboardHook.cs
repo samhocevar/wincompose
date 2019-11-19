@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -14,7 +14,8 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using WinForms = System.Windows.Forms;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace WinCompose
 {
@@ -23,34 +24,46 @@ static class KeyboardHook
 {
     public static void Init()
     {
-        m_active = Environment.OSVersion.Platform == PlatformID.Win32NT
-                || Environment.OSVersion.Platform == PlatformID.Win32S
-                || Environment.OSVersion.Platform == PlatformID.Win32Windows
-                || Environment.OSVersion.Platform == PlatformID.WinCE;
-
-        // Create a timer to regularly check our hook
-        m_update_timer = new WinForms.Timer();
-        m_update_timer.Tick += new EventHandler(CheckHook);
-        m_update_timer.Interval = 2000;
-        m_update_timer.Start();
+        var thread = new Thread(KeyboardThread);
+        thread.IsBackground = true;
+        thread.SetApartmentState(ApartmentState.STA);
+        thread.Start();
     }
 
     public static void Fini()
     {
-        m_update_timer.Stop();
-
-        m_active = false;
-        CheckHook(null, null);
+        m_check_timer?.Stop();
+        m_check_timer = null;
+        CheckHook(must_reinstall: false);
+        Dispatcher.CurrentDispatcher.InvokeShutdown();
     }
 
-    private static void CheckHook(object obj, EventArgs args)
+    private static void KeyboardThread()
+    {
+        if (Environment.OSVersion.Platform == PlatformID.Win32NT
+             || Environment.OSVersion.Platform == PlatformID.Win32S
+             || Environment.OSVersion.Platform == PlatformID.Win32Windows
+             || Environment.OSVersion.Platform == PlatformID.WinCE)
+        {
+            CheckHook(must_reinstall: true);
+
+            // Create a timer to regularly check our hook
+            m_check_timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(5) };
+            m_check_timer.Tick += (o, e) => CheckHook(must_reinstall: true);
+            m_check_timer.Start();
+        }
+
+        Dispatcher.Run();
+    }
+
+    private static void CheckHook(bool must_reinstall)
     {
         HOOK old_hook = m_hook;
 
         // Reinstall the hook in case Windows disabled it without telling us. It’s
         // OK to have two hooks installed for a short time, because we check for
         // recursive calls to ourselves in OnKey().
-        if (m_active)
+        if (must_reinstall)
         {
             m_hook = NativeMethods.SetWindowsHookEx(WH.KEYBOARD_LL, m_callback,
                                    NativeMethods.LoadLibrary("user32.dll"), 0);
@@ -79,8 +92,7 @@ static class KeyboardHook
         }
     }
 
-    private static WinForms.Timer m_update_timer;
-    private static bool m_active = false;
+    private static DispatcherTimer m_check_timer;
 
     // Keep an explicit reference on the CALLBACK object created because
     // SetWindowsHookEx will not prevent it from being GCed.
@@ -88,7 +100,16 @@ static class KeyboardHook
 
     private static HOOK m_hook = HOOK.INVALID;
 
-    // Check whether OnKey is called twice for the same event
+    /// <summary>
+    /// Check whether OnKey is called twice for the same event. This may
+    /// happen when two hooks are installed.
+    /// </summary>
+    private static int m_duplicate = 0;
+
+    /// <summary>
+    /// Check whether OnKey is called from itself. This may happen when
+    /// configured to accept injected keys and outputing a very long sequence.
+    /// </summary>
     private static int m_recursive = 0;
 
     private static int OnKey(HC nCode, WM wParam, IntPtr lParam)
@@ -96,7 +117,7 @@ static class KeyboardHook
         bool is_key = (wParam == WM.KEYDOWN || wParam == WM.SYSKEYDOWN
                         || wParam == WM.KEYUP || wParam == WM.SYSKEYUP);
 
-        if (m_recursive != 0)
+        if (m_duplicate != 0)
         {
             // Do nothing. We can only get here if a key is pressed during
             // the very short time where we have two hooks installed, i.e.
@@ -108,19 +129,20 @@ static class KeyboardHook
             var data = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam,
                                                       typeof(KBDLLHOOKSTRUCT));
             bool is_injected = (data.flags & LLKHF.INJECTED) != 0;
-            bool ignore = is_injected && !Settings.AllowInjected.Value;
+            bool accept = !is_injected || (Settings.AllowInjected.Value && m_recursive == 0);
 
             Log.Debug("{0}{1}: OnKey(HC.{2}, WM.{3}, [vk:0x{4:X02} ({7}) sc:0x{5:X02} flags:{6}])",
-                      ignore ? "Ignored " : "", is_injected ? "Injected Event" : "Event",
+                      accept ? "" : "Ignored ", is_injected ? "Injected Event" : "Event",
                       nCode, wParam, (int)data.vk, (int)data.sc, data.flags, new Key(data.vk));
 
-            if (!ignore)
+            if (accept)
             {
-                if (Composer.OnKey(wParam, data.vk, data.sc, data.flags))
-                {
-                    // Do not process further: that key was for us.
-                    return -1;
-                }
+                ++m_recursive;
+                bool processed = Composer.OnKey(wParam, data.vk, data.sc, data.flags);
+                --m_recursive;
+
+                if (processed)
+                    return -1; // Do not process further: that key was for us.
             }
         }
         else
@@ -130,9 +152,9 @@ static class KeyboardHook
 
         // Call next hook but guard against re-doing our own work in case we
         // were installed twice.
-        ++m_recursive;
+        ++m_duplicate;
         int ret = NativeMethods.CallNextHookEx(m_hook, nCode, wParam, lParam);
-        --m_recursive;
+        --m_duplicate;
 
         return ret;
     }

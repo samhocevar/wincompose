@@ -162,27 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>tipka Enter</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisekund</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekunda</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekundi</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekunde</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekund</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 sekund</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Brez</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Prikaži zaporedja…</value>
   </data>
@@ -192,26 +171,14 @@
   <data name="Restart" xml:space="preserve">
     <value>Ponovno zaženi</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Zgodovina</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Obišči spletno stran</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Izhod</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Zaporedja</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Zaporedje</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Iskalni filter:</value>
@@ -227,9 +194,6 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Napreden Unicode vnos</value>
-  </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Omogoči Unicode vnos za vse znake, tudi tiste brez definiranega zaporedja. Tako bo npr. zaporedje „Compose U 1 A 3 F“ tvorilo izhodni znak U+1A3F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Ob napačnih zaporedjih</value>

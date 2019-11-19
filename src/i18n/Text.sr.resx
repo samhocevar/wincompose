@@ -162,30 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Ентер</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Обрнути апостроф `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 милисекунди</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 секунда</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 секунде</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 секунде</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 секунди</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 секунди</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>без</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Прикажи комбинације…</value>
   </data>
@@ -195,26 +171,14 @@
   <data name="Restart" xml:space="preserve">
     <value>Поново покрени</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Историјат</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Посети веб сајт</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Излаз</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>Сам Хочевар (Sam Hocevar) &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Комбинације</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Комбинација</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Уникод</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Филтер претраге:</value>
@@ -230,9 +194,6 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Напредни Уникод унос</value>
-  </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Укључити Уникод унос за све знакове, чак и оне који немају дефинисану модификаторску комбинацију. На пример, следећа секвенца ће исписати знак U+1A3F: Модификатор U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>При неисправним комбинацијама</value>
@@ -251,12 +212,6 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Затвори</value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Копирај знак</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Опис:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Примени</value>
@@ -301,13 +256,10 @@
     <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Куцајте за пробу:</value>
+    <value>Куцајте за пробу</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Штеловања</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(милисекунди)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>О програму</value>
@@ -321,9 +273,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Превод</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Захвалнице</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Лиценца</value>
   </data>
@@ -332,5 +281,8 @@
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Пријавите грешку</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Захвалнице</value>
   </data>
 </root>

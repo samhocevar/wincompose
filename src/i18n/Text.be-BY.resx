@@ -168,29 +168,8 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Return</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Gravis `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>½ siakundy</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 siakunda</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 siakundy</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 siakundy</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 siakundaŭ</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 siakund</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Niama</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Akno adladki</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Pakazać paśliadoŭnaści…</value>
@@ -201,26 +180,17 @@
   <data name="Restart" xml:space="preserve">
     <value>Pierazapusk</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historyja</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Naviedać websajt</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Vyjści</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>napisaŭ Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Symbali Junikodu</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Paśliadoŭnaści</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Kambinacyja</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unikod</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Fiĺtar pošuku:</value>
@@ -236,9 +206,6 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Prasunuty ŭvod Unikodu</value>
-  </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Uvamknuć Unikodny ŭvod dlia ŭsich symbaliaŭ, navat tych, jakim nie pryznačana kampanavaĺnaje paśliadoŭnaści. Naprykład, hetaja paśliadoŭnaść vyviadzie symbaĺ U+1A3F: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Pry niapraviĺnych paśliadoŭnaściach</value>
@@ -270,11 +237,8 @@
   <data name="Close" xml:space="preserve">
     <value>Začynić</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Kapijavaci symbaĺ</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Apisańnie:</value>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emodžy</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Užyć</value>
@@ -343,13 +307,10 @@
     <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Praviercie nabor:</value>
+    <value>Praviercie nabor</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Paliapšeńni</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(ms)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Pra pragramu</value>
@@ -365,9 +326,6 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Pierakład</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Padziaki</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Licenzija</value>
@@ -401,5 +359,11 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>«Print Screen»</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Vymknutaja</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Padziaki</value>
   </data>
 </root>

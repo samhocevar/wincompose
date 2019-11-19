@@ -1,7 +1,7 @@
 ﻿<!--
    - WinCompose — a compose key for Windows — http://wincompose.info/
    -
-   - Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+   - Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
    -             2014—2015 Benjamin Litzelmann
    -
    - This program is free software. It comes without any warranty, to
@@ -11,20 +11,30 @@
    - See http://www.wtfpl.net/ for more details.
   -->
 
-<UserControl x:Class="WinCompose.SysTrayIcon"
+<tb:TaskbarIcon x:Class="WinCompose.SysTrayIcon"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:i18n="clr-namespace:WinCompose.i18n"
-             xmlns:wc="clr-namespace:WinCompose">
+             xmlns:tb="http://www.hardcodet.net/taskbar"
+             xmlns:wc="clr-namespace:WinCompose"
+             xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
+             xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf">
 
-    <UserControl.Resources>
+    <tb:TaskbarIcon.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
-    </UserControl.Resources>
+        <emoji:TextBlock Text="💬" x:Key="SequencesEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🛠" x:Key="OptionsEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="ℹ" x:Key="AboutEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="💸" x:Key="DonateEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🔎" x:Key="DebugEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🌐" x:Key="WebsiteEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="♻" x:Key="RestartEmoji" FontSize="16"/>
+        <emoji:TextBlock Text="🚪" x:Key="ExitEmoji" FontSize="16" HorizontalAlignment="Center"/>
+    </tb:TaskbarIcon.Resources>
 
-    <UserControl.ContextMenu>
+    <tb:TaskbarIcon.ContextMenu>
         <ContextMenu Padding="0,0,0,1">
 
             <ContextMenu.Resources>
@@ -55,20 +65,25 @@
             </MenuItem>
 
             <MenuItem Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.ShowSequences}">
+                      Icon="{StaticResource SequencesEmoji}" CommandParameter="{x:Static wc:MenuCommand.ShowSequences}">
                 <MenuItem.Header>
                     <TextBlock FontWeight="Bold" Text="{x:Static i18n:Text.ShowSequences}"/>
                 </MenuItem.Header>
             </MenuItem>
 
             <MenuItem Header="{x:Static i18n:Text.ShowOptions}" Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.ShowOptions}"/>
+                      Icon="{StaticResource OptionsEmoji}" CommandParameter="{x:Static wc:MenuCommand.ShowOptions}"/>
 
             <MenuItem Header="{x:Static i18n:Text.Help}">
                 <MenuItem Header="{x:Static i18n:Text.About}" Command="{Binding MenuItemCommand}"
-                          CommandParameter="{x:Static wc:MenuCommand.About}"/>
+                          Icon="{StaticResource AboutEmoji}" CommandParameter="{x:Static wc:MenuCommand.About}"/>
                 <MenuItem Header="{x:Static i18n:Text.VisitWebsite}" Command="{Binding MenuItemCommand}"
-                          CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
+                          Icon="{StaticResource WebsiteEmoji}" CommandParameter="{x:Static wc:MenuCommand.VisitWebsite}"/>
+                <MenuItem Header="{x:Static i18n:Text.DonationPage}" Command="{Binding MenuItemCommand}"
+                          Icon="{StaticResource DonateEmoji}" CommandParameter="{x:Static wc:MenuCommand.DonationPage}"/>
+                <Separator/>
+                <MenuItem Header="{x:Static i18n:Text.DebugWindow}" Command="{Binding MenuItemCommand}"
+                          Icon="{StaticResource DebugEmoji}" CommandParameter="{x:Static wc:MenuCommand.DebugWindow}"/>
             </MenuItem>
 
             <MenuItem Command="{Binding MenuItemCommand}"
@@ -86,12 +101,12 @@
                       CommandParameter="{x:Static wc:MenuCommand.Disable}"/>
 
             <MenuItem Header="{x:Static i18n:Text.Restart}" Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.Restart}"/>
+                      Icon="{StaticResource RestartEmoji}" CommandParameter="{x:Static wc:MenuCommand.Restart}"/>
 
             <MenuItem Header="{x:Static i18n:Text.Exit}" Command="{Binding MenuItemCommand}"
-                      CommandParameter="{x:Static wc:MenuCommand.Exit}"/>
+                      Icon="{StaticResource ExitEmoji}" CommandParameter="{x:Static wc:MenuCommand.Exit}"/>
 
         </ContextMenu>
-    </UserControl.ContextMenu>
+    </tb:TaskbarIcon.ContextMenu>
 
-</UserControl>
+</tb:TaskbarIcon>

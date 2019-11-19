@@ -1,0 +1,73 @@
+﻿<!--
+   - WinCompose — a compose key for Windows — http://wincompose.info/
+   -
+   - Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+   -             2014—2015 Benjamin Litzelmann
+   -
+   - This program is free software. It comes without any warranty, to
+   - the extent permitted by applicable law. You can redistribute it
+   - and/or modify it under the terms of the Do What the Fuck You Want
+   - to Public License, Version 2, as published by the WTFPL Task Force.
+   - See http://www.wtfpl.net/ for more details.
+  -->
+
+<!-- Intentionally no i18n -->
+
+<Window x:Class="WinCompose.DebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wc="clr-namespace:WinCompose"
+        Title="Debug Window"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="Manual"
+        ResizeMode="CanResize"
+        MouseLeftButtonDown="OnLeftButtonDown"
+        Deactivated="OnDeactivated"
+        Closing="OnClosing"
+        Icon="/WinCompose;component/res/key_compose.png"
+        ShowInTaskbar="False"
+        Topmost="True"
+        Background="White"
+        BorderBrush="Black"
+        Width="800" Height="800">
+
+    <x:Code>
+        <![CDATA[
+            private void OnLeftButtonDown(object sender, MouseButtonEventArgs e) { if (e.ChangedButton == MouseButton.Left) DragMove(); }
+            private void OnDeactivated(object sender, EventArgs e) { (sender as Window).Topmost = true; }
+            private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e) { Hide(); e.Cancel = true; }
+        ]]>
+    </x:Code>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type wc:LogEntry}">
+            <Grid IsSharedSizeScope="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="Date" Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding DateTime, StringFormat='{}{0:yyyy/MM/dd HH:mm:ss.fff}'}" Grid.Column="0"
+                       Foreground="DarkGray" FontWeight="Bold" Margin="5,0,5,0"/>
+                <TextBlock Text="{Binding Message}" Grid.Column="1" FontFamily="{x:Static wc:Constants.FixedFontFamily}"
+                       Foreground="Black" TextWrapping="NoWrap"/>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <DockPanel Name="m_dockpanel">
+        <ItemsControl ItemsSource="{Binding}">
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer Name="m_scrollviewer" CanContentScroll="True" Focusable="False">
+                        <ItemsPresenter/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel IsItemsHost="True"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </DockPanel>
+</Window>

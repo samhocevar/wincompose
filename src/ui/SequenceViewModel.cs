@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -11,69 +11,84 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
+using System.Windows;
 
 namespace WinCompose
 {
-    public class SequenceViewModel
+    public class SequenceViewModel : ViewModelBase
     {
         public static Key SpaceKey = new Key(" ");
 
-        public SequenceViewModel(CategoryViewModel category, SequenceDescription desc)
-        {
-            Category = category;
-            Category.IsEmpty = false;
-            Result = desc.Result;
-            Description = desc.Description;
-            Sequence = desc.Sequence;
-            Utf32 = desc.Utf32;
-        }
+        public SequenceViewModel(SequenceDescription desc) => m_desc = desc;
 
-        public CategoryViewModel Category { get; private set; }
+        public CategoryViewModel UnicodeCategoryVM { get; set; }
+        public CategoryViewModel EmojiCategoryVM { get; set; }
 
         /// <summary>
         /// Return the sequence result in an UTF-16 string
         /// </summary>
-        public string Result { get; private set; }
+        public string Result => m_desc.Result;
 
         /// <summary>
         /// Return the sequence Unicode codepoint. If the sequence contains
         /// zero, two or more characters, return -1.
         /// </summary>
-        public int Utf32 { get; private set; }
+        public string CodePoint => (m_desc.Utf32 == -1) ? "" : $"U+{(m_desc.Utf32):X04}";
 
-        public int UnicodeCategory { get { return Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0); } }
+        public int UnicodeCategory => m_desc.Utf32 == -1 ? -1 : (int)CharUnicodeInfo.GetUnicodeCategory(Result, 0);
 
-        public string Description { get; private set; }
+        public string Description => m_desc.Description;
 
-        public KeySequence Sequence { get; set; }
+        public string RichDescription => (IsFavorite ? "⭐ " : "") + m_desc.Description;
 
-        public bool Match(SearchTokens searchText)
+        public KeySequence Sequence => m_desc.Sequence;
+
+        public Visibility AddToFavoritesVisibility
+            => IsFavorite ? Visibility.Collapsed : Visibility.Visible;
+
+        public Visibility RemoveFromFavoritesVisibility
+            => IsFavorite ? Visibility.Visible : Visibility.Collapsed;
+
+        public void ToggleFavorite()
         {
-            if (searchText.IsEmpty)
-                return true;
-
-            if (searchText.ExactSearchString == Result)
-                return true;
-
-            var compareInfo = Thread.CurrentThread.CurrentCulture.CompareInfo;
-            foreach (var token in searchText.Tokens)
-            {
-                if (compareInfo.IndexOf(Description, token, CompareOptions.IgnoreCase) != -1)
-                    return true;
-                if (Sequence.ToString().Contains(token))
-                    return true;
-            }
-
-            foreach (var number in searchText.Numbers)
-            {
-                if (Utf32 == number)
-                    return true;
-            }
-            return false;
+            Metadata.ToggleFavorite(Sequence, Result);
+            OnPropertyChanged(nameof(RichDescription));
+            OnPropertyChanged(nameof(AddToFavoritesVisibility));
+            OnPropertyChanged(nameof(RemoveFromFavoritesVisibility));
         }
+
+        public bool Match(SearchQuery query)
+        {
+            if (query.IsEmpty)
+                return true;
+
+            if (query.ExactSearchString == Result)
+                return true;
+
+            var compare_info = Thread.CurrentThread.CurrentCulture.CompareInfo;
+
+            // Ensure this sequence matches all the tokens (implicit AND)
+            foreach (var token in query.Tokens)
+            {
+                if (token.Num == m_desc.Utf32 || token.HexNum == m_desc.Utf32)
+                    continue;
+                if (compare_info.IndexOf(Description, token.Text, CompareOptions.IgnoreCase) != -1)
+                    continue;
+                if (Sequence.Contains(new Key(token.Text)))
+                    continue;
+
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool IsMacro => UnicodeCategoryVM == null && EmojiCategoryVM == null;
+
+        public bool IsFavorite => Metadata.IsFavorite(Sequence, Result);
+
+        private SequenceDescription m_desc;
     }
 }

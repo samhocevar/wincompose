@@ -19,7 +19,7 @@ namespace WinCompose.i18n {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Text {
@@ -79,6 +79,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add to favorites.
+        /// </summary>
+        public static string AddToFavorites {
+            get {
+                return ResourceManager.GetString("AddToFavorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string Advanced {
+            get {
+                return ResourceManager.GetString("Advanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow Injected Keys.
         /// </summary>
         public static string AllowInjected {
@@ -97,11 +115,38 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alternate compose key is always Compose.
+        /// </summary>
+        public static string AlwaysCompose {
+            get {
+                return ResourceManager.GetString("AlwaysCompose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role..
+        /// </summary>
+        public static string AlwaysComposeToolTip {
+            get {
+                return ResourceManager.GetString("AlwaysComposeToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {
             get {
                 return ResourceManager.GetString("Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authors.
+        /// </summary>
+        public static string Authors {
+            get {
+                return ResourceManager.GetString("Authors", resourceCulture);
             }
         }
         
@@ -160,6 +205,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please press a key to use as your compose key..
+        /// </summary>
+        public static string CaptureComposeKey {
+            get {
+                return ResourceManager.GetString("CaptureComposeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fall back to case insensitive matches.
         /// </summary>
         public static string CaseInsensitive {
@@ -183,6 +237,33 @@ namespace WinCompose.i18n {
         public static string Categories {
             get {
                 return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change….
+        /// </summary>
+        public static string ChangeComposeKey {
+            get {
+                return ResourceManager.GetString("ChangeComposeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatically check for updates.
+        /// </summary>
+        public static string CheckUpdates {
+            get {
+                return ResourceManager.GetString("CheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically..
+        /// </summary>
+        public static string CheckUpdatesToolTip {
+            get {
+                return ResourceManager.GetString("CheckUpdatesToolTip", resourceCulture);
             }
         }
         
@@ -214,11 +295,47 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Special Thanks.
+        ///   Looks up a localized string similar to Composing.
         /// </summary>
-        public static string Contributors {
+        public static string Composing {
             get {
-                return ResourceManager.GetString("Contributors", resourceCulture);
+                return ResourceManager.GetString("Composing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy to clipboard.
+        /// </summary>
+        public static string CopyToClipboard {
+            get {
+                return ResourceManager.GetString("CopyToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debug Window.
+        /// </summary>
+        public static string DebugWindow {
+            get {
+                return ResourceManager.GetString("DebugWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No delay.
+        /// </summary>
+        public static string DelayDisabled {
+            get {
+                return ResourceManager.GetString("DelayDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} seconds.
+        /// </summary>
+        public static string DelaySeconds {
+            get {
+                return ResourceManager.GetString("DelaySeconds", resourceCulture);
             }
         }
         
@@ -241,6 +358,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disable notification area icon.
+        /// </summary>
+        public static string DisableIcon {
+            get {
+                return ResourceManager.GetString("DisableIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu..
+        /// </summary>
+        public static string DisableIconToolTip {
+            get {
+                return ResourceManager.GetString("DisableIconToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discard all typed characters.
         /// </summary>
         public static string DiscardOnInvalid {
@@ -259,11 +394,29 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Donation Page.
+        /// </summary>
+        public static string DonationPage {
+            get {
+                return ResourceManager.GetString("DonationPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download WinCompose {0}.
         /// </summary>
         public static string Download {
             get {
                 return ResourceManager.GetString("Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emoji.
+        /// </summary>
+        public static string Emoji {
+            get {
+                return ResourceManager.GetString("Emoji", resourceCulture);
             }
         }
         
@@ -295,6 +448,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Favorites.
+        /// </summary>
+        public static string Favorites {
+            get {
+                return ResourceManager.GetString("Favorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
         public static string General {
@@ -309,6 +471,24 @@ namespace WinCompose.i18n {
         public static string Help {
             get {
                 return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ignore windows matching this regex:.
+        /// </summary>
+        public static string IgnoreRegex {
+            get {
+                return ResourceManager.GetString("IgnoreRegex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WinCompose will be completely disabled when the current window class or window name matches this regular expression..
+        /// </summary>
+        public static string IgnoreRegexToolTip {
+            get {
+                return ResourceManager.GetString("IgnoreRegexToolTip", resourceCulture);
             }
         }
         
@@ -345,6 +525,24 @@ namespace WinCompose.i18n {
         public static string InvalidSequences {
             get {
                 return ResourceManager.GetString("InvalidSequences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try to keep notification area icon always visible.
+        /// </summary>
+        public static string KeepIconVisible {
+            get {
+                return ResourceManager.GetString("KeepIconVisible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible..
+        /// </summary>
+        public static string KeepIconVisibleToolTip {
+            get {
+                return ResourceManager.GetString("KeepIconVisibleToolTip", resourceCulture);
             }
         }
         
@@ -394,11 +592,38 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disabled.
+        /// </summary>
+        public static string KeyDisabled {
+            get {
+                return ResourceManager.GetString("KeyDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End.
+        /// </summary>
+        public static string KeyEnd {
+            get {
+                return ResourceManager.GetString("KeyEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Escape.
         /// </summary>
         public static string KeyEscape {
             get {
                 return ResourceManager.GetString("KeyEscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string KeyHome {
+            get {
+                return ResourceManager.GetString("KeyHome", resourceCulture);
             }
         }
         
@@ -529,6 +754,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tab.
+        /// </summary>
+        public static string KeyTab {
+            get {
+                return ResourceManager.GetString("KeyTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Interface language:.
         /// </summary>
         public static string Language {
@@ -556,146 +790,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (milliseconds).
-        /// </summary>
-        public static string Milliseconds {
-            get {
-                return ResourceManager.GetString("Milliseconds", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to WinCompose needs to be restarted for some changes to take effect..
         /// </summary>
         public static string NeedRestart {
             get {
                 return ResourceManager.GetString("NeedRestart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Grave Accent `.
-        /// </summary>
-        public static string Obsolete016 {
-            get {
-                return ResourceManager.GetString("Obsolete016", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 500 milliseconds.
-        /// </summary>
-        public static string Obsolete017 {
-            get {
-                return ResourceManager.GetString("Obsolete017", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1 second.
-        /// </summary>
-        public static string Obsolete018 {
-            get {
-                return ResourceManager.GetString("Obsolete018", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 2 seconds.
-        /// </summary>
-        public static string Obsolete019 {
-            get {
-                return ResourceManager.GetString("Obsolete019", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 3 seconds.
-        /// </summary>
-        public static string Obsolete020 {
-            get {
-                return ResourceManager.GetString("Obsolete020", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 5 seconds.
-        /// </summary>
-        public static string Obsolete021 {
-            get {
-                return ResourceManager.GetString("Obsolete021", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 10 seconds.
-        /// </summary>
-        public static string Obsolete022 {
-            get {
-                return ResourceManager.GetString("Obsolete022", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to None.
-        /// </summary>
-        public static string Obsolete023 {
-            get {
-                return ResourceManager.GetString("Obsolete023", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to History.
-        /// </summary>
-        public static string Obsolete027 {
-            get {
-                return ResourceManager.GetString("Obsolete027", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to by Sam Hocevar &lt;sam@hocevar.net&gt;.
-        /// </summary>
-        public static string Obsolete036 {
-            get {
-                return ResourceManager.GetString("Obsolete036", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sequence.
-        /// </summary>
-        public static string Obsolete039 {
-            get {
-                return ResourceManager.GetString("Obsolete039", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unicode.
-        /// </summary>
-        public static string Obsolete041 {
-            get {
-                return ResourceManager.GetString("Obsolete041", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Copy Character.
-        /// </summary>
-        public static string Obsolete050 {
-            get {
-                return ResourceManager.GetString("Obsolete050", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Description:.
-        /// </summary>
-        public static string Obsolete051 {
-            get {
-                return ResourceManager.GetString("Obsolete051", resourceCulture);
             }
         }
         
@@ -714,6 +813,15 @@ namespace WinCompose.i18n {
         public static string Programming {
             get {
                 return ResourceManager.GetString("Programming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove from favorites.
+        /// </summary>
+        public static string RemoveFromFavorites {
+            get {
+                return ResourceManager.GetString("RemoveFromFavorites", resourceCulture);
             }
         }
         
@@ -799,7 +907,34 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Test Typing:.
+        ///   Looks up a localized string similar to Special Thanks.
+        /// </summary>
+        public static string SpecialThanks {
+            get {
+                return ResourceManager.GetString("SpecialThanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try to swap the two keys.
+        /// </summary>
+        public static string SwapOnInvalid {
+            get {
+                return ResourceManager.GetString("SwapOnInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead..
+        /// </summary>
+        public static string SwapOnInvalidToolTip {
+            get {
+                return ResourceManager.GetString("SwapOnInvalidToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test Typing.
         /// </summary>
         public static string TestTyping {
             get {
@@ -835,6 +970,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unicode characters.
+        /// </summary>
+        public static string UnicodeCharacters {
+            get {
+                return ResourceManager.GetString("UnicodeCharacters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced Unicode input.
         /// </summary>
         public static string UnicodeInput {
@@ -844,7 +988,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F.
+        ///   Looks up a localized string similar to Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter.
         /// </summary>
         public static string UnicodeInputToolTip {
             get {
@@ -858,6 +1002,24 @@ namespace WinCompose.i18n {
         public static string UpdatesToolTip {
             get {
                 return ResourceManager.GetString("UpdatesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use WinCompose emoji sequences.
+        /// </summary>
+        public static string UseEmojiRules {
+            get {
+                return ResourceManager.GetString("UseEmojiRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the compose sequences for Emoji provided by the WinCompose author and contributors..
+        /// </summary>
+        public static string UseEmojiRulesToolTip {
+            get {
+                return ResourceManager.GetString("UseEmojiRulesToolTip", resourceCulture);
             }
         }
         
@@ -894,6 +1056,42 @@ namespace WinCompose.i18n {
         public static string UserMacros {
             get {
                 return ResourceManager.GetString("UserMacros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use sequences from the XCompose project.
+        /// </summary>
+        public static string UseXComposeRules {
+            get {
+                return ResourceManager.GetString("UseXComposeRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones..
+        /// </summary>
+        public static string UseXComposeRulesToolTip {
+            get {
+                return ResourceManager.GetString("UseXComposeRulesToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use sequences from the Xorg project.
+        /// </summary>
+        public static string UseXorgRules {
+            get {
+                return ResourceManager.GetString("UseXorgRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system..
+        /// </summary>
+        public static string UseXorgRulesToolTip {
+            get {
+                return ResourceManager.GetString("UseXorgRulesToolTip", resourceCulture);
             }
         }
         

@@ -162,30 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enenklavo</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Malsupren-supersigna klavo `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisekundoj</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekundo</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekundoj</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekundoj</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekundoj</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 sekundoj</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Neniu</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Montri makroklavojn…</value>
   </data>
@@ -195,26 +171,14 @@
   <data name="Restart" xml:space="preserve">
     <value>Reŝargi</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historio</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Nian retpaĝon viziti</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Eliri</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Makroklavoj</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Makroklavo</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unikodo</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Serĉa filtrilo:</value>
@@ -230,9 +194,6 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Speciala Unikoda enigo</value>
-  </data>
-  <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Ŝalti la Unikodan enigon por ĉiuj la signoj, inkluzive tiuj signoj kiuj ne havas difinitan makroklavon. Ekzemple, la makroklavo &quot;U 2 6 3 A&quot; eligus la signon ☺ U+263A</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Se nevalida makroklavo estas enigita</value>
@@ -263,12 +224,6 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermi</value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Kopii signon</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Priskribo:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apliki</value>
@@ -331,13 +286,10 @@
     <value>Enmeta klavo</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Provi la tajpadon:</value>
+    <value>Provi la tajpadon</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Optimumigoj</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milisekondoj)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Pri WinCompose</value>
@@ -353,9 +305,6 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Tradukado</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Rekonoj</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Permesilo</value>
@@ -380,5 +329,8 @@
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Reŝargi</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Rekonoj</value>
   </data>
 </root>

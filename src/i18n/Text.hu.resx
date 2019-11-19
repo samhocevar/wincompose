@@ -162,30 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Újsor</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Ekezet `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 ezredmásodperc</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 másodperc</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 másodperc</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 másodperc</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 másodperc</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 másodperc</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Egyik sem</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Szekvenciák mutatása…</value>
   </data>
@@ -195,26 +171,14 @@
   <data name="Restart" xml:space="preserve">
     <value>Újraindítás</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Történet</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Honlap meglátogatása</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Kilépés</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>írta Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Szekvenciák</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Szekvencia</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Keresési szűrő:</value>
@@ -234,12 +198,6 @@
   <data name="Close" xml:space="preserve">
     <value>Bezár</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Karakter másolás</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Leírás:</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Alkalmaz</value>
   </data>
@@ -248,9 +206,6 @@
   </data>
   <data name="ShowOptions" xml:space="preserve">
     <value>Lehetőségek…</value>
-  </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(ezredmásodperc)</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Névjegy</value>
@@ -261,9 +216,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Fordítás</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Külön köszönet</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Licensz</value>
   </data>
@@ -272,5 +224,8 @@
   </data>
   <data name="Help" xml:space="preserve">
     <value>Segítség</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Külön köszönet</value>
   </data>
 </root>

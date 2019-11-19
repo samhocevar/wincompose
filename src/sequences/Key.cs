@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -28,16 +28,22 @@ namespace WinCompose
 public partial class Key
 {
     /// <summary>
-    /// A dictionary of symbols that we use for some non-printable key labels.
+    /// A dictionary of symbols that we use for some key labels when
+    /// ToString() won’t do a good job.
     /// </summary>
-    private static readonly Dictionary<VK, string> m_key_labels
-        = new Dictionary<VK, string>
+    private static readonly Dictionary<Key, string> m_key_labels
+        = new Dictionary<Key, string>
     {
-        { VK.COMPOSE, "♦" },
-        { VK.UP,      "▲" },
-        { VK.DOWN,    "▼" },
-        { VK.LEFT,    "◀" },
-        { VK.RIGHT,   "▶" },
+        { new Key(VK.COMPOSE), "♦" },
+        { new Key(VK.UP),      "▲" },
+        { new Key(VK.DOWN),    "▼" },
+        { new Key(VK.LEFT),    "◀" },
+        { new Key(VK.RIGHT),   "▶" },
+        { new Key(VK.HOME),    "Home" },
+        { new Key(VK.END),     "End" },
+        { new Key(VK.BACK),    "⌫" },
+        { new Key(VK.DELETE),  "␡" },
+        { new Key(VK.TAB),     "↹" },
     };
 
     /// <summary>
@@ -52,6 +58,12 @@ public partial class Key
         { "Down",      VK.DOWN },
         { "Left",      VK.LEFT },
         { "Right",     VK.RIGHT },
+        { "Home",      VK.HOME },
+        { "End",       VK.END },
+        { "BackSpace", VK.BACK },
+        { "Delete",    VK.DELETE },
+        { "Tab",       VK.TAB },
+        { "Return",    VK.RETURN },
     };
 
     /// <summary>
@@ -64,7 +76,7 @@ public partial class Key
     private static Dictionary<string, string> ReadXorgKeySyms()
     {
         Dictionary<string, string> ret = new Dictionary<string, string>();
-        using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.res.keysymdef.h"))
+        using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("3rdparty.keysymdef.h"))
         using (StreamReader reader = new StreamReader(s))
         {
             Regex r = new Regex(@"^#define XK_([^ ]*).* U\+([A-Za-z0-9]+)");
@@ -74,7 +86,7 @@ public partial class Key
                 if (m.Success)
                 {
                     int codepoint = int.Parse(m.Groups[2].Value, NumberStyles.HexNumber);
-                    ret[m.Groups[1].Value] = Convert.ToChar(codepoint).ToString();
+                    ret[m.Groups[1].Value] = char.ConvertFromUtf32(codepoint);
                 }
             }
         }
@@ -82,15 +94,22 @@ public partial class Key
     }
 
     /// <summary>
-    /// A dictionary of keysyms and the corresponding Key object
+    /// Convert a string to a key, using the following methods:
+    ///  - a dictionary of keysyms
+    ///  - the "U+XXXX" Unicode hex notation
+    ///  - the string contents if it is of length 1
     /// </summary>
-    public static Key FromKeySym(string keysym)
+    public static Key FromKeySymOrChar(string keysym)
     {
         if (m_keysyms.ContainsKey(keysym))
             return new Key(m_keysyms[keysym]);
 
         if (m_extra_keysyms.ContainsKey(keysym))
             return new Key(m_extra_keysyms[keysym]);
+
+        if (keysym.Length > 1 && keysym[0] == 'U' &&
+            int.TryParse(keysym.Substring(1), NumberStyles.HexNumber, null, out var codepoint))
+            return new Key(char.ConvertFromUtf32(codepoint));
 
         if (keysym.Length == 1)
             return new Key(keysym);
@@ -116,6 +135,7 @@ public partial class Key
             {
                 m_key_names = new Dictionary<Key, string>
                 {
+                    { new Key(VK.DISABLED),   i18n.Text.KeyDisabled },
                     { new Key(VK.LMENU),      i18n.Text.KeyLMenu },
                     { new Key(VK.RMENU),      i18n.Text.KeyRMenu },
                     { new Key(VK.LCONTROL),   i18n.Text.KeyLControl },
@@ -131,10 +151,17 @@ public partial class Key
                     { new Key(VK.NONCONVERT), i18n.Text.KeyNonConvert },
                     { new Key(VK.SCROLL),     i18n.Text.KeyScroll },
                     { new Key(VK.INSERT),     i18n.Text.KeyInsert },
-                    { new Key(VK.PRINT),      i18n.Text.KeyPrint },
+                    { new Key(VK.SNAPSHOT),   i18n.Text.KeyPrint },
+                    { new Key(VK.TAB),        i18n.Text.KeyTab },
+                    { new Key(VK.HOME),       i18n.Text.KeyHome },
+                    { new Key(VK.END),        i18n.Text.KeyEnd },
 
                     { new Key(" "),    i18n.Text.KeySpace },
                     { new Key("\r"),   i18n.Text.KeyReturn },
+
+                    // This should not be necessary because we build these
+                    // key objects using their VirtualKey.
+                    { new Key("\t"),   i18n.Text.KeyTab },
                     { new Key("\x1b"), i18n.Text.KeyEscape },
                 };
 
@@ -148,26 +175,30 @@ public partial class Key
     }
 
     private readonly VK m_vk;
-
     private readonly string m_str;
 
     public Key(string str) { m_str = str; }
 
     public Key(VK vk) { m_vk = vk; }
 
-    public VK VirtualKey { get { return m_vk; } }
+    public VK VirtualKey => m_vk;
 
-    public bool IsPrintable()
-    {
-        return m_str != null;
-    }
+    /// <summary>
+    /// Return whether a key is printable
+    /// </summary>
+    public bool IsPrintable => m_str != null;
+
+    /// <summary>
+    /// Return the printable result of a key
+    /// </summary>
+    public string PrintableResult => m_str ?? "";
 
     /// <summary>
     /// Return whether a key is usable in a compose sequence
     /// </summary>
     public bool IsUsable()
     {
-        return IsPrintable() || m_extra_keysyms.ContainsValue(m_vk);
+        return IsPrintable || m_extra_keysyms.ContainsValue(m_vk);
     }
 
     /// <summary>
@@ -207,6 +238,11 @@ public partial class Key
     }
 
     /// <summary>
+    /// This should be part of a Key viewmodel class
+    /// </summary>
+    public double Opacity => m_vk == VK.DISABLED ? 0.5 : 1.0;
+
+    /// <summary>
     /// A label that we can print on keycap icons
     /// </summary>
     public string KeyLabel
@@ -214,10 +250,33 @@ public partial class Key
         get
         {
             string ret;
-            if (m_key_labels.TryGetValue(m_vk, out ret))
+            if (m_key_labels.TryGetValue(this, out ret))
                 return ret;
+            if (IsPrintable)
+                return PrintableResult;
             return ToString();
         }
+    }
+
+    public static Key FromString(string str)
+    {
+        // We serialize Space as VK.SPACE so that it can be embedded in .ini
+        // files without ambiguities (e.g. foo=VK.SPACE can be parsed), but
+        // we want the Key object to be Key(" "). Same for VK.OEM_COMMA.
+        if (str.StartsWith("VK."))
+        {
+            try
+            {
+                var vk = (VK)Enum.Parse(typeof(VK), str.Substring(3));
+                if (vk == VK.SPACE)
+                    return new Key(" ");
+                if (vk == VK.OEM_COMMA)
+                    return new Key(",");
+                return new Key(vk);
+            }
+            catch { } // Silently catch parsing exception.
+        }
+        return new Key(str);
     }
 
     /// <summary>
@@ -226,7 +285,11 @@ public partial class Key
     /// </summary>
     public override string ToString()
     {
-        return m_str ?? string.Format("VK.{0}", m_vk);
+        if (m_str == " ")
+            return "VK.SPACE";
+        if (m_str == ",")
+            return "VK.OEM_COMMA";
+        return m_str ?? $"VK.{m_vk}";
     }
 
     public override bool Equals(object o)

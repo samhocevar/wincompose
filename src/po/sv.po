@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-10-06 22:47+0000\n"
-"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-"Language-Team: Swedish "
-"<https://hosted.weblate.org/projects/wincompose/master/sv/>\n"
+"PO-Revision-Date: 2019-11-16 09:04+0000\n"
+"Last-Translator: greywatcher <greyman000@hotmail.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
+"master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 3.10-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -82,12 +82,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Konvertering"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Icke-konvertering"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -104,394 +104,551 @@ msgstr "Mellanslag"
 msgid "Return"
 msgstr "Enter"
 
-#. The name of the key on the keyboard
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:189 ID:Obsolete016
-msgid "Grave Accent `"
-msgstr "Grav accent `"
+#. The "Composing" section in the settings window
+#: i18n/Text.resx:189 ID:Composing
+msgid "Composing"
+msgstr "Komposering"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:193 ID:Obsolete017
-msgid "500 milliseconds"
-msgstr "500 millisekunder"
+#: i18n/Text.resx:193 ID:UseXorgRules
+msgid "Use sequences from the Xorg project"
+msgstr "Använd sekvenser från Xorg-projektet"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:196 ID:Obsolete018
-msgid "1 second"
-msgstr "1 sekund"
+#: i18n/Text.resx:197 ID:UseXorgRulesToolTip
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
+msgstr ""
+"Använder de 3 000 komponeringssekvenserna från Xorg-projektet (httt://www.x."
+"org/). Dessa är de sekvenser som vanligtvis hittas på vanliga Linux-system."
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:199 ID:Obsolete019
-msgid "2 seconds"
-msgstr "2 sekunder"
+#: i18n/Text.resx:201 ID:UseXComposeRules
+msgid "Use sequences from the XCompose project"
+msgstr "Användarsekvenser från XCompose-projektet"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:202 ID:Obsolete020
-msgid "3 seconds"
-msgstr "3 sekunder"
+#: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
+msgid ""
+"Use the 1,000 compose sequences from the XCompose opensource project "
+"(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
+"with the Xorg ones."
+msgstr ""
+"Använder de 1 000 komponeringssekvenserna från opensource XCompose-projektet "
+"(htttps://githug.com/kragen/xcompose). Dessa sekvenser kan ibland hamna i "
+"konflikt med de från Xorg-projektet."
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:205 ID:Obsolete021
-msgid "5 seconds"
-msgstr "5 sekunder"
+#: i18n/Text.resx:209 ID:UseEmojiRules
+msgid "Use WinCompose emoji sequences"
+msgstr "Använder WinCompose-sekvenser för Emoijer"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:208 ID:Obsolete022
-msgid "10 seconds"
-msgstr "10 sekunder"
+#: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
+msgid ""
+"Use the compose sequences for Emoji provided by the WinCompose author and "
+"contributors."
+msgstr ""
+"Använd komposeringssekvenser för Emojier som tillhandahålls av WinComposes "
+"skapare och medarbetare."
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:211 ID:Obsolete023
-msgid "None"
-msgstr "Ingen"
+#. Menu entry to show the debug window
+#: i18n/Text.resx:217 ID:DebugWindow
+msgid "Debug Window"
+msgstr "Felsökningsfönster"
 
-#: i18n/Text.resx:214 ID:ShowSequences
+#: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
 msgstr "Visa sekvenser…"
 
 #. Menu entry to disable WinCompose
-#: i18n/Text.resx:217 ID:Disable
+#: i18n/Text.resx:225 ID:Disable
 msgid "Disable"
 msgstr "Inaktivera"
 
-#: i18n/Text.resx:221 ID:Restart
+#: i18n/Text.resx:229 ID:Restart
 msgid "Restart"
 msgstr "Starta om"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:224 ID:Obsolete027
-msgid "History"
-msgstr "Historik"
+#. A button to visit the donation page (http://wincompose.info/donate/)
+#: i18n/Text.resx:233 ID:DonationPage
+msgid "Donation Page"
+msgstr "Doneringssida"
 
 #. A button to visit the website
-#: i18n/Text.resx:227 ID:VisitWebsite
+#: i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
 msgstr "Besök hemsidan"
 
-#: i18n/Text.resx:231 ID:Exit
+#: i18n/Text.resx:241 ID:Exit
 msgid "Exit"
 msgstr "Stäng"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:234 ID:Obsolete036
-msgid "by Sam Hocevar <sam@hocevar.net>"
-msgstr "av Sam Hocevar <sam@hocevar.net>"
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
+#: i18n/Text.resx:245 ID:UnicodeCharacters
+msgid "Unicode characters"
+msgstr "Unicode-tecken"
 
-#: i18n/Text.resx:237 ID:Sequences
+#: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
 msgstr "Sekvenser"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:240 ID:Obsolete039
-msgid "Sequence"
-msgstr "Sekvens"
+#: i18n/Text.resx:253 ID:SwapOnInvalid
+msgid "Try to swap the two keys"
+msgstr "Försök byta plats på de två tangenterna"
 
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:243 ID:Obsolete041
-msgid "Unicode"
-msgstr "Unicode"
+#: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
+msgid ""
+"Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
+"not a valid sequence, try Compose A E instead."
+msgstr ""
+"Försök byta plats på tangenterna i en sekvens med två tangenter. Exempelvis "
+"om Compose E A är en ogiltig sekvens prova Compose A E istället."
 
-#: i18n/Text.resx:246 ID:Search
+#: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
 msgstr "Sökfilter:"
 
-#: i18n/Text.resx:249 ID:ComposeKey
+#: i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Hopfogningstangent:"
+msgstr "Compose-tangent:"
 
-#: i18n/Text.resx:252 ID:ComposeKeyToolTip
+#: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Välj tangenten som ska fungera som Compose-tangent."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:255 ID:ResetDelay
+#: i18n/Text.resx:273 ID:ResetDelay
 msgid "Delay:"
 msgstr "Fördröjning:"
 
-#: i18n/Text.resx:259 ID:UnicodeInput
+#: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Avancerad Unicode-inmatning"
 
-#: i18n/Text.resx:262 ID:UnicodeInputToolTip
+#: i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
-"Compose U 1 A 3 F"
+"Compose U 1 A 3 F Enter"
 msgstr ""
+"Aktivera Unicode-inmatning för alla tecken, även de som saknar definierad "
+"komponeringssekvens. Till exempel kommer följande sekvens att mata ut "
+"tecknet U+1A3F: Compose U 1 A 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
-#: i18n/Text.resx:265 ID:InvalidSequences
-#, fuzzy
+#: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Pip på ogiltiga sekvenser"
+msgstr "För ogiltiga sekvenser"
 
-#: i18n/Text.resx:269 ID:CaseInsensitive
-#, fuzzy
+#: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "Fall tillbaka på icke-skiftlägeskänsliga träffar på ogiltiga sekvenser"
+msgstr "Fall tillbaka på icke-skiftlägeskänsliga träffar"
 
-#: i18n/Text.resx:272 ID:CaseInsensitiveToolTip
+#: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
+"Om den angivna sekvensen inte existerar, men det finns en som bara skiljer "
+"sig gällande skiftläge, korrigera det automatiskt."
 
-#: i18n/Text.resx:275 ID:DiscardOnInvalid
+#: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Förkasta alla inmatade tecken"
 
-#: i18n/Text.resx:278 ID:DiscardOnInvalidToolTip
+#: i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
+"Om den angivna sekvensen inte existerar, förkasta alla tecken som matats in. "
+"Standardbeteendet är att mata ut tecknen som om Compose-tangenten inte hade "
+"använts."
 
-#: i18n/Text.resx:281 ID:BeepOnInvalid
+#: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Skicka ut ett pip"
 
-#: i18n/Text.resx:284 ID:BeepOnInvalidToolTip
+#: i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Om den inmatade sekvensen inte existerar, skicka ut ett systemljud."
 
-#: i18n/Text.resx:287 ID:Language
+#: i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
 msgstr "Gränssnittsspråk:"
 
-#: i18n/Text.resx:290 ID:LanguageToolTip
+#: i18n/Text.resx:317 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Välj språket som WinCompose använder i gränssnittet. Som standard används "
+"operativsystemets språk."
 
 #. Close the settings window
-#: i18n/Text.resx:293 ID:Close
+#: i18n/Text.resx:321 ID:Close
 msgid "Close"
 msgstr "Stäng"
 
-#. Copy character to the clipboard
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:297 ID:Obsolete050
-msgid "Copy Character"
-msgstr "Kopiera tecken"
+#. Copy character or symbol to the clipboard
+#: i18n/Text.resx:325 ID:CopyToClipboard
+msgid "Copy to clipboard"
+msgstr "Kopiera till urklipp"
 
-#. Description of a Unicode character or group of characters
-#. This string is obsolete but might be reused in the future
-#: i18n/Text.resx:301 ID:Obsolete051
-msgid "Description:"
-msgstr "Beskrivning:"
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
+#: i18n/Text.resx:329 ID:Emoji
+msgid "Emoji"
+msgstr "Emoji"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:305 ID:Apply
+#: i18n/Text.resx:333 ID:Apply
 msgid "Apply"
 msgstr "Verkställ"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:309 ID:KeepOriginalKey
+#: i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Upprätthåll ursprunglig komponent-tangentbeteende"
+msgstr "Upprätthåll ursprunglig beteende för Compose-tangenten"
 
-#: i18n/Text.resx:313 ID:KeepOriginalKeyToolTip
+#: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
+"Detta säger till WinCompose att göra en ansträngning att behålla "
+"originaltangentens beteende. Till exempel skulle genvägen Alt-Tab "
+"fortfarande fungera även om Alt används som Compose-tangent."
 
-#: i18n/Text.resx:316 ID:InsertZwsp
+#: i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "Infoga 0-punkts mellanslag i Office-program"
+msgstr "Infoga nollpunktsmellanslag i Office-program"
 
-#: i18n/Text.resx:319 ID:InsertZwspToolTip
+#: i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Microsoft Office-program ändrar ibland dokumenttypsnittet automatiskt när "
+"vissa Unicode-tecken matas in. Denna funktion matar in ett osynligt tecken "
+"efter Unicode-tecknet för att kringgå detta fel."
 
-#: i18n/Text.resx:322 ID:EmulateCapsLock
+#: i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Emulera Caps Lock med båda Shift-tangenterna"
 
-#: i18n/Text.resx:325 ID:EmulateCapsLockToolTip
+#: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
+"Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga "
+"beteende att bli otillgängligt. Denna funktion låter dig slå på Caps Lock "
+"genom att trycka på båda Skift-tangenterna samtidigt."
 
-#: i18n/Text.resx:328 ID:ShiftDisablesCapsLock
+#: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
 msgstr "Skift-tangenten slår av Caps Lock"
 
-#: i18n/Text.resx:331 ID:ShiftDisablesCapsLockToolTip
+#: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
+"Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga "
+"beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock "
+"genom att trycka på Skift-tangenten."
 
-#: i18n/Text.resx:334 ID:CapsLockCapitalizes
+#: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Caps Lock gör alltid om bokstäver till versaler"
 
-#: i18n/Text.resx:337 ID:CapsLockCapitalizesToolTip
+#: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"När Caps Lock är på, kommer inmatning av en bokstav med accenter så som ”é” "
+"kommer alltid att mata ut motsvarande versal bokstav, i detta fall ”É”."
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:340 ID:Categories
+#: i18n/Text.resx:377 ID:Categories
 msgid "Categories"
 msgstr "Kategorier"
 
-#: i18n/Text.resx:344 ID:InSelectedCategories
+#: i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr "I utvalda kategorier"
+msgstr "I valda kategorier"
 
 #. The title of the Options window
-#: i18n/Text.resx:347 ID:Options
+#: i18n/Text.resx:385 ID:Options
 msgid "Options — WinCompose"
 msgstr "Alternativ — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:351 ID:ShowOptions
+#: i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
 msgstr "Alternativ…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:355 ID:TrayToolTip
+#: i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2} on {0} ({1} sekvenser)"
+msgstr "WinCompose v{2} på {0} ({1} sekvenser)"
 
 #. The “general” tab of the options window
-#: i18n/Text.resx:359 ID:General
-#, fuzzy
+#: i18n/Text.resx:397 ID:General
 msgid "General"
-msgstr "Allmänt beteende"
+msgstr "Allmänt"
 
-#: i18n/Text.resx:363 ID:Behavior
-#, fuzzy
+#: i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
-msgstr "Allmänt beteende"
+msgstr "Beteende"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:366 ID:WindowTitle
+#: i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Sekvenser — WinCompose"
 
-#: i18n/Text.resx:370 ID:UserMacros
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
+#: i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
-msgstr "Användardefinierade macros"
+msgstr "Användardefinierade makron"
 
-#: i18n/Text.resx:373 ID:DisabledToolTip
+#: i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr "WinCompose är inaktiverad"
+msgstr "WinCompose är inaktiverat"
 
-#. The name of the key on the keyboard
-#: i18n/Text.resx:376 ID:KeyInsert
+#. The name of the "Insert" key on the keyboard
+#: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
 msgstr "Infoga"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:380 ID:TestTyping
-msgid "Test Typing:"
-msgstr "Testinmatning:"
+#: i18n/Text.resx:421 ID:TestTyping
+msgid "Test Typing"
+msgstr "Testinmatning"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:384 ID:Tweaks
+#: i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
 msgstr "Justeringar"
 
-#: i18n/Text.resx:388 ID:Milliseconds
-msgid "(milliseconds)"
-msgstr "(millisekunder)"
+#. Format string to display the current reset delay
+#: i18n/Text.resx:429 ID:DelaySeconds
+msgid "{0} seconds"
+msgstr "{0} sekunder"
 
 #. About box menu entry
-#: i18n/Text.resx:391 ID:About
+#: i18n/Text.resx:433 ID:About
 msgid "About"
 msgstr "Om"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:395 ID:Download
-#, fuzzy
+#: i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
-msgstr "Om WinCompose"
+msgstr "Hämta WinCompose {0}"
 
 #. Window title of the About box
-#: i18n/Text.resx:399 ID:AboutBoxTitle
+#: i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "Om WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:403 ID:Programming
+#: i18n/Text.resx:445 ID:Programming
 msgid "Programming"
 msgstr "Programmering"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:407 ID:Translators
+#: i18n/Text.resx:449 ID:Translators
 msgid "Translation"
 msgstr "Översättning"
 
-#. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:411 ID:Contributors
-msgid "Special Thanks"
-msgstr "Speciella tack"
+#. The tab item to see all the program authors.
+#: i18n/Text.resx:453 ID:Authors
+msgid "Authors"
+msgstr "Skapare"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:415 ID:License
+#: i18n/Text.resx:457 ID:License
 msgid "License"
 msgstr "Licens"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:419 ID:NeedRestart
+#: i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr "WinCompose behöver startas om för att ändringarna skall gälla."
+msgstr ""
+"WinCompose behöver startas om för att några av ändringarna ska börja gälla."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:423 ID:ReportBug
+#: i18n/Text.resx:465 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Rapportera en bugg"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:427 ID:Help
+#: i18n/Text.resx:469 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Hjälp"
 
-#. Message displayed in the systray tooltip.
-#: i18n/Text.resx:431 ID:UpdatesToolTip
+#. Message displayed in the notification area tooltip.
+#: i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Uppdateringar är tillgängliga."
 
-#: i18n/Text.resx:435 ID:UserDefinedSequences
-#, fuzzy
+#: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Användardefinierade macros"
+msgstr "Användardefinierade sekvenser"
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:438 ID:UserDefinedSequencesEdit
+#: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:442 ID:UserDefinedSequencesReload
+#: i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Läs om"
 
-#: i18n/Text.resx:446 ID:AllowInjected
+#: i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Tillåt inskjutna tangenter"
 
-#: i18n/Text.resx:449 ID:AllowInjectedToolTip
+#: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
+"Hoppa inte över tangent som skickas av andra programvaror så som AutoHotKey "
+"eller Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
-#: i18n/Text.resx:452 ID:KeyPrint
+#: i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
+msgstr "Print Screen"
+
+#. String to show instead of the key name when no compose key is configured
+#: i18n/Text.resx:501 ID:KeyDisabled
+msgid "Disabled"
+msgstr "Inaktivera"
+
+#: i18n/Text.resx:505 ID:CheckUpdates
+msgid "Automatically check for updates"
+msgstr "Automatiskt sök efter uppdateringar"
+
+#: i18n/Text.resx:509 ID:CheckUpdatesToolTip
+msgid ""
+"If enabled, WinCompose will connect to the Internet at regular intervals to "
+"check for new versions. Updates are not installed automatically."
 msgstr ""
+"Om markerat kommer WinCompose regelbundet försöka ansluta till Internet för "
+"att finna nya versioner. Uppdateringar installeras inte automatiskt."
+
+#: i18n/Text.resx:513 ID:KeepIconVisible
+msgid "Try to keep notification area icon always visible"
+msgstr "Försök att alltid hålla ikonen i notifieringsområdet synlig"
+
+#: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
+msgid ""
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
+msgstr ""
+"Som standard kommer Windows försöka ta bort ikonen från notifieringsområdet "
+"efter ett kort tag. Detta alternativ försöker hålla det synligt hela tiden."
+
+#. The user can click on this button to change the current compose key.
+#: i18n/Text.resx:521 ID:ChangeComposeKey
+msgid "Change…"
+msgstr "Förändra…"
+
+#: i18n/Text.resx:525 ID:CaptureComposeKey
+msgid "Please press a key to use as your compose key."
+msgstr ""
+"Var vänlig att tryck på en tangent för att använda denna som din Compose-"
+"tangent."
+
+#. Add sequence to the list of favorites.
+#: i18n/Text.resx:529 ID:AddToFavorites
+msgid "Add to favorites"
+msgstr "Lägg till i favoriter"
+
+#: i18n/Text.resx:533 ID:DisableIcon
+msgid "Disable notification area icon"
+msgstr "Stäng av ikonen för notifieringsområdet"
+
+#: i18n/Text.resx:537 ID:DisableIconToolTip
+msgid ""
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
+"“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgstr ""
+"Om markerat kommer WinCompose inte längre visa en ikon i notiferingsområdet. "
+"Det enda sättet att öppna gränssnittet för WinCompose blir genom att öppna "
+"”WinCompose Settings” och ”Wincompose Sequences” i Startmenyn."
+
+#. The name of the “Home” key on the keyboard
+#: i18n/Text.resx:541 ID:KeyHome
+msgid "Home"
+msgstr "Home"
+
+#. The name of the “End” key on the keyboard
+#: i18n/Text.resx:545 ID:KeyEnd
+msgid "End"
+msgstr "End"
+
+#. The name of the “Tab” key on the keyboard
+#: i18n/Text.resx:549 ID:KeyTab
+msgid "Tab"
+msgstr "Tab"
+
+#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#: i18n/Text.resx:553 ID:DelayDisabled
+msgid "No delay"
+msgstr "Avstängd"
+
+#. The “Advanced” section in the settings.
+#: i18n/Text.resx:557 ID:Advanced
+msgid "Advanced"
+msgstr "Avancerat"
+
+#. “regex” is shorthand for “regular expression”.
+#: i18n/Text.resx:561 ID:IgnoreRegex
+msgid "Ignore windows matching this regex:"
+msgstr "Ignorera fönster som matchar detta regelbundna uttryck:"
+
+#: i18n/Text.resx:565 ID:IgnoreRegexToolTip
+msgid ""
+"WinCompose will be completely disabled when the current window class or "
+"window name matches this regular expression."
+msgstr ""
+"WinCompose kommer stängas av helt när nuvarande fönsterklass eller "
+"fönsternamn matchar detta regelbundna uttryck."
+
+#: i18n/Text.resx:569 ID:AlwaysCompose
+msgid "Alternate compose key is always Compose"
+msgstr "Alternativ Compose-tangent är alltid Compose"
+
+#: i18n/Text.resx:573 ID:AlwaysComposeToolTip
+msgid ""
+"If enabled, all compose keys will be treated as Compose in a sequence. By "
+"default, only the first pressed key will act as Compose, and alternate "
+"compose keys will keep their original role."
+msgstr ""
+"Om markerat kommer alla Compose-tangenter behandlas som Compose i en "
+"sekvens. Som standard kommer endast den tangent som trycks på först att "
+"agera som Compose medan alternativa Compose-tangenter behåller sina "
+"ursprungliga roller."
+
+#. The section for random contributors who aren’t programmers or translators. Might be empty.
+#: i18n/Text.resx:577 ID:SpecialThanks
+msgid "Special Thanks"
+msgstr "Speciella tack"
+
+#. Remove sequence from the list of favorites.
+#: i18n/Text.resx:581 ID:RemoveFromFavorites
+msgid "Remove from favorites"
+msgstr "Ta bort från favoriter"
+
+#. Name of the category (Unicode characters, Emoji, User macros, Favorites)
+#: i18n/Text.resx:585 ID:Favorites
+msgid "Favorites"
+msgstr "Favoriter"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -546,12 +703,12 @@ msgstr "Bokstav, versal"
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Märke, blankstegskombinerande"
+msgstr "Märke, utrymmeskombinerande"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr "Märke, inneslutande"
+msgstr "Märke, omslutande"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:169 ID:NonSpacingMark
@@ -644,41 +801,86 @@ msgid "Separator, Space"
 msgstr "Avskiljare, blanksteg"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:136
+#: installer.pas:174
 msgid "Prerequisites"
-msgstr ""
+msgstr "Förutsättningar"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:137
-#, fuzzy
+#: installer.pas:175
 msgid "Software required by WinCompose"
-msgstr "Sekvenser — WinCompose"
+msgstr "Programvara som krävs av WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:140
+#: installer.pas:178
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose behöver .Net Framework version 3.5 SP1 eller senare, vilket inte\n"
+"verkar vara installerat. Följande åtgärd kan hjälpa dig att lösa problemet:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:145
+#: installer.pas:183
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
-msgstr ""
+msgstr "Hämta och installera .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:155
+#: installer.pas:193
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"När detta är klart kan du återgår till denna skärm och fortsätta med\n"
+"installationen."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:245
+#: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Administratörsrättigheter krävs. Fel: %d"
+
+#~ msgid "(milliseconds)"
+#~ msgstr "(millisekunder)"
+
+#~ msgid "Copy Character"
+#~ msgstr "Kopiera tecken"
+
+#~ msgid "Grave Accent `"
+#~ msgstr "Grav accent `"
+
+#~ msgid "500 milliseconds"
+#~ msgstr "500 millisekunder"
+
+#~ msgid "1 second"
+#~ msgstr "1 sekund"
+
+#~ msgid "2 seconds"
+#~ msgstr "2 sekunder"
+
+#~ msgid "3 seconds"
+#~ msgstr "3 sekunder"
+
+#~ msgid "5 seconds"
+#~ msgstr "5 sekunder"
+
+#~ msgid "None"
+#~ msgstr "Ingen"
+
+#~ msgid "History"
+#~ msgstr "Historik"
+
+#~ msgid "Sequence"
+#~ msgstr "Sekvens"
+
+#~ msgid "Unicode"
+#~ msgstr "Unicode"
+
+#~ msgid "by Sam Hocevar <sam@hocevar.net>"
+#~ msgstr "av Sam Hocevar <sam@hocevar.net>"
+
+#~ msgid "Description:"
+#~ msgstr "Beskrivning:"
 
 #~ msgid "Discard characters from invalid sequences"
 #~ msgstr "Förkasta tecken från ogiltiga sekvenser"

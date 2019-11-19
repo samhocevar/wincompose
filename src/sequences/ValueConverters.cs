@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -44,7 +44,8 @@ namespace WinCompose
 
     public class UnicodeCategoryConverter : OneWayValueConverter<UnicodeCategoryConverter>
     {
-        private static readonly Dictionary<UnicodeCategory, string> Strings = new Dictionary<UnicodeCategory, string>();
+        private static readonly IDictionary<UnicodeCategory, string> m_lut
+            = new Dictionary<UnicodeCategory, string>();
 
         static UnicodeCategoryConverter()
         {
@@ -53,15 +54,14 @@ namespace WinCompose
                 var name = value.ToString();
                 var prop = typeof(unicode.Category).GetProperty(name, BindingFlags.Static | BindingFlags.Public);
                 var desc = prop.GetValue(null, null);
-                Strings.Add((UnicodeCategory)value, (string)desc);
+                m_lut.Add((UnicodeCategory)value, (string)desc);
             }
         }
 
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var cat = (UnicodeCategory)value;
-            string result;
-            return Strings.TryGetValue(cat, out result) ? result : cat.ToString();
+            return m_lut.TryGetValue(cat, out var result) ? result : "";
         }
     }
 }

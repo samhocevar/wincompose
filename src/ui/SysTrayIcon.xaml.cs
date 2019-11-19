@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -12,11 +12,14 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
-using System.Reflection;
-using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Input;
-using WinForms = System.Windows.Forms;
+using System.Windows.Media;
+using System.Windows.Threading;
+
+using Hardcodet.Wpf.TaskbarNotification;
 
 namespace WinCompose
 {
@@ -28,7 +31,9 @@ namespace WinCompose
         ShowSequences,
         ShowOptions,
         About,
+        DebugWindow,
         VisitWebsite,
+        DonationPage,
         Download,
         Disable,
         Restart,
@@ -38,119 +43,125 @@ namespace WinCompose
     /// <summary>
     /// Interaction logic for SysTrayIcon.xaml
     /// </summary>
-    public partial class SysTrayIcon : UserControl, INotifyPropertyChanged, IDisposable
+    public partial class SysTrayIcon : TaskbarIcon, INotifyPropertyChanged, IDisposable
     {
         public SysTrayIcon()
         {
             InitializeComponent();
-
-(new Popup()).Show();
-            // Set the data context for the menu, not for our empty shell class
-            ContextMenu.DataContext = this;
-
-            m_control = new RemoteControl();
-            m_control.DisableEvent += OnDisableEvent;
-            m_control.DisableEvent += SysTrayUpdateCallback;
-            m_control.ExitEvent += OnExitEvent;
-            m_control.TriggerDisableEvent();
-
-            m_icon = new WinForms.NotifyIcon();
-            m_icon.Visible = true;
-            m_icon.Click += NotifyiconClicked;
-            m_icon.DoubleClick += NotifyiconDoubleclicked;
-
-            // XXX: disabled for now, as this feature is a bit controversial
-            //SysTray.AlwaysShow("wincompose[.]exe");
-
-            Composer.ChangedEvent += SysTrayUpdateCallback;
-            Updater.Changed += SysTrayUpdateCallback;
-            SysTrayUpdateCallback(null, new EventArgs());
-
-            Updater.Changed += UpdaterStateChanged;
-            UpdaterStateChanged(null, new EventArgs());
+            Loaded += OnLoaded;
         }
 
-        public void Dispose()
+        private void OnLoaded(object sender, RoutedEventArgs args)
+        {
+(new Popup()).Show();
+            Application.RemoteControl.DisableEvent += OnDisableEvent;
+            Application.RemoteControl.ExitEvent += OnExitEvent;
+            Application.RemoteControl.OpenEvent += OnOpenEvent;
+            Application.RemoteControl.BroadcastDisableEvent();
+
+            TrayMouseDoubleClick += NotifyiconDoubleclicked;
+
+            // Opt-in only, as this feature is a bit controversial
+            if (Settings.KeepIconVisible.Value)
+                SysTray.AlwaysShow("wincompose[.]exe");
+
+            // This one is a bit safer
+            m_cleanup_timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
+            m_cleanup_timer.Tick += (o, e) => CleanupNotificationArea();
+            m_cleanup_timer.Start();
+            CleanupNotificationArea();
+
+            Settings.DisableIcon.ValueChanged += MarkIconDirty;
+            Composer.Changed += MarkIconDirty;
+            Updater.Changed += MarkIconDirty;
+            MarkIconDirty();
+
+            Updater.Changed += UpdaterStateChanged;
+            UpdaterStateChanged();
+
+            CompositionTarget.Rendering += UpdateNotificationIcon;
+        }
+
+        public new void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+            base.Dispose();
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            Composer.ChangedEvent -= SysTrayUpdateCallback;
-            Updater.Changed -= SysTrayUpdateCallback;
+            CompositionTarget.Rendering -= UpdateNotificationIcon;
+
+            Composer.Changed -= MarkIconDirty;
+            Updater.Changed -= MarkIconDirty;
             Updater.Changed -= UpdaterStateChanged;
 
-            if (m_icon != null)
-            {
-                m_icon.Visible = false;
-                m_icon.Dispose();
-                m_icon = null;
-            }
+            Application.RemoteControl.DisableEvent -= OnDisableEvent;
+            Application.RemoteControl.ExitEvent -= OnExitEvent;
+            Application.RemoteControl.OpenEvent -= OnOpenEvent;
 
-            if (m_control != null)
-            {
-                m_control.DisableEvent -= OnDisableEvent;
-                m_control.ExitEvent -= OnExitEvent;
-                m_control.Dispose();
-                m_control = null;
-            }
+            Visibility = Visibility.Collapsed;
+
+            m_cleanup_timer?.Stop();
+            m_cleanup_timer = null;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand MenuItemCommand
         {
-            get { return m_menu_item_command ?? (m_menu_item_command = new DelegateCommand(OnMenuItemClicked)); }
+            get { return m_menu_item_command ?? (m_menu_item_command = new DelegateCommand(OnCommand)); }
         }
 
         private DelegateCommand m_menu_item_command;
 
-        private void OnMenuItemClicked(object parameter)
+        private void OnCommand(object o)
         {
-            switch (parameter as MenuCommand?)
+            switch (o as MenuCommand?)
             {
                 case MenuCommand.ShowSequences:
-                    if (m_sequencewindow == null)
-                    {
-                        m_sequencewindow = new SequenceWindow();
-                        WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
-                    }
+                    m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
                     m_sequencewindow.Show();
                     m_sequencewindow.Activate();
                     break;
 
                 case MenuCommand.ShowOptions:
-                    if (m_optionswindow == null)
-                    {
-                        m_optionswindow = new SettingsWindow();
-                        WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_optionswindow);
-                    }
+                    m_optionswindow = m_optionswindow ?? new SettingsWindow();
                     m_optionswindow.Show();
                     m_optionswindow.Activate();
                     break;
 
+                case MenuCommand.DebugWindow:
+                    m_debugwindow = m_debugwindow ?? new DebugWindow();
+                    m_debugwindow.Show();
+                    m_debugwindow.Activate();
+                    break;
+
                 case MenuCommand.About:
-                    var about_box = new AboutBox();
-                    about_box.ShowDialog();
+                    m_about_box = m_about_box ?? new AboutBox();
+                    m_about_box.Show();
+                    m_about_box.Activate();
                     break;
 
                 case MenuCommand.Download:
-                    var url = Settings.IsInstalled() ? Updater.Get("Installer")
-                                                     : Updater.Get("Portable");
-                    System.Diagnostics.Process.Start(url);
+                    var url = Utils.IsInstalled ? Updater.Get("Installer")
+                                                : Updater.Get("Portable");
+                    Process.Start(url);
                     break;
 
                 case MenuCommand.VisitWebsite:
-                    System.Diagnostics.Process.Start("http://wincompose.info/");
+                    Process.Start("http://wincompose.info/");
+                    break;
+
+                case MenuCommand.DonationPage:
+                    Process.Start("http://wincompose.info/donate/");
                     break;
 
                 case MenuCommand.Disable:
-                    if (Composer.IsDisabled())
-                        m_control.TriggerDisableEvent();
+                    if (Composer.IsDisabled)
+                        Application.RemoteControl.BroadcastDisableEvent();
                     Composer.ToggleDisabled();
-                    SysTrayUpdateCallback(null, new EventArgs());
                     break;
 
                 case MenuCommand.Restart:
@@ -158,27 +169,55 @@ namespace WinCompose
                     // not worth it, because restarting the app is a hack and whatever
                     // reason the user may have, it’s because of a bug or a limitation
                     // in WinCompose that we need to fix.
-                    m_icon.Visible = false;
-                    WinForms.Application.Restart();
-                    Environment.Exit(0);
+                    Visibility = Visibility.Collapsed;
+                    Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
+                    Application.Current.Shutdown();
                     break;
 
                 case MenuCommand.Exit:
-                    WinForms.Application.Exit();
+                    Application.Current.Shutdown();
                     break;
             }
         }
 
-        private RemoteControl m_control;
-        private WinForms.NotifyIcon m_icon;
+        private DispatcherTimer m_cleanup_timer;
+
+        private void CleanupNotificationArea()
+        {
+            // Parse the window hierarchy to find the notification area and
+            // send mouse move events to get rid of zombie icons.
+            string[] classes = { "Shell_TrayWnd", "TrayNotifyWnd", "SysPager" };
+            string[] names = { "User Promoted Notification Area", "Notification Area" };
+
+            IntPtr window = IntPtr.Zero;
+            foreach (var win_class in classes)
+                window = NativeMethods.FindWindowEx(window, IntPtr.Zero, win_class, "");
+
+            foreach (var win_name in names)
+            {
+                var area = NativeMethods.FindWindowEx(window, IntPtr.Zero,
+                                                  "ToolbarWindow32", win_name);
+                if (area == IntPtr.Zero)
+                    continue;
+
+                RECT rect;
+                NativeMethods.GetClientRect(area, out rect);
+                for (int y = rect.top + 4; y < rect.bottom; y += 8)
+                    for (int x = rect.left + 4; x < rect.right; x += 8)
+                        NativeMethods.PostMessage(area, (uint)WM.MOUSEMOVE, 0, (y << 16) | x);
+            }
+        }
+
         private SequenceWindow m_sequencewindow;
         private SettingsWindow m_optionswindow;
+        private DebugWindow m_debugwindow;
+        private AboutBox m_about_box;
 
         private System.Drawing.Icon GetCurrentIcon()
         {
-            return GetIcon((Composer.IsDisabled() ?     0x1 : 0x0) |
-                           (Composer.IsComposing() ?    0x2 : 0x0) |
-                           (Updater.HasNewerVersion() ? 0x4 : 0x0));
+            return GetIcon((Composer.IsDisabled?     0x1 : 0x0) |
+                           (Composer.IsComposing?    0x2 : 0x0) |
+                           (Updater.HasNewerVersion? 0x4 : 0x0));
         }
 
         public static System.Drawing.Icon GetIcon(int index)
@@ -221,87 +260,72 @@ namespace WinCompose
 
         private static System.Drawing.Icon[] m_icon_cache;
 
-        private void SysTrayUpdateCallback(object sender, EventArgs e)
+        private AtomicFlag m_dirty;
+
+        private void MarkIconDirty() => m_dirty.Set();
+
+        private void UpdateNotificationIcon(object o, EventArgs e)
         {
-            m_icon.Icon = GetCurrentIcon();
+            if (m_dirty.Get())
+            {
+                Visibility = Settings.DisableIcon.Value ? Visibility.Collapsed : Visibility.Visible;
+                Icon = GetCurrentIcon();
+                ToolTipText = GetCurrentToolTip();
 
-            // XXX: we cannot directly set m_icon.Text because it has an
-            // erroneous 64-character limitation (the underlying framework has
-            // the correct 128-char limitation). So instead we use this hack,
-            // taken from http://stackoverflow.com/a/580264/111461
-            Type t = typeof(WinForms.NotifyIcon);
-            BindingFlags hidden = BindingFlags.NonPublic | BindingFlags.Instance;
-            t.GetField("text", hidden).SetValue(m_icon, GetCurrentToolTip());
-            if ((bool)t.GetField("added", hidden).GetValue(m_icon))
-                t.GetMethod("UpdateIcon", hidden).Invoke(m_icon, new object[] { true });
-
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
+            }
         }
 
         private static string GetCurrentToolTip()
         {
             string ret = i18n.Text.DisabledToolTip;
 
-            if (!Composer.IsDisabled())
+            if (!Composer.IsDisabled)
                 ret = string.Format(i18n.Text.TrayToolTip,
                                     Settings.ComposeKeys.Value.FriendlyName,
                                     Settings.SequenceCount,
                                     Settings.Version);
 
-            if (Updater.HasNewerVersion())
+            if (Updater.HasNewerVersion)
                 ret += "\n" + i18n.Text.UpdatesToolTip;
 
             return ret;
         }
 
-        private void NotifyiconClicked(object sender, EventArgs e)
-        {
-            bool is_right_button = (e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Right;
-            ContextMenu.IsOpen = is_right_button && !ContextMenu.IsOpen;
-        }
-
         private void NotifyiconDoubleclicked(object sender, EventArgs e)
         {
-            if ((e as WinForms.MouseEventArgs).Button == WinForms.MouseButtons.Left)
-            {
-                if (m_sequencewindow == null)
-                {
-                    m_sequencewindow = new SequenceWindow();
-                    WinForms.Integration.ElementHost.EnableModelessKeyboardInterop(m_sequencewindow);
-                }
+            m_sequencewindow = m_sequencewindow ?? new SequenceWindow();
 
-                if (m_sequencewindow.IsVisible)
-                {
-                    m_sequencewindow.Hide();
-                }
-                else
-                {
-                    m_sequencewindow.Show();
-                    m_sequencewindow.Activate();
-                }
+            if (m_sequencewindow.IsVisible)
+            {
+                m_sequencewindow.Hide();
+            }
+            else
+            {
+                m_sequencewindow.Show();
+                m_sequencewindow.Activate();
             }
         }
 
-        public bool IsDisabled { get { return Composer.IsDisabled(); } }
-        public bool HasNewerVersion { get { return Updater.HasNewerVersion(); } }
-        public string DownloadHeader { get { return string.Format(i18n.Text.Download, Updater.Get("Latest") ?? ""); } }
+        public bool IsDisabled => Composer.IsDisabled;
+        public bool HasNewerVersion => Updater.HasNewerVersion;
+        public string DownloadHeader => string.Format(i18n.Text.Download, Updater.Get("Latest") ?? "");
 
-        private void UpdaterStateChanged(object sender, EventArgs e)
+        private void UpdaterStateChanged()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasNewerVersion"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DownloadHeader"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasNewerVersion)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DownloadHeader)));
         }
 
-        private void OnDisableEvent(object sender, EventArgs e)
+        private void OnDisableEvent()
         {
-            if (!Composer.IsDisabled())
+            if (!Composer.IsDisabled)
                 Composer.ToggleDisabled();
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsDisabled"));
+            MarkIconDirty();
         }
 
-        private void OnExitEvent(object sender, EventArgs e)
-        {
-            WinForms.Application.Exit();
-        }
+        private void OnExitEvent() => Application.Current.Shutdown();
+
+        private void OnOpenEvent(MenuCommand cmd) => OnCommand(cmd);
     }
 }

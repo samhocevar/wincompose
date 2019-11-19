@@ -1,8 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
-//              2014—2015 Benjamin Litzelmann
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -40,8 +39,10 @@ internal enum WM : int
     INPUTLANGCHANGEREQUEST = 0x50,
     KEYDOWN    = 0x100,
     KEYUP      = 0x101,
+    CHAR       = 0x102,
     SYSKEYDOWN = 0x104,
     SYSKEYUP   = 0x105,
+    MOUSEMOVE  = 0x200,
 };
 
 public enum VK : int
@@ -180,11 +181,25 @@ public enum VK : int
 
     /* This is for internal WinCompose use only */
     COMPOSE    = 0x100,
+    DISABLED   = 0x101,
 };
 
 internal enum SC : uint
 {
     // Not needed
+};
+
+internal enum LANG : uint
+{
+    ENGLISH  = 0x09,
+    JAPANESE = 0x11,
+};
+
+internal enum SUBLANG : uint
+{
+    NEUTRAL        = 0x00,
+    DEFAULT        = 0x01,
+    JAPANESE_JAPAN = 0x01,
 };
 
 [Flags]
@@ -227,6 +242,29 @@ public static class HKL
     public static IntPtr PREV = (IntPtr)0;
     public static IntPtr NEXT = (IntPtr)1;
 };
+
+public static class HWND
+{
+    public static IntPtr BROADCAST = (IntPtr)0xffff;
+}
+
+/// <summary>
+/// Represents possible dialogbox command id values by the MB_GetString function.
+/// </summary>
+internal enum DialogBoxCommandID : int
+{
+    IDOK       = 0,
+    IDCANCEL   = 1,
+    IDABORT    = 2,
+    IDRETRY    = 3,
+    IDIGNORE   = 4,
+    IDYES      = 5,
+    IDNO       = 6,
+    IDCLOSE    = 7,
+    IDHELP     = 8,
+    IDTRYAGAIN = 9,
+    IDCONTINUE = 10,
+}
 
 [Flags]
 internal enum LLKHF : uint
@@ -416,6 +454,13 @@ internal enum ASSOCSTR : int
     APPPUBLISHER,
     APPICONREFERENCE,
     MAX,
+};
+
+[Flags]
+internal enum MSGFLT : uint
+{
+    ADD = 1,
+    REMOVE = 2,
 };
 
 [Flags]

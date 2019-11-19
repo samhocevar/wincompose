@@ -2,30 +2,14 @@
 
 set -e
 
-STEPS=6
-CACHE=unicode/cache
-mkdir -p ${CACHE}
-
-#
-# Copy and transform system files
-#
-
-echo "[1/${STEPS}] Copy system files…"
-
-if [ -f /usr/share/X11/locale/en_US.UTF-8/Compose ]; then
-    cat -s /usr/share/X11/locale/en_US.UTF-8/Compose > rules/Xorg.txt
-fi
-
-if [ -f /usr/include/X11/keysymdef.h ]; then
-    cat -s /usr/include/X11/keysymdef.h > res/keysymdef.h
-fi
+STEPS=5
 
 #
 # Rebuild po/wincompose.pot from our master translation file Text.resx
 # then update all .po files
 #
 
-echo "[2/${STEPS}] Rebuild potfiles…"
+echo "[1/${STEPS}] Rebuild potfiles…"
 DEST=po/wincompose.pot
 # Update POT-Creation-Date with: date +'%Y-%m-%d %R%z'
 cat > ${DEST} << EOF
@@ -96,8 +80,8 @@ po2res()
 {
     case "$1" in
         pt_BR) echo pt-BR ;;
-        zh_CN) echo zh-CHS ;;
-        zh) echo zh-CHT ;;
+        zh) echo zh-CHS ;;
+        zh_Hant) echo zh-CHT ;;
         sc) echo it-CH ;;
         eo) echo de-CH ;;
         be@latin) echo be-BY ;;
@@ -106,7 +90,7 @@ po2res()
     esac
 }
 
-echo "[3/${STEPS}] Rebuild resx files…"
+echo "[2/${STEPS}] Rebuild resx files…"
 for POFILE in po/*.po; do
     polang=$(basename ${POFILE} .po)
     reslang=$(po2res $polang)
@@ -148,16 +132,11 @@ done
 # and create .resx translation files for our project
 #
 
-echo "[4/${STEPS}] Rebuild Unicode translation files…"
-INDEX=https://github.com/samhocevar/unicode-translation/tree/master/po
-BASE=https://raw.github.com/samhocevar/unicode-translation/master/po/
-PO=$(wget -qO- $INDEX | tr '<>' '\n' | sed -ne 's/^\(..\)[.]po$/\1/p')
-for polang in $PO; do
-    printf "${polang}... "
+echo "[3/${STEPS}] Rebuild Unicode translation files…"
+for POFILE in 3rdparty/unicode-translation/po/*.po; do
+    polang=$(basename ${POFILE} .po)
     reslang=$(po2res $polang)
-    SRC=${CACHE}/${polang}.po
-    # Get latest translation if new
-    (cd ${CACHE} && wget -q -N ${BASE}/${polang}.po)
+    printf "${polang}... "
 
     # Parse data and put it in the Char.*.resx and Block.*.resx files
     for FILE in Char Block; do
@@ -173,7 +152,7 @@ for polang in $PO; do
         esac
         DEST=unicode/${FILE}.${reslang}.resx
         sed -e '/^  <data/,$d' < unicode/${FILE}.resx > ${DEST}
-        if uname | grep -qi mingw; then unix2dos; else cat; fi < ${SRC} \
+        if uname | grep -qi mingw; then unix2dos; else cat; fi < ${POFILE} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk 'function f() {
                      if (c && msgstr) {
@@ -193,14 +172,14 @@ done
 echo "done."
 
 #
-# Check some wincompose.csproj consistency
+# Check some language.csproj consistency
 #
 
-echo "[5/${STEPS}] Check consistency…"
+echo "[4/${STEPS}] Check consistency…"
 for x in unicode/*.*.resx i18n/*.*.resx; do
     reslang="$(echo $x | cut -f2 -d.)"
-    if ! grep -q '"'$(echo $x | tr / .)'"' wincompose.csproj; then
-        echo "WARNING: $x not found in wincompose.csproj"
+    if ! grep -q '"'$(echo $x | tr / .)'"' language.csproj; then
+        echo "WARNING: $x not found in language.csproj"
     fi
     if ! grep -q '^Source: "bin.*[\\]'$reslang'[\\][*][.]dll";' installer.iss; then
         echo "WARNING: $reslang DLL not found in installer.iss"
@@ -210,8 +189,8 @@ for x in unicode/*.*.resx i18n/*.*.resx; do
     fi
 done
 
-if [ -d "/c/Program Files (x86)/Inno Setup 5/Languages" ]; then
-    for f in "/c/Program Files (x86)/Inno Setup 5/Languages/"*.isl*; do
+if [ -d "/c/Program Files (x86)/Inno Setup 6/Languages" ]; then
+    for f in "/c/Program Files (x86)/Inno Setup 6/Languages/"*.isl*; do
         f="$(basename "$f")"
         if ! grep -q "$f" installer.iss; then
             echo "WARNING: $f exists in Inno Setup but is not mentioned in installer.iss"
@@ -219,11 +198,20 @@ if [ -d "/c/Program Files (x86)/Inno Setup 5/Languages" ]; then
     done
 fi
 
+for po in po/*.po; do
+    l="$(sed -ne 's/Language-Team: *//p' $po | tr -d '"' | cut -f1 -d' ')"
+    if [ -f "3rdparty/innosetup/Files/Languages/Unofficial/$l.isl" ]; then
+        if ! grep -q "$l[.]isl" installer.iss; then
+            echo "WARNING: $po exists and $l.isl exists in Unofficial Inno Setup but they are not mentioned in installer.iss"
+        fi
+    fi
+done
+
 #
 # Build translator list
 #
 
-echo "[6/${STEPS}] Update contributor list…"
+echo "[5/${STEPS}] Update contributor list…"
 printf '﻿' > res/.contributors.html
 cat >> res/.contributors.html << EOF
 <html>
@@ -255,6 +243,31 @@ git log --stat po/*.po | \
   | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g' | sed 's,.*,<li>&</li>,' \
   >> res/.contributors.html
 cat >> res/.contributors.html << EOF
+</ul>
+<h3>Donations</h3>
+<ul>
+<li>Aaron Mayzes</li>
+<li>André Rauscher</li>
+<li>Casper Clausen</li>
+<li>Anonyme</li>
+<li>Ben Babcock</li>
+<li>Francois Conil</li>
+<li>Edward Palmer</li>
+<li>Bryan Mills</li>
+<li>Grigory Rechistov</li>
+<li>Matt Proud</li>
+<li>Pascal Heitz</li>
+<li>Jacob Dreesen</li>
+<li>Anonymous</li>
+<li>Fabio Ferreira Cachapa</li>
+<li>Tim Weber</li>
+<li>Andreu Cabré Chacón</li>
+<li>Anonymous</li>
+<li>Marc Dirix</li>
+<li>Jeffrey Miller</li>
+<li>Anonymous</li>
+<li>Jason Baietto</li>
+<li>Stephen Friedrich</li>
 </ul>
 </body>
 </html>

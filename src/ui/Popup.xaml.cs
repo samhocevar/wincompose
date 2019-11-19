@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -28,13 +28,13 @@ namespace WinCompose
             InitializeComponent();
 
             // FIXME: remove Event Handler on destruction!
-            Composer.KeyEvent += new EventHandler(OnKey);
+            Composer.Key += OnKey;
         }
 
-        public void OnKey(object sender, EventArgs e)
+        public void OnKey()
         {
             Rect caret;
-            if (!Composer.IsComposing() || (caret = GetCaretInfo()).IsEmpty)
+            if (!Composer.IsComposing || (caret = GetCaretInfo()).IsEmpty)
             {
                 Hide();
                 return;

@@ -148,10 +148,10 @@
     <value>Bokstav, versal</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>Märke, blankstegskombinerande</value>
+    <value>Märke, utrymmeskombinerande</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>Märke, inneslutande</value>
+    <value>Märke, omslutande</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
     <value>Märke, icke-blanksteg</value>

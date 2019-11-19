@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Μετατροπή</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Μη μετατροπή</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -162,29 +168,29 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Βαρεία `</value>
+  <data name="Composing" xml:space="preserve">
+    <value>Σύνθεση</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>0,5 δευτερόλεπτο</value>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Χρήση ακολουθιών από το έργο Xorg</value>
   </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 δευτερόλεπτο</value>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Χρήση των 3.000 ακολουθιών σύνθεσης από το έργο Xorg (http://www.x.org/). Αυτές είναι οι ακολουθίες που βρίσκονται συνήθως σε ένα τυπικό σύστημα Linux.</value>
   </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 δευτερόλεπτα</value>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Χρήση ακολουθιών από το έργο XCompose</value>
   </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 δευτερόλεπτα</value>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Χρήση των 1.000 ακολουθιών σύνθεσης από το έργο ανοιχτού κώδικα XCompose (https://github.com/kragen/xcompose). Αυτές οι ακολουθίες μπορεί μερικές φορές να έρχονται σε διένεξη με αυτές του Xorg.</value>
   </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 δευτερόλεπτα</value>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Χρήση ακολουθιών emoji του WinCompose</value>
   </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 δευτερόλεπτα</value>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Χρήση των ακολουθιών σύνθεσης για Emoji που παρέχονται από τον δημιουργό του WinCompose και τους συνεργάτες.</value>
   </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Καμία</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Παράθυρο εντοπισμού σφαλμάτων</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Εμφάνιση ακολουθιών…</value>
@@ -195,8 +201,8 @@
   <data name="Restart" xml:space="preserve">
     <value>Επανεκκίνηση</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Ιστορικό</value>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Σελίδα δωρεάς</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Επίσκεψη ιστοσελίδας</value>
@@ -204,17 +210,17 @@
   <data name="Exit" xml:space="preserve">
     <value>Έξοδος</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>από τον Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Χαρακτήρες Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Ακολουθίες</value>
   </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Ακολουθία</value>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Προσπάθεια αντιμετάθεσης των δύο πλήκτρων</value>
   </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Προσπάθεια για αντιμετάθεση των πλήκτρων μιας ακολουθίας δύο πλήκτρων. Για παράδειγμα, εάν η Σύνθεση E A δεν είναι έγκυρη ακολουθία, θα γίνει προσπάθεια για Σύνθεση A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Φίλτρο αναζήτησης:</value>
@@ -232,7 +238,7 @@
     <value>Προηγμένη εισαγωγή Unicode</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Ενεργοποίηση εισαγωγής Unicode για όλους τους χαρακτήρες, ακόμη και εκείνων που δεν ορίζονται σε ακολουθία σύνθεσης. Για παράδειγμα, η παρακάτω ακολουθία θα εξάγει τον χαρακτήρα U+1A3F: Σύνθεση U 1 Α 3 F</value>
+    <value>Ενεργοποίηση εισαγωγής Unicode για όλους τους χαρακτήρες, ακόμη και εκείνων που δεν ορίζονται σε ακολουθία σύνθεσης. Για παράδειγμα, η παρακάτω ακολουθία θα εξάγει τον χαρακτήρα U+1A3F: Compose U 1 Α 3 F Enter</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Σε άκυρες ακολουθίες</value>
@@ -259,16 +265,16 @@
     <value>Γλώσσα περιβάλλοντος:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Επιλέξτε τη γλώσσα που θα χρησιμοποιεί το WinCompose για το περιβάλλον. Εξ ορισμού χρησιμοποιείται η γλώσσα του λειτουργικού συστήματος.</value>
+    <value>Επιλέξτε τη γλώσσα που θα χρησιμοποιεί το WinCompose για το περιβάλλον χρήστη. Εξ ορισμού χρησιμοποιείται η γλώσσα του λειτουργικού συστήματος.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Κλείσιμο</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Αντιγραφή χαρακτήρα</value>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Αντιγραφή στο πρόχειρο</value>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Περιγραφή:</value>
+  <data name="Emoji" xml:space="preserve">
+    <value>Εικονίδια έκφρασης</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Εφαρμογή</value>
@@ -318,6 +324,12 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose  v{2} σε {0} ({1} ακολουθίες)</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>Γενικά</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Συμπεριφορά</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Ακολουθίες — WinCompose</value>
   </data>
@@ -331,13 +343,13 @@
     <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Δοκιμή πληκτρολόγησης:</value>
+    <value>Δοκιμή πληκτρολόγησης</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Λεπτομερείς ρυθμίσεις</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(χιλιοστά δευτερ.)</value>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} δευτερόλεπτα</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Περί</value>
@@ -354,8 +366,8 @@
   <data name="Translators" xml:space="preserve">
     <value>Μετάφραση</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Ιδιαίτερες ευχαριστίες</value>
+  <data name="Authors" xml:space="preserve">
+    <value>Συντελεστές</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Άδεια χρήστη</value>
@@ -371,5 +383,83 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Υπάρχουν διαθέσιμες ενημερώσεις.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Ακολουθίες οριζόμενες από χρήστη</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Επαναφόρτωση</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Να επιτρέπονται εμβόλιμα πλήκτρα</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Να μην αγνοούνται τα πλήκτρα που αποστέλλονται από άλλο λογισμικό όπως το AutoHotkey ή το Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Prt Scrn</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Απενεργοποιημένο</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Αυτόματος έλεγχος για ενημερώσεις</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, το WinCompose θα ελέγχει κατά διαστήματα στο διαδίκτυο για νέες εκδόσεις. Οι ενημερώσεις δεν θα εγκατασταθούν αυτόματα.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Προσπάθεια διατήρησης πάντα ορατού του εικονιδίου ΠΕ</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Από προεπιλογή, τα Windows θα αφαιρέσουν μετά από λίγο το εικονίδιο από την περιοχή ειδοποιήσεων. Αυτή η επιλογή επιχειρεί να το κρατάει πάντα ορατό.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Αλλαγή...</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Πατήστε το πλήκτρο που θα χρησιμοποιηθεί ως πλήκτρο σύνθεσης.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Προσθήκη στα αγαπημένα</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Απενεργοποίηση εικονιδίου στην περιοχή ειδοποιήσεων</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, το WinCompose δεν θα εμφανίζει πλέον ένα εικονίδιο στην περιοχή ειδοποιήσεων. Ο μόνος τρόπος για να ανοίξετε τη διεπαφή του WinCompose θα είναι μέσω των καταχωρήσεων «Ρυθμίσεις WinCompose» και «Ακολουθίες WinCompose» στο μενού εκκίνησης.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Χωρίς καθυστέρηση</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Για προχωρημένους</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Παράβλεψη των παραθύρων που ταιριάζουν με αυτό το regex:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>Το WinCompose θα απενεργοποιηθεί εντελώς όταν η τρέχουσα κλάση παραθύρου ή το όνομα παραθύρου ταιριάζει με αυτήν την κανονική έκφραση.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Το εναλλακτικό πλήκτρο σύνθεσης είναι πάντα Σύνθεση</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, όλα τα πλήκτρα σύνθεσης θα αντιμετωπίζονται ως Σύνθεση σε μια ακολουθία. Από προεπιλογή, μόνο το πρώτο πάτημα πλήκτρου θα ενεργήσει ως Σύνθεση και τα εναλλακτικά πλήκτρα σύνθεσης θα κρατήσουν τον αρχικό τους ρόλο.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Ιδιαίτερες ευχαριστίες</value>
   </data>
 </root>

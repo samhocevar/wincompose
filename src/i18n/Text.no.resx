@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutodetectLanguage" xml:space="preserve">
+    <value>Automatisk oppdaging</value>
+  </data>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Venstre Alt</value>
+  </data>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Høyre Alt</value>
+  </data>
+  <data name="KeyLControl" xml:space="preserve">
+    <value>Venstre Ctrl</value>
+  </data>
+  <data name="KeyRControl" xml:space="preserve">
+    <value>Høyre Ctrl</value>
+  </data>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>Venstre Super</value>
+  </data>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>Høyre Super</value>
+  </data>
+  <data name="KeyCapital" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="KeyNumLock" xml:space="preserve">
+    <value>Num Lock</value>
+  </data>
+  <data name="KeyPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="KeyApps" xml:space="preserve">
+    <value>Meny</value>
+  </data>
+  <data name="KeyEscape" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Konvertering</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Ikke-konvertering</value>
+  </data>
+  <data name="KeyScroll" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Mellomrom</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Bruk sekvenser fra Xorg-prosjektet</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Bruk sekvenser fra XCompose-prosjektet</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Bruk de 1000 sammenfattingssekvensene fra XCompose opensource-prosjektet (https://github.com/kragen/xcompose). Sekvensene kan noen ganger komme i konflikt med dem fra Xorg.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Bruk WinCompose-emojisekvenser</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Bruk sammenfattingssekvensene for emojier tilbudt av WinCompose-utvikleren og bidragsyterne.</value>
+  </data>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>Vis sekvenser…</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Skru av</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Start på nytt</value>
+  </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Donasjonsside</value>
+  </data>
+  <data name="VisitWebsite" xml:space="preserve">
+    <value>Besøk nettsiden</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Lukk</value>
+  </data>
+  <data name="Sequences" xml:space="preserve">
+    <value>Sekvenser</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Prøv å bytte de to tastene</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Prøv å bytte tastene i en to-tasters sekvens. For eksempel. Hvis sammenfattingstast E A ikke er en gyldig sekvens, prøv sammenfattingstast A E istedenfor.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Søkefilter:</value>
+  </data>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Sammenfattingstast:</value>
+  </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Velg knappen å bruke som sammenfattingstast.</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Avansert Unicode-inndata</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Skru på Unicode-inndata for alle tegn, selv dem uten definert sammenfattingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet U+1A3F: Sammenfattingstast U 1 A 3 F</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Ved ugyldige sekvenser</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Fall tilbake til versalinsensitive treff</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Hvis innskrevet sekvens ikke fines, mendet er mer en én som kun skiller seg i versalbruk, korriger den automatisk.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Forkast alle skrevne tegn</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Hvis innskrevet sekvens ikke finnes, forkast alle innskrevne tegn. Forvalgt oppførsel er å skrive ut alle tegnene som om sammenfattingstasten ikke hadde blitt brukt.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Utbasuner pip</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Hvis innskrevet sekvens ikke finnes, utbasuner systemlyd.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Grensesnittspråk:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Velg språket brukt i WinCompose-grensesnittet. Som forvalg brukes systemspråk.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Lukk</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopier til utklippstavle</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Legg til</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Behold opprinnelig oppførsel for sammenfattingstast</value>
+  </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Gir WinCompose beskjed om å prøve å beholde den opprinnelige tastens oppførsel. For eksempel, vil Alt+Tab-snarveien fungere selv om Alt brukes som sammenfattingstast.</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>Kontorprogrammer endrer noen ganger dokumentskriften på direkten når noen av Unicode-tegnene skrives inn. Denne funksjonen setter inn et usynlig tegn etter Unicode-tegnet for å unngå problemet.</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Emuler Caps Lock ved bruk av begge Shift-tastene</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Hvis Caps Lock brukes som sammenfattingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Denne funksjonen tillater å skru på Caps Lock ved å trykke begge Shift-tastene samtidig.</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift-tasten skrur av Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Hvis Caps Lock brukes som sammenfattingstast, vil opprinnelig oppførsel for tasten bli utilgjengelig. Funksjonen tillater å skru av Caps Lock ved å trykke på Shift-tasten.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Caps Lock gjør alltid om bokstaver til store versaler</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>Når Caps Lock er på, vil innskriving av bokstav med akksent, som &quot;é&quot; alltid resultere i motsvarende bokstav i stor versal, i dette fall &quot;É&quot;.</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorier</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>I valgte kategorier</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Innstillinger — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Alternativ…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} på {0} ({1} sekvenser)</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Hovedinnstillinger</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Oppførsel</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Sekvenser — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Brukerdefinerte makroer</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose er avskrudd</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Justeringer</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Last ned WinCompose {0}</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Om WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Programmering av</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Oversettelse ved</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Utviklere</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Lisens</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose må startes på ny før endringer kan tre i effekt.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Rapporter en feil</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hjelp</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Brukerdefinerte sekvenser</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Rediger</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Last inn igjen</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Prt Scrn</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Prøv å alltid holde varslingsområdet synlig</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Windows vil fjerne ikonet fra varslingsområdet etter en kort stund som forvalg. Dette valget prøver å alltid holde det synlig.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Endre…</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Legg til i favoritter</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Skru av ikonet i varslingsområdet</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Fjerner visning av WinCompose-ikon i varslingsområdet. Den eneste måten å åpne WinCompose-grensesnittet vil være gjennom &quot;WinCompose-innstillinger&quot; og &quot;WinCompose-sekvenser&quot;-oppføringer i oppstartsmenyen.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Hjem</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tabulator</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Ingen forsinkelse</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avansert</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Se bort fra vinduer som samsvarer med dette regulære uttrykket:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose vil bli helt skrudd av når nåværende vindusklasse eller vindusnavn samsvarer med dette regulære uttrykket.</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Behandler alle sammenfattingstaster som Compose i en sekvens. Kun første tast som trykkes vil fungere som Compose som forvalg, og alternative sammenfattingstaster vil alltid beholde deres opprinnelige rolle.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Spesiell takk til</value>
+  </data>
+</root>

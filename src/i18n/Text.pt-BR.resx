@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Automático</value>
+    <value>Detecção automática</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Alt Esquerdo</value>
@@ -168,29 +168,29 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Acento Grave `</value>
+  <data name="Composing" xml:space="preserve">
+    <value>Compondo</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisegundos</value>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Usar sequências do projeto Xorg</value>
   </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 segundo</value>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Usar as 3,000 sequências de composição do projeto Xorg(http://www.x.org/). Essas são as sequências mais encontradas no sistema Linux.</value>
   </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 segundos</value>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Usar sequências do projeto XCompose</value>
   </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 segundos</value>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Usar as 1,000 sequências de composição do projeto de código aberto XCompose(https://github.com/kragen/xcompose). Essas sequências podem eventualmente conflitar com as do Xorg.</value>
   </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 segundos</value>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Usar as sequências emoji do WinCompose</value>
   </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 segundos</value>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Usar as sequências de composição para Emoji fornecida pelos autores e contribuidores do WinCompose.</value>
   </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Nenhum</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Janela de Debug</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Mostrar Sequências…</value>
@@ -201,26 +201,26 @@
   <data name="Restart" xml:space="preserve">
     <value>Reiniciar</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Histórico</value>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Página de Doações</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Visitar o Site</value>
+    <value>Visitar o Website</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Sair</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>por Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Caracteres Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequências</value>
   </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sequência</value>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Tentar trocar as duas teclas</value>
   </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Tentar trocar as duas teclas de uma sequência de duas teclas. Por exemplo, se Compose E A não é uma sequência válida, uma tentativa será realizada para Compose A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Filtro de Busca:</value>
@@ -270,11 +270,11 @@
   <data name="Close" xml:space="preserve">
     <value>Fechar</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Copiar Caractere</value>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copiar para a área de transferência</value>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Descrição:</value>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Aplicar</value>
@@ -283,7 +283,7 @@
     <value>Manter comportamento original da tecla Compose</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Determina que o WinCompose faça o possível para manter o comportamento original da tecla. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo que Alt seja usada como tecla Compose.</value>
+    <value>Determina que o WinCompose faça o possível para manter o comportamento original das teclas. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo que Alt seja usada como tecla Compose.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Inserir espaços de largura zero em aplicativos do Office</value>
@@ -343,13 +343,13 @@
     <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Teste a Digitação:</value>
+    <value>Teste a Digitação</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Ajustes</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milisegundos)</value>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} segundos</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Sobre</value>
@@ -366,8 +366,8 @@
   <data name="Translators" xml:space="preserve">
     <value>Tradução</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Agradecimentos Especiais</value>
+  <data name="Authors" xml:space="preserve">
+    <value>Autores</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Licença</value>
@@ -400,6 +400,60 @@
     <value>Não ignorar teclas enviadas por outros programas tais como AutoHotKey e Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Prt Scrn</value>
+    <value>PrtScrn</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Desabilitado</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Verificar atualizações automaticamente</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Se ativado, WinCompose irá conectar à internet em intervalos regulares para buscar por novas versões. As atualizações não são instaladas automaticamente.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Tentar manter o ícone na área de notificação sempre visível</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Por padrão, Windows irá remover o ícone da área de notificações após um curto período. Esta opção tenta manter ele sempre visível.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Alterar…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Pressione uma tecla para usar como tecla Compose.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Adicionar aos favoritos</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Desativar o ícone da área de notificações</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Se habilitado, WinCompose não mostrará um ícone na área de notificação. A única forma de abrir a interface do WinCompose será através dos itens &quot;Configurações do WinCompose&quot; e &quot;Sequências do WinCompose&quot; no menu de inicialização.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Sem atraso</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avançado</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignore janelas que correspondem a seguinte regex:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose será desabilitado completamente quando a classe ou nome da janela atual corresponda a seguinte expressão regular.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Agradecimentos Especiais</value>
   </data>
 </root>

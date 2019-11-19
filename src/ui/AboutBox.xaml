@@ -1,7 +1,7 @@
 ﻿<!--
    - WinCompose — a compose key for Windows — http://wincompose.info/
    -
-   - Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+   - Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
    -             2014—2015 Benjamin Litzelmann
    -
    - This program is free software. It comes without any warranty, to
@@ -11,38 +11,48 @@
    - See http://www.wtfpl.net/ for more details.
   -->
 
-<Window x:Class="WinCompose.AboutBox"
+<wc:BaseWindow
+        x:Class="WinCompose.AboutBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:i18n="clr-namespace:WinCompose.i18n"
-        xmlns:wincompose="clr-namespace:WinCompose"
+        xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
+        xmlns:wc="clr-namespace:WinCompose"
         Title="{x:Static i18n:Text.AboutBoxTitle}"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Icon="/WinCompose;component/res/key_compose.png"
-        Height="400"
-        Width="700">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <StackPanel Orientation="Vertical">
-                <Image Height="100" Source="/WinCompose;component/res/key_compose_big.png"/>
-                <Label HorizontalAlignment="Center" FontSize="18" Content="Wincompose"/>
-                <Label HorizontalAlignment="Center" FontSize="18" Content="{Binding Version}"/>
-            </StackPanel>
-            <StackPanel Margin="0, 10, 0, 10"  VerticalAlignment="Bottom">
-                <Button Margin="10, 2, 10, 2" Content="Contributors" Command="{Binding SwitchDocumentCommand}" CommandParameter="contributors"/>
-                <Button Margin="10, 2, 10, 2" Content="License" Command="{Binding SwitchDocumentCommand}" CommandParameter="licence"/>
-                <Button Margin="10, 2, 10, 2" Content="{x:Static i18n:Text.VisitWebsite}" Command="{Binding OpenWebsiteCommand}"/>
-                <Button Margin="10, 2, 10, 2" Content="{x:Static i18n:Text.ReportBug}" Command="{Binding OpenReportBugCommand}"/>
-            </StackPanel>
-        </Grid>
-        <GroupBox Grid.Column="1" Header="{Binding ActiveDocumentTitle}">
-            <WebBrowser Margin="10, 10 10, 10" wincompose:AboutBox.WebContent="{Binding ActiveDocument}" />
-        </GroupBox>
-    </Grid>
-</Window>
+        Height="500" Width="500">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="OnCloseCommandExecuted"/>
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Key="Escape" Command="ApplicationCommands.Close"/>
+    </Window.InputBindings>
+
+    <StackPanel Orientation="Vertical">
+        <TabControl Margin="10">
+
+            <TabItem Header="{x:Static i18n:Text.About}">
+                <DockPanel Margin="8">
+                    <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="18" Content="Wincompose"/>
+                    <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="18" Content="{Binding Version}"/>
+                    <Button DockPanel.Dock="Bottom" Margin="4" Content="{x:Static i18n:Text.ReportBug}" Command="{Binding OpenReportBugCommand}"/>
+                    <Button DockPanel.Dock="Bottom" Margin="4" Content="{x:Static i18n:Text.VisitWebsite}" Command="{Binding OpenWebsiteCommand}"/>
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Header="{x:Static i18n:Text.Authors}">
+                <WebBrowser Margin="8" wc:AboutBox.WebContent="{Binding AuthorsDocument}" Height="400" />
+            </TabItem>
+
+            <TabItem Header="{x:Static i18n:Text.License}">
+                <WebBrowser Margin="8" wc:AboutBox.WebContent="{Binding LicenseDocument}" Height="400" />
+            </TabItem>
+
+        </TabControl>
+    </StackPanel>
+</wc:BaseWindow>

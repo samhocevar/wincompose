@@ -11,30 +11,24 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WinCompose
 {
     /// <summary>
     /// Interaction logic for AboutBox.xaml
     /// </summary>
-    public partial class AboutBox : Window
+    public partial class AboutBox : BaseWindow
     {
         public static readonly DependencyProperty WebContentProperty;
 
         static AboutBox()
         {
-            WebContentProperty = DependencyProperty.RegisterAttached("WebContent", typeof(Stream), typeof(AboutBox), new PropertyMetadata(OnWebContentPropertyChanged));
+            WebContentProperty = DependencyProperty.RegisterAttached("WebContent",
+                typeof(Stream), typeof(AboutBox), new PropertyMetadata(OnWebContentPropertyChanged));
         }
 
         public AboutBox()
@@ -43,8 +37,16 @@ namespace WinCompose
             InitializeComponent();
         }
 
-        public static Stream GetWebContent(WebBrowser web_browser) { return web_browser.GetValue(WebContentProperty) as Stream; }
-        public static void SetWebContent(WebBrowser web_browser, Stream value) { web_browser.SetValue(WebContentProperty, value); }
+        private void OnCloseCommandExecuted(object Sender, ExecutedRoutedEventArgs e)
+        {
+            Hide();
+        }
+
+        public static Stream GetWebContent(WebBrowser web_browser)
+            => web_browser.GetValue(WebContentProperty) as Stream;
+
+        public static void SetWebContent(WebBrowser web_browser, Stream value)
+            => web_browser.SetValue(WebContentProperty, value);
 
         private static void OnWebContentPropertyChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {

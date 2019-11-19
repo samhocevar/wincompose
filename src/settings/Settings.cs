@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -18,40 +18,50 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
-using System.Xml.XPath;
 
 namespace WinCompose
 {
     public static class Settings
     {
-        private const string GlobalSection = "global";
-        private const string ConfigFileName = "settings.ini";
-        private static FileSystemWatcher m_watcher;
-        private static Timer m_reload_timer;
+        private class EntryLocation : Attribute
+        {
+            public EntryLocation(string section, string key)
+            {
+                Section = section;
+                Key = key;
+            }
+
+            public readonly string Section, Key;
+        }
 
         static Settings()
         {
-            Language = new SettingsEntry<string>(GlobalSection, "language", "");
-            ComposeKeys = new SettingsEntry<KeySequence>(GlobalSection, "compose_key", new KeySequence());
-            ResetDelay = new SettingsEntry<int>(GlobalSection, "reset_delay", -1);
-            Disabled = new SettingsEntry<bool>(GlobalSection, "disabled", false);
-            UnicodeInput = new SettingsEntry<bool>(GlobalSection, "unicode_input", true);
-            CaseInsensitive = new SettingsEntry<bool>(GlobalSection, "case_insensitive", false);
-            DiscardOnInvalid = new SettingsEntry<bool>(GlobalSection, "discard_on_invalid", false);
-            BeepOnInvalid = new SettingsEntry<bool>(GlobalSection, "beep_on_invalid", false);
-            KeepOriginalKey = new SettingsEntry<bool>(GlobalSection, "keep_original_key", false);
-            InsertZwsp = new SettingsEntry<bool>(GlobalSection, "insert_zwsp", false);
-            EmulateCapsLock = new SettingsEntry<bool>(GlobalSection, "emulate_capslock", false);
-            ShiftDisablesCapsLock = new SettingsEntry<bool>(GlobalSection, "shift_disables_capslock", false);
-            CapsLockCapitalizes = new SettingsEntry<bool>(GlobalSection, "capslock_capitalizes", false);
-            AllowInjected = new SettingsEntry<bool>(GlobalSection, "allow_injected", false);
+            m_ini_file = new IniFile(Path.Combine(Utils.AppDataDir, "settings.ini"));
+
+            // Add a save handler to our EntryLocation attributes
+            foreach (var v in typeof(Settings).GetProperties())
+            {
+                foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
+                {
+                    var entry = v.GetValue(null, null) as SettingsEntry;
+                    entry.ValueChanged += () => ThreadPool.QueueUserWorkItem(_ => m_ini_file.SaveEntry(entry.ToString(), attr.Section, attr.Key));
+                }
+            }
+
+            // Reload all sequences when these values change
+            UseXorgRules.ValueChanged += () => LoadSequences();
+            UseXComposeRules.ValueChanged += () => LoadSequences();
+            UseEmojiRules.ValueChanged += () => LoadSequences();
+
+            // Refresh the window properties when this value changes
+            IgnoreRegex.ValueChanged += () => KeyboardLayout.Window.Refresh();
         }
 
+        // The application version
         public static string Version
         {
             get
@@ -69,107 +79,115 @@ namespace WinCompose
                 return m_version;
             }
         }
+        private static string m_version;
 
-        public static SettingsEntry<string> Language { get; private set; }
+        [EntryLocation("global", "language")]
+        public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
+        [EntryLocation("global", "disabled")]
+        public static SettingsEntry<bool> Disabled { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("global", "check_updates")]
+        public static SettingsEntry<bool> CheckUpdates { get; } = new SettingsEntry<bool>(true);
 
-        public static SettingsEntry<KeySequence> ComposeKeys { get; private set; }
+        [EntryLocation("composing", "compose_key")]
+        public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
+        [EntryLocation("composing", "reset_delay")]
+        public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
+        [EntryLocation("composing", "use_xorg_rules")]
+        public static SettingsEntry<bool> UseXorgRules { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("composing", "use_xcompose_rules")]
+        public static SettingsEntry<bool> UseXComposeRules { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("composing", "use_emoji_rules")]
+        public static SettingsEntry<bool> UseEmojiRules { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("composing", "unicode_input")]
+        public static SettingsEntry<bool> UnicodeInput { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("composing", "case_insensitive")]
+        public static SettingsEntry<bool> CaseInsensitive { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("composing", "discard_on_invalid")]
+        public static SettingsEntry<bool> DiscardOnInvalid { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("composing", "swap_on_invalid")]
+        public static SettingsEntry<bool> SwapOnInvalid { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("composing", "beep_on_invalid")]
+        public static SettingsEntry<bool> BeepOnInvalid { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("composing", "keep_original_key")]
+        public static SettingsEntry<bool> KeepOriginalKey { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("composing", "always_compose")]
+        public static SettingsEntry<bool> AlwaysCompose { get; } = new SettingsEntry<bool>(false);
 
-        public static SettingsEntry<int> ResetDelay { get; private set; }
+        [EntryLocation("tweaks", "insert_zwsp")]
+        public static SettingsEntry<bool> InsertZwsp { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "emulate_capslock")]
+        public static SettingsEntry<bool> EmulateCapsLock { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "shift_disables_capslock")]
+        public static SettingsEntry<bool> ShiftDisablesCapsLock { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "capslock_capitalizes")]
+        public static SettingsEntry<bool> CapsLockCapitalizes { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "allow_injected")]
+        public static SettingsEntry<bool> AllowInjected { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "keep_icon_visible")]
+        public static SettingsEntry<bool> KeepIconVisible { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "disable_icon")]
+        public static SettingsEntry<bool> DisableIcon { get; } = new SettingsEntry<bool>(false);
 
-        public static SettingsEntry<bool> Disabled { get; private set; }
+        [EntryLocation("advanced", "ignore_regex")]
+        public static SettingsEntry<string> IgnoreRegex { get; } = new SettingsEntry<string>("");
 
-        public static SettingsEntry<bool> UnicodeInput { get; private set; }
-
-        public static SettingsEntry<bool> CaseInsensitive { get; private set; }
-
-        public static SettingsEntry<bool> DiscardOnInvalid { get; private set; }
-
-        public static SettingsEntry<bool> BeepOnInvalid { get; private set; }
-
-        public static SettingsEntry<bool> KeepOriginalKey { get; private set; }
-
-        public static SettingsEntry<bool> InsertZwsp { get; private set; }
-
-        public static SettingsEntry<bool> EmulateCapsLock { get; private set; }
-
-        public static SettingsEntry<bool> ShiftDisablesCapsLock { get; private set; }
-
-        public static SettingsEntry<bool> CapsLockCapitalizes { get; private set; }
-
-        public static SettingsEntry<bool> AllowInjected { get; private set; }
-
-        public static int SequenceCount { get { return m_sequence_count; } }
-
-        public static IEnumerable<Key> ValidComposeKeys { get { return m_valid_compose_keys; } }
-
-        public static Dictionary<string, string> ValidLanguages { get { return m_valid_languages; } }
+        public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
+        public static Dictionary<string, string> ValidLanguages => m_valid_languages;
 
         public static void StartWatchConfigFile()
         {
-            if (CreateConfigDir())
-            {
-                m_watcher = new FileSystemWatcher(GetConfigDir(), ConfigFileName);
-                m_watcher.NotifyFilter = NotifyFilters.LastWrite;
-                m_watcher.Changed += ConfigFileChanged;
-                m_watcher.EnableRaisingEvents = true;
-            }
+            m_ini_file.OnFileChanged += LoadConfig;
         }
 
         public static void StopWatchConfigFile()
         {
-            if (m_watcher != null)
-            {
-                m_watcher.Dispose();
-                m_watcher = null;
-            }
+            m_ini_file.OnFileChanged -= LoadConfig;
+            m_ini_file.Dispose();
         }
 
-        private static void ConfigFileChanged(object sender, FileSystemEventArgs e)
-        {
-            if (m_reload_timer == null)
-            {
-                // This event is triggered multiple times.
-                // Let's defer its handling to reload the config only once.
-                m_reload_timer = new Timer(ReloadConfig, null, 300, Timeout.Infinite);
-            }
-        }
-
-        private static void ReloadConfig(object state)
-        {
-            m_reload_timer.Dispose();
-            m_reload_timer = null;
-            LoadConfig();
-        }
+        private static IniFile m_ini_file;
 
         private static void ValidateComposeKeys()
         {
-            // Validate the list of compose keys, ensuring there are only valid keys
-            // and there are no duplicates.
             KeySequence compose_keys = new KeySequence();
-            foreach (Key k in ComposeKeys.Value)
+            if (ComposeKeys.Value?.Count == 0)
             {
-                bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
-                                 || m_valid_compose_keys.Contains(k);
-                if (is_valid && !compose_keys.Contains(k))
-                    compose_keys.Add(k);
-            }
-
-            if (compose_keys.Count == 0)
+                // The default compose key for the first time WinCompose is launched
                 compose_keys.Add(m_default_compose_key);
+            }
+            else
+            {
+                // Validate the list of compose keys, ensuring there are only valid keys
+                // and there are no duplicates. Also remove VK.DISABLED from the list
+                // but re-add it if there are no valid keys at all.
+                foreach (Key k in ComposeKeys.Value)
+                {
+                    bool is_valid = (k.VirtualKey >= VK.F1 && k.VirtualKey <= VK.F24)
+                                     || m_valid_compose_keys.Contains(k);
+                    if (is_valid && k.VirtualKey != VK.DISABLED && !compose_keys.Contains(k))
+                        compose_keys.Add(k);
+                }
+
+                if (compose_keys.Count == 0)
+                    compose_keys.Add(new Key(VK.DISABLED));
+            }
             ComposeKeys.Value = compose_keys;
         }
 
         public static void LoadConfig()
         {
-            // The keys used as the compose keys
-            ComposeKeys.Load();
+            Log.Debug($"Reloading configuration file {m_ini_file.FullPath}");
+
+            foreach (var v in typeof(Settings).GetProperties())
+            {
+                foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
+                {
+                    var entry = v.GetValue(null, null) as SettingsEntry;
+                    m_ini_file.LoadEntry(entry, attr.Section, attr.Key);
+                }
+            }
+
             ValidateComposeKeys();
-
-            // The timeout delay
-            ResetDelay.Load();
-
-            // Activate the desired interface language
-            Language.Load();
 
             // HACK: if the user uses the "it-CH" locale, replace it with "it"
             // because we use "it-CH" as a special value to mean Sardinian.
@@ -209,51 +227,38 @@ namespace WinCompose
 
             // Catch-22: we can only add this string when the UI language is known
             m_valid_languages[""] = i18n.Text.AutodetectLanguage;
-
-            // Various options
-            Disabled.Load();
-            UnicodeInput.Load();
-            CaseInsensitive.Load();
-            DiscardOnInvalid.Load();
-            BeepOnInvalid.Load();
-            KeepOriginalKey.Load();
-            InsertZwsp.Load();
-            EmulateCapsLock.Load();
-            ShiftDisablesCapsLock.Load();
-            CapsLockCapitalizes.Load();
-            AllowInjected.Load();
         }
 
         public static void SaveConfig()
         {
-            SaveEntry("reset_delay", m_delay.ToString());
-            Language.Save();
-            ComposeKeys.Save();
-            Disabled.Save();
-            UnicodeInput.Save();
-            CaseInsensitive.Save();
-            DiscardOnInvalid.Save();
-            BeepOnInvalid.Save();
-            KeepOriginalKey.Save();
-            InsertZwsp.Save();
-            EmulateCapsLock.Save();
-            ShiftDisablesCapsLock.Save();
-            CapsLockCapitalizes.Save();
-            AllowInjected.Save();
+            Log.Debug($"Saving configuration file {m_ini_file.FullPath}");
+
+            foreach (var v in typeof(Settings).GetProperties())
+            {
+                foreach (EntryLocation attr in v.GetCustomAttributes(typeof(EntryLocation), true))
+                {
+                    var entry = v.GetValue(null, null) as SettingsEntry;
+                    m_ini_file.SaveEntry(entry.ToString(), attr.Section, attr.Key);
+                }
+            }
         }
 
         public static void LoadSequences()
         {
-            m_sequences = new SequenceTree();
-            m_sequence_count = 0;
+            m_sequences.Clear();
 
-            LoadSequenceFile(Path.Combine(GetDataDir(), "Xorg.txt"));
-            LoadSequenceFile(Path.Combine(GetDataDir(), "XCompose.txt"));
-            LoadSequenceFile(Path.Combine(GetDataDir(), "Emoji.txt"));
-            LoadSequenceFile(Path.Combine(GetDataDir(), "WinCompose.txt"));
+            if (UseXorgRules.Value)
+                m_sequences.LoadResource("3rdparty.xorg.rules");
+            if (UseXComposeRules.Value)
+                m_sequences.LoadResource("3rdparty.xcompose.rules");
+            if (UseEmojiRules.Value)
+            {
+                m_sequences.LoadFile(Path.Combine(Utils.DataDir, "Emoji.txt"));
+                m_sequences.LoadFile(Path.Combine(Utils.DataDir, "WinCompose.txt"));
+            }
 
-            LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose"));
-            LoadSequenceFile(Path.Combine(GetUserDir(), ".XCompose.txt"));
+            m_sequences.LoadFile(Path.Combine(Utils.UserDir, ".XCompose"));
+            m_sequences.LoadFile(Path.Combine(Utils.UserDir, ".XCompose.txt"));
         }
 
         /// <summary>
@@ -264,18 +269,19 @@ namespace WinCompose
         public static void EditCustomRulesFile()
         {
             // Ensure the rules file exists.
-            string user_file = Path.Combine(GetUserDir(), ".XCompose");
+            string user_file = Path.Combine(Utils.UserDir, ".XCompose");
             if (!File.Exists(user_file))
             {
-                string alt_file = Path.Combine(GetUserDir(), ".XCompose.txt");
+                string alt_file = Path.Combine(Utils.UserDir, ".XCompose.txt");
+                string default_file = Path.Combine(Utils.DataDir, "DefaultUserSequences.txt");
                 if (File.Exists(alt_file))
                 {
                     user_file = alt_file;
                 }
-                else
+                else if (File.Exists(default_file))
                 {
-                    var text = File.ReadAllText(Path.Combine(GetDataDir(), "DefaultUserSequences.txt"), Encoding.UTF8);
-                    var replacedText = text.Replace("%DataDir%", GetDataDir());
+                    var text = File.ReadAllText(default_file);
+                    var replacedText = text.Replace("%DataDir%", Utils.DataDir);
                     File.WriteAllText(user_file, replacedText, Encoding.UTF8);
                 }
             }
@@ -304,167 +310,61 @@ namespace WinCompose
             Process.Start(psinfo);
         }
 
-        public static SequenceTree GetSequenceList()
-        {
-            return m_sequences;
-        }
+        public static int SequenceCount => m_sequences.Count;
+
+        public static SequenceTree GetSequenceList() => m_sequences;
 
         public static bool IsValidPrefix(KeySequence sequence, bool ignore_case)
-        {
-            return m_sequences.IsValidPrefix(sequence, ignore_case);
-        }
-
+            => m_sequences.IsValidPrefix(sequence, ignore_case);
         public static bool IsValidSequence(KeySequence sequence, bool ignore_case)
-        {
-            return m_sequences.IsValidSequence(sequence, ignore_case);
-        }
-
+            => m_sequences.IsValidSequence(sequence, ignore_case);
         public static string GetSequenceResult(KeySequence sequence, bool ignore_case)
+            => m_sequences.GetSequenceResult(sequence, ignore_case);
+
+        public static bool IsValidGenericPrefix(KeySequence sequence)
         {
-            return m_sequences.GetSequenceResult(sequence, ignore_case);
+            if (!UnicodeInput.Value)
+                return false;
+            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
+            return m_match_gen_prefix.Match(seq_string).Success;
         }
 
-        public static List<SequenceDescription> GetSequenceDescriptions()
+        public static bool IsValidGenericSequence(KeySequence sequence)
         {
-            return m_sequences.GetSequenceDescriptions();
+            if (!UnicodeInput.Value)
+                return false;
+            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
+            return m_match_gen_seq.Match(seq_string).Success;
         }
 
-        private static string LoadEntry(string key)
+        public static string GetGenericSequenceResult(KeySequence sequence)
         {
-            const int len = 255;
-            var tmp = new StringBuilder(len);
-            NativeMethods.GetPrivateProfileString("global", key, "",
-                                                  tmp, len, GetConfigFile());
-            return tmp.ToString();
+            if (!UnicodeInput.Value)
+                return "";
+            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
+            var m = m_match_gen_seq.Match(seq_string);
+            if (!m.Success)
+                return "";
+            int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
+            if (codepoint < 0 || codepoint > 0x10ffff)
+                return "";
+            if (codepoint >= 0xd800 && codepoint < 0xe000)
+                return "";
+            return char.ConvertFromUtf32(codepoint);
         }
 
-        private static void SaveEntry(string key, string val)
-        {
-            NativeMethods.WritePrivateProfileString("global", key, val,
-                                                    GetConfigFile());
-        }
+        private static Regex m_match_gen_prefix = new Regex(@"^u[0-9a-f]*$");
+        private static Regex m_match_gen_seq = new Regex(@"^u([0-9a-f]+)( |vk[.]return)$");
 
-        private static void LoadSequenceFile(string path)
-        {
-            try
-            {
-                foreach (string line in File.ReadAllLines(path))
-                    LoadSequenceString(line);
-                Log.Debug("Loaded rule file {0}", path);
-            }
-            catch (FileNotFoundException)
-            {
-                Log.Debug("Rule file {0} not found", path);
-            }
-            catch (Exception) { }
-        }
-
-        private static Regex m_r0 = new Regex(@"^\s*include\s*""([^""]*)""");
-        private static Regex m_r1 = new Regex(@"^\s*<Multi_key>\s*([^:]*):[^""]*""(([^""]|\\"")*)""[^#]*#?\s*(.*)");
-            //                                                    ^^^^^^^         ^^^^^^^^^^^^^^^            ^^^^
-            //                                                     keys               result                 desc
-        private static Regex m_r2 = new Regex(@"[\s<>]+");
-
-        private static void LoadSequenceString(string line)
-        {
-            // If this is an include directive, use LoadSequenceFile() again
-            Match m0 = m_r0.Match(line);
-            if (m0.Success)
-            {
-                string file = m0.Groups[1].Captures[0].Value;
-
-                // We support %H (user directory) but not %L (locale-specific dir)
-                if (file.Contains("%L"))
-                    return;
-                file = file.Replace("%H", GetUserDir());
-
-                // Also if path is not absolute, prepend user directory
-                if (!Path.IsPathRooted(file))
-                    file = Path.Combine(GetUserDir(), file);
-
-                LoadSequenceFile(file);
-                return;
-            }
-
-            // Only bother with sequences that start with <Multi_key>
-            var m1 = m_r1.Match(line);
-            if (!m1.Success)
-                return;
-
-            var keysyms = m_r2.Split(m1.Groups[1].Captures[0].Value);
-
-            if (keysyms.Length < 4) // We need 2 empty strings + at least 2 keysyms
-                return;
-
-            KeySequence seq = new KeySequence();
-
-            for (int i = 1; i < keysyms.Length; ++i)
-            {
-                if (keysyms[i] == String.Empty)
-                    continue;
-
-                Key k = Key.FromKeySym(keysyms[i]);
-                if (k == null)
-                {
-                    //Console.WriteLine("Unknown key name <{0}>, ignoring sequence", keysyms[i]);
-                    return; // Unknown key name! Better bail out
-                }
-
-                seq.Add(k);
-            }
-
-            string result = m1.Groups[2].Captures[0].Value;
-            string description = m1.Groups.Count >= 5 ? m1.Groups[4].Captures[0].Value : "";
-
-            // Unescape \n \\ \" and more in the string output
-            result = Regex.Replace(result, @"\\.", m =>
-            {
-                switch (m.Value)
-                {
-                    // These sequences are converted to their known value
-                    case @"\n": return "\n";
-                    case @"\r": return "\r";
-                    case @"\t": return "\t";
-                    // For all other sequences, just strip the leading \
-                    default: return m.Value.Substring(1).ToString();
-                }
-            });
-
-            // Try to translate the description if appropriate
-            int utf32 = StringToCodepoint(result);
-            if (utf32 >= 0)
-            {
-                string key = String.Format("U{0:X04}", utf32);
-                string alt_desc = unicode.Char.ResourceManager.GetString(key);
-                if (alt_desc != null && alt_desc.Length > 0)
-                    description = alt_desc;
-            }
-
-            m_sequences.Add(seq, result, utf32, description);
-            ++m_sequence_count;
-        }
-
-        private static int StringToCodepoint(string s)
-        {
-            if (s.Length == 1)
-                return (int)s[0];
-
-            if (s.Length == 2 && s[0] >= 0xd800 && s[0] <= 0xdbff)
-                return Char.ConvertToUtf32(s[0], s[1]);
-
-            return -1;
-        }
-
-        // The application version
-        private static string m_version;
+        public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
         // Tree of all known sequences
         private static SequenceTree m_sequences = new SequenceTree();
-        private static int m_sequence_count = 0;
 
         // FIXME: couldn't we accept any compose key?
         private static readonly KeySequence m_valid_compose_keys = new KeySequence
         {
+           new Key(VK.DISABLED),
            new Key(VK.LMENU),
            new Key(VK.RMENU),
            new Key(VK.LCONTROL),
@@ -479,8 +379,11 @@ namespace WinCompose
            new Key(VK.CONVERT),
            new Key(VK.NONCONVERT),
            new Key(VK.INSERT),
-           new Key(VK.PRINT),
+           new Key(VK.SNAPSHOT),
            new Key(VK.SCROLL),
+           new Key(VK.TAB),
+           new Key(VK.HOME),
+           new Key(VK.END),
            new Key("`"),
         };
 
@@ -488,20 +391,6 @@ namespace WinCompose
 
         private static readonly
         Dictionary<string, string> m_valid_languages = GetSupportedLanguages();
-
-        private static readonly Dictionary<int, string> m_valid_delays
-         = new Dictionary<int, string>()
-        {
-            { 500,   "500 milliseconds" },
-            { 1000,  "1 second" },
-            { 2000,  "2 seconds" },
-            { 3000,  "3 seconds" },
-            { 5000,  "5 seconds" },
-            { 10000, "10 seconds" },
-            { -1,    "None" },
-        };
-
-        private static int m_delay = -1;
 
         private static Dictionary<string, string> GetSupportedLanguages()
         {
@@ -538,70 +427,6 @@ namespace WinCompose
             }
 
             return ret;
-        }
-
-        public static string GetConfigFile()
-        {
-            return Path.Combine(GetConfigDir(), ConfigFileName);
-        }
-
-        public static bool CreateConfigDir()
-        {
-            string config_dir = GetConfigDir();
-            if (!Directory.Exists(config_dir))
-            {
-                try
-                {
-                    Directory.CreateDirectory(config_dir);
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private static string GetConfigDir()
-        {
-            var appdata = Environment.SpecialFolder.ApplicationData;
-            var appdatadir = Path.Combine(Environment.GetFolderPath(appdata),
-                                          "WinCompose");
-            return IsInstalled() ? appdatadir : GetExeDir();
-        }
-
-        private static string GetDataDir()
-        {
-            return IsInstalled() ? Path.Combine(GetExeDir(), "res")
-                 : IsDebugging() ? Path.Combine(GetExeDir(), "../../rules")
-                 : Path.Combine(GetExeDir(), "rules");
-        }
-
-        private static string GetUserDir()
-        {
-            return Environment.ExpandEnvironmentVariables("%USERPROFILE%");
-        }
-
-        private static string GetExeName()
-        {
-            var codebase = Assembly.GetExecutingAssembly().GetName().CodeBase;
-            return Uri.UnescapeDataString(new UriBuilder(codebase).Path);
-        }
-
-        private static string GetExeDir()
-        {
-            return Path.GetDirectoryName(GetExeName());
-        }
-
-        public static bool IsInstalled()
-        {
-            return File.Exists(Path.Combine(GetExeDir(), "unins000.dat"));
-        }
-
-        public static bool IsDebugging()
-        {
-            string exe = GetExeName();
-            return File.Exists(Path.ChangeExtension(exe, ".pdb"));
         }
     }
 }

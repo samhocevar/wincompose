@@ -121,16 +121,16 @@
     <value>其他，控制字符</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>其他，格式化字符</value>
+    <value>其他，格式字符</value>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
-    <value>其他，尚未指派</value>
+    <value>其他，未分类</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>其他，私用空间</value>
+    <value>其他，专用</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>其他，超大字符集</value>
+    <value>其他，代理项</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
     <value>字母，小写</value>
@@ -142,19 +142,19 @@
     <value>字母，其他</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>字母，标题样式</value>
+    <value>字母，词首字母大写</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
     <value>字母，大写</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>标记，空格组合</value>
+    <value>符号，间隔组合</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>标记，带圈</value>
+    <value>符号，封闭</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>标记，无空格</value>
+    <value>符号，不占位</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
     <value>数字，十进制数字</value>
@@ -166,31 +166,31 @@
     <value>数字，其他</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>标点符号，连接符</value>
+    <value>标点，连接符</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>标点符号，破折号</value>
+    <value>标点，短划线</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
-    <value>标点符号，关闭</value>
+    <value>标点，结束</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>标点符号，右引号</value>
+    <value>标点，后引号</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>标点符号，左引号</value>
+    <value>标点，前引号</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
-    <value>标点符号，其他</value>
+    <value>标点，其他</value>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
-    <value>标点符号，打开</value>
+    <value>标点，开始</value>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
     <value>符号，货币</value>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
-    <value>符号，调整字符</value>
+    <value>符号，修饰符</value>
   </data>
   <data name="MathSymbol" xml:space="preserve">
     <value>符号，数学</value>
@@ -199,7 +199,7 @@
     <value>符号，其他</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>分隔符，直线</value>
+    <value>分隔符，行</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
     <value>分隔符，段落</value>

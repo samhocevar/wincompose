@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -30,7 +30,7 @@ namespace WinCompose
             return true;
         }
 
-        public event EventHandler CanExecuteChanged = delegate {};
+        public event EventHandler CanExecuteChanged;
 
         public void Execute(object parameter)
         {
@@ -39,7 +39,7 @@ namespace WinCompose
 
         public void RaiseCanExecuteChanged()
         {
-            CanExecuteChanged(this, new EventArgs());
+            CanExecuteChanged?.Invoke(this, new EventArgs());
         }
     }
 }

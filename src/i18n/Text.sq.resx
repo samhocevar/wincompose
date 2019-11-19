@@ -162,30 +162,6 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Theks solemn `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisekonda</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekondë</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekonda</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekonda</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekonda</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 sekonda</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Asnjë</value>
-  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Shfaq sekuencat…</value>
   </data>
@@ -195,26 +171,14 @@
   <data name="Restart" xml:space="preserve">
     <value>Rifillo</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Historia</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Vizito uebfaqen</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Dalje</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>nga Sam Hocevar &lt;sam@hocevar.net&gt;</value>
-  </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekuenca</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sekuencë</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unikod</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Filtri i kërkimit:</value>
@@ -233,12 +197,6 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Mbyll</value>
-  </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Kopjo karakterin</value>
-  </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Përshkrimi:</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apliko</value>

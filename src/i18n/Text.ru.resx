@@ -162,29 +162,14 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Ввод</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Тильда `</value>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Использовать комбинации WinCompose для emoji</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 миллисекунд</value>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Использовать комбинации для Emoji, предоставленные автором WinCompose и сообществом.</value>
   </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 секунда</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 секунды</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 секунды</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 секунд</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 секунд</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Нет</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Окно отладки</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Показать комбинации…</value>
@@ -195,8 +180,8 @@
   <data name="Restart" xml:space="preserve">
     <value>Перезапуск</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>История</value>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Пожертвовать</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Посетить веб-сайт</value>
@@ -204,17 +189,11 @@
   <data name="Exit" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Символы Юникода</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Комбинации</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Комбинация</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Фильтр поиска:</value>
@@ -232,7 +211,7 @@
     <value>Расширенный ввод символов Unicode</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Включить ввод Unicode для всех символов, даже для не имеющих ассоциированных с ними последовательностей Compose. Например, следующая комбинация клавиш создаст символ U+1A3F: Compose U 1 A 3 F</value>
+    <value>Использовать коды Unicode для ввода любых символов, даже для не имеющих связанных с ними последовательностей Compose. Например, следующая комбинация клавиш введет символ U+1A3F: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Сигнал при недопустимых комбинациях</value>
@@ -264,11 +243,11 @@
   <data name="Close" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Копировать символ</value>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Скопировать в буфер обмена</value>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Описание:</value>
+  <data name="Emoji" xml:space="preserve">
+    <value>Эмоджи</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Принять</value>
@@ -318,6 +297,12 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} на {0} ({1} комбинаций)</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Последовательности — WinCompose</value>
   </data>
@@ -331,13 +316,13 @@
     <value>Insert</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Протестируйте ввод:</value>
+    <value>Протестируйте ввод</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Твики</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(в миллисекундах)</value>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} секунд</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>О программе</value>
@@ -354,9 +339,6 @@
   <data name="Translators" xml:space="preserve">
     <value>Перевод</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Благодарности</value>
-  </data>
   <data name="License" xml:space="preserve">
     <value>Лицензия</value>
   </data>
@@ -371,5 +353,68 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Доступны обновления.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Комбинации пользователя</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Правка</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Перезагрузить</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Обрабатывать комбинации от других программ</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Не игнорировать нажатия клавиш, отправленные сторонними программами, типа AutoHotkey или Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>PrntScr</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Клавиша не выбрана</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Автоматически проверять наличие обновлений</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Если опция включена, WinCompose будет регулярно подключаться к Интернету для проверки наличия новых версий. Обновления не устанавливаются автоматически.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>По возможности оставлять видимым значок в области уведомлений</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>По умолчанию, Windows будет скрывать значок из области уведомлений через некоторое время. Этот параметр попытается оставить значок видимым.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Изменить…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Нажмите клавишу, чтобы выбрать ее в качестве клавиши Compose.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Добавить в избранное</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Отключить значок в области уведомлений</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Если этот параметр включен, WinCompose больше не будет отображать значок в области уведомлений. В таком случае единственный способ открыть интерфейс WinCompose — через пункты «WinCompose Settings» и «WinCompose Sequences» в меню «Пуск».</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Без задержки</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Благодарности</value>
   </data>
 </root>

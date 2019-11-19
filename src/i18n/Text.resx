@@ -185,33 +185,41 @@
     <value>Return</value>
     <comment>The name of the key on the keyboard</comment>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Grave Accent `</value>
-    <comment>The name of the key on the keyboard</comment>
+  <data name="Composing" xml:space="preserve">
+    <value>Composing</value>
+    <comment>The "Composing" section in the settings window</comment>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milliseconds</value>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Use sequences from the Xorg project</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 second</value>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system.</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 seconds</value>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Use sequences from the XCompose project</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 seconds</value>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones.</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 seconds</value>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Use WinCompose emoji sequences</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 seconds</value>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Use the compose sequences for Emoji provided by the WinCompose author and contributors.</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>None</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Debug Window</value>
+    <comment>Menu entry to show the debug window</comment>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Show Sequences…</value>
+    <comment></comment>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Disable</value>
@@ -219,9 +227,11 @@
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Restart</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>History</value>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Donation Page</value>
+    <comment>A button to visit the donation page (http://wincompose.info/donate/)</comment>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Visit Website</value>
@@ -229,27 +239,35 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>by Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode characters</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequences</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sequence</value>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Try to swap the two keys</value>
+    <comment></comment>
   </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead.</value>
+    <comment></comment>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search Filter:</value>
+    <comment></comment>
   </data>
   <data name="ComposeKey" xml:space="preserve">
     <value>Compose Key:</value>
+    <comment></comment>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Select the key that should act as the Compose key.</value>
+    <comment></comment>
   </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Delay:</value>
@@ -257,9 +275,11 @@
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Advanced Unicode input</value>
+    <comment></comment>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F</value>
+    <value>Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter</value>
+    <comment></comment>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>On invalid sequences</value>
@@ -267,39 +287,47 @@
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>Fall back to case insensitive matches</value>
+    <comment></comment>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
     <value>If the entered sequence does not exist, but there is one that only differs by case, automatically correct it.</value>
+    <comment></comment>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
     <value>Discard all typed characters</value>
+    <comment></comment>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
     <value>If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used.</value>
+    <comment></comment>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Emit a beep</value>
+    <comment></comment>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
     <value>If the entered sequence does not exist, emit a system sound.</value>
+    <comment></comment>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Interface language:</value>
+    <comment></comment>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
     <value>Select the language that WinCompose uses for the interface. By default the operating system language is used.</value>
+    <comment></comment>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
     <comment>Close the settings window</comment>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Copy Character</value>
-    <comment>Copy character to the clipboard</comment>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copy to clipboard</value>
+    <comment>Copy character or symbol to the clipboard</comment>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Description:</value>
-    <comment>Description of a Unicode character or group of characters</comment>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoji</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
@@ -311,30 +339,39 @@
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
     <value>This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key.</value>
+    <comment></comment>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Insert zero-width spaces in Office apps</value>
+    <comment></comment>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
     <value>Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug.</value>
+    <comment></comment>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emulate Caps Lock using both Shift keys</value>
+    <comment></comment>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
     <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously.</value>
+    <comment></comment>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift key disables Caps Lock</value>
+    <comment></comment>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
     <value>If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key.</value>
+    <comment></comment>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
     <value>Caps Lock always capitalizes letters</value>
+    <comment></comment>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
     <value>When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”.</value>
+    <comment></comment>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
@@ -342,6 +379,7 @@
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
     <value>In selected categories</value>
+    <comment></comment>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options — WinCompose</value>
@@ -361,6 +399,7 @@
   </data>
   <data name="Behavior" xml:space="preserve">
     <value>Behavior</value>
+    <comment></comment>
   </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Sequences — WinCompose</value>
@@ -368,24 +407,27 @@
   </data>
   <data name="UserMacros" xml:space="preserve">
     <value>User-defined macros</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose is disabled</value>
+    <comment></comment>
   </data>
   <data name="KeyInsert" xml:space="preserve">
     <value>Insert</value>
-    <comment>The name of the key on the keyboard</comment>
+    <comment>The name of the "Insert" key on the keyboard</comment>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Test Typing:</value>
+    <value>Test Typing</value>
     <comment>The "Test Typing" section in the settings window</comment>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Tweaks</value>
     <comment>The "Tweaks" section in the settings window</comment>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(milliseconds)</value>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} seconds</value>
+    <comment>Format string to display the current reset delay</comment>
   </data>
   <data name="About" xml:space="preserve">
     <value>About</value>
@@ -407,9 +449,9 @@
     <value>Translation</value>
     <comment>The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!</comment>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Special Thanks</value>
-    <comment>The section for random contributors who aren’t programmers or translators. Might be empty.</comment>
+  <data name="Authors" xml:space="preserve">
+    <value>Authors</value>
+    <comment>The tab item to see all the program authors.</comment>
   </data>
   <data name="License" xml:space="preserve">
     <value>License</value>
@@ -429,10 +471,11 @@
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
     <value>Updates are available.</value>
-    <comment>Message displayed in the systray tooltip.</comment>
+    <comment>Message displayed in the notification area tooltip.</comment>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
     <value>User-defined sequences</value>
+    <comment></comment>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
     <value>Edit</value>
@@ -444,12 +487,102 @@
   </data>
   <data name="AllowInjected" xml:space="preserve">
     <value>Allow Injected Keys</value>
+    <comment></comment>
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>Do not ignore keys sent by other software like AutoHotkey or Synergy</value>
+    <comment></comment>
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Prt Scrn</value>
     <comment>The name of the “Print Screen” key on the keyboard</comment>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>String to show instead of the key name when no compose key is configured</comment>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automatically check for updates</value>
+    <comment></comment>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically.</value>
+    <comment></comment>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Try to keep notification area icon always visible</value>
+    <comment></comment>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible.</value>
+    <comment></comment>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Change…</value>
+    <comment>The user can click on this button to change the current compose key.</comment>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Please press a key to use as your compose key.</value>
+    <comment></comment>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Add to favorites</value>
+    <comment>Add sequence to the list of favorites.</comment>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Disable notification area icon</value>
+    <comment></comment>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu.</value>
+    <comment></comment>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+    <comment>The name of the “Home” key on the keyboard</comment>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+    <comment>The name of the “End” key on the keyboard</comment>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+    <comment>The name of the “Tab” key on the keyboard</comment>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>No delay</value>
+    <comment>Text to show instead of a value in seconds when the reset delay feature is disabled</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+    <comment>The “Advanced” section in the settings.</comment>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignore windows matching this regex:</value>
+    <comment>“regex” is shorthand for “regular expression”.</comment>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose will be completely disabled when the current window class or window name matches this regular expression.</value>
+    <comment></comment>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternate compose key is always Compose</value>
+    <comment></comment>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role.</value>
+    <comment></comment>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Special Thanks</value>
+    <comment>The section for random contributors who aren’t programmers or translators. Might be empty.</comment>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Remove from favorites</value>
+    <comment>Remove sequence from the list of favorites.</comment>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favorites</value>
+    <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
 </root>

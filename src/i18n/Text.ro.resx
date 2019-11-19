@@ -162,29 +162,8 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Return</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Accent grav `</value>
-  </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 milisecunde</value>
-  </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 secundă</value>
-  </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 secunde</value>
-  </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 secunde</value>
-  </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 secunde</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 secunde</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Fără</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Fereastră Depanare</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Arată secvenţe…</value>
@@ -195,26 +174,17 @@
   <data name="Restart" xml:space="preserve">
     <value>Restartează</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Istoric</value>
-  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Vizitează site</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Ieşire</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>de Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Caractere Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Secvenţe</value>
-  </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Secvenţă</value>
-  </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Filtru căutare:</value>
@@ -222,7 +192,13 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Cheie Compose:</value>
   </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Selectați tasta corespunzătoare pentru Compose.</value>
+  </data>
   <data name="ResetDelay" xml:space="preserve">
     <value>Întârziere:</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Intrare Unicode Avansată</value>
   </data>
 </root>

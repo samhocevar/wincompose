@@ -28,25 +28,15 @@ namespace WinCompose
             InitializeComponent();
         }
 
-        private void CloseWindowClicked(object sender, CancelEventArgs e)
-        {
-            Hide();
-            e.Cancel = true;
-        }
-
         private void OnCloseCommandExecuted(object Sender, ExecutedRoutedEventArgs e)
         {
             Hide();
         }
 
         private void EditUserDefinedSequences_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.EditCustomRulesFile();
-        }
+            => Settings.EditCustomRulesFile();
 
         private void ReloadUserDefinedSequences_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.LoadSequences();
-        }
+            => Settings.LoadSequences();
     }
 }

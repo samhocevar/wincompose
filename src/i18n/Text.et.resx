@@ -168,29 +168,23 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Sisesta</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>GRAAVIS `</value>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Kasuta projekti Xorg järjestusi</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 millisekundit</value>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Kasuta projekti XCompose järjendeid</value>
   </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 sekund</value>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Kasuta tuhandet järjendit avatud lähtekoodiga projektist XCompose (https://github.com/kragen/xcompose). Mõnikord võivad need järjendid olla konfliktis Xorgi omadega.</value>
   </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 sekundit</value>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Kasuta WinCompose’i emoji järjestusi</value>
   </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 sekundit</value>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Kasuta emotikonide sisestamiseks WinCompose autori ja kaastöötajate loodud kombineerimisjärjendeid.</value>
   </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 sekundit</value>
-  </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 sekundit</value>
-  </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Puudub</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Silumisaken</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Kuva kombinatsioonid…</value>
@@ -201,8 +195,8 @@
   <data name="Restart" xml:space="preserve">
     <value>Taaskäivita</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Ajalugu</value>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Annetuste leht</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Veebileht</value>
@@ -210,17 +204,17 @@
   <data name="Exit" xml:space="preserve">
     <value>Välju</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>autorilt Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode märgid</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Kombinatsioonid</value>
   </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Kombinatsioon</value>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Proovi vahetada kahte klahvi</value>
   </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Proovi vahetada klahve kaheklahvilistes järjendites. Näide: kui Compose E A ei ole kehtiv järjend, siis proovi selle asemel Compose A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Otsingufilter:</value>
@@ -270,11 +264,11 @@
   <data name="Close" xml:space="preserve">
     <value>Sulge</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Copeeri sümbol</value>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopeeri lõikepuhvrisse</value>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Kirjeldus:</value>
+  <data name="Emoji" xml:space="preserve">
+    <value>emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Rakenda</value>
@@ -343,13 +337,13 @@
     <value>Lisa</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Proovi sisestamist:</value>
+    <value>Proovi sisestamist</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Kohandused</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(millisekundit)</value>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} sekundit</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Programmist</value>
@@ -366,8 +360,8 @@
   <data name="Translators" xml:space="preserve">
     <value>Tõlge</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Eriline tänu</value>
+  <data name="Authors" xml:space="preserve">
+    <value>Autorid</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Litsents</value>
@@ -401,5 +395,35 @@
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>Print Scrn</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>keelatud</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Kontrolli värskendusi automaatselt</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Kui on lubatud, siis ühendub WinCompose perioodiliselt Internetiga, et kontrollida uute versioonide olemasolu. Värkendusi ei paigaldata automaatselt.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Proovi hoida tevituste ala ikoon alati nähtaval</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Vaikimisi eemaldab Windows teavituste ala ikooni mõne aja möödudes. See säte proovib hoida ikooni alati nähtaval.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Muuda…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Vajuta klahvi, mida kasutada kombineerimisklahvina.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Lisa lemmikutesse</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Keela teavitusteala ikoon</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Eriline tänu</value>
   </data>
 </root>

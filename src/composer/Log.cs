@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2015 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -13,20 +13,92 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace WinCompose
 {
 
-static class Log
+public class LogEntry
 {
+    public DateTime DateTime { get; set; }
+    public string Message { get; set; }
+}
+
+public class LogList : ObservableCollection<LogEntry>
+{
+    // Override the CollectionChanged event so that we can track listeners and call
+    // their delegates in the correct thread.
+    // FIXME: would a Log.MessageReceived event be more elegant?
+    public override event NotifyCollectionChangedEventHandler CollectionChanged
+    {
+        add
+        {
+            if (Dispatcher.CurrentDispatcher.Thread.GetApartmentState() == System.Threading.ApartmentState.STA)
+                PreferredDispatcher = Dispatcher.CurrentDispatcher;
+            ListenerCount += value?.GetInvocationList().Length ?? 0;
+            base.CollectionChanged += value;
+        }
+
+        remove
+        {
+            base.CollectionChanged -= value;
+            ListenerCount -= value?.GetInvocationList().Length ?? 0;
+        }
+    }
+
+    public Dispatcher PreferredDispatcher = Dispatcher.CurrentDispatcher;
+    public int ListenerCount { get; set; }
+}
+
+public static class Log
+{
+    private static LogList m_entries = new LogList();
+    public static LogList Entries => m_entries;
+
+#if DEBUG
+    static Log()
+    {
+        m_entries.CollectionChanged += ConsoleDebug;
+    }
+
+    private static void ConsoleDebug(object sender, NotifyCollectionChangedEventArgs e)
+    {
+        if (e.Action == NotifyCollectionChangedAction.Add)
+        {
+            foreach (LogEntry entry in e.NewItems)
+            {
+                string msgf = $"{entry.DateTime:yyyy/MM/dd HH:mm:ss.fff} {entry.Message}";
+                System.Diagnostics.Debug.WriteLine(msgf);
+            }
+        }
+    }
+#endif
+
     public static void Debug(string format, params object[] args)
     {
-#if DEBUG
-        string msg = string.Format("{0:yyyy/MM/dd HH:mm:ss.fff} {1}",
-                                   DateTime.Now, string.Format(format, args));
-        System.Diagnostics.Debug.WriteLine(msg);
-#endif
+        // We don’t do anything unless we have listeners
+        if (m_entries.ListenerCount > 0)
+        {
+            DateTime date = DateTime.Now;
+            var msg = string.Format(format, args);
+            ThreadPool.QueueUserWorkItem(x =>
+            {
+                m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, date, msg);
+            });
+        }
     }
+
+    private delegate void DebugDelegate(DateTime date, string msg);
+    private static DebugDelegate DebugSTA = (date, msg) =>
+    {
+        var entry = new LogEntry() { DateTime = date, Message = msg };
+        while (m_entries.Count > 1024)
+            m_entries.RemoveAt(0);
+        m_entries.Add(entry);
+    };
 }
 
 }

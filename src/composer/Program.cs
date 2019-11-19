@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2017 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -12,39 +12,48 @@
 //
 
 using System;
-using WinForms = System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace WinCompose
 {
+    public delegate void Action(); // This type was only added in .NET 3.5
+
     static class Program
     {
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            // Some commandline flags just trigger a message broadcast
+            var command_flags = new Dictionary<string, MenuCommand>()
+            {
+                {  "-sequences", MenuCommand.ShowSequences },
+                {  "-settings",  MenuCommand.ShowOptions },
+            };
+
+            foreach (var arg in args)
+            {
+                if (command_flags.TryGetValue(arg, out var cmd))
+                {
+                    NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.OPEN, (int)cmd, 0);
+                    return;
+                }
+            }
+
             // Do this before Composer.Init() because of the Disabled setting
             Settings.LoadConfig();
 
             Composer.Init();
             Settings.LoadSequences();
+            Metadata.LoadDB();
+            KeyboardHook.Init();
             Updater.Init();
 
             Settings.StartWatchConfigFile();
 
             try
             {
-                WinForms.Application.EnableVisualStyles();
-                WinForms.Application.SetCompatibleTextRenderingDefault(false);
-
-                // Must call this after SetCompatibleTextRenderingDefault()
-                // because it uses a WinForms timer which seems to open a
-                // hidden window. The reason we use a WinForms timer is so that
-                // the hook is installed from the main thread.
-                KeyboardHook.Init();
-
-                using (SysTrayIcon icon = new SysTrayIcon())
-                {
-                    WinForms.Application.Run();
-                }
+                var app = new Application();
+                app.Run();
             }
             finally
             {
@@ -52,6 +61,7 @@ namespace WinCompose
                 Updater.Fini();
                 KeyboardHook.Fini();
                 Settings.SaveConfig();
+                Metadata.SaveDB();
                 Composer.Fini();
                 Updater.Fini();
             }

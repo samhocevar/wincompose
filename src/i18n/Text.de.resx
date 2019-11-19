@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>automatische Erkennung</value>
+    <value>Automatisch erkennen</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>linke Alt-Taste</value>
@@ -151,7 +151,13 @@
     <value>Menü</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+    <value>ESC-Taste</value>
+  </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Umwandeln</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Nicht umwandeln</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Rollen</value>
@@ -162,32 +168,32 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Eingabe</value>
   </data>
-  <data name="Obsolete016" xml:space="preserve">
-    <value>Gravis `</value>
+  <data name="Composing" xml:space="preserve">
+    <value>Compose</value>
   </data>
-  <data name="Obsolete017" xml:space="preserve">
-    <value>500 Millisekunden</value>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Sequenzen aus dem Xorg-Projekt verwenden</value>
   </data>
-  <data name="Obsolete018" xml:space="preserve">
-    <value>1 Sekunde</value>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Die 3000 Compose-Sequenzen aus dem Xorg-Projekt (http://www.x.org/) verwenden. Es handelt sich um die Sequenzen, die häufig auf einem Standard-Linux-System zu finden sind.</value>
   </data>
-  <data name="Obsolete019" xml:space="preserve">
-    <value>2 Sekunden</value>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Sequenzen aus dem XCompose-Projekt verwenden</value>
   </data>
-  <data name="Obsolete020" xml:space="preserve">
-    <value>3 Sekunden</value>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Die 1000 Compose-Sequenzen aus dem XCompose-Projekt (https://github.com/kragen/xcompose) verwenden. Einige dieser Sequenzen sind nicht mit denen von Xorg vereinbar.</value>
   </data>
-  <data name="Obsolete021" xml:space="preserve">
-    <value>5 Sekunden</value>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>WinCompose-Emoji-Sequenzen verwenden</value>
   </data>
-  <data name="Obsolete022" xml:space="preserve">
-    <value>10 Sekunden</value>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Compose-Sequenzen für Emojis verwenden, die vom WinCompose-Autor und Mitwirkenden bereitgestellt wurden.</value>
   </data>
-  <data name="Obsolete023" xml:space="preserve">
-    <value>Keine</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Debugfenster</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Sequenzen anzeigen…</value>
+    <value>Sequenzen anzeigen …</value>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Deaktivieren</value>
@@ -195,8 +201,8 @@
   <data name="Restart" xml:space="preserve">
     <value>Neustart</value>
   </data>
-  <data name="Obsolete027" xml:space="preserve">
-    <value>Verlauf</value>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Spendenseite</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website besuchen</value>
@@ -204,17 +210,17 @@
   <data name="Exit" xml:space="preserve">
     <value>Beenden</value>
   </data>
-  <data name="Obsolete036" xml:space="preserve">
-    <value>von Sam Hocevar &lt;sam@hocevar.net&gt;</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode-Zeichen</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenzen</value>
   </data>
-  <data name="Obsolete039" xml:space="preserve">
-    <value>Sequenz</value>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Einen Tausch der beiden Tasten versuchen</value>
   </data>
-  <data name="Obsolete041" xml:space="preserve">
-    <value>Unicode</value>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Bei Zwei-Tasten-Sequenzen versuchen, die beiden Tasten zu vertauschen. Falls zum Beispiel Compose E A keine gültige Sequenz ist, stattdessen Compose A E versuchen.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Suchfilter:</value>
@@ -232,7 +238,7 @@
     <value>Erweiterte Unicode-Eingabe</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Unicode-Eingabe für beliebige Zeichen aktivieren, selbst wenn keine Compose-Tastenfolge definiert ist. Beispielsweise ergibt die Tastenfolge „Compose U 1 A 3 F“ das Zeichen U+1A3F</value>
+    <value>Die Unicode-Eingabe für alle Zeichen aktivieren, auch wenn keine Compose-Tastenfolge definiert ist. Beispielsweise gibt die folgende Sequenz das Zeichen U+1A3F aus: Compose U 1 A 3 F Enter</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Bei ungültigen Sequenzen</value>
@@ -264,11 +270,11 @@
   <data name="Close" xml:space="preserve">
     <value>Schließen</value>
   </data>
-  <data name="Obsolete050" xml:space="preserve">
-    <value>Zeichen kopieren</value>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>In die Zwischenablage kopieren</value>
   </data>
-  <data name="Obsolete051" xml:space="preserve">
-    <value>Beschreibung:</value>
+  <data name="Emoji" xml:space="preserve">
+    <value>Bildschriftzeichen</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Übernehmen</value>
@@ -337,13 +343,13 @@
     <value>Einfügen</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Testfeld zum Tippen:</value>
+    <value>Testfeld zum Tippen</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
     <value>Diverse Einstellungen</value>
   </data>
-  <data name="Milliseconds" xml:space="preserve">
-    <value>(Millisekunden)</value>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} Sekunden</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>Über</value>
@@ -360,8 +366,8 @@
   <data name="Translators" xml:space="preserve">
     <value>Übersetzung</value>
   </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Besonderer Dank</value>
+  <data name="Authors" xml:space="preserve">
+    <value>Entwickler</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Lizenz</value>
@@ -392,5 +398,68 @@
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
     <value>Beachte Tasten gesendet von anderer Software wie AutoHotkey oder Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>Druck</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>deaktiviert</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automatisch nach Updates suchen</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Falls aktiviert, wird WinCompose sich in regelmäßigen Abständen mit dem Internet verbinden und nach neuen Versionen suchen. Aktualisierungen werden nicht automatisch installiert.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Versuche das Symbol im Infobereich immer sichtbar zu halten</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Standardmässig entfernt Windows nach einer kurzen Zeit das Symbol aus dem Infobereich. Diese Option versucht, dass es trotzdem sichtbar bleibt.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Ändern…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Drücke nun die Taste, die du als deine Compose-Taste benutzen willst.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Zu Favoriten hinzufügen</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Deaktiviere das Symbol im Infobereich</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Falls aktiviert, wird WinCompose kein Symbol mehr im Infobereich anzeigen. Die einzige Möglichkeit, die WinCompose Oberfläche zu öffnen, ist über die Startmenüeinträge „WinCompose Einstellungen“ und „WinCompose Sequenzen“.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Pos1</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Ende</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="DelayDisabled" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Fenster, die diesem regulären Ausdruck (regex) entsprechen, werden ignoriert:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose wird komplett deaktiviert wenn die Klasse oder der Name des momentanen Fensters diesem regulären Ausdruck (regex) entspricht.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternative Compose-Taste ist immer Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Falls aktiviert, werden in einer Compose-Sequenz alle Compose-Tasten als solche angesehen. Andernfalls wird nur die erste Taste als Compose-Taste angesehen und die nachfolgenden alternativen Compose-Tasten behalten ihre ursprüngliche Funktion.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Besonderer Dank</value>
   </data>
 </root>

@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -16,10 +16,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
-using System.Windows.Forms;
+using System.Windows;
 
 namespace WinCompose
 {
@@ -77,7 +75,7 @@ static class Composer
     public static void Init()
     {
         StartMonitoringKeyboardLeds();
-        CheckKeyboardLayout();
+        KeyboardLayout.CheckForChanges();
     }
 
     /// <summary>
@@ -105,14 +103,14 @@ static class Composer
 
         // We need to check the keyboard layout before we save the dead
         // key, otherwise we may be saving garbage.
-        CheckKeyboardLayout();
+        KeyboardLayout.CheckForChanges();
 
-        int dead_key = SaveDeadKey();
+        KeyboardLayout.SaveDeadKey();
         bool ret = OnKeyInternal(ev, vk, sc, flags);
-        RestoreDeadKey(dead_key);
+        KeyboardLayout.RestoreDeadKey();
 
         // Warn listeners that a key was just handled by us
-        KeyEvent(null, new EventArgs());
+        Key?.Invoke();
 
         return ret;
     }
@@ -134,7 +132,33 @@ static class Composer
         // Guess what the system would print if we weren’t interfering. If
         // a printable representation exists, use that. Otherwise, default
         // to its virtual key code.
-        Key key = VkToKey(vk, sc, flags, has_shift, has_altgr, has_capslock);
+        Key key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, has_capslock);
+
+        // Special handling of Left Control on keyboards with AltGr
+        if (KeyboardLayout.HasAltGr && key.VirtualKey == VK.LCONTROL)
+        {
+            bool is_altgr = false;
+            // If this is a key down event with LLKHF_ALTDOWN but no Alt key
+            // is down, it is actually AltGr.
+            is_altgr |= is_keydown && (flags & LLKHF.ALTDOWN) != 0
+                         && ((NativeMethods.GetKeyState(VK.LMENU) |
+                              NativeMethods.GetKeyState(VK.RMENU)) & 0x80) == 0;
+            // If this is a key up event but Left Control is not down, it is
+            // actually AltGr.
+            is_altgr |= is_keyup && m_control_down_was_altgr;
+
+            m_control_down_was_altgr = is_altgr && is_keydown;
+
+            if (is_altgr)
+            {
+                // Eat the key if one of our compose keys is AltGr
+                if (Settings.ComposeKeys.Value.Contains(new Key(VK.RMENU)))
+                    goto exit_discard_key;
+
+                // Otherwise ignore the keypress, it’s not for us
+                goto exit_forward_key;
+            }
+        }
 
         // If Caps Lock is on, and the Caps Lock hack is enabled, we check
         // whether this key without Caps Lock gives a non-ASCII alphabetical
@@ -142,12 +166,12 @@ static class Composer
         // uppercase variant of that character.
         if (has_capslock && Settings.CapsLockCapitalizes.Value)
         {
-            Key alt_key = VkToKey(vk, sc, flags, has_shift, has_altgr, false);
+            Key alt_key = KeyboardLayout.VkToKey(vk, sc, flags, has_shift, has_altgr, false);
 
-            if (alt_key.IsPrintable() && alt_key.ToString()[0] > 0x7f)
+            if (alt_key.IsPrintable && alt_key.PrintableResult[0] > 0x7f)
             {
-                string str_upper = alt_key.ToString().ToUpper();
-                string str_lower = alt_key.ToString().ToLower();
+                string str_upper = alt_key.PrintableResult.ToUpper();
+                string str_lower = alt_key.PrintableResult.ToLower();
 
                 // Hack for German keyboards: it seems that ToUpper() does
                 // not properly change ß into ẞ.
@@ -160,6 +184,14 @@ static class Composer
                     is_capslock_hack = true;
                 }
             }
+        }
+
+        // If we are being used to capture a key, send the resulting key.
+        if (Captured != null)
+        {
+            if (is_keyup)
+                Captured.Invoke(key);
+            return true;
         }
 
         // Update statistics
@@ -183,27 +215,36 @@ static class Composer
         // If the special Synergy window has focus, we’re actually sending
         // keystrokes to another computer; disable WinCompose. Same if it is
         // a Cygwin X window.
-        if (m_window_is_other_desktop)
+        if (KeyboardLayout.Window.IsOtherDesktop)
+            goto exit_forward_key;
+
+        // Sanity check in case the configuration changed between two
+        // key events.
+        if (m_current_compose_key.VirtualKey != VK.NONE
+             && !Settings.ComposeKeys.Value.Contains(m_current_compose_key))
         {
-            return false;
+            CurrentState = State.Idle;
+            m_current_compose_key = new Key(VK.NONE);
         }
 
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
-        if (is_keyup && CurrentState == State.Combination
+        if (is_keyup && CurrentState == State.KeyCombination
              && key == m_current_compose_key)
         {
-            Log.Debug("Combination Off");
             bool compose_key_was_altgr = m_compose_key_is_altgr;
+            Key old_compose_key = m_current_compose_key;
             CurrentState = State.Idle;
             m_current_compose_key = new Key(VK.NONE);
             m_compose_key_is_altgr = false;
             m_compose_counter = 0;
 
+            Log.Debug("KeyCombination ended (state: {0})", m_state);
+
             // If relevant, send an additional KeyUp for the opposite
             // key; experience indicates that it helps unstick some
             // applications such as mintty.exe.
-            switch (m_current_compose_key.VirtualKey)
+            switch (old_compose_key.VirtualKey)
             {
                 case VK.LMENU: SendKeyUp(VK.RMENU); break;
                 case VK.RMENU: SendKeyUp(VK.LMENU);
@@ -218,33 +259,25 @@ static class Composer
                 case VK.RCONTROL: SendKeyUp(VK.LCONTROL); break;
             }
 
-            return false;
+            goto exit_forward_key;
         }
 
         // If this is the compose key and we’re idle, enter Sequence mode
-        if (is_keydown && Settings.ComposeKeys.Value.Contains(key)
-             && m_compose_counter == 0 && CurrentState == State.Idle)
+        if (m_compose_counter == 0 && CurrentState == State.Idle
+             && is_keydown && Settings.ComposeKeys.Value.Contains(key))
         {
-            Log.Debug("Now Composing");
             CurrentState = State.Sequence;
             m_current_compose_key = key;
             m_compose_key_is_altgr = key.VirtualKey == VK.RMENU &&
-                                     m_possible_altgr_keys.Count > 0;
+                                     KeyboardLayout.HasAltGr;
             ++m_compose_counter;
 
-            // Lauch the sequence reset expiration thread
-            // FIXME: do we need to launch a new thread each time the
-            // compose key is pressed? Let's have a dormant thread instead
+            Log.Debug("Now composing (state: {0}) (altgr: {1})",
+                      m_state, m_compose_key_is_altgr);
+
+            // Lauch the sequence reset expiration timer
             if (Settings.ResetDelay.Value > 0)
-            {
-                new Thread(() =>
-                {
-                    while (CurrentState == State.Sequence &&
-                            DateTime.Now < m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value))
-                        Thread.Sleep(50);
-                    ResetSequence();
-                }).Start();
-            }
+                m_timeout.Change(TimeSpan.FromMilliseconds(Settings.ResetDelay.Value), NEVER);
 
             return true;
         }
@@ -262,8 +295,8 @@ static class Composer
              && (key.VirtualKey == VK.ESCAPE || key.VirtualKey == VK.BACK))
         {
             // FIXME: if a sequence was in progress, maybe print it!
-            Log.Debug("No Longer Composing");
             ResetSequence();
+            Log.Debug("No longer composing (state: {0})", m_state);
             return true;
         }
 
@@ -274,13 +307,13 @@ static class Composer
             if (is_keyup && has_lrshift && Settings.EmulateCapsLock.Value)
             {
                 SendKeyPress(VK.CAPITAL);
-                return false;
+                goto exit_forward_key;
             }
 
             if (is_keydown && has_capslock && Settings.ShiftDisablesCapsLock.Value)
             {
                 SendKeyPress(VK.CAPITAL);
-                return false;
+                goto exit_forward_key;
             }
         }
 
@@ -291,20 +324,35 @@ static class Composer
         {
             if (is_capslock_hack && is_keydown)
             {
-                SendString(key.ToString());
+                SendString(key.PrintableResult);
                 return true;
             }
 
             // If this was a dead key, it will be completely ignored. But
             // it’s okay since we stored it.
-            Log.Debug("Forwarding Key {0} to System (not composing)",
-                      key.FriendlyName);
-            return false;
+            goto exit_forward_key;
         }
 
         //
         // From this point we know we are composing
         //
+
+        // If this is the compose key again, replace its value with our custom
+        // virtual key.
+        // FIXME: we don’t properly support compose keys that also normally
+        // print stuff, such as `.
+        if (key == m_current_compose_key
+             || (Settings.AlwaysCompose.Value && Settings.ComposeKeys.Value.Contains(key)))
+        {
+            ++m_compose_counter;
+            key = new Key(VK.COMPOSE);
+
+            // If the compose key is AltGr, we only add it to the sequence when
+            // it’s a KeyUp event, otherwise we may be adding Multi_key to the
+            // sequence while the user actually wants to enter an AltGr char.
+            if (m_compose_key_is_altgr && m_compose_counter > 2)
+                add_to_sequence = is_keyup;
+        }
 
         // If the compose key is down and the user pressed a new key, maybe
         // instead of composing they want to do a key combination, such as
@@ -321,11 +369,10 @@ static class Composer
             bool keep_original = Settings.KeepOriginalKey.Value;
             bool key_unusable = !key.IsUsable();
             bool altgr_combination = m_compose_key_is_altgr &&
-                        m_possible_altgr_keys.ContainsKey(key.ToString());
+                            KeyboardLayout.KeyToAltGrVariant(key) != null;
 
             if (keep_original || key_unusable || altgr_combination)
             {
-                Log.Debug("Combination On");
                 bool compose_key_was_altgr = m_compose_key_is_altgr;
                 ResetSequence();
                 if (compose_key_was_altgr)
@@ -339,34 +386,20 @@ static class Composer
                 {
                     SendKeyDown(m_current_compose_key.VirtualKey);
                 }
-                CurrentState = State.Combination;
-                return false;
+                CurrentState = State.KeyCombination;
+                Log.Debug("KeyCombination started (state: {0})", m_state);
+                goto exit_forward_key;
             }
-        }
-
-        // If this is the compose key again, use our custom virtual key
-        // FIXME: we don’t properly support compose keys that also normally
-        // print stuff, such as `.
-        if (key == m_current_compose_key)
-        {
-            ++m_compose_counter;
-            key = new Key(VK.COMPOSE);
-
-            // If the compose key is AltGr, we only add it to the sequence when
-            // it’s a KeyUp event, otherwise we may be adding Multi_key to the
-            // sequence while the user actually wants to enter an AltGr char.
-            if (m_compose_key_is_altgr && m_compose_counter > 2)
-                add_to_sequence = is_keyup;
         }
 
         // If the compose key is AltGr and it’s down, check whether the current
         // key needs translating.
         if (m_compose_key_is_altgr && (m_compose_counter & 1) != 0)
         {
-            string altgr_variant;
-            if (m_possible_altgr_keys.TryGetValue(key.ToString(), out altgr_variant))
+            Key altgr_variant = KeyboardLayout.KeyToAltGrVariant(key);
+            if (altgr_variant != null)
             {
-                key = new Key(altgr_variant);
+                key = altgr_variant;
                 // Do as if we already released Compose, otherwise the next KeyUp
                 // event will cause VK.COMPOSE to be added to the sequence…
                 ++m_compose_counter;
@@ -375,21 +408,47 @@ static class Composer
 
         // If the key can't be used in a sequence, just ignore it.
         if (!key.IsUsable())
-        {
-            Log.Debug("Forwarding Key {0} to System (no possible sequence uses it)",
-                      key.FriendlyName);
-            return false;
-        }
+            goto exit_forward_key;
 
         // If we reached this point, everything else ignored this key, so it
         // is a key we must add to the current sequence.
         if (add_to_sequence)
         {
-            Log.Debug("Adding to Sequence: {0}", key.FriendlyName);
+            Log.Debug("Adding to sequence: “{0}”", key.FriendlyName);
             return AddToSequence(key);
         }
 
+exit_discard_key:
         return true;
+
+exit_forward_key:
+        Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
+                  is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
+        return false;
+    }
+
+    /// <summary>
+    /// Cancel the current sequence when the reset delay is expired.
+    /// </summary>
+    /// <param name="state"></param>
+    private static void TimeoutExpired(object state)
+    {
+        if (CurrentState == State.Sequence)
+        {
+            // If a key was pressed since the timer was launched, we delay
+            // the timeout value and check again later.
+            var expected_timeout = m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value);
+            var remaining_time = expected_timeout.Subtract(DateTime.Now);
+            if (remaining_time.TotalMilliseconds > 10)
+            {
+                m_timeout.Change(remaining_time, NEVER);
+                return;
+            }
+
+            ResetSequence();
+        }
+
+        m_timeout.Change(NEVER, NEVER);
     }
 
     /// <summary>
@@ -402,58 +461,81 @@ static class Composer
         m_sequence.Add(key);
 
         // We try the following, in this order:
-        //  1. if m_sequence + key is a valid prefix, it means the user
+        //  1. if m_sequence + key is a valid sequence, we don't go further,
+        //     we append key to m_sequence and output the result.
+        //  2. if m_sequence + key is a valid prefix, it means the user
         //     could type other characters to build a longer sequence,
         //     so just append key to m_sequence.
-        //  2. if m_sequence + key is a valid sequence, we can't go further,
-        //     we append key to m_sequence and output the result.
-        //  3. if m_sequence is a valid sequence, the user didn't type a
-        //     valid key, so output the m_sequence result _and_ process key.
-        //  4. (optionally) try again 1. 2. and 3. ignoring case.
-        //  5. none of the characters make sense, output all of them as if
+        //  3. if m_sequence + key is a valid generic prefix, continue as well.
+        //  4. if m_sequence + key is a valid sequence, send it.
+        //  5. (optionally) try again 1. and 2. ignoring case.
+        //  6. none of the characters make sense, output all of them as if
         //     the user didn't press Compose.
         foreach (bool ignore_case in Settings.CaseInsensitive.Value ?
                               new bool[]{ false, true } : new bool[]{ false })
         {
+            if (Settings.IsValidSequence(m_sequence, ignore_case))
+            {
+                string tosend = Settings.GetSequenceResult(m_sequence,
+                                                           ignore_case);
+                SendString(tosend);
+                Log.Debug("Valid sequence! Sent “{0}”", tosend);
+                Stats.AddSequence(m_sequence);
+                ResetSequence();
+                return true;
+            }
+
             if (Settings.IsValidPrefix(m_sequence, ignore_case))
             {
                 // Still a valid prefix, continue building sequence
                 return true;
             }
 
-            if (Settings.IsValidSequence(m_sequence, ignore_case))
+            if (!ignore_case)
             {
-                string tosend = Settings.GetSequenceResult(m_sequence,
-                                                           ignore_case);
-                Stats.AddSequence(m_sequence);
-                Log.Debug("Valid sequence! Sending {0}", tosend);
-                ResetSequence();
-                SendString(tosend);
-                return true;
+                if (Settings.IsValidGenericPrefix(m_sequence))
+                    return true;
+
+                if (Settings.IsValidGenericSequence(m_sequence))
+                {
+                    string tosend = Settings.GetGenericSequenceResult(m_sequence);
+                    SendString(tosend);
+                    Log.Debug("Valid generic sequence! Sent “{0}”", tosend);
+                    Stats.AddSequence(m_sequence);
+                    ResetSequence();
+                    return true;
+                }
             }
 
-            // Some code duplication with the above block, but this way
-            // what we are doing is more clear.
-            if (Settings.IsValidSequence(old_sequence, ignore_case))
+            // Try to swap characters if the corresponding option is set
+            if (m_sequence.Count == 2 && Settings.SwapOnInvalid.Value)
             {
-                string tosend = Settings.GetSequenceResult(old_sequence,
-                                                           ignore_case);
-                Stats.AddSequence(old_sequence);
-                Log.Debug("Sending previously valid sequence {0}", tosend);
-                ResetSequence();
-                SendString(tosend);
-                return false;
+                var other_sequence = new KeySequence() { m_sequence[1], m_sequence[0] };
+                if (Settings.IsValidSequence(other_sequence, ignore_case))
+                {
+                    string tosend = Settings.GetSequenceResult(other_sequence,
+                                                               ignore_case);
+                    SendString(tosend);
+                    Log.Debug("Found swapped sequence! Sent “{0}”", tosend);
+                    Stats.AddSequence(other_sequence);
+                    ResetSequence();
+                    return true;
+                }
             }
         }
 
         // Unknown characters for sequence, print them if necessary
         if (!Settings.DiscardOnInvalid.Value)
         {
+            string tosend = "";
             foreach (Key k in m_sequence)
+                if (k.IsPrintable) // FIXME: what if the key is e.g. left arrow?
+                    tosend += k.PrintableResult;
+
+            if (!string.IsNullOrEmpty(tosend))
             {
-                // FIXME: what if the key is e.g. left arrow?
-                if (k.IsPrintable())
-                    SendString(k.ToString());
+                SendString(tosend);
+                Log.Debug("Invalid sequence! Sent “{0}”", tosend);
             }
         }
 
@@ -464,55 +546,13 @@ static class Composer
         return true;
     }
 
-    private static Key VkToKey(VK vk, SC sc, LLKHF flags, bool has_shift,
-                               bool has_altgr, bool has_capslock)
-    {
-        byte[] keystate = new byte[256];
-        NativeMethods.GetKeyboardState(keystate);
-        keystate[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-        keystate[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-        keystate[(int)VK.CAPITAL] = (byte)(has_capslock ? 0x01 : 0x00);
-
-        // These two calls must be done together and in this order.
-        string str_if_normal = VkToUnicode(vk, sc, keystate, flags);
-        string str_if_dead = VkToUnicode(VK.SPACE);
-
-        if (str_if_dead != " ")
-            return new Key(str_if_dead);
-
-        // Special case: we don't consider characters such as Esc as printable
-        // otherwise they are not properly serialised in the config file.
-        if (str_if_normal == "" || str_if_normal[0] < ' ')
-            return new Key(vk);
-
-        return new Key(str_if_normal);
-    }
-
-    private static string VkToUnicode(VK vk)
-    {
-        return VkToUnicode(vk, (SC)0, new byte[256], (LLKHF)0);
-    }
-
-    private static string VkToUnicode(VK vk, SC sc, byte[] keystate, LLKHF flags)
-    {
-        const int buflen = 4;
-        byte[] buf = new byte[2 * buflen];
-        int ret = NativeMethods.ToUnicode(vk, sc, keystate, buf, buflen, flags);
-        if (ret > 0 && ret < buflen)
-        {
-            return Encoding.Unicode.GetString(buf, 0, ret * 2);
-        }
-        return "";
-    }
-
     /// <summary>
     /// Check whether a string contains any Unicode surrogate characters.
     /// </summary>
     private static bool HasSurrogates(string str)
     {
         foreach (char ch in str)
-            if (ch >= 0xd800 && ch < 0xe000)
+            if (char.IsSurrogate(ch))
                 return true;
         return false;
     }
@@ -525,12 +565,13 @@ static class Composer
          * applications such as XChat for Windows rename their own top-level
          * window, so we parse through the names we know in order to detect
          * a GTK+ application. */
-        bool use_gtk_hack = m_window_is_gtk;
+        bool use_gtk_hack = KeyboardLayout.Window.IsGtk;
 
-        /* HACK: Notepad++ is unable to output high plane Unicode characters,
-         * so we rely on clipboard hacking when the composed string contains
-         * such characters. */
-        bool use_clipboard_hack = m_window_is_notepadpp && HasSurrogates(str);
+        /* HACK: Notepad++ and LibreOffice are unable to output high plane
+         * Unicode characters, so we rely on clipboard hacking when the
+         * composed string contains such characters. */
+        bool use_clipboard_hack = KeyboardLayout.Window.IsNPPOrLO
+                                   && HasSurrogates(str);
 
         /* HACK: in MS Office, some symbol insertions change the text font
          * without returning to the original font. To avoid this, we output
@@ -538,12 +579,13 @@ static class Composer
          * go right and backspace. */
         /* These are the actual window class names for Outlook and Word…
          * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
-        bool use_office_hack = m_window_is_office && Settings.InsertZwsp.Value;
+        bool use_office_hack = KeyboardLayout.Window.IsOffice
+                                && Settings.InsertZwsp.Value;
 
         /* Clear keyboard modifiers if we need one of our custom hacks */
         if (use_gtk_hack || use_office_hack)
         {
-            VK[] all_modifiers = new VK[]
+            VK[] all_modifiers =
             {
                 VK.LSHIFT, VK.RSHIFT,
                 VK.LCONTROL, VK.RCONTROL,
@@ -594,7 +636,7 @@ static class Composer
                     SendKeyUp(VK.LSHIFT);
                     SendKeyUp(VK.LCONTROL);
 
-                    foreach (var key in String.Format("{0:X04} ", (short)ch))
+                    foreach (var key in $"{(short)ch:X04} ")
                         SendKeyPress((VK)key);
                 }
             }
@@ -621,7 +663,7 @@ static class Composer
             SendKeyUp(VK.SHIFT);
             Clipboard.Clear();
 
-            if (!string.IsNullOrEmpty(backup_text))
+            if (backup_text != null)
                 Clipboard.SetText(backup_text);
             if (backup_image != null)
                 Clipboard.SetImage(backup_image);
@@ -632,25 +674,25 @@ static class Composer
         }
         else
         {
-            InputSequence Seq = new InputSequence();
+            InputSequence seq = new InputSequence();
 
             if (use_office_hack)
             {
-                Seq.AddInput((ScanCodeShort)'\u200b');
-                Seq.AddInput((VirtualKeyShort)VK.LEFT);
+                seq.AddInput((ScanCodeShort)'\u200b');
+                seq.AddInput((VirtualKeyShort)VK.LEFT);
             }
 
             foreach (char ch in str)
             {
-                Seq.AddInput((ScanCodeShort)ch);
+                seq.AddInput((ScanCodeShort)ch);
             }
 
             if (use_office_hack)
             {
-                Seq.AddInput((VirtualKeyShort)VK.RIGHT);
+                seq.AddInput((VirtualKeyShort)VK.RIGHT);
             }
 
-            Seq.Send();
+            seq.Send();
         }
 
         /* Restore keyboard modifiers if we needed one of our custom hacks */
@@ -661,8 +703,14 @@ static class Composer
         }
     }
 
-    public static event EventHandler ChangedEvent = delegate {};
-    public static event EventHandler KeyEvent = delegate {};
+    public static event Action Changed;
+    public static event Action Key;
+
+    /// <summary>
+    /// Allows other parts of the program to capture a key.
+    /// TODO: make this work with key combinations, too!
+    /// </summary>
+    public static event Action<Key> Captured;
 
     /// <summary>
     /// Toggle the disabled state
@@ -673,188 +721,31 @@ static class Composer
         ResetSequence();
         // FIXME: this will no longer be necessary when "Disabled"
         // becomes a composer state of its own.
-        ChangedEvent(null, new EventArgs());
+        Changed?.Invoke();
     }
 
     /// <summary>
     /// Return whether WinCompose has been disabled
     /// </summary>
-    public static bool IsDisabled()
-    {
-        return Settings.Disabled.Value;
-    }
+    public static bool IsDisabled => Settings.Disabled.Value;
 
     private static void ResetSequence()
     {
         CurrentState = State.Idle;
-        m_current_compose_key = new Key(VK.NONE);
-        m_compose_key_is_altgr = false;
         m_compose_counter = 0;
         m_sequence.Clear();
     }
 
     private static void SendKeyDown(VK vk, KEYEVENTF flags = 0)
-    {
-        NativeMethods.keybd_event(vk, 0, flags, 0);
-    }
+        => NativeMethods.keybd_event(vk, 0, flags, 0);
 
     private static void SendKeyUp(VK vk, KEYEVENTF flags = 0)
-    {
-        NativeMethods.keybd_event(vk, 0, KEYEVENTF.KEYUP | flags, 0);
-    }
+        => NativeMethods.keybd_event(vk, 0, KEYEVENTF.KEYUP | flags, 0);
 
     private static void SendKeyPress(VK vk, KEYEVENTF flags = 0)
     {
         SendKeyDown(vk, flags);
         SendKeyUp(vk, flags);
-    }
-
-    /// <summary>
-    /// Attempt to enumerate all dead keys available on the current keyboard
-    /// layout and cache the results in <see cref="m_possible_dead_keys"/>.
-    /// </summary>
-    private static void AnalyzeKeyboardLayout()
-    {
-        m_possible_dead_keys = new Dictionary<string, int>();
-        m_possible_altgr_keys = new Dictionary<string, string>();
-
-        // Try every keyboard key followed by space to see which ones are
-        // dead keys. This way, when later we want to know if a dead key is
-        // currently buffered, we just call ToUnicode(VK.SPACE) and match
-        // the result with what we found here.
-        string[] no_altgr = new string[0x200];
-        byte[] state = new byte[256];
-
-        for (int i = 0; i < 0x400; ++i)
-        {
-            VK vk = (VK)(i & 0xff);
-            bool has_shift = (i & 0x100) != 0;
-            bool has_altgr = (i & 0x200) != 0;
-
-            state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-            state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-            state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-
-            // First the key we’re interested in, then the space key
-            string str_if_normal = VkToUnicode(vk, (SC)0, state, (LLKHF)0);
-            string str_if_dead = VkToUnicode(VK.SPACE);
-
-            // If the AltGr gives us a result and it’s different from without
-            // AltGr, we need to remember it.
-            string str = str_if_dead != " " ? str_if_dead : str_if_normal;
-            if (has_altgr)
-            {
-                if (no_altgr[i - 0x200] != "" && str != "" && no_altgr[i - 0x200] != str)
-                {
-                    Log.Debug("VK {0} is “{1}” but “{2}” with AltGr",
-                              vk.ToString(), no_altgr[i - 0x200], str);
-                    m_possible_altgr_keys[no_altgr[i - 0x200]] = str;
-                }
-            }
-            else
-            {
-                no_altgr[i] = str_if_dead != " " ? str_if_dead : str_if_normal;
-            }
-
-            // If the resulting string is not the space character, it means
-            // that it was a dead key. Good!
-            if (str_if_dead != " ")
-                m_possible_dead_keys[str_if_dead] = i;
-        }
-
-        // Clean up key buffer
-        VkToUnicode(VK.SPACE);
-        VkToUnicode(VK.SPACE);
-    }
-
-    /// <summary>
-    /// Save the dead key if there is one, since we'll be calling ToUnicode
-    /// later on. This effectively removes any dead key from the ToUnicode
-    /// internal buffer.
-    /// </summary>
-    private static int SaveDeadKey()
-    {
-        int dead_key = 0;
-        string str = VkToUnicode(VK.SPACE);
-        if (str != " ")
-            m_possible_dead_keys.TryGetValue(str, out dead_key);
-        return dead_key;
-    }
-
-    /// <summary>
-    /// Restore a previously saved dead key. This should restore the ToUnicode
-    /// internal buffer.
-    /// </summary>
-    private static void RestoreDeadKey(int dead_key)
-    {
-        if (dead_key == 0)
-            return;
-
-        byte[] state = new byte[256];
-
-        VK vk = (VK)(dead_key & 0xff);
-        bool has_shift = (dead_key & 0x100) != 0;
-        bool has_altgr = (dead_key & 0x200) != 0;
-
-        state[(int)VK.SHIFT] = (byte)(has_shift ? 0x80 : 0x00);
-        state[(int)VK.CONTROL] = (byte)(has_altgr ? 0x80 : 0x00);
-        state[(int)VK.MENU] = (byte)(has_altgr ? 0x80 : 0x00);
-
-        VkToUnicode(vk, (SC)0, state, (LLKHF)0);
-    }
-
-    private static void CheckKeyboardLayout()
-    {
-        // Detect keyboard layout changes by querying the foreground window,
-        // and apply the same layout to WinCompose itself.
-        IntPtr hwnd = NativeMethods.GetForegroundWindow();
-        uint pid, tid = NativeMethods.GetWindowThreadProcessId(hwnd, out pid);
-        IntPtr active_layout = NativeMethods.GetKeyboardLayout(tid);
-
-        m_window_is_gtk = false;
-        m_window_is_notepadpp = false;
-        m_window_is_office = false;
-        m_window_is_other_desktop = false;
-
-        const int len = 256;
-        StringBuilder buf = new StringBuilder(len);
-        if (NativeMethods.GetClassName(hwnd, buf, len) > 0)
-        {
-            string wclass = buf.ToString();
-
-            if (wclass == "gdkWindowToplevel" || wclass == "xchatWindowToplevel"
-                 || wclass == "hexchatWindowToplevel")
-                m_window_is_gtk = true;
-
-            if (wclass == "Notepad++")
-                m_window_is_notepadpp = true;
-
-            if (wclass == "rctrl_renwnd32" || wclass == "OpusApp")
-                m_window_is_office = true;
-
-            if (Regex.Match(wclass, "^(SynergyDesk|cygwin/x.*)$").Success)
-                m_window_is_other_desktop = true;
-        }
-
-        if (active_layout != m_current_layout)
-        {
-            m_current_layout = active_layout;
-
-            Log.Debug("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                      tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
-
-            if (active_layout != (IntPtr)0)
-                NativeMethods.ActivateKeyboardLayout(active_layout, 0);
-
-            tid = NativeMethods.GetCurrentThreadId();
-            active_layout = NativeMethods.GetKeyboardLayout(tid);
-
-            Log.Debug("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                      tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
-
-            // We need to rebuild the list of dead keys
-            AnalyzeKeyboardLayout();
-        }
     }
 
     private static void StartMonitoringKeyboardLeds()
@@ -866,7 +757,7 @@ static class Composer
             NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, kbd_name, kbd_class);
         }
 
-        ChangedEvent += UpdateKeyboardLeds;
+        Changed += UpdateKeyboardLeds;
     }
 
     private static void StopMonitoringKeyboardLeds()
@@ -876,10 +767,10 @@ static class Composer
             string kbd_name = "dos_kbd" + i.ToString();
             NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, kbd_name, null);
         }
-        ChangedEvent -= UpdateKeyboardLeds;
+        Changed -= UpdateKeyboardLeds;
     }
 
-    public static void UpdateKeyboardLeds(object sender, EventArgs e)
+    public static void UpdateKeyboardLeds()
     {
         var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
         int buffer_size = (int)Marshal.SizeOf(indicators);
@@ -890,15 +781,15 @@ static class Composer
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
         if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (IsComposing() && m_current_compose_key.VirtualKey == VK.CAPITAL))
+             || (IsComposing && m_current_compose_key.VirtualKey == VK.CAPITAL))
             indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (IsComposing() && m_current_compose_key.VirtualKey == VK.NUMLOCK))
+             || (IsComposing && m_current_compose_key.VirtualKey == VK.NUMLOCK))
             indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
 
         if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (IsComposing() && m_current_compose_key.VirtualKey == VK.SCROLL))
+             || (IsComposing && m_current_compose_key.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
         for (ushort i = 0; i < 4; ++i)
@@ -925,15 +816,10 @@ static class Composer
 
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
-    private static Dictionary<string, int> m_possible_dead_keys;
-    private static Dictionary<string, string> m_possible_altgr_keys;
-    // Initialise with -1 to make sure the above dictionaries are
-    // properly initialised even if the layout is found to be 0x0.
-    private static IntPtr m_current_layout = new IntPtr(-1);
-    private static bool m_window_is_gtk = false;
-    private static bool m_window_is_notepadpp = false;
-    private static bool m_window_is_office = false;
-    private static bool m_window_is_other_desktop = false;
+
+    private static Timer m_timeout = new Timer(TimeoutExpired);
+
+    private static readonly TimeSpan NEVER = TimeSpan.FromMilliseconds(-1);
 
     /// <summary>
     /// How many times we pressed and released compose.
@@ -941,9 +827,14 @@ static class Composer
     private static int m_compose_counter = 0;
 
     /// <summary>
-    /// The compose key being used; only valid in state “Combination” for now.
+    /// The compose key being used; only valid in state “KeyCombination” for now.
     /// </summary>
     private static Key m_current_compose_key = new Key(VK.NONE);
+
+    /// <summary>
+    /// Whether the last control keypress was AltGr
+    /// </summary>
+    private static bool m_control_down_was_altgr = false;
 
     /// <summary>
     /// Whether the current compose key is AltGr
@@ -955,23 +846,25 @@ static class Composer
         Idle,
         Sequence,
         /// <summary>
-        /// Combination mode: the compose key is held, but not for composing,
+        /// KeyCombination mode: the compose key is held, but not for composing,
         /// more likely for a key combination such as Alt-Tab or Ctrl-Esc.
         /// </summary>
-        Combination,
+        KeyCombination,
         // TODO: we probably want "Disabled" as another possible state
     };
 
     public static State CurrentState
     {
-        get { return m_state; }
+        get => m_state;
 
         private set
         {
             bool has_changed = (m_state != value);
+            if (has_changed && m_state == State.Sequence)
+                m_timeout.Change(NEVER, NEVER);
             m_state = value;
             if (has_changed)
-                ChangedEvent(null, new EventArgs());
+                Changed?.Invoke();
         }
     }
 
@@ -980,10 +873,7 @@ static class Composer
     /// <summary>
     /// Indicates whether a compose sequence is in progress
     /// </summary>
-    public static bool IsComposing()
-    {
-        return CurrentState == State.Sequence;
-    }
+    public static bool IsComposing => CurrentState == State.Sequence;
 }
 
 }
