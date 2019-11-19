@@ -543,17 +543,6 @@ exit_forward_key:
         return true;
     }
 
-    /// <summary>
-    /// Check whether a string contains any Unicode surrogate characters.
-    /// </summary>
-    private static bool HasSurrogates(string str)
-    {
-        foreach (char ch in str)
-            if (char.IsSurrogate(ch))
-                return true;
-        return false;
-    }
-
     private static void SendString(string str)
     {
         List<VK> modifiers = new List<VK>();
@@ -563,12 +552,6 @@ exit_forward_key:
          * window, so we parse through the names we know in order to detect
          * a GTK+ application. */
         bool use_gtk_hack = KeyboardLayout.Window.IsGtk;
-
-        /* HACK: Notepad++ and LibreOffice are unable to output high plane
-         * Unicode characters, so we rely on clipboard hacking when the
-         * composed string contains such characters. */
-        bool use_clipboard_hack = KeyboardLayout.Window.IsNPPOrLO
-                                   && HasSurrogates(str);
 
         /* HACK: in MS Office, some symbol insertions change the text font
          * without returning to the original font. To avoid this, we output
@@ -640,34 +623,6 @@ exit_forward_key:
 
             if (has_capslock)
                 SendKeyPress(VK.CAPITAL);
-        }
-        else if (use_clipboard_hack)
-        {
-            // We do not use Clipboard.GetDataObject because I have been
-            // unable to restore the clipboard properly. This is reasonable
-            // and has been tested with several clipboard content types.
-            var backup_text = Clipboard.GetText();
-            var backup_image = Clipboard.GetImage();
-            var backup_audio = Clipboard.GetAudioStream();
-            var backup_files = Clipboard.GetFileDropList();
-
-            // Use Shift+Insert instead of Ctrl-V because Ctrl-V will misbehave
-            // if a Shift key is held down. Using Shift+Insert even works if the
-            // compose key is Insert.
-            Clipboard.SetText(str);
-            SendKeyDown(VK.SHIFT);
-            SendKeyPress(VK.INSERT);
-            SendKeyUp(VK.SHIFT);
-            Clipboard.Clear();
-
-            if (backup_text != null)
-                Clipboard.SetText(backup_text);
-            if (backup_image != null)
-                Clipboard.SetImage(backup_image);
-            if (backup_audio != null)
-                Clipboard.SetAudio(backup_audio);
-            if (backup_files != null && backup_files.Count > 0)
-                Clipboard.SetFileDropList(backup_files);
         }
         else
         {
