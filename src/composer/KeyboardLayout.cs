@@ -26,6 +26,10 @@ public static class KeyboardLayout
     /// </summary>
     private static void AnalyzeLayout()
     {
+        // Clear key buffer
+        VkToUnicode(VK.SPACE);
+        VkToUnicode(VK.SPACE);
+
         // Compute an input locale identifier suitable for ToUnicodeEx(). This is
         // necessary because some IMEs interfer with ToUnicodeEx, e.g. Japanese,
         // so instead we pretend we use an English US keyboard.
@@ -69,6 +73,7 @@ public static class KeyboardLayout
             // First the key we’re interested in, then the space key
             string str_if_normal = VkToUnicode(vk, (SC)0, state, (LLKHF)0);
             string str_if_dead = VkToUnicode(VK.SPACE);
+            VkToUnicode(VK.SPACE); // Additional safety to clear buffer
 
             bool has_dead = str_if_dead != "" && str_if_dead != " ";
 
@@ -92,12 +97,12 @@ public static class KeyboardLayout
             // If the resulting string is not the space character, it means
             // that it was a dead key. Good!
             if (has_dead)
+            {
+                Log.Debug("VK {0} is dead key “{1}”",
+                          vk.ToString(), str_if_dead);
                 m_possible_dead_keys[str_if_dead] = i;
+            }
         }
-
-        // Clean up key buffer
-        VkToUnicode(VK.SPACE);
-        VkToUnicode(VK.SPACE);
     }
 
     /// <summary>
