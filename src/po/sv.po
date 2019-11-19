@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-16 09:04+0000\n"
+"PO-Revision-Date: 2019-11-19 13:04+0000\n"
 "Last-Translator: greywatcher <greyman000@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
 "master/sv/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Autodetektera"
+msgstr "Upptäck automatiskt"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
@@ -617,8 +617,8 @@ msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
-"WinCompose kommer stängas av helt när nuvarande fönsterklass eller "
-"fönsternamn matchar detta regelbundna uttryck."
+"WinCompose kommer helt inaktiveras när aktivt fönsterklass eller fönsternamn "
+"matchar detta reguljära uttryck (regex)."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
