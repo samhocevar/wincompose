@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace WinCompose
 {
@@ -30,21 +31,32 @@ public static class KeyboardLeds
                 m_kbd_devices.Add(id);
         }
 
-        Composer.Changed += Refresh;
+        // Use a standard task timer to avoid blocking the composer thread
+        EnableTimer();
+        Composer.Changed += EnableTimer;
     }
 
     public static void StopMonitoring()
     {
-        Composer.Changed -= Refresh;
+        Composer.Changed -= EnableTimer;
+        DisableTimer();
 
         foreach (ushort id in m_kbd_devices)
             NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, $"dos_kbd{id}", null);
         m_kbd_devices.Clear();
     }
 
+    private static void EnableTimer()
+        => m_update_timer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(5));
+
+    private static void DisableTimer()
+        => m_update_timer.Change(TimeSpan.FromSeconds(-1), TimeSpan.FromSeconds(-1));
+
+    private static Timer m_update_timer = new Timer(Refresh);
+
     private static IList<ushort> m_kbd_devices = new List<ushort>();
 
-    public static void Refresh()
+    private static void Refresh(object o)
     {
         var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
         int buffer_size = (int)Marshal.SizeOf(indicators);
