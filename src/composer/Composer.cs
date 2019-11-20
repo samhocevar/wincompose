@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Media;
 using System.Runtime.InteropServices;
-using System.Threading;
+using System.Windows.Threading;
 
 namespace WinCompose
 {
@@ -74,6 +74,9 @@ static class Composer
     {
         KeyboardLeds.StartMonitoring();
         KeyboardLayout.CheckForChanges();
+
+        m_timeout = new DispatcherTimer();
+        m_timeout.Tick += (o, e) => ResetSequence();
     }
 
     /// <summary>
@@ -81,6 +84,7 @@ static class Composer
     /// </summary>
     public static void Fini()
     {
+        m_timeout.Stop();
         KeyboardLeds.StopMonitoring();
     }
 
@@ -95,9 +99,7 @@ static class Composer
 
         // Do nothing if we are disabled; NOTE: this disables stats, too
         if (Settings.Disabled.Value)
-        {
             return false;
-        }
 
         // We need to check the keyboard layout before we save the dead
         // key, otherwise we may be saving garbage.
@@ -272,7 +274,10 @@ static class Composer
 
             // Lauch the sequence reset expiration timer
             if (Settings.ResetDelay.Value > 0)
-                m_timeout.Change(TimeSpan.FromMilliseconds(Settings.ResetDelay.Value), NEVER);
+            {
+                m_timeout.Interval = TimeSpan.FromMilliseconds(Settings.ResetDelay.Value);
+                m_timeout.Start();
+            }
 
             return true;
         }
@@ -331,6 +336,13 @@ static class Composer
         //
         // From this point we know we are composing
         //
+
+        if (m_timeout.IsEnabled)
+        {
+            // Extend the expiration timer due date
+            m_timeout.Stop();
+            m_timeout.Start();
+        }
 
         // If this is the compose key again, replace its value with our custom
         // virtual key.
@@ -420,30 +432,6 @@ exit_forward_key:
         Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
                   is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
         return false;
-    }
-
-    /// <summary>
-    /// Cancel the current sequence when the reset delay is expired.
-    /// </summary>
-    /// <param name="state"></param>
-    private static void TimeoutExpired(object state)
-    {
-        if (CurrentState == State.Sequence)
-        {
-            // If a key was pressed since the timer was launched, we delay
-            // the timeout value and check again later.
-            var expected_timeout = m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value);
-            var remaining_time = expected_timeout.Subtract(DateTime.Now);
-            if (remaining_time.TotalMilliseconds > 10)
-            {
-                m_timeout.Change(remaining_time, NEVER);
-                return;
-            }
-
-            ResetSequence();
-        }
-
-        m_timeout.Change(NEVER, NEVER);
     }
 
     /// <summary>
@@ -708,7 +696,7 @@ exit_forward_key:
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
 
-    private static Timer m_timeout = new Timer(TimeoutExpired);
+    private static DispatcherTimer m_timeout;
 
     private static readonly TimeSpan NEVER = TimeSpan.FromMilliseconds(-1);
 
@@ -747,7 +735,7 @@ exit_forward_key:
         {
             bool has_changed = (m_state != value);
             if (has_changed && m_state == State.Sequence)
-                m_timeout.Change(NEVER, NEVER);
+                m_timeout.Stop();
             m_state = value;
             if (has_changed)
                 Changed?.Invoke();
