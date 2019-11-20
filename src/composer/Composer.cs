@@ -13,12 +13,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Windows;
-using System.Windows.Threading;
 
 namespace WinCompose
 {
@@ -75,7 +72,7 @@ static class Composer
     /// </summary>
     public static void Init()
     {
-        StartMonitoringKeyboardLeds();
+        KeyboardLeds.StartMonitoring();
         KeyboardLayout.CheckForChanges();
     }
 
@@ -84,7 +81,7 @@ static class Composer
     /// </summary>
     public static void Fini()
     {
-        StopMonitoringKeyboardLeds();
+        KeyboardLeds.StopMonitoring();
     }
 
     /// <summary>
@@ -218,22 +215,22 @@ static class Composer
 
         // Sanity check in case the configuration changed between two
         // key events.
-        if (m_current_compose_key.VirtualKey != VK.NONE
-             && !Settings.ComposeKeys.Value.Contains(m_current_compose_key))
+        if (CurrentComposeKey.VirtualKey != VK.NONE
+             && !Settings.ComposeKeys.Value.Contains(CurrentComposeKey))
         {
             CurrentState = State.Idle;
-            m_current_compose_key = new Key(VK.NONE);
+            CurrentComposeKey = new Key(VK.NONE);
         }
 
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
         if (is_keyup && CurrentState == State.KeyCombination
-             && key == m_current_compose_key)
+             && key == CurrentComposeKey)
         {
             bool compose_key_was_altgr = m_compose_key_is_altgr;
-            Key old_compose_key = m_current_compose_key;
+            Key old_compose_key = CurrentComposeKey;
             CurrentState = State.Idle;
-            m_current_compose_key = new Key(VK.NONE);
+            CurrentComposeKey = new Key(VK.NONE);
             m_compose_key_is_altgr = false;
             m_compose_counter = 0;
 
@@ -265,7 +262,7 @@ static class Composer
              && is_keydown && Settings.ComposeKeys.Value.Contains(key))
         {
             CurrentState = State.Sequence;
-            m_current_compose_key = key;
+            CurrentComposeKey = key;
             m_compose_key_is_altgr = key.VirtualKey == VK.RMENU &&
                                      KeyboardLayout.HasAltGr;
             ++m_compose_counter;
@@ -282,7 +279,7 @@ static class Composer
 
         // If this is a compose key KeyDown event and it’s already down, or it’s
         // a KeyUp and it’s already up, eat this event without forwarding it.
-        if (key == m_current_compose_key
+        if (key == CurrentComposeKey
              && is_keydown == ((m_compose_counter & 1) != 0))
         {
             return true;
@@ -339,7 +336,7 @@ static class Composer
         // virtual key.
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
-        if (key == m_current_compose_key
+        if (key == CurrentComposeKey
              || (Settings.AlwaysCompose.Value && Settings.ComposeKeys.Value.Contains(key)))
         {
             ++m_compose_counter;
@@ -382,7 +379,7 @@ static class Composer
                 }
                 else
                 {
-                    SendKeyDown(m_current_compose_key.VirtualKey);
+                    SendKeyDown(CurrentComposeKey.VirtualKey);
                 }
                 CurrentState = State.KeyCombination;
                 Log.Debug("KeyCombination started (state: {0})", m_state);
@@ -703,69 +700,6 @@ exit_forward_key:
         SendKeyUp(vk, flags);
     }
 
-    private static void StartMonitoringKeyboardLeds()
-    {
-        // Try to create up to 4 keyboard devices
-        for (ushort id = 0; id < 4; ++id)
-        {
-            if (NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, $"dos_kbd{id}",
-                                              $@"\Device\KeyboardClass{id}"))
-                m_kbd_devices.Add(id);
-        }
-
-        Changed += UpdateKeyboardLeds;
-    }
-
-    private static IList<ushort> m_kbd_devices = new List<ushort>();
-
-    private static void StopMonitoringKeyboardLeds()
-    {
-        foreach (ushort id in m_kbd_devices)
-            NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, $"dos_kbd{id}", null);
-        m_kbd_devices.Clear();
-
-        Changed -= UpdateKeyboardLeds;
-    }
-
-    public static void UpdateKeyboardLeds()
-    {
-        var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
-        int buffer_size = (int)Marshal.SizeOf(indicators);
-
-        // NOTE: I was unable to make IOCTL.KEYBOARD_QUERY_INDICATORS work
-        // properly, but querying state with GetKeyState() seemed more
-        // robust anyway. Think of the user setting Caps Lock as their
-        // compose key, entering compose state, then suddenly changing
-        // the compose key to Shift: the LED state would be inconsistent.
-        if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (IsComposing && m_current_compose_key.VirtualKey == VK.CAPITAL))
-            indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
-
-        if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (IsComposing && m_current_compose_key.VirtualKey == VK.NUMLOCK))
-            indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
-
-        if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (IsComposing && m_current_compose_key.VirtualKey == VK.SCROLL))
-            indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
-
-        foreach (ushort id in m_kbd_devices)
-        {
-            indicators.UnitId = id;
-
-            using (var handle = NativeMethods.CreateFile($@"\\.\dos_kbd{id}",
-                           FileAccess.Write, FileShare.Read, IntPtr.Zero,
-                           FileMode.Open, FileAttributes.Normal, IntPtr.Zero))
-            {
-                int bytesReturned;
-                NativeMethods.DeviceIoControl(handle, IOCTL.KEYBOARD_SET_INDICATORS,
-                                              ref indicators, buffer_size,
-                                              IntPtr.Zero, 0, out bytesReturned,
-                                              IntPtr.Zero);
-            }
-        }
-    }
-
     /// <summary>
     /// The sequence being currently typed
     /// </summary>
@@ -782,11 +716,6 @@ exit_forward_key:
     /// How many times we pressed and released compose.
     /// </summary>
     private static int m_compose_counter = 0;
-
-    /// <summary>
-    /// The compose key being used; only valid in state “KeyCombination” for now.
-    /// </summary>
-    private static Key m_current_compose_key = new Key(VK.NONE);
 
     /// <summary>
     /// Whether the last control keypress was AltGr
@@ -826,6 +755,11 @@ exit_forward_key:
     }
 
     private static State m_state;
+
+    /// <summary>
+    /// The compose key being used; only valid in state “KeyCombination” for now.
+    /// </summary>
+    public static Key CurrentComposeKey { get; private set; } = new Key(VK.NONE);
 
     /// <summary>
     /// Indicates whether a compose sequence is in progress

@@ -50,6 +50,7 @@
     <Compile Include="composer\Composer.cs" />
     <Compile Include="composer\KeyboardHook.cs" />
     <Compile Include="composer\KeyboardLayout.cs" />
+    <Compile Include="composer\KeyboardLeds.cs" />
     <Compile Include="composer\Log.cs" />
     <Compile Include="composer\Program.cs" />
     <Compile Include="composer\Stats.cs" />
