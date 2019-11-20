@@ -23,12 +23,15 @@ public static class KeyboardLeds
 {
     public static void StartMonitoring()
     {
-        // Try to create up to 4 keyboard devices
-        for (ushort id = 0; id < 4; ++id)
+        lock (m_kbd_devices)
         {
-            if (NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, $"dos_kbd{id}",
-                                              $@"\Device\KeyboardClass{id}"))
-                m_kbd_devices.Add(id);
+            // Try to create up to 4 keyboard devices
+            for (ushort id = 0; id < 4; ++id)
+            {
+                if (NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, $"dos_kbd{id}",
+                                                  $@"\Device\KeyboardClass{id}"))
+                    m_kbd_devices.Add(id);
+            }
         }
 
         // Use a standard task timer to avoid blocking the composer thread
@@ -41,9 +44,12 @@ public static class KeyboardLeds
         Composer.Changed -= EnableTimer;
         DisableTimer();
 
-        foreach (ushort id in m_kbd_devices)
-            NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, $"dos_kbd{id}", null);
-        m_kbd_devices.Clear();
+        lock (m_kbd_devices)
+        {
+            foreach (ushort id in m_kbd_devices)
+                NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, $"dos_kbd{id}", null);
+            m_kbd_devices.Clear();
+        }
     }
 
     private static void EnableTimer()
@@ -78,23 +84,26 @@ public static class KeyboardLeds
              || (Composer.IsComposing && Composer.CurrentComposeKey.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
-        foreach (ushort id in m_kbd_devices)
+        lock (m_kbd_devices)
         {
-            indicators.UnitId = id;
-
-            using (var handle = NativeMethods.CreateFile($@"\\.\dos_kbd{id}",
-                           FileAccess.Write, FileShare.Read, IntPtr.Zero,
-                           FileMode.Open, FileAttributes.Normal, IntPtr.Zero))
+            foreach (ushort id in m_kbd_devices)
             {
-                int bytesReturned;
-                NativeMethods.DeviceIoControl(handle, IOCTL.KEYBOARD_SET_INDICATORS,
-                                              ref indicators, buffer_size,
-                                              IntPtr.Zero, 0, out bytesReturned,
-                                              IntPtr.Zero);
+                indicators.UnitId = id;
+
+                using (var handle = NativeMethods.CreateFile($@"\\.\dos_kbd{id}",
+                               FileAccess.Write, FileShare.Read, IntPtr.Zero,
+                               FileMode.Open, FileAttributes.Normal, IntPtr.Zero))
+                {
+                    int bytesReturned;
+                    NativeMethods.DeviceIoControl(handle, IOCTL.KEYBOARD_SET_INDICATORS,
+                                                  ref indicators, buffer_size,
+                                                  IntPtr.Zero, 0, out bytesReturned,
+                                                  IntPtr.Zero);
+                }
             }
         }
     }
-
 }
 
 }
+
