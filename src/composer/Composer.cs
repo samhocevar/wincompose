@@ -656,6 +656,9 @@ exit_forward_key:
         }
     }
 
+    /// <summary>
+    /// Broadcast state changes.
+    /// </summary>
     public static event Action Changed;
 
     /// <summary>
@@ -702,23 +705,25 @@ exit_forward_key:
 
     private static void StartMonitoringKeyboardLeds()
     {
-        for (ushort i = 0; i < 4; ++i)
+        // Try to create up to 4 keyboard devices
+        for (ushort id = 0; id < 4; ++id)
         {
-            string kbd_name = "dos_kbd" + i.ToString();
-            string kbd_class = @"\Device\KeyboardClass" + i.ToString();
-            NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, kbd_name, kbd_class);
+            if (NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, $"dos_kbd{id}",
+                                              $@"\Device\KeyboardClass{id}"))
+                m_kbd_devices.Add(id);
         }
 
         Changed += UpdateKeyboardLeds;
     }
 
+    private static IList<ushort> m_kbd_devices = new List<ushort>();
+
     private static void StopMonitoringKeyboardLeds()
     {
-        for (ushort i = 0; i < 4; ++i)
-        {
-            string kbd_name = "dos_kbd" + i.ToString();
-            NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, kbd_name, null);
-        }
+        foreach (ushort id in m_kbd_devices)
+            NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, $"dos_kbd{id}", null);
+        m_kbd_devices.Clear();
+
         Changed -= UpdateKeyboardLeds;
     }
 
@@ -744,11 +749,11 @@ exit_forward_key:
              || (IsComposing && m_current_compose_key.VirtualKey == VK.SCROLL))
             indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
 
-        for (ushort i = 0; i < 4; ++i)
+        foreach (ushort id in m_kbd_devices)
         {
-            indicators.UnitId = i;
+            indicators.UnitId = id;
 
-            using (var handle = NativeMethods.CreateFile(@"\\.\" + "dos_kbd" + i.ToString(),
+            using (var handle = NativeMethods.CreateFile($@"\\.\dos_kbd{id}",
                            FileAccess.Write, FileShare.Read, IntPtr.Zero,
                            FileMode.Open, FileAttributes.Normal, IntPtr.Zero))
             {
