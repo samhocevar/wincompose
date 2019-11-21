@@ -231,9 +231,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Composeキーとなるキーを指定してください。</value>
   </data>
-  <data name="ResetTimeout" xml:space="preserve">
-    <value>遅延:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>上級者向けUnicode入力</value>
   </data>
@@ -440,9 +437,6 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
-  </data>
-  <data name="NoTimeout" xml:space="preserve">
-    <value>遅延なし</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>上級者向け</value>

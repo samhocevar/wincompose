@@ -270,7 +270,7 @@
     <comment></comment>
   </data>
   <data name="ResetTimeout" xml:space="preserve">
-    <value>Delay:</value>
+    <value>Reset timeout</value>
     <comment>The compose key deactivates itself after a certain configurable delay</comment>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
@@ -550,7 +550,7 @@
     <comment>The name of the “Tab” key on the keyboard</comment>
   </data>
   <data name="NoTimeout" xml:space="preserve">
-    <value>No delay</value>
+    <value>No timeout</value>
     <comment>Text to show instead of a value in seconds when the reset timeout feature is disabled</comment>
   </data>
   <data name="Advanced" xml:space="preserve">
@@ -584,5 +584,9 @@
   <data name="Favorites" xml:space="preserve">
     <value>Favorites</value>
     <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>If enabled, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected.</value>
+    <comment></comment>
   </data>
 </root>

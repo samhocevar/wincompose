@@ -219,9 +219,8 @@ msgstr "Velg knappen å bruke som sammenfattingstast."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
-#, fuzzy
-msgid "Delay:"
-msgstr "Forsinkelse:"
+msgid "Reset timeout"
+msgstr ""
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -610,10 +609,10 @@ msgstr "End"
 msgid "Tab"
 msgstr "Tabulator"
 
-#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
-msgid "No delay"
-msgstr "Ingen forsinkelse"
+msgid "No timeout"
+msgstr ""
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -664,6 +663,12 @@ msgstr "Legg til i favoritter"
 #, fuzzy
 msgid "Favorites"
 msgstr "Legg til i favoritter"
+
+#: i18n/Text.resx:589 ID:TimeoutToolTip
+msgid ""
+"If enabled, any compose sequence will be cancelled after a certain delay if "
+"no keyboard activity is detected."
+msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -860,6 +865,13 @@ msgstr ""
 #: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administrasjonsrettigheter kreves. Feil: %d"
+
+#, fuzzy
+#~ msgid "Delay:"
+#~ msgstr "Forsinkelse:"
+
+#~ msgid "No delay"
+#~ msgstr "Ingen forsinkelse"
 
 #~ msgid "(milliseconds)"
 #~ msgstr "(millisekunder)"

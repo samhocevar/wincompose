@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WinCompose 0.9.2\n"
+"Project-Id-Version: WinCompose 0.9.4beta20191120\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -194,7 +194,7 @@ msgstr ""
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
-msgid "Delay:"
+msgid "Reset timeout"
 msgstr ""
 
 #: i18n/Text.resx:277 ID:UnicodeInput
@@ -510,9 +510,9 @@ msgstr ""
 msgid "Tab"
 msgstr ""
 
-#. Text to show instead of a value in seconds when the reset delay feature is disabled
+#. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
-msgid "No delay"
+msgid "No timeout"
 msgstr ""
 
 #. The “Advanced” section in the settings.
@@ -550,6 +550,10 @@ msgstr ""
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
+msgstr ""
+
+#: i18n/Text.resx:589 ID:TimeoutToolTip
+msgid "If enabled, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected."
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)

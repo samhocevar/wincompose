@@ -155,10 +155,11 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <emoji:TextBlock Grid.Row="0" Grid.Column="0"
-                                         Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.ComposeKey}, Path=.}"
-                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
-                                         ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}"/>
+                        <Border Margin="0" ToolTipService.ToolTip="{x:Static i18n:Text.ComposeKeyToolTip}">
+                            <emoji:TextBlock Grid.Row="0" Grid.Column="0"
+                                             Text="{Binding StringFormat='⌨️ {0}', Source={x:Static i18n:Text.ComposeKey}, Path=.}"
+                                             Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+                        </Border>
                         <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                    DataContext="{Binding ComposeKey0}" Text="{Binding FriendlyName}" FontWeight="Bold"/>
                         <Button Grid.Row="0" Grid.Column="2" Margin="8,4" VerticalAlignment="Center"
@@ -172,8 +173,11 @@
                                 Command="{Binding EditButtonCommand}" CommandParameter="1"/>
 
                         <StackPanel Margin="4,8" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
-                            <emoji:TextBlock Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetTimeout}, Path=.}"
-                                             Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
+                            <Border Margin="0" ToolTipService.ToolTip="{x:Static i18n:Text.TimeoutToolTip}">
+                                <emoji:TextBlock Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetTimeout}, Path=.}"
+                                                 Margin="8,4" VerticalAlignment="Center"
+                                                 ToolTipService.ToolTip="{x:Static i18n:Text.TimeoutToolTip}"/>
+                            </Border>
                             <Slider Width="150" Value="{Binding DelayTicks}" VerticalAlignment="Center"
                                     Minimum="0" Maximum="12" TickFrequency="1" IsSnapToTickEnabled="True"/>
                             <TextBlock Margin="8,4" Text="{Binding DelayText}"/>

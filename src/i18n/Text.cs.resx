@@ -201,9 +201,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Zvolte klávesu, která by měla fungovat jako klávesa Compose.</value>
   </data>
-  <data name="ResetTimeout" xml:space="preserve">
-    <value>Doba trvání:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Zadávání kódů Unicode</value>
   </data>

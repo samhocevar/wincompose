@@ -201,9 +201,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Выбяры клавішу, якая стане Кампанавальнай.</value>
   </data>
-  <data name="ResetTimeout" xml:space="preserve">
-    <value>Затрымка:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Прасунуты ўвод Унікоду</value>
   </data>

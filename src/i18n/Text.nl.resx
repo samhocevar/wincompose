@@ -202,7 +202,7 @@
     <value>Herstarten</value>
   </data>
   <data name="DonationPage" xml:space="preserve">
-    <value>Een knop om de donatiepagina te bezoeken (http://wincompose.info/donate/)</value>
+    <value>Donatiepagina</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Website bezoeken</value>
@@ -220,7 +220,7 @@
     <value>Probeer de twee toetsen te wisselen</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Probeer de toetsen van de twee-toetsen sequentie te wisselen. Bv. als compositiesequentie E A geen geldige sequentie is, probeer compositiesequentie A E.</value>
+    <value>Probeer de toetsen van de twee-toetsen sequentie te wisselen. Bv. als Compositietoets E A geen geldige sequentie is, probeer Compositietoets A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Zoek filter:</value>
@@ -230,9 +230,6 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Selecteer de toets die moet werken als compositietoets.</value>
-  </data>
-  <data name="ResetTimeout" xml:space="preserve">
-    <value>Vertraging:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Geavanceerde Unicode input</value>
@@ -440,9 +437,6 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
-  </data>
-  <data name="NoTimeout" xml:space="preserve">
-    <value>Geen vertraging</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Uitgebreid</value>

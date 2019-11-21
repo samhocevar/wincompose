@@ -231,9 +231,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>选择要作为“组合键”的按键。</value>
   </data>
-  <data name="ResetTimeout" xml:space="preserve">
-    <value>延迟：</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>高级 Unicode 输入</value>
   </data>
@@ -437,9 +434,6 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab 键</value>
-  </data>
-  <data name="NoTimeout" xml:space="preserve">
-    <value>无延迟</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>特别鸣谢</value>

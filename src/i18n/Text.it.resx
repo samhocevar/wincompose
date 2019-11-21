@@ -201,9 +201,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Seleziona il tasto che agirà da tasto Compose.</value>
   </data>
-  <data name="ResetTimeout" xml:space="preserve">
-    <value>Ritardo:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Input Unicode avanzato</value>
   </data>
