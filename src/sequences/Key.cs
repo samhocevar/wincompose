@@ -64,6 +64,19 @@ public partial class Key
         { "Delete",    VK.DELETE },
         { "Tab",       VK.TAB },
         { "Return",    VK.RETURN },
+#if false
+        // These cannot be activated yet because the composer cannot handle
+        // modifier keys as both possible sequence elements and forwardable
+        // keys.
+        { "Shift_L",   VK.LSHIFT },
+        { "Shift_R",   VK.RSHIFT },
+        { "Control_L", VK.LCONTROL },
+        { "Control_R", VK.RCONTROL },
+        { "Alt_L",     VK.LMENU },
+        { "Alt_R",     VK.RMENU },
+        { "Super_L",   VK.LWIN },
+        { "Super_R",   VK.RWIN },
+#endif
     };
 
     /// <summary>
@@ -196,30 +209,31 @@ public partial class Key
     /// <summary>
     /// Return whether a key is usable in a compose sequence
     /// </summary>
-    public bool IsUsable()
-    {
-        return IsPrintable || m_extra_keysyms.ContainsValue(m_vk);
-    }
+    public bool IsUsable
+        => IsPrintable || m_extra_keysyms.ContainsValue(m_vk);
 
     /// <summary>
     /// Return whether a key is a modifier (shift, ctrl, alt)
     /// </summary>
-    public bool IsModifier()
+    public bool IsModifier
     {
-        switch (m_vk)
+        get
         {
-            case VK.LCONTROL:
-            case VK.RCONTROL:
-            case VK.CONTROL:
-            case VK.LSHIFT:
-            case VK.RSHIFT:
-            case VK.SHIFT:
-            case VK.LMENU:
-            case VK.RMENU:
-            case VK.MENU:
-                return true;
-            default:
-                return false;
+            switch (m_vk)
+            {
+                case VK.LCONTROL:
+                case VK.RCONTROL:
+                case VK.CONTROL:
+                case VK.LSHIFT:
+                case VK.RSHIFT:
+                case VK.SHIFT:
+                case VK.LMENU:
+                case VK.RMENU:
+                case VK.MENU:
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 

@@ -371,10 +371,10 @@ static class Composer
         // Never do this if we already started a sequence
         // Never do this if the key is a modifier key such as shift or alt.
         if (m_compose_counter == 1 && is_keydown
-             && m_sequence.Count == 0 && !key.IsModifier())
+             && m_sequence.Count == 0 && !key.IsModifier)
         {
             bool keep_original = Settings.KeepOriginalKey.Value;
-            bool key_unusable = !key.IsUsable();
+            bool key_unusable = !key.IsUsable;
             bool altgr_combination = m_compose_key_is_altgr &&
                             KeyboardLayout.KeyToAltGrVariant(key) != null;
 
@@ -414,11 +414,11 @@ static class Composer
         }
 
         // If the key can't be used in a sequence, just ignore it.
-        if (!key.IsUsable())
+        if (!key.IsUsable)
             goto exit_forward_key;
 
         // If we reached this point, everything else ignored this key, so it
-        // is a key we must add to the current sequence.
+        // is a key we should add to the current sequence.
         if (add_to_sequence)
         {
             Log.Debug("Adding to sequence: “{0}”", key.FriendlyName);
@@ -505,6 +505,10 @@ exit_forward_key:
                 }
             }
         }
+
+        // FIXME: At this point we know the key can’t be part of a valid
+        // sequence, but this should not be a hard error if the key is a
+        // modifier key.
 
         // Unknown characters for sequence, print them if necessary
         if (!Settings.DiscardOnInvalid.Value)
