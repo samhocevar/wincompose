@@ -225,7 +225,7 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Pasirinkite, kuriuo klavišu pradėsite sudėtines sekas (Compose).</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>Laukti:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
@@ -435,7 +435,7 @@
   <data name="KeyTab" xml:space="preserve">
     <value>↹ Tab</value>
   </data>
-  <data name="DelayDisabled" xml:space="preserve">
+  <data name="NoTimeout" xml:space="preserve">
     <value>neribota</value>
   </data>
   <data name="IgnoreRegex" xml:space="preserve">

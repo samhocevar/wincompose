@@ -324,9 +324,9 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to No delay.
         /// </summary>
-        public static string DelayDisabled {
+        public static string NoTimeout {
             get {
-                return ResourceManager.GetString("DelayDisabled", resourceCulture);
+                return ResourceManager.GetString("NoTimeout", resourceCulture);
             }
         }
         
@@ -837,9 +837,9 @@ namespace WinCompose.i18n {
         /// <summary>
         ///   Looks up a localized string similar to Delay:.
         /// </summary>
-        public static string ResetDelay {
+        public static string ResetTimeout {
             get {
-                return ResourceManager.GetString("ResetDelay", resourceCulture);
+                return ResourceManager.GetString("ResetTimeout", resourceCulture);
             }
         }
         

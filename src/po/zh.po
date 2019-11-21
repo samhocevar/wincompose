@@ -210,7 +210,7 @@ msgid "Select the key that should act as the Compose key."
 msgstr "选择要作为“组合键”的按键。"
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetDelay
+#: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Delay:"
 msgstr "延迟："
 
@@ -583,7 +583,7 @@ msgid "Tab"
 msgstr "Tab 键"
 
 #. Text to show instead of a value in seconds when the reset delay feature is disabled
-#: i18n/Text.resx:553 ID:DelayDisabled
+#: i18n/Text.resx:553 ID:NoTimeout
 msgid "No delay"
 msgstr "无延迟"
 

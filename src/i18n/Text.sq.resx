@@ -186,7 +186,7 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Çelësi i kompozimit:</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>Vonesa:</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">

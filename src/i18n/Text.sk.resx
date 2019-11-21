@@ -195,7 +195,7 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Zvoľte kláves, ktorý by mal fungovať ako kláves Compose.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>Doba trvania:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">

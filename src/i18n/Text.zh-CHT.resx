@@ -201,7 +201,7 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>選擇應充當 Compose 鍵的鍵。</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>延遲：</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">

@@ -231,7 +231,7 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Wählen Sie die Taste, die als Compose-Taste dienen soll.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>Verzögerung:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
@@ -441,7 +441,7 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
   </data>
-  <data name="DelayDisabled" xml:space="preserve">
+  <data name="NoTimeout" xml:space="preserve">
     <value>Aus</value>
   </data>
   <data name="Advanced" xml:space="preserve">

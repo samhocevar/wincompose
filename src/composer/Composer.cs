@@ -273,9 +273,9 @@ static class Composer
                       m_state, m_compose_key_is_altgr);
 
             // Lauch the sequence reset expiration timer
-            if (Settings.ResetDelay.Value > 0)
+            if (Settings.ResetTimeout.Value > 0)
             {
-                m_timeout.Interval = TimeSpan.FromMilliseconds(Settings.ResetDelay.Value);
+                m_timeout.Interval = TimeSpan.FromMilliseconds(Settings.ResetTimeout.Value);
                 m_timeout.Start();
             }
 

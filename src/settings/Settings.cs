@@ -91,7 +91,7 @@ namespace WinCompose
         [EntryLocation("composing", "compose_key")]
         public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
         [EntryLocation("composing", "reset_delay")]
-        public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
+        public static SettingsEntry<int> ResetTimeout { get; } = new SettingsEntry<int>(-1);
         [EntryLocation("composing", "use_xorg_rules")]
         public static SettingsEntry<bool> UseXorgRules { get; } = new SettingsEntry<bool>(true);
         [EntryLocation("composing", "use_xcompose_rules")]

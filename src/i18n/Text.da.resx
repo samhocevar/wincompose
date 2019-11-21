@@ -192,7 +192,7 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Compose-tast:</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>Forsinkning:</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">

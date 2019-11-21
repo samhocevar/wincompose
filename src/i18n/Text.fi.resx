@@ -186,7 +186,7 @@
   <data name="ComposeKey" xml:space="preserve">
     <value>Compose-näppäin:</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>Viive:</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">

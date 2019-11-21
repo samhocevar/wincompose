@@ -396,7 +396,7 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tabulator</value>
   </data>
-  <data name="DelayDisabled" xml:space="preserve">
+  <data name="NoTimeout" xml:space="preserve">
     <value>Ingen forsinkelse</value>
   </data>
   <data name="Advanced" xml:space="preserve">

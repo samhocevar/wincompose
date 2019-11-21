@@ -172,7 +172,7 @@
                                 Command="{Binding EditButtonCommand}" CommandParameter="1"/>
 
                         <StackPanel Margin="4,8" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
-                            <emoji:TextBlock Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetDelay}, Path=.}"
+                            <emoji:TextBlock Text="{Binding StringFormat='⏳ {0}', Source={x:Static i18n:Text.ResetTimeout}, Path=.}"
                                              Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"/>
                             <Slider Width="150" Value="{Binding DelayTicks}" VerticalAlignment="Center"
                                     Minimum="0" Maximum="12" TickFrequency="1" IsSnapToTickEnabled="True"/>

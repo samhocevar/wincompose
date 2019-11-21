@@ -205,7 +205,7 @@ msgid "Select the key that should act as the Compose key."
 msgstr "Selectați tasta corespunzătoare pentru Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetDelay
+#: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Delay:"
 msgstr "Întârziere:"
 
@@ -560,7 +560,7 @@ msgid "Tab"
 msgstr ""
 
 #. Text to show instead of a value in seconds when the reset delay feature is disabled
-#: i18n/Text.resx:553 ID:DelayDisabled
+#: i18n/Text.resx:553 ID:NoTimeout
 msgid "No delay"
 msgstr ""
 

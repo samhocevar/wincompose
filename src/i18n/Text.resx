@@ -269,7 +269,7 @@
     <value>Select the key that should act as the Compose key.</value>
     <comment></comment>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
+  <data name="ResetTimeout" xml:space="preserve">
     <value>Delay:</value>
     <comment>The compose key deactivates itself after a certain configurable delay</comment>
   </data>
@@ -549,9 +549,9 @@
     <value>Tab</value>
     <comment>The name of the “Tab” key on the keyboard</comment>
   </data>
-  <data name="DelayDisabled" xml:space="preserve">
+  <data name="NoTimeout" xml:space="preserve">
     <value>No delay</value>
-    <comment>Text to show instead of a value in seconds when the reset delay feature is disabled</comment>
+    <comment>Text to show instead of a value in seconds when the reset timeout feature is disabled</comment>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Advanced</value>
