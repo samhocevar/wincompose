@@ -238,6 +238,20 @@ public partial class Key
     }
 
     /// <summary>
+    /// Convert the key to a unique string representation that can
+    /// be put in an XML attribute among other things.
+    /// </summary>
+    public string AsXmlAttr
+    {
+        get
+        {
+            return m_str == "{" ? "{{"
+                 : m_str == "}" ? "}}"
+                 : m_str ?? "{vk:" + m_vk.ToString().ToLowerInvariant() + "}";
+        }
+    }
+
+    /// <summary>
     /// This should be part of a Key viewmodel class
     /// </summary>
     public double Opacity => m_vk == VK.DISABLED ? 0.5 : 1.0;

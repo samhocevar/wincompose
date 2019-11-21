@@ -102,6 +102,13 @@ public class KeySequence : List<Key>
         => string.Join("", Array.ConvertAll(ToArray(), x => x.PrintableResult));
 
     /// <summary>
+    /// Convert sequence to a unique string representation that can
+    /// be put in an XML attribute among other things.
+    /// </summary>
+    public string AsXmlAttr
+        => string.Join("", Array.ConvertAll(ToArray(), x => x.AsXmlAttr));
+
+    /// <summary>
     /// Construct a key sequence from a serialized string.
     /// </summary>
     public static KeySequence FromString(string str)

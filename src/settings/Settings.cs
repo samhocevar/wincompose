@@ -325,36 +325,28 @@ namespace WinCompose
         {
             if (!UnicodeInput.Value)
                 return false;
-            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
-            return m_match_gen_prefix.Match(seq_string).Success;
+            return m_match_gen_prefix.Match(sequence.AsXmlAttr).Success;
         }
 
-        public static bool IsValidGenericSequence(KeySequence sequence)
+        public static bool GetGenericSequenceResult(KeySequence sequence, out string result)
         {
+            result = null;
             if (!UnicodeInput.Value)
                 return false;
-            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
-            return m_match_gen_seq.Match(seq_string).Success;
-        }
-
-        public static string GetGenericSequenceResult(KeySequence sequence)
-        {
-            if (!UnicodeInput.Value)
-                return "";
-            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
-            var m = m_match_gen_seq.Match(seq_string);
+            var m = m_match_gen_seq.Match(sequence.AsXmlAttr);
             if (!m.Success)
-                return "";
+                return false;
             int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
             if (codepoint < 0 || codepoint > 0x10ffff)
-                return "";
+                return false;
             if (codepoint >= 0xd800 && codepoint < 0xe000)
-                return "";
-            return char.ConvertFromUtf32(codepoint);
+                return false;
+            result = char.ConvertFromUtf32(codepoint);
+            return true;
         }
 
-        private static Regex m_match_gen_prefix = new Regex(@"^u[0-9a-f]*$");
-        private static Regex m_match_gen_seq = new Regex(@"^u([0-9a-f]+)( |vk[.]return)$");
+        private static Regex m_match_gen_prefix = new Regex(@"^[uU][0-9a-fA-F]*$");
+        private static Regex m_match_gen_seq = new Regex(@"^[uU]([0-9a-fA-F]+)( |{vk:return})$");
 
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 

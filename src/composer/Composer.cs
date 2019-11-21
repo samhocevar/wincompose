@@ -479,9 +479,8 @@ exit_forward_key:
                 if (Settings.IsValidGenericPrefix(m_sequence))
                     return true;
 
-                if (Settings.IsValidGenericSequence(m_sequence))
+                if (Settings.GetGenericSequenceResult(m_sequence, out var tosend))
                 {
-                    string tosend = Settings.GetGenericSequenceResult(m_sequence);
                     SendString(tosend);
                     Log.Debug("Valid generic sequence! Sent “{0}”", tosend);
                     Stats.AddSequence(m_sequence);
