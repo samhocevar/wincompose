@@ -565,11 +565,38 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Keyboard LED.
+        /// </summary>
+        public static string KeyboardLed {
+            get {
+                return ResourceManager.GetString("KeyboardLed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If set, the corresponding keyboard LED will be lit when a compose sequence is in progress..
+        /// </summary>
+        public static string KeyboardLedToolTip {
+            get {
+                return ResourceManager.GetString("KeyboardLedToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Caps Lock.
         /// </summary>
         public static string KeyCapital {
             get {
                 return ResourceManager.GetString("KeyCapital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compose.
+        /// </summary>
+        public static string KeyCompose {
+            get {
+                return ResourceManager.GetString("KeyCompose", resourceCulture);
             }
         }
         
@@ -943,7 +970,7 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If enabled, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected..
+        ///   Looks up a localized string similar to If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected..
         /// </summary>
         public static string TimeoutToolTip {
             get {

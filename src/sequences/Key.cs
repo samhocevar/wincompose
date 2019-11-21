@@ -149,6 +149,7 @@ public partial class Key
                 m_key_names = new Dictionary<Key, string>
                 {
                     { new Key(VK.DISABLED),   i18n.Text.KeyDisabled },
+                    { new Key(VK.COMPOSE),    i18n.Text.KeyCompose},
                     { new Key(VK.LMENU),      i18n.Text.KeyLMenu },
                     { new Key(VK.RMENU),      i18n.Text.KeyRMenu },
                     { new Key(VK.LCONTROL),   i18n.Text.KeyLControl },

@@ -90,6 +90,8 @@ namespace WinCompose
 
         [EntryLocation("composing", "compose_key")]
         public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
+        [EntryLocation("composing", "led_key")]
+        public static SettingsEntry<KeySequence> LedKey { get; } = new SettingsEntry<KeySequence>(new KeySequence());
         [EntryLocation("composing", "reset_delay")]
         public static SettingsEntry<int> ResetTimeout { get; } = new SettingsEntry<int>(-1);
         [EntryLocation("composing", "use_xorg_rules")]
@@ -134,6 +136,15 @@ namespace WinCompose
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;
 
+        public static IList<Key> ValidLedKeys { get; } = new List<Key>()
+        {
+            new Key(VK.DISABLED),
+            new Key(VK.COMPOSE),
+            new Key(VK.CAPITAL),
+            new Key(VK.NUMLOCK),
+            new Key(VK.PAUSE),
+        };
+
         public static void StartWatchConfigFile()
         {
             m_ini_file.OnFileChanged += LoadConfig;
@@ -147,8 +158,9 @@ namespace WinCompose
 
         private static IniFile m_ini_file;
 
-        private static void ValidateComposeKeys()
+        private static void ValidateSettings()
         {
+            // Check that the configured compose key(s) are legal
             KeySequence compose_keys = new KeySequence();
             if (ComposeKeys.Value?.Count == 0)
             {
@@ -172,6 +184,12 @@ namespace WinCompose
                     compose_keys.Add(new Key(VK.DISABLED));
             }
             ComposeKeys.Value = compose_keys;
+
+            // Check that the keyboard LED key is legal
+            if (LedKey.Value.Count != 1 || !ValidLedKeys.Contains(LedKey.Value[0]))
+            {
+                LedKey.Value = new KeySequence() { new Key(VK.COMPOSE) };
+            }
         }
 
         public static void LoadConfig()
@@ -187,7 +205,7 @@ namespace WinCompose
                 }
             }
 
-            ValidateComposeKeys();
+            ValidateSettings();
 
             // HACK: if the user uses the "it-CH" locale, replace it with "it"
             // because we use "it-CH" as a special value to mean Sardinian.

@@ -21,7 +21,7 @@ namespace WinCompose
 
 /// <summary>
 /// The KeySequenceConverter class allows to convert a string or a string-like
-/// object to a Key object and back.
+/// object to a KeySequence object and back.
 /// </summary>
 public class KeySequenceConverter : TypeConverter
 {

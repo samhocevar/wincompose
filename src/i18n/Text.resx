@@ -586,7 +586,19 @@
     <comment>Name of the category (Unicode characters, Emoji, User macros, Favorites)</comment>
   </data>
   <data name="TimeoutToolTip" xml:space="preserve">
-    <value>If enabled, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected.</value>
+    <value>If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected.</value>
     <comment></comment>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Keyboard LED</value>
+    <comment></comment>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>If set, the corresponding keyboard LED will be lit when a compose sequence is in progress.</value>
+    <comment></comment>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Compose</value>
+    <comment>The short name of the compose key</comment>
   </data>
 </root>

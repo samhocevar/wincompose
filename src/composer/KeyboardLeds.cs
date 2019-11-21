@@ -62,27 +62,38 @@ public static class KeyboardLeds
 
     private static IList<ushort> m_kbd_devices = new List<ushort>();
 
+    private static readonly IDictionary<VK, KEYBOARD> m_vk_to_flag = new Dictionary<VK, KEYBOARD>()
+    {
+        { VK.CAPITAL, KEYBOARD.CAPS_LOCK_ON },
+        { VK.NUMLOCK, KEYBOARD.NUM_LOCK_ON },
+        { VK.PAUSE,   KEYBOARD.SCROLL_LOCK_ON },
+    };
+
     private static void Refresh(object o)
     {
         var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
         int buffer_size = (int)Marshal.SizeOf(indicators);
+
+        var led_vk = Settings.LedKey.Value[0].VirtualKey;
 
         // NOTE: I was unable to make IOCTL.KEYBOARD_QUERY_INDICATORS work
         // properly, but querying state with GetKeyState() seemed more
         // robust anyway. Think of the user setting Caps Lock as their
         // compose key, entering compose state, then suddenly changing
         // the compose key to Shift: the LED state would be inconsistent.
-        if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (Composer.IsComposing && Composer.CurrentComposeKey.VirtualKey == VK.CAPITAL))
-            indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
-
-        if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (Composer.IsComposing && Composer.CurrentComposeKey.VirtualKey == VK.NUMLOCK))
-            indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
-
-        if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (Composer.IsComposing && Composer.CurrentComposeKey.VirtualKey == VK.SCROLL))
-            indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
+        foreach (var kv in m_vk_to_flag)
+        {
+            var vk = kv.Key;
+            var flag = kv.Value;
+            if (NativeMethods.GetKeyState(vk) != 0)
+                indicators.LedFlags |= flag;
+            else if (Composer.IsComposing)
+            {
+                if (Composer.CurrentComposeKey.VirtualKey == vk && led_vk == VK.COMPOSE
+                     || led_vk == vk)
+                    indicators.LedFlags |= flag;
+            }
+        }
 
         lock (m_kbd_devices)
         {

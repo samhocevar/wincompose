@@ -55,6 +55,13 @@ namespace WinCompose
             set => SetValue(ref m_selected_language, value, nameof(SelectedLanguage));
         }
 
+        public Key SelectedLedKey
+        {
+            // FIXME: this settings value should be a Key, not a KeySequence
+            get => Settings.LedKey.Value[0];
+            set => Settings.LedKey.Value = new KeySequence() { value };
+        }
+
         public Key ComposeKey0 { get => GetComposeKey(0); set => SetComposeKey(0, value); }
         public Key ComposeKey1 { get => GetComposeKey(1); set => SetComposeKey(1, value); }
 
