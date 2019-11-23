@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-14 07:51+0000\n"
+"PO-Revision-Date: 2019-11-24 18:04+0000\n"
 "Last-Translator: Geert Delmeiren <weblate@zy.33mail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
 "nl/>\n"
@@ -215,7 +215,7 @@ msgstr "Selecteer de toets die moet werken als compositietoets."
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "time-out resetten"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -553,7 +553,7 @@ msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
-"Standaard zal Windows het icoon na een tijdhe uit de systeem balk "
+"Standaard zal Windows het icoon na een tijdje uit de systeem balk "
 "verwijderen. Deze optie probeert het icoon altijd zichtbaar te houden."
 
 #. The user can click on this button to change the current compose key.
@@ -602,7 +602,7 @@ msgstr "Tab"
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Geen time-out"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -657,6 +657,8 @@ msgid ""
 "If enabled, any compose sequence will be cancelled after a certain delay if "
 "no keyboard activity is detected."
 msgstr ""
+"Indien ingeschakeld zal elke compositiesequentie opgeheven worden na een "
+"bepaalde tijd als er geen toetsenbordactiviteit wordt gedetecteerd."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
