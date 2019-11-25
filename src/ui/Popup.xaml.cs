@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Threading;
 
 namespace WinCompose
@@ -108,7 +109,25 @@ namespace WinCompose
             }
 
             if (guiti.hwndCaret == IntPtr.Zero)
+            {
+                foreach (var tid in tid_list)
+                {
+                    NativeMethods.GetGUIThreadInfo(tid, ref guiti);
+                    //Console.WriteLine($"tid {tid}: hwnd {guiti.hwndFocus}");
+                    var root = AutomationElement.FromHandle(guiti.hwndFocus);
+                    var ctrl = root.FindFirst(TreeScope.Subtree, new PropertyCondition(AutomationElement.HasKeyboardFocusProperty, true));
+                    //foreach (var prop in ctrl.GetSupportedProperties())
+                    //    Console.WriteLine($"prop: {prop.ProgrammaticName} = {ctrl.GetCurrentPropertyValue(prop)}");
+                    if (ctrl != null)
+                    {
+                        var bbox = ctrl.GetCurrentPropertyValue(AutomationElement.BoundingRectangleProperty, true);
+                        if (bbox != AutomationElement.NotSupported)
+                            return (Rect)bbox;
+                    }
+                }
+
                 return new Rect();
+            }
 
             // Window position in screen coordinates
             POINT window_pos = new POINT();
