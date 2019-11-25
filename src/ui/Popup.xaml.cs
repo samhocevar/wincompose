@@ -49,16 +49,21 @@ namespace WinCompose
                 return;
             }
 
+            // Position popup near the cursor
+            var ps = PresentationSource.FromVisual(this);
+            var mat = ps.CompositionTarget.TransformFromDevice;
+            var pos = mat.Transform(new Point(caret.Left - 5, caret.Bottom + 5));
+            Left = pos.X;
+            Top = pos.Y;
+
             PopupText.Text = string.Format("({0}, {1}) {2}x{3}",
                     caret.Left, caret.Top, caret.Width, caret.Height);
-            Left = caret.Left - 5;
-            Top = caret.Bottom + 5;
             Show();
         }
 
         private DispatcherTimer m_timer;
 
-        private static Rect GetCaretInfo()
+        private Rect GetCaretInfo()
         {
             List<uint> tid_list = new List<uint>();
 
@@ -105,13 +110,16 @@ namespace WinCompose
             if (guiti.hwndCaret == IntPtr.Zero)
                 return new Rect();
 
-            POINT point = new POINT();
-            NativeMethods.ClientToScreen(guiti.hwndCaret, out point);
+            // Window position in screen coordinates
+            POINT window_pos = new POINT();
+            NativeMethods.ClientToScreen(guiti.hwndCaret, out window_pos);
 
-            return new Rect(guiti.rcCaret.left + point.x,
-                            guiti.rcCaret.top + point.y,
-                            guiti.rcCaret.right - guiti.rcCaret.left,
-                            guiti.rcCaret.bottom - guiti.rcCaret.top);
+            var x = guiti.rcCaret.left + window_pos.x;
+            var y = guiti.rcCaret.top + window_pos.y;
+            var w = guiti.rcCaret.right - guiti.rcCaret.left;
+            var h = guiti.rcCaret.bottom - guiti.rcCaret.top;
+
+            return new Rect(x, y, w, h);
         }
     }
 }
