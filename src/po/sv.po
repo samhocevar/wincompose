@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-19 13:04+0000\n"
+"PO-Revision-Date: 2019-11-28 19:04+0000\n"
 "Last-Translator: greywatcher <greyman000@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
 "master/sv/>\n"
@@ -215,7 +215,7 @@ msgstr "Välj tangenten som ska fungera som Compose-tangent."
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Återställ väntetid"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -600,7 +600,7 @@ msgstr "Tab"
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Ingen väntetid"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -655,6 +655,8 @@ msgid ""
 "If enabled, any compose sequence will be cancelled after a certain delay if "
 "no keyboard activity is detected."
 msgstr ""
+"Om markerat, kommer alla Compose-sekvenser avbrytas efter en viss "
+"fördröjning om ingen tangentbordsaktivitet upptäcks."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
