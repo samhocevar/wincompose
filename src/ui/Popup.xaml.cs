@@ -110,23 +110,17 @@ namespace WinCompose
 
             if (guiti.hwndCaret == IntPtr.Zero)
             {
+#if false
                 foreach (var tid in tid_list)
                 {
                     NativeMethods.GetGUIThreadInfo(tid, ref guiti);
-                    //Console.WriteLine($"tid {tid}: hwnd {guiti.hwndFocus}");
+                    Log.Debug($"tid {tid}: hwnd {guiti.hwndFocus}");
                     var root = AutomationElement.FromHandle(guiti.hwndFocus);
-                    var ctrl = root.FindFirst(TreeScope.Subtree, new PropertyCondition(AutomationElement.HasKeyboardFocusProperty, true));
-                    //foreach (var prop in ctrl.GetSupportedProperties())
-                    //    Console.WriteLine($"prop: {prop.ProgrammaticName} = {ctrl.GetCurrentPropertyValue(prop)}");
-                    if (ctrl != null)
-                    {
-                        var bbox = ctrl.GetCurrentPropertyValue(AutomationElement.BoundingRectangleProperty, true);
-                        if (bbox != AutomationElement.NotSupported)
-                            return (Rect)bbox;
-                    }
+                    var ctrl = root.FindAll(TreeScope.Descendants, new Condi
                 }
+#endif
 
-                return new Rect();
+                return GetCaret(AutomationElement.FocusedElement) ?? new Rect();
             }
 
             // Window position in screen coordinates
@@ -139,6 +133,40 @@ namespace WinCompose
             var h = guiti.rcCaret.bottom - guiti.rcCaret.top;
 
             return new Rect(x, y, w, h);
+        }
+
+        private static Rect? GetCaret(AutomationElement elem)
+        {
+            Log.Debug($"  elem: {elem}");
+            var current = elem.Current;
+            Log.Debug($"  name: {current.Name}");
+            Log.Debug($"  type: {current.ControlType}");
+            foreach (var prop in elem.GetSupportedProperties())
+            {
+                //if (prop.ProgrammaticName.Contains("Keyboard"))
+                if (prop.ProgrammaticName.Contains("Value") || prop.ProgrammaticName.Contains("Bounding"))
+                    Log.Debug($"    prop: {prop.ProgrammaticName} = {elem.GetCurrentPropertyValue(prop)}");
+            }
+
+            // Find an edit control in there
+            // This is ultra slow! Find something else.
+            // See discussion here: https://social.msdn.microsoft.com/Forums/SECURITY/en-US/485b5ea0-ca07-4b02-9efc-3d7354c585d2/performance-issue-on-findfirst-and-findall-calls-of-systemwindowsautomation-while-finding-the?forum=netfxbcl
+            var l = elem.FindAll(TreeScope.Descendants, new PropertyCondition(AutomationElement.ControlTypeProperty, ControlType.Edit));
+            foreach (AutomationElement e in l)
+            {
+                var b = GetCaret(e);
+                if (b != null)
+                    return b;
+            }
+
+            if (elem != null)
+            {
+                var bbox = elem.GetCurrentPropertyValue(AutomationElement.BoundingRectangleProperty, true);
+                if (bbox != AutomationElement.NotSupported)
+                    return (Rect)bbox;
+            }
+
+            return null;
         }
     }
 }
