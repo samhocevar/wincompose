@@ -15,7 +15,6 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Automation;
-using System.Windows.Threading;
 
 namespace WinCompose
 {
@@ -29,20 +28,14 @@ namespace WinCompose
             ShowInTaskbar = false;
             InitializeComponent();
 
-            // Seems to be the simplest way to implement an async event
-            m_timer = new DispatcherTimer();
-            m_timer.Tick += OnKeyInternal;
-
-            Loaded += (o, e) => Composer.Key += OnKey;
-            Closed += (o, e) => Composer.Key -= OnKey;
+            // Ensure OnKey() is called on our dispatcher thread
+            var trigger = DispatcherTrigger.Create(OnKey);
+            Loaded += (o, e) => Composer.Key += trigger;
+            Closed += (o, e) => Composer.Key -= trigger;
         }
 
-        public void OnKey() => m_timer.Start();
-
-        private void OnKeyInternal(object sender, EventArgs e)
+        private void OnKey()
         {
-            m_timer.Stop();
-
             Rect caret;
             if (!Composer.IsComposing || (caret = GetCaretInfo()).IsEmpty)
             {
@@ -61,8 +54,6 @@ namespace WinCompose
                     caret.Left, caret.Top, caret.Width, caret.Height);
             Show();
         }
-
-        private DispatcherTimer m_timer;
 
         private Rect GetCaretInfo()
         {

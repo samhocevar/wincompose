@@ -13,9 +13,25 @@
 using System;
 using System.IO;
 using System.Reflection;
+using System.Windows.Threading;
 
 namespace WinCompose
 {
+    /// <summary>
+    /// Wrap an action around a dispatcher timer so it is always run on
+    /// the dispatcher thread. This is a fire-and-forget action.
+    /// </summary>
+    public static class DispatcherTrigger
+    {
+        public static Action Create(Action a)
+        {
+            var trigger = new DispatcherTimer();
+            trigger.Tick += (o, e) => { trigger.Stop(); a(); };
+            Action ret = () => trigger.Start();
+            return ret;
+        }
+    }
+
     static class Utils
     {
         public static bool EnsureDirectory(string directory)
