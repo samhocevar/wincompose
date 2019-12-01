@@ -38,6 +38,11 @@
         ]]>
     </x:Code>
     <StackPanel Orientation="Vertical">
-        <TextBlock Name="PopupText" Background="Transparent" Text="Lol Hi" Margin="12" VerticalAlignment="Center"/>
+        <TextBlock Name="PopupText" Background="Transparent"
+                   Text="Lol Hi" Margin="12" VerticalAlignment="Center"/>
+        <Popup Name="TestBorder" IsOpen="True"
+               Width="10" Height="16" AllowsTransparency="True">
+            <Border BorderBrush="YellowGreen" BorderThickness="2"/>
+        </Popup>
     </StackPanel>
 </Window>

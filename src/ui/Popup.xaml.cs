@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Automation;
+using System.Windows.Controls.Primitives;
 
 namespace WinCompose
 {
@@ -46,12 +47,19 @@ namespace WinCompose
             // Position popup near the cursor
             var ps = PresentationSource.FromVisual(this);
             var mat = ps.CompositionTarget.TransformFromDevice;
-            var pos = mat.Transform(new Point(caret.Left - 5, caret.Bottom + 5));
-            Left = pos.X;
-            Top = pos.Y;
+            var p1 = mat.Transform(new Point(caret.Left, caret.Top));
+            var p2 = mat.Transform(new Point(caret.Right, caret.Bottom));
+            Left = p1.X - 5;
+            Top = p2.Y + 5;
 
             PopupText.Text = string.Format("({0}, {1}) {2}x{3}",
                     caret.Left, caret.Top, caret.Width, caret.Height);
+
+            TestBorder.Placement = PlacementMode.Absolute;
+            TestBorder.HorizontalOffset = p1.X;
+            TestBorder.VerticalOffset = p1.Y;
+            TestBorder.Width = p2.X - p1.X;
+            TestBorder.Height = p2.Y - p1.Y;
             Show();
         }
 
