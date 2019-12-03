@@ -83,7 +83,10 @@ public static class Log
         if (m_entries.ListenerCount > 0)
         {
             DateTime date = DateTime.Now;
-            var msg = string.Format(format, args);
+            // Only use string.Format() if arguments are given, because if the
+            // formatting was made in the caller it probably didn’t check for {}
+            // in the resulting string.
+            var msg = args.Length > 0 ? string.Format(format, args) : format;
             ThreadPool.QueueUserWorkItem(x =>
             {
                 m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, date, msg);
