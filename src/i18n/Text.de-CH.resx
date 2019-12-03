@@ -189,9 +189,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Elektu la klavon kiun estos la kunigo-klavon.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Prokrasto:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Speciala Unikoda enigo</value>
   </data>

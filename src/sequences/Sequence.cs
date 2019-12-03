@@ -21,7 +21,7 @@ namespace WinCompose
 
 /// <summary>
 /// The KeySequenceConverter class allows to convert a string or a string-like
-/// object to a Key object and back.
+/// object to a KeySequence object and back.
 /// </summary>
 public class KeySequenceConverter : TypeConverter
 {
@@ -100,6 +100,13 @@ public class KeySequence : List<Key>
     /// </summary>
     public string PrintableResult
         => string.Join("", Array.ConvertAll(ToArray(), x => x.PrintableResult));
+
+    /// <summary>
+    /// Convert sequence to a unique string representation that can
+    /// be put in an XML attribute among other things.
+    /// </summary>
+    public string AsXmlAttr
+        => string.Join("", Array.ConvertAll(ToArray(), x => x.AsXmlAttr));
 
     /// <summary>
     /// Construct a key sequence from a serialized string.

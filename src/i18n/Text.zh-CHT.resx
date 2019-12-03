@@ -148,25 +148,25 @@
     <value>Pause 鍵</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>Menu 鍵</value>
+    <value>彈出選單鍵</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
     <value>Esc 鍵</value>
   </data>
   <data name="KeyConvert" xml:space="preserve">
-    <value>Conversion 鍵</value>
+    <value>Conversion 鍵(日文)</value>
   </data>
   <data name="KeyNonConvert" xml:space="preserve">
-    <value>Non-conversion 鍵</value>
+    <value>Non-conversion 鍵(日文)</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock 鍵</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>空白鍵</value>
+    <value>空格鍵</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
-    <value>Return 鍵</value>
+    <value>Enter 鍵</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>&quot;調試&quot; 視窗</value>
@@ -200,9 +200,6 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>選擇應充當 Compose 鍵的鍵。</value>
-  </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>延遲：</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>進階 Unicode 輸入</value>

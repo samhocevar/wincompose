@@ -189,9 +189,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Izberite tipko, ki bo uporabljena kot Compose tipka.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Zamik:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Napreden Unicode vnos</value>
   </data>

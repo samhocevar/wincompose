@@ -211,9 +211,9 @@ msgid "Select the key that should act as the Compose key."
 msgstr "Vali klahv, mis peaks käituma kombineerimisklahvina."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetDelay
-msgid "Delay:"
-msgstr "Viivitus:"
+#: i18n/Text.resx:273 ID:ResetTimeout
+msgid "Reset timeout"
+msgstr ""
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -588,9 +588,9 @@ msgstr ""
 msgid "Tab"
 msgstr ""
 
-#. Text to show instead of a value in seconds when the reset delay feature is disabled
-#: i18n/Text.resx:553 ID:DelayDisabled
-msgid "No delay"
+#. Text to show instead of a value in seconds when the reset timeout feature is disabled
+#: i18n/Text.resx:553 ID:NoTimeout
+msgid "No timeout"
 msgstr ""
 
 #. The “Advanced” section in the settings.
@@ -636,6 +636,12 @@ msgstr "Lisa lemmikutesse"
 #, fuzzy
 msgid "Favorites"
 msgstr "Lisa lemmikutesse"
+
+#: i18n/Text.resx:589 ID:TimeoutToolTip
+msgid ""
+"If enabled, any compose sequence will be cancelled after a certain delay if "
+"no keyboard activity is detected."
+msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -826,6 +832,9 @@ msgstr ""
 #: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
 msgstr "Vajalikud on administraatori õigused. Viga: %d"
+
+#~ msgid "Delay:"
+#~ msgstr "Viivitus:"
 
 #~ msgid "(milliseconds)"
 #~ msgstr "(millisekundit)"

@@ -204,9 +204,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Выберите клавишу, которая будет использоваться в качестве клавиши Compose.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Задержка:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Расширенный ввод символов Unicode</value>
   </data>
@@ -410,9 +407,6 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
-  </data>
-  <data name="DelayDisabled" xml:space="preserve">
-    <value>Без задержки</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Благодарности</value>

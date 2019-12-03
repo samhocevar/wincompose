@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Autodetektera</value>
+    <value>Upptäck automatiskt</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Vänster Alt</value>
@@ -230,9 +230,6 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Välj tangenten som ska fungera som Compose-tangent.</value>
-  </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Fördröjning:</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Avancerad Unicode-inmatning</value>
@@ -441,9 +438,6 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
   </data>
-  <data name="DelayDisabled" xml:space="preserve">
-    <value>Avstängd</value>
-  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avancerat</value>
   </data>
@@ -451,7 +445,7 @@
     <value>Ignorera fönster som matchar detta regelbundna uttryck:</value>
   </data>
   <data name="IgnoreRegexToolTip" xml:space="preserve">
-    <value>WinCompose kommer stängas av helt när nuvarande fönsterklass eller fönsternamn matchar detta regelbundna uttryck.</value>
+    <value>WinCompose kommer helt inaktiveras när aktivt fönsterklass eller fönsternamn matchar detta reguljära uttryck (regex).</value>
   </data>
   <data name="AlwaysCompose" xml:space="preserve">
     <value>Alternativ Compose-tangent är alltid Compose</value>

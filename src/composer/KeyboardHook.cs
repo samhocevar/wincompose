@@ -40,6 +40,10 @@ static class KeyboardHook
 
     private static void KeyboardThread()
     {
+        // Since the Composer uses a DispatcherTimer, we need to be the ones
+        // initialising that class from our STA thread.
+        Composer.Init();
+
         if (Environment.OSVersion.Platform == PlatformID.Win32NT
              || Environment.OSVersion.Platform == PlatformID.Win32S
              || Environment.OSVersion.Platform == PlatformID.Win32Windows
@@ -54,6 +58,7 @@ static class KeyboardHook
         }
 
         Dispatcher.Run();
+        Composer.Fini();
     }
 
     private static void CheckHook(bool must_reinstall)

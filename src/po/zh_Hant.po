@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.8.0\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-01-13 09:08+0000\n"
-"Last-Translator: Louies <louies0623@gmail.com>\n"
+"PO-Revision-Date: 2019-11-20 08:00+0000\n"
+"Last-Translator: Wei-cheng Kung <wck317@pchome.com.tw>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "wincompose/master/zh_Hant/>\n"
 "Language: zh_Hant\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.4-dev\n"
+"X-Generator: Weblate 3.10-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -72,7 +72,7 @@ msgstr "Pause 鍵"
 #. Also known as Application key
 #: i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr "Menu 鍵"
+msgstr "彈出選單鍵"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:165 ID:KeyEscape
@@ -82,12 +82,12 @@ msgstr "Esc 鍵"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr "Conversion 鍵"
+msgstr "Conversion 鍵(日文)"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr "Non-conversion 鍵"
+msgstr "Non-conversion 鍵(日文)"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -97,12 +97,12 @@ msgstr "Scroll Lock 鍵"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr "空白鍵"
+msgstr "空格鍵"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr "Return 鍵"
+msgstr "Enter 鍵"
 
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
@@ -204,9 +204,9 @@ msgid "Select the key that should act as the Compose key."
 msgstr "選擇應充當 Compose 鍵的鍵。"
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetDelay
-msgid "Delay:"
-msgstr "延遲："
+#: i18n/Text.resx:273 ID:ResetTimeout
+msgid "Reset timeout"
+msgstr ""
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -562,9 +562,9 @@ msgstr ""
 msgid "Tab"
 msgstr ""
 
-#. Text to show instead of a value in seconds when the reset delay feature is disabled
-#: i18n/Text.resx:553 ID:DelayDisabled
-msgid "No delay"
+#. Text to show instead of a value in seconds when the reset timeout feature is disabled
+#: i18n/Text.resx:553 ID:NoTimeout
+msgid "No timeout"
 msgstr ""
 
 #. The “Advanced” section in the settings.
@@ -607,6 +607,12 @@ msgstr ""
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
+msgstr ""
+
+#: i18n/Text.resx:589 ID:TimeoutToolTip
+msgid ""
+"If enabled, any compose sequence will be cancelled after a certain delay if "
+"no keyboard activity is detected."
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
@@ -794,6 +800,9 @@ msgstr ""
 #: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
 msgstr ""
+
+#~ msgid "Delay:"
+#~ msgstr "延遲："
 
 #~ msgid "Grave Accent `"
 #~ msgstr "Grave Accent ` 鍵"

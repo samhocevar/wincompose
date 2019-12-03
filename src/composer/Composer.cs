@@ -13,11 +13,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
-using System.Threading;
-using System.Windows;
+using System.Windows.Threading;
 
 namespace WinCompose
 {
@@ -74,8 +72,11 @@ static class Composer
     /// </summary>
     public static void Init()
     {
-        StartMonitoringKeyboardLeds();
+        KeyboardLeds.StartMonitoring();
         KeyboardLayout.CheckForChanges();
+
+        m_timeout = new DispatcherTimer();
+        m_timeout.Tick += (o, e) => ResetSequence();
     }
 
     /// <summary>
@@ -83,7 +84,8 @@ static class Composer
     /// </summary>
     public static void Fini()
     {
-        StopMonitoringKeyboardLeds();
+        m_timeout.Stop();
+        KeyboardLeds.StopMonitoring();
     }
 
     /// <summary>
@@ -97,9 +99,7 @@ static class Composer
 
         // Do nothing if we are disabled; NOTE: this disables stats, too
         if (Settings.Disabled.Value)
-        {
             return false;
-        }
 
         // We need to check the keyboard layout before we save the dead
         // key, otherwise we may be saving garbage.
@@ -220,22 +220,22 @@ static class Composer
 
         // Sanity check in case the configuration changed between two
         // key events.
-        if (m_current_compose_key.VirtualKey != VK.NONE
-             && !Settings.ComposeKeys.Value.Contains(m_current_compose_key))
+        if (CurrentComposeKey.VirtualKey != VK.NONE
+             && !Settings.ComposeKeys.Value.Contains(CurrentComposeKey))
         {
             CurrentState = State.Idle;
-            m_current_compose_key = new Key(VK.NONE);
+            CurrentComposeKey = new Key(VK.NONE);
         }
 
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
         if (is_keyup && CurrentState == State.KeyCombination
-             && key == m_current_compose_key)
+             && key == CurrentComposeKey)
         {
             bool compose_key_was_altgr = m_compose_key_is_altgr;
-            Key old_compose_key = m_current_compose_key;
+            Key old_compose_key = CurrentComposeKey;
             CurrentState = State.Idle;
-            m_current_compose_key = new Key(VK.NONE);
+            CurrentComposeKey = new Key(VK.NONE);
             m_compose_key_is_altgr = false;
             m_compose_counter = 0;
 
@@ -267,7 +267,7 @@ static class Composer
              && is_keydown && Settings.ComposeKeys.Value.Contains(key))
         {
             CurrentState = State.Sequence;
-            m_current_compose_key = key;
+            CurrentComposeKey = key;
             m_compose_key_is_altgr = key.VirtualKey == VK.RMENU &&
                                      KeyboardLayout.HasAltGr;
             ++m_compose_counter;
@@ -276,15 +276,18 @@ static class Composer
                       m_state, m_compose_key_is_altgr);
 
             // Lauch the sequence reset expiration timer
-            if (Settings.ResetDelay.Value > 0)
-                m_timeout.Change(TimeSpan.FromMilliseconds(Settings.ResetDelay.Value), NEVER);
+            if (Settings.ResetTimeout.Value > 0)
+            {
+                m_timeout.Interval = TimeSpan.FromMilliseconds(Settings.ResetTimeout.Value);
+                m_timeout.Start();
+            }
 
             return true;
         }
 
         // If this is a compose key KeyDown event and it’s already down, or it’s
         // a KeyUp and it’s already up, eat this event without forwarding it.
-        if (key == m_current_compose_key
+        if (key == CurrentComposeKey
              && is_keydown == ((m_compose_counter & 1) != 0))
         {
             return true;
@@ -337,11 +340,18 @@ static class Composer
         // From this point we know we are composing
         //
 
+        if (m_timeout.IsEnabled)
+        {
+            // Extend the expiration timer due date
+            m_timeout.Stop();
+            m_timeout.Start();
+        }
+
         // If this is the compose key again, replace its value with our custom
         // virtual key.
         // FIXME: we don’t properly support compose keys that also normally
         // print stuff, such as `.
-        if (key == m_current_compose_key
+        if (key == CurrentComposeKey
              || (Settings.AlwaysCompose.Value && Settings.ComposeKeys.Value.Contains(key)))
         {
             ++m_compose_counter;
@@ -364,10 +374,10 @@ static class Composer
         // Never do this if we already started a sequence
         // Never do this if the key is a modifier key such as shift or alt.
         if (m_compose_counter == 1 && is_keydown
-             && m_sequence.Count == 0 && !key.IsModifier())
+             && m_sequence.Count == 0 && !key.IsModifier)
         {
             bool keep_original = Settings.KeepOriginalKey.Value;
-            bool key_unusable = !key.IsUsable();
+            bool key_unusable = !key.IsUsable;
             bool altgr_combination = m_compose_key_is_altgr &&
                             KeyboardLayout.KeyToAltGrVariant(key) != null;
 
@@ -384,7 +394,7 @@ static class Composer
                 }
                 else
                 {
-                    SendKeyDown(m_current_compose_key.VirtualKey);
+                    SendKeyDown(CurrentComposeKey.VirtualKey);
                 }
                 CurrentState = State.KeyCombination;
                 Log.Debug("KeyCombination started (state: {0})", m_state);
@@ -407,11 +417,11 @@ static class Composer
         }
 
         // If the key can't be used in a sequence, just ignore it.
-        if (!key.IsUsable())
+        if (!key.IsUsable)
             goto exit_forward_key;
 
         // If we reached this point, everything else ignored this key, so it
-        // is a key we must add to the current sequence.
+        // is a key we should add to the current sequence.
         if (add_to_sequence)
         {
             Log.Debug("Adding to sequence: “{0}”", key.FriendlyName);
@@ -425,30 +435,6 @@ exit_forward_key:
         Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
                   is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
         return false;
-    }
-
-    /// <summary>
-    /// Cancel the current sequence when the reset delay is expired.
-    /// </summary>
-    /// <param name="state"></param>
-    private static void TimeoutExpired(object state)
-    {
-        if (CurrentState == State.Sequence)
-        {
-            // If a key was pressed since the timer was launched, we delay
-            // the timeout value and check again later.
-            var expected_timeout = m_last_key_time.AddMilliseconds(Settings.ResetDelay.Value);
-            var remaining_time = expected_timeout.Subtract(DateTime.Now);
-            if (remaining_time.TotalMilliseconds > 10)
-            {
-                m_timeout.Change(remaining_time, NEVER);
-                return;
-            }
-
-            ResetSequence();
-        }
-
-        m_timeout.Change(NEVER, NEVER);
     }
 
     /// <summary>
@@ -496,9 +482,8 @@ exit_forward_key:
                 if (Settings.IsValidGenericPrefix(m_sequence))
                     return true;
 
-                if (Settings.IsValidGenericSequence(m_sequence))
+                if (Settings.GetGenericSequenceResult(m_sequence, out var tosend))
                 {
-                    string tosend = Settings.GetGenericSequenceResult(m_sequence);
                     SendString(tosend);
                     Log.Debug("Valid generic sequence! Sent “{0}”", tosend);
                     Stats.AddSequence(m_sequence);
@@ -524,6 +509,10 @@ exit_forward_key:
             }
         }
 
+        // FIXME: At this point we know the key can’t be part of a valid
+        // sequence, but this should not be a hard error if the key is a
+        // modifier key.
+
         // Unknown characters for sequence, print them if necessary
         if (!Settings.DiscardOnInvalid.Value)
         {
@@ -546,17 +535,6 @@ exit_forward_key:
         return true;
     }
 
-    /// <summary>
-    /// Check whether a string contains any Unicode surrogate characters.
-    /// </summary>
-    private static bool HasSurrogates(string str)
-    {
-        foreach (char ch in str)
-            if (char.IsSurrogate(ch))
-                return true;
-        return false;
-    }
-
     private static void SendString(string str)
     {
         List<VK> modifiers = new List<VK>();
@@ -566,12 +544,6 @@ exit_forward_key:
          * window, so we parse through the names we know in order to detect
          * a GTK+ application. */
         bool use_gtk_hack = KeyboardLayout.Window.IsGtk;
-
-        /* HACK: Notepad++ and LibreOffice are unable to output high plane
-         * Unicode characters, so we rely on clipboard hacking when the
-         * composed string contains such characters. */
-        bool use_clipboard_hack = KeyboardLayout.Window.IsNPPOrLO
-                                   && HasSurrogates(str);
 
         /* HACK: in MS Office, some symbol insertions change the text font
          * without returning to the original font. To avoid this, we output
@@ -644,34 +616,6 @@ exit_forward_key:
             if (has_capslock)
                 SendKeyPress(VK.CAPITAL);
         }
-        else if (use_clipboard_hack)
-        {
-            // We do not use Clipboard.GetDataObject because I have been
-            // unable to restore the clipboard properly. This is reasonable
-            // and has been tested with several clipboard content types.
-            var backup_text = Clipboard.GetText();
-            var backup_image = Clipboard.GetImage();
-            var backup_audio = Clipboard.GetAudioStream();
-            var backup_files = Clipboard.GetFileDropList();
-
-            // Use Shift+Insert instead of Ctrl-V because Ctrl-V will misbehave
-            // if a Shift key is held down. Using Shift+Insert even works if the
-            // compose key is Insert.
-            Clipboard.SetText(str);
-            SendKeyDown(VK.SHIFT);
-            SendKeyPress(VK.INSERT);
-            SendKeyUp(VK.SHIFT);
-            Clipboard.Clear();
-
-            if (backup_text != null)
-                Clipboard.SetText(backup_text);
-            if (backup_image != null)
-                Clipboard.SetImage(backup_image);
-            if (backup_audio != null)
-                Clipboard.SetAudio(backup_audio);
-            if (backup_files != null && backup_files.Count > 0)
-                Clipboard.SetFileDropList(backup_files);
-        }
         else
         {
             InputSequence seq = new InputSequence();
@@ -703,6 +647,9 @@ exit_forward_key:
         }
     }
 
+    /// <summary>
+    /// Broadcast state changes.
+    /// </summary>
     public static event Action Changed;
     public static event Action Key;
 
@@ -748,67 +695,6 @@ exit_forward_key:
         SendKeyUp(vk, flags);
     }
 
-    private static void StartMonitoringKeyboardLeds()
-    {
-        for (ushort i = 0; i < 4; ++i)
-        {
-            string kbd_name = "dos_kbd" + i.ToString();
-            string kbd_class = @"\Device\KeyboardClass" + i.ToString();
-            NativeMethods.DefineDosDevice(DDD.RAW_TARGET_PATH, kbd_name, kbd_class);
-        }
-
-        Changed += UpdateKeyboardLeds;
-    }
-
-    private static void StopMonitoringKeyboardLeds()
-    {
-        for (ushort i = 0; i < 4; ++i)
-        {
-            string kbd_name = "dos_kbd" + i.ToString();
-            NativeMethods.DefineDosDevice(DDD.REMOVE_DEFINITION, kbd_name, null);
-        }
-        Changed -= UpdateKeyboardLeds;
-    }
-
-    public static void UpdateKeyboardLeds()
-    {
-        var indicators = new KEYBOARD_INDICATOR_PARAMETERS();
-        int buffer_size = (int)Marshal.SizeOf(indicators);
-
-        // NOTE: I was unable to make IOCTL.KEYBOARD_QUERY_INDICATORS work
-        // properly, but querying state with GetKeyState() seemed more
-        // robust anyway. Think of the user setting Caps Lock as their
-        // compose key, entering compose state, then suddenly changing
-        // the compose key to Shift: the LED state would be inconsistent.
-        if (NativeMethods.GetKeyState(VK.CAPITAL) != 0
-             || (IsComposing && m_current_compose_key.VirtualKey == VK.CAPITAL))
-            indicators.LedFlags |= KEYBOARD.CAPS_LOCK_ON;
-
-        if (NativeMethods.GetKeyState(VK.NUMLOCK) != 0
-             || (IsComposing && m_current_compose_key.VirtualKey == VK.NUMLOCK))
-            indicators.LedFlags |= KEYBOARD.NUM_LOCK_ON;
-
-        if (NativeMethods.GetKeyState(VK.SCROLL) != 0
-             || (IsComposing && m_current_compose_key.VirtualKey == VK.SCROLL))
-            indicators.LedFlags |= KEYBOARD.SCROLL_LOCK_ON;
-
-        for (ushort i = 0; i < 4; ++i)
-        {
-            indicators.UnitId = i;
-
-            using (var handle = NativeMethods.CreateFile(@"\\.\" + "dos_kbd" + i.ToString(),
-                           FileAccess.Write, FileShare.Read, IntPtr.Zero,
-                           FileMode.Open, FileAttributes.Normal, IntPtr.Zero))
-            {
-                int bytesReturned;
-                NativeMethods.DeviceIoControl(handle, IOCTL.KEYBOARD_SET_INDICATORS,
-                                              ref indicators, buffer_size,
-                                              IntPtr.Zero, 0, out bytesReturned,
-                                              IntPtr.Zero);
-            }
-        }
-    }
-
     /// <summary>
     /// The sequence being currently typed
     /// </summary>
@@ -817,7 +703,7 @@ exit_forward_key:
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
 
-    private static Timer m_timeout = new Timer(TimeoutExpired);
+    private static DispatcherTimer m_timeout;
 
     private static readonly TimeSpan NEVER = TimeSpan.FromMilliseconds(-1);
 
@@ -825,11 +711,6 @@ exit_forward_key:
     /// How many times we pressed and released compose.
     /// </summary>
     private static int m_compose_counter = 0;
-
-    /// <summary>
-    /// The compose key being used; only valid in state “KeyCombination” for now.
-    /// </summary>
-    private static Key m_current_compose_key = new Key(VK.NONE);
 
     /// <summary>
     /// Whether the last control keypress was AltGr
@@ -861,7 +742,7 @@ exit_forward_key:
         {
             bool has_changed = (m_state != value);
             if (has_changed && m_state == State.Sequence)
-                m_timeout.Change(NEVER, NEVER);
+                m_timeout.Stop();
             m_state = value;
             if (has_changed)
                 Changed?.Invoke();
@@ -869,6 +750,11 @@ exit_forward_key:
     }
 
     private static State m_state;
+
+    /// <summary>
+    /// The compose key being used; only valid in state “KeyCombination” for now.
+    /// </summary>
+    public static Key CurrentComposeKey { get; private set; } = new Key(VK.NONE);
 
     /// <summary>
     /// Indicates whether a compose sequence is in progress

@@ -189,9 +189,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Изаберите који тастер ће бити Модификатор.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Задршка:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Напредни Уникод унос</value>
   </data>

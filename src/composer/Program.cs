@@ -42,7 +42,6 @@ namespace WinCompose
             // Do this before Composer.Init() because of the Disabled setting
             Settings.LoadConfig();
 
-            Composer.Init();
             Settings.LoadSequences();
             Metadata.LoadDB();
             KeyboardHook.Init();
@@ -62,7 +61,6 @@ namespace WinCompose
                 KeyboardHook.Fini();
                 Settings.SaveConfig();
                 Metadata.SaveDB();
-                Composer.Fini();
                 Updater.Fini();
             }
         }

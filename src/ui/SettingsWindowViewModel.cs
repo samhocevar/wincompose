@@ -55,6 +55,13 @@ namespace WinCompose
             set => SetValue(ref m_selected_language, value, nameof(SelectedLanguage));
         }
 
+        public Key SelectedLedKey
+        {
+            // FIXME: this settings value should be a Key, not a KeySequence
+            get => Settings.LedKey.Value[0];
+            set => Settings.LedKey.Value = new KeySequence() { value };
+        }
+
         public Key ComposeKey0 { get => GetComposeKey(0); set => SetComposeKey(0, value); }
         public Key ComposeKey1 { get => GetComposeKey(1); set => SetComposeKey(1, value); }
 
@@ -78,10 +85,10 @@ namespace WinCompose
 
         public double DelayTicks
         {
-            get => Settings.ResetDelay.Value == -1 ? 0 : Math.Log(Settings.ResetDelay.Value / 200.0, 1.6);
+            get => Settings.ResetTimeout.Value == -1 ? 0 : Math.Log(Settings.ResetTimeout.Value / 200.0, 1.6);
             set
             {
-                Settings.ResetDelay.Value = value == 0 ? -1 : (int)Math.Round(200 * Math.Pow(1.6, value));
+                Settings.ResetTimeout.Value = value == 0 ? -1 : (int)Math.Round(200 * Math.Pow(1.6, value));
                 OnPropertyChanged(nameof(DelayText));
             }
         }
@@ -90,11 +97,11 @@ namespace WinCompose
         {
             get
             {
-                if (Settings.ResetDelay.Value < 0)
-                    return i18n.Text.DelayDisabled;
+                if (Settings.ResetTimeout.Value < 0)
+                    return i18n.Text.NoTimeout;
 
                 // Perform some aesthetic rounding on the displayed value
-                double display_value = Settings.ResetDelay.Value / 1000.0;
+                double display_value = Settings.ResetTimeout.Value / 1000.0;
                 double round = Math.Pow(10, Math.Floor(Math.Log(display_value / 2, 10)));
                 display_value = Math.Round(display_value / round) * round;
                 return string.Format(i18n.Text.DelaySeconds, display_value);

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-07-08 16:00+0000\n"
+"PO-Revision-Date: 2019-12-02 21:05+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "wincompose/master/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8-dev\n"
+"X-Generator: Weblate 3.10-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -218,10 +218,10 @@ msgid "Select the key that should act as the Compose key."
 msgstr "Velg knappen å bruke som sammenfattingstast."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetDelay
+#: i18n/Text.resx:273 ID:ResetTimeout
 #, fuzzy
-msgid "Delay:"
-msgstr "Forsinkelse:"
+msgid "Reset timeout"
+msgstr "Tilbakestill ventetid"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -536,9 +536,8 @@ msgstr "Prt Scrn"
 
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
-#, fuzzy
 msgid "Disabled"
-msgstr "Skru av"
+msgstr "Avskrudd"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 #, fuzzy
@@ -610,10 +609,11 @@ msgstr "End"
 msgid "Tab"
 msgstr "Tabulator"
 
-#. Text to show instead of a value in seconds when the reset delay feature is disabled
-#: i18n/Text.resx:553 ID:DelayDisabled
-msgid "No delay"
-msgstr "Ingen forsinkelse"
+#. Text to show instead of a value in seconds when the reset timeout feature is disabled
+#: i18n/Text.resx:553 ID:NoTimeout
+#, fuzzy
+msgid "No timeout"
+msgstr "Ingen ventetid"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -655,15 +655,22 @@ msgstr "Spesiell takk til"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "Legg til i favoritter"
+msgstr "Fjern fra favoritter"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Legg til i favoritter"
+msgstr "Favoritter"
+
+#: i18n/Text.resx:589 ID:TimeoutToolTip
+#, fuzzy
+msgid ""
+"If enabled, any compose sequence will be cancelled after a certain delay if "
+"no keyboard activity is detected."
+msgstr ""
+"Hvis påskrudd, vil sammenfattingssekvenser avbrytes hvis ingen tastaturtrykk "
+"registreres på en stund."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -860,6 +867,13 @@ msgstr ""
 #: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administrasjonsrettigheter kreves. Feil: %d"
+
+#, fuzzy
+#~ msgid "Delay:"
+#~ msgstr "Forsinkelse:"
+
+#~ msgid "No delay"
+#~ msgstr "Ingen forsinkelse"
 
 #~ msgid "(milliseconds)"
 #~ msgstr "(millisekunder)"

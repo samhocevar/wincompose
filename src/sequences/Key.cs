@@ -64,6 +64,19 @@ public partial class Key
         { "Delete",    VK.DELETE },
         { "Tab",       VK.TAB },
         { "Return",    VK.RETURN },
+#if false
+        // These cannot be activated yet because the composer cannot handle
+        // modifier keys as both possible sequence elements and forwardable
+        // keys.
+        { "Shift_L",   VK.LSHIFT },
+        { "Shift_R",   VK.RSHIFT },
+        { "Control_L", VK.LCONTROL },
+        { "Control_R", VK.RCONTROL },
+        { "Alt_L",     VK.LMENU },
+        { "Alt_R",     VK.RMENU },
+        { "Super_L",   VK.LWIN },
+        { "Super_R",   VK.RWIN },
+#endif
     };
 
     /// <summary>
@@ -136,6 +149,7 @@ public partial class Key
                 m_key_names = new Dictionary<Key, string>
                 {
                     { new Key(VK.DISABLED),   i18n.Text.KeyDisabled },
+                    { new Key(VK.COMPOSE),    i18n.Text.KeyCompose},
                     { new Key(VK.LMENU),      i18n.Text.KeyLMenu },
                     { new Key(VK.RMENU),      i18n.Text.KeyRMenu },
                     { new Key(VK.LCONTROL),   i18n.Text.KeyLControl },
@@ -196,30 +210,31 @@ public partial class Key
     /// <summary>
     /// Return whether a key is usable in a compose sequence
     /// </summary>
-    public bool IsUsable()
-    {
-        return IsPrintable || m_extra_keysyms.ContainsValue(m_vk);
-    }
+    public bool IsUsable
+        => IsPrintable || m_extra_keysyms.ContainsValue(m_vk);
 
     /// <summary>
     /// Return whether a key is a modifier (shift, ctrl, alt)
     /// </summary>
-    public bool IsModifier()
+    public bool IsModifier
     {
-        switch (m_vk)
+        get
         {
-            case VK.LCONTROL:
-            case VK.RCONTROL:
-            case VK.CONTROL:
-            case VK.LSHIFT:
-            case VK.RSHIFT:
-            case VK.SHIFT:
-            case VK.LMENU:
-            case VK.RMENU:
-            case VK.MENU:
-                return true;
-            default:
-                return false;
+            switch (m_vk)
+            {
+                case VK.LCONTROL:
+                case VK.RCONTROL:
+                case VK.CONTROL:
+                case VK.LSHIFT:
+                case VK.RSHIFT:
+                case VK.SHIFT:
+                case VK.LMENU:
+                case VK.RMENU:
+                case VK.MENU:
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 
@@ -234,6 +249,20 @@ public partial class Key
             if (KeyNames.TryGetValue(this, out ret))
                 return ret;
             return ToString();
+        }
+    }
+
+    /// <summary>
+    /// Convert the key to a unique string representation that can
+    /// be put in an XML attribute among other things.
+    /// </summary>
+    public string AsXmlAttr
+    {
+        get
+        {
+            return m_str == "{" ? "{{"
+                 : m_str == "}" ? "}}"
+                 : m_str ?? "{vk:" + m_vk.ToString().ToLowerInvariant() + "}";
         }
     }
 

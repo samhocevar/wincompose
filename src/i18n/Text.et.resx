@@ -225,9 +225,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Vali klahv, mis peaks käituma kombineerimisklahvina.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Viivitus:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Täpsem Unicode sisend</value>
   </data>

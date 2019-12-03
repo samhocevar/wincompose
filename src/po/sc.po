@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-14 07:51+0000\n"
+"PO-Revision-Date: 2019-11-26 09:04+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
 "master/sc/>\n"
@@ -215,9 +215,9 @@ msgid "Select the key that should act as the Compose key."
 msgstr "Ischerta sa tecla chi at a divènnere sa Tecla Compose."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetDelay
-msgid "Delay:"
-msgstr "Durada ativatzione:"
+#: i18n/Text.resx:273 ID:ResetTimeout
+msgid "Reset timeout"
+msgstr "Intervallu de riprìstinu"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -605,10 +605,10 @@ msgstr "Fine"
 msgid "Tab"
 msgstr "Tab"
 
-#. Text to show instead of a value in seconds when the reset delay feature is disabled
-#: i18n/Text.resx:553 ID:DelayDisabled
-msgid "No delay"
-msgstr "Perunu ritardu"
+#. Text to show instead of a value in seconds when the reset timeout feature is disabled
+#: i18n/Text.resx:553 ID:NoTimeout
+msgid "No timeout"
+msgstr "Perunu intervallu"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -657,6 +657,15 @@ msgstr "Boga dae sos preferidos"
 #: i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
 msgstr "Preferidos"
+
+#: i18n/Text.resx:589 ID:TimeoutToolTip
+msgid ""
+"If enabled, any compose sequence will be cancelled after a certain delay if "
+"no keyboard activity is detected."
+msgstr ""
+"Si custa optzione est abilitada cale si siat filera compose s'at a annullare "
+"a pustis de un'intervallu isseberadu si no at a èssere registrada peruna "
+"atividade de tastiera."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -849,6 +858,12 @@ msgstr ""
 #: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
 msgstr "Serbint sos permissos de amministradore. Errore: %d"
+
+#~ msgid "Delay:"
+#~ msgstr "Durada ativatzione:"
+
+#~ msgid "No delay"
+#~ msgstr "Perunu ritardu"
 
 #~ msgid "(milliseconds)"
 #~ msgstr "(millisegundos)"

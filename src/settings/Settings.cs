@@ -90,8 +90,10 @@ namespace WinCompose
 
         [EntryLocation("composing", "compose_key")]
         public static SettingsEntry<KeySequence> ComposeKeys { get; } = new SettingsEntry<KeySequence>(new KeySequence());
+        [EntryLocation("composing", "led_key")]
+        public static SettingsEntry<KeySequence> LedKey { get; } = new SettingsEntry<KeySequence>(new KeySequence());
         [EntryLocation("composing", "reset_delay")]
-        public static SettingsEntry<int> ResetDelay { get; } = new SettingsEntry<int>(-1);
+        public static SettingsEntry<int> ResetTimeout { get; } = new SettingsEntry<int>(-1);
         [EntryLocation("composing", "use_xorg_rules")]
         public static SettingsEntry<bool> UseXorgRules { get; } = new SettingsEntry<bool>(true);
         [EntryLocation("composing", "use_xcompose_rules")]
@@ -134,6 +136,15 @@ namespace WinCompose
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;
 
+        public static IList<Key> ValidLedKeys { get; } = new List<Key>()
+        {
+            new Key(VK.DISABLED),
+            new Key(VK.COMPOSE),
+            new Key(VK.CAPITAL),
+            new Key(VK.NUMLOCK),
+            new Key(VK.PAUSE),
+        };
+
         public static void StartWatchConfigFile()
         {
             m_ini_file.OnFileChanged += LoadConfig;
@@ -147,8 +158,9 @@ namespace WinCompose
 
         private static IniFile m_ini_file;
 
-        private static void ValidateComposeKeys()
+        private static void ValidateSettings()
         {
+            // Check that the configured compose key(s) are legal
             KeySequence compose_keys = new KeySequence();
             if (ComposeKeys.Value?.Count == 0)
             {
@@ -172,6 +184,12 @@ namespace WinCompose
                     compose_keys.Add(new Key(VK.DISABLED));
             }
             ComposeKeys.Value = compose_keys;
+
+            // Check that the keyboard LED key is legal
+            if (LedKey.Value.Count != 1 || !ValidLedKeys.Contains(LedKey.Value[0]))
+            {
+                LedKey.Value = new KeySequence() { new Key(VK.COMPOSE) };
+            }
         }
 
         public static void LoadConfig()
@@ -187,7 +205,7 @@ namespace WinCompose
                 }
             }
 
-            ValidateComposeKeys();
+            ValidateSettings();
 
             // HACK: if the user uses the "it-CH" locale, replace it with "it"
             // because we use "it-CH" as a special value to mean Sardinian.
@@ -325,36 +343,28 @@ namespace WinCompose
         {
             if (!UnicodeInput.Value)
                 return false;
-            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
-            return m_match_gen_prefix.Match(seq_string).Success;
+            return m_match_gen_prefix.Match(sequence.AsXmlAttr).Success;
         }
 
-        public static bool IsValidGenericSequence(KeySequence sequence)
+        public static bool GetGenericSequenceResult(KeySequence sequence, out string result)
         {
+            result = null;
             if (!UnicodeInput.Value)
                 return false;
-            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
-            return m_match_gen_seq.Match(seq_string).Success;
-        }
-
-        public static string GetGenericSequenceResult(KeySequence sequence)
-        {
-            if (!UnicodeInput.Value)
-                return "";
-            var seq_string = sequence.PrintableResult.ToLower(CultureInfo.InvariantCulture);
-            var m = m_match_gen_seq.Match(seq_string);
+            var m = m_match_gen_seq.Match(sequence.AsXmlAttr);
             if (!m.Success)
-                return "";
+                return false;
             int codepoint = Convert.ToInt32(m.Groups[1].Value, 16);
             if (codepoint < 0 || codepoint > 0x10ffff)
-                return "";
+                return false;
             if (codepoint >= 0xd800 && codepoint < 0xe000)
-                return "";
-            return char.ConvertFromUtf32(codepoint);
+                return false;
+            result = char.ConvertFromUtf32(codepoint);
+            return true;
         }
 
-        private static Regex m_match_gen_prefix = new Regex(@"^u[0-9a-f]*$");
-        private static Regex m_match_gen_seq = new Regex(@"^u([0-9a-f]+)( |vk[.]return)$");
+        private static Regex m_match_gen_prefix = new Regex(@"^[uU][0-9a-fA-F]*$");
+        private static Regex m_match_gen_seq = new Regex(@"^[uU]([0-9a-fA-F]+)( |{vk:return})$");
 
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 

@@ -201,9 +201,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Vybiary klavišu, jakaja stanie Kampanavaĺnaj.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Zatrymka:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Prasunuty ŭvod Unikodu</value>
   </data>

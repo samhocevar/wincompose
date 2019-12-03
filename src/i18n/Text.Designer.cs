@@ -322,15 +322,6 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No delay.
-        /// </summary>
-        public static string DelayDisabled {
-            get {
-                return ResourceManager.GetString("DelayDisabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {0} seconds.
         /// </summary>
         public static string DelaySeconds {
@@ -574,11 +565,38 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Keyboard LED.
+        /// </summary>
+        public static string KeyboardLed {
+            get {
+                return ResourceManager.GetString("KeyboardLed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If set, the corresponding keyboard LED will be lit when a compose sequence is in progress..
+        /// </summary>
+        public static string KeyboardLedToolTip {
+            get {
+                return ResourceManager.GetString("KeyboardLedToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Caps Lock.
         /// </summary>
         public static string KeyCapital {
             get {
                 return ResourceManager.GetString("KeyCapital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compose.
+        /// </summary>
+        public static string KeyCompose {
+            get {
+                return ResourceManager.GetString("KeyCompose", resourceCulture);
             }
         }
         
@@ -799,6 +817,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No timeout.
+        /// </summary>
+        public static string NoTimeout {
+            get {
+                return ResourceManager.GetString("NoTimeout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Options — WinCompose.
         /// </summary>
         public static string Options {
@@ -835,11 +862,11 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delay:.
+        ///   Looks up a localized string similar to Reset timeout.
         /// </summary>
-        public static string ResetDelay {
+        public static string ResetTimeout {
             get {
-                return ResourceManager.GetString("ResetDelay", resourceCulture);
+                return ResourceManager.GetString("ResetTimeout", resourceCulture);
             }
         }
         
@@ -939,6 +966,15 @@ namespace WinCompose.i18n {
         public static string TestTyping {
             get {
                 return ResourceManager.GetString("TestTyping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected..
+        /// </summary>
+        public static string TimeoutToolTip {
+            get {
+                return ResourceManager.GetString("TimeoutToolTip", resourceCulture);
             }
         }
         

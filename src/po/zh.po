@@ -210,9 +210,9 @@ msgid "Select the key that should act as the Compose key."
 msgstr "选择要作为“组合键”的按键。"
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetDelay
-msgid "Delay:"
-msgstr "延迟："
+#: i18n/Text.resx:273 ID:ResetTimeout
+msgid "Reset timeout"
+msgstr ""
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -582,10 +582,10 @@ msgstr "End 键"
 msgid "Tab"
 msgstr "Tab 键"
 
-#. Text to show instead of a value in seconds when the reset delay feature is disabled
-#: i18n/Text.resx:553 ID:DelayDisabled
-msgid "No delay"
-msgstr "无延迟"
+#. Text to show instead of a value in seconds when the reset timeout feature is disabled
+#: i18n/Text.resx:553 ID:NoTimeout
+msgid "No timeout"
+msgstr ""
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -630,6 +630,12 @@ msgstr "加入喜爱列表"
 #, fuzzy
 msgid "Favorites"
 msgstr "加入喜爱列表"
+
+#: i18n/Text.resx:589 ID:TimeoutToolTip
+msgid ""
+"If enabled, any compose sequence will be cancelled after a certain delay if "
+"no keyboard activity is detected."
+msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -818,6 +824,12 @@ msgstr "当您完成之后，可以回到这个窗口继续安装 WinCompose。"
 #: installer.pas:284
 msgid "Administrator rights are required. Error: %d"
 msgstr "需要管理员权限。错误：%d"
+
+#~ msgid "Delay:"
+#~ msgstr "延迟："
+
+#~ msgid "No delay"
+#~ msgstr "无延迟"
 
 #~ msgid "(milliseconds)"
 #~ msgstr "(毫秒)"

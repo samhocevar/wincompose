@@ -189,9 +189,6 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Válasszon egy billentyűt, mely Komponáló Billentyűként kellene majd működjön.</value>
   </data>
-  <data name="ResetDelay" xml:space="preserve">
-    <value>Késleltetés:</value>
-  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Haladó Unicode bevitel</value>
   </data>
