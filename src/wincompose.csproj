@@ -60,6 +60,7 @@
     <Compile Include="composer\Application.xaml.cs">
       <DependentUpon>Application.xaml</DependentUpon>
     </Compile>
+    <Compile Include="interop\CaretControl.cs" />
     <Compile Include="interop\RemoteControl.cs" />
     <Compile Include="interop\RemoteTypes.cs" />
     <Compile Include="interop\WinApi.cs" />

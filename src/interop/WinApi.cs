@@ -138,7 +138,9 @@ static internal class NativeMethods
     [DllImport("user32", SetLastError=true, CharSet=CharSet.Auto)]
     public static extern bool GetGUIThreadInfo(uint idThread, ref GUITHREADINFO lpgui);
     [DllImport("user32", SetLastError=true, CharSet=CharSet.Auto)]
-    public static extern bool ClientToScreen(IntPtr hWnd, out POINT position);
+    public static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+    [DllImport("user32", SetLastError=true, CharSet=CharSet.Auto)]
+    public static extern bool ClientToScreen(IntPtr hWnd, ref POINT position);
 
     //
     // for RemoteControl.cs
