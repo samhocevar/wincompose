@@ -262,7 +262,7 @@ public partial class Key
         {
             return m_str == "{" ? "{{"
                  : m_str == "}" ? "}}"
-                 : m_str ?? "{vk:" + m_vk.ToString().ToLowerInvariant() + "}";
+                 : m_str ?? "{" + m_vk.ToString().ToLowerInvariant() + "}";
         }
     }
 

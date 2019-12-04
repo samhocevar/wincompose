@@ -364,7 +364,7 @@ namespace WinCompose
         }
 
         private static Regex m_match_gen_prefix = new Regex(@"^[uU][0-9a-fA-F]*$");
-        private static Regex m_match_gen_seq = new Regex(@"^[uU]([0-9a-fA-F]+)( |{vk:return})$");
+        private static Regex m_match_gen_seq = new Regex(@"^[uU]([0-9a-fA-F]+)( |{return})$");
 
         public static List<SequenceDescription> GetSequenceDescriptions() => m_sequences.GetSequenceDescriptions();
 
