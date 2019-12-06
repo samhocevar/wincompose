@@ -438,6 +438,9 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
   </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Aucun délai</value>
+  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avancé</value>
   </data>

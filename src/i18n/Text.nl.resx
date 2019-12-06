@@ -231,6 +231,9 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Selecteer de toets die moet werken als compositietoets.</value>
   </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>time-out resetten</value>
+  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Geavanceerde Unicode input</value>
   </data>
@@ -412,7 +415,7 @@
     <value>Probeer het icoon altijd zichtbaar te houden in de systeembalk</value>
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
-    <value>Standaard zal Windows het icoon na een tijdhe uit de systeem balk verwijderen. Deze optie probeert het icoon altijd zichtbaar te houden.</value>
+    <value>Standaard zal Windows het icoon na een tijdje uit de systeem balk verwijderen. Deze optie probeert het icoon altijd zichtbaar te houden.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
     <value>Aanpassen…</value>
@@ -437,6 +440,9 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
+  </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Geen time-out</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Uitgebreid</value>

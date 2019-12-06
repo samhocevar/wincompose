@@ -231,6 +231,9 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Ischerta sa tecla chi at a divènnere sa Tecla Compose.</value>
   </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Intervallu de riprìstinu</value>
+  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Insertada (input) avantzada Unicode</value>
   </data>
@@ -437,6 +440,9 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
+  </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Perunu intervallu</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avantzadas</value>

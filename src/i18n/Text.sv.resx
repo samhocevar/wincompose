@@ -231,6 +231,9 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Välj tangenten som ska fungera som Compose-tangent.</value>
   </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Återställ väntetid</value>
+  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Avancerad Unicode-inmatning</value>
   </data>
@@ -437,6 +440,9 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
+  </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Ingen väntetid</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avancerat</value>

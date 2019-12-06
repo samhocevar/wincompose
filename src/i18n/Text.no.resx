@@ -369,6 +369,9 @@
   <data name="KeyPrint" xml:space="preserve">
     <value>Prt Scrn</value>
   </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Avskrudd</value>
+  </data>
   <data name="KeepIconVisible" xml:space="preserve">
     <value>Prøv å alltid holde varslingsområdet synlig</value>
   </data>
@@ -410,5 +413,11 @@
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Spesiell takk til</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Fjern fra favoritter</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favoritter</value>
   </data>
 </root>

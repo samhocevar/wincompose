@@ -657,9 +657,25 @@ msgstr "Adicionar aos favoritos"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
-"If enabled, any compose sequence will be cancelled after a certain delay if "
-"no keyboard activity is detected."
+"If set, any compose sequence will be cancelled after a certain delay if no "
+"keyboard activity is detected."
 msgstr ""
+
+#: i18n/Text.resx:593 ID:KeyboardLed
+msgid "Keyboard LED"
+msgstr ""
+
+#: i18n/Text.resx:597 ID:KeyboardLedToolTip
+msgid ""
+"If set, the corresponding keyboard LED will be lit when a compose sequence "
+"is in progress."
+msgstr ""
+
+#. The short name of the compose key
+#: i18n/Text.resx:601 ID:KeyCompose
+#, fuzzy
+msgid "Compose"
+msgstr "Composição"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
