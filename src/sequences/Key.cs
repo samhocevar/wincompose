@@ -308,6 +308,24 @@ public partial class Key
         return new Key(str);
     }
 
+    public static Key FromXmlAttr(string str)
+    {
+        // We serialize Space as VK.SPACE so that it can be embedded in .ini
+        // files without ambiguities (e.g. foo=VK.SPACE can be parsed), but
+        // we want the Key object to be Key(" "). Same for VK.OEM_COMMA.
+        if (str.StartsWith("{") && str.EndsWith("}"))
+        {
+            try
+            {
+                var vk = (VK)Enum.Parse(typeof(VK), str.Substring(1, str.Length - 2));
+                return new Key(vk);
+            }
+            catch { } // Silently catch parsing exception.
+        }
+        return new Key(str == "{{" ? "{" : str == "}}" ? "}" : str);
+    }
+
+
     /// <summary>
     /// Serialize key to a printable string we can parse back into
     /// a <see cref="Key"/> object

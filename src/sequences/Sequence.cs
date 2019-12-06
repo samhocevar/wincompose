@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace WinCompose
 {
@@ -118,6 +119,19 @@ public class KeySequence : List<Key>
         // space after the comma.
         foreach (string s in Array.ConvertAll(str.Split(','), x => x.Trim()))
             ret.Add(Key.FromString(s));
+        return ret;
+    }
+
+    private static Regex re_xml = new Regex(@"\{\{|\}\}|\{[^{}]*\}|.");
+
+    /// <summary>
+    /// Construct a key sequence from an XML attr string.
+    /// </summary>
+    public static KeySequence FromXmlAttr(string str)
+    {
+        KeySequence ret = new KeySequence();
+        foreach (Match match in re_xml.Matches(str))
+            ret.Add(Key.FromXmlAttr(match.Value));
         return ret;
     }
 

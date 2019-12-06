@@ -61,7 +61,7 @@ namespace WinCompose
             foreach (var kv in this)
             {
                 writer.WriteStartElement("Item");
-                writer.WriteAttributeString("Sequence", kv.Key.Sequence.ToString());
+                writer.WriteAttributeString("Seq", kv.Key.Sequence.AsXmlAttr);
                 writer.WriteAttributeString("Result", kv.Key.Result.ToString());
                 writer.WriteAttributeString("Favorite", kv.Value.Favorite.ToString());
                 writer.WriteAttributeString("UsageCount", kv.Value.UsageCount.ToString());
@@ -75,13 +75,31 @@ namespace WinCompose
 
             while (reader.Read())
             {
+                KeySequence seq;
+
                 if (reader.NodeType != XmlNodeType.Element || reader.Name != "Item")
                     continue;
-                var sequence = reader.GetAttribute("Sequence");
+
                 var result = reader.GetAttribute("Result");
-                if (sequence == null || result == null)
+                if (result == null)
                     continue;
-                var data = GetOrAdd(cv.ConvertFromString(sequence) as KeySequence, result);
+
+                var in_attr = reader.GetAttribute("Seq");
+                if (in_attr == null)
+                {
+                    // Backward compatibility with 0.9.3
+                    var seq_attr = reader.GetAttribute("Sequence");
+                    if (seq_attr == null)
+                        continue;
+
+                    seq = cv.ConvertFromString(seq_attr) as KeySequence;
+                }
+                else
+                {
+                    seq = KeySequence.FromXmlAttr(in_attr);
+                }
+
+                var data = GetOrAdd(seq, result);
                 bool.TryParse(reader.GetAttribute("Favorite") ?? "false", out data.Favorite);
                 int.TryParse(reader.GetAttribute("UsageCount") ?? "0", out data.UsageCount);
             }
