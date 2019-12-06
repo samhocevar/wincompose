@@ -224,6 +224,27 @@ static class Composer
             CurrentComposeKey = new Key(VK.NONE);
         }
 
+        // Magic sequence handling. If the exact sequence is typed, we
+        // enter compose state.
+        if (m_magic_pos < m_magic_sequence.Count
+             && m_magic_sequence[m_magic_pos].Key == key.VirtualKey
+             && m_magic_sequence[m_magic_pos].Value == is_keydown)
+        {
+            ++m_magic_pos;
+            Log.Debug($"Magic key {m_magic_pos}/{m_magic_sequence.Count}");
+
+            if (CurrentState == State.Idle && m_magic_pos == m_magic_sequence.Count)
+            {
+                CurrentState = State.Sequence;
+                CurrentComposeKey = new Key(VK.NONE);
+                Log.Debug($"Magic sequence entered (state: {m_state})");
+                m_magic_pos = 0;
+                goto exit_forward_key;
+            }
+        }
+        else
+            m_magic_pos = 0;
+
         // If we receive a keyup for the compose key while in emulation
         // mode, we’re done. Send a KeyUp event and exit emulation mode.
         if (is_keyup && CurrentState == State.KeyCombination
@@ -756,6 +777,20 @@ exit_forward_key:
     /// Indicates whether a compose sequence is in progress
     /// </summary>
     public static bool IsComposing => CurrentState == State.Sequence;
+
+    private static int m_magic_pos = 0;
+
+    private static readonly List<KeyValuePair<VK, bool>> m_magic_sequence = new List<KeyValuePair<VK, bool>>()
+    {
+        new KeyValuePair<VK, bool>(VK.LSHIFT, true),
+        new KeyValuePair<VK, bool>(VK.LMENU, true),
+        new KeyValuePair<VK, bool>(VK.LCONTROL, true),
+        new KeyValuePair<VK, bool>(VK.LMENU, false),
+        new KeyValuePair<VK, bool>(VK.LMENU, true),
+        new KeyValuePair<VK, bool>(VK.LSHIFT, false),
+        new KeyValuePair<VK, bool>(VK.LCONTROL, false),
+        new KeyValuePair<VK, bool>(VK.LMENU, false),
+    };
 }
 
 }
