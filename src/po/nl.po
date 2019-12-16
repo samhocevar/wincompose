@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-24 18:04+0000\n"
+"PO-Revision-Date: 2019-12-17 16:21+0000\n"
 "Last-Translator: Geert Delmeiren <weblate@zy.33mail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
 "nl/>\n"
@@ -653,27 +653,27 @@ msgid "Favorites"
 msgstr "Categorienaam (Unicode karakters, Emoji, Macro's, Favorieten)"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
-#, fuzzy
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
-"Indien ingeschakeld zal elke compositiesequentie opgeheven worden na een "
+"Indien ingeschakeld, zal elke compositiesequentie opgeheven worden na een "
 "bepaalde tijd als er geen toetsenbordactiviteit wordt gedetecteerd."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Toetsenbord LED"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Indien ingeschakeld zal de overeenkomstige LED op het toetsenbord oplichten "
+"tijdens het uitvoeren van een compositiesequentie."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
 msgstr "Samenstellen"
 
