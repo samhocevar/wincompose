@@ -150,7 +150,7 @@ public static class KeyboardLayout
         var active_layout = NativeMethods.GetKeyboardLayout(tid);
         if (active_layout != m_current_layout)
         {
-            m_current_layout = active_layout;
+            m_transformed_hkl = m_current_layout = active_layout;
 
             Log.Debug("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
                       tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
