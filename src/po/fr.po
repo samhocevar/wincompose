@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2019-12-17 16:21+0000\n"
-"Last-Translator: Otiel <web@otiel.fr>\n"
+"Last-Translator: Nico207[FR] <github@nicoladie.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
 "fr/>\n"
 "Language: fr\n"
@@ -32,22 +32,22 @@ msgstr "Alt droit"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Ctrl gauche"
+msgstr "Ctrl-gauche"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr "Ctrl droit"
+msgstr "Ctrl-droit"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Windows gauche"
+msgstr "Windows-gauche"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Windows droit"
+msgstr "Windows-droit"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
@@ -210,7 +210,6 @@ msgstr "Sélectionner la touche qui sera la touche de composition."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
-#, fuzzy
 msgid "Reset timeout"
 msgstr "Délai d'annulation"
 
@@ -497,7 +496,7 @@ msgstr "Des mises à jour sont disponibles."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Séquences définies par l’utilisateur"
+msgstr "Séquences personnelles"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
@@ -538,9 +537,9 @@ msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
-"Quand cette option est cochée, WinCompose se connecte régulièrement à "
-"Internet afin de vérifier si une nouvelle version est disponible. Les mises "
-"à jour ne sont pas installées automatiquement."
+"Si activée, WinCompose se connectera à Internet à intervalles réguliers pour "
+"vérifier les nouvelles versions. Les mises à jour ne sont pas installées "
+"automatiquement."
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
@@ -652,13 +651,12 @@ msgid "Favorites"
 msgstr "Favoris"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
-#, fuzzy
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
-"Si cette option est activée, toutes les séquences composées seront annulées "
-"après un délai sans activité sur le clavier."
+"Si activée, toute séquence composée sera annulée après un certain délai, si "
+"aucune activité du clavier n'est détectée."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
@@ -674,7 +672,6 @@ msgstr ""
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
 msgstr "Composition"
 
