@@ -236,17 +236,6 @@
                                 ToolTipService.ToolTip="{x:Static i18n:Text.UseEmojiRulesToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.UseEmojiRules}" TextWrapping="Wrap"/>
                         </CheckBox>
-
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{x:Static i18n:Text.UserDefinedSequences}"
-                                       Margin="8,4" VerticalAlignment="Center"/>
-                            <Button x:Name="EditUserDefinedSequences" MinWidth="80" Margin="8,4"
-                                    Content="{x:Static i18n:Text.UserDefinedSequencesEdit}"
-                                    Click="EditUserDefinedSequences_Click" />
-                            <Button x:Name="ReloadUserDefinedSequences" MinWidth="80" Margin="8,4"
-                                    Content="{x:Static i18n:Text.UserDefinedSequencesReload}"
-                                    Click="ReloadUserDefinedSequences_Click" />
-                        </StackPanel>
                     </StackPanel>
                 </GroupBox>
             </DockPanel>

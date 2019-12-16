@@ -56,7 +56,7 @@
                 <TextBox x:Name="SearchBox" Padding="4" Width="240"
                          Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <DockPanel>
-                    <Button DockPanel.Dock="Right" Click="ClearSearchClicked" Margin="4,0">
+                    <Button DockPanel.Dock="Right" Click="ClearSearch_Click" Margin="4,0">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="Transparent">
@@ -85,11 +85,11 @@
 
         <ContextMenu x:Key="ContextMenu">
             <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}" Icon="{StaticResource CopyEmoji}"
-                      Click="CopyToClipboardClicked"/>
+                      Click="CopyToClipboard_Click"/>
             <MenuItem Header="{x:Static i18n:Text.AddToFavorites}" Icon="{StaticResource FavoriteEmoji}"
-                      Click="ToggleFavoriteClicked" Visibility="{Binding AddToFavoritesVisibility}"/>
+                      Click="ToggleFavorite_Click" Visibility="{Binding AddToFavoritesVisibility}"/>
             <MenuItem Header="{x:Static i18n:Text.RemoveFromFavorites}" Icon="{StaticResource UnfavoriteEmoji}"
-                      Click="ToggleFavoriteClicked" Visibility="{Binding RemoveFromFavoritesVisibility}"/>
+                      Click="ToggleFavorite_Click" Visibility="{Binding RemoveFromFavoritesVisibility}"/>
         </ContextMenu>
     </Window.Resources>
 
@@ -100,14 +100,26 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.Column="0">
+        <DockPanel Grid.Column="0" LastChildFill="True">
             <StackPanel Margin="4" Orientation="Horizontal" DockPanel.Dock="Top" VerticalAlignment="Top">
                 <ContentPresenter x:Name="SearchWidget" Content="{Binding}"
                                   ContentTemplate="{StaticResource SearchTextTemplate}"/>
             </StackPanel>
 
+            <GroupBox DockPanel.Dock="Bottom" Margin="4"
+                      Header="{x:Static i18n:Text.UserDefinedSequences}">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <Button x:Name="EditUserDefinedSequences" MinWidth="80" Margin="8,4"
+                            Content="{x:Static i18n:Text.UserDefinedSequencesEdit}"
+                            Click="EditUserDefinedSequences_Click" />
+                    <Button x:Name="ReloadUserDefinedSequences" MinWidth="80" Margin="8,4"
+                            Content="{x:Static i18n:Text.UserDefinedSequencesReload}"
+                            Click="ReloadUserDefinedSequences_Click" />
+                </StackPanel>
+            </GroupBox>
+
             <wc:TreeView Margin="4" ItemsSource="{Binding Categories}"
-                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <wc:TreeView.ItemContainerStyle>
                     <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource {x:Type TreeViewItem}}">
                         <Setter Property="Padding" Value="4"/>

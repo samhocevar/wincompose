@@ -32,11 +32,5 @@ namespace WinCompose
         {
             Hide();
         }
-
-        private void EditUserDefinedSequences_Click(object sender, RoutedEventArgs e)
-            => Settings.EditCustomRulesFile();
-
-        private void ReloadUserDefinedSequences_Click(object sender, RoutedEventArgs e)
-            => Settings.LoadSequences();
     }
 }

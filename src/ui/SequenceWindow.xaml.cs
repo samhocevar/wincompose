@@ -61,19 +61,19 @@ namespace WinCompose
                 Hide();
         }
 
-        private void ClearSearchClicked(object sender, RoutedEventArgs e)
-        {
-            m_view_model.SearchText = "";
-        }
+        private void ClearSearch_Click(object sender, RoutedEventArgs e)
+            => m_view_model.SearchText = "";
 
-        private void CopyToClipboardClicked(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText((ListBox.SelectedItem as SequenceViewModel)?.Result);
-        }
+        private void CopyToClipboard_Click(object sender, RoutedEventArgs e)
+            => Clipboard.SetText((ListBox.SelectedItem as SequenceViewModel)?.Result);
 
-        private void ToggleFavoriteClicked(object sender, RoutedEventArgs e)
-        {
-            (ListBox.SelectedItem as SequenceViewModel)?.ToggleFavorite();
-        }
+        private void EditUserDefinedSequences_Click(object sender, RoutedEventArgs e)
+            => Settings.EditCustomRulesFile();
+
+        private void ReloadUserDefinedSequences_Click(object sender, RoutedEventArgs e)
+            => Settings.LoadSequences();
+
+        private void ToggleFavorite_Click(object sender, RoutedEventArgs e)
+            => (ListBox.SelectedItem as SequenceViewModel)?.ToggleFavorite();
     }
 }
