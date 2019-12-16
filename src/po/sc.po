@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-26 09:04+0000\n"
+"PO-Revision-Date: 2019-12-17 16:21+0000\n"
 "Last-Translator: Ajeje Brazorf <lmelonimamo@yahoo.it>\n"
 "Language-Team: Sardinian <https://hosted.weblate.org/projects/wincompose/"
 "master/sc/>\n"
@@ -659,7 +659,6 @@ msgid "Favorites"
 msgstr "Preferidos"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
-#, fuzzy
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
@@ -670,13 +669,15 @@ msgstr ""
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "LED de sa tastiera"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Si custa optzione est abilitada su LED de sa tastiera s'at a allùghere cando "
+"ses impreende una filera compose."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
