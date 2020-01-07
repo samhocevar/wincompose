@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-28 19:04+0000\n"
+"PO-Revision-Date: 2020-01-09 15:21+0000\n"
 "Last-Translator: greywatcher <greyman000@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
 "master/sv/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.10.1\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -198,7 +198,7 @@ msgid ""
 "not a valid sequence, try Compose A E instead."
 msgstr ""
 "Försök byta plats på tangenterna i en sekvens med två tangenter. Exempelvis "
-"om Compose E A är en ogiltig sekvens prova Compose A E istället."
+"om Komposition E A är en ogiltig sekvens prova Komposition A E istället."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -206,11 +206,11 @@ msgstr "Sökfilter:"
 
 #: i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Compose-tangent:"
+msgstr "Komposition-tangent:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Välj tangenten som ska fungera som Compose-tangent."
+msgstr "Välj tangenten som ska fungera som Komposition-tangent."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
@@ -229,7 +229,7 @@ msgid ""
 msgstr ""
 "Aktivera Unicode-inmatning för alla tecken, även de som saknar definierad "
 "komponeringssekvens. Till exempel kommer följande sekvens att mata ut "
-"tecknet U+1A3F: Compose U 1 A 3 F Enter"
+"tecknet U+1A3F: Komposering U 1 A 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -259,8 +259,8 @@ msgid ""
 "key had not been used."
 msgstr ""
 "Om den angivna sekvensen inte existerar, förkasta alla tecken som matats in. "
-"Standardbeteendet är att mata ut tecknen som om Compose-tangenten inte hade "
-"använts."
+"Standardbeteendet är att mata ut tecknen som om Komposition-tangenten inte "
+"hade använts."
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -305,7 +305,7 @@ msgstr "Verkställ"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Upprätthåll ursprunglig beteende för Compose-tangenten"
+msgstr "Upprätthåll ursprunglig beteende för Komposition-tangenten"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -315,7 +315,7 @@ msgid ""
 msgstr ""
 "Detta säger till WinCompose att göra en ansträngning att behålla "
 "originaltangentens beteende. Till exempel skulle genvägen Alt-Tab "
-"fortfarande fungera även om Alt används som Compose-tangent."
+"fortfarande fungera även om Alt används som Komposition-tangent."
 
 #: i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -341,7 +341,7 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga "
+"Om Caps Lock används som Komposition-tangent kommer tangentens ursprungliga "
 "beteende att bli otillgängligt. Denna funktion låter dig slå på Caps Lock "
 "genom att trycka på båda Skift-tangenterna samtidigt."
 
@@ -355,7 +355,7 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
-"Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga "
+"Om Caps Lock används som Komposition-tangent kommer tangentens ursprungliga "
 "beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock "
 "genom att trycka på Skift-tangenten."
 
@@ -560,7 +560,7 @@ msgstr "Förändra…"
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
 msgstr ""
-"Var vänlig att tryck på en tangent för att använda denna som din Compose-"
+"Var vänlig att tryck på en tangent för att använda denna som din Komposition-"
 "tangent."
 
 #. Add sequence to the list of favorites.
@@ -622,7 +622,7 @@ msgstr ""
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr "Alternativ Compose-tangent är alltid Compose"
+msgstr "Alternativ Komposition-tangent är alltid Komposition"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -630,9 +630,9 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
-"Om markerat kommer alla Compose-tangenter behandlas som Compose i en "
+"Om markerat kommer alla Komposition-tangenter behandlas som Komposition i en "
 "sekvens. Som standard kommer endast den tangent som trycks på först att "
-"agera som Compose medan alternativa Compose-tangenter behåller sina "
+"agera som Komposition medan alternativa Komposition-tangenter behåller sina "
 "ursprungliga roller."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
@@ -651,29 +651,29 @@ msgid "Favorites"
 msgstr "Favoriter"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
-#, fuzzy
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
-"Om markerat, kommer alla Compose-sekvenser avbrytas efter en viss "
+"Om markerat, kommer alla Kompositionssekvenser avbrytas efter en viss "
 "fördröjning om ingen tangentbordsaktivitet upptäcks."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Tangentbordslampa"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Om markerat kommer korresponderande tangentbordslampa lysa när sekvensen "
+"pågår."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Komposering"
+msgstr "Komposition"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
