@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-12-17 16:21+0000\n"
+"PO-Revision-Date: 2020-01-22 06:21+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "wincompose/master/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -680,7 +680,7 @@ msgstr "Tastatur-LED"
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr ""
+msgstr "Lyser opp tilhørende tastatur-LED når en sammenfattingssekvens pågår."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
