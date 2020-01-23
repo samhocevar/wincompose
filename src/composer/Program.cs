@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace WinCompose
 {
@@ -37,6 +38,14 @@ namespace WinCompose
                     NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.OPEN, (int)cmd, 0);
                     return;
                 }
+            }
+
+            // If started from Task Scheduler, we need to detach otherwise the
+            // system may kill us after some time.
+            if (Array.Find(args, arg => arg == "/fromtask") != null)
+            {
+                Process.Start(Application.ResourceAssembly.Location);
+                return;
             }
 
             // Do this before Composer.Init() because of the Disabled setting

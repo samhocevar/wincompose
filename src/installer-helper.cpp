@@ -153,7 +153,6 @@ void __cdecl fix_file(wchar_t const *path)
     fix_tag(buf, L"DisallowStartIfOnBatteries", L"false");
     fix_tag(buf, L"StopIfGoingOnBatteries", L"false");
     fix_tag(buf, L"StopOnIdleEnd", L"false");
-    fix_tag(buf, L"ExecutionTimeLimit", L"PT0S");
 
     fd = CreateFileW(path, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS,
                      FILE_ATTRIBUTE_NORMAL, nullptr);
