@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.6beta20160111\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-08 20:04+0000\n"
-"Last-Translator: Wesley Schleumer <wesley.schleumer@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 17:50+0000\n"
+"Last-Translator: David Santos <david@dsantosdev.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "wincompose/master/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Detecção automática"
+msgstr "Detectar automaticamente"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
@@ -37,12 +37,12 @@ msgstr "Alt Direito"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Control Esquerdo"
+msgstr "Ctrl Esquerdo"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr "Control Direito"
+msgstr "Ctrl Direito"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
@@ -107,7 +107,7 @@ msgstr "Enter"
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr "Compondo"
+msgstr "Composição"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
@@ -118,8 +118,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Usar as 3,000 sequências de composição do projeto Xorg(http://www.x.org/). "
-"Essas são as sequências mais encontradas no sistema Linux."
+"Usar as 3.000 sequências de composição do projeto Xorg (http://www.x.org/). "
+"Estas são as sequências normalmente encontradas em um sistema Linux comum."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -131,21 +131,21 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"Usar as 1,000 sequências de composição do projeto de código aberto "
-"XCompose(https://github.com/kragen/xcompose). Essas sequências podem "
-"eventualmente conflitar com as do Xorg."
+"Usar as 1.000 sequências de composição do projeto de código aberto XCompose "
+"(https://github.com/kragen/xcompose). Algumas destas sequências podem "
+"conflitar com as do Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "Usar as sequências emoji do WinCompose"
+msgstr "Usar sequências emoji do WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
-"Usar as sequências de composição para Emoji fornecida pelos autores e "
-"contribuidores do WinCompose."
+"Usar as sequências de composição para Emoji fornecidas pelos autores e "
+"colaboradores do WinCompose."
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -168,12 +168,12 @@ msgstr "Reiniciar"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr "Página de Doações"
+msgstr "Página de Doação"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Visitar o Website"
+msgstr "Visitar o Site"
 
 #: i18n/Text.resx:241 ID:Exit
 msgid "Exit"
@@ -190,20 +190,20 @@ msgstr "Sequências"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr "Tentar trocar as duas teclas"
+msgstr "Tentar com as duas teclas invertidas"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
-"Tentar trocar as duas teclas de uma sequência de duas teclas. Por exemplo, "
-"se Compose E A não é uma sequência válida, uma tentativa será realizada para "
-"Compose A E."
+"Tenta inverter a ordem das teclas em uma sequência de duas teclas. Por "
+"exemplo, se Compose E A não é uma sequência válida, a sequência Compose A E "
+"também será considerada."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr "Filtro de Busca:"
+msgstr "Buscar"
 
 #: i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
@@ -211,12 +211,12 @@ msgstr "Tecla Compose:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Selecione a tecla que deve funcionar como tecla Compose."
+msgstr "Selecione a tecla que deve funcionar como tecla de composição."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Cancelar Após:"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -230,12 +230,12 @@ msgid ""
 msgstr ""
 "Permite que todos os caracteres Unicode sejam digitados, até mesmo os que "
 "não tiverem sequências de composição definidas. Por exemplo, a sequência a "
-"seguir produzirá o caractere U+1A3F: Compose U 1 A 3 F"
+"seguir produzirá o caractere U+1A3F: Compose U 1 A 3 F Enter."
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Com sequências inválidas"
+msgstr "Se a sequência for inválida"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
@@ -246,8 +246,8 @@ msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
-"Se a sequência digitada não existe, mas existe uma que só difere em "
-"capitalização, corrigir automaticamente."
+"Corrige automaticamente se a sequência digitada não existe mas existe uma "
+"que só difere em capitalização."
 
 #: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -259,7 +259,7 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"Se a sequência digitada não existe, descartar todos os caracteres que foram "
+"Se a sequência digitada não existe, descarta todos os caracteres que foram "
 "digitados. O comportamento padrão é inserir os caracteres como se a tecla "
 "Compose não tivesse sido usada."
 
@@ -269,8 +269,7 @@ msgstr "Soar um alerta"
 
 #: i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
-"Se a sequência digitada não existe, emitir um alerta sonoro do sistema."
+msgstr "Se a sequência digitada não existe, emite um alerta sonoro do sistema."
 
 #: i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -307,7 +306,7 @@ msgstr "Aplicar"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Manter comportamento original da tecla Compose"
+msgstr "Manter comportamento original da tecla de composição"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -316,8 +315,8 @@ msgid ""
 "used as the compose key."
 msgstr ""
 "Determina que o WinCompose faça o possível para manter o comportamento "
-"original das teclas. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo "
-"que Alt seja usada como tecla Compose."
+"original da tecla. Por exemplo, o atalho Alt-Tab ainda funcionará mesmo que "
+"Alt seja usado como tecla de composição."
 
 #: i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -395,7 +394,7 @@ msgstr "Opções…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2} em {0} ({1} sequências)"
+msgstr "WinCompose v{2} na tecla {0} ({1} sequências)"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:397 ID:General
@@ -418,7 +417,7 @@ msgstr "Macros personalizadas"
 
 #: i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr "WinCompose está desativado"
+msgstr "O WinCompose está desativado"
 
 #. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
@@ -485,7 +484,7 @@ msgstr ""
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:465 ID:ReportBug
 msgid "Report a Bug"
-msgstr "Reportar um Bug"
+msgstr "Relatar um Problema"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:469 ID:Help
@@ -495,7 +494,7 @@ msgstr "Ajuda"
 #. Message displayed in the notification area tooltip.
 #: i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr "Há atualizações disponíveis."
+msgstr "Atualizações estão disponíveis."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
@@ -529,7 +528,7 @@ msgstr "PrtScrn"
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr "Desabilitado"
+msgstr "Desativada"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
@@ -540,8 +539,9 @@ msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
-"Se ativado, WinCompose irá conectar à internet em intervalos regulares para "
-"buscar por novas versões. As atualizações não são instaladas automaticamente."
+"Se ativado, o WinCompose usará a internet em intervalos regulares para "
+"verificar se existem versões novas. As atualizações não são instaladas "
+"automaticamente."
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
@@ -552,8 +552,8 @@ msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
-"Por padrão, Windows irá remover o ícone da área de notificações após um "
-"curto período. Esta opção tenta manter ele sempre visível."
+"Por padrão, o Windows remove o ícone da área de notificação após um curto "
+"período. Esta opção tenta mantê-lo sempre visível."
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
@@ -562,16 +562,16 @@ msgstr "Alterar…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr "Pressione uma tecla para usar como tecla Compose."
+msgstr "Pressione a tecla que deseja usar como tecla de composição."
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr "Adicionar aos favoritos"
+msgstr "Adicionar às favoritas"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr "Desativar o ícone da área de notificações"
+msgstr "Desativar o ícone da área de notificação"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -579,10 +579,9 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
-"Se habilitado, WinCompose não mostrará um ícone na área de notificação. A "
-"única forma de abrir a interface do WinCompose será através dos itens "
-"\"Configurações do WinCompose\" e \"Sequências do WinCompose\" no menu de "
-"inicialização."
+"Se habilitado, o WinCompose não mostrará um ícone na área de notificação. A "
+"única forma de abrir a interface do WinCompose será através dos itens “"
+"Configurações do WinCompose” e “Sequências do WinCompose” no Menu Iniciar."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -602,7 +601,7 @@ msgstr "Tab"
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Não cancelar"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -612,19 +611,19 @@ msgstr "Avançado"
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr "Ignore janelas que correspondem a seguinte regex:"
+msgstr "Ignorar janelas que correspondam à seguinte regex:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
-"WinCompose será desabilitado completamente quando a classe ou nome da janela "
-"atual corresponda a seguinte expressão regular."
+"O WinCompose estará completamente desativado enquanto a classe ou nome da "
+"janela ativa corresponder a esta expressão regular."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Tecla de composição alternativa sempre faz composição"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -632,6 +631,10 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Quando ativada, todas as teclas de composição são tratadas como Compose em "
+"uma sequência. Por padrão, somente a primeira tecla pressionada é "
+"considerada Compose, e teclas Compose alternativas mantém suas funções "
+"originais."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
@@ -640,37 +643,38 @@ msgstr "Agradecimentos Especiais"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "Adicionar aos favoritos"
+msgstr "Remover das favoritas"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Adicionar aos favoritos"
+msgstr "Favoritas"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Se ativado, a sequência de composição será cancelada após um certo tempo de "
+"inatividade no teclado."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "LED do teclado:"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Se ativado, o LED correspondente no teclado acenderá quando uma sequência de "
+"composição estiver sendo digitada."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Compondo"
+msgstr "Composição"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -840,7 +844,7 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"O WinCompose precisa do .NET Framework, versão 3.5 SP1 ou superior, o qual\n"
+"O WinCompose precisa do .NET Framework, versão 3.5 SP1 ou superior, que\n"
 "aparentemente não está instalado. A ação a seguir pode ajudar a resolver o "
 "problema:"
 
