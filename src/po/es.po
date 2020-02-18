@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-06-10 07:56+0000\n"
+"PO-Revision-Date: 2020-02-19 19:32+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/wincompose/"
 "master/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7-dev\n"
+"X-Generator: Weblate 3.11\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -181,7 +181,7 @@ msgstr "Salir"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr "Caracteres Unicode"
+msgstr "Caracteres de Unicode"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -189,7 +189,7 @@ msgstr "Secuencias"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr "Intenta intercambiar dos teclas"
+msgstr "Intentar intercambiar dos teclas"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
@@ -205,16 +205,16 @@ msgstr "Filtro de búsqueda:"
 
 #: i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Tecla Compose:"
+msgstr "Tecla de composición:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Selecciona la tecla que actuará como Compose."
+msgstr "Seleccione la tecla que actuará como Componer."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Lapso de cancelación"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -233,7 +233,7 @@ msgstr ""
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Al ingresar secuencias inválidas"
+msgstr "Al digitar secuencias no válidas"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
@@ -328,10 +328,10 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
-"Las aplicaciones de Microsoft Office tienden a cambiar la fuente del "
-"documento cuando ciertos caracteres de Unicode son ingresados. Está función "
-"insertará un carácter invisible después del carácter de Unicode para evitar "
-"este defecto."
+"Las aplicaciones de Microsoft Office tienden a cambiar el tipo de letra del "
+"documento cuando se insertan determinados caracteres de Unicode. Está "
+"función insertará un carácter invisible después del carácter de Unicode para "
+"evitar este defecto."
 
 #: i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -343,9 +343,9 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"Si se usa Bloq Mayús como tecla Compose, el comportamiento original de la "
-"tecla no estará disponible. Esta función permite activar Bloq Mayús pulsando "
-"ambas teclas Mayús al mismo tiempo."
+"Si se usa Bloq Mayús como tecla Componer, el comportamiento original de la "
+"tecla ya no estará disponible. Esta función permite activar Bloq Mayús "
+"oprimiendo ambas teclas Mayús a la vez."
 
 #: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -600,7 +600,7 @@ msgstr "Tab"
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "No cancelar"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -642,37 +642,38 @@ msgstr "Agradecimientos especiales"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "Añadir a favoritos"
+msgstr "Eliminar de favoritos"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Añadir a favoritos"
+msgstr "Favoritos"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Si se define, las secuencias de composición se cancelarán tras un "
+"determinado lapso si no se detecta actividad del teclado."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "LED de teclado"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Si se define, el LED correspondiente en el teclado se iluminará cuando se "
+"esté digitando una secuencia de composición."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Composición"
+msgstr "Componer"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
