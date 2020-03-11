@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-01 21:03+0000\n"
+"PO-Revision-Date: 2020-03-12 18:32+0000\n"
 "Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/"
 "pl/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -145,6 +145,8 @@ msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
+"Użyj sekwencji redagowania emotikonów dostarczonych przez autora i "
+"współautorów WinCompose."
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -536,21 +538,26 @@ msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
+"Jeśli ta opcja jest włączona, program WinCompose będzie łączyć się z "
+"Internetem w regularnych odstępach czasu, aby sprawdzić, czy nie ma nowych "
+"wersji. Aktualizacje nie są instalowane automatycznie."
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Staraj się, aby ikona obszaru powiadomień była zawsze widoczna"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
+"Domyślnie system Windows po krótkiej chwili usunie ikonę z obszaru "
+"powiadomień. Ta opcja próbuje zachować ją zawsze widoczną."
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Zmień…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
@@ -563,7 +570,7 @@ msgstr "Dodaj do ulubionych"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Wyłącz ikonę obszaru powiadomień"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -571,53 +578,65 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"Jeśli ta opcja jest włączona, funkcja WinCompose nie będzie już wyświetlać "
+"ikony w obszarze powiadomień. Jedynym sposobem otwarcia interfejsu "
+"WinCompose będzie następnie poprzez \"WinCompose Ustawienia\" i \"WinCompose "
+"Sekwencje\" wpisy w menu startowym."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Strona główna"
 
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "Koniec"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Zakładka"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Brak limitu czasu"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Zaawansowane"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Zignoruj okna pasujące do tego wyrażenia regularnego:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"Polecenie WinCompose zostanie całkowicie wyłączone, gdy bieżąca klasa okna "
+"lub nazwa okna będą zgodne z tym wyrażeniem regularnym."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
+#, fuzzy
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Alternatywnym klawiszem tworzenia jest zawsze Utwórz"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
+#, fuzzy
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Jeśli ta opcja jest włączona, wszystkie klucze redagowania będą traktowane "
+"jako Compose w sekwencji. Domyślnie tylko pierwszy naciśnięty klawisz będzie "
+"działać jako Compose, a alternatywne klucze redagowania zachowaswoją "
+"pierwotną rolę."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
@@ -626,31 +645,34 @@ msgstr "Specjalne podziękowania"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "Dodaj do ulubionych"
+msgstr "Usuń z ulubionych"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Dodaj do ulubionych"
+msgstr "Ulubione"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Jeśli jest ustawiona, dowolna sekwencja redagowania zostanie anulowana po "
+"pewnym opóźnieniu, jeśli nie zostanie wykryte żadne działanie klawiatury."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Klawiatura LED"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
+#, fuzzy
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Jeśli jest ustawiona, odpowiednia dioda LED klawiatury zostanie "
+"podświetlona, gdy trwa sekwencja redagowania."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
