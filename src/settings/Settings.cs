@@ -136,7 +136,7 @@ namespace WinCompose
         public static IEnumerable<Key> ValidComposeKeys => m_valid_compose_keys;
         public static Dictionary<string, string> ValidLanguages => m_valid_languages;
 
-        public static IList<Key> ValidLedKeys { get; } = new List<Key>()
+        public static IList<Key> ValidLedKeys { get; } = new List<Key>
         {
             new Key(VK.DISABLED),
             new Key(VK.COMPOSE),
@@ -188,7 +188,7 @@ namespace WinCompose
             // Check that the keyboard LED key is legal
             if (LedKey.Value.Count != 1 || !ValidLedKeys.Contains(LedKey.Value[0]))
             {
-                LedKey.Value = new KeySequence() { new Key(VK.COMPOSE) };
+                LedKey.Value = new KeySequence{ new Key(VK.COMPOSE) };
             }
         }
 

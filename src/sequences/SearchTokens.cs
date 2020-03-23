@@ -23,7 +23,7 @@ namespace WinCompose
         public SearchToken(string token)
         {
             if (token.StartsWith("\"") && token.EndsWith("\""))
-                token = token.Trim(new char[] { '"' });
+                token = token.Trim(new[] { '"' });
             Text = token;
 
             // Interpret token as decimal number, if applicable

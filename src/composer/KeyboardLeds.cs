@@ -62,7 +62,7 @@ public static class KeyboardLeds
 
     private static IList<ushort> m_kbd_devices = new List<ushort>();
 
-    private static readonly IDictionary<VK, KEYBOARD> m_vk_to_flag = new Dictionary<VK, KEYBOARD>()
+    private static readonly IDictionary<VK, KEYBOARD> m_vk_to_flag = new Dictionary<VK, KEYBOARD>
     {
         { VK.CAPITAL, KEYBOARD.CAPS_LOCK_ON },
         { VK.NUMLOCK, KEYBOARD.NUM_LOCK_ON },

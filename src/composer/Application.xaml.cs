@@ -32,7 +32,7 @@ namespace WinCompose
             }
         }
 
-        private void OnFatalError(Exception ex)
+        private static void OnFatalError(Exception ex)
             => System.Windows.MessageBox.Show(ex.ToString(), "Fatal Error");
 
         private void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

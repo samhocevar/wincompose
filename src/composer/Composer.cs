@@ -43,7 +43,7 @@ class InputSequence
         AddInput(vk, (ScanCodeShort)0);
     }
 
-    private List<INPUT> m_input = new List<INPUT>();
+    private readonly List<INPUT> m_input = new List<INPUT>();
 
     private void AddInput(VirtualKeyShort vk, ScanCodeShort sc)
     {
@@ -778,7 +778,7 @@ exit_forward_key:
     /// </summary>
     public static bool IsComposing => CurrentState == State.Sequence;
 
-    private static int m_magic_pos = 0;
+    private static int m_magic_pos;
 
     private static readonly List<KeyValuePair<VK, bool>> m_magic_sequence = new List<KeyValuePair<VK, bool>>()
     {
