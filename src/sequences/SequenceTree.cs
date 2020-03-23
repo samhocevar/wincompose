@@ -140,15 +140,15 @@ public class SequenceTree : SequenceNode
         {
             result = result.Trim('"');
             // Unescape \n \\ \" and more in the string output
-            result = Regex.Replace(result, @"\\([0-7]{3}|x[0-7a-fA-F]{4}|.)", m =>
+            result = Regex.Replace(result, @"\\([0-7]{3}|0x[0-7a-fA-F]{4}|.)", m =>
             {
                 var s = m.Value;
 
                 if (s.Length == 4) // Octal escape
                     return ((char)Convert.ToInt32(s.Substring(1), 8)).ToString();
 
-                if (s.Length == 6) // Hex escape
-                    return ((char)Convert.ToInt32(s.Substring(2), 16)).ToString();
+                if (s.Length == 7) // Hex escape
+                    return ((char)Convert.ToInt32(s.Substring(3), 16)).ToString();
 
                 switch (s[1])
                 {
