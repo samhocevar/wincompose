@@ -12,6 +12,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -139,16 +140,25 @@ public class SequenceTree : SequenceNode
         {
             result = result.Trim('"');
             // Unescape \n \\ \" and more in the string output
-            result = Regex.Replace(result, @"\\.", m =>
+            result = Regex.Replace(result, @"\\([0-7]{3}|x[0-7a-fA-F]{4}|.)", m =>
             {
-                switch (m.Value)
+                var s = m.Value;
+
+                if (s.Length == 4) // Octal escape
+                    return ((char)Convert.ToInt32(s.Substring(1), 8)).ToString();
+
+                if (s.Length == 6) // Hex escape
+                    return ((char)Convert.ToInt32(s.Substring(2), 16)).ToString();
+
+                switch (s[1])
                 {
                     // These sequences are converted to their known value
-                    case @"\n": return "\n";
-                    case @"\r": return "\r";
-                    case @"\t": return "\t";
-                    // For all other sequences, just strip the leading \
-                    default: return m.Value.Substring(1);
+                    case 'n': return "\n";
+                    case 'r': return "\r";
+                    case 't': return "\t";
+                    case '"': return "\"";
+                    case '\\': return "\\";
+                    default: return s;
                 }
             });
         }
