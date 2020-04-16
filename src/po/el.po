@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.7\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-01-04 15:21+0000\n"
-"Last-Translator: THANOS SIOURDAKIS <siourdakisthanos@gmail.com>\n"
+"PO-Revision-Date: 2020-04-17 21:11+0000\n"
+"Last-Translator: george k <norhorn@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
 "el/>\n"
 "Language: el\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.0.2-dev\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -213,9 +213,8 @@ msgstr "Επιλέξτε το πλήκτρο που πρέπει να ενεργ
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
-#, fuzzy
 msgid "Reset timeout"
-msgstr "Χρονικό όριο"
+msgstr "Επαναφορά μετά από"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -559,7 +558,7 @@ msgstr ""
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr "Αλλαγή..."
+msgstr "Αλλαγή…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
@@ -602,9 +601,8 @@ msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
-#, fuzzy
 msgid "No timeout"
-msgstr "Χρονικό όριο"
+msgstr "Χωρίς χρονικό όριο"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
