@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2020-05-11 13:33+0000\n"
-"Last-Translator: Mingun <Alexander_Sergey@mail.ru>\n"
+"Last-Translator: Dmitry Trubin <dtruebin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
 "master/ru/>\n"
 "Language: ru\n"
@@ -124,7 +124,7 @@ msgstr ""
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Использовать комбинации из проекта XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -132,6 +132,9 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"Использовать 1000 комбинаций из проекта с открытым исходным кодом XCompose "
+"(https://github.com/kragen/xcompose). Эти комбинации иногда могут "
+"конфликтовать с комбинациями из Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
