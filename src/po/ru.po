@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-05-11 13:33+0000\n"
-"Last-Translator: Dmitry Trubin <dtruebin@gmail.com>\n"
+"PO-Revision-Date: 2020-05-12 14:41+0000\n"
+"Last-Translator: Mingun <Alexander_Sergey@mail.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
 "master/ru/>\n"
 "Language: ru\n"
@@ -132,7 +132,7 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"Использовать 1000 комбинаций из проекта с открытым исходным кодом XCompose "
+"Использовать 1 000 комбинаций из проекта с открытым исходным кодом XCompose "
 "(https://github.com/kragen/xcompose). Эти комбинации иногда могут "
 "конфликтовать с комбинациями из Xorg."
 
@@ -215,7 +215,7 @@ msgstr ""
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Время до сброса"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -471,7 +471,7 @@ msgstr "Перевод"
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Авторы"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
@@ -603,27 +603,29 @@ msgstr "Tab"
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Без сброса"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Расширенные"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Игнорировать окна, соответствующие этому регулярному выражению:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"WinCompose будет полностью отключён, если класс или имя текущего окна будет "
+"соответствовать этому регулярному выражению."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Всегда считать альтернативные клавиши клавишей Compose"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -631,6 +633,10 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Если включено, все клавиши комбинирования будут считаться в "
+"последовательности клавишей Compose. По умолчанию, клавишей Compose "
+"считается только первая нажатая клавиша комбинирования, а альтернативные "
+"клавиши сохраняют свою первоначальную роль."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
@@ -639,37 +645,38 @@ msgstr "Благодарности"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "Добавить в избранное"
+msgstr "Удалить из избранного"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Добавить в избранное"
+msgstr "Избранное"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Если установлена, то, если не будет обнаружена активность клавиатуры и "
+"пройдёт определённая задержка, любая комбинация будет отменена."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Включать светодиод на клавиатуре"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Если установлена, то во время выполнения комбинации будет загораться "
+"соответствующий светодиод клавиатуры."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Модификатор:"
+msgstr "Комбинирование"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
