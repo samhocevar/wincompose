@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2020-05-12 14:41+0000\n"
-"Last-Translator: Mingun <Alexander_Sergey@mail.ru>\n"
+"Last-Translator: Dmitry Trubin <dtruebin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
 "master/ru/>\n"
 "Language: ru\n"
@@ -191,13 +191,16 @@ msgstr "Комбинации"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Пробовать обратный порядок двух клавиш"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
+"Пробовать комбинацию из тех же двух клавиш в обратном порядке. Например, "
+"если Compose E A является недопустимой последовательностью, попробовать "
+"также Compose A E."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
