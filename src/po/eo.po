@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.6\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-08-28 01:45+0000\n"
-"Last-Translator: Kastuś Kašenia <KKaszenia@tut.by>\n"
+"PO-Revision-Date: 2020-05-15 02:41+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/wincompose/"
 "master/eo/>\n"
 "Language: eo\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -82,12 +82,12 @@ msgstr "Eskapa klavo"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Konverto"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Nekonverto"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -131,9 +131,8 @@ msgid ""
 msgstr ""
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose v{2} en {0} ({1} makroklavoj)"
+msgstr "Uzi emoĝiajn makroklavojn de WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
@@ -143,9 +142,8 @@ msgstr ""
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Vindozo-klavo maldekstra"
+msgstr "Fenestro por sencimigo"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -176,9 +174,8 @@ msgstr "Eliri"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Forviŝu ĉiujn la signojn tajpitajn"
+msgstr "Unikodaj signoj"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -285,12 +282,12 @@ msgstr "Fermi"
 #. Copy character or symbol to the clipboard
 #: i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopii al tondujo"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Emoĝioj"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
@@ -395,14 +392,12 @@ msgstr "WinCompose v{2} en {0} ({1} makroklavoj)"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:397 ID:General
-#, fuzzy
 msgid "General"
-msgstr "Konduto ĝenerala"
+msgstr "Ĝenerala"
 
 #: i18n/Text.resx:401 ID:Behavior
-#, fuzzy
 msgid "Behavior"
-msgstr "Konduto ĝenerala"
+msgstr "Konduto"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:405 ID:WindowTitle
@@ -435,14 +430,13 @@ msgstr "Optimumigoj"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 sekundoj"
+msgstr "{0} sekundoj"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
 msgid "About"
-msgstr "Pri WinCompose"
+msgstr "Pri"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:437 ID:Download
@@ -467,7 +461,7 @@ msgstr "Tradukado"
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Aŭtoroj"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
@@ -523,13 +517,12 @@ msgstr ""
 
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
-#, fuzzy
 msgid "Disabled"
-msgstr "Malŝalti"
+msgstr "Malŝaltita"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Aŭtomate kontroli ĉu estas ĝisdatigoj"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
@@ -674,7 +667,7 @@ msgstr "Aliaj, Neniu kategorio"
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "Aliaj, Uzo nepublika"
+msgstr "Aliaj, uzo nepublika"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:137 ID:Surrogate
