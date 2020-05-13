@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-02-19 19:32+0000\n"
+"PO-Revision-Date: 2020-05-15 02:41+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/wincompose/"
 "master/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -123,7 +123,7 @@ msgstr ""
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr "Usa secuencias del proyecto XCompose"
+msgstr "Usar secuencias del proyecto XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -136,14 +136,14 @@ msgstr ""
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "Usa las secuencias de emoji de WinCompose"
+msgstr "Usar secuencias de emoyi de WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
-"Utilizar las secuencias de composición de emojis provistas por los creadores "
+"Utilizar las secuencias de composición de emoyis provistas por los creadores "
 "de WinCompose."
 
 #. Menu entry to show the debug window
@@ -296,7 +296,7 @@ msgstr "Copiar en el portapapeles"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "Emoji"
+msgstr "Emoyis"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
