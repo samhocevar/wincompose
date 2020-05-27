@@ -26,6 +26,8 @@
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close"
                         Executed="OnCloseCommandExecuted"/>
+        <CommandBinding Command="ApplicationCommands.Copy"
+                        Executed="OnCopyCommandExecuted"/>
     </Window.CommandBindings>
 
     <Window.InputBindings>
@@ -85,7 +87,7 @@
 
         <ContextMenu x:Key="ContextMenu">
             <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}" Icon="{StaticResource CopyEmoji}"
-                      Click="CopyToClipboard_Click"/>
+                      Command="ApplicationCommands.Copy"/>
             <MenuItem Header="{x:Static i18n:Text.AddToFavorites}" Icon="{StaticResource FavoriteEmoji}"
                       Click="ToggleFavorite_Click" Visibility="{Binding AddToFavoritesVisibility}"/>
             <MenuItem Header="{x:Static i18n:Text.RemoveFromFavorites}" Icon="{StaticResource UnfavoriteEmoji}"
