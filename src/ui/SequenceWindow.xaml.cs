@@ -61,11 +61,15 @@ namespace WinCompose
                 Hide();
         }
 
+        private void OnCopyCommandExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            var seq_view = (ListBox.SelectedItem as SequenceViewModel)?.Result;
+            if(seq_view != null)
+                Clipboard.SetText(seq_view);
+        }
+
         private void ClearSearch_Click(object sender, RoutedEventArgs e)
             => m_view_model.SearchText = "";
-
-        private void CopyToClipboard_Click(object sender, RoutedEventArgs e)
-            => Clipboard.SetText((ListBox.SelectedItem as SequenceViewModel)?.Result);
 
         private void EditUserDefinedSequences_Click(object sender, RoutedEventArgs e)
             => Settings.EditCustomRulesFile();
