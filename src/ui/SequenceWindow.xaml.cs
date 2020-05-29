@@ -75,7 +75,14 @@ namespace WinCompose
             => Settings.EditCustomRulesFile();
 
         private void ReloadUserDefinedSequences_Click(object sender, RoutedEventArgs e)
-            => Settings.LoadSequences();
+        {
+            Settings.LoadSequences();
+            // Create a new view model to sync the sequence list UI with the
+            // active sequences. Preserve the search text while doing so.
+            var search_text = m_view_model.SearchText;
+            DataContext = new RootViewModel();
+            m_view_model.SearchText = search_text;
+        }
 
         private void ToggleFavorite_Click(object sender, RoutedEventArgs e)
             => (ListBox.SelectedItem as SequenceViewModel)?.ToggleFavorite();
