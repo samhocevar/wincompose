@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20191111\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-11-16 09:04+0000\n"
+"PO-Revision-Date: 2020-06-11 15:41+0000\n"
 "Last-Translator: pt <toplinden@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/wincompose/"
 "master/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -195,8 +195,8 @@ msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
-"Minjaj dvi klavici. Napryklad, jakctco Skladova E A nedijsnyj rjad, todi "
-"sprobuvty Skladova A E."
+"Міняй дві клавіші. Наприклад, якщо Складова Е А недійсне, тоді спробуй "
+"Складова А Е."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
