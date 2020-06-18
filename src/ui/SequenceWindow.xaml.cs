@@ -13,6 +13,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -65,7 +66,22 @@ namespace WinCompose
         {
             var seq_view = (ListBox.SelectedItem as SequenceViewModel)?.Result;
             if(seq_view != null)
-                Clipboard.SetText(seq_view);
+            {
+                // Try several times in case another process uses the clipboard
+                // See https://github.com/samhocevar/wincompose/issues/319
+                for (int n = 0; n < 10; ++n)
+                {
+                    try
+                    {
+                        Clipboard.SetText(seq_view);
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        Thread.Sleep(10 * n);
+                    }
+                }
+            }
         }
 
         private void ClearSearch_Click(object sender, RoutedEventArgs e)
