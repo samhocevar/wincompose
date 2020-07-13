@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-06-24 22:41+0000\n"
+"PO-Revision-Date: 2020-07-14 17:41+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/wincompose/master/"
 "de/>\n"
@@ -216,9 +216,8 @@ msgstr "Wählen Sie die Taste, die als Compose-Taste dienen soll."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
-#, fuzzy
 msgid "Reset timeout"
-msgstr "Verzögerung"
+msgstr "Zeitüberschreitung zurücksetzen"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -605,9 +604,8 @@ msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
-#, fuzzy
 msgid "No timeout"
-msgstr "Verzögerung"
+msgstr "Keine Zeitüberschreitung"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -663,6 +661,8 @@ msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Falls gesetzt, wird jede Compose-Sequenz nach einer bestimmten Verzögerung "
+"abgebrochen, wenn keine Tastaturaktivität erkannt wird."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
@@ -673,10 +673,11 @@ msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Falls gesetzt, leuchtet das entsprechende Tastatur-LED Licht auf, wenn eine "
+"Compse-Sequenz läuft."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
 msgstr "Compose"
 
