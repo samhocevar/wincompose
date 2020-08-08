@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-05-12 14:41+0000\n"
+"PO-Revision-Date: 2020-08-09 16:32+0000\n"
 "Last-Translator: Dmitry Trubin <dtruebin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/wincompose/"
 "master/ru/>\n"
@@ -16,9 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -83,12 +83,12 @@ msgstr "Esc"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Хенкан"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Мухенкан"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -237,7 +237,7 @@ msgstr ""
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Сигнал при недопустимых комбинациях"
+msgstr "Поведение при недопустимых комбинациях"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
@@ -375,9 +375,9 @@ msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
-"Когда включён режим Caps Lock, ввод акцентированных символов, таких как  "
-"“é”, всегда будет приводить к выводу соответствующих заглавных букв, в "
-"данном случае “É”."
+"Когда включён режим Caps Lock, ввод акцентированных символов, таких как “é”, "
+"всегда будет приводить к выводу соответствующих заглавных букв, в данном "
+"случае “É”."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
