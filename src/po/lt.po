@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20190405\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-05-29 05:27+0000\n"
-"Last-Translator: Mindaugas Smolinskas <gsmoffln@gmail.com>\n"
+"PO-Revision-Date: 2020-09-22 02:39+0000\n"
+"Last-Translator: Kornelijus Tvarijanavičius <kornelitvari@protonmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/wincompose/"
 "master/lt/>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
 "19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
 "1 : 2);\n"
-"X-Generator: Weblate 3.7-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -84,7 +84,7 @@ msgstr "Escape (Gr.)"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Konversija"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
@@ -375,7 +375,7 @@ msgid ""
 msgstr ""
 "Kuomet įjungtas didžiųjų raidžių režimas (⇪Caps Lock, Didž.), įvedamos "
 "raidės su diakritikais bus automatiškai pakeistos didžiosiomis. Pavyzdžiui, "
-"įvedant seką „Compose . e“  („ė“), bus sugeneruota didžioji raidė „Ė“."
+"įvedant seką „Compose . e“ („ė“), bus sugeneruota didžioji raidė „Ė“."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
@@ -609,7 +609,7 @@ msgstr ""
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Išplėstiniai"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
@@ -646,15 +646,13 @@ msgstr "Padėka"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "Pridėti prie išrinktųjų"
+msgstr "Pašalinti iš mėgstamiausiųjų"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Pridėti prie išrinktųjų"
+msgstr "Mėgstamiausi"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
@@ -664,7 +662,7 @@ msgstr ""
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Klaviatūros LED"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
@@ -674,9 +672,8 @@ msgstr ""
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Sudėtiniai rašmenys"
+msgstr "Komponuoti"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
