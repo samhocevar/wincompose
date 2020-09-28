@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20190405\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-09-13 21:36+0000\n"
+"PO-Revision-Date: 2020-09-29 09:43+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/wincompose/"
 "master/pt/>\n"
@@ -260,8 +260,8 @@ msgid ""
 "key had not been used."
 msgstr ""
 "Se a sequência introduzida não existe, descartar todos os caracteres que "
-"foram introduzidos. O comportamento padrão é inserir os caracteres como se a "
-"tecla Compor não tivesse sido usada."
+"foram introduzidos. O comportamento predefinido é inserir os caracteres como "
+"se a tecla Compor não tivesse sido usada."
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -281,8 +281,8 @@ msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
-"Selecione o idioma que WinCompose deve usar na sua interface. O padrão é "
-"usar o idioma do sistema operativo."
+"Selecione o idioma que WinCompose deve usar na sua interface. A predefinição "
+"é usar o idioma do sistema operativo."
 
 #. Close the settings window
 #: i18n/Text.resx:321 ID:Close
@@ -336,7 +336,7 @@ msgstr ""
 
 #: i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Simular Caps Lock usando ambas as teclas Shift"
+msgstr "Simular Caps Lock a usar ambas as teclas Shift"
 
 #: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
@@ -346,7 +346,7 @@ msgid ""
 msgstr ""
 "Se a tecla Caps Lock (bloqueio de maiúsculas) for usada como tecla Compor, o "
 "comportamento original da tecla torna-se indisponível. Esta função permite "
-"que se ative a tecla Caps Lock pressionando ambas as teclas Shift ao mesmo "
+"que se ative a tecla Caps Lock a pressionar ambas as teclas Shift ao mesmo "
 "tempo."
 
 #: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
@@ -361,7 +361,7 @@ msgid ""
 msgstr ""
 "Se a tecla Caps Lock (bloquear maiúsculas) for usada como tecla Compor, o "
 "comportamento original da tecla torna-se indisponível. Esta função permite "
-"que se desative a tecla Caps Lock pressionando a tecla Shift."
+"que se desative a tecla Caps Lock a pressionar a tecla Shift."
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
@@ -554,7 +554,7 @@ msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
-"Por padrão, o Windows remove o ícone da área de notificação após algum "
+"Por predefinição, o Windows remove o ícone da área de notificação após algum "
 "tempo. Esta opção tenta mantê-lo sempre visível."
 
 #. The user can click on this button to change the current compose key.
@@ -635,8 +635,9 @@ msgid ""
 "compose keys will keep their original role."
 msgstr ""
 "Se ativado, todas as teclas de compor serão tratadas como Compor numa "
-"sequência. Por padrão, apenas a primeira tecla pressionada irá atuar como "
-"Compor, e as teclas de compor alternativas manterão a sua função original."
+"sequência. Por predefinição, apenas a primeira tecla pressionada irá atuar "
+"como Compor e as teclas de compor alternativas manterão a função original "
+"delas."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
