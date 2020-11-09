@@ -1,0 +1,27 @@
+
+# Everything is text unless it isn’t.
+* text=auto
+
+# Source files are whatever the OS prefers but should be
+# normalised in the repository.
+*.cpp  text
+*.cs   text
+*.iss  text
+*.pas  text
+*.xaml text
+*.html text
+*.txt  text
+*.md   text
+*.po   text
+*.pot  text
+
+# Just enforce UNIX line endings for bash scripts
+*.sh text eol=lf
+
+# This is Windows-specific and should always have CRLF, or
+# Visual Studio may misbehave.
+*.sln     text eol=crlf
+*.csproj  text eol=crlf
+*.vcxproj text eol=crlf
+*.resx    text eol=crlf
+
