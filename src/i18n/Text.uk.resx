@@ -220,7 +220,7 @@
     <value>Пробуй міняти дві клавіші</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Minjaj dvi klavici. Napryklad, jakctco Skladova E A nedijsnyj rjad, todi sprobuvty Skladova A E.</value>
+    <value>Міняй дві клавіші. Наприклад, якщо Складова Е А недійсне, тоді спробуй Складова А Е.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Цідило пошуку:</value>
@@ -230,6 +230,9 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Вибери клавішу за Складову.</value>
+  </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Скинути час затримки деактивації</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Додаткові єднописні вставки</value>
@@ -437,6 +440,9 @@
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Виступ</value>
+  </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Немає часу затримки</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Поглиблене</value>

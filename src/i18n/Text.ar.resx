@@ -117,94 +117,139 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Control" xml:space="preserve">
-    <value>其他，控制字元</value>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Alt يسار</value>
   </data>
-  <data name="Format" xml:space="preserve">
-    <value>其他，格式</value>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Alt يمين</value>
   </data>
-  <data name="OtherNotAssigned" xml:space="preserve">
-    <value>其他，未分配</value>
+  <data name="KeyLControl" xml:space="preserve">
+    <value>Control يسار</value>
   </data>
-  <data name="PrivateUse" xml:space="preserve">
-    <value>其他，專用</value>
+  <data name="KeyRControl" xml:space="preserve">
+    <value>Control يمين</value>
   </data>
-  <data name="Surrogate" xml:space="preserve">
-    <value>其他，代理區</value>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>Windows يسار</value>
   </data>
-  <data name="LowercaseLetter" xml:space="preserve">
-    <value>字母，小寫</value>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>Windows يمين</value>
   </data>
-  <data name="ModifierLetter" xml:space="preserve">
-    <value>字母，修飾號</value>
+  <data name="KeyCapital" xml:space="preserve">
+    <value>Caps Lock</value>
   </data>
-  <data name="OtherLetter" xml:space="preserve">
-    <value>字母，其他</value>
+  <data name="KeyNumLock" xml:space="preserve">
+    <value>Num Lock</value>
   </data>
-  <data name="TitlecaseLetter" xml:space="preserve">
-    <value>字母，標題樣式</value>
+  <data name="KeyPause" xml:space="preserve">
+    <value>Pause</value>
   </data>
-  <data name="UppercaseLetter" xml:space="preserve">
-    <value>字母，大寫</value>
+  <data name="KeyApps" xml:space="preserve">
+    <value>مفتاح القائمة</value>
   </data>
-  <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>標記，佔空間</value>
+  <data name="KeyEscape" xml:space="preserve">
+    <value>Escape</value>
   </data>
-  <data name="EnclosingMark" xml:space="preserve">
-    <value>符號，圈起</value>
+  <data name="KeyScroll" xml:space="preserve">
+    <value>Scroll Lock</value>
   </data>
-  <data name="NonSpacingMark" xml:space="preserve">
-    <value>標記，不佔空間</value>
+  <data name="KeySpace" xml:space="preserve">
+    <value>المسافة</value>
   </data>
-  <data name="DecimalDigitNumber" xml:space="preserve">
-    <value>數，數字</value>
+  <data name="Composing" xml:space="preserve">
+    <value>التركيب</value>
   </data>
-  <data name="LetterNumber" xml:space="preserve">
-    <value>數，字母</value>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>استعمال سلاسل رموز المشاعر التي وفرها مؤلف WinCompose والمساهمون معه.</value>
   </data>
-  <data name="OtherNumber" xml:space="preserve">
-    <value>數，其他</value>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>نافذة التنقيح</value>
   </data>
-  <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>標點，連接</value>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>إظهار السلاسل…</value>
   </data>
-  <data name="DashPunctuation" xml:space="preserve">
-    <value>標點，破折號</value>
+  <data name="Disable" xml:space="preserve">
+    <value>تعطيل</value>
   </data>
-  <data name="ClosePunctuation" xml:space="preserve">
-    <value>標點，關閉</value>
+  <data name="Restart" xml:space="preserve">
+    <value>إعادة تشغيل</value>
   </data>
-  <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>標點，引號止</value>
+  <data name="DonationPage" xml:space="preserve">
+    <value>صفحة التبرع</value>
   </data>
-  <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>標點，引號起</value>
+  <data name="VisitWebsite" xml:space="preserve">
+    <value>زيارة موقع الويب</value>
   </data>
-  <data name="OtherPunctuation" xml:space="preserve">
-    <value>標點，其他</value>
+  <data name="Exit" xml:space="preserve">
+    <value>خروج</value>
   </data>
-  <data name="OpenPunctuation" xml:space="preserve">
-    <value>標點，開啟</value>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>محارف يونيكود</value>
   </data>
-  <data name="CurrencySymbol" xml:space="preserve">
-    <value>符號，貨幣</value>
+  <data name="Sequences" xml:space="preserve">
+    <value>السلاسل</value>
   </data>
-  <data name="ModifierSymbol" xml:space="preserve">
-    <value>符號，修飾號</value>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>محاولة قلب المفتاحين</value>
   </data>
-  <data name="MathSymbol" xml:space="preserve">
-    <value>符號，數學</value>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>حاول تبديل المفاتيح في السلاسل التي فيها مفتاحين. كأن يكون تركيب E A ليس سلسلة صالحة، فحاول أن تركب A E بدل ذلك.</value>
   </data>
-  <data name="OtherSymbol" xml:space="preserve">
-    <value>符號，其他</value>
+  <data name="Search" xml:space="preserve">
+    <value>فلتر البحث:</value>
   </data>
-  <data name="LineSeparator" xml:space="preserve">
-    <value>分隔，線段</value>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>مفتاح التركيب:</value>
   </data>
-  <data name="ParagraphSeparator" xml:space="preserve">
-    <value>分隔，段落</value>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>اختر المفتاح اذي تريده أن يكون مفتاح التركيب.</value>
   </data>
-  <data name="SpaceSeparator" xml:space="preserve">
-    <value>分隔，空格</value>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>تصفير المهلة</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>دخل يونيكود المتقدم</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>تفعيل دخل يونيكود لكل المحارف، حتى لو لم يكن لها سلسلة معرفة. مثال ذلك أن المحرف U+1A3F يمكن كتابته بالسلسة الآتية: Compose U 1 A 3 F Enter</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>في حالة السلاسل الخاطئة</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>الرجوع إلى المطابقة مع إهمال حالة الأحرف</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>إذا أدخلت سلسلة ليست موجودة، ووجدت سلسلة أخرى تختلف في حالة الأحرف فقط، فاذهب إلى تلك السلسلة تلقائيًّا.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>إهمال كل المحارف المدخلة</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>إذا أدخلت سلسلة ليست موجودة، فأهمل كل المحارف التي كُتبت وابدأ من جديد كأنه لم يكتب أي شيء. السلوك الإفتراضي هو كتابة المحارف كأنه لم يستعمل مفتاح التركيب.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>صفارة</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>إذا أدخلت سلسلة ليست موجودة، فأخرج صوت تنبيه.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>لغة الواجهة:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>اختر اللغة التي يستعملها WinCompose في الواجهة. سيستعمل لغة نظام التشغيل إفتراضيًّا.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>نسخ إلى الحافظة</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>رموز المشاعر</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>تطبيق</value>
   </data>
 </root>

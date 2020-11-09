@@ -38,6 +38,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="unicode\Category.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.ar.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.be.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +107,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.ga.resx</DependentUpon>
+    </Compile>
+    <Compile Include="unicode\Category.hr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.hr.resx</DependentUpon>
     </Compile>
     <Compile Include="unicode\Category.hu.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -328,6 +338,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Block.sr.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.ar.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.be.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -392,6 +407,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.id.resx</DependentUpon>
+    </Compile>
+    <Compile Include="i18n\Text.hr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.hr.resx</DependentUpon>
     </Compile>
     <Compile Include="i18n\Text.hu.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -498,6 +518,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="unicode\Category.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.be.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.be.Designer.cs</LastGenOutput>
@@ -561,6 +586,11 @@
     <EmbeddedResource Include="unicode\Category.hu.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.hu.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.hr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.hr.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.id.resx">
@@ -792,6 +822,11 @@
       <LastGenOutput>Text.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.be.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.be.Designer.cs</LastGenOutput>
@@ -850,6 +885,11 @@
     <EmbeddedResource Include="i18n\Text.ga.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.ga.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.hr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.hr.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.hu.resx">

@@ -220,16 +220,16 @@
     <value>Försök byta plats på de två tangenterna</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Försök byta plats på tangenterna i en sekvens med två tangenter. Exempelvis om Compose E A är en ogiltig sekvens prova Compose A E istället.</value>
+    <value>Försök byta plats på tangenterna i en sekvens med två tangenter. Exempelvis om Komposition E A är en ogiltig sekvens prova Komposition A E istället.</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Sökfilter:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Compose-tangent:</value>
+    <value>Komposition-tangent:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Välj tangenten som ska fungera som Compose-tangent.</value>
+    <value>Välj tangenten som ska fungera som Komposition-tangent.</value>
   </data>
   <data name="ResetTimeout" xml:space="preserve">
     <value>Återställ väntetid</value>
@@ -238,7 +238,7 @@
     <value>Avancerad Unicode-inmatning</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Aktivera Unicode-inmatning för alla tecken, även de som saknar definierad komponeringssekvens. Till exempel kommer följande sekvens att mata ut tecknet U+1A3F: Compose U 1 A 3 F Enter</value>
+    <value>Aktivera Unicode-inmatning för alla tecken, även de som saknar definierad komponeringssekvens. Till exempel kommer följande sekvens att mata ut tecknet U+1A3F: Komposering U 1 A 3 F Enter</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>För ogiltiga sekvenser</value>
@@ -253,7 +253,7 @@
     <value>Förkasta alla inmatade tecken</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Om den angivna sekvensen inte existerar, förkasta alla tecken som matats in. Standardbeteendet är att mata ut tecknen som om Compose-tangenten inte hade använts.</value>
+    <value>Om den angivna sekvensen inte existerar, förkasta alla tecken som matats in. Standardbeteendet är att mata ut tecknen som om Komposition-tangenten inte hade använts.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Skicka ut ett pip</value>
@@ -280,10 +280,10 @@
     <value>Verkställ</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Upprätthåll ursprunglig beteende för Compose-tangenten</value>
+    <value>Upprätthåll ursprunglig beteende för Komposition-tangenten</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Detta säger till WinCompose att göra en ansträngning att behålla originaltangentens beteende. Till exempel skulle genvägen Alt-Tab fortfarande fungera även om Alt används som Compose-tangent.</value>
+    <value>Detta säger till WinCompose att göra en ansträngning att behålla originaltangentens beteende. Till exempel skulle genvägen Alt-Tab fortfarande fungera även om Alt används som Komposition-tangent.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
     <value>Infoga nollpunktsmellanslag i Office-program</value>
@@ -295,13 +295,13 @@
     <value>Emulera Caps Lock med båda Shift-tangenterna</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig slå på Caps Lock genom att trycka på båda Skift-tangenterna samtidigt.</value>
+    <value>Om Caps Lock används som Komposition-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig slå på Caps Lock genom att trycka på båda Skift-tangenterna samtidigt.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Skift-tangenten slår av Caps Lock</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Om Caps Lock används som Compose-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock genom att trycka på Skift-tangenten.</value>
+    <value>Om Caps Lock används som Komposition-tangent kommer tangentens ursprungliga beteende att bli otillgängligt. Denna funktion låter dig stänga av Caps Lock genom att trycka på Skift-tangenten.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
     <value>Caps Lock gör alltid om bokstäver till versaler</value>
@@ -421,7 +421,7 @@
     <value>Förändra…</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
-    <value>Var vänlig att tryck på en tangent för att använda denna som din Compose-tangent.</value>
+    <value>Var vänlig att tryck på en tangent för att använda denna som din Komposition-tangent.</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
     <value>Lägg till i favoriter</value>
@@ -454,10 +454,10 @@
     <value>WinCompose kommer helt inaktiveras när aktivt fönsterklass eller fönsternamn matchar detta reguljära uttryck (regex).</value>
   </data>
   <data name="AlwaysCompose" xml:space="preserve">
-    <value>Alternativ Compose-tangent är alltid Compose</value>
+    <value>Alternativ Komposition-tangent är alltid Komposition</value>
   </data>
   <data name="AlwaysComposeToolTip" xml:space="preserve">
-    <value>Om markerat kommer alla Compose-tangenter behandlas som Compose i en sekvens. Som standard kommer endast den tangent som trycks på först att agera som Compose medan alternativa Compose-tangenter behåller sina ursprungliga roller.</value>
+    <value>Om markerat kommer alla Komposition-tangenter behandlas som Komposition i en sekvens. Som standard kommer endast den tangent som trycks på först att agera som Komposition medan alternativa Komposition-tangenter behåller sina ursprungliga roller.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Speciella tack</value>
@@ -467,5 +467,17 @@
   </data>
   <data name="Favorites" xml:space="preserve">
     <value>Favoriter</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Om markerat, kommer alla Kompositionssekvenser avbrytas efter en viss fördröjning om ingen tangentbordsaktivitet upptäcks.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Tangentbordslampa</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Om markerat kommer korresponderande tangentbordslampa lysa när sekvensen pågår.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Komposition</value>
   </data>
 </root>

@@ -168,8 +168,14 @@
   <data name="KeyReturn" xml:space="preserve">
     <value>Sisesta</value>
   </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Kombineerin</value>
+  </data>
   <data name="UseXorgRules" xml:space="preserve">
     <value>Kasuta projekti Xorg järjestusi</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Kasuta kolme tuhandet järjendit avatud lähtekoodiga projektist Xorg (http://www.x.org/). Neid järjendeid eelkõige kasutatakse tavapärastes Linux'ites.</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
     <value>Kasuta projekti XCompose järjendeid</value>
@@ -224,6 +230,9 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Vali klahv, mis peaks käituma kombineerimisklahvina.</value>
+  </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Muuda aegumist</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Täpsem Unicode sisend</value>
@@ -420,7 +429,19 @@
   <data name="DisableIcon" xml:space="preserve">
     <value>Keela teavitusteala ikoon</value>
   </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Aegumine puudub</value>
+  </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Eriline tänu</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Eemalda lemmikutest</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Lemmikud</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Kombineerimisklahv</value>
   </data>
 </root>

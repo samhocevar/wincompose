@@ -229,7 +229,7 @@
     <value>Tecla de composição:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Selecione a tecla que deve atuar como a  tecla de Composição.</value>
+    <value>Selecione a tecla que deve atuar como a tecla de Composição.</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Introdução Unicode avançada</value>
@@ -250,7 +250,7 @@
     <value>Descartar todos os caracteres introduzidos</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Se a sequência introduzida não existe, descartar todos os caracteres que foram introduzidos. O comportamento padrão é inserir os caracteres como se a tecla Compor não tivesse sido usada.</value>
+    <value>Se a sequência introduzida não existe, descartar todos os caracteres que foram introduzidos. O comportamento predefinido é inserir os caracteres como se a tecla Compor não tivesse sido usada.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Soar um som</value>
@@ -262,7 +262,7 @@
     <value>Idioma da interface:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Selecione o idioma que WinCompose deve usar na sua interface. O padrão é usar o idioma do sistema operativo.</value>
+    <value>Selecione o idioma que WinCompose deve usar na sua interface. A predefinição é usar o idioma do sistema operativo.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fechar</value>
@@ -289,16 +289,16 @@
     <value>Os programas do Microsoft Office às vezes mudam a fonte do documento no momento em que se digitam certos caracteres Unicode. Esta funcionalidade insere um caractere invisível depois do caractere Unicode para contornar o problema.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Simular Caps Lock usando ambas as teclas Shift</value>
+    <value>Simular Caps Lock a usar ambas as teclas Shift</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Se a tecla Caps Lock (bloqueio de maiúsculas) for usada como tecla Compor, o comportamento original da tecla torna-se indisponível. Esta função permite que se ative a tecla Caps Lock pressionando ambas as teclas Shift ao mesmo tempo.</value>
+    <value>Se a tecla Caps Lock (bloqueio de maiúsculas) for usada como tecla Compor, o comportamento original da tecla torna-se indisponível. Esta função permite que se ative a tecla Caps Lock a pressionar ambas as teclas Shift ao mesmo tempo.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift desativa Caps Lock</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Se a tecla Caps Lock (bloquear maiúsculas) for usada como tecla Compor, o comportamento original da tecla torna-se indisponível. Esta função permite que se desative a tecla Caps Lock pressionando a tecla Shift.</value>
+    <value>Se a tecla Caps Lock (bloquear maiúsculas) for usada como tecla Compor, o comportamento original da tecla torna-se indisponível. Esta função permite que se desative a tecla Caps Lock a pressionar a tecla Shift.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
     <value>Caps Lock capitaliza sempre as letras</value>
@@ -412,7 +412,7 @@
     <value>Tentar manter o ícone da área de notificação sempre visível</value>
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
-    <value>Por padrão, o Windows remove o ícone da área de notificação após algum tempo. Esta opção tenta mantê-lo sempre visível.</value>
+    <value>Por predefinição, o Windows remove o ícone da área de notificação após algum tempo. Esta opção tenta mantê-lo sempre visível.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
     <value>Alterar…</value>
@@ -451,7 +451,7 @@
     <value>A tecla alternativa de compor é sempre a Compor</value>
   </data>
   <data name="AlwaysComposeToolTip" xml:space="preserve">
-    <value>Se ativado, todas as teclas de compor serão tratadas como Compor numa sequência. Por padrão, apenas a primeira tecla pressionada irá atuar como Compor, e as teclas de compor alternativas manterão a sua função original.</value>
+    <value>Se ativado, todas as teclas de compor serão tratadas como Compor numa sequência. Por predefinição, apenas a primeira tecla pressionada irá atuar como Compor e as teclas de compor alternativas manterão a função original delas.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Agradecimentos especiais</value>

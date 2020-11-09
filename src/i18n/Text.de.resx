@@ -231,6 +231,9 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Wählen Sie die Taste, die als Compose-Taste dienen soll.</value>
   </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Zeitüberschreitung zurücksetzen</value>
+  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Erweiterte Unicode-Eingabe</value>
   </data>
@@ -438,6 +441,9 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
   </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Keine Zeitüberschreitung</value>
+  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Erweitert</value>
   </data>
@@ -455,5 +461,23 @@
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Besonderer Dank</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Aus Favoriten entfernen</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favoriten</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Falls gesetzt, wird jede Compose-Sequenz nach einer bestimmten Verzögerung abgebrochen, wenn keine Tastaturaktivität erkannt wird.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Tastatur-LED</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Falls gesetzt, leuchtet das entsprechende Tastatur-LED Licht auf, wenn eine Compse-Sequenz läuft.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Compose</value>
   </data>
 </root>

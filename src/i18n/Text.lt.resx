@@ -153,6 +153,9 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Escape (Gr.)</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Konversija</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock (Slinkt.)</value>
   </data>
@@ -298,7 +301,7 @@
     <value>Įjungus ⇪Caps Lock (Didž.), visuomet įvesti didžiąsias raides</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Kuomet įjungtas didžiųjų raidžių režimas (⇪Caps Lock, Didž.), įvedamos raidės su diakritikais bus automatiškai pakeistos didžiosiomis. Pavyzdžiui, įvedant seką „Compose . e“  („ė“), bus sugeneruota didžioji raidė „Ė“.</value>
+    <value>Kuomet įjungtas didžiųjų raidžių režimas (⇪Caps Lock, Didž.), įvedamos raidės su diakritikais bus automatiškai pakeistos didžiosiomis. Pavyzdžiui, įvedant seką „Compose . e“ („ė“), bus sugeneruota didžioji raidė „Ė“.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Rūšys</value>
@@ -432,6 +435,9 @@
   <data name="KeyTab" xml:space="preserve">
     <value>↹ Tab</value>
   </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Išplėstiniai</value>
+  </data>
   <data name="IgnoreRegex" xml:space="preserve">
     <value>Vengti langų, atitinkančių RegEx filtrą:</value>
   </data>
@@ -446,5 +452,17 @@
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Padėka</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Pašalinti iš mėgstamiausiųjų</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Mėgstamiausi</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Klaviatūros LED</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Komponuoti</value>
   </data>
 </root>

@@ -468,4 +468,16 @@
   <data name="Favorites" xml:space="preserve">
     <value>Categorienaam (Unicode karakters, Emoji, Macro's, Favorieten)</value>
   </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Indien ingeschakeld, zal elke compositiesequentie opgeheven worden na een bepaalde tijd als er geen toetsenbordactiviteit wordt gedetecteerd.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Toetsenbord LED</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Indien ingeschakeld zal de overeenkomstige LED op het toetsenbord oplichten tijdens het uitvoeren van een compositiesequentie.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Samenstellen</value>
+  </data>
 </root>

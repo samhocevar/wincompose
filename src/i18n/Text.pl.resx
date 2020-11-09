@@ -186,6 +186,9 @@
   <data name="UseEmojiRules" xml:space="preserve">
     <value>Użyj sekwencji emoji z WinCompose</value>
   </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Użyj sekwencji redagowania emotikonów dostarczonych przez autora i współautorów WinCompose.</value>
+  </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Okno Debugowania</value>
   </data>
@@ -227,6 +230,9 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Wybierz klawisz, który będzie używany jako klawisz Compose.</value>
+  </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Zresetuj limit czasu</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Zaawansowane wprowadzanie tekstu Unicode</value>
@@ -402,10 +408,64 @@
   <data name="CheckUpdates" xml:space="preserve">
     <value>Automatycznie sprawdzaj dostępność aktualizacji</value>
   </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Jeśli ta opcja jest włączona, program WinCompose będzie łączyć się z Internetem w regularnych odstępach czasu, aby sprawdzić, czy nie ma nowych wersji. Aktualizacje nie są instalowane automatycznie.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Staraj się, aby ikona obszaru powiadomień była zawsze widoczna</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Domyślnie system Windows po krótkiej chwili usunie ikonę z obszaru powiadomień. Ta opcja próbuje zachować ją zawsze widoczną.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Zmień…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Naciśnij klawisz, który ma być używany jako klawisz kompozycji.</value>
+  </data>
   <data name="AddToFavorites" xml:space="preserve">
     <value>Dodaj do ulubionych</value>
   </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Wyłącz ikonę obszaru powiadomień</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Jeśli ta opcja jest włączona, funkcja WinCompose nie będzie już wyświetlać ikony w obszarze powiadomień. Jedynym sposobem otwarcia interfejsu WinCompose będzie następnie poprzez &quot;WinCompose Ustawienia&quot; i &quot;WinCompose Sekwencje&quot; wpisy w menu startowym.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Strona główna</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Koniec</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Zakładka</value>
+  </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Brak limitu czasu</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Zaawansowane</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Zignoruj okna pasujące do tego wyrażenia regularnego:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>Polecenie WinCompose zostanie całkowicie wyłączone, gdy bieżąca klasa okna lub nazwa okna będą zgodne z tym wyrażeniem regularnym.</value>
+  </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Specjalne podziękowania</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Usuń z ulubionych</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Ulubione</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Jeśli jest ustawiona, dowolna sekwencja redagowania zostanie anulowana po pewnym opóźnieniu, jeśli nie zostanie wykryte żadne działanie klawiatury.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Klawiatura LED</value>
   </data>
 </root>

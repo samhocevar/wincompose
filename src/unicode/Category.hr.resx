@@ -118,93 +118,93 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Control" xml:space="preserve">
-    <value>其他，控制字元</value>
+    <value>Ostalo, kontrolni znak</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>其他，格式</value>
+    <value>Ostalo, format</value>
   </data>
   <data name="OtherNotAssigned" xml:space="preserve">
-    <value>其他，未分配</value>
+    <value>Ostalo, nedodijeljeno</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>其他，專用</value>
+    <value>Ostalo, privatno područje</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
-    <value>其他，代理區</value>
+    <value>Slovo, zamjenski znak</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
-    <value>字母，小寫</value>
+    <value>Slovo, mala slova</value>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
-    <value>字母，修飾號</value>
+    <value>Slovo, modifikator</value>
   </data>
   <data name="OtherLetter" xml:space="preserve">
-    <value>字母，其他</value>
+    <value>Slovo, ostalo</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>字母，標題樣式</value>
+    <value>Slovo, naslovna slova</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
-    <value>字母，大寫</value>
+    <value>Slovo, velika slova</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>標記，佔空間</value>
+    <value>Dijakritički znak, spojni sa širinom</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>符號，圈起</value>
+    <value>Dijakritički znak, obuhvatni</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>標記，不佔空間</value>
+    <value>Dijakritički znak, bez širine</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
-    <value>數，數字</value>
+    <value>Brojka, decimalni broj</value>
   </data>
   <data name="LetterNumber" xml:space="preserve">
-    <value>數，字母</value>
+    <value>Brojka, slovo</value>
   </data>
   <data name="OtherNumber" xml:space="preserve">
-    <value>數，其他</value>
+    <value>Brojka, ostalo</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>標點，連接</value>
+    <value>Interpunkcija, spojnica</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>標點，破折號</value>
+    <value>Interpunkcija, povlaka</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
-    <value>標點，關閉</value>
+    <value>Interpunkcija, zatvarajuća</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>標點，引號止</value>
+    <value>Interpunkcija, zatvarajući navodni znak</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>標點，引號起</value>
+    <value>Interpunkcija, otvarajući navodni znak</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
-    <value>標點，其他</value>
+    <value>Interpunkcija, ostalo</value>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
-    <value>標點，開啟</value>
+    <value>Interpunkcija, otvarajuća</value>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
-    <value>符號，貨幣</value>
+    <value>Simbol, valuta</value>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
-    <value>符號，修飾號</value>
+    <value>Simbol, modifikator</value>
   </data>
   <data name="MathSymbol" xml:space="preserve">
-    <value>符號，數學</value>
+    <value>Simbol, matematički</value>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
-    <value>符號，其他</value>
+    <value>Simbol, ostalo</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>分隔，線段</value>
+    <value>Znak rastavljanja, redak</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
-    <value>分隔，段落</value>
+    <value>Znak rastavljanja, odlomak</value>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
-    <value>分隔，空格</value>
+    <value>Znak rastavljanja, razmak</value>
   </data>
 </root>

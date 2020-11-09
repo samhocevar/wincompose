@@ -231,6 +231,9 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>选择要作为“组合键”的按键。</value>
   </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>重置超时</value>
+  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>高级 Unicode 输入</value>
   </data>
@@ -363,6 +366,9 @@
   <data name="Translators" xml:space="preserve">
     <value>翻译人员</value>
   </data>
+  <data name="Authors" xml:space="preserve">
+    <value>开发者</value>
+  </data>
   <data name="License" xml:space="preserve">
     <value>证书</value>
   </data>
@@ -418,7 +424,7 @@
     <value>请按下要指定为“组合键”的按键。</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
-    <value>加入喜爱列表</value>
+    <value>加入收藏</value>
   </data>
   <data name="DisableIcon" xml:space="preserve">
     <value>禁用通知区图标</value>
@@ -435,7 +441,43 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab 键</value>
   </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>无超时</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>高级设置</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>无视匹配该正则表达式的窗口:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>当前窗口类或窗口名称与此正则表达式匹配时，Wicompose将被完全禁用。</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>备用组合键始终是Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>如果启用，所有组合键将被视为序列中的Compose。默认情况下，只有第一个按下的键将担当Compose角色，其他组合键将保持其原始角色。</value>
+  </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>特别鸣谢</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>从收藏中删除</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>收藏</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>若启用该设置，那么在没有检测到键盘活动的情况下，任何组合序列都将在一定的延迟之后被取消。</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>键盘 LED</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>如果启用，则当一个合成序列进行时，相应的键盘LED将点亮。</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>组合键</value>
   </data>
 </root>

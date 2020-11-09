@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Eskapa klavo</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Konverto</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Nekonverto</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Ruluma baskulo</value>
   </data>
@@ -161,6 +167,12 @@
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Enenklavo</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Uzi emoĝiajn makroklavojn de WinCompose</value>
+  </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Fenestro por sencimigo</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Montri makroklavojn…</value>
@@ -176,6 +188,9 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Eliri</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unikodaj signoj</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Makroklavoj</value>
@@ -221,6 +236,12 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermi</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Kopii al tondujo</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Emoĝioj</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Apliki</value>
@@ -270,6 +291,12 @@
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} en {0} ({1} makroklavoj)</value>
   </data>
+  <data name="General" xml:space="preserve">
+    <value>Ĝenerala</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Konduto</value>
+  </data>
   <data name="WindowTitle" xml:space="preserve">
     <value>Makroklavoj - WinCompose</value>
   </data>
@@ -288,8 +315,11 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Optimumigoj</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} sekundoj</value>
+  </data>
   <data name="About" xml:space="preserve">
-    <value>Pri WinCompose</value>
+    <value>Pri</value>
   </data>
   <data name="Download" xml:space="preserve">
     <value>Elŝuti WinCompose-n {0}</value>
@@ -302,6 +332,9 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Tradukado</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Aŭtoroj</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Permesilo</value>
@@ -326,6 +359,12 @@
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
     <value>Reŝargi</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Malŝaltita</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Aŭtomate kontroli ĉu estas ĝisdatigoj</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Rekonoj</value>

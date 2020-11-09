@@ -231,6 +231,9 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Επιλέξτε το πλήκτρο που πρέπει να ενεργεί ως πλήκτρο Σύνθεσης.</value>
   </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Επαναφορά μετά από</value>
+  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Προηγμένη εισαγωγή Unicode</value>
   </data>
@@ -415,7 +418,7 @@
     <value>Από προεπιλογή, τα Windows θα αφαιρέσουν μετά από λίγο το εικονίδιο από την περιοχή ειδοποιήσεων. Αυτή η επιλογή επιχειρεί να το κρατάει πάντα ορατό.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
-    <value>Αλλαγή...</value>
+    <value>Αλλαγή…</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
     <value>Πατήστε το πλήκτρο που θα χρησιμοποιηθεί ως πλήκτρο σύνθεσης.</value>
@@ -438,6 +441,9 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
   </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Χωρίς χρονικό όριο</value>
+  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Για προχωρημένους</value>
   </data>
@@ -455,5 +461,17 @@
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Ιδιαίτερες ευχαριστίες</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Αφαίρεση από τα αγαπημένα</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Αγαπημένα</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>LED πληκτρολογίου</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Σύνθεση</value>
   </data>
 </root>

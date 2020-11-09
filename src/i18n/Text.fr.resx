@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Détecter automatiquement</value>
+    <value>Détection automatique</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
     <value>Alt gauche</value>
@@ -127,16 +127,16 @@
     <value>Alt droit</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Ctrl gauche</value>
+    <value>Ctrl-gauche</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Ctrl droit</value>
+    <value>Ctrl-droit</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Windows gauche</value>
+    <value>Windows-gauche</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Windows droit</value>
+    <value>Windows-droit</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Verr Maj</value>
@@ -199,7 +199,7 @@
     <value>Désactiver</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Réinitialiser</value>
+    <value>Redémarrer</value>
   </data>
   <data name="DonationPage" xml:space="preserve">
     <value>Page de dons</value>
@@ -230,6 +230,9 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Sélectionner la touche qui sera la touche de composition.</value>
+  </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Délai d'annulation</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Saisie Unicode avancée</value>
@@ -382,7 +385,7 @@
     <value>Des mises à jour sont disponibles.</value>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
-    <value>Séquences définies par l’utilisateur</value>
+    <value>Séquences personnelles</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
     <value>Éditer</value>
@@ -406,7 +409,7 @@
     <value>Vérifier automatiquement les mises à jour</value>
   </data>
   <data name="CheckUpdatesToolTip" xml:space="preserve">
-    <value>Quand cette option est cochée, WinCompose se connecte régulièrement à Internet afin de vérifier si une nouvelle version est disponible. Les mises à jour ne sont pas installées automatiquement.</value>
+    <value>Si activée, WinCompose se connectera à Internet à intervalles réguliers pour vérifier les nouvelles versions. Les mises à jour ne sont pas installées automatiquement.</value>
   </data>
   <data name="KeepIconVisible" xml:space="preserve">
     <value>Garder l'icône de la zone de notification toujours visible</value>
@@ -427,7 +430,7 @@
     <value>Désactiver l’icône de la zone de notification</value>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors de lancer “WinCompose Settings” ou “WinCompose Sequences” depuis le menu Démarrer.</value>
+    <value>Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors de lancer « WinCompose Settings » ou « WinCompose Sequences » depuis le menu Démarrer.</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
     <value>Début</value>
@@ -464,5 +467,17 @@
   </data>
   <data name="Favorites" xml:space="preserve">
     <value>Favoris</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Si activée, toute séquence composée sera annulée après un certain délai, si aucune activité du clavier n'est détectée.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Diode du clavier</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Si cette option est activée, la diode électroluminescente du clavier sera allumée pendant qu'une séquence de composition est entrée.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Composition</value>
   </data>
 </root>

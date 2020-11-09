@@ -468,4 +468,13 @@
   <data name="Favorites" xml:space="preserve">
     <value>Preferidos</value>
   </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Si custa optzione est abilitada cale si siat filera compose s'at a annullare a pustis de un'intervallu isseberadu si no at a èssere registrada peruna atividade de tastiera.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>LED de sa tastiera</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Si custa optzione est abilitada su LED de sa tastiera s'at a allùghere cando ses impreende una filera compose.</value>
+  </data>
 </root>

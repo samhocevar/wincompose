@@ -153,6 +153,12 @@
   <data name="KeyEscape" xml:space="preserve">
     <value>Esc</value>
   </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Хенкан</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Мухенкан</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock</value>
   </data>
@@ -161,6 +167,21 @@
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Ввод</value>
+  </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Комбинирование</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Использовать комбинации из проекта Xorg</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Использовать 3 000 комбинаций из проекта Xorg (http://www.x.org/). Это комбинации, чаще всего встречающиеся в стандартной Linux -системе.</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Использовать комбинации из проекта XCompose</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Использовать 1 000 комбинаций из проекта с открытым исходным кодом XCompose (https://github.com/kragen/xcompose). Эти комбинации иногда могут конфликтовать с комбинациями из Xorg.</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
     <value>Использовать комбинации WinCompose для emoji</value>
@@ -195,6 +216,12 @@
   <data name="Sequences" xml:space="preserve">
     <value>Комбинации</value>
   </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Пробовать обратный порядок двух клавиш</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Пробовать комбинацию из тех же двух клавиш в обратном порядке. Например, если Compose E A является недопустимой последовательностью, попробовать также Compose A E.</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Фильтр поиска:</value>
   </data>
@@ -204,6 +231,9 @@
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Выберите клавишу, которая будет использоваться в качестве клавиши Compose.</value>
   </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Время до сброса</value>
+  </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Расширенный ввод символов Unicode</value>
   </data>
@@ -211,7 +241,7 @@
     <value>Использовать коды Unicode для ввода любых символов, даже для не имеющих связанных с ними последовательностей Compose. Например, следующая комбинация клавиш введет символ U+1A3F: Compose U 1 A 3 F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>Сигнал при недопустимых комбинациях</value>
+    <value>Поведение при недопустимых комбинациях</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>Откат к соответствиям, не учитывающим регистр символов, при недействительных комбинациях</value>
@@ -277,7 +307,7 @@
     <value>Нажатый Caps Lock всегда генерирует заглавные буквы</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Когда включён режим Caps Lock, ввод акцентированных символов, таких как  “é”, всегда будет приводить к выводу соответствующих заглавных букв, в данном случае “É”.</value>
+    <value>Когда включён режим Caps Lock, ввод акцентированных символов, таких как “é”, всегда будет приводить к выводу соответствующих заглавных букв, в данном случае “É”.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Категории</value>
@@ -335,6 +365,9 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Перевод</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Авторы</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Лицензия</value>
@@ -408,7 +441,43 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
   </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Без сброса</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Расширенные</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Игнорировать окна, соответствующие этому регулярному выражению:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose будет полностью отключён, если класс или имя текущего окна будет соответствовать этому регулярному выражению.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Всегда считать альтернативные клавиши клавишей Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Если включено, все клавиши комбинирования будут считаться в последовательности клавишей Compose. По умолчанию, клавишей Compose считается только первая нажатая клавиша комбинирования, а альтернативные клавиши сохраняют свою первоначальную роль.</value>
+  </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Благодарности</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Удалить из избранного</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Если установлена, то, если не будет обнаружена активность клавиатуры и пройдёт определённая задержка, любая комбинация будет отменена.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Включать светодиод на клавиатуре</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Если установлена, то во время выполнения комбинации будет загораться соответствующий светодиод клавиатуры.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Комбинирование</value>
   </data>
 </root>

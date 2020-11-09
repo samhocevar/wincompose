@@ -178,16 +178,16 @@
     <value>Usa las 3000 secuencias de composición del proyecto Xorg (http://www.x.org/). Estas son las secuencias más comunes en un sistema Linux.</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
-    <value>Usa secuencias del proyecto XCompose</value>
+    <value>Usar secuencias del proyecto XCompose</value>
   </data>
   <data name="UseXComposeRulesToolTip" xml:space="preserve">
     <value>Usa las 1000 secuencias de composición del proyecto XCompose (https://github.com/kragen/xcompose). Estas secuencias pueden conflictuar con las de Xorg.</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
-    <value>Usa las secuencias de emoji de WinCompose</value>
+    <value>Usar secuencias de emoyi de WinCompose</value>
   </data>
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
-    <value>Utilizar las secuencias de composición de emojis provistas por los creadores de WinCompose.</value>
+    <value>Utilizar las secuencias de composición de emoyis provistas por los creadores de WinCompose.</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>Ventana de depuración</value>
@@ -211,13 +211,13 @@
     <value>Salir</value>
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
-    <value>Caracteres Unicode</value>
+    <value>Caracteres de Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Secuencias</value>
   </data>
   <data name="SwapOnInvalid" xml:space="preserve">
-    <value>Intenta intercambiar dos teclas</value>
+    <value>Intentar intercambiar dos teclas</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
     <value>Intente intercambiar las teclas de una secuencia de dos teclas. Por ejemplo, si Componer + E A no es una secuencia válida, pruebe con Componer + A E.</value>
@@ -226,10 +226,13 @@
     <value>Filtro de búsqueda:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Tecla Compose:</value>
+    <value>Tecla de composición:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Selecciona la tecla que actuará como Compose.</value>
+    <value>Seleccione la tecla que actuará como Componer.</value>
+  </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Lapso de cancelación</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Inserción avanzada de Unicode</value>
@@ -238,7 +241,7 @@
     <value>Activar el ingreso de cualesquier caracteres Unicode, incluidos aquellos que carecen de secuencia de composición. Por ejemplo, la secuencia Componer + 1 A 3 F + Intro insertará el carácter U+1A3F.</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>Al ingresar secuencias inválidas</value>
+    <value>Al digitar secuencias no válidas</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
     <value>Revertir a comparación de secuencias sin diferenciar entre mayúsculas y minúsculas</value>
@@ -271,7 +274,7 @@
     <value>Copiar en el portapapeles</value>
   </data>
   <data name="Emoji" xml:space="preserve">
-    <value>Emoji</value>
+    <value>Emoyis</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Aplicar</value>
@@ -286,13 +289,13 @@
     <value>Insertar espacios de anchura cero en las programas de Office</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Las aplicaciones de Microsoft Office tienden a cambiar la fuente del documento cuando ciertos caracteres de Unicode son ingresados. Está función insertará un carácter invisible después del carácter de Unicode para evitar este defecto.</value>
+    <value>Las aplicaciones de Microsoft Office tienden a cambiar el tipo de letra del documento cuando se insertan determinados caracteres de Unicode. Está función insertará un carácter invisible después del carácter de Unicode para evitar este defecto.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Emular Bloq Mayús usando ambas teclas Mayús</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Si se usa Bloq Mayús como tecla Compose, el comportamiento original de la tecla no estará disponible. Esta función permite activar Bloq Mayús pulsando ambas teclas Mayús al mismo tiempo.</value>
+    <value>Si se usa Bloq Mayús como tecla Componer, el comportamiento original de la tecla ya no estará disponible. Esta función permite activar Bloq Mayús oprimiendo ambas teclas Mayús a la vez.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Desactivar Bloq Mayús con la tecla Mayús</value>
@@ -438,6 +441,9 @@
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
   </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>No cancelar</value>
+  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avanzado</value>
   </data>
@@ -455,5 +461,23 @@
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Agradecimientos especiales</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Eliminar de favoritos</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favoritos</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Si se define, las secuencias de composición se cancelarán tras un determinado lapso si no se detecta actividad del teclado.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>LED de teclado</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Si se define, el LED correspondiente en el teclado se iluminará cuando se esté digitando una secuencia de composición.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Componer</value>
   </data>
 </root>

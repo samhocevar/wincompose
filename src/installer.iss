@@ -40,6 +40,7 @@ Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignore
 Source: "bin\{#CONFIG}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Hardcodet.Wpf.TaskbarNotification.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\ar\*.dll"; DestDir: "{app}\ar"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
@@ -52,6 +53,7 @@ Source: "bin\{#CONFIG}\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\hr\*.dll"; DestDir: "{app}\hr"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\hu\*.dll"; DestDir: "{app}\hu"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
@@ -84,6 +86,7 @@ Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 ; not supported.
 Name: "en"; MessagesFile: "compiler:Default.isl"
 
+Name: "ar"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Arabic.isl"
 ; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
 Name: "cs"; MessagesFile: "compiler:Languages/Czech.isl"
 Name: "da"; MessagesFile: "compiler:Languages/Danish.isl"
@@ -92,6 +95,7 @@ Name: "fr"; MessagesFile: "compiler:Languages/French.isl"
 Name: "de"; MessagesFile: "compiler:Languages/German.isl"
 Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; Name: "he"; MessagesFile: "compiler:Languages/Hebrew.isl"
+Name: "hr"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Croatian.isl"
 ; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.islu"
 Name: "id"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Indonesian.isl"
 ; Name: "is"; MessagesFile: "compiler:Languages/Icelandic.isl"
