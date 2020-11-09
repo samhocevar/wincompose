@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -96,6 +96,7 @@ static void wstring_replace(wchar_t *buf, wchar_t const *src, wchar_t const *dst
     }
 }
 
+// Fix an XML tag. If value is nullptr, remove the tag entirely
 static void fix_tag(wchar_t *buf, wchar_t const *tag, wchar_t const *value)
 {
     wchar_t opening[128] = { 0 }, closing[128] = { 0 };
@@ -106,9 +107,22 @@ static void fix_tag(wchar_t *buf, wchar_t const *tag, wchar_t const *value)
     wchar_t *t2 = t1 ? wcsstr(t1, closing) : nullptr;
     if (t1 && t2)
     {
-        memmove(t1 + wcslen(opening) + wcslen(value), t2, (wcslen(t2) + 1) * sizeof(wchar_t));
-        memcpy(t1 + wcslen(opening), value, wcslen(value) * sizeof(wchar_t));
+        if (value)
+        {
+            memmove(t1 + wcslen(opening) + wcslen(value), t2, (wcslen(t2) + 1) * sizeof(wchar_t));
+            memcpy(t1 + wcslen(opening), value, wcslen(value) * sizeof(wchar_t));
+        }
+        else
+        {
+            size_t l2 = wcslen(closing);
+            memmove(t1, t2 + l2, (wcslen(t2 + l2) + 1) * sizeof(wchar_t));
+        }
     }
+}
+
+static void remove_tag(wchar_t* buf, wchar_t const* tag)
+{
+    return fix_tag(buf, tag, nullptr);
 }
 
 extern "C" __declspec(dllexport)
@@ -144,15 +158,17 @@ void __cdecl fix_file(wchar_t const *path)
     get_local_user_group_name(group);
     wstring_replace(buf, L"UserId", L"GroupId");
     fix_tag(buf, L"GroupId", group); // Can’t use SYSTEM because it can’t open GUIs
-    fix_tag(buf, L"LogonType", L"");
-    wstring_replace(buf, L"<LogonType></LogonType>", L"");
+    remove_tag(buf, L"LogonType");
 
     // Fix some additional task settings
-    fix_tag(buf, L"RunLevel", L"HighestAvailable");
-    fix_tag(buf, L"MultipleInstancesPolicy", L"Parallel");
+    fix_tag(buf, L"RunLevel", L"HighestAvailable"); // run with higest privileges
+    fix_tag(buf, L"ExecutionTimeLimit", L"PT0S");   // allow to run indefinitely
+    fix_tag(buf, L"MultipleInstancesPolicy", L"Parallel"); // allow multiple instances
     fix_tag(buf, L"DisallowStartIfOnBatteries", L"false");
     fix_tag(buf, L"StopIfGoingOnBatteries", L"false");
     fix_tag(buf, L"StopOnIdleEnd", L"false");
+    fix_tag(buf, L"StartWhenAvailable", L"false");
+    fix_tag(buf, L"RunOnlyIfNetworkAvailable", L"false");
 
     fd = CreateFileW(path, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS,
                      FILE_ATTRIBUTE_NORMAL, nullptr);
