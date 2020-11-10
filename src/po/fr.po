@@ -254,7 +254,7 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"Si la séquence saisie n'existe pas, ignorer tout les caractères déjà tapés. "
+"Si la séquence saisie n'existe pas, ignorer tous les caractères déjà tapés. "
 "Le comportement par défaut est d'afficher les caractères comme si la touche "
 "de composition n'avait pas été utilisée."
 
@@ -496,7 +496,7 @@ msgstr "Des mises à jour sont disponibles."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Séquences défini par l’utilisateur"
+msgstr "Séquences définies par l’utilisateur"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
