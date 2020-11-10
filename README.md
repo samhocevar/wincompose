@@ -82,8 +82,12 @@ WinCompose supports the standard Compose file format. It provides more than
 1700 compose rules from the [Xorg](http://www.x.org/wiki/) project and the
 [dotXCompose](https://github.com/kragen/xcompose) project. You can add custom
 rules by creating a file named `.XCompose` or `.XCompose.txt` in your
-`%USERPROFILE%` directory. WinCompose must be restarted for changes to take
+`%USERPROFILE%` folder. WinCompose must be restarted for changes to take
 effect.
+
+WinCompose stores its state in the `%APPDATA%\wincompose` folder: `settings.ini`
+contains the settings, and `metadata.xml` contains all the metadata associated
+with sequences.
 
 WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kbd>
 <kbd>(</kbd> <kbd>3</kbd> <kbd>)</kbd> for **③**.
