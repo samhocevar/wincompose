@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-11-10 10:18+0000\n"
+"PO-Revision-Date: 2020-11-10 18:59+0000\n"
 "Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
 "fr/>\n"
@@ -496,7 +496,7 @@ msgstr "Des mises à jour sont disponibles."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Séquences définies par l’utilisateur"
+msgstr "Séquences personnalisées"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
