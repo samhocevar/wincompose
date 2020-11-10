@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-04-17 21:11+0000\n"
-"Last-Translator: Jeannette L <j.lavoie@net-c.ca>\n"
+"PO-Revision-Date: 2020-11-10 10:18+0000\n"
+"Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/"
 "fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0.2-dev\n"
+"X-Generator: Weblate 4.4-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -254,9 +254,9 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"Si la séquence utilisée n'existe pas, ignorer tous les caractères saisis. Le "
-"comportement par défaut est d'afficher les caractères comme si la touche de "
-"composition n'avait pas été utilisée."
+"Si la séquence saisie n'existe pas, ignorer tout les caractères déjà tapés. "
+"Le comportement par défaut est d'afficher les caractères comme si la touche "
+"de composition n'avait pas été utilisée."
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -367,9 +367,9 @@ msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
-"Quand le Verrouillage de Majuscule (Caps Lock) est activé, la saisie d’une "
-"lettre accentuée telle que « é » produira toujours la majuscule "
-"correspondante, pour cet exemple « É »."
+"Quand le verrouillage de majuscule est activé, la saisie d’une lettre "
+"accentuée telle que « é » produira toujours la majuscule correspondante, "
+"pour cet exemple « É »."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
@@ -496,7 +496,7 @@ msgstr "Des mises à jour sont disponibles."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Séquences personnelles"
+msgstr "Séquences défini par l’utilisateur"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
@@ -579,7 +579,7 @@ msgid ""
 msgstr ""
 "Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone "
 "de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors "
-"de lancer « WinCompose Settings » ou « WinCompose Sequences » depuis le menu "
+"de lancer « WinCompose Settings » ou « WinCompose Sequences » depuis le menu "
 "Démarrer."
 
 #. The name of the “Home” key on the keyboard
