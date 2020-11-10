@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -89,8 +89,7 @@ public partial class Key
     private static Dictionary<string, string> ReadXorgKeySyms()
     {
         Dictionary<string, string> ret = new Dictionary<string, string>();
-        using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("3rdparty.keysymdef.h"))
-        using (StreamReader reader = new StreamReader(s))
+        using (var reader = new CompressedResourceStream("keysymdef.h.gz"))
         {
             Regex r = new Regex(@"^#define XK_([^ ]*).* U\+([A-Za-z0-9]+)");
             for (string l = reader.ReadLine(); l != null; l = reader.ReadLine())

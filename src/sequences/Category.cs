@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -56,8 +56,7 @@ namespace WinCompose
             var match_sequence = new Regex(@"^([0-9A-F ]+[0-9A-F]).*");
             var list = new List<EmojiCategory>();
 
-            using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("3rdparty.emoji-test.txt"))
-            using (StreamReader sr = new StreamReader(s))
+            using (var sr = new CompressedResourceStream("emoji-test.txt.gz"))
             {
                 EmojiCategory last_category = null;
                 string buffer = sr.ReadToEnd();

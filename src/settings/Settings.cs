@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -266,9 +266,9 @@ namespace WinCompose
             m_sequences.Clear();
 
             if (UseXorgRules.Value)
-                m_sequences.LoadResource("3rdparty.xorg.rules");
+                m_sequences.LoadResource("xorg.rules.gz");
             if (UseXComposeRules.Value)
-                m_sequences.LoadResource("3rdparty.xcompose.rules");
+                m_sequences.LoadResource("xcompose.rules.gz");
             if (UseEmojiRules.Value)
             {
                 m_sequences.LoadFile(Path.Combine(Utils.DataDir, "Emoji.txt"));

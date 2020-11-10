@@ -2,6 +2,24 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="build.config" />
+  <UsingTask TaskName="GZipTask" TaskFactory="CodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <InputFile ParameterType="System.String" Required="true" />
+      <OutputFile ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System.IO.Compression" />
+      <Using Namespace="System.IO.Compression" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+          Directory.CreateDirectory(Path.GetDirectoryName(OutputFile));
+          var data = File.ReadAllBytes(InputFile);
+          using (var s = new FileStream(OutputFile, FileMode.Create))
+              using (var gs = new GZipStream(s, CompressionLevel.Optimal, false))
+                  gs.Write(data, 0, data.Length);
+      ]]></Code>
+    </Task>
+  </UsingTask>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -70,6 +88,7 @@
     <Compile Include="interop\WinApi.cs" />
     <Compile Include="interop\WinTypes.cs" />
     <Compile Include="misc\AtomicFlag.cs" />
+    <Compile Include="misc\CompressedResource.cs" />
     <Compile Include="misc\IniFile.cs" />
     <Compile Include="misc\SysTray.cs" />
     <Compile Include="misc\Utils.cs" />
@@ -171,20 +190,50 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <Target Name="CompressResources" BeforeTargets="BeforeBuild"
+          Inputs="3rdparty\xorgproto\include\X11\keysymdef.h
+                  3rdparty\libx11\nls\en_US.UTF-8\Compose.pre
+                  3rdparty\xcompose\dotXCompose
+                  3rdparty\unicode-emoji\emoji-test.txt"
+          Outputs="$(OutputPath)\keysymdef.h.gz
+                   $(OutputPath)\xorg.rules.gz
+                   $(OutputPath)\xcompose.rules.gz
+                   $(OutputPath)\emoji-test.txt.gz">
+    <GZipTask InputFile="3rdparty\xorgproto\include\X11\keysymdef.h"
+              OutputFile="$(OutputPath)\keysymdef.h.gz" />
+    <GZipTask InputFile="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre"
+              OutputFile="$(OutputPath)\xorg.rules.gz" />
+    <GZipTask InputFile="3rdparty\xcompose\dotXCompose"
+              OutputFile="$(OutputPath)\xcompose.rules.gz" />
+    <GZipTask InputFile="3rdparty\unicode-emoji\emoji-test.txt"
+              OutputFile="$(OutputPath)\emoji-test.txt.gz" />
+  </Target>
+  <ItemGroup>
+    <Item Include="3rdparty\xorgproto\include\X11\keysymdef.h" />
+    <Item Include="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" />
+    <Item Include="3rdparty\xcompose\dotXCompose" />
+    <Item Include="3rdparty\unicode-emoji\emoji-test.txt" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="build.config" />
-    <EmbeddedResource Include="3rdparty\xorgproto\include\X11\keysymdef.h">
-      <LogicalName>3rdparty.keysymdef.h</LogicalName>
+    <EmbeddedResource Include="$(OutputPath)\keysymdef.h.gz">
+      <Visible>false</Visible>
+      <LogicalName>keysymdef.h.gz</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre">
-      <LogicalName>3rdparty.xorg.rules</LogicalName>
+    <EmbeddedResource Include="$(OutputPath)\xorg.rules.gz">
+      <Visible>false</Visible>
+      <LogicalName>xorg.rules.gz</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="3rdparty\xcompose\dotXCompose">
-      <LogicalName>3rdparty.xcompose.rules</LogicalName>
+    <EmbeddedResource Include="$(OutputPath)\xcompose.rules.gz">
+      <Visible>false</Visible>
+      <LogicalName>xcompose.rules.gz</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="3rdparty\unicode-emoji\emoji-test.txt">
-      <LogicalName>3rdparty.emoji-test.txt</LogicalName>
+    <EmbeddedResource Include="$(OutputPath)\emoji-test.txt.gz">
+      <Visible>false</Visible>
+      <LogicalName>emoji-test.txt.gz</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -202,9 +251,9 @@
     <Resource Include="res\key_compose_big.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="rules\DefaultUserSequences.txt" />
-    <Resource Include="rules\Emoji.txt" />
-    <Resource Include="rules\WinCompose.txt" />
+    <Item Include="rules\DefaultUserSequences.txt" />
+    <Item Include="rules\Emoji.txt" />
+    <Item Include="rules\WinCompose.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="3rdparty\wpf-notify-icon\wpf-notifyicon\NotifyIconWpf\NotifyIconWpf.csproj">
