@@ -135,7 +135,11 @@ Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
 Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}";
 ; Set the elevation bit on wincompose.exe.lnk because it launches an elevated task
 Name: "{group}\{#NAME}"; Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; \
-    IconFilename: "{app}\{#EXE}"; AfterInstall: set_elevation_bit('{group}\{#NAME}.lnk')
+    IconFilename: "{app}\{#EXE}"; AfterInstall: set_elevation_bit('{group}\{#NAME}.lnk'); \
+    Check: is_elevated_run()
+; In non-admin mode, the shortcut just runs the .exe
+Name: "{group}\{#NAME}"; Filename: "{app}\{#EXE}"; IconFilename: "{app}\{#EXE}"; \
+    Check: not is_elevated_run()
 ; We provide these shortcuts in case the notification area icon is disabled
 Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#EXE}"; IconIndex: 1; Parameters: "-sequences"
 Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#EXE}"; IconIndex: 2; Parameters: "-settings"
@@ -149,11 +153,18 @@ Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#EXE}"; IconIndex: 2; Parame
 ; events into other high level processes, such as cmd.exe run as Administrator.
 ; FIXME: On Windows XP, tasks are in {win}\Tasks instead of {sys}\Tasks and
 ; their format is .job (binary) instead of .xml!
-Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /tr ""\""{app}\{#EXE}\"" /fromtask"""; Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /sc onlogon /tr ""\""{app}\{#EXE}\"" /fromtask"""; \
+    Flags: runhidden; Check: is_elevated_run()
 Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /f /create /xml ""{sys}\Tasks\{#NAME}"""; \
-    BeforeInstall: fix_scheduled_task('{sys}\Tasks\{#NAME}'); Flags: runhidden
+    BeforeInstall: fix_scheduled_task('{sys}\Tasks\{#NAME}'); \
+    Flags: runhidden; Check: is_elevated_run()
 ; Launch the task just after installation
-Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; Flags: runhidden
+Filename: "{sys}\schtasks"; Parameters: "/tn ""{#NAME}"" /run"; \
+    Flags: runhidden; Check: is_elevated_run()
+
+; Non-admin mode: just run the .exe
+Filename: "{app}\{#EXE}"; \
+    Flags: nowait; Check: not is_elevated_run()
 
 [InstallDelete]
 ; We used to be installed in c:\Program Files (x86)

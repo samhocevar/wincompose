@@ -68,6 +68,18 @@ begin
 end;
 
 {
+{ Helper function to know whether the current installer was run in elevated mode
+}
+function is_elevated_run(): boolean;
+var
+    i: integer;
+begin
+    result := false;
+    for i := 1 to paramcount do
+        if comparetext(paramstr(i), '/elevate') = 0 then result := true;
+end;
+
+{
 { Translation support
 }
 function _(src: string): string;
@@ -150,9 +162,7 @@ var
     i: integer;
     homepage: tnewstatictext;
 begin
-    state := s_run_1;
-    for i := 1 to paramcount do
-        if comparetext(paramstr(i), '/elevate') = 0 then state := s_run_2;
+    if is_elevated_run() then state := s_run_2 else state := s_run_1;
 
     { Add a link to the homepage at the bottom of the installer window }
     homepage := tnewstatictext.create(wizardform);
