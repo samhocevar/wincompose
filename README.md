@@ -1,8 +1,7 @@
 ﻿WinCompose
 ==========
 
-A compose key for Windows, free and opensource, created by Sam Hocevar
-with the help of [dozens of contributors](https://github.com/samhocevar/wincompose/graphs/contributors).
+A compose key for Windows, free and opensource, created by Sam Hocevar.
 
 A **compose key** allows to easily write special characters such as **é
 ž à ō û ø ☺ ¤ ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often
@@ -101,11 +100,15 @@ can help us translate it to more languages using the Weblate project:
 
 <a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
 
-Sam wrote WinCompose because none of the alternatives (FreeCompose,
-CKFW, AllChars or Unichars) were found to be satisfying.
+Development
+-----------
+
+Make sure that all Git submodules are fetched, then just open `src/wincompose.sln`
+in Visual Studio in order to build WinCompose. You will also need to install
+[Inno Setup](https://jrsoftware.org/isinfo.php) if you wish to build the installer.
 
 Bugs and Improvements
 ---------------------
 
 Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>
-or to the [GitHub issue tracker](https://github.com/samhocevar/wincompose/issues).
+or preferably to the [GitHub issue tracker](https://github.com/samhocevar/wincompose/issues).
