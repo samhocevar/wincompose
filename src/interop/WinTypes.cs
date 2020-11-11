@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -67,8 +67,8 @@ public enum VK : int
     PAUSE      = 0x13,
     CAPITAL    = 0x14,
     KANA       = 0x15,
-    HANGUEL    = 0x15,
     HANGUL     = 0x15,
+    HANGUEL    = 0x15,
     /* 0x16: undefined */
     JUNJA      = 0x17,
     FINAL      = 0x18,
@@ -103,7 +103,16 @@ public enum VK : int
     APPS       = 0x5d,
     /* 0x5e: reserved */
     SLEEP      = 0x5f,
-    /* 0x60 … 0x69: numpad 0—9 */
+    NUMPAD0    = 0x60,
+    NUMPAD1    = 0x61,
+    NUMPAD2    = 0x62,
+    NUMPAD3    = 0x63,
+    NUMPAD4    = 0x64,
+    NUMPAD5    = 0x65,
+    NUMPAD6    = 0x66,
+    NUMPAD7    = 0x67,
+    NUMPAD8    = 0x68,
+    NUMPAD9    = 0x69,
     MULTIPLY   = 0x6a,
     ADD        = 0x6b,
     SEPARATOR  = 0x6c,
@@ -144,21 +153,38 @@ public enum VK : int
     RCONTROL   = 0xa3,
     LMENU      = 0xa4,
     RMENU      = 0xa5,
-    /* 0xa6 … 0xb7: browser, volume, media, launch */
+    BROWSER_BACK        = 0xa6,
+    BROWSER_FORWARD     = 0xa7,
+    BROWSER_REFRESH     = 0xa8,
+    BROWSER_STOP        = 0xa9,
+    BROWSER_SEARCH      = 0xaa,
+    BROWSER_FAVORITES   = 0xab,
+    BROWSER_HOME        = 0xac,
+    VOLUME_MUTE         = 0xad,
+    VOLUME_DOWN         = 0xae,
+    VOLUME_UP           = 0xaf,
+    MEDIA_NEXT_TRACK    = 0xb0,
+    MEDIA_PREV_TRACK    = 0xb1,
+    MEDIA_STOP          = 0xb2,
+    MEDIA_PLAY_PAUSE    = 0xb3,
+    LAUNCH_MAIL         = 0xb4,
+    LAUNCH_MEDIA_SELECT = 0xb5,
+    LAUNCH_APP1         = 0xb6,
+    LAUNCH_APP2         = 0xb7,
     /* 0xb8 … 0xb9: reserved */
-    OEM_1      = 0xba,
+    OEM_1      = 0xba, // the ;: key (US keyboard)
     OEM_PLUS   = 0xbb,
     OEM_COMMA  = 0xbc,
     OEM_MINUS  = 0xbd,
     OEM_PERIOD = 0xbe,
-    OEM_2      = 0xbf,
-    OEM_3      = 0xc0,
+    OEM_2      = 0xbf, // the /? key (US keyboard)
+    OEM_3      = 0xc0, // the `~ key (US keyboard)
     /* 0xc1 … 0xd7: reserved */
     /* 0xd8 … 0xda: unassigned */
-    OEM_4      = 0xdb,
-    OEM_5      = 0xdc,
-    OEM_6      = 0xdd,
-    OEM_7      = 0xde,
+    OEM_4      = 0xdb, // the [{ key (US keyboard)
+    OEM_5      = 0xdc, // the \| key (US keyboard)
+    OEM_6      = 0xdd, // the ]} key (US keyboard)
+    OEM_7      = 0xde, // the '" key (US keyboard)
     OEM_8      = 0xdf,
     /* 0xe0: reserved */
     /* 0xe1: OEM specific */
