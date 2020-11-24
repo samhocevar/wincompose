@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-10-18 06:26+0000\n"
-"Last-Translator: Eric <spice2wolf@gmail.com>\n"
+"PO-Revision-Date: 2020-11-24 06:54+0000\n"
+"Last-Translator: liuxilu <liuxilu@live.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "wincompose/master/zh_Hans/>\n"
 "Language: zh\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.3.1-dev\n"
+"X-Generator: Weblate 4.4-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -47,12 +47,12 @@ msgstr "右 Ctrl 键"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr "左 Windows 键"
+msgstr "左 Win 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr "右 Windows 键"
+msgstr "右 Win 键"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
@@ -107,23 +107,21 @@ msgstr "回车键"
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr "组合键设置"
+msgstr "组合键"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr "使用来自 Xorg 项目的组合键序列"
+msgstr "使用 Xorg 项目的按键序列"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr ""
-"使用来自 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些组合键序列常"
-"见于标准的 Linux 系统中。"
+msgstr "使用 Xorg 项目 (http://www.x.org/) 的三千多个按键序列。这些按键序列常见于标准 Linux 系统。"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr "使用来自 XCompose 项目的组合键序列"
+msgstr "使用 XCompose 项目的按键序列"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -131,8 +129,8 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"使用来自开源项目 XCompose (https://github.com/kragen/xcompose) 中的一千多个组"
-"合键序列。这些序列可能会与 Xorg 中的序列冲突。"
+"使用开源项目 XCompose (https://github.com/kragen/xcompose) 的一千多个按键序列。这些序列可能会与 Xorg "
+"的序列冲突。"
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -142,25 +140,25 @@ msgstr "使用 WinCompose 的表情符号序列"
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr "使用来自 WinCompose 的作者以及社区贡献者的表情符号序列。"
+msgstr "使用 WinCompose 作者及社区贡献者的表情符号序列。"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
-msgstr "Debug 窗口"
+msgstr "调试窗口"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "显示组合键序列…"
+msgstr "显示按键序列…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr "停用 WinCompose"
+msgstr "停用"
 
 #: i18n/Text.resx:229 ID:Restart
 msgid "Restart"
-msgstr "重新启动"
+msgstr "重启程序"
 
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
@@ -183,19 +181,17 @@ msgstr "Unicode 字符"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr "组合键序列"
+msgstr "按键序列"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr "自动尝试将两个按键交换"
+msgstr "尝试交换两个按键"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr ""
-"在输入两个按键的序列时，自动尝试交换这两个按键。例如，如果“组合键 E A”不是有"
-"效的序列，则自动尝试“组合键 A E”。"
+msgstr "尝试交换两键序列的两个键。例如，如果“组合键 E A”不是有效序列，则自动尝试“组合键 A E”。"
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -223,47 +219,41 @@ msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
-msgstr ""
-"启用所有字符的 Unicode 输入，即使它们未在组合键序列表中定义。比如：“组合键 U "
-"1 A 3 F 回车键”这个序列会输出 Unicode 字符 U+1A3F"
+msgstr "启用所有字符的 Unicode 输入，即使它们未定义在按键序列表。例如，“组合键 U 1 A 3 F 回车”会输出字符 U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "当输入的序列无效时"
+msgstr "当按键序列无效"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "尝试忽略按键的大小写的匹配"
+msgstr "回退到无大小写的匹配"
 
 #: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
-"如果输入的序列没有组合键序列的定义，但是存在一个仅有大小写区别的定义，则自动"
-"使用这个序列。"
+msgstr "如果输入的序列不存在，但有一个仅大小写不同，则自动纠正。"
 
 #: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr "舍弃所有已经输入的字符"
+msgstr "丢弃所有已输入字符"
 
 #: i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr ""
-"如果输入的序列没有组合键序列的定义，丢弃所有已经输入的字符。默认的行为是像没"
-"有使用组合键一样，直接输出所有已经输入的字符。"
+msgstr "如果输入的序列不存在，丢弃所有已输入字符。默认的行为是直接输出字符，如同没用组合键那样。"
 
 #: i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr "发出一声哔响"
+msgstr "发出一声哔"
 
 #: i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "如果输入的序列没有组合键序列的定义，则发出系统的哔响。"
+msgstr "如果输入的序列不存在，则发出系统哔声。"
 
 #: i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -273,7 +263,7 @@ msgstr "界面语言："
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
-msgstr "选择 WinCompose 的用户界面语言。默认为操作系统当前语言。"
+msgstr "选择 WinCompose 的用户界面语言。默认为系统语言。"
 
 #. Close the settings window
 #: i18n/Text.resx:321 ID:Close
@@ -298,20 +288,18 @@ msgstr "应用"
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "保留组合键原始功能"
+msgstr "保留组合键原功能"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
-msgstr ""
-"这个选项要求 WinCompose 最大程度保证用作“组合键”的按键的原始功能。例如：即使"
-"指定 Alt 键为组合键，“Alt+Tab”的功能仍然可用。"
+msgstr "这让 WinCompose 最大程度保持组合键的原功能。例如，即使指定 Alt 键为组合键，“Alt+Tab”的功能仍然可用。"
 
 #: i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "在 Office 应用中插入零宽度空格"
+msgstr "在 Office 应用中插入零宽空格"
 
 #: i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid ""
@@ -319,8 +307,7 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
-"微软 Office 应用程序有时会在输入特定的 Unicode 字符后，动态地更改文档字体。这"
-"个选项在输入 Unicode 字符后，插入一个不可见的空格，以避免这种问题出现。"
+"输入某些特定 Unicode 字符时，微软 Office 应用的文档字体会乱动。此功能为了避免这个问题，在 Unicode 字符后插入一个不可见的空格。"
 
 #: i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -331,22 +318,18 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
-"如果将大写锁定键 (Caps Lock 键) 设置为“组合键”，其原有功能将不可用。这个选项"
-"允许同时按下左右两个 Shift 键来打开大写锁定功能。"
+msgstr "如果将 Caps Lock（大写锁定）设置为“组合键”，其原有功能将不可用。这个功能允许同时按下左右两个 Shift 键来打开大写锁定。"
 
 #: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "使用 Shift 键停用大写锁定功能"
+msgstr "Shift 键关闭大写锁定"
 
 #: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr ""
-"如果大写锁定键 (Caps Lock 键) 被设置为“组合键”，其原有功能将不可用。这个选项"
-"允许按下 Shift 键来关闭大写锁定功能。"
+msgstr "如果将 Caps Lock（大写锁定）设置为“组合键”，其原有功能将不可用。这个功能允许按下 Shift 键来关闭大写锁定。"
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
@@ -382,26 +365,26 @@ msgstr "选项…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2} 组合键：{0} ({1} 个组合键序列)"
+msgstr "WinCompose v{2}：{0}（{1} 个按键序列）"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:397 ID:General
 msgid "General"
-msgstr "常规选项"
+msgstr "常规"
 
 #: i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
-msgstr "特性"
+msgstr "表现"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr "组合键序列 — WinCompose"
+msgstr "按键序列 — WinCompose"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
-msgstr "用户自定义的宏"
+msgstr "用户定义的宏"
 
 #: i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
@@ -440,7 +423,7 @@ msgstr "下载 WinCompose {0}"
 #. Window title of the About box
 #: i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr "关于 — WinCompose"
+msgstr "关于 WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:445 ID:Programming
@@ -460,12 +443,12 @@ msgstr "开发者"
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
 msgid "License"
-msgstr "证书"
+msgstr "许可证"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr "WinCompose 需要重新启动，才能使部分设置生效。"
+msgstr "需要重启 WinCompose 才能使部分设置生效。"
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:465 ID:ReportBug
@@ -484,7 +467,7 @@ msgstr "有新版本可用。"
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "用户自定义的序列"
+msgstr "用户定义的序列"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
@@ -502,8 +485,7 @@ msgstr "允许注入的按键"
 
 #: i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr ""
-"这个选项允许 WinCompose 接受比如 AutoHotKey 或者 Synergy 这类程序发送的按键"
+msgstr "接收其它程序发送的按键，如 AutoHotKey 或 Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
@@ -523,21 +505,17 @@ msgstr "自动检查更新"
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
-msgstr ""
-"如果勾选这个选项，WinCompose 将定期连接互联网来检查新版本。新版本不会自动安"
-"装。"
+msgstr "如果启用，WinCompose 将定期连接互联网来检查新版本。新版本不会自动安装。"
 
 #: i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr "尝试保持在系统通知栏可见"
+msgstr "尝试保持通知区图标可见"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr ""
-"一般情况下，Windows 会在一段时间后隐藏通知区（系统托盘区）的图标。这个选项会"
-"尝试让 WinCompose 的图标一直可见。"
+msgstr "Windows 默认在一段时间后隐藏通知区图标。这个选项会尝试保持 WinCompose 图标可见。"
 
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
@@ -546,7 +524,7 @@ msgstr "更改…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr "请按下要指定为“组合键”的按键。"
+msgstr "请按要指定为“组合键”的键。"
 
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
@@ -563,9 +541,8 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
-"如果勾选这个选项，WinCompose 将不会在通知区（系统托盘区）显示图标。将只能通过"
-"开始菜单的“WinCompose 设置”和“WinCompose 组合键序列”来打开 WinCompose 的界"
-"面。"
+"如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通过开始菜单的“WinCompose 设置”和“"
+"WinCompose 按键序列”。"
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -590,29 +567,29 @@ msgstr "无超时"
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr "高级设置"
+msgstr "高级"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr "无视匹配该正则表达式的窗口:"
+msgstr "忽略匹配该正则的窗口："
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
-msgstr "当前窗口类或窗口名称与此正则表达式匹配时，Wicompose将被完全禁用。"
+msgstr "当前窗口类名或标题匹配此正则表达式时，Wicompose 将完全停用。"
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr "备用组合键始终是Compose"
+msgstr "副组合键始终作为组合键"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
-msgstr "如果启用，所有组合键将被视为序列中的Compose。默认情况下，只有第一个按下的键将担当Compose角色，其他组合键将保持其原始角色。"
+msgstr "如果启用，所有组合键都将被视为序列中的组合键。默认只有第一个按过的键作为组合键，其他组合键将保持原角色。"
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
@@ -633,17 +610,17 @@ msgstr "收藏"
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr "若启用该设置，那么在没有检测到键盘活动的情况下，任何组合序列都将在一定的延迟之后被取消。"
+msgstr "如果设置，则检测不到键盘活动一定时间后，任何组合序列都会取消。"
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr "键盘 LED"
+msgstr "键盘灯"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr "如果启用，则当一个合成序列进行时，相应的键盘LED将点亮。"
+msgstr "如果设置，则组合序列输入时，会点亮相应键盘灯。"
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
@@ -653,27 +630,27 @@ msgstr "组合键"
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr "其他，控制字符"
+msgstr "其他，控制符"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr "其他，格式字符"
+msgstr "其他，格式符"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr "其他，未分类"
+msgstr "其他，未分配"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "其他，专用"
+msgstr "其他，私用"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "其他，代理项"
+msgstr "其他，代理"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:141 ID:LowercaseLetter
@@ -683,7 +660,7 @@ msgstr "字母，小写"
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr "字母，修饰符"
+msgstr "字母，修饰"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:149 ID:OtherLetter
@@ -693,7 +670,7 @@ msgstr "字母，其他"
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "字母，词首字母大写"
+msgstr "字母，合字首字大写"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:157 ID:UppercaseLetter
@@ -703,17 +680,17 @@ msgstr "字母，大写"
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "符号，间隔组合"
+msgstr "标记，间隔合字符"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr "符号，封闭"
+msgstr "标记，闭合合字符"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "符号，不占位"
+msgstr "标记，无间隔合字符"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:173 ID:DecimalDigitNumber
@@ -723,7 +700,7 @@ msgstr "数字，十进制数字"
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
-msgstr "数字，字母"
+msgstr "数字，类字母"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:181 ID:OtherNumber
@@ -738,12 +715,12 @@ msgstr "标点，连接符"
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr "标点，短划线"
+msgstr "标点，连字符"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:193 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr "标点，结束"
+msgstr "标点，后"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:197 ID:FinalQuotePunctuation
@@ -763,7 +740,7 @@ msgstr "标点，其他"
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:209 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr "标点，开始"
+msgstr "标点，前"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:213 ID:CurrencySymbol
@@ -773,7 +750,7 @@ msgstr "符号，货币"
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr "符号，修饰符"
+msgstr "符号，修饰"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:221 ID:MathSymbol
@@ -808,7 +785,7 @@ msgstr "前置需求"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:175
 msgid "Software required by WinCompose"
-msgstr "WinCompose 的前置软件需求"
+msgstr "WinCompose 需要的软件"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:178
@@ -818,8 +795,8 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose 需要 .NET Framework, 3.5 SP1 或更高版本，这台计算机似乎并未安装。\n"
-"下列操作或许可以帮助解决这个问题:"
+"WinCompose 需要 .NET Framework 3.5 SP1 或更高版本，本机似乎并未安装。\n"
+"下列操作或可帮助解决问题："
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:183
@@ -832,8 +809,8 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
-"一旦完成安装，您就可以返回此屏幕并继续\n"
-"安装WinCompose。"
+"安装完成后，您就可以\n"
+"返回此屏幕并继续安装。"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:284
