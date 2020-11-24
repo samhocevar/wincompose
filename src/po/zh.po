@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-11-24 06:54+0000\n"
+"PO-Revision-Date: 2020-11-25 08:28+0000\n"
 "Last-Translator: liuxilu <liuxilu@live.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "wincompose/master/zh_Hans/>\n"
@@ -263,7 +263,7 @@ msgstr "界面语言："
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
-msgstr "选择 WinCompose 的用户界面语言。默认为系统语言。"
+msgstr "选择 WinCompose 界面所用的语言。默认为系统语言。"
 
 #. Close the settings window
 #: i18n/Text.resx:321 ID:Close
@@ -333,15 +333,13 @@ msgstr "如果将 Caps Lock（大写锁定）设置为“组合键”，其原�
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr "大写锁定状态始终锁定为大写字母"
+msgstr "大写锁定用于全部字母"
 
 #: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
-"如果启用大写锁定功能，输入比如“é”这样的重音字母时，会输出对应的大写字母比"
-"如“É”。"
+msgstr "大写锁定时，输入“é”这种重音字母，会输出相应大写字母，本例是“É”。"
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
@@ -428,17 +426,17 @@ msgstr "关于 WinCompose"
 #. The section where we list all programmers.
 #: i18n/Text.resx:445 ID:Programming
 msgid "Programming"
-msgstr "程序设计"
+msgstr "编程"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:449 ID:Translators
 msgid "Translation"
-msgstr "翻译人员"
+msgstr "翻译"
 
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr "开发者"
+msgstr "作者"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
