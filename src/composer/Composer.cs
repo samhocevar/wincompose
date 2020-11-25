@@ -558,11 +558,12 @@ exit_forward_key:
     {
         List<VK> modifiers = new List<VK>();
 
-        /* HACK: GTK+ applications behave differently with Unicode, and some
-         * applications such as XChat for Windows rename their own top-level
-         * window, so we parse through the names we know in order to detect
-         * a GTK+ application. */
-        bool use_gtk_hack = KeyboardLayout.Window.IsGtk;
+        // HACK: GTK+ applications will crash when receiving surrogate pairs through VK.PACKET,
+        // so we use the Ctrl-Shift-u special sequence.
+        bool use_gtk_hack = false;
+        foreach (var ch in str)
+            use_gtk_hack |= char.IsSurrogate(ch);
+        use_gtk_hack &= KeyboardLayout.Window.IsGtk;
 
         /* HACK: in MS Office, some symbol insertions change the text font
          * without returning to the original font. To avoid this, we output
@@ -618,9 +619,12 @@ exit_forward_key:
                 }
                 else
                 {
-                    /* Wikipedia says Ctrl+Shift+u, release, then type the four
-                     * hex digits, and press Enter.
-                     * (http://en.wikipedia.org/wiki/Unicode_input). */
+                    // GTK+ hack:
+                    //  - Wikipedia says Ctrl+Shift+u, release, then type the four hex digits,
+                    //    and press Enter (http://en.wikipedia.org/wiki/Unicode_input).
+                    //  - The Gimp accepts either Enter or Space but stops immediately in both
+                    //    cases.
+                    //  - Inkscape stops after Enter, but allows to chain sequences using Space.
                     SendKeyDown(VK.LCONTROL);
                     SendKeyDown(VK.LSHIFT);
                     SendKeyPress((VK)'U');
@@ -629,6 +633,8 @@ exit_forward_key:
 
                     foreach (var key in $"{(short)ch:X04} ")
                         SendKeyPress((VK)key);
+
+                    SendKeyPress(VK.RETURN);
                 }
             }
 
