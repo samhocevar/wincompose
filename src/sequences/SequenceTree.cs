@@ -119,11 +119,8 @@ public class SequenceTree : SequenceNode
             Key k = Key.FromKeySymOrChar(keysyms[i]);
             if (k == null)
             {
-                if (!m_invalid_keys.ContainsKey(keysyms[i]))
-                {
-                    m_invalid_keys[keysyms[i]] = true;
+                if (m_invalid_keys.Add(keysyms[i]))
                     Log.Debug($"Unknown key name <{keysyms[i]}>, ignoring sequence");
-                }
                 return; // Unknown key name! Better bail out
             }
 
@@ -203,7 +200,7 @@ public class SequenceTree : SequenceNode
     }
 
     private IList<string> m_loaded_files = new List<string>();
-    private IDictionary<string, bool> m_invalid_keys = new Dictionary<string, bool>();
+    private HashSet<string> m_invalid_keys = new HashSet<string>();
 }
 
 /// <summary>
