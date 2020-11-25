@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -152,8 +152,9 @@ static class Composer
                 if (Settings.ComposeKeys.Value.Contains(new Key(VK.RMENU)))
                     goto exit_discard_key;
 
-                // Otherwise ignore the keypress, it’s not for us
-                goto exit_forward_key;
+                // Otherwise they keypress is not for us, ignore it, unless capturing
+                if (Captured != null)
+                    goto exit_forward_key;
             }
         }
 
