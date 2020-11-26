@@ -133,10 +133,10 @@
     <value>右 Ctrl 键</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>左 Windows 键</value>
+    <value>左 Win 键</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>右 Windows 键</value>
+    <value>右 Win 键</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock 键</value>
@@ -169,37 +169,37 @@
     <value>回车键</value>
   </data>
   <data name="Composing" xml:space="preserve">
-    <value>组合键设置</value>
+    <value>组合键</value>
   </data>
   <data name="UseXorgRules" xml:space="preserve">
-    <value>使用来自 Xorg 项目的组合键序列</value>
+    <value>使用 Xorg 项目的按键序列</value>
   </data>
   <data name="UseXorgRulesToolTip" xml:space="preserve">
-    <value>使用来自 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些组合键序列常见于标准的 Linux 系统中。</value>
+    <value>使用 Xorg 项目 (http://www.x.org/) 的三千多个按键序列。这些按键序列常见于标准 Linux 系统。</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
-    <value>使用来自 XCompose 项目的组合键序列</value>
+    <value>使用 XCompose 项目的按键序列</value>
   </data>
   <data name="UseXComposeRulesToolTip" xml:space="preserve">
-    <value>使用来自开源项目 XCompose (https://github.com/kragen/xcompose) 中的一千多个组合键序列。这些序列可能会与 Xorg 中的序列冲突。</value>
+    <value>使用开源项目 XCompose (https://github.com/kragen/xcompose) 的一千多个按键序列。这些序列可能会与 Xorg 的序列冲突。</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
     <value>使用 WinCompose 的表情符号序列</value>
   </data>
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
-    <value>使用来自 WinCompose 的作者以及社区贡献者的表情符号序列。</value>
+    <value>使用 WinCompose 作者及社区贡献者的表情符号序列。</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
-    <value>Debug 窗口</value>
+    <value>调试窗口</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>显示组合键序列…</value>
+    <value>显示按键序列…</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>停用 WinCompose</value>
+    <value>停用</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>重新启动</value>
+    <value>重启程序</value>
   </data>
   <data name="DonationPage" xml:space="preserve">
     <value>捐款页面</value>
@@ -214,13 +214,13 @@
     <value>Unicode 字符</value>
   </data>
   <data name="Sequences" xml:space="preserve">
-    <value>组合键序列</value>
+    <value>按键序列</value>
   </data>
   <data name="SwapOnInvalid" xml:space="preserve">
-    <value>自动尝试将两个按键交换</value>
+    <value>尝试交换两个按键</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>在输入两个按键的序列时，自动尝试交换这两个按键。例如，如果“组合键 E A”不是有效的序列，则自动尝试“组合键 A E”。</value>
+    <value>尝试交换两键序列的两个键。例如，如果“组合键 E A”不是有效序列，则自动尝试“组合键 A E”。</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>搜索过滤器：</value>
@@ -238,34 +238,34 @@
     <value>高级 Unicode 输入</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>启用所有字符的 Unicode 输入，即使它们未在组合键序列表中定义。比如：“组合键 U 1 A 3 F 回车键”这个序列会输出 Unicode 字符 U+1A3F</value>
+    <value>启用所有字符的 Unicode 输入，即使它们未定义在按键序列表。例如，“组合键 U 1 A 3 F 回车”会输出字符 U+1A3F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>当输入的序列无效时</value>
+    <value>当按键序列无效</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>尝试忽略按键的大小写的匹配</value>
+    <value>回退到无大小写的匹配</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>如果输入的序列没有组合键序列的定义，但是存在一个仅有大小写区别的定义，则自动使用这个序列。</value>
+    <value>如果输入的序列不存在，但有一个仅大小写不同，则自动纠正。</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>舍弃所有已经输入的字符</value>
+    <value>丢弃所有已输入字符</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>如果输入的序列没有组合键序列的定义，丢弃所有已经输入的字符。默认的行为是像没有使用组合键一样，直接输出所有已经输入的字符。</value>
+    <value>如果输入的序列不存在，丢弃所有已输入字符。默认的行为是直接输出字符，如同没用组合键那样。</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>发出一声哔响</value>
+    <value>发出一声哔</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>如果输入的序列没有组合键序列的定义，则发出系统的哔响。</value>
+    <value>如果输入的序列不存在，则发出系统哔声。</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>界面语言：</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>选择 WinCompose 的用户界面语言。默认为操作系统当前语言。</value>
+    <value>选择 WinCompose 界面所用的语言。默认为系统语言。</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>关闭</value>
@@ -280,34 +280,34 @@
     <value>应用</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>保留组合键原始功能</value>
+    <value>保留组合键原功能</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>这个选项要求 WinCompose 最大程度保证用作“组合键”的按键的原始功能。例如：即使指定 Alt 键为组合键，“Alt+Tab”的功能仍然可用。</value>
+    <value>这让 WinCompose 最大程度保持组合键的原功能。例如，即使指定 Alt 键为组合键，“Alt+Tab”的功能仍然可用。</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>在 Office 应用中插入零宽度空格</value>
+    <value>在 Office 应用中插入零宽空格</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>微软 Office 应用程序有时会在输入特定的 Unicode 字符后，动态地更改文档字体。这个选项在输入 Unicode 字符后，插入一个不可见的空格，以避免这种问题出现。</value>
+    <value>输入某些特定 Unicode 字符时，微软 Office 应用的文档字体会乱动。此功能为了避免这个问题，在 Unicode 字符后插入一个不可见的空格。</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>用两个 Shift 键模拟 Caps Lock 键</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>如果将大写锁定键 (Caps Lock 键) 设置为“组合键”，其原有功能将不可用。这个选项允许同时按下左右两个 Shift 键来打开大写锁定功能。</value>
+    <value>如果将 Caps Lock（大写锁定）设置为“组合键”，其原有功能将不可用。这个功能允许同时按下左右两个 Shift 键来打开大写锁定。</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>使用 Shift 键停用大写锁定功能</value>
+    <value>Shift 键关闭大写锁定</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>如果大写锁定键 (Caps Lock 键) 被设置为“组合键”，其原有功能将不可用。这个选项允许按下 Shift 键来关闭大写锁定功能。</value>
+    <value>如果将 Caps Lock（大写锁定）设置为“组合键”，其原有功能将不可用。这个功能允许按下 Shift 键来关闭大写锁定。</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
-    <value>大写锁定状态始终锁定为大写字母</value>
+    <value>大写锁定用于全部字母</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>如果启用大写锁定功能，输入比如“é”这样的重音字母时，会输出对应的大写字母比如“É”。</value>
+    <value>大写锁定时，输入“é”这种重音字母，会输出相应大写字母，本例是“É”。</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>分类</value>
@@ -322,19 +322,19 @@
     <value>选项…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} 组合键：{0} ({1} 个组合键序列)</value>
+    <value>WinCompose v{2}：{0}（{1} 个按键序列）</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>常规选项</value>
+    <value>常规</value>
   </data>
   <data name="Behavior" xml:space="preserve">
-    <value>特性</value>
+    <value>表现</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>组合键序列 — WinCompose</value>
+    <value>按键序列 — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>用户自定义的宏</value>
+    <value>用户定义的宏</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose 已停用</value>
@@ -358,22 +358,22 @@
     <value>下载 WinCompose {0}</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
-    <value>关于 — WinCompose</value>
+    <value>关于 WinCompose</value>
   </data>
   <data name="Programming" xml:space="preserve">
-    <value>程序设计</value>
+    <value>编程</value>
   </data>
   <data name="Translators" xml:space="preserve">
-    <value>翻译人员</value>
+    <value>翻译</value>
   </data>
   <data name="Authors" xml:space="preserve">
-    <value>开发者</value>
+    <value>作者</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>证书</value>
+    <value>许可证</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose 需要重新启动，才能使部分设置生效。</value>
+    <value>需要重启 WinCompose 才能使部分设置生效。</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>报告程序错误</value>
@@ -385,7 +385,7 @@
     <value>有新版本可用。</value>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
-    <value>用户自定义的序列</value>
+    <value>用户定义的序列</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
     <value>编辑</value>
@@ -397,7 +397,7 @@
     <value>允许注入的按键</value>
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
-    <value>这个选项允许 WinCompose 接受比如 AutoHotKey 或者 Synergy 这类程序发送的按键</value>
+    <value>接收其它程序发送的按键，如 AutoHotKey 或 Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
     <value>截图键 (Print Screen 键)</value>
@@ -409,19 +409,19 @@
     <value>自动检查更新</value>
   </data>
   <data name="CheckUpdatesToolTip" xml:space="preserve">
-    <value>如果勾选这个选项，WinCompose 将定期连接互联网来检查新版本。新版本不会自动安装。</value>
+    <value>如果启用，WinCompose 将定期连接互联网来检查新版本。新版本不会自动安装。</value>
   </data>
   <data name="KeepIconVisible" xml:space="preserve">
-    <value>尝试保持在系统通知栏可见</value>
+    <value>尝试保持通知区图标可见</value>
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
-    <value>一般情况下，Windows 会在一段时间后隐藏通知区（系统托盘区）的图标。这个选项会尝试让 WinCompose 的图标一直可见。</value>
+    <value>Windows 默认在一段时间后隐藏通知区图标。这个选项会尝试保持 WinCompose 图标可见。</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
     <value>更改…</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
-    <value>请按下要指定为“组合键”的按键。</value>
+    <value>请按要指定为“组合键”的键。</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
     <value>加入收藏</value>
@@ -430,7 +430,7 @@
     <value>禁用通知区图标</value>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>如果勾选这个选项，WinCompose 将不会在通知区（系统托盘区）显示图标。将只能通过开始菜单的“WinCompose 设置”和“WinCompose 组合键序列”来打开 WinCompose 的界面。</value>
+    <value>如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通过开始菜单的“WinCompose 设置”和“WinCompose 按键序列”。</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
     <value>Home 键</value>
@@ -445,19 +445,19 @@
     <value>无超时</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>高级设置</value>
+    <value>高级</value>
   </data>
   <data name="IgnoreRegex" xml:space="preserve">
-    <value>无视匹配该正则表达式的窗口:</value>
+    <value>忽略匹配该正则的窗口：</value>
   </data>
   <data name="IgnoreRegexToolTip" xml:space="preserve">
-    <value>当前窗口类或窗口名称与此正则表达式匹配时，Wicompose将被完全禁用。</value>
+    <value>当前窗口类名或标题匹配此正则表达式时，Wicompose 将完全停用。</value>
   </data>
   <data name="AlwaysCompose" xml:space="preserve">
-    <value>备用组合键始终是Compose</value>
+    <value>副组合键始终作为组合键</value>
   </data>
   <data name="AlwaysComposeToolTip" xml:space="preserve">
-    <value>如果启用，所有组合键将被视为序列中的Compose。默认情况下，只有第一个按下的键将担当Compose角色，其他组合键将保持其原始角色。</value>
+    <value>如果启用，所有组合键都将被视为序列中的组合键。默认只有第一个按过的键作为组合键，其他组合键将保持原角色。</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>特别鸣谢</value>
@@ -469,13 +469,13 @@
     <value>收藏</value>
   </data>
   <data name="TimeoutToolTip" xml:space="preserve">
-    <value>若启用该设置，那么在没有检测到键盘活动的情况下，任何组合序列都将在一定的延迟之后被取消。</value>
+    <value>如果设置，则检测不到键盘活动一定时间后，任何组合序列都会取消。</value>
   </data>
   <data name="KeyboardLed" xml:space="preserve">
-    <value>键盘 LED</value>
+    <value>键盘灯</value>
   </data>
   <data name="KeyboardLedToolTip" xml:space="preserve">
-    <value>如果启用，则当一个合成序列进行时，相应的键盘LED将点亮。</value>
+    <value>如果设置，则组合序列输入时，会点亮相应键盘灯。</value>
   </data>
   <data name="KeyCompose" xml:space="preserve">
     <value>组合键</value>

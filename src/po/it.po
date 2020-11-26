@@ -578,8 +578,8 @@ msgid ""
 msgstr ""
 "Se abilitato, WinCompose non mosterà più un icona nella barra notifiche. "
 "L'unico modo per aprire l'interfaccia di WnCompose sarà allora attraverso le "
-"applicazioni \"Impostazioni WinCompose\" (\"WinCompose Settings\") e \""
-"Sequenze di WinCompose\" (\"WinCompose Sequences\") nel menu Start."
+"applicazioni \"Impostazioni WinCompose\" (\"WinCompose Settings\") e "
+"\"Sequenze di WinCompose\" (\"WinCompose Sequences\") nel menu Start."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -818,17 +818,17 @@ msgid "Separator, Space"
 msgstr "Separatore, spazio"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:174
+#: installer.pas:184
 msgid "Prerequisites"
 msgstr "Prerequisiti"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer.pas:185
 msgid "Software required by WinCompose"
 msgstr "Software richiesto da WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:178
+#: installer.pas:188
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -840,12 +840,12 @@ msgstr ""
 "problema:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:193
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Scarica ed installa .NET Framework 3.5 SP1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:203
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -854,7 +854,7 @@ msgstr ""
 "l'installazione."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:284
+#: installer.pas:294
 msgid "Administrator rights are required. Error: %d"
 msgstr "Sono richiesti privilegi da Amministratore. Errore: %d"
 

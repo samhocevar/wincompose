@@ -373,7 +373,7 @@
     <value>Litzèntzia</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose depet èssere torradu a allùere pro che sas sas modìficas potzant fàghere efetu.</value>
+    <value>WinCompose depet èssere torradu a allùere pro fàghere in menera chi sas modìficas potzant tènnere efetu.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
     <value>Sinnala unu problema</value>
@@ -476,5 +476,8 @@
   </data>
   <data name="KeyboardLedToolTip" xml:space="preserve">
     <value>Si custa optzione est abilitada su LED de sa tastiera s'at a allùghere cando ses impreende una filera compose.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Cumpositzione</value>
   </data>
 </root>

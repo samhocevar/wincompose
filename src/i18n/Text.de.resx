@@ -193,7 +193,7 @@
     <value>Debugfenster</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Sequenzen anzeigen …</value>
+    <value>Sequenzen anzeigen …</value>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Deaktivieren</value>
@@ -319,7 +319,7 @@
     <value>Optionen – WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
-    <value>Optionen…</value>
+    <value>Optionen …</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
     <value>WinCompose v{2} auf {0} ({1} Sequenzen)</value>
@@ -406,7 +406,7 @@
     <value>deaktiviert</value>
   </data>
   <data name="CheckUpdates" xml:space="preserve">
-    <value>Automatisch nach Updates suchen</value>
+    <value>Automatisch nach Aktualisierungen suchen</value>
   </data>
   <data name="CheckUpdatesToolTip" xml:space="preserve">
     <value>Falls aktiviert, wird WinCompose sich in regelmäßigen Abständen mit dem Internet verbinden und nach neuen Versionen suchen. Aktualisierungen werden nicht automatisch installiert.</value>
@@ -418,7 +418,7 @@
     <value>Standardmässig entfernt Windows nach einer kurzen Zeit das Symbol aus dem Infobereich. Diese Option versucht, dass es trotzdem sichtbar bleibt.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
-    <value>Ändern…</value>
+    <value>Ändern …</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
     <value>Drücke nun die Taste, die du als deine Compose-Taste benutzen willst.</value>

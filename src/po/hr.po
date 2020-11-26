@@ -115,7 +115,9 @@ msgid "Use sequences from the Xorg project"
 msgstr "Koristi kombinacije projekta Xorg"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
-msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
 msgstr ""
 "Koristi 3.000 kombinacije projekta Xorg (http://www.x.org/). Te se "
 "kombinacije najčešće mogu naći u standardnom Linux sustavu."
@@ -125,7 +127,10 @@ msgid "Use sequences from the XCompose project"
 msgstr "Koristi kombinacije projekta XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
-msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
+msgid ""
+"Use the 1,000 compose sequences from the XCompose opensource project "
+"(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
+"with the Xorg ones."
 msgstr ""
 "Koristi 1.000 kombinacija projekta otvorenog koda XCompose (https://github."
 "com/kragen/xcompose). Te se kombinacije ponekad sukobljavaju s onima u Xorg."
@@ -135,7 +140,9 @@ msgid "Use WinCompose emoji sequences"
 msgstr "Koristi kombinacije WinCompose-a za emojije"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
-msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
+msgid ""
+"Use the compose sequences for Emoji provided by the WinCompose author and "
+"contributors."
 msgstr ""
 "Koristi kombinacije za emojije koje su pripremili autor i suradnici programa "
 "WinCompose."
@@ -186,7 +193,9 @@ msgid "Try to swap the two keys"
 msgstr "Pokušaj zamijeniti te dvije tipke"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
-msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
+msgid ""
+"Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
+"not a valid sequence, try Compose A E instead."
 msgstr ""
 "Pokušaj zamijeniti tipke dvotipkovne kombinacije. Na primjer, ako „Sastavi E "
 "A” nije ispravna kombinacija, pokušaj „Sastavi A E”."
@@ -213,11 +222,14 @@ msgid "Advanced Unicode input"
 msgstr "Napredni unos unikoda"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter"
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F Enter"
 msgstr ""
 "Aktiviraj unos unikoda za sve znakove, čak i za one bez definirane "
-"kombinacije. Na primjer, sljedeća kombinacija će ispisati znak U+1A3F: „"
-"Sastavi U 1 A 3 F Enter”"
+"kombinacije. Na primjer, sljedeća kombinacija će ispisati znak U+1A3F: "
+"„Sastavi U 1 A 3 F Enter”"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -229,7 +241,9 @@ msgid "Fall back to case insensitive matches"
 msgstr "Koristi poklapanja bez razlikovanja veličine slova"
 
 #: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
-msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
 msgstr ""
 "Ako upisana kombinacija ne postoji, ali postoji jedna koja se razlikuje samo "
 "u veličini slova, automatski je ispravi."
@@ -239,7 +253,10 @@ msgid "Discard all typed characters"
 msgstr "Odbaci sve utipkane znakove"
 
 #: i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
-msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
 msgstr ""
 "Ako upisana kombinacija ne postoji, odbaci sve utipkane znakove. Standardni "
 "način je, da se znakovi prikazuju kao da tipka za sastavljanje nije "
@@ -258,7 +275,9 @@ msgid "Interface language:"
 msgstr "Jezik sučelja:"
 
 #: i18n/Text.resx:317 ID:LanguageToolTip
-msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
 msgstr ""
 "Odaberi jezik koji WinCompose koristi za sučelje. Standardno se koristi "
 "jezik operacijskog sustava."
@@ -289,7 +308,10 @@ msgid "Maintain original compose key behaviour"
 msgstr "Zadrži izvorni način rada tipke za sastavljanje"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
-msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
 msgstr ""
 "Ovime će WinCompose pokušati što bolje zadržati izvorni način rada tipke za "
 "sastavljanje. Na primjer, prečac Alt-Tab i dalje će raditi, čak i ako se Alt "
@@ -300,7 +322,10 @@ msgid "Insert zero-width spaces in Office apps"
 msgstr "Umetni znakove razmaka bez širine u Office programima"
 
 #: i18n/Text.resx:349 ID:InsertZwspToolTip
-msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
 msgstr ""
 "Microsoft Office programi ponekad mijenjaju font dokumenta, kad se upišu "
 "određeni Unicode znakovi. Ova funkcija umeće nevidljivi znak nakon Unicode "
@@ -311,7 +336,10 @@ msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Simuliraj Caps Lock koristeći obje Shift tipke"
 
 #: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
 msgstr ""
 "Ako se Caps Lock koristi kao tipka za sastavljanje, izvorni način rada tipke "
 "postaje nedostupan. Ova funkcija omogućuje uključivanje tipke Caps Lock "
@@ -322,7 +350,10 @@ msgid "Shift key disables Caps Lock"
 msgstr "Tipka Shift isključuje Caps Lock"
 
 #: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
 msgstr ""
 "Ako se Caps Lock koristi kao tipka za sastavljanje, izvorni način rada tipke "
 "postaje nedostupan. Ova funkcija omogućuje isključivanje tipke Caps Lock "
@@ -333,7 +364,9 @@ msgid "Caps Lock always capitalizes letters"
 msgstr "Caps Lock uvijek pretvara u velika slova"
 
 #: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
-msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
 msgstr ""
 "Kad je tipka Caps Lock uključena, tipkanje slova s naglaskom kao što je „é”, "
 "uvijek će ispisati odgovarajuće veliko slovo, u ovom slučaju „É”."
@@ -498,7 +531,9 @@ msgid "Automatically check for updates"
 msgstr "Automatski traži nove verzije"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
-msgid "If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically."
+msgid ""
+"If enabled, WinCompose will connect to the Internet at regular intervals to "
+"check for new versions. Updates are not installed automatically."
 msgstr ""
 "Ako je aktivirano, WinCompose će se redovito povezati s internetom i "
 "provjeriti ima li novih verzija. Nove verzije se ne instaliraju automatski."
@@ -508,7 +543,9 @@ msgid "Try to keep notification area icon always visible"
 msgstr "Pokušaj održati vidljivost ikone u području obavijesti"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
-msgid "By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible."
+msgid ""
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
 msgstr ""
 "Windows standardno ukljanja ikonu iz područja obavijesti nakon kratkog "
 "vremena. Ova opcija pokušava ikonu uvijek održati vidljivom."
@@ -532,11 +569,14 @@ msgid "Disable notification area icon"
 msgstr "Deaktiviraj ikonu u području obavijesti"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
-msgid "If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgid ""
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
+"“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
 "Ako je aktivirano, WinCompose više neće prikazivati ikonu u području "
-"obavijesti. Tada će jedini način otvaranja WinCompose sučelja biti putem „"
-"WinCompose postavke” i „WinCompose kombinacije” u izborniku pokretanja."
+"obavijesti. Tada će jedini način otvaranja WinCompose sučelja biti putem "
+"„WinCompose postavke” i „WinCompose kombinacije” u izborniku pokretanja."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -569,7 +609,9 @@ msgid "Ignore windows matching this regex:"
 msgstr "Zanemari prozore koji se poklapaju s ovim regularnim izrazom:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
-msgid "WinCompose will be completely disabled when the current window class or window name matches this regular expression."
+msgid ""
+"WinCompose will be completely disabled when the current window class or "
+"window name matches this regular expression."
 msgstr ""
 "WinCompose će se u potpunosti deaktivirati, kad trenutačna klasa prozora ili "
 "ime prozora odgovaraju ovom regularnom izrazu."
@@ -579,7 +621,10 @@ msgid "Alternate compose key is always Compose"
 msgstr "Alternativna tipka za sastavljanje je uvijek Sastavi"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
-msgid "If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role."
+msgid ""
+"If enabled, all compose keys will be treated as Compose in a sequence. By "
+"default, only the first pressed key will act as Compose, and alternate "
+"compose keys will keep their original role."
 msgstr ""
 "Ako je aktivirano, sve tipke za sastavljanje, u kombinaciji će se tumačiti "
 "kao „Sastavi”. Standardno samo prva pritisnuta tipka djeluje kao „Sastavi”, "
@@ -601,7 +646,9 @@ msgid "Favorites"
 msgstr "Favoriti"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
-msgid "If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected."
+msgid ""
+"If set, any compose sequence will be cancelled after a certain delay if no "
+"keyboard activity is detected."
 msgstr ""
 "Ako je postavljeno, bilo koja kombinacija otkazat će se nakon određenog "
 "vremena, ako se u tom vremenu ne otkrije aktivnost tipkovnice."
@@ -611,7 +658,9 @@ msgid "Keyboard LED"
 msgstr "LED tipkovnice"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
-msgid "If set, the corresponding keyboard LED will be lit when a compose sequence is in progress."
+msgid ""
+"If set, the corresponding keyboard LED will be lit when a compose sequence "
+"is in progress."
 msgstr ""
 "Ako je postavljeno, odgovarajuća LED tipkovnica svijetli kad je kombinacija "
 "u tijeku."
@@ -772,34 +821,40 @@ msgid "Separator, Space"
 msgstr "Znak rastavljanja, razmak"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:174
+#: installer.pas:184
 msgid "Prerequisites"
 msgstr "Preduvjeti"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer.pas:185
 msgid "Software required by WinCompose"
 msgstr "Potreban softver za WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:178
-msgid "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
+#: installer.pas:188
+msgid ""
+"WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
+"not\n"
+"seem to be currently installed. The following action may help solve the "
+"problem:"
 msgstr ""
-"WinCompose treba .NET Framework, verziju 3.5 SP1 ili noviju, koja trenutačno,"
-"\n"
+"WinCompose treba .NET Framework, verziju 3.5 SP1 ili noviju, koja "
+"trenutačno,\n"
 "čini se, nije instalirana. Sljedeća radnja može pomoći riješiti problem:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:193
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Preuzmi i instaliraj .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
-msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
+#: installer.pas:203
+msgid ""
+"Once this is done, you may return to this screen and proceed with the\n"
+"installation."
 msgstr "Kad ovo završi, možeš se ovamo vratiti i nastaviti s instalacijom."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:284
+#: installer.pas:294
 msgid "Administrator rights are required. Error: %d"
 msgstr "Potrebna su administratorska prava. Greška: %d"

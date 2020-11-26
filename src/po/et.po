@@ -118,9 +118,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Kasuta kolme tuhandet järjendit avatud lähtekoodiga projektist Xorg "
-"(http://www.x.org/). Neid järjendeid eelkõige kasutatakse tavapärastes "
-"Linux'ites."
+"Kasuta kolme tuhandet järjendit avatud lähtekoodiga projektist Xorg (http://"
+"www.x.org/). Neid järjendeid eelkõige kasutatakse tavapärastes Linux'ites."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -810,17 +809,17 @@ msgid "Separator, Space"
 msgstr "Eraldaja, Tühik"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:174
+#: installer.pas:184
 msgid "Prerequisites"
 msgstr "Nõutavad komponendid"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer.pas:185
 msgid "Software required by WinCompose"
 msgstr "Tarkvara, mida WinCompose vajab"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:178
+#: installer.pas:188
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -831,12 +830,12 @@ msgstr ""
 "hetkel paigaldatud. Järgmine tegevus võib aidata probleemi lahendada:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:193
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Laadi alla ja paigalda .NET Framework 3.5 SP1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:203
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -845,7 +844,7 @@ msgstr ""
 "jätkata paigaldust."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:284
+#: installer.pas:294
 msgid "Administrator rights are required. Error: %d"
 msgstr "Vajalikud on administraatori õigused. Viga: %d"
 

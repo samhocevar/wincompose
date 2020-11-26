@@ -803,17 +803,17 @@ msgid "Separator, Space"
 msgstr "Padzialiaĺnik, prahały"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:174
+#: installer.pas:184
 msgid "Prerequisites"
 msgstr "Patrabavańni"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer.pas:185
 msgid "Software required by WinCompose"
 msgstr "Nieabchodnyja zaliežnaści"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:178
+#: installer.pas:188
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -824,19 +824,19 @@ msgstr ""
 "nie ŭstaliavana. Nastupnaja instrukcyja moža dapamahčy vam:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:193
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Spampuj i ŭstaliuj .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:203
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr "Paslia hetaha vy zmožacie viarnucca da praciahu ŭstalioŭki."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:284
+#: installer.pas:294
 msgid "Administrator rights are required. Error: %d"
 msgstr "Nieabchodnyja pravy administratara. Pamyłka: %d"
 

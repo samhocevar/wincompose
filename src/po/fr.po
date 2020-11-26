@@ -826,17 +826,17 @@ msgid "Separator, Space"
 msgstr "Séparateur, espace"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:174
+#: installer.pas:184
 msgid "Prerequisites"
 msgstr "Prérequis"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer.pas:185
 msgid "Software required by WinCompose"
 msgstr "Logiciels nécessaires à WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:178
+#: installer.pas:188
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -849,12 +849,12 @@ msgstr ""
 "permettre de résoudre le problème :"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:193
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Télécharger et installer .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:203
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -863,7 +863,7 @@ msgstr ""
 "l’installation."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:284
+#: installer.pas:294
 msgid "Administrator rights are required. Error: %d"
 msgstr "Les droits d’administrateur sont nécessaires. Erreur : %d"
 

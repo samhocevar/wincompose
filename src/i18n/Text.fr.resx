@@ -253,7 +253,7 @@
     <value>Ignorer tous les caractères saisis</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Si la séquence utilisée n'existe pas, ignorer tous les caractères saisis. Le comportement par défaut est d'afficher les caractères comme si la touche de composition n'avait pas été utilisée.</value>
+    <value>Si la séquence saisie n'existe pas, ignorer tous les caractères déjà tapés. Le comportement par défaut est d'afficher les caractères comme si la touche de composition n'avait pas été utilisée.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
     <value>Émettre un son</value>
@@ -307,7 +307,7 @@
     <value>Ver Maj met toujours les lettres en majuscule</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Quand le Verrouillage de Majuscule (Caps Lock) est activé, la saisie d’une lettre accentuée telle que « é » produira toujours la majuscule correspondante, pour cet exemple « É ».</value>
+    <value>Quand le verrouillage de majuscule est activé, la saisie d’une lettre accentuée telle que « é » produira toujours la majuscule correspondante, pour cet exemple « É ».</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Catégories</value>
@@ -385,7 +385,7 @@
     <value>Des mises à jour sont disponibles.</value>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
-    <value>Séquences personnelles</value>
+    <value>Séquences personnalisées</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
     <value>Éditer</value>
@@ -430,7 +430,7 @@
     <value>Désactiver l’icône de la zone de notification</value>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors de lancer « WinCompose Settings » ou « WinCompose Sequences » depuis le menu Démarrer.</value>
+    <value>Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors de lancer « WinCompose Settings » ou « WinCompose Sequences » depuis le menu Démarrer.</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
     <value>Début</value>

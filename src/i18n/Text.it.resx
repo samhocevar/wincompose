@@ -319,7 +319,7 @@
     <value>Opzioni…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} attivo su {0} ({1} sequenze)</value>
+    <value>WinCompose v{2} su {0} ({1} sequenze)</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Generale</value>
@@ -415,7 +415,7 @@
     <value>Di default, Windows rimuoverà l'icona dall'area di notifica dopo un breve intervallo. Questa opzione cerca di tenerla sempre visibile.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
-    <value>Cambia...</value>
+    <value>Cambia…</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
     <value>Premere un tasto da utilizzare come tasto di combinazione.</value>
@@ -455,5 +455,17 @@
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Ringraziamenti</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Rimuovi dai preferiti</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Preferiti</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>LED della tastiera</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Tasto Compose</value>
   </data>
 </root>

@@ -131,9 +131,9 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"Použít 1 000 sekvencí skládání z open source projektu Xcompose "
-"((https://github.com/kragen/xcompose). Tyto sekvence někdy mohou být v "
-"konfliktu se sekvencemi od Xorg."
+"Použít 1 000 sekvencí skládání z open source projektu Xcompose ((https://"
+"github.com/kragen/xcompose). Tyto sekvence někdy mohou být v konfliktu se "
+"sekvencemi od Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -806,17 +806,17 @@ msgid "Separator, Space"
 msgstr "Oddělovač, mezera"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:174
+#: installer.pas:184
 msgid "Prerequisites"
 msgstr "Předpoklady"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer.pas:185
 msgid "Software required by WinCompose"
 msgstr "Software vyžadovaný pro běh WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:178
+#: installer.pas:188
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -827,12 +827,12 @@ msgstr ""
 "v systému detekován. Následující akce by mohla pomoci vyřešit tento problém:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:193
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Stáhnout a nainstalovat .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:203
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -841,7 +841,7 @@ msgstr ""
 "v instalaci."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:284
+#: installer.pas:294
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administrátorská práva vyžadována. Chyba: %d"
 
