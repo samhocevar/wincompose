@@ -539,26 +539,7 @@ exit_forward_key:
         // FIXME: At this point we know the key can’t be part of a valid
         // sequence, but this should not be a hard error if the key is a
         // modifier key.
-
-        // Unknown characters for sequence, print them if necessary
-        if (!Settings.DiscardOnInvalid.Value)
-        {
-            string tosend = "";
-            foreach (Key k in m_sequence)
-                if (k.IsPrintable) // FIXME: what if the key is e.g. left arrow?
-                    tosend += k.PrintableResult;
-
-            if (!string.IsNullOrEmpty(tosend))
-            {
-                SendString(tosend);
-                Log.Debug("Invalid sequence! Sent “{0}”", tosend);
-            }
-        }
-
-        if (Settings.BeepOnInvalid.Value)
-            SystemSounds.Beep.Play();
-
-        ResetSequence();
+        OnInvalidSequence();
         return true;
     }
 
@@ -693,6 +674,32 @@ exit_forward_key:
     /// Return whether WinCompose has been disabled
     /// </summary>
     public static bool IsDisabled => Settings.Disabled.Value;
+
+    private static void OnInvalidSequence()
+    {
+        bool empty_sequence = true;
+
+        string printable = "";
+        foreach (Key k in m_sequence)
+        {
+            if (k.VirtualKey != VK.COMPOSE)
+                empty_sequence = false;
+            if (k.IsPrintable) // FIXME: what if the key is e.g. left arrow?
+                printable += k.PrintableResult;
+        }
+
+        // Unknown characters for sequence, print them if necessary
+        if (!Settings.DiscardOnInvalid.Value && !string.IsNullOrEmpty(printable))
+        {
+            SendString(printable);
+            Log.Debug("Invalid sequence! Sent “{0}”", printable);
+        }
+
+        if (Settings.BeepOnInvalid.Value && !empty_sequence)
+            SystemSounds.Beep.Play();
+
+        ResetSequence();
+    }
 
     private static void ResetSequence()
     {
