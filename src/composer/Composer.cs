@@ -34,30 +34,39 @@ class InputSequence
     }
 
     public void AddInput(ScanCodeShort sc)
-    {
-        AddInput((VirtualKeyShort)0, sc);
-    }
+        => AddInput(VK.NONE, sc, Mode.Press);
 
-    public void AddInput(VirtualKeyShort vk)
-    {
-        AddInput(vk, (ScanCodeShort)0);
-    }
+    public void AddInput(VK vk)
+        => AddInput(vk, (ScanCodeShort)0, Mode.Press);
+
+    public void AddKeyDown(VK vk)
+        => AddInput(vk, (ScanCodeShort)0, Mode.Down);
+
+    public void AddKeyUp(VK vk)
+        => AddInput(vk, (ScanCodeShort)0, Mode.Up);
+
+    private enum Mode { Up, Down, Press }
 
     private readonly List<INPUT> m_input = new List<INPUT>();
 
-    private void AddInput(VirtualKeyShort vk, ScanCodeShort sc)
+    private void AddInput(VK vk, ScanCodeShort sc, Mode mode)
     {
         INPUT tmp = new INPUT();
         tmp.type = EINPUT.KEYBOARD;
-        tmp.U.ki.wVk = vk;
+        tmp.U.ki.wVk = (VirtualKeyShort)vk;
         tmp.U.ki.wScan = sc;
         tmp.U.ki.time = 0;
         tmp.U.ki.dwFlags = KEYEVENTF.UNICODE;
         tmp.U.ki.dwExtraInfo = UIntPtr.Zero;
-        m_input.Add(tmp);
 
-        tmp.U.ki.dwFlags |= KEYEVENTF.KEYUP;
-        m_input.Add(tmp);
+        if (mode != Mode.Up)
+            m_input.Add(tmp);
+
+        if (mode != Mode.Down)
+        {
+            tmp.U.ki.dwFlags |= KEYEVENTF.KEYUP;
+            m_input.Add(tmp);
+        }
     }
 }
 
@@ -596,59 +605,45 @@ exit_forward_key:
                 SendKeyUp(vk);
         }
 
+        InputSequence seq = new InputSequence();
+
         if (use_gtk_hack)
         {
             /* XXX: We need to disable caps lock because GTK’s Shift-Ctrl-U
              * input mode (see below) doesn’t work when Caps Lock is on. */
             bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
             if (has_capslock)
-                SendKeyPress(VK.CAPITAL);
+                seq.AddInput(VK.CAPITAL);
 
             foreach (var ch in str)
             {
-                if (false)
-                {
-                    /* FIXME: there is a possible optimisation here where we do
-                     * not have to send the whole unicode sequence for regular
-                     * ASCII characters. However, SendKeyPress() needs a VK, so
-                     * we need an ASCII to VK conversion method, together with
-                     * the proper keyboard modifiers. Maybe not worth it.
-                     * Also, we cannot use KeySequence because GTK+ seems to
-                     * ignore SendInput(). */
-                    //SendKeyPress((VK)char.ToUpper(ch));
-                }
-                else
-                {
-                    // GTK+ hack:
-                    //  - Wikipedia says Ctrl+Shift+u, release, then type the four hex digits,
-                    //    and press Enter (http://en.wikipedia.org/wiki/Unicode_input).
-                    //  - The Gimp accepts either Enter or Space but stops immediately in both
-                    //    cases.
-                    //  - Inkscape stops after Enter, but allows to chain sequences using Space.
-                    SendKeyDown(VK.LCONTROL);
-                    SendKeyDown(VK.LSHIFT);
-                    SendKeyPress((VK)'U');
-                    SendKeyUp(VK.LSHIFT);
-                    SendKeyUp(VK.LCONTROL);
+                // GTK+ hack:
+                //  - Wikipedia says Ctrl+Shift+u, release, then type the four hex digits,
+                //    and press Enter (http://en.wikipedia.org/wiki/Unicode_input).
+                //  - The Gimp accepts either Enter or Space but stops immediately in both
+                //    cases.
+                //  - Inkscape stops after Enter, but allows to chain sequences using Space.
+                seq.AddKeyDown(VK.LCONTROL);
+                seq.AddKeyDown(VK.LSHIFT);
+                seq.AddInput((VK)'U');
+                seq.AddKeyUp(VK.LSHIFT);
+                seq.AddKeyUp(VK.LCONTROL);
 
-                    foreach (var key in $"{(short)ch:X04} ")
-                        SendKeyPress((VK)key);
+                foreach (var key in $"{(short)ch:X04} ")
+                    seq.AddInput((VK)key);
 
-                    SendKeyPress(VK.RETURN);
-                }
+                seq.AddInput(VK.RETURN);
             }
 
             if (has_capslock)
-                SendKeyPress(VK.CAPITAL);
+                seq.AddInput(VK.CAPITAL);
         }
         else
         {
-            InputSequence seq = new InputSequence();
-
             if (use_office_hack)
             {
                 seq.AddInput((ScanCodeShort)'\u200b');
-                seq.AddInput((VirtualKeyShort)VK.LEFT);
+                seq.AddInput(VK.LEFT);
             }
 
             foreach (char ch in str)
@@ -658,13 +653,13 @@ exit_forward_key:
 
             if (use_office_hack)
             {
-                seq.AddInput((VirtualKeyShort)VK.RIGHT);
+                seq.AddInput(VK.RIGHT);
             }
-
-            seq.Send();
         }
 
-        /* Restore keyboard modifiers if we needed one of our custom hacks */
+        seq.Send();
+
+        // Restore keyboard modifiers if we needed one of our custom hacks
         if (use_gtk_hack || use_office_hack)
         {
             foreach (VK vk in modifiers)
@@ -723,6 +718,11 @@ exit_forward_key:
     /// The sequence being currently typed
     /// </summary>
     private static KeySequence m_sequence = new KeySequence();
+
+    /// <summary>
+    /// The list of keys we have seen pressed and not yet released
+    /// </summary>
+    private static HashSet<Key> m_pressed = new HashSet<Key>();
 
     private static Key m_last_key;
     private static DateTime m_last_key_time = DateTime.Now;
