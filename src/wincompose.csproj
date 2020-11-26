@@ -257,7 +257,7 @@
     <Item Include="rules\WinCompose.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="3rdparty\wpf-notify-icon\src\NotifyIconWpf\NotifyIconWpf.csproj">
+    <ProjectReference Include="3rdparty\wpf-notifyicon\src\NotifyIconWpf\NotifyIconWpf.csproj">
       <Project>{7ac63864-7638-41c4-969c-d3197ef2bed9}</Project>
       <Name>NotifyIconWpf</Name>
     </ProjectReference>

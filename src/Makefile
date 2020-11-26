@@ -20,7 +20,7 @@ DLL = bin/$(CONFIG)/language.dll \
       bin/$(CONFIG)/Emoji.Wpf.dll \
       bin/$(CONFIG)/Typography.OpenFont.dll \
       bin/$(CONFIG)/Typography.GlyphLayout.dll \
-      bin/$(CONFIG)/Hardcodet.Wpf.TaskbarNotification.dll
+      bin/$(CONFIG)/Hardcodet.NotifyIcon.Wpf.dll
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip

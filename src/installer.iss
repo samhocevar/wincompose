@@ -38,7 +38,7 @@ Source: "bin\{#CONFIG}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\Hardcodet.Wpf.TaskbarNotification.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\ar\*.dll"; DestDir: "{app}\ar"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
@@ -227,6 +227,7 @@ Type: files; Name: "{app}\locale\fr.ini"
 Type: dirifempty; Name: "{app}\locale"
 Type: files; Name: "{app}\po\*.po"
 Type: dirifempty; Name: "{app}\po"
+Type: files; Name: "{app}\Hardcodet.Wpf.TaskbarNotification.dll"
 ; Those were just tests and only a few beta releases had them
 Type: files; Name: "{app}\{#NAME}-sequences.exe"
 Type: files; Name: "{app}\{#NAME}-settings.exe"
