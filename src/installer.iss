@@ -86,19 +86,26 @@ Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
 ; not supported.
 Name: "en"; MessagesFile: "compiler:Default.isl"
 
+; [ERR] present as unofficial Inno Setup translation but contains errors
+; [OBS] used to be in Inno Setup but no longer here
+; [???] not in Inno Setup
+
 Name: "ar"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Arabic.isl"
-; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
+; [ERR] be / Belarusian.isl
+; [???] be@latin
 Name: "cs"; MessagesFile: "compiler:Languages/Czech.isl"
 Name: "da"; MessagesFile: "compiler:Languages/Danish.isl"
+Name: "de"; MessagesFile: "compiler:Languages/German.isl"
+Name: "el"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Greek.isl"
+; [ERR] eo / Esperanto.isl
+Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
+; [ERR] et / Estonian.isl
 Name: "fi"; MessagesFile: "compiler:Languages/Finnish.isl"
 Name: "fr"; MessagesFile: "compiler:Languages/French.isl"
-Name: "de"; MessagesFile: "compiler:Languages/German.isl"
-Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
-; Name: "he"; MessagesFile: "compiler:Languages/Hebrew.isl"
+; [???] ga (Gaelic)
 Name: "hr"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Croatian.isl"
-; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.islu"
-Name: "id"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Indonesian.isl"
-; Name: "is"; MessagesFile: "compiler:Languages/Icelandic.isl"
+Name: "hu"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Hungarian.isl"
+; [ERR] Name: "id"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Indonesian.isl"
 Name: "it"; MessagesFile: "compiler:Languages/Italian.isl"
 Name: "ja"; MessagesFile: "compiler:Languages/Japanese.isl"
 Name: "lt"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Lithuanian.isl"
@@ -107,29 +114,27 @@ Name: "no"; MessagesFile: "compiler:Languages/Norwegian.isl"
 Name: "pl"; MessagesFile: "compiler:Languages/Polish.isl"
 Name: "pt"; MessagesFile: "compiler:Languages/Portuguese.isl"
 Name: "pt_BR"; MessagesFile: "compiler:Languages/BrazilianPortuguese.isl"
+; [ERR] ro / Romanian.isl
 Name: "ru"; MessagesFile: "compiler:Languages/Russian.isl"
-; Name: "Cy-sr-SP"; MessagesFile: "compiler:Languages/SerbianCyrillic.isl"
-; Name: "Lt-sr-SP"; MessagesFile: "compiler:Languages/SerbianLatin.isl"
+; [???] sc (Sardinian)
 Name: "sk"; MessagesFile: "compiler:Languages/Slovak.isl"
 Name: "sl"; MessagesFile: "compiler:Languages/Slovenian.isl"
+; [ERR] sq / Albanian.isl
+Name: "sr"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/SerbianCyrillic.isl"
 Name: "sv"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Swedish.isl"
-; Name: "tr"; MessagesFile: "compiler:Languages/Turkish.isl"
 Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
+Name: "zh"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/ChineseSimplified.isl"
+; [ERR] Name: "zh_Hant"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/ChineseTraditional.isl"
 
+; FIXME: these languages are available in official Inno Setup but not in WinCompose
+; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
+; Name: "he"; MessagesFile: "compiler:Languages/Hebrew.isl"
+; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.isl"
+; Name: "is"; MessagesFile: "compiler:Languages/Icelandic.isl"
+; Name: "tr"; MessagesFile: "compiler:Languages/Turkish.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Corsican.isl"
 ; Name: "??"; MessagesFile: "compiler:Languages/Nepali.islu"
 ; Name: "??"; MessagesFile: "compiler:Languages/ScottishGaelic.isl"
-
-; FIXME: these languages are present as unofficial translations but contain errors
-; be / Belarusian.isl
-; eo / Esperanto.isl
-; et / Estonian.isl
-; ro / Romanian.isl
-; sq / Albanian.isl
-
-; FIXME: these languages used to be in Inno Setup 5 but are no longer here
-; el / Greek.isl
-; hu / Hungarian.isl
 
 [Icons]
 Name: "{group}\Uninstall {#NAME}"; Filename: "{uninstallexe}";
@@ -233,9 +238,11 @@ Type: files; Name: "{app}\{#NAME}-sequences.exe"
 Type: files; Name: "{app}\{#NAME}-settings.exe"
 
 [UninstallRun]
-Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#EXE}"; Flags: runhidden
+Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#EXE}"; \
+    RunOnceId: kill_wincompose; Flags: runhidden
 ; Use "nowait" because /f does not exist on XP / 2003
-Filename: "{sys}\schtasks"; Parameters: "/delete /f /tn ""{#NAME}"""; Flags: runhidden nowait
+Filename: "{sys}\schtasks"; Parameters: "/delete /f /tn ""{#NAME}"""; \
+    RunOnceId: del_task; Flags: runhidden nowait
 
 [UninstallDelete]
 Type: dirifempty; Name: "{app}\rules"

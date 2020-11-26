@@ -159,7 +159,6 @@ end;
 }
 procedure InitializeWizard;
 var
-    i: integer;
     homepage: tnewstatictext;
 begin
     if is_elevated_run() then state := s_run_2 else state := s_run_1;

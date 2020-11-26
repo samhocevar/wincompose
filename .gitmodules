@@ -14,6 +14,7 @@
 	path = src/3rdparty/wpf-notifyicon
 	url = ../../samhocevar-forks/wpf-notifyicon.git
 	branch = feature/net30
+	update = merge
 
 [submodule "src/3rdparty/libx11"]
 	path = src/3rdparty/libx11
@@ -30,3 +31,5 @@
 [submodule "src/3rdparty/innosetup"]
 	path = src/3rdparty/innosetup
 	url = ../../jrsoftware/issrc.git
+	branch = main
+	update = merge
