@@ -106,10 +106,6 @@ static class Composer
         // Remember when the user touched a key for the last time
         m_last_key_time = DateTime.Now;
 
-        // Do nothing if we are disabled; NOTE: this disables stats, too
-        if (Settings.Disabled.Value)
-            return false;
-
         // We need to check the keyboard layout before we save the dead
         // key, otherwise we may be saving garbage.
         KeyboardLayout.CheckForChanges();
@@ -197,7 +193,7 @@ static class Composer
         {
             if (is_keyup)
                 Captured.Invoke(key);
-            return true;
+            goto exit_discard_key;
         }
 
         // Update statistics
@@ -217,6 +213,10 @@ static class Composer
             m_last_key_time = DateTime.Now;
             m_last_key = key;
         }
+
+        // Do nothing if we are disabled
+        if (Settings.Disabled.Value)
+            goto exit_forward_key;
 
         // If the special Synergy window has focus, we’re actually sending
         // keystrokes to another computer; disable WinCompose. Same if it is
