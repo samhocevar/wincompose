@@ -161,9 +161,8 @@ static class Composer
                 if (Settings.ComposeKeys.Value.Contains(new Key(VK.RMENU)))
                     goto exit_discard_key;
 
-                // Otherwise they keypress is not for us, ignore it, unless capturing
-                if (Captured != null)
-                    goto exit_forward_key;
+                // Otherwise the keypress is not for us, ignore it
+                goto exit_forward_key;
             }
         }
 
