@@ -36,13 +36,13 @@ class InputSequence
     public void AddInput(ScanCodeShort sc)
         => AddInput(VK.NONE, sc, Mode.Press);
 
-    public void AddInput(VK vk)
+    public void KeyPress(VK vk)
         => AddInput(vk, (ScanCodeShort)0, Mode.Press);
 
-    public void AddKeyDown(VK vk)
+    public void KeyDown(VK vk)
         => AddInput(vk, (ScanCodeShort)0, Mode.Down);
 
-    public void AddKeyUp(VK vk)
+    public void KeyUp(VK vk)
         => AddInput(vk, (ScanCodeShort)0, Mode.Up);
 
     private enum Mode { Up, Down, Press }
@@ -583,7 +583,9 @@ exit_forward_key:
         bool use_office_hack = KeyboardLayout.Window.IsOffice
                                 && Settings.InsertZwsp.Value;
 
-        /* Clear keyboard modifiers if we need one of our custom hacks */
+        InputSequence seq = new InputSequence();
+
+        // Clear keyboard modifiers if we need one of our custom hacks
         if (use_gtk_hack || use_office_hack)
         {
             VK[] all_modifiers =
@@ -602,69 +604,67 @@ exit_forward_key:
                     modifiers.Add(vk);
 
             foreach (VK vk in modifiers)
-                SendKeyUp(vk);
+                seq.KeyUp(vk);
         }
 
-        InputSequence seq = new InputSequence();
-
-        if (use_gtk_hack)
+        if (use_office_hack)
         {
-            /* XXX: We need to disable caps lock because GTK’s Shift-Ctrl-U
-             * input mode (see below) doesn’t work when Caps Lock is on. */
-            bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
-            if (has_capslock)
-                seq.AddInput(VK.CAPITAL);
+            seq.AddInput((ScanCodeShort)'\u200b');
+            seq.KeyPress(VK.LEFT);
+        }
 
-            foreach (var ch in str)
+        for (int i = 0; i < str.Length; ++i)
+        {
+            char ch = str[i];
+
+            if (use_gtk_hack && char.IsSurrogate(ch))
             {
+                // Sanity check
+                if (i + 1 >= str.Length || !char.IsHighSurrogate(ch) || !char.IsLowSurrogate(str, i + 1))
+                    continue;
+
+                var codepoint = char.ConvertToUtf32(ch, str[++i]);
+
                 // GTK+ hack:
+                //  - We need to disable Caps Lock
                 //  - Wikipedia says Ctrl+Shift+u, release, then type the four hex digits,
                 //    and press Enter (http://en.wikipedia.org/wiki/Unicode_input).
                 //  - The Gimp accepts either Enter or Space but stops immediately in both
                 //    cases.
                 //  - Inkscape stops after Enter, but allows to chain sequences using Space.
-                seq.AddKeyDown(VK.LCONTROL);
-                seq.AddKeyDown(VK.LSHIFT);
-                seq.AddInput((VK)'U');
-                seq.AddKeyUp(VK.LSHIFT);
-                seq.AddKeyUp(VK.LCONTROL);
+                bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
+                if (has_capslock)
+                    seq.KeyPress(VK.CAPITAL);
 
-                foreach (var key in $"{(short)ch:X04} ")
-                    seq.AddInput((VK)key);
+                seq.KeyDown(VK.LCONTROL);
+                seq.KeyDown(VK.LSHIFT);
+                seq.KeyPress((VK)'U');
+                seq.KeyUp(VK.LSHIFT);
+                seq.KeyUp(VK.LCONTROL);
+                foreach (var key in $"{codepoint:X04}")
+                    seq.KeyPress((VK)key);
+                seq.KeyPress(VK.RETURN);
 
-                seq.AddInput(VK.RETURN);
+                if (has_capslock)
+                    seq.KeyPress(VK.CAPITAL);
             }
-
-            if (has_capslock)
-                seq.AddInput(VK.CAPITAL);
-        }
-        else
-        {
-            if (use_office_hack)
-            {
-                seq.AddInput((ScanCodeShort)'\u200b');
-                seq.AddInput(VK.LEFT);
-            }
-
-            foreach (char ch in str)
+            else
             {
                 seq.AddInput((ScanCodeShort)ch);
             }
-
-            if (use_office_hack)
-            {
-                seq.AddInput(VK.RIGHT);
-            }
         }
 
-        seq.Send();
-
-        // Restore keyboard modifiers if we needed one of our custom hacks
-        if (use_gtk_hack || use_office_hack)
+        if (use_office_hack)
         {
-            foreach (VK vk in modifiers)
-                SendKeyDown(vk);
+            seq.KeyPress(VK.RIGHT);
         }
+
+        // Restore keyboard modifier state if we needed one of our custom hacks
+        foreach (VK vk in modifiers)
+            seq.KeyDown(vk);
+
+        // Send the whole keyboard sequence
+        seq.Send();
     }
 
     /// <summary>
