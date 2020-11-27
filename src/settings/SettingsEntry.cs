@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -91,8 +91,9 @@ namespace WinCompose
                         ? (T)cv.ConvertFrom(str)
                         : (T)Convert.ChangeType(str, typeof(T));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Log.Debug($"Could not load settings entry {str}: {ex}");
             }
         }
     }

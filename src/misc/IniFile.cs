@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -10,6 +10,7 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -27,7 +28,10 @@ namespace WinCompose
             try
             {
                 if (!m_mutex.WaitOne(2000))
+                {
+                    Log.Debug($"Failed to acquire settings lock");
                     return;
+                }
             }
             catch (AbandonedMutexException)
             {
@@ -65,6 +69,10 @@ namespace WinCompose
                                                             FullPath);
                 }
             }
+            catch (Exception ex)
+            {
+                Log.Debug($"Failed to load settings: {ex}");
+            }
             finally
             {
                 // Ensure the mutex is always released even if an
@@ -81,7 +89,10 @@ namespace WinCompose
             try
             {
                 if (!m_mutex.WaitOne(2000))
+                {
+                    Log.Debug($"Failed to acquire settings lock");
                     return;
+                }
             }
             catch (AbandonedMutexException)
             {
@@ -95,6 +106,10 @@ namespace WinCompose
                 // Ensure old keys are removed from the global section
                 if (section != "global")
                     NativeMethods.WritePrivateProfileString("global", key, null, FullPath);
+            }
+            catch (Exception ex)
+            {
+                Log.Debug($"Failed to save settings: {ex}");
             }
             finally
             {
