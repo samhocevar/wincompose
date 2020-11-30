@@ -1,7 +1,7 @@
 ﻿WinCompose
 ==========
 
-A compose key for Windows, free and opensource, created by Sam Hocevar.
+A compose key for Windows, free and open-source, created by Sam Hocevar.
 
 A **compose key** allows to easily write special characters such as **é
 ž à ō û ø ☺ ¤ ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often
@@ -11,16 +11,16 @@ very intuitive key combinations. For instance, **ö** is obtained using
 
 WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 
-Download latest: [WinCompose 0.9.4](https://github.com/samhocevar/wincompose/releases/download/v0.9.4/WinCompose-Setup-0.9.4.exe) (December 6, 2019)
+Download latest: [WinCompose 0.9.5](https://github.com/samhocevar/wincompose/releases/download/v0.9.5/WinCompose-Setup-0.9.5.exe) (November 27, 2020)
 -----------------------------------
 
- * Installable version: [WinCompose 0.9.4 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.4/WinCompose-Setup-0.9.4.exe).
+ * Installable version: [WinCompose 0.9.5 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.5/WinCompose-Setup-0.9.5.exe).
 
- * Portable version: [WinCompose 0.9.4 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.4/WinCompose-NoInstall-0.9.4.zip).
+ * Portable version: [WinCompose 0.9.5 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.5/WinCompose-NoInstall-0.9.5.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
-**Note: the software is not digitally signed.** You can help with this by [donating to the project](http://wincompose.info/donate/).
+**Note: this software is not digitally signed.** You can help with this by [donating to the project](http://wincompose.info/donate/).
 
 Quick start
 -----------
