@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WinCompose")]
-[assembly: AssemblyCopyright("Copyright © 2015—2018 Sam Hocevar et al.")]
+[assembly: AssemblyCopyright("Copyright © 2015—2020 Sam Hocevar et al.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,4 +51,4 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.9.5")]
+[assembly: AssemblyVersion("0.9.6")]
