@@ -322,7 +322,7 @@ namespace WinCompose
             var psinfo = new ProcessStartInfo
             {
                 FileName = sb.ToString(),
-                Arguments = user_file,
+                Arguments = $"\"{user_file.Replace("\"", "\"\"\"")}\"",
                 UseShellExecute = true,
             };
             Process.Start(psinfo);
