@@ -224,7 +224,12 @@ public class SequenceNode
     {
         if (path.Count == 0)
         {
-            m_results.Add(item);
+            // If this is a conflict, warn about it
+            if (m_results.Count > 0 && m_results[0].Result != item.Result)
+                Log.Debug($"Conflicting sequence for {item.Sequence.FriendlyName}: had {m_results[0].Result}, got {item.Result}");
+
+            // Insert sequence at index 0 to give precedence to user sequences
+            m_results.Insert(0, item);
             return;
         }
 
