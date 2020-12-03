@@ -1,7 +1,7 @@
 ﻿WinCompose
 ==========
 
-A compose key for Windows, free and opensource, created by Sam Hocevar.
+A compose key for Windows, free and open-source, created by Sam Hocevar.
 
 A **compose key** allows to easily write special characters such as **é
 ž à ō û ø ☺ ¤ ∅ « ♯ ⸘ Ⓚ ㊷ ♪ ♬** using short and often
@@ -20,7 +20,7 @@ Download latest: [WinCompose 0.9.5](https://github.com/samhocevar/wincompose/rel
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
-**Note: the software is not digitally signed.** You can help with this by [donating to the project](http://wincompose.info/donate/).
+**Note: this software is not digitally signed.** You can help with this by [donating to the project](http://wincompose.info/donate/).
 
 Quick start
 -----------
