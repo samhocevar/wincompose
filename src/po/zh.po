@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-11-29 06:52+0000\n"
+"PO-Revision-Date: 2020-12-07 19:29+0000\n"
 "Last-Translator: liuxilu <liuxilu@live.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "wincompose/master/zh_Hans/>\n"
@@ -117,7 +117,7 @@ msgstr "使用 Xorg 项目的按键序列"
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr "使用 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些组合键序列常见于标准 Linux 系统。"
+msgstr "使用 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些序列常见于标准 Linux 系统。"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -134,13 +134,13 @@ msgstr ""
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "使用 WinCompose 的表情符号序列"
+msgstr "使用 WinCompose 的绘文字序列"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr "使用 WinCompose 作者及社区贡献者的表情符号序列。"
+msgstr "使用 WinCompose 作者及社区贡献者的绘文字序列。"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -149,12 +149,12 @@ msgstr "调试窗口"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "显示组合键序列…"
+msgstr "显示按键序列…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr "停用 WinCompose"
+msgstr "停用"
 
 #: i18n/Text.resx:229 ID:Restart
 msgid "Restart"
@@ -181,7 +181,7 @@ msgstr "Unicode 字符"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr "组合键序列"
+msgstr "按键序列"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
@@ -221,9 +221,7 @@ msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
-msgstr ""
-"启用所有字符的 Unicode 输入，即使它们未定义在按键序列表。例如，“组合键 U 1 A "
-"3 F 回车”会输出字符 U+1A3F"
+msgstr "启用所有字符的 Unicode 输入，即使它们没有组合键序列定义。例如，“组合键 U 1 A 3 F 回车”会输出字符 U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -284,7 +282,7 @@ msgstr "复制到剪贴板"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "表情符号"
+msgstr "绘文字"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
@@ -626,7 +624,7 @@ msgstr "收藏"
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr "如果设置，则检测不到键盘活动一定时间后，任何组合序列都会取消。"
+msgstr "如果设置，则检测不到键盘活动一定时间后，任何组合键序列都会取消。"
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
@@ -636,7 +634,7 @@ msgstr "键盘灯"
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr "如果设置，则组合序列输入时，会点亮相应键盘灯。"
+msgstr "如果设置，则组合键序列输入时，会点亮相应键盘灯。"
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
