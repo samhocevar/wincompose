@@ -597,7 +597,13 @@ exit_forward_key:
         {
             char ch = str[i];
 
-            if (use_gtk_hack && char.IsSurrogate(ch))
+            if (ch == '\n' || ch == '\r')
+            {
+                // On some applications (e.g. Chrome or PowerPoint), \n cannot be injected
+                // through its scancode, so we send the virtual key instead.
+                seq.KeyPress(VK.RETURN);
+            }
+            else if (use_gtk_hack && char.IsSurrogate(ch))
             {
                 // Sanity check
                 if (i + 1 >= str.Length || !char.IsHighSurrogate(ch) || !char.IsLowSurrogate(str, i + 1))
