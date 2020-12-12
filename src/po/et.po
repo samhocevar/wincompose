@@ -809,17 +809,17 @@ msgid "Separator, Space"
 msgstr "Eraldaja, Tühik"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:183
 msgid "Prerequisites"
 msgstr "Nõutavad komponendid"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:185
+#: installer.pas:184
 msgid "Software required by WinCompose"
 msgstr "Tarkvara, mida WinCompose vajab"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:188
+#: installer.pas:187
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -830,12 +830,12 @@ msgstr ""
 "hetkel paigaldatud. Järgmine tegevus võib aidata probleemi lahendada:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:192
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Laadi alla ja paigalda .NET Framework 3.5 SP1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:203
+#: installer.pas:202
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -844,7 +844,7 @@ msgstr ""
 "jätkata paigaldust."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:294
+#: installer.pas:293
 msgid "Administrator rights are required. Error: %d"
 msgstr "Vajalikud on administraatori õigused. Viga: %d"
 

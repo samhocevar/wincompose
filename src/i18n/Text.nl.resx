@@ -163,7 +163,7 @@
     <value>Scroll Lock</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>Spatie</value>
+    <value>Spatiebalk</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
@@ -172,28 +172,28 @@
     <value>Samenstellen</value>
   </data>
   <data name="UseXorgRules" xml:space="preserve">
-    <value>Gebruik sequenties van het Xorg project</value>
+    <value>Sequenties van het Xorg-project gebruiken</value>
   </data>
   <data name="UseXorgRulesToolTip" xml:space="preserve">
-    <value>Gebruik de 3000 sequenties van het Xorg project (http://www.x.org/). Het zijn de sequenties die men op een standaard Linux systeem kan vinden.</value>
+    <value>Gebruik de 3000 sequenties van het Xorg-project (http://www.x.org/). Het zijn de sequenties die men op een standaard Linux-systeem aantreft.</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
-    <value>Gebruik sequenties van het XCompose project</value>
+    <value>Sequenties van het XCompose-project gebruiken</value>
   </data>
   <data name="UseXComposeRulesToolTip" xml:space="preserve">
-    <value>Gebruik de 1000 sequenties vanhet XCompose opensource project (https://github.com/kragen/xcompose). Deze sequenties kunnen soms conflicteren met die van Xorg.</value>
+    <value>Gebruik de 1000 sequenties van het XCompose-project (open source - https://github.com/kragen/xcompose). Deze sequenties kunnen soms conflicteren met die van Xorg.</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
-    <value>Gebruik WinCompose emoji sequenties</value>
+    <value>WinCompose emojisequenties gebruiken</value>
   </data>
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
-    <value>Gebruik de sequenties voor Emoji voorzien door de WinCompose auteur en medewerkers.</value>
+    <value>Gebruik de sequenties voor Emoji voorzien door de WinCompose-auteur en -medewerkers.</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
-    <value>Debugvenster</value>
+    <value>Foutopsporingsvenster</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Toon sequenties…</value>
+    <value>Sequenties tonen…</value>
   </data>
   <data name="Disable" xml:space="preserve">
     <value>Uitschakelen</value>
@@ -211,7 +211,7 @@
     <value>Afsluiten</value>
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
-    <value>Unicode karakters</value>
+    <value>Unicode-tekens</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sequenties</value>
@@ -220,25 +220,25 @@
     <value>Probeer de twee toetsen te wisselen</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Probeer de toetsen van de twee-toetsen sequentie te wisselen. Bv. als Compositietoets E A geen geldige sequentie is, probeer Compositietoets A E.</value>
+    <value>Probeer de toetsen van de twee-toetsensequentie te wisselen. Voorbeeld: als samensteltoets E A geen geldige sequentie is, probeer dan samensteltoets A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Zoek filter:</value>
+    <value>Zoekfilter:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Compositietoets:</value>
+    <value>Samensteltoets:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Selecteer de toets die moet werken als compositietoets.</value>
+    <value>Kies de toets die moet werken als samensteltoets.</value>
   </data>
   <data name="ResetTimeout" xml:space="preserve">
-    <value>time-out resetten</value>
+    <value>Time-out herstellen</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
-    <value>Geavanceerde Unicode input</value>
+    <value>Uigebreide Unicode-invoer</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Unicode input toestaan voor alle karakters, zelfs voor deze zonder gedefinieerde compositiesequentie. Bv. de volgende sequentie zal het karakter U+1A3F opleveren: Compositietoets U 1 A 3 F Enter</value>
+    <value>Unicode-invoer toestaan voor alle tekens, zelfs voor tekens zonder gedefinieerde samenstelsequentie. Voorbeeld: de volgende sequentie voert het teken U+1A3F in: samensteltoets U 1 A 3 F Enter</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>Bij ongeldige sequenties</value>
@@ -250,64 +250,64 @@
     <value>Als de ingetoetste sequentie niet bestaat, maar wel een die enkel qua hoofdletters verschilt, corrigeer dan automatisch.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Verwijder alle ingetoetste karakters</value>
+    <value>Alle ingevoerde tekens wissen</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Als de ingetoetste sequentie niet bestaat, verwijder alle ingetoetste karakters. Het standaard gedrag is de karakters plaatsen alsof de compositietoets niet werd ingedrukt.</value>
+    <value>Als de ingetoetste sequentie niet bestaat, verwijder dan alle ingevoerde tekens. Standaardgedrag: plaats de tekens alsof de samensteltoets niet werd ingedrukt.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Produceer een auditief signaal</value>
+    <value>Auditief signaal</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>Als de ingetoetste sequentie niet bestaat, produceer een auditief signaal.</value>
+    <value>Als de ingetoetste sequentie niet bestaat, produceer dan een auditief signaal.</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Interface taal:</value>
+    <value>Programmataal:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Selecteer de taal die WinCompose gebruikt voor de interface. Standaard wordt de taal van het besturingssysteem gebruikt.</value>
+    <value>Kies de taal die WinCompose moet gebruiken als programmataal. Standaard wordt de taal van het besturingssysteem gebruikt.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Sluiten</value>
   </data>
   <data name="CopyToClipboard" xml:space="preserve">
-    <value>Kopieer naar het klembord</value>
+    <value>Kopiëren naar klembord</value>
   </data>
   <data name="Emoji" xml:space="preserve">
-    <value>Emoticons</value>
+    <value>Emoji</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>Toepassen</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Gedrag van oorspronkelijke compositietoets behouden</value>
+    <value>Gedrag van oorspronkelijke samensteltoets behouden</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Dit vraagt WinCompose om zo goed als mogelijk het originele gedrag van de toetsen te behouden. Bv. de combinatie Alt-Tab blijft werken ook als Alt als compositietoets wordt gebruikt.</value>
+    <value>Dit vraagt WinCompose om zo goed als mogelijk het oorspronkelijke gedrag van de toetsen te behouden. Voorbeeld: de combinatie Alt+Tab blijft werken, ook als Alt als samensteltoets wordt gebruikt.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Nul-breedte spaties invoegen in Office apps</value>
+    <value>Nul-breedtespaties invoegen in Office-programma's</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Soms veranderen Microsoft Office toepassingen het lettertype bij het intoetsen van bepaalde Unicode karakters. Deze optie voegt een onzichtbaar karakter toe na het Unicode karakter om dat te omzeilen.</value>
+    <value>Soms passen Microsoft Office-programma's het lettertype aan bij het invoeren van bepaalde Unicode-tekens. Deze optie voegt een onzichtbaar teken toe na het Unicode-teken om dat te omzeilen.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
     <value>Caps Lock emuleren met beide Shift-toetsen</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Als Caps Lock wordt gebruikt als compositietoets is het originele gedrag van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock aan te schakelen door beide Shift toetsen tegelijkertijd in te drukken.</value>
+    <value>Als Caps Lock wordt gebruikt als samensteltoets, is het oorspronkelijke gedrag van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock in te schakelen door beide Shift-toetsen tegelijkertijd in te drukken.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
     <value>Shift-toets schakelt Caps Lock uit</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Als Caps Lock wordt gebruikt als compositietoets, is het originele gedrag van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock aan te schakelen door de Shift-toets in te drukken.</value>
+    <value>Als Caps Lock wordt gebruikt als samensteltoets, is het oorspronkelijke gedrag van die toets niet meer beschikbaar. Deze optie laat toe om Caps Lock in te schakelen door de Shift-toets in te drukken.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
-    <value>Caps Lock maakt van alle letters hoofdletters</value>
+    <value>Caps Lock zet alle letters om in hoofdletters</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Wanneer Caps Lock aanstaat resulteert het intoetsen van een letter met een accent zoals bv &quot;é&quot; altijd in de corresponderende hoofdletter, in dit geval “É”.</value>
+    <value>Als Caps Lock aanstaat, resulteert het intoetsen van een letter met een accent, zoals &quot;é&quot;, altijd in de corresponderende hoofdletter, in dit geval “É”.</value>
   </data>
   <data name="Categories" xml:space="preserve">
     <value>Categorieën</value>
@@ -334,7 +334,7 @@
     <value>Sequenties — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Gebruikersmacro’s</value>
+    <value>Eigen macro’s</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
     <value>WinCompose is uitgeschakeld</value>
@@ -361,22 +361,22 @@
     <value>Over WinCompose</value>
   </data>
   <data name="Programming" xml:space="preserve">
-    <value>Programmeren</value>
+    <value>Programmering</value>
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Vertaling</value>
   </data>
   <data name="Authors" xml:space="preserve">
-    <value>Auteurs</value>
+    <value>Makers</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Licentie</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>WinCompose moet herstart worden opdat sommige wijzigingen zouden kunnen worden toegepast.</value>
+    <value>Herstart WinCompose om enkele wijzigingen toe te passen.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
-    <value>Meld een fout</value>
+    <value>Bug melden</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hulp</value>
@@ -385,7 +385,7 @@
     <value>Er zijn updates beschikbaar.</value>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
-    <value>Gebruikerssequenties</value>
+    <value>Eigen sequenties</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
     <value>Aanpassen</value>
@@ -394,13 +394,13 @@
     <value>Herladen</value>
   </data>
   <data name="AllowInjected" xml:space="preserve">
-    <value>Geïnjecteerde toetscombinaties toelaten</value>
+    <value>Geïnjecteerde toetscombinaties toestaan</value>
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
-    <value>Toetscombinaties gegenereerd door andere software zoals AutoHotKey of Synergy niet negeren</value>
+    <value>Toetscombinaties gegenereerd door andere software, zoals AutoHotKey of Synergy, niet negeren</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Print Screen</value>
+    <value>PrtSc</value>
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Uitgeschakeld</value>
@@ -409,34 +409,34 @@
     <value>Automatisch controleren op updates</value>
   </data>
   <data name="CheckUpdatesToolTip" xml:space="preserve">
-    <value>Indien ingeschakeld, zal WinCompose regelmatig via het internet controleren of er nieuwe versies beschikbaar zijn. Die worden niet automatisch geïnstalleerd.</value>
+    <value>Schakel in om WinCompose regelmatig op internet te laten controleren op nieuwe versies. Nieuwe versies worden niet automatisch geïnstalleerd.</value>
   </data>
   <data name="KeepIconVisible" xml:space="preserve">
-    <value>Probeer het icoon altijd zichtbaar te houden in de systeembalk</value>
+    <value>Systeemvakpictogram altijd zichtbaar houden</value>
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
-    <value>Standaard zal Windows het icoon na een tijdje uit de systeem balk verwijderen. Deze optie probeert het icoon altijd zichtbaar te houden.</value>
+    <value>Standaard verbergt Windows het pictogram uit het systeemvak. Deze optie probeert het altijd zichtbaar te houden.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
     <value>Aanpassen…</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
-    <value>Druk aub een toets in die mag worden gebruikt als compositietoets.</value>
+    <value>Druk op de als samensteltoets te gebruiken toets.</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
     <value>Toevoegen aan favorieten</value>
   </data>
   <data name="DisableIcon" xml:space="preserve">
-    <value>Systeembalk icoon uitschakelen</value>
+    <value>Systeemvakpictogram uitschakelen</value>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>Indien aangeschakeld zal het WinCompose icoon niet meer in de systeembalk verschijnen. De enige manier om WinCompose dan te openen is via &quot;WinCompose Settings&quot; en &quot;WinCompose sequenties&quot; in het opstart menu.</value>
+    <value>Schakel in om het WinCompose-pictogram niet meer te tonen in het systeemvak. De enige manier om WinCompose dan te openen is via &quot;WinCompose-instellingen&quot; en &quot;WinCompose-sequenties&quot; in het opstartmenu.</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
-    <value>Beginpagina</value>
+    <value>Home</value>
   </data>
   <data name="KeyEnd" xml:space="preserve">
-    <value>Einde</value>
+    <value>End</value>
   </data>
   <data name="KeyTab" xml:space="preserve">
     <value>Tab</value>
@@ -445,19 +445,19 @@
     <value>Geen time-out</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Uitgebreid</value>
+    <value>Geavanceerd</value>
   </data>
   <data name="IgnoreRegex" xml:space="preserve">
-    <value>Negeer windows die overeenkomen met deze regex:</value>
+    <value>Vensters negeren die overeenkomen met deze regex:</value>
   </data>
   <data name="IgnoreRegexToolTip" xml:space="preserve">
-    <value>WinCompose zal volledig uitgeschakeld worden wanneer de huidige window klasse of window naam overeenkomt met deze reguliere expressie.</value>
+    <value>WinCompose wordt volledig uitgeschakeld als de huidige vensterklasse of -naam overeenkomt met deze reguliere uitdrukking.</value>
   </data>
   <data name="AlwaysCompose" xml:space="preserve">
-    <value>Alternatieve compositietoets is altijd Compose</value>
+    <value>Alternatieve samensteltoets is altijd Compose</value>
   </data>
   <data name="AlwaysComposeToolTip" xml:space="preserve">
-    <value>Indien ingeschakeld zullen alle toetsen een voor een als compositietoets worden behandeld. Standaard wordt enkel de eerste ingedrukte toets als compositietoets geïnterpreteerd en alle andere behouden hun oorspronkelijk gedrag.</value>
+    <value>Schakel in om alle toetsen één voor één als samensteltoets te behandelen. Standaard wordt enkel de eerste ingedrukte toets als samensteltoets behandeld en alle andere behouden hun oorspronkelijk gedrag.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Bijzondere dank</value>
@@ -466,16 +466,16 @@
     <value>Verwijderen uit favorieten</value>
   </data>
   <data name="Favorites" xml:space="preserve">
-    <value>Categorienaam (Unicode karakters, Emoji, Macro's, Favorieten)</value>
+    <value>Favorieten</value>
   </data>
   <data name="TimeoutToolTip" xml:space="preserve">
-    <value>Indien ingeschakeld, zal elke compositiesequentie opgeheven worden na een bepaalde tijd als er geen toetsenbordactiviteit wordt gedetecteerd.</value>
+    <value>Schakel in om elke samenstelsequentie op te heffen na een bepaalde tijd als er geen toetsenbordactiviteit wordt gedetecteerd.</value>
   </data>
   <data name="KeyboardLed" xml:space="preserve">
-    <value>Toetsenbord LED</value>
+    <value>Toetsenbord-led</value>
   </data>
   <data name="KeyboardLedToolTip" xml:space="preserve">
-    <value>Indien ingeschakeld zal de overeenkomstige LED op het toetsenbord oplichten tijdens het uitvoeren van een compositiesequentie.</value>
+    <value>Schakel in om de overeenkomstige led op het toetsenbord te laten oplichten tijdens het uitvoeren van een samenstelsequentie.</value>
   </data>
   <data name="KeyCompose" xml:space="preserve">
     <value>Samenstellen</value>

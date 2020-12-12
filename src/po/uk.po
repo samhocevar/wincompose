@@ -804,17 +804,17 @@ msgid "Separator, Space"
 msgstr "Роздільник, пробіл"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:183
 msgid "Prerequisites"
 msgstr "Вимоги"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:185
+#: installer.pas:184
 msgid "Software required by WinCompose"
 msgstr "Потреби до засобу WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:188
+#: installer.pas:187
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -825,19 +825,19 @@ msgstr ""
 "схоже, не встановлене. Така дія дасть ладу:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:192
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Вивантаж і встанови .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:203
+#: installer.pas:202
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr "Як зробиш, гайда сюди знов і далі встановлювати."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:294
+#: installer.pas:293
 msgid "Administrator rights are required. Error: %d"
 msgstr "Потрібні права управителя. Помилка: %d"
 
