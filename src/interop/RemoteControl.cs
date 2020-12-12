@@ -28,6 +28,8 @@ namespace WinCompose
             Width = Height = 0;
             WindowState = WindowState.Minimized;
             WindowStyle = WindowStyle.None;
+            AllowsTransparency = true;
+            Opacity = 0.0;
 
             SourceInitialized += (o, e) =>
                 (PresentationSource.FromVisual(this) as HwndSource).AddHook(WndProc);
