@@ -826,17 +826,17 @@ msgid "Separator, Space"
 msgstr "Avskiljare, blanksteg"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:183
 msgid "Prerequisites"
 msgstr "Förutsättningar"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:185
+#: installer.pas:184
 msgid "Software required by WinCompose"
 msgstr "Programvara som krävs av WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:188
+#: installer.pas:187
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -847,12 +847,12 @@ msgstr ""
 "verkar vara installerat. Följande åtgärd kan hjälpa dig att lösa problemet:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:192
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "Hämta och installera .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:203
+#: installer.pas:202
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -861,7 +861,7 @@ msgstr ""
 "installationen."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:294
+#: installer.pas:293
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administratörsrättigheter krävs. Fel: %d"
 

@@ -117,7 +117,9 @@ msgstr "使用 Xorg 项目的按键序列"
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr "使用 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些序列常见于标准 Linux 系统。"
+msgstr ""
+"使用 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些序列常见于标准 "
+"Linux 系统。"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -129,8 +131,8 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"使用开源项目 XCompose (https://github.com/kragen/xcompose) 的一千多个组合键序列。这些序列可能会与 "
-"Xorg 的序列冲突。"
+"使用开源项目 XCompose (https://github.com/kragen/xcompose) 的一千多个组合键序"
+"列。这些序列可能会与 Xorg 的序列冲突。"
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -221,7 +223,9 @@ msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
-msgstr "启用所有字符的 Unicode 输入，即使它们没有组合键序列定义。例如，“组合键 U 1 A 3 F 回车”会输出字符 U+1A3F"
+msgstr ""
+"启用所有字符的 Unicode 输入，即使它们没有组合键序列定义。例如，“组合键 U 1 A "
+"3 F 回车”会输出字符 U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
@@ -792,17 +796,17 @@ msgid "Separator, Space"
 msgstr "分隔符，空格"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:183
 msgid "Prerequisites"
 msgstr "前置需求"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:185
+#: installer.pas:184
 msgid "Software required by WinCompose"
 msgstr "WinCompose 需要的软件"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:188
+#: installer.pas:187
 msgid ""
 "WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
 "not\n"
@@ -813,12 +817,12 @@ msgstr ""
 "下列操作或可帮助解决问题："
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:193
+#: installer.pas:192
 msgid "Download and install .NET Framework 3.5 Service Pack 1"
 msgstr "下载并安装 .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:203
+#: installer.pas:202
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -827,7 +831,7 @@ msgstr ""
 "返回此屏幕并继续安装。"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:294
+#: installer.pas:293
 msgid "Administrator rights are required. Error: %d"
 msgstr "需要管理员权限。错误：%d"
 

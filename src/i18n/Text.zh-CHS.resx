@@ -133,10 +133,10 @@
     <value>右 Ctrl 键</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>左 Win 键</value>
+    <value>左 Windows 键</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>右 Win 键</value>
+    <value>右 Windows 键</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
     <value>Caps Lock 键</value>
@@ -175,19 +175,19 @@
     <value>使用 Xorg 项目的按键序列</value>
   </data>
   <data name="UseXorgRulesToolTip" xml:space="preserve">
-    <value>使用 Xorg 项目 (http://www.x.org/) 的三千多个按键序列。这些按键序列常见于标准 Linux 系统。</value>
+    <value>使用 Xorg 项目 (http://www.x.org/) 的三千多个组合键序列。这些序列常见于标准 Linux 系统。</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
     <value>使用 XCompose 项目的按键序列</value>
   </data>
   <data name="UseXComposeRulesToolTip" xml:space="preserve">
-    <value>使用开源项目 XCompose (https://github.com/kragen/xcompose) 的一千多个按键序列。这些序列可能会与 Xorg 的序列冲突。</value>
+    <value>使用开源项目 XCompose (https://github.com/kragen/xcompose) 的一千多个组合键序列。这些序列可能会与 Xorg 的序列冲突。</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
-    <value>使用 WinCompose 的表情符号序列</value>
+    <value>使用 WinCompose 的绘文字序列</value>
   </data>
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
-    <value>使用 WinCompose 作者及社区贡献者的表情符号序列。</value>
+    <value>使用 WinCompose 作者及社区贡献者的绘文字序列。</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>调试窗口</value>
@@ -238,7 +238,7 @@
     <value>高级 Unicode 输入</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>启用所有字符的 Unicode 输入，即使它们未定义在按键序列表。例如，“组合键 U 1 A 3 F 回车”会输出字符 U+1A3F</value>
+    <value>启用所有字符的 Unicode 输入，即使它们没有组合键序列定义。例如，“组合键 U 1 A 3 F 回车”会输出字符 U+1A3F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
     <value>当按键序列无效</value>
@@ -256,16 +256,16 @@
     <value>如果输入的序列不存在，丢弃所有已输入字符。默认的行为是直接输出字符，如同没用组合键那样。</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>发出一声哔</value>
+    <value>发出一声哔响</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>如果输入的序列不存在，则发出系统哔声。</value>
+    <value>如果输入的序列不存在，则发出系统哔响。</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>界面语言：</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>选择 WinCompose 界面所用的语言。默认为系统语言。</value>
+    <value>选择 WinCompose 用户界面所用的语言。默认为系统语言。</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>关闭</value>
@@ -274,7 +274,7 @@
     <value>复制到剪贴板</value>
   </data>
   <data name="Emoji" xml:space="preserve">
-    <value>表情符号</value>
+    <value>绘文字</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>应用</value>
@@ -469,13 +469,13 @@
     <value>收藏</value>
   </data>
   <data name="TimeoutToolTip" xml:space="preserve">
-    <value>如果设置，则检测不到键盘活动一定时间后，任何组合序列都会取消。</value>
+    <value>如果设置，则检测不到键盘活动一定时间后，任何组合键序列都会取消。</value>
   </data>
   <data name="KeyboardLed" xml:space="preserve">
     <value>键盘灯</value>
   </data>
   <data name="KeyboardLedToolTip" xml:space="preserve">
-    <value>如果设置，则组合序列输入时，会点亮相应键盘灯。</value>
+    <value>如果设置，则组合键序列输入时，会点亮相应键盘灯。</value>
   </data>
   <data name="KeyCompose" xml:space="preserve">
     <value>组合键</value>

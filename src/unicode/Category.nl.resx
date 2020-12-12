@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Control" xml:space="preserve">
-    <value>Overig, Sturing</value>
+    <value>Overig, Besturing</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Overig, Formaat</value>
@@ -127,84 +127,84 @@
     <value>Overig, Niet toegewezen</value>
   </data>
   <data name="PrivateUse" xml:space="preserve">
-    <value>Overig, Privaatgebruik</value>
+    <value>Overig, Privégebruik</value>
   </data>
   <data name="Surrogate" xml:space="preserve">
     <value>Overig, Surrogaat</value>
   </data>
   <data name="LowercaseLetter" xml:space="preserve">
-    <value>Letter, onderkast</value>
+    <value>Letter, Kleine letter</value>
   </data>
   <data name="ModifierLetter" xml:space="preserve">
-    <value>Letter, aanpassend</value>
+    <value>Letter, Aanpassingstoets</value>
   </data>
   <data name="OtherLetter" xml:space="preserve">
     <value>Letter, Overig</value>
   </data>
   <data name="TitlecaseLetter" xml:space="preserve">
-    <value>Letter, klein kapitaal</value>
+    <value>Letter, Kop</value>
   </data>
   <data name="UppercaseLetter" xml:space="preserve">
-    <value>Letter, bovenkast</value>
+    <value>Letter, Hoofdletter</value>
   </data>
   <data name="SpacingCombiningMark" xml:space="preserve">
-    <value>Markeringsteken, combinerende spatiëring</value>
+    <value>Markeerteken, Gecombineerde spaties</value>
   </data>
   <data name="EnclosingMark" xml:space="preserve">
-    <value>Teken, omvattend</value>
+    <value>Teken, Omvattend</value>
   </data>
   <data name="NonSpacingMark" xml:space="preserve">
-    <value>Teken, niet-spatiëring</value>
+    <value>Teken, Geen spatiëring</value>
   </data>
   <data name="DecimalDigitNumber" xml:space="preserve">
-    <value>Getal, decimaal cijfer</value>
+    <value>Getal, Decimaal cijfer</value>
   </data>
   <data name="LetterNumber" xml:space="preserve">
-    <value>Getal, letter</value>
+    <value>Getal, Letter</value>
   </data>
   <data name="OtherNumber" xml:space="preserve">
-    <value>Getal, overig</value>
+    <value>Getal, Overig</value>
   </data>
   <data name="ConnectorPunctuation" xml:space="preserve">
-    <value>Leesteken, verbindingsstuk</value>
+    <value>Leesteken, Verbindingsstuk</value>
   </data>
   <data name="DashPunctuation" xml:space="preserve">
-    <value>Leesteken, streep</value>
+    <value>Leesteken, Streep</value>
   </data>
   <data name="ClosePunctuation" xml:space="preserve">
-    <value>Leesteken, afsluiten</value>
+    <value>Leesteken, Sluiten</value>
   </data>
   <data name="FinalQuotePunctuation" xml:space="preserve">
-    <value>Leesteken, aanhalingsteken sluiten</value>
+    <value>Leesteken, Dubbel aanhalingsteken sluiten</value>
   </data>
   <data name="InitialQuotePunctuation" xml:space="preserve">
-    <value>Leesteken, aanhalingsteken openen</value>
+    <value>Leesteken, Dubbel aanhalingsteken openen</value>
   </data>
   <data name="OtherPunctuation" xml:space="preserve">
-    <value>Leesteken, overig</value>
+    <value>Leesteken, Overig</value>
   </data>
   <data name="OpenPunctuation" xml:space="preserve">
-    <value>Leesteken, openen</value>
+    <value>Leesteken, Openen</value>
   </data>
   <data name="CurrencySymbol" xml:space="preserve">
-    <value>Symbool, valuta</value>
+    <value>Symbool, Valuta</value>
   </data>
   <data name="ModifierSymbol" xml:space="preserve">
-    <value>Symbool, aanpassend</value>
+    <value>Symbool, Aanpassingstoets</value>
   </data>
   <data name="MathSymbol" xml:space="preserve">
     <value>Symbool, wiskundig</value>
   </data>
   <data name="OtherSymbol" xml:space="preserve">
-    <value>Symbool, overig</value>
+    <value>Symbool, Overig</value>
   </data>
   <data name="LineSeparator" xml:space="preserve">
-    <value>Scheiding, lijn</value>
+    <value>Scheidingsteken, Regel</value>
   </data>
   <data name="ParagraphSeparator" xml:space="preserve">
-    <value>Scheiding, alinea</value>
+    <value>Scheidingsteken, Alinea</value>
   </data>
   <data name="SpaceSeparator" xml:space="preserve">
-    <value>Scheiding, spatie</value>
+    <value>Scheidingsteken, Spatie</value>
   </data>
 </root>
