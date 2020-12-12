@@ -275,6 +275,12 @@
   <Target Name="BeforeBuild">
   </Target>
   -->
+  <Target Name="BeforeBuild">
+    <Exec Command="echo using System.Reflection; [assembly: AssemblyVersion(&quot;$([System.Text.RegularExpressions.Regex]::Replace($(ApplicationVersion), '[a-z].*', ''))&quot;)] > $(OutputPath)\BuildInfo.g.cs" />
+    <ItemGroup>
+      <Compile Include="$(OutputPath)\BuildInfo.g.cs" />
+    </ItemGroup>
+  </Target>
   <Target Name="AfterBuild">
     <Exec Command="3rdparty\inserticons\bin\$(Configuration)\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
   </Target>
