@@ -89,6 +89,7 @@
     <Compile Include="interop\WinTypes.cs" />
     <Compile Include="misc\AtomicFlag.cs" />
     <Compile Include="misc\CompressedResource.cs" />
+    <Compile Include="misc\Extensions.cs" />
     <Compile Include="misc\HashSet.cs" />
     <Compile Include="misc\IniFile.cs" />
     <Compile Include="misc\SysTray.cs" />

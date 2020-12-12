@@ -42,7 +42,7 @@ namespace WinCompose
 
             // If started from Task Scheduler, we need to detach otherwise the
             // system may kill us after some time.
-            if (Array.Find(args, arg => arg == "/fromtask") != null)
+            if (args.Contains("/fromtask"))
             {
                 Process.Start(Application.ResourceAssembly.Location);
                 return;
