@@ -601,4 +601,12 @@
     <value>Compose</value>
     <comment>The short name of the compose key</comment>
   </data>
+  <data name="AutoLaunch" xml:space="preserve">
+    <value>Launch WinCompose on login</value>
+    <comment></comment>
+  </data>
+  <data name="AutoLaunchToolTip" xml:space="preserve">
+    <value>If set, WinCompose will be started when the user logs in.</value>
+    <comment></comment>
+  </data>
 </root>

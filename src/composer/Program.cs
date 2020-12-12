@@ -40,6 +40,16 @@ namespace WinCompose
                 }
             }
 
+            // Do this before Composer.Init() because of the Disabled and AutoLaunch settings
+            Settings.LoadConfig();
+
+            // If started automatically, but autolaunch is disabled, bail out.
+            if (args.Contains("/fromtask") || args.Contains("/fromstartup"))
+            {
+                if (!Settings.AutoLaunch.Value)
+                    return;
+            }
+
             // If started from Task Scheduler, we need to detach otherwise the
             // system may kill us after some time.
             if (args.Contains("/fromtask"))
@@ -47,9 +57,6 @@ namespace WinCompose
                 Process.Start(Application.ResourceAssembly.Location);
                 return;
             }
-
-            // Do this before Composer.Init() because of the Disabled setting
-            Settings.LoadConfig();
 
             Settings.LoadSequences();
             Metadata.LoadDB();

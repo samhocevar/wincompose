@@ -160,6 +160,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch WinCompose on login.
+        /// </summary>
+        public static string AutoLaunch {
+            get {
+                return ResourceManager.GetString("AutoLaunch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If set, WinCompose will be started when the user logs in..
+        /// </summary>
+        public static string AutoLaunchToolTip {
+            get {
+                return ResourceManager.GetString("AutoLaunchToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emit a beep.
         /// </summary>
         public static string BeepOnInvalid {

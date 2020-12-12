@@ -82,6 +82,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <emoji:TextBlock Grid.Row="0" Grid.Column="0"
@@ -95,19 +96,26 @@
 
                         <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                   Margin="8,4" VerticalAlignment="Center"
+                                  IsChecked="{Binding Value, Source={x:Static wc:Settings.AutoLaunch}}"
+                                  ToolTipService.ToolTip="{x:Static i18n:Text.AutoLaunchToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.AutoLaunch}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.CheckUpdates}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.CheckUpdatesToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.CheckUpdates}" TextWrapping="Wrap"/>
                         </CheckBox>
 
-                        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                        <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
                                   Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.KeepIconVisible}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.KeepIconVisibleToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.KeepIconVisible}" TextWrapping="Wrap"/>
                         </CheckBox>
 
-                        <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                        <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                                   Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.DisableIcon}}"
                                   ToolTipService.ToolTip="{x:Static i18n:Text.DisableIconToolTip}">
