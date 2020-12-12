@@ -43,19 +43,27 @@ namespace WinCompose
             // Do this before Composer.Init() because of the Disabled and AutoLaunch settings
             Settings.LoadConfig();
 
-            // If started automatically, but autolaunch is disabled, bail out.
-            if (args.Contains("/fromtask") || args.Contains("/fromstartup"))
+            // Check if started from task
+            if (args.Contains("-fromtask"))
             {
                 if (!Settings.AutoLaunch.Value)
                     return;
-            }
 
-            // If started from Task Scheduler, we need to detach otherwise the
-            // system may kill us after some time.
-            if (args.Contains("/fromtask"))
-            {
+                // If started from Task Scheduler, we need to detach otherwise the
+                // system may kill us after some time.
                 Process.Start(Application.ResourceAssembly.Location);
                 return;
+            }
+
+            // Check if started from startup menu
+            if (args.Contains("-fromstartup"))
+            {
+                if (!Settings.AutoLaunch.Value)
+                    return;
+
+                // If there is a task scheduler entry, give it priority
+                if (SchTasks.HasTask())
+                    return;
             }
 
             Settings.LoadSequences();

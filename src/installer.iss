@@ -144,14 +144,14 @@ Name: "{group}\{#NAME} Sequences"; Filename: "{app}\{#EXE}"; IconIndex: 1; Param
 Name: "{group}\{#NAME} Settings"; Filename: "{app}\{#EXE}"; IconIndex: 2; Parameters: "-settings"
 
 [Run]
-Filename: "{app}\{#EXE}"; Parameters: "/frominstaller"; Flags: nowait
+Filename: "{app}\{#EXE}"; Parameters: "-frominstaller"; Flags: nowait
 
 [Registry]
 Root: HKCU; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; \
-    ValueType: string; ValueName: "{#NAME}"; ValueData: """{app}\{#EXE}"" /fromstartup"; \
+    ValueType: string; ValueName: "{#NAME}"; ValueData: """{app}\{#EXE}"" -fromstartup"; \
     Flags: uninsdeletevalue; Check: not is_elevated_run()
 Root: HKLM; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; \
-    ValueType: string; ValueName: "{#NAME}"; ValueData: """{app}\{#EXE}"" /fromstartup"; \
+    ValueType: string; ValueName: "{#NAME}"; ValueData: """{app}\{#EXE}"" -fromstartup"; \
     Flags: uninsdeletevalue; Check: is_elevated_run()
 
 [InstallDelete]
@@ -223,6 +223,7 @@ Type: files; Name: "{app}\{#NAME}-settings.exe"
 [UninstallRun]
 Filename: "{cmd}"; Parameters: "/c taskkill /f /im {#EXE}"; \
     RunOnceId: kill_wincompose; Flags: runhidden
+; Remove the task scheduler entry that may have been added
 ; Use "nowait" because /f does not exist on XP / 2003
 Filename: "{sys}\schtasks"; Parameters: "/delete /f /tn ""{#NAME}"""; \
     RunOnceId: del_task; Flags: runhidden nowait

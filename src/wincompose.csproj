@@ -92,6 +92,7 @@
     <Compile Include="misc\Extensions.cs" />
     <Compile Include="misc\HashSet.cs" />
     <Compile Include="misc\IniFile.cs" />
+    <Compile Include="misc\SchTasks.cs" />
     <Compile Include="misc\SysTray.cs" />
     <Compile Include="misc\Utils.cs" />
     <Compile Include="misc\WatchedFile.cs" />
