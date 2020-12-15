@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-12-07 19:29+0000\n"
+"PO-Revision-Date: 2020-12-15 10:02+0000\n"
 "Last-Translator: liuxilu <liuxilu@live.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "wincompose/master/zh_Hans/>\n"
@@ -136,13 +136,13 @@ msgstr ""
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "使用 WinCompose 的绘文字序列"
+msgstr "使用 WinCompose 的表情符号序列"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr "使用 WinCompose 作者及社区贡献者的绘文字序列。"
+msgstr "使用 WinCompose 作者及社区贡献者的表情符号序列。"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -174,7 +174,7 @@ msgstr "访问官网"
 
 #: i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr "退出"
+msgstr "退出 WinCompose"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
@@ -230,17 +230,17 @@ msgstr ""
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "当按键序列无效"
+msgstr "当输入的序列无效"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "回退到无大小写的匹配"
+msgstr "回退到忽略大小写的匹配"
 
 #: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr "如果输入的序列不存在，但有一个仅大小写不同，则自动纠正。"
+msgstr "如果输入的序列不存在，但有仅大小写不同的定义，则自动更正。"
 
 #: i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -286,7 +286,7 @@ msgstr "复制到剪贴板"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "绘文字"
+msgstr "表情符号"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
@@ -557,8 +557,8 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
-"如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通"
-"过开始菜单的“WinCompose 设置”和“WinCompose 按键序列”。"
+"如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通过开始菜单的“WinCompose "
+"Settings”和“WinCompose Sequences”打开。"
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -628,7 +628,7 @@ msgstr "收藏"
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr "如果设置，则检测不到键盘活动一定时间后，任何组合键序列都会取消。"
+msgstr "如果设置，则检测不到键盘活动一定时间后，任何输入的序列都会取消。"
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
@@ -827,8 +827,8 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
-"安装完成后，您就可以\n"
-"返回此屏幕并继续安装。"
+"安装完成后，您就可以返回此屏幕\n"
+"并继续安装 WinCompose。"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:293
