@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-12-07 19:29+0000\n"
+"PO-Revision-Date: 2020-12-15 10:01+0000\n"
 "Last-Translator: liuxilu <liuxilu@live.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "wincompose/master/zh_Hans/>\n"
@@ -230,7 +230,7 @@ msgstr "当按键序列无效"
 
 #: i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "回退到无大小写的匹配"
+msgstr "回退到忽略大小写的匹配"
 
 #: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
