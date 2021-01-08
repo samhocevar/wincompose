@@ -8,115 +8,120 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.6\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-01-09 15:33+0000\n"
+"Last-Translator: Indrani Roy <indrani@scriptek.co.in>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/wincompose/master/"
+"hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "अपने आप डिटक्ट होना"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr ""
+msgstr "बायाँ ऑल्ट"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr ""
+msgstr "दायाँ ऑल्ट"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr ""
+msgstr "बायाँ कंट्रोल"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr ""
+msgstr "दायाँ कंट्रोल"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr ""
+msgstr "बायाँ विंडोज"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr ""
+msgstr "दायाँ विंडोज"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr ""
+msgstr "कैप्स लॉक"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr ""
+msgstr "नम लाक"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr ""
+msgstr "रोकें"
 
 #. Also known as Application key
 #: i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr ""
+msgstr "मेन्यू"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr ""
+msgstr "एस्केप"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "कनवर्शन"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "नॉन-कनवर्शन"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr ""
+msgstr "स्क्रॉल लॉक"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "स्पेसबार"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "रिटर्न बटन"
 
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "लिखना"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Xorg प्रोजेक्ट से क्रमों का उपयोग करें"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Xorg प्रोजेक्ट (http://www.x.org/) से 3,000 रचना क्रमों का उपयोग करें। ये मा"
+"नक लिनक्स प्रणाली सबेस ज़्यादा पर पाए जाने वाले क्रम हैं।"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "XCompose प्रोजेक्ट से क्रमों का उपयोग करें"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
