@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -467,6 +467,22 @@ internal enum MSGFLT : uint
 {
     ADD = 1,
     REMOVE = 2,
+};
+
+// Enums from winnt.h
+internal enum SID_NAME_USE : int
+{
+    SidTypeUser = 1,
+    SidTypeGroup,
+    SidTypeDomain,
+    SidTypeAlias,
+    SidTypeWellKnownGroup,
+    SidTypeDeletedAccount,
+    SidTypeInvalid,
+    SidTypeUnknown,
+    SidTypeComputer,
+    SidTypeLabel,
+    SidTypeLogonSession,
 };
 
 }

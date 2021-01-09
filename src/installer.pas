@@ -1,4 +1,16 @@
 {
+{  WinCompose — a compose key for Windows — http://wincompose.info/
+{
+{  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
+{
+{  This program is free software. It comes without any warranty, to
+{  the extent permitted by applicable law. You can redistribute it
+{  and/or modify it under the terms of the Do What the Fuck You Want
+{  to Public License, Version 2, as published by the WTFPL Task Force.
+{  See http://www.wtfpl.net/ for more details.
+}
+
+{
 { Installer state
 }
 var
@@ -32,9 +44,6 @@ function reexec(hwnd: hwnd; lpOperation: string; lpFile: string;
 procedure keepalive(hwnd: hwnd; milliseconds: uint);
     external 'keepalive@files:installer-helper.dll cdecl setuponly';
 
-procedure fix_file(path: string);
-    external 'fix_file@files:installer-helper.dll cdecl setuponly';
-
 {
 { Helper function to set elevation bit in a shortcut
 }
@@ -56,15 +65,6 @@ begin
     finally
         s.free;
     end;
-end;
-
-{
-{ Helper function to patch our scheduled task
-}
-procedure fix_scheduled_task(path: string);
-begin
-    path := expandconstant(path);
-    fix_file(path);
 end;
 
 {
