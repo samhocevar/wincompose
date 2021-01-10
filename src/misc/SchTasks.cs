@@ -13,6 +13,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Xml;
 
@@ -26,7 +27,10 @@ namespace WinCompose
         public static void InstallTask()
         {
             var cmd = $"\"\"\"\"{Utils.ExecutableName}\"\"\" -fromtask\"";
-            var xml = $@"{Environment.SystemDirectory}\Tasks\WinCompose";
+            var source = $@"{Environment.SystemDirectory}\Tasks\WinCompose";
+            // Save temporary task file to our app data dir in case we want to inspect it.
+            Utils.EnsureDirectory(Utils.AppDataDir);
+            var tmp = Path.Combine(Utils.AppDataDir, "task.backup.xml");
 
             try
             {
@@ -36,15 +40,15 @@ namespace WinCompose
                 RunSchTasks($"/tn WinCompose /f /create /sc onlogon /tr {cmd}");
 
                 var doc = new XmlDocument();
-                doc.Load(xml);
+                doc.Load(source);
                 FixTaskElement(doc.DocumentElement);
-                doc.Save(xml);
+                doc.Save(tmp);
 
-                RunSchTasks($"/tn WinCompose /f /create /xml \"{xml}\"");
+                RunSchTasks($"/tn WinCompose /f /create /xml \"{tmp}\"");
             }
-            catch
+            catch (Exception ex)
             {
-                // FIXME: add error reporting here
+                Log.Debug($"Could not create scheduled task: {ex}");
             }
         }
 
@@ -52,7 +56,7 @@ namespace WinCompose
         {
             // Make sure we use a GroupId, not a UserId; we can’t use the SYSTEM
             // account because it is not allowed to open GUI programs. We use the
-            // translated name of BUILTIN\Users instead.
+            // built-in BUILTIN\Users group instead.
             { "UserId", "GroupId" },
         };
 
@@ -88,7 +92,7 @@ namespace WinCompose
                 node = tmp;
             }
 
-            // Replace content if necessary
+            // Replace node content if necessary
             if (m_xml_replaces.TryGetValue(node.Name, out string content))
                 node.InnerText = content;
 
