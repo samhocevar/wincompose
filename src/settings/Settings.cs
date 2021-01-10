@@ -83,6 +83,8 @@ namespace WinCompose
 
         [EntryLocation("global", "language")]
         public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
+        [EntryLocation("global", "autolaunch")]
+        public static SettingsEntry<bool> AutoLaunch { get; } = new SettingsEntry<bool>(true);
         [EntryLocation("global", "disabled")]
         public static SettingsEntry<bool> Disabled { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("global", "check_updates")]

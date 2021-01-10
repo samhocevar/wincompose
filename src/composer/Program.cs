@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -40,16 +40,33 @@ namespace WinCompose
                 }
             }
 
-            // If started from Task Scheduler, we need to detach otherwise the
-            // system may kill us after some time.
-            if (Array.Find(args, arg => arg == "/fromtask") != null)
+            // Do this before Composer.Init() because of the Disabled and AutoLaunch settings
+            Settings.LoadConfig();
+
+            // Check if started from task
+            if (args.Contains("-fromtask"))
             {
+                if (!Settings.AutoLaunch.Value)
+                    return;
+
+                // If started from Task Scheduler, we need to detach otherwise the
+                // system may kill us after some time.
                 Process.Start(Application.ResourceAssembly.Location);
                 return;
             }
 
-            // Do this before Composer.Init() because of the Disabled setting
-            Settings.LoadConfig();
+            // Check if started from startup menu
+            if (args.Contains("-fromstartup"))
+            {
+                if (!Settings.AutoLaunch.Value)
+                    return;
+
+                // If there is a task scheduler entry, give it priority
+                if (SchTasks.HasTask())
+                    return;
+            }
+
+            SchTasks.InstallTask();
 
             Settings.LoadSequences();
             Metadata.LoadDB();

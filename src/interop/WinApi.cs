@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -165,6 +165,16 @@ static internal class NativeMethods
         IntPtr childAfter, string className, string windowTitle);
     [DllImport("user32")]
     public static extern bool GetClientRect(IntPtr hWnd, out RECT lpRect);
+
+    //
+    // for SchTask.cs
+    //
+
+    [DllImport("advapi32", CharSet=CharSet.Auto, SetLastError = true)]
+    public static extern bool LookupAccountSid(string lpSystemName,
+        [MarshalAs(UnmanagedType.LPArray)] byte[] Sid, StringBuilder lpName,
+        ref uint cchName, StringBuilder ReferencedDomainName,
+        ref uint cchReferencedDomainName, out SID_NAME_USE peUse);
 };
 
 }
