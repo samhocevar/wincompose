@@ -184,10 +184,10 @@
     <value>使用开源项目 XCompose (https://github.com/kragen/xcompose) 的一千多个组合键序列。这些序列可能会与 Xorg 的序列冲突。</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
-    <value>使用 WinCompose 的绘文字序列</value>
+    <value>使用 WinCompose 的表情符号序列</value>
   </data>
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
-    <value>使用 WinCompose 作者及社区贡献者的绘文字序列。</value>
+    <value>使用 WinCompose 作者及社区贡献者的表情符号序列。</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
     <value>调试窗口</value>
@@ -208,7 +208,7 @@
     <value>访问官网</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>退出</value>
+    <value>退出 WinCompose</value>
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
     <value>Unicode 字符</value>
@@ -241,13 +241,13 @@
     <value>启用所有字符的 Unicode 输入，即使它们没有组合键序列定义。例如，“组合键 U 1 A 3 F 回车”会输出字符 U+1A3F</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>当按键序列无效</value>
+    <value>当输入的序列无效</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>回退到无大小写的匹配</value>
+    <value>回退到忽略大小写的匹配</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>如果输入的序列不存在，但有一个仅大小写不同，则自动纠正。</value>
+    <value>如果输入的序列不存在，但有仅大小写不同的定义，则自动更正。</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
     <value>丢弃所有已输入字符</value>
@@ -274,7 +274,7 @@
     <value>复制到剪贴板</value>
   </data>
   <data name="Emoji" xml:space="preserve">
-    <value>绘文字</value>
+    <value>表情符号</value>
   </data>
   <data name="Apply" xml:space="preserve">
     <value>应用</value>
@@ -430,7 +430,7 @@
     <value>禁用通知区图标</value>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通过开始菜单的“WinCompose 设置”和“WinCompose 按键序列”。</value>
+    <value>如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通过开始菜单的“WinCompose Settings”和“WinCompose Sequences”打开。</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
     <value>Home 键</value>
@@ -469,7 +469,7 @@
     <value>收藏</value>
   </data>
   <data name="TimeoutToolTip" xml:space="preserve">
-    <value>如果设置，则检测不到键盘活动一定时间后，任何组合键序列都会取消。</value>
+    <value>如果设置，则检测不到键盘活动一定时间后，任何输入的序列都会取消。</value>
   </data>
   <data name="KeyboardLed" xml:space="preserve">
     <value>键盘灯</value>

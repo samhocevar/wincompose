@@ -108,6 +108,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Category.ga.resx</DependentUpon>
     </Compile>
+    <Compile Include="unicode\Category.hi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.hi.resx</DependentUpon>
+    </Compile>
     <Compile Include="unicode\Category.hr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -408,6 +413,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Text.id.resx</DependentUpon>
     </Compile>
+    <Compile Include="i18n\Text.hi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.hi.resx</DependentUpon>
+    </Compile>
     <Compile Include="i18n\Text.hr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -583,14 +593,19 @@
       <LastGenOutput>Category.ga.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="unicode\Category.hu.resx">
+    <EmbeddedResource Include="unicode\Category.hi.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Category.hu.Designer.cs</LastGenOutput>
+      <LastGenOutput>Category.hi.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.hr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Category.hr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unicode\Category.hu.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.hu.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="unicode\Category.id.resx">
@@ -885,6 +900,11 @@
     <EmbeddedResource Include="i18n\Text.ga.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.ga.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\Text.hi.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.hi.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="i18n\Text.hr.resx">

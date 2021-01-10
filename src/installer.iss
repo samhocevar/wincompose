@@ -53,6 +53,7 @@ Source: "bin\{#CONFIG}\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\hi\*.dll"; DestDir: "{app}\hi"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\hr\*.dll"; DestDir: "{app}\hr"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\hu\*.dll"; DestDir: "{app}\hu"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
@@ -103,6 +104,7 @@ Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 Name: "fi"; MessagesFile: "compiler:Languages/Finnish.isl"
 Name: "fr"; MessagesFile: "compiler:Languages/French.isl"
 ; [???] ga (Gaelic)
+Name: "hi"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Hindi.islu"
 Name: "hr"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Croatian.isl"
 Name: "hu"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Hungarian.isl"
 ; [ERR] Name: "id"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Indonesian.isl"
