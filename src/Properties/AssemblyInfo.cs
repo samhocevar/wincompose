@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WinCompose")]
-[assembly: AssemblyCopyright("Copyright © 2015—2020 Sam Hocevar et al.")]
+[assembly: AssemblyCopyright("Copyright © 2015—2021 Sam Hocevar et al.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
