@@ -40,31 +40,30 @@ namespace WinCompose
                 }
             }
 
-            // Do this before Composer.Init() because of the Disabled and AutoLaunch settings
+            // Do this early because of the Disabled and AutoLaunch settings
             Settings.LoadConfig();
 
-            // Check if started from task
-            if (args.Contains("-fromtask"))
-            {
-                if (!Settings.AutoLaunch.Value)
-                    return;
+            bool from_task = args.Contains("-fromtask");
+            bool from_startup = args.Contains("-fromstartup");
 
-                // If started from Task Scheduler, we need to detach otherwise the
-                // system may kill us after some time.
+            // If run from the task scheduler or from startup but autolaunch is
+            // disabled, exit early.
+            if ((from_task || from_startup) && !Settings.AutoLaunch.Value)
+                return;
+
+
+            // If run from Task Scheduler, we need to detach otherwise the
+            // system may kill us after some time.
+            if (from_task)
+            {
                 Process.Start(Application.ResourceAssembly.Location);
                 return;
             }
 
-            // Check if started from startup menu
-            if (args.Contains("-fromstartup"))
-            {
-                if (!Settings.AutoLaunch.Value)
-                    return;
-
-                // If there is a task scheduler entry, give it priority
-                if (SchTasks.HasTask())
-                    return;
-            }
+            // If run from the start menu but there is a task scheduler entry,
+            // give it priority.
+            if (from_startup && SchTasks.HasTask())
+                return;
 
             SchTasks.InstallTask();
 
