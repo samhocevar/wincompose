@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-10-05 12:12+0000\n"
-"Last-Translator: Karl Tammik <karltammik@protonmail.com>\n"
+"PO-Revision-Date: 2021-01-18 15:32+0000\n"
+"Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/wincompose/"
 "master/et/>\n"
 "Language: et\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -574,21 +574,24 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"Lülitades selle sisse peidab WinCompose teadete ala ikooni. Ainus meetod "
+"WinCompose liidese avamiseks on menüü Start valikud \"WinCompose Seaded\" ja "
+"\"WinCompose Järjendid\"."
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Algus"
 
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "Lõpp"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
@@ -598,22 +601,24 @@ msgstr "Aegumine puudub"
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Täpsemalt"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Eira aknaid, mis vastavad sellele regulaaravaldisele:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"WinCompose on täieslikult keelatud, kui praeguse akna klass või akna nimi "
+"vastab sellele regulaaravaldisele."
 
 #: i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Alternatiivne kombineerimisklahv on alati Compose"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -642,16 +647,20 @@ msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Kui see on valitud, siis tühistatakse kombineerimisjärjend, kui teatud aja "
+"möödudes ei tuvastata klahvivajutusi."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Klaviatuuri leed"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Kui see on valitud, siis lülitatakse vastav klaviatuuri leed põlema, kui "
+"kombineerimisjärjend edeneb."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
