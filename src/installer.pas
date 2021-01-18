@@ -105,8 +105,7 @@ procedure download_dotnet(sender: tobject);
 var
     ret: integer;
 begin
-    { ID 22 is Service Pack 1, ID 21 would be the original .NET 3.5. }
-    shellexec('open', 'https://www.microsoft.com/en-us/download/details.aspx?id=22',
+    shellexec('open', 'https://dotnet.microsoft.com/download/dotnet-framework/net40',
               '', '', sw_show, ewnowait, ret);
 end;
 
@@ -139,14 +138,7 @@ begin
        or (getarraylength(framework_names) = 0) then
         exit;
 
-    { .NET 3.5 found, but only valid if not Service Pack 1 }
-    if regquerystringvalue(HKLM, reg_path + 'v3.5', 'Version', version) then
-        if pos('3.5.21022.08', version) <> 1 then begin
-            log('Found .NET v3.5 version ' + version)
-            result := 0;
-        end;
-
-    { Some other .NET versions found; check for v4. }
+    { Some .NET Framework versions found; check for v4. }
     for i := 0 to length(reg_dirs) - 1 do
         if regquerystringvalue(HKLM, reg_path + reg_dirs[i], 'Version', version) then begin
             log('Found .NET ' + reg_dirs[i] + ' version ' + version)
@@ -184,12 +176,12 @@ begin
                                     _('Software required by WinCompose'));
 
     warning := tnewstatictext.create(dotnet_page);
-    warning.caption := _('WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does not\n'
+    warning.caption := _('WinCompose needs the .NET Framework, version 4.0 or later, which does not\n'
                        + 'seem to be currently installed. The following action may help solve the problem:');
     warning.parent := dotnet_page.surface;
 
     action := tnewstatictext.create(dotnet_page);
-    action.caption := _('Download and install .NET Framework 3.5 Service Pack 1');
+    action.caption := _('Download and install .NET Framework 4.0 Runtime');
     action.parent := dotnet_page.surface;
     action.cursor := crhand;
     action.onclick := @download_dotnet;
