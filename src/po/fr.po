@@ -845,22 +845,19 @@ msgstr "Logiciels nécessaires à WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose nécessite le framework .NET, version 3.5 SP1 ou plus récente, "
-"qui\n"
+"WinCompose nécessite le framework .NET, version 4.0 ou plus récente, qui\n"
 "ne semble pas être installé actuellement. La procédure ci-dessous devrait\n"
 "permettre de résoudre le problème :"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr "Télécharger et installer .NET Framework 3.5 Service Pack 1"
+msgstr "Télécharger et installer .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
