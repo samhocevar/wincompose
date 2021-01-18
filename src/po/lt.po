@@ -834,20 +834,20 @@ msgid "Separator, Space"
 msgstr "Skyrikliai, tarpai (Zs)"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:175
 msgid "Prerequisites"
 msgstr "Reikalavimai sistemai"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:176
 msgid "Software required by WinCompose"
 msgstr "Programinė įranga, reikalinga WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:187
+#: installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
-"not\n"
+"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -856,19 +856,20 @@ msgstr ""
 "Prašome atlikti čia aprašytus veiksmus:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:192
-msgid "Download and install .NET Framework 3.5 Service Pack 1"
+#: installer.pas:184
+#, fuzzy
+msgid "Download and install .NET Framework 4.0 Runtime"
 msgstr "Atsisiųsti ir įdiegti .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:202
+#: installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr "Po to galėsite grįžti ir baigti diegti WinCompose."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:293
+#: installer.pas:285
 msgid "Administrator rights are required. Error: %d"
 msgstr "Reikia administratoriaus teisių. Klaida: %d"
 

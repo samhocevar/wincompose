@@ -429,8 +429,32 @@
   <data name="DisableIcon" xml:space="preserve">
     <value>Keela teavitusteala ikoon</value>
   </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Lülitades selle sisse peidab WinCompose teadete ala ikooni. Ainus meetod WinCompose liidese avamiseks on menüü Start valikud &quot;WinCompose Seaded&quot; ja &quot;WinCompose Järjendid&quot;.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Algus</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Lõpp</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
   <data name="NoTimeout" xml:space="preserve">
     <value>Aegumine puudub</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Täpsemalt</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Eira aknaid, mis vastavad sellele regulaaravaldisele:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose on täieslikult keelatud, kui praeguse akna klass või akna nimi vastab sellele regulaaravaldisele.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternatiivne kombineerimisklahv on alati Compose</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Eriline tänu</value>
@@ -440,6 +464,15 @@
   </data>
   <data name="Favorites" xml:space="preserve">
     <value>Lemmikud</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Kui see on valitud, siis tühistatakse kombineerimisjärjend, kui teatud aja möödudes ei tuvastata klahvivajutusi.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Klaviatuuri leed</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Kui see on valitud, siis lülitatakse vastav klaviatuuri leed põlema, kui kombineerimisjärjend edeneb.</value>
   </data>
   <data name="KeyCompose" xml:space="preserve">
     <value>Kombineerimisklahv</value>

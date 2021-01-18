@@ -557,8 +557,8 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
-"如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通过开始菜单的“WinCompose "
-"Settings”和“WinCompose Sequences”打开。"
+"如果启用，WinCompose 将不再在通知区显示图标。要打开 WinCompose 界面，将只能通"
+"过开始菜单的“WinCompose Settings”和“WinCompose Sequences”打开。"
 
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
@@ -804,20 +804,20 @@ msgid "Separator, Space"
 msgstr "分隔符，空格"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:175
 msgid "Prerequisites"
 msgstr "前置需求"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:176
 msgid "Software required by WinCompose"
 msgstr "WinCompose 需要的软件"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:187
+#: installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
-"not\n"
+"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -825,12 +825,13 @@ msgstr ""
 "下列操作或可帮助解决问题："
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:192
-msgid "Download and install .NET Framework 3.5 Service Pack 1"
+#: installer.pas:184
+#, fuzzy
+msgid "Download and install .NET Framework 4.0 Runtime"
 msgstr "下载并安装 .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:202
+#: installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -839,7 +840,7 @@ msgstr ""
 "并继续安装 WinCompose。"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:293
+#: installer.pas:285
 msgid "Administrator rights are required. Error: %d"
 msgstr "需要管理员权限。错误：%d"
 

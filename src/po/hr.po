@@ -829,20 +829,20 @@ msgid "Separator, Space"
 msgstr "Znak rastavljanja, razmak"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:175
 msgid "Prerequisites"
 msgstr "Preduvjeti"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:176
 msgid "Software required by WinCompose"
 msgstr "Potreban softver za WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:187
+#: installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
-"not\n"
+"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -851,18 +851,19 @@ msgstr ""
 "čini se, nije instalirana. Sljedeća radnja može pomoći riješiti problem:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:192
-msgid "Download and install .NET Framework 3.5 Service Pack 1"
+#: installer.pas:184
+#, fuzzy
+msgid "Download and install .NET Framework 4.0 Runtime"
 msgstr "Preuzmi i instaliraj .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:202
+#: installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr "Kad ovo završi, možeš se ovamo vratiti i nastaviti s instalacijom."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:293
+#: installer.pas:285
 msgid "Administrator rights are required. Error: %d"
 msgstr "Potrebna su administratorska prava. Greška: %d"

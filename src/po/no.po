@@ -851,21 +851,21 @@ msgid "Separator, Space"
 msgstr "Inndeler, mellomrom"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:183
+#: installer.pas:175
 #, fuzzy
 msgid "Prerequisites"
 msgstr "Forutsetninger"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer.pas:176
 msgid "Software required by WinCompose"
 msgstr "Programvare påkrevd av WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:187
+#: installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 3.5 SP1 or later, which does "
-"not\n"
+"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -873,13 +873,13 @@ msgstr ""
 "ser ut til å være installert. Følgende handling kan løse problemet:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:192
+#: installer.pas:184
 #, fuzzy
-msgid "Download and install .NET Framework 3.5 Service Pack 1"
+msgid "Download and install .NET Framework 4.0 Runtime"
 msgstr "Last ned og installer .NET-rammeverket 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:202
+#: installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -888,7 +888,7 @@ msgstr ""
 "installasjonen."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:293
+#: installer.pas:285
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administrasjonsrettigheter kreves. Feil: %d"
 
