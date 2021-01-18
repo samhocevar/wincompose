@@ -77,16 +77,15 @@ public static class Log
     }
 #endif
 
+    public static void Debug(string msg) => Debug("{0}", msg);
+
     public static void Debug(string format, params object[] args)
     {
         // We don’t do anything unless we have listeners
         if (m_entries.ListenerCount > 0)
         {
             DateTime date = DateTime.Now;
-            // Only use string.Format() if arguments are given, because if the
-            // formatting was made in the caller it probably didn’t check for {}
-            // in the resulting string.
-            var msg = args.Length > 0 ? string.Format(format, args) : format;
+            var msg = string.Format(format, args);
             ThreadPool.QueueUserWorkItem(x =>
             {
                 m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, date, msg);
