@@ -54,20 +54,11 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emoji.Wpf, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Emoji.Wpf.0.2.0\lib\net40\Emoji.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
-    <Reference Include="Typography.GlyphLayout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Emoji.Wpf.0.2.0\lib\net40\Typography.GlyphLayout.dll</HintPath>
-    </Reference>
-    <Reference Include="Typography.OpenFont, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Emoji.Wpf.0.2.0\lib\net40\Typography.OpenFont.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -157,7 +148,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -271,6 +261,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="res\icon_normal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Emoji.Wpf">
+      <Version>0.2.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
