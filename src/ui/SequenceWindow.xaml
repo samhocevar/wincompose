@@ -154,11 +154,15 @@
 
         <DockPanel Grid.Column="2">
             <TextBlock DockPanel.Dock="Top" Text="{x:Static i18n:Text.Sequences}" Margin="8"/>
-            <ListBox Margin="4" ItemsSource="{Binding Sequences}" Name="ListBox"
-                     AlternationCount="2"
+            <ListBox Margin="4" ItemsSource="{Binding Sequences}" Name="ListBox" AlternationCount="2"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     VirtualizingStackPanel.VirtualizationMode="Recycling">
-                <!-- ^^ This is still set to "Standard" because Emoji.Wpf.Image doesn't recycle well -->
+                     VirtualizingStackPanel.VirtualizationMode="Recycling"
+                     wc:PixelBasedScrollingBehavior.IsEnabled="True">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel wc:PixelBasedScrollingBehavior.IsEnabled="True"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <Style.Triggers>
