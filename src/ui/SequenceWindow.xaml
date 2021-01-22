@@ -1,7 +1,7 @@
 ﻿<!--
    - WinCompose — a compose key for Windows — http://wincompose.info/
    -
-   - Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+   - Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
    -             2014—2015 Benjamin Litzelmann
    -
    - This program is free software. It comes without any warranty, to
@@ -195,16 +195,7 @@
 
                             <!-- The sequence, printed as key icons -->
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
-                                <Border Width="32" Height="32">
-                                    <Border.Background>
-                                        <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
-                                    </Border.Background>
-                                    <Viewbox Margin="4">
-                                        <TextBlock Text="♦" Foreground="#310"
-                                                   FontFamily="Consolas, Segoe UI Symbol, Arial" FontWeight="Bold" />
-                                    </Viewbox>
-                                </Border>
-                                <ItemsControl ItemsSource="{Binding Sequence}">
+                                <ItemsControl ItemsSource="{Binding FullSequence}">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal"/>
@@ -212,9 +203,8 @@
                                     </ItemsControl.ItemsPanel>
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text=" " VerticalAlignment="Center"/>
-                                                <Border Width="32" Height="32" x:Name="KeyImage">
+                                            <StackPanel Orientation="Horizontal" Margin="1,0">
+                                                <Border Width="28" Height="28" x:Name="KeyImage">
                                                     <Border.Background>
                                                         <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
                                                     </Border.Background>

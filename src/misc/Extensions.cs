@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -11,6 +11,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 namespace WinCompose
 {
@@ -22,5 +23,13 @@ namespace WinCompose
         public static bool Contains<T>(this T[] array, T element)
             where T : IComparable<T>
             => Array.Find(array, e => element.CompareTo(e) == 0) != null;
+
+        /// <summary>
+        /// Create a one-element enumerable from a single object
+        /// </summary>
+        public static IEnumerable<T> Yield<T>(this T element)
+        {
+            yield return element;
+        }
     }
 }

@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -11,7 +11,9 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 
@@ -43,7 +45,8 @@ namespace WinCompose
 
         public string RichDescription => (IsFavorite ? "⭐ " : "") + m_desc.Description;
 
-        public KeySequence Sequence => m_desc.Sequence;
+        public IEnumerable<Key> FullSequence
+            => new Key("♦").Yield().Concat(m_desc.Sequence);
 
         public Visibility AddToFavoritesVisibility
             => IsFavorite ? Visibility.Collapsed : Visibility.Visible;
@@ -53,7 +56,7 @@ namespace WinCompose
 
         public void ToggleFavorite()
         {
-            Metadata.ToggleFavorite(Sequence, Result);
+            Metadata.ToggleFavorite(m_desc.Sequence, Result);
             OnPropertyChanged(nameof(RichDescription));
             OnPropertyChanged(nameof(AddToFavoritesVisibility));
             OnPropertyChanged(nameof(RemoveFromFavoritesVisibility));
@@ -76,7 +79,7 @@ namespace WinCompose
                     continue;
                 if (compare_info.IndexOf(Description, token.Text, CompareOptions.IgnoreCase) != -1)
                     continue;
-                if (Sequence.Contains(new Key(token.Text)))
+                if (m_desc.Sequence.Contains(new Key(token.Text)))
                     continue;
 
                 return false;
@@ -87,7 +90,7 @@ namespace WinCompose
 
         public bool IsMacro => UnicodeCategoryVM == null && EmojiCategoryVM == null;
 
-        public bool IsFavorite => Metadata.IsFavorite(Sequence, Result);
+        public bool IsFavorite => Metadata.IsFavorite(m_desc.Sequence, Result);
 
         private SequenceDescription m_desc;
     }
