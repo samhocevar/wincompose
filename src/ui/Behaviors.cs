@@ -36,11 +36,10 @@ namespace WinCompose
             // Code is inspired by https://stackoverflow.com/a/17431815/111461
             if (o is VirtualizingPanel || o is ItemsControl)
             {
-                var prop = typeof(VirtualizingPanel).GetField("ScrollUnitProperty",
-                               BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
-                var dp = (DependencyProperty)prop?.GetValue(null);
                 var t = typeof(Window).Assembly.GetType("System.Windows.Controls.ScrollUnit");
-                if (dp != null && t != null)
+                var f = typeof(VirtualizingPanel).GetField("ScrollUnitProperty",
+                            BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+                if (t != null && f?.GetValue(null) is DependencyProperty dp)
                 {
                     o.SetValue(dp, Enum.Parse(t, val ? "Pixel" : "Item"));
                     return;

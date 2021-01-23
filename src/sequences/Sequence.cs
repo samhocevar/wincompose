@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace WinCompose
@@ -29,30 +30,29 @@ public class KeySequenceConverter : TypeConverter
     public override bool CanConvertFrom(ITypeDescriptorContext context,
                                         Type src_type)
     {
-        if (src_type != typeof(string))
-            return base.CanConvertFrom(context, src_type);
+        if (src_type == typeof(string))
+            return true;
 
-        return true;
+        return base.CanConvertFrom(context, src_type);
     }
 
     public override object ConvertFrom(ITypeDescriptorContext context,
                                        CultureInfo culture, object val)
     {
-        var list_str = val as string;
-        if (list_str == null)
-            return base.ConvertFrom(context, culture, val);
+        if (val is string str)
+            return KeySequence.FromString(str);
 
-        return KeySequence.FromString(list_str);
+        return base.ConvertFrom(context, culture, val);
     }
 
     public override object ConvertTo(ITypeDescriptorContext context,
                                      CultureInfo culture, object val,
                                      Type dst_type)
     {
-        if (dst_type != typeof(string))
-            return base.ConvertTo(context, culture, val, dst_type);
+        if (dst_type == typeof(string))
+            return (val as KeySequence).ToString();
 
-        return (val as KeySequence).ToString();
+        return base.ConvertTo(context, culture, val, dst_type);
     }
 }
 
@@ -63,9 +63,9 @@ public class KeySequenceConverter : TypeConverter
 [TypeConverter(typeof(KeySequenceConverter))]
 public class KeySequence : List<Key>
 {
-    public KeySequence() : base(new List<Key>()) {}
+    public KeySequence() : base() {}
 
-    public KeySequence(List<Key> val) : base(val) {}
+    public KeySequence(IEnumerable<Key> val) : base(val) {}
 
     public override bool Equals(object o)
     {
@@ -86,41 +86,35 @@ public class KeySequence : List<Key>
     /// Serialize sequence to a printable string.
     /// </summary>
     public override string ToString()
-    {
-        return string.Join(",", Array.ConvertAll(ToArray(), x => x.ToString()));
-    }
+        => string.Join(",", this.Select(x => x.ToString()));
 
     /// <summary>
     /// Convert sequence to a reader-friendly string.
     /// </summary>
     public string FriendlyName
-        => string.Join(", ", Array.ConvertAll(ToArray(), x => x.FriendlyName));
+        => string.Join(",", this.Select(x => x.FriendlyName));
 
     /// <summary>
     /// Convert sequence to a printable string. Non-printable characters are omitted
     /// </summary>
     public string PrintableResult
-        => string.Join("", Array.ConvertAll(ToArray(), x => x.PrintableResult));
+        => string.Join("", this.Select(x => x.PrintableResult));
 
     /// <summary>
     /// Convert sequence to a unique string representation that can
     /// be put in an XML attribute among other things.
     /// </summary>
     public string AsXmlAttr
-        => string.Join("", Array.ConvertAll(ToArray(), x => x.AsXmlAttr));
+        => string.Join("", this.Select(x => x.AsXmlAttr));
 
     /// <summary>
     /// Construct a key sequence from a serialized string.
     /// </summary>
     public static KeySequence FromString(string str)
-    {
-        KeySequence ret = new KeySequence();
         // Be sure to call Trim() because older WinCompose versions would add a
         // space after the comma.
-        foreach (string s in Array.ConvertAll(str.Split(','), x => x.Trim()))
-            ret.Add(Key.FromString(s));
-        return ret;
-    }
+        => new KeySequence(str.Split(',')
+                              .Select(x => Key.FromString(x.Trim())));
 
     private static Regex re_xml = new Regex(@"\{\{|\}\}|\{[^{}]*\}|.");
 
@@ -128,36 +122,26 @@ public class KeySequence : List<Key>
     /// Construct a key sequence from an XML attr string.
     /// </summary>
     public static KeySequence FromXmlAttr(string str)
-    {
-        KeySequence ret = new KeySequence();
-        foreach (Match match in re_xml.Matches(str))
-            ret.Add(Key.FromXmlAttr(match.Value));
-        return ret;
-    }
+        => new KeySequence(re_xml.Matches(str)
+                                 .Cast<Match>()
+                                 .Select(x => Key.FromXmlAttr(x.Value)));
 
     /// <summary>
     /// Get a subsequence of the current sequence.
     /// </summary>
     public new KeySequence GetRange(int start, int count)
-    {
-        return new KeySequence(base.GetRange(start, count));
-    }
+        => new KeySequence(base.GetRange(start, count));
 
     /// <summary>
     /// Hash sequence by combining the hashcodes of all its composing keys.
     /// </summary>
     public override int GetHashCode()
-    {
-        int hash = 0x2d2816fe;
-        foreach (Key ch in this)
-            hash = hash * 31 + ch.GetHashCode();
-        return hash;
-    }
+        => this.Aggregate(0x2d2816fe, (hash, x) => hash * 31 + x.GetHashCode());
 };
 
-/*
- * This data structure is used for communication with the GUI
- */
+//
+// This data structure is used for communication with the GUI
+//
 
 public class SequenceDescription : IComparable<SequenceDescription>
 {

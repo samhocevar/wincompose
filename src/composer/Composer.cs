@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Windows.Threading;
@@ -549,17 +550,15 @@ exit_forward_key:
 
         // HACK: GTK+ applications will crash when receiving surrogate pairs through VK.PACKET,
         // so we use the Ctrl-Shift-u special sequence.
-        bool use_gtk_hack = false;
-        foreach (var ch in str)
-            use_gtk_hack |= char.IsSurrogate(ch);
-        use_gtk_hack &= KeyboardLayout.Window.IsGtk;
+        bool use_gtk_hack = KeyboardLayout.Window.IsGtk
+                             && str.Any(x => char.IsSurrogate(x));
 
-        /* HACK: in MS Office, some symbol insertions change the text font
-         * without returning to the original font. To avoid this, we output
-         * a space character, then go left, insert our actual symbol, then
-         * go right and backspace. */
-        /* These are the actual window class names for Outlook and Word…
-         * TODO: PowerPoint ("PP(7|97|9|10)FrameClass") */
+        // HACK: in MS Office, some symbol insertions change the text font
+        // without returning to the original font. To avoid this, we output
+        // a space character, then go left, insert our actual symbol, then
+        // go right and backspace.
+        // These are the actual window class names for Outlook and Word…
+        // TODO: PowerPoint ("PP(7|97|9|10)FrameClass")
         bool use_office_hack = KeyboardLayout.Window.IsOffice
                                 && Settings.InsertZwsp.Value;
 
@@ -573,16 +572,14 @@ exit_forward_key:
                 VK.LSHIFT, VK.RSHIFT,
                 VK.LCONTROL, VK.RCONTROL,
                 VK.LMENU, VK.RMENU,
-                /* Needs to be released, too, otherwise Caps Lock + é on
-                 * a French keyboard will print garbage if Caps Lock is
-                 * not released soon enough. See note below. */
+                // Needs to be released, too, otherwise Caps Lock + é on
+                // a French keyboard will print garbage if Caps Lock is
+                // not released soon enough. See note below.
                 VK.CAPITAL,
             };
 
-            foreach (VK vk in all_modifiers)
-                if ((NativeMethods.GetKeyState(vk) & 0x80) == 0x80)
-                    modifiers.Add(vk);
-
+            modifiers = all_modifiers.Where(x => (NativeMethods.GetKeyState(x) & 0x80) == 0x80)
+                                     .ToList();
             foreach (VK vk in modifiers)
                 seq.KeyUp(vk);
         }
@@ -799,6 +796,11 @@ exit_forward_key:
 
     private static int m_magic_pos;
 
+    /// <summary>
+    /// The magic sequence is a sequence of key down and key up events that are
+    /// nearly impossible for a human to trigger. This may be used by keyboard
+    /// drivers to trigger compose sequences.
+    /// </summary>
     private static readonly List<KeyValuePair<VK, bool>> m_magic_sequence = new List<KeyValuePair<VK, bool>>()
     {
         new KeyValuePair<VK, bool>(VK.LSHIFT, true),

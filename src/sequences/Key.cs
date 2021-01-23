@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -178,7 +178,7 @@ public partial class Key
                     { new Key("\x1b"), i18n.Text.KeyEscape },
                 };
 
-                /* Append F1—F24 */
+                // Append F1—F24
                 for (VK vk = VK.F1; vk <= VK.F24; ++vk)
                     m_key_names.Add(new Key(vk), vk.ToString());
             }
@@ -241,29 +241,16 @@ public partial class Key
     /// A friendly name that we can put in e.g. a dropdown menu
     /// </summary>
     public string FriendlyName
-    {
-        get
-        {
-            string ret;
-            if (KeyNames.TryGetValue(this, out ret))
-                return ret;
-            return ToString();
-        }
-    }
+        => KeyNames.TryGetValue(this, out string ret) ? ret : ToString();
 
     /// <summary>
     /// Convert the key to a unique string representation that can
     /// be put in an XML attribute among other things.
     /// </summary>
     public string AsXmlAttr
-    {
-        get
-        {
-            return m_str == "{" ? "{{"
-                 : m_str == "}" ? "}}"
-                 : m_str ?? "{" + m_vk.ToString().ToLowerInvariant() + "}";
-        }
-    }
+        => m_str == "{" ? "{{"
+         : m_str == "}" ? "}}"
+         : m_str ?? "{" + m_vk.ToString().ToLowerInvariant() + "}";
 
     /// <summary>
     /// This should be part of a Key viewmodel class
@@ -277,9 +264,8 @@ public partial class Key
     {
         get
         {
-            string ret;
-            if (m_key_labels.TryGetValue(this, out ret))
-                return ret;
+            if (m_key_labels.TryGetValue(this, out string label))
+                return label;
             if (IsPrintable)
                 return PrintableResult;
             return ToString();

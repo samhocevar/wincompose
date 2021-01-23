@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -23,7 +23,7 @@ namespace WinCompose
     public class Category
     {
         public string Name { get; protected set; }
-        public string Icon { get; protected set; } = ""; // Emoji.Wpf does not like null
+        public string Icon { get; protected set; }
 
         public int RangeStart { get; protected set; } = -1;
         public int RangeEnd { get; protected set; } = -1;

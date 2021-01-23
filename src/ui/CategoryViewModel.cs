@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -45,13 +45,22 @@ namespace WinCompose
 
         public string Name => m_category.Name;
         public string Icon => m_category.Icon;
-        public string RichName => m_category.Name + " " + m_category.Icon;
+        public string RichName => $"{m_category.Name} {m_category.Icon}";
 
         public int RangeStart => m_category.RangeStart;
         public int RangeEnd => m_category.RangeEnd;
 
-        public bool IsSelected { get { return m_is_selected; } set { SetValue(ref m_is_selected, value, nameof(IsSelected)); } }
-        public bool IsEmpty { get { return m_is_empty; } set { SetValue(ref m_is_empty, value, nameof(IsEmpty)); } }
+        public bool IsSelected
+        {
+            get => m_is_selected;
+            set => SetValue(ref m_is_selected, value, nameof(IsSelected));
+        }
+
+        public bool IsEmpty
+        {
+            get => m_is_empty;
+            set => SetValue(ref m_is_empty, value, nameof(IsEmpty));
+        }
 
         private bool m_is_selected;
         private bool m_is_empty;
