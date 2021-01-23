@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2021-01-24 10:32+0000\n"
-"Last-Translator: Bargi Nick <bargiamakis@hotmail.com>\n"
+"Last-Translator: Savvas Sfantos <savvassfa@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/wincompose/master/"
 "el/>\n"
 "Language: el\n"
@@ -657,6 +657,8 @@ msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Εάν οριστεί, οποιαδήποτε ακολουθία σύνταξης θα ακυρωθεί μετά από μια "
+"συγκεκριμένη καθυστέρηση εάν δεν εντοπιστεί δραστηριότητα πληκτρολογίου."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
@@ -667,6 +669,8 @@ msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Εάν ρυθμιστεί, το αντίστοιχο LED πληκτρολογίου θα ανάψει όταν βρίσκεται σε "
+"εξέλιξη μια ακολουθία σύνταξης."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
