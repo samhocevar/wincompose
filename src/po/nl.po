@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-01-24 10:55+0000\n"
-"Last-Translator: Geert Delmeiren <weblate@zy.33mail.com>\n"
+"PO-Revision-Date: 2021-01-24 10:56+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/wincompose/master/"
 "nl/>\n"
 "Language: nl\n"
@@ -676,7 +676,7 @@ msgstr "Samenstellen"
 
 #: i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr "WinCompose opstarten bij inloggen"
+msgstr "WinCompose automatisch opstarten"
 
 #: i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
@@ -844,20 +844,18 @@ msgstr "Door WinCompose vereiste software"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose vereist het .NET-framework, versie 3.5 SP1 of hoger, welke niet\n"
+"WinCompose vereist het .NET-framework, versie 4.0 of hoger, welke niet\n"
 "geïnstalleerd lijkt te zijn. Het probleem kan als volgt worden opgelost:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ".NET-framework 3.5 Service Pack 1 downloaden en installeren"
+msgstr ".NET-framework 4.0 downloaden en installeren"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
