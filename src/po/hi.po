@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.6\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-01-18 15:32+0000\n"
+"PO-Revision-Date: 2021-01-28 14:32+0000\n"
 "Last-Translator: Indrani Roy <indrani@scriptek.co.in>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/wincompose/master/"
 "hi/>\n"
@@ -62,7 +62,7 @@ msgstr "कैप्स लॉक"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr "नम लाक"
+msgstr "नम लॉक"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:157 ID:KeyPause
@@ -92,7 +92,7 @@ msgstr "नॉन-कनवर्शन"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr "स्क्रॉल लॉक"
+msgstr "स्क्रोल लॉक"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:181 ID:KeySpace
@@ -118,8 +118,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Xorg प्रोजेक्ट (http://www.x.org/) से 3,000 रचना क्रमों का उपयोग करें। ये मानक लिनक्स "
-"प्रणाली सबेस ज़्यादा पर पाए जाने वाले क्रम हैं।"
+"Xorg प्रोजेक्ट (http://www.x.org/) से 3,000 कंपोज़ क्रमों का उपयोग करें। ये "
+"क्रम मानक लिनक्स सिस्टम में सबेस ज़्यादा पाए जाने वाले हैं।"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -131,17 +131,22 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"XCompose ओपन सोर्स प्रोजेक्ट (https://github.com/kragen/xcompose) से 1,000 "
+"कंपोज़ क्रम का उपयोग करें। ये क्रम कभी-कभी Xorg वाले क्रमों के साथ न भी चल "
+"सकते हैं।"
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose इमोजी क्रम का उपयोग करें"
+msgstr "WinCompose इमोजी क्रमों का उपयोग करें"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
+#, fuzzy
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
-"WinCompose लेखक और योगदानकर्ताओं द्वारा इमोजी के लिए दी गई कंपोज़ क्रम का उपयोग करें।"
+"WinCompose लेखक और योगदानकर्ताओं द्वारा इमोजी के लिए दी गई कंपोज़ क्रम का "
+"उपयोग करें।"
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -169,7 +174,7 @@ msgstr "दान पृष्ठ"
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "वेबसाइट पर जाएं"
+msgstr "वेबसाइट पर जाएँ"
 
 #: i18n/Text.resx:241 ID:Exit
 msgid "Exit"
@@ -185,9 +190,8 @@ msgid "Sequences"
 msgstr "क्रम"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
-#, fuzzy
 msgid "Try to swap the two keys"
-msgstr "दोनों की अदला बदली करेँ"
+msgstr "दोनों कुंजी को एक दूसरे से बदलने की कोशिश करें"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
