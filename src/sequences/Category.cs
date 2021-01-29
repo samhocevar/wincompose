@@ -56,7 +56,7 @@ namespace WinCompose
             var match_sequence = new Regex(@"^([0-9A-F ]+[0-9A-F]).*");
             var list = new List<EmojiCategory>();
 
-            using (var sr = new CompressedResourceStream("emoji-test.txt.gz"))
+            using (var sr = new GZipResourceStream("emoji-test.txt.gz"))
             {
                 EmojiCategory last_category = null;
                 string buffer = sr.ReadToEnd();

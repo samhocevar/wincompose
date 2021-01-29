@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -45,7 +45,7 @@ public class SequenceTree : SequenceNode
 
     public void LoadResource(string resource)
     {
-        using (var sr = new CompressedResourceStream(resource))
+        using (var sr = new GZipResourceStream(resource))
         {
             Log.Debug("Loaded rule resource {0}", resource);
             LoadStream(sr);

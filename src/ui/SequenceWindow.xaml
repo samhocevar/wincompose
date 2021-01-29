@@ -157,10 +157,10 @@
             <ListBox Margin="4" ItemsSource="{Binding Sequences}" Name="ListBox" AlternationCount="2"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      VirtualizingStackPanel.VirtualizationMode="Recycling"
-                     wc:PixelBasedScrollingBehavior.IsEnabled="True">
+                     emoji:Behaviors.SmoothScrolling="True">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <VirtualizingStackPanel wc:PixelBasedScrollingBehavior.IsEnabled="True"/>
+                        <VirtualizingStackPanel emoji:Behaviors.SmoothScrolling="True"/>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
                 <ListBox.ItemContainerStyle>

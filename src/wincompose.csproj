@@ -99,7 +99,6 @@
     <Compile Include="settings\SettingsEntry.cs" />
     <Compile Include="ui\AboutBoxViewModel.cs" />
     <Compile Include="ui\BaseWindow.cs" />
-    <Compile Include="ui\Behaviors.cs" />
     <Compile Include="ui\CategoryViewModel.cs" />
     <Compile Include="ui\Constants.cs" />
     <Compile Include="ui\DelegateCommand.cs" />
@@ -264,7 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Emoji.Wpf">
-      <Version>0.2.1</Version>
+      <Version>0.2.5</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

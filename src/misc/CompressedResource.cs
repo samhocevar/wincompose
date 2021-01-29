@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -16,9 +16,10 @@ using System.Reflection;
 
 namespace WinCompose
 {
-    internal class CompressedResourceStream : StreamReader
+    // FIXME: deprecate this class once it is properly exposed by Emoji.Wpf
+    internal class GZipResourceStream : StreamReader
     {
-        public CompressedResourceStream(string name)
+        public GZipResourceStream(string name)
           : base(new GZipStream(Assembly.GetExecutingAssembly().GetManifestResourceStream(name),
                                 CompressionMode.Decompress))
         {
