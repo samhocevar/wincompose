@@ -83,8 +83,8 @@
     <Compile Include="misc\CompressedResource.cs" />
     <Compile Include="misc\Extensions.cs" />
     <Compile Include="misc\IniFile.cs" />
+    <Compile Include="misc\NotificationArea.cs" />
     <Compile Include="misc\SchTasks.cs" />
-    <Compile Include="misc\SysTray.cs" />
     <Compile Include="misc\Utils.cs" />
     <Compile Include="misc\WatchedFile.cs" />
     <Compile Include="misc\XmlFile.cs" />
@@ -118,8 +118,8 @@
     <Compile Include="ui\KeySelector.xaml.cs">
       <DependentUpon>KeySelector.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ui\SysTrayIcon.xaml.cs">
-      <DependentUpon>SysTrayIcon.xaml</DependentUpon>
+    <Compile Include="ui\NotificationIcon.xaml.cs">
+      <DependentUpon>NotificationIcon.xaml</DependentUpon>
     </Compile>
     <Compile Include="ui\SequenceWindow.xaml.cs">
       <DependentUpon>SequenceWindow.xaml</DependentUpon>
@@ -170,7 +170,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ui\SysTrayIcon.xaml">
+    <Page Include="ui\NotificationIcon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

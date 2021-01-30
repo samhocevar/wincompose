@@ -157,7 +157,7 @@ static internal class NativeMethods
               ref uint pcchOut);
 
     //
-    // for SysTrayIcon.xaml.cs
+    // for NotificationIcon.xaml.cs
     //
 
     [DllImport("user32", CharSet=CharSet.Auto, SetLastError=true)]

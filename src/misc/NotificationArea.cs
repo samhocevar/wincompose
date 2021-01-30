@@ -16,14 +16,14 @@ using Microsoft.Win32;
 
 namespace WinCompose
 {
-    static class SysTray
+    static class NotificationArea
     {
         private const int HEADER_SIZE = 20;
         private const int ENTRY_SIZE = 1640;
         private const int MAGIC_OFFSET = 528;
 
         /// <summary>
-        /// Check that the systray icon for the program is marked as “always show”
+        /// Check that the notification icon for the program is marked as “always show”
         /// and restart explorer if any changes were made. The argument is a regex
         /// used to match against the executable path.
         /// </summary>
@@ -75,7 +75,7 @@ namespace WinCompose
                 {
                     if (Regex.Match(path, pattern, RegexOptions.IgnoreCase).Success)
                     {
-                        Log.Debug("Enforcing SysTray visibility for {0}", path);
+                        Log.Debug("Enforcing notification area visibility for {0}", path);
                         data[offset + MAGIC_OFFSET] = 2;
                         key.SetValue(key_name, data);
                         must_restart_explorer = true;

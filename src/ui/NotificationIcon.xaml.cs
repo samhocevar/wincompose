@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -24,7 +24,7 @@ using Hardcodet.Wpf.TaskbarNotification;
 namespace WinCompose
 {
     /// <summary>
-    /// All possible commands that the systray menu can execute
+    /// All possible commands that the notification area menu can execute
     /// </summary>
     public enum MenuCommand
     {
@@ -41,11 +41,11 @@ namespace WinCompose
     }
 
     /// <summary>
-    /// Interaction logic for SysTrayIcon.xaml
+    /// Interaction logic for NotificationIcon.xaml
     /// </summary>
-    public partial class SysTrayIcon : TaskbarIcon, INotifyPropertyChanged, IDisposable
+    public partial class NotificationIcon : TaskbarIcon, INotifyPropertyChanged, IDisposable
     {
-        public SysTrayIcon()
+        public NotificationIcon()
         {
             InitializeComponent();
             Loaded += OnLoaded;
@@ -62,7 +62,7 @@ namespace WinCompose
 
             // Opt-in only, as this feature is a bit controversial
             if (Settings.KeepIconVisible.Value)
-                SysTray.AlwaysShow("wincompose[.]exe");
+                NotificationArea.AlwaysShow("wincompose[.]exe");
 
             // This one is a bit safer
             m_cleanup_timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
