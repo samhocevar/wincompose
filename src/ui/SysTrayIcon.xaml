@@ -24,14 +24,14 @@
     <tb:TaskbarIcon.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
         <BitmapImage x:Key="ComposeKeyImage" UriSource="../res/key_compose.png"/>
-        <emoji:TextBlock Text="💬" x:Key="SequencesEmoji" FontSize="16"/>
-        <emoji:TextBlock Text="🛠" x:Key="OptionsEmoji" FontSize="16"/>
-        <emoji:TextBlock Text="ℹ" x:Key="AboutEmoji" FontSize="16"/>
-        <emoji:TextBlock Text="💸" x:Key="DonateEmoji" FontSize="16"/>
-        <emoji:TextBlock Text="🔎" x:Key="DebugEmoji" FontSize="16"/>
-        <emoji:TextBlock Text="🌐" x:Key="WebsiteEmoji" FontSize="16"/>
-        <emoji:TextBlock Text="♻" x:Key="RestartEmoji" FontSize="16"/>
-        <emoji:TextBlock Text="🚪" x:Key="ExitEmoji" FontSize="16" HorizontalAlignment="Center"/>
+        <Image Height="18" x:Key="SequencesEmoji" emoji:Image.Source="💬"/>
+        <Image Height="18" x:Key="OptionsEmoji"   emoji:Image.Source="🛠"/>
+        <Image Height="18" x:Key="AboutEmoji"     emoji:Image.Source="ℹ"/>
+        <Image Height="18" x:Key="DonateEmoji"    emoji:Image.Source="💸"/>
+        <Image Height="18" x:Key="DebugEmoji"     emoji:Image.Source="🔎"/>
+        <Image Height="18" x:Key="WebsiteEmoji"   emoji:Image.Source="🌐"/>
+        <Image Height="18" x:Key="RestartEmoji"   emoji:Image.Source="♻"/>
+        <Image Height="18" x:Key="ExitEmoji"      emoji:Image.Source="🚪"/>
     </tb:TaskbarIcon.Resources>
 
     <tb:TaskbarIcon.ContextMenu>
