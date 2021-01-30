@@ -615,7 +615,7 @@ exit_forward_key:
 
                 seq.AddKeyEvent(EventType.KeyDown, VK.LCONTROL);
                 seq.AddKeyEvent(EventType.KeyDown, VK.LSHIFT);
-                seq.AddKeyEvent(EventType.KeyUpDown, (VK)'U');
+                seq.AddKeyEvent(EventType.KeyUpDown, VK.U);
                 seq.AddKeyEvent(EventType.KeyUp, VK.LSHIFT);
                 seq.AddKeyEvent(EventType.KeyUp, VK.LCONTROL);
                 foreach (var key in $"{codepoint:X04}")
