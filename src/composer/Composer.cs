@@ -21,52 +21,46 @@ using System.Windows.Threading;
 namespace WinCompose
 {
 
+internal enum EventType
+{
+    KeyUp,
+    KeyDown,
+    KeyUpDown
+}
+
 /// <summary>
 /// A convenience class that can be fed either scancodes (<see cref="SC"/>)
 /// or virtual keys (<see cref="VK"/>), then uses the Win32 API function
 /// <see cref="SendInput"/> to send all these events in one single call.
 /// </summary>
-class InputSequence
+class InputSequence : List<INPUT>
 {
+    public void AddUnicodeInput(char ch)
+        => AddInput(EventType.KeyUpDown,
+                    new KEYBDINPUT() { wScan = (ScanCodeShort)ch, dwFlags = KEYEVENTF.UNICODE });
+
+    public void AddKeyEvent(EventType type, VK vk)
+        => AddInput(type, new KEYBDINPUT() { wVk = (VirtualKeyShort)vk });
+
     public void Send()
     {
-        NativeMethods.SendInput((uint)m_input.Count, m_input.ToArray(),
+        NativeMethods.SendInput((uint)Count, ToArray(),
                                 Marshal.SizeOf(typeof(INPUT)));
     }
 
-    public void AddInput(ScanCodeShort sc)
-        => AddInput(VK.NONE, sc, Mode.Press);
-
-    public void KeyPress(VK vk)
-        => AddInput(vk, (ScanCodeShort)0, Mode.Press);
-
-    public void KeyDown(VK vk)
-        => AddInput(vk, (ScanCodeShort)0, Mode.Down);
-
-    public void KeyUp(VK vk)
-        => AddInput(vk, (ScanCodeShort)0, Mode.Up);
-
-    private enum Mode { Up, Down, Press }
-
-    private readonly List<INPUT> m_input = new List<INPUT>();
-
-    private void AddInput(VK vk, ScanCodeShort sc, Mode mode)
+    private void AddInput(EventType type, KEYBDINPUT ki)
     {
         INPUT tmp = new INPUT();
         tmp.type = EINPUT.KEYBOARD;
-        tmp.U.ki.wVk = (VirtualKeyShort)vk;
-        tmp.U.ki.wScan = sc;
-        tmp.U.ki.time = 0;
-        tmp.U.ki.dwFlags = KEYEVENTF.UNICODE;
-        tmp.U.ki.dwExtraInfo = UIntPtr.Zero;
+        tmp.U.ki = ki;
 
-        if (mode != Mode.Up)
-            m_input.Add(tmp);
+        if (type != EventType.KeyUp)
+            Add(tmp);
 
-        if (mode != Mode.Down)
+        if (type != EventType.KeyDown)
         {
             tmp.U.ki.dwFlags |= KEYEVENTF.KEYUP;
-            m_input.Add(tmp);
+            Add(tmp);
         }
     }
 }
@@ -581,13 +575,13 @@ exit_forward_key:
             modifiers = all_modifiers.Where(x => (NativeMethods.GetKeyState(x) & 0x80) == 0x80)
                                      .ToList();
             foreach (VK vk in modifiers)
-                seq.KeyUp(vk);
+                seq.AddKeyEvent(EventType.KeyUp, vk);
         }
 
         if (use_office_hack)
         {
-            seq.AddInput((ScanCodeShort)'\u200b');
-            seq.KeyPress(VK.LEFT);
+            seq.AddUnicodeInput('\u200b');
+            seq.AddKeyEvent(EventType.KeyUpDown, VK.LEFT);
         }
 
         for (int i = 0; i < str.Length; ++i)
@@ -598,7 +592,7 @@ exit_forward_key:
             {
                 // On some applications (e.g. Chrome or PowerPoint), \n cannot be injected
                 // through its scancode, so we send the virtual key instead.
-                seq.KeyPress(VK.RETURN);
+                seq.AddKeyEvent(EventType.KeyUpDown, VK.RETURN);
             }
             else if (use_gtk_hack && char.IsSurrogate(ch))
             {
@@ -617,34 +611,34 @@ exit_forward_key:
                 //  - Inkscape stops after Enter, but allows to chain sequences using Space.
                 bool has_capslock = NativeMethods.GetKeyState(VK.CAPITAL) != 0;
                 if (has_capslock)
-                    seq.KeyPress(VK.CAPITAL);
+                    seq.AddKeyEvent(EventType.KeyUpDown, VK.CAPITAL);
 
-                seq.KeyDown(VK.LCONTROL);
-                seq.KeyDown(VK.LSHIFT);
-                seq.KeyPress((VK)'U');
-                seq.KeyUp(VK.LSHIFT);
-                seq.KeyUp(VK.LCONTROL);
+                seq.AddKeyEvent(EventType.KeyDown, VK.LCONTROL);
+                seq.AddKeyEvent(EventType.KeyDown, VK.LSHIFT);
+                seq.AddKeyEvent(EventType.KeyUpDown, (VK)'U');
+                seq.AddKeyEvent(EventType.KeyUp, VK.LSHIFT);
+                seq.AddKeyEvent(EventType.KeyUp, VK.LCONTROL);
                 foreach (var key in $"{codepoint:X04}")
-                    seq.KeyPress((VK)key);
-                seq.KeyPress(VK.RETURN);
+                    seq.AddKeyEvent(EventType.KeyUpDown, (VK)key);
+                seq.AddKeyEvent(EventType.KeyUpDown, VK.RETURN);
 
                 if (has_capslock)
-                    seq.KeyPress(VK.CAPITAL);
+                    seq.AddKeyEvent(EventType.KeyUpDown, VK.CAPITAL);
             }
             else
             {
-                seq.AddInput((ScanCodeShort)ch);
+                seq.AddUnicodeInput(ch);
             }
         }
 
         if (use_office_hack)
         {
-            seq.KeyPress(VK.RIGHT);
+            seq.AddKeyEvent(EventType.KeyUpDown, VK.RIGHT);
         }
 
         // Restore keyboard modifier state if we needed one of our custom hacks
         foreach (VK vk in modifiers)
-            seq.KeyDown(vk);
+            seq.AddKeyEvent(EventType.KeyDown, vk);
 
         // Send the whole keyboard sequence
         seq.Send();
