@@ -574,8 +574,7 @@ exit_forward_key:
 
             modifiers = all_modifiers.Where(x => (NativeMethods.GetKeyState(x) & 0x80) == 0x80)
                                      .ToList();
-            foreach (VK vk in modifiers)
-                seq.AddKeyEvent(EventType.KeyUp, vk);
+            modifiers.ForEach(vk => seq.AddKeyEvent(EventType.KeyUp, vk));
         }
 
         if (use_office_hack)
@@ -637,8 +636,7 @@ exit_forward_key:
         }
 
         // Restore keyboard modifier state if we needed one of our custom hacks
-        foreach (VK vk in modifiers)
-            seq.AddKeyEvent(EventType.KeyDown, vk);
+        modifiers.ForEach(vk => seq.AddKeyEvent(EventType.KeyDown, vk));
 
         // Send the whole keyboard sequence
         seq.Send();
@@ -674,16 +672,9 @@ exit_forward_key:
 
     private static void OnInvalidSequence()
     {
-        bool empty_sequence = true;
-
-        string printable = "";
-        foreach (Key k in m_sequence)
-        {
-            if (k.VirtualKey != VK.COMPOSE)
-                empty_sequence = false;
-            if (k.IsPrintable) // FIXME: what if the key is e.g. left arrow?
-                printable += k.PrintableResult;
-        }
+        // FIXME: what if the key is e.g. left arrow?
+        var printable = string.Join("", m_sequence.Where(k => k.IsPrintable)
+                                                  .Select(k => k.PrintableResult));
 
         // Unknown characters for sequence, print them if necessary
         if (!Settings.DiscardOnInvalid.Value && !string.IsNullOrEmpty(printable))
@@ -692,7 +683,8 @@ exit_forward_key:
             Log.Debug("Invalid sequence! Sent “{0}”", printable);
         }
 
-        if (Settings.BeepOnInvalid.Value && !empty_sequence)
+        // Emit a beep unless all keys in the sequence were the Compose key.
+        if (Settings.BeepOnInvalid.Value && m_sequence.Any(k => k.VirtualKey != VK.COMPOSE))
             SystemSounds.Beep.Play();
 
         ResetSequence();
