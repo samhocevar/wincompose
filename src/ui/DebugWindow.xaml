@@ -16,6 +16,7 @@
 <Window x:Class="WinCompose.DebugWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         xmlns:wc="clr-namespace:WinCompose"
         Title="Debug Window"
         WindowStyle="ToolWindow"
@@ -48,8 +49,8 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding DateTime, StringFormat='{}{0:yyyy/MM/dd HH:mm:ss.fff}'}" Grid.Column="0"
                        Foreground="DarkGray" FontWeight="Bold" Margin="5,0,5,0"/>
-                <TextBlock Text="{Binding Message}" Grid.Column="1" FontFamily="{x:Static wc:Constants.FixedFontFamily}"
-                       Foreground="Black" TextWrapping="NoWrap"/>
+                <emoji:TextBlock Text="{Binding Message}" Grid.Column="1" FontFamily="{x:Static wc:Constants.FixedFontFamily}"
+                                 Foreground="Black" TextWrapping="NoWrap"/>
             </Grid>
         </DataTemplate>
     </Window.Resources>
