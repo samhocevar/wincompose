@@ -609,4 +609,8 @@
     <value>If set, WinCompose will be started when the user logs in.</value>
     <comment></comment>
   </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Accessibility</value>
+    <comment></comment>
+  </data>
 </root>

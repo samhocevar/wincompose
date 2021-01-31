@@ -38,10 +38,10 @@
         <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
         <BitmapImage x:Key="SpaceKeyImage" UriSource="../res/key_space.png"/>
 
-        <emoji:TextBlock Text="📋" x:Key="CopyEmoji" FontSize="12"/>
-        <emoji:TextBlock Text="❤️" x:Key="FavoriteEmoji" FontSize="12"/>
-        <emoji:TextBlock Text="💔" x:Key="UnfavoriteEmoji" FontSize="12"/>
-        <emoji:TextBlock Text="❌" x:Key="DisableEmoji" FontSize="12"/>
+        <Image Height="14" x:Key="CopyIcon"       emoji:Image.Source="📋"/>
+        <Image Height="14" x:Key="FavoriteIcon"   emoji:Image.Source="❤️"/>
+        <Image Height="14" x:Key="UnfavoriteIcon" emoji:Image.Source="💔"/>
+        <Image Height="14" x:Key="DisableIcon"    emoji:Image.Source="❌"/>
 
         <!-- This style can be applied to a TextBlock to display text with a smaller size -->
         <Style x:Key="SmallTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
@@ -86,11 +86,11 @@
         </DataTemplate>
 
         <ContextMenu x:Key="ContextMenu">
-            <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}" Icon="{StaticResource CopyEmoji}"
+            <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}" Icon="{StaticResource CopyIcon}"
                       Command="ApplicationCommands.Copy"/>
-            <MenuItem Header="{x:Static i18n:Text.AddToFavorites}" Icon="{StaticResource FavoriteEmoji}"
+            <MenuItem Header="{x:Static i18n:Text.AddToFavorites}" Icon="{StaticResource FavoriteIcon}"
                       Click="ToggleFavorite_Click" Visibility="{Binding AddToFavoritesVisibility}"/>
-            <MenuItem Header="{x:Static i18n:Text.RemoveFromFavorites}" Icon="{StaticResource UnfavoriteEmoji}"
+            <MenuItem Header="{x:Static i18n:Text.RemoveFromFavorites}" Icon="{StaticResource UnfavoriteIcon}"
                       Click="ToggleFavorite_Click" Visibility="{Binding RemoveFromFavoritesVisibility}"/>
         </ContextMenu>
     </Window.Resources>

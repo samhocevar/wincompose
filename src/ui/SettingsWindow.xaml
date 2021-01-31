@@ -1,7 +1,7 @@
 ﻿<!--
    - WinCompose — a compose key for Windows — http://wincompose.info/
    -
-   - Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+   - Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
    -             2014—2015 Benjamin Litzelmann
    -
    - This program is free software. It comes without any warranty, to
@@ -29,26 +29,35 @@
 
     <Window.Resources>
 
-       <!-- display tooltips for 30 seconds; they’re supposed to be helpful -->
-       <Style TargetType="TextBlock">
-           <Setter Property="ToolTipService.ShowDuration" Value="30000" />
-       </Style>
-       <Style TargetType="CheckBox">
-           <Setter Property="ToolTipService.ShowDuration" Value="30000" />
-       </Style>
+        <DrawingImage emoji:Image.Source="🎛" x:Key="ProgramBehaviorIcon"/>
+        <DrawingImage emoji:Image.Source="🌐" x:Key="LanguageIcon"/>
+        <DrawingImage emoji:Image.Source="🆎" x:Key="TestTypingIcon"/>
+        <DrawingImage emoji:Image.Source="⚙️" x:Key="BehaviorIcon"/>
+        <DrawingImage emoji:Image.Source="💬" x:Key="SequencesIcon"/>
+        <DrawingImage emoji:Image.Source="❌" x:Key="InvalidSequencesIcon"/>
+        <DrawingImage emoji:Image.Source="♿" x:Key="AccessibilityIcon"/>
+        <DrawingImage emoji:Image.Source="🚀" x:Key="AdvancedIcon"/>
 
-       <!-- wrap tooltips at 350 pixels width -->
-       <Style TargetType="ToolTip">
-          <Setter Property="ContentTemplate">
-             <Setter.Value>
-                <DataTemplate>
-                   <StackPanel>
-                      <TextBlock Text="{Binding}" MaxWidth="350" TextWrapping="Wrap" />
-                   </StackPanel>
-                </DataTemplate>
-             </Setter.Value>
-          </Setter>
-       </Style>
+        <!-- display tooltips for 30 seconds; they’re supposed to be helpful -->
+        <Style TargetType="TextBlock">
+            <Setter Property="ToolTipService.ShowDuration" Value="30000"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="ToolTipService.ShowDuration" Value="30000"/>
+        </Style>
+
+        <!-- wrap tooltips at 350 pixels width -->
+        <Style TargetType="ToolTip">
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding}" MaxWidth="350" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Window.CommandBindings>
@@ -70,7 +79,10 @@
             <!--<DockPanel Margin="8" Height="{Binding ElementName=MasterPanel, Path=ActualHeight}">-->
                 <GroupBox DockPanel.Dock="Top" Padding="0,4,0,0">
                     <GroupBox.Header>
-                        <emoji:TextBlock Text="{Binding StringFormat='🎛 {0}', Source={x:Static i18n:Text.Behavior}, Path=.}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource ProgramBehaviorIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.Behavior}"/>
+                        </StackPanel>
                     </GroupBox.Header>
                     <Grid VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
@@ -85,10 +97,13 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <emoji:TextBlock Grid.Row="0" Grid.Column="0"
-                                         Text="{Binding StringFormat='🌐 {0}', Source={x:Static i18n:Text.Language}, Path=.}"
-                                         Margin="8,4" TextAlignment="Right" VerticalAlignment="Center"
-                                         ToolTipService.ToolTip="{x:Static i18n:Text.LanguageToolTip}"/>
+                        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal"
+                                    Margin="8,4" VerticalAlignment="Center"
+                                    ToolTipService.ToolTip="{x:Static i18n:Text.LanguageToolTip}">
+                            <Image Source="{StaticResource LanguageIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.Language}"/>
+                        </StackPanel>
+
                         <ComboBox Grid.Row="0" Grid.Column="1" Margin="8,4" VerticalAlignment="Center"
                                   ItemsSource="{x:Static wc:Settings.ValidLanguages}"
                                   SelectedValue="{Binding SelectedLanguage}"
@@ -126,7 +141,10 @@
 
                 <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
                     <GroupBox.Header>
-                        <emoji:TextBlock Text="{Binding StringFormat='🆎 {0}', Source={x:Static i18n:Text.TestTyping}, Path=.}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource TestTypingIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.TestTyping}"/>
+                        </StackPanel>
                     </GroupBox.Header>
                     <emoji:RichTextBox Margin="8" Width="Auto" Height="90" MaxHeight="90"
                                        FontSize="20" AcceptsReturn="True"
@@ -146,7 +164,10 @@
 
                 <GroupBox DockPanel.Dock="Top" Padding="0,4,0,0">
                     <GroupBox.Header>
-                        <emoji:TextBlock Text="{Binding StringFormat='⚙️ {0}', Source={x:Static i18n:Text.Behavior}, Path=.}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource BehaviorIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.Behavior}"/>
+                        </StackPanel>
                     </GroupBox.Header>
                     <Grid VerticalAlignment="Top">
                         <Grid.ColumnDefinitions>
@@ -224,7 +245,10 @@
 
                 <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
                     <GroupBox.Header>
-                        <emoji:TextBlock Text="{Binding StringFormat='💬 {0}', Source={x:Static i18n:Text.Sequences}, Path=.}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource SequencesIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.Sequences}"/>
+                        </StackPanel>
                     </GroupBox.Header>
                     <StackPanel Orientation="Vertical">
                         <CheckBox Grid.Row="4" Grid.ColumnSpan="2" Margin="8,4" VerticalAlignment="Center"
@@ -256,7 +280,10 @@
                 <!-- The Invalid Sequences group -->
                 <GroupBox DockPanel.Dock="Top" Padding="0,4,0,0">
                     <GroupBox.Header>
-                        <emoji:TextBlock Text="{Binding StringFormat='❌ {0}', Source={x:Static i18n:Text.InvalidSequences}, Path=.}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource InvalidSequencesIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.InvalidSequences}"/>
+                        </StackPanel>
                     </GroupBox.Header>
                     <StackPanel VerticalAlignment="Center">
 
@@ -293,14 +320,16 @@
 
                 <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
                     <GroupBox.Header>
-                        <emoji:TextBlock Text="🚀"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource AccessibilityIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.Accessibility}"/>
+                        </StackPanel>
                     </GroupBox.Header>
-                    <StackPanel DockPanel.Dock="Top">
-
+                    <StackPanel>
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
-                                IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"
-                                ToolTipService.ToolTip="{x:Static i18n:Text.InsertZwspToolTip}">
-                            <TextBlock Text="{x:Static i18n:Text.InsertZwsp}" TextWrapping="Wrap"/>
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.CapsLockCapitalizes}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.CapsLockCapitalizesToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.CapsLockCapitalizes}" TextWrapping="Wrap"/>
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
@@ -314,11 +343,22 @@
                                 ToolTipService.ToolTip="{x:Static i18n:Text.ShiftDisablesCapsLockToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.ShiftDisablesCapsLock}" TextWrapping="Wrap"/>
                         </CheckBox>
+                    </StackPanel>
+                </GroupBox>
 
+                <!-- The Advanced group -->
+                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource AdvancedIcon}" Height="16" Margin="0 0 4 0"/>
+                            <TextBlock Text="{x:Static i18n:Text.Advanced}"/>
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <StackPanel>
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
-                                IsChecked="{Binding Value, Source={x:Static wc:Settings.CapsLockCapitalizes}}"
-                                ToolTipService.ToolTip="{x:Static i18n:Text.CapsLockCapitalizesToolTip}">
-                            <TextBlock Text="{x:Static i18n:Text.CapsLockCapitalizes}" TextWrapping="Wrap"/>
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.InsertZwsp}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.InsertZwspToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.InsertZwsp}" TextWrapping="Wrap"/>
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
@@ -326,23 +366,15 @@
                                 ToolTipService.ToolTip="{x:Static i18n:Text.AllowInjectedToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.AllowInjected}" TextWrapping="Wrap"/>
                         </CheckBox>
-                    </StackPanel>
-                </GroupBox>
 
-                <!-- The Advanced group -->
-                <GroupBox DockPanel.Dock="Top" Margin="0,4,0,0" Padding="0,4,0,0">
-                    <GroupBox.Header>
-                        <emoji:TextBlock Text="{Binding StringFormat='👩🏽‍🔬 {0}', Source={x:Static i18n:Text.Advanced}, Path=.}"/>
-                    </GroupBox.Header>
-                    <StackPanel VerticalAlignment="Center">
-
-                        <emoji:TextBlock Text="{Binding StringFormat='{}{0}', Source={x:Static i18n:Text.IgnoreRegex}, Path=.}"
-                                         ToolTipService.ToolTip="{x:Static i18n:Text.IgnoreRegexToolTip}"
-                                         TextWrapping="Wrap" Margin="8,4,8,0"/>
-                        <TextBox Margin="8,4" VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
-                                 FontFamily="{x:Static wc:Constants.FixedFontFamily}" Padding="4"
-                                 Text="{Binding Value, Source={x:Static wc:Settings.IgnoreRegex}}"/>
-
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="{x:Static i18n:Text.IgnoreRegex}"
+                                       ToolTipService.ToolTip="{x:Static i18n:Text.IgnoreRegexToolTip}"
+                                       TextWrapping="Wrap" Margin="8,4,8,0"/>
+                            <TextBox Margin="8,4" VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
+                                     FontFamily="{x:Static wc:Constants.FixedFontFamily}" Padding="4"
+                                     Text="{Binding Value, Source={x:Static wc:Settings.IgnoreRegex}}"/>
+                        </StackPanel>
                     </StackPanel>
                 </GroupBox>
             </DockPanel>
@@ -355,7 +387,7 @@
                  Margin="0, 0, 0, 4" Visibility="{Binding WarnMessageVisibility}" TextWrapping="Wrap"/>
       <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="80"
               Margin="10,0,10,10" Content="{Binding CloseButtonText}" Command="{Binding CloseButtonCommand}"
-              CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+              CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
 
     </StackPanel>
 </wc:BaseWindow>

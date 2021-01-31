@@ -79,6 +79,15 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accessibility.
+        /// </summary>
+        public static string Accessibility {
+            get {
+                return ResourceManager.GetString("Accessibility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add to favorites.
         /// </summary>
         public static string AddToFavorites {
