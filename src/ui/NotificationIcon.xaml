@@ -30,7 +30,6 @@
         <Image Height="18" x:Key="DonateEmoji"    emoji:Image.Source="💸"/>
         <Image Height="18" x:Key="DebugEmoji"     emoji:Image.Source="🔎"/>
         <Image Height="18" x:Key="WebsiteEmoji"   emoji:Image.Source="🌐"/>
-        <Image Height="18" x:Key="RestartEmoji"   emoji:Image.Source="♻"/>
         <Image Height="18" x:Key="ExitEmoji"      emoji:Image.Source="🚪"/>
     </tb:TaskbarIcon.Resources>
 
@@ -95,13 +94,6 @@
             </MenuItem>
 
             <Separator/>
-
-            <MenuItem Header="{x:Static i18n:Text.Disable}" Command="{Binding MenuItemCommand}"
-                      IsCheckable="True" IsChecked="{Binding Path=IsDisabled, Mode=OneWay}"
-                      CommandParameter="{x:Static wc:MenuCommand.Disable}"/>
-
-            <MenuItem Header="{x:Static i18n:Text.Restart}" Command="{Binding MenuItemCommand}"
-                      Icon="{StaticResource RestartEmoji}" CommandParameter="{x:Static wc:MenuCommand.Restart}"/>
 
             <MenuItem Header="{x:Static i18n:Text.Exit}" Command="{Binding MenuItemCommand}"
                       Icon="{StaticResource ExitEmoji}" CommandParameter="{x:Static wc:MenuCommand.Exit}"/>

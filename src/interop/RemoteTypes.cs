@@ -27,12 +27,6 @@ namespace WinCompose
             = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_EXIT");
 
         /// <summary>
-        /// A custom message ID used to disable other WinCompose instances
-        /// </summary>
-        public static readonly uint DISABLE
-            = NativeMethods.RegisterWindowMessage("WM_WINCOMPOSE_DISABLE");
-
-        /// <summary>
         /// A custom message ID used to open various WinCompose windows
         /// </summary>
         public static readonly uint OPEN

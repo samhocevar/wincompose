@@ -40,7 +40,7 @@ namespace WinCompose
                 }
             }
 
-            // Do this early because of the Disabled and AutoLaunch settings
+            // Do this early because of the AutoLaunch setting
             Settings.LoadConfig();
 
             bool from_task = args.Contains("-fromtask");

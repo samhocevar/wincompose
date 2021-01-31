@@ -209,10 +209,6 @@ static class Composer
             m_last_key = key;
         }
 
-        // Do nothing if we are disabled
-        if (Settings.Disabled.Value)
-            goto exit_forward_key;
-
         // If the special Synergy window has focus, we’re actually sending
         // keystrokes to another computer; disable WinCompose. Same if it is
         // a Cygwin X window.
@@ -652,23 +648,6 @@ exit_forward_key:
     /// TODO: make this work with key combinations, too!
     /// </summary>
     public static event Action<Key> Captured;
-
-    /// <summary>
-    /// Toggle the disabled state
-    /// </summary>
-    public static void ToggleDisabled()
-    {
-        Settings.Disabled.Value = !Settings.Disabled.Value;
-        ResetSequence();
-        // FIXME: this will no longer be necessary when "Disabled"
-        // becomes a composer state of its own.
-        Changed?.Invoke();
-    }
-
-    /// <summary>
-    /// Return whether WinCompose has been disabled
-    /// </summary>
-    public static bool IsDisabled => Settings.Disabled.Value;
 
     private static void OnInvalidSequence()
     {

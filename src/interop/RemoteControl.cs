@@ -51,13 +51,7 @@ namespace WinCompose
         [PermissionSet(SecurityAction.Demand, Name="FullTrust")]
         protected IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            if (msg == WM_WINCOMPOSE.DISABLE)
-            {
-                if (Process.GetCurrentProcess().Id != (int)wParam)
-                    DisableEvent?.Invoke();
-                handled = true;
-            }
-            else if (msg == WM_WINCOMPOSE.EXIT)
+            if (msg == WM_WINCOMPOSE.EXIT)
             {
                 if (Process.GetCurrentProcess().Id != (int)wParam)
                     ExitEvent?.Invoke();
@@ -72,17 +66,6 @@ namespace WinCompose
             return IntPtr.Zero;
         }
 
-        /// <summary>
-        /// Send a message to all other processes to ask them to disable any
-        /// WinCompose hooks they may have installed.
-        /// </summary>
-        public void BroadcastDisableEvent()
-        {
-            NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.DISABLE,
-                                      Process.GetCurrentProcess().Id, 0);
-        }
-
-        public event Action DisableEvent;
         public event Action ExitEvent;
         public event Action<MenuCommand> OpenEvent;
     }

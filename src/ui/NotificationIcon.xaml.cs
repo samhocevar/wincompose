@@ -35,8 +35,6 @@ namespace WinCompose
         VisitWebsite,
         DonationPage,
         Download,
-        Disable,
-        Restart,
         Exit,
     }
 
@@ -53,10 +51,8 @@ namespace WinCompose
 
         private void OnLoaded(object sender, RoutedEventArgs args)
         {
-            Application.RemoteControl.DisableEvent += OnDisableEvent;
             Application.RemoteControl.ExitEvent += OnExitEvent;
             Application.RemoteControl.OpenEvent += OnOpenEvent;
-            Application.RemoteControl.BroadcastDisableEvent();
 
             TrayMouseDoubleClick += NotifyiconDoubleclicked;
 
@@ -96,7 +92,6 @@ namespace WinCompose
             Updater.Changed -= MarkIconDirty;
             Updater.Changed -= UpdaterStateChanged;
 
-            Application.RemoteControl.DisableEvent -= OnDisableEvent;
             Application.RemoteControl.ExitEvent -= OnExitEvent;
             Application.RemoteControl.OpenEvent -= OnOpenEvent;
 
@@ -157,22 +152,6 @@ namespace WinCompose
                     Process.Start("http://wincompose.info/donate/");
                     break;
 
-                case MenuCommand.Disable:
-                    if (Composer.IsDisabled)
-                        Application.RemoteControl.BroadcastDisableEvent();
-                    Composer.ToggleDisabled();
-                    break;
-
-                case MenuCommand.Restart:
-                    // FIXME: there might be more cleanup to do here; but it’s probably
-                    // not worth it, because restarting the app is a hack and whatever
-                    // reason the user may have, it’s because of a bug or a limitation
-                    // in WinCompose that we need to fix.
-                    Visibility = Visibility.Collapsed;
-                    Application.Current.Exit += (s, e) => Process.Start(Application.ResourceAssembly.Location);
-                    Application.Current.Shutdown();
-                    break;
-
                 case MenuCommand.Exit:
                     Application.Current.Shutdown();
                     break;
@@ -214,9 +193,8 @@ namespace WinCompose
 
         private System.Drawing.Icon GetCurrentIcon()
         {
-            return GetIcon((Composer.IsDisabled?     0x1 : 0x0) |
-                           (Composer.IsComposing?    0x2 : 0x0) |
-                           (Updater.HasNewerVersion? 0x4 : 0x0));
+            return GetIcon((Composer.IsComposing?    0x1 : 0x0) |
+                           (Updater.HasNewerVersion? 0x2 : 0x0));
         }
 
         public static System.Drawing.Icon GetIcon(int index)
@@ -226,9 +204,8 @@ namespace WinCompose
 
             if (m_icon_cache[index] == null)
             {
-                bool is_disabled = (index & 0x1) != 0;
-                bool is_composing = (index & 0x2) != 0;
-                bool has_update = (index & 0x4) != 0;
+                bool is_composing = (index & 0x1) != 0;
+                bool has_update = (index & 0x2) != 0;
 
                 // XXX: if you create new bitmap images here instead of using bitmaps from
                 // resources, make sure the DPI settings match. Our PNGs are 72 DPI whereas
@@ -240,10 +217,6 @@ namespace WinCompose
                     // LED status: on or off
                     canvas.DrawImage(is_composing ? Properties.Resources.DecalActive
                                                   : Properties.Resources.DecalIdle, 0, 0);
-
-                    // Large red cross indicating we’re disabled
-                    if (is_disabled)
-                        canvas.DrawImage(Properties.Resources.DecalDisabled, 0, 0);
 
                     // Tiny yellow exclamation mark to advertise updates
                     if (has_update)
@@ -270,17 +243,12 @@ namespace WinCompose
                 Visibility = Settings.DisableIcon.Value ? Visibility.Collapsed : Visibility.Visible;
                 Icon = GetCurrentIcon();
                 ToolTipText = GetCurrentToolTip();
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDisabled)));
             }
         }
 
         private static string GetCurrentToolTip()
         {
-            string ret = i18n.Text.DisabledToolTip;
-
-            if (!Composer.IsDisabled)
-                ret = string.Format(i18n.Text.TrayToolTip,
+            var ret = string.Format(i18n.Text.TrayToolTip,
                                     Settings.ComposeKeys.Value.FriendlyName,
                                     Settings.SequenceCount,
                                     Settings.Version);
@@ -306,7 +274,6 @@ namespace WinCompose
             }
         }
 
-        public bool IsDisabled => Composer.IsDisabled;
         public bool HasNewerVersion => Updater.HasNewerVersion;
         public string DownloadHeader => string.Format(i18n.Text.Download, Updater.Get("Latest") ?? "");
 
@@ -314,13 +281,6 @@ namespace WinCompose
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasNewerVersion)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DownloadHeader)));
-        }
-
-        private void OnDisableEvent()
-        {
-            if (!Composer.IsDisabled)
-                Composer.ToggleDisabled();
-            MarkIconDirty();
         }
 
         private void OnExitEvent() => Application.Current.Shutdown();
