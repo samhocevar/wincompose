@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20190405\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-09-22 02:39+0000\n"
+"PO-Revision-Date: 2021-02-22 11:50+0000\n"
 "Last-Translator: Kornelijus Tvarijanavičius <kornelitvari@protonmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/wincompose/"
 "master/lt/>\n"
@@ -16,10 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
-"19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
-"1 : 2);\n"
-"X-Generator: Weblate 4.3-dev\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 4.5\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -89,7 +88,7 @@ msgstr "Konversija"
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Be konvertavimo"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -677,11 +676,11 @@ msgstr "Komponuoti"
 
 #: i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Atverti WinCompose prisijungimo metu"
 
 #: i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Jei pasirinkta, WinCompose bus atverta, kai naudotojas prisijungs."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -845,28 +844,28 @@ msgstr "Programinė įranga, reikalinga WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"Norint paleisti WinCompose, reikia įdiegti .NET Framework, 3.5 SP1 arba "
-"naujesnę laidą.\n"
-"Prašome atlikti čia aprašytus veiksmus:"
+"WinCompose veikimui reikia „ .NET Framework“ versijos 4.0 ar naujesnės, "
+"kurios\n"
+"nepavyko rasti sistemoje. Šis veiksmas galbūt išsprėstų problemą:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr "Atsisiųsti ir įdiegti .NET Framework 3.5 Service Pack 1"
+msgstr "Atsisiųsti ir įdiegti „ .NET Framework 4.0 Runtime“"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
-msgstr "Po to galėsite grįžti ir baigti diegti WinCompose."
+msgstr ""
+"Kai tai bus baigta, galėsite grįžti į šį langą ir tęsti\n"
+"instaliaciją."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:285
