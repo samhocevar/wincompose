@@ -43,8 +43,11 @@
         <Image Height="14" x:Key="UnfavoriteIcon" emoji:Image.Source="💔"/>
         <Image Height="14" x:Key="DisableIcon"    emoji:Image.Source="❌"/>
 
-        <!-- This style can be applied to a TextBlock to display text with a smaller size -->
-        <Style x:Key="SmallTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+        <!--
+           - Style for TextBlock that renders text at a slightly smaller size
+          -->
+        <Style x:Key="SmallTextBlock" BasedOn="{StaticResource {x:Type TextBlock}}"
+               TargetType="{x:Type TextBlock}">
             <Setter Property="LayoutTransform">
                 <Setter.Value>
                     <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
@@ -52,7 +55,10 @@
             </Setter>
         </Style>
 
-        <!-- This DataTemplate contains a TextBox and a "clear text" button that can be used for the Search text input -->
+        <!--
+           - DataTemplate containing a TextBox and a "clear text" button that can be
+           - used for the Search text input
+          -->
         <DataTemplate x:Key="SearchTextTemplate">
             <Grid>
                 <TextBox x:Name="SearchBox" Padding="4" Width="240"
@@ -70,11 +76,12 @@
                                    FontFamily="{x:Static wc:Constants.PreferredFontFamily}"/>
                     </Button>
                     <TextBlock x:Name="Watermark" Text="{x:Static i18n:Text.Search}" VerticalAlignment="Center"
-                               Margin="8,0" FontStyle="Italic" Foreground="DarkGray" Visibility="Collapsed" IsHitTestVisible="False"/>
+                               Margin="8,0" Visibility="Collapsed" IsHitTestVisible="False"
+                               FontStyle="Italic" Foreground="DarkGray"/>
                 </DockPanel>
             </Grid>
-            <!-- If search box is empty and unfocused, show the watermark -->
             <DataTemplate.Triggers>
+                <!-- If search box is empty and unfocused, show the watermark -->
                 <MultiTrigger>
                     <MultiTrigger.Conditions>
                         <Condition Property="IsFocused" Value="False" SourceName="SearchBox"/>
@@ -84,6 +91,49 @@
                 </MultiTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
+
+        <!--
+           - ControlTemplate for a ContentControl that renders a key sequence using
+           - fancy keycap images.
+          -->
+        <ControlTemplate x:Key="SequenceView" TargetType="ContentControl">
+            <StackPanel Orientation="Horizontal" Margin="4,0">
+                <ItemsControl ItemsSource="{Binding FullSequence}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="1,0">
+                                <Border Width="28" Height="28" x:Name="KeyImage">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
+                                    </Border.Background>
+                                    <Viewbox Margin="4">
+                                        <TextBlock Text="{Binding KeyLabel}" Foreground="#310"
+                                                   FontFamily="Consolas, Segoe UI Symbol, Arial" FontWeight="Bold" />
+                                    </Viewbox>
+                                </Border>
+                            </StackPanel>
+                            <DataTemplate.Triggers>
+                                <!-- Change the key image and size when the value matches the space key -->
+                                <DataTrigger Binding="{Binding}" Value="{x:Static wc:SequenceViewModel.SpaceKey}">
+                                    <Setter TargetName="KeyImage" Property="Width" Value="64"/>
+                                    <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->
+                                    <Setter TargetName="KeyImage" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="{StaticResource SpaceKeyImage}"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ControlTemplate>
 
         <ContextMenu x:Key="ContextMenu">
             <MenuItem Header="{x:Static i18n:Text.CopyToClipboard}" Icon="{StaticResource CopyIcon}"
@@ -198,42 +248,9 @@
                             </Border>
 
                             <!-- The sequence, printed as key icons -->
-                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0">
-                                <ItemsControl ItemsSource="{Binding FullSequence}">
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="1,0">
-                                                <Border Width="28" Height="28" x:Name="KeyImage">
-                                                    <Border.Background>
-                                                        <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
-                                                    </Border.Background>
-                                                    <Viewbox Margin="4">
-                                                        <TextBlock Text="{Binding KeyLabel}" Foreground="#310"
-                                                                   FontFamily="Consolas, Segoe UI Symbol, Arial" FontWeight="Bold" />
-                                                    </Viewbox>
-                                                </Border>
-                                            </StackPanel>
-                                            <DataTemplate.Triggers>
-                                                <!-- Change the key image and size when the value matches the space key -->
-                                                <DataTrigger Binding="{Binding}" Value="{x:Static wc:SequenceViewModel.SpaceKey}">
-                                                    <Setter TargetName="KeyImage" Property="Width" Value="64"/>
-                                                    <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->
-                                                    <Setter TargetName="KeyImage" Property="Background">
-                                                        <Setter.Value>
-                                                            <ImageBrush ImageSource="{StaticResource SpaceKeyImage}"/>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </DataTrigger>
-                                            </DataTemplate.Triggers>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </StackPanel>
+                            <ContentControl Template="{StaticResource ResourceKey=SequenceView}"
+                                            DockPanel.Dock="Right"/>
+
                             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                                 <StackPanel.RenderTransform>
                                     <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
