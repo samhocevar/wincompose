@@ -17,8 +17,6 @@ using System.Diagnostics;
 
 namespace WinCompose
 {
-    public delegate void Action(); // This type was only added in .NET 3.5
-
     static class Program
     {
         [STAThread]

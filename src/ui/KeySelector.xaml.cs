@@ -10,6 +10,7 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace WinCompose
