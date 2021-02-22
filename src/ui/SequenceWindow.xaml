@@ -35,9 +35,6 @@
     </Window.InputBindings>
 
     <Window.Resources>
-        <BitmapImage x:Key="EmptyKeyImage" UriSource="../res/key_empty.png"/>
-        <BitmapImage x:Key="SpaceKeyImage" UriSource="../res/key_space.png"/>
-
         <Image Height="14" x:Key="CopyIcon"       emoji:Image.Source="📋"/>
         <Image Height="14" x:Key="FavoriteIcon"   emoji:Image.Source="❤️"/>
         <Image Height="14" x:Key="UnfavoriteIcon" emoji:Image.Source="💔"/>
@@ -106,27 +103,36 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="1,0">
-                                <Border Width="28" Height="28" x:Name="KeyImage">
+                            <Border x:Name="KeyBorder" Width="28" Height="28" Margin="2" CornerRadius="4">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                        <GradientStop Color="#d2ad8e" Offset="0.0" />
+                                        <GradientStop Color="#f6ebdb" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border CornerRadius="2" BorderThickness="1" Margin="3">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Color="#eed7bb" Offset="0.0" />
+                                            <GradientStop Color="#f9f2e7" Offset="1.0" />
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
                                     <Border.Background>
-                                        <ImageBrush ImageSource="{StaticResource EmptyKeyImage}"/>
+                                        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                            <GradientStop Color="#eed8bb" Offset="0.0" />
+                                            <GradientStop Color="#faf3e8" Offset="1.0" />
+                                        </LinearGradientBrush>
                                     </Border.Background>
-                                    <Viewbox Margin="4">
-                                        <TextBlock Text="{Binding KeyLabel}" Foreground="#310"
-                                                   FontFamily="Consolas, Segoe UI Symbol, Arial" FontWeight="Bold" />
+                                    <Viewbox>
+                                        <TextBlock Text="{Binding KeyLabel}" Foreground="#310" FontWeight="Bold"
+                                                   FontFamily="Consolas, Segoe UI Symbol, Arial"/>
                                     </Viewbox>
                                 </Border>
-                            </StackPanel>
+                            </Border>
                             <DataTemplate.Triggers>
-                                <!-- Change the key image and size when the value matches the space key -->
+                                <!-- Change the key size when the value matches the space key -->
                                 <DataTrigger Binding="{Binding}" Value="{x:Static wc:SequenceViewModel.SpaceKey}">
-                                    <Setter TargetName="KeyImage" Property="Width" Value="64"/>
-                                    <!--<Setter TargetName="KeyImage" Property="Height" Value="16"/>-->
-                                    <Setter TargetName="KeyImage" Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="{StaticResource SpaceKeyImage}"/>
-                                        </Setter.Value>
-                                    </Setter>
+                                    <Setter TargetName="KeyBorder" Property="Width" Value="60"/>
                                 </DataTrigger>
                             </DataTemplate.Triggers>
                         </DataTemplate>

@@ -240,7 +240,6 @@
     <Resource Include="res\icon_settings.png" />
     <Resource Include="res\key_compose.png" />
     <Resource Include="res\key_empty.png" />
-    <Resource Include="res\key_space.png" />
     <Resource Include="res\key_compose_big.png" />
   </ItemGroup>
   <ItemGroup>
