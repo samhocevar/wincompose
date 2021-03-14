@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.6beta20160111\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-02-12 17:50+0000\n"
+"PO-Revision-Date: 2021-02-28 17:50+0000\n"
 "Last-Translator: David Santos <david@dsantosdev.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "wincompose/master/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.11-dev\n"
+"X-Generator: Weblate 4.5\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -678,11 +678,11 @@ msgstr "Composição"
 
 #: i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Iniciar o WinCompose ao fazer login"
 
 #: i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Se ativado, o WinCompose será iniciado quando o usuário fizer login."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -846,21 +846,19 @@ msgstr "Software necessário para o WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"O WinCompose precisa do .NET Framework, versão 3.5 SP1 ou superior, que\n"
+"O WinCompose precisa do .NET Framework, versão 4.0 ou superior, que\n"
 "aparentemente não está instalado. A ação a seguir pode ajudar a resolver o "
 "problema:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr "Baixar e instalar o .NET Framework 3.5 Service Pack 1"
+msgstr "Baixar e instalar o Runtime do .NET Framework 4.0"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
