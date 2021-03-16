@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-01-28 14:32+0000\n"
+"PO-Revision-Date: 2021-03-18 08:18+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "wincompose/master/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -151,9 +151,8 @@ msgstr ""
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Venstre Super"
+msgstr "Avlusingsvindu"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -184,9 +183,8 @@ msgstr "Lukk"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Kopier tegn"
+msgstr "Unicode-tegn"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -443,9 +441,8 @@ msgstr "Justeringer"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "Ti sekunder"
+msgstr "{0} sekunder"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
@@ -864,20 +861,18 @@ msgstr "Programvare påkrevd av WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose trenger .NET-rammeverket, versjon 3.5 SP1 eller senere, som ikke\n"
+"WinCompose trenger .NET-rammeverket, versjon 4.0 eller senere, som ikke\n"
 "ser ut til å være installert. Følgende handling kan løse problemet:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr "Last ned og installer .NET-rammeverket 3.5 Service Pack 1"
+msgstr "Last ned og installer .NET-rammeverket 4.0-kjøretidsrutine"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
