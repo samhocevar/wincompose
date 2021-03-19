@@ -42,4 +42,5 @@
 <Multi_key> <s> <f> : "¯\\_(ツ)_/¯"     # Shrug face
 
 <Multi_key> <h> <w> : "Hello World"
+<Multi_key> <b> <z> <h> : "🏴󠁦󠁲󠁢󠁲󠁥󠁿" # Bretagne flag
 
