@@ -35,7 +35,7 @@ namespace WinCompose
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            Activated += (o, e) => SearchBox.Focus();
+            Activated += (o, _) => SearchBox.Focus();
             SearchBox.PreviewKeyDown += OnSearchBoxPreviewKeyDown;
         }
 
