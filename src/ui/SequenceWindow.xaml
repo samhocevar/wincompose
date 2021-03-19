@@ -124,8 +124,11 @@
                                         </LinearGradientBrush>
                                     </Border.Background>
                                     <Viewbox>
+                                        <!-- We use MinWidth in case the label is a combining character,
+                                           - otherwise nothing will be rendered. -->
                                         <TextBlock Text="{Binding KeyLabel}" Foreground="#310" FontWeight="Bold"
-                                                   FontFamily="Consolas, Segoe UI Symbol, Arial"/>
+                                                   FontFamily="Consolas, Segoe UI Symbol, Arial"
+                                                   HorizontalAlignment="Center" MinWidth="10"/>
                                     </Viewbox>
                                 </Border>
                             </Border>
