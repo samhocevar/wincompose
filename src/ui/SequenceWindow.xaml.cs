@@ -30,19 +30,31 @@ namespace WinCompose
         {
             InitializeComponent();
             DataContext = new RootViewModel();
+            Loaded += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
             Activated += (o, e) => SearchBox.Focus();
+            SearchBox.PreviewKeyDown += OnSearchBoxPreviewKeyDown;
+        }
+
+        private void OnSearchBoxPreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Return)
+                e.Handled = true;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         private RootViewModel m_view_model => (RootViewModel)DataContext;
 
-        private TextBox SearchBox
+        private RichTextBox SearchBox
         {
             get
             {
                 var grid = VisualTreeHelper.GetChild(SearchWidget, 0) as Grid;
-                return VisualTreeHelper.GetChild(grid, 0) as TextBox;
+                return VisualTreeHelper.GetChild(grid, 0) as RichTextBox;
             }
         }
 

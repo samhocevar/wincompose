@@ -58,8 +58,8 @@
           -->
         <DataTemplate x:Key="SearchTextTemplate">
             <Grid>
-                <TextBox x:Name="SearchBox" Padding="4" Width="240"
-                         Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <emoji:RichTextBox x:Name="SearchBox" Padding="4" Width="240"
+                    Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <DockPanel>
                     <Button DockPanel.Dock="Right" Click="ClearSearch_Click" Margin="4,0">
                         <Button.Template>
