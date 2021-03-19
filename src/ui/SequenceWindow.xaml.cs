@@ -30,12 +30,15 @@ namespace WinCompose
         {
             InitializeComponent();
             DataContext = new RootViewModel();
+            Activated += OnActivated;
             Loaded += OnLoaded;
         }
 
+        private void OnActivated(object sender, EventArgs e)
+            => SearchBox.Focus();
+
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            Activated += (o, _) => SearchBox.Focus();
             SearchBox.PreviewKeyDown += OnSearchBoxPreviewKeyDown;
         }
 
