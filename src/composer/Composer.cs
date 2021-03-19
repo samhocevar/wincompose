@@ -510,6 +510,10 @@ exit_forward_key:
                 }
             }
 
+            // Wait for a second character if SwapOnInvalid is true
+            if (m_sequence.Count == 1 && Settings.SwapOnInvalid.Value)
+                return true;
+
             // Try to swap characters if the corresponding option is set
             if (m_sequence.Count == 2 && Settings.SwapOnInvalid.Value)
             {
