@@ -683,6 +683,10 @@ msgstr ""
 msgid "If set, WinCompose will be started when the user logs in."
 msgstr ""
 
+#: i18n/Text.resx:613 ID:Accessibility
+msgid "Accessibility"
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"

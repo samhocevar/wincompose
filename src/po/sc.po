@@ -694,6 +694,10 @@ msgstr ""
 "Si est impostadu gasi, Wincompose s'at a allùghere cando s'impreadore faghet "
 "s'atzessu."
 
+#: i18n/Text.resx:613 ID:Accessibility
+msgid "Accessibility"
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
 msgid "Other, Control"

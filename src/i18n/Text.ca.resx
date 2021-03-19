@@ -118,372 +118,372 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutodetectLanguage" xml:space="preserve">
-    <value>Automatsko otkrivanje</value>
+    <value>Detecció automàtica</value>
   </data>
   <data name="KeyLMenu" xml:space="preserve">
-    <value>Lijevi Alt</value>
+    <value>Alt esquerra</value>
   </data>
   <data name="KeyRMenu" xml:space="preserve">
-    <value>Desni Alt</value>
+    <value>Alt dreta</value>
   </data>
   <data name="KeyLControl" xml:space="preserve">
-    <value>Lijevi Ctrl</value>
+    <value>Control esquerre</value>
   </data>
   <data name="KeyRControl" xml:space="preserve">
-    <value>Desni Ctrl</value>
+    <value>Control dreta</value>
   </data>
   <data name="KeyLWin" xml:space="preserve">
-    <value>Lijevi Windows</value>
+    <value>Windows esquerre</value>
   </data>
   <data name="KeyRWin" xml:space="preserve">
-    <value>Desni Windows</value>
+    <value>Windows dreta</value>
   </data>
   <data name="KeyCapital" xml:space="preserve">
-    <value>Caps Lock</value>
+    <value>Bloq Maj</value>
   </data>
   <data name="KeyNumLock" xml:space="preserve">
-    <value>Num Lock</value>
+    <value>Bloq Númc</value>
   </data>
   <data name="KeyPause" xml:space="preserve">
-    <value>Pause</value>
+    <value>Pausa</value>
   </data>
   <data name="KeyApps" xml:space="preserve">
-    <value>Menu</value>
+    <value>Menú</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>ESC</value>
+    <value>Esc</value>
   </data>
   <data name="KeyConvert" xml:space="preserve">
-    <value>Konverzija</value>
+    <value>Conversió</value>
   </data>
   <data name="KeyNonConvert" xml:space="preserve">
-    <value>Ne-konverzija</value>
+    <value>Sense conversió</value>
   </data>
   <data name="KeyScroll" xml:space="preserve">
-    <value>Scroll Lock</value>
+    <value>Bloq Despl</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>Razmaknica</value>
+    <value>Espai</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
-    <value>Return</value>
+    <value>Retorn</value>
   </data>
   <data name="Composing" xml:space="preserve">
-    <value>Sastavljanje</value>
+    <value>Composició</value>
   </data>
   <data name="UseXorgRules" xml:space="preserve">
-    <value>Koristi kombinacije projekta Xorg</value>
+    <value>Usa les seqüències del projecte Xorg</value>
   </data>
   <data name="UseXorgRulesToolTip" xml:space="preserve">
-    <value>Koristi 3.000 kombinacije projekta Xorg (http://www.x.org/). Te se kombinacije najčešće mogu naći u standardnom Linux sustavu.</value>
+    <value>Usa les 3.000 seqüències de composició del projecte Xorg (http://www.x.org/). Són seqüències que habitualment es troben en el sistema Linux estàndard.</value>
   </data>
   <data name="UseXComposeRules" xml:space="preserve">
-    <value>Koristi kombinacije projekta XCompose</value>
+    <value>Usa les seqüències del projecte XCompose</value>
   </data>
   <data name="UseXComposeRulesToolTip" xml:space="preserve">
-    <value>Koristi 1.000 kombinacija projekta otvorenog koda XCompose (https://github.com/kragen/xcompose). Te se kombinacije ponekad sukobljavaju s onima u Xorg.</value>
+    <value>Usa les 1.000 seqüències de composició del projecte de codi obert XCompose (https://github.com/kragen/xcompose). Aquestes seqüències poden entrar en conflicte amb les d'Xorg.</value>
   </data>
   <data name="UseEmojiRules" xml:space="preserve">
-    <value>Koristi kombinacije WinCompose-a za emojije</value>
+    <value>Usa les seqüències d'emojis de WinCompse</value>
   </data>
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
-    <value>Koristi kombinacije za emojije koje su pripremili autor i suradnici programa WinCompose.</value>
+    <value>Usa les seqüències de composició d'emojis proporcionada per l'autor i els col·laboradors del WinCompose.</value>
   </data>
   <data name="DebugWindow" xml:space="preserve">
-    <value>Prozor otklanjanja grešaka</value>
+    <value>Finestra de depuració</value>
   </data>
   <data name="ShowSequences" xml:space="preserve">
-    <value>Pokaži kombinacije …</value>
+    <value>Mostra les seqüències…</value>
   </data>
   <data name="Disable" xml:space="preserve">
-    <value>Deaktiviraj</value>
+    <value>Desactiva</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Pokreni ponovo</value>
+    <value>Reinicia</value>
   </data>
   <data name="DonationPage" xml:space="preserve">
-    <value>Stranica za donacije</value>
+    <value>Pàgina de donatius</value>
   </data>
   <data name="VisitWebsite" xml:space="preserve">
-    <value>Posjeti web-stranicu</value>
+    <value>Visita el lloc web</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Zatvori program</value>
+    <value>Surt</value>
   </data>
   <data name="UnicodeCharacters" xml:space="preserve">
-    <value>Unicode znakovi</value>
+    <value>Caràcters Unicode</value>
   </data>
   <data name="Sequences" xml:space="preserve">
-    <value>Kombinacije</value>
+    <value>Seqüències</value>
   </data>
   <data name="SwapOnInvalid" xml:space="preserve">
-    <value>Pokušaj zamijeniti te dvije tipke</value>
+    <value>Intenta d'intercanviar les dues tecles</value>
   </data>
   <data name="SwapOnInvalidToolTip" xml:space="preserve">
-    <value>Pokušaj zamijeniti tipke dvotipkovne kombinacije. Na primjer, ako „Sastavi E A” nije ispravna kombinacija, pokušaj „Sastavi A E”.</value>
+    <value>Intenta d'intercanviar les tecles per a un seqüència de dues tecles. Per exemple, si Composició E A no és una seqüència vàlida, aleshores prova Composició A E.</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Filtar za pretragu:</value>
+    <value>Filtre de cerca:</value>
   </data>
   <data name="ComposeKey" xml:space="preserve">
-    <value>Tipka za sastavljanje:</value>
+    <value>Tecla de composició:</value>
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
-    <value>Odaberi tipku, koja će se koristiti kao tipka za sastavljanje.</value>
+    <value>Trieu la tecla que hauria d'actuar com a tecla de composició.</value>
   </data>
   <data name="ResetTimeout" xml:space="preserve">
-    <value>Obnovi istek vremena</value>
+    <value>Temps d'expiració</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
-    <value>Napredni unos unikoda</value>
+    <value>Introducció d'Unicode avançada</value>
   </data>
   <data name="UnicodeInputToolTip" xml:space="preserve">
-    <value>Aktiviraj unos unikoda za sve znakove, čak i za one bez definirane kombinacije. Na primjer, sljedeća kombinacija će ispisati znak U+1A3F: „Sastavi U 1 A 3 F Enter”</value>
+    <value>Permet l'entrada Unicode per a tots els caràcters, fins i tot pels que no hi ha definica una seqüència. Per exemple, la seqüència següent generarà el caràcter U+1A3F: Composició U 1 A 3 F Retorn</value>
   </data>
   <data name="InvalidSequences" xml:space="preserve">
-    <value>Pri neispravnim kombinacijama</value>
+    <value>En introduir seqüències no vàlides</value>
   </data>
   <data name="CaseInsensitive" xml:space="preserve">
-    <value>Koristi poklapanja bez razlikovanja veličine slova</value>
+    <value>No distingeixis entre majúscules i minúscules</value>
   </data>
   <data name="CaseInsensitiveToolTip" xml:space="preserve">
-    <value>Ako upisana kombinacija ne postoji, ali postoji jedna koja se razlikuje samo u veličini slova, automatski je ispravi.</value>
+    <value>Si la seqüència introduïda no existeix, però n'hi ha una que només difereix en majúscules i minúscules, la corregeix automàticament.</value>
   </data>
   <data name="DiscardOnInvalid" xml:space="preserve">
-    <value>Odbaci sve utipkane znakove</value>
+    <value>Descarta tots els caràcters teclejats</value>
   </data>
   <data name="DiscardOnInvalidToolTip" xml:space="preserve">
-    <value>Ako upisana kombinacija ne postoji, odbaci sve utipkane znakove. Standardni način je, da se znakovi prikazuju kao da tipka za sastavljanje nije korištena.</value>
+    <value>Si la seqüència no existeix, descarta tots els caràcters que s'han escrit. El comportament predeterminat és generar els caràcters com si la tecla de composició no s'hagués usat.</value>
   </data>
   <data name="BeepOnInvalid" xml:space="preserve">
-    <value>Sviraj zvučni signal</value>
+    <value>Emet un beep</value>
   </data>
   <data name="BeepOnInvalidToolTip" xml:space="preserve">
-    <value>Ako upisana kombinacija ne postoji, sviraj zvučni signal sustava.</value>
+    <value>Si la seqüència introduïda no existeix, emet un so de sistema.</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Jezik sučelja:</value>
+    <value>Llengua de la interfície:</value>
   </data>
   <data name="LanguageToolTip" xml:space="preserve">
-    <value>Odaberi jezik koji WinCompose koristi za sučelje. Standardno se koristi jezik operacijskog sustava.</value>
+    <value>Seleccioneu la llengua que usarà el WinCompose per a la interfície. De manera predeterminada s'usa la llengua del sistema.</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Zatvori</value>
+    <value>Tanca</value>
   </data>
   <data name="CopyToClipboard" xml:space="preserve">
-    <value>Kopiraj u međuspremnik</value>
+    <value>Copia al porta-retalls</value>
   </data>
   <data name="Emoji" xml:space="preserve">
-    <value>Emoji</value>
+    <value>Emojis</value>
   </data>
   <data name="Apply" xml:space="preserve">
-    <value>Primijeni</value>
+    <value>Aplica</value>
   </data>
   <data name="KeepOriginalKey" xml:space="preserve">
-    <value>Zadrži izvorni način rada tipke za sastavljanje</value>
+    <value>Conserva el comportament original de la tecla de composició</value>
   </data>
   <data name="KeepOriginalKeyToolTip" xml:space="preserve">
-    <value>Ovime će WinCompose pokušati što bolje zadržati izvorni način rada tipke za sastavljanje. Na primjer, prečac Alt-Tab i dalje će raditi, čak i ako se Alt koristi kao tipka za sastavljanje.</value>
+    <value>Això li diu al WinCompose que faci el possible per a conservar el comportament de la tecla original. Per exemple, la drecera Alt-Tab funcionarà encara que s'utilitzi Alt com a tecla de composició.</value>
   </data>
   <data name="InsertZwsp" xml:space="preserve">
-    <value>Umetni znakove razmaka bez širine u Office programima</value>
+    <value>Insereix espais d'amplada zero en les aplicacions Office</value>
   </data>
   <data name="InsertZwspToolTip" xml:space="preserve">
-    <value>Microsoft Office programi ponekad mijenjaju font dokumenta, kad se upišu određeni Unicode znakovi. Ova funkcija umeće nevidljivi znak nakon Unicode znaka, kako bi se zaobišla ta greška.</value>
+    <value>Les aplicacions de Microsoft Office de vegades canvien la lletra tipogràfica del document sobre la marxa en introduir determinats caràcters Unicode. Aquesta característica insereix un caràcter invisible després del caràcter Unicode per a pal·liar aquest problema.</value>
   </data>
   <data name="EmulateCapsLock" xml:space="preserve">
-    <value>Simuliraj Caps Lock koristeći obje Shift tipke</value>
+    <value>Emula la tecla Bloq Maj usant les dues tecles de majúscules</value>
   </data>
   <data name="EmulateCapsLockToolTip" xml:space="preserve">
-    <value>Ako se Caps Lock koristi kao tipka za sastavljanje, izvorni način rada tipke postaje nedostupan. Ova funkcija omogućuje uključivanje tipke Caps Lock istovremenim pritiskom objih tipki Shift.</value>
+    <value>Si s'usa la tecla de bloqueig de majúscules com a tecla de composició, el comportament original de la tecla no és disponible. Aquesta característica permet activar el bloqueig de majúscules pitjant les dues tecles majúscules simultàniament.</value>
   </data>
   <data name="ShiftDisablesCapsLock" xml:space="preserve">
-    <value>Tipka Shift isključuje Caps Lock</value>
+    <value>La tecla majúscula desactiva el bloqueig de majúscules</value>
   </data>
   <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
-    <value>Ako se Caps Lock koristi kao tipka za sastavljanje, izvorni način rada tipke postaje nedostupan. Ova funkcija omogućuje isključivanje tipke Caps Lock pritiskom tipke Shift.</value>
+    <value>Si s'usa Bloq Maj com a tecla de composició, el comportament original de la tecla no és disponible. Aquesta funcionalitat permet desactivar el bloqueig de majúscules pitjant la tecla de majúscules.</value>
   </data>
   <data name="CapsLockCapitalizes" xml:space="preserve">
-    <value>Caps Lock uvijek pretvara u velika slova</value>
+    <value>Bloq Maj sempre genera lletres en majúscula</value>
   </data>
   <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
-    <value>Kad je tipka Caps Lock uključena, tipkanje slova s naglaskom kao što je „é”, uvijek će ispisati odgovarajuće veliko slovo, u ovom slučaju „É”.</value>
+    <value>Si el bloqueig de majúscules està activat, en escriure una lletra accentuada, com ara «é», sempre generarà la lletra corresponent en majúscula, en aquest cas «É».</value>
   </data>
   <data name="Categories" xml:space="preserve">
-    <value>Kategorije</value>
+    <value>Categories</value>
   </data>
   <data name="InSelectedCategories" xml:space="preserve">
-    <value>U odabranim kategorijama</value>
+    <value>En les categories seleccionades</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Opcije – WinCompose</value>
+    <value>Opcions — WinCompose</value>
   </data>
   <data name="ShowOptions" xml:space="preserve">
-    <value>Opcije …</value>
+    <value>Opcions…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose v{2} na {0} (broj kombinacija: {1})</value>
+    <value>WinCompose v{2} en {0} ({1} seqüències)</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>Opće</value>
+    <value>General</value>
   </data>
   <data name="Behavior" xml:space="preserve">
-    <value>Ponašanje</value>
+    <value>Comportament</value>
   </data>
   <data name="WindowTitle" xml:space="preserve">
-    <value>Kombinacije – WinCompose</value>
+    <value>Seqüències — WinCompose</value>
   </data>
   <data name="UserMacros" xml:space="preserve">
-    <value>Korisničke makronaredbe</value>
+    <value>Macros definides per l'usuari</value>
   </data>
   <data name="DisabledToolTip" xml:space="preserve">
-    <value>WinCompose je deaktiviran</value>
+    <value>WinCompose està desactivat</value>
   </data>
   <data name="KeyInsert" xml:space="preserve">
-    <value>Umetni</value>
+    <value>Insereix</value>
   </data>
   <data name="TestTyping" xml:space="preserve">
-    <value>Test tipkanja</value>
+    <value>Prova de tecleig</value>
   </data>
   <data name="Tweaks" xml:space="preserve">
-    <value>Podešavanja</value>
+    <value>Ajustaments</value>
   </data>
   <data name="DelaySeconds" xml:space="preserve">
-    <value>{0} s</value>
+    <value>{0} segons</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>Informacije</value>
+    <value>Quant a</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Preuzmi WinCompose {0}</value>
+    <value>Baixa el WinCompose {0}</value>
   </data>
   <data name="AboutBoxTitle" xml:space="preserve">
-    <value>Informacije o WinCompose</value>
+    <value>Quant al WinCompose</value>
   </data>
   <data name="Programming" xml:space="preserve">
-    <value>Programiranje</value>
+    <value>Programació</value>
   </data>
   <data name="Translators" xml:space="preserve">
-    <value>Prijevod</value>
+    <value>Traducció</value>
   </data>
   <data name="Authors" xml:space="preserve">
-    <value>Autori</value>
+    <value>Autors</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Licenca</value>
+    <value>Llicència</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
-    <value>Za primjenu promjena, WinCompose se mora ponovo pokrenuti.</value>
+    <value>Cal que reinicieu el WinCompose perquè alguns canvis siguin efectius.</value>
   </data>
   <data name="ReportBug" xml:space="preserve">
-    <value>Prijavi grešku</value>
+    <value>Informa d'un problema</value>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>Pomoć</value>
+    <value>Ajuda</value>
   </data>
   <data name="UpdatesToolTip" xml:space="preserve">
-    <value>Dostupne su nove verzije.</value>
+    <value>Hi ha una actualització disponible.</value>
   </data>
   <data name="UserDefinedSequences" xml:space="preserve">
-    <value>Korisničke kombinacije</value>
+    <value>Seqüències definides per l'usuari</value>
   </data>
   <data name="UserDefinedSequencesEdit" xml:space="preserve">
-    <value>Uredi</value>
+    <value>Edita</value>
   </data>
   <data name="UserDefinedSequencesReload" xml:space="preserve">
-    <value>Učitaj ponovo</value>
+    <value>Torna a carregar</value>
   </data>
   <data name="AllowInjected" xml:space="preserve">
-    <value>Dozvoli umetnute tipke</value>
+    <value>Permet tecles injectades</value>
   </data>
   <data name="AllowInjectedToolTip" xml:space="preserve">
-    <value>Nemoj zanemariti tipke koje šalju drugi softveri poput AutoHotkey ili Synergy</value>
+    <value>No ignora les tecles enviades per altre programari com ara AutoHotkey o Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Prt Scrn</value>
+    <value>Impr Pant</value>
   </data>
   <data name="KeyDisabled" xml:space="preserve">
-    <value>Deaktivirano</value>
+    <value>Desactivat</value>
   </data>
   <data name="CheckUpdates" xml:space="preserve">
-    <value>Automatski traži nove verzije</value>
+    <value>Cerca automàtica si hi ha cap actualització</value>
   </data>
   <data name="CheckUpdatesToolTip" xml:space="preserve">
-    <value>Ako je aktivirano, WinCompose će se redovito povezati s internetom i provjeriti ima li novih verzija. Nove verzije se ne instaliraju automatski.</value>
+    <value>Si es marca, el WinCompose connectarà a Internet a intervals regulars per a verificar si hi ha una nova versió. Les actualitzacions no s'instal·laran automàticament.</value>
   </data>
   <data name="KeepIconVisible" xml:space="preserve">
-    <value>Pokušaj održati vidljivost ikone u području obavijesti</value>
+    <value>Intenta de mantenir visible la icona de l'àrea de notificacions</value>
   </data>
   <data name="KeepIconVisibleToolTip" xml:space="preserve">
-    <value>Windows standardno ukljanja ikonu iz područja obavijesti nakon kratkog vremena. Ova opcija pokušava ikonu uvijek održati vidljivom.</value>
+    <value>Per defecte, el Windows suprimirà la icona de l'àrea de notificacions després d'una estona. Aquesta opció intenta de mantenir-la sempre visible.</value>
   </data>
   <data name="ChangeComposeKey" xml:space="preserve">
-    <value>Promijeni…</value>
+    <value>Canvia…</value>
   </data>
   <data name="CaptureComposeKey" xml:space="preserve">
-    <value>Pritisni tipku koja će se koristiti kao tipka za sastavljanje.</value>
+    <value>Premeu una tecla per a usar com a tecla de composició.</value>
   </data>
   <data name="AddToFavorites" xml:space="preserve">
-    <value>Dodaj u favorite</value>
+    <value>Afegeix als preferits</value>
   </data>
   <data name="DisableIcon" xml:space="preserve">
-    <value>Deaktiviraj ikonu u području obavijesti</value>
+    <value>Desactiva la icona de l'àrea de notificacions</value>
   </data>
   <data name="DisableIconToolTip" xml:space="preserve">
-    <value>Ako je aktivirano, WinCompose više neće prikazivati ikonu u području obavijesti. Tada će jedini način otvaranja WinCompose sučelja biti putem „WinCompose postavke” i „WinCompose kombinacije” u izborniku pokretanja.</value>
+    <value>Si es marca, el WinCompose no mostrarà més la icona de l'àrea de notificacions. L'única manera d'obrir la interfície del WinCompose serà mitjançant les entrades «Configuració del WinCompose» i «Seqüències del WinCompose» del menú d'inici.</value>
   </data>
   <data name="KeyHome" xml:space="preserve">
-    <value>Home</value>
+    <value>Inici</value>
   </data>
   <data name="KeyEnd" xml:space="preserve">
-    <value>End</value>
+    <value>Final</value>
   </data>
   <data name="KeyTab" xml:space="preserve">
-    <value>Tabulator</value>
+    <value>Tab</value>
   </data>
   <data name="NoTimeout" xml:space="preserve">
-    <value>Bez isteka vremena</value>
+    <value>Sense temps d'expiració</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Napredno</value>
+    <value>Avançat</value>
   </data>
   <data name="IgnoreRegex" xml:space="preserve">
-    <value>Zanemari prozore koji se poklapaju s ovim regularnim izrazom:</value>
+    <value>Ignora les finestres que coincideixen amb aquesta expressió regular:</value>
   </data>
   <data name="IgnoreRegexToolTip" xml:space="preserve">
-    <value>WinCompose će se u potpunosti deaktivirati, kad trenutačna klasa prozora ili ime prozora odgovaraju ovom regularnom izrazu.</value>
+    <value>El WinCompose es desactivarà completament si la classe de la finestra actual o el nom de la finestra coincideix amb aquesta expressió regular.</value>
   </data>
   <data name="AlwaysCompose" xml:space="preserve">
-    <value>Alternativna tipka za sastavljanje je uvijek Sastavi</value>
+    <value>La tecla de composició alternativa és sempre Composició</value>
   </data>
   <data name="AlwaysComposeToolTip" xml:space="preserve">
-    <value>Ako je aktivirano, sve tipke za sastavljanje, u kombinaciji će se tumačiti kao „Sastavi”. Standardno samo prva pritisnuta tipka djeluje kao „Sastavi”, a alternativne tipke za sastavljanje zadržat će svoje izvorne uloge.</value>
+    <value>Si està marcada, totes les tecles de composició es tractaran com a Composició en una seqüència. Per defecte, només la primera tecla premuda actua com a Composició, i les tecles de composició alternatives mantindran el rol original.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
-    <value>Posebne zahvale</value>
+    <value>Agraïments especials</value>
   </data>
   <data name="RemoveFromFavorites" xml:space="preserve">
-    <value>Ukloni iz favorita</value>
+    <value>Suprimeix dels preferits</value>
   </data>
   <data name="Favorites" xml:space="preserve">
-    <value>Favoriti</value>
+    <value>Preferits</value>
   </data>
   <data name="TimeoutToolTip" xml:space="preserve">
-    <value>Ako je postavljeno, bilo koja kombinacija otkazat će se nakon određenog vremena, ako se u tom vremenu ne otkrije aktivnost tipkovnice.</value>
+    <value>Si es marca, qualsevol seqüència de composició es cancel·larà després d'un temps determinat si no es detecta activitat en el teclat.</value>
   </data>
   <data name="KeyboardLed" xml:space="preserve">
-    <value>LED tipkovnice</value>
+    <value>LED del teclat</value>
   </data>
   <data name="KeyboardLedToolTip" xml:space="preserve">
-    <value>Ako je postavljeno, odgovarajuća LED tipkovnica svijetli kad je kombinacija u tijeku.</value>
+    <value>Si es marca, el led corresponent del teclat s'il·luminarà quan s'estigui introduint una seqüència de composició.</value>
   </data>
   <data name="KeyCompose" xml:space="preserve">
-    <value>Sastavi</value>
+    <value>Composició</value>
   </data>
   <data name="AutoLaunch" xml:space="preserve">
-    <value>Pokreni WinCompose nakon prijave</value>
+    <value>Executa el WinCompose en iniciar sessió</value>
   </data>
   <data name="AutoLaunchToolTip" xml:space="preserve">
-    <value>Ako je postavljeno, WinCompose će se pokrenuti kad se korisnik prijavi.</value>
+    <value>Si es marca, s'iniciarà el WinCompose en iniciar una sessió d'usuari.</value>
   </data>
 </root>

@@ -156,6 +156,9 @@
   <data name="KeyConvert" xml:space="preserve">
     <value>Konversija</value>
   </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Be konvertavimo</value>
+  </data>
   <data name="KeyScroll" xml:space="preserve">
     <value>Scroll Lock (Slinkt.)</value>
   </data>
@@ -464,5 +467,11 @@
   </data>
   <data name="KeyCompose" xml:space="preserve">
     <value>Komponuoti</value>
+  </data>
+  <data name="AutoLaunch" xml:space="preserve">
+    <value>Atverti WinCompose prisijungimo metu</value>
+  </data>
+  <data name="AutoLaunchToolTip" xml:space="preserve">
+    <value>Jei pasirinkta, WinCompose bus atverta, kai naudotojas prisijungs.</value>
   </data>
 </root>

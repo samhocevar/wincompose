@@ -118,8 +118,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Xorg प्रोजेक्ट (http://www.x.org/) से 3,000 कंपोज़ क्रमों का उपयोग करें। ये "
-"क्रम मानक लिनक्स सिस्टम में सबेस ज़्यादा पाए जाने वाले हैं।"
+"Xorg प्रोजेक्ट (http://www.x.org/) से 3,000 कंपोज़ क्रमों का उपयोग करें। ये क्रम मानक "
+"लिनक्स सिस्टम में सबेस ज़्यादा पाए जाने वाले हैं।"
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -131,9 +131,8 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"XCompose ओपन सोर्स प्रोजेक्ट (https://github.com/kragen/xcompose) से 1,000 "
-"कंपोज़ क्रम का उपयोग करें। ये क्रम कभी-कभी Xorg वाले क्रमों के साथ न भी चल "
-"सकते हैं।"
+"XCompose ओपन सोर्स प्रोजेक्ट (https://github.com/kragen/xcompose) से 1,000 कंपोज़ "
+"क्रम का उपयोग करें। ये क्रम कभी-कभी Xorg वाले क्रमों के साथ न भी चल सकते हैं।"
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -144,8 +143,8 @@ msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
-"इमोजी के लिए जो कंपोज़ क्रम WinCompose लेखक और योगदानकर्ताओं ने दिया है, उसका"
-" उपयोग करें."
+"इमोजी के लिए जो कंपोज़ क्रम WinCompose लेखक और योगदानकर्ताओं ने दिया है, उसका उपयोग "
+"करें."
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
@@ -197,8 +196,8 @@ msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
-"2-कुंजी क्रम के कुंजियों को एक दूसरे से बदलने की कोशिश करें. उदाहरण, अगर "
-"कंपोज़ E A वैध क्रम नहीं है, तो कंपोज़ A E आज़माएँ."
+"2-कुंजी क्रम के कुंजियों को एक दूसरे से बदलने की कोशिश करें. उदाहरण, अगर कंपोज़ E A वैध क्रम "
+"नहीं है, तो कंपोज़ A E आज़माएँ."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -635,6 +634,10 @@ msgstr ""
 
 #: i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
+msgstr ""
+
+#: i18n/Text.resx:613 ID:Accessibility
+msgid "Accessibility"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)

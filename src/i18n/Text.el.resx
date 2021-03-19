@@ -151,7 +151,7 @@
     <value>Μενού</value>
   </data>
   <data name="KeyEscape" xml:space="preserve">
-    <value>Escape</value>
+    <value>Διαφυγή (Escape)</value>
   </data>
   <data name="KeyConvert" xml:space="preserve">
     <value>Μετατροπή</value>
@@ -163,7 +163,7 @@
     <value>Scroll Lock</value>
   </data>
   <data name="KeySpace" xml:space="preserve">
-    <value>Διάστημα</value>
+    <value>Κενό</value>
   </data>
   <data name="KeyReturn" xml:space="preserve">
     <value>Enter</value>
@@ -322,7 +322,7 @@
     <value>Επιλογές…</value>
   </data>
   <data name="TrayToolTip" xml:space="preserve">
-    <value>WinCompose  v{2} σε {0} ({1} ακολουθίες)</value>
+    <value>WinCompose v{2} σε {0} ({1} ακολουθίες)</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Γενικά</value>
@@ -370,7 +370,7 @@
     <value>Συντελεστές</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Άδεια χρήστη</value>
+    <value>Άδεια</value>
   </data>
   <data name="NeedRestart" xml:space="preserve">
     <value>Το WinCompose πρέπει να κάνει επανεκκίνηση για εφαρμογή ορισμένων αλλαγών.</value>
@@ -468,8 +468,14 @@
   <data name="Favorites" xml:space="preserve">
     <value>Αγαπημένα</value>
   </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Εάν οριστεί, οποιαδήποτε ακολουθία σύνταξης θα ακυρωθεί μετά από μια συγκεκριμένη καθυστέρηση εάν δεν εντοπιστεί δραστηριότητα πληκτρολογίου.</value>
+  </data>
   <data name="KeyboardLed" xml:space="preserve">
     <value>LED πληκτρολογίου</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Εάν ρυθμιστεί, το αντίστοιχο LED πληκτρολογίου θα ανάψει όταν βρίσκεται σε εξέλιξη μια ακολουθία σύνταξης.</value>
   </data>
   <data name="KeyCompose" xml:space="preserve">
     <value>Σύνθεση</value>

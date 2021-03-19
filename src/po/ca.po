@@ -114,17 +114,23 @@ msgid "Use sequences from the Xorg project"
 msgstr "Usa les seqüències del projecte Xorg"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
-msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Usa les 3.000 seqüències de composició del projecte Xorg (http://www.x.org/)"
-". Són seqüències que habitualment es troben en el sistema Linux estàndard."
+"Usa les 3.000 seqüències de composició del projecte Xorg (http://www.x."
+"org/). Són seqüències que habitualment es troben en el sistema Linux "
+"estàndard."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
 msgstr "Usa les seqüències del projecte XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
-msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
+msgid ""
+"Use the 1,000 compose sequences from the XCompose opensource project "
+"(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
+"with the Xorg ones."
 msgstr ""
 "Usa les 1.000 seqüències de composició del projecte de codi obert XCompose "
 "(https://github.com/kragen/xcompose). Aquestes seqüències poden entrar en "
@@ -135,7 +141,9 @@ msgid "Use WinCompose emoji sequences"
 msgstr "Usa les seqüències d'emojis de WinCompse"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
-msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
+msgid ""
+"Use the compose sequences for Emoji provided by the WinCompose author and "
+"contributors."
 msgstr ""
 "Usa les seqüències de composició d'emojis proporcionada per l'autor i els "
 "col·laboradors del WinCompose."
@@ -186,7 +194,9 @@ msgid "Try to swap the two keys"
 msgstr "Intenta d'intercanviar les dues tecles"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
-msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
+msgid ""
+"Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
+"not a valid sequence, try Compose A E instead."
 msgstr ""
 "Intenta d'intercanviar les tecles per a un seqüència de dues tecles. Per "
 "exemple, si Composició E A no és una seqüència vàlida, aleshores prova "
@@ -214,7 +224,10 @@ msgid "Advanced Unicode input"
 msgstr "Introducció d'Unicode avançada"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter"
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F Enter"
 msgstr ""
 "Permet l'entrada Unicode per a tots els caràcters, fins i tot pels que no hi "
 "ha definica una seqüència. Per exemple, la seqüència següent generarà el "
@@ -230,7 +243,9 @@ msgid "Fall back to case insensitive matches"
 msgstr "No distingeixis entre majúscules i minúscules"
 
 #: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
-msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
 msgstr ""
 "Si la seqüència introduïda no existeix, però n'hi ha una que només difereix "
 "en majúscules i minúscules, la corregeix automàticament."
@@ -240,7 +255,10 @@ msgid "Discard all typed characters"
 msgstr "Descarta tots els caràcters teclejats"
 
 #: i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
-msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
 msgstr ""
 "Si la seqüència no existeix, descarta tots els caràcters que s'han escrit. "
 "El comportament predeterminat és generar els caràcters com si la tecla de "
@@ -259,7 +277,9 @@ msgid "Interface language:"
 msgstr "Llengua de la interfície:"
 
 #: i18n/Text.resx:317 ID:LanguageToolTip
-msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
 msgstr ""
 "Seleccioneu la llengua que usarà el WinCompose per a la interfície. De "
 "manera predeterminada s'usa la llengua del sistema."
@@ -290,7 +310,10 @@ msgid "Maintain original compose key behaviour"
 msgstr "Conserva el comportament original de la tecla de composició"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
-msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
 msgstr ""
 "Això li diu al WinCompose que faci el possible per a conservar el "
 "comportament de la tecla original. Per exemple, la drecera Alt-Tab "
@@ -301,7 +324,10 @@ msgid "Insert zero-width spaces in Office apps"
 msgstr "Insereix espais d'amplada zero en les aplicacions Office"
 
 #: i18n/Text.resx:349 ID:InsertZwspToolTip
-msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
 msgstr ""
 "Les aplicacions de Microsoft Office de vegades canvien la lletra tipogràfica "
 "del document sobre la marxa en introduir determinats caràcters Unicode. "
@@ -313,7 +339,10 @@ msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Emula la tecla Bloq Maj usant les dues tecles de majúscules"
 
 #: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
 msgstr ""
 "Si s'usa la tecla de bloqueig de majúscules com a tecla de composició, el "
 "comportament original de la tecla no és disponible. Aquesta característica "
@@ -325,7 +354,10 @@ msgid "Shift key disables Caps Lock"
 msgstr "La tecla majúscula desactiva el bloqueig de majúscules"
 
 #: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
 msgstr ""
 "Si s'usa Bloq Maj com a tecla de composició, el comportament original de la "
 "tecla no és disponible. Aquesta funcionalitat permet desactivar el bloqueig "
@@ -336,7 +368,9 @@ msgid "Caps Lock always capitalizes letters"
 msgstr "Bloq Maj sempre genera lletres en majúscula"
 
 #: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
-msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
 msgstr ""
 "Si el bloqueig de majúscules està activat, en escriure una lletra "
 "accentuada, com ara «é», sempre generarà la lletra corresponent en "
@@ -503,7 +537,9 @@ msgid "Automatically check for updates"
 msgstr "Cerca automàtica si hi ha cap actualització"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
-msgid "If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically."
+msgid ""
+"If enabled, WinCompose will connect to the Internet at regular intervals to "
+"check for new versions. Updates are not installed automatically."
 msgstr ""
 "Si es marca, el WinCompose connectarà a Internet a intervals regulars per a "
 "verificar si hi ha una nova versió. Les actualitzacions no s'instal·laran "
@@ -514,7 +550,9 @@ msgid "Try to keep notification area icon always visible"
 msgstr "Intenta de mantenir visible la icona de l'àrea de notificacions"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
-msgid "By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible."
+msgid ""
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
 msgstr ""
 "Per defecte, el Windows suprimirà la icona de l'àrea de notificacions "
 "després d'una estona. Aquesta opció intenta de mantenir-la sempre visible."
@@ -538,7 +576,10 @@ msgid "Disable notification area icon"
 msgstr "Desactiva la icona de l'àrea de notificacions"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
-msgid "If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgid ""
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
+"“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
 "Si es marca, el WinCompose no mostrarà més la icona de l'àrea de "
 "notificacions. L'única manera d'obrir la interfície del WinCompose serà "
@@ -576,7 +617,9 @@ msgid "Ignore windows matching this regex:"
 msgstr "Ignora les finestres que coincideixen amb aquesta expressió regular:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
-msgid "WinCompose will be completely disabled when the current window class or window name matches this regular expression."
+msgid ""
+"WinCompose will be completely disabled when the current window class or "
+"window name matches this regular expression."
 msgstr ""
 "El WinCompose es desactivarà completament si la classe de la finestra actual "
 "o el nom de la finestra coincideix amb aquesta expressió regular."
@@ -586,7 +629,10 @@ msgid "Alternate compose key is always Compose"
 msgstr "La tecla de composició alternativa és sempre Composició"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
-msgid "If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role."
+msgid ""
+"If enabled, all compose keys will be treated as Compose in a sequence. By "
+"default, only the first pressed key will act as Compose, and alternate "
+"compose keys will keep their original role."
 msgstr ""
 "Si està marcada, totes les tecles de composició es tractaran com a "
 "Composició en una seqüència. Per defecte, només la primera tecla premuda "
@@ -609,7 +655,9 @@ msgid "Favorites"
 msgstr "Preferits"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
-msgid "If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected."
+msgid ""
+"If set, any compose sequence will be cancelled after a certain delay if no "
+"keyboard activity is detected."
 msgstr ""
 "Si es marca, qualsevol seqüència de composició es cancel·larà després d'un "
 "temps determinat si no es detecta activitat en el teclat."
@@ -619,7 +667,9 @@ msgid "Keyboard LED"
 msgstr "LED del teclat"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
-msgid "If set, the corresponding keyboard LED will be lit when a compose sequence is in progress."
+msgid ""
+"If set, the corresponding keyboard LED will be lit when a compose sequence "
+"is in progress."
 msgstr ""
 "Si es marca, el led corresponent del teclat s'il·luminarà quan s'estigui "
 "introduint una seqüència de composició."
@@ -636,6 +686,10 @@ msgstr "Executa el WinCompose en iniciar sessió"
 #: i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
 msgstr "Si es marca, s'iniciarà el WinCompose en iniciar una sessió d'usuari."
+
+#: i18n/Text.resx:613 ID:Accessibility
+msgid "Accessibility"
+msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -799,7 +853,10 @@ msgstr "Programari requerit pel WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-msgid "WinCompose needs the .NET Framework, version 4.0 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
+msgid ""
+"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"seem to be currently installed. The following action may help solve the "
+"problem:"
 msgstr ""
 "El WinCompose necessita el .NET Framework, versió 4.0 o posterior, que no\n"
 "sembla que estigui instal·lat. L'acció següent pot ajudar a solucionar el "
@@ -812,7 +869,9 @@ msgstr "Baixa i instal·la l'entorn d'execuió del .NET Framework 4.0"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
-msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
+msgid ""
+"Once this is done, you may return to this screen and proceed with the\n"
+"installation."
 msgstr ""
 "Una vegada hagi finalitzat, podeu tornar a aquesta pantalla i procedir\n"
 "amb la instal·lació."

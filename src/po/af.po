@@ -114,7 +114,9 @@ msgid "Use sequences from the Xorg project"
 msgstr "Gebruik die reekse van die Xorg-projek"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
-msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
 msgstr ""
 "Gebruik die 3 000 skryfreekse van die Xorg-projek (http://www.x.org/). Dit "
 "is die reekse wat die meeste op 'n standaard Linux-stelsel voorkom."
@@ -124,7 +126,10 @@ msgid "Use sequences from the XCompose project"
 msgstr "Gebruik reekse uit die XCompose-projek"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
-msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
+msgid ""
+"Use the 1,000 compose sequences from the XCompose opensource project "
+"(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
+"with the Xorg ones."
 msgstr ""
 "Gebruik die 1000 komponeerreekse van die XCompose open source-projek "
 "(https://github.com/kragen/xcompose). Hierdie reekse kan soms bots met die "
@@ -135,7 +140,9 @@ msgid "Use WinCompose emoji sequences"
 msgstr "Gebruik Emoji-reekse van WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
-msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
+msgid ""
+"Use the compose sequences for Emoji provided by the WinCompose author and "
+"contributors."
 msgstr ""
 "Gebruik die skryfreekse vir Emoji wat deur die WinCompose-outeur en bydraers "
 "verskaf word."
@@ -186,7 +193,9 @@ msgid "Try to swap the two keys"
 msgstr "Probeer om die twee sleutels te ruil"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
-msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
+msgid ""
+"Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
+"not a valid sequence, try Compose A E instead."
 msgstr ""
 "Probeer om die sleutels van 'n twee-sleutel volgorde te ruil. Byvoorbeeld, "
 "as kombinasie E A nie 'n geldige volgorde saam nie, probeer ook A E saam."
@@ -213,7 +222,10 @@ msgid "Advanced Unicode input"
 msgstr "Gevorderde Unicode-insette"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
-msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter"
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F Enter"
 msgstr ""
 "Aktiveer Unicode-insette vir alle karakters, selfs dié met geen "
 "komponeervolgorde gedefinieer nie. Byvoorbeeld, die volgende volgorde sal "
@@ -229,7 +241,9 @@ msgid "Fall back to case insensitive matches"
 msgstr "Moenie omgee oor hoof en kleinletters nie"
 
 #: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
-msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
 msgstr ""
 "As die volgorde nie bestaan nie, maar daar is een wat net met hoofletters/"
 "kleinletters verskil, maak dit outomaties reg."
@@ -239,7 +253,10 @@ msgid "Discard all typed characters"
 msgstr "Gooi alle getikte karakters weg"
 
 #: i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
-msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
 msgstr ""
 "As die ingevoerde volgorde nie bestaan nie, gooi al die karakters weg wat "
 "getik is. Die verstekgedrag is om die karakters uit te voer asof die "
@@ -258,7 +275,9 @@ msgid "Interface language:"
 msgstr "Taal van die program:"
 
 #: i18n/Text.resx:317 ID:LanguageToolTip
-msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
 msgstr ""
 "Kies die taal wat WinCompose vir die program gebruik. By verstek word die "
 "bedryfstelseltaal gebruik."
@@ -289,7 +308,10 @@ msgid "Maintain original compose key behaviour"
 msgstr "Handhaaf oorspronklike komponeer sleutelgedrag"
 
 #: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
-msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
 msgstr ""
 "Dit sê vir WinCompose om die beste te probeer om die oorspronklike sleutel "
 "se gedrag te behou. Die snelkoppeling Alt-Tab sal byvoorbeeld steeds werk, "
@@ -300,7 +322,10 @@ msgid "Insert zero-width spaces in Office apps"
 msgstr "Voeg nulwydtespasies in Office-toepassings in"
 
 #: i18n/Text.resx:349 ID:InsertZwspToolTip
-msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
 msgstr ""
 "Microsoft Office-toepassings verander soms die dokumentfont wanneer sekere "
 "Unicode-karakters getik word. Hierdie stelling voeg 'n onsigbare karakter na "
@@ -311,7 +336,10 @@ msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Maak asof Caps Lock gedruk word as beide Shift sleutels gedruk word"
 
 #: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
 msgstr ""
 "As Caps Lock as die komponeer-sleutel gebruik word, word die oorspronklike "
 "gedrag van die sleutel nie beskikbaar nie. Met hierdie funksie kan Caps Lock "
@@ -322,7 +350,10 @@ msgid "Shift key disables Caps Lock"
 msgstr "Shift sleutel deaktiveer Caps Lock"
 
 #: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
 msgstr ""
 "As Caps Lock as die komponeersleutel gebruik word, word die oorspronklike "
 "gedrag van die sleutel nie beskikbaar nie. Hierdie stelling laat Caps Lock "
@@ -333,7 +364,9 @@ msgid "Caps Lock always capitalizes letters"
 msgstr "Caps Lock maak altyd hoofletters"
 
 #: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
-msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
 msgstr ""
 "Wanneer Caps Lock aan is, sal 'n geaksentreerde letter soos \"é\" altyd die "
 "ooreenstemmende gekapitaliseerde letter, in hierdie geval \"É\" tik."
@@ -443,7 +476,8 @@ msgstr "Lisensie"
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr "WinCompose moet weer begin word om die veranderinge in werking te stel."
+msgstr ""
+"WinCompose moet weer begin word om die veranderinge in werking te stel."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:465 ID:ReportBug
@@ -499,7 +533,9 @@ msgid "Automatically check for updates"
 msgstr "Kyk outomaties of daar nuwe weergawe is"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
-msgid "If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically."
+msgid ""
+"If enabled, WinCompose will connect to the Internet at regular intervals to "
+"check for new versions. Updates are not installed automatically."
 msgstr ""
 "As dit geaktiveer is, sal WinCompose met gereelde tussenposes aan die "
 "internet koppel om nuwe weergawes te soek. Opdaterings word nie outomaties "
@@ -510,7 +546,9 @@ msgid "Try to keep notification area icon always visible"
 msgstr "Probeer om kennisgewingarea-ikoon altyd sigbaar te hou"
 
 #: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
-msgid "By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible."
+msgid ""
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
 msgstr ""
 "Windows sal by verstek die ikoon na 'n kort rukkie uit die kennisgewingsarea "
 "verwyder. Hierdie opsie poog om dit altyd sigbaar te hou."
@@ -534,7 +572,10 @@ msgid "Disable notification area icon"
 msgstr "Deaktiveer kennisgewingarea-ikoon"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
-msgid "If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgid ""
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
+"“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
 "Indien dit geaktiveer is, sal WinCompose nie meer 'n ikoon in die "
 "kennisgewingsarea vertoon nie. Die enigste manier om die WinCompose-"
@@ -572,7 +613,9 @@ msgid "Ignore windows matching this regex:"
 msgstr "Ignoreer vensters wat ooreenstem met hierdie regex:"
 
 #: i18n/Text.resx:565 ID:IgnoreRegexToolTip
-msgid "WinCompose will be completely disabled when the current window class or window name matches this regular expression."
+msgid ""
+"WinCompose will be completely disabled when the current window class or "
+"window name matches this regular expression."
 msgstr ""
 "WinCompose sal heeltemal gedeaktiveer word wanneer die huidige vensterklas "
 "of vensternaam ooreenstem met hierdie regex."
@@ -582,7 +625,10 @@ msgid "Alternate compose key is always Compose"
 msgstr "Alternatiewe komponeer sleutel is altyd Komponeer"
 
 #: i18n/Text.resx:573 ID:AlwaysComposeToolTip
-msgid "If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role."
+msgid ""
+"If enabled, all compose keys will be treated as Compose in a sequence. By "
+"default, only the first pressed key will act as Compose, and alternate "
+"compose keys will keep their original role."
 msgstr ""
 "Indien geaktiveer, sal alle komponeer sleutels as Komponeer in 'n kombinasie "
 "behandel word. By verstek sal slegs die eerste gedrukte sleutel as Komponeer "
@@ -604,7 +650,9 @@ msgid "Favorites"
 msgstr "Gunstelinge"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
-msgid "If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected."
+msgid ""
+"If set, any compose sequence will be cancelled after a certain delay if no "
+"keyboard activity is detected."
 msgstr ""
 "As dit aan is, sal enige komponeervolgorde na 'n sekere tyd gekanselleer "
 "word indien geen verdere knoppies gedruk word nie."
@@ -614,7 +662,9 @@ msgid "Keyboard LED"
 msgstr "Sleutelbord LED"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
-msgid "If set, the corresponding keyboard LED will be lit when a compose sequence is in progress."
+msgid ""
+"If set, the corresponding keyboard LED will be lit when a compose sequence "
+"is in progress."
 msgstr ""
 "As dit aan is, sal die ooreenstemmende sleutelbord LED verlig word wanneer "
 "'n komponeervolgorde aan die gang is."
@@ -632,6 +682,10 @@ msgstr "Begin WinCompose op as jy inlog"
 msgid "If set, WinCompose will be started when the user logs in."
 msgstr ""
 "As dit aan is, sal WinCompose begin word wanneer jy inlog op die rekenaar."
+
+#: i18n/Text.resx:613 ID:Accessibility
+msgid "Accessibility"
+msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -795,7 +849,10 @@ msgstr "Sagteware benodig deur WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-msgid "WinCompose needs the .NET Framework, version 4.0 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
+msgid ""
+"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"seem to be currently installed. The following action may help solve the "
+"problem:"
 msgstr ""
 "WinCompose benodig die .NET Framework, weergawe 4.0 of nuwer, wat nie\n"
 "tans geïnstalleer is nie. Die volgende aksie kan help om die probleem op te "
@@ -808,7 +865,9 @@ msgstr "NET Framework 4.0 Runtime aflaai en installeer"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
-msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
+msgid ""
+"Once this is done, you may return to this screen and proceed with the\n"
+"installation."
 msgstr ""
 "Sodra dit gedoen is, kan jy terugkeer na hierdie skerm en voortgaan met die\n"
 "Installasie."

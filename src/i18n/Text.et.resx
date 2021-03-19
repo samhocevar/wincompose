@@ -456,6 +456,9 @@
   <data name="AlwaysCompose" xml:space="preserve">
     <value>Alternatiivne kombineerimisklahv on alati Compose</value>
   </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Sisselülitatult käsitletakse kõiki kombineerimisklahve järjendi kombineerimisena. Vaikimisi käsitletakse ainult esimest vajutatud klahvi kombineerijana ja järgnevad kombineerimisklahvid säilitavad oma algse rolli.</value>
+  </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Eriline tänu</value>
   </data>
@@ -476,5 +479,11 @@
   </data>
   <data name="KeyCompose" xml:space="preserve">
     <value>Kombineerimisklahv</value>
+  </data>
+  <data name="AutoLaunch" xml:space="preserve">
+    <value>Käivita WinCompose sisselogimisel</value>
+  </data>
+  <data name="AutoLaunchToolTip" xml:space="preserve">
+    <value>Valitult käivitatakse WinCompose kasutaja sisselogimisel.</value>
   </data>
 </root>

@@ -480,4 +480,10 @@
   <data name="KeyCompose" xml:space="preserve">
     <value>Composição</value>
   </data>
+  <data name="AutoLaunch" xml:space="preserve">
+    <value>Iniciar o WinCompose ao fazer login</value>
+  </data>
+  <data name="AutoLaunchToolTip" xml:space="preserve">
+    <value>Se ativado, o WinCompose será iniciado quando o usuário fizer login.</value>
+  </data>
 </root>

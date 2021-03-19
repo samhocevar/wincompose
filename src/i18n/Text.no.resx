@@ -183,6 +183,9 @@
   <data name="UseEmojiRulesToolTip" xml:space="preserve">
     <value>Bruk sammenfattingssekvensene for emojier tilbudt av WinCompose-utvikleren og bidragsyterne.</value>
   </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Avlusingsvindu</value>
+  </data>
   <data name="ShowSequences" xml:space="preserve">
     <value>Vis sekvenser…</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Lukk</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Unicode-tegn</value>
   </data>
   <data name="Sequences" xml:space="preserve">
     <value>Sekvenser</value>
@@ -327,6 +333,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Justeringer</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} sekunder</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>Om</value>
   </data>
@@ -425,5 +434,8 @@
   </data>
   <data name="KeyboardLedToolTip" xml:space="preserve">
     <value>Lyser opp tilhørende tastatur-LED når en sammenfattingssekvens pågår.</value>
+  </data>
+  <data name="AutoLaunch" xml:space="preserve">
+    <value>Kjør WinCompose ved innlogging</value>
   </data>
 </root>
