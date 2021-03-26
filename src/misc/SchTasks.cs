@@ -21,13 +21,13 @@ namespace WinCompose
 {
     internal static class SchTasks
     {
-        public static bool HasTask()
-            => !string.IsNullOrEmpty(RunSchTasks("/query /tn WinCompose /xml"));
+        public static bool HasTask(string task_name)
+            => !string.IsNullOrEmpty(RunSchTasks("/query /tn {task_name} /xml"));
 
-        public static void InstallTask()
+        public static void InstallTask(string task_name)
         {
             var cmd = $"\"\"\"\"{Utils.ExecutableName}\"\"\" -fromtask\"";
-            var source = $@"{Environment.SystemDirectory}\Tasks\WinCompose";
+            var source = $@"{Environment.SystemDirectory}\Tasks\{task_name}";
             // Save temporary task file to our app data dir in case we want to inspect it.
             Utils.EnsureDirectory(Utils.AppDataDir);
             var tmp = Path.Combine(Utils.AppDataDir, "task.backup.xml");
@@ -37,14 +37,14 @@ namespace WinCompose
                 // Create a scheduled task, then edit the resulting XML with some
                 // features that the command line tool does not support, and reload
                 // the XML file.
-                RunSchTasks($"/tn WinCompose /f /create /sc onlogon /tr {cmd}");
+                RunSchTasks($"/tn {task_name} /f /create /sc onlogon /tr {cmd}");
 
                 var doc = new XmlDocument();
                 doc.Load(source);
                 FixTaskElement(doc.DocumentElement);
                 doc.Save(tmp);
 
-                RunSchTasks($"/tn WinCompose /f /create /xml \"{tmp}\"");
+                RunSchTasks($"/tn {task_name} /f /create /xml \"{tmp}\"");
             }
             catch (Exception ex)
             {

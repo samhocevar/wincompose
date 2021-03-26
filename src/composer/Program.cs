@@ -60,10 +60,10 @@ namespace WinCompose
 
             // If run from the start menu but there is a task scheduler entry,
             // give it priority.
-            if (from_startup && SchTasks.HasTask())
+            if (from_startup && SchTasks.HasTask("WinCompose"))
                 return;
 
-            SchTasks.InstallTask();
+            SchTasks.InstallTask("WinCompose");
 
             Settings.LoadSequences();
             Metadata.LoadDB();
