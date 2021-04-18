@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-10-26 13:48+0000\n"
-"Last-Translator: John Vandenberg <jayvdb@gmail.com>\n"
+"PO-Revision-Date: 2021-04-18 02:26+0000\n"
+"Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/wincompose/"
 "master/id/>\n"
 "Language: id\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9-dev\n"
+"X-Generator: Weblate 4.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "Deteksi otomatis"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:125 ID:KeyLMenu
@@ -82,12 +82,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Konversi"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Non-konversi"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:177 ID:KeyScroll
@@ -97,31 +97,33 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Ruang"
 
 #. The name of the key on the keyboard
 #: i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Kembali"
 
 #. The "Composing" section in the settings window
 #: i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Menulis"
 
 #: i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Gunakan urutan dari proyek Xorg"
 
 #: i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Gunakan 3.000 urutan compose dari proyek Xorg (http://www.x.org/). Ini "
+"adalah urutan yang paling sering ditemukan pada sistem Linux standar."
 
 #: i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Gunakan urutan dari proyek XCompose"
 
 #: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -129,10 +131,13 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"Gunakan 1.000 urutan penulisan dari proyek sumber terbuka XCompose "
+"(https://github.com/kragen/xcompose). Urutan ini terkadang konflik dengan "
+"Xorg."
 
 #: i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr ""
+msgstr "Gunakan urutan emoji WinCompose"
 
 #: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
@@ -142,13 +147,12 @@ msgstr ""
 
 #. Menu entry to show the debug window
 #: i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Windows bagian kiri"
+msgstr "Jendela Debug"
 
 #: i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr ""
+msgstr "Tampilkan Urutan…"
 
 #. Menu entry to disable WinCompose
 #: i18n/Text.resx:225 ID:Disable
@@ -162,7 +166,7 @@ msgstr "Restart"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Halaman Donasi"
 
 #. A button to visit the website
 #: i18n/Text.resx:237 ID:VisitWebsite
@@ -171,47 +175,49 @@ msgstr "Mengunjungi situs web"
 
 #: i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "Keluar"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr ""
+msgstr "Karakter unicode"
 
 #: i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "Urutan"
 
 #: i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Cobalah untuk menukar dua tombol"
 
 #: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
+"Cobalah untuk menukar tombolzadari urutan dua tombol. Misalnya, jika Compose "
+"E A bukan urutan yang valid, coba Buat E sebagai gantinya."
 
 #: i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "Filter Pencarian:"
 
 #: i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "Tombol Tulisan:"
 
 #: i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
+msgstr "Pilih tombol yang akan berfungsi sebagai tombol Tulis."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Reset waktu habis"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr ""
+msgstr "Masukan Unicode lanjutan"
 
 #: i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid ""
@@ -256,33 +262,35 @@ msgstr ""
 
 #: i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "Bahasa tampilan:"
 
 #: i18n/Text.resx:317 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
+"Pilih bahasa antarmuka WinCompose. Secara default bahasa sistem operasi akan "
+"digunakan."
 
 #. Close the settings window
 #: i18n/Text.resx:321 ID:Close
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #. Copy character or symbol to the clipboard
 #: i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Salin ke papanklip"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Emoji"
 
 #. Apply changes from the settings window
 #: i18n/Text.resx:333 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Terapkan"
 
 #. Should this say “retain” instead of “maintain”?
 #: i18n/Text.resx:337 ID:KeepOriginalKey
@@ -306,10 +314,13 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
+"Aplikasi Microsoft Office terkadang mengubah font dokumen saat memasukkan "
+"karakter Unicode tertentu. Fitur ini menyisipkan karakter yang tidak "
+"terlihat setelah karakter Unicode untuk mengatasi bug."
 
 #: i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr ""
+msgstr "Emulasi Caps Lock menggunakan kedua tombol Shift"
 
 #: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
@@ -320,7 +331,7 @@ msgstr ""
 
 #: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr ""
+msgstr "Tombol Shift menonaktifkan Caps Lock"
 
 #: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid ""
@@ -331,18 +342,20 @@ msgstr ""
 
 #: i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Caps Lock selalu mengkapitalisasi huruf"
 
 #: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
+"Saat Caps Lock aktif, mengetik huruf beraksen seperti \"é\" akan selalu "
+"menghasilkan huruf kapital yang sesuai, dalam hal ini \"É\"."
 
 #. Header for the list of Unicode character categories
 #: i18n/Text.resx:377 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "Kategori"
 
 #: i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
@@ -351,130 +364,129 @@ msgstr ""
 #. The title of the Options window
 #: i18n/Text.resx:385 ID:Options
 msgid "Options — WinCompose"
-msgstr ""
+msgstr "Opsi — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
-msgstr ""
+msgstr "Opsi…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose v{2} pada {0} ({1} urutan)"
 
 #. The “general” tab of the options window
 #: i18n/Text.resx:397 ID:General
 msgid "General"
-msgstr ""
+msgstr "Umum"
 
 #: i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
-msgstr ""
+msgstr "Perilaku"
 
 #. The title of the Sequences window
 #: i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Urutan — WinCompose"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Makro yang ditentukan pengguna"
 
 #: i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr ""
+msgstr "WinCompose dinonaktifkan"
 
 #. The name of the "Insert" key on the keyboard
 #: i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Masukkan"
 
 #. The "Test Typing" section in the settings window
 #: i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr ""
+msgstr "Tes Pengetikan"
 
 #. The "Tweaks" section in the settings window
 #: i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Penyesuaian"
 
 #. Format string to display the current reset delay
 #: i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 detik"
+msgstr "{0} detik"
 
 #. About box menu entry
 #: i18n/Text.resx:433 ID:About
 msgid "About"
-msgstr ""
+msgstr "Tentang"
 
 #. Download new version menu entry. {0}: version number
 #: i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
-msgstr ""
+msgstr "Unduh WinCompose {0}"
 
 #. Window title of the About box
 #: i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "Tentang WinCompose"
 
 #. The section where we list all programmers.
 #: i18n/Text.resx:445 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Pemrograman"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: i18n/Text.resx:449 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Terjemahan"
 
 #. The tab item to see all the program authors.
 #: i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Pembuat"
 
 #. US: License, UK: Licence
 #: i18n/Text.resx:457 ID:License
 msgid "License"
-msgstr ""
+msgstr "Lisensi"
 
 #. Warning message when the user changes the language in the settings window
 #: i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "WinCompose perlu direstart agar beberapa perubahan diterapkan."
 
 #. A button to report bugs (opens web browser)
 #: i18n/Text.resx:465 ID:ReportBug
 msgid "Report a Bug"
-msgstr ""
+msgstr "Laporkan Bug"
 
 #. The context menu for about, help, and software updates
 #: i18n/Text.resx:469 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Bantuan"
 
 #. Message displayed in the notification area tooltip.
 #: i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Pembaruan tersedia."
 
 #: i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr ""
+msgstr "Urutan yang ditentukan pengguna"
 
 #. A button to open the file containing the user-defined sequences.
 #: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Sunting"
 
 #. A button to reload the user-defined sequences.
 #: i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Muat ulang"
 
 #: i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
@@ -487,17 +499,16 @@ msgstr ""
 #. The name of the “Print Screen” key on the keyboard
 #: i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "Prt Scrn"
 
 #. String to show instead of the key name when no compose key is configured
 #: i18n/Text.resx:501 ID:KeyDisabled
-#, fuzzy
 msgid "Disabled"
-msgstr "Non-aktifkan"
+msgstr "Nonaktifkan"
 
 #: i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Otomatis memeriksa pembaruan"
 
 #: i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
@@ -518,7 +529,7 @@ msgstr ""
 #. The user can click on this button to change the current compose key.
 #: i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Ubah…"
 
 #: i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
@@ -527,11 +538,11 @@ msgstr ""
 #. Add sequence to the list of favorites.
 #: i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Tambah ke favorit"
 
 #: i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Nonaktifkan ikon area pemberitahuan"
 
 #: i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -543,27 +554,27 @@ msgstr ""
 #. The name of the “Home” key on the keyboard
 #: i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. The name of the “End” key on the keyboard
 #: i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Tidak ada waktu habis"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Lanjut"
 
 #. “regex” is shorthand for “regular expression”.
 #: i18n/Text.resx:561 ID:IgnoreRegex
@@ -590,42 +601,46 @@ msgstr ""
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
-msgstr ""
+msgstr "Terima kasih kepada"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Hapus dari favorit"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
-msgstr ""
+msgstr "Favorit"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Jika disetel, urutan compose apa pun akan dibatalkan setelah penundaan "
+"tertentu jika tidak ada aktivitas keyboard yang terdeteksi."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "LED Keyboard"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Jika disetel, LED keyboard yang sesuai akan menyala saat urutan compose "
+"sedang berlangsung."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
 msgid "Compose"
-msgstr ""
+msgstr "Menyusun"
 
 #: i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Luncurkan WinCompose saat masuk"
 
 #: i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
@@ -678,7 +693,7 @@ msgstr "Huruf, Yang Lain"
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Huruf, Huruf Judul"
+msgstr "Huruf, Judul"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:157 ID:UppercaseLetter
@@ -788,12 +803,12 @@ msgstr "Pemisah, Spasi"
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:175
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prasyarat"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:176
 msgid "Software required by WinCompose"
-msgstr ""
+msgstr "Perangkat lunak yang diperlukan oleh WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
@@ -802,11 +817,14 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose membutuhkan .NET Framework, versi 4.0 atau yang lebih baru, yan\n"
+"nampaknya belum dipasang. Tindakan berikut dapat membantu menyelesaikan "
+"masalah:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ""
+msgstr "Unduh dan instal .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
@@ -814,11 +832,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Setelah selesai, Anda dapat kembali ke layar ini dan melanjutkan dengan\n"
+"instalasi."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:285
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Hak administrator diperlukan. Galat: %d"
 
 #~ msgid "(milliseconds)"
 #~ msgstr "milidetik"
