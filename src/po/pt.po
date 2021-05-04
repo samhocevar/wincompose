@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20190405\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-09-29 09:43+0000\n"
+"PO-Revision-Date: 2021-05-05 20:32+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/wincompose/"
 "master/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: i18n/Text.resx:121 ID:AutodetectLanguage
@@ -216,7 +216,7 @@ msgstr "Selecione a tecla que deve atuar como a tecla de Composição."
 #. The compose key deactivates itself after a certain configurable delay
 #: i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Cancelar Após:"
 
 #: i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -604,7 +604,7 @@ msgstr "Tab"
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Não cancelar"
 
 #. The “Advanced” section in the settings.
 #: i18n/Text.resx:557 ID:Advanced
@@ -646,49 +646,50 @@ msgstr "Agradecimentos especiais"
 
 #. Remove sequence from the list of favorites.
 #: i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "Adicionar aos favoritos"
+msgstr "Remover das favoritas"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "Adicionar aos favoritos"
+msgstr "Favoritas"
 
 #: i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Se ativado, a sequência de composição será cancelada após um certo tempo de "
+"inatividade no teclado."
 
 #: i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "LED do teclado"
 
 #: i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Se ativado, o LED correspondente no teclado acenderá quando uma sequência de "
+"composição estiver sendo digitada."
 
 #. The short name of the compose key
 #: i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
 msgstr "Composição"
 
 #: i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Iniciar o WinCompose ao fazer login"
 
 #: i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Se ativado, o WinCompose será iniciado quando o utilizador fizer login."
 
 #: i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Acessibilidade"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: unicode/Category.resx:121 ID:Control
@@ -852,21 +853,19 @@ msgstr "Software necessário para o WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"O WinCompose precisa do .NET Framework, versão 3.5 SP1 ou superior, o qual\n"
+"O WinCompose precisa do .NET Framework, versão 4.0 ou superior, que\n"
 "aparentemente não está instalado. A ação a seguir pode ajudar a resolver o "
 "problema:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr "Descarregar e instalar o .NET Framework 3.5 Service Pack 1"
+msgstr "Descarregar e instalar o Runtime do .NET Framework 4.0"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer.pas:194
