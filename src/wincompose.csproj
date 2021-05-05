@@ -271,6 +271,6 @@
   </Target>
   -->
   <Target Name="AfterBuild">
-    <Exec Command="3rdparty\inserticons\bin\$(Configuration)\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
+    <Exec Command="3rdparty\inserticons\bin\Release\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
   </Target>
 </Project>
