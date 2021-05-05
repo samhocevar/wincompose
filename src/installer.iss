@@ -13,12 +13,16 @@
 #define NAME "WinCompose"
 #define AUTHOR "Sam Hocevar"
 #define EXE "wincompose.exe"
-#ifndef VERSION
-#   define VERSION GetEnv('VERSION')
-#endif
 #ifndef CONFIG
 #   define CONFIG GetEnv('CONFIG')
 #endif
+
+#define MAJOR
+#define MINOR
+#define REV
+#define BUILD
+#expr GetVersionComponents("bin/" + CONFIG + "/" + EXE, MAJOR, MINOR, REV, BUILD)
+#define VERSION Str(MAJOR) + "." + Str(MINOR) + "." + Str(REV)
 
 [Setup]
 AppName = {#NAME}

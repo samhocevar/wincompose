@@ -14,7 +14,7 @@
     <None Include="installer.iss" />
   </ItemGroup>
   <Target Name="Build">
-    <Exec Command="&quot;%ProgramFiles(x86)%\Inno Setup 6\iscc&quot; /V4 /DVERSION=$(ApplicationVersion) /DCONFIG=$(Configuration) &quot;$(SolutionDir)\installer.iss&quot;" />
+    <Exec Command="&quot;%ProgramFiles(x86)%\Inno Setup 6\iscc&quot; /V4 /DCONFIG=$(Configuration) &quot;$(SolutionDir)\installer.iss&quot;" />
   </Target>
   <Target Name="Clean">
     <Exec Command="del WinCompose-Setup-$(ApplicationVersion).exe" />
