@@ -51,10 +51,12 @@ Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\af\*.dll"; DestDir: "{app}\af"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\ar\*.dll"; DestDir: "{app}\ar"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
+Source: "bin\{#CONFIG}\ca\*.dll"; DestDir: "{app}\ca"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
 Source: "bin\{#CONFIG}\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
@@ -103,9 +105,11 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 ; [OBS] used to be in Inno Setup but no longer here
 ; [???] not in Inno Setup
 
+Name: "af"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Afrikaans.isl"
 Name: "ar"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Arabic.isl"
 ; [ERR] be / Belarusian.isl
 ; [???] be@latin
+Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
 Name: "cs"; MessagesFile: "compiler:Languages/Czech.isl"
 Name: "da"; MessagesFile: "compiler:Languages/Danish.isl"
 Name: "de"; MessagesFile: "compiler:Languages/German.isl"
@@ -141,7 +145,6 @@ Name: "zh"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Chinese
 ; [ERR] Name: "zh_Hant"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/ChineseTraditional.isl"
 
 ; FIXME: these languages are available in official Inno Setup but not in WinCompose
-; Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
 ; Name: "he"; MessagesFile: "compiler:Languages/Hebrew.isl"
 ; Name: "hy"; MessagesFile: "compiler:Languages/Armenian.isl"
 ; Name: "is"; MessagesFile: "compiler:Languages/Icelandic.isl"

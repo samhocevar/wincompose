@@ -400,7 +400,7 @@
     <value>Nemoj zanemariti tipke koje šalju drugi softveri poput AutoHotkey ili Synergy</value>
   </data>
   <data name="KeyPrint" xml:space="preserve">
-    <value>Prt Scrn</value>
+    <value>Ispis ekrana</value>
   </data>
   <data name="KeyDisabled" xml:space="preserve">
     <value>Deaktivirano</value>
@@ -485,5 +485,8 @@
   </data>
   <data name="AutoLaunchToolTip" xml:space="preserve">
     <value>Ako je postavljeno, WinCompose će se pokrenuti kad se korisnik prijavi.</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Pristupačnost</value>
   </data>
 </root>
