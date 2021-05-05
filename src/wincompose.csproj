@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="build.config" />
   <UsingTask TaskName="GZipTask" TaskFactory="CodeTaskFactory"
              AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
@@ -211,7 +210,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="build.config" />
     <EmbeddedResource Include="$(OutputPath)\keysymdef.h.gz">
       <Visible>false</Visible>
       <LogicalName>keysymdef.h.gz</LogicalName>
@@ -261,8 +259,9 @@
     <EmbeddedResource Include="res\icon_normal.ico" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Emoji.Wpf">
-      <Version>0.3.0</Version>
+    <PackageReference Include="Emoji.Wpf" Version="0.3.0" />
+    <PackageReference Include="GitVersion.MsBuild" Version="5.6.9" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -271,12 +270,6 @@
   <Target Name="BeforeBuild">
   </Target>
   -->
-  <Target Name="BeforeBuild">
-    <Exec Command="echo using System.Reflection; [assembly: AssemblyVersion(&quot;$([System.Text.RegularExpressions.Regex]::Replace($(ApplicationVersion), '[a-z].*', ''))&quot;)] &gt; $(OutputPath)\BuildInfo.g.cs" />
-    <ItemGroup>
-      <Compile Include="$(OutputPath)\BuildInfo.g.cs" />
-    </ItemGroup>
-  </Target>
   <Target Name="AfterBuild">
     <Exec Command="3rdparty\inserticons\bin\$(Configuration)\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
   </Target>

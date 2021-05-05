@@ -1,11 +1,12 @@
 
 # Requirements:
 #  - Inno Setup 6 (download and install)
+#  - GitVersion (choco install gitversion)
 #  - zip/unzip (mingw-get install msys-zip msys-unzip)
-#  - Visual Studio (ensure devenv.exe is in %PATH%)
+#  - Visual Studio (ensure vswhere.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = $(shell sed -ne 's/.*<ApplicationVersion>\([^<]*\).*/\1/p' build.config)
+VERSION = $(shell gitversion -showvariable MajorMinorPatch)
 CONFIG = Release
 
 ISS = installer.iss

@@ -61,25 +61,9 @@ namespace WinCompose
             IgnoreRegex.ValueChanged += () => KeyboardLayout.Window.Refresh();
         }
 
-        // The application version
+        // The application version; trim the build number if it is zero
         public static string Version
-        {
-            get
-            {
-                if (m_version == null)
-                {
-                    var doc = new XmlDocument();
-                    doc.Load(Assembly.GetExecutingAssembly().GetManifestResourceStream("WinCompose.build.config"));
-                    var mgr = new XmlNamespaceManager(doc.NameTable);
-                    mgr.AddNamespace("ns", "http://schemas.microsoft.com/developer/msbuild/2003");
-
-                    m_version = doc.DocumentElement.SelectSingleNode("//ns:Project/ns:PropertyGroup/ns:ApplicationVersion", mgr).InnerText;
-                }
-
-                return m_version;
-            }
-        }
-        private static string m_version;
+            => Regex.Replace(Assembly.GetExecutingAssembly().GetName().Version.ToString(), "[.]0$", "");
 
         [EntryLocation("global", "language")]
         public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
