@@ -33,7 +33,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 EOF
-for FILE in i18n/Text.resx unicode/Category.resx; do
+for FILE in language/i18n/Text.resx language/unicode/Category.resx; do
     awk < ${FILE} '
     /<!--/      { off=1 }
     /-->/       { off=0 }
@@ -98,7 +98,7 @@ for POFILE in po/*.po; do
         continue
     fi
 
-    for FILE in i18n/Text.resx unicode/Category.resx; do
+    for FILE in language/i18n/Text.resx language/unicode/Category.resx; do
         DEST=${FILE%%.resx}.${reslang}.resx
         sed -e '/^  <data/,$d' < ${FILE} > ${DEST}
         cat ${POFILE} \
@@ -150,8 +150,8 @@ for POFILE in 3rdparty/unicode-translation/po/*.po; do
             #. UNICODE BLOCK: U+0000..U+007F
             Block) CODE='/^#[.] UNICODE BLOCK: / { split($0, a, /[+.]/); c="U" a[3] "_U" a[6]; }' ;;
         esac
-        DEST=unicode/${FILE}.${reslang}.resx
-        sed -e '/^  <data/,$d' < unicode/${FILE}.resx > ${DEST}
+        DEST=language/unicode/${FILE}.${reslang}.resx
+        sed -e '/^  <data/,$d' < language/unicode/${FILE}.resx > ${DEST}
         if uname | grep -qi mingw; then unix2dos; else cat; fi < ${POFILE} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk 'function f() {
@@ -176,9 +176,9 @@ echo "done."
 #
 
 echo "[4/${STEPS}] Check consistency…"
-for x in unicode/*.*.resx i18n/*.*.resx; do
+for x in language/unicode/*.*.resx language/i18n/*.*.resx; do
     reslang="$(echo $x | cut -f2 -d.)"
-    if ! grep -q '"'$(echo $x | tr / .)'"' language.csproj; then
+    if ! grep -q '"'$(echo $x | cut -f2- -d/ | tr / .)'"' language/language.csproj; then
         echo "WARNING: $x not found in language.csproj"
     fi
     if ! grep -q '^Source: "bin.*[\\]'$reslang'[\\][*][.]dll";' installer.iss; then

@@ -20,100 +20,100 @@ msgstr ""
 "X-Generator: Weblate 4.5-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
-#: i18n/Text.resx:121 ID:AutodetectLanguage
+#: language/i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
 msgstr "Tuvasta automaatselt"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:125 ID:KeyLMenu
+#: language/i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
 msgstr "Vasak ALT"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:129 ID:KeyRMenu
+#: language/i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
 msgstr "Parem ALT"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:133 ID:KeyLControl
+#: language/i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
 msgstr "Vasak CONTROL"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:137 ID:KeyRControl
+#: language/i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
 msgstr "Parem CONTROL"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:141 ID:KeyLWin
+#: language/i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
 msgstr "Vasak WINDOWS"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:145 ID:KeyRWin
+#: language/i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
 msgstr "Parem WINDOWS"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:149 ID:KeyCapital
+#: language/i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
 msgstr "CAPS LOCK"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:153 ID:KeyNumLock
+#: language/i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
 msgstr "NUM LOCK"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:157 ID:KeyPause
+#: language/i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
 msgstr "PAUSE"
 
 #. Also known as Application key
-#: i18n/Text.resx:161 ID:KeyApps
+#: language/i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
 msgstr "MENU"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:165 ID:KeyEscape
+#: language/i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
 msgstr "ESC"
 
 #. The name of the 変換 key on a Japanese keyboard
-#: i18n/Text.resx:169 ID:KeyConvert
+#: language/i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
 msgstr "Teisendusega"
 
 #. The name of the 無変換 key on a Japanese keyboard
-#: i18n/Text.resx:173 ID:KeyNonConvert
+#: language/i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
 msgstr "Teisenduseta"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:177 ID:KeyScroll
+#: language/i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
 msgstr "SCROLL LOCK"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:181 ID:KeySpace
+#: language/i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
 msgstr "Tühik"
 
 #. The name of the key on the keyboard
-#: i18n/Text.resx:185 ID:KeyReturn
+#: language/i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
 msgstr "Sisesta"
 
 #. The "Composing" section in the settings window
-#: i18n/Text.resx:189 ID:Composing
+#: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
 msgstr "Kombineerin"
 
-#: i18n/Text.resx:193 ID:UseXorgRules
+#: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
 msgstr "Kasuta projekti Xorg järjestusi"
 
-#: i18n/Text.resx:197 ID:UseXorgRulesToolTip
+#: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
@@ -121,11 +121,11 @@ msgstr ""
 "Kasuta kolme tuhandet järjendit avatud lähtekoodiga projektist Xorg (http://"
 "www.x.org/). Neid järjendeid eelkõige kasutatakse tavapärastes Linux'ites."
 
-#: i18n/Text.resx:201 ID:UseXComposeRules
+#: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
 msgstr "Kasuta projekti XCompose järjendeid"
 
-#: i18n/Text.resx:205 ID:UseXComposeRulesToolTip
+#: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
 "Use the 1,000 compose sequences from the XCompose opensource project "
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
@@ -135,11 +135,11 @@ msgstr ""
 "github.com/kragen/xcompose). Mõnikord võivad need järjendid olla konfliktis "
 "Xorgi omadega."
 
-#: i18n/Text.resx:209 ID:UseEmojiRules
+#: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
 msgstr "Kasuta WinCompose’i emoji järjestusi"
 
-#: i18n/Text.resx:213 ID:UseEmojiRulesToolTip
+#: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
@@ -148,51 +148,51 @@ msgstr ""
 "kombineerimisjärjendeid."
 
 #. Menu entry to show the debug window
-#: i18n/Text.resx:217 ID:DebugWindow
+#: language/i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
 msgstr "Silumisaken"
 
-#: i18n/Text.resx:221 ID:ShowSequences
+#: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
 msgstr "Kuva kombinatsioonid…"
 
 #. Menu entry to disable WinCompose
-#: i18n/Text.resx:225 ID:Disable
+#: language/i18n/Text.resx:225 ID:Disable
 msgid "Disable"
 msgstr "Keela"
 
-#: i18n/Text.resx:229 ID:Restart
+#: language/i18n/Text.resx:229 ID:Restart
 msgid "Restart"
 msgstr "Taaskäivita"
 
 #. A button to visit the donation page (http://wincompose.info/donate/)
-#: i18n/Text.resx:233 ID:DonationPage
+#: language/i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
 msgstr "Annetuste leht"
 
 #. A button to visit the website
-#: i18n/Text.resx:237 ID:VisitWebsite
+#: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
 msgstr "Veebileht"
 
-#: i18n/Text.resx:241 ID:Exit
+#: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
 msgstr "Välju"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
-#: i18n/Text.resx:245 ID:UnicodeCharacters
+#: language/i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
 msgstr "Unicode märgid"
 
-#: i18n/Text.resx:249 ID:Sequences
+#: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
 msgstr "Kombinatsioonid"
 
-#: i18n/Text.resx:253 ID:SwapOnInvalid
+#: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
 msgstr "Proovi vahetada kahte klahvi"
 
-#: i18n/Text.resx:257 ID:SwapOnInvalidToolTip
+#: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
@@ -200,28 +200,28 @@ msgstr ""
 "Proovi vahetada klahve kaheklahvilistes järjendites. Näide: kui Compose E A "
 "ei ole kehtiv järjend, siis proovi selle asemel Compose A E."
 
-#: i18n/Text.resx:261 ID:Search
+#: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
 msgstr "Otsingufilter:"
 
-#: i18n/Text.resx:265 ID:ComposeKey
+#: language/i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
 msgstr "Kombineerimisklahv:"
 
-#: i18n/Text.resx:269 ID:ComposeKeyToolTip
+#: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
 msgstr "Vali klahv, mis peaks käituma kombineerimisklahvina."
 
 #. The compose key deactivates itself after a certain configurable delay
-#: i18n/Text.resx:273 ID:ResetTimeout
+#: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
 msgstr "Muuda aegumist"
 
-#: i18n/Text.resx:277 ID:UnicodeInput
+#: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
 msgstr "Täpsem Unicode sisend"
 
-#: i18n/Text.resx:281 ID:UnicodeInputToolTip
+#: language/i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
@@ -232,15 +232,15 @@ msgstr ""
 "F’ märgi U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
-#: i18n/Text.resx:285 ID:InvalidSequences
+#: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
 msgstr "Vigaste kombinatsioonide korral"
 
-#: i18n/Text.resx:289 ID:CaseInsensitive
+#: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
 msgstr "Pöördu tagasi tõstutundetute vastavuste juurde"
 
-#: i18n/Text.resx:293 ID:CaseInsensitiveToolTip
+#: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
@@ -248,11 +248,11 @@ msgstr ""
 "Kui sisestatud jada puudub, kuid erineb ainult tähesuuruses, siis paranda "
 "see automaatselt."
 
-#: i18n/Text.resx:297 ID:DiscardOnInvalid
+#: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
 msgstr "Unusta kõik sisestatud märgid"
 
-#: i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
+#: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
@@ -261,19 +261,19 @@ msgstr ""
 "Kui sisestatud jada puudub, siis unusta kõik sisestatud märgid. Vaikimisi "
 "väljastatakse märgid nii nagu kombineerimisklahvi ei ole kasutatud."
 
-#: i18n/Text.resx:305 ID:BeepOnInvalid
+#: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
 msgstr "Häälitse"
 
-#: i18n/Text.resx:309 ID:BeepOnInvalidToolTip
+#: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
 msgstr "Kui sisestatud jada on tundmatu, siis tee häält."
 
-#: i18n/Text.resx:313 ID:Language
+#: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
 msgstr "Kasutajaliidese keel:"
 
-#: i18n/Text.resx:317 ID:LanguageToolTip
+#: language/i18n/Text.resx:317 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
@@ -282,31 +282,31 @@ msgstr ""
 "operatsioonisüsteemi keelt."
 
 #. Close the settings window
-#: i18n/Text.resx:321 ID:Close
+#: language/i18n/Text.resx:321 ID:Close
 msgid "Close"
 msgstr "Sulge"
 
 #. Copy character or symbol to the clipboard
-#: i18n/Text.resx:325 ID:CopyToClipboard
+#: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
 msgstr "Kopeeri lõikepuhvrisse"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
-#: i18n/Text.resx:329 ID:Emoji
+#: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
 msgstr "emoji"
 
 #. Apply changes from the settings window
-#: i18n/Text.resx:333 ID:Apply
+#: language/i18n/Text.resx:333 ID:Apply
 msgid "Apply"
 msgstr "Rakenda"
 
 #. Should this say “retain” instead of “maintain”?
-#: i18n/Text.resx:337 ID:KeepOriginalKey
+#: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
 msgstr "Säilita algne kombineerimisklahvi käitumine"
 
-#: i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
+#: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
@@ -316,11 +316,11 @@ msgstr ""
 "algse käitumise. Näiteks jätkab Alt+Tab oma tööd isegi siis, kui Alt on "
 "valitud kombineerimisklahviks."
 
-#: i18n/Text.resx:345 ID:InsertZwsp
+#: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Sisesta Office programmides null-laiusega tühikud"
 
-#: i18n/Text.resx:349 ID:InsertZwspToolTip
+#: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
@@ -330,11 +330,11 @@ msgstr ""
 "sisestatakse teatavaid Unicode märke. See parameeter lisab automaatselt "
 "Unicode märgi taha nähtamatu märgisi, et vältida vea avaldumist."
 
-#: i18n/Text.resx:353 ID:EmulateCapsLock
+#: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Emuleeri Caps Lock mõlema Shift klahviga"
 
-#: i18n/Text.resx:357 ID:EmulateCapsLockToolTip
+#: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
@@ -344,11 +344,11 @@ msgstr ""
 "algne käitumine. See parameeter lubab lülitada Caps Locki sisse vajutades "
 "korraga mõlemat Shift klahvi."
 
-#: i18n/Text.resx:361 ID:ShiftDisablesCapsLock
+#: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
 msgstr "Shift klahv keelab Caps Locki"
 
-#: i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
+#: language/i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
@@ -358,11 +358,11 @@ msgstr ""
 "algne käitumine. See parameeter lubab lülitada Caps Locki välja vajutades "
 "Shift klahvi."
 
-#: i18n/Text.resx:369 ID:CapsLockCapitalizes
+#: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
 msgstr "Caps Lock muudab tähed alati suureks"
 
-#: i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
+#: language/i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
@@ -372,164 +372,164 @@ msgstr ""
 "ks."
 
 #. Header for the list of Unicode character categories
-#: i18n/Text.resx:377 ID:Categories
+#: language/i18n/Text.resx:377 ID:Categories
 msgid "Categories"
 msgstr "Kategooriad"
 
-#: i18n/Text.resx:381 ID:InSelectedCategories
+#: language/i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
 msgstr "Valitud kategooriates"
 
 #. The title of the Options window
-#: i18n/Text.resx:385 ID:Options
+#: language/i18n/Text.resx:385 ID:Options
 msgid "Options — WinCompose"
 msgstr "Seaded — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
-#: i18n/Text.resx:389 ID:ShowOptions
+#: language/i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
 msgstr "Seaded…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
-#: i18n/Text.resx:393 ID:TrayToolTip
+#: language/i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
 msgstr "WinCompose v{2} masinas {0} ({1} kombinatsiooni)"
 
 #. The “general” tab of the options window
-#: i18n/Text.resx:397 ID:General
+#: language/i18n/Text.resx:397 ID:General
 msgid "General"
 msgstr "Üldine"
 
-#: i18n/Text.resx:401 ID:Behavior
+#: language/i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
 msgstr "Käitumine"
 
 #. The title of the Sequences window
-#: i18n/Text.resx:405 ID:WindowTitle
+#: language/i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
 msgstr "Kombinatsioonid — WinCompose"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
-#: i18n/Text.resx:409 ID:UserMacros
+#: language/i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
 msgstr "Kasutaja loodud makrod"
 
-#: i18n/Text.resx:413 ID:DisabledToolTip
+#: language/i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
 msgstr "WinCompose ei ole aktiivne"
 
 #. The name of the "Insert" key on the keyboard
-#: i18n/Text.resx:417 ID:KeyInsert
+#: language/i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
 msgstr "Lisa"
 
 #. The "Test Typing" section in the settings window
-#: i18n/Text.resx:421 ID:TestTyping
+#: language/i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
 msgstr "Proovi sisestamist"
 
 #. The "Tweaks" section in the settings window
-#: i18n/Text.resx:425 ID:Tweaks
+#: language/i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
 msgstr "Kohandused"
 
 #. Format string to display the current reset delay
-#: i18n/Text.resx:429 ID:DelaySeconds
+#: language/i18n/Text.resx:429 ID:DelaySeconds
 msgid "{0} seconds"
 msgstr "{0} sekundit"
 
 #. About box menu entry
-#: i18n/Text.resx:433 ID:About
+#: language/i18n/Text.resx:433 ID:About
 msgid "About"
 msgstr "Programmist"
 
 #. Download new version menu entry. {0}: version number
-#: i18n/Text.resx:437 ID:Download
+#: language/i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
 msgstr "Laadi alla WinCompose {0}"
 
 #. Window title of the About box
-#: i18n/Text.resx:441 ID:AboutBoxTitle
+#: language/i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
 msgstr "Programmist WinCompose"
 
 #. The section where we list all programmers.
-#: i18n/Text.resx:445 ID:Programming
+#: language/i18n/Text.resx:445 ID:Programming
 msgid "Programming"
 msgstr "Programm"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
-#: i18n/Text.resx:449 ID:Translators
+#: language/i18n/Text.resx:449 ID:Translators
 msgid "Translation"
 msgstr "Tõlge"
 
 #. The tab item to see all the program authors.
-#: i18n/Text.resx:453 ID:Authors
+#: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
 msgstr "Autorid"
 
 #. US: License, UK: Licence
-#: i18n/Text.resx:457 ID:License
+#: language/i18n/Text.resx:457 ID:License
 msgid "License"
 msgstr "Litsents"
 
 #. Warning message when the user changes the language in the settings window
-#: i18n/Text.resx:461 ID:NeedRestart
+#: language/i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
 msgstr "WinCompose tuleb mõnede muudatuste aktiveerimiseks uuesti käivitada."
 
 #. A button to report bugs (opens web browser)
-#: i18n/Text.resx:465 ID:ReportBug
+#: language/i18n/Text.resx:465 ID:ReportBug
 msgid "Report a Bug"
 msgstr "Teata veast"
 
 #. The context menu for about, help, and software updates
-#: i18n/Text.resx:469 ID:Help
+#: language/i18n/Text.resx:469 ID:Help
 msgid "Help"
 msgstr "Abi"
 
 #. Message displayed in the notification area tooltip.
-#: i18n/Text.resx:473 ID:UpdatesToolTip
+#: language/i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
 msgstr "Saadaval on programmi uuendus."
 
-#: i18n/Text.resx:477 ID:UserDefinedSequences
+#: language/i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
 msgstr "Kasutaja loodud kombinatsioonid"
 
 #. A button to open the file containing the user-defined sequences.
-#: i18n/Text.resx:481 ID:UserDefinedSequencesEdit
+#: language/i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
 msgstr "Muuda"
 
 #. A button to reload the user-defined sequences.
-#: i18n/Text.resx:485 ID:UserDefinedSequencesReload
+#: language/i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
 msgstr "Laadi uuesti"
 
-#: i18n/Text.resx:489 ID:AllowInjected
+#: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
 msgstr "Luba süstikklahvid"
 
-#: i18n/Text.resx:493 ID:AllowInjectedToolTip
+#: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr "Kasuta teiste programmide nagu AutoHotkey või Synergy klahvivajutusi"
 
 #. The name of the “Print Screen” key on the keyboard
-#: i18n/Text.resx:497 ID:KeyPrint
+#: language/i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
 msgstr "Print Scrn"
 
 #. String to show instead of the key name when no compose key is configured
-#: i18n/Text.resx:501 ID:KeyDisabled
+#: language/i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
 msgstr "keelatud"
 
-#: i18n/Text.resx:505 ID:CheckUpdates
+#: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
 msgstr "Kontrolli värskendusi automaatselt"
 
-#: i18n/Text.resx:509 ID:CheckUpdatesToolTip
+#: language/i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
@@ -538,11 +538,11 @@ msgstr ""
 "kontrollida uute versioonide olemasolu. Värkendusi ei paigaldata "
 "automaatselt."
 
-#: i18n/Text.resx:513 ID:KeepIconVisible
+#: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
 msgstr "Proovi hoida tevituste ala ikoon alati nähtaval"
 
-#: i18n/Text.resx:517 ID:KeepIconVisibleToolTip
+#: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
@@ -551,24 +551,24 @@ msgstr ""
 "proovib hoida ikooni alati nähtaval."
 
 #. The user can click on this button to change the current compose key.
-#: i18n/Text.resx:521 ID:ChangeComposeKey
+#: language/i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
 msgstr "Muuda…"
 
-#: i18n/Text.resx:525 ID:CaptureComposeKey
+#: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
 msgstr "Vajuta klahvi, mida kasutada kombineerimisklahvina."
 
 #. Add sequence to the list of favorites.
-#: i18n/Text.resx:529 ID:AddToFavorites
+#: language/i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
 msgstr "Lisa lemmikutesse"
 
-#: i18n/Text.resx:533 ID:DisableIcon
+#: language/i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
 msgstr "Keela teavitusteala ikoon"
 
-#: i18n/Text.resx:537 ID:DisableIconToolTip
+#: language/i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
@@ -579,36 +579,36 @@ msgstr ""
 "\"WinCompose Järjendid\"."
 
 #. The name of the “Home” key on the keyboard
-#: i18n/Text.resx:541 ID:KeyHome
+#: language/i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
 msgstr "Algus"
 
 #. The name of the “End” key on the keyboard
-#: i18n/Text.resx:545 ID:KeyEnd
+#: language/i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
 msgstr "Lõpp"
 
 #. The name of the “Tab” key on the keyboard
-#: i18n/Text.resx:549 ID:KeyTab
+#: language/i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
 msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
-#: i18n/Text.resx:553 ID:NoTimeout
+#: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
 msgstr "Aegumine puudub"
 
 #. The “Advanced” section in the settings.
-#: i18n/Text.resx:557 ID:Advanced
+#: language/i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
 msgstr "Täpsemalt"
 
 #. “regex” is shorthand for “regular expression”.
-#: i18n/Text.resx:561 ID:IgnoreRegex
+#: language/i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
 msgstr "Eira aknaid, mis vastavad sellele regulaaravaldisele:"
 
-#: i18n/Text.resx:565 ID:IgnoreRegexToolTip
+#: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
@@ -616,11 +616,11 @@ msgstr ""
 "WinCompose on täieslikult keelatud, kui praeguse akna klass või akna nimi "
 "vastab sellele regulaaravaldisele."
 
-#: i18n/Text.resx:569 ID:AlwaysCompose
+#: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
 msgstr "Alternatiivne kombineerimisklahv on alati Compose"
 
-#: i18n/Text.resx:573 ID:AlwaysComposeToolTip
+#: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
@@ -631,21 +631,21 @@ msgstr ""
 "kombineerijana ja järgnevad kombineerimisklahvid säilitavad oma algse rolli."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
-#: i18n/Text.resx:577 ID:SpecialThanks
+#: language/i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
 msgstr "Eriline tänu"
 
 #. Remove sequence from the list of favorites.
-#: i18n/Text.resx:581 ID:RemoveFromFavorites
+#: language/i18n/Text.resx:581 ID:RemoveFromFavorites
 msgid "Remove from favorites"
 msgstr "Eemalda lemmikutest"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
-#: i18n/Text.resx:585 ID:Favorites
+#: language/i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
 msgstr "Lemmikud"
 
-#: i18n/Text.resx:589 ID:TimeoutToolTip
+#: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
@@ -653,11 +653,11 @@ msgstr ""
 "Kui see on valitud, siis tühistatakse kombineerimisjärjend, kui teatud aja "
 "möödudes ei tuvastata klahvivajutusi."
 
-#: i18n/Text.resx:593 ID:KeyboardLed
+#: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
 msgstr "Klaviatuuri leed"
 
-#: i18n/Text.resx:597 ID:KeyboardLedToolTip
+#: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
@@ -666,169 +666,169 @@ msgstr ""
 "kombineerimisjärjend edeneb."
 
 #. The short name of the compose key
-#: i18n/Text.resx:601 ID:KeyCompose
+#: language/i18n/Text.resx:601 ID:KeyCompose
 msgid "Compose"
 msgstr "Kombineerimisklahv"
 
-#: i18n/Text.resx:605 ID:AutoLaunch
+#: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
 msgstr "Käivita WinCompose sisselogimisel"
 
-#: i18n/Text.resx:609 ID:AutoLaunchToolTip
+#: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
 msgstr "Valitult käivitatakse WinCompose kasutaja sisselogimisel."
 
-#: i18n/Text.resx:613 ID:Accessibility
+#: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
 msgstr ""
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:121 ID:Control
+#: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Muu, Juhtkood"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:125 ID:Format
+#: language/unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
 msgstr "Muu, Vormindus"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:129 ID:OtherNotAssigned
+#: language/unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
 msgstr "Muu, Määramata"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:133 ID:PrivateUse
+#: language/unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
 msgstr "Muu, Erakasutuses"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:137 ID:Surrogate
+#: language/unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
 msgstr "Muu, Asendaja"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:141 ID:LowercaseLetter
+#: language/unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
 msgstr "Kirjatäht, Suurtäht"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:145 ID:ModifierLetter
+#: language/unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
 msgstr "Täht, laiend"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:149 ID:OtherLetter
+#: language/unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
 msgstr "Kirjatäht, Muu"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:153 ID:TitlecaseLetter
+#: language/unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
 msgstr "Kirjatäht, Pealkirjatäht"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:157 ID:UppercaseLetter
+#: language/unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
 msgstr "Kirjatäht, Väiketäht"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:161 ID:SpacingCombiningMark
+#: language/unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
 msgstr "Märk, sõnavahede kombineerimine"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:165 ID:EnclosingMark
+#: language/unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
 msgstr "Märk, lisa"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:169 ID:NonSpacingMark
+#: language/unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
 msgstr "Märk, sammuta"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:173 ID:DecimalDigitNumber
+#: language/unicode/Category.resx:173 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
 msgstr "Arv, Kümnendsüsteemi number"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:177 ID:LetterNumber
+#: language/unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
 msgstr "Arv, Täht"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:181 ID:OtherNumber
+#: language/unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
 msgstr "Arv, Muu"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:185 ID:ConnectorPunctuation
+#: language/unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
 msgstr "Kirjavahemärk, ühendaja"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:189 ID:DashPunctuation
+#: language/unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
 msgstr "Kirjavahemärk, Kriips"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:193 ID:ClosePunctuation
+#: language/unicode/Category.resx:193 ID:ClosePunctuation
 msgid "Punctuation, Close"
 msgstr "Kirjavahemärk, Sulgev"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:197 ID:FinalQuotePunctuation
+#: language/unicode/Category.resx:197 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
 msgstr "Kirjavahemärk, Lõpetav jutumärk"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:201 ID:InitialQuotePunctuation
+#: language/unicode/Category.resx:201 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
 msgstr "Kirjavahemärk, Alustav jutumärk"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:205 ID:OtherPunctuation
+#: language/unicode/Category.resx:205 ID:OtherPunctuation
 msgid "Punctuation, Other"
 msgstr "Kirjavahemärk, muu"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:209 ID:OpenPunctuation
+#: language/unicode/Category.resx:209 ID:OpenPunctuation
 msgid "Punctuation, Open"
 msgstr "Kirjavahemärk, Avav"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:213 ID:CurrencySymbol
+#: language/unicode/Category.resx:213 ID:CurrencySymbol
 msgid "Symbol, Currency"
 msgstr "Sümbol, Rahavääring"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:217 ID:ModifierSymbol
+#: language/unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
 msgstr "Sümbol, laiend"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:221 ID:MathSymbol
+#: language/unicode/Category.resx:221 ID:MathSymbol
 msgid "Symbol, Math"
 msgstr "Sümbol, Matemaatiline"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:225 ID:OtherSymbol
+#: language/unicode/Category.resx:225 ID:OtherSymbol
 msgid "Symbol, Other"
 msgstr "Sümbol, Muu"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:229 ID:LineSeparator
+#: language/unicode/Category.resx:229 ID:LineSeparator
 msgid "Separator, Line"
 msgstr "Eraldaja, Joon"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:233 ID:ParagraphSeparator
+#: language/unicode/Category.resx:233 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
 msgstr "Eraldaja, Lõik"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
-#: unicode/Category.resx:237 ID:SpaceSeparator
+#: language/unicode/Category.resx:237 ID:SpaceSeparator
 msgid "Separator, Space"
 msgstr "Eraldaja, Tühik"
 
