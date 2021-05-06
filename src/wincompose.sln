@@ -18,7 +18,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "installer-helper", "install
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wincompose-tests", "..\tests\wincompose-tests.csproj", "{7EF72322-8A15-49B1-9E92-777B16B84BD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "language", "language.csproj", "{BBA0B950-2B67-4660-BAD0-C359E99A733F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "language", "language\language.csproj", "{BBA0B950-2B67-4660-BAD0-C359E99A733F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inserticons", "3rdparty\inserticons\inserticons.csproj", "{C037D608-57FD-4ACD-AAC1-BFAD1767B11B}"
 EndProject

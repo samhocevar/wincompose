@@ -14,7 +14,7 @@
     <UseWPF>true</UseWPF>
     <DefaultItemExcludes>
         $(DefaultItemExcludes);gitversion.json;**\*.swp;**\*~;
-        *;3rdparty\**;i18n\**;po\**;unicode\**;WinCompose-*\**
+        *;3rdparty\**;language\**;po\**;WinCompose-*\**
     </DefaultItemExcludes>
   </PropertyGroup>
 
@@ -35,7 +35,16 @@
       ]]></Code>
     </Task>
   </UsingTask>
-  <Target Name="CompressResources" BeforeTargets="BeforeBuild" Inputs="3rdparty\xorgproto\include\X11\keysymdef.h&#xD;&#xA;                  3rdparty\libx11\nls\en_US.UTF-8\Compose.pre&#xD;&#xA;                  3rdparty\xcompose\dotXCompose&#xD;&#xA;                  3rdparty\unicode-emoji\emoji-test.txt" Outputs="$(OutputPath)\keysymdef.h.gz&#xD;&#xA;                   $(OutputPath)\xorg.rules.gz&#xD;&#xA;                   $(OutputPath)\xcompose.rules.gz&#xD;&#xA;                   $(OutputPath)\emoji-test.txt.gz">
+  <Target Name="CompressResources"
+          BeforeTargets="BeforeBuild"
+          Inputs="3rdparty\xorgproto\include\X11\keysymdef.h&#xD;&#xA;
+                  3rdparty\libx11\nls\en_US.UTF-8\Compose.pre&#xD;&#xA;
+                  3rdparty\xcompose\dotXCompose&#xD;&#xA;
+                  3rdparty\unicode-emoji\emoji-test.txt"
+          Outputs="$(OutputPath)\keysymdef.h.gz&#xD;&#xA;
+                   $(OutputPath)\xorg.rules.gz&#xD;&#xA;
+                   $(OutputPath)\xcompose.rules.gz&#xD;&#xA;
+                   $(OutputPath)\emoji-test.txt.gz">
     <GZipTask InputFile="3rdparty\xorgproto\include\X11\keysymdef.h" OutputFile="$(OutputPath)\keysymdef.h.gz" />
     <GZipTask InputFile="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" OutputFile="$(OutputPath)\xorg.rules.gz" />
     <GZipTask InputFile="3rdparty\xcompose\dotXCompose" OutputFile="$(OutputPath)\xcompose.rules.gz" />
@@ -96,7 +105,7 @@
 
   <ItemGroup>
     <ProjectReference Include="3rdparty\wpf-notifyicon\src\NotifyIconWpf\NotifyIconWpf.csproj" />
-    <ProjectReference Include="language.csproj" />
+    <ProjectReference Include="language\language.csproj" />
   </ItemGroup>
 
   <ItemGroup>
