@@ -1,8 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <UsingTask TaskName="GZipTask" TaskFactory="CodeTaskFactory"
-             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <Title>WinCompose</Title>
+    <Product>WinCompose</Product>
+    <Authors>Sam Hocevar</Authors>
+    <Copyright>Copyright © 2015—2021 Sam Hocevar et al.</Copyright>
+    <Description></Description>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WinCompose.Program</StartupObject>
+    <TargetFrameworks>net40</TargetFrameworks>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <UseWPF>true</UseWPF>
+    <DefaultItemExcludes>
+        $(DefaultItemExcludes);gitversion.json;**\*.swp;**\*~;
+        *;3rdparty\**;i18n\**;po\**;unicode\**;WinCompose-*\**
+    </DefaultItemExcludes>
+  </PropertyGroup>
+
+  <UsingTask TaskName="GZipTask" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
       <InputFile ParameterType="System.String" Required="true" />
       <OutputFile ParameterType="System.String" Required="true" />
@@ -14,191 +30,16 @@
           Directory.CreateDirectory(Path.GetDirectoryName(OutputFile));
           var data = File.ReadAllBytes(InputFile);
           using (var s = new FileStream(OutputFile, FileMode.Create))
-              using (var gs = new GZipStream(s, CompressionLevel.Optimal, false))
+              using (var gs = new GZipStream(s, CompressionMode.Compress, false))
                   gs.Write(data, 0, data.Length);
       ]]></Code>
     </Task>
   </UsingTask>
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E00DB4B7-3738-47F4-B430-B10EFFB36205}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinCompose</RootNamespace>
-    <AssemblyName>WinCompose</AssemblyName>
-    <TargetName>wincompose</TargetName>
-    <StartupObject>WinCompose.Program</StartupObject>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <Deterministic>true</Deterministic>
-    <PathMap>$(SolutionDir)=src</PathMap>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="PresentationFramework.Aero" />
-    <Reference Include="System" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="composer\Composer.cs" />
-    <Compile Include="composer\KeyboardHook.cs" />
-    <Compile Include="composer\KeyboardLayout.cs" />
-    <Compile Include="composer\KeyboardLeds.cs" />
-    <Compile Include="composer\Log.cs" />
-    <Compile Include="composer\Program.cs" />
-    <Compile Include="composer\Stats.cs" />
-    <Compile Include="composer\Updater.cs" />
-    <Compile Include="composer\Application.xaml.cs">
-      <DependentUpon>Application.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="interop\RemoteControl.cs" />
-    <Compile Include="interop\RemoteTypes.cs" />
-    <Compile Include="interop\WinApi.cs" />
-    <Compile Include="interop\WinTypes.cs" />
-    <Compile Include="misc\AtomicFlag.cs" />
-    <Compile Include="misc\CompressedResource.cs" />
-    <Compile Include="misc\Extensions.cs" />
-    <Compile Include="misc\IniFile.cs" />
-    <Compile Include="misc\NotificationArea.cs" />
-    <Compile Include="misc\SchTasks.cs" />
-    <Compile Include="misc\Utils.cs" />
-    <Compile Include="misc\WatchedFile.cs" />
-    <Compile Include="misc\XmlFile.cs" />
-    <Compile Include="sequences\Category.cs" />
-    <Compile Include="sequences\Key.cs" />
-    <Compile Include="sequences\SearchTokens.cs" />
-    <Compile Include="sequences\Sequence.cs" />
-    <Compile Include="sequences\SequenceTree.cs" />
-    <Compile Include="sequences\Metadata.cs" />
-    <Compile Include="sequences\ValueConverters.cs" />
-    <Compile Include="settings\Settings.cs" />
-    <Compile Include="settings\SettingsEntry.cs" />
-    <Compile Include="ui\AboutBoxViewModel.cs" />
-    <Compile Include="ui\BaseWindow.cs" />
-    <Compile Include="ui\CategoryViewModel.cs" />
-    <Compile Include="ui\Constants.cs" />
-    <Compile Include="ui\DelegateCommand.cs" />
-    <Compile Include="ui\RootViewModel.cs" />
-    <Compile Include="ui\SequenceViewModel.cs" />
-    <Compile Include="ui\SettingsWindowViewModel.cs" />
-    <Compile Include="ui\TreeView.cs" />
-    <Compile Include="ui\ViewModelBase.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ui\AboutBox.xaml.cs">
-      <DependentUpon>AboutBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\DebugWindow.xaml.cs">
-      <DependentUpon>DebugWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\KeySelector.xaml.cs">
-      <DependentUpon>KeySelector.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\NotificationIcon.xaml.cs">
-      <DependentUpon>NotificationIcon.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\SequenceWindow.xaml.cs">
-      <DependentUpon>SequenceWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\SettingsWindow.xaml.cs">
-      <DependentUpon>SettingsWindow.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="composer\Application.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ui\AboutBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ui\DebugWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ui\KeySelector.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ui\NotificationIcon.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ui\SequenceWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ui\SettingsWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <Target Name="CompressResources" BeforeTargets="BeforeBuild"
-          Inputs="3rdparty\xorgproto\include\X11\keysymdef.h
-                  3rdparty\libx11\nls\en_US.UTF-8\Compose.pre
-                  3rdparty\xcompose\dotXCompose
-                  3rdparty\unicode-emoji\emoji-test.txt"
-          Outputs="$(OutputPath)\keysymdef.h.gz
-                   $(OutputPath)\xorg.rules.gz
-                   $(OutputPath)\xcompose.rules.gz
-                   $(OutputPath)\emoji-test.txt.gz">
-    <GZipTask InputFile="3rdparty\xorgproto\include\X11\keysymdef.h"
-              OutputFile="$(OutputPath)\keysymdef.h.gz" />
-    <GZipTask InputFile="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre"
-              OutputFile="$(OutputPath)\xorg.rules.gz" />
-    <GZipTask InputFile="3rdparty\xcompose\dotXCompose"
-              OutputFile="$(OutputPath)\xcompose.rules.gz" />
-    <GZipTask InputFile="3rdparty\unicode-emoji\emoji-test.txt"
-              OutputFile="$(OutputPath)\emoji-test.txt.gz" />
+  <Target Name="CompressResources" BeforeTargets="BeforeBuild" Inputs="3rdparty\xorgproto\include\X11\keysymdef.h&#xD;&#xA;                  3rdparty\libx11\nls\en_US.UTF-8\Compose.pre&#xD;&#xA;                  3rdparty\xcompose\dotXCompose&#xD;&#xA;                  3rdparty\unicode-emoji\emoji-test.txt" Outputs="$(OutputPath)\keysymdef.h.gz&#xD;&#xA;                   $(OutputPath)\xorg.rules.gz&#xD;&#xA;                   $(OutputPath)\xcompose.rules.gz&#xD;&#xA;                   $(OutputPath)\emoji-test.txt.gz">
+    <GZipTask InputFile="3rdparty\xorgproto\include\X11\keysymdef.h" OutputFile="$(OutputPath)\keysymdef.h.gz" />
+    <GZipTask InputFile="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" OutputFile="$(OutputPath)\xorg.rules.gz" />
+    <GZipTask InputFile="3rdparty\xcompose\dotXCompose" OutputFile="$(OutputPath)\xcompose.rules.gz" />
+    <GZipTask InputFile="3rdparty\unicode-emoji\emoji-test.txt" OutputFile="$(OutputPath)\emoji-test.txt.gz" />
   </Target>
   <ItemGroup>
     <Item Include="3rdparty\xorgproto\include\X11\keysymdef.h" />
@@ -206,9 +47,15 @@
     <Item Include="3rdparty\xcompose\dotXCompose" />
     <Item Include="3rdparty\unicode-emoji\emoji-test.txt" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="app.config" />
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="$(OutputPath)\keysymdef.h.gz">
       <Visible>false</Visible>
@@ -227,6 +74,7 @@
       <LogicalName>emoji-test.txt.gz</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <Resource Include="res\contributors.html" />
     <Resource Include="res\copying.html" />
@@ -245,31 +93,23 @@
     <Item Include="rules\Emoji.txt" />
     <Item Include="rules\WinCompose.txt" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="3rdparty\wpf-notifyicon\src\NotifyIconWpf\NotifyIconWpf.csproj">
-      <Project>{7ac63864-7638-41c4-969c-d3197ef2bed9}</Project>
-      <Name>NotifyIconWpf</Name>
-    </ProjectReference>
-    <ProjectReference Include="language.csproj">
-      <Project>{bba0b950-2b67-4660-bad0-c359e99a733f}</Project>
-      <Name>language</Name>
-    </ProjectReference>
+    <ProjectReference Include="3rdparty\wpf-notifyicon\src\NotifyIconWpf\NotifyIconWpf.csproj" />
+    <ProjectReference Include="language.csproj" />
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="res\icon_normal.ico" />
   </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Emoji.Wpf" Version="0.3.0" />
     <PackageReference Include="GitVersion.MsBuild" Version="5.6.9" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  -->
+
   <Target Name="AfterBuild">
     <Exec Command="3rdparty\inserticons\bin\Release\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
   </Target>
