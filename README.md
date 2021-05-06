@@ -11,12 +11,12 @@ very intuitive key combinations. For instance, **ö** is obtained using
 
 WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 
-Download latest: [WinCompose 0.9.6](https://github.com/samhocevar/wincompose/releases/download/v0.9.6/WinCompose-Setup-0.9.6.exe) (December 3, 2020)
+Download latest: [WinCompose 0.9.7](https://github.com/samhocevar/wincompose/releases/download/v0.9.7/WinCompose-Setup-0.9.7.exe) (May 6, 2021)
 -----------------------------------
 
- * Installable version: [WinCompose 0.9.6 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.6/WinCompose-Setup-0.9.6.exe).
+ * Installable version: [WinCompose 0.9.7 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.7/WinCompose-Setup-0.9.7.exe).
 
- * Portable version: [WinCompose 0.9.6 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.6/WinCompose-NoInstall-0.9.6.zip).
+ * Portable version: [WinCompose 0.9.7 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.7/WinCompose-NoInstall-0.9.7.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
@@ -95,12 +95,11 @@ WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kb
 WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>q</kbd> will
 immediately type **q** because there is currently no rule starting with <kbd>q</kbd>.
 
-As of now, WinCompose is almost fully translated to Belarusian, Chinese,
-Czech, Dutch, Estonian, French, German, Greek, Italian, Japanese, Lithuanian,
-Norwegian, Polish, Portuguese, Brazilian Portuguese, Russian, Sardinian,
-Spanish, and Swedish. It is partially translated to Danish, Esperanto, Finnish,
-Hungarian, Indonesian, Irish, Romanian, Serbian, Slovak, and Slovenian. You
-can help us translate it to more languages using the Weblate project:
+As of now, WinCompose is almost fully translated to Afrikaans, Belarusian, Catalan, Chinese,
+Czech, Dutch, Estonian, French, German, Greek, Italian, Japanese, Lithuanian, Norwegian, Polish,
+Portuguese, Brazilian Portuguese, Russian, Sardinian, Spanish, and Swedish. It is partially
+translated to Danish, Esperanto, Finnish, Hungarian, Indonesian, Irish, Romanian, Serbian, Slovak,
+and Slovenian. You can help us translate it to more languages using the Weblate project:
 
 <a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
 
