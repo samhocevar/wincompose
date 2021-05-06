@@ -7,14 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wincompose", "wincompose\wi
 		{C037D608-57FD-4ACD-AAC1-BFAD1767B11B} = {C037D608-57FD-4ACD-AAC1-BFAD1767B11B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "installer", "installer.csproj", "{55AF5191-E02C-4445-A578-D209A40C0AC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "installer", "installer\installer.csproj", "{55AF5191-E02C-4445-A578-D209A40C0AC7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{BBA0B950-2B67-4660-BAD0-C359E99A733F} = {BBA0B950-2B67-4660-BAD0-C359E99A733F}
 		{91D61EB7-36A9-449F-B8AE-D151928026DA} = {91D61EB7-36A9-449F-B8AE-D151928026DA}
 		{E00DB4B7-3738-47F4-B430-B10EFFB36205} = {E00DB4B7-3738-47F4-B430-B10EFFB36205}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "installer-helper", "installer-helper.vcxproj", "{91D61EB7-36A9-449F-B8AE-D151928026DA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "installer-helper", "installer\installer-helper.vcxproj", "{91D61EB7-36A9-449F-B8AE-D151928026DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wincompose-tests", "..\tests\wincompose-tests.csproj", "{7EF72322-8A15-49B1-9E92-777B16B84BD1}"
 EndProject

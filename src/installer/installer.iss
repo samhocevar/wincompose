@@ -18,13 +18,15 @@
 #endif
 #define FRAMEWORK "net40"
 
-#define OUTDIR "wincompose/bin/" + CONFIG + "/" + FRAMEWORK
+#define SRCDIR "../wincompose"
+#define BINDIR "../wincompose/bin/" + CONFIG + "/" + FRAMEWORK
+#define INNODIR "../3rdparty/innosetup/Files"
 
 #define MAJOR
 #define MINOR
 #define REV
 #define BUILD
-#expr GetVersionComponents(OUTDIR + "/" + EXE, MAJOR, MINOR, REV, BUILD)
+#expr GetVersionComponents(BINDIR + "/" + EXE, MAJOR, MINOR, REV, BUILD)
 #define VERSION Str(MAJOR) + "." + Str(MINOR) + "." + Str(REV)
 
 [Setup]
@@ -36,11 +38,11 @@ OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 ArchitecturesInstallIn64BitMode = x64
 DefaultDirName = {commonpf}\{#NAME}
 DefaultGroupName = {#NAME}
-SetupIconFile = "wincompose\res\icon_normal.ico"
+SetupIconFile = "{#SRCDIR}\res\icon_normal.ico"
 UninstallDisplayIcon = "{app}\{#EXE}"
 Compression = lzma2
 SolidCompression = yes
-OutputDir = .
+OutputDir = ..\
 ShowLanguageDialog = auto
 ; We only install stuff in {userstartup} and in {app}. Since the latter
 ; can be overridden, we do not necessarily need elevated privileges, so
@@ -51,56 +53,56 @@ PrivilegesRequired = lowest
 ; We put this at the beginning so that it’s easier to decompress
 Source: "bin\{#CONFIG}\installer-helper.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
-Source: "{#OUTDIR}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#OUTDIR}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#OUTDIR}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#OUTDIR}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#OUTDIR}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#OUTDIR}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#OUTDIR}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#OUTDIR}\af\*.dll"; DestDir: "{app}\af"; Flags: ignoreversion
-Source: "{#OUTDIR}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
-Source: "{#OUTDIR}\ar\*.dll"; DestDir: "{app}\ar"; Flags: ignoreversion
-Source: "{#OUTDIR}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
-Source: "{#OUTDIR}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
-Source: "{#OUTDIR}\ca\*.dll"; DestDir: "{app}\ca"; Flags: ignoreversion
-Source: "{#OUTDIR}\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
-Source: "{#OUTDIR}\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
-Source: "{#OUTDIR}\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
-Source: "{#OUTDIR}\de-CH\*.dll"; DestDir: "{app}\de-CH"; Flags: ignoreversion
-Source: "{#OUTDIR}\el\*.dll"; DestDir: "{app}\el"; Flags: ignoreversion
-Source: "{#OUTDIR}\es\*.dll"; DestDir: "{app}\es"; Flags: ignoreversion
-Source: "{#OUTDIR}\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
-Source: "{#OUTDIR}\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
-Source: "{#OUTDIR}\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
-Source: "{#OUTDIR}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
-Source: "{#OUTDIR}\hi\*.dll"; DestDir: "{app}\hi"; Flags: ignoreversion
-Source: "{#OUTDIR}\hr\*.dll"; DestDir: "{app}\hr"; Flags: ignoreversion
-Source: "{#OUTDIR}\hu\*.dll"; DestDir: "{app}\hu"; Flags: ignoreversion
-Source: "{#OUTDIR}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
-Source: "{#OUTDIR}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
-Source: "{#OUTDIR}\it-CH\*.dll"; DestDir: "{app}\it-CH"; Flags: ignoreversion
-Source: "{#OUTDIR}\ja\*.dll"; DestDir: "{app}\ja"; Flags: ignoreversion
-Source: "{#OUTDIR}\lt\*.dll"; DestDir: "{app}\lt"; Flags: ignoreversion
-Source: "{#OUTDIR}\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
-Source: "{#OUTDIR}\no\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
-Source: "{#OUTDIR}\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
-Source: "{#OUTDIR}\pt\*.dll"; DestDir: "{app}\pt"; Flags: ignoreversion
-Source: "{#OUTDIR}\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
-Source: "{#OUTDIR}\ro\*.dll"; DestDir: "{app}\ro"; Flags: ignoreversion
-Source: "{#OUTDIR}\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
-Source: "{#OUTDIR}\rw\*.dll"; DestDir: "{app}\rw"; Flags: ignoreversion
-Source: "{#OUTDIR}\sk\*.dll"; DestDir: "{app}\sk"; Flags: ignoreversion
-Source: "{#OUTDIR}\sl\*.dll"; DestDir: "{app}\sl"; Flags: ignoreversion
-Source: "{#OUTDIR}\sq\*.dll"; DestDir: "{app}\sq"; Flags: ignoreversion
-Source: "{#OUTDIR}\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
-Source: "{#OUTDIR}\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
-Source: "{#OUTDIR}\uk\*.dll"; DestDir: "{app}\uk"; Flags: ignoreversion
-Source: "{#OUTDIR}\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
-Source: "{#OUTDIR}\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
-Source: "wincompose\rules\DefaultUserSequences.txt"; DestDir: "{app}\res"
-Source: "wincompose\rules\Emoji.txt"; DestDir: "{app}\res"
-Source: "wincompose\rules\WinCompose.txt"; DestDir: "{app}\res"
+Source: "{#BINDIR}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\af\*.dll"; DestDir: "{app}\af"; Flags: ignoreversion
+Source: "{#BINDIR}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
+Source: "{#BINDIR}\ar\*.dll"; DestDir: "{app}\ar"; Flags: ignoreversion
+Source: "{#BINDIR}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
+Source: "{#BINDIR}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
+Source: "{#BINDIR}\ca\*.dll"; DestDir: "{app}\ca"; Flags: ignoreversion
+Source: "{#BINDIR}\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
+Source: "{#BINDIR}\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
+Source: "{#BINDIR}\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
+Source: "{#BINDIR}\de-CH\*.dll"; DestDir: "{app}\de-CH"; Flags: ignoreversion
+Source: "{#BINDIR}\el\*.dll"; DestDir: "{app}\el"; Flags: ignoreversion
+Source: "{#BINDIR}\es\*.dll"; DestDir: "{app}\es"; Flags: ignoreversion
+Source: "{#BINDIR}\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
+Source: "{#BINDIR}\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
+Source: "{#BINDIR}\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "{#BINDIR}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
+Source: "{#BINDIR}\hi\*.dll"; DestDir: "{app}\hi"; Flags: ignoreversion
+Source: "{#BINDIR}\hr\*.dll"; DestDir: "{app}\hr"; Flags: ignoreversion
+Source: "{#BINDIR}\hu\*.dll"; DestDir: "{app}\hu"; Flags: ignoreversion
+Source: "{#BINDIR}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
+Source: "{#BINDIR}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
+Source: "{#BINDIR}\it-CH\*.dll"; DestDir: "{app}\it-CH"; Flags: ignoreversion
+Source: "{#BINDIR}\ja\*.dll"; DestDir: "{app}\ja"; Flags: ignoreversion
+Source: "{#BINDIR}\lt\*.dll"; DestDir: "{app}\lt"; Flags: ignoreversion
+Source: "{#BINDIR}\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
+Source: "{#BINDIR}\no\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
+Source: "{#BINDIR}\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
+Source: "{#BINDIR}\pt\*.dll"; DestDir: "{app}\pt"; Flags: ignoreversion
+Source: "{#BINDIR}\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
+Source: "{#BINDIR}\ro\*.dll"; DestDir: "{app}\ro"; Flags: ignoreversion
+Source: "{#BINDIR}\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
+Source: "{#BINDIR}\rw\*.dll"; DestDir: "{app}\rw"; Flags: ignoreversion
+Source: "{#BINDIR}\sk\*.dll"; DestDir: "{app}\sk"; Flags: ignoreversion
+Source: "{#BINDIR}\sl\*.dll"; DestDir: "{app}\sl"; Flags: ignoreversion
+Source: "{#BINDIR}\sq\*.dll"; DestDir: "{app}\sq"; Flags: ignoreversion
+Source: "{#BINDIR}\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
+Source: "{#BINDIR}\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
+Source: "{#BINDIR}\uk\*.dll"; DestDir: "{app}\uk"; Flags: ignoreversion
+Source: "{#BINDIR}\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
+Source: "{#BINDIR}\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
+Source: "{#SRCDIR}\rules\DefaultUserSequences.txt"; DestDir: "{app}\res"
+Source: "{#SRCDIR}\rules\Emoji.txt"; DestDir: "{app}\res"
+Source: "{#SRCDIR}\rules\WinCompose.txt"; DestDir: "{app}\res"
 
 [Languages]
 ; Put English first, because Inno Setup will apparently fall back to the first
@@ -112,28 +114,28 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 ; [OBS] used to be in Inno Setup but no longer here
 ; [???] not in Inno Setup
 
-Name: "af"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Afrikaans.isl"
-Name: "ar"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Arabic.isl"
+Name: "af"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Afrikaans.isl"
+Name: "ar"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Arabic.isl"
 ; [ERR] be / Belarusian.isl
 ; [???] be@latin
 Name: "ca"; MessagesFile: "compiler:Languages/Catalan.isl"
 Name: "cs"; MessagesFile: "compiler:Languages/Czech.isl"
 Name: "da"; MessagesFile: "compiler:Languages/Danish.isl"
 Name: "de"; MessagesFile: "compiler:Languages/German.isl"
-Name: "el"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Greek.isl"
+Name: "el"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Greek.isl"
 ; [ERR] eo / Esperanto.isl
 Name: "es"; MessagesFile: "compiler:Languages/Spanish.isl"
 ; [ERR] et / Estonian.isl
 Name: "fi"; MessagesFile: "compiler:Languages/Finnish.isl"
 Name: "fr"; MessagesFile: "compiler:Languages/French.isl"
 ; [???] ga (Gaelic)
-Name: "hi"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Hindi.islu"
-Name: "hr"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Croatian.isl"
-Name: "hu"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Hungarian.isl"
-; [ERR] Name: "id"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Indonesian.isl"
+Name: "hi"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Hindi.islu"
+Name: "hr"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Croatian.isl"
+Name: "hu"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Hungarian.isl"
+; [ERR] Name: "id"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Indonesian.isl"
 Name: "it"; MessagesFile: "compiler:Languages/Italian.isl"
 Name: "ja"; MessagesFile: "compiler:Languages/Japanese.isl"
-Name: "lt"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Lithuanian.isl"
+Name: "lt"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Lithuanian.isl"
 Name: "nl"; MessagesFile: "compiler:Languages/Dutch.isl"
 Name: "no"; MessagesFile: "compiler:Languages/Norwegian.isl"
 Name: "pl"; MessagesFile: "compiler:Languages/Polish.isl"
@@ -145,11 +147,11 @@ Name: "ru"; MessagesFile: "compiler:Languages/Russian.isl"
 Name: "sk"; MessagesFile: "compiler:Languages/Slovak.isl"
 Name: "sl"; MessagesFile: "compiler:Languages/Slovenian.isl"
 ; [ERR] sq / Albanian.isl
-Name: "sr"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/SerbianCyrillic.isl"
-Name: "sv"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/Swedish.isl"
+Name: "sr"; MessagesFile: "{#INNODIR}/Languages/Unofficial/SerbianCyrillic.isl"
+Name: "sv"; MessagesFile: "{#INNODIR}/Languages/Unofficial/Swedish.isl"
 Name: "uk"; MessagesFile: "compiler:Languages/Ukrainian.isl"
-Name: "zh"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/ChineseSimplified.isl"
-; [ERR] Name: "zh_Hant"; MessagesFile: "3rdparty/innosetup/Files/Languages/Unofficial/ChineseTraditional.isl"
+Name: "zh"; MessagesFile: "{#INNODIR}/Languages/Unofficial/ChineseSimplified.isl"
+; [ERR] Name: "zh_Hant"; MessagesFile: "{#INNODIR}/Languages/Unofficial/ChineseTraditional.isl"
 
 ; FIXME: these languages are available in official Inno Setup but not in WinCompose
 ; Name: "he"; MessagesFile: "compiler:Languages/Hebrew.isl"

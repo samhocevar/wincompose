@@ -15,8 +15,8 @@ SRCDIR = wincompose
 BINDIR = wincompose/bin/$(CONFIG)/$(FRAMEWORK)
 
 SLN = wincompose.sln
-ISS = installer.iss
-PAS = installer.pas
+ISS = installer/installer.iss
+PAS = installer/installer.pas
 
 TXT = $(SRCDIR)/rules/DefaultUserSequences.txt \
       $(SRCDIR)/rules/Emoji.txt \
