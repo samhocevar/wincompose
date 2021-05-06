@@ -16,12 +16,15 @@
 #ifndef CONFIG
 #   define CONFIG GetEnv('CONFIG')
 #endif
+#define FRAMEWORK "net40"
+
+#define OUTDIR "wincompose/bin/" + CONFIG + "/" + FRAMEWORK
 
 #define MAJOR
 #define MINOR
 #define REV
 #define BUILD
-#expr GetVersionComponents("bin/" + CONFIG + "/" + EXE, MAJOR, MINOR, REV, BUILD)
+#expr GetVersionComponents(OUTDIR + "/" + EXE, MAJOR, MINOR, REV, BUILD)
 #define VERSION Str(MAJOR) + "." + Str(MINOR) + "." + Str(REV)
 
 [Setup]
@@ -33,7 +36,7 @@ OutputBaseFilename = "{#NAME}-Setup-{#VERSION}"
 ArchitecturesInstallIn64BitMode = x64
 DefaultDirName = {commonpf}\{#NAME}
 DefaultGroupName = {#NAME}
-SetupIconFile = "res\icon_normal.ico"
+SetupIconFile = "wincompose\res\icon_normal.ico"
 UninstallDisplayIcon = "{app}\{#EXE}"
 Compression = lzma2
 SolidCompression = yes
@@ -48,56 +51,56 @@ PrivilegesRequired = lowest
 ; We put this at the beginning so that it’s easier to decompress
 Source: "bin\{#CONFIG}\installer-helper.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
-Source: "bin\{#CONFIG}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\af\*.dll"; DestDir: "{app}\af"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\ar\*.dll"; DestDir: "{app}\ar"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\ca\*.dll"; DestDir: "{app}\ca"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\de-CH\*.dll"; DestDir: "{app}\de-CH"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\el\*.dll"; DestDir: "{app}\el"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\es\*.dll"; DestDir: "{app}\es"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\hi\*.dll"; DestDir: "{app}\hi"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\hr\*.dll"; DestDir: "{app}\hr"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\hu\*.dll"; DestDir: "{app}\hu"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\it-CH\*.dll"; DestDir: "{app}\it-CH"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\ja\*.dll"; DestDir: "{app}\ja"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\lt\*.dll"; DestDir: "{app}\lt"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\no\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\pt\*.dll"; DestDir: "{app}\pt"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\ro\*.dll"; DestDir: "{app}\ro"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\rw\*.dll"; DestDir: "{app}\rw"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\sk\*.dll"; DestDir: "{app}\sk"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\sl\*.dll"; DestDir: "{app}\sl"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\sq\*.dll"; DestDir: "{app}\sq"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\uk\*.dll"; DestDir: "{app}\uk"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
-Source: "bin\{#CONFIG}\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
-Source: "rules\DefaultUserSequences.txt"; DestDir: "{app}\res"
-Source: "rules\Emoji.txt"; DestDir: "{app}\res"
-Source: "rules\WinCompose.txt"; DestDir: "{app}\res"
+Source: "{#OUTDIR}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#OUTDIR}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#OUTDIR}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#OUTDIR}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#OUTDIR}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#OUTDIR}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#OUTDIR}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#OUTDIR}\af\*.dll"; DestDir: "{app}\af"; Flags: ignoreversion
+Source: "{#OUTDIR}\am\*.dll"; DestDir: "{app}\am"; Flags: ignoreversion
+Source: "{#OUTDIR}\ar\*.dll"; DestDir: "{app}\ar"; Flags: ignoreversion
+Source: "{#OUTDIR}\be\*.dll"; DestDir: "{app}\be"; Flags: ignoreversion
+Source: "{#OUTDIR}\be-BY\*.dll"; DestDir: "{app}\be-BY"; Flags: ignoreversion
+Source: "{#OUTDIR}\ca\*.dll"; DestDir: "{app}\ca"; Flags: ignoreversion
+Source: "{#OUTDIR}\cs\*.dll"; DestDir: "{app}\cs"; Flags: ignoreversion
+Source: "{#OUTDIR}\da\*.dll"; DestDir: "{app}\da"; Flags: ignoreversion
+Source: "{#OUTDIR}\de\*.dll"; DestDir: "{app}\de"; Flags: ignoreversion
+Source: "{#OUTDIR}\de-CH\*.dll"; DestDir: "{app}\de-CH"; Flags: ignoreversion
+Source: "{#OUTDIR}\el\*.dll"; DestDir: "{app}\el"; Flags: ignoreversion
+Source: "{#OUTDIR}\es\*.dll"; DestDir: "{app}\es"; Flags: ignoreversion
+Source: "{#OUTDIR}\et\*.dll"; DestDir: "{app}\et"; Flags: ignoreversion
+Source: "{#OUTDIR}\fi\*.dll"; DestDir: "{app}\fi"; Flags: ignoreversion
+Source: "{#OUTDIR}\fr\*.dll"; DestDir: "{app}\fr"; Flags: ignoreversion
+Source: "{#OUTDIR}\ga\*.dll"; DestDir: "{app}\ga"; Flags: ignoreversion
+Source: "{#OUTDIR}\hi\*.dll"; DestDir: "{app}\hi"; Flags: ignoreversion
+Source: "{#OUTDIR}\hr\*.dll"; DestDir: "{app}\hr"; Flags: ignoreversion
+Source: "{#OUTDIR}\hu\*.dll"; DestDir: "{app}\hu"; Flags: ignoreversion
+Source: "{#OUTDIR}\id\*.dll"; DestDir: "{app}\id"; Flags: ignoreversion
+Source: "{#OUTDIR}\it\*.dll"; DestDir: "{app}\it"; Flags: ignoreversion
+Source: "{#OUTDIR}\it-CH\*.dll"; DestDir: "{app}\it-CH"; Flags: ignoreversion
+Source: "{#OUTDIR}\ja\*.dll"; DestDir: "{app}\ja"; Flags: ignoreversion
+Source: "{#OUTDIR}\lt\*.dll"; DestDir: "{app}\lt"; Flags: ignoreversion
+Source: "{#OUTDIR}\nl\*.dll"; DestDir: "{app}\nl"; Flags: ignoreversion
+Source: "{#OUTDIR}\no\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
+Source: "{#OUTDIR}\pl\*.dll"; DestDir: "{app}\pl"; Flags: ignoreversion
+Source: "{#OUTDIR}\pt\*.dll"; DestDir: "{app}\pt"; Flags: ignoreversion
+Source: "{#OUTDIR}\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
+Source: "{#OUTDIR}\ro\*.dll"; DestDir: "{app}\ro"; Flags: ignoreversion
+Source: "{#OUTDIR}\ru\*.dll"; DestDir: "{app}\ru"; Flags: ignoreversion
+Source: "{#OUTDIR}\rw\*.dll"; DestDir: "{app}\rw"; Flags: ignoreversion
+Source: "{#OUTDIR}\sk\*.dll"; DestDir: "{app}\sk"; Flags: ignoreversion
+Source: "{#OUTDIR}\sl\*.dll"; DestDir: "{app}\sl"; Flags: ignoreversion
+Source: "{#OUTDIR}\sq\*.dll"; DestDir: "{app}\sq"; Flags: ignoreversion
+Source: "{#OUTDIR}\sr\*.dll"; DestDir: "{app}\sr"; Flags: ignoreversion
+Source: "{#OUTDIR}\sv\*.dll"; DestDir: "{app}\sv"; Flags: ignoreversion
+Source: "{#OUTDIR}\uk\*.dll"; DestDir: "{app}\uk"; Flags: ignoreversion
+Source: "{#OUTDIR}\zh-CHS\*.dll"; DestDir: "{app}\zh-CHS"; Flags: ignoreversion
+Source: "{#OUTDIR}\zh-CHT\*.dll"; DestDir: "{app}\zh-CHT"; Flags: ignoreversion
+Source: "wincompose\rules\DefaultUserSequences.txt"; DestDir: "{app}\res"
+Source: "wincompose\rules\Emoji.txt"; DestDir: "{app}\res"
+Source: "wincompose\rules\WinCompose.txt"; DestDir: "{app}\res"
 
 [Languages]
 ; Put English first, because Inno Setup will apparently fall back to the first

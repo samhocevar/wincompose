@@ -3,31 +3,37 @@
 #  - Inno Setup 6 (download and install)
 #  - GitVersion (choco install gitversion)
 #  - zip/unzip (mingw-get install msys-zip msys-unzip)
+#  - nuget
 #  - Visual Studio (ensure vswhere.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
 VERSION = $(shell gitversion -showvariable MajorMinorPatch)
+FRAMEWORK = net40
 CONFIG = Release
 
+SRCDIR = wincompose
+BINDIR = wincompose/bin/$(CONFIG)/$(FRAMEWORK)
+
+SLN = wincompose.sln
 ISS = installer.iss
 PAS = installer.pas
 
-TXT = rules/DefaultUserSequences.txt \
-      rules/Emoji.txt \
-      rules/WinCompose.txt
+TXT = $(SRCDIR)/rules/DefaultUserSequences.txt \
+      $(SRCDIR)/rules/Emoji.txt \
+      $(SRCDIR)/rules/WinCompose.txt
 
-EXE = bin/$(CONFIG)/wincompose.exe
-DLL = bin/$(CONFIG)/language.dll \
-      bin/$(CONFIG)/Emoji.Wpf.dll \
-      bin/$(CONFIG)/Typography.OpenFont.dll \
-      bin/$(CONFIG)/Typography.GlyphLayout.dll \
-      bin/$(CONFIG)/Hardcodet.NotifyIcon.Wpf.dll
-LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard i18n/*.*.resx unicode/*.*.resx)))))
+EXE = $(BINDIR)/wincompose.exe
+DLL = $(BINDIR)/language.dll \
+      $(BINDIR)/Emoji.Wpf.dll \
+      $(BINDIR)/Typography.OpenFont.dll \
+      $(BINDIR)/Typography.GlyphLayout.dll \
+      $(BINDIR)/Hardcodet.NotifyIcon.Wpf.dll
+LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard language/i18n/*.*.resx language/unicode/*.*.resx)))))
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
 VSWHERE = "${ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
-DEVENV = "$(shell $(VSWHERE) | sed -ne 's/^productPath: //p' | sed 's/devenv.exe/devenv.com/' | head -n 1)"
+MSBUILD = TMP= TEMP= "$(shell $(VSWHERE) -latest -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe')"
 MSGMERGE = msgmerge
 
 all: check installer portable
@@ -44,22 +50,24 @@ check:
 	./check-data.sh
 
 clean:
-	$(foreach x, $(EXE), $(DEVENV) wincompose.sln //clean $(CONFIG) //project $(basename $(notdir $x)).csproj;)
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project language.csproj
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer.csproj
-	$(DEVENV) wincompose.sln //clean $(CONFIG) //project installer-helper.vcxproj
+	$(MSBUILD) $(SLN) -p:Configuration=$(CONFIG) -t:Clean
 	rm -f $(PORTABLE)
 	rm -rf obj bin || true
+	rm -rf language/obj language/bin || true
+	rm -rf wincompose/obj wincompose/bin || true
 
-installer: $(EXE) $(ISS) $(PAS)
-	$(DEVENV) wincompose.sln //build $(CONFIG) //project installer.csproj
+build:
+	nuget restore $(SLN)
+	$(MSBUILD) $(SLN) -p:Configuration=$(CONFIG) -t:Build
 
-portable: $(EXE)
+installer: build $(EXE) $(ISS) $(PAS)
+
+portable: build $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
 	mkdir -p $(PORTABLE:.zip=)/rules
 	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
-	for L in $(LANG); do cp bin/$(CONFIG)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
+	for L in $(LANG); do cp $(BINDIR)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
 	cp $(EXE).config $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)/rules
@@ -67,12 +75,3 @@ portable: $(EXE)
 	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -sequences",0' > $(PORTABLE:.zip=)/wincompose-sequences.vbs
 	zip -r $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
-
-# Sometimes Visual Studio does not rebuild this dependency
-$(EXE): bin/$(CONFIG)/language.dll
-
-%.exe %.dll:
-	@mkdir -p bin/$(CONFIG)
-	@rm -f $@
-	$(DEVENV) wincompose.sln //build $(CONFIG) //project $(basename $(notdir $@)).csproj
-

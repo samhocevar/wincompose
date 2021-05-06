@@ -17,13 +17,12 @@
     </DefaultItemExcludes>
   </PropertyGroup>
 
-  <UsingTask TaskName="GZipTask" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+  <UsingTask TaskName="GZipTask" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
       <InputFile ParameterType="System.String" Required="true" />
       <OutputFile ParameterType="System.String" Required="true" />
     </ParameterGroup>
     <Task>
-      <Reference Include="System.IO.Compression" />
       <Using Namespace="System.IO.Compression" />
       <Code Type="Fragment" Language="cs"><![CDATA[
           Directory.CreateDirectory(Path.GetDirectoryName(OutputFile));
