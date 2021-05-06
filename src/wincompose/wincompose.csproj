@@ -14,7 +14,6 @@
     <UseWPF>true</UseWPF>
     <DefaultItemExcludes>
         $(DefaultItemExcludes);gitversion.json;**\*.swp;**\*~;
-        *;3rdparty\**;language\**;po\**;WinCompose-*\**
     </DefaultItemExcludes>
   </PropertyGroup>
 
@@ -37,24 +36,24 @@
   </UsingTask>
   <Target Name="CompressResources"
           BeforeTargets="BeforeBuild"
-          Inputs="3rdparty\xorgproto\include\X11\keysymdef.h&#xD;&#xA;
-                  3rdparty\libx11\nls\en_US.UTF-8\Compose.pre&#xD;&#xA;
-                  3rdparty\xcompose\dotXCompose&#xD;&#xA;
-                  3rdparty\unicode-emoji\emoji-test.txt"
+          Inputs="..\3rdparty\xorgproto\include\X11\keysymdef.h&#xD;&#xA;
+                  ..\3rdparty\libx11\nls\en_US.UTF-8\Compose.pre&#xD;&#xA;
+                  ..\3rdparty\xcompose\dotXCompose&#xD;&#xA;
+                  ..\3rdparty\unicode-emoji\emoji-test.txt"
           Outputs="$(OutputPath)\keysymdef.h.gz&#xD;&#xA;
                    $(OutputPath)\xorg.rules.gz&#xD;&#xA;
                    $(OutputPath)\xcompose.rules.gz&#xD;&#xA;
                    $(OutputPath)\emoji-test.txt.gz">
-    <GZipTask InputFile="3rdparty\xorgproto\include\X11\keysymdef.h" OutputFile="$(OutputPath)\keysymdef.h.gz" />
-    <GZipTask InputFile="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" OutputFile="$(OutputPath)\xorg.rules.gz" />
-    <GZipTask InputFile="3rdparty\xcompose\dotXCompose" OutputFile="$(OutputPath)\xcompose.rules.gz" />
-    <GZipTask InputFile="3rdparty\unicode-emoji\emoji-test.txt" OutputFile="$(OutputPath)\emoji-test.txt.gz" />
+    <GZipTask InputFile="..\3rdparty\xorgproto\include\X11\keysymdef.h" OutputFile="$(OutputPath)\keysymdef.h.gz" />
+    <GZipTask InputFile="..\3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" OutputFile="$(OutputPath)\xorg.rules.gz" />
+    <GZipTask InputFile="..\3rdparty\xcompose\dotXCompose" OutputFile="$(OutputPath)\xcompose.rules.gz" />
+    <GZipTask InputFile="..\3rdparty\unicode-emoji\emoji-test.txt" OutputFile="$(OutputPath)\emoji-test.txt.gz" />
   </Target>
   <ItemGroup>
-    <Item Include="3rdparty\xorgproto\include\X11\keysymdef.h" />
-    <Item Include="3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" />
-    <Item Include="3rdparty\xcompose\dotXCompose" />
-    <Item Include="3rdparty\unicode-emoji\emoji-test.txt" />
+    <Item Include="..\3rdparty\xorgproto\include\X11\keysymdef.h" />
+    <Item Include="..\3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" />
+    <Item Include="..\3rdparty\xcompose\dotXCompose" />
+    <Item Include="..\3rdparty\unicode-emoji\emoji-test.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -104,8 +103,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="3rdparty\wpf-notifyicon\src\NotifyIconWpf\NotifyIconWpf.csproj" />
-    <ProjectReference Include="language\language.csproj" />
+    <ProjectReference Include="..\3rdparty\wpf-notifyicon\src\NotifyIconWpf\NotifyIconWpf.csproj" />
+    <ProjectReference Include="..\language\language.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -120,6 +119,6 @@
   </ItemGroup>
 
   <Target Name="AfterBuild">
-    <Exec Command="3rdparty\inserticons\bin\Release\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
+    <Exec Command="..\3rdparty\inserticons\bin\Release\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
   </Target>
 </Project>

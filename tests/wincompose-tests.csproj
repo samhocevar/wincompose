@@ -57,7 +57,7 @@
     <Compile Include="sequences\Sequence.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\wincompose.csproj">
+    <ProjectReference Include="..\src\wincompose\wincompose.csproj">
       <Project>{e00db4b7-3738-47f4-b430-b10effb36205}</Project>
       <Name>wincompose</Name>
     </ProjectReference>
