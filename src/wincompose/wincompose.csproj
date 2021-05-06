@@ -6,6 +6,7 @@
     <Copyright>Copyright © 2015—2021 Sam Hocevar et al.</Copyright>
     <Description></Description>
     <OutputType>WinExe</OutputType>
+    <RootNamespace>WinCompose</RootNamespace>
     <StartupObject>WinCompose.Program</StartupObject>
     <TargetFrameworks>net40</TargetFrameworks>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
@@ -56,6 +57,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
