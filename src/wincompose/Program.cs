@@ -54,7 +54,7 @@ namespace WinCompose
             // system may kill us after some time.
             if (from_task)
             {
-                Process.Start(Application.ResourceAssembly.Location);
+                Process.Start(Application.ResourceAssembly.Location, "-detached");
                 return;
             }
 
