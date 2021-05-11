@@ -75,7 +75,7 @@ namespace WinCompose
                 {
                     if (Regex.Match(path, pattern, RegexOptions.IgnoreCase).Success)
                     {
-                        Log.Debug("Enforcing notification area visibility for {0}", path);
+                        Log.Info("Enforcing notification area visibility for {0}", path);
                         data[offset + MAGIC_OFFSET] = 2;
                         key.SetValue(key_name, data);
                         must_restart_explorer = true;

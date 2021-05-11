@@ -39,7 +39,7 @@ namespace WinCompose
                 m_watcher.EnableRaisingEvents = true;
                 m_reload_timer = new Timer(o =>
                 {
-                    Log.Debug($"File {filename} changed, reloading.");
+                    Log.Info($"File {filename} changed, reloading.");
                     OnFileChanged?.Invoke();
                 });
             }

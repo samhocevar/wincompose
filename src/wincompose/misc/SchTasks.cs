@@ -48,7 +48,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Debug($"Could not create scheduled task: {ex}");
+                Log.Warn($"Could not create scheduled task: {ex}");
             }
         }
 

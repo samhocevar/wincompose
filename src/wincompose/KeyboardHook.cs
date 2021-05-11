@@ -74,7 +74,7 @@ static class KeyboardHook
                                    NativeMethods.LoadLibrary("user32.dll"), 0);
             if (m_hook == HOOK.INVALID)
             {
-                Log.Debug("Unable to install hook: {0}",
+                Log.Warn("Unable to install hook: {0}",
                           new Win32Exception(Marshal.GetLastWin32Error()));
             }
         }
@@ -91,8 +91,8 @@ static class KeyboardHook
 
             if (ret == 0)
             {
-                Log.Debug("Unable to uninstall hook: {0}",
-                          new Win32Exception(Marshal.GetLastWin32Error()));
+                Log.Warn("Unable to uninstall hook: {0}",
+                         new Win32Exception(Marshal.GetLastWin32Error()));
             }
         }
     }

@@ -11,32 +11,37 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace WinCompose
 {
+
     static class Program
     {
+        static Dictionary<string, MenuCommand> m_command_flags = new Dictionary<string, MenuCommand>()
+        {
+            {  "-sequences", MenuCommand.ShowSequences },
+            {  "-settings",  MenuCommand.ShowOptions },
+        };
+
         [STAThread]
         static void Main(string[] args)
         {
             // Some commandline flags just trigger a message broadcast
-            var command_flags = new Dictionary<string, MenuCommand>()
-            {
-                {  "-sequences", MenuCommand.ShowSequences },
-                {  "-settings",  MenuCommand.ShowOptions },
-            };
-
             foreach (var arg in args)
             {
-                if (command_flags.TryGetValue(arg, out var cmd))
+                if (m_command_flags.TryGetValue(arg, out var cmd))
                 {
                     NativeMethods.PostMessage(HWND.BROADCAST, WM_WINCOMPOSE.OPEN, (int)cmd, 0);
                     return;
                 }
             }
+
+            Log.Init();
+            Log.Info($"WinCompose {Settings.Version} started");
 
             // Do this early because of the AutoLaunch setting
             Settings.LoadConfig();

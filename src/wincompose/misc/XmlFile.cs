@@ -34,7 +34,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Debug($"Failed to load {FullPath}: {ex}");
+                Log.Warn($"Failed to load {FullPath}: {ex}");
             }
 
             return new T();
@@ -51,7 +51,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Debug($"Failed to save {FullPath}: {ex}");
+                Log.Warn($"Failed to save {FullPath}: {ex}");
             }
         }
     }

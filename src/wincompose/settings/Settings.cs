@@ -178,7 +178,7 @@ namespace WinCompose
 
         public static void LoadConfig()
         {
-            Log.Debug($"Reloading configuration file {m_ini_file.FullPath}");
+            Log.Info($"Reloading configuration file {m_ini_file.FullPath}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {
@@ -233,7 +233,7 @@ namespace WinCompose
 
         public static void SaveConfig()
         {
-            Log.Debug($"Saving configuration file {m_ini_file.FullPath}");
+            Log.Info($"Saving configuration file {m_ini_file.FullPath}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {

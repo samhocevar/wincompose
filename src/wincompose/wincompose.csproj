@@ -121,6 +121,7 @@
     <PackageReference Include="GitVersion.MsBuild" Version="5.6.9" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="NLog" Version="4.7.9" />
   </ItemGroup>
 
   <Target Name="AfterBuild">

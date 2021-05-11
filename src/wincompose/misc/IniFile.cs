@@ -29,7 +29,7 @@ namespace WinCompose
             {
                 if (!m_mutex.WaitOne(2000))
                 {
-                    Log.Debug($"Failed to acquire settings lock");
+                    Log.Warn($"Failed to acquire settings lock");
                     return;
                 }
             }
@@ -71,7 +71,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Debug($"Failed to load settings: {ex}");
+                Log.Warn($"Failed to load settings: {ex}");
             }
             finally
             {
@@ -90,7 +90,7 @@ namespace WinCompose
             {
                 if (!m_mutex.WaitOne(2000))
                 {
-                    Log.Debug($"Failed to acquire settings lock");
+                    Log.Warn($"Failed to acquire settings lock");
                     return;
                 }
             }
@@ -101,7 +101,7 @@ namespace WinCompose
 
             try
             {
-                Log.Debug($"Saving {section}.{key} = {value}");
+                Log.Info($"Saving {section}.{key} = {value}");
                 NativeMethods.WritePrivateProfileString(section, key, value, FullPath);
                 // Ensure old keys are removed from the global section
                 if (section != "global")
@@ -109,7 +109,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Debug($"Failed to save settings: {ex}");
+                Log.Warn($"Failed to save settings: {ex}");
             }
             finally
             {

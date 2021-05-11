@@ -27,7 +27,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Debug($"Could not create {directory}: {ex}");
+                Log.Warn($"Could not create {directory}: {ex}");
                 return false;
             }
         }

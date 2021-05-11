@@ -93,7 +93,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Debug($"Could not load settings entry {str}: {ex}");
+                Log.Warn($"Could not load settings entry {str}: {ex}");
             }
         }
     }

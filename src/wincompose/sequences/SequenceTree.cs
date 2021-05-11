@@ -31,14 +31,14 @@ public class SequenceTree : SequenceNode
         {
             using (StreamReader s = new StreamReader(path))
             {
-                Log.Debug("Loaded rule file {0}", path);
+                Log.Info("Loaded rule file {0}", path);
                 m_loaded_files.Add(path);
                 LoadStream(s);
             }
         }
         catch (FileNotFoundException)
         {
-            Log.Debug("Rule file {0} not found", path);
+            Log.Warn("Rule file {0} not found", path);
         }
         catch (Exception) { }
     }
@@ -47,7 +47,7 @@ public class SequenceTree : SequenceNode
     {
         using (var sr = new GZipResourceStream(resource))
         {
-            Log.Debug("Loaded rule resource {0}", resource);
+            Log.Info("Loaded rule resource {0}", resource);
             LoadStream(sr);
         }
     }
@@ -120,7 +120,7 @@ public class SequenceTree : SequenceNode
             if (k == null)
             {
                 if (m_invalid_keys.Add(keysyms[i]))
-                    Log.Debug($"Unknown key name <{keysyms[i]}>, ignoring sequence");
+                    Log.Warn($"Unknown key name <{keysyms[i]}>, ignoring sequence");
                 return; // Unknown key name! Better bail out
             }
 
@@ -163,7 +163,7 @@ public class SequenceTree : SequenceNode
             var result_key = Key.FromKeySymOrChar(result);
             if (result_key == null)
             {
-                Log.Debug($"Unknown key name {result}, ignoring sequence");
+                Log.Warn($"Unknown key name {result}, ignoring sequence");
                 return;
             }
             result = result_key.PrintableResult;
@@ -226,7 +226,7 @@ public class SequenceNode
         {
             // If this is a conflict, warn about it
             if (m_results.Count > 0 && m_results[0].Result != item.Result)
-                Log.Debug($"Conflicting sequence for {item.Sequence.FriendlyName}: had {m_results[0].Result}, got {item.Result}");
+                Log.Warn($"Conflicting sequence for {item.Sequence.FriendlyName}: had {m_results[0].Result}, got {item.Result}");
 
             // Insert sequence at index 0 to give precedence to user sequences
             m_results.Insert(0, item);
