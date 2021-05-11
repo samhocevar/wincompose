@@ -838,17 +838,17 @@ msgid "Separator, Space"
 msgstr "Skeider, Spasie"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer/installer.pas:175
 msgid "Prerequisites"
 msgstr "Voorvereistes"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:176
+#: installer/installer.pas:176
 msgid "Software required by WinCompose"
 msgstr "Sagteware benodig deur WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:179
+#: installer/installer.pas:179
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
@@ -859,12 +859,12 @@ msgstr ""
 "los:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer/installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
 msgstr "NET Framework 4.0 Runtime aflaai en installeer"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:194
+#: installer/installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -873,6 +873,6 @@ msgstr ""
 "Installasie."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:285
+#: installer/installer.pas:285
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administrateur regte is nodig. Fout:% d"

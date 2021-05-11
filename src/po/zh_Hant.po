@@ -809,17 +809,17 @@ msgid "Separator, Space"
 msgstr "分隔，空格"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:175
+#: installer/installer.pas:175
 msgid "Prerequisites"
 msgstr "先決條件"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:176
+#: installer/installer.pas:176
 msgid "Software required by WinCompose"
 msgstr "WinCompose 需要的軟體"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:179
+#: installer/installer.pas:179
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
@@ -829,19 +829,19 @@ msgstr ""
 "面做法可能有助於解決問題:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:184
+#: installer/installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
 msgstr "下載、安裝 .NET Framework 4.0 執行期間程式庫"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:194
+#: installer/installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr "完成後，您可以返回此螢幕，繼續安裝。"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer.pas:285
+#: installer/installer.pas:285
 msgid "Administrator rights are required. Error: %d"
 msgstr "需要有管理員權限。錯誤: %d"
 
