@@ -147,7 +147,10 @@ namespace WinCompose
             };
             var p = Process.Start(pi);
             p.WaitForExit();
-            return p.ExitCode == 0 ? p.StandardOutput.ReadToEnd() : null;
+            var exit_code = p.ExitCode;
+            var stdout = p.StandardOutput.ReadToEnd();
+            Logger.Warn($"Process “{pi.FileName} {args}” exited with code {exit_code} and returned {stdout.Length} bytes");
+            return exit_code == 0 ? stdout : null;
         }
 
         private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();

@@ -41,7 +41,7 @@ namespace WinCompose
             }
 
             Logging.Init();
-            Logger.Info($"WinCompose {Settings.Version} started");
+            Logger.Info($"WinCompose {Settings.Version} started, arguments: “{string.Join(" ", args)}”");
 
             // Do this early because of the AutoLaunch setting
             Settings.LoadConfig();
@@ -90,6 +90,7 @@ namespace WinCompose
                 Settings.SaveConfig();
                 Metadata.SaveDB();
                 Updater.Fini();
+                Logger.Info("Program shut down");
             }
         }
 
