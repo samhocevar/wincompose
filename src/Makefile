@@ -25,6 +25,7 @@ TXT = $(SRCDIR)/rules/DefaultUserSequences.txt \
 EXE = $(BINDIR)/wincompose.exe
 DLL = $(BINDIR)/language.dll \
       $(BINDIR)/Emoji.Wpf.dll \
+      $(BINDIR)/NLog.dll \
       $(BINDIR)/Typography.OpenFont.dll \
       $(BINDIR)/Typography.GlyphLayout.dll \
       $(BINDIR)/Hardcodet.NotifyIcon.Wpf.dll

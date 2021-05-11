@@ -57,6 +57,7 @@ Source: "{#BINDIR}\{#EXE}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\NLog.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\Typography.OpenFont.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\Typography.GlyphLayout.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
