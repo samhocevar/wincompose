@@ -4,6 +4,8 @@ set -e
 
 STEPS=5
 
+INSTALLER=installer/installer.iss
+
 #
 # Rebuild po/wincompose.pot from our master translation file Text.resx
 # then update all .po files
@@ -51,7 +53,7 @@ for FILE in language/i18n/Text.resx language/unicode/Category.resx; do
   | sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g' \
   >> ${DEST}
 done
-for FILE in installer.pas; do
+for FILE in installer/installer.pas; do
     awk < ${FILE} '
     /_\(/ { ok=1; value=""; line=NR; }
           { if(ok) { split($0, a, "'"'"'"); value=value a[2]; } }
@@ -181,19 +183,19 @@ for x in language/unicode/*.*.resx language/i18n/*.*.resx; do
     if ! grep -q '"'$(echo $x | cut -f2- -d/ | tr / .)'"' language/language.csproj; then
         echo "WARNING: $x not found in language.csproj"
     fi
-    if ! grep -q '^Source: "bin.*[\\]'$reslang'[\\][*][.]dll";' installer.iss; then
-        echo "WARNING: $reslang DLL not found in installer.iss"
+    if ! grep -q '^Source: "{#BINDIR}[\\]'$reslang'[\\][*][.]dll";' ${INSTALLER}; then
+        echo "WARNING: $reslang DLL not found in ${INSTALLER}"
     fi
-    if grep -q '^; Name: "'$reslang'";' installer.iss; then
-        echo "WARNING: $reslang is commented out in installer.iss"
+    if grep -q '^; Name: "'$reslang'";' ${INSTALLER}; then
+        echo "WARNING: $reslang is commented out in ${INSTALLER}"
     fi
 done
 
 if [ -d "/c/Program Files (x86)/Inno Setup 6/Languages" ]; then
     for f in "/c/Program Files (x86)/Inno Setup 6/Languages/"*.isl*; do
         f="$(basename "$f")"
-        if ! grep -q "$f" installer.iss; then
-            echo "WARNING: $f exists in Inno Setup but is not mentioned in installer.iss"
+        if ! grep -q "$f" ${INSTALLER}; then
+            echo "WARNING: $f exists in Inno Setup but is not mentioned in ${INSTALLER}"
         fi
     done
 fi
@@ -201,8 +203,8 @@ fi
 for po in po/*.po; do
     l="$(sed -ne 's/Language-Team: *//p' $po | tr -d '"' | cut -f1 -d' ')"
     if [ -f "3rdparty/innosetup/Files/Languages/Unofficial/$l.isl" ]; then
-        if ! grep -q "$l[.]isl" installer.iss; then
-            echo "WARNING: $po exists and $l.isl exists in Unofficial Inno Setup but they are not mentioned in installer.iss"
+        if ! grep -q "$l[.]isl" ${INSTALLER}; then
+            echo "WARNING: $po exists and $l.isl exists in Unofficial Inno Setup but they are not mentioned in ${INSTALLER}"
         fi
     fi
 done
@@ -212,8 +214,8 @@ done
 #
 
 echo "[5/${STEPS}] Update contributor list…"
-printf '﻿' > res/.contributors.html
-cat >> res/.contributors.html << EOF
+printf '﻿' > wincompose/res/.contributors.html
+cat >> wincompose/res/.contributors.html << EOF
 <html>
 <body style="font-family: verdana, sans-serif; font-size: .7em;">
 <h3>Programming</h3>
@@ -241,8 +243,8 @@ git log --stat po/*.po | \
   | sed 's/\(.*Sam Hocevar.*\) (.*)/\1 (de, fr, es)/' \
   | LANG=C sort | uniq \
   | sed 's/</\&lt;/g' | sed 's/>/\&gt;/g' | sed 's,.*,<li>&</li>,' \
-  >> res/.contributors.html
-cat >> res/.contributors.html << EOF
+  >> wincompose/res/.contributors.html
+cat >> wincompose/res/.contributors.html << EOF
 </ul>
 <h3>Donations</h3>
 <ul>
@@ -272,5 +274,5 @@ cat >> res/.contributors.html << EOF
 </body>
 </html>
 EOF
-mv res/.contributors.html res/contributors.html
+mv wincompose/res/.contributors.html wincompose/res/contributors.html
 
