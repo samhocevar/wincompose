@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -39,7 +39,7 @@ namespace WinCompose
                 m_watcher.EnableRaisingEvents = true;
                 m_reload_timer = new Timer(o =>
                 {
-                    Log.Info($"File {filename} changed, reloading.");
+                    Logger.Info($"File {filename} changed, reloading.");
                     OnFileChanged?.Invoke();
                 });
             }
@@ -70,6 +70,8 @@ namespace WinCompose
 
         private FileSystemWatcher m_watcher;
         private Timer m_reload_timer;
+
+        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }
 

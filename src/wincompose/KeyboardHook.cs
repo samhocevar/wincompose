@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -74,8 +74,8 @@ static class KeyboardHook
                                    NativeMethods.LoadLibrary("user32.dll"), 0);
             if (m_hook == HOOK.INVALID)
             {
-                Log.Warn("Unable to install hook: {0}",
-                          new Win32Exception(Marshal.GetLastWin32Error()));
+                Logger.Warn(new Win32Exception(Marshal.GetLastWin32Error()),
+                            "Unable to install hook");
             }
         }
         else
@@ -91,8 +91,8 @@ static class KeyboardHook
 
             if (ret == 0)
             {
-                Log.Warn("Unable to uninstall hook: {0}",
-                         new Win32Exception(Marshal.GetLastWin32Error()));
+                Logger.Warn(new Win32Exception(Marshal.GetLastWin32Error()),
+                            "Unable to uninstall hook");
             }
         }
     }
@@ -136,9 +136,9 @@ static class KeyboardHook
             bool is_injected = (data.flags & LLKHF.INJECTED) != 0;
             bool accept = !is_injected || (Settings.AllowInjected.Value && m_recursive == 0);
 
-            Log.Debug("{0}{1}: OnKey(HC.{2}, WM.{3}, [vk:0x{4:X02} ({7}) sc:0x{5:X02} flags:{6}])",
-                      accept ? "" : "Ignored ", is_injected ? "Injected Event" : "Event",
-                      nCode, wParam, (int)data.vk, (int)data.sc, data.flags, new Key(data.vk));
+            Logger.Debug("{0}{1}: OnKey(HC.{2}, WM.{3}, [vk:0x{4:X02} ({7}) sc:0x{5:X02} flags:{6}])",
+                         accept ? "" : "Ignored ", is_injected ? "Injected Event" : "Event",
+                         nCode, wParam, (int)data.vk, (int)data.sc, data.flags, new Key(data.vk));
 
             if (accept)
             {
@@ -152,7 +152,7 @@ static class KeyboardHook
         }
         else
         {
-            Log.Debug("Ignored Event: OnKey({0}, {1})", nCode, wParam);
+            Logger.Debug("Ignored Event: OnKey({0}, {1})", nCode, wParam);
         }
 
         // Call next hook but guard against re-doing our own work in case we
@@ -163,6 +163,8 @@ static class KeyboardHook
 
         return ret;
     }
+
+    private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
 }
 
 }

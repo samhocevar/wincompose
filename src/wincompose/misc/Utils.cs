@@ -27,7 +27,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Warn($"Could not create {directory}: {ex}");
+                Logger.Warn(ex, $"Could not create directory {directory}");
                 return false;
             }
         }
@@ -64,6 +64,7 @@ namespace WinCompose
 
         private static string ExecutableDir
             => Path.GetDirectoryName(ExecutableName);
+
+        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }
-

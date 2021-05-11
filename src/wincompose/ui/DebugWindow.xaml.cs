@@ -27,13 +27,13 @@ namespace WinCompose
             ShowInTaskbar = false;
             InitializeComponent();
 
-            DataContext = Log.Entries;
-            Log.Entries.CollectionChanged += OnEntriesChanged;
+            DataContext = Logging.Entries;
+            Logging.Entries.CollectionChanged += OnEntriesChanged;
         }
 
         ~DebugWindow()
         {
-            Log.Entries.CollectionChanged -= OnEntriesChanged;
+            Logging.Entries.CollectionChanged -= OnEntriesChanged;
         }
 
         ScrollViewer m_scrollviewer;

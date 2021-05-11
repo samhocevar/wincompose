@@ -231,13 +231,13 @@ static class Composer
              && m_magic_sequence[m_magic_pos].Value == is_keydown)
         {
             ++m_magic_pos;
-            Log.Debug($"Magic key {m_magic_pos}/{m_magic_sequence.Count}");
+            Logger.Debug($"Magic key {m_magic_pos}/{m_magic_sequence.Count}");
 
             if (CurrentState == State.Idle && m_magic_pos == m_magic_sequence.Count)
             {
                 CurrentState = State.Sequence;
                 CurrentComposeKey = new Key(VK.NONE);
-                Log.Debug($"Magic sequence entered (state: {m_state})");
+                Logger.Debug($"Magic sequence entered (state: {m_state})");
                 m_magic_pos = 0;
                 goto exit_forward_key;
             }
@@ -257,7 +257,7 @@ static class Composer
             m_compose_key_is_altgr = false;
             m_compose_counter = 0;
 
-            Log.Debug("KeyCombination ended (state: {0})", m_state);
+            Logger.Debug("KeyCombination ended (state: {0})", m_state);
 
             // If relevant, send an additional KeyUp for the opposite
             // key; experience indicates that it helps unstick some
@@ -290,8 +290,8 @@ static class Composer
                                      KeyboardLayout.HasAltGr;
             ++m_compose_counter;
 
-            Log.Debug("Now composing (state: {0}) (altgr: {1})",
-                      m_state, m_compose_key_is_altgr);
+            Logger.Debug("Now composing (state: {0}) (altgr: {1})",
+                         m_state, m_compose_key_is_altgr);
 
             // Lauch the sequence reset expiration timer
             if (Settings.ResetTimeout.Value > 0)
@@ -317,7 +317,7 @@ static class Composer
         {
             // FIXME: if a sequence was in progress, maybe print it!
             ResetSequence();
-            Log.Debug("No longer composing (state: {0})", m_state);
+            Logger.Debug("No longer composing (state: {0})", m_state);
             return true;
         }
 
@@ -415,7 +415,7 @@ static class Composer
                     SendKeyDown(CurrentComposeKey.VirtualKey);
                 }
                 CurrentState = State.KeyCombination;
-                Log.Debug("KeyCombination started (state: {0})", m_state);
+                Logger.Debug("KeyCombination started (state: {0})", m_state);
                 goto exit_forward_key;
             }
         }
@@ -442,7 +442,7 @@ static class Composer
         // is a key we should add to the current sequence.
         if (add_to_sequence)
         {
-            Log.Debug("Adding to sequence: “{0}”", key.FriendlyName);
+            Logger.Debug("Adding to sequence: “{0}”", key.FriendlyName);
             return AddToSequence(key);
         }
 
@@ -450,8 +450,8 @@ exit_discard_key:
         return true;
 
 exit_forward_key:
-        Log.Debug("Forwarding {0} “{1}” to system (state: {2})",
-                  is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
+        Logger.Debug("Forwarding {0} “{1}” to system (state: {2})",
+                     is_keydown ? "⭝" : "⭜", key.FriendlyName, m_state);
         return false;
     }
 
@@ -483,7 +483,7 @@ exit_forward_key:
                 string tosend = Settings.GetSequenceResult(m_sequence,
                                                            ignore_case);
                 SendString(tosend);
-                Log.Debug("Valid sequence! Sent “{0}”", tosend);
+                Logger.Debug("Valid sequence! Sent “{0}”", tosend);
                 Stats.AddSequence(m_sequence);
                 ResetSequence();
                 return true;
@@ -503,7 +503,7 @@ exit_forward_key:
                 if (Settings.GetGenericSequenceResult(m_sequence, out var tosend))
                 {
                     SendString(tosend);
-                    Log.Debug("Valid generic sequence! Sent “{0}”", tosend);
+                    Logger.Debug("Valid generic sequence! Sent “{0}”", tosend);
                     Stats.AddSequence(m_sequence);
                     ResetSequence();
                     return true;
@@ -523,7 +523,7 @@ exit_forward_key:
                     string tosend = Settings.GetSequenceResult(other_sequence,
                                                                ignore_case);
                     SendString(tosend);
-                    Log.Debug("Found swapped sequence! Sent “{0}”", tosend);
+                    Logger.Debug("Found swapped sequence! Sent “{0}”", tosend);
                     Stats.AddSequence(other_sequence);
                     ResetSequence();
                     return true;
@@ -663,7 +663,7 @@ exit_forward_key:
         if (!Settings.DiscardOnInvalid.Value && !string.IsNullOrEmpty(printable))
         {
             SendString(printable);
-            Log.Debug("Invalid sequence! Sent “{0}”", printable);
+            Logger.Debug($"Invalid sequence! Sent “{printable}”");
         }
 
         // Emit a beep unless all keys in the sequence were the Compose key.
@@ -781,6 +781,8 @@ exit_forward_key:
         new KeyValuePair<VK, bool>(VK.LCONTROL, false),
         new KeyValuePair<VK, bool>(VK.LMENU, false),
     };
+
+    private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
 }
 
 }

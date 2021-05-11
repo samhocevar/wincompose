@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -33,11 +33,16 @@ namespace WinCompose
         }
 
         private static void OnFatalError(Exception ex)
-            => System.Windows.MessageBox.Show(ex.ToString(), "Fatal Error");
+        {
+            Logger.Fatal(ex, "Fatal Error");
+            System.Windows.MessageBox.Show(ex.ToString(), "Fatal Error");
+        }
 
         private void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
             => OnFatalError(e.Exception);
 
         public static RemoteControl RemoteControl => (Current as Application).RC;
+
+        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }

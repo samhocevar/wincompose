@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2018 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -34,7 +34,7 @@ public class LogList : ObservableCollection<LogEntry>
 {
     // Override the CollectionChanged event so that we can track listeners and call
     // their delegates in the correct thread.
-    // FIXME: would a Log.MessageReceived event be more elegant?
+    // FIXME: would a Logging.MessageReceived event be more elegant?
     public override event NotifyCollectionChangedEventHandler CollectionChanged
     {
         add
@@ -56,7 +56,7 @@ public class LogList : ObservableCollection<LogEntry>
     public int ListenerCount { get; set; }
 }
 
-public static class Log
+public static class Logging
 {
     public static void Init()
     {
@@ -87,47 +87,32 @@ public static class Log
         config.AddTarget(file_target);
         config.AddRule(LogLevel.Info, LogLevel.Fatal, file_target);
 
+        var gui_target = new MethodCallTarget("MyTarget", Debug);
+        config.AddTarget(gui_target);
+        config.AddRule(LogLevel.Debug, LogLevel.Fatal, gui_target);
+
         LogManager.Configuration = config;
     }
 
-    private static ILogger Logger = LogManager.GetCurrentClassLogger();
+    public static LogList Entries { get; } = new LogList();
 
-    private static LogList m_entries = new LogList();
-    public static LogList Entries => m_entries;
-
-    public static void Info(string msg) => Info("{0}", msg);
-
-    public static void Info(string format, params object[] args) => Logger.Info(format, args);
-
-    public static void Warn(string msg) => Warn("{0}", msg);
-
-    public static void Warn(string format, params object[] args) => Logger.Warn(format, args);
-
-    public static void Debug(string msg) => Debug("{0}", msg);
-
-    public static void Debug(string format, params object[] args)
+    public static void Debug(LogEventInfo lei, params object[] args)
     {
-        Logger.Debug(format, args);
-
         // We don’t do anything unless we have listeners
-        if (m_entries.ListenerCount > 0)
+        if (Entries.ListenerCount > 0)
         {
-            DateTime date = DateTime.Now;
-            var msg = string.Format(format, args);
             ThreadPool.QueueUserWorkItem(x =>
-            {
-                m_entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, date, msg);
-            });
+                Entries.PreferredDispatcher.Invoke(DispatcherPriority.Background, DebugSTA, lei));
         }
     }
 
-    private delegate void DebugDelegate(DateTime date, string msg);
-    private static DebugDelegate DebugSTA = (date, msg) =>
+    private delegate void DebugDelegate(LogEventInfo lei);
+    private static DebugDelegate DebugSTA = (lei) =>
     {
-        var entry = new LogEntry() { DateTime = date, Message = msg };
-        while (m_entries.Count > 1024)
-            m_entries.RemoveAt(0);
-        m_entries.Add(entry);
+        var entry = new LogEntry() { DateTime = lei.TimeStamp, Message = lei.FormattedMessage };
+        while (Entries.Count > 1024)
+            Entries.RemoveAt(0);
+        Entries.Add(entry);
     };
 }
 

@@ -48,7 +48,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Warn($"Could not create scheduled task: {ex}");
+                Logger.Warn(ex, "Could not create scheduled task");
             }
         }
 
@@ -149,5 +149,7 @@ namespace WinCompose
             p.WaitForExit();
             return p.ExitCode == 0 ? p.StandardOutput.ReadToEnd() : null;
         }
+
+        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }

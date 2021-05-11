@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //              2014—2015 Benjamin Litzelmann
 //
 //  This program is free software. It comes without any warranty, to
@@ -178,7 +178,7 @@ namespace WinCompose
 
         public static void LoadConfig()
         {
-            Log.Info($"Reloading configuration file {m_ini_file.FullPath}");
+            Logger.Info($"Reloading configuration file {m_ini_file.FullPath}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {
@@ -233,7 +233,7 @@ namespace WinCompose
 
         public static void SaveConfig()
         {
-            Log.Info($"Saving configuration file {m_ini_file.FullPath}");
+            Logger.Info($"Saving configuration file {m_ini_file.FullPath}");
 
             foreach (var v in typeof(Settings).GetProperties())
             {
@@ -422,6 +422,8 @@ namespace WinCompose
 
             return ret;
         }
+
+        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }
 

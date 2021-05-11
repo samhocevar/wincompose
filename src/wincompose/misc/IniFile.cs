@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2020 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -29,7 +29,7 @@ namespace WinCompose
             {
                 if (!m_mutex.WaitOne(2000))
                 {
-                    Log.Warn($"Failed to acquire settings lock");
+                    Logger.Warn("Failed to acquire settings lock");
                     return;
                 }
             }
@@ -71,7 +71,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Warn($"Failed to load settings: {ex}");
+                Logger.Warn(ex, "Failed to load settings");
             }
             finally
             {
@@ -90,7 +90,7 @@ namespace WinCompose
             {
                 if (!m_mutex.WaitOne(2000))
                 {
-                    Log.Warn($"Failed to acquire settings lock");
+                    Logger.Warn("Failed to acquire settings lock");
                     return;
                 }
             }
@@ -101,7 +101,7 @@ namespace WinCompose
 
             try
             {
-                Log.Info($"Saving {section}.{key} = {value}");
+                Logger.Info($"Saving {section}.{key} = {value}");
                 NativeMethods.WritePrivateProfileString(section, key, value, FullPath);
                 // Ensure old keys are removed from the global section
                 if (section != "global")
@@ -109,7 +109,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Log.Warn($"Failed to save settings: {ex}");
+                Logger.Warn(ex, "Failed to save settings");
             }
             finally
             {
@@ -121,6 +121,8 @@ namespace WinCompose
 
         private static readonly Mutex m_mutex = new Mutex(false,
                           "wincompose-{1342C5FF-9483-45F3-BE0C-1C8D63CEA81C}");
+
+        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }
 

@@ -40,8 +40,8 @@ namespace WinCompose
                 }
             }
 
-            Log.Init();
-            Log.Info($"WinCompose {Settings.Version} started");
+            Logging.Init();
+            Logger.Info($"WinCompose {Settings.Version} started");
 
             // Do this early because of the AutoLaunch setting
             Settings.LoadConfig();
@@ -92,6 +92,8 @@ namespace WinCompose
                 Updater.Fini();
             }
         }
+
+        private static ILogger Logger = LogManager.GetCurrentClassLogger();
     }
 }
 

@@ -1,7 +1,7 @@
 ﻿//
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2019 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -84,8 +84,8 @@ public static class KeyboardLayout
             {
                 if (no_altgr[i - 0x200] != "" && str != "" && no_altgr[i - 0x200] != str)
                 {
-                    Log.Info("VK {0} is “{1}” but “{2}” with AltGr",
-                             vk.ToString(), no_altgr[i - 0x200], str);
+                    Logger.Info("VK {0} is “{1}” but “{2}” with AltGr",
+                                vk.ToString(), no_altgr[i - 0x200], str);
                     m_possible_altgr_keys[no_altgr[i - 0x200]] = str;
                 }
             }
@@ -98,8 +98,7 @@ public static class KeyboardLayout
             // that it was a dead key. Good!
             if (has_dead)
             {
-                Log.Info("VK {0} is dead key “{1}”",
-                         vk.ToString(), str_if_dead);
+                Logger.Info($"VK {vk} is dead key “{str_if_dead}”");
                 m_possible_dead_keys[str_if_dead] = i;
             }
         }
@@ -152,8 +151,8 @@ public static class KeyboardLayout
         {
             m_transformed_hkl = m_current_layout = active_layout;
 
-            Log.Info("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                     tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
+            Logger.Info("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+                        tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
             if (active_layout != (IntPtr)0)
                 NativeMethods.ActivateKeyboardLayout(active_layout, 0);
@@ -161,8 +160,8 @@ public static class KeyboardLayout
             tid = NativeMethods.GetCurrentThreadId();
             active_layout = NativeMethods.GetKeyboardLayout(tid);
 
-            Log.Info("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                     tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
+            Logger.Info("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+                        tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
             // We need to rebuild the list of dead keys
             AnalyzeLayout();
@@ -241,7 +240,7 @@ public static class KeyboardLayout
             if (NativeMethods.GetWindowText(Hwnd, buf, len) > 0)
                 wname = buf.ToString();
 
-            Log.Info($"Window {Hwnd} (class: {wclass}) (name: {wname}) got focus");
+            Logger.Info($"Window {Hwnd} (class: {wclass}) (name: {wname}) got focus");
 
             IsGtk = m_match_gtk.Match(wclass).Success;
             IsOffice = m_match_office.Match(wclass).Success;
@@ -304,6 +303,8 @@ public static class KeyboardLayout
     /// Alternate layout to use with ToUnicodeEx
     /// </summary>
     private static IntPtr m_transformed_hkl;
+
+    private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
 }
 
 }

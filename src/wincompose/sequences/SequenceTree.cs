@@ -12,9 +12,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace WinCompose
@@ -31,23 +29,26 @@ public class SequenceTree : SequenceNode
         {
             using (StreamReader s = new StreamReader(path))
             {
-                Log.Info("Loaded rule file {0}", path);
+                Logger.Info($"Loaded rule file {path}");
                 m_loaded_files.Add(path);
                 LoadStream(s);
             }
         }
         catch (FileNotFoundException)
         {
-            Log.Warn("Rule file {0} not found", path);
+            Logger.Info($"Rule file {path} not found");
         }
-        catch (Exception) { }
+        catch (Exception ex)
+        {
+            Logger.Warn(ex, $"Cannot load rule file {path}");
+        }
     }
 
     public void LoadResource(string resource)
     {
         using (var sr = new GZipResourceStream(resource))
         {
-            Log.Info("Loaded rule resource {0}", resource);
+            Logger.Info($"Loaded rule resource {resource}");
             LoadStream(sr);
         }
     }
@@ -120,7 +121,7 @@ public class SequenceTree : SequenceNode
             if (k == null)
             {
                 if (m_invalid_keys.Add(keysyms[i]))
-                    Log.Warn($"Unknown key name <{keysyms[i]}>, ignoring sequence");
+                    Logger.Warn($"Unknown key name <{keysyms[i]}>, ignoring sequence");
                 return; // Unknown key name! Better bail out
             }
 
@@ -163,7 +164,7 @@ public class SequenceTree : SequenceNode
             var result_key = Key.FromKeySymOrChar(result);
             if (result_key == null)
             {
-                Log.Warn($"Unknown key name {result}, ignoring sequence");
+                Logger.Warn($"Unknown key name {result}, ignoring sequence");
                 return;
             }
             result = result_key.PrintableResult;
@@ -201,6 +202,8 @@ public class SequenceTree : SequenceNode
 
     private IList<string> m_loaded_files = new List<string>();
     private HashSet<string> m_invalid_keys = new HashSet<string>();
+
+    private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
 }
 
 /// <summary>
@@ -226,7 +229,7 @@ public class SequenceNode
         {
             // If this is a conflict, warn about it
             if (m_results.Count > 0 && m_results[0].Result != item.Result)
-                Log.Warn($"Conflicting sequence for {item.Sequence.FriendlyName}: had {m_results[0].Result}, got {item.Result}");
+                Logger.Warn($"Conflicting sequence for {item.Sequence.FriendlyName}: had {m_results[0].Result}, got {item.Result}");
 
             // Insert sequence at index 0 to give precedence to user sequences
             m_results.Insert(0, item);
@@ -361,6 +364,8 @@ public class SequenceNode
         = new Dictionary<Key, SequenceNode>();
     private IList<SequenceDescription> m_results
         = new List<SequenceDescription>();
+
+    private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
 };
 
 }

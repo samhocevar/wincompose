@@ -1,7 +1,7 @@
 //
 //  WinCompose — a compose key for Windows — http://wincompose.info/
 //
-//  Copyright © 2013—2016 Sam Hocevar <sam@hocevar.net>
+//  Copyright © 2013—2021 Sam Hocevar <sam@hocevar.net>
 //
 //  This program is free software. It comes without any warranty, to
 //  the extent permitted by applicable law. You can redistribute it
@@ -75,7 +75,7 @@ namespace WinCompose
                 {
                     if (Regex.Match(path, pattern, RegexOptions.IgnoreCase).Success)
                     {
-                        Log.Info("Enforcing notification area visibility for {0}", path);
+                        Logger.Info($"Enforcing notification area visibility for {path}");
                         data[offset + MAGIC_OFFSET] = 2;
                         key.SetValue(key_name, data);
                         must_restart_explorer = true;
@@ -102,6 +102,8 @@ namespace WinCompose
                     Process.Start("explorer.exe");
             }
         }
+
+        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }
 
