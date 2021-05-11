@@ -22,7 +22,7 @@ namespace WinCompose
     internal static class SchTasks
     {
         public static bool HasTask(string task_name)
-            => !string.IsNullOrEmpty(RunSchTasks("/query /tn {task_name} /xml"));
+            => !string.IsNullOrEmpty(RunSchTasks($"/query /tn {task_name} /xml"));
 
         public static void InstallTask(string task_name)
         {
