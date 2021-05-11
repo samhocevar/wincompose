@@ -43,7 +43,7 @@ namespace WinCompose
                 const int len = 255;
                 var must_migrate = false;
                 var tmp = new StringBuilder(len);
-                var result = NativeMethods.GetPrivateProfileString(section, key, "",
+                var result = NativeMethods.GetPrivateProfileString(section, key, entry.ToString(),
                                                                    tmp, len, FullPath);
                 if (result == 0)
                 {
@@ -51,7 +51,7 @@ namespace WinCompose
                     // to the "composing" or "tweaks" section.
                     if (section != "global")
                     {
-                        result = NativeMethods.GetPrivateProfileString("global", key, "",
+                        result = NativeMethods.GetPrivateProfileString("global", key, entry.ToString(),
                                                                        tmp, len, FullPath);
                         if (result == 0)
                             return;
@@ -59,6 +59,7 @@ namespace WinCompose
                     }
                 }
 
+                // This may throw, but will be caught gracefully
                 entry.LoadString(tmp.ToString());
 
                 if (must_migrate)
@@ -71,7 +72,7 @@ namespace WinCompose
             }
             catch (Exception ex)
             {
-                Logger.Warn(ex, "Failed to load settings");
+                Logger.Warn(ex, $"Failed to load settings entry {section}.{key}");
             }
             finally
             {

@@ -83,20 +83,11 @@ namespace WinCompose
         /// <inheritdoc/>
         public override void LoadString(string str)
         {
-            try
-            {
-                var cv = TypeDescriptor.GetConverter(typeof(T));
-                // Fall back to the Convert class if there is no converter.
-                m_value = cv.CanConvertFrom(typeof(string))
-                        ? (T)cv.ConvertFrom(str)
-                        : (T)Convert.ChangeType(str, typeof(T));
-            }
-            catch (Exception ex)
-            {
-                Logger.Warn(ex, $"Could not load settings entry {str}");
-            }
+            var cv = TypeDescriptor.GetConverter(typeof(T));
+            // Fall back to the Convert class if there is no converter.
+            m_value = cv.CanConvertFrom(typeof(string))
+                    ? (T)cv.ConvertFrom(str)
+                    : (T)Convert.ChangeType(str, typeof(T));
         }
-
-        private static NLog.ILogger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }
