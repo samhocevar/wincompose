@@ -43,6 +43,17 @@ namespace WinCompose
             }
         }
 
+        public static string LocalAppDataDir
+        {
+            get
+            {
+                var localappdata = Environment.SpecialFolder.LocalApplicationData;
+                var localappdatadir = Path.Combine(Environment.GetFolderPath(localappdata),
+                                                   "WinCompose");
+                return IsInstalled ? localappdatadir : ExecutableDir;
+            }
+        }
+
         public static string DataDir
             => Path.Combine(ExecutableDir, IsInstalled ? "res" :
                                            IsDebugging ? "../../rules" : "rules");

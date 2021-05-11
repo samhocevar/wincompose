@@ -77,7 +77,7 @@ public static class Logging
         var file_target = new FileTarget("File")
         {
             Layout = log_fmt,
-            FileName = Path.Combine(Utils.AppDataDir, "wincompose.log"),
+            FileName = Path.Combine(Utils.LocalAppDataDir, "wincompose.log"),
             ConcurrentWrites = true,
             ArchiveEvery = FileArchivePeriod.Day,
             EnableArchiveFileCompression = true,
