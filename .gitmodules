@@ -34,7 +34,7 @@
 
 [submodule "src/3rdparty/inserticons"]
 	path = src/3rdparty/inserticons
-	url = ../../einaregilsson/InsertIcons
+	url = ../../samhocevar-forks/inserticons.git
 
 [submodule "src/3rdparty/innosetup"]
 	path = src/3rdparty/innosetup

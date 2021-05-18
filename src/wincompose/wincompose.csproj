@@ -124,7 +124,8 @@
     <PackageReference Include="NLog" Version="4.7.9" />
   </ItemGroup>
 
-  <Target Name="AfterBuild">
-    <Exec Command="..\3rdparty\inserticons\bin\Release\InsertIcons.exe $(OutputPath)\$(TargetName).exe &quot;res\icon_normal.ico;res\icon_sequences.ico;res\icon_settings.ico&quot;" />
+  <Target Name="InsertIcons" AfterTargets="AfterBuild">
+    <!-- Icons are loaded alphabetically: icon_normal.ico icon_sequences.ico icon_settings.ico -->
+    <Exec Command="..\3rdparty\inserticons\bin\$(Configuration)\InsertIcons.exe $(OutputPath)$(TargetName).exe res" />
   </Target>
 </Project>
