@@ -240,7 +240,8 @@ public static class KeyboardLayout
             if (NativeMethods.GetWindowText(Hwnd, buf, len) > 0)
                 wname = buf.ToString();
 
-            Logger.Info($"Window {Hwnd} (class: {wclass}) (name: {wname}) got focus");
+            Logger.Info($"Window {Hwnd} got focus");
+            Logger.Debug($"Window class: {wclass} name: {wname}");
 
             IsGtk = m_match_gtk.Match(wclass).Success;
             IsOffice = m_match_office.Match(wclass).Success;
