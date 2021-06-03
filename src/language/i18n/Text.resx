@@ -613,4 +613,12 @@
     <value>Accessibility</value>
     <comment></comment>
   </data>
+  <data name="MustHoldCapsLock" xml:space="preserve">
+    <value>Caps Lock is only active while being held down</value>
+    <comment></comment>
+  </data>
+  <data name="MustHoldCapsLockToolTip" xml:space="preserve">
+    <value>Releasing the Caps Lock key will immediately disable it, instead of the more standard behaviour of having to press it a second time.</value>
+    <comment></comment>
+  </data>
 </root>

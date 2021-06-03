@@ -105,6 +105,8 @@ namespace WinCompose
         public static SettingsEntry<bool> EmulateCapsLock { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("tweaks", "shift_disables_capslock")]
         public static SettingsEntry<bool> ShiftDisablesCapsLock { get; } = new SettingsEntry<bool>(false);
+        [EntryLocation("tweaks", "must_hold_capslock")]
+        public static SettingsEntry<bool> MustHoldCapsLock { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("tweaks", "capslock_capitalizes")]
         public static SettingsEntry<bool> CapsLockCapitalizes { get; } = new SettingsEntry<bool>(false);
         [EntryLocation("tweaks", "allow_injected")]

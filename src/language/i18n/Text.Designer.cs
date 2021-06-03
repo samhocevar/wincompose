@@ -835,6 +835,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Caps Lock is only active while being held down.
+        /// </summary>
+        public static string MustHoldCapsLock {
+            get {
+                return ResourceManager.GetString("MustHoldCapsLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Releasing the Caps Lock key will immediately disable it, instead of the more standard behaviour of having to press it a second time..
+        /// </summary>
+        public static string MustHoldCapsLockToolTip {
+            get {
+                return ResourceManager.GetString("MustHoldCapsLockToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WinCompose needs to be restarted for some changes to take effect..
         /// </summary>
         public static string NeedRestart {

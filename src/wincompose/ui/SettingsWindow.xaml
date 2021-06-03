@@ -339,6 +339,12 @@
                         </CheckBox>
 
                         <CheckBox Margin="8,4" VerticalAlignment="Center"
+                                IsChecked="{Binding Value, Source={x:Static wc:Settings.MustHoldCapsLock}}"
+                                ToolTipService.ToolTip="{x:Static i18n:Text.MustHoldCapsLockToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.MustHoldCapsLock}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
+                        <CheckBox Margin="8,4" VerticalAlignment="Center"
                                 IsChecked="{Binding Value, Source={x:Static wc:Settings.ShiftDisablesCapsLock}}"
                                 ToolTipService.ToolTip="{x:Static i18n:Text.ShiftDisablesCapsLockToolTip}">
                             <TextBlock Text="{x:Static i18n:Text.ShiftDisablesCapsLock}" TextWrapping="Wrap"/>

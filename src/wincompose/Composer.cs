@@ -337,6 +337,15 @@ static class Composer
             }
         }
 
+        // Feature: capslock is only active while being held
+        if (key.VirtualKey == VK.CAPITAL && is_keyup && Settings.MustHoldCapsLock.Value
+             && NativeMethods.GetKeyState(VK.CAPITAL) != 0)
+        {
+            SendKeyUp(VK.CAPITAL);
+            SendKeyDown(VK.CAPITAL);
+            goto exit_forward_key;
+        }
+
         // If we are not currently composing a sequence, do nothing unless
         // one of our hacks forces us to send the key as a string (for
         // instance the Caps Lock capitalisation feature).
