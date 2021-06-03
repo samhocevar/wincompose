@@ -311,9 +311,8 @@ static class Composer
             return true;
         }
 
-        // Escape and backspace cancel the current sequence
-        if (is_keydown && CurrentState == State.Sequence
-             && (key.VirtualKey == VK.ESCAPE || key.VirtualKey == VK.BACK))
+        // Escape cancels the current sequence
+        if (is_keydown && CurrentState == State.Sequence && key.VirtualKey == VK.ESCAPE)
         {
             // FIXME: if a sequence was in progress, maybe print it!
             ResetSequence();
