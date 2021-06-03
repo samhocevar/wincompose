@@ -925,6 +925,24 @@ namespace WinCompose.i18n {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Run with elevated privileges (recommended).
+        /// </summary>
+        public static string RunElevated {
+            get {
+                return ResourceManager.GetString("RunElevated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Composition will not work in some applications if WinCompose does not run with elevated privileges. This options reduces the chances that this will happen..
+        /// </summary>
+        public static string RunElevatedToolTip {
+            get {
+                return ResourceManager.GetString("RunElevatedToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search Filter:.
         /// </summary>
         public static string Search {

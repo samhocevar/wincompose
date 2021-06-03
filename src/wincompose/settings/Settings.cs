@@ -69,6 +69,8 @@ namespace WinCompose
         public static SettingsEntry<string> Language { get; } = new SettingsEntry<string>("");
         [EntryLocation("global", "autolaunch")]
         public static SettingsEntry<bool> AutoLaunch { get; } = new SettingsEntry<bool>(true);
+        [EntryLocation("global", "run_elevated")]
+        public static SettingsEntry<bool> RunElevated { get; } = new SettingsEntry<bool>(true);
         [EntryLocation("global", "check_updates")]
         public static SettingsEntry<bool> CheckUpdates { get; } = new SettingsEntry<bool>(true);
 

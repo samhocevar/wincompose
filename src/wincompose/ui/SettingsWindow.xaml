@@ -116,6 +116,13 @@
                             <TextBlock Text="{x:Static i18n:Text.AutoLaunch}" TextWrapping="Wrap"/>
                         </CheckBox>
 
+                        <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Margin="8,4" VerticalAlignment="Center"
+                                  IsChecked="{Binding Value, Source={x:Static wc:Settings.RunElevated}}"
+                                  ToolTipService.ToolTip="{x:Static i18n:Text.RunElevatedToolTip}">
+                            <TextBlock Text="{x:Static i18n:Text.RunElevated}" TextWrapping="Wrap"/>
+                        </CheckBox>
+
                         <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                                   Margin="8,4" VerticalAlignment="Center"
                                   IsChecked="{Binding Value, Source={x:Static wc:Settings.CheckUpdates}}"

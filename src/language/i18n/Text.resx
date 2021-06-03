@@ -621,4 +621,12 @@
     <value>Releasing the Caps Lock key will immediately disable it, instead of the more standard behaviour of having to press it a second time.</value>
     <comment></comment>
   </data>
+  <data name="RunElevated" xml:space="preserve">
+    <value>Run with elevated privileges (recommended)</value>
+    <comment></comment>
+  </data>
+  <data name="RunElevatedToolTip" xml:space="preserve">
+    <value>Composition will not work in some applications if WinCompose does not run with elevated privileges. This options reduces the chances that this will happen.</value>
+    <comment></comment>
+  </data>
 </root>

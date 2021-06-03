@@ -49,11 +49,15 @@ namespace WinCompose
             bool from_task = args.Contains("-fromtask");
             bool from_startup = args.Contains("-fromstartup");
 
-            // If run from the task scheduler or from startup but autolaunch is
+            // If run from Task Scheduler or from startup but autolaunch is
             // disabled, exit early.
             if ((from_task || from_startup) && !Settings.AutoLaunch.Value)
                 return;
 
+            // If run from Task Scheduler but we do not want to run elevated,
+            // exit early.
+            if (from_task && !Settings.RunElevated.Value)
+                return;
 
             // If run from Task Scheduler, we need to detach otherwise the
             // system may kill us after some time.
@@ -63,11 +67,14 @@ namespace WinCompose
                 return;
             }
 
-            // If run from the start menu but there is a task scheduler entry,
-            // give it priority.
-            if (from_startup && SchTasks.HasTask("WinCompose"))
+            // If run from the start menu but we want to run elevated and there
+            // is a task scheduler entry, give it priority.
+            if (from_startup && Settings.RunElevated.Value && SchTasks.HasTask("WinCompose"))
                 return;
 
+            // Try to install the Task Scheduler entry. The best time for this is
+            // just after installation, when the installer launches us with elevated
+            // privileges.
             SchTasks.InstallTask("WinCompose");
 
             Settings.LoadSequences();
