@@ -692,6 +692,27 @@ msgstr ""
 msgid "Accessibility"
 msgstr ""
 
+#: language/i18n/Text.resx:617 ID:MustHoldCapsLock
+msgid "Caps Lock is only active while being held down"
+msgstr ""
+
+#: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
+msgid ""
+"Releasing the Caps Lock key will immediately disable it, instead of the more "
+"standard behaviour of having to press it a second time."
+msgstr ""
+
+#: language/i18n/Text.resx:625 ID:RunElevated
+msgid "Run with elevated privileges (recommended)"
+msgstr ""
+
+#: language/i18n/Text.resx:629 ID:RunElevatedToolTip
+msgid ""
+"Composition will not work in some applications if WinCompose does not run "
+"with elevated privileges. This options reduces the chances that this will "
+"happen."
+msgstr ""
+
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
