@@ -56,7 +56,7 @@ namespace WinCompose
 
         public static string DataDir
             => Path.Combine(ExecutableDir, IsInstalled ? "res" :
-                                           IsDebugging ? "../../rules" : "rules");
+                                           IsDebugging ? "../../../rules" : "rules");
 
         public static string UserDir
             => Environment.ExpandEnvironmentVariables("%USERPROFILE%");
