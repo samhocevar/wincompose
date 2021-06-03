@@ -117,11 +117,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Emoji.Wpf" Version="0.3.0" />
-    <PackageReference Include="GitVersion.MsBuild" Version="5.6.9" PrivateAssets="all">
+    <PackageReference Include="Emoji.Wpf" Version="0.3.2" />
+    <PackageReference Include="GitVersion.MsBuild" Version="5.6.10" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="NLog" Version="4.7.9" />
+    <PackageReference Include="NLog" Version="4.7.10" />
   </ItemGroup>
 
   <Target Name="InsertIcons" AfterTargets="AfterBuild">
