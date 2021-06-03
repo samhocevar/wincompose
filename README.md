@@ -11,12 +11,12 @@ very intuitive key combinations. For instance, **ö** is obtained using
 
 WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 
-Download latest: [WinCompose 0.9.8](https://github.com/samhocevar/wincompose/releases/download/v0.9.8/WinCompose-Setup-0.9.8.exe) (May 11, 2021)
+Download latest: [WinCompose 0.9.9](https://github.com/samhocevar/wincompose/releases/download/v0.9.9/WinCompose-Setup-0.9.9.exe) (June 3, 2021)
 -----------------------------------
 
- * Installable version: [WinCompose 0.9.8 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.8/WinCompose-Setup-0.9.8.exe).
+ * Installable version: [WinCompose 0.9.9 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.9/WinCompose-Setup-0.9.9.exe).
 
- * Portable version: [WinCompose 0.9.8 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.8/WinCompose-NoInstall-0.9.8.zip).
+ * Portable version: [WinCompose 0.9.9 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.9/WinCompose-NoInstall-0.9.9.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
