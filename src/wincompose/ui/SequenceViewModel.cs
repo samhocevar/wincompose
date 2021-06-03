@@ -79,6 +79,8 @@ namespace WinCompose
                     continue;
                 if (compare_info.IndexOf(Description, token.Text, CompareOptions.IgnoreCase) != -1)
                     continue;
+                if (m_desc.Sequence.Contains(token.Key))
+                    continue;
                 if (m_desc.Sequence.Contains(new Key(token.Text)))
                     continue;
 

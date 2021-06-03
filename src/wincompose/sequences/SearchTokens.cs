@@ -26,6 +26,10 @@ namespace WinCompose
                 token = token.Trim(new[] { '"' });
             Text = token;
 
+            // Interpret token as key, if applicable
+            if (token.StartsWith("key:"))
+                Key = Key.FromString(token.Substring(4));
+
             // Interpret token as decimal number, if applicable
             if (int.TryParse(token, out var num))
                 Num = num;
@@ -41,6 +45,7 @@ namespace WinCompose
         public string Text { get; private set; }
         public int Num { get; private set; } = int.MinValue;
         public int HexNum { get; private set; } = int.MinValue;
+        public Key Key { get; private set; } = new Key(VK.NONE);
     }
 
     public class SearchQuery
@@ -59,6 +64,7 @@ namespace WinCompose
 
         private readonly IList<SearchToken> m_tokens = new List<SearchToken>();
 
+        // Split string along spaces except when inside ""
         private static readonly Regex m_split = new Regex(" *(([^ \"]|\"[^\"]*\"|\")+) *");
     }
 }
