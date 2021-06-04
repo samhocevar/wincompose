@@ -75,7 +75,8 @@ namespace WinCompose
             // Try to install the Task Scheduler entry. The best time for this is
             // just after installation, when the installer launches us with elevated
             // privileges.
-            SchTasks.InstallTask("WinCompose");
+            if (!from_task && Settings.AutoLaunch.Value)
+                SchTasks.InstallTask("WinCompose");
 
             Settings.LoadSequences();
             Metadata.LoadDB();
