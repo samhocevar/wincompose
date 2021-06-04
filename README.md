@@ -11,12 +11,12 @@ very intuitive key combinations. For instance, **ö** is obtained using
 
 WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 
-Download latest: [WinCompose 0.9.9](https://github.com/samhocevar/wincompose/releases/download/v0.9.9/WinCompose-Setup-0.9.9.exe) (June 3, 2021)
+Download latest: [WinCompose 0.9.10](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-Setup-0.9.10.exe) (June 4, 2021)
 -----------------------------------
 
- * Installable version: [WinCompose 0.9.9 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.9/WinCompose-Setup-0.9.9.exe).
+ * Installable version: [WinCompose 0.9.10 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-Setup-0.9.10.exe).
 
- * Portable version: [WinCompose 0.9.9 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.9/WinCompose-NoInstall-0.9.9.zip).
+ * Portable version: [WinCompose 0.9.10 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
@@ -101,7 +101,7 @@ Portuguese, Brazilian Portuguese, Russian, Sardinian, Spanish, and Swedish. It i
 translated to Danish, Esperanto, Finnish, Hungarian, Indonesian, Irish, Romanian, Serbian, Slovak,
 and Slovenian. You can help us translate it to more languages using the Weblate project:
 
-<a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose-287x66-white.png" alt="Translation status" /></a>
+<a href="https://hosted.weblate.org/engage/wincompose/?utm_source=widget"><img src="https://hosted.weblate.org/widgets/wincompose/-/svg-badge.svg" alt="Translation status" /></a>
 
 Development
 -----------
