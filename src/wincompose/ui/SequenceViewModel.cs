@@ -11,6 +11,7 @@
 //  See http://www.wtfpl.net/ for more details.
 //
 
+using Stfu.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;

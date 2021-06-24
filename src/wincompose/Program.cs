@@ -12,6 +12,8 @@
 //
 
 using NLog;
+using Stfu;
+using Stfu.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -69,14 +71,17 @@ namespace WinCompose
 
             // If run from the start menu but we want to run elevated and there
             // is a task scheduler entry, give it priority.
-            if (from_startup && Settings.RunElevated.Value && SchTasks.HasTask("WinCompose"))
+            if (from_startup && Settings.RunElevated.Value && TaskScheduler.HasTask("WinCompose"))
                 return;
 
             // Try to install the Task Scheduler entry. The best time for this is
             // just after installation, when the installer launches us with elevated
             // privileges.
             if (!from_task && Settings.AutoLaunch.Value)
-                SchTasks.InstallTask("WinCompose");
+            {
+                var task_cmd = $"\"\"\"\"{Utils.ExecutableName}\"\"\" -fromtask\"";
+                TaskScheduler.InstallTask("WinCompose", task_cmd, elevated: true, author: "Sam Hocevar");
+            }
 
             Settings.LoadSequences();
             Metadata.LoadDB();

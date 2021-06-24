@@ -504,20 +504,4 @@ internal enum MSGFLT : uint
     REMOVE = 2,
 };
 
-// Enums from winnt.h
-internal enum SID_NAME_USE : int
-{
-    SidTypeUser = 1,
-    SidTypeGroup,
-    SidTypeDomain,
-    SidTypeAlias,
-    SidTypeWellKnownGroup,
-    SidTypeDeletedAccount,
-    SidTypeInvalid,
-    SidTypeUnknown,
-    SidTypeComputer,
-    SidTypeLabel,
-    SidTypeLogonSession,
-};
-
 }
