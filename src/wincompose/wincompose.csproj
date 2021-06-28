@@ -122,7 +122,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="NLog" Version="4.7.10" />
-    <PackageReference Include="Stfu" Version="0.1.1" />
+    <PackageReference Include="Stfu" Version="0.1.2" />
   </ItemGroup>
 
   <Target Name="InsertIcons" AfterTargets="AfterBuild">

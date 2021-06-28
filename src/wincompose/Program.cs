@@ -71,16 +71,23 @@ namespace WinCompose
 
             // If run from the start menu but we want to run elevated and there
             // is a task scheduler entry, give it priority.
-            if (from_startup && Settings.RunElevated.Value && TaskScheduler.HasTask("WinCompose"))
-                return;
+            if (from_startup && Settings.RunElevated.Value)
+            {
+                var ret = TaskScheduler.HasTask("WinCompose");
+                if (ret)
+                    return;
+                Logger.Warn($"Scheduled task not found: {ret.Message}");
+            }
 
             // Try to install the Task Scheduler entry. The best time for this is
             // just after installation, when the installer launches us with elevated
             // privileges.
             if (!from_task && Settings.AutoLaunch.Value)
             {
-                var task_cmd = $"\"\"\"\"{Utils.ExecutableName}\"\"\" -fromtask\"";
-                TaskScheduler.InstallTask("WinCompose", task_cmd, elevated: true, author: "Sam Hocevar");
+                var ret = TaskScheduler.InstallTask("WinCompose", $"\"{Utils.ExecutableName}\" -fromtask",
+                                                    elevated: true, author: "Sam Hocevar");
+                if (!ret)
+                    Logger.Warn($"Could not install scheduled task: {ret.Message}");
             }
 
             Settings.LoadSequences();
