@@ -84,8 +84,8 @@ public static class KeyboardLayout
             {
                 if (no_altgr[i - 0x200] != "" && str != "" && no_altgr[i - 0x200] != str)
                 {
-                    Logger.Info("VK {0} is “{1}” but “{2}” with AltGr",
-                                vk.ToString(), no_altgr[i - 0x200], str);
+                    Logger.Debug("VK {0} is “{1}” but “{2}” with AltGr",
+                                 vk.ToString(), no_altgr[i - 0x200], str);
                     m_possible_altgr_keys[no_altgr[i - 0x200]] = str;
                 }
             }
@@ -98,7 +98,7 @@ public static class KeyboardLayout
             // that it was a dead key. Good!
             if (has_dead)
             {
-                Logger.Info($"VK {vk} is dead key “{str_if_dead}”");
+                Logger.Debug($"VK {vk} is dead key “{str_if_dead}”");
                 m_possible_dead_keys[str_if_dead] = i;
             }
         }
@@ -151,8 +151,8 @@ public static class KeyboardLayout
         {
             m_transformed_hkl = m_current_layout = active_layout;
 
-            Logger.Info("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                        tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
+            Logger.Debug("Active window layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+                         tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
             if (active_layout != (IntPtr)0)
                 NativeMethods.ActivateKeyboardLayout(active_layout, 0);
@@ -160,8 +160,8 @@ public static class KeyboardLayout
             tid = NativeMethods.GetCurrentThreadId();
             active_layout = NativeMethods.GetKeyboardLayout(tid);
 
-            Logger.Info("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
-                        tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
+            Logger.Debug("WinCompose process layout tid:{0} handle:0x{1:X} lang:0x{2:X}",
+                         tid, (uint)active_layout >> 16, (uint)active_layout & 0xffff);
 
             // We need to rebuild the list of dead keys
             AnalyzeLayout();
@@ -240,7 +240,7 @@ public static class KeyboardLayout
             if (NativeMethods.GetWindowText(Hwnd, buf, len) > 0)
                 wname = buf.ToString();
 
-            Logger.Info($"Window {Hwnd} got focus");
+            Logger.Debug($"Window {Hwnd} got focus");
             Logger.Debug($"Window class: {wclass} name: {wname}");
 
             IsGtk = m_match_gtk.Match(wclass).Success;
