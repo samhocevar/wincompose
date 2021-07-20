@@ -25,10 +25,12 @@ TXT = $(SRCDIR)/rules/DefaultUserSequences.txt \
 EXE = $(BINDIR)/wincompose.exe
 DLL = $(BINDIR)/language.dll \
       $(BINDIR)/Emoji.Wpf.dll \
+      $(BINDIR)/Hardcodet.NotifyIcon.Wpf.dll \
       $(BINDIR)/NLog.dll \
+      $(BINDIR)/stfu.dll \
+      $(BINDIR)/System.ValueTuple.dll \
       $(BINDIR)/Typography.OpenFont.dll \
-      $(BINDIR)/Typography.GlyphLayout.dll \
-      $(BINDIR)/Hardcodet.NotifyIcon.Wpf.dll
+      $(BINDIR)/Typography.GlyphLayout.dll
 LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard language/i18n/*.*.resx language/unicode/*.*.resx)))))
 
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
