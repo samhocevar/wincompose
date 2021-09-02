@@ -162,6 +162,10 @@ namespace WinCompose
 
         private void CleanupNotificationArea()
         {
+            // Disable this feature after 60 seconds of user inactivity
+            if (Stfu.User.IdleTime.TotalSeconds > 60)
+                return;
+
             // Parse the window hierarchy to find the notification area and
             // send mouse move events to get rid of zombie icons.
             string[] classes = { "Shell_TrayWnd", "TrayNotifyWnd", "SysPager" };
