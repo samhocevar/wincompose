@@ -130,7 +130,7 @@ namespace WinCompose
             new Key(VK.COMPOSE),
             new Key(VK.CAPITAL),
             new Key(VK.NUMLOCK),
-            new Key(VK.PAUSE),
+            new Key(VK.SCROLL),
         };
 
         public static void StartWatchConfigFile()

@@ -66,7 +66,7 @@ public static class KeyboardLeds
     {
         { VK.CAPITAL, KEYBOARD.CAPS_LOCK_ON },
         { VK.NUMLOCK, KEYBOARD.NUM_LOCK_ON },
-        { VK.PAUSE,   KEYBOARD.SCROLL_LOCK_ON },
+        { VK.SCROLL,  KEYBOARD.SCROLL_LOCK_ON },
     };
 
     private static void Refresh(object o)
