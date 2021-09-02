@@ -43,6 +43,7 @@ internal enum WM : int
     SYSKEYDOWN = 0x104,
     SYSKEYUP   = 0x105,
     MOUSEMOVE  = 0x200,
+    MOUSELEAVE = 0x2A3,
 };
 
 public enum VK : int

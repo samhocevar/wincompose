@@ -187,6 +187,7 @@ namespace WinCompose
                 for (int y = rect.Top + 4; y < rect.Bottom; y += 8)
                     for (int x = rect.Left + 4; x < rect.Right; x += 8)
                         NativeMethods.PostMessage(area, (uint)WM.MOUSEMOVE, 0, (y << 16) | x);
+                NativeMethods.PostMessage(area, (uint)WM.MOUSELEAVE, 0, 0);
             }
         }
 
