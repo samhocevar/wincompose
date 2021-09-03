@@ -4,21 +4,18 @@
 ① Ensure the version information is up to date
 ----------------------------------------------
 
-Files to edit:
-
- - `src/build.config`
- - `README.md` (preemptively)
+Edit `README.md` preemptively to link to the new version.
 
 Make sure to run `./update-data.sh` so that translations are up to date.
 
-② Build installer and portable versions
+② Commit, tag and push
+----------------------
+
+③ Build installer and portable versions
 ---------------------------------------
 
 Just run `make` in an MSYS2 shell. Building the Visual Studio solution
 will not be enough, as it only builds the installer.
-
-③ Commit, tag and push
-----------------------
 
 ④ Upload packages
 -----------------
