@@ -346,7 +346,7 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"Wenn die Feststelltaste als Compose-Taste benutzt wird, wird das "
+"Wenn man die Feststelltaste als Compose-Taste benutzt, wird das "
 "ursprüngliche Verhalten dieser Taste unmöglich. Mit dieser Einstellung "
 "können Sie beide Umschalttasten drücken, um die Feststelltaste zu simulieren."
 
@@ -360,7 +360,7 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
-"Wenn die Feststelltaste als Compose-Taste benutzt wird, wird das "
+"Wenn man die Feststelltaste als Compose-Taste benutzt, wird das "
 "ursprüngliche Verhalten dieser Taste unmöglich. Mit dieser Einstellung "
 "können Sie den Feststellmodus ausschalten, indem Sie die Umschalttaste "
 "drücken."
@@ -679,19 +679,20 @@ msgstr ""
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
 msgid "Compose"
-msgstr "Compose"
+msgstr "Komponieren"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Starte WinCompose bei Anmeldung"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
 msgstr ""
+"Wenn ausgewählt wird WinCompose gestartet nachdem der Benutzer sich anmeldet."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Erreichbarkeit"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
@@ -866,36 +867,33 @@ msgid "Separator, Space"
 msgstr "Trenner, Leerzeichen"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer/installer.pas:175
+#: installer/installer.pas:175 installer.pas:175
 msgid "Prerequisites"
 msgstr "Voraussetzungen"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer/installer.pas:176
+#: installer/installer.pas:176 installer.pas:176
 msgid "Software required by WinCompose"
 msgstr "Von WinCompose benötigte Software"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer/installer.pas:179
-#, fuzzy
+#: installer.pas:179
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose benötigt das.NET Framework, Version 3.5 SP1 oder höher, das "
-"derzeit\n"
+"WinCompose benötigt das .NET Framework, Version 4.0 oder höher, das derzeit\n"
 "nicht installiert zu sein scheint. Die folgenden Schritte können helfen, das "
 "Problem zu lösen:"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer/installer.pas:184
-#, fuzzy
+#: installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ".NET Framework 3.5 SP1 herunterladen und installieren"
+msgstr ".NET Framework 4.0 herunterladen und installieren"
 
 #. This string appears in the installer, not in WinCompose.
-#: installer/installer.pas:194
+#: installer/installer.pas:194 installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
@@ -904,7 +902,7 @@ msgstr ""
 "und die Installation fortsetzen."
 
 #. This string appears in the installer, not in WinCompose.
-#: installer/installer.pas:285
+#: installer/installer.pas:285 installer.pas:285
 msgid "Administrator rights are required. Error: %d"
 msgstr "Administratorrechte erforderlich. Fehler: %d"
 
