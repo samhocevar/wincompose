@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2018-07-20 22:31+0000\n"
-"Last-Translator: Viktar Vauchkevich <victorenator@gmail.com>\n"
+"PO-Revision-Date: 2021-10-12 18:18+0000\n"
+"Last-Translator: Aliaksiej Razumaŭ <belarusaed@gmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/wincompose/"
 "master/be/>\n"
 "Language: be\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Аўтавызначэньне"
+msgstr "Аўтавызначэнне"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:125 ID:KeyLMenu
@@ -83,12 +83,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr "Канвертаваць"
+msgstr "Хэнкан"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr "Не канвертаваць"
+msgstr "Му Хэнкан"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
@@ -98,7 +98,7 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr "Прагал"
+msgstr "Прабел"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
@@ -108,21 +108,23 @@ msgstr "Return"
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Камбінаванне"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Выкарыстоўваць паслядоўнасці з Xorg"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
+"Выкарыстоўваць 3 000 паслядоўнасцей з Xorg (http://x.org/). Гэтыя камбінацыі "
+"часцей сустракаюцца ў Linux-сістэмах."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Выкарыстоўваць паслядоўнасці з XCompose"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -130,17 +132,18 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
+"Выкарыстоўваць 1 000 паслядоўнасцей з XCompose (https://github.com/kragen/"
+"xcompose). Некаторыя камбінацыі могуць канфліктаваць з камбінацыямі Xorg."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "Кампанавальная клавіша:"
+msgstr "Выкарыстоўваць паслядоўнасці WinCompose для эмодзі"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr ""
+msgstr "Выкарыстоўваць паслядоўнасці для эмодзі ад аўтараў WinCompose."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
@@ -149,12 +152,12 @@ msgstr "Акно адладкі"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "Паказаць пасьлядоўнасьці…"
+msgstr "Паказаць пасьлядоўнасці…"
 
 #. Menu entry to disable WinCompose
 #: language/i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr "Вымкнуць"
+msgstr "Выключыць"
 
 #: language/i18n/Text.resx:229 ID:Restart
 msgid "Restart"
@@ -163,12 +166,12 @@ msgstr "Перазапуск"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Ахвяраваць"
 
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Наведаць вэбсайт"
+msgstr "Наведаць вэб-сайт"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
@@ -177,74 +180,75 @@ msgstr "Выйсці"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr "Сымбалі Юнікоду"
+msgstr "Сімвалы Юнікоду"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr "Пасьлядоўнасьці"
+msgstr "Паслядоўнасці"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Спрабаваць дзве клавішы ў адваротным парадку"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
+"Спрабаваць паслядоўнасці з дзвух клавіш у адваротным парадку. Напрыклад, "
+"калі паслядоўнасці E A не існуе, спрабаваць паслядоўнасць A E."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr "Фільтар пошуку:"
+msgstr "Фільтр пошуку:"
 
 #: language/i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Кампанавальная клавіша:"
+msgstr "Клавіша compose:"
 
 #: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Выбяры клавішу, якая стане Кампанавальнай."
+msgstr "Выбярыце клавішу, якая будзе працаваць compose."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Час да адмены ўвода паслядоўнасці"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr "Прасунуты ўвод Унікоду"
+msgstr "Прасунуты ўвод Юнікоду"
 
 #: language/i18n/Text.resx:281 ID:UnicodeInputToolTip
-#, fuzzy
 msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"Увамкнуць Унікодны ўвод для ўсех сымбаляў, нават тых, якім ня прызначана "
-"кампанавальнае пасьлядоўнасьці. Напрыклад, гэтая пасьлядоўнасьць вывядзе "
-"сымбаль U+1A3F: Compose U 1 A 3 F"
+"Уключыць увод Юнікоду для ўсіх сімвалаў, у тым ліку для тых, што не маюць "
+"уласнай паслядоўнасці. Напрыклад паслядоўнасць Compose U 1 A 3 F Enter "
+"увядзе сімвал Юнікоду U+1A3F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Пры няправільных пасьлядоўнасьцях"
+msgstr "Пры няправільных паслядоўнасцях"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "Адступаць да раґістранечутлівых супадзеньняў"
+msgstr "Выкарыстоўваць паслядоўнасці без уліку рэгістра"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
 msgstr ""
-"Калі ўведзеная пасьлядоўнасьць не існуе, але ёсьць та, што адрозьніваецца "
-"толькі рэґістрам, то аўтаматычна выпраўляць яе."
+"Калі ўведзеная паслядоўнасць не існуе, але ёсць іншая, што адрозніваецца "
+"толькі рэгістрам, аўтаматычна выкарыстоўваць яе."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr "Скасаваць усе набраныя сымбалі"
+msgstr "Забыць усе надрукаваныя сімвалы"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid ""
@@ -252,53 +256,53 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"Калі ўведзеная пасьлядоўнасьць не існуе, то скасаваць усе набраныя сымбалі. "
-"Агадана яны выводзяцца так, бы кампанавальная клавіша не націскалась."
+"Калі ўведзеная паслядоўнасць не існуе, забыць усе надрукаваныя сімвалы. Па "
+"змаўчанні ўсе сімвалы друкуюцца так, нібы яны былі набраныя без compose."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr "Выдаваць гудок"
+msgstr "Утвараць гук"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "Калі ўведзеная пасьлядоўнасьць не існуе, то выдаць сыстэмны гук."
+msgstr "Утвараць сістэмны гук, калі паслядоўнасці не існуе."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
-msgstr "Мова інтарфэйсу:"
+msgstr "Мова інтэрфейса:"
 
 #: language/i18n/Text.resx:317 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
 msgstr ""
-"Выбяры мову інтарфэйсу WinCompose. Агадана выкарыстоўваецца мова аперацыйнай "
-"сыстэмы."
+"Выбярыце мову, які будзе выкарыстоўвацца WinCompose для перакладу "
+"інтэрфейса. Па змаўчанні выкарыстоўваецца мова сістэмы."
 
 #. Close the settings window
 #: language/i18n/Text.resx:321 ID:Close
 msgid "Close"
-msgstr "Зачыніць"
+msgstr "Закрыць"
 
 #. Copy character or symbol to the clipboard
 #: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Скапіяваць у буфер абмену"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "Эмоджы"
+msgstr "Эмодзі"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
 msgid "Apply"
-msgstr "Ужыць"
+msgstr "Прымяніць"
 
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Захаваць зыходныя паводзіны клавішы"
+msgstr "Захаваць першапачатковыя паводзіны клавішы compose"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
@@ -306,13 +310,12 @@ msgid ""
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
 msgstr ""
-"Гэта наказвае WinCompose мкнуцца захаваць першасныя паводзіны клавішаў. "
-"Напрыклад, спалука Alt+Tab працавацьме па-ранейшаму нават, калі Alt "
-"выкарыстана як кампанавальная клавіша."
+"Старацца захоўваць першапачатковыя паводзіны клавіш. Напрыклад, Alt + Tab "
+"будзе спрацоўваць як і раней, нават калі Alt вызначаны як клавіша compose."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "Устаўляць прагалы нулявой шырыні ў офісных праграмах"
+msgstr "Устаўляць пустыя прабелы ў праграмах Office"
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid ""
@@ -320,13 +323,13 @@ msgid ""
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
 msgstr ""
-"Дадаткі Microsoft Office часам мяняюць шрыфт дакумента на ляту пад час уводу "
-"некаторых унікодавых сымбаляў. Гэтая опцыя ўстаўляе нябачны сымбаль пасьля "
-"ўнікодавага, кабы справіцца з гэнай прыкрасьцю."
+"Праграмы Microsoft Office часам змяняюць шрыфт дакумента, калі былі ўведзены "
+"пэўныя сімвалы Unicode. Гэтая налада дазваляе ўстаўляць нябачны прабел перад "
+"такімі сімваламі, каб прадухіліць гэтыя паводзіны."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Эмуляваць Caps Lock выкарыстоўваючы абедзве клавішы Shift"
+msgstr "Эмуляваць Caps Lock выкарыстоўваючы абодва Shift"
 
 #: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
@@ -334,13 +337,13 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
 msgstr ""
-"Калі Caps Lock ужываецца як кампанавальная клавіша, першапачатковыя "
-"паводзіны клавішы стаюць недаступнымі. Гэтая опцыя дазваляе ўвамкнуць Caps "
-"Lock націсканьнем абедзьвюх клавішаў Shift адначасова."
+"Калі Caps Lock выкарыстоўваць як клавішу compose, першапачатковыя паводзіны "
+"клавішы будуць недаступнымі. Гэтая опцыя дазваляе уключаць Caps Lock "
+"націсканнем абодвух Shift адначасова."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "Клавіша Shift выключае Caps Lock"
+msgstr "Shift выключае Caps Lock"
 
 #: language/i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid ""
@@ -348,21 +351,21 @@ msgid ""
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
 msgstr ""
-"Калі Caps Lock ужываецца як кампанавальная клавіша, першапачатковыя "
-"паводзіны клавішы стаюць недаступнымі. Гэтая опцыя дазваляе вымкнуць Caps "
-"Lock націсканьнем клавішы Shift."
+"Калі Caps Lock выкарыстоўваць як клавішу compose, першапачатковыя паводзіны "
+"клавішы будуць недаступнымі. Гэтая опцыя дазваляе уключаць Caps Lock "
+"націсканнем Shift."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr "Caps Lock заўсёды робіць вялікімі літары"
+msgstr "Caps Lock заўсёды робіць літары вялікімі"
 
 #: language/i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
-"Калі Caps Lock увамкнёна, набіраньне дыякрытызаванай літары, такой як «ź», "
-"заўсёды вывядзе адпаведную вялікую літару, ў гэтым выпадку «Ź»."
+"Пры наборы складаных літар, такіх як «é» будзе ўлічвацца стан Caps Lock: "
+"калі ён уключаны, замест звычайнага «é» будзе «É»."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
@@ -371,22 +374,22 @@ msgstr "Катэгорыі"
 
 #: language/i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr "У абраных катэгорыях"
+msgstr "У выбраных катэгорыях"
 
 #. The title of the Options window
 #: language/i18n/Text.resx:385 ID:Options
 msgid "Options — WinCompose"
-msgstr "Опцыї — WinCompose"
+msgstr "Параметры — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: language/i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
-msgstr "Опцыї…"
+msgstr "Параметры…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: language/i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2} на {0} ({1} пасьлядоўнасьцяў)"
+msgstr "WinCompose v{2} на {0} ({1} паслядоўнасцяў)"
 
 #. The “general” tab of the options window
 #: language/i18n/Text.resx:397 ID:General
@@ -428,19 +431,18 @@ msgstr "Паляпшэнні"
 
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 сякунд"
+msgstr "10 секунд"
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
 msgid "About"
-msgstr "Пра праґраму"
+msgstr "Пра праграму"
 
 #. Download new version menu entry. {0}: version number
 #: language/i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
-msgstr "Спампаваці WinCompose {0}"
+msgstr "Спампаваць WinCompose {0}"
 
 #. Window title of the About box
 #: language/i18n/Text.resx:441 ID:AboutBoxTitle
@@ -460,7 +462,7 @@ msgstr "Пераклад"
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Аўтары"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
@@ -486,7 +488,7 @@ msgstr "Дапамога"
 #. Message displayed in the notification area tooltip.
 #: language/i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr "Абнаўленьні наяўныя."
+msgstr "Даступныя абнаўленні."
 
 #: language/i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
@@ -495,7 +497,7 @@ msgstr "Паслядоўнасці карыстальніка"
 #. A button to open the file containing the user-defined sequences.
 #: language/i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr "Правіць"
+msgstr "Рэдагаванне"
 
 #. A button to reload the user-defined sequences.
 #: language/i18n/Text.resx:485 ID:UserDefinedSequencesReload
@@ -504,60 +506,65 @@ msgstr "Перачытаць"
 
 #: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr "Дазволіць управаджаныя клавішы"
+msgstr "Апрацоўваць націсканні клавіш ад іншых праграм"
 
 #: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
 msgstr ""
-"Не іґнараваці клавішы дасланыя іншымі праґрамамі, як AutoHotkey ці Synergy"
+"Не ігнараваць націсканні клавіш, створаныя праграмамі накшталт AutoHotKey ці "
+"Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr "«Print Screen»"
+msgstr "Prt Scrn"
 
 #. String to show instead of the key name when no compose key is configured
 #: language/i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr "Вымкнутая"
+msgstr "Выключана"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Правяраць абнаўленні аўтаматычна"
 
 #: language/i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
 msgstr ""
+"Калі ўключана, WinCompose будзе час ад часу правяраць у інтэрнэце наяўнасць "
+"новых версій. Абнаўленні не ўсталёўваюцца аўтаматычна."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Па магчымасці пакідаць бачным значок у вобласці паведамленняў"
 
 #: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
 msgstr ""
+"Па змаўчанні, Windows будзе хаваць значок з вобласці паведамленняў праз "
+"некаторы час. Гэты параметр паспрабуе зрабіць значок заўсёды бачным."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Змяніць…"
 
 #: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Націсніце на клавішу, каб вызначыць яе як клавішу compose."
 
 #. Add sequence to the list of favorites.
 #: language/i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Дадаць у абранае"
 
 #: language/i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Выключыць значок у вобласці паведамленняў"
 
 #: language/i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
@@ -565,46 +572,51 @@ msgid ""
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
+"Калі ўключана, WinCompose больш не будзе паказваць значок у вобласці "
+"паведамленняў. Адзіным спосабам адкрыць інтэрфейс WinCompose застанецца — "
+"праз «Налады WinCompose» і «Паслядоўнасці WinCompose» праз меню «Пуск»."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. The name of the “End” key on the keyboard
 #: language/i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: language/i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Без скідвання"
 
 #. The “Advanced” section in the settings.
 #: language/i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Пашыраныя налады"
 
 #. “regex” is shorthand for “regular expression”.
 #: language/i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Ігнараваць вокны, якія адпавядаюць рэгулярнаму выразу:"
 
 #: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
 msgstr ""
+"WinCompose будзе цалкам адключана, калі клас бягучага акна будзе адпавядаць "
+"рэгулярнаму выразу."
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Альтэрнатыўныя клавішы compose заўсёды імі застаюцца"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -612,69 +624,77 @@ msgid ""
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
+"Калі ўключана, усе клавішы compose у паслядоўнасці будуць лічыцца гэтакімі. "
+"Па змаўчанні, клавішай compose лічыцца толькі тая, з якой паслядоўнасць "
+"пачалася, а астатнія выконваюць сваю першапачатковую функцыю."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
-msgstr "Падзякі"
+msgstr "Асаблівыя падзякі"
 
 #. Remove sequence from the list of favorites.
 #: language/i18n/Text.resx:581 ID:RemoveFromFavorites
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Выдаліць з абраных"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
-msgstr ""
+msgstr "Абраныя"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
 msgstr ""
+"Калі ўключана, любая паслядоўнасць будзе скінута пры адсутнасці актыўнасці "
+"клавіятуры ў пэўны тэрмін."
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Уключаць святлодыёд на клавіятуры"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
 msgstr ""
+"Калі ўключана, на клавіятуры будзе загарацца адпаведны святлодыёд падчас "
+"уводу паслядоўнасці."
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Кампанавальная клавіша:"
+msgstr "Compose"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Запускаць WinCompose пры ўваходзе"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Калі ўключана, WinCompose будзе запускацца пры ўваходзе ў сістэму."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Даступнасць"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "Caps lock актыўны толькі пры ўтрыманні"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
 msgstr ""
+"Caps Lock будзе аўтаматычна выключаны пры адпусканні клавішы, замест таго, "
+"каб націскаць яго паўторна."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "Запускаць з павышанымі правамі (рэкамендуецца)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
@@ -682,111 +702,114 @@ msgid ""
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
 msgstr ""
+"Камбінаванне не будзе працаваць у некаторых праграмах, калі WinCompose будзе "
+"запушчаны без павышаных праў. Гэты параметр памяншае верагоднасць такіх "
+"выпадкаў."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr "Іншае, кіроўныя знакі"
+msgstr "Іншыя, для кіравання"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr "Іншае, знакі фарматавання"
+msgstr "Іншыя, для фарматавання"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr "Іншае, не прызначана"
+msgstr "Іншыя, не прызначаныя"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "Іншае, для асабістага выкарыстання"
+msgstr "Іншыя, карыстальніцкія"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Іншае, сурагат"
+msgstr "Іншае, заменнікі"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr "Літара, ніжні рэгістр"
+msgstr "Літары, ніжні рэгістр"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr "Літара, мадыфікатар"
+msgstr "Літары, мадыфікатары"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
-msgstr "Літара, іншае"
+msgstr "Літары, іншыя"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Літара, загаловак"
+msgstr "Літары, для загалоўкаў"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr "Літара, верхні рэгістр"
+msgstr "Літары, верхні рэгістр"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Значок, спалучальны, патрабуе дадатковага месца ў радку"
+msgstr "Адзнакі, спалучэнні прабелаў"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr "Значок, які ўпісвае папярэдні знак"
+msgstr "Адзнакі, канцавыя"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Значок, не патрабуе дадатковага месца ў радку"
+msgstr "Адзнакі, без прабелаў"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:173 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr "Лічба, Дзесятковая сістэма злічэння"
+msgstr "Лічбы, дзесятковыя лікі"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
-msgstr "Лічба, літара"
+msgstr "Лічбы, літары"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
-msgstr "Лічба, іншае"
+msgstr "Лічбы, іншае"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr "Пунктуацыя, якая спалучае часткі слова"
+msgstr "Знакі прыпынку, злучнікі"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr "Пунктуацыя, злучкі і працяжнікі"
+msgstr "Знакі прыпынку, працяжнікі"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:193 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr "Пунктуацыя, закрывальны знак"
+msgstr "Знакі прыпынку, канцавыя"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:197 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr "Пунктуацыя, закрывальны знак двукосся"
+msgstr "Знакі прыпанку, канцавыя двукоссі"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:201 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr "Пунктуацыя, пачатковы знак двукосся"
+msgstr "Пунктуацыя, пачатковыя двукоссі"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:205 ID:OtherPunctuation
@@ -796,42 +819,42 @@ msgstr "Пунктуацыя, іншае"
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:209 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr "Пунктуацыя, адкрывальны знак"
+msgstr "Пунктуацыя, пачатковыя знакі"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:213 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr "Сімвал, валюта"
+msgstr "Сімвалы, валюты"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr "Сімвал, мадыфікатар"
+msgstr "Сімвалы, мадыфікатары"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:221 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr "Сімвал, матэматыка"
+msgstr "Сімвалы, матэматыка"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:225 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr "Сімвал, іншае"
+msgstr "Сімвалы, іншае"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:229 ID:LineSeparator
 msgid "Separator, Line"
-msgstr "Падзяляльнік, падзел радкоў"
+msgstr "Раздзяляльнікі, радкі"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:233 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr "Падзяляльнік, падзел абзацаў"
+msgstr "Раздзяляльнікі, абзацы"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:237 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr "Падзяляльнік, прабелы"
+msgstr "Раздзяляльнікі, прабелы"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:175
@@ -841,31 +864,29 @@ msgstr "Патрабаванні"
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:176
 msgid "Software required by WinCompose"
-msgstr "Неабходныя залежнасці"
+msgstr "Неабходныя праграмныя залежнасці"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose выкарыстоўвае .NET Framework версіі 3.5 SP1 ці навей, якая\n"
-"не ўстаноўлена. Наступная інструкцыя можа дапамагчы вам:"
+"WinCompose выкарыстоўвае .NET Framework версіі 4.0 ці навей, якая\n"
+"не ўсталёвана. Наступная інструкцыя можа дапамагчы вам:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr "Спампуй і ўсталюй .NET Framework 3.5 Service Pack 1"
+msgstr "Спампуйце і ўсталюйце .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
 msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
-msgstr "Пасля гэтага вы зможаце вярнуцца да працягу ўсталёўкі."
+msgstr "Пасля гэтага вы зможаце вярнуцца да ўсталёкі."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:285
