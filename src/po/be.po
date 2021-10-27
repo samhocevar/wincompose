@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-10-12 18:18+0000\n"
+"PO-Revision-Date: 2021-10-28 15:36+0000\n"
 "Last-Translator: Aliaksiej Razumaŭ <belarusaed@gmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/wincompose/"
 "master/be/>\n"
@@ -574,7 +574,7 @@ msgid ""
 msgstr ""
 "Калі ўключана, WinCompose больш не будзе паказваць значок у вобласці "
 "паведамленняў. Адзіным спосабам адкрыць інтэрфейс WinCompose застанецца — "
-"праз «Налады WinCompose» і «Паслядоўнасці WinCompose» праз меню «Пуск»."
+"праз «WinCompose Settings» ці «WinCompose Sequences» у меню «Пуск»."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
