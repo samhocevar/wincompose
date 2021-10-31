@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-01-27 02:32+0000\n"
+"PO-Revision-Date: 2021-11-01 08:34+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/wincompose/"
 "master/et/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -680,21 +680,23 @@ msgstr "Valitult käivitatakse WinCompose kasutaja sisselogimisel."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Hõlbustus"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "Caps Lock on aktiivne ainult alla vajutatult"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
 msgstr ""
+"Caps Locki vabastamine lülitab ta koheselt välja nii, et tema välja "
+"lülitamiseks ei pea klahvi teist korda vajutama."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "Käivita kõrgendatud õigustega (soovitatav)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
@@ -702,6 +704,9 @@ msgid ""
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
 msgstr ""
+"Kobineerimine ei tööta mõnedes rakendustes, kui WinCompose ei tööta "
+"kõrgendatud õigustega. See suvand vähendab võimalusi mittetöötamine "
+"kogemiseks."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
