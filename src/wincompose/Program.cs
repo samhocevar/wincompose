@@ -50,6 +50,7 @@ namespace WinCompose
 
             bool from_task = args.Contains("-fromtask");
             bool from_startup = args.Contains("-fromstartup");
+            bool detached = args.Contains("-detached");
 
             // If run from Task Scheduler or from startup but autolaunch is
             // disabled, exit early.
@@ -82,7 +83,9 @@ namespace WinCompose
             // Try to install the Task Scheduler entry. The best time for this is
             // just after installation, when the installer launches us with elevated
             // privileges.
-            if (!from_task && Settings.AutoLaunch.Value)
+			// If we have started from task and are now detached, do not try to
+			// create task again. It already exists and most likely will fail.
+            if (!from_task && Settings.AutoLaunch.Value && !detached)
             {
                 var ret = TaskScheduler.InstallTask("WinCompose", $"\"{Utils.ExecutableName}\" -fromtask",
                                                     elevated: true, author: "Sam Hocevar");
