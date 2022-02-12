@@ -92,8 +92,7 @@ with sequences.
 WinCompose supports rules of more than 2 characters such as <kbd>⎄ Compose</kbd>
 <kbd>(</kbd> <kbd>3</kbd> <kbd>)</kbd> for **③**.
 
-WinCompose supports early exits. For instance, <kbd>⎄ Compose</kbd> <kbd>q</kbd> will
-immediately type **q** because there is currently no rule starting with <kbd>q</kbd>.
+WinCompose supports early exits.
 
 As of now, WinCompose is almost fully translated to Afrikaans, Belarusian, Catalan, Chinese,
 Czech, Dutch, Estonian, French, German, Greek, Italian, Japanese, Lithuanian, Norwegian, Polish,
