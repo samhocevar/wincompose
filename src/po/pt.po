@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20190405\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-05-10 16:32+0000\n"
+"PO-Revision-Date: 2022-02-14 21:57+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/wincompose/"
 "master/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"X-Generator: Weblate 4.11-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -694,17 +694,19 @@ msgstr "Acessibilidade"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "O Caps Lock só está ativo enquanto é mantido em baixo"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
 msgstr ""
+"Ao soltar a tecla Caps Lock, será imediatamente desativada, em vez do "
+"comportamento mais padrão de ter que pressioná-la uma segunda vez."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "Executar com privilégios elevados (recomendado)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
@@ -712,6 +714,9 @@ msgid ""
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
 msgstr ""
+"A composição não funcionará em algumas aplicações se o WinCompose não for "
+"executado com privilégios elevados. Essas opções reduzem as hipóteses de que "
+"isso aconteça."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
