@@ -137,14 +137,14 @@ msgstr ""
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "Usar secuencias de emoyi de WinCompose"
+msgstr "Usar secuencias de emoji de WinCompose"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
 msgstr ""
-"Utilizar las secuencias de composición de emoyis provistas por los creadores "
+"Utilizar las secuencias de composición de emojis provistas por los creadores "
 "de WinCompose."
 
 #. Menu entry to show the debug window
@@ -227,7 +227,7 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"Activar el ingreso de cualesquier caracteres Unicode, incluidos aquellos que "
+"Activar el ingreso de cualquier caracter Unicode, incluidos aquellos que "
 "carecen de secuencia de composición. Por ejemplo, la secuencia "
 "Componer + 1 A 3 F + Intro insertará el carácter U+1A3F."
 
@@ -297,7 +297,7 @@ msgstr "Copiar en el portapapeles"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "Emoyis"
+msgstr "Emoji"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
@@ -979,7 +979,7 @@ msgstr "Se necesitan privilegios administrativos. Error: %d"
 #~ msgstr "\n"
 
 #~ msgid "Options"
-#~ msgstr "Options"
+#~ msgstr "Opciones"
 
 #~ msgid "Char"
 #~ msgstr "Carácter"
