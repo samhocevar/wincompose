@@ -227,7 +227,7 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"Activar el ingreso de cualquier caracter Unicode, incluidos aquellos que "
+"Activar el ingreso de cualquier carácter Unicode, incluidos aquellos que "
 "carecen de secuencia de composición. Por ejemplo, la secuencia "
 "Componer + 1 A 3 F + Intro insertará el carácter U+1A3F."
 
