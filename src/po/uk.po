@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20191111\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2022-05-02 12:14+0000\n"
+"PO-Revision-Date: 2022-05-17 15:13+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/wincompose/"
 "master/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -604,22 +604,25 @@ msgid ""
 msgstr "Вимкни ся, як вікно з класом чи імʼєм ся збіже з сталим виразом."
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
+#, fuzzy
 msgid "Alternate compose key is always Compose"
-msgstr "Іншеможлива Складова завше є Складовою"
+msgstr "Клавіша альтернативного складання - це завжди \"Складова\""
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
+#, fuzzy
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
 msgstr ""
-"Як вмикнене, то в ряду буде ся вватати за Складову. А уставно лише перша є "
-"Складовою, а іншеможливі Складові мати ймуть першовласну дію."
+"Якщо увімкнено, всі клавіші складання будуть розглядатися як послідовність "
+"клавіш Складова. За промовчанням лише перша натиснута клавіша буде діяти як "
+"Складова, а альтернативні клавіші складання збережуть свою початкову роль."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
-msgstr "Особливі подяки"
+msgstr "Особлива подяка"
 
 #. Remove sequence from the list of favorites.
 #: language/i18n/Text.resx:581 ID:RemoveFromFavorites
@@ -629,7 +632,7 @@ msgstr "Видалити з обраного"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
-msgstr "Обрані"
+msgstr "Обране"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
@@ -697,27 +700,27 @@ msgstr ""
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr "Инші, керівні"
+msgstr "Інше, керування"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr "Инші, формат"
+msgstr "Інше, форматування"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr "Инші, не призначено"
+msgstr "Інше, не призначено"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr "Инші, особистий вжив"
+msgstr "Інше, особисте використання"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Инші, замінники"
+msgstr "Інше, замінники"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:141 ID:LowercaseLetter
@@ -747,17 +750,17 @@ msgstr "Велика буква"
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr "Знак, сполуки пропуску"
+msgstr "Позначки, комбінування інтервалів"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr "Огороджний знак"
+msgstr "Позначки, загороджувальні"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Непропускний знак"
+msgstr "Позначки, нероздільні"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:173 ID:DecimalDigitNumber
