@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2022-10-01 14:19+0000\n"
+"PO-Revision-Date: 2022-10-02 20:24+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/wincompose/"
 "master/es/>\n"
@@ -92,7 +92,7 @@ msgstr "No conversión"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr "Bloq Despl"
+msgstr "Bloqueo del desplazamiento"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
