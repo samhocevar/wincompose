@@ -8,77 +8,77 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.1beta20191111\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2022-06-16 07:16+0000\n"
-"Last-Translator: Artem <artem@molotov.work>\n"
+"PO-Revision-Date: 2022-12-24 10:47+0000\n"
+"Last-Translator: Serhii <tsenzuk@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/wincompose/"
 "master/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.13-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "Самовизначu"
+msgstr "Визначати автоматично"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr "Ліве Инше"
+msgstr "Лівий Alt"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Праве Инше"
+msgstr "Правий Alt"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Ліва Контроля"
+msgstr "Лівий Control"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr "Права Контроля"
+msgstr "Правий Control"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Ліві Вікна"
+msgstr "Ліва Windows"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Праві Вікна"
+msgstr "Права Windows"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr "Заголовні"
+msgstr "Caps Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr "Числова"
+msgstr "Num Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr "Відгал"
+msgstr "Pause"
 
 #. Also known as Application key
 #: language/i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr "Перелік"
+msgstr "Меню"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr "Вихід"
+msgstr "Escape"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
@@ -93,7 +93,7 @@ msgstr "Безвиміна"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr "Прокрутна"
+msgstr "Scroll Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
@@ -103,28 +103,28 @@ msgstr "Пробіл"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr "Зворот"
+msgstr "Назад"
 
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr "Складова"
+msgstr "Комбінаційна"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr "Вжий ряди з проєкту Xorg"
+msgstr "Використати послідовності з проєкту Xorg"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Вжий 3000 рядів складових з проєкту Xorg (http://www.x.org/). Вони зазвичай "
-"уставні в Лінуксі."
+"Використати 3000 комбінаційних послідовностей складових з проєкту Xorg "
+"(http://www.x.org/). Вони зазвичай встановлені в Лінуксі."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr "Вжий ряди з проєкту XCompose"
+msgstr "Використати послідовності з проєкту XCompose"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
@@ -132,36 +132,39 @@ msgid ""
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
 msgstr ""
-"Вжий 1000 рядів складових з відкритого вихідника проєкта XCompose (https://"
-"github.com/kragen/xcompose). Ці ряди можуть подеколи мати сутичку з Xorg."
+"Використати 1000 комбінаційних послідовностей з відкритого вихідника проєкта "
+"XCompose (https://github.com/kragen/xcompose). Ці комбінації можуть подеколи "
+"конфліктувати з Xorg."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "Вжий ряди емоджей від WinCompose"
+msgstr "Використати послідовності емоджей від WinCompose"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr "Вжити ряди складові для емоджей від авторів і внесників WinComposeʼа."
+msgstr ""
+"Використати комбінаційні послідовності для емоджей від авторів і внесників "
+"WinComposeʼа."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
-msgstr "Вікно відвади"
+msgstr "Вікно відладки"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "Покажи ряди…"
+msgstr "Покажи послідовності…"
 
 #. Menu entry to disable WinCompose
 #: language/i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr "Вимкни"
+msgstr "Вимкнути"
 
 #: language/i18n/Text.resx:229 ID:Restart
 msgid "Restart"
-msgstr "Перепочни"
+msgstr "Перезапустити"
 
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
@@ -171,44 +174,44 @@ msgstr "Сторінка пожертв"
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Відвідай вебсторінку"
+msgstr "Відвідати вебсторінку"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr "Вийди"
+msgstr "Вихід"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr "Знаки єднопису"
+msgstr "Знаки Unicode"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr "Ряди"
+msgstr "Послідовності"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr "Пробуй міняти дві клавіші"
+msgstr "Пробувати поміняти два знаки"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
 msgstr ""
-"Міняй дві клавіші. Наприклад, якщо Складова Е А недійсне, тоді спробуй "
-"Складова А Е."
+"Спробувати поміняти послідовність з двох знаків. Наприклад, якщо "
+"послідовність Е А недійсна, тоді спробувати А Е."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr "Цідило пошуку:"
+msgstr "Фільтр пошуку:"
 
 #: language/i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "Клавіша Складова:"
+msgstr "Комбінаційна Клавіша:"
 
 #: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Вибери клавішу за Складову."
+msgstr "Вибрати клавішу в якості Комбінаційної."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
@@ -217,7 +220,7 @@ msgstr "Скинути час затримки деактивації"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr "Додаткові єднописні вставки"
+msgstr "Розширений ввід Unicode"
 
 #: language/i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid ""
@@ -225,23 +228,26 @@ msgid ""
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
 msgstr ""
-"Вмикни єднописну вставку для всіх знків, навіть без визначень ряду "
-"складового. Вистав знак U+1A3F, коли настикати: Складова U 1 A 3 F Ввід"
+"Увімикнути Unicode ввід для всіх знків, навіть тих, для яких немає "
+"комбінаційних послідовностей. Наприколад, вставити знак U+1A3F, коли "
+"натиснуто: Комбінаційна U 1 A 3 F Ввід"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "При недійсних рядів"
+msgstr "При недійсних послідовностей"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "Нехтуй розмір букв"
+msgstr "Нехтувати розміром букв"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr "Якщо введеного ряду нема, але є з иншим розміром букв — самовиправляй."
+msgstr ""
+"Якщо введеної послідовності нема, але є з иншим розміром букв — автоматично "
+"виправити її."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -253,8 +259,9 @@ msgid ""
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
 msgstr ""
-"Скасуй всі здруковані знаки, якщо введеного ряда нема. Инакше викладаю "
-"здруковані знаки, гейби і не тиснув Складову."
+"Якщо введеної послідовності нема, скасуй всі здруковані знаки. За "
+"замовчуванням, всі здруковані знаки вводятяться, немов Комбінаційна клавіша "
+"не натистуна."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
