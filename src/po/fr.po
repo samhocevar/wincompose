@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2023-02-22 18:07+0000\n"
-"Last-Translator: Sam Hocevar <sam@hocevar.net>\n"
+"PO-Revision-Date: 2023-06-20 11:51+0000\n"
+"Last-Translator: Giraudet Théo <theo.giraudet@orange.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.18.1\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -676,12 +676,11 @@ msgstr "Composition"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr "Lancer WinCompose à la connexion"
+msgstr "Lancer WinCompose au démarrage"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
-"S'il est défini, WinCompose sera lancé lorsque l'utilisateur se connectera."
+msgstr "Si activé, WinCompose va démarrer quand l'utilisateur se connectera à sa session."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
@@ -689,24 +688,24 @@ msgstr "Accessibilité"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "Verr. Maj. est seulement actif quand maintenu appuyé"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
-msgstr ""
+msgstr "Relâcher la touche Verr. Maj. va immédiatement la désactiver, au lieu du comportement habituel de devoirs la presser une seconde fois."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr "Exécuter avec élévation de privilèges (recommandé)"
+msgstr "Exécuter en tant qu'administrateur (recommandé)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
 "Composition will not work in some applications if WinCompose does not run "
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
-msgstr ""
+msgstr "La composition ne fonctionnera pas dans certaines applications si WinCompose ne se lance pas en tant qu'administrateur. Cette option réduit les chances d'un tel événement."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
