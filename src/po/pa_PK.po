@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2023-05-29 22:51+0000\n"
+"PO-Revision-Date: 2023-07-18 18:06+0000\n"
 "Last-Translator: bgo-eiu <huyaqoob+toolforge@gmail.com>\n"
 "Language-Team: Punjabi (Pakistan) <https://hosted.weblate.org/projects/wincompose/master/pa_PK/>\n"
 "Language: pa_PK\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -114,11 +114,11 @@ msgstr "‫Xorg‬؜ پروجیکٹ توں سلسلے ورتو"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
-msgstr ""
+msgstr "؜‫Xorg‬؜ پروجیکٹ توں تن ہزار سلسلے ورت سکدے او۔ ٹکسالی لینکس سسٹماں عام طور تے ایہہ شامل کیتے ہن۔"
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "؜‫XCompose‬؜ پروجیکٹ توں سلسلے ورتو"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
@@ -135,20 +135,20 @@ msgstr ""
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
-msgstr ""
+msgstr "ڈی‌بگ ونڈو"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr ""
+msgstr "سلسلے ویکھو…؜"
 
 #. Menu entry to disable WinCompose
 #: language/i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr ""
+msgstr "نکما کر دو"
 
 #: language/i18n/Text.resx:229 ID:Restart
 msgid "Restart"
-msgstr ""
+msgstr "دبارا شروع کرو"
 
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
@@ -162,16 +162,16 @@ msgstr "ویب سائٹ نوں جاؤ"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "باہر آ جاؤ"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr ""
+msgstr "یونیکوڈ اکھر"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "سلسلے"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
@@ -183,11 +183,11 @@ msgstr ""
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "تلاش فلٹر:؜"
 
 #: language/i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "لکھݨ والی کنجی:؜"
 
 #: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
@@ -196,7 +196,7 @@ msgstr ""
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "کنجی لئی ٹیم آوٹ"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -307,7 +307,7 @@ msgstr ""
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
 msgid "Categories"
-msgstr ""
+msgstr "قسماں"
 
 #: language/i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
@@ -321,7 +321,7 @@ msgstr ""
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: language/i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
-msgstr ""
+msgstr "ترجیحاں…؜"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: language/i18n/Text.resx:393 ID:TrayToolTip
@@ -331,11 +331,11 @@ msgstr ""
 #. The “general” tab of the options window
 #: language/i18n/Text.resx:397 ID:General
 msgid "General"
-msgstr ""
+msgstr "عام"
 
 #: language/i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
-msgstr ""
+msgstr "طور طریقہ"
 
 #. The title of the Sequences window
 #: language/i18n/Text.resx:405 ID:WindowTitle
@@ -345,7 +345,7 @@ msgstr ""
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "تہاڈے میکرو"
 
 #: language/i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
@@ -354,22 +354,22 @@ msgstr ""
 #. The name of the "Insert" key on the keyboard
 #: language/i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: language/i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr ""
+msgstr "کوشش کرو"
 
 #. The "Tweaks" section in the settings window
 #: language/i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "وتیرے"
 
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
 msgid "{0} seconds"
-msgstr ""
+msgstr "؜{0} سکنٹ"
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
@@ -384,27 +384,27 @@ msgstr ""
 #. Window title of the About box
 #: language/i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "ون‌کمپوس بارے"
 
 #. The section where we list all programmers.
 #: language/i18n/Text.resx:445 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "پروگرام کرن"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: language/i18n/Text.resx:449 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "ترجمے کرن"
 
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "لکھاری"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
 msgid "License"
-msgstr ""
+msgstr "لائسنس"
 
 #. Warning message when the user changes the language in the settings window
 #: language/i18n/Text.resx:461 ID:NeedRestart
@@ -419,7 +419,7 @@ msgstr ""
 #. The context menu for about, help, and software updates
 #: language/i18n/Text.resx:469 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "مدد"
 
 #. Message displayed in the notification area tooltip.
 #: language/i18n/Text.resx:473 ID:UpdatesToolTip
@@ -428,17 +428,17 @@ msgstr ""
 
 #: language/i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr ""
+msgstr "تہاڈے سلسلے"
 
 #. A button to open the file containing the user-defined sequences.
 #: language/i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "سودھو"
 
 #. A button to reload the user-defined sequences.
 #: language/i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "تازہ کرو"
 
 #: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
@@ -451,12 +451,12 @@ msgstr ""
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "Prt Scrn"
 
 #. String to show instead of the key name when no compose key is configured
 #: language/i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr ""
+msgstr "چالو نہیں کیتی"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
@@ -477,7 +477,7 @@ msgstr ""
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "بدلو…؜"
 
 #: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
@@ -499,27 +499,27 @@ msgstr ""
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. The name of the “End” key on the keyboard
 #: language/i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: language/i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "ٹیم آوٹ کوئی نہیں"
 
 #. The “Advanced” section in the settings.
 #: language/i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "اضافی"
 
 #. “regex” is shorthand for “regular expression”.
 #: language/i18n/Text.resx:561 ID:IgnoreRegex
@@ -541,7 +541,7 @@ msgstr ""
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
-msgstr ""
+msgstr "ہور شکریے"
 
 #. Remove sequence from the list of favorites.
 #: language/i18n/Text.resx:581 ID:RemoveFromFavorites
@@ -551,7 +551,7 @@ msgstr ""
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
-msgstr ""
+msgstr "پسند"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid "If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected."
@@ -559,7 +559,7 @@ msgstr ""
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "کیبورڈ ایل‌ای‌ڈی"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid "If set, the corresponding keyboard LED will be lit when a compose sequence is in progress."
@@ -568,7 +568,7 @@ msgstr ""
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
 msgid "Compose"
-msgstr ""
+msgstr "لکھݨ"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
@@ -580,7 +580,7 @@ msgstr ""
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "پہنچ دا"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
@@ -601,12 +601,12 @@ msgstr ""
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr ""
+msgstr "ہور، کنٹرول"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr ""
+msgstr "ہور، فارمیٹ"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:129 ID:OtherNotAssigned
@@ -621,32 +621,32 @@ msgstr ""
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr ""
+msgstr "ہور، سروگٹ"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr ""
+msgstr "اکھر، چھوٹا"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr ""
+msgstr "اکھر، بدلݨ والا"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
-msgstr ""
+msgstr "اکھر، ہور"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr ""
+msgstr "اکھر، ٹائیٹل کیس"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr ""
+msgstr "اکھر، وڈا"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:161 ID:SpacingCombiningMark
@@ -656,12 +656,12 @@ msgstr ""
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr ""
+msgstr "مارک، گھیرن والا"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr ""
+msgstr "مارک، سپیس نہیں بݨیا"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:173 ID:DecimalDigitNumber
@@ -671,12 +671,12 @@ msgstr ""
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
-msgstr ""
+msgstr "نمبر، اکھر"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
-msgstr ""
+msgstr "نمبر، ہور"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:185 ID:ConnectorPunctuation
@@ -751,7 +751,7 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:175
 msgid "Prerequisites"
-msgstr ""
+msgstr "لڑیندے"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:176
