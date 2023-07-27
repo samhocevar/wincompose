@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2023-07-27 10:06+0000\n"
+"PO-Revision-Date: 2023-07-28 16:06+0000\n"
 "Last-Translator: hosseinabaspanah <hosseinabaspanah@gmail.com>\n"
 "Language-Team: Bakhtiari <https://hosted.weblate.org/projects/wincompose/master/bqi/>\n"
 "Language: bqi\n"
@@ -266,7 +266,7 @@ msgstr "ê'māl kerdên"
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "raftāre nêvêštêne kilitê asli nê zaft boko"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
