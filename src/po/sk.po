@@ -3,16 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2017-09-01 22:48+0000\n"
-"Last-Translator: Fuxik Nah <fuxik12345@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/wincompose/master/"
-"sk/>\n"
+"PO-Revision-Date: 2023-08-10 04:44+0000\n"
+"Last-Translator: Aris <aatiger2007@gmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/wincompose/master/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -102,45 +101,43 @@ msgstr "Enter"
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Komponovať"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Použiť sekvencie projektu Xorg"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr ""
+msgstr "Použiť 3,000 komponovacích sekvencií z projektu Xorg (http://ww.x.org/). Tieto sekvencie sú najčastejšie nájdené na štandardnom systéme Linux."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Použiť sekvencie z projektu XCompose"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
 "Use the 1,000 compose sequences from the XCompose opensource project "
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
-msgstr ""
+msgstr "Použiť 1,000 komponovacích sekvencií z projektu XCompose s otvoreným zdrojovým kódom (https://github.com/kragen/xcompose/). Tieto sekvencie sa môžu dostať do konfliktu so sekvenciami z projektu Xorg."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose v{2} (kláves: {0}; {1} sekvencií)"
+msgstr "Použiť emoji sekvencie z projektu WinCompose"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr ""
+msgstr "Použiť emoji sekvencie poskytnuté autorom WinCompose a jeho prispievateľmi."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Ľavý kláves s logom Windows"
+msgstr "Ladiace okienko"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -158,12 +155,12 @@ msgstr "Reštartovať"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Prispejte"
 
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Navštívte stránky"
+msgstr "Navštívte stránku"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
@@ -171,9 +168,8 @@ msgstr "Ukončiť"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Zrušiť všetky zadané znaky"
+msgstr "Znaky Unicode"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -254,11 +250,11 @@ msgstr ""
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr "Vytvoriť pípnutie"
+msgstr "Vydať pípnutie"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "Ak zadaná sekvencie neexistuje, urobiť systémový zvuk."
+msgstr "Ak zadaná sekvencie neexistuje, vydať systémový zvuk."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -315,10 +311,7 @@ msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
-msgstr ""
-"Aplikácie Microsoft Office niekedy automaticky zmení písmo dokumentu pri "
-"zadávaní určitých znakov Unicode. Táto funkcia vloží za problémové znaky "
-"neviditeľný znak, ktorý zabráni tomuto správaniu."
+msgstr "Aplikácie Microsoft Office niekedy automaticky zmenia písmo dokumentu pri zadávaní určitých znakov Unicode. Táto funkcia vloží za problémové znaky neviditeľný znak, ktorý zabráni tomuto správaniu."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -356,9 +349,7 @@ msgstr "Pri CapsLock vždy písať veľké písmená"
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
-"Ak je funkcia CapsLock zapnutá, písanie sekvencie pre písmeno, napríklad \"æ"
-"\", vždy vytlačí príslušný variant veľkého písmena, v tomto prípade \"Æ\"."
+msgstr "Ak je funkcia CapsLock zapnutá, písanie sekvencie pre písmeno, napríklad \"é\", vždy vytlačí príslušný variant veľkého písmena, v tomto prípade \"É\"."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
