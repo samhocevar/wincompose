@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.7beta20160207\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2016-04-06 19:18+0000\n"
-"Last-Translator: Gergely Nagy <github@gergo.csillger.hu>\n"
-"Language-Team: Hungarian <https://hosted.weblate.org/projects/wincompose/"
-"master/hu/>\n"
+"PO-Revision-Date: 2023-10-09 13:01+0000\n"
+"Last-Translator: Fehér Titusz <titusz.feher@gmail.com>\n"
+"Language-Team: Hungarian <https://hosted.weblate.org/projects/wincompose/master/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.6-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -82,12 +81,12 @@ msgstr "ESC"
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Konverzió"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Nem-konverzió"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
@@ -107,44 +106,43 @@ msgstr "Újsor"
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Komponálás"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Az Xorg projekt szekvenciáinak használata"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr ""
+msgstr "Használja az Xorg projekt (http://www.x.org/) 3000 komponáló szekvenciáját. Ezek a legtöbb standard Linux rendszeren megtalálható szekvenciák."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "Használja az XCompose projekt szekvenciáit"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
 "Use the 1,000 compose sequences from the XCompose opensource project "
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
-msgstr ""
+msgstr "Használja a szabad forrású XCompose projekt (https://github.com/kragen/xcompose) 1000 komponáló szekvenciáját. E szekvenciák némelyike ütközik az Xorg-éival."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr ""
+msgstr "Használja a WinCompose emoji szekvenciáit"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr ""
+msgstr "Használja azokat az emojikat komponáló szekvenciákat, amelyeket a WinCompose szerzője és a közreműködők készítettek."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Bal Windows"
+msgstr "Hibakereső ablak"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -162,7 +160,7 @@ msgstr "Újraindítás"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Támogatók oldala"
 
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
@@ -175,9 +173,8 @@ msgstr "Kilépés"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Karakter másolás"
+msgstr "Unicode karakter"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
@@ -185,13 +182,13 @@ msgstr "Szekvenciák"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Fordítva is megpróbálja a két billentyűt"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr ""
+msgstr "Fordítva is megpróbálja a két-billentyűs szekvenciát. Pl. ha az E A nem valós szekvencia, megpróbálja az A E-t helyette."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -203,13 +200,12 @@ msgstr "Komponáló billentyű:"
 
 #: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr ""
-"Válasszon egy billentyűt, mely Komponáló Billentyűként kellene majd működjön."
+msgstr "Válassza ki, hogy melyik billentyű működjön Komponáló Billentyűként."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Elvetés késleltetése"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -220,51 +216,51 @@ msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
-msgstr ""
+msgstr "Minden Unicode karakter bevitelének engedélyezése, még ha nincs is hozzá definiált szekvencia. Például a \"Komponálás U 1 A 3 F Enter\" szekvencia az U+1A3F karaktert fogja adni"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr ""
+msgstr "Helytelen szekvenciák esetén"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "Ha nem sikerül, próbálja meg a kis- és nagybetűk megkülönböztetése nélkül is"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
+msgstr "Ha a bevitt szekvencia nem létezik, de kis- és nagybetűk cseréjével igen, akkor automatikusan javítsa."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Minden leütött karakter elvetése"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr ""
+msgstr "Ha a bevitt szekvencia nem létezik, minden karakter elvetése. Az alapértelmezés az összes karakter megjelenítése, mint ha a komponáló gombot meg sem nyomtuk volna."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Hangjelzés"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Ha a szekvencia nem létezik, adjon ki hangjelzést."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "A kezelőfelület nyelve:"
 
 #: language/i18n/Text.resx:317 ID:LanguageToolTip
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
-msgstr ""
+msgstr "Válassza ki a WinCompose felhasználói felületének nyelvét. Alapértelmezés a rendszer nyelve."
 
 #. Close the settings window
 #: language/i18n/Text.resx:321 ID:Close
@@ -274,12 +270,12 @@ msgstr "Bezár"
 #. Copy character or symbol to the clipboard
 #: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Vágólapra másolás"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Emoji"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
@@ -289,57 +285,57 @@ msgstr "Alkalmaz"
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "A komponáló billentyű eredeti funkciójának megtartása"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
-msgstr ""
+msgstr "Próbálja a WinCompose a lehető legjobban megőrizni a billentyű eredeti funkcióját. Például az Alt-Tab gyorsbillentyű működni fog akkor is, ha az Alt a komponáló billentyű."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Az Office alkalmazásokban null-szélességű szóközök beszúrása"
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
-msgstr ""
+msgstr "A Microsoft Office alkalmazások néha menet közben megváltoztatják a dokumentum betűtípusát bizonyos Unicode karakterek bevitelekor. Ez a funkció megelőzi ezt a hibát egy láthatatlan karakter beillesztésével."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr ""
+msgstr "A Caps Lock emulálása a két shift megnyomásával"
 
 #: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
+msgstr "Ha a Caps Lockot használjuk komponáló billentyűként, az eredeti funkciója elérhetetlen lesz. Ezzel a beállítással a két Shift egyidejű megnyomása bekapcsolja a Caps Lockot."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr ""
+msgstr "A Shift billentyű kikapcsolja a Caps Lockot"
 
 #: language/i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr ""
+msgstr "Ha a Caps Lock van komponáló billentyűként beállítva, az eredeti funkciója elvész. Ezzel a beállítással a Shift billentyű kikapcsolja a Caps Lockot."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "A Caps Lock mindent nagybetűsít"
 
 #: language/i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
+msgstr "Ha a Caps Lock be van kapcsolva, az ékezetes betűk, mint pl. az „é” is nagybetűként fognak megjelenni, pl. „É”."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
@@ -348,66 +344,65 @@ msgstr "Kategóriák"
 
 #: language/i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "A kiválasztott kategóriákban"
 
 #. The title of the Options window
 #: language/i18n/Text.resx:385 ID:Options
 msgid "Options — WinCompose"
-msgstr ""
+msgstr "Beállítások — WinCompose"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: language/i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
-msgstr "Lehetőségek…"
+msgstr "Beállítások…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: language/i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr ""
+msgstr "WinCompose v{2} a {0} billentyűvel ({1} szekvencia)"
 
 #. The “general” tab of the options window
 #: language/i18n/Text.resx:397 ID:General
 msgid "General"
-msgstr ""
+msgstr "Általános"
 
 #: language/i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
-msgstr ""
+msgstr "Viselkedés"
 
 #. The title of the Sequences window
 #: language/i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr ""
+msgstr "Szekvenciák — WinCompose"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "Felhasználó által definiált makrók"
 
 #: language/i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr ""
+msgstr "WinCompose letiltva"
 
 #. The name of the "Insert" key on the keyboard
 #: language/i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "Beszúrás"
 
 #. The "Test Typing" section in the settings window
 #: language/i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr ""
+msgstr "Gépelés kipróbálása"
 
 #. The "Tweaks" section in the settings window
 #: language/i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Trükkök"
 
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 másodperc"
+msgstr "{0} másodperc"
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
@@ -417,17 +412,17 @@ msgstr "Névjegy"
 #. Download new version menu entry. {0}: version number
 #: language/i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
-msgstr ""
+msgstr "A WinCompose {0} letöltése"
 
 #. Window title of the About box
 #: language/i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "A WinCompose névjegye"
 
 #. The section where we list all programmers.
 #: language/i18n/Text.resx:445 ID:Programming
 msgid "Programming"
-msgstr "Programozás"
+msgstr "Programozták"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: language/i18n/Text.resx:449 ID:Translators
@@ -437,17 +432,17 @@ msgstr "Fordítás"
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Készítették"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
 msgid "License"
-msgstr "Licensz"
+msgstr "Licenc"
 
 #. Warning message when the user changes the language in the settings window
 #: language/i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "Néhány változás csak a WinCompose újranidítása után lép életbe."
 
 #. A button to report bugs (opens web browser)
 #: language/i18n/Text.resx:465 ID:ReportBug
@@ -462,132 +457,131 @@ msgstr "Segítség"
 #. Message displayed in the notification area tooltip.
 #: language/i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Frissítések elérhetők."
 
 #: language/i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr ""
+msgstr "Felhasználó által definiált szekvenciák"
 
 #. A button to open the file containing the user-defined sequences.
 #: language/i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 #. A button to reload the user-defined sequences.
 #: language/i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Újratöltés"
 
 #: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Leütések szimulációja"
 
 #: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr ""
+msgstr "Ne vesse el a más szoftverek (pl. AutoHotkey, Synergy) által küldött billentyűket"
 
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "Képernyőkép"
 
 #. String to show instead of the key name when no compose key is configured
 #: language/i18n/Text.resx:501 ID:KeyDisabled
-#, fuzzy
 msgid "Disabled"
-msgstr "Letiltás"
+msgstr "Letiltva"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Automatikusan keresse a frissítéseket"
 
 #: language/i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
-msgstr ""
+msgstr "Engedélyezés esetén a WinCompose rendszeresen újabb verziókat fog keresni az Interneten. A frissítések nem települnek automatikusan."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Próbálja az értesítési ikont mindig látható helyen tartani"
 
 #: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr ""
+msgstr "Alapértelmezésben a Windows rövid időn belül eltünteti az ikont az értesítési területről. Ez az opció megpróbálja látható helyen tartani."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Módosítás…"
 
 #: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Nyomja meg a leendő komponáló billentyűt annak kiválasztásához."
 
 #. Add sequence to the list of favorites.
 #: language/i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Kedvencekhez adás"
 
 #: language/i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Az értesítési ikon letiltása"
 
 #: language/i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr ""
+msgstr "Kiválasztás esetén a WinCompose nem fogja az értesítési területen megjeleníteni az ikonját. A WinCompose felület megnyitására lehetőségként a Start menüben található \"WinCompose Beállítások\" és \"WinCompose Szekvenciák\" pontok maradnak."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. The name of the “End” key on the keyboard
 #: language/i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: language/i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Nincs timeout"
 
 #. The “Advanced” section in the settings.
 #: language/i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Haladó"
 
 #. “regex” is shorthand for “regular expression”.
 #: language/i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Az ennek a regexnek megfelelő ablakok kihagyása:"
 
 #: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
-msgstr ""
+msgstr "A WinCompose nem fog működni, amikor az aktuális ablak osztályára vagy nevére illeszkedik ez a regular expression."
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Alternatív komponáló billentyű legyen mindig a Compose"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
-msgstr ""
+msgstr "Bekapcsolás esetén minden komponáló billentyű Compose-ként lesz értelmezve egy-egy szekvenciában. Alapértelmezésben csak az első leütés lesz komponálásként értelmezve, és minden más komponáló billentyű megőrzi az eredeti funkcióját."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
@@ -597,227 +591,226 @@ msgstr "Külön köszönet"
 #. Remove sequence from the list of favorites.
 #: language/i18n/Text.resx:581 ID:RemoveFromFavorites
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Törlés a kedvencek közül"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
-msgstr ""
+msgstr "Kedvencek"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr ""
+msgstr "Ha be van állítva, az elkezdett komponáló szekvencia törlésre kerül a megadott idő után, ha nem érzékelhető billentyűzetaktivitás."
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Billentyűzet LED"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr ""
+msgstr "Beállítás esetén a megfelelő billentyűzet LED világítani fog, amíg a komponáló szekvencia tart."
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Komponáló billentyű:"
+msgstr "Komponáló billentyű"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Belépéskor a WinCompose elindítása"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Beállítás esetén a WinCompose elindul a felhasználó belépésekor."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Akadálymentesítés"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "A Caps Lock csak lenyomás közben aktív"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
-msgstr ""
+msgstr "A Caps Lock felengedése azt azonnal lekapcsolja a szokásos viselkedés helyett, amikor az ismételt megnyomás kapcsolja le."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "Futtatás emelt jogosultságokkal (javasolt)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
 "Composition will not work in some applications if WinCompose does not run "
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
-msgstr ""
+msgstr "A komponálás néhány alkalmazásban nem működik, ha a WinCompose nem emelt jogosultságokkal fut. Ez az opció csökkenti ennek előfordulási valószínűségét."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr ""
+msgstr "Más, kontrol kód"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr ""
+msgstr "Más, Formázás"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr ""
+msgstr "Más, Hozzárendelés nélküli"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr ""
+msgstr "Más, Saját használatra"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr ""
+msgstr "Más, Surrogate karakter"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr ""
+msgstr "Betű, Kisbetű"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr ""
+msgstr "Betű, módosító"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
-msgstr ""
+msgstr "Betű, egyéb"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr ""
+msgstr "Betű, címformátum (nagybetű)"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr ""
+msgstr "Betű, nagybetű"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr ""
+msgstr "Jelölő, kombináló, szélességmódosító"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr ""
+msgstr "Jelölő, összefogó"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr ""
+msgstr "Jelölő, nullszélességű"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:173 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr ""
+msgstr "Szám, decimális jegy"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
-msgstr ""
+msgstr "Szám, betű"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
-msgstr ""
+msgstr "Szám, egyéb"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr ""
+msgstr "Központozás, összekötő"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr ""
+msgstr "Központozás, kötőjel"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:193 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr ""
+msgstr "Központozás, bezáró"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:197 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr ""
+msgstr "Központozás, idézet vége"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:201 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr ""
+msgstr "Központozás, idézet kezdete"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:205 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr ""
+msgstr "Központozás, egyéb"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:209 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr ""
+msgstr "Központozás, nyitó"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:213 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr ""
+msgstr "Szimbólum, pénznem"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr ""
+msgstr "Szimbólum, módosító"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:221 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr ""
+msgstr "Szimbólum, matematika"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:225 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr ""
+msgstr "Szimbólum, egyéb"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:229 ID:LineSeparator
 msgid "Separator, Line"
-msgstr ""
+msgstr "Elválasztás, vonal"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:233 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr ""
+msgstr "Elválasztás, bekezdés"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:237 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr ""
+msgstr "Elválasztás, térköz"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:175
 msgid "Prerequisites"
-msgstr ""
+msgstr "Rendszerkövetelmények"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:176
 msgid "Software required by WinCompose"
-msgstr ""
+msgstr "A WinCompose-hoz szükséges szoftverek"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
@@ -826,11 +819,13 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"A WinCompose-nak szüksége van a .NET keretprogram 4.0 vagy későbbi\n"
+"változatára, ami nincs installálva. Az alábbi lépés megoldás lehet:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ""
+msgstr "A .NET Framework 4.0 Runtime letöltése és telepítése"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
@@ -838,11 +833,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Ha befejeződött, erre a képernyőre visszatérve folytatható\n"
+"a telepítés."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:285
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Adminisztrátor jogosultság szükséges. Hibakód: %d"
 
 #~ msgid "Delay:"
 #~ msgstr "Késleltetés:"
