@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-10-12 18:17+0000\n"
+"PO-Revision-Date: 2023-10-25 07:01+0000\n"
 "Last-Translator: greywatcher <greyman000@hotmail.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
-"master/sv/>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 5.1.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -177,7 +176,7 @@ msgstr "Besök hemsidan"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr "Stäng"
+msgstr "Avsluta"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
@@ -526,7 +525,7 @@ msgstr "Print Screen"
 #. String to show instead of the key name when no compose key is configured
 #: language/i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr "Inaktivera"
+msgstr "Inaktiverad"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
