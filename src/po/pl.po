@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2024-01-09 21:06+0000\n"
-"Last-Translator: Waterrail <maksymiliankrol03@gmail.com>\n"
+"Last-Translator: Krzysztof Wolicki <1kwolicki@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -439,7 +439,7 @@ msgstr "Tłumaczenie"
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr "Autorzy"
+msgstr "Deweloperzy"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
