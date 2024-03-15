@@ -8,17 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-06-10 14:41+0000\n"
-"Last-Translator: WaldiS <sto@tutanota.de>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/"
-"pl/>\n"
+"PO-Revision-Date: 2024-01-09 21:06+0000\n"
+"Last-Translator: Krzysztof Wolicki <1kwolicki@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/wincompose/master/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -118,9 +116,7 @@ msgstr "Użyj sekwencji z projektu Xorg"
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr ""
-"Użyj ponad 3000 sekwencji komponowania z projektu Xorg (http://www.x.org/). "
-"To sekwencje, które występują najczęściej na systemach Linuksowych."
+msgstr "Użyj ponad 3000 sekwencji komponowania z projektu Xorg (http://www.x.org/). To sekwencje, które występują najczęściej na systemach Linux."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -131,10 +127,7 @@ msgid ""
 "Use the 1,000 compose sequences from the XCompose opensource project "
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
-msgstr ""
-"Użyj ponad 1000 sekwencji komponowania z otwarto-źródłowego projektu "
-"XCompose (https://github.com/kragen/xcompose). Te sekwencje czasami "
-"zawierają konflikty z sekwencjami projektu Xorg."
+msgstr "Użyj ponad 1000 sekwencji komponowania z opensource'owego projektu XCompose (https://github.com/kragen/xcompose). Te sekwencje mogą czasem kolidować z sekwencjami projektu Xorg."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -144,14 +137,12 @@ msgstr "Użyj sekwencji emoji z WinCompose"
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr ""
-"Użyj sekwencji redagowania emotikonów dostarczonych przez autora i "
-"współautorów WinCompose."
+msgstr "Użyj sekwencji komponowania dla emoji dostarczonych przez autora i inne osoby pracujące nad WinCompose."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
-msgstr "Okno Debugowania"
+msgstr "Okno debugowania"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
@@ -216,7 +207,7 @@ msgstr "Wybierz klawisz, który będzie używany jako klawisz Compose."
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr "Zresetuj limit czasu"
+msgstr "Czas zresetowania"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -239,15 +230,13 @@ msgstr "Niepoprawne sekwencje"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr "Ewentualnie dopasuj ignorując wielkość liter"
+msgstr "Znajdź dopasowania ignorując wielkość liter"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
-"Jeżeli wprowadzona sekwencja nie istnieje, ale jest, która różni się "
-"wielkością liter, automatycznie ją popraw."
+msgstr "Jeżeli wprowadzona sekwencja nie istnieje, ale jest taka, która różni się wielkością liter, zostanie ona poprawiona."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
@@ -258,10 +247,7 @@ msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr ""
-"Jeżeli wprowadzona sekwencja nie istnieje, odrzuć wszystkie symbole, które "
-"zostały wprowadzone. Domyślnie wszystkie wprowadzone symbole zostaną "
-"przepuszczone, tak jakby klawisz Compose nie został użyty."
+msgstr "Jeżeli wprowadzona sekwencja nie istnieje, odrzucone zostaną wszystkie symbole, które zostały wprowadzone. Domyślnym zachowaniem jest wypisanie znaków tak, jak gdyby klawisz Compose nie został użyty."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -269,7 +255,7 @@ msgstr "Wydaj sygnał dźwiękowy"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr "Jeżeli wprowadzona sekwencja nie istnieje, wydaj dzwięk systemowy."
+msgstr "Jeżeli wprowadzona sekwencja nie istnieje, wydany zostanie dźwięk systemowy."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -296,7 +282,7 @@ msgstr "Kopiuj do schowka"
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "Emoji - nazwa kategorii (znaki Unicode, emotikony, makra użytkownika)"
+msgstr "Emoji"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
@@ -306,17 +292,14 @@ msgstr "Zastosuj"
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Zachowaj oryginalne zachowanie klawisza compose"
+msgstr "Zachowaj oryginalne zachowanie klawisza Compose"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
-msgstr ""
-"Instruuje WinCompose aby starał się jak najbardziej zachować oryginalną "
-"funkcjonalność klawisza. Na przykład: skrót Alt-Tab będzie wciąż "
-"funkcjonować nawet gdy Alt będzie ustawiony jako klawisz Compose."
+msgstr "Instruuje WinCompose, aby postarał się jak najbardziej zachować oryginalną funkcję klawisza. Na przykład: skrót Alt + Tab będzie wciąż działać, nawet gdy Alt będzie ustawiony jako klawisz Compose."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
@@ -327,24 +310,18 @@ msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
-msgstr ""
-"Aplikacje Microsoft Office czasami zmieniają czcionkę dokumentu w locie "
-"podczas wprowadzania niektórych znaków Unicode. Ta funkcja wstawia "
-"niewidoczny znak po znaku Unicode, aby obejść błąd."
+msgstr "Aplikacje Microsoft Office czasami na bieżąco zmieniają czcionkę dokumentu podczas wprowadzania niektórych znaków Unicode. Ta funkcja wstawia niewidoczny znak po znaku Unicode, aby obejść błąd."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Emuluj Caps Lock za pomocą obu klawiszy Shift"
+msgstr "Emuluj Caps Lock po użyciu obu klawiszy Shift"
 
 #: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
-"Jeśli Caps Lock jest używany jako klawisz compose, oryginalne zachowanie "
-"klucza staje się niedostępne. Ta funkcja pozwala włączyć Caps Lock, "
-"naciskając jednocześnie oba klawisze Shift."
+msgstr "Jeśli Caps Lock jest używany jako klawisz Compose, oryginalne zachowanie klawisza staje się niedostępne. Ta funkcja pozwala włączyć Caps Lock poprzez jednoczesne wciśnięcie obu klawiszy Shift."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -355,10 +332,7 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr ""
-"Gdy Caps Lock jest ustawiony jako klawisz Compose, jego oryginalne działanie "
-"jest niedostępne. Ta opcja pozwala wyłączyć Caps Lock naciskając krótko "
-"klawisz Shift."
+msgstr "Jeśli Caps Lock jest używany jako klawisz Compose, oryginalne zachowanie klawisza staje się niedostępne. Ta funkcja umożliwia wyłączenie funkcji Caps Lock poprzez naciśnięcie klawisza Shift."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
@@ -368,10 +342,7 @@ msgstr "Caps Lock zawsze używa wielkich liter"
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
-"Gdy funkcja Caps Lock jest włączona, wpisanie litery z akcentem, takiej jak "
-"\"é\", zawsze spowoduje wyświetlenie odpowiedniej litery pisanej dużą "
-"literą, w tym przypadku \"É\"."
+msgstr "Gdy Caps Lock jest włączony, wpisanie akcentowanej litery, takiej jak \"é\", zawsze spowoduje wyświetlenie wielkiego odpowiednika, w tym przypadku \"É\"."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
@@ -395,7 +366,7 @@ msgstr "Opcje…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: language/i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v {2} w {0} (sekwencje {1})"
+msgstr "WinCompose w wersji {2} przypisany pod {0} (liczba sekwencji: {1})"
 
 #. The “general” tab of the options window
 #: language/i18n/Text.resx:397 ID:General
@@ -423,12 +394,12 @@ msgstr "WinCompose jest wyłączony"
 #. The name of the "Insert" key on the keyboard
 #: language/i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
-msgstr "Wstaw"
+msgstr "Insert"
 
 #. The "Test Typing" section in the settings window
 #: language/i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr "Pisanie testowe"
+msgstr "Testownie wpisywania"
 
 #. The "Tweaks" section in the settings window
 #: language/i18n/Text.resx:425 ID:Tweaks
@@ -438,7 +409,7 @@ msgstr "Poprawki"
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
 msgid "{0} seconds"
-msgstr "{0} sekund"
+msgstr "{0} sek."
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
@@ -468,7 +439,7 @@ msgstr "Tłumaczenie"
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr "Autorzy"
+msgstr "Deweloperzy"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
@@ -478,7 +449,7 @@ msgstr "Licencja"
 #. Warning message when the user changes the language in the settings window
 #: language/i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr "Wprowadzenie zmian wymaga restartu WinCompose."
+msgstr "Wprowadzenie zmian wymaga ponownego uruchomienia programu WinCompose."
 
 #. A button to report bugs (opens web browser)
 #: language/i18n/Text.resx:465 ID:ReportBug
@@ -507,17 +478,15 @@ msgstr "Edytuj"
 #. A button to reload the user-defined sequences.
 #: language/i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr "Załaduj ponownie"
+msgstr "Przeładuj"
 
 #: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr "Zezwól na wtryskiwane klawisze"
+msgstr "Zezwól na klawisze ze stron trzecich"
 
 #: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr ""
-"Nie ignoruj kluczy wysłanych przez inne oprogramowanie, takie jak AutoHotkey "
-"lub Synergy"
+msgstr "Nie ignoruj kluczy wysłanych przez inne oprogramowanie, takie jak AutoHotkey czy Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
@@ -527,7 +496,7 @@ msgstr "Print Screen"
 #. String to show instead of the key name when no compose key is configured
 #: language/i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr "Wyłączone"
+msgstr "Brak"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
