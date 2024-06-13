@@ -8,21 +8,20 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2022-10-31 20:08+0000\n"
-"Last-Translator: TheRedPlanet <junmo.moon8@gmail.com>\n"
-"Language-Team: Korean <https://hosted.weblate.org/projects/wincompose/master/"
-"ko/>\n"
+"PO-Revision-Date: 2024-06-13 09:25+0000\n"
+"Last-Translator: RdxxeR <rdxxer@pm.me>\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/wincompose/master/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "자동 감지"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:125 ID:KeyLMenu
@@ -67,51 +66,51 @@ msgstr "Num Lock"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #. Also known as Application key
 #: language/i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "변환"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "무변환"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "스페이스"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "엔터"
 
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "합성 규칙"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Xorg 프로젝트의 시퀀스를 사용"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
@@ -119,7 +118,7 @@ msgstr ""
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "XCompose 프로젝트의 시퀀스를 사용"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
@@ -127,7 +126,7 @@ msgstr ""
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr ""
+msgstr "WinCompose 이모지 시퀀스를 사용"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
@@ -136,59 +135,59 @@ msgstr ""
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
-msgstr ""
+msgstr "디버그 창"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr ""
+msgstr "시퀀스를 표시…"
 
 #. Menu entry to disable WinCompose
 #: language/i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr ""
+msgstr "비활성화"
 
 #: language/i18n/Text.resx:229 ID:Restart
 msgid "Restart"
-msgstr ""
+msgstr "다시 시작"
 
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "기부 페이지"
 
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr ""
+msgstr "웹사이트 방문"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr ""
+msgstr "나가기"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr ""
+msgstr "유니코드 문자"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr ""
+msgstr "시퀀스"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "키의 순서 교환을 시도"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
-msgstr ""
+msgstr "키 2개로 구성된 시퀀스에서 위치를 교체하는 것을 시도합니다. 예를 들어, Compose E A가 올바른 시퀀스가 아닐 경우, 대신 Compose A E를 시도합니다."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "검색 필터:"
 
 #: language/i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr ""
+msgstr "Compose 키:"
 
 #: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
@@ -222,52 +221,52 @@ msgstr ""
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "입력된 문자를 버리기"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
-msgstr ""
+msgstr "입력된 시퀀스가 없는 경우, 입력된 문자를 모두 버립니다. 기본적으로는 Compose 키가 입력되지 않았을 때처럼 문자를 출력합니다."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "비프음을 출력"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "입력된 시퀀스가 존재하지 않는 경우, 시스템 사운드를 출력합니다."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "표시 언어:"
 
 #: language/i18n/Text.resx:317 ID:LanguageToolTip
 msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
-msgstr ""
+msgstr "WinCompose의 인터페이스가 표시되는 언어를 선택하세요. 기본적으로 시스템 언어를 사용합니다."
 
 #. Close the settings window
 #: language/i18n/Text.resx:321 ID:Close
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #. Copy character or symbol to the clipboard
 #: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "클립보드에 복사"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "이모지"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "적용"
 
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "원래 Compose 키의 동작을 유지"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
@@ -767,7 +766,7 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ""
+msgstr ".NET Framework 4.0 런타임을 다운로드하고 설치"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
@@ -777,4 +776,4 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:285
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "관리자 권한이 필요합니다. 오류: %d"
