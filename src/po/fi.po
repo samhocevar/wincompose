@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-01-18 22:21+0000\n"
-"Last-Translator: mika-n <citius@luukku.com>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/wincompose/"
-"master/fi/>\n"
+"PO-Revision-Date: 2024-07-15 13:09+0000\n"
+"Last-Translator: Kari Eveli <lexitec@lexitec.fi>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/wincompose/master/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.2\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -57,12 +56,12 @@ msgstr "Oikea Windows-näppäin"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr "Caps Lock"
+msgstr "CapsLock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr "Num Lock"
+msgstr "NumLock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:157 ID:KeyPause
@@ -102,59 +101,52 @@ msgstr "Välilyönti"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr "Askelpalautin"
+msgstr "Enter"
 
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Compose"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr "Käytä Xorg projektin merkkisarjoja"
+msgstr "Käytä Xorg-projektin merkkiyhdistelmiä"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
-msgstr ""
-"Käytä 3,000 merkkisarjaa Xorg projektista (http://www.x.org/). Nämä ovat "
-"yleisimpiä standardista Linux-järjestelmästä löytyviä merkkisarjoja."
+msgstr "Käytä 3 000 Xorg-projektin (http://www.x.org/) merkkiyhdistelmää. Nämä ovat yleisessä käytössä standardi-Linux-järjestelmissä."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr "Käytä XCompose projektin merkkisarjoja"
+msgstr "Käytä XCompose-projektin merkkiyhdistelmiä"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid ""
 "Use the 1,000 compose sequences from the XCompose opensource project "
 "(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
 "with the Xorg ones."
-msgstr ""
-"Käytä 1,000 merkkisarjaa XCompose projektista (https://github.com/kragen/"
-"xcompose). Nämä merkkisarjat saattavat joskus olla ristiriidassa Xorg:n "
-"vastaavien kanssa."
+msgstr "Käytä 1 000 XCompose-projektin merkkiyhdistelmää (https://github.com/kragen/xcompose). Nämä voivat joskus olla ristiriidassa Xorg-projektin merkkiyhdistelmien kanssa."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
-#, fuzzy
 msgid "Use WinCompose emoji sequences"
-msgstr "WinCompose v{2}, näppäin {0} ({1} merkkisarjaa)"
+msgstr "Käytä WinComposen emoji-merkkiyhdistelmiä"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid ""
 "Use the compose sequences for Emoji provided by the WinCompose author and "
 "contributors."
-msgstr "Käytä WinCompose kehittäjien ja avustajien luomia Emoji merkkisarjoja."
+msgstr "Käytä WinComposen kehittäjän ja avustajien luomia Emoji-merkkiyhdistelmiä."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
-#, fuzzy
 msgid "Debug Window"
-msgstr "Vasen Windows-näppäin"
+msgstr "Virheenkorjausikkuna"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "Näytä merkkisarjat…"
+msgstr "Näytä merkkiyhdistelmät…"
 
 #. Menu entry to disable WinCompose
 #: language/i18n/Text.resx:225 ID:Disable
@@ -173,7 +165,7 @@ msgstr "Lahjoitussivu"
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Käy verkkosivuilla"
+msgstr "Käy verkkosivustolla"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
@@ -181,13 +173,12 @@ msgstr "Poistu"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
-#, fuzzy
 msgid "Unicode characters"
-msgstr "Kopioi merkki"
+msgstr "Unicode-merkit"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr "Merkkisarjat"
+msgstr "Merkkiyhdistelmät"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
@@ -197,10 +188,7 @@ msgstr "Yritä vaihtaa näppäimiä keskenään"
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr ""
-"Kokeile vaihtaa kaksinäppäimisen merkkisarjan näppäimet toisinpäin. "
-"Esimerkiksi jos näppäinyhdistelmä E A ei ole sallittu, niin kokeile A E "
-"yhdistelmää."
+msgstr "Kokeile vaihtaa merkkien järjestystä. Esimerkiksi jos näppäinyhdistelmä E A ei ole määritelty, niin kokeile yhdistelmää A E."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -212,7 +200,7 @@ msgstr "Compose-näppäin:"
 
 #: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "Valitse Compose-näppäimenä toimiva näppäin."
+msgstr "Valitse haluamasi Compose-näppäin."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
@@ -228,41 +216,41 @@ msgid ""
 "Enable Unicode input for all characters, even those with no compose sequence "
 "defined. For instance, the following sequence will output character U+1A3F: "
 "Compose U 1 A 3 F Enter"
-msgstr ""
+msgstr "Salli merkkien syöttö Unicode-koodin avulla, vaikka niillä ei ole valmista Compose-merkkiyhdistelmää. Tällöin esimerkiksi merkin U+1A3F voi syöttää kirjoittamalla: <Compose> U 1 A 3 F <Enter>"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "Virheellisissä sarjoissa"
+msgstr "Kun näppäinyhdistelmää ei ole määritelty"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "Sisällytä tuloksettomaan hakuun merkkikoosta riippumattomat tulokset"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
+msgstr "Mikäli syötettyä yhdistelmää ei löydy, mutta vain merkkikooltaan eroava yhdistelmä löytyy, korjaa se automaattisesti."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Jätä pois kaikki syötetyt merkit"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr ""
+msgstr "Mikäli syötettyä yhdistelmää ei ole, jätä pois kaikki syötetyt merkit. Oletusarvoisesti merkit tulostetaan ikään kuin Compose-näppäintä ei olisi painettu."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Anna äänimerkki"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Mikäli syötettyä merkkiyhdistelmää ei ole, annetaan äänimerkki."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -272,7 +260,7 @@ msgstr "Käyttöliittymän kieli:"
 msgid ""
 "Select the language that WinCompose uses for the interface. By default the "
 "operating system language is used."
-msgstr ""
+msgstr "Valitse WinCompose-ohjelman käyttöliittymäkieli. Oletus on käyttöjärjestelmän kieli."
 
 #. Close the settings window
 #: language/i18n/Text.resx:321 ID:Close
@@ -282,12 +270,12 @@ msgstr "Sulje"
 #. Copy character or symbol to the clipboard
 #: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopioi leikepöydälle"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Emoji"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
@@ -297,57 +285,57 @@ msgstr "Käytä"
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "Säilytä Compose-näppäimen käyttäytyminen"
+msgstr "Säilytä Compose-näppäimen alkuperäinen käyttäytyminen"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
-msgstr ""
+msgstr "Tällä asetuksella WinCompose yrittää säilyttää näppäimen alkuperäisen toiminnan. Esimerkiksi Alt-Tab-pikanäppäin toimii, vaikka Alt-näppäintä käytetään Compose-näppäimenä."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr "Lisää olemattoman levyisiä välilyöntejä Office-ohjelmiin"
+msgstr "Lisää näkymättömiä välilyöntejä Office-sovelluksissa"
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid ""
 "Microsoft Office applications sometimes change the document font on the fly "
 "when entering certain Unicode characters. This feature inserts an invisible "
 "character after the Unicode character to work around the bug."
-msgstr ""
+msgstr "Microsoft Office -sovellukset muuttavat joskus asiakirjan fontin tiettyjä Unicode-merkkejä syötettäessä. Tämä ominaisuus lisää näkymättömän merkin Unicode-merkin jälkeen tämän Office-bugin korjaamiseksi."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr "Jäljittele Caps Lockkia kummallakin Shift-näppäimellä"
+msgstr "Jäljittele CapsLockia kummallakin Shift-näppäimellä"
 
 #: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
+msgstr "Mikäli CapsLock-näppäintä käytetään Compose-näppäimenä, näppäimen alkuperäinen toiminta estyy. Tämä ominaisuus sallii ottaa CapsLockin käyttöön painamalla molempia vaihto- eli Shift-näppäimiä yhtä aikaa."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "Shift-näppäin kytkee Caps Lockin pois"
+msgstr "Vaihto- eli Shift-näppäin kytkee CapsLockin pois"
 
 #: language/i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr ""
+msgstr "Mikäli CapsLock-näppäintä käytetään Compose-näppäimenä, näppäimen alkuperäinen toiminta estyy. Tämä ominaisuus sallii ottaa CapsLockin käyttöön painamalla vaihto- eli Shift-näppäintä."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "CapsLock-näppäin tuottaa aina isoja kirjaimia"
 
 #: language/i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
+msgstr "Kun CapsLock-toiminto on päällä, pienet aksenttikirjaimet tulostuvat aina vastaavina isoina aksenttikirjaimina (esim. é => É)."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
@@ -371,23 +359,21 @@ msgstr "Asetukset…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: language/i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "WinCompose v{2}, näppäin {0} ({1} merkkisarjaa)"
+msgstr "WinCompose v{2}, näppäin {0} ({1} merkkiyhdistelmää)"
 
 #. The “general” tab of the options window
 #: language/i18n/Text.resx:397 ID:General
-#, fuzzy
 msgid "General"
-msgstr "Yleinen Käytös"
+msgstr "Yleistä"
 
 #: language/i18n/Text.resx:401 ID:Behavior
-#, fuzzy
 msgid "Behavior"
-msgstr "Yleinen Käytös"
+msgstr "Toiminta"
 
 #. The title of the Sequences window
 #: language/i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr "Merkkisarjat — WinCompose"
+msgstr "Merkkiyhdistelmät — WinCompose"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:409 ID:UserMacros
@@ -396,7 +382,7 @@ msgstr "Käyttäjän makrot"
 
 #: language/i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr "Compose-näppäin on pois käytöstä"
+msgstr "WinCompose on pois käytöstä"
 
 #. The name of the "Insert" key on the keyboard
 #: language/i18n/Text.resx:417 ID:KeyInsert
@@ -406,7 +392,7 @@ msgstr "Syötä"
 #. The "Test Typing" section in the settings window
 #: language/i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr "Kokeile"
+msgstr "Syötön kokeilu"
 
 #. The "Tweaks" section in the settings window
 #: language/i18n/Text.resx:425 ID:Tweaks
@@ -415,9 +401,8 @@ msgstr "Parannukset"
 
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 sekuntia"
+msgstr "[0} sekuntia"
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
@@ -447,7 +432,7 @@ msgstr "Käännös"
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Kehittäjät"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
@@ -457,23 +442,22 @@ msgstr "Lisenssi"
 #. Warning message when the user changes the language in the settings window
 #: language/i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
-"WinCompose joudutaan käynnistämään uudelleen muutosten toimeenpanemiseksi."
+msgstr "WinCompose täytyy käynnistää uudelleen, jotta muutokset tulevat voimaan."
 
 #. A button to report bugs (opens web browser)
 #: language/i18n/Text.resx:465 ID:ReportBug
 msgid "Report a Bug"
-msgstr "Ilmoita viasta"
+msgstr "Ilmoita virheestä"
 
 #. The context menu for about, help, and software updates
 #: language/i18n/Text.resx:469 ID:Help
 msgid "Help"
-msgstr ""
+msgstr "Ohje"
 
 #. Message displayed in the notification area tooltip.
 #: language/i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr ""
+msgstr "Päivitys on saatavilla."
 
 #: language/i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
@@ -482,123 +466,122 @@ msgstr "Käyttäjän makrot"
 #. A button to open the file containing the user-defined sequences.
 #: language/i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr ""
+msgstr "Muokkaa"
 
 #. A button to reload the user-defined sequences.
 #: language/i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr ""
+msgstr "Lataa uudelleen"
 
 #: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Salli näppäinpainallusten emulointi"
 
 #: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr ""
+msgstr "Älä ohita muiden ohjelmien, kuyten AutoHotKey tai Synergy, lähettämiä näppäinpainalluksia"
 
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr ""
+msgstr "PrtScrn"
 
 #. String to show instead of the key name when no compose key is configured
 #: language/i18n/Text.resx:501 ID:KeyDisabled
-#, fuzzy
 msgid "Disabled"
-msgstr "Poista käytöstä"
+msgstr "Ei käytössä"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Tarkista päivitykset automaattisesti"
 
 #: language/i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
-msgstr ""
+msgstr "Kun asetus on päällä, WinCompose tarkistaa säännöllisesti saatavilla olevat päivitykset internetistä. Päivityksiä ei asenneta automaattisesti."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Ilmoitusalueen kuvake yritetään pitää aina näkyvissä"
 
 #: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr ""
+msgstr "Windows piilottaa ilmaisinalueella näkyvän kuvakkeen oletusarvoisesti jonkin ajan kuluttua. Tämä asetus yrittää pitää kuvakkeen aina näkyvissä."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Muokkaa…"
 
 #: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Paina näppäintä jota haluat käyttää Compose-näppäimenä."
 
 #. Add sequence to the list of favorites.
 #: language/i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Lisää suosikkeihin"
 
 #: language/i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Älä näytä ilmoitusalueen kuvaketta"
 
 #: language/i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr ""
+msgstr "Kun tämä asetus on päällä, WinCompose ei enää näytä ilmoitusalueen kuvaketta. Tässä tapauksessa WinComposen käyttöliittymään pääsee vain käynnistysvalikon linkeistä \"WinCompose-asetukset\" tai \"WinCompose-merkkiyhdistelmät\"."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. The name of the “End” key on the keyboard
 #: language/i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #. The name of the “Tab” key on the keyboard
 #: language/i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Sarkain"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Ei odotusaikaa"
 
 #. The “Advanced” section in the settings.
 #: language/i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Lisäasetukset"
 
 #. “regex” is shorthand for “regular expression”.
 #: language/i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Älä käytä ikkunoissa, jotka vastaavat tätä säännöllistä lauseketta:"
 
 #: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
-msgstr ""
+msgstr "WinCompose-ohjelma on pois käytöstä ikkunassa, kun aktiivisen ikkunan luokka tai nimi vastaa tätä säännöllistä lauseketta."
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Vaihtoehtoinen Compose-näppäin toimii aina Compose-näppäimenä"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
-msgstr ""
+msgstr "Kun tämä asetus on päällä, kaikki asettamasi Compose-näppäimet tulkitaan Compose-näppäimiksi. Oletusarvoisesti vain ensimmäinen syötetty Compose-näppäin tulkitaan Compose-näppäimeksi ja muut säilyttävät alkuperäisen toimintonsa."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
@@ -608,67 +591,66 @@ msgstr "Erikoiskiitokset"
 #. Remove sequence from the list of favorites.
 #: language/i18n/Text.resx:581 ID:RemoveFromFavorites
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Poista suosikeista"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
-msgstr ""
+msgstr "Suosikit"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr ""
+msgstr "Tämä asetus peruuttaa Compose-syötön tietyn odotusajan kuluttua, mikäli näppäimistöä ei käytetä."
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "Näppäimistö-LED"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr ""
+msgstr "Jos käytössä, vastaava näppäimistö-LED syttyy, kun Compose-syöttö on käynnissä."
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Compose-näppäin:"
+msgstr "Compose"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Käynnistä WinCompose kirjauduttaessa"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Tällä asetuksella WinCompose käynnistyy, kun käyttäjä kirjautuu järjestelmään."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Saavutettavuus"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "CapsLock-tominto on käytössä vain, kun näppäintä pidetään alhaalla"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
-msgstr ""
+msgstr "CapsLockin vapauttaminen ottaa sen heti pois päältä, ei siis tarvita kahta painallusta, kuten normaalisti."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "Suorita korotetuilla käyttöoikeuksilla (suositus)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
 "Composition will not work in some applications if WinCompose does not run "
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
-msgstr ""
+msgstr "Compose-syöttö ei toimi joissain sovelluksissa, jollei WinCompose-ohjelmaa ajeta korotetuin käyttöoikeuksin. Tämä varmistaa sen, että niin ei kävisi."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
@@ -823,13 +805,12 @@ msgstr "Erotinmerkki, välilyönti"
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:175
 msgid "Prerequisites"
-msgstr ""
+msgstr "Edellytykset"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:176
-#, fuzzy
 msgid "Software required by WinCompose"
-msgstr "Merkkisarjat — WinCompose"
+msgstr "WinComposen tarvitsemat ohjelmat"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
@@ -838,11 +819,13 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
+"WinCompose tarvitsee .NET Frameworkiä, versiota 4.0 tai uudempaa, joka ei ole \n"
+"vaikuta olevan tällä hetkellä asennettuna. Ongelma voidaan yrittää ratkaista seuraavasti:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ""
+msgstr "Lataa ja asenna .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
@@ -850,11 +833,13 @@ msgid ""
 "Once this is done, you may return to this screen and proceed with the\n"
 "installation."
 msgstr ""
+"Kun asennus on valmis, palaa tähän ruutuun ja jatka\n"
+"asennusta."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:285
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "Järjestelmänvalvojan oikeudet tarvitaan. Virhe: %d"
 
 #~ msgid "Delay:"
 #~ msgstr "Viive:"
