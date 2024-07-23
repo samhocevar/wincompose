@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.8.0\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2022-01-28 10:53+0000\n"
-"Last-Translator: WCK <wck317-wck317@yahoo.com>\n"
-"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
-"wincompose/master/zh_Hant/>\n"
+"PO-Revision-Date: 2024-07-24 08:09+0000\n"
+"Last-Translator: mkpoli <git@mkpo.li>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/wincompose/master/zh_Hant/>\n"
 "Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.11-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -846,8 +845,8 @@ msgid ""
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose 需要 .NET Framework, 4.0 或更高的版本，而這看來並非目前已安裝。後"
-"面做法可能有助於解決問題:"
+"WinCompose 需要 .NET Framework 4.0 或更高的版本\n"
+"本電腦尚未安裝。後面做法可能有助於解決問題:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
