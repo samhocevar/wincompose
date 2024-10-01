@@ -8,103 +8,105 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-10-02 08:16+0000\n"
+"Last-Translator: Techit Sumo Thawiang <techit@dailitation.xyz>\n"
+"Language-Team: Thai <https://hosted.weblate.org/projects/wincompose/master/th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.8-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "ตรวจจับอัตโนมัติ"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr ""
+msgstr "ปุ่ม Alt ซ้าย"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr ""
+msgstr "ปุ่ม Alt ขวา"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr ""
+msgstr "ปุ่ม Control ซ้าย"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr ""
+msgstr "ปุ่ม Control ขวา"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr ""
+msgstr "ปุ่มวินโดวส์ซ้าย"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr ""
+msgstr "ปุ่มวินโดวส์ขวา"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr ""
+msgstr "Caps Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #. Also known as Application key
 #: language/i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr ""
+msgstr "เมนู"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "แปลง"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "ไม่แปลง"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Space"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "ปุ่มรีเทิร์น"
 
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "การเขียน"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
