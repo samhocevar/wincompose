@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.7.4\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2019-09-14 16:42+0000\n"
-"Last-Translator: Miyazawa Akira <pecorarista@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/wincompose/"
-"master/ja/>\n"
+"PO-Revision-Date: 2024-07-24 08:09+0000\n"
+"Last-Translator: mkpoli <git@mkpo.li>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/wincompose/master/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -215,7 +214,7 @@ msgstr "Composeキーとなるキーを指定してください。"
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "タイムアウトをリセット"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -593,7 +592,7 @@ msgstr "Tab"
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "タイムアウトなし"
 
 #. The “Advanced” section in the settings.
 #: language/i18n/Text.resx:557 ID:Advanced
@@ -634,70 +633,67 @@ msgstr "スペシャルサンクス"
 
 #. Remove sequence from the list of favorites.
 #: language/i18n/Text.resx:581 ID:RemoveFromFavorites
-#, fuzzy
 msgid "Remove from favorites"
-msgstr "お気に入りに追加する"
+msgstr "お気に入りから削除する"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:585 ID:Favorites
-#, fuzzy
 msgid "Favorites"
-msgstr "お気に入りに追加する"
+msgstr "お気に入り"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr ""
+msgstr "設定した場合、一定時間キーボード入力が検出されないときに合成シーケンスをキャンセルします。"
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "キーボードLED"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr ""
+msgstr "設定した場合、合成シーケンスに対応するキーボードLEDが点灯します。"
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "合成規則"
+msgstr "Compose"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "ログイン時にWinComposeを起動する"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "設定した場合、ユーザーがログインしたときにWinComposeが起動します。"
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "アクセシビリティ"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "Caps Lockは、押された間のみ有効です"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
-msgstr ""
+msgstr "Caps Lockを標準的な仕様のように二回押さなければならないのに対し、離すとすぐに無効になります。"
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "管理者権限で実行する（推奨）"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
 "Composition will not work in some applications if WinCompose does not run "
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
-msgstr ""
+msgstr "WinComposeが管理者権限で実行されない場合、一部のアプリで合成が動作しないことがあります。 この設定は、そのような現象が発生する可能性を減らします。"
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
@@ -861,21 +857,18 @@ msgstr "WinComposeのために必要なもの"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinComposeに必要な.NET Framework バージョン 3.5 SP1 またはそれ以上がインス"
-"トールされていないようです。以下のことをすると、問題の解決に役立つかもしれま"
-"せん:"
+"WinComposeに必要なバージョン 4.0 以上の .NET Framework 見つかりません。\n"
+"これらの問題を解決するために、以下のことが役立つかもしれません。"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ".NET Framework 3.5 Service Pack 1をダウンロードし、インストールする"
+msgstr ".NET Framework 4.0 ランタイムをダウンロードし、インストールする"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
