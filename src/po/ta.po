@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2024-11-06 03:00+0000\n"
+"PO-Revision-Date: 2024-12-02 04:00+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/wincompose/master/ta/>\n"
 "Language: ta\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.2\n"
+"X-Generator: Weblate 5.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -278,7 +278,7 @@ msgstr "அலுவலக பயன்பாடுகளில் சுழி�
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
-msgstr "நுண்மென் ஆபிச் பயன்பாடுகள் சில சில யூனிகோட் எழுத்துக்களை உள்ளிடும்போது சில நேரங்களில் ஆவண எழுத்துருவை பறக்கின்றன. இந்த நற்பொருத்தம் பிழையைச் சுற்றி வேலை செய்ய யூனிகோட் எழுத்துக்குப் பிறகு கண்ணுக்கு தெரியாத தன்மையைச் செருகும்."
+msgstr "நுண்மென் ஆபிச் பயன்பாடுகள் சில யூனிகோட் எழுத்துக்களை உள்ளிடும்போது சில நேரங்களில் ஆவண எழுத்துருவைப் பறக்கின்றன. இந்த நற்பொருத்தம் பிழையைச் சுற்றி வேலை செய்ய யூனிகோட் எழுத்துக்குப் பிறகு கண்ணுக்குத் தெரியாத தன்மையைச் செருகும்."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
@@ -326,7 +326,7 @@ msgstr "விருப்பங்கள்…"
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: language/i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr "{0} ({1} வரிசைமுறைகளில்) V {2}"
+msgstr "{1} ({0} வரிசைமுறைகளில்) V {2}"
 
 #. The “general” tab of the options window
 #: language/i18n/Text.resx:397 ID:General
