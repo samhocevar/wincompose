@@ -1,4 +1,5 @@
-﻿WinCompose
+not maintained
+ WinCompose
 ==========
 
 A compose key for Windows, free and open-source, created by Sam Hocevar.
