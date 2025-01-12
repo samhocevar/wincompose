@@ -1,12 +1,12 @@
 [submodule "src/3rdparty/unicode-emoji"]
 	path = src/3rdparty/unicode-emoji
-	url = ../unicode-emoji.git
+	url = ../../samhocevar/unicode-emoji.git
 	branch = master
 	update = merge
 
 [submodule "src/3rdparty/unicode-translation"]
 	path = src/3rdparty/unicode-translation
-	url = ../unicode-translation.git
+	url = ../../samhocevar/unicode-translation.git
 	branch = master
 	update = merge
 
