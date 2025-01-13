@@ -43,3 +43,6 @@
 	url = https://github.com/unicode-org/unicodetools
 	branch = main
 	update = merge
+[submodule "src/3rdparty/inserticons"]
+	path = src/3rdparty/inserticons
+	url = https://github.com/dIeGoLi/InsertIcons
