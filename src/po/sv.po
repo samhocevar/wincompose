@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -10,7 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2023-10-25 07:01+0000\n"
 "Last-Translator: greywatcher <greyman000@hotmail.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/master/sv/>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/wincompose/"
+"master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

@@ -17,7 +17,7 @@
 [submodule "wpf-notifyicon"]
 	path = src/3rdparty/wpf-notifyicon
 	url = ../../samhocevar-forks/wpf-notifyicon.git
-	branch = feature/net30
+	branch = feature/net40
 	update = merge
 
 [submodule "src/3rdparty/libx11"]
@@ -31,10 +31,6 @@
 	url = https://gitlab.freedesktop.org/xorg/proto/xorgproto
 	branch = master
 	update = merge
-
-[submodule "src/3rdparty/inserticons"]
-	path = src/3rdparty/inserticons
-	url = ../../samhocevar-forks/inserticons.git
 
 [submodule "src/3rdparty/innosetup"]
 	path = src/3rdparty/innosetup
