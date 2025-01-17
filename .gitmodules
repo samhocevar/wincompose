@@ -16,8 +16,8 @@
 
 [submodule "wpf-notifyicon"]
 	path = src/3rdparty/wpf-notifyicon
-	url = ../../samhocevar-forks/wpf-notifyicon.git
-	branch = feature/net40
+	url = ../../hardcodet/wpf-notifyicon.git
+	branch = release/2.0.1
 	update = merge
 
 [submodule "src/3rdparty/libx11"]

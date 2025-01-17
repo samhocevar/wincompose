@@ -16,7 +16,7 @@
 #ifndef CONFIG
 #   define CONFIG GetEnv('CONFIG')
 #endif
-#define FRAMEWORK "net40"
+#define FRAMEWORK "net472"
 
 #define SRCDIR "../wincompose"
 #define BINDIR "../wincompose/bin/" + CONFIG + "/" + FRAMEWORK
