@@ -58,6 +58,9 @@ namespace WinCompose
 
             Settings.DisableIcon.ValueChanged += MarkIconDirty;
             Settings.ComposeKeys.ValueChanged += MarkIconDirty;
+            Settings.UseXComposeRules.ValueChanged += MarkIconDirty;
+            Settings.UseEmojiRules.ValueChanged += MarkIconDirty;
+            Settings.UseXorgRules.ValueChanged += MarkIconDirty;
             Composer.Changed += MarkIconDirty;
             Updater.Changed += MarkIconDirty;
             MarkIconDirty();
@@ -71,7 +74,12 @@ namespace WinCompose
         {
             GC.SuppressFinalize(this);
             CompositionTarget.Rendering -= UpdateNotificationIcon;
-			
+
+            Settings.DisableIcon.ValueChanged += MarkIconDirty;
+            Settings.ComposeKeys.ValueChanged += MarkIconDirty;
+            Settings.UseXComposeRules.ValueChanged += MarkIconDirty;
+            Settings.UseEmojiRules.ValueChanged += MarkIconDirty;
+            Settings.UseXorgRules.ValueChanged += MarkIconDirty;
             Composer.Changed -= MarkIconDirty;
             Updater.Changed -= MarkIconDirty;
             Updater.Changed -= UpdaterStateChanged;
