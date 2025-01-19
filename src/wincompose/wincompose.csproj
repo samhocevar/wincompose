@@ -50,14 +50,14 @@
     <GZipTask InputFile="..\3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" OutputFile="$(OutputPath)\xorg.rules.gz" />
     <GZipTask InputFile="..\3rdparty\xcompose\dotXCompose" OutputFile="$(OutputPath)\xcompose.rules.gz" />
     <GZipTask InputFile="..\3rdparty\unicode-emoji\emoji-test.txt" OutputFile="$(OutputPath)\emoji-test.txt.gz" />
-	<GZipTask InputFile="..\3rdparty\unicodetools\unicodetools\data\ucd\15.0.0\Blocks.txt" OutputFile="$(OutputPath)\Blocks.txt.gz"/>
+	<GZipTask InputFile="..\3rdparty\unicodetools\unicodetools\data\ucd\16.0.0\Blocks.txt" OutputFile="$(OutputPath)\Blocks.txt.gz"/>
   </Target>
   <ItemGroup>
     <Item Include="..\3rdparty\xorgproto\include\X11\keysymdef.h" />
     <Item Include="..\3rdparty\libx11\nls\en_US.UTF-8\Compose.pre" />
     <Item Include="..\3rdparty\xcompose\dotXCompose" />
     <Item Include="..\3rdparty\unicode-emoji\emoji-test.txt" />
-	<Item Include="..\3rdparty\unicodetools\unicodetools\data\ucd\15.0.0\Blocks.txt" />
+	<Item Include="..\3rdparty\unicodetools\unicodetools\data\ucd\16.0.0\Blocks.txt" />
   </ItemGroup>
 
   <ItemGroup>
