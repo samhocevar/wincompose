@@ -12,7 +12,7 @@
 
 [submodule "src/3rdparty/xcompose"]
 	path = src/3rdparty/xcompose
-	url = ../../samhocevar-forks/xcompose.git
+	url = ../../kragen/xcompose.git
 
 [submodule "wpf-notifyicon"]
 	path = src/3rdparty/wpf-notifyicon
