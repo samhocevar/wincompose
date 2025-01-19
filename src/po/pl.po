@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -229,8 +229,8 @@ msgid ""
 "Compose U 1 A 3 F Enter"
 msgstr ""
 "Włącz wprowadzanie tekstu Unicode dla wszystkich symboli, nawet tych bez "
-"zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol U"
-"+1A3F: Compose U 1 A 3 F Enter"
+"zdefiniowanej sekwencji Compose. Na przykład, ta sekwencja wytworzy symbol "
+"U+1A3F: Compose U 1 A 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
@@ -713,7 +713,7 @@ msgid ""
 "happen."
 msgstr ""
 
-#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Inne, kontrola"

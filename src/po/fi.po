@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -313,8 +313,8 @@ msgid ""
 "used as the compose key."
 msgstr ""
 "Tämä kehottaa WinComposea pyrkimään parhaansa mukaan säilyttämään "
-"alkuperäisen näppäimen toiminnallisuuden. Tällöin esimerkiksi Alt-Tab -"
-"pikanäppäin toimii edelleen, vaikka Alt-näppäintä käytetään compose-"
+"alkuperäisen näppäimen toiminnallisuuden. Tällöin esimerkiksi Alt-Tab "
+"-pikanäppäin toimii edelleen, vaikka Alt-näppäintä käytetään compose-"
 "näppäimenä."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
@@ -711,7 +711,7 @@ msgstr ""
 "korotetuilla oikeuksilla. Tämä vaihtoehto vähentää mahdollisuuksia, että "
 "näin tapahtuu."
 
-#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Muut, hallinta"

@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
@@ -706,7 +706,7 @@ msgstr ""
 "வின்கோம்போச் உயர்ந்த சலுகைகளுடன் இயங்கவில்லை என்றால் சில பயன்பாடுகளில் கலவை இயங்காது. இந்த "
 "விருப்பங்கள் இது நடக்கும் வாய்ப்புகளை குறைக்கிறது."
 
-#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "மற்றவை, கட்டுப்பாடு"

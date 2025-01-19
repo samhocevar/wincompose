@@ -360,8 +360,8 @@ msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
 msgstr ""
-"Ak je funkcia CapsLock zapnutá, písanie sekvencie pre písmeno, napríklad \"é"
-"\", vždy vytlačí príslušný variant veľkého písmena, v tomto prípade \"É\"."
+"Ak je funkcia CapsLock zapnutá, písanie sekvencie pre písmeno, napríklad "
+"\"é\", vždy vytlačí príslušný variant veľkého písmena, v tomto prípade \"É\"."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
@@ -682,7 +682,7 @@ msgid ""
 "happen."
 msgstr ""
 
-#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Ostatné, riadiace"
