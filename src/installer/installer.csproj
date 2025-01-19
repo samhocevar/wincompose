@@ -18,7 +18,7 @@
     <Exec Command="&quot;%ProgramFiles(x86)%\Inno Setup 6\iscc&quot; /V4 /DCONFIG=$(Configuration) &quot;installer.iss&quot;" />
   </Target>
   <Target Name="Clean">
-    <Exec Command="for /F &quot;tokens=*&quot; %%g in ('gitversion -showvariable MajorMinorPatch') do (del ..\WinCompose-Setup-%%g.exe)" />
+    <Exec Command="for /F &quot;tokens=*&quot; %%g in ('dotnet-gitversion -showvariable MajorMinorPatch') do (del ..\WinCompose-Setup-%%g.exe)" />
   </Target>
   <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
 </Project>
