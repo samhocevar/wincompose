@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-01-24 06:43+0000\n"
+"Last-Translator: 109247019824 <109247019824@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Bulgarian <https://hosted.weblate.org/projects/wincompose/master/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -24,57 +26,57 @@ msgstr ""
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr ""
+msgstr "Ляв Alt"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr ""
+msgstr "Десен Alt"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr ""
+msgstr "Ляв Control"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr ""
+msgstr "Десен Control"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr ""
+msgstr "Ляв Windows"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr ""
+msgstr "Десен Windows"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr ""
+msgstr "Caps Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr ""
+msgstr "Pause, Break"
 
 #. Also known as Application key
 #: language/i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
@@ -89,26 +91,26 @@ msgstr ""
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr ""
+msgstr "Scroll Lock"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr ""
+msgstr "Интервал"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr ""
+msgstr "Return"
 
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr ""
+msgstr "Комбиниране"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr ""
+msgstr "Комбинации от проекта Xorg"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
