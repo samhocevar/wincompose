@@ -16,7 +16,7 @@
 #ifndef CONFIG
 #   define CONFIG GetEnv('CONFIG')
 #endif
-#define FRAMEWORK "net472"
+#define FRAMEWORK "net481"
 
 #define SRCDIR "../wincompose"
 #define BINDIR "../wincompose/bin/" + CONFIG + "/" + FRAMEWORK
@@ -58,6 +58,7 @@ Source: "{#BINDIR}\{#EXE}.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\language.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\Emoji.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\Hardcodet.NotifyIcon.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BINDIR}\Wpf.Ui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\NLog.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\System.ValueTuple.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BINDIR}\stfu.dll"; DestDir: "{app}"; Flags: ignoreversion

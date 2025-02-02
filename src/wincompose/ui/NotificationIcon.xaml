@@ -49,7 +49,7 @@
                 </ResourceDictionary>
             </ContextMenu.Resources>
 
-            <MenuItem Height="26" IsEnabled="False" Padding="0,0,0,2">
+            <MenuItem Height="32" IsEnabled="False" Padding="0,0,0,2">
                 <MenuItem.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="LightCyan" Offset="0"/>
@@ -60,7 +60,7 @@
                     <Image Source="{StaticResource ComposeKeyImage}" Width="16" Height="16"/>
                 </MenuItem.Icon>
                 <MenuItem.Header>
-                    <TextBlock Foreground="Black" FontWeight="Bold" FontSize="14"
+                    <TextBlock FontWeight="Bold" FontSize="14"
                                Text="WinCompose" VerticalAlignment="Center"/>
                 </MenuItem.Header>
             </MenuItem>

@@ -56,7 +56,6 @@ namespace WinCompose
 
             TrayMouseDoubleClick += NotifyiconDoubleclicked;
 
-            Settings.DisableIcon.ValueChanged += MarkIconDirty;
             Settings.ComposeKeys.ValueChanged += MarkIconDirty;
             Settings.UseXComposeRules.ValueChanged += MarkIconDirty;
             Settings.UseEmojiRules.ValueChanged += MarkIconDirty;
@@ -75,11 +74,10 @@ namespace WinCompose
             GC.SuppressFinalize(this);
             CompositionTarget.Rendering -= UpdateNotificationIcon;
 
-            Settings.DisableIcon.ValueChanged += MarkIconDirty;
-            Settings.ComposeKeys.ValueChanged += MarkIconDirty;
-            Settings.UseXComposeRules.ValueChanged += MarkIconDirty;
-            Settings.UseEmojiRules.ValueChanged += MarkIconDirty;
-            Settings.UseXorgRules.ValueChanged += MarkIconDirty;
+            Settings.ComposeKeys.ValueChanged -= MarkIconDirty;
+            Settings.UseXComposeRules.ValueChanged -= MarkIconDirty;
+            Settings.UseEmojiRules.ValueChanged -= MarkIconDirty;
+            Settings.UseXorgRules.ValueChanged -= MarkIconDirty;
             Composer.Changed -= MarkIconDirty;
             Updater.Changed -= MarkIconDirty;
             Updater.Changed -= UpdaterStateChanged;
@@ -178,7 +176,6 @@ namespace WinCompose
         {
             if (m_dirty.Get())
             {
-                Visibility = Settings.DisableIcon.Value ? Visibility.Collapsed : Visibility.Visible;
                 Currenttooltip = GetCurrentToolTip();
             }
         }
