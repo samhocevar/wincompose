@@ -1,4 +1,4 @@
-not maintained (most likely)
+Possibly maintained
 
  WinCompose
 ==========
