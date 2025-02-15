@@ -116,5 +116,5 @@ in Visual Studio in order to build WinCompose. You will also need to install
 Bugs and Improvements
 ---------------------
 
-Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>
+~~Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>~~
 or preferably to the [GitHub issue tracker](https://github.com/samhocevar/wincompose/issues).
