@@ -18,7 +18,7 @@ Download latest: [WinCompose 0.9.14](https://github.com/ell1010/wincompose/relea
 
  * Installable version: [WinCompose 0.9.14 (installer)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.14.exe).
 
- * Portable version: [WinCompose 0.9.11 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-NoInstall-0.9.11.zip).
+ * Portable version: [WinCompose 0.9.14 (portable)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-NoInstall-0.9.14.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
