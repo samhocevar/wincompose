@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2025-01-26 09:02+0000\n"
+"PO-Revision-Date: 2025-02-16 03:27+0000\n"
 "Last-Translator: 109247019824 <109247019824@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/wincompose/master/bg/>\n"
 "Language: bg\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr ""
+msgstr "Автоматично разпознаване"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:125 ID:KeyLMenu
@@ -175,7 +175,7 @@ msgstr "Комбинации"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Пробване с размяна поредността на клавишите"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
@@ -183,7 +183,7 @@ msgstr ""
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr ""
+msgstr "Търсене:"
 
 #: language/i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
@@ -209,7 +209,7 @@ msgstr ""
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr ""
+msgstr "Действия при недействителни комбинации"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
