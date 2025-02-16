@@ -13,16 +13,16 @@ very intuitive key combinations. For instance, **ö** is obtained using
 
 WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 
-Download latest: [WinCompose 0.9.11](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-Setup-0.9.11.exe) (September 3, 2021) or [browse releases](https://github.com/samhocevar/wincompose/releases)
+Download latest: [WinCompose 0.9.14](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.14.exe) (February 2nd, 2025) or [browse releases](https://github.com/ell1010/wincompose/releases/)
 ----------------
 
- * Installable version: [WinCompose 0.9.11 (installer)](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-Setup-0.9.11.exe).
+ * Installable version: [WinCompose 0.9.14 (installer)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.14.exe).
 
- * Portable version: [WinCompose 0.9.11 (portable)](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-NoInstall-0.9.11.zip).
+ * Portable version: [WinCompose 0.9.14 (portable)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-NoInstall-0.9.14.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
-**Note: this software is not digitally signed.** You can help with this by [donating to the project](http://wincompose.info/donate/).
+**Note: this software is not digitally signed.** ~~You can help with this by [donating to the project](http://wincompose.info/donate/).~~
 
 Quick start
 -----------
@@ -116,5 +116,5 @@ in Visual Studio in order to build WinCompose. You will also need to install
 Bugs and Improvements
 ---------------------
 
-Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>
+~~Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>~~
 or preferably to the [GitHub issue tracker](https://github.com/samhocevar/wincompose/issues).
