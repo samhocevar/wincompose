@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.8.0\n"
@@ -681,7 +681,7 @@ msgstr ""
 "在某些應用程式，若不以更高的權限執行 WinCompose，則組合鍵無作用。此選項可降低"
 "這種問題。"
 
-#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "其他，控制字元"
@@ -843,8 +843,9 @@ msgstr "WinCompose 需要的軟體"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -853,7 +854,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "下載、安裝 .NET Framework 4.0 執行期間程式庫"
 
 #. This string appears in the installer, not in WinCompose.

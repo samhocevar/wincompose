@@ -27,6 +27,7 @@ DLL = $(BINDIR)/language.dll \
       $(BINDIR)/Hardcodet.NotifyIcon.Wpf.dll \
       $(BINDIR)/NLog.dll \
       $(BINDIR)/stfu.dll \
+	  $(BINDIR)/Wpf.Ui.dll \
       $(BINDIR)/System.ValueTuple.dll \
       $(BINDIR)/Typography.OpenFont.dll \
       $(BINDIR)/Typography.GlyphLayout.dll
@@ -41,12 +42,12 @@ MSGMERGE = msgmerge
 all: check installer portable
 	@echo
 	@echo Latest: $(VERSION)
-	@echo Installer: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-Setup-$(VERSION).exe
-	@echo InstallerSHA256: $(shell sha256sum WinCompose-Setup-$(VERSION).exe)
-	@echo InstallerMD5: $(shell md5sum WinCompose-Setup-$(VERSION).exe)
-	@echo Portable: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-NoInstall-$(VERSION).zip
-	@echo PortableSHA256: $(shell sha256sum $(PORTABLE))
-	@echo PortableMD5: $(shell md5sum $(PORTABLE))
+	@echo Installer: https://github.com/ell1010/wincompose/releases/download/v$(VERSION)/WinCompose-Setup-$(VERSION).exe
+	@echo InstallerMD5: $(shell certutil -hashfile WinCompose-Setup-$(VERSION).exe MD5)
+	@echo InstallerSHA256: $(shell certutil -hashfile WinCompose-Setup-$(VERSION).exe sha256)
+	@echo Portable: https://github.com/ell1010/wincompose/releases/download/v$(VERSION)/WinCompose-NoInstall-$(VERSION).zip
+	@echo PortableSHA256: $(shell certutil -hashfile $(PORTABLE) MD5)
+	@echo PortableMD5: $(shell certutil -hashfile $(PORTABLE) sha256)
 
 check:
 	bash ./check-data.sh
@@ -73,7 +74,7 @@ portable: build $(EXE)
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
 	cp $(EXE).config $(PORTABLE:.zip=)
 	cp $(TXT) $(PORTABLE:.zip=)\rules
-	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -settings",0' > $(PORTABLE:.zip=)\wincompose-settings.vbs
-	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -sequences",0' > $(PORTABLE:.zip=)\wincompose-sequences.vbs
+	echo start wincompose.exe -settings > $(PORTABLE:.zip=)\wincompose-settings.bat
+	echo start wincompose.exe -sequences > $(PORTABLE:.zip=)\wincompose-sequences.bat
 	tar -a -c -f $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)

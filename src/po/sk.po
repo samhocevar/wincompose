@@ -682,7 +682,7 @@ msgid ""
 "happen."
 msgstr ""
 
-#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Ostatné, riadiace"
@@ -846,7 +846,7 @@ msgstr "Softvér potrebný na spustenie WinCompose"
 #: installer/installer.pas:179
 #, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -857,7 +857,7 @@ msgstr ""
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
 #, fuzzy
-msgid "Download and install .NET Framework 4.0 Runtime"
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Stiahnite a nainštalujte .NET Framework 3.5 Service Pack 1"
 
 #. This string appears in the installer, not in WinCompose.

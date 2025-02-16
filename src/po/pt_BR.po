@@ -2,7 +2,7 @@
 # Copyright (C) 2016 THE WinCompose'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the WinCompose package.
 # Automatically generated, 2016.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.6beta20160111\n"
@@ -714,7 +714,7 @@ msgstr ""
 "executado com privilégios elevados. Esta opção reduz as chances de que isso "
 "aconteça."
 
-#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Outro, Controle"
@@ -876,8 +876,9 @@ msgstr "Software necessário para o WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -887,7 +888,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Baixar e instalar o Runtime do .NET Framework 4.0"
 
 #. This string appears in the installer, not in WinCompose.

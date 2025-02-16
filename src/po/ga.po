@@ -114,9 +114,9 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Úsáid na 3,000 seicheamh cumadóireachta ó thionscadal Xorg (http://"
-"www.x.org/). Seo iad na seichimh is coitianta a fhaightear ar chóras "
-"caighdeánach Linux."
+"Úsáid na 3,000 seicheamh cumadóireachta ó thionscadal Xorg (http://www.x."
+"org/). Seo iad na seichimh is coitianta a fhaightear ar chóras caighdeánach "
+"Linux."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -715,7 +715,7 @@ msgstr ""
 "Ní oibreoidh comhdhéanamh i roinnt feidhmchlár mura ritheann WinCompose le "
 "pribhléidí ardaithe. Laghdaíonn na roghanna seo an seans go dtarlóidh sé seo."
 
-#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Eile, Rialúcháin"
@@ -877,8 +877,9 @@ msgstr "Bogearraí a theastaíonn ó WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -889,7 +890,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Íoslódáil agus suiteáil .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.

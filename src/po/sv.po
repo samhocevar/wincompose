@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -118,9 +118,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Använder de 3 000 komponeringssekvenserna från Xorg-projektet (httt://"
-"www.x.org/). Dessa är de sekvenser som vanligtvis hittas på vanliga Linux-"
-"system."
+"Använder de 3 000 komponeringssekvenserna från Xorg-projektet (httt://www.x."
+"org/). Dessa är de sekvenser som vanligtvis hittas på vanliga Linux-system."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -713,7 +712,7 @@ msgstr ""
 "Komposition kommer inte fungera i somliga program om WinCompose inte körs "
 "med utökade privilegier. Detta val minskar risken att detta sker."
 
-#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
 msgstr "Andra, kontroll"
@@ -875,8 +874,9 @@ msgstr "Programvara som krävs av WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -885,7 +885,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Hämta och installera .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.

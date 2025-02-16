@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
@@ -120,9 +120,8 @@ msgid ""
 "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
 "These are the sequences most commonly found on a standard Linux system."
 msgstr ""
-"Bruk de 3000 sammenfattingssekvensene fra Xorg-prosjektet (https://"
-"www.x.org/). Dette er sekvensene som oftest er å finne på et vanlig Linux-"
-"system."
+"Bruk de 3000 sammenfattingssekvensene fra Xorg-prosjektet (https://www.x."
+"org/). Dette er sekvensene som oftest er å finne på et vanlig Linux-system."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -720,7 +719,7 @@ msgid ""
 "happen."
 msgstr ""
 
-#.  Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
+#. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 #, fuzzy
 msgid "Other, Control"
@@ -887,8 +886,9 @@ msgstr "Programvare påkrevd av WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -897,7 +897,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Last ned og installer .NET-rammeverket 4.0-kjøretidsrutine"
 
 #. This string appears in the installer, not in WinCompose.
