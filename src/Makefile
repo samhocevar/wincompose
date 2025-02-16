@@ -1,4 +1,3 @@
-
 # Requirements:
 #  - Inno Setup 6 (download and install)
 #  - GitVersion (choco install gitversion)
@@ -7,12 +6,12 @@
 #  - Visual Studio (ensure vswhere.exe is in %PATH%)
 #  - gettext (mingw-get install msys-gettext)
 
-VERSION = $(shell dotnet-gitversion -showvariable MajorMinorPatch)
-FRAMEWORK = net472
+VERSION = $(shell gitversion -showvariable MajorMinorPatch)
+FRAMEWORK = net481
 CONFIG = Release
 
 SRCDIR = wincompose
-BINDIR = wincompose/bin/$(CONFIG)/$(FRAMEWORK)
+BINDIR = wincompose\bin\$(CONFIG)\$(FRAMEWORK)
 
 SLN = wincompose.sln
 ISS = installer/installer.iss
@@ -36,7 +35,7 @@ LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard language/i18n/*.*.resx
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
 VSWHERE = "${ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
-MSBUILD = TMP= TEMP= "$(shell $(VSWHERE) -latest -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe')"
+MSBUILD = "$(shell $(VSWHERE) -latest -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe')"
 MSGMERGE = msgmerge
 
 all: check installer portable
@@ -50,7 +49,7 @@ all: check installer portable
 	@echo PortableMD5: $(shell md5sum $(PORTABLE))
 
 check:
-	./check-data.sh
+	bash ./check-data.sh
 
 clean:
 	$(MSBUILD) $(SLN) -p:Configuration=$(CONFIG) -t:Clean
@@ -60,7 +59,7 @@ clean:
 	rm -rf wincompose/obj wincompose/bin || true
 
 build:
-	nuget restore $(SLN)
+	dotnet restore $(SLN)
 	$(MSBUILD) $(SLN) -p:Configuration=$(CONFIG) -t:Build
 
 installer: build $(EXE) $(ISS) $(PAS)
@@ -68,13 +67,13 @@ installer: build $(EXE) $(ISS) $(PAS)
 portable: build $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
-	mkdir -p $(PORTABLE:.zip=)/rules
-	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
-	for L in $(LANG); do cp $(BINDIR)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
+	mkdir $(PORTABLE:.zip=)\rules
+	mkdir $(addprefix $(PORTABLE:.zip=)\, $(LANG))
+	for %%L in ($(LANG)) do cp $(BINDIR)\%%L\language.resources.dll $(PORTABLE:.zip=)\%%L\ 
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
 	cp $(EXE).config $(PORTABLE:.zip=)
-	cp $(TXT) $(PORTABLE:.zip=)/rules
-	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -settings",0' > $(PORTABLE:.zip=)/wincompose-settings.vbs
-	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -sequences",0' > $(PORTABLE:.zip=)/wincompose-sequences.vbs
-	zip -r $(PORTABLE) $(PORTABLE:.zip=)
+	cp $(TXT) $(PORTABLE:.zip=)\rules
+	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -settings",0' > $(PORTABLE:.zip=)\wincompose-settings.vbs
+	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -sequences",0' > $(PORTABLE:.zip=)\wincompose-sequences.vbs
+	tar -a -c -f $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)
