@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2025-02-16 03:27+0000\n"
+"PO-Revision-Date: 2025-02-17 08:42+0000\n"
 "Last-Translator: 109247019824 <109247019824@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/wincompose/master/bg/>\n"
 "Language: bg\n"
@@ -81,12 +81,12 @@ msgstr "Escape"
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr ""
+msgstr "Превръщане"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr ""
+msgstr "Без превръщане"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
@@ -122,7 +122,7 @@ msgstr "Комбинации от проекта XCompose"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
-msgstr ""
+msgstr "Използвайте 1000 комбинации от проекта с отворен код XCompose (https://github.com/kragen/xcompose). Тези комбинации понякога могат да влязат в конфликт с тези на Xorg."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
@@ -130,7 +130,7 @@ msgstr "Комбинации за емоции от WinCompose"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
-msgstr ""
+msgstr "Използвайте комбинации за емоции, предоставени от автора и сътрудниците на WinCompose."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
@@ -179,7 +179,7 @@ msgstr "Пробване с размяна поредността на клав�
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
-msgstr ""
+msgstr "Пробване с размяна поредността на клавишите на комбинация от два клавиша. Например ако комбинацията от Е и А не е намерена ще бъде пробвана комбинацията А и Е."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -196,7 +196,7 @@ msgstr "Изберете клавиша, който да действа като
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr "Време на изчакване"
+msgstr "Нулиране след"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -204,7 +204,7 @@ msgstr "Разширено въвеждане на юникод"
 
 #: language/i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter"
-msgstr ""
+msgstr "Дава възможност за въвеждане на знаците от областта на Юникод, дори и тези, за които няма създадена комбинация. Например, следната последователност ще изведе знака U+1A3F: Модификатор U 1 A 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
@@ -213,92 +213,92 @@ msgstr "Действия при недействителни комбинаци�
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "Съвпадения без отчитане на регистъра"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
-msgstr ""
+msgstr "Ако въведената комбинация не съществува, но има такава, която се различава само по регистъра, автоматично се използва тя."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Отхвърляне на всички въведени знаци"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
-msgstr ""
+msgstr "Ако въведената комбинация не съществува, всички въведени знаци биват отхвърлени. Поведението по подразбиране е извеждането на знаците все едно модификаторът не е бил натиснат."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Издаване на звуков сигнал"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Ако въведената комбинация не съществува се издава системен звук."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
-msgstr ""
+msgstr "Език на интерфейса:"
 
 #: language/i18n/Text.resx:317 ID:LanguageToolTip
 msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
-msgstr ""
+msgstr "Изберете езика, който WinCompose да използва за интерфейса си. По подразбиране се използва езикът на операционната система."
 
 #. Close the settings window
 #: language/i18n/Text.resx:321 ID:Close
 msgid "Close"
-msgstr ""
+msgstr "Затваряне"
 
 #. Copy character or symbol to the clipboard
 #: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Копиране"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr ""
+msgstr "Емоции"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
 msgid "Apply"
-msgstr ""
+msgstr "Прилагане"
 
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Запазване на поведението на клавиша Модификатор"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
-msgstr ""
+msgstr "Запазва поведението на натиснатия клавиш. Например, комбинацията Alt+Tab ще работи, дори и когато за модификатор е избран клавишът Alt."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Вмъкване на невидими интервали в MS Office"
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
-msgstr ""
+msgstr "При въвеждане на определени символи на Юникод приложенията на Microsoft Office понякога променят шрифта на документа. Тази настройка вмъква невидим символ след символа на Юникод, за да заобиколи грешката."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr ""
+msgstr "Емулиране на Caps Lock, чрез два клавиша Shift"
 
 #: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
-msgstr ""
+msgstr "Ако Caps Lock е използван за модификатор, клавишът престава да върши функцията си. Тази настройка дава възможност Caps Lock да бъде включен при едновременно натискане на два клавиша Shift."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr ""
+msgstr "Shift изключва Caps Lock"
 
 #: language/i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
-msgstr ""
+msgstr "Ако Caps Lock е използван за модификатор, клавишът престава да върши функцията си. Тази настройка дава възможност Caps Lock да бъде изключен при натискане на клавиш Shift."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr ""
+msgstr "Включен Caps Lock винаги създава главни букви"
 
 #: language/i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
