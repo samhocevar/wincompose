@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2025-02-17 08:42+0000\n"
+"PO-Revision-Date: 2025-02-18 06:56+0000\n"
 "Last-Translator: 109247019824 <109247019824@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/wincompose/master/bg/>\n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -364,47 +364,47 @@ msgstr ""
 #. The "Tweaks" section in the settings window
 #: language/i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
-msgstr ""
+msgstr "Фини настройки"
 
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
 msgid "{0} seconds"
-msgstr ""
+msgstr "{0} секунди"
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
 msgid "About"
-msgstr ""
+msgstr "Относно"
 
 #. Download new version menu entry. {0}: version number
 #: language/i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
-msgstr ""
+msgstr "Изтегляне на WinCompose {0}"
 
 #. Window title of the About box
 #: language/i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr ""
+msgstr "Относно WinCompose"
 
 #. The section where we list all programmers.
 #: language/i18n/Text.resx:445 ID:Programming
 msgid "Programming"
-msgstr ""
+msgstr "Програмиране"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: language/i18n/Text.resx:449 ID:Translators
 msgid "Translation"
-msgstr ""
+msgstr "Преводи"
 
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Автори"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
 msgid "License"
-msgstr ""
+msgstr "Лицензи"
 
 #. Warning message when the user changes the language in the settings window
 #: language/i18n/Text.resx:461 ID:NeedRestart
