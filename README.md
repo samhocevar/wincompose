@@ -117,4 +117,4 @@ Bugs and Improvements
 ---------------------
 
 ~~Please report bugs or suggest improvements to Sam Hocevar <sam@hocevar.net>~~
-or preferably to the [GitHub issue tracker](https://github.com/samhocevar/wincompose/issues).
+or preferably to the [GitHub issue tracker](https://github.com/ell1010/wincompose/issues).
