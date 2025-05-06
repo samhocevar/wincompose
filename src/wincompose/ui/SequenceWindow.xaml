@@ -22,7 +22,7 @@
         xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
         xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
         Width="1024" Height="600"
-        WindowCornerPreference="Round" ResizeMode="NoResize"
+        WindowCornerPreference="Round"
         ExtendsContentIntoTitleBar="True"
         Title="{x:Static i18n:Text.WindowTitle}"
         Icon="/WinCompose;component/res/icon_sequences.png">
@@ -52,7 +52,7 @@
           -->
             <DataTemplate x:Key="SearchTextTemplate">
                 <Grid>
-                    <emoji:RichTextBox x:Name="SearchBox" Padding="4" Width="240" Style="{DynamicResource DefaultRichTextBoxStyle}"
+                    <emoji:RichTextBox x:Name="SearchBox" Padding="4" Width="Auto" Style="{DynamicResource DefaultRichTextBoxStyle}"
                     Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <DockPanel>
                         <Button DockPanel.Dock="Right" Click="ClearSearch_Click" Margin="4,0">
@@ -97,7 +97,7 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border x:Name="KeyBorder" Width="28" Height="28" Margin="2" CornerRadius="4">
+                                <Border x:Name="KeyBorder" Width="28" Height="28" Margin="1" CornerRadius="4">
                                     <Border.Background>
                                         <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                                             <GradientStop Color="#d2ad8e" Offset="0.0" />
@@ -117,12 +117,12 @@
                                                 <GradientStop Color="#faf3e8" Offset="1.0" />
                                             </LinearGradientBrush>
                                         </Border.Background>
-                                        <Viewbox>
+                                        <Viewbox Grid.ColumnSpan="4">
                                             <!-- We use MinWidth in case the label is a combining character,
                                            - otherwise nothing will be rendered. -->
                                             <TextBlock Text="{Binding KeyLabel}" Foreground="#310" FontWeight="Bold"
                                                    FontFamily="Consolas, Segoe UI Symbol, Arial"
-                                                   HorizontalAlignment="Center" MinWidth="10"/>
+                                                   HorizontalAlignment="Center"/>
                                         </Viewbox>
                                     </Border>
                                 </Border>
@@ -171,7 +171,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="540"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <ui:TitleBar Title="{x:Static i18n:Text.WindowTitle}" Grid.Row="0" Grid.ColumnSpan="5" FontSize="14" ShowMaximize="False" ShowMinimize="False" Height="38" Margin="0,0,0,4">
             <ui:TitleBar.Icon>
@@ -179,10 +180,10 @@
             </ui:TitleBar.Icon>
         </ui:TitleBar>
         <DockPanel Grid.Column="0" Grid.Row="1" LastChildFill="True" Grid.ColumnSpan="3">
-            <StackPanel Margin="10 4" Orientation="Horizontal" DockPanel.Dock="Top" VerticalAlignment="Top">
+            <DockPanel Margin="10 4" DockPanel.Dock="Top" VerticalAlignment="Top">
                 <ContentPresenter x:Name="SearchWidget" Content="{Binding}"
-                                  ContentTemplate="{StaticResource SearchTextTemplate}"/>
-            </StackPanel>
+                                  ContentTemplate="{StaticResource SearchTextTemplate}" Margin="10 4" DockPanel.Dock="Top" VerticalAlignment="Top" />
+            </DockPanel>
             <GroupBox DockPanel.Dock="Bottom" Margin="10 4 0 0" Header="{x:Static i18n:Text.UserDefinedSequences}">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                     <Button x:Name="EditUserDefinedSequences" MinWidth="80" Margin="8,4"
@@ -272,8 +273,9 @@
                             </Border>
 
                             <!-- The sequence, printed as key icons -->
-                            <ContentControl Template="{StaticResource ResourceKey=SequenceView}"
-                                            DockPanel.Dock="Right"/>
+                            <ScrollViewer  ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" MaxWidth="450" DockPanel.Dock="Right" Background="Transparent" PanningMode="HorizontalOnly">
+                                <ContentControl Template="{StaticResource ResourceKey=SequenceView}"></ContentControl>
+                            </ScrollViewer>
 
                             <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="20">
 
