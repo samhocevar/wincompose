@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
@@ -113,8 +113,13 @@ msgid "Use sequences from the Xorg project"
 msgstr "Комбинации от проекта Xorg"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
-msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
-msgstr "Използване на 3000 комбинации за композиране от проекта Xorg (http://www.x.org/). Това са най-често срещаните комбинации в стандартна операционна система Linux."
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
+msgstr ""
+"Използване на 3000 комбинации за композиране от проекта Xorg (http://www.x."
+"org/). Това са най-често срещаните комбинации в стандартна операционна "
+"система Linux."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
@@ -760,7 +765,10 @@ msgstr "Софтуерни зависимости на WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
-msgid "WinCompose needs the .NET Framework, version 4.0 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
+msgid ""
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
+"seem to be currently installed. The following action may help solve the "
+"problem:"
 msgstr ""
 "WinCompose използва .NET Framework, издание 4.0 или по-ново, което\n"
 "не е инсталирано. Следното действие може да помогне:"
