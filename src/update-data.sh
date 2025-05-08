@@ -23,7 +23,7 @@ cat > ${DEST} << EOF
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WinCompose $(dotnet-gitversion -showvariable MajorMinorPatch)\n"
+"Project-Id-Version: WinCompose $(gitversion -showvariable MajorMinorPatch)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -154,7 +154,7 @@ for POFILE in 3rdparty/unicode-translation/po/*.po; do
         esac
         DEST=language/unicode/${FILE}.${reslang}.resx
         sed -e '/^  <data/,$d' < language/unicode/${FILE}.resx > ${DEST}
-        if uname | grep -qi mingw; then unix2dos; else cat; fi < ${POFILE} \
+        if uname | grep -qi mingw; then todos; else cat; fi < ${POFILE} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk 'function f() {
                      if (c && msgstr) {
