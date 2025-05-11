@@ -2,7 +2,7 @@
 # Copyright (C) 2016 THE WinCompose'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the WinCompose package.
 # Automatically generated, 2016.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.6\n"
@@ -576,8 +576,8 @@ msgid ""
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
 msgstr ""
 "Se ebligite, WinCompose ne plu montros bildsimbolon en la taskopleto. La "
-"sola maniero de malfermi la interfacon de WinCompose do estos per la eroj «"
-"Agordoj de WinCompose» kaj «Makroklavoj de WinCompose» en la startmenuo."
+"sola maniero de malfermi la interfacon de WinCompose do estos per la eroj "
+"«Agordoj de WinCompose» kaj «Makroklavoj de WinCompose» en la startmenuo."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
@@ -870,8 +870,9 @@ msgstr "Programaroj bezonataj de WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -880,7 +881,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Elŝuti kaj instali .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.

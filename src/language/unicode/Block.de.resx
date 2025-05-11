@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="U1D00_U1D7F" xml:space="preserve">
-    <value>Phonetische Erweiterungen</value>
-  </data>
-  <data name="U3040_U309F" xml:space="preserve">
-    <value>Hiragana</value>
-  </data>
-  <data name="U30A0_U30FF" xml:space="preserve">
-    <value>Katakana</value>
-  </data>
-  <data name="U3100_U312F" xml:space="preserve">
-    <value>Bopomofo</value>
-  </data>
-  <data name="U3190_U319F" xml:space="preserve">
-    <value>Kanbun</value>
-  </data>
-  <data name="U31F0_U31FF" xml:space="preserve">
-    <value>Katakana Phonetische Erweiterungen</value>
-  </data>
-  <data name="UA490_UA4CF" xml:space="preserve">
-    <value>Yi-Radikale</value>
-  </data>
-  <data name="UAC00_UD7AF" xml:space="preserve">
-    <value>Hangul Silben</value>
-  </data>
-  <data name="UFE50_UFE6F" xml:space="preserve">
-    <value>Kleine Formvarianten</value>
-  </data>
-  <data name="U10330_U1034F" xml:space="preserve">
-    <value>Gotisch</value>
-  </data>
-  <data name="U10800_U1083F" xml:space="preserve">
-    <value>Zypriotische Silben</value>
-  </data>
-  <data name="U1D000_U1D0FF" xml:space="preserve">
-    <value>Byzantinische Musikalische Symbole</value>
-  </data>
-  <data name="U1D100_U1D1FF" xml:space="preserve">
-    <value>Musikalische Symbole</value>
-  </data>
 </root>
