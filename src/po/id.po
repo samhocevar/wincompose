@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2021-04-18 02:26+0000\n"
-"Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/wincompose/"
-"master/id/>\n"
+"PO-Revision-Date: 2025-05-08 04:01+0000\n"
+"Last-Translator: Eryquicc <fathirzaidanmaulana@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/wincompose/master/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.6-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -97,7 +96,7 @@ msgstr "Scroll Lock"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr "Ruang"
+msgstr "Spasi"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
@@ -170,7 +169,7 @@ msgstr "Halaman Donasi"
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "Mengunjungi situs web"
+msgstr "Kunjungi situs web"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
@@ -643,11 +642,11 @@ msgstr "Luncurkan WinCompose saat masuk"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Jika disetel, WinCompose akan dimulai saat pengguna masuk."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Aksesibilitas"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
@@ -661,7 +660,7 @@ msgstr ""
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "Jalankan dengan hak lebih tinggi (direkomendasikan)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
