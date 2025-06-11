@@ -48,7 +48,6 @@ namespace WinCompose
 
         private void CancelClicked(object sender, System.Windows.RoutedEventArgs e)
         {
-            Key = null;
             Close();
         }
     }

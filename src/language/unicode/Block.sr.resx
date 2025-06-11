@@ -117,31 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="U0000_U007F" xml:space="preserve">
-    <value>Основна латиница</value>
-  </data>
-  <data name="U0080_U00FF" xml:space="preserve">
-    <value>Латиница-1 додатак</value>
-  </data>
-  <data name="U0100_U017F" xml:space="preserve">
-    <value>Проширена латиница-А</value>
-  </data>
-  <data name="U0180_U024F" xml:space="preserve">
-    <value>Проширена латиница-Б</value>
-  </data>
-  <data name="U0400_U04FF" xml:space="preserve">
-    <value>Ћирилица</value>
-  </data>
-  <data name="U25A0_U25FF" xml:space="preserve">
-    <value>Геометријски облици</value>
-  </data>
-  <data name="U3040_U309F" xml:space="preserve">
-    <value>Хирагана</value>
-  </data>
-  <data name="U30A0_U30FF" xml:space="preserve">
-    <value>Катакана</value>
-  </data>
-  <data name="UE000_UF8FF" xml:space="preserve">
-    <value>Област за личну употребу</value>
-  </data>
 </root>
