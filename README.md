@@ -16,9 +16,9 @@ WinCompose also supports Emoji input for 😁 👻 👍 💩 🎁 🌹 🐊.
 Download latest: [WinCompose 0.9.14](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.14.exe) (February 2nd, 2025) or [browse releases](https://github.com/ell1010/wincompose/releases/)
 ----------------
 
- * Installable version: [WinCompose 0.9.14 (installer)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.14.1.exe).
+ * Installable version: [WinCompose 0.9.15.1 (installer)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.15.1.exe).
 
- * Portable version: [WinCompose 0.9.14 (portable)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-NoInstall-0.9.14.1.zip).
+ * Portable version: [WinCompose 0.9.15.1 (portable)](https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-NoInstall-0.9.15.1.zip).
 
  * Older versions are available [in the releases section](https://github.com/samhocevar/wincompose/releases/).
 
