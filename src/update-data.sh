@@ -154,7 +154,7 @@ for POFILE in 3rdparty/unicode-translation/po/*.po; do
         esac
         DEST=language/unicode/${FILE}.${reslang}.resx
         sed -e '/^  <data/,$d' < language/unicode/${FILE}.resx > ${DEST}
-        if uname | grep -qi mingw; then unix2dos; else cat; fi < ${POFILE} \
+        if uname | grep -qi mingw; then todos; else cat; fi < ${POFILE} \
           | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' \
           | awk 'function f() {
                      if (c && msgstr) {

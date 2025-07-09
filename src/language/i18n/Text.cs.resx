@@ -201,6 +201,9 @@
   <data name="Restart" xml:space="preserve">
     <value>Restartovat</value>
   </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Podpořte nás</value>
+  </data>
   <data name="VisitWebsite" xml:space="preserve">
     <value>Navštívit web</value>
   </data>
@@ -213,6 +216,12 @@
   <data name="Sequences" xml:space="preserve">
     <value>Sekvence</value>
   </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Pokuste se prohodit dvě klávesy</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Jsou-li zadány dva znaky, pokusí se vyměnit jejich pořadí. Jinými slovy, pokud Compose E A není platná sekvence, zkusí se Compose A E.</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Filtr vyhledávání:</value>
   </data>
@@ -221,6 +230,9 @@
   </data>
   <data name="ComposeKeyToolTip" xml:space="preserve">
     <value>Zvolte klávesu, která by měla fungovat jako klávesa Compose.</value>
+  </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Deaktivovat po</value>
   </data>
   <data name="UnicodeInput" xml:space="preserve">
     <value>Zadávání kódů Unicode</value>
@@ -254,6 +266,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Zavřít</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Zkopírovat do schránky</value>
   </data>
   <data name="Emoji" xml:space="preserve">
     <value>Emoji</value>
@@ -330,6 +345,9 @@
   <data name="Tweaks" xml:space="preserve">
     <value>Vychytávky</value>
   </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} sekund</value>
+  </data>
   <data name="About" xml:space="preserve">
     <value>O aplikaci</value>
   </data>
@@ -344,6 +362,9 @@
   </data>
   <data name="Translators" xml:space="preserve">
     <value>Překlad</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Autoři</value>
   </data>
   <data name="License" xml:space="preserve">
     <value>Licence</value>
@@ -381,8 +402,59 @@
   <data name="KeyDisabled" xml:space="preserve">
     <value>Zakázáno</value>
   </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Automaticky vyhledávat aktualizace</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Pokud to povolíte, WinCompose se bude průběžně připojovat k Internetu za účelem kontroly nových aktualizací. Aktualizace se nebudou instalovat samy.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>Vždy zobraz ikonu v oblasti oznámení</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>Windows automaticky po uplynutí určité doby skrývá ikony z oblasti oznámení. Tato volba se ji snaží udržet vždy viditelnou.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Změnit…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Prosím vyberte stiskem Vaše nové tlačítko Compose.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Přidat do oblíbených</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Skrýt ikonu v oblasti oznámení</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Pokud povoleno, WinCompose již nebude zobrazovat ikonu v oblasti oznámení. Jediný způsob, jakým bude možno otevřít rozhraní WinCompose, bude skrze “WinCompose Settings” a “WinCompose Sequences” vstupech ve Start menu.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Domů</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>Konec</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Bez odpočtu</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Pokročilé</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Ignorovat okna odpovídající regulárnímu výrazu:</value>
+  </data>
   <data name="IgnoreRegexToolTip" xml:space="preserve">
     <value>WinCompose bude zcela zakázán, pokud třída nebo titulek okna odpovídá regulárnímu výrazu.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Alternativní klávesa compoje je vždy Compose</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Pokud povoleno, se všemi klávesami compose bude zacházeno jako s Compose ve sekvenci. Výchozím chováním je, že pouze první klávesa se bude chovat jako Compose, a alternativní klávesy compose si ponechají jejich původní roli.</value>
   </data>
   <data name="SpecialThanks" xml:space="preserve">
     <value>Zvláštní poděkování</value>
@@ -392,5 +464,38 @@
   </data>
   <data name="Favorites" xml:space="preserve">
     <value>Oblíbené</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Pokud nastaveno, jakákoliv compose sekvence bude zrušena po určité době, pokud není zaznamenána jakákoli aktivita na klávesnici.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>LED klávesnice</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Pokud nastaveno, korespondující LED klávesnice bude rožnuta, když je jakákoli sekvence v průběhu.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Klávesa Compose</value>
+  </data>
+  <data name="AutoLaunch" xml:space="preserve">
+    <value>Spustit WinCompose při přihlášení</value>
+  </data>
+  <data name="AutoLaunchToolTip" xml:space="preserve">
+    <value>Pokud nastaveno, WinCompose se samo spustí, když se uživatel přihlásí</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Přístupnost</value>
+  </data>
+  <data name="MustHoldCapsLock" xml:space="preserve">
+    <value>Caps Lock je aktivní pouze při držení klávesy dolů</value>
+  </data>
+  <data name="MustHoldCapsLockToolTip" xml:space="preserve">
+    <value>Po puštění se klávesa Caps Lock okamžitě vypne, namísto standartního chování, kdy ji musíte zmáčknout dvakrát.</value>
+  </data>
+  <data name="RunElevated" xml:space="preserve">
+    <value>Spustit se zvýšenými oprávněními (doporučeno)</value>
+  </data>
+  <data name="RunElevatedToolTip" xml:space="preserve">
+    <value>Složení nebude fungovat v některých aplikacích, když WinCompose nepoběží se zvýšenými oprávněními. Tato možnost snižuje šanci, že se to stane.</value>
   </data>
 </root>
