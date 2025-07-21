@@ -8,772 +8,776 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2025-06-11 06:01+0000\n"
-"Last-Translator: hosêyň abāspanā <hosseinabaspanah@gmail.com>\n"
-"Language-Team: Luri (Bakhtiari) <https://hosted.weblate.org/projects/wincompose/master/bqi/>\n"
-"Language: bqi\n"
+"PO-Revision-Date: 2024-12-02 04:00+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/wincompose/master/ta/>\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.9-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
 msgid "Autodetect"
-msgstr "شناسایی خوتکار"
+msgstr "ஆட்டோடெடெக்ட்"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:125 ID:KeyLMenu
 msgid "Left Alt"
-msgstr "Alt چپ"
+msgstr "இடது ஆல்ட்"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:129 ID:KeyRMenu
 msgid "Right Alt"
-msgstr "Alt راست"
+msgstr "வலது ஆல்ட்"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:133 ID:KeyLControl
 msgid "Left Control"
-msgstr "Control چپ"
+msgstr "இடது கட்டுப்பாடு"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr "Control راست"
+msgstr "சரியான கட்டுப்பாடு"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:141 ID:KeyLWin
 msgid "Left Windows"
-msgstr "Left Windows"
+msgstr "இடது சன்னல்கள்"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:145 ID:KeyRWin
 msgid "Right Windows"
-msgstr "Right Windows"
+msgstr "வலது சாளரங்கள்"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:149 ID:KeyCapital
 msgid "Caps Lock"
-msgstr "Caps Lock"
+msgstr "தொப்பிகள் பூட்டு"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:153 ID:KeyNumLock
 msgid "Num Lock"
-msgstr "Num Lock"
+msgstr "எண் பூட்டு"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:157 ID:KeyPause
 msgid "Pause"
-msgstr "Pause"
+msgstr "இடைநிறுத்தம்"
 
 #. Also known as Application key
 #: language/i18n/Text.resx:161 ID:KeyApps
 msgid "Menu"
-msgstr "نومگه"
+msgstr "பட்டியல்"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:165 ID:KeyEscape
 msgid "Escape"
-msgstr "Escape"
+msgstr "தப்பிக்கும்"
 
 #. The name of the 変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:169 ID:KeyConvert
 msgid "Conversion"
-msgstr "تبدیل"
+msgstr "மாற்றம்"
 
 #. The name of the 無変換 key on a Japanese keyboard
 #: language/i18n/Text.resx:173 ID:KeyNonConvert
 msgid "Non-conversion"
-msgstr "بؽ تبدیل"
+msgstr "மாற்றமற்ற"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:177 ID:KeyScroll
 msgid "Scroll Lock"
-msgstr "Scroll Lock"
+msgstr "உருள் பூட்டு"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:181 ID:KeySpace
 msgid "Space"
-msgstr "Space"
+msgstr "இடைவெளி"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:185 ID:KeyReturn
 msgid "Return"
-msgstr "وورگشتن"
+msgstr "திரும்ப"
 
 #. The "Composing" section in the settings window
 #: language/i18n/Text.resx:189 ID:Composing
 msgid "Composing"
-msgstr "وورکل کردن"
+msgstr "இசையமைத்தல்"
 
 #: language/i18n/Text.resx:193 ID:UseXorgRules
 msgid "Use sequences from the Xorg project"
-msgstr "دیندایل پوروژه Xorg ن و کار بگر"
+msgstr "Xorg திட்டத்திலிருந்து காட்சிகளைப் பயன்படுத்தவும்"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
 msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
-msgstr ""
+msgstr "Xorg திட்டத்திலிருந்து (http://www.x.org/) 3,000 இசையமைப்புக் காட்சிகளைப் பயன்படுத்தவும். இது ஒரு நிலையான லினக்ச் அமைப்பில் பொதுவாகக் காணப்படும் காட்சிகள்."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
-msgstr ""
+msgstr "XCOPOSE திட்டத்திலிருந்து காட்சிகளைப் பயன்படுத்தவும்"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
 msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
-msgstr ""
+msgstr "XCOMPOSE OpenSource திட்டத்திலிருந்து (https://github.com/kragen/xcomopose) 1,000 இசையமைப்புக் காட்சிகளைப் பயன்படுத்தவும். இந்த காட்சிகள் சில நேரங்களில் Xorg உடன் முரண்படக்கூடும்."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
-msgstr "دیندایل ایموجی WinCompose ن و کار بگر"
+msgstr "வின்கோம்போச் ஈமோசி காட்சிகளைப் பயன்படுத்தவும்"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
 msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
-msgstr ""
+msgstr "வின்கோம்போச் ஆசிரியர் மற்றும் பங்களிப்பாளர்களால் வழங்கப்பட்ட ஈமோசிக்கான இசையமைப்புக் காட்சிகளைப் பயன்படுத்தவும்."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
 msgid "Debug Window"
-msgstr "نیمدری رفع اشکال"
+msgstr "பிழைத்திருத்த சாளரம்"
 
 #: language/i18n/Text.resx:221 ID:ShowSequences
 msgid "Show Sequences…"
-msgstr "نشووݩ داڌن دیندایل…"
+msgstr "காட்சிகளைக் காட்டு…"
 
 #. Menu entry to disable WinCompose
 #: language/i18n/Text.resx:225 ID:Disable
 msgid "Disable"
-msgstr "قیر فعال"
+msgstr "முடக்கு"
 
 #: language/i18n/Text.resx:229 ID:Restart
 msgid "Restart"
-msgstr "ز نۊ ر وندن"
+msgstr "மறுதொடக்கம்"
 
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr "بلگه لادراری"
+msgstr "நன்கொடை பக்கம்"
 
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
 msgid "Visit Website"
-msgstr "نیشتن سایت"
+msgstr "வலைத்தளத்தைப் பார்வையிடவும்"
 
 #: language/i18n/Text.resx:241 ID:Exit
 msgid "Exit"
-msgstr "و در زیڌن"
+msgstr "வெளியேறு"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:245 ID:UnicodeCharacters
 msgid "Unicode characters"
-msgstr "کاراکترا یۊنیکود"
+msgstr "யூனிகோட் எழுத்துக்கள்"
 
 #: language/i18n/Text.resx:249 ID:Sequences
 msgid "Sequences"
-msgstr "دیندایل"
+msgstr "வரிசைகள்"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr "ٱر دو تا کیلیتن آلشت کۊنی بؽڌره"
+msgstr "இரண்டு விசைகளையும் மாற்ற முயற்சிக்கவும்"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
-msgstr ""
+msgstr "இரண்டு முக்கிய வரிசையின் சாவியை மாற்ற முயற்சிக்கவும். உதாரணமாக, இ A TRATILE வரிசை இல்லையென்றால், அதற்கு பதிலாக இ ஐ இசையமைக்க முயற்சிக்கவும்."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
-msgstr "فیلتر پیتینیڌن:"
+msgstr "தேடல் வடிகட்டி:"
 
 #: language/i18n/Text.resx:265 ID:ComposeKey
 msgid "Compose Key:"
-msgstr "کیلیت هؽل کردن:"
+msgstr "விசையை எழுதுங்கள்:"
 
 #: language/i18n/Text.resx:269 ID:ComposeKeyToolTip
 msgid "Select the key that should act as the Compose key."
-msgstr "کیلیتی ک وا سی هؽل کردن بۊ ن، پسند کوݩ."
+msgstr "இசையமைப்பின் விசையாக செயல்பட வேண்டிய விசையைத் தேர்ந்தெடுக்கவும்."
 
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr "وورگندن موئلت زمۊوی"
+msgstr "நேரத்தை மீட்டமைக்கவும்"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
-msgstr "وۊرۊدی پؽش رئڌه یۊنیکود"
+msgstr "மேம்பட்ட யூனிகோட் உள்ளீடு"
 
 #: language/i18n/Text.resx:281 ID:UnicodeInputToolTip
 msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter"
-msgstr ""
+msgstr "எல்லா எழுத்துகளுக்கும் யூனிகோட் உள்ளீட்டை இயக்கவும், எந்த இசையமைப்பும் இல்லாதவர்கள் கூட வரையறுக்கப்பட்டுள்ளனர். உதாரணமாக, பின்வரும் வரிசை எழுத்துக்குறி u+1a3f ஐ வெளியிடும்: உ 1 a 3 f என்ட்"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr "منه دیندایلی ک زبال نؽن"
+msgstr "தவறான காட்சிகளில்"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "வழக்கு உணர்வற்ற போட்டிகளுக்கு மீண்டும் விழுங்கள்"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
-msgstr ""
+msgstr "உள்ளிட்ட வரிசை இல்லை என்றால், ஆனால் வழக்கால் மட்டுமே வேறுபடும் ஒன்று இருந்தால், அதை தானாகவே சரிசெய்கிறது."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr "پوی کاراکترا تایپ وابیڌنه ول کوݩ وو راو"
+msgstr "தட்டச்சு செய்த அனைத்து எழுத்துக்களையும் நிராகரிக்கவும்"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
-msgstr ""
+msgstr "உள்ளிட்ட வரிசை இல்லை என்றால், தட்டச்சு செய்யப்பட்ட அனைத்து எழுத்துக்களையும் நிராகரிக்கவும். இயல்புநிலை நடத்தை, இசையமைப்பின் விசை பயன்படுத்தப்படாதது போல் எழுத்துக்களை வெளியிடுவதாகும்."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr "ی بۊق پشک کوݩ"
+msgstr "ஒரு பீப்பை வெளியிடுங்கள்"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "உள்ளிட்ட வரிசை இல்லை என்றால், கணினி ஒலியை வெளியிடுங்கள்."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
-msgstr "زووݩ رابت منتوری:"
+msgstr "இடைமுக மொழி:"
 
 #: language/i18n/Text.resx:317 ID:LanguageToolTip
 msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
-msgstr ""
+msgstr "இடைமுகத்திற்கு Wincompose பயன்படுத்தும் மொழியைத் தேர்ந்தெடுக்கவும். இயல்பாக இயக்க முறைமை மொழி பயன்படுத்தப்படுகிறது."
 
 #. Close the settings window
 #: language/i18n/Text.resx:321 ID:Close
 msgid "Close"
-msgstr "بستن"
+msgstr "மூடு"
 
 #. Copy character or symbol to the clipboard
 #: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr "لف گیری من ویرگه"
+msgstr "கிளிப்போர்டுக்கு நகலெடுக்கவும்"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
 msgid "Emoji"
-msgstr "ایموجی"
+msgstr "ஈமோசி"
 
 #. Apply changes from the settings window
 #: language/i18n/Text.resx:333 ID:Apply
 msgid "Apply"
-msgstr "ائمال کردن"
+msgstr "இடு"
 
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr "رفتار هؽل کردن کیلیت ٱسلی ن زفت بوکوݩ"
+msgstr "அசல் இசையமைத்தல் முக்கிய நடத்தை பராமரிக்கவும்"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
-msgstr ""
+msgstr "அசல் விசையின் நடத்தையைத் தக்கவைக்க சிறந்த முயற்சியை மேற்கொள்ள இது வின்கோம்போசைக் கூறுகிறது. உதாரணமாக, ALT-TAB குறுக்குவழி மாற்று இசையமைப்பின் விசையாகப் பயன்படுத்தப்பட்டாலும் இன்னும் செயல்படும்."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "அலுவலக பயன்பாடுகளில் சுழிய அகல இடங்களைச் செருகவும்"
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
-msgstr ""
+msgstr "நுண்மென் ஆபிச் பயன்பாடுகள் சில யூனிகோட் எழுத்துக்களை உள்ளிடும்போது சில நேரங்களில் ஆவண எழுத்துருவைப் பறக்கின்றன. இந்த நற்பொருத்தம் பிழையைச் சுற்றி வேலை செய்ய யூனிகோட் எழுத்துக்குப் பிறகு கண்ணுக்குத் தெரியாத தன்மையைச் செருகும்."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
-msgstr ""
+msgstr "இரண்டு சிப்ட் விசைகளையும் பயன்படுத்தி கேப்ச் பூட்டைப் பின்பற்றுங்கள்"
 
 #: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
 msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
-msgstr ""
+msgstr "கேப்ச் லாக் இசையமைப்பின் விசையாகப் பயன்படுத்தப்பட்டால், விசையின் அசல் நடத்தை கிடைக்காது. இந்த நற்பொருத்தம் இரண்டு சிப்ட் விசைகளையும் ஒரே நேரத்தில் அழுத்துவதன் மூலம் கேப்ச் பூட்டை இயக்க அனுமதிக்கிறது."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
-msgstr "کیلیت Shift، Caps Lock ن قیر فعال اکونه"
+msgstr "சிப்ட் விசை கேப்ச் பூட்டை முடக்குகிறது"
 
 #: language/i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
 msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
-msgstr ""
+msgstr "கேப்ச் லாக் இசையமைப்பின் விசையாகப் பயன்படுத்தப்பட்டால், விசையின் அசல் நடத்தை கிடைக்காது. இந்த நற்பொருத்தம் சிப்ட் விசையை அழுத்துவதன் மூலம் கேப்ச் பூட்டை அணைக்க அனுமதிக்கிறது."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
-msgstr "Caps Lock هی هۊرۊف ن گپ اکونه"
+msgstr "தொப்பிகள் பூட்டு எப்போதும் கடிதங்களை மூலதனமாக்குகிறது"
 
 #: language/i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
 msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
-msgstr ""
+msgstr "கேப்ச் பூட்டு இயங்கும் போது, “é” போன்ற உச்சரிக்கப்பட்ட கடிதத்தைத் தட்டச்சு செய்வது எப்போதும் தொடர்புடைய மூலதன கடிதத்தை வெளியிடும், இந்த விசயத்தில் “é”."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
 msgid "Categories"
-msgstr "کتن بندی یل"
+msgstr "வகைகள்"
 
 #: language/i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr "من کتن بندی یل پسند بیڌه"
+msgstr "தேர்ந்தெடுக்கப்பட்ட வகைகளில்"
 
 #. The title of the Options window
 #: language/i18n/Text.resx:385 ID:Options
 msgid "Options — WinCompose"
-msgstr "گۊزینه یل — WinCompose"
+msgstr "விருப்பங்கள் - வின்கோம்போச்"
 
 #. Microsoft recommends using this instead of Settings or Preferences (https://msdn.microsoft.com/en-us/library/dn742392.aspx)
 #: language/i18n/Text.resx:389 ID:ShowOptions
 msgid "Options…"
-msgstr "گۊزینه یل…"
+msgstr "விருப்பங்கள்…"
 
 #. {0}: compose key name, {1}: number of sequences, {2}: program version number
 #: language/i18n/Text.resx:393 ID:TrayToolTip
 msgid "WinCompose v{2} on {0} ({1} sequences)"
-msgstr ""
+msgstr "{1} ({0} வரிசைமுறைகளில்) V {2}"
 
 #. The “general” tab of the options window
 #: language/i18n/Text.resx:397 ID:General
 msgid "General"
-msgstr "پوی وولاتی"
+msgstr "பொது"
 
 #: language/i18n/Text.resx:401 ID:Behavior
 msgid "Behavior"
-msgstr "رفتار"
+msgstr "நடத்தை"
 
 #. The title of the Sequences window
 #: language/i18n/Text.resx:405 ID:WindowTitle
 msgid "Sequences — WinCompose"
-msgstr "دیندایل — WinCompose"
+msgstr "காட்சிகள் - வின்கோம்போச்"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:409 ID:UserMacros
 msgid "User-defined macros"
-msgstr ""
+msgstr "பயனர் வரையறுக்கப்பட்ட மேக்ரோக்கள்"
 
 #: language/i18n/Text.resx:413 ID:DisabledToolTip
 msgid "WinCompose is disabled"
-msgstr "WinCompose قیر فعال هڌ"
+msgstr "வின்கோம்போச் முடக்கப்பட்டுள்ளது"
 
 #. The name of the "Insert" key on the keyboard
 #: language/i18n/Text.resx:417 ID:KeyInsert
 msgid "Insert"
-msgstr ""
+msgstr "செருகவும்"
 
 #. The "Test Typing" section in the settings window
 #: language/i18n/Text.resx:421 ID:TestTyping
 msgid "Test Typing"
-msgstr "آزمایش سی هؽل کردن"
+msgstr "சோதனை தட்டச்சு"
 
 #. The "Tweaks" section in the settings window
 #: language/i18n/Text.resx:425 ID:Tweaks
 msgid "Tweaks"
-msgstr "ترفندا"
+msgstr "மாற்றங்கள்"
 
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
 msgid "{0} seconds"
-msgstr "{0} سانیه"
+msgstr "{0} விநாடிகள்"
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
 msgid "About"
-msgstr "زبار"
+msgstr "பற்றி"
 
 #. Download new version menu entry. {0}: version number
 #: language/i18n/Text.resx:437 ID:Download
 msgid "Download WinCompose {0}"
-msgstr "دانلود WinCompose {0}"
+msgstr "Wincompose {0} பதிவிறக்கவும்"
 
 #. Window title of the About box
 #: language/i18n/Text.resx:441 ID:AboutBoxTitle
 msgid "About WinCompose"
-msgstr "زبار WinCompose"
+msgstr "வின்கோம்போச் பற்றி"
 
 #. The section where we list all programmers.
 #: language/i18n/Text.resx:445 ID:Programming
 msgid "Programming"
-msgstr "برنومه نویسی"
+msgstr "நிரலாக்க"
 
 #. The section where we list all translators. If you’re reading this, you’re probably a translator, so thank you! You rock!
 #: language/i18n/Text.resx:449 ID:Translators
 msgid "Translation"
-msgstr "ولرنیڌن"
+msgstr "மொழிபெயர்ப்பு"
 
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr "هؽل کونووݩ"
+msgstr "ஆசிரியர்கள்"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
 msgid "License"
-msgstr "لایسنس"
+msgstr "உரிமம்"
 
 #. Warning message when the user changes the language in the settings window
 #: language/i18n/Text.resx:461 ID:NeedRestart
 msgid "WinCompose needs to be restarted for some changes to take effect."
-msgstr ""
+msgstr "சில மாற்றங்கள் நடைமுறைக்கு வர வின்கோம்போச் மறுதொடக்கம் செய்யப்பட வேண்டும்."
 
 #. A button to report bugs (opens web browser)
 #: language/i18n/Text.resx:465 ID:ReportBug
 msgid "Report a Bug"
-msgstr "گوزارش ی باگ"
+msgstr "ஒரு பிழையைப் புகாரளிக்கவும்"
 
 #. The context menu for about, help, and software updates
 #: language/i18n/Text.resx:469 ID:Help
 msgid "Help"
-msgstr "هیاری"
+msgstr "உதவி"
 
 #. Message displayed in the notification area tooltip.
 #: language/i18n/Text.resx:473 ID:UpdatesToolTip
 msgid "Updates are available."
-msgstr "ورۊ رسۊوی من دسرس هڌ."
+msgstr "புதுப்பிப்புகள் கிடைக்கின்றன."
 
 #: language/i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr ""
+msgstr "பயனர் வரையறுக்கப்பட்ட காட்சிகள்"
 
 #. A button to open the file containing the user-defined sequences.
 #: language/i18n/Text.resx:481 ID:UserDefinedSequencesEdit
 msgid "Edit"
-msgstr "آلشت"
+msgstr "தொகு"
 
 #. A button to reload the user-defined sequences.
 #: language/i18n/Text.resx:485 ID:UserDefinedSequencesReload
 msgid "Reload"
-msgstr "بار ونی دووارته"
+msgstr "ஏற்றவும்"
 
 #: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr "کیلیتا تزریق بیڌه ن بؽل"
+msgstr "செலுத்தப்பட்ட விசைகளை அனுமதிக்கவும்"
 
 #: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr ""
+msgstr "ஆட்டோஓட்கி அல்லது சினெர்சி போன்ற பிற மென்பொருளால் அனுப்பப்பட்ட விசைகளை புறக்கணிக்காதீர்கள்"
 
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
 msgid "Prt Scrn"
-msgstr "Prt Scrn"
+msgstr "Prt scrn"
 
 #. String to show instead of the key name when no compose key is configured
 #: language/i18n/Text.resx:501 ID:KeyDisabled
 msgid "Disabled"
-msgstr "قیر فعال"
+msgstr "முடக்கப்பட்டது"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr "واجۊری خوتکار سی نوسخه نۊ"
+msgstr "புதுப்பிப்புகளை தானாக சரிபார்க்கவும்"
 
 #: language/i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid "If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically."
-msgstr ""
+msgstr "இயக்கப்பட்டால், புதிய பதிப்புகளைச் சரிபார்க்க வின்கோம்போச் சரியான இடைவெளியில் இணையத்துடன் இணைக்கும். புதுப்பிப்புகள் தானாக நிறுவப்படவில்லை."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "அறிவிப்பு பகுதி ஐகானை எப்போதும் காணக்கூடியதாக வைத்திருக்க முயற்சிக்கவும்"
 
 #: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid "By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible."
-msgstr ""
+msgstr "இயல்பாக, சாளரங்கள் சிறிது நேரத்திற்குப் பிறகு அறிவிப்பு பகுதியிலிருந்து ஐகானை அகற்றும். இந்த விருப்பம் எப்போதும் தெரியும்."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr "آلشت…"
+msgstr "மாற்றம்…"
 
 #: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "உங்கள் இசையமைப்பின் விசையாகப் பயன்படுத்த ஒரு விசையை அழுத்தவும்."
 
 #. Add sequence to the list of favorites.
 #: language/i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr "ٱووردن و موورد علاقه یل"
+msgstr "பிடித்தவைகளில் சேர்க்கவும்"
 
 #: language/i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "அறிவிப்பு பகுதி ஐகானை முடக்கு"
 
 #: language/i18n/Text.resx:537 ID:DisableIconToolTip
 msgid "If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr ""
+msgstr "இயக்கப்பட்டால், வின்கோம்போச் இனி அறிவிப்பு பகுதியில் ஒரு ஐகானைக் காட்டாது. வின்கோம்போச் இடைமுகத்தைத் திறப்பதற்கான ஒரே வழி, தொடக்க பட்டியலில் “வின்காம்போச் அமைப்புகள்” மற்றும் “வின்காம்போச் காட்சிகள்” உள்ளீடுகள் மூலம் இருக்கும்."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr "Home"
+msgstr "வீடு"
 
 #. The name of the “End” key on the keyboard
 #: language/i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr "End"
+msgstr "முடிவு"
 
 #. The name of the “Tab” key on the keyboard
 #: language/i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr "Tab"
+msgstr "தாவல்"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr "بؽ تیم اوت"
+msgstr "நேரம் முடிந்தது"
 
 #. The “Advanced” section in the settings.
 #: language/i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr "پؽش رئڌه"
+msgstr "மேம்பட்ட"
 
 #. “regex” is shorthand for “regular expression”.
 #: language/i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "இந்த ரீசெக்சுடன் பொருந்தக்கூடிய சாளரங்களை புறக்கணிக்கவும்:"
 
 #: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid "WinCompose will be completely disabled when the current window class or window name matches this regular expression."
-msgstr ""
+msgstr "தற்போதைய சாளர வகுப்பு அல்லது சாளர பெயர் இந்த வழக்கமான வெளிப்பாட்டுடன் பொருந்தும்போது வின்கோம்போச் முற்றிலும் முடக்கப்படும்."
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "மாற்று இசையமைப்பின் விசை எப்போதும் இசையமைக்கப்படுகிறது"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid "If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role."
-msgstr ""
+msgstr "இயக்கப்பட்டால், அனைத்து இசையமைப்பின் விசைகளும் ஒரு வரிசையில் இசையமைப்பாக கருதப்படும். இயல்பாக, முதல் அழுத்தப்பட்ட விசை மட்டுமே இசையமைப்பாக செயல்படும், மேலும் மாற்று இசையமை விசைகள் அவற்றின் அசல் பங்கைக் கொண்டிருக்கும்."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
 msgid "Special Thanks"
-msgstr "وا تشکور ویژه"
+msgstr "சிறப்பு நன்றி"
 
 #. Remove sequence from the list of favorites.
 #: language/i18n/Text.resx:581 ID:RemoveFromFavorites
 msgid "Remove from favorites"
-msgstr "پاک کردن ز موورد علاقه یل"
+msgstr "பிடித்தவைகளிலிருந்து அகற்று"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:585 ID:Favorites
 msgid "Favorites"
-msgstr "موورد علاقه یل"
+msgstr "பிடித்தவை"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
 msgid "If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected."
-msgstr ""
+msgstr "அமைக்கப்பட்டால், விசைப்பலகை செயல்பாடு எதுவும் கண்டறியப்படாவிட்டால் ஒரு குறிப்பிட்ட தாமதத்திற்குப் பிறகு எந்த இசையமைப்புக் வரிசை ரத்து செய்யப்படும்."
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "விசைப்பலகை எல்.ஈ.டி"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid "If set, the corresponding keyboard LED will be lit when a compose sequence is in progress."
-msgstr ""
+msgstr "அமைக்கப்பட்டால், ஒரு இசையமைப்புக் வரிசை நடந்து கொண்டிருக்கும்போது தொடர்புடைய விசைப்பலகை எல்.ஈ.டி எரியும்."
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
 msgid "Compose"
-msgstr ""
+msgstr "எழுதுங்கள்"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "உள்நுழைவில் வின்காம்போச் தொடங்கவும்"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "அமைக்கப்பட்டால், பயனர் உள்நுழையும்போது வின்கோம்போச் தொடங்கப்படும்."
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "அணுகல்"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "தொப்பிகள் பூட்டு கீழே வைத்திருக்கும் போது மட்டுமே செயலில் உள்ளது"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid "Releasing the Caps Lock key will immediately disable it, instead of the more standard behaviour of having to press it a second time."
-msgstr ""
+msgstr "கேப்ச் லாக் விசையை வெளியிடுவது உடனடியாக அதை முடக்கும், அதை இரண்டாவது முறையாக அழுத்த வேண்டியிருக்கும் நிலையான நடத்தைக்கு பதிலாக."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "உயர்ந்த சலுகைகளுடன் இயக்கவும் (பரிந்துரைக்கப்படுகிறது)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid "Composition will not work in some applications if WinCompose does not run with elevated privileges. This options reduces the chances that this will happen."
-msgstr ""
+msgstr "வின்கோம்போச் உயர்ந்த சலுகைகளுடன் இயங்கவில்லை என்றால் சில பயன்பாடுகளில் கலவை இயங்காது. இந்த விருப்பங்கள் இது நடக்கும் வாய்ப்புகளை குறைக்கிறது."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
 msgid "Other, Control"
-msgstr ""
+msgstr "மற்றவை, கட்டுப்பாடு"
 
 #. Unicode designation “Cf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:125 ID:Format
 msgid "Other, Format"
-msgstr ""
+msgstr "மற்ற, வடிவம்"
 
 #. Unicode designation “Cn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:129 ID:OtherNotAssigned
 msgid "Other, Not Assigned"
-msgstr ""
+msgstr "மற்றவை, ஒதுக்கப்படவில்லை"
 
 #. Unicode designation “Co” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:133 ID:PrivateUse
 msgid "Other, Private Use"
-msgstr ""
+msgstr "மற்ற, தனியார் பயன்பாடு"
 
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr ""
+msgstr "மற்ற, வாகை"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:141 ID:LowercaseLetter
 msgid "Letter, Lowercase"
-msgstr ""
+msgstr "கடிதம், சிறிய எழுத்துக்கள்"
 
 #. Unicode designation “Lm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:145 ID:ModifierLetter
 msgid "Letter, Modifier"
-msgstr ""
+msgstr "கடிதம், மாற்றியமைப்பாளர்"
 
 #. Unicode designation “Lo” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:149 ID:OtherLetter
 msgid "Letter, Other"
-msgstr ""
+msgstr "கடிதம், மற்றவை"
 
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr ""
+msgstr "கடிதம், டிட்ட்லெகேச்"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:157 ID:UppercaseLetter
 msgid "Letter, Uppercase"
-msgstr ""
+msgstr "கடிதம், பெரிய எழுத்து"
 
 #. Unicode designation “Mc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:161 ID:SpacingCombiningMark
 msgid "Mark, Spacing Combining"
-msgstr ""
+msgstr "குறி, இடைவெளி இணைத்தல்"
 
 #. Unicode designation “Me” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:165 ID:EnclosingMark
 msgid "Mark, Enclosing"
-msgstr ""
+msgstr "குறி, இணைத்தல்"
 
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr ""
+msgstr "குறி, இடைவெளி அல்ல"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:173 ID:DecimalDigitNumber
 msgid "Number, Decimal Digit"
-msgstr ""
+msgstr "எண், தசம இலக்க"
 
 #. Unicode designation “Nl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:177 ID:LetterNumber
 msgid "Number, Letter"
-msgstr ""
+msgstr "எண், கடிதம்"
 
 #. Unicode designation “No” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:181 ID:OtherNumber
 msgid "Number, Other"
-msgstr ""
+msgstr "எண், மற்றவை"
 
 #. Unicode designation “Pc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:185 ID:ConnectorPunctuation
 msgid "Punctuation, Connector"
-msgstr ""
+msgstr "நிறுத்தற்குறி, இணைப்பு"
 
 #. Unicode designation “Pd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:189 ID:DashPunctuation
 msgid "Punctuation, Dash"
-msgstr ""
+msgstr "நிறுத்தற்குறி, கோடு"
 
 #. Unicode designation “Pe” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:193 ID:ClosePunctuation
 msgid "Punctuation, Close"
-msgstr ""
+msgstr "நிறுத்தற்குறி, மூடு"
 
 #. Unicode designation “Pf” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:197 ID:FinalQuotePunctuation
 msgid "Punctuation, Final Quote"
-msgstr ""
+msgstr "நிறுத்தற்குறி, இறுதி மேற்கோள்"
 
 #. Unicode designation “Pi” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:201 ID:InitialQuotePunctuation
 msgid "Punctuation, Initial Quote"
-msgstr "نوقته زیڌن، نقل قاول ٱولیه"
+msgstr "நிறுத்தற்குறி, ஆரம்ப மேற்கோள்"
 
 #. Unicode designation “Po” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:205 ID:OtherPunctuation
 msgid "Punctuation, Other"
-msgstr "نوقته زیڌن، دیر"
+msgstr "நிறுத்தற்குறி, மற்றவை"
 
 #. Unicode designation “Ps” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:209 ID:OpenPunctuation
 msgid "Punctuation, Open"
-msgstr "علامت زیڌن، گۊشیڌن"
+msgstr "நிறுத்தற்குறி, திறந்த"
 
 #. Unicode designation “Sc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:213 ID:CurrencySymbol
 msgid "Symbol, Currency"
-msgstr "نماد، ٱرز"
+msgstr "அடையாளம், நாணயம்"
 
 #. Unicode designation “Sk” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:217 ID:ModifierSymbol
 msgid "Symbol, Modifier"
-msgstr "نماد، آلشتگر"
+msgstr "அடையாளம், மாற்றியமைப்பாளர்"
 
 #. Unicode designation “Sm” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:221 ID:MathSymbol
 msgid "Symbol, Math"
-msgstr "نماد، ریازی"
+msgstr "அடையாளம், கணிதம்"
 
 #. Unicode designation “So” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:225 ID:OtherSymbol
 msgid "Symbol, Other"
-msgstr "نماد، دیر"
+msgstr "அடையாளம், மற்றவை"
 
 #. Unicode designation “Zl” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:229 ID:LineSeparator
 msgid "Separator, Line"
-msgstr "سوا کوننده، خت"
+msgstr "பிரிப்பான், வரி"
 
 #. Unicode designation “Zp” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:233 ID:ParagraphSeparator
 msgid "Separator, Paragraph"
-msgstr "سوا کوننده، پاراگراف"
+msgstr "பிரிப்பான், பத்தி"
 
 #. Unicode designation “Zs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:237 ID:SpaceSeparator
 msgid "Separator, Space"
-msgstr "سوا کوننده، جاگه"
+msgstr "பிரிப்பான், இடம்"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:175
 msgid "Prerequisites"
-msgstr "پؽش نیازا"
+msgstr "முன்நிபந்தனைகள்"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:176
 msgid "Software required by WinCompose"
-msgstr ""
+msgstr "வின்கோம்போச் தேவைப்படும் மென்பொருள்"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
 msgid "WinCompose needs the .NET Framework, version 4.0 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
 msgstr ""
+"வின்கோம்போசுக்கு .NET கட்டமைப்பு, பதிப்பு 4.0 அல்லது அதற்குப் பிறகு தேவை, இது இல்லை\n"
+" தற்போது நிறுவப்பட்டதாகத் தெரிகிறது. பின்வரும் நடவடிக்கை சிக்கலைத் தீர்க்க உதவும்:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr ""
+msgstr ".NET கட்டமைப்பைப் பதிவிறக்கி நிறுவவும் 4.0 இயக்க நேரம்"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
 msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
 msgstr ""
+"இது முடிந்ததும், நீங்கள் இந்தத் திரைக்குத் திரும்பி தொடரலாம்\n"
+" நிறுவல்."
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:285
 msgid "Administrator rights are required. Error: %d"
-msgstr ""
+msgstr "நிர்வாகி உரிமைகள் தேவை. பிழை: %d"

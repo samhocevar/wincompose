@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2020-11-04 08:26+0000\n"
+"PO-Revision-Date: 2025-03-16 12:59+0000\n"
 "Last-Translator: Štěpán Adamec <adamec@yasas.org>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
-"cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.3.2-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -167,7 +166,7 @@ msgstr "Restartovat"
 #. A button to visit the donation page (http://wincompose.info/donate/)
 #: language/i18n/Text.resx:233 ID:DonationPage
 msgid "Donation Page"
-msgstr ""
+msgstr "Podpořte nás"
 
 #. A button to visit the website
 #: language/i18n/Text.resx:237 ID:VisitWebsite
@@ -189,13 +188,13 @@ msgstr "Sekvence"
 
 #: language/i18n/Text.resx:253 ID:SwapOnInvalid
 msgid "Try to swap the two keys"
-msgstr ""
+msgstr "Pokuste se prohodit dvě klávesy"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr ""
+msgstr "Jsou-li zadány dva znaky, pokusí se vyměnit jejich pořadí. Jinými slovy, pokud Compose E A není platná sekvence, zkusí se Compose A E."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -212,7 +211,7 @@ msgstr "Zvolte klávesu, která by měla fungovat jako klávesa Compose."
 #. The compose key deactivates itself after a certain configurable delay
 #: language/i18n/Text.resx:273 ID:ResetTimeout
 msgid "Reset timeout"
-msgstr ""
+msgstr "Deaktivovat po"
 
 #: language/i18n/Text.resx:277 ID:UnicodeInput
 msgid "Advanced Unicode input"
@@ -288,7 +287,7 @@ msgstr "Zavřít"
 #. Copy character or symbol to the clipboard
 #: language/i18n/Text.resx:325 ID:CopyToClipboard
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Zkopírovat do schránky"
 
 #. Name of the category (Unicode characters, Emoji, User macros, Favorites)
 #: language/i18n/Text.resx:329 ID:Emoji
@@ -432,9 +431,8 @@ msgstr "Vychytávky"
 
 #. Format string to display the current reset delay
 #: language/i18n/Text.resx:429 ID:DelaySeconds
-#, fuzzy
 msgid "{0} seconds"
-msgstr "10 sekund"
+msgstr "{0} sekund"
 
 #. About box menu entry
 #: language/i18n/Text.resx:433 ID:About
@@ -464,7 +462,7 @@ msgstr "Překlad"
 #. The tab item to see all the program authors.
 #: language/i18n/Text.resx:453 ID:Authors
 msgid "Authors"
-msgstr ""
+msgstr "Autoři"
 
 #. US: License, UK: Licence
 #: language/i18n/Text.resx:457 ID:License
@@ -526,78 +524,78 @@ msgstr "Zakázáno"
 
 #: language/i18n/Text.resx:505 ID:CheckUpdates
 msgid "Automatically check for updates"
-msgstr ""
+msgstr "Automaticky vyhledávat aktualizace"
 
 #: language/i18n/Text.resx:509 ID:CheckUpdatesToolTip
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
-msgstr ""
+msgstr "Pokud to povolíte, WinCompose se bude průběžně připojovat k Internetu za účelem kontroly nových aktualizací. Aktualizace se nebudou instalovat samy."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Vždy zobraz ikonu v oblasti oznámení"
 
 #: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr ""
+msgstr "Windows automaticky po uplynutí určité doby skrývá ikony z oblasti oznámení. Tato volba se ji snaží udržet vždy viditelnou."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
 msgid "Change…"
-msgstr ""
+msgstr "Změnit…"
 
 #: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Prosím vyberte stiskem Vaše nové tlačítko Compose."
 
 #. Add sequence to the list of favorites.
 #: language/i18n/Text.resx:529 ID:AddToFavorites
 msgid "Add to favorites"
-msgstr ""
+msgstr "Přidat do oblíbených"
 
 #: language/i18n/Text.resx:533 ID:DisableIcon
 msgid "Disable notification area icon"
-msgstr ""
+msgstr "Skrýt ikonu v oblasti oznámení"
 
 #: language/i18n/Text.resx:537 ID:DisableIconToolTip
 msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr ""
+msgstr "Pokud povoleno, WinCompose již nebude zobrazovat ikonu v oblasti oznámení. Jediný způsob, jakým bude možno otevřít rozhraní WinCompose, bude skrze “WinCompose Settings” a “WinCompose Sequences” vstupech ve Start menu."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
 msgid "Home"
-msgstr ""
+msgstr "Domů"
 
 #. The name of the “End” key on the keyboard
 #: language/i18n/Text.resx:545 ID:KeyEnd
 msgid "End"
-msgstr ""
+msgstr "Konec"
 
 #. The name of the “Tab” key on the keyboard
 #: language/i18n/Text.resx:549 ID:KeyTab
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Text to show instead of a value in seconds when the reset timeout feature is disabled
 #: language/i18n/Text.resx:553 ID:NoTimeout
 msgid "No timeout"
-msgstr ""
+msgstr "Bez odpočtu"
 
 #. The “Advanced” section in the settings.
 #: language/i18n/Text.resx:557 ID:Advanced
 msgid "Advanced"
-msgstr ""
+msgstr "Pokročilé"
 
 #. “regex” is shorthand for “regular expression”.
 #: language/i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Ignorovat okna odpovídající regulárnímu výrazu:"
 
 #: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
@@ -609,14 +607,14 @@ msgstr ""
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Alternativní klávesa compoje je vždy Compose"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
-msgstr ""
+msgstr "Pokud povoleno, se všemi klávesami compose bude zacházeno jako s Compose ve sekvenci. Výchozím chováním je, že pouze první klávesa se bude chovat jako Compose, a alternativní klávesy compose si ponechají jejich původní roli."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
@@ -637,56 +635,55 @@ msgstr "Oblíbené"
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr ""
+msgstr "Pokud nastaveno, jakákoliv compose sekvence bude zrušena po určité době, pokud není zaznamenána jakákoli aktivita na klávesnici."
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
-msgstr ""
+msgstr "LED klávesnice"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr ""
+msgstr "Pokud nastaveno, korespondující LED klávesnice bude rožnuta, když je jakákoli sekvence v průběhu."
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
-#, fuzzy
 msgid "Compose"
-msgstr "Klávesa Compose:"
+msgstr "Klávesa Compose"
 
 #: language/i18n/Text.resx:605 ID:AutoLaunch
 msgid "Launch WinCompose on login"
-msgstr ""
+msgstr "Spustit WinCompose při přihlášení"
 
 #: language/i18n/Text.resx:609 ID:AutoLaunchToolTip
 msgid "If set, WinCompose will be started when the user logs in."
-msgstr ""
+msgstr "Pokud nastaveno, WinCompose se samo spustí, když se uživatel přihlásí"
 
 #: language/i18n/Text.resx:613 ID:Accessibility
 msgid "Accessibility"
-msgstr ""
+msgstr "Přístupnost"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "Caps Lock je aktivní pouze při držení klávesy dolů"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
-msgstr ""
+msgstr "Po puštění se klávesa Caps Lock okamžitě vypne, namísto standartního chování, kdy ji musíte zmáčknout dvakrát."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
-msgstr ""
+msgstr "Spustit se zvýšenými oprávněními (doporučeno)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
 msgid ""
 "Composition will not work in some applications if WinCompose does not run "
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
-msgstr ""
+msgstr "Složení nebude fungovat v některých aplikacích, když WinCompose nepoběží se zvýšenými oprávněními. Tato možnost snižuje šanci, že se to stane."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
@@ -850,20 +847,18 @@ msgstr "Software vyžadovaný pro běh WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
-#, fuzzy
 msgid ""
 "WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
-"WinCompose vyžaduje .NET Framework, verzi 3.5 SP1 či pozdější, který nebyl\n"
+"WinCompose vyžaduje .NET Framework, ve verzi 4.0 či pozdější, který nebyl\n"
 "v systému detekován. Následující akce by mohla pomoci vyřešit tento problém:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-#, fuzzy
 msgid "Download and install .NET Framework 4.0 Runtime"
-msgstr "Stáhnout a nainstalovat .NET Framework 3.5 Service Pack 1"
+msgstr "Stáhnout a nainstalovat .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
