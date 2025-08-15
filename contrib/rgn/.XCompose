@@ -42,22 +42,26 @@
 
 # mgua Wincompose Romagnolo configurations:
 # contributed by Marco Guardigli, mgua@tomware.it for www.vocinelvento.it project, aug 2025
-
+ä á ā 
 
 # Letter A with diacritics
 <Multi_key> <a> <g> <r> <a> <v> <e>		: "à"	U00E0		# {"ascii-equivalent": "a", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E0","composition":["U+0061","U+0300"]}
+<Multi_key> <a> <g>				: "à"	U00E0		# {"ascii-equivalent": "a", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E0","composition":["U+0061","U+0300"]}
 <Multi_key> <a> <`>						: "à"	U00E0		# {"ascii-equivalent": "a", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E0","composition":["U+0061","U+0300"]}
 <Multi_key> <a> <<>						: "à"	U00E0		# {"ascii-equivalent": "a", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E0","composition":["U+0061","U+0300"]}
 
 <Multi_key> <a> <a> <c> <u> <t> <e>		: "á"	U00E1		# {"ascii-equivalent": "a", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E1","composition":["U+0061","U+0301"]}
 <Multi_key> <a> <'>						: "á"	U00E1		# {"ascii-equivalent": "a", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E1","composition":["U+0061","U+0301"]}
+<Multi_key> <a> <a>						: "á"	U00E1		# {"ascii-equivalent": "a", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E1","composition":["U+0061","U+0301"]}
 <Multi_key> <a> <>>						: "á"	U00E1		# {"ascii-equivalent": "a", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E1","composition":["U+0061","U+0301"]}
 
 <Multi_key> <a> <c> <i> <r> <c>			: "â"	U00E2		# {"ascii-equivalent": "a", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00E2","composition":["U+0061","U+0302"]}
 <Multi_key> <a> <^>						: "â"	U00E2		# {"ascii-equivalent": "a", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00E2","composition":["U+0061","U+0302"]}
+<Multi_key> <a> <c>						: "â"	U00E2		# {"ascii-equivalent": "a", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00E2","composition":["U+0061","U+0302"]}
 
 <Multi_key> <a> <d> <i> <a> <e>			: "ä"	U00E4		# {"ascii-equivalent": "a", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00E4", "composition":["U+0061","U+0308"]}
 <Multi_key> <a> <">						: "ä"	U00E4		# {"ascii-equivalent": "a", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00E4", "composition":["U+0061","U+0308"]}
+<Multi_key> <a> <d>						: "ä"	U00E4		# {"ascii-equivalent": "a", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00E4", "composition":["U+0061","U+0308"]}
 <Multi_key> <a> <:>						: "ä"	U00E4		# {"ascii-equivalent": "a", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00E4", "composition":["U+0061","U+0308"]}
 
 <Multi_key> <a> <m> <a> <c> <r>			: "ā"	U0101		# {"ascii-equivalent": "a", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+0101", "composition":["U+0061","U+0304"]}
@@ -71,21 +75,26 @@
 
 <Multi_key> <a> <t> <i> <l> <d> <e>		: "ã"	U00E3		# {"ascii-equivalent": "a", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+00E3", "composition": ["U+0061", "U+0303"]}
 <Multi_key> <a> <~>						: "ã"	U00E3		# {"ascii-equivalent": "a", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+00E3", "composition": ["U+0061", "U+0303"]}
+<Multi_key> <a> <t>						: "ã"	U00E3		# {"ascii-equivalent": "a", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+00E3", "composition": ["U+0061", "U+0303"]}
 
 # Letter A uppercase with diacritics
 <Multi_key> <A> <g> <r> <a> <v> <e>		: "À"	U00C0		# {"ascii-equivalent": "A", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C0","composition":["U+0041","U+0300"]}
 <Multi_key> <A> <`>						: "À"	U00C0		# {"ascii-equivalent": "A", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C0","composition":["U+0041","U+0300"]}
+<Multi_key> <A> <g>						: "À"	U00C0		# {"ascii-equivalent": "A", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C0","composition":["U+0041","U+0300"]}
 <Multi_key> <A> <<>						: "À"	U00C0		# {"ascii-equivalent": "A", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C0","composition":["U+0041","U+0300"]}
 
 <Multi_key> <A> <a> <c> <u> <t> <e>		: "Á"	U00C1		# {"ascii-equivalent": "A", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C1","composition":["U+0041","U+0301"]}
 <Multi_key> <A> <'>						: "Á"	U00C1		# {"ascii-equivalent": "A", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C1","composition":["U+0041","U+0301"]}
+<Multi_key> <A> <a>						: "Á"	U00C1		# {"ascii-equivalent": "A", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C1","composition":["U+0041","U+0301"]}
 <Multi_key> <A> <>>						: "Á"	U00C1		# {"ascii-equivalent": "A", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C1","composition":["U+0041","U+0301"]}
 
 <Multi_key> <A> <c> <i> <r> <c>			: "Â"	U00C2		# {"ascii-equivalent": "A", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00C2","composition":["U+0041","U+0302"]}
 <Multi_key> <A> <^>						: "Â"	U00C2		# {"ascii-equivalent": "A", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00C2","composition":["U+0041","U+0302"]}
+<Multi_key> <A> <c>						: "Â"	U00C2		# {"ascii-equivalent": "A", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00C2","composition":["U+0041","U+0302"]}
 
 <Multi_key> <A> <d> <i> <a> <e>			: "Ä"	U00C4		# {"ascii-equivalent": "A", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00C4", "composition":["U+0041","U+0308"]}
 <Multi_key> <A> <">						: "Ä"	U00C4		# {"ascii-equivalent": "A", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00C4", "composition":["U+0041","U+0308"]}
+<Multi_key> <A> <d>						: "Ä"	U00C4		# {"ascii-equivalent": "A", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00C4", "composition":["U+0041","U+0308"]}
 <Multi_key> <A> <:>						: "Ä"	U00C4		# {"ascii-equivalent": "A", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00C4", "composition":["U+0041","U+0308"]}
 
 <Multi_key> <A> <m> <a> <c> <r>			: "Ā"	U0100		# {"ascii-equivalent": "A", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+0100", "composition":["U+0041","U+0304"]}
@@ -99,22 +108,27 @@
 
 <Multi_key> <A> <t> <i> <l> <d> <e>		: "Ã"	U00C3		# {"ascii-equivalent": "A", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+00C3", "composition": ["U+0041", "U+0303"]}
 <Multi_key> <A> <~>						: "Ã"	U00C3		# {"ascii-equivalent": "A", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+00C3", "composition": ["U+0041", "U+0303"]}
+<Multi_key> <A> <t>						: "Ã"	U00C3		# {"ascii-equivalent": "A", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+00C3", "composition": ["U+0041", "U+0303"]}
 
 # Letter E with diacritics
 <Multi_key> <e> <g> <r> <a> <v> <e>		: "è"	U00E8		# {"ascii-equivalent": "e", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E8","composition":["U+0065","U+0300"]}
 <Multi_key> <e> <`>						: "è"	U00E8		# {"ascii-equivalent": "e", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E8","composition":["U+0065","U+0300"]}
+<Multi_key> <e> <g>						: "è"	U00E8		# {"ascii-equivalent": "e", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E8","composition":["U+0065","U+0300"]}
 <Multi_key> <e> <<>						: "è"	U00E8		# {"ascii-equivalent": "e", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E8","composition":["U+0065","U+0300"]}
 
 <Multi_key> <e> <a> <c> <u> <t> <e>		: "é"	U00E9		# {"ascii-equivalent": "e", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E9","composition":["U+0065","U+0301"]}
 <Multi_key> <e> <'>						: "é"	U00E9		# {"ascii-equivalent": "e", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E9","composition":["U+0065","U+0301"]}
+<Multi_key> <e> <a>						: "é"	U00E9		# {"ascii-equivalent": "e", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E9","composition":["U+0065","U+0301"]}
 <Multi_key> <e> <>>						: "é"	U00E9		# {"ascii-equivalent": "e", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00E9","composition":["U+0065","U+0301"]}
 
 <Multi_key> <e> <c> <i> <r> <c>			: "ê"	U00EA		# {"ascii-equivalent": "e", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00EA","composition":["U+0065","U+0302"]}
 <Multi_key> <e> <^>						: "ê"	U00EA		# {"ascii-equivalent": "e", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00EA","composition":["U+0065","U+0302"]}
+<Multi_key> <e> <c>						: "ê"	U00EA		# {"ascii-equivalent": "e", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00EA","composition":["U+0065","U+0302"]}
 
 <Multi_key> <e> <d> <i> <a> <e>			: "ë"	U00EB		# {"ascii-equivalent": "e", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EB", "composition":["U+0065","U+0308"]}
 <Multi_key> <e> <">						: "ë"	U00EB		# {"ascii-equivalent": "e", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EB", "composition":["U+0065","U+0308"]}
 <Multi_key> <e> <:>						: "ë"	U00EB		# {"ascii-equivalent": "e", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EB", "composition":["U+0065","U+0308"]}
+<Multi_key> <e> <d>						: "ë"	U00EB		# {"ascii-equivalent": "e", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EB", "composition":["U+0065","U+0308"]}
 
 <Multi_key> <e> <m> <a> <c> <r>			: "ē"	U0113		# {"ascii-equivalent": "e", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+0113", "composition":["U+0065","U+0304"]}
 <Multi_key> <e> <->						: "ē"	U0113		# {"ascii-equivalent": "e", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+0113", "composition":["U+0065","U+0304"]}
@@ -122,24 +136,29 @@
 
 <Multi_key> <e> <t> <i> <l> <d> <e>		: "ẽ"	U1EBD		# {"ascii-equivalent": "e", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+1EBD", "composition": ["U+0065", "U+0303"]}
 <Multi_key> <e> <~>						: "ẽ"	U1EBD		# {"ascii-equivalent": "e", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+1EBD", "composition": ["U+0065", "U+0303"]}
+<Multi_key> <e> <t>						: "ẽ"	U1EBD		# {"ascii-equivalent": "e", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+1EBD", "composition": ["U+0065", "U+0303"]}
 
 <Multi_key> <a> <e>						: "æ"	U00E6		# {"ascii-equivalent": "e", "diacritics": ["letter"], "case":"lowercase", "unicode":"U+00E6", "composition":["U+00E6"]}
 
 # Letter E uppercase with diacritics
 <Multi_key> <E> <g> <r> <a> <v> <e>		: "È"	U00C8		# {"ascii-equivalent": "E", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C8","composition":["U+0045","U+0300"]}
 <Multi_key> <E> <`>						: "È"	U00C8		# {"ascii-equivalent": "E", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C8","composition":["U+0045","U+0300"]}
+<Multi_key> <E> <g>						: "È"	U00C8		# {"ascii-equivalent": "E", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C8","composition":["U+0045","U+0300"]}
 <Multi_key> <E> <<>						: "È"	U00C8		# {"ascii-equivalent": "E", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00C8","composition":["U+0045","U+0300"]}
 
 <Multi_key> <E> <a> <c> <u> <t> <e>		: "É"	U00C9		# {"ascii-equivalent": "E", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C9","composition":["U+0045","U+0301"]}
 <Multi_key> <E> <'>						: "É"	U00C9		# {"ascii-equivalent": "E", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C9","composition":["U+0045","U+0301"]}
+<Multi_key> <E> <a>						: "É"	U00C9		# {"ascii-equivalent": "E", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C9","composition":["U+0045","U+0301"]}
 <Multi_key> <E> <>>						: "É"	U00C9		# {"ascii-equivalent": "E", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00C9","composition":["U+0045","U+0301"]}
 
 <Multi_key> <E> <c> <i> <r> <c>			: "Ê"	U00CA		# {"ascii-equivalent": "E", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00CA","composition":["U+0045","U+0302"]}
 <Multi_key> <E> <^>						: "Ê"	U00CA		# {"ascii-equivalent": "E", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00CA","composition":["U+0045","U+0302"]}
+<Multi_key> <E> <c>						: "Ê"	U00CA		# {"ascii-equivalent": "E", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00CA","composition":["U+0045","U+0302"]}
 
 <Multi_key> <E> <d> <i> <a> <e>			: "Ë"	U00CB		# {"ascii-equivalent": "E", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CB", "composition":["U+0045","U+0308"]}
 <Multi_key> <E> <">						: "Ë"	U00CB		# {"ascii-equivalent": "E", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CB", "composition":["U+0045","U+0308"]}
 <Multi_key> <E> <:>						: "Ë"	U00CB		# {"ascii-equivalent": "E", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CB", "composition":["U+0045","U+0308"]}
+<Multi_key> <E> <d>						: "Ë"	U00CB		# {"ascii-equivalent": "E", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CB", "composition":["U+0045","U+0308"]}
 
 <Multi_key> <E> <m> <a> <c> <r>			: "Ē"	U0112		# {"ascii-equivalent": "E", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+0112", "composition":["U+0045","U+0304"]}
 <Multi_key> <E> <->						: "Ē"	U0112		# {"ascii-equivalent": "E", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+0112", "composition":["U+0045","U+0304"]}
@@ -147,24 +166,29 @@
 
 <Multi_key> <E> <t> <i> <l> <d> <e>		: "Ẽ"	U1EBC		# {"ascii-equivalent": "E", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+1EBC", "composition": ["U+0045", "U+0303"]}
 <Multi_key> <E> <~>						: "Ẽ"	U1EBC		# {"ascii-equivalent": "E", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+1EBC", "composition": ["U+0045", "U+0303"]}
+<Multi_key> <E> <t>						: "Ẽ"	U1EBC		# {"ascii-equivalent": "E", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+1EBC", "composition": ["U+0045", "U+0303"]}
 
 <Multi_key> <A> <E>						: "Æ"	U00C6		# {"ascii-equivalent": "e", "diacritics": ["letter"], "case":"uppercase", "unicode":"U+00C6", "composition":["U+00C6"]}
 
 # Letter I with diacritics
 <Multi_key> <i> <g> <r> <a> <v> <e>		: "ì"	U00EC		# {"ascii-equivalent": "i", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00EC","composition":["U+0069","U+0300"]}
 <Multi_key> <i> <`>						: "ì"	U00EC		# {"ascii-equivalent": "i", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00EC","composition":["U+0069","U+0300"]}
+<Multi_key> <i> <g>						: "ì"	U00EC		# {"ascii-equivalent": "i", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00EC","composition":["U+0069","U+0300"]}
 <Multi_key> <i> <<>						: "ì"	U00EC		# {"ascii-equivalent": "i", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00EC","composition":["U+0069","U+0300"]}
 
 <Multi_key> <i> <a> <c> <u> <t> <e>		: "í"	U00ED		# {"ascii-equivalent": "i", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00ED","composition":["U+0069","U+0301"]}
 <Multi_key> <i> <'>						: "í"	U00ED		# {"ascii-equivalent": "i", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00ED","composition":["U+0069","U+0301"]}
+<Multi_key> <i> <a>						: "í"	U00ED		# {"ascii-equivalent": "i", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00ED","composition":["U+0069","U+0301"]}
 <Multi_key> <i> <>>						: "í"	U00ED		# {"ascii-equivalent": "i", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00ED","composition":["U+0069","U+0301"]}
 
 <Multi_key> <i> <c> <i> <r> <c>			: "î"	U00EE		# {"ascii-equivalent": "i", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00EE","composition":["U+0069","U+0302"]}
 <Multi_key> <i> <^>						: "î"	U00EE		# {"ascii-equivalent": "i", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00EE","composition":["U+0069","U+0302"]}
+<Multi_key> <i> <c>						: "î"	U00EE		# {"ascii-equivalent": "i", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00EE","composition":["U+0069","U+0302"]}
 
 <Multi_key> <i> <d> <i> <a> <e>			: "ï"	U00EF		# {"ascii-equivalent": "i", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EF", "composition":["U+0069","U+0308"]}
 <Multi_key> <i> <">						: "ï"	U00EF		# {"ascii-equivalent": "i", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EF", "composition":["U+0069","U+0308"]}
 <Multi_key> <i> <:>						: "ï"	U00EF		# {"ascii-equivalent": "i", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EF", "composition":["U+0069","U+0308"]}
+<Multi_key> <i> <d>						: "ï"	U00EF		# {"ascii-equivalent": "i", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00EF", "composition":["U+0069","U+0308"]}
 
 <Multi_key> <i> <m> <a> <c> <r>			: "ī"	U012B		# {"ascii-equivalent": "i", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+012B", "composition":["U+0069","U+0304"]}
 <Multi_key> <i> <->						: "ī"	U012B		# {"ascii-equivalent": "i", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+012B", "composition":["U+0069","U+0304"]}
@@ -172,22 +196,27 @@
 
 <Multi_key> <i> <t> <i> <l> <d> <e>		: "ĩ"	U0129		# {"ascii-equivalent": "i", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+0129", "composition": ["U+0069", "U+0303"]}
 <Multi_key> <i> <~>						: "ĩ"	U0129		# {"ascii-equivalent": "i", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+0129", "composition": ["U+0069", "U+0303"]}
+<Multi_key> <i> <t>						: "ĩ"	U0129		# {"ascii-equivalent": "i", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+0129", "composition": ["U+0069", "U+0303"]}
 
 # Letter I uppercase with diacritics
 <Multi_key> <I> <g> <r> <a> <v> <e>		: "Ì"	U00CC		# {"ascii-equivalent": "I", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00CC","composition":["U+0049","U+0300"]}
 <Multi_key> <I> <`>						: "Ì"	U00CC		# {"ascii-equivalent": "I", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00CC","composition":["U+0049","U+0300"]}
+<Multi_key> <I> <g>						: "Ì"	U00CC		# {"ascii-equivalent": "I", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00CC","composition":["U+0049","U+0300"]}
 <Multi_key> <I> <<>						: "Ì"	U00CC		# {"ascii-equivalent": "I", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00CC","composition":["U+0049","U+0300"]}
 
 <Multi_key> <I> <a> <c> <u> <t> <e>		: "Í"	U00CD		# {"ascii-equivalent": "I", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00CD","composition":["U+0049","U+0301"]}
 <Multi_key> <I> <'>						: "Í"	U00CD		# {"ascii-equivalent": "I", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00CD","composition":["U+0049","U+0301"]}
+<Multi_key> <I> <a>						: "Í"	U00CD		# {"ascii-equivalent": "I", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00CD","composition":["U+0049","U+0301"]}
 <Multi_key> <I> <>>						: "Í"	U00CD		# {"ascii-equivalent": "I", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00CD","composition":["U+0049","U+0301"]}
 
 <Multi_key> <I> <c> <i> <r> <c>			: "Î"	U00CE		# {"ascii-equivalent": "I", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00CE","composition":["U+0049","U+0302"]}
 <Multi_key> <I> <^>						: "Î"	U00CE		# {"ascii-equivalent": "I", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00CE","composition":["U+0049","U+0302"]}
+<Multi_key> <I> <c>						: "Î"	U00CE		# {"ascii-equivalent": "I", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00CE","composition":["U+0049","U+0302"]}
 
 <Multi_key> <I> <d> <i> <a> <e>			: "Ï"	U00CF		# {"ascii-equivalent": "I", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CF", "composition":["U+0049","U+0308"]}
 <Multi_key> <I> <">						: "Ï"	U00CF		# {"ascii-equivalent": "I", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CF", "composition":["U+0049","U+0308"]}
 <Multi_key> <I> <:>						: "Ï"	U00CF		# {"ascii-equivalent": "I", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CF", "composition":["U+0049","U+0308"]}
+<Multi_key> <I> <d>						: "Ï"	U00CF		# {"ascii-equivalent": "I", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00CF", "composition":["U+0049","U+0308"]}
 
 <Multi_key> <I> <m> <a> <c> <r>			: "Ī"	U012A		# {"ascii-equivalent": "I", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+012A", "composition":["U+0049","U+0304"]}
 <Multi_key> <I> <->						: "Ī"	U012A		# {"ascii-equivalent": "I", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+012A", "composition":["U+0049","U+0304"]}
@@ -195,22 +224,27 @@
 
 <Multi_key> <I> <t> <i> <l> <d> <e>		: "Ĩ"	U0128		# {"ascii-equivalent": "I", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+0128", "composition": ["U+0049", "U+0303"]}
 <Multi_key> <I> <~>						: "Ĩ"	U0128		# {"ascii-equivalent": "I", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+0128", "composition": ["U+0049", "U+0303"]}
+<Multi_key> <I> <t>						: "Ĩ"	U0128		# {"ascii-equivalent": "I", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+0128", "composition": ["U+0049", "U+0303"]}
 
 # Letter O with diacritics
 <Multi_key> <o> <g> <r> <a> <v> <e>		: "ò"	U00F2		# {"ascii-equivalent": "o", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F2","composition":["U+006F","U+0300"]}
 <Multi_key> <o> <`>						: "ò"	U00F2		# {"ascii-equivalent": "o", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F2","composition":["U+006F","U+0300"]}
+<Multi_key> <o> <g>						: "ò"	U00F2		# {"ascii-equivalent": "o", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F2","composition":["U+006F","U+0300"]}
 <Multi_key> <o> <<>						: "ò"	U00F2		# {"ascii-equivalent": "o", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F2","composition":["U+006F","U+0300"]}
 
 <Multi_key> <o> <a> <c> <u> <t> <e>		: "ó"	U00F3		# {"ascii-equivalent": "o", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00F3","composition":["U+006F","U+0301"]}
 <Multi_key> <o> <'>						: "ó"	U00F3		# {"ascii-equivalent": "o", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00F3","composition":["U+006F","U+0301"]}
+<Multi_key> <o> <a>						: "ó"	U00F3		# {"ascii-equivalent": "o", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00F3","composition":["U+006F","U+0301"]}
 <Multi_key> <o> <>>						: "ó"	U00F3		# {"ascii-equivalent": "o", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00F3","composition":["U+006F","U+0301"]}
 
 <Multi_key> <o> <c> <i> <r> <c>			: "ô"	U00F4		# {"ascii-equivalent": "o", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00F4","composition":["U+006F","U+0302"]}
 <Multi_key> <o> <^>						: "ô"	U00F4		# {"ascii-equivalent": "o", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00F4","composition":["U+006F","U+0302"]}
+<Multi_key> <o> <c>						: "ô"	U00F4		# {"ascii-equivalent": "o", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00F4","composition":["U+006F","U+0302"]}
 
 <Multi_key> <o> <d> <i> <a> <e>			: "ö"	U00F6		# {"ascii-equivalent": "o", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00F6", "composition":["U+006F","U+0308"]}
 <Multi_key> <o> <">						: "ö"	U00F6		# {"ascii-equivalent": "o", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00F6", "composition":["U+006F","U+0308"]}
 <Multi_key> <o> <:>						: "ö"	U00F6		# {"ascii-equivalent": "o", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00F6", "composition":["U+006F","U+0308"]}
+<Multi_key> <o> <d>						: "ö"	U00F6		# {"ascii-equivalent": "o", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00F6", "composition":["U+006F","U+0308"]}
 
 <Multi_key> <o> <m> <a> <c> <r>			: "ō"	U014D		# {"ascii-equivalent": "o", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+014D", "composition":["U+006F","U+0304"]}
 <Multi_key> <o> <->						: "ō"	U014D		# {"ascii-equivalent": "o", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+014D", "composition":["U+006F","U+0304"]}
@@ -218,25 +252,31 @@
 
 <Multi_key> <o> <t> <i> <l> <d> <e>		: "õ"	U00F5		# {"ascii-equivalent": "o", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+00F5", "composition": ["U+006F", "U+0303"]}
 <Multi_key> <o> <~>						: "õ"	U00F5		# {"ascii-equivalent": "o", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+00F5", "composition": ["U+006F", "U+0303"]}
+<Multi_key> <o> <t>						: "õ"	U00F5		# {"ascii-equivalent": "o", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+00F5", "composition": ["U+006F", "U+0303"]}
 
 <Multi_key> <o> <b> <r> <e> <v> <e>		: "ŏ"	U014F		# {"ascii-equivalent": "o", "diacritics": ["breve"], "case":"lowercase", "unicode":"U+014F","composition":["U+006F","U+0306"]}
 <Multi_key> <o> <(>						: "ŏ"	U014F		# {"ascii-equivalent": "o", "diacritics": ["breve"], "case":"lowercase", "unicode":"U+014F","composition":["U+006F","U+0306"]}
+<Multi_key> <o> <b>						: "ŏ"	U014F		# {"ascii-equivalent": "o", "diacritics": ["breve"], "case":"lowercase", "unicode":"U+014F","composition":["U+006F","U+0306"]}
 
 # Letter O uppercase with diacritics
 <Multi_key> <O> <g> <r> <a> <v> <e>		: "Ò"	U00D2		# {"ascii-equivalent": "O", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D2","composition":["U+004F","U+0300"]}
 <Multi_key> <O> <`>						: "Ò"	U00D2		# {"ascii-equivalent": "O", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D2","composition":["U+004F","U+0300"]}
+<Multi_key> <O> <g>						: "Ò"	U00D2		# {"ascii-equivalent": "O", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D2","composition":["U+004F","U+0300"]}
 <Multi_key> <O> <<>						: "Ò"	U00D2		# {"ascii-equivalent": "O", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D2","composition":["U+004F","U+0300"]}
 
 <Multi_key> <O> <a> <c> <u> <t> <e>		: "Ó"	U00D3		# {"ascii-equivalent": "O", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00D3","composition":["U+004F","U+0301"]}
 <Multi_key> <O> <'>						: "Ó"	U00D3		# {"ascii-equivalent": "O", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00D3","composition":["U+004F","U+0301"]}
+<Multi_key> <O> <a>						: "Ó"	U00D3		# {"ascii-equivalent": "O", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00D3","composition":["U+004F","U+0301"]}
 <Multi_key> <O> <>>						: "Ó"	U00D3		# {"ascii-equivalent": "O", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00D3","composition":["U+004F","U+0301"]}
 
 <Multi_key> <O> <c> <i> <r> <c>			: "Ô"	U00D4		# {"ascii-equivalent": "O", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00D4","composition":["U+004F","U+0302"]}
 <Multi_key> <O> <^>						: "Ô"	U00D4		# {"ascii-equivalent": "O", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00D4","composition":["U+004F","U+0302"]}
+<Multi_key> <O> <c>						: "Ô"	U00D4		# {"ascii-equivalent": "O", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00D4","composition":["U+004F","U+0302"]}
 
 <Multi_key> <O> <d> <i> <a> <e>			: "Ö"	U00D6		# {"ascii-equivalent": "O", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00D6", "composition":["U+004F","U+0308"]}
 <Multi_key> <O> <">						: "Ö"	U00D6		# {"ascii-equivalent": "O", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00D6", "composition":["U+004F","U+0308"]}
 <Multi_key> <O> <:>						: "Ö"	U00D6		# {"ascii-equivalent": "O", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00D6", "composition":["U+004F","U+0308"]}
+<Multi_key> <O> <d>						: "Ö"	U00D6		# {"ascii-equivalent": "O", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00D6", "composition":["U+004F","U+0308"]}
 
 <Multi_key> <O> <m> <a> <c> <r>			: "Ō"	U014C		# {"ascii-equivalent": "O", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+014C", "composition":["U+004F","U+0304"]}
 <Multi_key> <O> <->						: "Ō"	U014C		# {"ascii-equivalent": "O", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+014C", "composition":["U+004F","U+0304"]}
@@ -244,25 +284,31 @@
 
 <Multi_key> <O> <t> <i> <l> <d> <e>		: "Õ"	U00D5		# {"ascii-equivalent": "O", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+00D5", "composition": ["U+004F", "U+0303"]}
 <Multi_key> <O> <~>						: "Õ"	U00D5		# {"ascii-equivalent": "O", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+00D5", "composition": ["U+004F", "U+0303"]}
+<Multi_key> <O> <t>						: "Õ"	U00D5		# {"ascii-equivalent": "O", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+00D5", "composition": ["U+004F", "U+0303"]}
 
 <Multi_key> <O> <b> <r> <e> <v> <e>		: "Ŏ"	U014E		# {"ascii-equivalent": "O", "diacritics": ["breve"], "case":"capital", "unicode":"U+014E","composition":["U+004F","U+0306"]}
 <Multi_key> <O> <(>						: "Ŏ"	U014E		# {"ascii-equivalent": "O", "diacritics": ["breve"], "case":"capital", "unicode":"U+014E","composition":["U+004F","U+0306"]}
+<Multi_key> <O> <b>						: "Ŏ"	U014E		# {"ascii-equivalent": "O", "diacritics": ["breve"], "case":"capital", "unicode":"U+014E","composition":["U+004F","U+0306"]}
 
 # Letter U with diacritics
 <Multi_key> <u> <g> <r> <a> <v> <e>		: "ù"	U00F9		# {"ascii-equivalent": "u", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F9","composition":["U+0075","U+0300"]}
 <Multi_key> <u> <`>						: "ù"	U00F9		# {"ascii-equivalent": "u", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F9","composition":["U+0075","U+0300"]}
+<Multi_key> <u> <g>						: "ù"	U00F9		# {"ascii-equivalent": "u", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F9","composition":["U+0075","U+0300"]}
 <Multi_key> <u> <<>						: "ù"	U00F9		# {"ascii-equivalent": "u", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00F9","composition":["U+0075","U+0300"]}
 
 <Multi_key> <u> <a> <c> <u> <t> <e>		: "ú"	U00FA		# {"ascii-equivalent": "u", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00FA","composition":["U+0075","U+0301"]}
 <Multi_key> <u> <'>						: "ú"	U00FA		# {"ascii-equivalent": "u", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00FA","composition":["U+0075","U+0301"]}
+<Multi_key> <u> <a>						: "ú"	U00FA		# {"ascii-equivalent": "u", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00FA","composition":["U+0075","U+0301"]}
 <Multi_key> <u> <>>						: "ú"	U00FA		# {"ascii-equivalent": "u", "diacritics": ["acute-accent"], "case":"lowercase", "unicode":"U+00FA","composition":["U+0075","U+0301"]}
 
 <Multi_key> <u> <c> <i> <r> <c>			: "û"	U00FB		# {"ascii-equivalent": "u", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00FB","composition":["U+0075","U+0302"]}
 <Multi_key> <u> <^>						: "û"	U00FB		# {"ascii-equivalent": "u", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00FB","composition":["U+0075","U+0302"]}
+<Multi_key> <u> <c>						: "û"	U00FB		# {"ascii-equivalent": "u", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+00FB","composition":["U+0075","U+0302"]}
 
 <Multi_key> <u> <d> <i> <a> <e>			: "ü"	U00FC		# {"ascii-equivalent": "u", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00FC", "composition":["U+0075","U+0308"]}
 <Multi_key> <u> <">						: "ü"	U00FC		# {"ascii-equivalent": "u", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00FC", "composition":["U+0075","U+0308"]}
 <Multi_key> <u> <:>						: "ü"	U00FC		# {"ascii-equivalent": "u", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00FC", "composition":["U+0075","U+0308"]}
+<Multi_key> <u> <d>						: "ü"	U00FC		# {"ascii-equivalent": "u", "diacritics": ["diaeresis"], "case":"lowercase", "unicode":"U+00FC", "composition":["U+0075","U+0308"]}
 
 <Multi_key> <u> <m> <a> <c> <r>			: "ū"	U016B		# {"ascii-equivalent": "u", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+016B", "composition":["U+0075","U+0304"]}
 <Multi_key> <u> <->						: "ū"	U016B		# {"ascii-equivalent": "u", "diacritics": ["macron"], "case":"lowercase", "unicode":"U+016B", "composition":["U+0075","U+0304"]}
@@ -270,22 +316,27 @@
 
 <Multi_key> <u> <t> <i> <l> <d> <e>		: "ũ"	U0169		# {"ascii-equivalent": "u", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+0169", "composition": ["U+0075", "U+0303"]}
 <Multi_key> <u> <~>						: "ũ"	U0169		# {"ascii-equivalent": "u", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+0169", "composition": ["U+0075", "U+0303"]}
+<Multi_key> <u> <t>						: "ũ"	U0169		# {"ascii-equivalent": "u", "diacritics": ["tilde"], "case": "lowercase", "unicode": "U+0169", "composition": ["U+0075", "U+0303"]}
 
 # Letter U uppercase with diacritics
 <Multi_key> <U> <g> <r> <a> <v> <e>		: "Ù"	U00D9		# {"ascii-equivalent": "U", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D9","composition":["U+0055","U+0300"]}
 <Multi_key> <U> <`>						: "Ù"	U00D9		# {"ascii-equivalent": "U", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D9","composition":["U+0055","U+0300"]}
+<Multi_key> <U> <g>						: "Ù"	U00D9		# {"ascii-equivalent": "U", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D9","composition":["U+0055","U+0300"]}
 <Multi_key> <U> <<>						: "Ù"	U00D9		# {"ascii-equivalent": "U", "diacritics": ["grave-accent"], "case":"uppercase", "unicode":"U+00D9","composition":["U+0055","U+0300"]}
 
 <Multi_key> <U> <a> <c> <u> <t> <e>		: "Ú"	U00DA		# {"ascii-equivalent": "U", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00DA","composition":["U+0055","U+0301"]}
 <Multi_key> <U> <'>						: "Ú"	U00DA		# {"ascii-equivalent": "U", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00DA","composition":["U+0055","U+0301"]}
+<Multi_key> <U> <a>						: "Ú"	U00DA		# {"ascii-equivalent": "U", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00DA","composition":["U+0055","U+0301"]}
 <Multi_key> <U> <>>						: "Ú"	U00DA		# {"ascii-equivalent": "U", "diacritics": ["acute-accent"], "case":"uppercase", "unicode":"U+00DA","composition":["U+0055","U+0301"]}
 
 <Multi_key> <U> <c> <i> <r> <c>			: "Û"	U00DB		# {"ascii-equivalent": "U", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00DB","composition":["U+0055","U+0302"]}
 <Multi_key> <U> <^>						: "Û"	U00DB		# {"ascii-equivalent": "U", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00DB","composition":["U+0055","U+0302"]}
+<Multi_key> <U> <c>						: "Û"	U00DB		# {"ascii-equivalent": "U", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+00DB","composition":["U+0055","U+0302"]}
 
 <Multi_key> <U> <d> <i> <a> <e>			: "Ü"	U00DC		# {"ascii-equivalent": "U", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00DC", "composition":["U+0055","U+0308"]}
 <Multi_key> <U> <">						: "Ü"	U00DC		# {"ascii-equivalent": "U", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00DC", "composition":["U+0055","U+0308"]}
 <Multi_key> <U> <:>						: "Ü"	U00DC		# {"ascii-equivalent": "U", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00DC", "composition":["U+0055","U+0308"]}
+<Multi_key> <U> <d>						: "Ü"	U00DC		# {"ascii-equivalent": "U", "diacritics": ["diaeresis"], "case":"uppercase", "unicode":"U+00DC", "composition":["U+0055","U+0308"]}
 
 <Multi_key> <U> <m> <a> <c> <r>			: "Ū"	U016A		# {"ascii-equivalent": "U", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+016A", "composition":["U+0055","U+0304"]}
 <Multi_key> <U> <->						: "Ū"	U016A		# {"ascii-equivalent": "U", "diacritics": ["macron"], "case":"uppercase", "unicode":"U+016A", "composition":["U+0055","U+0304"]}
@@ -293,10 +344,12 @@
 
 <Multi_key> <U> <t> <i> <l> <d> <e>		: "Ũ"	U0168		# {"ascii-equivalent": "U", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+0168", "composition": ["U+0055", "U+0303"]}
 <Multi_key> <U> <~>						: "Ũ"	U0168		# {"ascii-equivalent": "U", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+0168", "composition": ["U+0055", "U+0303"]}
+<Multi_key> <U> <t>						: "Ũ"	U0168		# {"ascii-equivalent": "U", "diacritics": ["tilde"], "case": "uppercase", "unicode": "U+0168", "composition": ["U+0055", "U+0303"]}
 
 # Letter S with diacritics
 <Multi_key> <s> <c> <i> <r> <c>			: "ŝ"	U015D		# {"ascii-equivalent": "s", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+015D","composition":["U+0073","U+0302"]}
 <Multi_key> <s> <^>						: "ŝ"	U015D		# {"ascii-equivalent": "s", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+015D","composition":["U+0073","U+0302"]}
+<Multi_key> <s> <c>						: "ŝ"	U015D		# {"ascii-equivalent": "s", "diacritics": ["circumflex-accent"], "case":"lowercase", "unicode":"U+015D","composition":["U+0073","U+0302"]}
 
 <Multi_key> <s> <c> <a> <r> <o> <n>		: "š"	U0161		# {"ascii-equivalent": "s", "diacritics": ["caron"], "case":"lowercase", "unicode":"U+0161","composition":["U+0073","U+030C"]}
 <Multi_key> <s> <v>						: "š"	U0161		# {"ascii-equivalent": "s", "diacritics": ["caron"], "case":"lowercase", "unicode":"U+0161","composition":["U+0073","U+030C"]}
@@ -312,11 +365,13 @@
 
 <Multi_key> <s> <a> <c> <u> <t> <e>		: "ś"	U015B		# {"ascii-equivalent": "s", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+015B", "composition": ["U+0073", "U+0301"]}
 <Multi_key> <s> <'>						: "ś"	U015B		# {"ascii-equivalent": "s", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+015B", "composition": ["U+0073", "U+0301"]}
+<Multi_key> <s> <a>						: "ś"	U015B		# {"ascii-equivalent": "s", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+015B", "composition": ["U+0073", "U+0301"]}
 <Multi_key> <s> <>>						: "ś"	U015B		# {"ascii-equivalent": "s", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+015B", "composition": ["U+0073", "U+0301"]}
 
 # Letter S uppercase with diacritics
 <Multi_key> <S> <c> <i> <r> <c>			: "Ŝ"	U015C		# {"ascii-equivalent": "S", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+015C","composition":["U+0053","U+0302"]}
 <Multi_key> <S> <^>						: "Ŝ"	U015C		# {"ascii-equivalent": "S", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+015C","composition":["U+0053","U+0302"]}
+<Multi_key> <S> <c>						: "Ŝ"	U015C		# {"ascii-equivalent": "S", "diacritics": ["circumflex-accent"], "case":"uppercase", "unicode":"U+015C","composition":["U+0053","U+0302"]}
 
 <Multi_key> <S> <c> <a> <r> <o> <n>		: "Š"	U0160		# {"ascii-equivalent": "S", "diacritics": ["caron"], "case":"uppercase", "unicode":"U+0160","composition":["U+0053","U+030C"]}
 <Multi_key> <S> <v>						: "Š"	U0160		# {"ascii-equivalent": "S", "diacritics": ["caron"], "case":"uppercase", "unicode":"U+0160","composition":["U+0053","U+030C"]}
@@ -332,6 +387,7 @@
 
 <Multi_key> <S> <a> <c> <u> <t> <e>		: "Ś"	U015A		# {"ascii-equivalent": "S", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+015A", "composition": ["U+0053", "U+0301"]}
 <Multi_key> <S> <'>						: "Ś"	U015A		# {"ascii-equivalent": "S", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+015A", "composition": ["U+0053", "U+0301"]}
+<Multi_key> <S> <a>						: "Ś"	U015A		# {"ascii-equivalent": "S", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+015A", "composition": ["U+0053", "U+0301"]}
 <Multi_key> <S> <>>						: "Ś"	U015A		# {"ascii-equivalent": "S", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+015A", "composition": ["U+0053", "U+0301"]}
 
 # Letter Z with diacritics
@@ -346,6 +402,7 @@
 
 <Multi_key> <z> <a> <c> <u> <t> <e>		: "ź"	U017A		# {"ascii-equivalent": "z", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+017A", "composition": ["U+007A", "U+0301"]}
 <Multi_key> <z> <'>						: "ź"	U017A		# {"ascii-equivalent": "z", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+017A", "composition": ["U+007A", "U+0301"]}
+<Multi_key> <z> <a>						: "ź"	U017A		# {"ascii-equivalent": "z", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+017A", "composition": ["U+007A", "U+0301"]}
 <Multi_key> <z> <>>						: "ź"	U017A		# {"ascii-equivalent": "z", "diacritics": ["acute-accent"], "case": "lowercase", "unicode": "U+017A", "composition": ["U+007A", "U+0301"]}
 
 <Multi_key> <z> <c> <a> <r> <o> <n>		: "ž"	U017E		# {"ascii-equivalent": "z", "diacritics": ["caron"], "case":"lowercase", "unicode":"U+017E","composition":["U+007A","U+030C"]}
@@ -362,6 +419,7 @@
 
 <Multi_key> <Z> <a> <c> <u> <t> <e>		: "Ź"	U0179		# {"ascii-equivalent": "Z", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+0179", "composition": ["U+005A", "U+0301"]}
 <Multi_key> <Z> <'>						: "Ź"	U0179		# {"ascii-equivalent": "Z", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+0179", "composition": ["U+005A", "U+0301"]}
+<Multi_key> <Z> <a>						: "Ź"	U0179		# {"ascii-equivalent": "Z", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+0179", "composition": ["U+005A", "U+0301"]}
 <Multi_key> <Z> <>>						: "Ź"	U0179		# {"ascii-equivalent": "Z", "diacritics": ["acute-accent"], "case": "uppercase", "unicode": "U+0179", "composition": ["U+005A", "U+0301"]}
 
 <Multi_key> <Z> <c> <a> <r> <o> <n>		: "Ž"	U017D		# {"ascii-equivalent": "Z", "diacritics": ["caron"], "case":"capital", "unicode":"U+017D","composition":["U+005A","U+030C"]}
@@ -394,6 +452,8 @@
 # Letter N with diacritics
 <Multi_key> <n> <t> <i> <l> <d> <e>		: "ñ"	U00F1		# {"ascii-equivalent": "n", "diacritics": ["tilde"], "case":"lowercase", "unicode":"U+00F1","composition":["U+006E","U+0303"]}
 <Multi_key> <n> <~>						: "ñ"	U00F1		# {"ascii-equivalent": "n", "diacritics": ["tilde"], "case":"lowercase", "unicode":"U+00F1","composition":["U+006E","U+0303"]}
+<Multi_key> <n> <t>						: "ñ"	U00F1		# {"ascii-equivalent": "n", "diacritics": ["tilde"], "case":"lowercase", "unicode":"U+00F1","composition":["U+006E","U+0303"]}
 
 <Multi_key> <N> <t> <i> <l> <d> <e>		: "Ñ"	U00D1		# {"ascii-equivalent": "N", "diacritics": ["tilde"], "case":"uppercase", "unicode":"U+00D1","composition":["U+004E","U+0303"]}
 <Multi_key> <N> <~>						: "Ñ"	U00D1		# {"ascii-equivalent": "N", "diacritics": ["tilde"], "case":"uppercase", "unicode":"U+00D1","composition":["U+004E","U+0303"]}
+<Multi_key> <N> <t>						: "Ñ"	U00D1		# {"ascii-equivalent": "N", "diacritics": ["tilde"], "case":"uppercase", "unicode":"U+00D1","composition":["U+004E","U+0303"]}
