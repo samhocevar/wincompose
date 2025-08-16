@@ -42,7 +42,7 @@
 
 # mgua Wincompose Romagnolo configurations:
 # contributed by Marco Guardigli, mgua@tomware.it for www.vocinelvento.it project, aug 2025
-ä á ā 
+# 
 
 # Letter A with diacritics
 <Multi_key> <a> <g> <r> <a> <v> <e>		: "à"	U00E0		# {"ascii-equivalent": "a", "diacritics": ["grave-accent"], "case":"lowercase", "unicode":"U+00E0","composition":["U+0061","U+0300"]}
