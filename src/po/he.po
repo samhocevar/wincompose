@@ -8,17 +8,15 @@ msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2022-09-02 08:19+0000\n"
-"Last-Translator: Noam Levi <noaml12@hotmail.com>\n"
-"Language-Team: Hebrew <https://hosted.weblate.org/projects/wincompose/master/"
-"he/>\n"
+"PO-Revision-Date: 2025-09-20 12:01+0000\n"
+"Last-Translator: Nadav Nimron <bkjnbkjn@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/wincompose/master/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -43,7 +41,7 @@ msgstr "Left Control"
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:137 ID:KeyRControl
 msgid "Right Control"
-msgstr ""
+msgstr "control ימני"
 
 #. The name of the key on the keyboard
 #: language/i18n/Text.resx:141 ID:KeyLWin
