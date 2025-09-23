@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.7.8beta20170831\n"
@@ -232,8 +232,8 @@ msgid ""
 "Compose U 1 A 3 F Enter"
 msgstr ""
 "Skru på Unicode-inndata for alle tegn, selv dem uten definert "
-"sammenfattingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet U"
-"+1A3F: Sammenfattingstast U 1 A 3 F"
+"sammenfattingssekvens. For eksempel, vil følgende sekvens skrive ut tegnet "
+"U+1A3F: Sammenfattingstast U 1 A 3 F"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
@@ -886,8 +886,9 @@ msgstr "Programvare påkrevd av WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -896,7 +897,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Last ned og installer .NET-rammeverket 4.0-kjøretidsrutine"
 
 #. This string appears in the installer, not in WinCompose.

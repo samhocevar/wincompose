@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -10,7 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2025-03-16 12:59+0000\n"
 "Last-Translator: Štěpán Adamec <adamec@yasas.org>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/wincompose/master/"
+"cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -194,7 +195,9 @@ msgstr "Pokuste se prohodit dvě klávesy"
 msgid ""
 "Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
 "not a valid sequence, try Compose A E instead."
-msgstr "Jsou-li zadány dva znaky, pokusí se vyměnit jejich pořadí. Jinými slovy, pokud Compose E A není platná sekvence, zkusí se Compose A E."
+msgstr ""
+"Jsou-li zadány dva znaky, pokusí se vyměnit jejich pořadí. Jinými slovy, "
+"pokud Compose E A není platná sekvence, zkusí se Compose A E."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -530,7 +533,9 @@ msgstr "Automaticky vyhledávat aktualizace"
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
-msgstr "Pokud to povolíte, WinCompose se bude průběžně připojovat k Internetu za účelem kontroly nových aktualizací. Aktualizace se nebudou instalovat samy."
+msgstr ""
+"Pokud to povolíte, WinCompose se bude průběžně připojovat k Internetu za "
+"účelem kontroly nových aktualizací. Aktualizace se nebudou instalovat samy."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
@@ -540,7 +545,9 @@ msgstr "Vždy zobraz ikonu v oblasti oznámení"
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr "Windows automaticky po uplynutí určité doby skrývá ikony z oblasti oznámení. Tato volba se ji snaží udržet vždy viditelnou."
+msgstr ""
+"Windows automaticky po uplynutí určité doby skrývá ikony z oblasti oznámení. "
+"Tato volba se ji snaží udržet vždy viditelnou."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
@@ -565,7 +572,10 @@ msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr "Pokud povoleno, WinCompose již nebude zobrazovat ikonu v oblasti oznámení. Jediný způsob, jakým bude možno otevřít rozhraní WinCompose, bude skrze “WinCompose Settings” a “WinCompose Sequences” vstupech ve Start menu."
+msgstr ""
+"Pokud povoleno, WinCompose již nebude zobrazovat ikonu v oblasti oznámení. "
+"Jediný způsob, jakým bude možno otevřít rozhraní WinCompose, bude skrze "
+"“WinCompose Settings” a “WinCompose Sequences” vstupech ve Start menu."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
@@ -614,7 +624,10 @@ msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
-msgstr "Pokud povoleno, se všemi klávesami compose bude zacházeno jako s Compose ve sekvenci. Výchozím chováním je, že pouze první klávesa se bude chovat jako Compose, a alternativní klávesy compose si ponechají jejich původní roli."
+msgstr ""
+"Pokud povoleno, se všemi klávesami compose bude zacházeno jako s Compose ve "
+"sekvenci. Výchozím chováním je, že pouze první klávesa se bude chovat jako "
+"Compose, a alternativní klávesy compose si ponechají jejich původní roli."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
@@ -635,7 +648,9 @@ msgstr "Oblíbené"
 msgid ""
 "If set, any compose sequence will be cancelled after a certain delay if no "
 "keyboard activity is detected."
-msgstr "Pokud nastaveno, jakákoliv compose sekvence bude zrušena po určité době, pokud není zaznamenána jakákoli aktivita na klávesnici."
+msgstr ""
+"Pokud nastaveno, jakákoliv compose sekvence bude zrušena po určité době, "
+"pokud není zaznamenána jakákoli aktivita na klávesnici."
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
@@ -645,7 +660,9 @@ msgstr "LED klávesnice"
 msgid ""
 "If set, the corresponding keyboard LED will be lit when a compose sequence "
 "is in progress."
-msgstr "Pokud nastaveno, korespondující LED klávesnice bude rožnuta, když je jakákoli sekvence v průběhu."
+msgstr ""
+"Pokud nastaveno, korespondující LED klávesnice bude rožnuta, když je "
+"jakákoli sekvence v průběhu."
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
@@ -672,7 +689,9 @@ msgstr "Caps Lock je aktivní pouze při držení klávesy dolů"
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
-msgstr "Po puštění se klávesa Caps Lock okamžitě vypne, namísto standartního chování, kdy ji musíte zmáčknout dvakrát."
+msgstr ""
+"Po puštění se klávesa Caps Lock okamžitě vypne, namísto standartního "
+"chování, kdy ji musíte zmáčknout dvakrát."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
@@ -683,7 +702,9 @@ msgid ""
 "Composition will not work in some applications if WinCompose does not run "
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
-msgstr "Složení nebude fungovat v některých aplikacích, když WinCompose nepoběží se zvýšenými oprávněními. Tato možnost snižuje šanci, že se to stane."
+msgstr ""
+"Složení nebude fungovat v některých aplikacích, když WinCompose nepoběží se "
+"zvýšenými oprávněními. Tato možnost snižuje šanci, že se to stane."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
@@ -847,8 +868,9 @@ msgstr "Software vyžadovaný pro běh WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -857,7 +879,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Stáhnout a nainstalovat .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.

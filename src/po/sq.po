@@ -816,14 +816,14 @@ msgstr "Softver-i nevojitet nga WinCompose"
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr ""
 
 #. This string appears in the installer, not in WinCompose.

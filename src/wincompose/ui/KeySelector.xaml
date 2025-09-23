@@ -15,19 +15,18 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i18n="clr-namespace:WinCompose.i18n;assembly=language"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:wc="clr-namespace:WinCompose"
-        ShowInTaskbar="False" AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen" WindowStyle="None"
-        Topmost="True" WindowState="Maximized" ResizeMode="NoResize"
-        Icon="/WinCompose;component/res/key_compose.png">
-    <Window.Background>
-        <SolidColorBrush Color="Black" Opacity="0.8"/>
-    </Window.Background>
-    <Border BorderBrush="Black" BorderThickness="2" Padding="16" Background="White"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True" ResizeMode="NoResize" SizeToContent="Height"
+        Icon="/WinCompose;component/res/key_compose.png" WindowStyle="None" AllowsTransparency="False" MaxWidth="288" MaxHeight="81">
+    <Border BorderBrush="Black" BorderThickness="2"
             VerticalAlignment="Center" HorizontalAlignment="Center">
-        <StackPanel Orientation="Vertical">
+        <StackPanel>
             <TextBlock Margin="16" Text="{x:Static i18n:Text.CaptureComposeKey}"/>
-            <DockPanel LastChildFill="True">
+            <DockPanel>
                 <Button DockPanel.Dock="Right" Padding="16,4" Click="CancelClicked"
                         Content="{x:Static wc:KeySelector.CancelButtonText}"/>
                 <StackPanel/>

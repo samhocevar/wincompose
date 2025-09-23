@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutodetectLanguage" xml:space="preserve">
+    <value>Автоматично разпознаване</value>
+  </data>
+  <data name="KeyLMenu" xml:space="preserve">
+    <value>Ляв Alt</value>
+  </data>
+  <data name="KeyRMenu" xml:space="preserve">
+    <value>Десен Alt</value>
+  </data>
+  <data name="KeyLControl" xml:space="preserve">
+    <value>Ляв Control</value>
+  </data>
+  <data name="KeyRControl" xml:space="preserve">
+    <value>Десен Control</value>
+  </data>
+  <data name="KeyLWin" xml:space="preserve">
+    <value>Ляв Windows</value>
+  </data>
+  <data name="KeyRWin" xml:space="preserve">
+    <value>Десен Windows</value>
+  </data>
+  <data name="KeyCapital" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="KeyNumLock" xml:space="preserve">
+    <value>Num Lock</value>
+  </data>
+  <data name="KeyPause" xml:space="preserve">
+    <value>Pause, Break</value>
+  </data>
+  <data name="KeyApps" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="KeyEscape" xml:space="preserve">
+    <value>Escape</value>
+  </data>
+  <data name="KeyConvert" xml:space="preserve">
+    <value>Превръщане</value>
+  </data>
+  <data name="KeyNonConvert" xml:space="preserve">
+    <value>Без превръщане</value>
+  </data>
+  <data name="KeyScroll" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="KeySpace" xml:space="preserve">
+    <value>Интервал</value>
+  </data>
+  <data name="KeyReturn" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="Composing" xml:space="preserve">
+    <value>Комбиниране</value>
+  </data>
+  <data name="UseXorgRules" xml:space="preserve">
+    <value>Комбинации от проекта Xorg</value>
+  </data>
+  <data name="UseXorgRulesToolTip" xml:space="preserve">
+    <value>Използване на 3000 комбинации за композиране от проекта Xorg (http://www.x.org/). Това са най-често срещаните комбинации в стандартна операционна система Linux.</value>
+  </data>
+  <data name="UseXComposeRules" xml:space="preserve">
+    <value>Комбинации от проекта XCompose</value>
+  </data>
+  <data name="UseXComposeRulesToolTip" xml:space="preserve">
+    <value>Използвайте 1000 комбинации от проекта с отворен код XCompose (https://github.com/kragen/xcompose). Тези комбинации понякога могат да влязат в конфликт с тези на Xorg.</value>
+  </data>
+  <data name="UseEmojiRules" xml:space="preserve">
+    <value>Комбинации за емоции от WinCompose</value>
+  </data>
+  <data name="UseEmojiRulesToolTip" xml:space="preserve">
+    <value>Използвайте комбинации за емоции, предоставени от автора и сътрудниците на WinCompose.</value>
+  </data>
+  <data name="DebugWindow" xml:space="preserve">
+    <value>Прозорец за отстраняване на дефекти</value>
+  </data>
+  <data name="ShowSequences" xml:space="preserve">
+    <value>Списък с комбинации…</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Изключване</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Рестартиране</value>
+  </data>
+  <data name="DonationPage" xml:space="preserve">
+    <value>Даряване</value>
+  </data>
+  <data name="VisitWebsite" xml:space="preserve">
+    <value>Страница</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Изход</value>
+  </data>
+  <data name="UnicodeCharacters" xml:space="preserve">
+    <value>Знаци на юникод</value>
+  </data>
+  <data name="Sequences" xml:space="preserve">
+    <value>Комбинации</value>
+  </data>
+  <data name="SwapOnInvalid" xml:space="preserve">
+    <value>Пробване с размяна поредността на клавишите</value>
+  </data>
+  <data name="SwapOnInvalidToolTip" xml:space="preserve">
+    <value>Пробване с размяна поредността на клавишите на комбинация от два клавиша. Например ако комбинацията от Е и А не е намерена ще бъде пробвана комбинацията А и Е.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Търсене:</value>
+  </data>
+  <data name="ComposeKey" xml:space="preserve">
+    <value>Модификатор:</value>
+  </data>
+  <data name="ComposeKeyToolTip" xml:space="preserve">
+    <value>Изберете клавиша, който да действа като клавиш Compose.</value>
+  </data>
+  <data name="ResetTimeout" xml:space="preserve">
+    <value>Нулиране след</value>
+  </data>
+  <data name="UnicodeInput" xml:space="preserve">
+    <value>Разширено въвеждане на юникод</value>
+  </data>
+  <data name="UnicodeInputToolTip" xml:space="preserve">
+    <value>Дава възможност за въвеждане на знаците от областта на Юникод, дори и тези, за които няма създадена комбинация. Например, следната последователност ще изведе знака U+1A3F: Модификатор U 1 A 3 F Enter</value>
+  </data>
+  <data name="InvalidSequences" xml:space="preserve">
+    <value>Действия при недействителни комбинации</value>
+  </data>
+  <data name="CaseInsensitive" xml:space="preserve">
+    <value>Съвпадения без отчитане на регистъра</value>
+  </data>
+  <data name="CaseInsensitiveToolTip" xml:space="preserve">
+    <value>Ако въведената комбинация не съществува, но има такава, която се различава само по регистъра, автоматично се използва тя.</value>
+  </data>
+  <data name="DiscardOnInvalid" xml:space="preserve">
+    <value>Отхвърляне на всички въведени знаци</value>
+  </data>
+  <data name="DiscardOnInvalidToolTip" xml:space="preserve">
+    <value>Ако въведената комбинация не съществува, всички въведени знаци биват отхвърлени. Поведението по подразбиране е извеждането на знаците все едно модификаторът не е бил натиснат.</value>
+  </data>
+  <data name="BeepOnInvalid" xml:space="preserve">
+    <value>Издаване на звуков сигнал</value>
+  </data>
+  <data name="BeepOnInvalidToolTip" xml:space="preserve">
+    <value>Ако въведената комбинация не съществува се издава системен звук.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Език на интерфейса:</value>
+  </data>
+  <data name="LanguageToolTip" xml:space="preserve">
+    <value>Изберете езика, който WinCompose да използва за интерфейса си. По подразбиране се използва езикът на операционната система.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Затваряне</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Копиране</value>
+  </data>
+  <data name="Emoji" xml:space="preserve">
+    <value>Емоции</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Прилагане</value>
+  </data>
+  <data name="KeepOriginalKey" xml:space="preserve">
+    <value>Запазване на поведението на клавиша Модификатор</value>
+  </data>
+  <data name="KeepOriginalKeyToolTip" xml:space="preserve">
+    <value>Запазва поведението на натиснатия клавиш. Например, комбинацията Alt+Tab ще работи, дори и когато за модификатор е избран клавишът Alt.</value>
+  </data>
+  <data name="InsertZwsp" xml:space="preserve">
+    <value>Вмъкване на невидими интервали в MS Office</value>
+  </data>
+  <data name="InsertZwspToolTip" xml:space="preserve">
+    <value>При въвеждане на определени символи на Юникод приложенията на Microsoft Office понякога променят шрифта на документа. Тази настройка вмъква невидим символ след символа на Юникод, за да заобиколи грешката.</value>
+  </data>
+  <data name="EmulateCapsLock" xml:space="preserve">
+    <value>Емулиране на Caps Lock, чрез два клавиша Shift</value>
+  </data>
+  <data name="EmulateCapsLockToolTip" xml:space="preserve">
+    <value>Ако Caps Lock е използван за модификатор, клавишът престава да върши функцията си. Тази настройка дава възможност Caps Lock да бъде включен при едновременно натискане на два клавиша Shift.</value>
+  </data>
+  <data name="ShiftDisablesCapsLock" xml:space="preserve">
+    <value>Shift изключва Caps Lock</value>
+  </data>
+  <data name="ShiftDisablesCapsLockToolTip" xml:space="preserve">
+    <value>Ако Caps Lock е използван за модификатор, клавишът престава да върши функцията си. Тази настройка дава възможност Caps Lock да бъде изключен при натискане на клавиш Shift.</value>
+  </data>
+  <data name="CapsLockCapitalizes" xml:space="preserve">
+    <value>Включен Caps Lock винаги създава главни букви</value>
+  </data>
+  <data name="CapsLockCapitalizesToolTip" xml:space="preserve">
+    <value>При включен режим Caps Lock, въвеждането на ударени знаци като „é“ винаги ще въвежда съответната главна буква, в този случай „É“.</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="InSelectedCategories" xml:space="preserve">
+    <value>В избрани категории</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Настройки — WinCompose</value>
+  </data>
+  <data name="ShowOptions" xml:space="preserve">
+    <value>Настройки…</value>
+  </data>
+  <data name="TrayToolTip" xml:space="preserve">
+    <value>WinCompose v{2} посредством {0} ({1} комбинации)</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Общи настройки</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Комбинации — WinCompose</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>Потребителски макроси</value>
+  </data>
+  <data name="DisabledToolTip" xml:space="preserve">
+    <value>WinCompose е изключен</value>
+  </data>
+  <data name="KeyInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="TestTyping" xml:space="preserve">
+    <value>Място за изпробване</value>
+  </data>
+  <data name="Tweaks" xml:space="preserve">
+    <value>Фини настройки</value>
+  </data>
+  <data name="DelaySeconds" xml:space="preserve">
+    <value>{0} секунди</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Относно</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Изтегляне на WinCompose {0}</value>
+  </data>
+  <data name="AboutBoxTitle" xml:space="preserve">
+    <value>Относно WinCompose</value>
+  </data>
+  <data name="Programming" xml:space="preserve">
+    <value>Програмиране</value>
+  </data>
+  <data name="Translators" xml:space="preserve">
+    <value>Преводи</value>
+  </data>
+  <data name="Authors" xml:space="preserve">
+    <value>Автори</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Лицензи</value>
+  </data>
+  <data name="NeedRestart" xml:space="preserve">
+    <value>WinCompose трябва да бъде рестартиран поради промяна.</value>
+  </data>
+  <data name="ReportBug" xml:space="preserve">
+    <value>Съобщаване на дефект</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Помощ</value>
+  </data>
+  <data name="UpdatesToolTip" xml:space="preserve">
+    <value>Има ново издание.</value>
+  </data>
+  <data name="UserDefinedSequences" xml:space="preserve">
+    <value>Потребителски комбинации</value>
+  </data>
+  <data name="UserDefinedSequencesEdit" xml:space="preserve">
+    <value>Променяне</value>
+  </data>
+  <data name="UserDefinedSequencesReload" xml:space="preserve">
+    <value>Презареждане</value>
+  </data>
+  <data name="AllowInjected" xml:space="preserve">
+    <value>Приемане на комбинации от други приложения</value>
+  </data>
+  <data name="AllowInjectedToolTip" xml:space="preserve">
+    <value>Приемане на изпратените клавишни комбинации от други приложения като AutoHotkey или Synergy</value>
+  </data>
+  <data name="KeyPrint" xml:space="preserve">
+    <value>PrntScr</value>
+  </data>
+  <data name="KeyDisabled" xml:space="preserve">
+    <value>Не е избран клавиш</value>
+  </data>
+  <data name="CheckUpdates" xml:space="preserve">
+    <value>Автоматична проверка за нови издания</value>
+  </data>
+  <data name="CheckUpdatesToolTip" xml:space="preserve">
+    <value>Когато е отметнато WinCompose редовно ще проверява за обновяване през интернет. Не инсталира новите издания автоматично.</value>
+  </data>
+  <data name="KeepIconVisible" xml:space="preserve">
+    <value>По възможност пиктограмата да е винаги видима в областта за известия</value>
+  </data>
+  <data name="KeepIconVisibleToolTip" xml:space="preserve">
+    <value>По подразбиране Windows скрива пиктограмите от областта за известията след определено време. Настройката прави опит пиктограмата да остане видима.</value>
+  </data>
+  <data name="ChangeComposeKey" xml:space="preserve">
+    <value>Променяне…</value>
+  </data>
+  <data name="CaptureComposeKey" xml:space="preserve">
+    <value>Натиснете клавиш, който да използвате като модификатор.</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Добавяне към избраните</value>
+  </data>
+  <data name="DisableIcon" xml:space="preserve">
+    <value>Изключване на пиктограмата в областта за известия</value>
+  </data>
+  <data name="DisableIconToolTip" xml:space="preserve">
+    <value>Когато е отметнато пиктограмата на WinCompose ще бъде премахната от областта за известия. В такъв случай единствения начин да отворите интерфейса на приложението е чрез елементите „WinCompose Settings“ и „WinCompose Sequences“ в менюто „Старт“.</value>
+  </data>
+  <data name="KeyHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="KeyEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="KeyTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="NoTimeout" xml:space="preserve">
+    <value>Без нулиране</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Разширени</value>
+  </data>
+  <data name="IgnoreRegex" xml:space="preserve">
+    <value>Пренебрегване прозорците, съвпадащи с регулярния израз:</value>
+  </data>
+  <data name="IgnoreRegexToolTip" xml:space="preserve">
+    <value>WinCompose напълно ще изключи, когато класа или името на текущия прозорец съвпада с регулярния израз.</value>
+  </data>
+  <data name="AlwaysCompose" xml:space="preserve">
+    <value>Зачитане на алтернативните модификатори</value>
+  </data>
+  <data name="AlwaysComposeToolTip" xml:space="preserve">
+    <value>Когато е отметнато всички избрани клавиши на модификатори ще бъдат използвани като такива. По подразбиране, само първия използван модификатор ще бъде използван, а другите клавиши запазват своето предназначение.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Благодарности</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Премахване от избраните</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Избрани</value>
+  </data>
+  <data name="TimeoutToolTip" xml:space="preserve">
+    <value>Когато е зададена стойност тя ще бъде използвана като изчакване преди отказ от започнатата комбинация ако за това време няма действия с клавиатурата.</value>
+  </data>
+  <data name="KeyboardLed" xml:space="preserve">
+    <value>Включване на светодиод на клавиатурата</value>
+  </data>
+  <data name="KeyboardLedToolTip" xml:space="preserve">
+    <value>Когато е зададено, по време на комбинация съответния светодиод на клавиатурата ще бъде включен.</value>
+  </data>
+  <data name="KeyCompose" xml:space="preserve">
+    <value>Модификатор</value>
+  </data>
+  <data name="AutoLaunch" xml:space="preserve">
+    <value>Стартиране на приложението със системата</value>
+  </data>
+  <data name="AutoLaunchToolTip" xml:space="preserve">
+    <value>Когато е отметнато, WinCompose ще стартира при влизане на потребителя.</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Достъпност</value>
+  </data>
+  <data name="MustHoldCapsLock" xml:space="preserve">
+    <value>Клавишът Caps Lock е включен само докато е натиснат</value>
+  </data>
+  <data name="MustHoldCapsLockToolTip" xml:space="preserve">
+    <value>Отпускане на клавиша Caps Lock веднага престава да действа, вместо подразбираното поведение, при което трябва да бъде натиснат втори път.</value>
+  </data>
+  <data name="RunElevated" xml:space="preserve">
+    <value>Работа с повишени права (препоръчително)</value>
+  </data>
+  <data name="RunElevatedToolTip" xml:space="preserve">
+    <value>Комбинирането на знаци може да не работи в някои приложения ако WinCompose не работи с повишени права. Тази настройка намалява риска това да се случи.</value>
+  </data>
+</root>

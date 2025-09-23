@@ -2,15 +2,17 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: WinCompose 0.9.9\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
 "PO-Revision-Date: 2025-02-21 21:01+0000\n"
-"Last-Translator: 109247019824 <109247019824@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Bulgarian <https://hosted.weblate.org/projects/wincompose/master/bg/>\n"
+"Last-Translator: 109247019824 <109247019824@users.noreply.hosted.weblate."
+"org>\n"
+"Language-Team: Bulgarian <https://hosted.weblate.org/projects/wincompose/"
+"master/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -113,24 +115,39 @@ msgid "Use sequences from the Xorg project"
 msgstr "Комбинации от проекта Xorg"
 
 #: language/i18n/Text.resx:197 ID:UseXorgRulesToolTip
-msgid "Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). These are the sequences most commonly found on a standard Linux system."
-msgstr "Използване на 3000 комбинации за композиране от проекта Xorg (http://www.x.org/). Това са най-често срещаните комбинации в стандартна операционна система Linux."
+msgid ""
+"Use the 3,000 compose sequences from the Xorg project (http://www.x.org/). "
+"These are the sequences most commonly found on a standard Linux system."
+msgstr ""
+"Използване на 3000 комбинации за композиране от проекта Xorg (http://www.x."
+"org/). Това са най-често срещаните комбинации в стандартна операционна "
+"система Linux."
 
 #: language/i18n/Text.resx:201 ID:UseXComposeRules
 msgid "Use sequences from the XCompose project"
 msgstr "Комбинации от проекта XCompose"
 
 #: language/i18n/Text.resx:205 ID:UseXComposeRulesToolTip
-msgid "Use the 1,000 compose sequences from the XCompose opensource project (https://github.com/kragen/xcompose). These sequences may sometimes conflict with the Xorg ones."
-msgstr "Използвайте 1000 комбинации от проекта с отворен код XCompose (https://github.com/kragen/xcompose). Тези комбинации понякога могат да влязат в конфликт с тези на Xorg."
+msgid ""
+"Use the 1,000 compose sequences from the XCompose opensource project "
+"(https://github.com/kragen/xcompose). These sequences may sometimes conflict "
+"with the Xorg ones."
+msgstr ""
+"Използвайте 1000 комбинации от проекта с отворен код XCompose (https://"
+"github.com/kragen/xcompose). Тези комбинации понякога могат да влязат в "
+"конфликт с тези на Xorg."
 
 #: language/i18n/Text.resx:209 ID:UseEmojiRules
 msgid "Use WinCompose emoji sequences"
 msgstr "Комбинации за емоции от WinCompose"
 
 #: language/i18n/Text.resx:213 ID:UseEmojiRulesToolTip
-msgid "Use the compose sequences for Emoji provided by the WinCompose author and contributors."
-msgstr "Използвайте комбинации за емоции, предоставени от автора и сътрудниците на WinCompose."
+msgid ""
+"Use the compose sequences for Emoji provided by the WinCompose author and "
+"contributors."
+msgstr ""
+"Използвайте комбинации за емоции, предоставени от автора и сътрудниците на "
+"WinCompose."
 
 #. Menu entry to show the debug window
 #: language/i18n/Text.resx:217 ID:DebugWindow
@@ -178,8 +195,13 @@ msgid "Try to swap the two keys"
 msgstr "Пробване с размяна поредността на клавишите"
 
 #: language/i18n/Text.resx:257 ID:SwapOnInvalidToolTip
-msgid "Try to swap the keys of a two-key sequence. For instance, if Compose E A is not a valid sequence, try Compose A E instead."
-msgstr "Пробване с размяна поредността на клавишите на комбинация от два клавиша. Например ако комбинацията от Е и А не е намерена ще бъде пробвана комбинацията А и Е."
+msgid ""
+"Try to swap the keys of a two-key sequence. For instance, if Compose E A is "
+"not a valid sequence, try Compose A E instead."
+msgstr ""
+"Пробване с размяна поредността на клавишите на комбинация от два клавиша. "
+"Например ако комбинацията от Е и А не е намерена ще бъде пробвана "
+"комбинацията А и Е."
 
 #: language/i18n/Text.resx:261 ID:Search
 msgid "Search Filter:"
@@ -203,8 +225,14 @@ msgid "Advanced Unicode input"
 msgstr "Разширено въвеждане на юникод"
 
 #: language/i18n/Text.resx:281 ID:UnicodeInputToolTip
-msgid "Enable Unicode input for all characters, even those with no compose sequence defined. For instance, the following sequence will output character U+1A3F: Compose U 1 A 3 F Enter"
-msgstr "Дава възможност за въвеждане на знаците от областта на Юникод, дори и тези, за които няма създадена комбинация. Например, следната последователност ще изведе знака U+1A3F: Модификатор U 1 A 3 F Enter"
+msgid ""
+"Enable Unicode input for all characters, even those with no compose sequence "
+"defined. For instance, the following sequence will output character U+1A3F: "
+"Compose U 1 A 3 F Enter"
+msgstr ""
+"Дава възможност за въвеждане на знаците от областта на Юникод, дори и тези, "
+"за които няма създадена комбинация. Например, следната последователност ще "
+"изведе знака U+1A3F: Модификатор U 1 A 3 F Enter"
 
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
@@ -216,16 +244,26 @@ msgid "Fall back to case insensitive matches"
 msgstr "Съвпадения без отчитане на регистъра"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
-msgid "If the entered sequence does not exist, but there is one that only differs by case, automatically correct it."
-msgstr "Ако въведената комбинация не съществува, но има такава, която се различава само по регистъра, автоматично се използва тя."
+msgid ""
+"If the entered sequence does not exist, but there is one that only differs "
+"by case, automatically correct it."
+msgstr ""
+"Ако въведената комбинация не съществува, но има такава, която се различава "
+"само по регистъра, автоматично се използва тя."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
 msgstr "Отхвърляне на всички въведени знаци"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
-msgid "If the entered sequence does not exist, discard all the characters that were typed. The default behaviour is to output the characters as if the compose key had not been used."
-msgstr "Ако въведената комбинация не съществува, всички въведени знаци биват отхвърлени. Поведението по подразбиране е извеждането на знаците все едно модификаторът не е бил натиснат."
+msgid ""
+"If the entered sequence does not exist, discard all the characters that were "
+"typed. The default behaviour is to output the characters as if the compose "
+"key had not been used."
+msgstr ""
+"Ако въведената комбинация не съществува, всички въведени знаци биват "
+"отхвърлени. Поведението по подразбиране е извеждането на знаците все едно "
+"модификаторът не е бил натиснат."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
@@ -240,8 +278,12 @@ msgid "Interface language:"
 msgstr "Език на интерфейса:"
 
 #: language/i18n/Text.resx:317 ID:LanguageToolTip
-msgid "Select the language that WinCompose uses for the interface. By default the operating system language is used."
-msgstr "Изберете езика, който WinCompose да използва за интерфейса си. По подразбиране се използва езикът на операционната система."
+msgid ""
+"Select the language that WinCompose uses for the interface. By default the "
+"operating system language is used."
+msgstr ""
+"Изберете езика, който WinCompose да използва за интерфейса си. По "
+"подразбиране се използва езикът на операционната система."
 
 #. Close the settings window
 #: language/i18n/Text.resx:321 ID:Close
@@ -269,40 +311,67 @@ msgid "Maintain original compose key behaviour"
 msgstr "Запазване на поведението на клавиша Модификатор"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
-msgid "This tells WinCompose to make a best effort to retain the original key’s behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is used as the compose key."
-msgstr "Запазва поведението на натиснатия клавиш. Например, комбинацията Alt+Tab ще работи, дори и когато за модификатор е избран клавишът Alt."
+msgid ""
+"This tells WinCompose to make a best effort to retain the original key’s "
+"behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
+"used as the compose key."
+msgstr ""
+"Запазва поведението на натиснатия клавиш. Например, комбинацията Alt+Tab ще "
+"работи, дори и когато за модификатор е избран клавишът Alt."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
 msgstr "Вмъкване на невидими интервали в MS Office"
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
-msgid "Microsoft Office applications sometimes change the document font on the fly when entering certain Unicode characters. This feature inserts an invisible character after the Unicode character to work around the bug."
-msgstr "При въвеждане на определени символи на Юникод приложенията на Microsoft Office понякога променят шрифта на документа. Тази настройка вмъква невидим символ след символа на Юникод, за да заобиколи грешката."
+msgid ""
+"Microsoft Office applications sometimes change the document font on the fly "
+"when entering certain Unicode characters. This feature inserts an invisible "
+"character after the Unicode character to work around the bug."
+msgstr ""
+"При въвеждане на определени символи на Юникод приложенията на Microsoft "
+"Office понякога променят шрифта на документа. Тази настройка вмъква невидим "
+"символ след символа на Юникод, за да заобиколи грешката."
 
 #: language/i18n/Text.resx:353 ID:EmulateCapsLock
 msgid "Emulate Caps Lock using both Shift keys"
 msgstr "Емулиране на Caps Lock, чрез два клавиша Shift"
 
 #: language/i18n/Text.resx:357 ID:EmulateCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock on by pressing both Shift keys simultaneously."
-msgstr "Ако Caps Lock е използван за модификатор, клавишът престава да върши функцията си. Тази настройка дава възможност Caps Lock да бъде включен при едновременно натискане на два клавиша Shift."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock on by pressing "
+"both Shift keys simultaneously."
+msgstr ""
+"Ако Caps Lock е използван за модификатор, клавишът престава да върши "
+"функцията си. Тази настройка дава възможност Caps Lock да бъде включен при "
+"едновременно натискане на два клавиша Shift."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
 msgstr "Shift изключва Caps Lock"
 
 #: language/i18n/Text.resx:365 ID:ShiftDisablesCapsLockToolTip
-msgid "If Caps Lock is used as the compose key, the original behaviour of the key becomes unavailable. This feature allows to turn Caps Lock off by pressing the Shift key."
-msgstr "Ако Caps Lock е използван за модификатор, клавишът престава да върши функцията си. Тази настройка дава възможност Caps Lock да бъде изключен при натискане на клавиш Shift."
+msgid ""
+"If Caps Lock is used as the compose key, the original behaviour of the key "
+"becomes unavailable. This feature allows to turn Caps Lock off by pressing "
+"the Shift key."
+msgstr ""
+"Ако Caps Lock е използван за модификатор, клавишът престава да върши "
+"функцията си. Тази настройка дава възможност Caps Lock да бъде изключен при "
+"натискане на клавиш Shift."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
 msgstr "Включен Caps Lock винаги създава главни букви"
 
 #: language/i18n/Text.resx:373 ID:CapsLockCapitalizesToolTip
-msgid "When Caps Lock is on, typing an accented letter such as “é” will always output the corresponding capitalized letter, in this case “É”."
-msgstr "При включен режим Caps Lock, въвеждането на ударени знаци като „é“ винаги ще въвежда съответната главна буква, в този случай „É“."
+msgid ""
+"When Caps Lock is on, typing an accented letter such as “é” will always "
+"output the corresponding capitalized letter, in this case “É”."
+msgstr ""
+"При включен режим Caps Lock, въвеждането на ударени знаци като „é“ винаги ще "
+"въвежда съответната главна буква, в този случай „É“."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
@@ -446,7 +515,9 @@ msgstr "Приемане на комбинации от други прилож�
 
 #: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr "Приемане на изпратените клавишни комбинации от други приложения като AutoHotkey или Synergy"
+msgstr ""
+"Приемане на изпратените клавишни комбинации от други приложения като "
+"AutoHotkey или Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
@@ -463,16 +534,24 @@ msgid "Automatically check for updates"
 msgstr "Автоматична проверка за нови издания"
 
 #: language/i18n/Text.resx:509 ID:CheckUpdatesToolTip
-msgid "If enabled, WinCompose will connect to the Internet at regular intervals to check for new versions. Updates are not installed automatically."
-msgstr "Когато е отметнато WinCompose редовно ще проверява за обновяване през интернет. Не инсталира новите издания автоматично."
+msgid ""
+"If enabled, WinCompose will connect to the Internet at regular intervals to "
+"check for new versions. Updates are not installed automatically."
+msgstr ""
+"Когато е отметнато WinCompose редовно ще проверява за обновяване през "
+"интернет. Не инсталира новите издания автоматично."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
 msgstr "По възможност пиктограмата да е винаги видима в областта за известия"
 
 #: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
-msgid "By default, Windows will remove the icon from the notification area after a short while. This option attempts to keep it always visible."
-msgstr "По подразбиране Windows скрива пиктограмите от областта за известията след определено време. Настройката прави опит пиктограмата да остане видима."
+msgid ""
+"By default, Windows will remove the icon from the notification area after a "
+"short while. This option attempts to keep it always visible."
+msgstr ""
+"По подразбиране Windows скрива пиктограмите от областта за известията след "
+"определено време. Настройката прави опит пиктограмата да остане видима."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
@@ -493,8 +572,15 @@ msgid "Disable notification area icon"
 msgstr "Изключване на пиктограмата в областта за известия"
 
 #: language/i18n/Text.resx:537 ID:DisableIconToolTip
-msgid "If enabled, WinCompose will no longer display an icon in the notification area. The only way to open the WinCompose interface will then be through the “WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr "Когато е отметнато пиктограмата на WinCompose ще бъде премахната от областта за известия. В такъв случай единствения начин да отворите интерфейса на приложението е чрез елементите „WinCompose Settings“ и „WinCompose Sequences“ в менюто „Старт“."
+msgid ""
+"If enabled, WinCompose will no longer display an icon in the notification "
+"area. The only way to open the WinCompose interface will then be through the "
+"“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
+msgstr ""
+"Когато е отметнато пиктограмата на WinCompose ще бъде премахната от областта "
+"за известия. В такъв случай единствения начин да отворите интерфейса на "
+"приложението е чрез елементите „WinCompose Settings“ и „WinCompose "
+"Sequences“ в менюто „Старт“."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
@@ -527,16 +613,26 @@ msgid "Ignore windows matching this regex:"
 msgstr "Пренебрегване прозорците, съвпадащи с регулярния израз:"
 
 #: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
-msgid "WinCompose will be completely disabled when the current window class or window name matches this regular expression."
-msgstr "WinCompose напълно ще изключи, когато класа или името на текущия прозорец съвпада с регулярния израз."
+msgid ""
+"WinCompose will be completely disabled when the current window class or "
+"window name matches this regular expression."
+msgstr ""
+"WinCompose напълно ще изключи, когато класа или името на текущия прозорец "
+"съвпада с регулярния израз."
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
 msgstr "Зачитане на алтернативните модификатори"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
-msgid "If enabled, all compose keys will be treated as Compose in a sequence. By default, only the first pressed key will act as Compose, and alternate compose keys will keep their original role."
-msgstr "Когато е отметнато всички избрани клавиши на модификатори ще бъдат използвани като такива. По подразбиране, само първия използван модификатор ще бъде използван, а другите клавиши запазват своето предназначение."
+msgid ""
+"If enabled, all compose keys will be treated as Compose in a sequence. By "
+"default, only the first pressed key will act as Compose, and alternate "
+"compose keys will keep their original role."
+msgstr ""
+"Когато е отметнато всички избрани клавиши на модификатори ще бъдат "
+"използвани като такива. По подразбиране, само първия използван модификатор "
+"ще бъде използван, а другите клавиши запазват своето предназначение."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
@@ -554,16 +650,24 @@ msgid "Favorites"
 msgstr "Избрани"
 
 #: language/i18n/Text.resx:589 ID:TimeoutToolTip
-msgid "If set, any compose sequence will be cancelled after a certain delay if no keyboard activity is detected."
-msgstr "Когато е зададена стойност тя ще бъде използвана като изчакване преди отказ от започнатата комбинация ако за това време няма действия с клавиатурата."
+msgid ""
+"If set, any compose sequence will be cancelled after a certain delay if no "
+"keyboard activity is detected."
+msgstr ""
+"Когато е зададена стойност тя ще бъде използвана като изчакване преди отказ "
+"от започнатата комбинация ако за това време няма действия с клавиатурата."
 
 #: language/i18n/Text.resx:593 ID:KeyboardLed
 msgid "Keyboard LED"
 msgstr "Включване на светодиод на клавиатурата"
 
 #: language/i18n/Text.resx:597 ID:KeyboardLedToolTip
-msgid "If set, the corresponding keyboard LED will be lit when a compose sequence is in progress."
-msgstr "Когато е зададено, по време на комбинация съответния светодиод на клавиатурата ще бъде включен."
+msgid ""
+"If set, the corresponding keyboard LED will be lit when a compose sequence "
+"is in progress."
+msgstr ""
+"Когато е зададено, по време на комбинация съответния светодиод на "
+"клавиатурата ще бъде включен."
 
 #. The short name of the compose key
 #: language/i18n/Text.resx:601 ID:KeyCompose
@@ -587,16 +691,25 @@ msgid "Caps Lock is only active while being held down"
 msgstr "Клавишът Caps Lock е включен само докато е натиснат"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
-msgid "Releasing the Caps Lock key will immediately disable it, instead of the more standard behaviour of having to press it a second time."
-msgstr "Отпускане на клавиша Caps Lock веднага престава да действа, вместо подразбираното поведение, при което трябва да бъде натиснат втори път."
+msgid ""
+"Releasing the Caps Lock key will immediately disable it, instead of the more "
+"standard behaviour of having to press it a second time."
+msgstr ""
+"Отпускане на клавиша Caps Lock веднага престава да действа, вместо "
+"подразбираното поведение, при което трябва да бъде натиснат втори път."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
 msgstr "Работа с повишени права (препоръчително)"
 
 #: language/i18n/Text.resx:629 ID:RunElevatedToolTip
-msgid "Composition will not work in some applications if WinCompose does not run with elevated privileges. This options reduces the chances that this will happen."
-msgstr "Комбинирането на знаци може да не работи в някои приложения ако WinCompose не работи с повишени права. Тази настройка намалява риска това да се случи."
+msgid ""
+"Composition will not work in some applications if WinCompose does not run "
+"with elevated privileges. This options reduces the chances that this will "
+"happen."
+msgstr ""
+"Комбинирането на знаци може да не работи в някои приложения ако WinCompose "
+"не работи с повишени права. Тази настройка намалява риска това да се случи."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
@@ -760,19 +873,25 @@ msgstr "Софтуерни зависимости на WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
-msgid "WinCompose needs the .NET Framework, version 4.0 or later, which does not\nseem to be currently installed. The following action may help solve the problem:"
+msgid ""
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
+"seem to be currently installed. The following action may help solve the "
+"problem:"
 msgstr ""
 "WinCompose използва .NET Framework, издание 4.0 или по-ново, което\n"
 "не е инсталирано. Следното действие може да помогне:"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Изтегляне и инсталиране на .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:194
-msgid "Once this is done, you may return to this screen and proceed with the\ninstallation."
+msgid ""
+"Once this is done, you may return to this screen and proceed with the\n"
+"installation."
 msgstr "След като приключи, се върнете и продължете."
 
 #. This string appears in the installer, not in WinCompose.

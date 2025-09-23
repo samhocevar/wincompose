@@ -1,4 +1,3 @@
-
 # Requirements:
 #  - Inno Setup 6 (download and install)
 #  - GitVersion (choco install gitversion)
@@ -8,11 +7,11 @@
 #  - gettext (mingw-get install msys-gettext)
 
 VERSION = $(shell gitversion -showvariable MajorMinorPatch)
-FRAMEWORK = net40
+FRAMEWORK = net481
 CONFIG = Release
 
 SRCDIR = wincompose
-BINDIR = wincompose/bin/$(CONFIG)/$(FRAMEWORK)
+BINDIR = wincompose\bin\$(CONFIG)\$(FRAMEWORK)
 
 SLN = wincompose.sln
 ISS = installer/installer.iss
@@ -28,6 +27,7 @@ DLL = $(BINDIR)/language.dll \
       $(BINDIR)/Hardcodet.NotifyIcon.Wpf.dll \
       $(BINDIR)/NLog.dll \
       $(BINDIR)/stfu.dll \
+	  $(BINDIR)/Wpf.Ui.dll \
       $(BINDIR)/System.ValueTuple.dll \
       $(BINDIR)/Typography.OpenFont.dll \
       $(BINDIR)/Typography.GlyphLayout.dll
@@ -36,21 +36,21 @@ LANG = $(sort $(subst ., , $(suffix $(basename $(wildcard language/i18n/*.*.resx
 PORTABLE = WinCompose-NoInstall-$(VERSION).zip
 
 VSWHERE = "${ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
-MSBUILD = TMP= TEMP= "$(shell $(VSWHERE) -latest -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe')"
+MSBUILD = "$(shell $(VSWHERE) -latest -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe')"
 MSGMERGE = msgmerge
 
 all: check installer portable
 	@echo
 	@echo Latest: $(VERSION)
-	@echo Installer: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-Setup-$(VERSION).exe
-	@echo InstallerSHA256: $(shell sha256sum WinCompose-Setup-$(VERSION).exe)
-	@echo InstallerMD5: $(shell md5sum WinCompose-Setup-$(VERSION).exe)
-	@echo Portable: https://github.com/samhocevar/wincompose/releases/download/v$(VERSION)/WinCompose-NoInstall-$(VERSION).zip
-	@echo PortableSHA256: $(shell sha256sum $(PORTABLE))
-	@echo PortableMD5: $(shell md5sum $(PORTABLE))
+	@echo Installer: https://github.com/ell1010/wincompose/releases/download/v$(VERSION)/WinCompose-Setup-$(VERSION).exe
+	@echo InstallerMD5: $(shell certutil -hashfile WinCompose-Setup-$(VERSION).exe MD5)
+	@echo InstallerSHA256: $(shell certutil -hashfile WinCompose-Setup-$(VERSION).exe sha256)
+	@echo Portable: https://github.com/ell1010/wincompose/releases/download/v$(VERSION)/WinCompose-NoInstall-$(VERSION).zip
+	@echo PortableSHA256: $(shell certutil -hashfile $(PORTABLE) MD5)
+	@echo PortableMD5: $(shell certutil -hashfile $(PORTABLE) sha256)
 
 check:
-	./check-data.sh
+	bash ./check-data.sh
 
 clean:
 	$(MSBUILD) $(SLN) -p:Configuration=$(CONFIG) -t:Clean
@@ -60,7 +60,7 @@ clean:
 	rm -rf wincompose/obj wincompose/bin || true
 
 build:
-	nuget restore $(SLN)
+	dotnet restore $(SLN)
 	$(MSBUILD) $(SLN) -p:Configuration=$(CONFIG) -t:Build
 
 installer: build $(EXE) $(ISS) $(PAS)
@@ -68,13 +68,13 @@ installer: build $(EXE) $(ISS) $(PAS)
 portable: build $(EXE)
 	rm -f $(PORTABLE)
 	rm -rf $(PORTABLE:.zip=)
-	mkdir -p $(PORTABLE:.zip=)/rules
-	mkdir -p $(addprefix $(PORTABLE:.zip=)/, $(LANG))
-	for L in $(LANG); do cp $(BINDIR)/$${L}/language.resources.dll $(PORTABLE:.zip=)/$${L}/; done
+	mkdir $(PORTABLE:.zip=)\rules
+	mkdir $(addprefix $(PORTABLE:.zip=)\, $(LANG))
+	for %%L in ($(LANG)) do cp $(BINDIR)\%%L\language.resources.dll $(PORTABLE:.zip=)\%%L\ 
 	cp $(EXE) $(DLL) $(PORTABLE:.zip=)
 	cp $(EXE).config $(PORTABLE:.zip=)
-	cp $(TXT) $(PORTABLE:.zip=)/rules
-	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -settings",0' > $(PORTABLE:.zip=)/wincompose-settings.vbs
-	echo 'CreateObject("WScript.Shell").Run CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\wincompose.exe -sequences",0' > $(PORTABLE:.zip=)/wincompose-sequences.vbs
-	zip -r $(PORTABLE) $(PORTABLE:.zip=)
+	cp $(TXT) $(PORTABLE:.zip=)\rules
+	echo start wincompose.exe -settings > $(PORTABLE:.zip=)\wincompose-settings.bat
+	echo start wincompose.exe -sequences > $(PORTABLE:.zip=)\wincompose-sequences.bat
+	tar -a -c -f $(PORTABLE) $(PORTABLE:.zip=)
 	rm -rf $(PORTABLE:.zip=)

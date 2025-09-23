@@ -2,7 +2,7 @@
 # Copyright (C) 2014 THE PACKAGE’S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2014.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -587,8 +587,8 @@ msgid ""
 msgstr ""
 "Si custu est abilitadu, WinCompose no at prus a ammustrare un'icona in "
 "s'àrea de notìfica. S'ùnica manera de abèrrere s'interfache de WinCompose at "
-"tando a èssere cussa de impreare sos elementos \"Impostatziones de WinCompose"
-"\" e \"Fileras de WinCompose\" in su menù de incumintzu."
+"tando a èssere cussa de impreare sos elementos \"Impostatziones de "
+"WinCompose\" e \"Fileras de WinCompose\" in su menù de incumintzu."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
@@ -886,8 +886,9 @@ msgstr "Programmas netzessàrios pro WinCompose"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:179
+#, fuzzy
 msgid ""
-"WinCompose needs the .NET Framework, version 4.0 or later, which does not\n"
+"WinCompose needs the .NET Framework, version 4.8.1 or later, which does not\n"
 "seem to be currently installed. The following action may help solve the "
 "problem:"
 msgstr ""
@@ -897,7 +898,8 @@ msgstr ""
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
-msgid "Download and install .NET Framework 4.0 Runtime"
+#, fuzzy
+msgid "Download and install .NET Framework 4.8.1 Runtime"
 msgstr "Iscàrriga e installa .NET Framework 4.0 Runtime"
 
 #. This string appears in the installer, not in WinCompose.
