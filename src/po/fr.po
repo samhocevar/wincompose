@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: French (WinCompose)\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2023-12-26 18:07+0000\n"
-"Last-Translator: QuarkUp <QuarkUpParticle@hotmail.com>\n"
+"PO-Revision-Date: 2025-10-09 12:07+0000\n"
+"Last-Translator: Logouneto <rico.sos@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/wincompose/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -334,11 +334,7 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
-"Si la touche Verrouillage de Majuscule (Caps Lock) est utilisée comme touche "
-"compose, le comportement d’origine de Caps Lock ne sera plus disponible. "
-"Cette fonction permet d’activer Caps Lock en pressant simultanément les deux "
-"touches Shift."
+msgstr "Si Verr Maj (Caps Lock) est utilisée comme touche compose, le comportement d’origine de Caps Lock ne sera plus disponible. Cette fonction permet d’activer Caps Lock en pressant simultanément les deux touches Shift."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -363,10 +359,7 @@ msgstr "Ver Maj met toujours les lettres en majuscule"
 msgid ""
 "When Caps Lock is on, typing an accented letter such as “é” will always "
 "output the corresponding capitalized letter, in this case “É”."
-msgstr ""
-"Quand le verrouillage de majuscule est activé, la saisie d’une lettre "
-"accentuée telle que « é » produira toujours la majuscule correspondante, "
-"pour cet exemple « É »."
+msgstr "Quand le verrouillage de majuscule est activé, la saisie d’une lettre accentuée telle que “é“ produira toujours la majuscule correspondante, pour cet exemple “É“."
 
 #. Header for the list of Unicode character categories
 #: language/i18n/Text.resx:377 ID:Categories
@@ -493,7 +486,7 @@ msgstr "Des mises à jour sont disponibles."
 
 #: language/i18n/Text.resx:477 ID:UserDefinedSequences
 msgid "User-defined sequences"
-msgstr "Séquences personnalisées"
+msgstr "Séquences prédéfinies"
 
 #. A button to open the file containing the user-defined sequences.
 #: language/i18n/Text.resx:481 ID:UserDefinedSequencesEdit
@@ -573,11 +566,7 @@ msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr ""
-"Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone "
-"de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors "
-"de lancer « WinCompose Settings » ou « WinCompose Sequences » depuis le menu "
-"Démarrer."
+msgstr "Si cette option est cochée, il n'y aura plus d'icône WinCompose dans la zone de notification. Le seul moyen d'ouvrir l'interface de WinCompose est alors de lancer \"WinCompose Settings\" ou \"WinCompose Sequences\" depuis le menu Démarrer."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
@@ -619,7 +608,7 @@ msgstr ""
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr "La touche de composition alternative est toujours Compose"
+msgstr "Touche de composition alternative est toujours Compose"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
@@ -728,7 +717,7 @@ msgstr "Autre, usage privé"
 #. Unicode designation “Cs” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:137 ID:Surrogate
 msgid "Other, Surrogate"
-msgstr "Autre, seizet d’indirection"
+msgstr "Autre, Substitut"
 
 #. Unicode designation “Ll” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:141 ID:LowercaseLetter
@@ -748,7 +737,7 @@ msgstr "Lettre, autre"
 #. Unicode designation “Lt” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:153 ID:TitlecaseLetter
 msgid "Letter, Titlecase"
-msgstr "Lettre, casse de titre"
+msgstr "Lettre, majuscules de titre"
 
 #. Unicode designation “Lu” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:157 ID:UppercaseLetter
@@ -768,7 +757,7 @@ msgstr "Marque, englobante"
 #. Unicode designation “Mn” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:169 ID:NonSpacingMark
 msgid "Mark, Non-Spacing"
-msgstr "Marque, à chasse nulle"
+msgstr "Marque, sans espacement"
 
 #. Unicode designation “Nd” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:173 ID:DecimalDigitNumber
@@ -873,8 +862,7 @@ msgid ""
 "problem:"
 msgstr ""
 "WinCompose nécessite le framework .NET, version 4.0 ou plus récente, qui\n"
-"ne semble pas être installé actuellement. La procédure ci-dessous devrait\n"
-"permettre de résoudre le problème :"
+"ne semble pas être installé actuellement. La procédure ci-dessous devrait permettre de résoudre le problème :"
 
 #. This string appears in the installer, not in WinCompose.
 #: installer/installer.pas:184
