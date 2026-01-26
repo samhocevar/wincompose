@@ -21,6 +21,9 @@
 #     braceright, asciitilde.
 #
 # For more definitions, see the files in C:\Program Files\WinCompose\res.
+#
+# by default, the <multi_key> is <right alt>
+
 
 <Multi_key> <h> <w> : "Hello, world!"
 
