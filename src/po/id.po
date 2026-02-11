@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: Sam Hocevar <sam@hocevar.net>\n"
 "POT-Creation-Date: 2015-03-23 15:27+0100\n"
-"PO-Revision-Date: 2025-05-08 04:01+0000\n"
-"Last-Translator: Eryquicc <fathirzaidanmaulana@gmail.com>\n"
+"PO-Revision-Date: 2026-02-12 11:09+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/wincompose/master/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #. The user can configure the application language and choose between English, French, etc. and Autodetect
 #: language/i18n/Text.resx:121 ID:AutodetectLanguage
@@ -227,36 +227,36 @@ msgstr ""
 #. This is the name of a category of settings about what happens when invalid sequences are typed
 #: language/i18n/Text.resx:285 ID:InvalidSequences
 msgid "On invalid sequences"
-msgstr ""
+msgstr "Pada urutan yang tidak valid"
 
 #: language/i18n/Text.resx:289 ID:CaseInsensitive
 msgid "Fall back to case insensitive matches"
-msgstr ""
+msgstr "Gunakan pencocokan tidak peka huruf besar/kecil sebagai cadangan"
 
 #: language/i18n/Text.resx:293 ID:CaseInsensitiveToolTip
 msgid ""
 "If the entered sequence does not exist, but there is one that only differs "
 "by case, automatically correct it."
-msgstr ""
+msgstr "Jika urutan yang dimasukkan tidak ada, tetapi ada yang hanya berbeda pada huruf besar/kecil, koreksi otomatis."
 
 #: language/i18n/Text.resx:297 ID:DiscardOnInvalid
 msgid "Discard all typed characters"
-msgstr ""
+msgstr "Buang semua karakter yang diketik"
 
 #: language/i18n/Text.resx:301 ID:DiscardOnInvalidToolTip
 msgid ""
 "If the entered sequence does not exist, discard all the characters that were "
 "typed. The default behaviour is to output the characters as if the compose "
 "key had not been used."
-msgstr ""
+msgstr "Jika urutan yang dimasukkan tidak ada, buang semua karakter yang telah diketik. Perilaku bawaan adalah mengeluarkan karakter seolah-olah tombol compose tidak digunakan."
 
 #: language/i18n/Text.resx:305 ID:BeepOnInvalid
 msgid "Emit a beep"
-msgstr ""
+msgstr "Bunyikan bip"
 
 #: language/i18n/Text.resx:309 ID:BeepOnInvalidToolTip
 msgid "If the entered sequence does not exist, emit a system sound."
-msgstr ""
+msgstr "Jika urutan yang dimasukkan tidak ada, keluarkan suara sistem."
 
 #: language/i18n/Text.resx:313 ID:Language
 msgid "Interface language:"
@@ -293,18 +293,18 @@ msgstr "Terapkan"
 #. Should this say “retain” instead of “maintain”?
 #: language/i18n/Text.resx:337 ID:KeepOriginalKey
 msgid "Maintain original compose key behaviour"
-msgstr ""
+msgstr "Pertahankan perilaku asli tombol compose"
 
 #: language/i18n/Text.resx:341 ID:KeepOriginalKeyToolTip
 msgid ""
 "This tells WinCompose to make a best effort to retain the original key’s "
 "behaviour. For instance, the Alt-Tab shortcut will still work even if Alt is "
 "used as the compose key."
-msgstr ""
+msgstr "Ini memberi tahu WinCompose agar berupaya sebaik mungkin mempertahankan perilaku tombol asli. Misalnya, pintasan Alt-Tab tetap berfungsi meskipun Alt digunakan sebagai tombol compose."
 
 #: language/i18n/Text.resx:345 ID:InsertZwsp
 msgid "Insert zero-width spaces in Office apps"
-msgstr ""
+msgstr "Sisipkan spasi lebar nol di aplikasi Office"
 
 #: language/i18n/Text.resx:349 ID:InsertZwspToolTip
 msgid ""
@@ -325,7 +325,7 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock on by pressing "
 "both Shift keys simultaneously."
-msgstr ""
+msgstr "Jika Caps Lock digunakan sebagai tombol compose, perilaku asli tombol tersebut menjadi tidak tersedia. Fitur ini memungkinkan menyalakan Caps Lock dengan menekan kedua tombol Shift secara bersamaan."
 
 #: language/i18n/Text.resx:361 ID:ShiftDisablesCapsLock
 msgid "Shift key disables Caps Lock"
@@ -336,7 +336,7 @@ msgid ""
 "If Caps Lock is used as the compose key, the original behaviour of the key "
 "becomes unavailable. This feature allows to turn Caps Lock off by pressing "
 "the Shift key."
-msgstr ""
+msgstr "Jika Caps Lock digunakan sebagai tombol compose, perilaku asli tombol tersebut menjadi tidak tersedia. Fitur ini memungkinkan mematikan Caps Lock dengan menekan tombol Shift."
 
 #: language/i18n/Text.resx:369 ID:CapsLockCapitalizes
 msgid "Caps Lock always capitalizes letters"
@@ -357,7 +357,7 @@ msgstr "Kategori"
 
 #: language/i18n/Text.resx:381 ID:InSelectedCategories
 msgid "In selected categories"
-msgstr ""
+msgstr "Dalam kategori yang dipilih"
 
 #. The title of the Options window
 #: language/i18n/Text.resx:385 ID:Options
@@ -488,11 +488,11 @@ msgstr "Muat ulang"
 
 #: language/i18n/Text.resx:489 ID:AllowInjected
 msgid "Allow Injected Keys"
-msgstr ""
+msgstr "Izinkan tombol yang disuntikkan"
 
 #: language/i18n/Text.resx:493 ID:AllowInjectedToolTip
 msgid "Do not ignore keys sent by other software like AutoHotkey or Synergy"
-msgstr ""
+msgstr "Jangan abaikan tombol yang dikirim oleh perangkat lunak lain seperti AutoHotkey atau Synergy"
 
 #. The name of the “Print Screen” key on the keyboard
 #: language/i18n/Text.resx:497 ID:KeyPrint
@@ -512,17 +512,17 @@ msgstr "Otomatis memeriksa pembaruan"
 msgid ""
 "If enabled, WinCompose will connect to the Internet at regular intervals to "
 "check for new versions. Updates are not installed automatically."
-msgstr ""
+msgstr "Jika diaktifkan, WinCompose akan terhubung ke Internet secara berkala untuk memeriksa versi baru. Pembaruan tidak diinstal secara otomatis."
 
 #: language/i18n/Text.resx:513 ID:KeepIconVisible
 msgid "Try to keep notification area icon always visible"
-msgstr ""
+msgstr "Coba agar ikon area notifikasi selalu terlihat"
 
 #: language/i18n/Text.resx:517 ID:KeepIconVisibleToolTip
 msgid ""
 "By default, Windows will remove the icon from the notification area after a "
 "short while. This option attempts to keep it always visible."
-msgstr ""
+msgstr "Secara bawaan, Windows akan menghapus ikon dari area notifikasi setelah beberapa saat. Opsi ini berupaya menjaganya agar selalu terlihat."
 
 #. The user can click on this button to change the current compose key.
 #: language/i18n/Text.resx:521 ID:ChangeComposeKey
@@ -531,7 +531,7 @@ msgstr "Ubah…"
 
 #: language/i18n/Text.resx:525 ID:CaptureComposeKey
 msgid "Please press a key to use as your compose key."
-msgstr ""
+msgstr "Silakan tekan tombol untuk digunakan sebagai tombol compose Anda."
 
 #. Add sequence to the list of favorites.
 #: language/i18n/Text.resx:529 ID:AddToFavorites
@@ -547,7 +547,7 @@ msgid ""
 "If enabled, WinCompose will no longer display an icon in the notification "
 "area. The only way to open the WinCompose interface will then be through the "
 "“WinCompose Settings” and “WinCompose Sequences” entries in the startup menu."
-msgstr ""
+msgstr "Jika diaktifkan, WinCompose tidak lagi menampilkan ikon di area notifikasi. Satu-satunya cara untuk membuka antarmuka WinCompose adalah melalui entri “WinCompose Settings” dan “WinCompose Sequences” di menu Start."
 
 #. The name of the “Home” key on the keyboard
 #: language/i18n/Text.resx:541 ID:KeyHome
@@ -577,24 +577,24 @@ msgstr "Lanjut"
 #. “regex” is shorthand for “regular expression”.
 #: language/i18n/Text.resx:561 ID:IgnoreRegex
 msgid "Ignore windows matching this regex:"
-msgstr ""
+msgstr "Abaikan jendela yang cocok dengan regex ini:"
 
 #: language/i18n/Text.resx:565 ID:IgnoreRegexToolTip
 msgid ""
 "WinCompose will be completely disabled when the current window class or "
 "window name matches this regular expression."
-msgstr ""
+msgstr "WinCompose akan dinonaktifkan sepenuhnya ketika kelas jendela saat ini atau nama jendela cocok dengan ekspresi reguler ini."
 
 #: language/i18n/Text.resx:569 ID:AlwaysCompose
 msgid "Alternate compose key is always Compose"
-msgstr ""
+msgstr "Tombol compose alternatif selalu Compose"
 
 #: language/i18n/Text.resx:573 ID:AlwaysComposeToolTip
 msgid ""
 "If enabled, all compose keys will be treated as Compose in a sequence. By "
 "default, only the first pressed key will act as Compose, and alternate "
 "compose keys will keep their original role."
-msgstr ""
+msgstr "Jika diaktifkan, semua tombol compose akan diperlakukan sebagai Compose dalam suatu urutan. Secara bawaan, hanya tombol pertama yang ditekan yang akan bertindak sebagai Compose, dan tombol compose alternatif akan tetap menjalankan peran aslinya."
 
 #. The section for random contributors who aren’t programmers or translators. Might be empty.
 #: language/i18n/Text.resx:577 ID:SpecialThanks
@@ -650,13 +650,13 @@ msgstr "Aksesibilitas"
 
 #: language/i18n/Text.resx:617 ID:MustHoldCapsLock
 msgid "Caps Lock is only active while being held down"
-msgstr ""
+msgstr "Caps Lock hanya aktif selama ditahan"
 
 #: language/i18n/Text.resx:621 ID:MustHoldCapsLockToolTip
 msgid ""
 "Releasing the Caps Lock key will immediately disable it, instead of the more "
 "standard behaviour of having to press it a second time."
-msgstr ""
+msgstr "Melepas tombol Caps Lock akan langsung menonaktifkannya, alih-alih perilaku yang lebih standar yang mengharuskan menekannya untuk kedua kalinya."
 
 #: language/i18n/Text.resx:625 ID:RunElevated
 msgid "Run with elevated privileges (recommended)"
@@ -667,7 +667,7 @@ msgid ""
 "Composition will not work in some applications if WinCompose does not run "
 "with elevated privileges. This options reduces the chances that this will "
 "happen."
-msgstr ""
+msgstr "Komposisi tidak akan berfungsi di beberapa aplikasi jika WinCompose tidak berjalan dengan hak akses yang ditingkatkan. Opsi ini mengurangi kemungkinan hal itu terjadi."
 
 #. Unicode designation “Cc” (https://msdn.microsoft.com/en-us/library/system.globalization.unicodecategory%28v=vs.110%29.aspx), see also Gucharmap translations (https://git.gnome.org/browse/gucharmap/tree/po)
 #: language/unicode/Category.resx:121 ID:Control
